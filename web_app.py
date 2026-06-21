@@ -1,73 +1,121 @@
 import os
 import json
-import re
 import pandas as pd
 import streamlit as st
 
-# --- CONFIGURATION ---
-FEEDBACK_FORM_URL = "#"
-SUBSCRIBE_FORM_URL = "#"
-UNSUBSCRIBE_FORM_URL = "#"
+# =====================================================================
+# 🌐 CONFIGURATION & SETTINGS
+# =====================================================================
+FEEDBACK_FORM_URL = "https://docs.google.com/forms/d/1b5uifsDa73u42tlfKK3RGto_hLiwT-TtotQwov0O0b4"
+SUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/1s1UE1gHsTBOirAPW4beST3DS6D_ra-whkndTq5iIOHQ"
+UNSUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/1uv_Xwymc8RFhsvK5L0oV9Rc16jdP0xRTrDW7zv_P5A0"
+
+# --- STREAMLIT PAGE CONFIG ---
+st.set_page_config(page_title="hack.CCM | Knowledge Portal", layout="wide")
+
+# Paths
 OUTPUT_DIR = "./output_files"
 EXCEL_TRACKER_FILE = "./sent_summaries.xlsx"
 
-st.set_page_config(page_title="hack.CCM | Knowledge Portal", page_icon="🧠", layout="wide")
-
-# --- AESTHETIC CSS REVAMP ---
+# =====================================================================
+# 🎨 AESTHETIC CSS INJECTION
+# =====================================================================
 st.markdown("""
     <style>
-    .stApp { background-color: #FDFBF7 !important; color: #1F2937; }
-    h1, h2, h3 { color: #111827 !important; font-family: 'Inter', sans-serif !important; }
+    .stApp { background-color: #F5F5DC !important; }
+    /* Font and Color Settings */
+    body, p, li, div { color: #1A1A1A !important; font-family: 'Georgia', serif !important; }
+    h1, h2, h3 { color: #000000 !important; font-weight: bold !important; }
     
-    /* Top Utility Bar */
-    .utility-bar { padding: 10px; background: #FFF; border-radius: 8px; border: 1px solid #E5E7EB; margin-bottom: 20px; }
+    /* Utility Bar */
+    .utility-bar { background-color: #FFFFFF; padding: 15px; border-radius: 8px; border: 1px solid #D1D5DB; margin-bottom: 25px; display: flex; justify-content: space-between; align-items: center; }
     
-    /* Article Card */
-    .card { background: #FFFFFF; padding: 25px; border-radius: 12px; border: 1px solid #E5E7EB; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+    /* Summary Card Styling */
+    .summary-card { background-color: #FFFFFF; padding: 30px; border-radius: 4px; border: 1px solid #D1D5DB; box-shadow: 2px 2px 5px rgba(0,0,0,0.05); }
     
-    /* Buttons */
-    div.stButton > button { border-radius: 6px; background-color: #1D4ED8; color: white; border: none; }
-    
-    /* Filter Section */
-    .filter-box { background: #F3F4F6; padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+    /* Sidebar/Filters Area */
+    .sidebar-panel { background-color: #EFEFE0; padding: 20px; border-radius: 8px; border: 1px solid #D1D5DB; }
     </style>
 """, unsafe_allow_html=True)
 
-# --- APP LOGIC ---
-def load_data():
-    if not os.path.exists(EXCEL_TRACKER_FILE): return []
+# --- DATA HANDLING ---
+@st.cache_data
+def get_data():
+    if not os.path.exists(EXCEL_TRACKER_FILE): return pd.DataFrame()
     df = pd.read_excel(EXCEL_TRACKER_FILE, sheet_name="Registry Logs")
     df.columns = df.columns.str.strip()
-    return df[df["show_on_web"].astype(str).str.lower() == "yes"].to_dict(orient="records")
+    return df[df["show_on_web"].astype(str).str.lower() == "yes"]
 
-# --- UI RENDER ---
-st.markdown('<div class="utility-bar" style="display:flex; justify-content:space-between;">'
-            '<strong>🧠 hack.CCM Portal</strong>'
-            f'<div><a href="{FEEDBACK_FORM_URL}">Feedback</a> | <a href="{SUBSCRIBE_FORM_URL}">Subscribe</a> | <a href="{UNSUBSCRIBE_FORM_URL}">Unsub</a></div>'
-            '</div>', unsafe_allow_html=True)
+# =====================================================================
+# 🖥️ UI IMPLEMENTATION
+# =====================================================================
 
-data = load_data()
-if data:
-    st.markdown('<div class="filter-box">', unsafe_allow_html=True)
-    col1, col2 = st.columns(2)
-    systems = ["All"] + sorted(list(set(d["System"] for d in data)))
-    sel_sys = col1.selectbox("Select System", systems)
-    search = col2.text_input("🔍 Search Summaries")
+# 1. Top Utility Header
+st.markdown(f'''
+    <div class="utility-bar">
+        <div style="font-size: 24px; font-weight: 800;">hack.CCM | Knowledge Portal</div>
+        <div>
+            <a href="{FEEDBACK_FORM_URL}" style="margin-right:15px; color:#1A1A1A;">Feedback</a>
+            <a href="{SUBSCRIBE_FORM_URL}" style="margin-right:15px; color:#1A1A1A;">Subscribe</a>
+            <a href="{UNSUBSCRIBE_FORM_URL}" style="color:#1A1A1A;">Unsubscribe</a>
+        </div>
+    </div>
+''', unsafe_allow_html=True)
+
+df = get_data()
+
+# Split Layout: 33% Left, 66% Right
+col_filter, col_view = st.columns([1, 2])
+
+# Left Panel (Filters)
+with col_filter:
+    st.markdown('<div class="sidebar-panel">', unsafe_allow_html=True)
+    st.markdown("### 🔍 Filter Articles")
+    search_query = st.text_input("Search titles...")
+    
+    systems = ["All"] + sorted(df["System"].unique().tolist())
+    sel_sys = st.selectbox("Subject:", systems)
+    
+    types = ["All"] + sorted(df["Type of Article"].unique().tolist())
+    sel_type = st.selectbox("Article Type:", types)
+    
+    # Filter Logic
+    filtered_df = df.copy()
+    if sel_sys != "All": filtered_df = filtered_df[filtered_df["System"] == sel_sys]
+    if sel_type != "All": filtered_df = filtered_df[filtered_df["Type of Article"] == sel_type]
+    if search_query: filtered_df = filtered_df[filtered_df["Paper/Guideline Name"].str.contains(search_query, case=False)]
+    
+    st.markdown("### 📜 Articles")
+    for _, row in filtered_df.iterrows():
+        # Store selection in session state
+        if st.button(row["Paper/Guideline Name"], key=row["File Name"], use_container_width=True):
+            st.session_state.selected_file = row["File Name"]
     st.markdown('</div>', unsafe_allow_html=True)
 
-    # Filtered View
-    filtered = [d for d in data if (sel_sys == "All" or d["System"] == sel_sys) and 
-                (search.lower() in d["Paper/Guideline Name"].lower())]
+# Right Panel (The Summary Viewer)
+with col_view:
+    selected_file = st.session_state.get("selected_file")
     
-    for item in filtered:
-        with st.expander(f"📖 {item['Paper/Guideline Name']} ({item['System']})"):
-            st.markdown('<div class="card">', unsafe_allow_html=True)
-            # Load JSON content
-            json_path = os.path.join(OUTPUT_DIR, os.path.splitext(item["File Name"])[0] + ".json")
-            if os.path.exists(json_path):
-                with open(json_path, 'r') as f:
-                    content = json.load(f)
-                    st.markdown(content.get("clinical_summary_markdown", "No summary available."))
-            st.markdown('</div>', unsafe_allow_html=True)
-else:
-    st.warning("No summaries published yet.")
+    if selected_file:
+        row = df[df["File Name"] == selected_file].iloc[0]
+        
+        # Title + DOI Button (Top Right alignment)
+        title_top, doi_btn = st.columns([3, 1])
+        title_top.markdown(f"## {row['Paper/Guideline Name']}")
+        
+        doi_link = str(row.get("DOI", "")).strip()
+        if doi_link and doi_link.lower() != "none" and doi_link.startswith("http"):
+            doi_btn.link_button("🔗 View Paper", doi_link, use_container_width=True)
+            
+        st.markdown('<div class="summary-card">', unsafe_allow_html=True)
+        # Content
+        json_path = os.path.join(OUTPUT_DIR, os.path.splitext(selected_file)[0] + ".json")
+        if os.path.exists(json_path):
+            with open(json_path, 'r', encoding='utf-8') as f:
+                content = json.load(f)
+                st.markdown(content.get("clinical_summary_markdown", "No summary available."))
+        else:
+            st.write("Summary data pending...")
+        st.markdown('</div>', unsafe_allow_html=True)
+    else:
+        st.info("Select an article from the left panel to begin reading.")
