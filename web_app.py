@@ -105,10 +105,58 @@ border-radius:999px;
 margin-right:8px;
 font-weight:600;
 }
+            
+            /* ----- GLOBAL TEXT ----- */
+body,
+p,
+span,
+div,
+label {
+    color: #1A1A1A !important;
+}
+
+/* ----- SIDEBAR TEXT ----- */
+[data-testid="stSidebar"] * {
+    color: #1A1A1A !important;
+}
+
+/* ----- RADIO BUTTON LABELS (article names) ----- */
+div[role="radiogroup"] label,
+div[role="radiogroup"] span,
+div[role="radiogroup"] p {
+    color: #1A1A1A !important;
+}
+
+/* ----- WIDGET LABELS ----- */
+label[data-testid="stWidgetLabel"],
+label[data-testid="stWidgetLabel"] p {
+    color: #1A1A1A !important;
+    font-weight: 600;
+}
+
+/* ----- SIDEBAR HEADERS ----- */
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] h4 {
+    color: #1A1A1A !important;
+}
+
+/* ----- MARKDOWN TEXT ----- */
+[data-testid="stMarkdownContainer"] p,
+[data-testid="stMarkdownContainer"] span,
+[data-testid="stMarkdownContainer"] li {
+    color: #1A1A1A !important;
+}
+
+/* ----- ARTICLE COUNTER ----- */
+[data-testid="stSidebar"] strong {
+    color: #1A1A1A !important;
+}
 </style>
 ''', unsafe_allow_html=True)
 
-st.markdown("<h1>hack.CCM V4</h1>", unsafe_allow_html=True)
+st.markdown("<h1>hack.CCM presents ACUMEN</h1>", unsafe_allow_html=True)
 
 
 @st.cache_data
