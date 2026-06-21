@@ -1,0 +1,13 @@
+# Local Automation Secrets Matrix
+.env
+emails.csv
+email_list_sync.py
+email_push.py
+master_app.py
+input_pdfs/
+Dockerfile
+
+# Temporary system artifacts
+*.tmp
+~$*.xlsx
+__pycache__/
