@@ -13,83 +13,127 @@ EXCEL_TRACKER_FILE = "./sent_summaries.xlsx"
 
 st.set_page_config(
     page_title="hack.CCM | Knowledge Portal",
+    page_icon="📚",
     layout="wide"
 )
 
-st.markdown("""
+st.markdown('''
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
 
 html,body,.stApp{
 background:#F4F1E8;
-font-family:Inter,sans-serif;
+color:#1A1A1A;
+font-family:'Inter',sans-serif;
 }
 
 [data-testid="stSidebar"]{
 background:#EDEADF;
+border-right:1px solid #D5CFBF;
 }
 
-h1,h2,h3{
-font-family:'Playfair Display',serif;
+h1,h2,h3,h4,p,span,div,label{
 color:#1A1A1A;
 }
 
-.main-card{
+.topbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 22px;
+background:#111111;
+border-radius:12px;
+margin-bottom:20px;
+}
+
+.logo{
+font-family:'Playfair Display',serif;
+font-size:30px;
+font-weight:700;
+color:#F4F1E8;
+}
+
+.btnrow{
+display:flex;
+gap:10px;
+}
+
+.btnrow a{
+background:#C8B88A;
+color:#111111 !important;
+padding:8px 16px;
+border-radius:8px;
+text-decoration:none;
+font-weight:600;
+}
+
+.card{
 background:white;
 padding:2rem;
-border-radius:12px;
+border-radius:14px;
 border:1px solid #D5CFBF;
 }
 
-.tag{
+.badge{
 display:inline-block;
+padding:5px 12px;
+margin-right:8px;
 background:#F0EDE3;
-padding:4px 10px;
-margin-right:6px;
-border-radius:5px;
+border-radius:999px;
 font-size:12px;
 font-weight:600;
 }
 
-.small{
-color:#6A6255;
-font-size:12px;
+.section{
+margin-top:24px;
+padding-top:12px;
+border-top:1px solid #ECE7DA;
 }
-</style>
-""", unsafe_allow_html=True)
 
+.sidebar-title{
+font-weight:700;
+margin-top:10px;
+margin-bottom:10px;
+}
+
+</style>
+''', unsafe_allow_html=True)
 
 @st.cache_data
-def get_data():
+def load_data():
     if not os.path.exists(EXCEL_TRACKER_FILE):
         return pd.DataFrame()
-
     df = pd.read_excel(EXCEL_TRACKER_FILE, sheet_name="Registry Logs")
     df.columns = df.columns.str.strip()
-
     return df[df["show_on_web"].astype(str).str.lower() == "yes"]
 
+df = load_data()
 
-df = get_data()
-
-st.title("hack.CCM | Knowledge Portal")
+st.markdown(f'''
+<div class="topbar">
+<div class="logo">hack.CCM | Knowledge Portal</div>
+<div class="btnrow">
+<a href="{FEEDBACK_FORM_URL}" target="_blank">Feedback</a>
+<a href="{SUBSCRIBE_FORM_URL}" target="_blank">Subscribe</a>
+<a href="{UNSUBSCRIBE_FORM_URL}" target="_blank">Unsubscribe</a>
+</div>
+</div>
+''', unsafe_allow_html=True)
 
 with st.sidebar:
-    st.header("Search")
+    st.markdown("### Search & Filters")
 
-    query = st.text_input("Search article")
+    search = st.text_input("Search")
 
     systems = ["All"]
+    types = ["All"]
+
     if not df.empty:
         systems += sorted(df["System"].dropna().unique())
-
-    system = st.selectbox("Subject", systems)
-
-    types = ["All"]
-    if not df.empty:
         types += sorted(df["Type of Article"].dropna().unique())
 
-    article_type = st.selectbox("Article type", types)
+    system = st.selectbox("Subject", systems)
+    article_type = st.selectbox("Article Type", types)
 
 filtered = df.copy()
 
@@ -101,54 +145,62 @@ if not filtered.empty:
     if article_type != "All":
         filtered = filtered[filtered["Type of Article"] == article_type]
 
-    if query:
-        filtered = filtered[filtered["Paper/Guideline Name"].str.contains(query, case=False, na=False)]
+    if search:
+        filtered = filtered[
+            filtered["Paper/Guideline Name"]
+            .str.contains(search, case=False, na=False)
+        ]
 
-article = None
+selected = None
 
 with st.sidebar:
-    st.markdown("---")
-    names = filtered["Paper/Guideline Name"].tolist() if not filtered.empty else []
+    st.markdown(f"### Articles ({len(filtered)})")
 
-    if names:
-        article = st.radio("Articles", names)
+    if not filtered.empty:
+        selected = st.radio(
+            "",
+            filtered["Paper/Guideline Name"].tolist(),
+            label_visibility="collapsed"
+        )
 
-if article:
-
-    row = filtered[filtered["Paper/Guideline Name"] == article].iloc[0]
-
-    st.markdown('<div class="main-card">', unsafe_allow_html=True)
-
-    st.markdown(f"# {row['Paper/Guideline Name']}")
-
-    st.markdown(
-        f'<span class="tag">{row["System"]}</span>'
-        f'<span class="tag">{row["Type of Article"]}</span>',
-        unsafe_allow_html=True
-    )
-
-    doi = str(row.get("DOI", "")).strip()
-
-    if doi.startswith("http"):
-        st.link_button("View Paper", doi)
-
-    st.divider()
-
-    json_path = os.path.join(
-        OUTPUT_DIR,
-        os.path.splitext(row["File Name"])[0] + ".json"
-    )
-
-    if os.path.exists(json_path):
-        with open(json_path, encoding="utf-8") as f:
-            content = json.load(f)
-
-        st.markdown(content.get("clinical_summary_markdown", ""))
-
-    else:
-        st.info("Summary not available")
-
-    st.markdown("</div>", unsafe_allow_html=True)
-
-else:
+if not selected:
     st.info("Select an article from the sidebar.")
+    st.stop()
+
+row = filtered[filtered["Paper/Guideline Name"] == selected].iloc[0]
+
+st.markdown('<div class="card">', unsafe_allow_html=True)
+
+st.markdown(f"# {row['Paper/Guideline Name']}")
+
+st.markdown(
+    f'''
+    <span class="badge">{row.get("System","")}</span>
+    <span class="badge">{row.get("Type of Article","")}</span>
+    ''',
+    unsafe_allow_html=True
+)
+
+doi = str(row.get("DOI","")).strip()
+
+if doi.startswith("http"):
+    st.link_button("📄 View Original Paper", doi)
+
+json_path = os.path.join(
+    OUTPUT_DIR,
+    os.path.splitext(row["File Name"])[0] + ".json"
+)
+
+st.markdown('<div class="section">', unsafe_allow_html=True)
+st.markdown("## 📋 Core Summary")
+
+if os.path.exists(json_path):
+    with open(json_path, "r", encoding="utf-8") as f:
+        content = json.load(f)
+
+    st.markdown(content.get("clinical_summary_markdown",""))
+else:
+    st.warning("Summary file not found")
+
+st.markdown('</div>', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
