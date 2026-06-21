@@ -1,4 +1,11 @@
 
+# V4 CSS patch for hack.CCM portal
+# Fixes:
+# - White selectboxes with black text
+# - White dropdown menus
+# - White DOI/View Paper button with black text
+# - Consistent light theme
+
 import os
 import json
 import pandas as pd
@@ -8,32 +15,60 @@ FEEDBACK_FORM_URL = "https://docs.google.com/forms/d/1b5uifsDa73u42tlfKK3RGto_hL
 SUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/1s1UE1gHsTBOirAPW4beST3DS6D_ra-whkndTq5iIOHQ"
 UNSUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/1uv_Xwymc8RFhsvK5L0oV9Rc16jdP0xRTrDW7zv_P5A0"
 
-OUTPUT_DIR = "./output_files"
-EXCEL_TRACKER_FILE = "./sent_summaries.xlsx"
+OUTPUT_DIR="./output_files"
+EXCEL_TRACKER_FILE="./sent_summaries.xlsx"
 
-st.set_page_config(
-    page_title="hack.CCM | Knowledge Portal",
-    page_icon="📚",
-    layout="wide"
-)
+st.set_page_config(page_title="hack.CCM | Knowledge Portal", page_icon="📚", layout="wide")
 
 st.markdown('''
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap');
-
-html,body,.stApp{
-background:#F4F1E8;
-color:#1A1A1A;
-font-family:'Inter',sans-serif;
+html, body, .stApp{
+    background:#F4F1E8;
+    color:#1A1A1A;
 }
 
 [data-testid="stSidebar"]{
-background:#EDEADF;
-border-right:1px solid #D5CFBF;
+    background:#EDEADF;
+    border-right:1px solid #D5CFBF;
 }
 
-h1,h2,h3,h4,p,span,div,label{
-color:#1A1A1A;
+/* SELECTBOX FIX */
+.stSelectbox div[data-baseweb="select"] > div{
+    background:white !important;
+    color:#1A1A1A !important;
+    border:1px solid #D5CFBF !important;
+}
+
+.stSelectbox *{
+    color:#1A1A1A !important;
+}
+
+/* TEXT INPUT FIX */
+.stTextInput input{
+    background:white !important;
+    color:#1A1A1A !important;
+}
+
+/* DROPDOWN MENU FIX */
+div[role="listbox"]{
+    background:white !important;
+}
+
+div[role="option"]{
+    background:white !important;
+    color:#1A1A1A !important;
+}
+
+/* BUTTON FIX */
+.stLinkButton a{
+    background:white !important;
+    color:#1A1A1A !important;
+    border:1px solid #D5CFBF !important;
+    border-radius:10px !important;
+}
+
+.stLinkButton a:hover{
+    background:#F5F5F5 !important;
 }
 
 .topbar{
@@ -47,57 +82,34 @@ margin-bottom:20px;
 }
 
 .logo{
-font-family:'Playfair Display',serif;
 font-size:30px;
 font-weight:700;
-color:#F4F1E8;
-}
-
-.btnrow{
-display:flex;
-gap:10px;
+color:white;
 }
 
 .btnrow a{
 background:#C8B88A;
-color:#111111 !important;
-padding:8px 16px;
+padding:8px 14px;
+margin-left:8px;
 border-radius:8px;
 text-decoration:none;
+color:#111 !important;
 font-weight:600;
-}
-
-.card{
-background:white;
-padding:2rem;
-border-radius:14px;
-border:1px solid #D5CFBF;
 }
 
 .badge{
 display:inline-block;
 padding:5px 12px;
-margin-right:8px;
 background:#F0EDE3;
 border-radius:999px;
-font-size:12px;
+margin-right:8px;
 font-weight:600;
 }
-
-.section{
-margin-top:24px;
-padding-top:12px;
-border-top:1px solid #ECE7DA;
-}
-
-.sidebar-title{
-font-weight:700;
-margin-top:10px;
-margin-bottom:10px;
-}
-
 </style>
 ''', unsafe_allow_html=True)
+
+st.markdown("<h1>hack.CCM V4</h1>", unsafe_allow_html=True)
+
 
 @st.cache_data
 def load_data():
