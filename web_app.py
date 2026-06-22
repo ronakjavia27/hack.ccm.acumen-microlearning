@@ -22,11 +22,12 @@ app = FastAPI()
 # Theme Archetype: High-End Academic Editorial Beige & Tan
 # 🏷️ #FDFBF7 -> Main Application Canvas (Soft cream color to eliminate eye strain)
 # 🏷️ #EFECE6 -> Structural Control Panels (Subtle dark tan to create visual depth)
+# 🏷️ #DCD9D2 -> Standard Selector Borders & Unselected Radio Card States (Light grey-tan)
+# 🏷️ #D7CDB7 -> 🤎 LIGHT TAN SELECTION BUTTON (Warm light tan representing active choice)
+# 🏷️ #5C5346 -> Text Contrast for Selected Tan Element (Deep brown-grey ink for clear visibility)
 # 🏷️ #FFFFFF -> Safe Paper Reading Card (Crisp pure white surface for clinical text focus)
 # 🏷️ #111827 -> Absolute Ink Primary Text (Deep charcoal black for elite readability)
-# 🏷️ #4B5563 -> Secondary Label Subtexts (Calm grey muted typography for background labels)
-# 🏷️ #1D4ED8 -> Interactive Core Accent Color (Deep clear royal blue for links/actions)
-# 🏷️ #2563EB -> Hover State Micro-Interactions (Vibrant mid-blue feedback state triggers)
+# 🏷️ #1D4ED8 -> Interactive Action Button Link (Deep vibrant primary royal blue)
 # =====================================================================
 
 def load_approved_ledger():
@@ -49,7 +50,6 @@ async def render_dashboard_portal(request: Request):
     articles_list = []
     if not df.empty:
         for idx, row in df.iterrows():
-            # 🛠️ FIXED: DOI Sanitization (Handles raw DOIs and pre-formatted strings seamlessly)
             raw_doi = str(row.get("DOI", "")).strip()
             clean_doi_url = "#"
             if raw_doi and raw_doi.lower() not in ["none", "nan", ""]:
@@ -76,12 +76,19 @@ async def render_dashboard_portal(request: Request):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>hack.CCM | Knowledge Portal</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss-typography/0.5.10/typography.min.css" />
         <style>
-            /* Canvas Color Setting (#FDFBF7) */
             body {{ background-color: #FDFBF7; color: #111827; font-family: 'Georgia', serif; }}
             .custom-scrollbar::-webkit-scrollbar {{ width: 6px; }}
             .custom-scrollbar::-webkit-scrollbar-track {{ background: #FDFBF7; }}
             .custom-scrollbar::-webkit-scrollbar-thumb {{ background: #EFECE6; border-radius: 3px; }}
+            
+            /* Clean formatting styles for parsed summary strings */
+            .summary-body h3 {{ font-size: 1.3em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; color: #000000; border-bottom: 1px solid #EFECE6; padding-bottom: 0.3em; }}
+            .summary-body p {{ margin-bottom: 1em; line-height: 1.6; text-align: justify; }}
+            .summary-body ul, .summary-body ol {{ margin-left: 1.5em; margin-bottom: 1em; list-style-type: disc; }}
+            .summary-body li {{ margin-bottom: 0.4em; line-height: 1.5; }}
+            .summary-body strong {{ color: #000000; font-weight: 700; }}
         </style>
     </head>
     <body class="p-4 md:p-8 max-w-7xl mx-auto">
@@ -99,42 +106,40 @@ async def render_dashboard_portal(request: Request):
             
             <div class="space-y-6">
                 
-                <div class="bg-[#EFECE6] p-5 rounded-2xl border border-transparent">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-3">📊 Portal Registries Analytics</h3>
+                <div class="bg-[#EFECE6] p-5 rounded-2xl border border-[#DCD9D2]">
+                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-3">📊 Portal Status</h3>
                     <div class="flex gap-3">
-                        <span class="bg-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-xs">📋 {total_published} Digests Live</span>
-                        <span class="bg-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-xs">🧬 {unique_systems} Systems</span>
+                        <span class="bg-white px-3 py-1.5 rounded-lg text-xs font-bold border border-[#DCD9D2]">📋 {total_published} Live Papers</span>
+                        <span class="bg-white px-3 py-1.5 rounded-lg text-xs font-bold border border-[#DCD9D2]">🧬 {unique_systems} Specialties</span>
                     </div>
                 </div>
 
-                <div class="bg-[#EFECE6] p-5 rounded-2xl space-y-4">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-1">🔍 Filter Inventory</h3>
-                    
+                <div class="bg-[#EFECE6] p-5 rounded-2xl border border-[#DCD9D2] space-y-4">
+                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-1">🔍 Filter Matrix</h3>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Keywords Query</label>
-                        <input type="text" id="titleSearch" onkeyup="executeClientSideFilter()" placeholder="Search topics..." class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
+                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Keywords Search</label>
+                        <input type="text" id="titleSearch" onkeyup="executeClientSideFilter()" placeholder="Type keywords..." class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
                     </div>
-
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Organ Specialty Group</label>
-                        <select id="systemFilter" onchange="executeClientSideFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
+                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Specialty Group</label>
+                        <select id="systemFilter" onchange="executeClientSideFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
                             <option value="All">All Specialties</option>
                         </select>
                     </div>
                 </div>
 
                 <div class="space-y-2">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase px-2">📑 Target Brief Selector</h3>
-                    <div id="articlesListDeck" class="max-h-[400px] overflow-y-auto custom-scrollbar space-y-2 pr-1">
+                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase px-2">📑 Document Selector</h3>
+                    <div id="articlesListDeck" class="max-h-[450px] overflow-y-auto custom-scrollbar space-y-2 pr-1">
                         </div>
                 </div>
             </div>
 
             <div class="md:col-span-2">
-                <div id="documentSheetContainer" class="bg-white border border-[#EFECE6] p-6 md:p-8 rounded-2xl shadow-xs min-h-[500px]">
-                    <div class="text-center py-20 text-[#4B5563]">
-                        <p class="text-lg font-medium">👋 Welcome to hack.CCM Intelligence Repository</p>
-                        <p class="text-sm mt-1">Pick a topic entry link from the index panel to begin browsing text layers.</p>
+                <div id="documentSheetContainer" class="bg-white border border-[#EFECE6] p-6 md:p-8 rounded-2xl shadow-xs min-h-[550px]">
+                    <div class="text-center py-24 text-[#4B5563]">
+                        <p class="text-lg font-medium">👋 Welcome to hack.CCM Repository</p>
+                        <p class="text-sm mt-1">Select a publication entry card from the index frame to unpack formatting layers.</p>
                     </div>
                 </div>
             </div>
@@ -169,24 +174,27 @@ async def render_dashboard_portal(request: Request):
                 }});
 
                 if(filtered.length === 0) {{
-                    deckContainer.innerHTML = `<p class="text-xs text-[#4B5563] italic p-3 text-center">No catalog entries match criteria filters.</p>`;
+                    deckContainer.innerHTML = `<p class="text-xs text-[#4B5563] italic p-3 text-center">No matching records found.</p>`;
                     return;
                 }}
 
                 filtered.forEach(item => {{
                     const btn = document.createElement("button");
-                    // Selection indicator highlights with Accent Blue (#1D4ED8)
-                    btn.className = `w-full text-left p-3.5 rounded-xl text-sm font-medium transition border flex flex-col gap-1 shadow-2xs ${{
-                        item.id === currentActiveSelectionId 
-                        ? 'bg-[#1D4ED8] text-white border-transparent' 
+                    const isActive = item.id === currentActiveSelectionId;
+                    
+                    // 🛠️ FIXED: Active selection button overrides blue layout blocks to Light Tan (#D7CDB7)
+                    btn.className = `w-full text-left p-4 rounded-xl text-sm transition border flex flex-col gap-1 shadow-2xs ${{
+                        isActive 
+                        ? 'bg-[#D7CDB7] text-[#5C5346] border-transparent font-bold ring-1 ring-[#BDB199]' 
                         : 'bg-white text-[#111827] border-[#EFECE6] hover:bg-[#EFECE6]'
                     }}`;
+                    
                     btn.onclick = () => fetchActiveDocumentSummary(item.id, item.file_name, item.title, item.doi, item.system, item.journal, item.type);
                     btn.innerHTML = `
-                        <span class="font-bold block text-sm line-clamp-2">${{item.title}}</span>
-                        <div class="flex flex-wrap gap-1 mt-1 text-[11px] font-semibold uppercase tracking-wider text-[#4B5563]">
-                            <span class="bg-black/5 px-1.5 py-0.5 rounded">${{item.system}}</span>
-                            <span class="bg-black/5 px-1.5 py-0.5 rounded">${{item.type}}</span>
+                        <span class="block text-sm leading-snug">${{item.title}}</span>
+                        <div class="flex gap-2 mt-1 text-[10px] font-bold tracking-wider uppercase text-[#4B5563]">
+                            <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.system}}</span>
+                            <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.type}}</span>
                         </div>
                     `;
                     deckContainer.appendChild(btn);
@@ -198,41 +206,41 @@ async def render_dashboard_portal(request: Request):
                 executeClientSideFilter();
                 
                 const viewer = document.getElementById("documentSheetContainer");
-                viewer.innerHTML = `<div class="text-center py-20 text-sm font-medium text-[#4B5563]">🔬 Loading summary schema data...</div>`;
+                viewer.innerHTML = `<div class="text-center py-24 text-sm font-medium text-[#4B5563] animate-pulse">🔬 Processing structural markdown fields...</div>`;
 
                 try {{
                     const response = await fetch(`/api/summary?file_name=${{encodeURIComponent(fileName)}}`);
                     const data = await response.json();
                     
                     if (!response.ok || data.error) {{
-                        viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">⚠️ Ingestion error: Failed loading structured JSON document cache matrix.</div>`;
+                        viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">⚠️ Error loading summary payload dataset.</div>`;
                         return;
                     }}
 
-                    // Action buttons utilize Active Blue (#1D4ED8) and Hover Blue (#2563EB)
                     let doiButtonHTML = "";
                     if(doiLink && doiLink !== "#") {{
                         doiButtonHTML = `<a href="${{doiLink}}" target="_blank" class="w-full sm:w-auto text-center bg-[#1D4ED8] hover:bg-[#2563EB] text-white font-semibold text-xs px-4 py-2.5 rounded-lg shadow-sm transition inline-block">🔗 Source Publication</a>`;
                     }}
 
+                    // 🛠️ FIXED: Content maps safely inside an isolated .summary-body wrapper to guarantee immaculate text presentation metrics
                     viewer.innerHTML = `
                         <div class="flex flex-col sm:flex-row justify-between items-start gap-4 pb-4 border-b border-[#EFECE6] mb-6">
                             <div>
                                 <h1 class="text-2xl font-bold tracking-tight text-black mb-2">📜 ${{title}}</h1>
                                 <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                                    <span class="bg-[#EFF6FF] text-[#1E40AF] px-2.5 py-1 rounded-md">🧬 Specialty: ${{system}}</span>
-                                    <span class="bg-[#FAF5FF] text-[#6B21A8] px-2.5 py-1 rounded-md">📖 Journal: ${{journal}}</span>
-                                    <span class="bg-[#F1F5F9] text-[#475569] px-2.5 py-1 rounded-md">📑 Type: ${{type}}</span>
+                                    <span class="bg-[#EFF6FF] text-[#1E40AF] px-2.5 py-1 rounded-md border border-[#DBEAFE]">🧬 Specialty: ${{system}}</span>
+                                    <span class="bg-[#FAF5FF] text-[#6B21A8] px-2.5 py-1 rounded-md border border-[#F3E8FF]">📖 Journal: ${{journal}}</span>
+                                    <span class="bg-[#F1F5F9] text-[#475569] px-2.5 py-1 rounded-md border border-[#E2E8F0]">📑 Type: ${{type}}</span>
                                 </div>
                             </div>
                             <div class="w-full sm:w-auto shrink-0">${{doiButtonHTML}}</div>
                         </div>
-                        <div class="prose max-w-none text-[#111827] text-[15px] leading-relaxed whitespace-pre-wrap font-sans">
+                        <div class="summary-body text-[#111827] text-[15px]">
                             ${{data.content}}
                         </div>
                     `;
                 }} catch(err) {{
-                    viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">❌ Connection error: ${{err.message}}</div>`;
+                    viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">❌ Network connection error: ${{err.message}}</div>`;
                 }}
             }}
 
@@ -249,11 +257,11 @@ async def get_cached_json_summary_contents(file_name: str):
     target_json_path = os.path.join(OUTPUT_DIR, f"{base_name}.json")
     
     if not os.path.exists(target_json_path):
-        return JSONResponse(status_code=404, content={"error": "Summary asset missing from partitions."})
+        return JSONResponse(status_code=404, content={"error": "Summary data asset missing from tracking registry."})
     try:
         with open(target_json_path, "r", encoding="utf-8") as f:
             payload = json.load(f)
-        summary_text = payload.get("clinical_summary_markdown", "No analysis text found.")
+        summary_text = payload.get("clinical_summary_markdown", "No summary metadata object parsed.")
         return {"content": summary_text}
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
