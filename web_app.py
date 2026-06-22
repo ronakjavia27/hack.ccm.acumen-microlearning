@@ -76,19 +76,23 @@ async def render_dashboard_portal(request: Request):
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>hack.CCM | Knowledge Portal</title>
         <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss-typography/0.5.10/typography.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <style>
             body {{ background-color: #FDFBF7; color: #111827; font-family: 'Georgia', serif; }}
             .custom-scrollbar::-webkit-scrollbar {{ width: 6px; }}
             .custom-scrollbar::-webkit-scrollbar-track {{ background: #FDFBF7; }}
             .custom-scrollbar::-webkit-scrollbar-thumb {{ background: #EFECE6; border-radius: 3px; }}
             
-            /* Clean formatting styles for parsed summary strings */
-            .summary-body h3 {{ font-size: 1.3em; font-weight: bold; margin-top: 1.5em; margin-bottom: 0.5em; color: #000000; border-bottom: 1px solid #EFECE6; padding-bottom: 0.3em; }}
-            .summary-body p {{ margin-bottom: 1em; line-height: 1.6; text-align: justify; }}
-            .summary-body ul, .summary-body ol {{ margin-left: 1.5em; margin-bottom: 1em; list-style-type: disc; }}
-            .summary-body li {{ margin-bottom: 0.4em; line-height: 1.5; }}
+            /* ----- FIXED MARKDOWN TYPOGRAPHY RENDERING STYLES ----- */
+            .summary-body h2 {{ font-size: 1.5em; font-weight: bold; margin-top: 1.6em; margin-bottom: 0.6em; color: #000000; border-bottom: 1px solid #EFECE6; padding-bottom: 0.4em; font-family: 'Georgia', serif; }}
+            .summary-body h3 {{ font-size: 1.25em; font-weight: bold; margin-top: 1.4em; margin-bottom: 0.5em; color: #111827; font-family: 'Georgia', serif; }}
+            .summary-body h4 {{ font-size: 1.1em; font-weight: bold; margin-top: 1.2em; margin-bottom: 0.4em; color: #111827; }}
+            .summary-body p {{ margin-bottom: 1.2em; line-height: 1.65; text-align: justify; font-family: system-ui, -apple-system, sans-serif; color: #111827; }}
+            .summary-body ul {{ list-style-type: disc !important; margin-left: 1.5em !important; margin-bottom: 1.2em !important; padding-left: 0px !important; }}
+            .summary-body ol {{ list-style-type: decimal !important; margin-left: 1.5em !important; margin-bottom: 1.2em !important; padding-left: 0px !important; }}
+            .summary-body li {{ margin-bottom: 0.5em; line-height: 1.6; font-family: system-ui, -apple-system, sans-serif; color: #111827; display: list-item !important; }}
             .summary-body strong {{ color: #000000; font-weight: 700; }}
+            .summary-body hr {{ border: 0; border-top: 1px solid #EFECE6; margin: 2em 0; }}
         </style>
     </head>
     <body class="p-4 md:p-8 max-w-7xl mx-auto">
@@ -131,7 +135,7 @@ async def render_dashboard_portal(request: Request):
                 <div class="space-y-2">
                     <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase px-2">📑 Document Selector</h3>
                     <div id="articlesListDeck" class="max-h-[450px] overflow-y-auto custom-scrollbar space-y-2 pr-1">
-                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -148,6 +152,12 @@ async def render_dashboard_portal(request: Request):
         <script>
             const baseDataset = {json.dumps(articles_list)};
             let currentActiveSelectionId = null;
+
+            // Configure Marked.js options for accurate linebreaks
+            marked.setOptions({{
+                gfm: true,
+                breaks: true
+            }});
 
             function initializeAppMatrix() {{
                 const systemSelect = document.getElementById("systemFilter");
@@ -182,7 +192,6 @@ async def render_dashboard_portal(request: Request):
                     const btn = document.createElement("button");
                     const isActive = item.id === currentActiveSelectionId;
                     
-                    // 🛠️ FIXED: Active selection button overrides blue layout blocks to Light Tan (#D7CDB7)
                     btn.className = `w-full text-left p-4 rounded-xl text-sm transition border flex flex-col gap-1 shadow-2xs ${{
                         isActive 
                         ? 'bg-[#D7CDB7] text-[#5C5346] border-transparent font-bold ring-1 ring-[#BDB199]' 
@@ -219,15 +228,17 @@ async def render_dashboard_portal(request: Request):
 
                     let doiButtonHTML = "";
                     if(doiLink && doiLink !== "#") {{
-                        doiButtonHTML = `<a href="${{doiLink}}" target="_blank" class="w-full sm:w-auto text-center bg-[#1D4ED8] hover:bg-[#2563EB] text-white font-semibold text-xs px-4 py-2.5 rounded-lg shadow-sm transition inline-block">🔗 Source Publication</a>`;
+                        doiButtonHTML = `<a href="${{doiLink}}" target="_blank" class="w-full sm:w-auto text-center bg-[#1D4ED8] hover:bg-[#2563EB] text-white font-semibold text-xs px-4 py-2.5 rounded-lg shadow-sm transition inline-block" style="font-family: system-ui, sans-serif;">🔗 Source Publication</a>`;
                     }}
 
-                    // 🛠️ FIXED: Content maps safely inside an isolated .summary-body wrapper to guarantee immaculate text presentation metrics
+                    // 🛠️ FIXED: data.content is now safely wrapped inside marked.parse() to dynamically convert Markdown to immaculate HTML tags
+                    const parsedMarkdownHTML = marked.parse(data.content);
+
                     viewer.innerHTML = `
                         <div class="flex flex-col sm:flex-row justify-between items-start gap-4 pb-4 border-b border-[#EFECE6] mb-6">
                             <div>
                                 <h1 class="text-2xl font-bold tracking-tight text-black mb-2">📜 ${{title}}</h1>
-                                <div class="flex flex-wrap gap-2 text-xs font-semibold">
+                                <div class="flex flex-wrap gap-2 text-xs font-semibold" style="font-family: system-ui, sans-serif;">
                                     <span class="bg-[#EFF6FF] text-[#1E40AF] px-2.5 py-1 rounded-md border border-[#DBEAFE]">🧬 Specialty: ${{system}}</span>
                                     <span class="bg-[#FAF5FF] text-[#6B21A8] px-2.5 py-1 rounded-md border border-[#F3E8FF]">📖 Journal: ${{journal}}</span>
                                     <span class="bg-[#F1F5F9] text-[#475569] px-2.5 py-1 rounded-md border border-[#E2E8F0]">📑 Type: ${{type}}</span>
@@ -236,7 +247,7 @@ async def render_dashboard_portal(request: Request):
                             <div class="w-full sm:w-auto shrink-0">${{doiButtonHTML}}</div>
                         </div>
                         <div class="summary-body text-[#111827] text-[15px]">
-                            ${{data.content}}
+                            ${{parsedMarkdownHTML}}
                         </div>
                     `;
                 }} catch(err) {{
