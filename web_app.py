@@ -78,7 +78,7 @@ st.markdown('''
     
     /* 🛠️ DOI Link Button Override Hook */
     div[data-testid="stLinkButton"] > a {
-        background-color: #1D4ED8 !important;
+        background-color: #8B6C5C !important;
         color: #FFFFFF !important;
         border: none !important;
         border-radius: 6px !important;
@@ -86,7 +86,7 @@ st.markdown('''
         transition: background-color 0.2s ease;
     }
     div[data-testid="stLinkButton"] > a:hover {
-        background-color: #1E40AF !important;
+        background-color: #D8CBC4 !important;
         color: #FFFFFF !important;
     }
     
