@@ -1,12 +1,10 @@
 import os
 import json
 import pandas as pd
-from fastapi import FastAPI, Request
-from fastapi.responses import HTMLTemplateResponse, JSONResponse
-import uvicorn
+import streamlit as st
 
 # =====================================================================
-# 🌐 GLOBAL CORE WORKSPACE SETTINGS & LINK MATRIX
+# 🌐 GLOBAL LINKS CONFIGURATION
 # =====================================================================
 FEEDBACK_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd6xRmmimmVc0Sv4AeNls-oxLR6k_zX8D_QERFZwPP6zlfjRw/viewform?usp=header"
 SUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSffsrF8DPWaTa-03XisMqSU5Da_8QdE-JrINdDP5iRmvWAI8Q/viewform?usp=header"
@@ -15,21 +13,98 @@ UNSUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScz864mkLh5AqBY
 OUTPUT_DIR = "./output_files"
 EXCEL_TRACKER_FILE = "./sent_summaries.xlsx"
 
-app = FastAPI(title="hack.CCM Portal Backend")
+# --- SYSTEM PAGE IDENTITY INITIALIZATION ---
+st.set_page_config(page_title="hack.CCM | Knowledge Portal", page_icon="📚", layout="wide")
 
 # =====================================================================
-# 🎨 COLOR CODES DICTIONARY & SIGNIFICATION DESIGN LEDGER
+# 🎨 COLOR CODES SIGNIFICATION MAP & CSS DECK
 # =====================================================================
-# Theme Archetype: High-End Academic Editorial Beige & Tan
-# #FDFBF7 -> Main Application Canvas (Soft cream color to eliminate eye strain)
-# #EFECE6 -> Structural Control Panels (Subtle dark tan to create visual depth)
-# #FFFFFF -> Safe Paper Reading Card (Crisp pure white surface for clinical text focus)
-# #111827 -> Absolute Ink Primary Text (Deep charcoal black for elite readability metrics)
-# #4B5563 -> Secondary Label Subtexts (Calm grey muted typography for background labels)
-# #1D4ED8 -> Interactive Core Accent Color (Deep clear royal blue for clickable links/actions)
-# #2563EB -> Hover State Micro-Interactions (Vibrant mid-blue feedback state triggers)
+# 🏷️ CANVAS_BG      = #FDFBF7 -> Main Application Page Background (Soft cream)
+# 🏷️ PANEL_BG       = #EFECE6 -> Filter Containers Background (Subtle tan)
+# 🏷️ CARD_BG        = #FFFFFF -> Safe Reading Card Canvas Background (Pure white)
+# 🏷️ INK_PRIMARY    = #111827 -> absolute High-Contrast Reading Typography (Charcoal)
+# 🏷️ INK_MUTED      = #4B5563 -> Secondary Metadata Labels / Subheadings (Muted grey)
+# 🏷️ ACCENT_BLUE    = #1D4ED8 -> Clickable Action Links & Anchor Elements (Royal Blue)
+# 🏷️ HOVER_BLUE     = #2563EB -> Button Hover Micro-Interactions (Mid Blue)
 # =====================================================================
+st.markdown('''
+<style>
+    /* 1. Global Page Canvas Setup */
+    html, body, [data-testid="stAppViewContainer"], [data-testid="stHeader"] {
+        background-color: #FDFBF7 !important;
+    }
+    
+    /* 2. Global Type & Readability Settings */
+    p, li, span, label, h1, h2, h3, h4 {
+        color: #111827 !important;
+        font-family: 'Georgia', serif !important;
+    }
 
+    /* 3. Top Header Navigation Ribbon Bar */
+    .utility-bar {
+        background-color: #FFFFFF;
+        padding: 16px 24px;
+        border-radius: 12px;
+        border: 1px solid #EFECE6;
+        margin-bottom: 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    
+    /* 4. Structural Light Brown Filter Boxes */
+    .tan-control-box {
+        background-color: #EFECE6 !important;
+        border: 1px solid #DCD9D2 !important;
+        border-radius: 16px !important;
+        padding: 20px !important;
+        margin-bottom: 20px !important;
+    }
+
+    /* 5. Pure White Academic Document Card */
+    .white-reading-card {
+        background-color: #FFFFFF !important;
+        padding: 35px !important;
+        border-radius: 16px !important;
+        border: 1px solid #EFECE6 !important;
+        box-shadow: 0 4px 20px rgba(27, 23, 19, 0.02) !important;
+    }
+
+    /* 6. Text Selection Badges */
+    .custom-pill {
+        display: inline-block;
+        font-weight: 600;
+        font-size: 12px;
+        padding: 4px 10px;
+        border-radius: 6px;
+        margin-right: 6px;
+        margin-bottom: 6px;
+    }
+    
+    /* 7. Action Hyperlink Styling */
+    .nav-link-item {
+        color: #1D4ED8 !important;
+        text-decoration: none !important;
+        font-weight: 600 !important;
+        font-size: 14px;
+        margin-left: 15px;
+    }
+    .nav-link-item:hover { text-decoration: underline !important; color: #2563EB !important; }
+
+    /* Streamlit Widget UI Overrides */
+    div[data-baseweb="select"] > div, input {
+        background-color: #FFFFFF !important;
+        color: #111827 !important;
+        border: 1px solid #DCD9D2 !important;
+    }
+    
+    /* Hide native container paddings for tight absolute alignments */
+    [data-testid="stVerticalBlock"] { gap: 0rem !important; }
+</style>
+''', unsafe_allow_html=True)
+
+# --- DATA LEDGER MANAGEMENT ---
 def load_verified_ledger():
     if not os.path.exists(EXCEL_TRACKER_FILE):
         return pd.DataFrame()
@@ -41,230 +116,120 @@ def load_verified_ledger():
         return pd.DataFrame()
 
 # =====================================================================
-# ⚡ CORE COMPONENT LOGIC ROUTING GATEWAYS
+# 🖥️ VISUAL FRAMEWORK PRESENTATION
 # =====================================================================
-@app.get("/", response_class=HTMLTemplateResponse)
-async def render_dashboard_portal(request: Request):
-    df = load_approved_ledger()
-    
-    # Calculate live workspace analytics data points
-    total_published = len(df)
-    unique_systems = df["System"].dropna().nunique() if total_published > 0 else 0
-    
-    # Pack items safely into an inventory matrix array mapping loop index bounds
-    articles_list = []
-    if not df.empty:
-        for idx, row in df.iterrows():
-            # 🛠️ FIXED: DOI Robust Handshake Normalization String Matrix
-            raw_doi = str(row.get("DOI", "")).strip()
-            clean_doi_url = "#"
+
+# Top Universal Navigation Bar
+st.markdown(f'''
+    <div class="utility-bar">
+        <div style="font-size: 22px; font-weight: bold; color: #111827; letter-spacing: -0.5px;">🧠 hack.CCM | Knowledge Portal</div>
+        <div>
+            <a class="nav-link-item" href="{FEEDBACK_FORM_URL}" target="_blank">📝 Feedback</a>
+            <a class="nav-link-item" href="{SUBSCRIBE_FORM_URL}" target="_blank">📢 Subscribe</a>
+            <a class="nav-link-item" href="{UNSUBSCRIBE_FORM_URL}" target="_blank">❌ Unsubscribe</a>
+        </div>
+    </div>
+''', unsafe_allow_html=True)
+
+df = load_verified_ledger()
+
+if df.empty:
+    st.info("👋 Welcome! Verified clinical digests will appear here once they are dispatched via the email loop.")
+else:
+    # Responsive Column Layout Matrix (33% Filter Suite, 66% Document Sheet)
+    col_filters, col_viewer = st.columns([1, 2], gap="large")
+
+    with col_filters:
+        # Left Panel Box A: Collection Metrics Card
+        st.markdown('<div class="tan-control-box">', unsafe_allow_html=True)
+        st.markdown('<h4 style="margin:0 0 10px 0; color:#4B5563; font-size:12px; font-weight:bold; tracking:0.05em;">📊 REPOSITORY STATUS</h4>', unsafe_allow_html=True)
+        st.markdown(f'''
+            <div style="display:flex; gap:8px;">
+                <span style="background:#FFFFFF; border:1px solid #DCD9D2; padding:6px 12px; rounded-md; font-size:13px; font-weight:bold;">📋 {len(df)} Live Summaries</span>
+                <span style="background:#FFFFFF; border:1px solid #DCD9D2; padding:6px 12px; rounded-md; font-size:13px; font-weight:bold;">🧬 {df["System"].dropna().nunique()} Systems</span>
+            </div>
+        ''', unsafe_allow_html=True)
+        st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Left Panel Box B: Multi-Input Filtering Logic
+        st.markdown('<div class="tan-control-box">', unsafe_allow_html=True)
+        st.markdown('<h4 style="margin:0 0 12px 0; color:#4B5563; font-size:12px; font-weight:bold; tracking:0.05em;">🔍 FILTER INVENTORY</h4>', unsafe_allow_html=True)
+        
+        search_query = st.text_input("Title Text Search", placeholder="Type title keywords...", label_visibility="collapsed")
+        systems = ["All Specialties"] + sorted(df["System"].dropna().unique().tolist())
+        selected_system = st.selectbox("Specialty", systems, label_visibility="visible")
+        types = ["All Types"] + sorted(df["Type of Article"].dropna().unique().tolist())
+        selected_type = st.selectbox("Article Archetype", types, label_visibility="visible")
+        st.markdown('</div>', unsafe_allow_html=True)
+        
+        # Apply filter choices to the data collection subset
+        filtered_df = df.copy()
+        if selected_system != "All Specialties":
+            filtered_df = filtered_df[filtered_df["System"] == selected_system]
+        if selected_type != "All Types":
+            filtered_df = filtered_df[filtered_df["Type of Article"] == selected_type]
+        if search_query:
+            filtered_df = filtered_df[filtered_df["Paper/Guideline Name"].str.contains(search_query, case=False, na=False)]
+            
+        # Left Panel List Selector Deck
+        st.markdown('### 📑 Available Papers')
+        if filtered_df.empty:
+            st.warning("No entries match active parameters.")
+            selected_paper = None
+        else:
+            selected_paper = st.radio(
+                "Paper Select Navigation",
+                filtered_df["Paper/Guideline Name"].tolist(),
+                label_visibility="collapsed"
+            )
+
+    with col_viewer:
+        if selected_paper:
+            target_row = df[df["Paper/Guideline Name"] == selected_paper].iloc[0]
+            
+            # 🛠️ FIXED: Universal DOI Link Parser & Sanitizer
+            raw_doi = str(target_row.get("DOI", "")).strip()
+            clean_doi_url = None
             if raw_doi and raw_doi.lower() != "none":
                 if raw_doi.startswith("http://") or raw_doi.startswith("https://"):
                     clean_doi_url = raw_doi
                 else:
                     clean_doi_url = f"https://doi.org/{raw_doi}"
 
-            articles_list.append({
-                "id": str(idx),
-                "title": str(row.get("Paper/Guideline Name", "Unknown Title")),
-                "system": str(row.get("System", "General")),
-                "journal": str(row.get("Journal Name", "Unknown Source")),
-                "type": str(row.get("Type of Article", "Unclassified")),
-                "doi": clean_doi_url,
-                "file_name": str(row.get("File Name", ""))
-            })
+            # Document Viewer Header Grid
+            title_box, action_box = st.columns([3, 1])
+            with title_box:
+                st.markdown(f'<h1 style="margin:0; padding:0; font-size:26px; font-weight:bold;">📜 {target_row["Paper/Guideline Name"]}</h1>', unsafe_allow_html=True)
+            with action_box:
+                if clean_doi_url:
+                    st.link_button("🔗 Source Article", clean_doi_url, use_container_width=True)
 
-    # Pure responsive Tailwind HTML injection grid canvas string matching layout deck
-    html_content = f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>hack.CCM | Knowledge Portal</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-        <style>
-            /* Smooth system scrolling parameters setup */
-            body {{ background-color: #FDFBF7; color: #111827; font-family: 'Georgia', serif; }}
-            .custom-scrollbar::-webkit-scrollbar {{ width: 6px; }}
-            .custom-scrollbar::-webkit-scrollbar-track {{ background: #FDFBF7; }}
-            .custom-scrollbar::-webkit-scrollbar-thumb {{ background: #EFECE6; border-radius: 3px; }}
-        </style>
-    </head>
-    <body class="p-4 md:p-8 max-w-7xl mx-auto">
+            # Metadata Pill Badges Block
+            st.markdown(f'''
+                <div style="margin-top:12px; margin-bottom:20px;">
+                    <span class="custom-pill" style="background-color:#EFF6FF; color:#1E40AF; border:1px solid #DBEAFE;">🧬 System: {target_row['System']}</span>
+                    <span class="custom-pill" style="background-color:#FAF5FF; color:#6B21A8; border:1px solid #F3E8FF;">📖 Journal: {target_row['Journal Name']}</span>
+                    <span class="custom-pill" style="background-color:#F1F5F9; color:#475569; border:1px solid #E2E8F0;">📑 Type: {target_row['Type of Article']}</span>
+                </div>
+            ''', unsafe_allow_html=True)
 
-        <header class="bg-white border border-[#EFECE6] p-4 rounded-xl shadow-sm mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="text-xl font-bold tracking-tight text-[#111827]">🧠 hack.CCM | Knowledge Portal</div>
-            <nav class="flex gap-6 text-sm font-semibold">
-                <a href="{FEEDBACK_FORM_URL}" target="_blank" class="text-[#1D4ED8] hover:text-[#2563EB] hover:underline transition">📝 Feedback</a>
-                <a href="{SUBSCRIBE_FORM_URL}" target="_blank" class="text-[#1D4ED8] hover:text-[#2563EB] hover:underline transition">📢 Subscribe</a>
-                <a href="{UNSUBSCRIBE_FORM_URL}" target="_blank" class="text-[#1D4ED8] hover:text-[#2563EB] hover:underline transition">❌ Unsubscribe</a>
-            </nav>
-        </header>
-
-        <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            # White Academic Paper Rendering Canvas
+            st.markdown('<div class="white-reading-card">', unsafe_allow_html=True)
             
-            <div class="space-y-6">
+            # Fetch structured local summary texts
+            json_filename = os.path.splitext(target_row["File Name"])[0] + ".json"
+            json_path = os.path.join(OUTPUT_DIR, json_filename)
+            
+            if os.path.exists(json_path):
+                try:
+                    with open(json_path, "r", encoding="utf-8") as jf:
+                        payload = json.load(jf)
+                    st.markdown(payload.get("clinical_summary_markdown", "Empty markdown compiled."))
+                except Exception as err:
+                    st.error(f"Error parsing summary asset details: {err}")
+            else:
+                st.warning("Prerendered summary dataset is synchronizing downstream...")
                 
-                <div class="bg-[#EFECE6] p-5 rounded-2xl border border-transparent">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-3">📊 Portal Registries Analytics</h3>
-                    <div class="flex gap-3">
-                        <span class="bg-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-xs">📋 {total_published} Digests Live</span>
-                        <span class="bg-white px-3 py-1.5 rounded-lg text-xs font-bold shadow-xs">🧬 {unique_systems} Systems</span>
-                    </div>
-                </div>
-
-                <div class="bg-[#EFECE6] p-5 rounded-2xl space-y-4">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-1">🔍 Filter Inventory</h3>
-                    
-                    <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Keywords Query</label>
-                        <input type="text" id="titleSearch" onkeyup="executeClientSideFilter()" placeholder="Search topics..." class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-transparent focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
-                    </div>
-
-                    <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Organ Specialty Group</label>
-                        <select id="systemFilter" onchange="executeClientSideFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
-                            <option value="All">All Specialties</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="space-y-2">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase px-2">📑 Target Brief Selector</h3>
-                    <div id="articlesListDeck" class="max-h-[400px] overflow-y-auto custom-scrollbar space-y-2 pr-1">
-                        </div>
-                </div>
-            </div>
-
-            <div class="md:col-span-2">
-                <div id="documentSheetContainer" class="bg-white border border-[#EFECE6] p-6 md:p-8 rounded-2xl shadow-xs min-h-[500px]">
-                    <div class="text-center py-20 text-[#4B5563]">
-                        <p class="text-lg font-medium">👋 Welcome to hack.CCM Intelligence Repository</p>
-                        <p class="text-sm mt-1">Pick a topic entry link from the catalog menu index grid row layout panel to begin browsing text layers.</p>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <script>
-            // Hydrate verified array variables directly from server compile passes
-            const baseDataset = {json.dumps(articles_list)};
-            let currentActiveSelectionId = null;
-
-            function initializeAppMatrix() {{
-                const systemSelect = document.getElementById("systemFilter");
-                const uniqueSpecs = [...new Set(baseDataset.map(item => item.system))].sort();
-                uniqueSpecs.forEach(sys => {{
-                    let opt = document.createElement("option");
-                    opt.value = sys; opt.textContent = sys;
-                    systemSelect.appendChild(opt);
-                }});
-                executeClientSideFilter();
-            }}
-
-            function executeClientSideFilter() {{
-                const searchVal = document.getElementById("titleSearch").value.toLowerCase();
-                const systemVal = document.getElementById("systemFilter").value;
-                const deckContainer = document.getElementById("articlesListDeck");
-                
-                deckContainer.innerHTML = "";
-                
-                const filtered = baseDataset.filter(item => {{
-                    const matchSearch = item.title.toLowerCase().includes(searchVal);
-                    const matchSystem = (systemVal === "All") || (item.system === systemVal);
-                    return matchSearch && matchSystem;
-                }});
-
-                if(filtered.length === 0) {{
-                    deckContainer.innerHTML = `<p class="text-xs text-[#4B5563] italic p-3 text-center">No catalog entries match criteria filters.</p>`;
-                    return;
-                }}
-
-                filtered.forEach(item => {{
-                    const btn = document.createElement("button");
-                    btn.className = `w-full text-left p-3.5 rounded-xl text-sm font-medium transition border flex flex-col gap-1 shadow-2xs ${{
-                        item.id === currentActiveSelectionId 
-                        ? 'bg-[#1D4ED8] text-white border-transparent' 
-                        : 'bg-white text-[#111827] border-[#EFECE6] hover:bg-[#EFECE6]'
-                    }}`;
-                    btn.onclick = () => fetchActiveDocumentSummary(item.id, item.file_name, item.title, item.doi, item.system, item.journal, item.type);
-                    btn.innerHTML = `
-                        <span class="font-bold block text-sm line-clamp-2">${{item.title}}</span>
-                        <div class="flex flex-wrap gap-1 mt-1 text-[11px] font-semibold uppercase tracking-wider text-[#4B5563]">
-                            <span class="bg-black/5 px-1.5 py-0.5 rounded">${{item.system}}</span>
-                            <span class="bg-black/5 px-1.5 py-0.5 rounded">${{item.type}}</span>
-                        </div>
-                    `;
-                    deckContainer.appendChild(btn);
-                }});
-            }}
-
-            async function fetchActiveDocumentSummary(id, fileName, title, doiLink, system, journal, type) {{
-                currentActiveSelectionId = id;
-                executeClientSideFilter(); // Redraw selection indicators immediately
-                
-                const viewer = document.getElementById("documentSheetContainer");
-                viewer.innerHTML = `<div class="text-center py-20 text-sm font-medium text-[#4B5563]">🔬 Loading summary schema data...</div>`;
-
-                try {{
-                    const response = await fetch(`/api/summary/${{fileName}}`);
-                    const data = await response.json();
-                    
-                    if (!response.ok || data.error) {{
-                        viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">⚠️ Ingestion error: Failed loading structured JSON document cache matrix.</div>`;
-                        return;
-                    }}
-
-                    // Build Top Header Section including the completely dynamic normalized DOI engine link
-                    let doiButtonHTML = "";
-                    if(doiLink && doiLink !== "#") {{
-                        doiButtonHTML = `<a href="${{doiLink}}" target="_blank" class="w-full sm:w-auto text-center bg-[#1D4ED8] hover:bg-[#2563EB] text-white font-semibold text-xs px-4 py-2.5 rounded-lg shadow-sm transition inline-block">🔗 Source Publication</a>`;
-                    }}
-
-                    viewer.innerHTML = `
-                        <div class="flex flex-col sm:flex-row justify-between items-start gap-4 pb-4 border-b border-[#EFECE6] mb-6">
-                            <div>
-                                <h1 class="text-2xl font-bold tracking-tight text-black mb-2">📜 ${{title}}</h1>
-                                <div class="flex flex-wrap gap-2 text-xs font-semibold">
-                                    <span class="bg-[#EFF6FF] text-[#1E40AF] px-2.5 py-1 rounded-md">🧬 Specialty: ${{system}}</span>
-                                    <span class="bg-[#FAF5FF] text-[#6B21A8] px-2.5 py-1 rounded-md">📖 Journal: ${{journal}}</span>
-                                    <span class="bg-[#F1F5F9] text-[#475569] px-2.5 py-1 rounded-md">📑 Type: ${{type}}</span>
-                                </div>
-                            </div>
-                            <div class="w-full sm:w-auto shrink-0">${{doiButtonHTML}}</div>
-                        </div>
-                        <div class="prose max-w-none text-[#111827] text-[15px] leading-relaxed whitespace-pre-wrap font-sans">
-                            ${{data.content}}
-                        </div>
-                    `;
-                }} catch(err) {{
-                    viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">❌ Fatal connection error targeting network storage partitions: ${{err.message}}</div>`;
-                }}
-            }}
-
-            window.onload = initializeAppMatrix;
-        </script>
-    </body>
-    </html>
-    """
-    return html_content
-
-@app.get("/api/summary/{file_name}")
-async def get_cached_json_summary_contents(file_name: str):
-    base_name = os.path.splitext(file_name)[0]
-    target_json_path = os.path.join(OUTPUT_DIR, f"{base_name}.json")
-    
-    if not os.path.exists(target_json_path):
-        return JSONResponse(status_code=404, content={"error": "Summary asset missing from partition arrays."})
-    try:
-        with open(target_json_path, "r", encoding="utf-8") as f:
-            payload = json.load(f)
-        summary_text = payload.get("clinical_summary_markdown", "No analysis text found in file storage context.")
-        return {"content": summary_text}
-    except Exception as e:
-        return JSONResponse(status_code=500, content={"error": str(e)})
-
-if __name__ == "__main__":
-    # Boots the fast python production proxy server engine cleanly locally on port 8501
-    uvicorn.run(app, host="0.0.0.0", port=8501)
+            st.markdown('</div>', unsafe_allow_html=True)
+        else:
+            st.info("Pick an entry from the list index array on the left side to get started.")
