@@ -16,20 +16,6 @@ EXCEL_TRACKER_FILE = "./sent_summaries.xlsx"
 
 app = FastAPI()
 
-# =====================================================================
-# 🎨 COLOR CODES DICTIONARY & SIGNIFICATION DESIGN LEDGER
-# =====================================================================
-# Theme Archetype: High-End Academic Editorial Beige & Tan
-# 🏷️ #FDFBF7 -> Main Application Canvas (Soft cream color to eliminate eye strain)
-# 🏷️ #EFECE6 -> Structural Control Panels (Subtle dark tan to create visual depth)
-# 🏷️ #DCD9D2 -> Standard Selector Borders & Unselected Radio Card States (Light grey-tan)
-# 🏷️ #D7CDB7 -> 🤎 LIGHT TAN SELECTION BUTTON (Warm light tan representing active choice)
-# 🏷️ #5C5346 -> Text Contrast for Selected Tan Element (Deep brown-grey ink for clear visibility)
-# 🏷️ #FFFFFF -> Safe Paper Reading Card (Crisp pure white surface for clinical text focus)
-# 🏷️ #111827 -> Absolute Ink Primary Text (Deep charcoal black for elite readability)
-# 🏷️ #1D4ED8 -> Interactive Action Button Link (Deep vibrant primary royal blue)
-# =====================================================================
-
 def load_approved_ledger():
     if not os.path.exists(EXCEL_TRACKER_FILE):
         return pd.DataFrame()
@@ -83,16 +69,13 @@ async def render_dashboard_portal(request: Request):
             .custom-scrollbar::-webkit-scrollbar-track {{ background: #FDFBF7; }}
             .custom-scrollbar::-webkit-scrollbar-thumb {{ background: #EFECE6; border-radius: 3px; }}
             
-            /* ----- FIXED MARKDOWN TYPOGRAPHY RENDERING STYLES ----- */
             .summary-body h2 {{ font-size: 1.5em; font-weight: bold; margin-top: 1.6em; margin-bottom: 0.6em; color: #000000; border-bottom: 1px solid #EFECE6; padding-bottom: 0.4em; font-family: 'Georgia', serif; }}
             .summary-body h3 {{ font-size: 1.25em; font-weight: bold; margin-top: 1.4em; margin-bottom: 0.5em; color: #111827; font-family: 'Georgia', serif; }}
-            .summary-body h4 {{ font-size: 1.1em; font-weight: bold; margin-top: 1.2em; margin-bottom: 0.4em; color: #111827; }}
             .summary-body p {{ margin-bottom: 1.2em; line-height: 1.65; text-align: justify; font-family: system-ui, -apple-system, sans-serif; color: #111827; }}
             .summary-body ul {{ list-style-type: disc !important; margin-left: 1.5em !important; margin-bottom: 1.2em !important; padding-left: 0px !important; }}
             .summary-body ol {{ list-style-type: decimal !important; margin-left: 1.5em !important; margin-bottom: 1.2em !important; padding-left: 0px !important; }}
             .summary-body li {{ margin-bottom: 0.5em; line-height: 1.6; font-family: system-ui, -apple-system, sans-serif; color: #111827; display: list-item !important; }}
             .summary-body strong {{ color: #000000; font-weight: 700; }}
-            .summary-body hr {{ border: 0; border-top: 1px solid #EFECE6; margin: 2em 0; }}
         </style>
     </head>
     <body class="p-4 md:p-8 max-w-7xl mx-auto">
@@ -107,9 +90,7 @@ async def render_dashboard_portal(request: Request):
         </header>
 
         <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
             <div class="space-y-6">
-                
                 <div class="bg-[#EFECE6] p-5 rounded-2xl border border-[#DCD9D2]">
                     <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-3">📊 Portal Status</h3>
                     <div class="flex gap-3">
@@ -134,8 +115,7 @@ async def render_dashboard_portal(request: Request):
 
                 <div class="space-y-2">
                     <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase px-2">📑 Document Selector</h3>
-                    <div id="articlesListDeck" class="max-h-[450px] overflow-y-auto custom-scrollbar space-y-2 pr-1">
-                    </div>
+                    <div id="articlesListDeck" class="max-h-[450px] overflow-y-auto custom-scrollbar space-y-2 pr-1"></div>
                 </div>
             </div>
 
@@ -153,11 +133,7 @@ async def render_dashboard_portal(request: Request):
             const baseDataset = {json.dumps(articles_list)};
             let currentActiveSelectionId = null;
 
-            // Configure Marked.js options for accurate linebreaks
-            marked.setOptions({{
-                gfm: true,
-                breaks: true
-            }});
+            marked.setOptions({{ gfm: true, breaks: true }});
 
             function initializeAppMatrix() {{
                 const systemSelect = document.getElementById("systemFilter");
@@ -176,11 +152,8 @@ async def render_dashboard_portal(request: Request):
                 const deckContainer = document.getElementById("articlesListDeck");
                 
                 deckContainer.innerHTML = "";
-                
                 const filtered = baseDataset.filter(item => {{
-                    const matchSearch = item.title.toLowerCase().includes(searchVal);
-                    const matchSystem = (systemVal === "All") || (item.system === systemVal);
-                    return matchSearch && matchSystem;
+                    return item.title.toLowerCase().includes(searchVal) && (systemVal === "All" || item.system === systemVal);
                 }});
 
                 if(filtered.length === 0) {{
@@ -191,19 +164,12 @@ async def render_dashboard_portal(request: Request):
                 filtered.forEach(item => {{
                     const btn = document.createElement("button");
                     const isActive = item.id === currentActiveSelectionId;
-                    
-                    btn.className = `w-full text-left p-4 rounded-xl text-sm transition border flex flex-col gap-1 shadow-2xs ${{
-                        isActive 
-                        ? 'bg-[#D7CDB7] text-[#5C5346] border-transparent font-bold ring-1 ring-[#BDB199]' 
-                        : 'bg-white text-[#111827] border-[#EFECE6] hover:bg-[#EFECE6]'
-                    }}`;
-                    
+                    btn.className = `w-full text-left p-4 rounded-xl text-sm transition border flex flex-col gap-1 shadow-2xs ${{isActive ? 'bg-[#D7CDB7] text-[#5C5346] border-transparent font-bold ring-1 ring-[#BDB199]' : 'bg-white text-[#111827] border-[#EFECE6] hover:bg-[#EFECE6]'}}`;
                     btn.onclick = () => fetchActiveDocumentSummary(item.id, item.file_name, item.title, item.doi, item.system, item.journal, item.type);
                     btn.innerHTML = `
                         <span class="block text-sm leading-snug">${{item.title}}</span>
                         <div class="flex gap-2 mt-1 text-[10px] font-bold tracking-wider uppercase text-[#4B5563]">
                             <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.system}}</span>
-                            <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.type}}</span>
                         </div>
                     `;
                     deckContainer.appendChild(btn);
@@ -228,17 +194,19 @@ async def render_dashboard_portal(request: Request):
 
                     let doiButtonHTML = "";
                     if(doiLink && doiLink !== "#") {{
-                        doiButtonHTML = `<a href="${{doiLink}}" target="_blank" class="w-full sm:w-auto text-center bg-[#1D4ED8] hover:bg-[#2563EB] text-white font-semibold text-xs px-4 py-2.5 rounded-lg shadow-sm transition inline-block" style="font-family: system-ui, sans-serif;">🔗 Source Publication</a>`;
+                        doiButtonHTML = `<a href="${{doiLink}}" target="_blank" class="w-full sm:w-auto text-center bg-[#1D4ED8] hover:bg-[#2563EB] text-white font-semibold text-xs px-4 py-2.5 rounded-lg shadow-sm transition inline-block">🔗 Source Publication</a>`;
                     }}
 
-                    // 🛠️ FIXED: data.content is now safely wrapped inside marked.parse() to dynamically convert Markdown to immaculate HTML tags
                     const parsedMarkdownHTML = marked.parse(data.content);
+                    // 🧠 EXTRACTION PATCH: Safely fallback to JSON cache keys to grab author lists dynamically
+                    const authorsLine = data.authors && data.authors !== "Unknown Authors" ? `<p class="text-sm italic text-[#4B5563] mt-1 font-sans">✍️ Primary Authors: ${{data.authors}}</p>` : "";
 
                     viewer.innerHTML = `
                         <div class="flex flex-col sm:flex-row justify-between items-start gap-4 pb-4 border-b border-[#EFECE6] mb-6">
                             <div>
-                                <h1 class="text-2xl font-bold tracking-tight text-black mb-2">📜 ${{title}}</h1>
-                                <div class="flex flex-wrap gap-2 text-xs font-semibold" style="font-family: system-ui, sans-serif;">
+                                <h1 class="text-2xl font-bold tracking-tight text-black">📜 ${{title}}</h1>
+                                ${{authorsLine}}
+                                <div class="flex flex-wrap gap-2 text-xs font-semibold mt-3" style="font-family: system-ui, sans-serif;">
                                     <span class="bg-[#EFF6FF] text-[#1E40AF] px-2.5 py-1 rounded-md border border-[#DBEAFE]">🧬 Specialty: ${{system}}</span>
                                     <span class="bg-[#FAF5FF] text-[#6B21A8] px-2.5 py-1 rounded-md border border-[#F3E8FF]">📖 Journal: ${{journal}}</span>
                                     <span class="bg-[#F1F5F9] text-[#475569] px-2.5 py-1 rounded-md border border-[#E2E8F0]">📑 Type: ${{type}}</span>
@@ -266,13 +234,14 @@ async def render_dashboard_portal(request: Request):
 async def get_cached_json_summary_contents(file_name: str):
     base_name = os.path.splitext(file_name)[0]
     target_json_path = os.path.join(OUTPUT_DIR, f"{base_name}.json")
-    
     if not os.path.exists(target_json_path):
-        return JSONResponse(status_code=404, content={"error": "Summary data asset missing from tracking registry."})
+        return JSONResponse(status_code=404, content={"error": "Summary missing."})
     try:
         with open(target_json_path, "r", encoding="utf-8") as f:
             payload = json.load(f)
-        summary_text = payload.get("clinical_summary_markdown", "No summary metadata object parsed.")
-        return {"content": summary_text}
+        return {
+            "content": payload.get("clinical_summary_markdown", ""),
+            "authors": payload.get("primary_authors", "Unknown Authors") # Expose authors to api layer
+        }
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
