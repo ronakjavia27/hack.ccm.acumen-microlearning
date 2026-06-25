@@ -22,7 +22,7 @@ def load_approved_ledger():
     try:
         df = pd.read_excel(EXCEL_TRACKER_FILE, sheet_name="Registry Logs")
         df.columns = df.columns.str.strip()
-        return df[df["show_on_web"].astype(str).str.strip().str.lower() == "yes"]
+        return df
     except Exception:
         return pd.DataFrame()
 
@@ -30,8 +30,13 @@ def load_approved_ledger():
 async def render_dashboard_portal(request: Request):
     df = load_approved_ledger()
     
-    total_published = len(df)
-    unique_systems = df["System"].dropna().nunique() if total_published > 0 else 0
+    if not df.empty and "show_on_web" in df.columns:
+        df_live = df[df["show_on_web"].astype(str).str.strip().str.lower() == "yes"]
+        total_published = len(df_live)
+        unique_systems = df_live["System"].dropna().nunique() if total_published > 0 else 0
+    else:
+        total_published = 0
+        unique_systems = 0
     
     articles_list = []
     if not df.empty:
@@ -51,7 +56,8 @@ async def render_dashboard_portal(request: Request):
                 "journal": str(row.get("Journal Name", "Unknown Source")),
                 "type": str(row.get("Type of Article", "Unclassified")),
                 "doi": clean_doi_url,
-                "file_name": str(row.get("File Name", ""))
+                "file_name": str(row.get("File Name", "")),
+                "show_on_web": str(row.get("show_on_web", "No")).strip().lower()
             })
 
     html_content = f"""
@@ -89,6 +95,11 @@ async def render_dashboard_portal(request: Request):
             </nav>
         </header>
 
+        <div class="flex flex-wrap gap-2 mb-6" style="font-family: system-ui, sans-serif;">
+            <button onclick="changeActiveViewMode('all')" id="modeBtn_all" class="px-4 py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-[#EFECE6] text-[#111827] border-[#DCD9D2] hover:bg-[#E2DFD7]">📁 All Papers</button>
+            <button onclick="changeActiveViewMode('guidelines')" id="modeBtn_guidelines" class="px-4 py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]">📋 Guidelines Only</button>
+        </div>
+
         <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="space-y-6">
                 <div class="bg-[#EFECE6] p-5 rounded-2xl border border-[#DCD9D2]">
@@ -109,6 +120,12 @@ async def render_dashboard_portal(request: Request):
                         <label class="block text-xs font-bold mb-1 text-[#4B5563]">Specialty Group</label>
                         <select id="systemFilter" onchange="executeClientSideFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
                             <option value="All">All Specialties</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Format Group Search</label>
+                        <select id="typeFilter" onchange="executeClientSideFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
+                            <option value="All">All Entries</option>
                         </select>
                     </div>
                 </div>
@@ -132,6 +149,7 @@ async def render_dashboard_portal(request: Request):
         <script>
             const baseDataset = {json.dumps(articles_list)};
             let currentActiveSelectionId = null;
+            let currentViewMode = 'all';
 
             marked.setOptions({{ gfm: true, breaks: true }});
 
@@ -139,9 +157,36 @@ async def render_dashboard_portal(request: Request):
                 const systemSelect = document.getElementById("systemFilter");
                 const uniqueSpecs = [...new Set(baseDataset.map(item => item.system))].sort();
                 uniqueSpecs.forEach(sys => {{
-                    let opt = document.createElement("option");
-                    opt.value = sys; opt.textContent = sys;
-                    systemSelect.appendChild(opt);
+                    if(sys && sys !== "None" && sys !== "nan" && sys.trim() !== "") {{
+                        let opt = document.createElement("option");
+                        opt.value = sys; opt.textContent = sys;
+                        systemSelect.appendChild(opt);
+                    }}
+                }});
+
+                const typeSelect = document.getElementById("typeFilter");
+                const uniqueTypes = [...new Set(baseDataset.map(item => item.type))].sort();
+                uniqueTypes.forEach(t => {{
+                    if(t && t !== "None" && t !== "nan" && t.trim() !== "") {{
+                        let opt = document.createElement("option");
+                        opt.value = t; opt.textContent = t;
+                        typeSelect.appendChild(opt);
+                    }}
+                }});
+
+                executeClientSideFilter();
+            }}
+
+            function changeActiveViewMode(mode) {{
+                currentViewMode = mode;
+                const buttons = ['all', 'guidelines', 'specialties', 'live'];
+                buttons.forEach(btnKey => {{
+                    const el = document.getElementById(`modeBtn_${{btnKey}}`);
+                    if(btnKey === mode) {{
+                        el.className = "px-4 py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-[#EFECE6] text-[#111827] border-[#DCD9D2] hover:bg-[#E2DFD7]";
+                    }} else {{
+                        el.className = "px-4 py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]";
+                    }}
                 }});
                 executeClientSideFilter();
             }}
@@ -149,11 +194,25 @@ async def render_dashboard_portal(request: Request):
             function executeClientSideFilter() {{
                 const searchVal = document.getElementById("titleSearch").value.toLowerCase();
                 const systemVal = document.getElementById("systemFilter").value;
+                const typeFilterVal = document.getElementById("typeFilter").value;
                 const deckContainer = document.getElementById("articlesListDeck");
                 
                 deckContainer.innerHTML = "";
                 const filtered = baseDataset.filter(item => {{
-                    return item.title.toLowerCase().includes(searchVal) && (systemVal === "All" || item.system === systemVal);
+                    const textMatches = item.title.toLowerCase().includes(searchVal);
+                    const systemMatches = (systemVal === "All" || item.system === systemVal);
+                    const typeMatches = (typeFilterVal === "All" || item.type === typeFilterVal);
+                    
+                    let modeMatches = true;
+                    if (currentViewMode === "guidelines") {{
+                        modeMatches = item.type.toLowerCase().includes("guideline");
+                    }} else if (currentViewMode === "specialties") {{
+                        modeMatches = (item.system && item.system.toLowerCase() !== "general" && item.system.toLowerCase() !== "unclassified" && item.system.trim() !== "");
+                    }} else if (currentViewMode === "live") {{
+                        modeMatches = (item.show_on_web === "yes");
+                    }}
+
+                    return textMatches && systemMatches && typeMatches && modeMatches;
                 }});
 
                 if(filtered.length === 0) {{
@@ -170,6 +229,7 @@ async def render_dashboard_portal(request: Request):
                         <span class="block text-sm leading-snug">${{item.title}}</span>
                         <div class="flex gap-2 mt-1 text-[10px] font-bold tracking-wider uppercase text-[#4B5563]">
                             <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.system}}</span>
+                            <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.type}}</span>
                         </div>
                     `;
                     deckContainer.appendChild(btn);
@@ -184,7 +244,8 @@ async def render_dashboard_portal(request: Request):
                 viewer.innerHTML = `<div class="text-center py-24 text-sm font-medium text-[#4B5563] animate-pulse">🔬 Processing structural markdown fields...</div>`;
 
                 try {{
-                    const response = await fetch(`/api/summary?file_name=${{encodeURIComponent(fileName)}}`);
+                    // Pass tracking variables context to route parameters securely
+                    const response = await fetch(`/api/summary?file_name=${{encodeURIComponent(fileName)}}&system=${{encodeURIComponent(system)}}&type=${{encodeURIComponent(type)}}`);
                     const data = await response.json();
                     
                     if (!response.ok || data.error) {{
@@ -198,7 +259,6 @@ async def render_dashboard_portal(request: Request):
                     }}
 
                     const parsedMarkdownHTML = marked.parse(data.content);
-                    // 🧠 EXTRACTION PATCH: Safely fallback to JSON cache keys to grab author lists dynamically
                     const authorsLine = data.authors && data.authors !== "Unknown Authors" ? `<p class="text-sm italic text-[#4B5563] mt-1 font-sans">✍️ Primary Authors: ${{data.authors}}</p>` : "";
 
                     viewer.innerHTML = `
@@ -228,20 +288,32 @@ async def render_dashboard_portal(request: Request):
     </body>
     </html>
     """
-    return html_content
+    return HTMLResponse(content=html_content)
 
 @app.get("/api/summary")
-async def get_cached_json_summary_contents(file_name: str):
+async def get_cached_json_summary_contents(file_name: str, system: str = "General", type: str = "Unclassified"):
     base_name = os.path.splitext(file_name)[0]
-    target_json_path = os.path.join(OUTPUT_DIR, f"{base_name}.json")
+    
+    # Clean system and type context formatting to replicate folder layouts exactly
+    clean_system = "".join(x for x in str(system) if x.isalnum() or x in "._- ").strip()
+    clean_type = "".join(x for x in str(type) if x.isalnum() or x in "._- ").strip()
+    
+    # Safely search across sharded navigation directory pools first
+    target_json_path = os.path.join(OUTPUT_DIR, clean_system, clean_type, f"{base_name}.json")
+    
+    # Dynamic fallback check to preserve compliance with flat directories
     if not os.path.exists(target_json_path):
-        return JSONResponse(status_code=404, content={"error": "Summary missing."})
+        target_json_path = os.path.join(OUTPUT_DIR, f"{base_name}.json")
+        
+    if not os.path.exists(target_json_path):
+        return JSONResponse(status_code=404, content={"error": f"Summary target path not found: {target_json_path}"})
+        
     try:
         with open(target_json_path, "r", encoding="utf-8") as f:
             payload = json.load(f)
         return {
             "content": payload.get("clinical_summary_markdown", ""),
-            "authors": payload.get("primary_authors", "Unknown Authors") # Expose authors to api layer
+            "authors": payload.get("primary_authors", "Unknown Authors")
         }
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
