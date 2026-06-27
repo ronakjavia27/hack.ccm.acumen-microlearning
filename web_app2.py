@@ -624,6 +624,7 @@ async def render_dashboard_portal(request: Request):
 
                 const viewer = document.getElementById("documentSheetContainer");
                 viewer.innerHTML = `<div class="text-center py-24 text-sm font-medium text-[#4B5563] animate-pulse">🔬 Processing structural markdown fields...</div>`;
+                if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
 
                 try {{
                     const response = await fetch(`/api/summary?file_name=${{encodeURIComponent(fileName)}}&system=${{encodeURIComponent(system)}}&type=${{encodeURIComponent(type)}}`);
