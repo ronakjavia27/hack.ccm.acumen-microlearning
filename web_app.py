@@ -32,8 +32,18 @@ def load_pearls():
         return []
     try:
         df = pd.read_csv(PEARLS_CSV)
-        if "Unnamed: 9" in df.columns:
-            df.rename(columns={"Unnamed: 9": "file_name"}, inplace=True)
+        # Normalise column name for legacy CSV format
+        for col in df.columns:
+            if col.startswith("Unnamed"):
+                df.rename(columns={col: "file_name"}, inplace=True)
+                break
+        # Ensure all expected columns exist
+        for col in ["id", "timestamp", "source_paper", "doi", "author", "system", "type", "pearl", "remarks", "file_name", "topic"]:
+            if col not in df.columns:
+                df[col] = ""
+        # Coerce all to string and replace NaN/None with empty string
+        for col in df.columns:
+            df[col] = df[col].fillna("").astype(str)
         return df.to_dict(orient="records")
     except Exception:
         return []
@@ -116,8 +126,8 @@ async def render_dashboard_portal(request: Request):
     <body class="p-4 md:p-8 max-w-7xl mx-auto">
 
         <header class="bg-white border border-[#EFECE6] p-4 rounded-xl shadow-sm mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="text-xl font-bold tracking-tight text-[#111827]">🧠 hack.CCM | Knowledge Portal</div>
-            <nav class="flex gap-6 text-sm font-semibold">
+            <div class="text-sm md:text-xl font-bold tracking-tight text-[#111827]">🧠 hack.CCM | Knowledge Portal</div>
+            <nav class="flex flex-wrap gap-2 md:gap-6 text-xs md:text-sm font-semibold">
                 <a href="{FEEDBACK_FORM_URL}" target="_blank" class="text-[#1D4ED8] hover:text-[#2563EB] hover:underline transition">📝 Feedback</a>
                 <a href="{SUBSCRIBE_FORM_URL}" target="_blank" class="text-[#1D4ED8] hover:text-[#2563EB] hover:underline transition">📢 Subscribe</a>
                 <a href="{UNSUBSCRIBE_FORM_URL}" target="_blank" class="text-[#1D4ED8] hover:text-[#2563EB] hover:underline transition">❌ Unsubscribe</a>
@@ -129,7 +139,7 @@ async def render_dashboard_portal(request: Request):
                 <div class="text-2xl shrink-0 mt-0.5">⭐</div>
                 <div class="flex-1 min-w-0">
                     <div class="text-[10px] font-bold tracking-wider text-[#4B5563] uppercase mb-1">📌 Paper of the Day</div>
-                    <div id="dailyPaperTitle" class="text-sm font-bold text-[#111827] leading-snug truncate">Loading...</div>
+                    <div id="dailyPaperTitle" class="text-sm font-bold text-[#111827] leading-snug">Loading...</div>
                     <div id="dailyPaperMeta" class="text-xs text-[#4B5563] mt-1 space-x-2">
                         <span id="dailyPaperAuthors" class="italic"></span>
                         <span id="dailyPaperSystem" class="bg-[#EFECE6] px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
@@ -145,7 +155,7 @@ async def render_dashboard_portal(request: Request):
                 <div class="text-2xl shrink-0 mt-0.5">💎</div>
                 <div class="flex-1 min-w-0">
                     <div class="text-[10px] font-bold tracking-wider text-[#4B5563] uppercase mb-1">💎 Pearl of the Day</div>
-                    <div id="dailyPearlText" class="text-sm font-bold text-[#111827] leading-snug truncate">Loading...</div>
+                    <div id="dailyPearlText" class="text-sm font-bold text-[#111827] leading-snug">Loading...</div>
                     <div id="dailyPearlMeta" class="text-xs text-[#4B5563] mt-1 space-x-2">
                         <span id="dailyPearlSystem" class="bg-[#EFECE6] px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
                         <span id="dailyPearlType" class="bg-[#EFECE6] px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
@@ -157,9 +167,9 @@ async def render_dashboard_portal(request: Request):
         </div>
 
         <div class="flex flex-wrap gap-2 mb-6" style="font-family: system-ui, sans-serif;">
-            <button onclick="switchTab('papers')" id="tabBtn_papers" class="px-4 py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-[#EFECE6] text-[#111827] border-[#DCD9D2] hover:bg-[#E2DFD7]">📄 Papers</button>
-            <button onclick="switchTab('guidelines')" id="tabBtn_guidelines" class="px-4 py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]">📋 Guidelines</button>
-            <button onclick="switchTab('pearls')" id="tabBtn_pearls" class="px-4 py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]">💡 Pearls</button>
+            <button onclick="switchTab('papers')" id="tabBtn_papers" class="px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-[#EFECE6] text-[#111827] border-[#DCD9D2] hover:bg-[#E2DFD7]">📄 Papers</button>
+            <button onclick="switchTab('guidelines')" id="tabBtn_guidelines" class="px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]">📋 Guidelines</button>
+            <button onclick="switchTab('pearls')" id="tabBtn_pearls" class="px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]">💡 Pearls</button>
         </div>
 
         <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -226,6 +236,13 @@ async def render_dashboard_portal(request: Request):
                 <div id="filterPanel_pearls" class="tab-panel bg-[#EFECE6] p-5 rounded-2xl border border-[#DCD9D2] space-y-4">
                     <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-1">🔍 Filter Pearls</h3>
                     <div>
+                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Keywords Search</label>
+                        <div style="position:relative;">
+                            <input type="text" id="topicSearch_pearls" oninput="onPearlSearchInput()" placeholder="Search topic or pearl text..." class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition pr-8">
+                            <button id="clearPearlSearch" onclick="clearPearlSearch()" style="display:none; position:absolute; right:6px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:14px; color:#4B5563; padding:4px; line-height:1;">✕</button>
+                        </div>
+                    </div>
+                    <div>
                         <label class="block text-xs font-bold mb-1 text-[#4B5563]">Specialty Group</label>
                         <select id="systemFilter_pearls" onchange="executePearlsFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
                             <option value="All">All Specialties</option>
@@ -241,7 +258,7 @@ async def render_dashboard_portal(request: Request):
                 </div>
 
                 <div class="space-y-2">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase px-2">📑 Document Selector</h3>
+                    <h3 id="deckLabel" class="text-xs font-bold tracking-wider text-[#4B5563] uppercase px-2">📑 Document Selector</h3>
                     <div id="articlesListDeck" class="max-h-[450px] overflow-y-auto custom-scrollbar space-y-2 pr-1"></div>
                 </div>
             </div>
@@ -249,8 +266,8 @@ async def render_dashboard_portal(request: Request):
             <div class="md:col-span-2">
                 <div id="documentSheetContainer" class="bg-white border border-[#EFECE6] p-6 md:p-8 rounded-2xl shadow-xs min-h-[550px]">
                     <div class="text-center py-24 text-[#4B5563]">
-                        <p class="text-lg font-medium">👋 Welcome to hack.CCM Repository</p>
-                        <p class="text-sm mt-1">Select a publication entry card from the index frame to unpack formatting layers.</p>
+                        <p class="text-sm md:text-lg font-medium">👋 Welcome to hack.CCM Repository</p>
+                        <p class="text-xs md:text-sm mt-1">Select a publication entry card from the index frame to unpack formatting layers.</p>
                     </div>
                 </div>
             </div>
@@ -371,9 +388,9 @@ async def render_dashboard_portal(request: Request):
                 tabButtons.forEach(btnKey => {{
                     const el = document.getElementById(`tabBtn_${{btnKey}}`);
                     if(btnKey === tab) {{
-                        el.className = "px-4 py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-[#EFECE6] text-[#111827] border-[#DCD9D2] hover:bg-[#E2DFD7]";
+                        el.className = "px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-[#EFECE6] text-[#111827] border-[#DCD9D2] hover:bg-[#E2DFD7]";
                     }} else {{
-                        el.className = "px-4 py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]";
+                        el.className = "px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]";
                     }}
                 }});
 
@@ -387,18 +404,23 @@ async def render_dashboard_portal(request: Request):
                     }}
                 }});
 
+                const deckContainer = document.getElementById("articlesListDeck");
+                document.getElementById("deckLabel").textContent =
+                    tab === 'pearls' ? '💎 Pearl Selector' : '📑 Document Selector';
+
                 currentActiveSelectionId = null;
                 fullTextResults = null;
                 updateStatusPanel();
 
                 const viewer = document.getElementById("documentSheetContainer");
                 if (tab === 'pearls') {{
+                    deckContainer.innerHTML = '';
                     executePearlsFilter();
                 }} else {{
                     executeClientSideFilter();
                     viewer.innerHTML = `<div class="text-center py-24 text-[#4B5563]">
-                        <p class="text-lg font-medium">👋 Welcome to hack.CCM Repository</p>
-                        <p class="text-sm mt-1">Select a publication entry card from the index frame to unpack formatting layers.</p>
+                        <p class="text-sm md:text-lg font-medium">👋 Welcome to hack.CCM Repository</p>
+                        <p class="text-xs md:text-sm mt-1">Select a publication entry card from the index frame to unpack formatting layers.</p>
                     </div>`;
                 }}
             }}
@@ -492,6 +514,18 @@ async def render_dashboard_portal(request: Request):
                 executeClientSideFilter();
             }}
 
+            function onPearlSearchInput() {{
+                const input = document.getElementById("topicSearch_pearls");
+                document.getElementById("clearPearlSearch").style.display = input.value ? 'block' : 'none';
+                executePearlsFilter();
+            }}
+
+            function clearPearlSearch() {{
+                document.getElementById("topicSearch_pearls").value = '';
+                document.getElementById("clearPearlSearch").style.display = 'none';
+                executePearlsFilter();
+            }}
+
             function onFullTextToggle(tab) {{
                 const checkbox = document.getElementById(`fulltextToggle_${{tab}}`);
                 const input = document.getElementById(`titleSearch_${{tab}}`);
@@ -528,6 +562,9 @@ async def render_dashboard_portal(request: Request):
 
             function executeClientSideFilter() {{
                 if (activeTab === 'pearls') return;
+                // Double-guard: only run if papers or guidelines filter panel is visible
+                if (!document.getElementById("filterPanel_papers").classList.contains("active") &&
+                    !document.getElementById("filterPanel_guidelines").classList.contains("active")) return;
                 updateStatusPanel();
                 const deckContainer = document.getElementById("articlesListDeck");
 
@@ -571,7 +608,7 @@ async def render_dashboard_portal(request: Request):
                     btn.className = `w-full text-left p-4 rounded-xl text-sm transition border flex flex-col gap-1 shadow-2xs ${{isActive ? 'bg-[#D7CDB7] text-[#5C5346] border-transparent font-bold ring-1 ring-[#BDB199]' : 'bg-white text-[#111827] border-[#EFECE6] hover:bg-[#EFECE6]'}}`;
                     btn.onclick = () => fetchActiveDocumentSummary(item.id, item.file_name, item.title, item.doi, item.system, item.journal, item.type);
                     btn.innerHTML = `
-                        <span class="block text-sm leading-snug">${{item.title}}</span>
+                        <span class="block text-xs md:text-sm leading-snug">${{item.title}}</span>
                         <div class="flex gap-2 mt-1 text-[10px] font-bold tracking-wider uppercase text-[#4B5563]">
                             <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.system}}</span>
                             <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.type}}</span>
@@ -590,6 +627,8 @@ async def render_dashboard_portal(request: Request):
 
                 try {{
                     const response = await fetch(`/api/summary?file_name=${{encodeURIComponent(fileName)}}&system=${{encodeURIComponent(system)}}&type=${{encodeURIComponent(type)}}`);
+                    // Bail if user switched tabs while we were fetching
+                    if (activeTab !== 'papers' && activeTab !== 'guidelines') return;
                     const data = await response.json();
 
                     if (!response.ok || data.error) {{
@@ -617,7 +656,7 @@ async def render_dashboard_portal(request: Request):
                     viewer.innerHTML = `
                         <div class="flex flex-col sm:flex-row justify-between items-start gap-4 pb-4 border-b border-[#EFECE6] mb-6">
                             <div>
-                                <h1 class="text-2xl font-bold tracking-tight text-black">📜 ${{title}}</h1>
+                                <h1 class="text-lg md:text-2xl font-bold tracking-tight text-black">📜 ${{title}}</h1>
                                 ${{authorsLine}}
                                 <div class="flex flex-wrap gap-2 text-xs font-semibold mt-3" style="font-family: system-ui, sans-serif;">
                                     <span class="bg-[#EFF6FF] text-[#1E40AF] px-2.5 py-1 rounded-md border border-[#DBEAFE]">🧬 Specialty: ${{system}}</span>
@@ -683,21 +722,60 @@ async def render_dashboard_portal(request: Request):
             function executePearlsFilter() {{
                 const systemVal = document.getElementById("systemFilter_pearls").value;
                 const typeVal = document.getElementById("typeFilter_pearls").value;
+                const keyword = document.getElementById("topicSearch_pearls").value.toLowerCase().trim();
                 filteredPearls = allPearls.filter(function(p) {{
                     if (systemVal !== "All" && p.system !== systemVal) return false;
                     if (typeVal !== "All" && p.type !== typeVal) return false;
+                    if (keyword) {{
+                        const haystack = (p.pearl || '') + ' ' + (p.topic || '') + ' ' + (p.source_paper || '');
+                        if (haystack.toLowerCase().indexOf(keyword) === -1) return false;
+                    }}
                     return true;
                 }});
                 currentPearlIndex = 0;
                 updateStatusPanel();
                 updatePearlCounter();
+                renderPearlList();
                 renderPearl();
+            }}
+
+            function renderPearlList() {{
+                const deck = document.getElementById("articlesListDeck");
+                if (filteredPearls.length === 0) {{
+                    deck.innerHTML = '<p class="text-xs text-[#4B5563] italic p-3 text-center">No matching pearls.</p>';
+                    return;
+                }}
+                deck.innerHTML = filteredPearls.map(function(p, idx) {{
+                    const isActive = idx === currentPearlIndex;
+                    const truncated = (p.pearl || '').length > 80 ? p.pearl.substring(0, 80) + '...' : p.pearl;
+                    const cls = isActive
+                        ? 'bg-[#D7CDB7] text-[#5C5346] border-transparent font-bold ring-1 ring-[#BDB199]'
+                        : 'bg-white text-[#111827] border-[#EFECE6] hover:bg-[#EFECE6]';
+                    return '<button onclick="selectPearl(' + idx + ')" '
+                        + 'class="w-full text-left p-3 rounded-xl text-xs transition border flex flex-col gap-0.5 shadow-2xs ' + cls + '">'
+                        + '<span class="leading-snug">' + truncated + '</span>'
+                        + '<span class="flex gap-1 mt-0.5 text-[9px] font-bold tracking-wider uppercase text-[#4B5563]">'
+                        + '<span class="bg-[#EFECE6] px-1 py-0.5 rounded">' + (p.system || '') + '</span>'
+                        + '<span class="bg-[#EFECE6] px-1 py-0.5 rounded">' + (p.type || '') + '</span>'
+                        + (p.topic ? p.topic.split(',').map(function(t) {{ return '<span class="bg-[#FEF3C7] text-[#92400E] px-1 py-0.5 rounded">' + t.trim() + '</span>'; }}).join('') : '')
+                        + '</span></button>';
+                }}).join('');
+            }}
+
+            function selectPearl(idx) {{
+                currentPearlIndex = idx;
+                updatePearlCounter();
+                renderPearlList();
+                renderPearl();
+                if (window.innerWidth < 640) {{
+                    document.getElementById("documentSheetContainer").scrollIntoView({{ behavior: 'smooth' }});
+                }}
             }}
 
             function renderPearl() {{
                 const viewer = document.getElementById("documentSheetContainer");
                 if (filteredPearls.length === 0) {{
-                    viewer.innerHTML = '<div class="text-center py-24 text-[#4B5563]"><p class="text-lg font-medium">💎 No pearls match your filters.</p><p class="text-sm mt-1">Try adjusting the filters above.</p></div>';
+                    viewer.innerHTML = '<div class="text-center py-24 text-[#4B5563]"><p class="text-sm md:text-lg font-medium">💎 No pearls match your filters.</p><p class="text-xs md:text-sm mt-1">Try adjusting the filters above.</p></div>';
                     return;
                 }}
                 const p = filteredPearls[currentPearlIndex];
@@ -705,11 +783,12 @@ async def render_dashboard_portal(request: Request):
                 const prevDisabled = currentPearlIndex === 0 ? 'disabled' : '';
                 const nextDisabled = currentPearlIndex === filteredPearls.length - 1 ? 'disabled' : '';
                 viewer.innerHTML = '<div class="flex flex-col items-center justify-center min-h-[400px] max-w-2xl mx-auto text-center">' +
-                    '<div class="flex gap-2 mb-6">' +
+                    '<div class="flex gap-2 mb-6 flex-wrap justify-center">' +
                         (p.system ? '<span class="bg-[#EFF6FF] text-[#1E40AF] text-xs font-bold px-3 py-1 rounded-md">' + p.system + '</span>' : '') +
                         (p.type ? '<span class="bg-[#F0FDF4] text-[#15803D] text-xs font-bold px-3 py-1 rounded-md">' + p.type + '</span>' : '') +
+                        (p.topic ? p.topic.split(',').map(function(t) {{ return '<span class="bg-[#FEF3C7] text-[#92400E] text-xs font-bold px-3 py-1 rounded-md">' + t.trim() + '</span>'; }}).join('') : '') +
                     '</div>' +
-                    '<div class="text-xl leading-relaxed text-[#1F2937] mb-6 font-serif">\u201C' + p.pearl + '\u201D</div>' +
+                    '<div class="text-sm md:text-xl leading-relaxed text-[#1F2937] mb-6 font-serif">\u201C' + p.pearl + '\u201D</div>' +
                     '<div class="text-sm text-[#6B7280] mb-8 font-sans">' +
                         '\u2014 ' + paperName +
                         ((p.file_name || p.source_paper) ? ' <button onclick="openPearlPaper()" class="ml-2 text-[#1D4ED8] hover:underline font-semibold text-xs">Open \u2197</button>' : '') +
@@ -725,6 +804,7 @@ async def render_dashboard_portal(request: Request):
                 if (currentPearlIndex > 0) {{
                     currentPearlIndex--;
                     updatePearlCounter();
+                    renderPearlList();
                     renderPearl();
                 }}
             }}
@@ -733,6 +813,7 @@ async def render_dashboard_portal(request: Request):
                 if (currentPearlIndex < filteredPearls.length - 1) {{
                     currentPearlIndex++;
                     updatePearlCounter();
+                    renderPearlList();
                     renderPearl();
                 }}
             }}
