@@ -125,12 +125,18 @@ async def render_dashboard_portal(request: Request):
     </head>
     <body class="p-4 md:p-8 max-w-7xl mx-auto">
 
-        <header class="bg-white border border-[#EFECE6] p-4 rounded-xl shadow-sm mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="text-sm md:text-xl font-bold tracking-tight text-[#111827]">🧠 hack.CCM | Knowledge Portal</div>
-            <nav class="flex flex-wrap gap-2 md:gap-6 text-xs md:text-sm font-semibold">
-                <a href="{FEEDBACK_FORM_URL}" target="_blank" class="text-[#1D4ED8] hover:text-[#2563EB] hover:underline transition">📝 Feedback</a>
-                <a href="{SUBSCRIBE_FORM_URL}" target="_blank" class="text-[#1D4ED8] hover:text-[#2563EB] hover:underline transition">📢 Subscribe</a>
-                <a href="{UNSUBSCRIBE_FORM_URL}" target="_blank" class="text-[#1D4ED8] hover:text-[#2563EB] hover:underline transition">❌ Unsubscribe</a>
+        <header class="bg-white border border-[#EFECE6] p-5 md:p-6 rounded-2xl shadow-md mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-start gap-4 w-full sm:w-auto">
+                <div class="w-1 h-12 md:h-16 bg-[#1D4ED8] rounded-full shrink-0 mt-1"></div>
+                <div>
+                    <div class="text-2xl md:text-4xl font-extrabold tracking-tight text-[#111827]">🧠 hack.CCM</div>
+                    <div class="text-sm md:text-base font-medium text-[#4B5563] tracking-wide">Critical Care Knowledge Portal</div>
+                </div>
+            </div>
+            <nav class="flex flex-wrap gap-2 md:gap-3 text-xs md:text-sm font-semibold">
+                <a href="{FEEDBACK_FORM_URL}" target="_blank" class="bg-[#F5F3F0] px-3 py-1.5 rounded-lg text-[#1D4ED8] hover:bg-[#EFECE6] hover:text-[#2563EB] transition">📝 Feedback</a>
+                <a href="{SUBSCRIBE_FORM_URL}" target="_blank" class="bg-[#F5F3F0] px-3 py-1.5 rounded-lg text-[#1D4ED8] hover:bg-[#EFECE6] hover:text-[#2563EB] transition">📢 Subscribe</a>
+                <a href="{UNSUBSCRIBE_FORM_URL}" target="_blank" class="bg-[#F5F3F0] px-3 py-1.5 rounded-lg text-[#1D4ED8] hover:bg-[#EFECE6] hover:text-[#2563EB] transition">❌ Unsubscribe</a>
             </nav>
         </header>
 
@@ -166,10 +172,10 @@ async def render_dashboard_portal(request: Request):
             </div>
         </div>
 
-        <div class="flex flex-wrap gap-2 mb-6" style="font-family: system-ui, sans-serif;">
-            <button onclick="switchTab('papers')" id="tabBtn_papers" class="px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-[#EFECE6] text-[#111827] border-[#DCD9D2] hover:bg-[#E2DFD7]">📄 Papers</button>
-            <button onclick="switchTab('guidelines')" id="tabBtn_guidelines" class="px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]">📋 Guidelines</button>
-            <button onclick="switchTab('pearls')" id="tabBtn_pearls" class="px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]">💡 Pearls</button>
+        <div class="flex flex-col sm:flex-row gap-3 mb-6" style="font-family: system-ui, sans-serif;">
+            <button onclick="switchTab('papers')" id="tabBtn_papers" class="w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all shadow-lg bg-[#1D4ED8] text-white border-[#1D4ED8]">📄 Papers</button>
+            <button onclick="switchTab('guidelines')" id="tabBtn_guidelines" class="w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all bg-white text-[#4B5563] border-[#DCD9D2] hover:bg-[#EFECE6] hover:border-[#BDB199] hover:shadow-md">📋 Guidelines</button>
+            <button onclick="switchTab('pearls')" id="tabBtn_pearls" class="w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all bg-white text-[#4B5563] border-[#DCD9D2] hover:bg-[#EFECE6] hover:border-[#BDB199] hover:shadow-md">💡 Pearls</button>
         </div>
 
         <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -389,9 +395,9 @@ async def render_dashboard_portal(request: Request):
                 tabButtons.forEach(btnKey => {{
                     const el = document.getElementById(`tabBtn_${{btnKey}}`);
                     if(btnKey === tab) {{
-                        el.className = "px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-[#EFECE6] text-[#111827] border-[#DCD9D2] hover:bg-[#E2DFD7]";
+                        el.className = "w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all shadow-lg bg-[#1D4ED8] text-white border-[#1D4ED8]";
                     }} else {{
-                        el.className = "px-2 py-1.5 md:px-4 md:py-2 text-xs uppercase tracking-wider rounded-lg border font-bold transition bg-white text-[#4B5563] border-[#EFECE6] hover:bg-[#EFECE6]";
+                        el.className = "w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all bg-white text-[#4B5563] border-[#DCD9D2] hover:bg-[#EFECE6] hover:border-[#BDB199] hover:shadow-md";
                     }}
                 }});
 
