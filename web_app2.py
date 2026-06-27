@@ -352,6 +352,7 @@ async def render_dashboard_portal(request: Request):
                 if (foundIdx !== -1) {{
                     currentPearlIndex = foundIdx;
                     renderPearl();
+                    if (window.innerWidth < 640) document.getElementById("documentSheetContainer").scrollIntoView({{ behavior: 'smooth' }});
                 }}
             }}
 
@@ -624,7 +625,6 @@ async def render_dashboard_portal(request: Request):
 
                 const viewer = document.getElementById("documentSheetContainer");
                 viewer.innerHTML = `<div class="text-center py-24 text-sm font-medium text-[#4B5563] animate-pulse">🔬 Processing structural markdown fields...</div>`;
-                if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
 
                 try {{
                     const response = await fetch(`/api/summary?file_name=${{encodeURIComponent(fileName)}}&system=${{encodeURIComponent(system)}}&type=${{encodeURIComponent(type)}}`);
@@ -634,6 +634,7 @@ async def render_dashboard_portal(request: Request):
 
                     if (!response.ok || data.error) {{
                         viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">⚠️ Error loading summary payload dataset.</div>`;
+                        if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
                         return;
                     }}
 
@@ -667,13 +668,15 @@ async def render_dashboard_portal(request: Request):
                             </div>
                             <div class="w-full sm:w-auto shrink-0 flex gap-2">${{doiButtonHTML}}${{pdfButtonHTML}}</div>
                         </div>
-                        <div class="summary-body text-[#111827] text-[15px]">
-                            ${{parsedMarkdownHTML}}
-                        </div>
-                    `;
-                }} catch(err) {{
-                    viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">❌ Network connection error: ${{err.message}}</div>`;
-                }}
+                                <div class="summary-body text-[#111827] text-[15px]">
+                                    ${{parsedMarkdownHTML}}
+                                </div>
+                            `;
+                        if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
+                        }} catch(err) {{
+                            viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">❌ Network connection error: ${{err.message}}</div>`;
+                            if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
+                        }}
             }}
 
             function exportPDF() {{
