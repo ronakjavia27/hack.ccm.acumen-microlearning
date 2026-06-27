@@ -34,11 +34,13 @@ def run_git_sync():
             print("✅ Web workspace repository state already matches upstream master baseline.")
             return
 
-        print("📦 Packaging updated deployment data structures...")
-        subprocess.run(["git", "add", "sent_summaries.xlsx"])
-        subprocess.run(["git", "add", "output_files/*.json"])
-        subprocess.run(["git", "add", "web_app.py"])
+        print("📦 Staging all changes (respecting .gitignore)...")
+        subprocess.run(["git", "add", "-A"])
         
+        # Double-check nothing staged from .gitignore
+        status = subprocess.run(["git", "diff", "--cached", "--stat"], capture_output=True, text=True)
+        print(f"   {status.stdout.strip() or 'No changes staged.'}")
+
         commit_msg = f"Clinical Sync - Published Ledger Inventory Base"
         subprocess.run(["git", "commit", "-m", commit_msg])
         

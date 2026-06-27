@@ -3,3 +3,6 @@ docker logs -f ccm-backend
 
 email push:
 docker exec -it ccm-backend python email_push.py
+
+fastAPI local
+python -m uvicorn web_app:app --reload
