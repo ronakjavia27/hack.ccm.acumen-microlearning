@@ -192,13 +192,23 @@ async def render_dashboard_portal(request: Request):
             .summary-body ol {{ list-style-type: decimal !important; margin-left: 1.5em !important; margin-bottom: 1.2em !important; padding-left: 0px !important; }}
             .summary-body li {{ margin-bottom: 0.5em; line-height: 1.6; font-family: system-ui, -apple-system, sans-serif; color: var(--color-primary); display: list-item !important; }}
             .summary-body strong {{ color: #000000; font-weight: 700; }}
+            .summary-section {{ margin-bottom: 0.75rem; border: 1px solid var(--color-border); border-radius: 0.75rem; overflow: hidden; background: var(--color-card); }}
+            .summary-section[open] {{ border-color: var(--color-border-dark); }}
+            .summary-heading {{ padding: 0.75rem 1rem; font-weight: 700; font-size: 0.9375em; cursor: pointer; background: var(--color-muted); color: var(--color-primary); user-select: none; font-family: system-ui, -apple-system, sans-serif; transition: background 0.15s; }}
+            .summary-heading:hover {{ background: var(--color-muted-hover); }}
+            .summary-heading::-webkit-details-marker {{ color: var(--color-secondary); }}
+            .summary-content {{ padding: 1rem 1.25rem; }}
+            .summary-content-intro {{ padding: 0 0.25rem 1rem 0.25rem; }}
             .tab-panel {{ display: none; }}
             .tab-panel.active {{ display: block; }}
             .no-scroll {{ overflow: hidden; }}
             .scrollbar-none::-webkit-scrollbar {{ display: none; }}
             .scrollbar-none {{ -ms-overflow-style: none; scrollbar-width: none; }}
             @keyframes fadeIn {{ from{{opacity:0;transform:translateY(-10px)}} to{{opacity:1;transform:translateY(0)}} }}
+            @keyframes slideDown {{ from{{opacity:0;transform:translateY(-8px)}} to{{opacity:1;transform:translateY(0)}} }}
             .modal-animate {{ animation: fadeIn 0.2s ease-out; }}
+            #tabDropdown {{ animation: slideDown 0.15s ease-out; }}
+            #tabDropdown button.active-tab {{ background-color: var(--color-accent); color: white; }}
         </style>
     </head>
     <body class="p-4 md:p-8 max-w-7xl mx-auto">
@@ -256,6 +266,9 @@ async def render_dashboard_portal(request: Request):
                 <h3 class="text-sm font-bold text-primary">🔖 Bookmarks</h3>
                 <button onclick="closeBookmarksModal()" class="text-lg p-1 hover:bg-muted-hover rounded-lg transition leading-none">✕</button>
             </div>
+            <div class="px-4 py-2 border-b border-muted">
+                <input type="text" id="bookmarkSearchInput" placeholder="Search bookmarks..." class="w-full text-sm bg-muted text-primary px-3 py-2 rounded-lg border border-dark outline-none focus:ring-2 focus:ring-accent transition" oninput="filterBookmarks()">
+            </div>
             <div id="bookmarksList" class="flex-1 overflow-y-auto p-4 space-y-2">
                 <p class="text-xs text-secondary text-center py-8">Loading...</p>
             </div>
@@ -304,7 +317,7 @@ async def render_dashboard_portal(request: Request):
 
         <header class="bg-card border border-muted p-5 md:p-6 rounded-2xl shadow-md mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
             <div class="flex items-start gap-4 w-full sm:w-auto">
-                <button onclick="toggleSidebar()" class="shrink-0 text-xl md:text-2xl p-1 -ml-1 mt-0.5 hover:bg-muted-hover rounded-lg transition leading-none" title="Menu">☰</button>
+                <button onclick="toggleSidebar()" class="shrink-0 text-3xl md:text-5xl p-0 -ml-1.5 mt-0 leading-none hover:bg-muted-hover rounded-lg transition" title="Menu">☰</button>
                 <div class="w-1 h-12 md:h-16 bg-accent rounded-full shrink-0 mt-1"></div>
                 <div>
                     <div class="text-2xl md:text-4xl font-extrabold tracking-tight text-primary">🧠 hack.CCM</div>
@@ -351,7 +364,17 @@ async def render_dashboard_portal(request: Request):
         </div>
 
         <nav id="stickyTabBar" class="sticky top-0 z-40 bg-card/95 backdrop-blur-md border-b border-muted shadow-sm mb-6 -mx-4 md:-mx-8 px-4 md:px-8 flex items-center gap-1 py-2 scrollbar-none" style="font-family: system-ui, sans-serif;">
-            <button onclick="toggleSidebar()" class="shrink-0 p-1.5 rounded-lg hover:bg-muted-hover transition text-lg leading-none" title="Menu">☰</button>
+            <button onclick="toggleTabDropdown()" class="shrink-0 p-1.5 rounded-lg hover:bg-muted-hover transition text-lg leading-none" title="All Tabs">≡</button>
+            <div id="tabDropdown" class="hidden absolute top-full left-0 mt-1 w-48 bg-card border border-muted rounded-xl shadow-xl z-50 py-1.5" style="min-width:170px;">
+                <button onclick="switchTabAndCloseDropdown('papers')" class="w-full text-left px-4 py-2.5 text-sm font-semibold rounded-lg hover:bg-muted-hover transition text-primary">📄 Papers</button>
+                <button onclick="switchTabAndCloseDropdown('guidelines')" class="w-full text-left px-4 py-2.5 text-sm font-semibold rounded-lg hover:bg-muted-hover transition text-primary">📋 Guidelines</button>
+                <button onclick="switchTabAndCloseDropdown('pearls')" class="w-full text-left px-4 py-2.5 text-sm font-semibold rounded-lg hover:bg-muted-hover transition text-primary">💡 Pearls</button>
+                <button onclick="switchTabAndCloseDropdown('antibiotics')" class="w-full text-left px-4 py-2.5 text-sm font-semibold rounded-lg hover:bg-muted-hover transition text-primary">💊 Antibiotics</button>
+                <button onclick="switchTabAndCloseDropdown('theory')" class="w-full text-left px-4 py-2.5 text-sm font-semibold rounded-lg hover:bg-muted-hover transition text-primary">🧠 Theory</button>
+                <button onclick="switchTabAndCloseDropdown('ask-ai')" class="w-full text-left px-4 py-2.5 text-sm font-semibold rounded-lg hover:bg-muted-hover transition text-secondary opacity-60">🤖 Ask AI</button>
+                <hr class="my-1 mx-2 border-muted">
+                <button onclick="document.getElementById('tabDropdown').classList.add('hidden');openBookmarksModal()" class="w-full text-left px-4 py-2.5 text-sm font-semibold rounded-lg hover:bg-muted-hover transition text-primary">🔖 Bookmarks</button>
+            </div>
             <div class="flex gap-1 flex-1 overflow-x-auto scrollbar-none" style="scrollbar-width:none;">
                 <button onclick="switchTab('papers')" id="tabBtn_papers" class="shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-accent text-white shadow-sm">📄<span class="hidden sm:inline ml-1">Papers</span></button>
                 <button onclick="switchTab('guidelines')" id="tabBtn_guidelines" class="shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-transparent text-secondary hover:bg-muted-hover">📋<span class="hidden sm:inline ml-1">Guidelines</span></button>
@@ -546,6 +569,24 @@ async def render_dashboard_portal(request: Request):
                 toggleSidebar();
                 switchTab(tab);
             }}
+            function toggleTabDropdown() {{
+                var dd = document.getElementById('tabDropdown');
+                var isOpen = !dd.classList.contains('hidden');
+                dd.classList.toggle('hidden', isOpen);
+                if (!isOpen) {{
+                    var close = function(e) {{
+                        if (!dd.contains(e.target) && !e.target.closest('#tabDropdown')) {{
+                            dd.classList.add('hidden');
+                            document.removeEventListener('click', close);
+                        }}
+                    }};
+                    setTimeout(function() {{ document.addEventListener('click', close); }}, 10);
+                }}
+            }}
+            function switchTabAndCloseDropdown(tab) {{
+                document.getElementById('tabDropdown').classList.add('hidden');
+                switchTab(tab);
+            }}
 
             // =====================================================================
             // UNIVERSAL SEARCH
@@ -680,13 +721,14 @@ async def render_dashboard_portal(request: Request):
             function openBookmarksModal() {{
                 document.getElementById('bookmarksOverlay').classList.remove('hidden');
                 document.getElementById('bookmarksModal').classList.remove('hidden');
+                document.getElementById('bookmarkSearchInput').value = '';
                 renderBookmarksList();
             }}
             function closeBookmarksModal() {{
                 document.getElementById('bookmarksOverlay').classList.add('hidden');
                 document.getElementById('bookmarksModal').classList.add('hidden');
             }}
-            function renderBookmarksList() {{
+            function renderBookmarksList(filter) {{
                 var bookmarks = loadBookmarks();
                 var container = document.getElementById('bookmarksList');
                 if (!bookmarks.length) {{
@@ -694,6 +736,14 @@ async def render_dashboard_portal(request: Request):
                     return;
                 }}
                 bookmarks.sort(function(a, b) {{ return new Date(b.timestamp) - new Date(a.timestamp); }});
+                if (filter) {{
+                    var lf = filter.toLowerCase();
+                    bookmarks = bookmarks.filter(function(b) {{ return (b.title||'').toLowerCase().indexOf(lf) !== -1 || (b.system||'').toLowerCase().indexOf(lf) !== -1 || (b.type||'').toLowerCase().indexOf(lf) !== -1; }});
+                }}
+                if (!bookmarks.length) {{
+                    container.innerHTML = '<p class="text-xs text-secondary text-center py-8">No bookmarks match your search.</p>';
+                    return;
+                }}
                 var html = '';
                 bookmarks.forEach(function(b) {{
                     var icon = b.type === 'pearl' ? '💎' : '📄';
@@ -707,6 +757,10 @@ async def render_dashboard_portal(request: Request):
                     '</div>';
                 }});
                 container.innerHTML = html;
+            }}
+            function filterBookmarks() {{
+                var q = document.getElementById('bookmarkSearchInput').value;
+                renderBookmarksList(q);
             }}
             function removeBookmark(id) {{
                 var bookmarks = loadBookmarks();
@@ -1117,7 +1171,7 @@ async def render_dashboard_portal(request: Request):
                     btn.innerHTML = `
                         <span class="flex items-start justify-between gap-2">
                             <span class="block text-xs md:text-sm leading-snug">${{item.title}}</span>
-                            <span class="bookmark-star shrink-0 text-xs cursor-pointer select-none" onclick="event.stopPropagation();toggleBookmark('${{item.id}}','paper','${{item.title.replace(/'/g, "\\\\'")}}','${{item.system}}')">${{bmIcon}}</span>
+                            <span class="bookmark-star shrink-0 text-xs cursor-pointer select-none" style="${{isBookmarked(item.id) ? 'color:var(--color-accent)' : ''}}" onclick="event.stopPropagation();toggleBookmark('${{item.id}}','paper','${{item.title.replace(/'/g, "\\\\'")}}','${{item.system}}')">${{bmIcon}}</span>
                         </span>
                         <div class="flex gap-2 mt-1 text-[10px] font-bold tracking-wider uppercase" style="color:var(--color-secondary)">
                             <span style="background:${{sysColor}}18;color:${{sysColor}};border:1px solid ${{sysColor}}30;border-radius:0.375rem" class="px-1.5 py-0.5 rounded">${{item.system}}</span>
@@ -1160,7 +1214,8 @@ async def render_dashboard_portal(request: Request):
 
                     let pdfButtonHTML = `<button onclick="exportPDF()" class="w-full sm:w-auto text-center bg-card text-accent font-semibold text-xs px-4 py-2.5 rounded-lg border border-accent shadow-sm transition hover:bg-badge-blue inline-block">📄 Download PDF</button>`;
 
-                    const parsedMarkdownHTML = marked.parse(data.content);
+                    const rawHTML = marked.parse(data.content);
+                    const parsedMarkdownHTML = makeCollapsible(rawHTML);
                     const authorsLine = data.authors && data.authors !== "Unknown Authors" ? `<p class="text-sm italic text-secondary mt-1 font-sans">✍️ Primary Authors: ${{data.authors}}</p>` : "";
 
                     const sysColor = getSystemColor(system);
@@ -1191,6 +1246,28 @@ async def render_dashboard_portal(request: Request):
                     viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">❌ Network connection error: ${{err.message}}</div>`;
                     if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
                 }}
+            }}
+
+            function makeCollapsible(html) {{
+                var parts = html.split(/(<h2[^>]*>[\s\S]*?<\/h2>)/i);
+                if (parts.length < 2) return html;
+                var result = '';
+                if (parts[0].trim()) {{
+                    result += '<div class="summary-content-intro">' + parts[0] + '</div>';
+                }}
+                var first = true;
+                for (var i = 1; i < parts.length; i += 2) {{
+                    var headingTag = parts[i];
+                    var content = parts[i + 1] || '';
+                    var textMatch = headingTag.match(/>([^<]*)</);
+                    var titleText = textMatch ? textMatch[1] : 'Section';
+                    result += '<details class="summary-section"' + (first ? ' open' : '') + '>' +
+                        '<summary class="summary-heading">' + titleText + '</summary>' +
+                        '<div class="summary-content">' + content.replace(headingTag, '') + '</div>' +
+                        '</details>';
+                    first = false;
+                }}
+                return result;
             }}
 
             function exportPDF() {{
@@ -1276,7 +1353,7 @@ async def render_dashboard_portal(request: Request):
                         + ' style="border-left:4px solid ' + sysColor + '">'
                         + '<span class="flex items-start justify-between gap-2">'
                         + '<span class="leading-snug">' + truncated + '</span>'
-                        + '<span class="bookmark-star shrink-0 text-xs cursor-pointer select-none" onclick="event.stopPropagation();toggleBookmark(\\'pearl_' + idx + '\\',\\'pearl\\',\\'' + (p.pearl||'').substring(0,40).replace(/'/g, "\\\\'") + '\\',\\'' + (p.system||'') + '\\')">' + bmIcon + '</span>'
+                        + '<span class="bookmark-star shrink-0 text-xs cursor-pointer select-none" style="' + (isBookmarked('pearl_' + idx) ? 'color:var(--color-accent)' : '') + '" onclick="event.stopPropagation();toggleBookmark(\\'pearl_' + idx + '\\',\\'pearl\\',\\'' + (p.pearl||'').substring(0,40).replace(/'/g, "\\\\'") + '\\',\\'' + (p.system||'') + '\\')">' + bmIcon + '</span>'
                         + '</span>'
                         + '<span class="flex gap-1 mt-0.5 text-[9px] font-bold tracking-wider uppercase" style="color:var(--color-secondary)">'
                         + '<span style="background:' + sysColor + '18;color:' + sysColor + ';border:1px solid ' + sysColor + '30;border-radius:0.375rem" class="px-1 py-0.5 rounded">' + (p.system || '') + '</span>'
