@@ -99,7 +99,7 @@ async def render_dashboard_portal(request: Request):
 
     html_content = f"""
     <!DOCTYPE html>
-    <html lang="en">
+    <html lang="en" data-theme="light" data-font-size="md">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -107,171 +107,374 @@ async def render_dashboard_portal(request: Request):
         <script src="https://cdn.tailwindcss.com"></script>
         <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
         <style>
-            body {{ background-color: #FDFBF7; color: #111827; font-family: 'Georgia', serif; }}
-            .custom-scrollbar::-webkit-scrollbar {{ width: 6px; }}
-            .custom-scrollbar::-webkit-scrollbar-track {{ background: #FDFBF7; }}
-            .custom-scrollbar::-webkit-scrollbar-thumb {{ background: #EFECE6; border-radius: 3px; }}
+            :root {{
+                --color-body: #FDFBF7;
+                --color-card: #FFFFFF;
+                --color-muted: #EFECE6;
+                --color-muted-hover: #E2DFD7;
+                --color-active-card: #D7CDB7;
+                --color-nav: #F5F3F0;
+                --color-primary: #111827;
+                --color-secondary: #4B5563;
+                --color-active-text: #5C5346;
+                --color-accent: #1D4ED8;
+                --color-accent-hover: #2563EB;
+                --color-border: #EFECE6;
+                --color-border-dark: #DCD9D2;
+                --color-border-hover: #BDB199;
+                --color-overlay: rgba(0,0,0,0.3);
+                --color-shadow: rgba(0,0,0,0.04);
+                --color-badge-blue-bg: #EFF6FF;
+                --color-badge-blue-text: #1E40AF;
+                --color-badge-blue-border: #DBEAFE;
+                --font-scale: 1;
+            }}
+            [data-theme="dark"] {{
+                --color-body: #0F172A;
+                --color-card: #1E293B;
+                --color-muted: #334155;
+                --color-muted-hover: #475569;
+                --color-active-card: #475569;
+                --color-nav: #1E293B;
+                --color-primary: #F1F5F9;
+                --color-secondary: #94A3B8;
+                --color-active-text: #F1F5F9;
+                --color-accent: #60A5FA;
+                --color-accent-hover: #93C5FD;
+                --color-border: #475569;
+                --color-border-dark: #64748B;
+                --color-border-hover: #94A3B8;
+                --color-overlay: rgba(0,0,0,0.5);
+                --color-shadow: rgba(0,0,0,0.3);
+                --color-badge-blue-bg: #1E3A5F;
+                --color-badge-blue-text: #93C5FD;
+                --color-badge-blue-border: #1E40AF;
+            }}
+            [data-font-size="sm"] {{ --font-scale: 0.85; }}
+            [data-font-size="lg"] {{ --font-scale: 1.15; }}
 
-            .summary-body h2 {{ font-size: 1.5em; font-weight: bold; margin-top: 1.6em; margin-bottom: 0.6em; color: #000000; border-bottom: 1px solid #EFECE6; padding-bottom: 0.4em; font-family: 'Georgia', serif; }}
-            .summary-body h3 {{ font-size: 1.25em; font-weight: bold; margin-top: 1.4em; margin-bottom: 0.5em; color: #111827; font-family: 'Georgia', serif; }}
-            .summary-body p {{ margin-bottom: 1.2em; line-height: 1.65; text-align: justify; font-family: system-ui, -apple-system, sans-serif; color: #111827; }}
+            body {{ background-color: var(--color-body); color: var(--color-primary); font-family: 'Georgia', serif; font-size: calc(16px * var(--font-scale)); }}
+            .bg-body {{ background-color: var(--color-body); }}
+            .bg-card {{ background-color: var(--color-card); }}
+            .bg-muted {{ background-color: var(--color-muted); }}
+            .bg-muted-hover {{ background-color: var(--color-muted-hover); }}
+            .bg-active-card {{ background-color: var(--color-active-card); }}
+            .bg-nav {{ background-color: var(--color-nav); }}
+            .bg-accent {{ background-color: var(--color-accent); }}
+            .bg-badge-blue {{ background-color: var(--color-badge-blue-bg); }}
+            .text-primary {{ color: var(--color-primary); }}
+            .text-secondary {{ color: var(--color-secondary); }}
+            .text-active-card {{ color: var(--color-active-text); }}
+            .text-accent {{ color: var(--color-accent); }}
+            .text-badge-blue {{ color: var(--color-badge-blue-text); }}
+            .border-muted {{ border-color: var(--color-border); }}
+            .border-dark {{ border-color: var(--color-border-dark); }}
+            .border-hover {{ border-color: var(--color-border-hover); }}
+            .border-accent {{ border-color: var(--color-accent); }}
+            .border-badge-blue {{ border-color: var(--color-badge-blue-bg); }}
+            .hover\:bg-muted-hover:hover {{ background-color: var(--color-muted-hover); }}
+            .hover\:bg-body:hover {{ background-color: var(--color-body); }}
+            .hover\:bg-accent-hover:hover {{ background-color: var(--color-accent-hover); }}
+            .hover\:bg-badge-blue:hover {{ background-color: var(--color-badge-blue-bg); }}
+            .hover\:text-accent-hover:hover {{ color: var(--color-accent-hover); }}
+            .hover\:border-dark:hover {{ border-color: var(--color-border-dark); }}
+            .hover\:border-hover:hover {{ border-color: var(--color-border-hover); }}
+            .focus\:ring-accent:focus {{ --tw-ring-color: var(--color-accent); }}
+            .ring-hover {{ --tw-ring-color: var(--color-border-hover); }}
+
+            .custom-scrollbar::-webkit-scrollbar {{ width: 6px; }}
+            .custom-scrollbar::-webkit-scrollbar-track {{ background: var(--color-body); }}
+            .custom-scrollbar::-webkit-scrollbar-thumb {{ background: var(--color-muted); border-radius: 3px; }}
+            .summary-body h2 {{ font-size: 1.5em; font-weight: bold; margin-top: 1.6em; margin-bottom: 0.6em; color: #000000; border-bottom: 1px solid var(--color-border); padding-bottom: 0.4em; font-family: 'Georgia', serif; }}
+            .summary-body h3 {{ font-size: 1.25em; font-weight: bold; margin-top: 1.4em; margin-bottom: 0.5em; color: var(--color-primary); font-family: 'Georgia', serif; }}
+            .summary-body p {{ margin-bottom: 1.2em; line-height: 1.65; text-align: justify; font-family: system-ui, -apple-system, sans-serif; color: var(--color-primary); }}
             .summary-body ul {{ list-style-type: disc !important; margin-left: 1.5em !important; margin-bottom: 1.2em !important; padding-left: 0px !important; }}
             .summary-body ol {{ list-style-type: decimal !important; margin-left: 1.5em !important; margin-bottom: 1.2em !important; padding-left: 0px !important; }}
-            .summary-body li {{ margin-bottom: 0.5em; line-height: 1.6; font-family: system-ui, -apple-system, sans-serif; color: #111827; display: list-item !important; }}
+            .summary-body li {{ margin-bottom: 0.5em; line-height: 1.6; font-family: system-ui, -apple-system, sans-serif; color: var(--color-primary); display: list-item !important; }}
             .summary-body strong {{ color: #000000; font-weight: 700; }}
             .tab-panel {{ display: none; }}
             .tab-panel.active {{ display: block; }}
+            .no-scroll {{ overflow: hidden; }}
+            .scrollbar-none::-webkit-scrollbar {{ display: none; }}
+            .scrollbar-none {{ -ms-overflow-style: none; scrollbar-width: none; }}
+            @keyframes fadeIn {{ from{{opacity:0;transform:translateY(-10px)}} to{{opacity:1;transform:translateY(0)}} }}
+            .modal-animate {{ animation: fadeIn 0.2s ease-out; }}
         </style>
     </head>
     <body class="p-4 md:p-8 max-w-7xl mx-auto">
 
-        <header class="bg-white border border-[#EFECE6] p-5 md:p-6 rounded-2xl shadow-md mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
-            <div class="flex items-start gap-4 w-full sm:w-auto">
-                <div class="w-1 h-12 md:h-16 bg-[#1D4ED8] rounded-full shrink-0 mt-1"></div>
+        <!-- Sidebar Overlay -->
+        <div id="sidebarOverlay" class="fixed inset-0 z-50 bg-black/30 hidden transition-opacity" onclick="toggleSidebar()"></div>
+
+        <!-- Sidebar Drawer -->
+        <div id="sidebar" class="fixed top-0 left-0 z-50 h-full w-72 bg-card shadow-xl border-r border-muted transform -translate-x-full transition-transform duration-300 p-6 overflow-y-auto flex flex-col">
+            <div class="flex justify-between items-start mb-6">
+                <div class="text-lg font-extrabold text-primary">🧠 hack.CCM</div>
+                <button onclick="toggleSidebar()" class="text-xl p-1 hover:bg-muted-hover rounded-lg transition leading-none">✕</button>
+            </div>
+            <nav class="space-y-1 flex-1">
+                <a onclick="switchTabAndClose('papers')" class="block px-4 py-3 rounded-xl hover:bg-muted-hover font-semibold text-primary cursor-pointer transition text-sm">📄 Papers</a>
+                <a onclick="switchTabAndClose('guidelines')" class="block px-4 py-3 rounded-xl hover:bg-muted-hover font-semibold text-primary cursor-pointer transition text-sm">📋 Guidelines</a>
+                <a onclick="switchTabAndClose('pearls')" class="block px-4 py-3 rounded-xl hover:bg-muted-hover font-semibold text-primary cursor-pointer transition text-sm">💡 Pearls</a>
+                <a onclick="switchTabAndClose('antibiotics')" class="block px-4 py-3 rounded-xl hover:bg-muted-hover font-semibold text-primary cursor-pointer transition text-sm">💊 Antibiotics <span class="text-secondary text-[10px] font-normal">(soon)</span></a>
+                <a onclick="switchTabAndClose('theory')" class="block px-4 py-3 rounded-xl hover:bg-muted-hover font-semibold text-primary cursor-pointer transition text-sm">🧠 Theory <span class="text-secondary text-[10px] font-normal">(soon)</span></a>
+                <a onclick="switchTabAndClose('ask-ai')" class="block px-4 py-3 rounded-xl hover:bg-muted-hover font-semibold text-secondary cursor-pointer transition text-sm opacity-60">🤖 Ask AI <span class="text-secondary text-[10px] font-normal">(soon)</span></a>
+            </nav>
+            <hr class="my-4 border-muted">
+            <nav class="space-y-1">
+                <a onclick="openBookmarksModal()" class="block px-4 py-3 rounded-xl hover:bg-muted-hover font-semibold text-primary cursor-pointer transition text-sm">🔖 Bookmarks</a>
+                <a onclick="openAboutModal()" class="block px-4 py-3 rounded-xl hover:bg-muted-hover font-semibold text-primary cursor-pointer transition text-sm">ℹ️ About</a>
+                <a onclick="openSettingsModal()" class="block px-4 py-3 rounded-xl hover:bg-muted-hover font-semibold text-primary cursor-pointer transition text-sm">⚙️ Settings</a>
+            </nav>
+            <hr class="my-4 border-muted">
+            <nav class="space-y-1">
+                <a href="{FEEDBACK_FORM_URL}" target="_blank" class="block px-4 py-2 rounded-xl hover:bg-muted-hover text-secondary cursor-pointer transition text-sm">📝 Feedback</a>
+                <a href="{SUBSCRIBE_FORM_URL}" target="_blank" class="block px-4 py-2 rounded-xl hover:bg-muted-hover text-secondary cursor-pointer transition text-sm">📢 Subscribe</a>
+                <a href="{UNSUBSCRIBE_FORM_URL}" target="_blank" class="block px-4 py-2 rounded-xl hover:bg-muted-hover text-secondary cursor-pointer transition text-sm">❌ Unsubscribe</a>
+            </nav>
+            <hr class="my-4 border-muted">
+            <a onclick="toast('🔑 Login — coming in a future update')" class="block px-4 py-2 rounded-xl text-secondary opacity-50 cursor-pointer transition text-sm hover:bg-muted-hover">🔑 Login <span class="text-[10px]">(future)</span></a>
+        </div>
+
+        <!-- Universal Search Modal -->
+        <div id="searchOverlay" class="fixed inset-0 z-50 bg-black/30 hidden" onclick="closeUniversalSearch()"></div>
+        <div id="searchModal" class="modal-animate fixed top-[15%] left-1/2 -translate-x-1/2 w-[90%] max-w-2xl z-50 bg-card rounded-2xl shadow-2xl border border-muted max-h-[65vh] flex flex-col hidden">
+            <div class="p-4 border-b border-muted flex items-center gap-3">
+                <span class="text-lg">🔍</span>
+                <input type="text" id="universalSearchInput" placeholder="Search Papers, Guidelines, Pearls..." class="flex-1 text-sm sm:text-base bg-transparent border-none outline-none text-primary" oninput="performUniversalSearch(this.value)">
+                <button onclick="closeUniversalSearch()" class="text-lg p-1 hover:bg-muted-hover rounded-lg transition leading-none">✕</button>
+            </div>
+            <div id="universalSearchResults" class="flex-1 overflow-y-auto p-4 space-y-4">
+                <p class="text-xs text-secondary text-center py-8">Type to search across all content...</p>
+            </div>
+        </div>
+
+        <!-- Bookmarks Modal -->
+        <div id="bookmarksOverlay" class="fixed inset-0 z-50 bg-black/30 hidden" onclick="closeBookmarksModal()"></div>
+        <div id="bookmarksModal" class="modal-animate fixed top-[15%] left-1/2 -translate-x-1/2 w-[90%] max-w-xl z-50 bg-card rounded-2xl shadow-2xl border border-muted max-h-[65vh] flex flex-col hidden">
+            <div class="p-4 border-b border-muted flex justify-between items-center">
+                <h3 class="text-sm font-bold text-primary">🔖 Bookmarks</h3>
+                <button onclick="closeBookmarksModal()" class="text-lg p-1 hover:bg-muted-hover rounded-lg transition leading-none">✕</button>
+            </div>
+            <div id="bookmarksList" class="flex-1 overflow-y-auto p-4 space-y-2">
+                <p class="text-xs text-secondary text-center py-8">Loading...</p>
+            </div>
+        </div>
+
+        <!-- About Modal -->
+        <div id="aboutOverlay" class="fixed inset-0 z-50 bg-black/30 hidden" onclick="closeAboutModal()"></div>
+        <div id="aboutModal" class="modal-animate fixed top-[20%] left-1/2 -translate-x-1/2 w-[90%] max-w-md z-50 bg-card rounded-2xl shadow-2xl border border-muted p-6 hidden">
+            <div class="flex justify-between items-start mb-4">
+                <h3 class="text-lg font-extrabold text-primary">🧠 hack.CCM</h3>
+                <button onclick="closeAboutModal()" class="text-lg p-1 hover:bg-muted-hover rounded-lg transition leading-none">✕</button>
+            </div>
+            <p class="text-sm text-secondary mb-4">Critical Care Knowledge Portal — a curated repository of critical care publications, guidelines, and clinical pearls for rapid point-of-care reference.</p>
+            <p class="text-xs text-secondary">Version 2.0</p>
+        </div>
+
+        <!-- Settings Modal -->
+        <div id="settingsOverlay" class="fixed inset-0 z-50 bg-black/30 hidden" onclick="closeSettingsModal()"></div>
+        <div id="settingsModal" class="modal-animate fixed top-[15%] left-1/2 -translate-x-1/2 w-[90%] max-w-md z-50 bg-card rounded-2xl shadow-2xl border border-muted p-6 hidden">
+            <div class="flex justify-between items-start mb-6">
+                <h3 class="text-lg font-bold text-primary">⚙️ Settings</h3>
+                <button onclick="closeSettingsModal()" class="text-lg p-1 hover:bg-muted-hover rounded-lg transition leading-none">✕</button>
+            </div>
+            <div class="space-y-6">
                 <div>
-                    <div class="text-2xl md:text-4xl font-extrabold tracking-tight text-[#111827]">🧠 hack.CCM</div>
-                    <div class="text-sm md:text-base font-medium text-[#4B5563] tracking-wide">Critical Care Knowledge Portal</div>
+                    <label class="block text-sm font-bold text-primary mb-3">🌙 Dark Mode</label>
+                    <div class="flex gap-3">
+                        <button onclick="setTheme('light')" id="themeBtn_light" class="flex-1 px-4 py-2.5 text-sm font-semibold rounded-xl border-2 transition-all bg-card text-primary border-dark hover:bg-muted-hover">☀️ Light</button>
+                        <button onclick="setTheme('dark')" id="themeBtn_dark" class="flex-1 px-4 py-2.5 text-sm font-semibold rounded-xl border-2 transition-all bg-accent text-white border-accent">🌙 Dark</button>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-bold text-primary mb-3">🔤 Font Size</label>
+                    <div class="flex gap-3">
+                        <button onclick="setFontSize('sm')" id="fontBtn_sm" class="flex-1 px-4 py-2.5 text-sm font-semibold rounded-xl border-2 transition-all bg-card text-primary border-dark hover:bg-muted-hover">A⁻ Small</button>
+                        <button onclick="setFontSize('md')" id="fontBtn_md" class="flex-1 px-4 py-2.5 text-sm font-semibold rounded-xl border-2 transition-all bg-accent text-white border-accent">A Medium</button>
+                        <button onclick="setFontSize('lg')" id="fontBtn_lg" class="flex-1 px-4 py-2.5 text-sm font-semibold rounded-xl border-2 transition-all bg-card text-primary border-dark hover:bg-muted-hover">A⁺ Large</button>
+                    </div>
+                </div>
+                <p class="text-xs text-secondary text-center pt-2">Preferences are saved automatically.</p>
+            </div>
+        </div>
+
+        <!-- Toast container -->
+        <div id="toastContainer" class="fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] hidden"></div>
+
+        <header class="bg-card border border-muted p-5 md:p-6 rounded-2xl shadow-md mb-6 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div class="flex items-start gap-4 w-full sm:w-auto">
+                <button onclick="toggleSidebar()" class="shrink-0 text-xl md:text-2xl p-1 -ml-1 mt-0.5 hover:bg-muted-hover rounded-lg transition leading-none" title="Menu">☰</button>
+                <div class="w-1 h-12 md:h-16 bg-accent rounded-full shrink-0 mt-1"></div>
+                <div>
+                    <div class="text-2xl md:text-4xl font-extrabold tracking-tight text-primary">🧠 hack.CCM</div>
+                    <div class="text-sm md:text-base font-medium text-secondary tracking-wide">Critical Care Knowledge Portal</div>
                 </div>
             </div>
             <nav class="flex flex-wrap gap-2 md:gap-3 text-xs md:text-sm font-semibold">
-                <a href="{FEEDBACK_FORM_URL}" target="_blank" class="bg-[#F5F3F0] px-3 py-1.5 rounded-lg text-[#1D4ED8] hover:bg-[#EFECE6] hover:text-[#2563EB] transition">📝 Feedback</a>
-                <a href="{SUBSCRIBE_FORM_URL}" target="_blank" class="bg-[#F5F3F0] px-3 py-1.5 rounded-lg text-[#1D4ED8] hover:bg-[#EFECE6] hover:text-[#2563EB] transition">📢 Subscribe</a>
-                <a href="{UNSUBSCRIBE_FORM_URL}" target="_blank" class="bg-[#F5F3F0] px-3 py-1.5 rounded-lg text-[#1D4ED8] hover:bg-[#EFECE6] hover:text-[#2563EB] transition">❌ Unsubscribe</a>
+                <a href="{FEEDBACK_FORM_URL}" target="_blank" class="bg-nav px-3 py-1.5 rounded-lg text-accent hover:bg-muted-hover hover:text-accent-hover transition">📝 Feedback</a>
+                <a href="{SUBSCRIBE_FORM_URL}" target="_blank" class="bg-nav px-3 py-1.5 rounded-lg text-accent hover:bg-muted-hover hover:text-accent-hover transition">📢 Subscribe</a>
+                <a href="{UNSUBSCRIBE_FORM_URL}" target="_blank" class="bg-nav px-3 py-1.5 rounded-lg text-accent hover:bg-muted-hover hover:text-accent-hover transition">❌ Unsubscribe</a>
             </nav>
         </header>
 
-        <div id="dailyPaperPanel" class="bg-white border border-[#EFECE6] p-4 rounded-xl shadow-sm mb-4 cursor-pointer transition hover:bg-[#FDFBF7] hover:border-[#DCD9D2]" onclick="openDailyPaper()">
+        <div id="dailyPaperPanel" class="bg-card border border-muted p-4 rounded-xl shadow-sm mb-4 cursor-pointer transition hover:bg-body hover:border-dark" onclick="openDailyPaper()">
             <div class="flex items-start gap-3">
                 <div class="text-2xl shrink-0 mt-0.5">⭐</div>
                 <div class="flex-1 min-w-0">
-                    <div class="text-[10px] font-bold tracking-wider text-[#4B5563] uppercase mb-1">📌 Paper of the Day</div>
-                    <div id="dailyPaperTitle" class="text-sm font-bold text-[#111827] leading-snug">Loading...</div>
-                    <div id="dailyPaperMeta" class="text-xs text-[#4B5563] mt-1 space-x-2">
+                    <div class="text-[10px] font-bold tracking-wider text-secondary uppercase mb-1">📌 Paper of the Day</div>
+                    <div id="dailyPaperTitle" class="text-sm font-bold text-primary leading-snug">Loading...</div>
+                    <div id="dailyPaperMeta" class="text-xs text-secondary mt-1 space-x-2">
                         <span id="dailyPaperAuthors" class="italic"></span>
-                        <span id="dailyPaperSystem" class="bg-[#EFECE6] px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
-                        <span id="dailyPaperType" class="bg-[#EFECE6] px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
+                        <span id="dailyPaperSystem" class="bg-muted px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
+                        <span id="dailyPaperType" class="bg-muted px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
                     </div>
                 </div>
-                <div class="text-xs font-semibold text-[#1D4ED8] shrink-0 self-center hover:underline">Read →</div>
+                <div class="text-xs font-semibold text-accent shrink-0 self-center hover:underline">Read →</div>
             </div>
         </div>
 
-        <div id="dailyPearlPanel" class="bg-white border border-[#EFECE6] p-4 rounded-xl shadow-sm mb-4 cursor-pointer transition hover:bg-[#FDFBF7] hover:border-[#DCD9D2]" onclick="openDailyPearl()">
+        <div id="dailyPearlPanel" class="bg-card border border-muted p-4 rounded-xl shadow-sm mb-4 cursor-pointer transition hover:bg-body hover:border-dark" onclick="openDailyPearl()">
             <div class="flex items-start gap-3">
                 <div class="text-2xl shrink-0 mt-0.5">💎</div>
                 <div class="flex-1 min-w-0">
-                    <div class="text-[10px] font-bold tracking-wider text-[#4B5563] uppercase mb-1">💎 Pearl of the Day</div>
-                    <div id="dailyPearlText" class="text-sm font-bold text-[#111827] leading-snug">Loading...</div>
-                    <div id="dailyPearlMeta" class="text-xs text-[#4B5563] mt-1 space-x-2">
-                        <span id="dailyPearlSystem" class="bg-[#EFECE6] px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
-                        <span id="dailyPearlType" class="bg-[#EFECE6] px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
+                    <div class="text-[10px] font-bold tracking-wider text-secondary uppercase mb-1">💎 Pearl of the Day</div>
+                    <div id="dailyPearlText" class="text-sm font-bold text-primary leading-snug">Loading...</div>
+                    <div id="dailyPearlMeta" class="text-xs text-secondary mt-1 space-x-2">
+                        <span id="dailyPearlSystem" class="bg-muted px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
+                        <span id="dailyPearlType" class="bg-muted px-1.5 py-0.5 rounded text-[10px] font-bold uppercase"></span>
                         <span id="dailyPearlSource" class="italic"></span>
                     </div>
                 </div>
-                <div class="text-xs font-semibold text-[#1D4ED8] shrink-0 self-center hover:underline">Read →</div>
+                <div class="text-xs font-semibold text-accent shrink-0 self-center hover:underline">Read →</div>
             </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-3 mb-6" style="font-family: system-ui, sans-serif;">
-            <button onclick="switchTab('papers')" id="tabBtn_papers" class="w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all shadow-lg bg-[#1D4ED8] text-white border-[#1D4ED8]">📄 Papers</button>
-            <button onclick="switchTab('guidelines')" id="tabBtn_guidelines" class="w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all bg-white text-[#4B5563] border-[#DCD9D2] hover:bg-[#EFECE6] hover:border-[#BDB199] hover:shadow-md">📋 Guidelines</button>
-            <button onclick="switchTab('pearls')" id="tabBtn_pearls" class="w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all bg-white text-[#4B5563] border-[#DCD9D2] hover:bg-[#EFECE6] hover:border-[#BDB199] hover:shadow-md">💡 Pearls</button>
-        </div>
+        <nav id="stickyTabBar" class="sticky top-0 z-40 bg-card/95 backdrop-blur-md border-b border-muted shadow-sm mb-6 -mx-4 md:-mx-8 px-4 md:px-8 flex items-center gap-1 py-2 scrollbar-none" style="font-family: system-ui, sans-serif;">
+            <button onclick="toggleSidebar()" class="shrink-0 p-1.5 rounded-lg hover:bg-muted-hover transition text-lg leading-none" title="Menu">☰</button>
+            <div class="flex gap-1 flex-1 overflow-x-auto scrollbar-none" style="scrollbar-width:none;">
+                <button onclick="switchTab('papers')" id="tabBtn_papers" class="shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-accent text-white shadow-sm">📄<span class="hidden sm:inline ml-1">Papers</span></button>
+                <button onclick="switchTab('guidelines')" id="tabBtn_guidelines" class="shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-transparent text-secondary hover:bg-muted-hover">📋<span class="hidden sm:inline ml-1">Guidelines</span></button>
+                <button onclick="switchTab('pearls')" id="tabBtn_pearls" class="shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-transparent text-secondary hover:bg-muted-hover">💡<span class="hidden sm:inline ml-1">Pearls</span></button>
+                <button onclick="switchTab('antibiotics')" id="tabBtn_antibiotics" class="shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-transparent text-secondary hover:bg-muted-hover">💊<span class="hidden sm:inline ml-1">Antibiotics</span></button>
+                <button onclick="switchTab('theory')" id="tabBtn_theory" class="shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-transparent text-secondary hover:bg-muted-hover">🧠<span class="hidden sm:inline ml-1">Theory</span></button>
+                <button onclick="switchTab('ask-ai')" id="tabBtn_ask-ai" class="shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-transparent text-secondary hover:bg-muted-hover opacity-60">🤖<span class="hidden sm:inline ml-1">Ask AI</span></button>
+            </div>
+            <button onclick="openUniversalSearch()" class="shrink-0 p-1.5 rounded-lg hover:bg-muted-hover transition text-lg leading-none" title="Search (Ctrl+K)">🔍</button>
+        </nav>
 
         <main class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="space-y-6">
-                <div class="bg-[#EFECE6] p-5 rounded-2xl border border-[#DCD9D2]">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-3">📊 Portal Status</h3>
+                <div class="bg-muted p-5 rounded-2xl border border-dark">
+                    <h3 class="text-xs font-bold tracking-wider text-secondary uppercase mb-3">📊 Portal Status</h3>
                     <div class="flex gap-3">
-                        <span class="bg-white px-3 py-1.5 rounded-lg text-xs font-bold border border-[#DCD9D2]"><span id="statusIcon">📋</span> <span id="statusCount">0</span> <span id="statusLabel">Papers</span></span>
-                        <span class="bg-white px-3 py-1.5 rounded-lg text-xs font-bold border border-[#DCD9D2]">🧬 <span id="statusSystems">0</span> Specialties</span>
+                        <span class="bg-card px-3 py-1.5 rounded-lg text-xs font-bold border border-dark"><span id="statusIcon">📋</span> <span id="statusCount">0</span> <span id="statusLabel">Papers</span></span>
+                        <span class="bg-card px-3 py-1.5 rounded-lg text-xs font-bold border border-dark">🧬 <span id="statusSystems">0</span> Specialties</span>
                     </div>
                 </div>
 
                 <!-- Papers Filter Panel -->
-                <div id="filterPanel_papers" class="tab-panel active bg-[#EFECE6] p-5 rounded-2xl border border-[#DCD9D2] space-y-4">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-1">🔍 Filter Papers</h3>
+                <div id="filterPanel_papers" class="tab-panel active bg-muted p-5 rounded-2xl border border-dark space-y-4">
+                    <h3 class="text-xs font-bold tracking-wider text-secondary uppercase mb-1">🔍 Filter Papers</h3>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Keywords Search</label>
+                        <label class="block text-xs font-bold mb-1 text-secondary">Keywords Search</label>
                         <div style="position:relative;">
-                            <input type="text" id="titleSearch_papers" onkeyup="onSearchInput('papers')" placeholder="Type keywords..." class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition pr-8">
-                            <button id="clearSearch_papers" onclick="clearSearch('papers')" style="display:none; position:absolute; right:6px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:14px; color:#4B5563; padding:4px; line-height:1;">✕</button>
+                            <input type="text" id="titleSearch_papers" onkeyup="onSearchInput('papers')" placeholder="Type keywords..." class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition pr-8">
+                            <button id="clearSearch_papers" onclick="clearSearch('papers')" style="display:none; position:absolute; right:6px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:14px; color:var(--color-secondary); padding:4px; line-height:1;">✕</button>
                         </div>
                         <label class="flex items-center gap-2 mt-2 cursor-pointer">
-                            <input type="checkbox" id="fulltextToggle_papers" onchange="onFullTextToggle('papers')" class="rounded border-[#DCD9D2] text-[#1D4ED8] focus:ring-[#1D4ED8]">
-                            <span class="text-[10px] font-bold text-[#4B5563] uppercase tracking-wider">🔍 Search full text</span>
+                            <input type="checkbox" id="fulltextToggle_papers" onchange="onFullTextToggle('papers')" class="rounded border-dark text-accent focus:ring-accent">
+                            <span class="text-[10px] font-bold text-secondary uppercase tracking-wider">🔍 Search full text</span>
                         </label>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Specialty Group</label>
-                        <select id="systemFilter_papers" onchange="executeClientSideFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
+                        <label class="block text-xs font-bold mb-1 text-secondary">Specialty Group</label>
+                        <select id="systemFilter_papers" onchange="executeClientSideFilter()" class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition">
                             <option value="All">All Specialties</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Subtype</label>
-                        <select id="typeFilter_papers" onchange="executeClientSideFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
+                        <label class="block text-xs font-bold mb-1 text-secondary">Subtype</label>
+                        <select id="typeFilter_papers" onchange="executeClientSideFilter()" class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition">
                             <option value="All">All Types</option>
                         </select>
                     </div>
                 </div>
 
                 <!-- Guidelines Filter Panel -->
-                <div id="filterPanel_guidelines" class="tab-panel bg-[#EFECE6] p-5 rounded-2xl border border-[#DCD9D2] space-y-4">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-1">🔍 Filter Guidelines</h3>
+                <div id="filterPanel_guidelines" class="tab-panel bg-muted p-5 rounded-2xl border border-dark space-y-4">
+                    <h3 class="text-xs font-bold tracking-wider text-secondary uppercase mb-1">🔍 Filter Guidelines</h3>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Keywords Search</label>
+                        <label class="block text-xs font-bold mb-1 text-secondary">Keywords Search</label>
                         <div style="position:relative;">
-                            <input type="text" id="titleSearch_guidelines" onkeyup="onSearchInput('guidelines')" placeholder="Type keywords..." class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition pr-8">
-                            <button id="clearSearch_guidelines" onclick="clearSearch('guidelines')" style="display:none; position:absolute; right:6px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:14px; color:#4B5563; padding:4px; line-height:1;">✕</button>
+                            <input type="text" id="titleSearch_guidelines" onkeyup="onSearchInput('guidelines')" placeholder="Type keywords..." class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition pr-8">
+                            <button id="clearSearch_guidelines" onclick="clearSearch('guidelines')" style="display:none; position:absolute; right:6px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:14px; color:var(--color-secondary); padding:4px; line-height:1;">✕</button>
                         </div>
                         <label class="flex items-center gap-2 mt-2 cursor-pointer">
-                            <input type="checkbox" id="fulltextToggle_guidelines" onchange="onFullTextToggle('guidelines')" class="rounded border-[#DCD9D2] text-[#1D4ED8] focus:ring-[#1D4ED8]">
-                            <span class="text-[10px] font-bold text-[#4B5563] uppercase tracking-wider">🔍 Search full text</span>
+                            <input type="checkbox" id="fulltextToggle_guidelines" onchange="onFullTextToggle('guidelines')" class="rounded border-dark text-accent focus:ring-accent">
+                            <span class="text-[10px] font-bold text-secondary uppercase tracking-wider">🔍 Search full text</span>
                         </label>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">System</label>
-                        <select id="systemFilter_guidelines" onchange="executeClientSideFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
+                        <label class="block text-xs font-bold mb-1 text-secondary">System</label>
+                        <select id="systemFilter_guidelines" onchange="executeClientSideFilter()" class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition">
                             <option value="All">All Systems</option>
                         </select>
                     </div>
                 </div>
 
                 <!-- Pearls Filter Panel -->
-                <div id="filterPanel_pearls" class="tab-panel bg-[#EFECE6] p-5 rounded-2xl border border-[#DCD9D2] space-y-4">
-                    <h3 class="text-xs font-bold tracking-wider text-[#4B5563] uppercase mb-1">🔍 Filter Pearls</h3>
+                <div id="filterPanel_pearls" class="tab-panel bg-muted p-5 rounded-2xl border border-dark space-y-4">
+                    <h3 class="text-xs font-bold tracking-wider text-secondary uppercase mb-1">🔍 Filter Pearls</h3>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Keywords Search</label>
+                        <label class="block text-xs font-bold mb-1 text-secondary">Keywords Search</label>
                         <div style="position:relative;">
-                            <input type="text" id="topicSearch_pearls" oninput="onPearlSearchInput()" placeholder="Search topic or pearl text..." class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition pr-8">
-                            <button id="clearPearlSearch" onclick="clearPearlSearch()" style="display:none; position:absolute; right:6px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:14px; color:#4B5563; padding:4px; line-height:1;">✕</button>
+                            <input type="text" id="topicSearch_pearls" oninput="onPearlSearchInput()" placeholder="Search topic or pearl text..." class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition pr-8">
+                            <button id="clearPearlSearch" onclick="clearPearlSearch()" style="display:none; position:absolute; right:6px; top:50%; transform:translateY(-50%); background:none; border:none; cursor:pointer; font-size:14px; color:var(--color-secondary); padding:4px; line-height:1;">✕</button>
                         </div>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Specialty Group</label>
-                        <select id="systemFilter_pearls" onchange="executePearlsFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
+                        <label class="block text-xs font-bold mb-1 text-secondary">Specialty Group</label>
+                        <select id="systemFilter_pearls" onchange="executePearlsFilter()" class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition">
                             <option value="All">All Specialties</option>
                         </select>
                     </div>
                     <div>
-                        <label class="block text-xs font-bold mb-1 text-[#4B5563]">Subtype</label>
-                        <select id="typeFilter_pearls" onchange="executePearlsFilter()" class="w-full bg-white text-[#111827] text-sm p-2.5 rounded-lg border border-[#DCD9D2] focus:outline-none focus:ring-2 focus:ring-[#1D4ED8] transition">
+                        <label class="block text-xs font-bold mb-1 text-secondary">Subtype</label>
+                        <select id="typeFilter_pearls" onchange="executePearlsFilter()" class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition">
                             <option value="All">All Types</option>
                         </select>
                     </div>
-                    <div class="text-xs font-semibold text-[#4B5563]" id="pearlCountDisplay">Select filters above</div>
+                    <div class="text-xs font-semibold text-secondary" id="pearlCountDisplay">Select filters above</div>
+                </div>
+
+                <!-- Antibiotics Filter Panel -->
+                <div id="filterPanel_antibiotics" class="tab-panel bg-muted p-5 rounded-2xl border border-dark space-y-4">
+                    <h3 class="text-xs font-bold tracking-wider text-secondary uppercase">💊 Antibiotics</h3>
+                    <p class="text-xs text-secondary">Coming soon</p>
+                </div>
+
+                <!-- Theory Filter Panel -->
+                <div id="filterPanel_theory" class="tab-panel bg-muted p-5 rounded-2xl border border-dark space-y-4">
+                    <h3 class="text-xs font-bold tracking-wider text-secondary uppercase">🧠 Theory</h3>
+                    <p class="text-xs text-secondary">Coming soon</p>
+                </div>
+
+                <!-- Ask AI Filter Panel -->
+                <div id="filterPanel_ask-ai" class="tab-panel bg-muted p-5 rounded-2xl border border-dark space-y-4">
+                    <h3 class="text-xs font-bold tracking-wider text-secondary uppercase">🤖 Ask AI</h3>
+                    <p class="text-xs text-secondary">Coming soon</p>
                 </div>
 
                 <div class="space-y-2">
-                    <h3 id="deckLabel" class="text-xs font-bold tracking-wider text-[#4B5563] uppercase px-2">📑 Document Selector</h3>
+                    <h3 id="deckLabel" class="text-xs font-bold tracking-wider text-secondary uppercase px-2">📑 Document Selector</h3>
                     <div id="articlesListDeck" class="max-h-[450px] overflow-y-auto custom-scrollbar space-y-2 pr-1"></div>
                 </div>
             </div>
 
             <div class="md:col-span-2">
-                <div id="documentSheetContainer" class="bg-white border border-[#EFECE6] p-6 md:p-8 rounded-2xl shadow-xs min-h-[550px]">
-                    <div class="text-center py-24 text-[#4B5563]">
+                <div id="documentSheetContainer" class="bg-card border border-muted p-6 md:p-8 rounded-2xl shadow-xs min-h-[550px]">
+                    <div class="text-center py-24 text-secondary">
                         <p class="text-sm md:text-lg font-medium">👋 Welcome to hack.CCM Repository</p>
                         <p class="text-xs md:text-sm mt-1">Select a publication entry card from the index frame to unpack formatting layers.</p>
                     </div>
@@ -285,6 +488,278 @@ async def render_dashboard_portal(request: Request):
             const pearlSystems = {json.dumps(pearl_systems)};
             const pearlTypes = {json.dumps(pearl_types)};
             const paperToFile = {json.dumps(paper_to_file)};
+
+            // =====================================================================
+            // SPECIALTY COLOR MAP
+            // =====================================================================
+            const SYSTEM_COLOR_MAP = {{
+                "Cardiology": "#EF4444", "Neurology": "#8B5CF6", "Nephrology": "#F59E0B",
+                "Pulmonology": "#3B82F6", "Gastroenterology": "#10B981", "Infectious Diseases": "#EC4899",
+                "Hematology": "#E11D48", "Hepatology": "#14B8A6", "Immunology": "#A855F7",
+                "Sepsis": "#F97316", "Trauma": "#DC2626", "Endocrinology": "#06B6D4",
+                "General": "#6B7280", "Multi-system": "#6366F1", "Multisystem": "#6366F1",
+                "Nutrition": "#84CC16", "Obstetrics and Gynecology": "#D946EF", "Rheumatology": "#0EA5E9",
+                "Toxicology": "#7C3AED", "Oncology": "#059669", "Surgery": "#D97706", "Other": "#9333EA"
+            }};
+            function getSystemColor(system) {{ return SYSTEM_COLOR_MAP[system] || '#6B7280'; }}
+
+            // =====================================================================
+            // BOOKMARKS (localStorage)
+            // =====================================================================
+            function loadBookmarks() {{
+                try {{ return JSON.parse(localStorage.getItem('hackCCM_bookmarks')) || []; }} catch(e) {{ return []; }}
+            }}
+            function saveBookmarks(bookmarks) {{
+                localStorage.setItem('hackCCM_bookmarks', JSON.stringify(bookmarks));
+            }}
+            function isBookmarked(id) {{
+                return loadBookmarks().some(function(b) {{ return b.id === id; }});
+            }}
+            function toggleBookmark(id, type, title, system) {{
+                var bookmarks = loadBookmarks();
+                var idx = -1;
+                bookmarks.some(function(b, i) {{ if (b.id === id) {{ idx = i; return true; }} return false; }});
+                if (idx !== -1) {{
+                    bookmarks.splice(idx, 1);
+                }} else {{
+                    bookmarks.push({{id:id, type:type, title:title, system:system, timestamp:new Date().toISOString()}});
+                }}
+                saveBookmarks(bookmarks);
+                // Re-render current view to reflect bookmark star
+                if (activeTab === 'pearls') {{ renderPearlList(); renderPearl(); }}
+                else if (activeTab === 'papers' || activeTab === 'guidelines') {{ executeClientSideFilter(); }}
+            }}
+
+            // =====================================================================
+            // SIDEBAR
+            // =====================================================================
+            function toggleSidebar() {{
+                var sidebar = document.getElementById('sidebar');
+                var overlay = document.getElementById('sidebarOverlay');
+                var open = sidebar.classList.contains('translate-x-0');
+                sidebar.classList.toggle('-translate-x-full', open);
+                sidebar.classList.toggle('translate-x-0', !open);
+                overlay.classList.toggle('hidden', open);
+                document.body.classList.toggle('no-scroll', !open);
+            }}
+            function switchTabAndClose(tab) {{
+                toggleSidebar();
+                switchTab(tab);
+            }}
+
+            // =====================================================================
+            // UNIVERSAL SEARCH
+            // =====================================================================
+            function openUniversalSearch() {{
+                document.getElementById('searchOverlay').classList.remove('hidden');
+                document.getElementById('searchModal').classList.remove('hidden');
+                document.getElementById('universalSearchInput').value = '';
+                document.getElementById('universalSearchResults').innerHTML = '<p class="text-xs text-secondary text-center py-8">Type to search across all content...</p>';
+                setTimeout(function() {{ document.getElementById('universalSearchInput').focus(); }}, 100);
+            }}
+            function closeUniversalSearch() {{
+                document.getElementById('searchOverlay').classList.add('hidden');
+                document.getElementById('searchModal').classList.add('hidden');
+            }}
+            function performUniversalSearch(q) {{
+                if (q.length < 2) {{
+                    document.getElementById('universalSearchResults').innerHTML = '<p class="text-xs text-secondary text-center py-8">Type at least 2 characters...</p>';
+                    return;
+                }}
+                var lq = q.toLowerCase();
+                var paperRes = baseDataset.filter(function(i) {{ return i.type.toLowerCase() !== 'guideline' && i.title.toLowerCase().indexOf(lq) !== -1; }});
+                var guidelineRes = baseDataset.filter(function(i) {{ return i.type.toLowerCase() === 'guideline' && i.title.toLowerCase().indexOf(lq) !== -1; }});
+                var pearlRes = allPearls.filter(function(p) {{
+                    return (p.pearl && p.pearl.toLowerCase().indexOf(lq) !== -1) ||
+                           (p.topic && p.topic.toLowerCase().indexOf(lq) !== -1) ||
+                           (p.system && p.system.toLowerCase().indexOf(lq) !== -1);
+                }});
+                renderUniversalResults(paperRes, guidelineRes, pearlRes);
+            }}
+            function renderUniversalResults(papers, guidelines, pearls) {{
+                var html = '';
+                if (papers.length) {{
+                    html += '<div class="mb-3"><h4 class="text-xs font-bold text-secondary uppercase tracking-wider mb-2">📋 Papers (' + papers.length + ')</h4>';
+                    papers.forEach(function(item) {{
+                        var bm = isBookmarked(item.id) ? '★' : '☆';
+                        html += '<div onclick="closeUniversalSearch();switchTab(\\'papers\\');fetchActiveDocumentSummary(\\'' + item.id + '\\',\\'' + item.file_name.replace(/'/g,"") + '\\',\\'' + item.title.replace(/'/g,"\\\\'") + '\\',\\'' + item.doi.replace(/'/g,"") + '\\',\\'' + item.system + '\\',\\'' + item.journal.replace(/'/g,"") + '\\',\\'' + item.type + '\\')" class="flex items-start gap-2 px-3 py-2.5 rounded-xl hover:bg-muted-hover cursor-pointer transition text-sm text-primary">' +
+                            '<span>' + item.title + '</span>' +
+                            '<span class="ml-auto shrink-0 text-xs cursor-pointer" onclick="event.stopPropagation();toggleBookmark(\\'' + item.id + '\\',\\'paper\\',\\'' + item.title.replace(/'/g,"\\'") + '\\',\\'' + item.system + '\\')">' + bm + '</span>' +
+                        '</div>';
+                    }});
+                    html += '</div>';
+                }}
+                if (guidelines.length) {{
+                    html += '<div class="mb-3"><h4 class="text-xs font-bold text-secondary uppercase tracking-wider mb-2">📋 Guidelines (' + guidelines.length + ')</h4>';
+                    guidelines.forEach(function(item) {{
+                        var bm = isBookmarked(item.id) ? '★' : '☆';
+                        html += '<div onclick="closeUniversalSearch();switchTab(\\'guidelines\\');fetchActiveDocumentSummary(\\'' + item.id + '\\',\\'' + item.file_name.replace(/'/g,"") + '\\',\\'' + item.title.replace(/'/g,"\\\\'") + '\\',\\'' + item.doi.replace(/'/g,"") + '\\',\\'' + item.system + '\\',\\'' + item.journal.replace(/'/g,"") + '\\',\\'' + item.type + '\\')" class="flex items-start gap-2 px-3 py-2.5 rounded-xl hover:bg-muted-hover cursor-pointer transition text-sm text-primary">' +
+                            '<span>' + item.title + '</span>' +
+                            '<span class="ml-auto shrink-0 text-xs cursor-pointer" onclick="event.stopPropagation();toggleBookmark(\\'' + item.id + '\\',\\'guideline\\',\\'' + item.title.replace(/'/g,"\\'") + '\\',\\'' + item.system + '\\')">' + bm + '</span>' +
+                        '</div>';
+                    }});
+                    html += '</div>';
+                }}
+                if (pearls.length) {{
+                    html += '<div class="mb-3"><h4 class="text-xs font-bold text-secondary uppercase tracking-wider mb-2">💎 Pearls (' + pearls.length + ')</h4>';
+                    pearls.forEach(function(p, i) {{
+                        var text = (p.pearl || '').length > 80 ? p.pearl.substring(0, 80) + '...' : p.pearl;
+                        var pid = 'pearl_' + i;
+                        var bm = isBookmarked(pid) ? '★' : '☆';
+                        html += '<div onclick="closeUniversalSearch();switchTab(\\'pearls\\');document.getElementById(\\'systemFilter_pearls\\').value=\\'All\\';document.getElementById(\\'typeFilter_pearls\\').value=\\'All\\';executePearlsFilter();var idx=filteredPearls.indexOf(p);if(idx!==-1){{currentPearlIndex=idx;renderPearlList();renderPearl();}}" class="flex items-start gap-2 px-3 py-2.5 rounded-xl hover:bg-muted-hover cursor-pointer transition text-sm text-primary">' +
+                            '<span class="italic">\u201C' + text + '\u201D</span>' +
+                            '<span class="ml-auto shrink-0 text-xs cursor-pointer" onclick="event.stopPropagation();toggleBookmark(\\'' + pid + '\\',\\'pearl\\',\\'' + (p.pearl || '').substring(0,40).replace(/'/g,"\\\\'") + '\\',\\'' + (p.system||'') + '\\')">' + bm + '</span>' +
+                        '</div>';
+                    }});
+                    html += '</div>';
+                }}
+                if (!html) {{
+                    html = '<p class="text-xs text-secondary text-center py-8">No results found.</p>';
+                }}
+                document.getElementById('universalSearchResults').innerHTML = html;
+            }}
+
+            // =====================================================================
+            // ABOUT MODAL
+            // =====================================================================
+            function openAboutModal() {{
+                document.getElementById('aboutOverlay').classList.remove('hidden');
+                document.getElementById('aboutModal').classList.remove('hidden');
+            }}
+            function closeAboutModal() {{
+                document.getElementById('aboutOverlay').classList.add('hidden');
+                document.getElementById('aboutModal').classList.add('hidden');
+            }}
+
+            // =====================================================================
+            // SETTINGS MODAL — Dark Mode + Font Size
+            // =====================================================================
+            function openSettingsModal() {{
+                document.getElementById('settingsOverlay').classList.remove('hidden');
+                document.getElementById('settingsModal').classList.remove('hidden');
+            }}
+            function closeSettingsModal() {{
+                document.getElementById('settingsOverlay').classList.add('hidden');
+                document.getElementById('settingsModal').classList.add('hidden');
+            }}
+            function setTheme(theme) {{
+                document.documentElement.setAttribute('data-theme', theme);
+                localStorage.setItem('hackCCM_theme', theme);
+                document.getElementById('themeBtn_light').className = 'flex-1 px-4 py-2.5 text-sm font-semibold rounded-xl border-2 transition-all ' + (theme === 'light' ? 'bg-accent text-white border-accent' : 'bg-card text-primary border-dark hover:bg-muted-hover');
+                document.getElementById('themeBtn_dark').className = 'flex-1 px-4 py-2.5 text-sm font-semibold rounded-xl border-2 transition-all ' + (theme === 'dark' ? 'bg-accent text-white border-accent' : 'bg-card text-primary border-dark hover:bg-muted-hover');
+            }}
+            function setFontSize(size) {{
+                document.documentElement.setAttribute('data-font-size', size);
+                localStorage.setItem('hackCCM_fontSize', size);
+                ['sm','md','lg'].forEach(function(s) {{
+                    var el = document.getElementById('fontBtn_' + s);
+                    el.className = 'flex-1 px-4 py-2.5 text-sm font-semibold rounded-xl border-2 transition-all ' + (s === size ? 'bg-accent text-white border-accent' : 'bg-card text-primary border-dark hover:bg-muted-hover');
+                }});
+            }}
+            function loadPreferences() {{
+                var theme = localStorage.getItem('hackCCM_theme');
+                if (theme) setTheme(theme);
+                var fontSize = localStorage.getItem('hackCCM_fontSize');
+                if (fontSize) setFontSize(fontSize);
+            }}
+
+            // =====================================================================
+            // TOAST NOTIFICATION
+            // =====================================================================
+            function toast(msg) {{
+                var c = document.getElementById('toastContainer');
+                c.textContent = msg;
+                c.className = 'fixed bottom-6 left-1/2 -translate-x-1/2 z-[60] bg-card text-primary px-5 py-3 rounded-xl shadow-lg border border-muted text-sm font-semibold modal-animate';
+                c.style.display = 'block';
+                setTimeout(function() {{ c.style.display = 'none'; }}, 3000);
+            }}
+
+            // =====================================================================
+            // BOOKMARKS MODAL
+            // =====================================================================
+            function openBookmarksModal() {{
+                document.getElementById('bookmarksOverlay').classList.remove('hidden');
+                document.getElementById('bookmarksModal').classList.remove('hidden');
+                renderBookmarksList();
+            }}
+            function closeBookmarksModal() {{
+                document.getElementById('bookmarksOverlay').classList.add('hidden');
+                document.getElementById('bookmarksModal').classList.add('hidden');
+            }}
+            function renderBookmarksList() {{
+                var bookmarks = loadBookmarks();
+                var container = document.getElementById('bookmarksList');
+                if (!bookmarks.length) {{
+                    container.innerHTML = '<p class="text-xs text-secondary text-center py-8">No bookmarks yet. Click \u2606 on any paper or pearl to save it.</p>';
+                    return;
+                }}
+                bookmarks.sort(function(a, b) {{ return new Date(b.timestamp) - new Date(a.timestamp); }});
+                var html = '';
+                bookmarks.forEach(function(b) {{
+                    var icon = b.type === 'pearl' ? '💎' : '📄';
+                    html += '<div class="flex items-start gap-2 px-3 py-2.5 rounded-xl hover:bg-muted-hover cursor-pointer transition text-sm" onclick="closeBookmarksModal();navigateToBookmark(\\'' + b.id + '\\',\\'' + b.type + '\\')">' +
+                        '<span class="shrink-0">' + icon + '</span>' +
+                        '<div class="flex-1 min-w-0">' +
+                            '<div class="text-primary font-medium truncate">' + b.title + '</div>' +
+                            '<div class="text-[10px] text-secondary">' + (b.system || '') + '</div>' +
+                        '</div>' +
+                        '<span class="shrink-0 text-xs cursor-pointer text-accent" onclick="event.stopPropagation();removeBookmark(\\'' + b.id + '\\')">\u2605</span>' +
+                    '</div>';
+                }});
+                container.innerHTML = html;
+            }}
+            function removeBookmark(id) {{
+                var bookmarks = loadBookmarks();
+                bookmarks = bookmarks.filter(function(b) {{ return b.id !== id; }});
+                saveBookmarks(bookmarks);
+                renderBookmarksList();
+            }}
+            function navigateToBookmark(id, type) {{
+                if (type === 'pearl') {{
+                    switchTab('pearls');
+                    // Try to find and select the pearl
+                    allPearls.forEach(function(p, i) {{
+                        if (('pearl_' + i) === id) {{
+                            document.getElementById('systemFilter_pearls').value = 'All';
+                            document.getElementById('typeFilter_pearls').value = 'All';
+                            executePearlsFilter();
+                            var found = filteredPearls.indexOf(p);
+                            if (found !== -1) {{ currentPearlIndex = found; renderPearlList(); renderPearl(); }}
+                        }}
+                    }});
+                }} else {{
+                    // Find paper/guideline by id and open it
+                    var item = baseDataset.filter(function(i) {{ return i.id === id; }});
+                    if (item.length) {{
+                        item = item[0];
+                        switchTab(item.type.toLowerCase() === 'guideline' ? 'guidelines' : 'papers');
+                        fetchActiveDocumentSummary(item.id, item.file_name, item.title, item.doi, item.system, item.journal, item.type);
+                    }}
+                }}
+            }}
+
+            // =====================================================================
+            // KEYBOARD SHORTCUT
+            // =====================================================================
+            document.addEventListener('keydown', function(e) {{
+                if ((e.ctrlKey || e.metaKey) && e.key === 'k') {{
+                    e.preventDefault();
+                    if (document.getElementById('searchModal').classList.contains('hidden')) {{
+                        openUniversalSearch();
+                    }} else {{
+                        closeUniversalSearch();
+                    }}
+                }}
+                if (e.key === 'Escape') {{
+                    closeUniversalSearch();
+                    closeBookmarksModal();
+                    closeAboutModal();
+                    closeSettingsModal();
+                    var sidebar = document.getElementById('sidebar');
+                    if (sidebar.classList.contains('translate-x-0')) toggleSidebar();
+                }}
+            }});
+
             let currentActiveSelectionId = null;
             let activeTab = 'papers';
             let dailyPaperItem = null;
@@ -321,6 +796,13 @@ async def render_dashboard_portal(request: Request):
                 document.getElementById("dailyPaperAuthors").textContent = dailyPaperItem.authors !== "Unknown Authors" ? "✍️ " + dailyPaperItem.authors : "";
                 document.getElementById("dailyPaperSystem").textContent = dailyPaperItem.system;
                 document.getElementById("dailyPaperType").textContent = dailyPaperItem.type;
+                // Apply system color to badge
+                var badge = document.getElementById("dailyPaperSystem");
+                var c = getSystemColor(dailyPaperItem.system);
+                badge.style.backgroundColor = c + '18';
+                badge.style.color = c;
+                badge.style.border = '1px solid ' + c + '30';
+                badge.style.borderRadius = '4px';
             }}
 
             function openDailyPaper() {{
@@ -346,6 +828,13 @@ async def render_dashboard_portal(request: Request):
                 document.getElementById("dailyPearlSystem").textContent = p.system || '';
                 document.getElementById("dailyPearlType").textContent = p.type || '';
                 document.getElementById("dailyPearlSource").textContent = p.source_paper ? '\u2014 ' + p.source_paper : '';
+                // Apply system color to badge
+                var badge = document.getElementById("dailyPearlSystem");
+                var c = getSystemColor(p.system || '');
+                badge.style.backgroundColor = c + '18';
+                badge.style.color = c;
+                badge.style.border = '1px solid ' + c + '30';
+                badge.style.borderRadius = '4px';
             }}
 
             function openDailyPearl() {{
@@ -368,19 +857,20 @@ async def render_dashboard_portal(request: Request):
                     const items = baseDataset.filter(i => i.type.toLowerCase() !== "guideline");
                     count = items.length;
                     systems = new Set(items.map(i => i.system)).size;
-                    icon = '📋';
-                    label = 'Papers';
+                    icon = '📋'; label = 'Papers';
                 }} else if (activeTab === 'guidelines') {{
                     const items = baseDataset.filter(i => i.type.toLowerCase() === "guideline");
                     count = items.length;
                     systems = new Set(items.map(i => i.system)).size;
-                    icon = '📋';
-                    label = 'Guidelines';
-                }} else {{
+                    icon = '📋'; label = 'Guidelines';
+                }} else if (activeTab === 'pearls') {{
                     count = filteredPearls.length;
                     systems = new Set(filteredPearls.map(function(p) {{ return p.system; }})).size;
-                    icon = '💎';
-                    label = 'Pearls';
+                    icon = '💎'; label = 'Pearls';
+                }} else {{
+                    count = 0; systems = 0;
+                    icon = '🚧';
+                    label = activeTab === 'antibiotics' ? 'Antibiotics' : activeTab === 'theory' ? 'Theory' : 'Ask AI';
                 }}
                 document.getElementById('statusIcon').textContent = icon;
                 document.getElementById('statusCount').textContent = count;
@@ -391,27 +881,27 @@ async def render_dashboard_portal(request: Request):
             function switchTab(tab) {{
                 activeTab = tab;
 
-                const tabButtons = ['papers', 'guidelines', 'pearls'];
-                tabButtons.forEach(btnKey => {{
-                    const el = document.getElementById(`tabBtn_${{btnKey}}`);
-                    if(btnKey === tab) {{
-                        el.className = "w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all shadow-lg bg-[#1D4ED8] text-white border-[#1D4ED8]";
+                var tabKeys = ['papers', 'guidelines', 'pearls', 'antibiotics', 'theory', 'ask-ai'];
+                tabKeys.forEach(function(key) {{
+                    var el = document.getElementById('tabBtn_' + key);
+                    if (!el) return;
+                    if (key === tab) {{
+                        el.className = 'shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-accent text-white shadow-sm';
                     }} else {{
-                        el.className = "w-full sm:flex-1 text-center px-6 py-5 sm:px-8 sm:py-5 text-xl sm:text-2xl font-extrabold uppercase tracking-wider rounded-2xl border-2 transition-all bg-white text-[#4B5563] border-[#DCD9D2] hover:bg-[#EFECE6] hover:border-[#BDB199] hover:shadow-md";
+                        el.className = 'shrink-0 px-3 py-1.5 sm:px-5 sm:py-2.5 text-xs sm:text-sm font-bold rounded-full transition-all whitespace-nowrap bg-transparent text-secondary hover:bg-muted-hover' + (key === 'ask-ai' ? ' opacity-60' : '');
                     }}
                 }});
 
-                const panels = ['filterPanel_papers', 'filterPanel_guidelines', 'filterPanel_pearls'];
-                panels.forEach(panelId => {{
-                    const el = document.getElementById(panelId);
-                    if(panelId === `filterPanel_${{tab}}`) {{
-                        el.classList.add('active');
-                    }} else {{
-                        el.classList.remove('active');
+                var filterPanels = ['filterPanel_papers', 'filterPanel_guidelines', 'filterPanel_pearls', 'filterPanel_antibiotics', 'filterPanel_theory', 'filterPanel_ask-ai'];
+                filterPanels.forEach(function(pid) {{
+                    var el = document.getElementById(pid);
+                    if (el) {{
+                        if (pid === 'filterPanel_' + tab) el.classList.add('active');
+                        else el.classList.remove('active');
                     }}
                 }});
 
-                const deckContainer = document.getElementById("articlesListDeck");
+                var deckContainer = document.getElementById("articlesListDeck");
                 document.getElementById("deckLabel").textContent =
                     tab === 'pearls' ? '💎 Pearl Selector' : '📑 Document Selector';
 
@@ -419,16 +909,28 @@ async def render_dashboard_portal(request: Request):
                 fullTextResults = null;
                 updateStatusPanel();
 
-                const viewer = document.getElementById("documentSheetContainer");
+                var viewer = document.getElementById("documentSheetContainer");
+
+                // Handle coming-soon tabs
+                if (tab === 'antibiotics' || tab === 'theory' || tab === 'ask-ai') {{
+                    deckContainer.innerHTML = '';
+                    var emoji = tab === 'antibiotics' ? '💊' : tab === 'theory' ? '🧠' : '🤖';
+                    var name = tab === 'antibiotics' ? 'Antibiotics Hub' : tab === 'theory' ? 'Theory Library' : 'Ask AI';
+                    viewer.innerHTML = '<div class="text-center py-24 text-secondary">' +
+                        '<p class="text-4xl mb-4">' + emoji + '</p>' +
+                        '<p class="text-lg font-bold mb-2">' + name + '</p>' +
+                        '<p class="text-sm">Coming soon</p></div>';
+                    return;
+                }}
+
                 if (tab === 'pearls') {{
                     deckContainer.innerHTML = '';
                     executePearlsFilter();
                 }} else {{
                     executeClientSideFilter();
-                    viewer.innerHTML = `<div class="text-center py-24 text-[#4B5563]">
-                        <p class="text-sm md:text-lg font-medium">👋 Welcome to hack.CCM Repository</p>
-                        <p class="text-xs md:text-sm mt-1">Select a publication entry card from the index frame to unpack formatting layers.</p>
-                    </div>`;
+                    viewer.innerHTML = '<div class="text-center py-24 text-secondary">' +
+                        '<p class="text-sm md:text-lg font-medium">👋 Welcome to hack.CCM Repository</p>' +
+                        '<p class="text-xs md:text-sm mt-1">Select a publication entry card from the index frame to unpack formatting layers.</p></div>';
                 }}
             }}
 
@@ -498,7 +1000,6 @@ async def render_dashboard_portal(request: Request):
                 const input = document.getElementById(`titleSearch_${{tab}}`);
                 const clearBtn = document.getElementById(`clearSearch_${{tab}}`);
                 clearBtn.style.display = input.value ? 'block' : 'none';
-
                 const toggle = document.getElementById(`fulltextToggle_${{tab}}`);
                 if (toggle.checked) {{
                     clearTimeout(searchTimeout);
@@ -568,15 +1069,13 @@ async def render_dashboard_portal(request: Request):
             }}
 
             function executeClientSideFilter() {{
-                if (activeTab === 'pearls') return;
-                // Double-guard: only run if papers or guidelines filter panel is visible
+                if (activeTab !== 'papers' && activeTab !== 'guidelines') return;
                 if (!document.getElementById("filterPanel_papers").classList.contains("active") &&
                     !document.getElementById("filterPanel_guidelines").classList.contains("active")) return;
                 updateStatusPanel();
                 const deckContainer = document.getElementById("articlesListDeck");
 
                 let searchVal, systemVal, typeFilterVal;
-
                 if (activeTab === 'papers') {{
                     searchVal = document.getElementById("titleSearch_papers").value.toLowerCase();
                     systemVal = document.getElementById("systemFilter_papers").value;
@@ -595,30 +1094,34 @@ async def render_dashboard_portal(request: Request):
                     }} else {{
                         tabMatches = item.type.toLowerCase() === "guideline";
                     }}
-
                     const ftMatch = fullTextResults ? fullTextResults.has(item.file_name) : true;
                     const textMatches = fullTextResults ? true : item.title.toLowerCase().includes(searchVal);
                     const systemMatches = (systemVal === "All" || item.system === systemVal);
                     const typeMatches = (typeFilterVal === "All" || item.type === typeFilterVal);
-
                     return tabMatches && ftMatch && textMatches && systemMatches && typeMatches;
                 }});
 
                 if(filtered.length === 0) {{
-                    deckContainer.innerHTML = `<p class="text-xs text-[#4B5563] italic p-3 text-center">No matching records found.</p>`;
+                    deckContainer.innerHTML = `<p class="text-xs text-secondary italic p-3 text-center">No matching records found.</p>`;
                     return;
                 }}
 
                 filtered.forEach(item => {{
                     const btn = document.createElement("button");
                     const isActive = item.id === currentActiveSelectionId;
-                    btn.className = `w-full text-left p-4 rounded-xl text-sm transition border flex flex-col gap-1 shadow-2xs ${{isActive ? 'bg-[#D7CDB7] text-[#5C5346] border-transparent font-bold ring-1 ring-[#BDB199]' : 'bg-white text-[#111827] border-[#EFECE6] hover:bg-[#EFECE6]'}}`;
+                    const sysColor = getSystemColor(item.system);
+                    btn.className = `w-full text-left p-4 rounded-xl text-sm transition border flex flex-col gap-1 shadow-2xs ${{isActive ? 'bg-active-card text-active-card border-transparent font-bold ring-1 ring-hover' : 'bg-card text-primary border-muted hover:bg-muted-hover'}}`;
+                    btn.style.borderLeft = '4px solid ' + sysColor;
                     btn.onclick = () => fetchActiveDocumentSummary(item.id, item.file_name, item.title, item.doi, item.system, item.journal, item.type);
+                    const bmIcon = isBookmarked(item.id) ? '★' : '☆';
                     btn.innerHTML = `
-                        <span class="block text-xs md:text-sm leading-snug">${{item.title}}</span>
-                        <div class="flex gap-2 mt-1 text-[10px] font-bold tracking-wider uppercase text-[#4B5563]">
-                            <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.system}}</span>
-                            <span class="${{isActive ? 'bg-[#FFFFFF]/50' : 'bg-[#EFECE6]'}} px-1.5 py-0.5 rounded">${{item.type}}</span>
+                        <span class="flex items-start justify-between gap-2">
+                            <span class="block text-xs md:text-sm leading-snug">${{item.title}}</span>
+                            <span class="bookmark-star shrink-0 text-xs cursor-pointer select-none" onclick="event.stopPropagation();toggleBookmark('${{item.id}}','paper','${{item.title.replace(/'/g, "\\\\'")}}','${{item.system}}')">${{bmIcon}}</span>
+                        </span>
+                        <div class="flex gap-2 mt-1 text-[10px] font-bold tracking-wider uppercase" style="color:var(--color-secondary)">
+                            <span style="background:${{sysColor}}18;color:${{sysColor}};border:1px solid ${{sysColor}}30;border-radius:0.375rem" class="px-1.5 py-0.5 rounded">${{item.system}}</span>
+                            <span class="${{isActive ? 'bg-white/50' : 'bg-muted'}} px-1.5 py-0.5 rounded">${{item.type}}</span>
                         </div>
                     `;
                     deckContainer.appendChild(btn);
@@ -630,12 +1133,11 @@ async def render_dashboard_portal(request: Request):
                 executeClientSideFilter();
 
                 const viewer = document.getElementById("documentSheetContainer");
-                viewer.innerHTML = `<div class="text-center py-24 text-sm font-medium text-[#4B5563] animate-pulse">🔬 Processing structural markdown fields...</div>`;
+                viewer.innerHTML = `<div class="text-center py-24 text-sm font-medium text-secondary animate-pulse">🔬 Processing structural markdown fields...</div>`;
 
                 try {{
                     const response = await fetch(`/api/summary?file_name=${{encodeURIComponent(fileName)}}&system=${{encodeURIComponent(system)}}&type=${{encodeURIComponent(type)}}`);
-                    // Bail if user switched tabs while we were fetching
-                    if (activeTab !== 'papers' && activeTab !== 'guidelines') return;
+                    if (activeTab !== 'papers' && activeTab !== 'guidelines' && activeTab !== 'pearls') return;
                     const data = await response.json();
 
                     if (!response.ok || data.error) {{
@@ -653,36 +1155,42 @@ async def render_dashboard_portal(request: Request):
 
                     let doiButtonHTML = "";
                     if(doiLink && doiLink !== "#") {{
-                        doiButtonHTML = `<a href="${{doiLink}}" target="_blank" class="w-full sm:w-auto text-center bg-[#1D4ED8] hover:bg-[#2563EB] text-white font-semibold text-xs px-4 py-2.5 rounded-lg shadow-sm transition inline-block">🔗 Source Publication</a>`;
+                        doiButtonHTML = `<a href="${{doiLink}}" target="_blank" class="w-full sm:w-auto text-center bg-accent hover:bg-accent-hover text-white font-semibold text-xs px-4 py-2.5 rounded-lg shadow-sm transition inline-block">🔗 Source Publication</a>`;
                     }}
 
-                    let pdfButtonHTML = `<button onclick="exportPDF()" class="w-full sm:w-auto text-center bg-white text-[#1D4ED8] font-semibold text-xs px-4 py-2.5 rounded-lg border border-[#1D4ED8] shadow-sm transition hover:bg-[#EFF6FF] inline-block">📄 Download PDF</button>`;
+                    let pdfButtonHTML = `<button onclick="exportPDF()" class="w-full sm:w-auto text-center bg-card text-accent font-semibold text-xs px-4 py-2.5 rounded-lg border border-accent shadow-sm transition hover:bg-badge-blue inline-block">📄 Download PDF</button>`;
 
                     const parsedMarkdownHTML = marked.parse(data.content);
-                    const authorsLine = data.authors && data.authors !== "Unknown Authors" ? `<p class="text-sm italic text-[#4B5563] mt-1 font-sans">✍️ Primary Authors: ${{data.authors}}</p>` : "";
+                    const authorsLine = data.authors && data.authors !== "Unknown Authors" ? `<p class="text-sm italic text-secondary mt-1 font-sans">✍️ Primary Authors: ${{data.authors}}</p>` : "";
+
+                    const sysColor = getSystemColor(system);
+                    const bmIcon = isBookmarked(id) ? '★' : '☆';
 
                     viewer.innerHTML = `
-                        <div class="flex flex-col sm:flex-row justify-between items-start gap-4 pb-4 border-b border-[#EFECE6] mb-6">
-                            <div>
-                                <h1 class="text-lg md:text-2xl font-bold tracking-tight text-black">📜 ${{title}}</h1>
+                        <div class="flex flex-col sm:flex-row justify-between items-start gap-4 pb-4 border-b border-muted mb-6" style="border-top:3px solid ${{sysColor}};padding-top:1rem;">
+                            <div class="w-full">
+                                <div class="flex items-start justify-between gap-2">
+                                    <h1 class="text-lg md:text-2xl font-bold tracking-tight text-black" style="color:var(--color-primary)">📜 ${{title}}</h1>
+                                    <span class="bookmark-star shrink-0 text-lg cursor-pointer select-none" onclick="toggleBookmark('${{id}}','paper','${{title.replace(/'/g, "\\\\'")}}','${{system}}')" style="color:var(--color-accent)">${{bmIcon}}</span>
+                                </div>
                                 ${{authorsLine}}
                                 <div class="flex flex-wrap gap-2 text-xs font-semibold mt-3" style="font-family: system-ui, sans-serif;">
-                                    <span class="bg-[#EFF6FF] text-[#1E40AF] px-2.5 py-1 rounded-md border border-[#DBEAFE]">🧬 Specialty: ${{system}}</span>
+                                    <span style="background:${{sysColor}}18;color:${{sysColor}};border:1px solid ${{sysColor}}30" class="px-2.5 py-1 rounded-md">🧬 Specialty: ${{system}}</span>
                                     <span class="bg-[#FAF5FF] text-[#6B21A8] px-2.5 py-1 rounded-md border border-[#F3E8FF]">📖 Journal: ${{journal}}</span>
                                     <span class="bg-[#F1F5F9] text-[#475569] px-2.5 py-1 rounded-md border border-[#E2E8F0]">📑 Type: ${{type}}</span>
                                 </div>
                             </div>
                             <div class="w-full sm:w-auto shrink-0 flex gap-2">${{doiButtonHTML}}${{pdfButtonHTML}}</div>
                         </div>
-                                <div class="summary-body text-[#111827] text-[15px]">
-                                    ${{parsedMarkdownHTML}}
-                                </div>
-                            `;
-                        if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
-                        }} catch(err) {{
-                            viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">❌ Network connection error: ${{err.message}}</div>`;
-                            if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
-                        }}
+                        <div class="summary-body" style="color:var(--color-primary);font-size:15px;">
+                            ${{parsedMarkdownHTML}}
+                        </div>
+                    `;
+                    if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
+                }} catch(err) {{
+                    viewer.innerHTML = `<div class="p-4 bg-red-50 text-red-700 rounded-lg text-sm">❌ Network connection error: ${{err.message}}</div>`;
+                    if (window.innerWidth < 640) viewer.scrollIntoView({{ behavior: 'smooth' }});
+                }}
             }}
 
             function exportPDF() {{
@@ -752,21 +1260,27 @@ async def render_dashboard_portal(request: Request):
             function renderPearlList() {{
                 const deck = document.getElementById("articlesListDeck");
                 if (filteredPearls.length === 0) {{
-                    deck.innerHTML = '<p class="text-xs text-[#4B5563] italic p-3 text-center">No matching pearls.</p>';
+                    deck.innerHTML = '<p class="text-xs text-secondary italic p-3 text-center">No matching pearls.</p>';
                     return;
                 }}
                 deck.innerHTML = filteredPearls.map(function(p, idx) {{
                     const isActive = idx === currentPearlIndex;
                     const truncated = (p.pearl || '').length > 80 ? p.pearl.substring(0, 80) + '...' : p.pearl;
+                    const sysColor = getSystemColor(p.system || '');
                     const cls = isActive
-                        ? 'bg-[#D7CDB7] text-[#5C5346] border-transparent font-bold ring-1 ring-[#BDB199]'
-                        : 'bg-white text-[#111827] border-[#EFECE6] hover:bg-[#EFECE6]';
+                        ? 'bg-active-card text-active-card border-transparent font-bold ring-1 ring-hover'
+                        : 'bg-card text-primary border-muted hover:bg-muted-hover';
+                    const bmIcon = isBookmarked('pearl_' + idx) ? '★' : '☆';
                     return '<button onclick="selectPearl(' + idx + ')" '
-                        + 'class="w-full text-left p-3 rounded-xl text-xs transition border flex flex-col gap-0.5 shadow-2xs ' + cls + '">'
+                        + 'class="w-full text-left p-3 rounded-xl text-xs transition border flex flex-col gap-0.5 shadow-2xs ' + cls + '"'
+                        + ' style="border-left:4px solid ' + sysColor + '">'
+                        + '<span class="flex items-start justify-between gap-2">'
                         + '<span class="leading-snug">' + truncated + '</span>'
-                        + '<span class="flex gap-1 mt-0.5 text-[9px] font-bold tracking-wider uppercase text-[#4B5563]">'
-                        + '<span class="bg-[#EFECE6] px-1 py-0.5 rounded">' + (p.system || '') + '</span>'
-                        + '<span class="bg-[#EFECE6] px-1 py-0.5 rounded">' + (p.type || '') + '</span>'
+                        + '<span class="bookmark-star shrink-0 text-xs cursor-pointer select-none" onclick="event.stopPropagation();toggleBookmark(\\'pearl_' + idx + '\\',\\'pearl\\',\\'' + (p.pearl||'').substring(0,40).replace(/'/g, "\\\\'") + '\\',\\'' + (p.system||'') + '\\')">' + bmIcon + '</span>'
+                        + '</span>'
+                        + '<span class="flex gap-1 mt-0.5 text-[9px] font-bold tracking-wider uppercase" style="color:var(--color-secondary)">'
+                        + '<span style="background:' + sysColor + '18;color:' + sysColor + ';border:1px solid ' + sysColor + '30;border-radius:0.375rem" class="px-1 py-0.5 rounded">' + (p.system || '') + '</span>'
+                        + '<span class="bg-muted px-1 py-0.5 rounded">' + (p.type || '') + '</span>'
                         + (p.topic ? p.topic.split(',').map(function(t) {{ return '<span class="bg-[#FEF3C7] text-[#92400E] px-1 py-0.5 rounded">' + t.trim() + '</span>'; }}).join('') : '')
                         + '</span></button>';
                 }}).join('');
@@ -785,27 +1299,32 @@ async def render_dashboard_portal(request: Request):
             function renderPearl() {{
                 const viewer = document.getElementById("documentSheetContainer");
                 if (filteredPearls.length === 0) {{
-                    viewer.innerHTML = '<div class="text-center py-24 text-[#4B5563]"><p class="text-sm md:text-lg font-medium">💎 No pearls match your filters.</p><p class="text-xs md:text-sm mt-1">Try adjusting the filters above.</p></div>';
+                    viewer.innerHTML = '<div class="text-center py-24 text-secondary"><p class="text-sm md:text-lg font-medium">💎 No pearls match your filters.</p><p class="text-xs md:text-sm mt-1">Try adjusting the filters above.</p></div>';
                     return;
                 }}
                 const p = filteredPearls[currentPearlIndex];
                 const paperName = (p.source_paper || '').replace(/[^a-zA-Z0-9 _-]/g, ' ').trim() || 'Unknown Source';
                 const prevDisabled = currentPearlIndex === 0 ? 'disabled' : '';
                 const nextDisabled = currentPearlIndex === filteredPearls.length - 1 ? 'disabled' : '';
-                viewer.innerHTML = '<div class="flex flex-col items-center justify-center min-h-[400px] max-w-2xl mx-auto text-center">' +
-                    '<div class="flex gap-2 mb-6 flex-wrap justify-center">' +
-                        (p.system ? '<span class="bg-[#EFF6FF] text-[#1E40AF] text-xs font-bold px-3 py-1 rounded-md">' + p.system + '</span>' : '') +
+                const sysColor = getSystemColor(p.system || '');
+                const bmIcon = isBookmarked('pearl_' + currentPearlIndex) ? '★' : '☆';
+                viewer.innerHTML = '<div class="flex flex-col items-center justify-center min-h-[400px] max-w-2xl mx-auto text-center" style="border-top:3px solid ' + sysColor + ';padding-top:1rem;">' +
+                    '<div class="flex gap-2 mb-4 flex-wrap justify-center">' +
+                        (p.system ? '<span style="background:' + sysColor + '18;color:' + sysColor + ';border:1px solid ' + sysColor + '30" class="text-xs font-bold px-3 py-1 rounded-md">' + p.system + '</span>' : '') +
                         (p.type ? '<span class="bg-[#F0FDF4] text-[#15803D] text-xs font-bold px-3 py-1 rounded-md">' + p.type + '</span>' : '') +
                         (p.topic ? p.topic.split(',').map(function(t) {{ return '<span class="bg-[#FEF3C7] text-[#92400E] text-xs font-bold px-3 py-1 rounded-md">' + t.trim() + '</span>'; }}).join('') : '') +
                     '</div>' +
-                    '<div class="text-sm md:text-xl leading-relaxed text-[#1F2937] mb-6 font-serif">\u201C' + p.pearl + '\u201D</div>' +
-                    '<div class="text-sm text-[#6B7280] mb-8 font-sans">' +
+                    '<div class="flex items-start justify-center gap-2 w-full max-w-lg">' +
+                        '<div class="text-sm md:text-xl leading-relaxed text-[#1F2937] mb-4 font-serif" style="color:var(--color-primary)">\u201C' + p.pearl + '\u201D</div>' +
+                        '<span class="bookmark-star shrink-0 text-lg cursor-pointer select-none mt-1" onclick="toggleBookmark(\\'pearl_' + currentPearlIndex + '\\',\\'pearl\\',\\'' + (p.pearl||'').substring(0,40).replace(/'/g, "\\\\'") + '\\',\\'' + (p.system||'') + '\\')" style="color:var(--color-accent)">' + bmIcon + '</span>' +
+                    '</div>' +
+                    '<div class="text-sm text-[#6B7280] mb-6 font-sans">' +
                         '\u2014 ' + paperName +
-                        ((p.file_name || p.source_paper) ? ' <button onclick="openPearlPaper()" class="ml-2 text-[#1D4ED8] hover:underline font-semibold text-xs">Open \u2197</button>' : '') +
+                        ((p.file_name || p.source_paper) ? ' <button onclick="openPearlPaper()" class="ml-2 text-accent hover:underline font-semibold text-xs">Open \u2197</button>' : '') +
                     '</div>' +
                     '<div class="flex gap-4 font-sans">' +
-                        '<button onclick="prevPearl()" ' + prevDisabled + ' class="px-6 py-2 text-sm font-semibold rounded-lg border border-[#DCD9D2] bg-white text-[#4B5563] hover:bg-[#EFECE6] disabled:opacity-40 disabled:cursor-not-allowed transition">\u2190 Previous</button>' +
-                        '<button onclick="nextPearl()" ' + nextDisabled + ' class="px-6 py-2 text-sm font-semibold rounded-lg border border-[#DCD9D2] bg-white text-[#4B5563] hover:bg-[#EFECE6] disabled:opacity-40 disabled:cursor-not-allowed transition">Next \u2192</button>' +
+                        '<button onclick="prevPearl()" ' + prevDisabled + ' class="px-6 py-2 text-sm font-semibold rounded-lg border border-dark bg-card text-secondary hover:bg-muted-hover disabled:opacity-40 disabled:cursor-not-allowed transition">\u2190 Previous</button>' +
+                        '<button onclick="nextPearl()" ' + nextDisabled + ' class="px-6 py-2 text-sm font-semibold rounded-lg border border-dark bg-card text-secondary hover:bg-muted-hover disabled:opacity-40 disabled:cursor-not-allowed transition">Next \u2192</button>' +
                     '</div>' +
                 '</div>';
             }}
@@ -870,7 +1389,7 @@ async def render_dashboard_portal(request: Request):
                 }}
             }}
 
-            window.onload = initializeAppMatrix;
+            window.onload = function() {{ loadPreferences(); initializeAppMatrix(); }};
         </script>
     </body>
     </html>
