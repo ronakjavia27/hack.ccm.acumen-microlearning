@@ -1,0 +1,104 @@
+{
+  "id": "cirse-esr-essentials-trauma-team-interventional-radiology-2026",
+  "doc_type": "guideline",
+  "title": "ESR Essentials: trauma team and the role of Interventional Radiology — practice recommendations by the Cardiovascular and Interventional Radiological Society of Europe",
+  "issuing_bodies": [
+    "CIRSE",
+    "ESR"
+  ],
+  "year": 2026,
+  "doi": "10.1007/s00330-026-12440-8",
+  "specialty": [
+    "trauma",
+    "surgery",
+    "multi_system"
+  ],
+  "tags": [
+    "trauma",
+    "interventional radiology",
+    "embolization",
+    "hemorrhage control",
+    "multidisciplinary team",
+    "pelvic fracture",
+    "solid organ injury",
+    "non-operative management"
+  ],
+  "one_line_summary": "Practice recommendations from CIRSE and ESR defining the 24/7 integration of Interventional Radiology into trauma teams, standardized whole-body CT-guided embolization protocols, and material readiness for non-compressible hemorrhage control across European trauma centers.",
+  "key_pearls": [
+    "Interventional Radiologists must be fully integrated into trauma teams with **24/7 availability** in Level I centers and structured access in Level II/III centers.",
+    "Whole-body contrast-enhanced CT should be performed in hemodynamically stable or stabilizable patients, with **immediate embolization** when active extravasation or pseudoaneurysm is identified.",
+    "Standardized embolization protocols and immediate access to **essential** materials — **coils, plugs, liquid embolics, stent-grafts, and REBOA** — are **critical** for effective bleeding control.",
+    "A **Shock Index > 1** (heart rate/systolic blood pressure) is an early indicator for considering IR involvement in bleeding trauma patients.",
+    "In pelvic fractures with arterial bleeding, angioembolization achieves **> 85% success rates**; surgical packing is reserved for IR unavailability or failure.",
+    "For high-grade solid organ injuries (AAST Grades IV–V), transarterial embolization is the cornerstone of non-operative management, achieving **> 90% hemostasis** in liver injuries.",
+    "Hybrid emergency rooms integrating CT, IR, and surgical capability in a single resuscitation space improve workflow efficiency and **survival** outcomes."
+  ],
+  "consensus_method": "Practice recommendations based on selected literature searches, current European guidelines, and expert consensus; graded using WSES and AAST systems (Level of Evidence and Strength of Recommendation).",
+  "search_period": "Non-English studies and case reports excluded; references of obtained articles evaluated for additional information.",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Integration of Interventional Radiology into Trauma Teams",
+      "narrative": "- IR must be involved in trauma team activation and decision-making.\n- Angiosuites should be located in the vicinity of the trauma bay to reduce delays.\n- Level II–III centers require structured IR access or transfer protocols.\n- Level I centers provide comprehensive, 24/7 multidisciplinary trauma care, including continuous access to IR, surgery, and ICU.\n- Level II centers can manage and stabilize many trauma cases but may lack on-site IR or ICU support at all times.\n- Level III centers are primarily responsible for initial stabilization before arranging transfer to higher-level facilities.\n- Early IR participation is associated with faster decision-making and shorter procedure times.\n- A fully equipped angiography suite with high-performance fluoroscopy, dedicated angiography-trained staff, and immediate availability of microcatheters, guiding catheters, and embolic materials is **essential**.",
+      "recommendations": [
+        {
+          "rec_id": "R1",
+          "statement": "Interventional Radiologists should be integrated into the trauma team with 24/7 availability in Level I centers.",
+          "strength": "conditional",
+          "evidence_grade": "Level of Evidence: III, Strength of Recommendation: B"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Whole-Body CT and Imaging-Guided IR Intervention",
+      "narrative": "- Use plain/unenhanced, arterial, and portal venous phases to detect bleeding.\n- Initiate embolization promptly if active extravasation in the arterial phase or pseudoaneurysm is present.\n- Hybrid emergency rooms (ERs) allow seamless CT-to-IR workflow.\n- Total-body MSCT is the gold standard in evaluating polytrauma patients due to its speed and diagnostic precision.\n- MRI has limited utility in acute trauma due to longer scan times, lower availability, and low diagnostic value for acute bleeding.\n- For hemodynamically stable patients, CT-based diagnosis followed by selective embolization is an established standard of care with high technical success rates.\n- A Shock Index > 1 is highlighted as an early indicator for considering IR involvement.",
+      "recommendations": [
+        {
+          "rec_id": "R2",
+          "statement": "Perform whole-body contrast-enhanced CT in stable or stabilizable trauma patients to guide IR intervention.",
+          "strength": "strong",
+          "evidence_grade": "Level of Evidence: II, Strength of Recommendation: A"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Standardized Embolization Protocols and Material Availability",
+      "narrative": "- Ensure rapid access to coils, plugs, liquid agents, stent-grafts, and resuscitative endovascular balloon occlusion of the aorta (REBOA).\n- Define local protocols for organ-specific strategies, including criteria for non-operative management (NOM).\n- Provide IR-specific trauma training and equipment kits.\n- Transcatheter arterial embolization (TAE), alone or in combination with REBOA, is an effective component of multidisciplinary trauma management in hemodynamically unstable patients.\n- Intraoperative cell salvage (ICS) can be performed alongside damage-control embolization to reduce allogeneic transfusion requirements.\n- Standardized protocols should include organ-specific strategies for liver, spleen, kidney, and pelvic injuries.",
+      "recommendations": [
+        {
+          "rec_id": "R3",
+          "statement": "Standardize embolization protocols and material availability in trauma IR.",
+          "strength": "conditional",
+          "evidence_grade": "Level of Evidence: IV, Strength of Recommendation: B"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Initial Assessment and Stabilization",
+      "action": "Follow ATLS protocol for primary survey. Perform FAST/eFAST ultrasound. Assess hemodynamic stability and Shock Index (HR/SBP > 1 indicates need for IR consideration)."
+    },
+    {
+      "step": 2,
+      "title": "Hemodynamically Unstable Patient Pathway",
+      "action": "Immediate resuscitation and activation of surgical team. Consider REBOA for temporary stabilization. If IR is available, proceed to angiosuite for damage-control embolization; if not, transfer to OR for surgical control."
+    },
+    {
+      "step": 3,
+      "title": "Hemodynamically Stable or Stabilizable Patient Pathway",
+      "action": "Perform whole-body contrast-enhanced CT with arterial and portal venous phases. Identify active extravasation, pseudoaneurysm, or vascular injury. Activate IR team for immediate embolization if bleeding source is identified."
+    },
+    {
+      "step": 4,
+      "title": "IR Intervention and Post-Procedure Care",
+      "action": "Perform transcatheter arterial embolization (TAE) using coils, plugs, liquid embolics, or stent-grafts as appropriate. If IR fails or is unavailable, proceed to damage-control surgery. Transfer all patients to ICU for continued monitoring."
+    }
+  ],
+  "strengths_limitations": "- Strengths: Provides practical, evidence-informed recommendations graded using established WSES/AAST systems; addresses a **critical** gap in standardized European trauma IR integration; includes specific organ-injury management protocols with detailed AAST grading.\n- Limitations: Not a systematic review; limited prospective comparative evidence for some recommendations; hybrid ER concept not yet widely implemented outside Japan; recommendations based on selected observational studies and expert consensus rather than randomized trials.",
+  "related_ids": [],
+  "added_date": "2026-04-09"
+}
