@@ -1,9 +1,81 @@
 {
-  "paper_name": "The evolution of sepsis care: from protocol-driven management to personalized intensive care",
-  "primary_authors": "Tim Rahmel et al.",
-  "journal_name": "Infection",
+  "id": "the-evolution-of-sepsis-care-2026",
+  "doc_type": "article",
+  "article_subtype": "review",
+  "title": "The evolution of sepsis care: from protocol-driven management to personalized intensive care",
+  "authors": "Tim Rahmel et al.",
+  "journal": "Infection",
+  "year": 2026,
   "doi": "10.1007/s15010-026-02852-5",
-  "system": "Critical Care Medicine",
-  "type_of_article": "Review",
-  "clinical_summary_markdown": "## 📋 Core Summary\nSepsis management is transitioning from rigid, protocol-driven 'bundle' care to a staged, phenotype-guided, and personalized model. While early management remains standardized for rapid stabilization, later stages require dynamic, context-sensitive adjustments. The integration of the 2025 German S3 guideline (DSG 2025) and the 2026 Surviving Sepsis Campaign (SSC 2026) highlights a shift toward perfusion-oriented resuscitation and the formalization of 'refractory septic shock' as a clinical entity for therapeutic escalation.\n\n## Detailed Clinical Summary of each sub-topics in the paper:\n- **Guideline Evolution:** Shift from rigid protocols (SSC 2021) to decision-support frameworks (DSG 2025, SSC 2026). DSG 2025 provides operational, practice-oriented guidance, while SSC 2026 adopts a broader, system-oriented continuum of care approach.\n- **Early Recognition:** Move away from qSOFA as a standalone tool. Emphasis on multimodal, continuous screening (e.g., NEWS2, MEWS, SIRS). \n- **Hemodynamic Management:** \n  - Shift from pressure-oriented (MAP >= 65 mmHg) to perfusion-oriented resuscitation.\n  - Peripheral vasopressor administration is now supported for early stabilization to avoid delays associated with central venous access.\n  - Capillary Refill Time (CRT) is highlighted as a key bedside marker of tissue perfusion, though it requires methodological standardization.\n  - SSC 2026 suggests age-adapted MAP targets (60-65 mmHg for patients > 65 years).\n- **Antimicrobial Strategy:** \n  - SSC 2026 introduces risk-stratified timing: 1-hour initiation for high-probability infection, 3-hour for possible sepsis, and diagnostic-driven approaches for low-probability cases.\n  - Strong support for prolonged/continuous beta-lactam infusion after a loading dose.\n  - Therapeutic Drug Monitoring (TDM) is recommended for critically ill patients with high pharmacokinetic variability.\n- **Refractory Septic Shock:** \n  - Defined as persistent hemodynamic instability and tissue hypoperfusion despite adequate initial resuscitation.\n  - Criteria: Persistent elevated lactate, prolonged CRT, lack of fluid responsiveness, and high vasopressor requirements (norepinephrine equivalents > 0.5 µg/kg/min).\n  - Serves as an action-guiding entity for therapeutic escalation (e.g., adjunctive therapies, advanced hemodynamic monitoring).\n- **Adjunctive Therapies:** Both guidelines advise against routine use of vitamin C, immunoglobulins, blood purification, and probiotics due to lack of evidence.\n- **Prevention:** DSG 2025 uniquely includes a chapter on vaccination (influenza, COVID-19, pneumococci, etc.) as a core sepsis prevention strategy.\n\n## 🧠 Clinical Takeaways & Practice Impact\n- **Strengths & Limitations:** The transition to personalized care is supported by emerging trials (ImmunoSep, ANDROMEDA-SHOCK-2, TIGRIS), but clinical implementation remains challenged by the need for standardized definitions of perfusion markers and the lack of robust outcome data for TDM-guided dosing.\n- **Direct ICU/Clinical Application:** \n  - **Immediate Phase:** Standardized bundles, early antibiotics, and rapid hemodynamic stabilization (peripheral vasopressors allowed).\n  - **Escalation Phase:** If the patient meets 'refractory septic shock' criteria, move beyond standard protocols to individualized, phenotype-guided management.\n  - **Monitoring:** Prioritize lactate clearance and CRT over static MAP targets to assess tissue perfusion adequacy."
+  "specialty": [
+    "multi_system"
+  ],
+  "tags": [
+    "sepsis",
+    "septic shock",
+    "guidelines",
+    "personalized medicine",
+    "hemodynamic management",
+    "antimicrobials",
+    "critical care"
+  ],
+  "one_line_summary": "Sepsis management is evolving from rigid protocols to a personalized, phenotype-guided model, integrating new guidelines (DSG 2025, SSC 2026) with a focus on perfusion-oriented resuscitation and formalizing refractory septic shock.",
+  "key_pearls": [
+    "Sepsis care is shifting from rigid protocols to a personalized, phenotype-guided model, emphasizing dynamic adjustments after initial stabilization.",
+    "Peripheral vasopressor administration is now supported for early stabilization to avoid delays associated with central venous access.",
+    "Capillary Refill Time (CRT) is a key bedside marker for tissue perfusion, alongside lactate clearance, and should be prioritized over static MAP targets.",
+    "SSC 2026 recommends risk-stratified antimicrobial timing: 1-hour for high-probability, 3-hour for possible, and diagnostic-driven for low-probability sepsis.",
+    "Refractory septic shock is a formalized entity, defined by persistent hypoperfusion despite initial resuscitation and high vasopressor needs (> 0.5 µg/kg/min norepinephrine equivalents), guiding therapeutic escalation.",
+    "Routine use of adjunctive therapies like vitamin C, immunoglobulins, blood purification, and probiotics is not advised due to lack of evidence."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": null,
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Guideline Evolution",
+      "content": "Sepsis guidelines are evolving from rigid protocols, such as SSC 2021, towards more flexible decision-support frameworks like the German S3 guideline (DSG 2025) and the Surviving Sepsis Campaign (SSC 2026). DSG 2025 offers operational, practice-oriented guidance, while SSC 2026 adopts a broader, system-oriented continuum of care approach.",
+      "section_pearls": []
+    },
+    {
+      "order": 2,
+      "heading": "Early Recognition",
+      "content": "The approach to early sepsis recognition is moving away from qSOFA as a standalone diagnostic tool. There is an increased emphasis on multimodal, continuous screening methods, including tools like NEWS2, MEWS, and SIRS criteria.",
+      "section_pearls": []
+    },
+    {
+      "order": 3,
+      "heading": "Hemodynamic Management",
+      "content": "Hemodynamic management is shifting from a pressure-oriented approach (e.g., MAP >= 65 mmHg) to a perfusion-oriented resuscitation strategy. Peripheral vasopressor administration is now supported for early stabilization to avoid delays associated with central venous access. Capillary Refill Time (CRT) is highlighted as a key bedside marker of tissue perfusion, though it requires methodological standardization. The SSC 2026 guideline suggests age-adapted MAP targets, specifically 60-65 mmHg for patients over 65 years.",
+      "section_pearls": []
+    },
+    {
+      "order": 4,
+      "heading": "Antimicrobial Strategy",
+      "content": "The SSC 2026 guideline introduces risk-stratified timing for antimicrobial initiation: 1-hour for high-probability infection, 3-hour for possible sepsis, and diagnostic-driven approaches for low-probability cases. There is strong support for prolonged or continuous beta-lactam infusion after an initial loading dose. Therapeutic Drug Monitoring (TDM) is recommended for critically ill patients who exhibit high pharmacokinetic variability.",
+      "section_pearls": []
+    },
+    {
+      "order": 5,
+      "heading": "Refractory Septic Shock",
+      "content": "Refractory septic shock is now formally defined as persistent hemodynamic instability and tissue hypoperfusion despite adequate initial resuscitation. Criteria include persistently elevated lactate, prolonged Capillary Refill Time (CRT), lack of fluid responsiveness, and high vasopressor requirements, specifically norepinephrine equivalents greater than 0.5 µg/kg/min. This entity serves as an action-guiding classification for therapeutic escalation, such as the consideration of adjunctive therapies or advanced hemodynamic monitoring.",
+      "section_pearls": []
+    },
+    {
+      "order": 6,
+      "heading": "Adjunctive Therapies",
+      "content": "Both the DSG 2025 and SSC 2026 guidelines advise against the routine use of various adjunctive therapies, including vitamin C, immunoglobulins, blood purification techniques, and probiotics, citing a lack of sufficient evidence to support their widespread application in sepsis management.",
+      "section_pearls": []
+    },
+    {
+      "order": 7,
+      "heading": "Prevention",
+      "content": "The DSG 2025 guideline uniquely incorporates a dedicated chapter on vaccination as a core sepsis prevention strategy. This includes recommendations for vaccinations against influenza, COVID-19, pneumococci, and other relevant pathogens.",
+      "section_pearls": []
+    }
+  ],
+  "strengths_limitations": "The transition to personalized sepsis care is supported by emerging trials (ImmunoSep, ANDROMEDA-SHOCK-2, TIGRIS). However, clinical implementation faces challenges due to the need for standardized definitions of perfusion markers and a lack of robust outcome data for TDM-guided dosing.",
+  "related_ids": [],
+  "added_date": "2026-06-30"
 }

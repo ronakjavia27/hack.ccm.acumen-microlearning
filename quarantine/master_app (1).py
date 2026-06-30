@@ -137,12 +137,12 @@ def log_transaction_to_excel(file_name, metadata, parsing_notes="Success"):
             
             row_data = [
                 next_serial, file_name,
-                metadata.get("paper_name", "Unknown Title"),
-                metadata.get("primary_authors", "Unknown Authors"),
-                metadata.get("journal_name", "Unknown Journal"),
+                metadata.get("title", metadata.get("paper_name", "Unknown Title")),
+                metadata.get("authors", metadata.get("primary_authors", "Unknown Authors")),
+                metadata.get("journal", metadata.get("journal_name", "Unknown Journal")),
                 metadata.get("doi", "None"),
-                metadata.get("system", "Other"),
-                metadata.get("type_of_article", "Other"),
+                ", ".join(metadata.get("specialty", [])) if isinstance(metadata.get("specialty"), list) else metadata.get("system", "Other"),
+                metadata.get("article_subtype", metadata.get("doc_type", metadata.get("type_of_article", "Other"))),
                 "Yes", "No",
                 datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "",
                 parsing_notes, "No"
@@ -190,30 +190,102 @@ def execute_gemini_with_fallback(prompt, system_instruction, target_model, respo
     raise RuntimeError(f"🚨 Critical Failure: API key layers exhausted. Error: {last_error}")
 
 def generate_final_structured_payload(uploaded_file, category_tag):
-    """Analyzes the file object natively via Google Files API and enforces vocabulary matching rules."""
+    """Analyzes the file object natively via Google Files API into the new structured schema."""
     target_model = MODEL_GUIDELINES if category_tag == "guidelines" else MODEL_ARTICLES
     
-    system_instruction = f"""You are an expert Clinical Research Ingestion Engine. Match parameters accurately.
+    system_instruction = """You are an advanced clinical content extraction engine for hack.CCM's knowledge base. You will be given a medical PDF document (a research article or clinical guideline). Your job is to EXTRACT and STRUCTURE its content into the fixed schema below. Do NOT invent new clinical facts, do NOT omit facts present in the document, and do NOT re-interpret the content - only reorganize it.
 
-You MUST respond strictly with a single valid JSON object following this format:
-{{
-  "paper_name": "Official Title",
-  "primary_authors": "Lead Author et al.",
-  "journal_name": "Medical Journal Name",
-  "doi": "Clean DOI identifier",
-  "system": "Choose the best matching clinical specialty from this list: {', '.join(ALLOWED_SPECIALTIES)}",
-  "type_of_article": "Choose the best matching layout option from this list: {', '.join(ALLOWED_TYPES)}",
-  "clinical_summary_markdown": "Full clinical summary using structural markdown parameters."
-}}
+CRITICAL RULES:
+1. Output ONLY valid JSON. No preamble, no markdown fences, no commentary.
+2. Determine doc_type: if the document is a guideline / clinical practice guideline, use the GUIDELINE schema. Otherwise (Review, RCT, Meta-analysis, Secondary Analysis, Observational study, Trial, Case Series, etc.) use the ARTICLE schema.
+3. Collapse ALL nested heading levels (H3/H4/H5/H6) into the new schema's two-level-maximum structure: top-level sections with any deeper sub-headers folded into that section's "content"/"narrative" field as prose or inline bullets. Do not create more top-level sections than the original warrants - usually 4-10.
+4. Extract "key_pearls" by scanning the document's key takeaways / clinical application content and converting its bullet points into 4-7 atomic, standalone pearls. If more than 7 bullets exist, select the 4-7 most clinically decisive ones (prioritize those with numbers, thresholds, or drug names).
+5. For GUIDELINES specifically: scan for recommendation identifiers embedded in headers or text (e.g. "(R1.1.1)", "(Q3)") and use these to reconstruct "recommendation_blocks". Each major subsection becomes one recommendation_block, with its constituent statements broken into individual "recommendations" entries. If no clean granularity exists, create ONE recommendation entry per block with strength/evidence_grade set to null.
+6. For GUIDELINES: if the document has a bedside protocol / step-by-step workflow section, map it directly into "bedside_protocol".
+7. "specialty" must be an array of 1-3 controlled strings from: ["pulmonology","nephrology","hepatology","neurology","cardiology","infectious_disease","hematology","endocrinology","gastroenterology","toxicology","trauma","surgery","multi_system","pharmacology","rehabilitation"]. Split combined fields into multiple entries.
+8. "one_line_summary" should be a single sentence max ~35 words extracted from the core summary.
+9. "strengths_limitations" maps directly from the document's strengths/limitations content, condensed to 1-3 sentences.
+10. Preserve "doi", "journal"/"issuing_bodies", "authors", and generate "id" as a slug from title + year if not already present.
+11. Set "added_date" to today's date.
+12. If genuinely unable to populate a field, use null or [] - never fabricate.
+13. Do NOT use LaTeX formatting. Write out metrics, clearances, equations using plain text notation.
+14. For ARTICLES: "evidence_level" must be exactly one of: "review", "rct", "meta_analysis", "secondary_analysis", "observational", "case_series", "narrative_review".
+15. Enforce strict medical ground truth. Never generalize equations, target values, drug intervals, or data clearances.
 
-CRITICAL GROUND TRUTH RULES:
-1. Enforce strict medical grounding. Do not generalize formulas or use LaTeX notation.
-2. In the 'system' field, choose from the provided specialty list. If no exact target matches, pick the closest field or default to 'Other'.
-3. In the 'type_of_article' field, you MUST classify it strictly as one of the options from the allowed types list."""
+ARTICLE SCHEMA:
+{
+  "id": "string - URL-safe slug from title + year",
+  "doc_type": "article",
+  "article_subtype": "review | rct | meta_analysis | secondary_analysis | observational | case_series | narrative_review",
+  "title": "string - exact paper title",
+  "authors": "string - first author + et al.",
+  "journal": "string",
+  "year": number,
+  "doi": "string",
+  "specialty": ["array of controlled strings, 1-3 items"],
+  "tags": ["array of 3-8 free-text clinical keywords, lowercase"],
+  "one_line_summary": "string, max ~35 words",
+  "key_pearls": ["array of 4-7 atomic, standalone clinical pearls"],
+  "evidence_level": "string, one of the controlled enum values",
+  "sample_size": "number or null",
+  "population": "string or null",
+  "sections": [
+    {
+      "order": number,
+      "heading": "string, plain title, no emoji, no markdown",
+      "content": "string, plain prose with inline '- ' bullets for lists",
+      "section_pearls": ["0-3 short pearls or empty array"]
+    }
+  ],
+  "strengths_limitations": "string, bulletted points for strengths and limitations",
+  "related_ids": [],
+  "added_date": "YYYY-MM-DD"
+}
+
+For GUIDELINES:
+{
+  "id": "string - URL-safe slug from issuing body + topic + year",
+  "doc_type": "guideline",
+  "title": "string - exact guideline title",
+  "issuing_bodies": ["array of society/organization acronyms, e.g. AHA, ACC, ESICM"],
+  "year": number,
+  "doi": "string",
+  "specialty": ["array of controlled strings, 1-3 items"],
+  "tags": ["array of 3-8 free-text clinical keywords, lowercase"],
+  "one_line_summary": "string, max ~35 words",
+  "key_pearls": ["array of 4-7 atomic, standalone clinical pearls"],
+  "consensus_method": "string or null",
+  "search_period": "string or null",
+  "recommendation_blocks": [
+    {
+      "order": number,
+      "topic": "string, plain title, no emoji, no markdown",
+      "narrative": "string, preserve all numbers, p-values, ORs, trial names verbatim",
+      "recommendations": [
+        {
+          "rec_id": "string or null",
+          "statement": "string, clear directive",
+          "strength": "strong | conditional | weak | expert_opinion | null",
+          "evidence_grade": "string or null"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": number,
+      "title": "string",
+      "action": "string, 1-3 sentences"
+    }
+  ],
+  "strengths_limitations": "string, bulletted points for strengths and limitations",
+  "related_ids": [],
+  "added_date": "YYYY-MM-DD"
+}"""
 
     prompt_content = [
         uploaded_file,
-        "Execute a comprehensive extraction pass. Do not summarize or compress drug boundaries or trial endpoint metrics."
+        "Extract and structure the full clinical content of this document into the schema above. Preserve all numbers, thresholds, drug doses, trial endpoints, and evidence grades exactly as stated."
     ]
 
     print(f"  🧠 Analyzing payload architecture via {target_model}...")
@@ -244,17 +316,15 @@ def process_single_pdf(file_path, category, processed_history):
 
         structured_payload = generate_final_structured_payload(uploaded_file, category)
         
-        # Programmatic scrubbing gates using the controlled lists
-        scrubbed_specialty = validate_and_scrub_metadata(structured_payload.get("system", "Other"), ALLOWED_SPECIALTIES)
-        scrubbed_type = validate_and_scrub_metadata(structured_payload.get("type_of_article", "Other"), ALLOWED_TYPES)
+        # Extract directory path components from new schema fields
+        specialty_list = structured_payload.get("specialty", [])
+        if isinstance(specialty_list, list) and len(specialty_list) > 0:
+            clean_system = "".join(x for x in str(specialty_list[0]) if x.isalnum() or x in "._- ").strip()
+        else:
+            clean_system = "Other"
         
-        # Override values inside payload to match exactly
-        structured_payload["system"] = scrubbed_specialty
-        structured_payload["type_of_article"] = scrubbed_type
-        
-        # Dynamic Storage Path Generation
-        clean_system = "".join(x for x in scrubbed_specialty if x.isalnum() or x in "._- ").strip()
-        clean_type = "".join(x for x in scrubbed_type if x.isalnum() or x in "._- ").strip()
+        doc_type = structured_payload.get("article_subtype", structured_payload.get("doc_type", "Other"))
+        clean_type = "".join(x for x in str(doc_type) if x.isalnum() or x in "._- ").strip()
         
         sharded_output_dir = os.path.join(OUTPUT_DIR, clean_system, clean_type)
         os.makedirs(sharded_output_dir, exist_ok=True)

@@ -1,9 +1,81 @@
 {
-  "paper_name": "Evidence-based, cost-effective management of upper gastrointestinal hemorrhage. An algorithm of the Journal of Trauma and Acute Care Surgery emergency general surgery algorithms work group",
-  "primary_authors": "Todd W. Costantini, Kendall R. McEachron, et al.",
-  "journal_name": "Journal of Trauma and Acute Care Surgery",
+  "id": "upper-gi-hemorrhage-management-jtacs-egs-guideline",
+  "doc_type": "guideline",
+  "title": "Evidence-based, cost-effective management of upper gastrointestinal hemorrhage. An algorithm of the Journal of Trauma and Acute Care Surgery emergency general surgery algorithms work group",
+  "issuing_bodies": [
+    "JTACS EGS Algorithms Work Group"
+  ],
+  "year": null,
   "doi": "10.1097/TA.0000000000005033",
-  "system": "Gastroenterology / Acute Care Surgery",
-  "type_of_article": "Guideline",
-  "clinical_summary_markdown": "## 📋 Core Summary\nThis guideline provides a structured, evidence-based algorithm for the management of acute upper gastrointestinal (UGI) hemorrhage. It emphasizes early risk stratification using the Glasgow-Blatchford Score, aggressive resuscitation for hemodynamically unstable patients, and a bifurcated management strategy based on whether the etiology is nonvariceal (NVUGIH) or variceal (EVUGIH). The guideline highlights the role of the emergency general surgeon in managing shock and coordinating multidisciplinary care.\n\n## Detailed Clinical Summary of each sub-topics in the paper:\n\n### Initial Presentation & Risk Stratification\n- **Hematochezia:** 10-25% of cases are UGI in origin. Nasogastric lavage is not routinely recommended due to low sensitivity/specificity.\n- **Glasgow-Blatchford Score (GBS):** Used for pre-endoscopy risk stratification. Score 0-1: consider outpatient follow-up. Score 2-5: intermediate risk. Score 6+: high risk.\n- **Resuscitation:** Prioritize airway protection in hematemesis. Use damage control resuscitation principles. In massive transfusion, maintain a 1:1:1 ratio of RBCs, platelets, and plasma. Administer 1g of calcium for every 4 units of blood products to prevent hypocalcemia.\n- **Tranexamic Acid (TXA):** Not recommended for routine use in acute GI bleeding due to lack of mortality benefit and increased risk of thromboembolic events.\n\n### Nonvariceal UGI Hemorrhage (NVUGIH)\n- **Pharmacotherapy:** Administer PPI (high-dose, continuous or intermittent) for 3 days post-hemostasis. Use erythromycin or metoclopramide as a prokinetic agent prior to endoscopy to clear blood.\n- **Endoscopy:** Perform within 24 hours. Use Forrest Classification to guide intervention: Ia/Ib (active) and IIa (visible vessel) require intervention. IIb (adherent clot) may require removal/assessment. IIc/III do not require intervention.\n- **Refractory Bleeding:** If endoscopy fails, consider interventional radiology (IR) for angioembolization. Surgery is reserved for refractory cases where IR is unavailable or unsuccessful.\n- **H. Pylori:** Test and treat with quadruple therapy (PPI, bismuth, tetracycline, metronidazole) if positive.\n\n### Esophagogastric Variceal UGI Hemorrhage (EVUGIH)\n- **Medical Management:** Start vasoactive agents (octreotide or terlipressin) immediately. Prophylactic antibiotics (e.g., IV ceftriaxone 1g daily) are recommended.\n- **Endoscopic Management:** Perform within 12 hours. Use band ligation for esophageal varices and glue/sclerotherapy for gastric varices.\n- **Secondary Prophylaxis:** Start nonselective beta-blockers (propranolol or carvedilol) indefinitely.\n- **Rescue Therapy:** For high-risk patients (Child-Pugh B > 7 with active bleeding, Child-Pugh C 10-13, or HVPG > 20 mm Hg), consider pre-emptive TIPS within 72 hours (ideally within 24 hours).\n\n## 🧠 Clinical Takeaways & Practice Impact\n- **Strengths & Limitations:** The algorithm provides a clear, actionable pathway for surgeons but acknowledges that institutional resource availability (e.g., availability of IR or TIPS) dictates specific management deviations.\n- **Direct ICU/Clinical Application:** \n  - **Resuscitation:** Do not over-correct labs in cirrhotic patients if they are no longer actively bleeding.\n  - **Surgical Technique:** For duodenal ulcers, perform longitudinal duodenotomy across the pylorus and close transversely (Heineke-Mikulicz) to avoid stricture. Avoid prolonged acid-reducing procedures in unstable patients.\n  - **Workflow:** Always coordinate with a multidisciplinary tumor board for bleeding malignancies or GISTs."
+  "specialty": [
+    "gastroenterology",
+    "surgery"
+  ],
+  "tags": [
+    "upper gi hemorrhage",
+    "ugih",
+    "variceal bleeding",
+    "nonvariceal bleeding",
+    "risk stratification",
+    "endoscopy",
+    "resuscitation",
+    "ppi"
+  ],
+  "one_line_summary": "This guideline provides an evidence-based algorithm for acute upper GI hemorrhage, emphasizing early risk stratification, aggressive resuscitation, and a bifurcated management strategy for nonvariceal vs. variceal etiologies.",
+  "key_pearls": [
+    "Do not over-correct labs in cirrhotic patients if they are no longer actively bleeding.",
+    "For duodenal ulcers, perform longitudinal duodenotomy across the pylorus and close transversely (Heineke-Mikulicz) to avoid stricture.",
+    "Avoid prolonged acid-reducing procedures in unstable patients.",
+    "Always coordinate with a multidisciplinary tumor board for bleeding malignancies or GISTs.",
+    "Glasgow-Blatchford Score 0-1 may allow for outpatient follow-up in UGI hemorrhage.",
+    "Tranexamic Acid (TXA) is not recommended for routine use in acute GI bleeding due to lack of mortality benefit.",
+    "For massive transfusion in UGI hemorrhage, maintain a 1:1:1 ratio of RBCs, platelets, and plasma, and administer 1g of calcium for every 4 units of blood products."
+  ],
+  "consensus_method": null,
+  "search_period": null,
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Initial Presentation & Risk Stratification",
+      "narrative": "- Hematochezia: 10-25% of cases are UGI in origin. Nasogastric lavage is not routinely recommended due to low sensitivity/specificity.\n- Glasgow-Blatchford Score (GBS): Used for pre-endoscopy risk stratification. Score 0-1: consider outpatient follow-up. Score 2-5: intermediate risk. Score 6+: high risk.\n- Resuscitation: Prioritize airway protection in hematemesis. Use damage control resuscitation principles. In massive transfusion, maintain a 1:1:1 ratio of RBCs, platelets, and plasma. Administer 1g of calcium for every 4 units of blood products to prevent hypocalcemia.\n- Tranexamic Acid (TXA): Not recommended for routine use in acute GI bleeding due to lack of mortality benefit and increased risk of thromboembolic events.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Implement early risk stratification using the Glasgow-Blatchford Score and apply damage control resuscitation principles, avoiding routine TXA for acute GI bleeding.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Nonvariceal UGI Hemorrhage (NVUGIH)",
+      "narrative": "- Pharmacotherapy: Administer PPI (high-dose, continuous or intermittent) for 3 days post-hemostasis. Use erythromycin or metoclopramide as a prokinetic agent prior to endoscopy to clear blood.\n- Endoscopy: Perform within 24 hours. Use Forrest Classification to guide intervention: Ia/Ib (active) and IIa (visible vessel) require intervention. IIb (adherent clot) may require removal/assessment. IIc/III do not require intervention.\n- Refractory Bleeding: If endoscopy fails, consider interventional radiology (IR) for angioembolization. Surgery is reserved for refractory cases where IR is unavailable or unsuccessful.\n- H. Pylori: Test and treat with quadruple therapy (PPI, bismuth, tetracycline, metronidazole) if positive.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Manage NVUGIH with PPIs and prokinetics, perform endoscopy within 24 hours guided by Forrest Classification, and consider IR or surgery for refractory cases, treating H. Pylori if positive.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Esophagogastric Variceal UGI Hemorrhage (EVUGIH)",
+      "narrative": "- Medical Management: Start vasoactive agents (octreotide or terlipressin) immediately. Prophylactic antibiotics (e.g., IV ceftriaxone 1g daily) are recommended.\n- Endoscopic Management: Perform within 12 hours. Use band ligation for esophageal varices and glue/sclerotherapy for gastric varices.\n- Secondary Prophylaxis: Start nonselective beta-blockers (propranolol or carvedilol) indefinitely.\n- Rescue Therapy: For high-risk patients (Child-Pugh B > 7 with active bleeding, Child-Pugh C 10-13, or HVPG > 20 mm Hg), consider pre-emptive TIPS within 72 hours (ideally within 24 hours).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Initiate vasoactive agents and prophylactic antibiotics for EVUGIH, perform endoscopy within 12 hours, provide secondary prophylaxis with beta-blockers, and consider pre-emptive TIPS for high-risk patients.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "The algorithm provides a clear, actionable pathway for surgeons but acknowledges that institutional resource availability (e.g., availability of IR or TIPS) dictates specific management deviations.",
+  "related_ids": [],
+  "added_date": "2026-06-30"
 }

@@ -1237,7 +1237,7 @@ async def render_dashboard_portal(request: Request):
                             </div>
                             <div class="w-full sm:w-auto shrink-0 flex gap-2">${{doiButtonHTML}}${{pdfButtonHTML}}</div>
                         </div>
-                        <div class="summary-body" style="color:var(--color-primary);font-size:15px;">
+                        <div class="summary-body" style="color:var(--color-primary);">
                             ${{parsedMarkdownHTML}}
                         </div>
                     `;
@@ -1473,6 +1473,75 @@ async def render_dashboard_portal(request: Request):
     """
     return HTMLResponse(content=html_content)
 
+def format_new_schema_as_markdown(payload):
+    """Convert new-format JSON payload into a markdown string for the frontend viewer."""
+    parts = []
+
+    # One-line summary at the top if present
+    summary = payload.get("one_line_summary", "")
+    if summary:
+        parts.append(f"> **One-Line Summary:** {summary}\n")
+
+    # Key pearls if present
+    pearls = payload.get("key_pearls", [])
+    if pearls:
+        parts.append("## Key Pearls\n" + "\n".join(f"- {p}" for p in pearls) + "\n")
+
+    # Article format: sections[]
+    sections = payload.get("sections", [])
+    if sections:
+        for s in sections:
+            heading = s.get("heading", "")
+            content = s.get("content", "")
+            section_pearls = s.get("section_pearls", [])
+            block = f"## {heading}\n{content}" if heading else content
+            if section_pearls:
+                block += "\n\n**Section Pearls:**\n" + "\n".join(f"- {sp}" for sp in section_pearls)
+            parts.append(block)
+
+    # Guideline format: recommendation_blocks[]
+    rec_blocks = payload.get("recommendation_blocks", [])
+    if rec_blocks:
+        for block in rec_blocks:
+            topic = block.get("topic", "")
+            narrative = block.get("narrative", "")
+            block_parts = [f"## {topic}"] if topic else []
+            if narrative:
+                block_parts.append(narrative)
+            for rec in block.get("recommendations", []):
+                rec_id = rec.get("rec_id")
+                statement = rec.get("statement", "")
+                strength = rec.get("strength")
+                evidence_grade = rec.get("evidence_grade")
+                label = f"[{rec_id}] " if rec_id else ""
+                meta_parts = []
+                if strength:
+                    meta_parts.append(strength)
+                if evidence_grade:
+                    meta_parts.append(evidence_grade)
+                meta = f" *({', '.join(meta_parts)})*" if meta_parts else ""
+                block_parts.append(f"- {label}{statement}{meta}")
+            parts.append("\n".join(block_parts))
+
+    # Bedside protocol (guidelines)
+    protocol = payload.get("bedside_protocol", [])
+    if protocol:
+        protocol_parts = ["## Bedside Protocol"]
+        for step in protocol:
+            step_num = step.get("step", "")
+            title = step.get("title", "")
+            action = step.get("action", "")
+            protocol_parts.append(f"**Step {step_num}: {title}**  \n{action}")
+        parts.append("\n".join(protocol_parts))
+
+    # Strengths & limitations
+    strengths = payload.get("strengths_limitations", "")
+    if strengths:
+        parts.append(f"## Strengths & Limitations\n{strengths}")
+
+    return "\n\n".join(parts)
+
+
 @app.get("/api/summary")
 async def get_cached_json_summary_contents(file_name: str, system: str = "General", type: str = "Unclassified"):
     base_name = os.path.splitext(file_name)[0]
@@ -1491,12 +1560,93 @@ async def get_cached_json_summary_contents(file_name: str, system: str = "Genera
     try:
         with open(target_json_path, "r", encoding="utf-8") as f:
             payload = json.load(f)
-        return {
-            "content": payload.get("clinical_summary_markdown", ""),
-            "authors": payload.get("primary_authors", "Unknown Authors")
-        }
+
+        # Old format (pre-migration)
+        content = payload.get("clinical_summary_markdown", "")
+        authors = payload.get("primary_authors", "")
+
+        # New format fallback
+        if not content:
+            content = format_new_schema_as_markdown(payload)
+        if not authors:
+            authors = payload.get("authors", "")
+        if not authors:
+            issuing = payload.get("issuing_bodies", [])
+            if issuing:
+                authors = ", ".join(issuing)
+        if not authors:
+            authors = "Unknown Authors"
+
+        return {"content": content, "authors": authors}
     except Exception as e:
         return JSONResponse(status_code=500, content={"error": str(e)})
+
+def extract_search_text(payload):
+    """Build a combined lowercase search string from both old and new format fields."""
+    text_parts = []
+
+    # Old format
+    text_parts.append(payload.get("paper_name", ""))
+    text_parts.append(payload.get("clinical_summary_markdown", ""))
+    text_parts.append(payload.get("primary_authors", ""))
+    text_parts.append(payload.get("journal_name", ""))
+
+    # New format (article)
+    text_parts.append(payload.get("title", ""))
+    authors = payload.get("authors", "")
+    if not authors:
+        issuing = payload.get("issuing_bodies", [])
+        if issuing:
+            authors = ", ".join(issuing)
+    text_parts.append(authors)
+    text_parts.append(payload.get("journal", ""))
+    text_parts.append(payload.get("one_line_summary", ""))
+    for p in payload.get("key_pearls", []):
+        text_parts.append(p)
+    for s in payload.get("sections", []):
+        text_parts.append(s.get("heading", ""))
+        text_parts.append(s.get("content", ""))
+        for sp in s.get("section_pearls", []):
+            text_parts.append(sp)
+
+    # New format (guideline)
+    text_parts.append(payload.get("consensus_method", ""))
+    for b in payload.get("recommendation_blocks", []):
+        text_parts.append(b.get("topic", ""))
+        text_parts.append(b.get("narrative", ""))
+        for r in b.get("recommendations", []):
+            text_parts.append(r.get("statement", ""))
+    for ib in payload.get("issuing_bodies", []):
+        text_parts.append(ib)
+    for step in payload.get("bedside_protocol", []):
+        text_parts.append(step.get("title", ""))
+        text_parts.append(step.get("action", ""))
+
+    text_parts.append(payload.get("strengths_limitations", ""))
+    for tag in payload.get("tags", []):
+        text_parts.append(tag)
+
+    return " ".join(text_parts).lower()
+
+
+def extract_metadata(payload):
+    """Extract title/system/type/journal from old or new format."""
+    title = payload.get("paper_name") or payload.get("title", "")
+    system = payload.get("system") or ""
+    if not system and payload.get("specialty"):
+        system = ", ".join(payload["specialty"])
+    article_type = payload.get("type_of_article") or ""
+    if not article_type and payload.get("doc_type"):
+        article_type = payload["doc_type"]
+    journal = payload.get("journal_name") or payload.get("journal", "")
+    if not journal:
+        issuing = payload.get("issuing_bodies", [])
+        if issuing:
+            journal = ", ".join(issuing)
+    if not journal:
+        journal = "Unknown Journal"
+    return title, system, article_type, journal
+
 
 @app.get("/api/search")
 async def search_summaries(q: str = ""):
@@ -1514,15 +1664,15 @@ async def search_summaries(q: str = ""):
                 fpath = os.path.join(root, fname)
                 with open(fpath, "r", encoding="utf-8") as f:
                     payload = json.load(f)
-                paper_name = payload.get("paper_name", "")
-                content = payload.get("clinical_summary_markdown", "")
-                if query in paper_name.lower() or query in content.lower():
+                search_text = extract_search_text(payload)
+                if query in search_text:
+                    title, system, article_type, journal = extract_metadata(payload)
                     results.append({
                         "file_name": fname,
-                        "title": paper_name,
-                        "system": payload.get("system", "Other"),
-                        "type": payload.get("type_of_article", "Other"),
-                        "journal": payload.get("journal_name", "Unknown Journal")
+                        "title": title,
+                        "system": system or "Other",
+                        "type": article_type or "Other",
+                        "journal": journal
                     })
             except Exception:
                 continue

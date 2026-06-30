@@ -1,9 +1,503 @@
 {
-  "paper_name": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2026",
-  "primary_authors": "Hallie C. Prescott et al.",
-  "journal_name": "Critical Care Medicine",
+  "id": "sccm-esicm-surviving-sepsis-campaign-international-guidelines-management-sepsis-septic-shock-2026",
+  "doc_type": "guideline",
+  "title": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2026",
+  "issuing_bodies": [
+    "SCCM",
+    "ESICM"
+  ],
+  "year": 2026,
   "doi": "10.1097/CCM.0000000000007075",
-  "system": "Sepsis",
-  "type_of_article": "Guideline",
-  "clinical_summary_markdown": "## 📋 CORE EXECUTIVE OVERVIEW & CLINICAL RATIONALE\nSepsis is defined as life-threatening acute organ dysfunction caused by a dysregulated host response to infection. It remains a profound global health priority, accounting for approximately 49 million cases and 13 million sepsis-related deaths annually. Beyond acute mortality, sepsis contributes to severe, long-lasting physical, cognitive, and mental health impairments in survivors. The 2026 Surviving Sepsis Campaign (SSC) International Guidelines provide an exhaustive, evidence-based framework for the screening, resuscitation, and comprehensive management of adult patients with sepsis and septic shock. \n\nThese updated guidelines address critical controversies and knowledge gaps in modern critical care, including the precise timing of antimicrobial administration based on the certainty of infection, the optimal fluid resuscitation volumes and strategies (liberal versus restrictive), the integration of dynamic hemodynamic monitoring (including capillary refill time), the role of prolonged beta-lactam infusions, and the utility of adjunctive therapies such as corticosteroids, blood purification, and vitamin C. The document emphasizes a personalized, physiology-driven approach to bedside management, moving away from rigid, one-size-fits-all mandates toward nuanced, context-specific clinical decision-making that incorporates antimicrobial stewardship and resource availability.\n\n## 🩺 CONDITIONAL SECTION: METICULOUS TRIAL METHODOLOGY & DESIGN\n- **Study Framework:** This document is a comprehensive international clinical practice guideline developed by a 69-person committee representing 23 countries (with 38% of panelists practicing in low- or middle-income countries). The guidelines were fully funded by the Society of Critical Care Medicine (SCCM) and the European Society of Intensive Care Medicine (ESICM) without industry support. \n- **Evidence Synthesis & Grading:** The panel utilized the Grading of Recommendations, Assessment, Development, and Evaluations (GRADE) methodology. The Evidence to Decision (EtD) framework was used to balance desirable and undesirable effects, certainty of evidence, patient values, resource intensity, and equity. \n- **Recommendation Formulation:** Recommendations were classified as either \"Strong\" (we recommend) or \"Conditional\" (we suggest). Strong recommendations indicate that most individuals should receive the intervention. Conditional recommendations acknowledge that the balance of effects may vary depending on patient values, clinical context, or resources. \"Good Practice Statements\" were issued for actionable, necessary practices with unequivocal benefit where formal GRADE evidence profiling was inappropriate.\n- **Consensus Voting:** A minimum 75% response rate and at least 80% agreement among eligible panelists were required to finalize a recommendation. \n- **Sepsis Terminology Definitions:** The panel standardized diagnostic certainty into four tiers: Definite Sepsis (confirmed by history, exam, and testing; alternative very unlikely), Probable Sepsis (high suspicion; most likely diagnosis), Possible Sepsis (moderate suspicion; alternative diagnosis also likely), and Unlikely Sepsis (low suspicion; alternative diagnosis more likely).\n\n## 🔬 SEQUENTIAL SUBSECTION ANALYSIS & CORE THEMATIC ARCHITECTURE\n\n### Screening and Early Management\n- **Detailed Synthesis:** Early identification of sepsis is paramount. The guidelines strongly recommend performance improvement programs that incorporate screening for acutely ill patients, standard operating procedures, and quality improvement (QI) strategies. The implementation of a multidisciplinary \"Code Sepsis\" or \"Sepsis Huddle\" is suggested to expedite diagnosis and treatment. For prehospital screening, the use of standard screening tools is suggested for patients en route via ambulance. In-hospital, the panel strongly recommends using the National Early Warning Score (NEWS), NEWS2, Modified Early Warning Score (MEWS), or Systemic Inflammatory Response Syndrome (SIRS) criteria over the quick Sepsis-Related Organ Failure Assessment (qSOFA) as a single screening tool, due to qSOFA's poor sensitivity. The guidelines explicitly state that sepsis is a clinical diagnosis and should not be ruled in or out using a single biomarker or novel rapid host response diagnostic test (e.g., Monocyte Distribution Width or SeptiCyte).\n- **Granular Data Points:** \n  - qSOFA sensitivity in prehospital settings: 23.1% (95% CI, 21.8-24.3%).\n  - NEWS2 sensitivity: 73.1% (95% CI, 71.8-74.4%).\n  - Blood cultures must be collected before antimicrobial administration, as antimicrobial therapy reduces blood culture positivity from 31.4% to 19.4% within a median of 70 minutes.\n  - Initial fluid resuscitation: At least 30 mL/kg of IV crystalloid within the first 3 hours for sepsis-induced hypoperfusion or septic shock. Weight-based volume should use actual body weight, or adjusted/ideal body weight for patients with a Body Mass Index (BMI) > 30 kg/m2.\n\n### Infection and Antimicrobial Therapy\n- **Detailed Synthesis:** The timing of antimicrobial therapy is stratified by the presence of shock and the certainty of the sepsis diagnosis. For patients with possible, probable, or definite septic shock, or those with probable/definite sepsis without shock, antimicrobials must be administered immediately, ideally within 1 hour of recognition. For patients with possible sepsis without shock, a time-limited rapid investigation is suggested; if concern for infection persists, antimicrobials should be given within 3 hours. Prehospital antibiotics are suggested if the anticipated time to in-hospital medical evaluation exceeds 60 minutes. The guidelines recommend against using procalcitonin to guide the *initiation* of antibiotics, but suggest its use alongside clinical evaluation to guide *discontinuation*. \n- **Granular Data Points:** \n  - Source control: Rapidly evaluate and achieve source control ideally within 6 hours of diagnosis.\n  - Empiric Multidrug-Resistant (MDR) coverage: Suggested only for patients at high risk for specific MDR pathogens; suggested against for low-risk patients.\n  - Antifungal therapy: Empiric use is suggested against for all patients, but may be considered on a case-by-case basis for those at high risk of Candida infection. The use of Candida biomarkers (e.g., 1,3-beta-D-glucan) to guide initiation or discontinuation is suggested against.\n  - Anaerobic coverage: Suggested against routinely, unless specific risk factors exist (e.g., intra-abdominal, necrotizing soft-tissue, or head/neck infections).\n  - Beta-lactam administration: Strong recommendation for prolonged infusion (extended or continuous) of beta-lactams for maintenance therapy after an initial loading dose, based on high-certainty evidence of mortality reduction.\n  - Selective Decontamination of the Digestive Tract (SDD): Suggested for mechanically ventilated adults in units with a low prevalence of antimicrobial resistance.\n\n### Hemodynamic Management and Resuscitation\n- **Detailed Synthesis:** Resuscitation should be guided by dynamic measures of fluid responsiveness rather than static parameters. Capillary refill time (CRT) is suggested as an adjunct to guide resuscitation, targeting normalization (<= 3 seconds). The guidelines suggest using either a liberal or restrictive fluid resuscitation strategy after the initial 30 mL/kg bolus, emphasizing individualized care based on patient factors. Balanced crystalloids are suggested over 0.9% saline, except in patients with traumatic brain injury where 0.9% saline is preferred. Albumin is suggested only for patients who have already received large volumes of crystalloids. Starches and gelatins are strongly recommended against. \n- **Granular Data Points:** \n  - Mean Arterial Pressure (MAP) targets: Initial target of 65 mmHg is recommended. For adults >= 65 years old, an initial target range of 60-65 mmHg is suggested over higher targets (permissive hypotension).\n  - Vasopressors: Norepinephrine is the first-line agent. Peripheral administration is suggested to restore MAP rather than delaying for central venous access. \n  - Adjunctive vasopressors: Vasopressin is suggested as the first adjunct for escalating norepinephrine doses (typically initiated at 0.2-0.3 mcg/kg/min of norepinephrine). Epinephrine is suggested if MAP remains inadequate despite norepinephrine and vasopressin.\n  - Inotropes: Dobutamine or epinephrine is suggested for patients with persistent hypoperfusion and cardiac dysfunction despite adequate fluid status and MAP. Levosimendan is suggested against.\n  - Methylene blue: Insufficient evidence to recommend for or against its use as rescue therapy in refractory shock.\n  - Beta-blockers: Suggested against for the treatment of septic shock.\n\n### Respiratory Support\n- **Detailed Synthesis:** Oxygenation should be monitored using pulse oximetry (SpO2) or arterial blood gas (SaO2), with the caveat that pulse oximetry is less accurate in shock, in patients with darker skin tones, and at extremes of saturation (< 90% or > 97%). The guidelines suggest titrating FiO2 to target either higher (liberal, e.g., 96-97%) or lower (conservative, e.g., 90-93%) oxygen levels depending on patient factors. High Flow Nasal Cannula (HFNC) is suggested over conventional oxygen therapy and noninvasive positive pressure ventilation (NIPPV) for acute hypoxemic respiratory failure. Awake proning is suggested for non-intubated patients. For mechanically ventilated patients, low tidal volume ventilation is strongly recommended.\n- **Granular Data Points:** \n  - Tidal volumes: 6 mL/kg of Ideal Body Weight (IBW) for ARDS; 6-8 mL/kg IBW for sepsis-associated hypoxemic respiratory failure without ARDS.\n  - Plateau pressure: Target <= 30 cm H2O.\n  - PEEP: Higher PEEP is suggested over lower PEEP in moderate-severe ARDS, but incremental PEEP titration strategies (e.g., recruitment maneuvers) are recommended against.\n  - Prone positioning: Suggested for > 12 hours daily in moderate-severe ARDS.\n  - Neuromuscular blockade: Intermittent boluses are suggested over continuous infusion.\n  - Veno-venous ECMO: Suggested for severe ARDS when conventional ventilation fails in experienced centers.\n\n### Adjunctive Therapies\n- **Detailed Synthesis:** The use of intravenous corticosteroids is suggested for patients with septic shock, balancing the benefits of shock reversal and potential mortality reduction against the risks of hyperglycemia and hypernatremia. The guidelines recommend against the use of antipyretics specifically to improve clinical outcomes, though they may be used for symptom control. Multiple highly debated adjunctive therapies were formally evaluated and recommended against due to lack of efficacy or potential harm.\n- **Granular Data Points:** \n  - Corticosteroids: IV hydrocortisone at a dose of 200 mg/day (often given as 50 mg IV every 6 hours or as a continuous infusion).\n  - Vitamin C: Conditional recommendation against IV vitamin C.\n  - IV Immunoglobulin (IVIG): Conditional recommendation against.\n  - Blood Purification: Conditional recommendation against hemoperfusion, high-dose hemofiltration, plasma exchange, and polymyxin B hemoperfusion.\n  - Vitamin D: Conditional recommendation against.\n  - XueBiJing injection: Conditional recommendation against outside of jurisdictions with regulatory approval.\n\n### Additional Supportive Therapies & Goals of Care\n- **Detailed Synthesis:** Stress ulcer prophylaxis using proton-pump inhibitors (PPIs) is suggested for patients with risk factors for gastrointestinal bleeding. Probiotics are suggested against. Active fluid removal (using diuretics or ultrafiltration) is suggested after the acute resuscitation phase to mitigate fluid overload. A restrictive transfusion strategy is recommended. Early enteral nutrition (within 72 hours) is suggested. Insulin therapy should be initiated when blood glucose levels reach >= 180 mg/dL (10 mmol/L). Goals of care and prognosis should be discussed early (within 72 hours). Comprehensive medication reconciliation, ideally pharmacist-based, is suggested at transitions of care. Post-hospital physical rehabilitation and mental health support services are suggested for survivors.\n\n## 📊 STATISTICAL RESULTS, ENDPOINTS & SAFETY OUTCOMES\n- **Prolonged Beta-Lactam Infusion:** Meta-analysis of 18 RCTs (including BLING III) showed prolonged infusions reduce short-term mortality (RR 0.91; 95% CI, 0.85-0.97, high certainty), translating to 25 fewer deaths per 1,000 patients.\n- **Selective Decontamination of the Digestive Tract (SDD):** Meta-analysis of 32 RCTs (including SuDDICU) showed a probable reduction in short-term mortality (RR 0.91; 95% CI, 0.82-0.99) and possibly less antimicrobial resistance (RR 0.64; 95% CI, 0.50-0.81).\n- **Capillary Refill Time (CRT):** Guided resuscitation targeting CRT <= 3 seconds (ANDROMEDA-SHOCK) showed a 28-day mortality risk ratio of 0.82 (95% CI, 0.65-1.04). The subsequent ANDROMEDA-SHOCK-2 trial showed a win ratio of 1.16 (95% CI, 1.02-1.33, p=0.04) for the composite primary outcome favoring CRT-guided resuscitation.\n- **Vasopressin Addition:** Meta-analysis of 9 RCTs (including VASST) found a probable reduction in mortality when adding vasopressin compared to escalating norepinephrine alone (RR 0.89; 95% CI, 0.79-1.01) and less atrial fibrillation (RR 0.66; 95% CI, 0.42-1.05).\n- **Corticosteroids:** Meta-analysis of 45 RCTs showed a small reduction in 28-day mortality (RR 0.92; 95% CI, 0.83-1.01) and a greater incidence of shock reversal at 7 days (RR 1.29; 95% CI, 1.13-1.46), but increased hyperglycemia (RR 1.19) and hypernatremia (RR 1.64).\n- **Fluid Strategies:** Restrictive versus liberal fluid management showed no difference in mortality (RR 1.00; 95% CI, 0.91-1.10, moderate certainty).\n- **Vitamin C:** High-quality RCTs (e.g., LOVIT) showed no difference in 90-day mortality (RR 1.06; 95% CI, 0.95-1.18) and potential harm regarding factitious hyperglycemia.\n\n## 🧠 BEDSIDE CLINICAL APPLICATION & ICU BLUEPRINT MANAGEMENT\n- **Methodological Strengths & Robustness:** The 2026 guidelines represent a monumental synthesis of critical care literature, utilizing rigorous GRADE methodology and the EtD framework. The inclusion of a large, geographically diverse panel (38% from LMICs) and a dedicated patient/family advisory group ensures that the recommendations are globally applicable, patient-centered, and sensitive to resource limitations.\n- **Limitations, Blind Spots & Knowledge Gaps:** Significant knowledge gaps remain regarding the optimal timing of vasopressor initiation relative to fluid administration, the precise identification of sepsis phenotypes that might benefit from targeted immunomodulation or blood purification, and the long-term cognitive and psychological rehabilitation of sepsis survivors. The reliance on observational data for the 1-hour and 3-hour antimicrobial timing bundles highlights a persistent vulnerability in the evidence base, as randomized trials withholding antibiotics are ethically unfeasible.\n- **Bedside Protocol Blueprint & Titration Workflows:**\n  1. **Screening & Recognition:** Utilize NEWS/NEWS2/MEWS to screen high-risk patients. Do not rely solely on qSOFA or isolated biomarkers.\n  2. **Hour-1 Resuscitation:** Obtain blood cultures immediately. Administer broad-spectrum IV antimicrobials within 1 hour if shock is present or sepsis is definite/probable. Initiate IV crystalloids at 30 mL/kg (using adjusted body weight for BMI > 30) for hypoperfusion or lactate >= 4 mmol/L.\n  3. **Hemodynamic Titration:** If hypotension persists during or after the fluid bolus, initiate norepinephrine (peripherally if central access is delayed) to target a MAP of 65 mmHg (or 60-65 mmHg in patients >= 65 years). \n  4. **Dynamic Reassessment:** Do not blindly administer fluids. Use Capillary Refill Time (target <= 3 seconds), stroke volume variation, or passive leg raises to assess fluid responsiveness. \n  5. **Vasopressor Escalation:** If norepinephrine requirements escalate (e.g., reaching 0.2-0.3 mcg/kg/min), add vasopressin. If MAP remains inadequate, add epinephrine. If cardiac dysfunction is present with hypoperfusion, add dobutamine.\n  6. **Infection Control:** Achieve anatomical source control within 6 hours. Administer beta-lactams via prolonged continuous or extended infusion after a loading dose. \n  7. **Adjuncts & De-escalation:** Initiate IV hydrocortisone (200 mg/day) for septic shock requiring ongoing vasopressors. De-escalate antimicrobials based on culture results and clinical improvement. Initiate active fluid removal (diuresis) once the acute resuscitation phase has concluded and the patient is hemodynamically stable.\n  8. **Recovery:** Engage in early Goals of Care discussions (within 72 hours). Ensure comprehensive medication reconciliation and arrange for physical and mental health follow-up prior to hospital discharge."
+  "specialty": [
+    "multi_system"
+  ],
+  "tags": [
+    "sepsis",
+    "septic shock",
+    "guidelines",
+    "critical care",
+    "antimicrobials",
+    "fluid resuscitation",
+    "vasopressors",
+    "ards",
+    "corticosteroids"
+  ],
+  "one_line_summary": "The 2026 Surviving Sepsis Campaign (SSC) International Guidelines provide an exhaustive, evidence-based framework for the screening, resuscitation, and comprehensive management of adult patients with sepsis and septic shock, emphasizing a personalized, physiology-driven approach.",
+  "key_pearls": [
+    "Screen high-risk patients using NEWS/NEWS2/MEWS; avoid qSOFA or isolated biomarkers for sepsis diagnosis.",
+    "Administer broad-spectrum IV antimicrobials within 1 hour for septic shock or definite/probable sepsis, and 30 mL/kg IV crystalloids for hypoperfusion.",
+    "Target MAP of 65 mmHg with norepinephrine as first-line vasopressor, using dynamic measures like Capillary Refill Time (target ≤ 3 seconds) to guide fluid responsiveness.",
+    "Prolonged infusion of beta-lactams is strongly recommended for maintenance therapy after a loading dose, based on high-certainty evidence of mortality reduction.",
+    "Consider IV hydrocortisone (200 mg/day) for septic shock requiring ongoing vasopressors, but conditionally recommend against IV vitamin C, IVIG, and most blood purification therapies.",
+    "Initiate active fluid removal (diuresis) once acute resuscitation concludes and discuss goals of care and prognosis early (within 72 hours)."
+  ],
+  "consensus_method": "GRADE methodology, Evidence to Decision (EtD) framework",
+  "search_period": null,
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Screening and Early Management",
+      "narrative": "Early identification of sepsis is paramount. The guidelines strongly recommend performance improvement programs that incorporate screening for acutely ill patients, standard operating procedures, and quality improvement (QI) strategies. The implementation of a multidisciplinary \"Code Sepsis\" or \"Sepsis Huddle\" is suggested to expedite diagnosis and treatment. For prehospital screening, the use of standard screening tools is suggested for patients en route via ambulance. In-hospital, the panel strongly recommends using the National Early Warning Score (NEWS), NEWS2, Modified Early Warning Score (MEWS), or Systemic Inflammatory Response Syndrome (SIRS) criteria over the quick Sepsis-Related Organ Failure Assessment (qSOFA) as a single screening tool, due to qSOFA's poor sensitivity. The guidelines explicitly state that sepsis is a clinical diagnosis and should not be ruled in or out using a single biomarker or novel rapid host response diagnostic test (e.g., Monocyte Distribution Width or SeptiCyte).\n\nqSOFA sensitivity in prehospital settings: 23.1% (95% CI, 21.8-24.3%). NEWS2 sensitivity: 73.1% (95% CI, 71.8-74.4%). Blood cultures must be collected before antimicrobial administration, as antimicrobial therapy reduces blood culture positivity from 31.4% to 19.4% within a median of 70 minutes. Initial fluid resuscitation: At least 30 mL/kg of IV crystalloid within the first 3 hours for sepsis-induced hypoperfusion or septic shock. Weight-based volume should use actual body weight, or adjusted/ideal body weight for patients with a Body Mass Index (BMI) > 30 kg/m2.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Implement performance improvement programs that incorporate screening for acutely ill patients, standard operating procedures, and quality improvement (QI) strategies.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Implement a multidisciplinary \"Code Sepsis\" or \"Sepsis Huddle\" to expedite diagnosis and treatment.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Use standard screening tools for prehospital patients en route via ambulance.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "In-hospital, use NEWS, NEWS2, MEWS, or SIRS criteria over qSOFA as a single screening tool.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Do not use a single biomarker or novel rapid host response diagnostic test (e.g., Monocyte Distribution Width or SeptiCyte) to rule in or out sepsis.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Collect blood cultures before antimicrobial administration.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Administer at least 30 mL/kg of IV crystalloid within the first 3 hours for sepsis-induced hypoperfusion or septic shock, using actual body weight, or adjusted/ideal body weight for patients with a Body Mass Index (BMI) > 30 kg/m2.",
+          "strength": "strong",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Infection and Antimicrobial Therapy",
+      "narrative": "The timing of antimicrobial therapy is stratified by the presence of shock and the certainty of the sepsis diagnosis. For patients with possible, probable, or definite septic shock, or those with probable/definite sepsis without shock, antimicrobials must be administered immediately, ideally within 1 hour of recognition. For patients with possible sepsis without shock, a time-limited rapid investigation is suggested; if concern for infection persists, antimicrobials should be given within 3 hours. Prehospital antibiotics are suggested if the anticipated time to in-hospital medical evaluation exceeds 60 minutes. The guidelines recommend against using procalcitonin to guide the *initiation* of antibiotics, but suggest its use alongside clinical evaluation to guide *discontinuation*.\n\nSource control: Rapidly evaluate and achieve source control ideally within 6 hours of diagnosis. Empiric Multidrug-Resistant (MDR) coverage: Suggested only for patients at high risk for specific MDR pathogens; suggested against for low-risk patients. Antifungal therapy: Empiric use is suggested against for all patients, but may be considered on a case-by-case basis for those at high risk of Candida infection. The use of Candida biomarkers (e.g., 1,3-beta-D-glucan) to guide initiation or discontinuation is suggested against. Anaerobic coverage: Suggested against routinely, unless specific risk factors exist (e.g., intra-abdominal, necrotizing soft-tissue, or head/neck infections). Beta-lactam administration: Strong recommendation for prolonged infusion (extended or continuous) of beta-lactams for maintenance therapy after an initial loading dose, based on high-certainty evidence of mortality reduction. Selective Decontamination of the Digestive Tract (SDD): Suggested for mechanically ventilated adults in units with a low prevalence of antimicrobial resistance.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Administer antimicrobials immediately (ideally within 1 hour) for patients with possible, probable, or definite septic shock, or probable/definite sepsis without shock.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "For patients with possible sepsis without shock, conduct a time-limited rapid investigation; if concern for infection persists, give antimicrobials within 3 hours.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Administer prehospital antibiotics if the anticipated time to in-hospital medical evaluation exceeds 60 minutes.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Do not use procalcitonin to guide the initiation of antibiotics.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Use procalcitonin alongside clinical evaluation to guide discontinuation of antibiotics.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Rapidly evaluate and achieve source control ideally within 6 hours of diagnosis.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest empiric Multidrug-Resistant (MDR) coverage only for patients at high risk for specific MDR pathogens; suggest against for low-risk patients.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest against empiric antifungal therapy for all patients, but consider on a case-by-case basis for those at high risk of Candida infection.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest against using Candida biomarkers (e.g., 1,3-beta-D-glucan) to guide initiation or discontinuation of antifungals.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest against routine anaerobic coverage, unless specific risk factors exist (e.g., intra-abdominal, necrotizing soft-tissue, or head/neck infections).",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Administer prolonged infusion (extended or continuous) of beta-lactams for maintenance therapy after an initial loading dose.",
+          "strength": "strong",
+          "evidence_grade": "high-certainty evidence of mortality reduction"
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest Selective Decontamination of the Digestive Tract (SDD) for mechanically ventilated adults in units with a low prevalence of antimicrobial resistance.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Hemodynamic Management and Resuscitation",
+      "narrative": "Resuscitation should be guided by dynamic measures of fluid responsiveness rather than static parameters. Capillary refill time (CRT) is suggested as an adjunct to guide resuscitation, targeting normalization (≤ 3 seconds). The guidelines suggest using either a liberal or restrictive fluid resuscitation strategy after the initial 30 mL/kg bolus, emphasizing individualized care based on patient factors. Balanced crystalloids are suggested over 0.9% saline, except in patients with traumatic brain injury where 0.9% saline is preferred. Albumin is suggested only for patients who have already received large volumes of crystalloids. Starches and gelatins are strongly recommended against.\n\nMean Arterial Pressure (MAP) targets: Initial target of 65 mmHg is recommended. For adults ≥ 65 years old, an initial target range of 60-65 mmHg is suggested over higher targets (permissive hypotension). Vasopressors: Norepinephrine is the first-line agent. Peripheral administration is suggested to restore MAP rather than delaying for central venous access. Adjunctive vasopressors: Vasopressin is suggested as the first adjunct for escalating norepinephrine doses (typically initiated at 0.2-0.3 mcg/kg/min of norepinephrine). Epinephrine is suggested if MAP remains inadequate despite norepinephrine and vasopressin. Inotropes: Dobutamine or epinephrine is suggested for patients with persistent hypoperfusion and cardiac dysfunction despite adequate fluid status and MAP. Levosimendan is suggested against. Methylene blue: Insufficient evidence to recommend for or against its use as rescue therapy in refractory shock. Beta-blockers: Suggested against for the treatment of septic shock.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Guide resuscitation by dynamic measures of fluid responsiveness rather than static parameters.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Use Capillary refill time (CRT) as an adjunct to guide resuscitation, targeting normalization (≤ 3 seconds).",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Use either a liberal or restrictive fluid resuscitation strategy after the initial 30 mL/kg bolus, emphasizing individualized care.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Use balanced crystalloids over 0.9% saline, except in patients with traumatic brain injury where 0.9% saline is preferred.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Use albumin only for patients who have already received large volumes of crystalloids.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Do not use starches and gelatins.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Target an initial Mean Arterial Pressure (MAP) of 65 mmHg.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "For adults ≥ 65 years old, suggest an initial MAP target range of 60-65 mmHg over higher targets (permissive hypotension).",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Use norepinephrine as the first-line vasopressor agent.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Administer norepinephrine peripherally to restore MAP rather than delaying for central venous access.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest vasopressin as the first adjunct for escalating norepinephrine doses (typically initiated at 0.2-0.3 mcg/kg/min of norepinephrine).",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest epinephrine if MAP remains inadequate despite norepinephrine and vasopressin.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest dobutamine or epinephrine for patients with persistent hypoperfusion and cardiac dysfunction despite adequate fluid status and MAP.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest against levosimendan.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "There is insufficient evidence to recommend for or against methylene blue as rescue therapy in refractory shock.",
+          "strength": null,
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest against beta-blockers for the treatment of septic shock.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Respiratory Support",
+      "narrative": "Oxygenation should be monitored using pulse oximetry (SpO2) or arterial blood gas (SaO2), with the caveat that pulse oximetry is less accurate in shock, in patients with darker skin tones, and at extremes of saturation (< 90% or > 97%). The guidelines suggest titrating FiO2 to target either higher (liberal, e.g., 96-97%) or lower (conservative, e.g., 90-93%) oxygen levels depending on patient factors. High Flow Nasal Cannula (HFNC) is suggested over conventional oxygen therapy and noninvasive positive pressure ventilation (NIPPV) for acute hypoxemic respiratory failure. Awake proning is suggested for non-intubated patients. For mechanically ventilated patients, low tidal volume ventilation is strongly recommended.\n\nTidal volumes: 6 mL/kg of Ideal Body Weight (IBW) for ARDS; 6-8 mL/kg IBW for sepsis-associated hypoxemic respiratory failure without ARDS. Plateau pressure: Target ≤ 30 cm H2O. PEEP: Higher PEEP is suggested over lower PEEP in moderate-severe ARDS, but incremental PEEP titration strategies (e.g., recruitment maneuvers) are recommended against. Prone positioning: Suggested for > 12 hours daily in moderate-severe ARDS. Neuromuscular blockade: Intermittent boluses are suggested over continuous infusion. Veno-venous ECMO: Suggested for severe ARDS when conventional ventilation fails in experienced centers.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Monitor oxygenation using pulse oximetry (SpO2) or arterial blood gas (SaO2), noting pulse oximetry limitations in shock, darker skin tones, and saturation extremes.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Titrate FiO2 to target either higher (liberal, e.g., 96-97%) or lower (conservative, e.g., 90-93%) oxygen levels depending on patient factors.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest High Flow Nasal Cannula (HFNC) over conventional oxygen therapy and noninvasive positive pressure ventilation (NIPPV) for acute hypoxemic respiratory failure.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest awake proning for non-intubated patients.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Use low tidal volume ventilation for mechanically ventilated patients.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Target tidal volumes of 6 mL/kg of Ideal Body Weight (IBW) for ARDS; 6-8 mL/kg IBW for sepsis-associated hypoxemic respiratory failure without ARDS.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Target plateau pressure ≤ 30 cm H2O.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest higher PEEP over lower PEEP in moderate-severe ARDS.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Recommend against incremental PEEP titration strategies (e.g., recruitment maneuvers).",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest prone positioning for > 12 hours daily in moderate-severe ARDS.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest intermittent boluses of neuromuscular blockade over continuous infusion.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest veno-venous ECMO for severe ARDS when conventional ventilation fails in experienced centers.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Adjunctive Therapies",
+      "narrative": "The use of intravenous corticosteroids is suggested for patients with septic shock, balancing the benefits of shock reversal and potential mortality reduction against the risks of hyperglycemia and hypernatremia. The guidelines recommend against the use of antipyretics specifically to improve clinical outcomes, though they may be used for symptom control. Multiple highly debated adjunctive therapies were formally evaluated and recommended against due to lack of efficacy or potential harm.\n\nCorticosteroids: IV hydrocortisone at a dose of 200 mg/day (often given as 50 mg IV every 6 hours or as a continuous infusion). Vitamin C: Conditional recommendation against IV vitamin C. IV Immunoglobulin (IVIG): Conditional recommendation against. Blood Purification: Conditional recommendation against hemoperfusion, high-dose hemofiltration, plasma exchange, and polymyxin B hemoperfusion. Vitamin D: Conditional recommendation against. XueBiJing injection: Conditional recommendation against outside of jurisdictions with regulatory approval.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Suggest intravenous corticosteroids (IV hydrocortisone at 200 mg/day) for patients with septic shock, balancing benefits and risks.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Do not use antipyretics specifically to improve clinical outcomes, though they may be used for symptom control.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Conditionally recommend against IV vitamin C.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Conditionally recommend against IV Immunoglobulin (IVIG).",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Conditionally recommend against blood purification therapies including hemoperfusion, high-dose hemofiltration, plasma exchange, and polymyxin B hemoperfusion.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Conditionally recommend against Vitamin D.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Conditionally recommend against XueBiJing injection outside of jurisdictions with regulatory approval.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Additional Supportive Therapies & Goals of Care",
+      "narrative": "Stress ulcer prophylaxis using proton-pump inhibitors (PPIs) is suggested for patients with risk factors for gastrointestinal bleeding. Probiotics are suggested against. Active fluid removal (using diuretics or ultrafiltration) is suggested after the acute resuscitation phase to mitigate fluid overload. A restrictive transfusion strategy is recommended. Early enteral nutrition (within 72 hours) is suggested. Insulin therapy should be initiated when blood glucose levels reach ≥ 180 mg/dL (10 mmol/L). Goals of care and prognosis should be discussed early (within 72 hours). Comprehensive medication reconciliation, ideally pharmacist-based, is suggested at transitions of care. Post-hospital physical rehabilitation and mental health support services are suggested for survivors.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Suggest stress ulcer prophylaxis using proton-pump inhibitors (PPIs) for patients with risk factors for gastrointestinal bleeding.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest against probiotics.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest active fluid removal (using diuretics or ultrafiltration) after the acute resuscitation phase to mitigate fluid overload.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Recommend a restrictive transfusion strategy.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest early enteral nutrition (within 72 hours).",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Initiate insulin therapy when blood glucose levels reach ≥ 180 mg/dL (10 mmol/L).",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Discuss goals of care and prognosis early (within 72 hours).",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest comprehensive medication reconciliation, ideally pharmacist-based, at transitions of care.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Suggest post-hospital physical rehabilitation and mental health support services for survivors.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Screening & Recognition",
+      "action": "Utilize NEWS/NEWS2/MEWS to screen high-risk patients. Do not rely solely on qSOFA or isolated biomarkers."
+    },
+    {
+      "step": 2,
+      "title": "Hour-1 Resuscitation",
+      "action": "Obtain blood cultures immediately. Administer broad-spectrum IV antimicrobials within 1 hour if shock is present or sepsis is definite/probable. Initiate IV crystalloids at 30 mL/kg (using adjusted body weight for BMI > 30) for hypoperfusion or lactate ≥ 4 mmol/L."
+    },
+    {
+      "step": 3,
+      "title": "Hemodynamic Titration",
+      "action": "If hypotension persists during or after the fluid bolus, initiate norepinephrine (peripherally if central access is delayed) to target a MAP of 65 mmHg (or 60-65 mmHg in patients ≥ 65 years)."
+    },
+    {
+      "step": 4,
+      "title": "Dynamic Reassessment",
+      "action": "Do not blindly administer fluids. Use Capillary Refill Time (target ≤ 3 seconds), stroke volume variation, or passive leg raises to assess fluid responsiveness."
+    },
+    {
+      "step": 5,
+      "title": "Vasopressor Escalation",
+      "action": "If norepinephrine requirements escalate (e.g., reaching 0.2-0.3 mcg/kg/min), add vasopressin. If MAP remains inadequate, add epinephrine. If cardiac dysfunction is present with hypoperfusion, add dobutamine."
+    },
+    {
+      "step": 6,
+      "title": "Infection Control",
+      "action": "Achieve anatomical source control within 6 hours. Administer beta-lactams via prolonged continuous or extended infusion after a loading dose."
+    },
+    {
+      "step": 7,
+      "title": "Adjuncts & De-escalation",
+      "action": "Initiate IV hydrocortisone (200 mg/day) for septic shock requiring ongoing vasopressors. De-escalate antimicrobials based on culture results and clinical improvement. Initiate active fluid removal (diuresis) once the acute resuscitation phase has concluded and the patient is hemodynamically stable."
+    },
+    {
+      "step": 8,
+      "title": "Recovery",
+      "action": "Engage in early Goals of Care discussions (within 72 hours). Ensure comprehensive medication reconciliation and arrange for physical and mental health follow-up prior to hospital discharge."
+    }
+  ],
+  "strengths_limitations": "The 2026 guidelines represent a monumental synthesis of critical care literature, utilizing rigorous GRADE methodology and the EtD framework. The inclusion of a large, geographically diverse panel (38% from LMICs) and a dedicated patient/family advisory group ensures that the recommendations are globally applicable, patient-centered, and sensitive to resource limitations. Significant knowledge gaps remain regarding the optimal timing of vasopressor initiation relative to fluid administration, the precise identification of sepsis phenotypes that might benefit from targeted immunomodulation or blood purification, and the long-term cognitive and psychological rehabilitation of sepsis survivors. The reliance on observational data for the 1-hour and 3-hour antimicrobial timing bundles highlights a persistent vulnerability in the evidence base, as randomized trials withholding antibiotics are ethically unfeasible.",
+  "related_ids": [],
+  "added_date": "2026-06-30"
 }
