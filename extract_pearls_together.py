@@ -15,7 +15,6 @@ Usage:
 import os
 import sys
 import json
-import csv
 import re
 import time
 import argparse
@@ -34,7 +33,7 @@ load_dotenv(dotenv_path=env_path)
 # ⚙️ CONFIG
 # =====================================================================
 OUTPUT_DIR = "./output_files"
-PEARLS_CSV = "./pearls.csv"
+PEARLS_JSON = "./pearls.json"
 PEARLS_TRACKER = "./pearls_processed.json"
 
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
@@ -65,7 +64,7 @@ SPECIALTIES_ALIASES = {
     "onc": "Oncology",
 }
 
-PEARLS_CSV_HEADERS = [
+PEARLS_JSON_FIELDS = [
     "id", "timestamp", "source_paper", "doi",
     "author", "system", "type", "pearl", "remarks", "file_name", "topic"
 ]
@@ -184,69 +183,60 @@ def update_tracker(file_name, count, mode):
 
 
 # =====================================================================
-# 📖 CSV HELPERS
+# 📖 JSON HELPERS
 # =====================================================================
+def _atomic_write_json(file_path, data):
+    tmp = file_path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, file_path)
+
+
 def load_existing_papers():
-    if not os.path.exists(PEARLS_CSV):
+    if not os.path.exists(PEARLS_JSON):
         return set(), 1
     try:
-        with open(PEARLS_CSV, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            papers = set()
-            max_id = 0
-            for row in reader:
-                src = row.get("source_paper", "").strip()
-                if src:
-                    papers.add(src)
-                try:
-                    max_id = max(max_id, int(row.get("id", 0)))
-                except (ValueError, TypeError):
-                    pass
-            return papers, max_id + 1
+        with open(PEARLS_JSON, "r", encoding="utf-8") as f:
+            rows = json.load(f)
+        papers = set()
+        max_id = 0
+        for row in rows:
+            src = row.get("source_paper", "").strip()
+            if src:
+                papers.add(src)
+            try:
+                max_id = max(max_id, int(row.get("id", 0)))
+            except (ValueError, TypeError):
+                pass
+        return papers, max_id + 1
     except Exception:
         return set(), 1
 
 
-def append_pearls_to_csv(pearls):
+def append_pearls_to_json(pearls):
     existing_rows = []
-    if os.path.exists(PEARLS_CSV):
+    if os.path.exists(PEARLS_JSON):
         try:
-            with open(PEARLS_CSV, "r", encoding="utf-8") as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    existing_rows.append(row)
+            with open(PEARLS_JSON, "r", encoding="utf-8") as f:
+                existing_rows = json.load(f)
         except Exception:
             pass
-
-    next_id = 0
-    if existing_rows:
-        ids = []
-        for r in existing_rows:
-            try:
-                ids.append(int(r.get("id", 0)))
-            except (ValueError, TypeError):
-                pass
-        next_id = (max(ids) + 1) if ids else 1
 
     now_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     all_rows = existing_rows + pearls
 
-    with open(PEARLS_CSV, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=PEARLS_CSV_HEADERS)
-        writer.writeheader()
-        for i, row in enumerate(all_rows):
-            out = {}
-            for key in PEARLS_CSV_HEADERS:
-                val = row.get(key, "")
-                if key == "id":
-                    val = str(i)
-                elif key == "timestamp" and not val:
-                    val = now_ts
-                elif isinstance(val, float) and str(val) == "nan":
-                    val = ""
-                out[key] = str(val) if val is not None else ""
-            writer.writerow(out)
+    for i, row in enumerate(all_rows):
+        out = {}
+        for key in PEARLS_JSON_FIELDS:
+            val = row.get(key, "")
+            if key == "id":
+                val = str(i)
+            elif key == "timestamp" and not val:
+                val = now_ts
+            out[key] = str(val) if val is not None else ""
+        all_rows[i] = out
 
+    _atomic_write_json(PEARLS_JSON, all_rows)
     return len(all_rows)
 
 
@@ -734,25 +724,25 @@ def main():
             update_tracker(fname, 0, backend)
             continue
 
-        count = append_pearls_to_csv(pearl_rows)
+        count = append_pearls_to_json(pearl_rows)
         update_tracker(fname, count, backend)
         total_pearls += count
         print(f"  [OK] {count} pearls saved")
 
     print()
-    print(f"[DONE] {total_pearls} new pearls written to {PEARLS_CSV}")
+    print(f"[DONE] {total_pearls} new pearls written to {PEARLS_JSON}")
 
-    # Validate CSV
+    # Validate JSON
     try:
-        with open(PEARLS_CSV, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        if reader.fieldnames != PEARLS_CSV_HEADERS:
-            print(f"  [WARN] Header mismatch: expected {PEARLS_CSV_HEADERS}, got {reader.fieldnames}")
+        with open(PEARLS_JSON, "r", encoding="utf-8") as f:
+            rows = json.load(f)
+        if rows and not all(k in rows[0] for k in PEARLS_JSON_FIELDS):
+            missing = [k for k in PEARLS_JSON_FIELDS if k not in rows[0]]
+            print(f"  [WARN] Missing fields in first row: {missing}")
         else:
-            print(f"  [OK] CSV validated: {len(rows)} rows, {len(reader.fieldnames)} columns")
+            print(f"  [OK] JSON validated: {len(rows)} entries")
     except Exception as e:
-        print(f"  [WARN] CSV validation failed: {e}")
+        print(f"  [WARN] JSON validation failed: {e}")
 
 
 if __name__ == "__main__":

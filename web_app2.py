@@ -1,5 +1,6 @@
 import os
 import json
+import re
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 
@@ -12,7 +13,7 @@ UNSUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScz864mkLh5AqBY
 
 OUTPUT_DIR = "./output_files"
 JSON_TRACKER_FILE = "./sent_summaries.json"
-PEARLS_CSV = "./pearls.csv"
+PEARLS_JSON = "./pearls.json"
 
 app = FastAPI()
 
@@ -27,24 +28,21 @@ def load_approved_ledger():
         return []
 
 def load_pearls():
-    if not os.path.exists(PEARLS_CSV):
+    if not os.path.exists(PEARLS_JSON):
         return []
     try:
-        df = pd.read_csv(PEARLS_CSV)
-        # Normalise column name for legacy CSV format
-        for col in df.columns:
-            if col.startswith("Unnamed"):
-                df.rename(columns={col: "file_name"}, inplace=True)
-                break
-        # Ensure all expected columns exist
-        for col in ["id", "timestamp", "source_paper", "doi", "author", "system", "type", "pearl", "remarks", "file_name", "topic"]:
-            if col not in df.columns:
-                df[col] = ""
-        # Coerce all to string and replace NaN/None with empty string
-        for col in df.columns:
-            df[col] = df[col].fillna("").astype(str)
-        return df.to_dict(orient="records")
-    except Exception:
+        with open(PEARLS_JSON, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if not isinstance(data, list):
+            return []
+        # Ensure all expected keys exist with defaults
+        expected_keys = ["id", "timestamp", "source_paper", "doi", "author", "system", "type", "pearl", "remarks", "file_name", "topic"]
+        for entry in data:
+            for k in expected_keys:
+                if k not in entry:
+                    entry[k] = ""
+        return data
+    except (json.JSONDecodeError, Exception):
         return []
 
 @app.get("/", response_class=HTMLResponse)

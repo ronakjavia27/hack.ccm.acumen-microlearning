@@ -3,7 +3,6 @@ import sys
 import re
 import json
 import argparse
-import csv
 from datetime import datetime
 from google import genai
 from google.genai import types
@@ -27,7 +26,7 @@ MODEL_FALLBACK = "gemini-3.1-flash-lite"        # backup model
 
 
 OUTPUT_DIR = "./output_files"
-PEARLS_CSV = "./pearls.csv"
+PEARLS_JSON = "./pearls.json"
 PEARLS_TRACKER = "./pearls_processed.xlsx"
 
 PRIMARY_API_KEY = os.getenv("PRIMARY_GEMINI_API_KEY")
@@ -40,7 +39,7 @@ if not PRIMARY_API_KEY and not BACKUP_API_KEY:
 PRIMARY_CLIENT = genai.Client(api_key=PRIMARY_API_KEY) if PRIMARY_API_KEY else None
 BACKUP_CLIENT = genai.Client(api_key=BACKUP_API_KEY) if BACKUP_API_KEY else None
 
-PEARLS_CSV_HEADERS = [
+PEARLS_JSON_FIELDS = [
     "id", "timestamp", "source_paper", "doi",
     "author", "system", "type", "pearl", "remarks", "file_name", "topic"
 ]
@@ -105,13 +104,19 @@ def update_tracker(file_name, pearl_count, mode):
     except Exception as e:
         print(f"  Warning: failed to update tracker: {e}")
 
+def _atomic_write_json(file_path, data):
+    tmp = file_path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, file_path)
+
+
 def load_existing_pearls():
-    if not os.path.exists(PEARLS_CSV):
+    if not os.path.exists(PEARLS_JSON):
         return set(), 1
     try:
-        with open(PEARLS_CSV, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
+        with open(PEARLS_JSON, "r", encoding="utf-8") as f:
+            rows = json.load(f)
         if not rows:
             return set(), 1
         ids = []
@@ -129,14 +134,13 @@ def load_existing_pearls():
     except Exception:
         return set(), 1
 
-def append_pearls_to_csv(pearls, next_id):
+
+def append_pearls_to_json(pearls, next_id):
     existing_rows = []
-    if os.path.exists(PEARLS_CSV):
+    if os.path.exists(PEARLS_JSON):
         try:
-            with open(PEARLS_CSV, "r", encoding="utf-8") as f:
-                reader = csv.DictReader(f)
-                for row in reader:
-                    existing_rows.append(row)
+            with open(PEARLS_JSON, "r", encoding="utf-8") as f:
+                existing_rows = json.load(f)
         except Exception:
             pass
 
@@ -151,24 +155,20 @@ def append_pearls_to_csv(pearls, next_id):
 
     now_ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     all_rows = existing_rows + pearls
-    with open(PEARLS_CSV, "w", encoding="utf-8", newline="") as f:
-        writer = csv.DictWriter(f, fieldnames=PEARLS_CSV_HEADERS)
-        writer.writeheader()
-        for i, row in enumerate(all_rows):
-            out = {}
-            for key in PEARLS_CSV_HEADERS:
-                val = row.get(key, "")
-                if key == "id":
-                    val = str(i)
-                elif key == "timestamp" and not val:
-                    val = now_ts
-                elif isinstance(val, float) and str(val) == "nan":
-                    val = ""
-                out[key] = str(val) if val is not None else ""
-            writer.writerow(out)
 
-    next_id = len(all_rows)
-    return next_id
+    for i, row in enumerate(all_rows):
+        out = {}
+        for key in PEARLS_JSON_FIELDS:
+            val = row.get(key, "")
+            if key == "id":
+                val = str(i)
+            elif key == "timestamp" and not val:
+                val = now_ts
+            out[key] = str(val) if val is not None else ""
+        all_rows[i] = out
+
+    _atomic_write_json(PEARLS_JSON, all_rows)
+    return len(all_rows)
 
 # =====================================================================
 # 📥 LOCAL MODE — extract pearls from markdown using rules
@@ -368,29 +368,25 @@ def main():
             update_tracker(fname, 0, mode)
             continue
 
-        next_id = append_pearls_to_csv(pearls, next_id)
+        next_id = append_pearls_to_json(pearls, next_id)
         update_tracker(fname, len(pearls), mode)
         total_pearls += len(pearls)
         print(f"  ✅ {len(pearls)} pearls saved")
 
     print()
-    print(f"🎉 Done! {total_pearls} new pearls written to {PEARLS_CSV}")
+    print(f"🎉 Done! {total_pearls} new pearls written to {PEARLS_JSON}")
 
-    # Validate the CSV is consistent
+    # Validate the JSON is consistent
     try:
-        with open(PEARLS_CSV, "r", encoding="utf-8") as f:
-            reader = csv.DictReader(f)
-            rows = list(reader)
-        if reader.fieldnames != PEARLS_CSV_HEADERS:
-            print(f"  ⚠️  Header mismatch: expected {PEARLS_CSV_HEADERS}, got {reader.fieldnames}")
+        with open(PEARLS_JSON, "r", encoding="utf-8") as f:
+            rows = json.load(f)
+        if rows and not all(k in rows[0] for k in PEARLS_JSON_FIELDS):
+            missing = [k for k in PEARLS_JSON_FIELDS if k not in rows[0]]
+            print(f"  ⚠️  Missing fields: {missing}")
         else:
-            print(f"  ✅ CSV validated: {len(rows)} rows, {len(reader.fieldnames)} columns")
-            for i, r in enumerate(rows[:3]):
-                missing = [k for k in PEARLS_CSV_HEADERS if k not in r]
-                if missing:
-                    print(f"  ⚠️  Row {i} missing keys: {missing}")
+            print(f"  ✅ JSON validated: {len(rows)} entries")
     except Exception as e:
-        print(f"  ⚠️  CSV validation failed: {e}")
+        print(f"  ⚠️  JSON validation failed: {e}")
 
 if __name__ == "__main__":
     main()

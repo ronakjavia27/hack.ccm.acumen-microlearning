@@ -25,7 +25,7 @@
   "one_line_summary": "This algorithm provides an evidence-based framework for acute lower GI bleeding management, stratifying patients by hemodynamic stability to guide triage, diagnostics, and interventions, aiming for cost-effective care.",
   "key_pearls": [
     "Calculate Oakland Score (<= 8 for safe ED discharge) and SHA2PE Score (<= 1 for low intervention risk) in stable LGI bleed patients.",
-    "Avoid Tranexamic Acid (TXA) in LGI bleeding due to lack of efficacy and increased VTE/mortality risk; use whole blood or 1:1:1 balanced transfusion for unstable patients.",
+    "Avoid Tranexamic Acid (TXA) in LGI bleeding due to lack of efficacy and increased VTE/**mortality** risk; use whole blood or 1:1:1 balanced transfusion for unstable patients.",
     "For unstable patients, perform emergent arterial-phase CTA; if positive, target interventional radiology \"needle-stick\" within 1 hour. Bypass CTA for direct angiography in refractory hemorrhagic shock.",
     "For stable patients or negative CTA, initiate PEG bowel prep and schedule colonoscopy within 24 hours.",
     "In patients on DAPT, continue aspirin to prevent cardiovascular events and temporarily hold the secondary antiplatelet agent.",
@@ -37,7 +37,7 @@
     {
       "order": 1,
       "topic": "Initial Assessment & Risk Stratification",
-      "narrative": "Initial assessment must focus on the depth of hypoperfusion using vital signs, shock index, lactate, and base deficit. Biochemical markers of shock (lactate/base deficit) may be less pronounced in elderly cohorts. Physical examination must include direct inspection and digital rectal examination to rule out local anorectal pathology (hemorrhoids, fissures, rectal ulcers). Sigmoidoscopy in an unprepared colon is not supported unless overt local bleeding is visible. For risk stratification in stable patients, the Oakland Score identifies patients safe for emergency department (ED) discharge; a score of <= 8 predicts a 95% probability of safe discharge (defined as the absence of rebleeding, transfusion, therapeutic intervention, 28-day readmission, or death). The Oakland Score components are: Age (years): <= 39 (0), 40-69 (1), >= 70 (2); Sex: Female (0), Male (1); Prior LGI Bleed Admission: No (0), Yes (1); Heart Rate (bpm): <= 69 (0), 70-89 (1), 90-109 (2), >= 110 (3); Systolic BP (mmHg): 50-89 (5), 90-110 (4), 120-129 (3), 130-159 (2), >= 160 (0); Hemoglobin (g/dL): 3.6-6.9 (22), 7.0-8.9 (17), 9.0-10.9 (13), 11.0-12.9 (8), 13.0-15.9 (4), >= 16.0 (0). The SHA2PE Score predicts low risk of hospital-based intervention (transfusion, endoscopy, embolization, surgery); a score of <= 1 indicates hospital-based intervention is highly unlikely. SHA2PE variables (1 point each, except Hb): SBP < 100 mmHg (1); Hb < 10.5 g/dL (2) or 10.5-12.0 g/dL (1); Antiplatelet therapy (1); Anticoagulant therapy (1); Pulse rate > 100 bpm (1); ED active bleeding (1).",
+      "narrative": "Initial assessment must focus on the depth of hypoperfusion using vital signs, shock index, lactate, and base deficit. Biochemical markers of shock (lactate/base deficit) may be less pronounced in elderly cohorts. Physical examination must include direct inspection and digital rectal examination to rule out local anorectal pathology (hemorrhoids, fissures, rectal ulcers). Sigmoidoscopy in an unprepared colon is not supported unless overt local bleeding is visible. For risk stratification in stable patients, the Oakland Score identifies patients safe for emergency department (ED) discharge; a score of <= 8 predicts a 95% probability of safe discharge (defined as the absence of rebleeding, transfusion, therapeutic intervention, 28-day readmission, or death). The Oakland Score components are: Age (years): <= 39 (0), 40-69 (1), >= 70 (2); Sex: Female (0), Male (1); Prior LGI Bleed Admission: No (0), Yes (1); Heart Rate (bpm): <= 69 (0), 70-89 (1), 90-109 (2), >= 110 (3); Systolic BP (mmHg): 50-89 (5), 90-110 (4), 120-129 (3), 130-159 (2), >= 160 (0); Hemoglobin (g/dL): 3.6-6.9 (22), 7.0-8.9 (17), 9.0-10.9 (13), 11.0-12.9 (8), 13.0-15.9 (4), >= 16.0 (0). The SHA2PE Score predicts low risk of hospital-based intervention (transfusion, endoscopy, embolization, surgery); a score of <= 1 indicates hospital-based intervention is highly unlikely. SHA2PE variables (1 point each, except Hb): SBP < **100 mmHg** (1); Hb < **10.5 g**/dL (2) or 10.5-**12.0 g**/dL (1); Antiplatelet therapy (1); Anticoagulant therapy (1); Pulse rate > 100 bpm (1); ED active bleeding (1).",
       "recommendations": [
         {
           "rec_id": null,
@@ -74,7 +74,7 @@
     {
       "order": 2,
       "topic": "Resuscitation & Pharmacotherapy in Unstable Patients",
-      "narrative": "Unstable patients presenting with shock, hypotension, or tachycardia require immediate hemostatic resuscitation utilizing whole blood and/or a balanced 1:1:1 transfusion protocol. Tranexamic Acid (TXA) is not recommended for LGI bleeding. Large-scale data (HALT-IT trial) demonstrated no reduction in death from GI bleeding but revealed a significantly higher rate of venous thromboembolic events (VTE). Recent meta-analyses associate TXA with increased mortality in LGI bleeding. Massive upper GI bleeding can present as hematochezia. Nasogastric tube (NGT) lavage is not routinely recommended due to low sensitivity and low negative predictive value, though it may facilitate rapid bowel prep if colonoscopy is planned.",
+      "narrative": "Unstable patients presenting with shock, hypotension, or tachycardia require immediate hemostatic resuscitation utilizing whole blood and/or a balanced 1:1:1 transfusion protocol. Tranexamic Acid (TXA) is not **recommended** for LGI bleeding. Large-scale data (HALT-IT trial) demonstrated no reduction in death from GI bleeding but revealed a **significantly** higher rate of venous thromboembolic events (VTE). Recent meta-analyses associate TXA with increased **mortality** in LGI bleeding. Massive upper GI bleeding can present as hematochezia. Nasogastric tube (NGT) lavage is not routinely **recommended** due to low sensitivity and low negative predictive value, though it may facilitate rapid bowel prep if colonoscopy is planned.",
       "recommendations": [
         {
           "rec_id": null,
@@ -84,7 +84,7 @@
         },
         {
           "rec_id": null,
-          "statement": "Do not use Tranexamic Acid (TXA) for LGI bleeding due to lack of efficacy and increased VTE/mortality risk.",
+          "statement": "Do not use Tranexamic Acid (TXA) for LGI bleeding due to lack of efficacy and increased VTE/**mortality** risk.",
           "strength": null,
           "evidence_grade": null
         },
@@ -99,7 +99,7 @@
     {
       "order": 3,
       "topic": "CT Angiography (CTA)",
-      "narrative": "CTA of the abdomen and pelvis (specifically with an arterial phase) is the first-line diagnostic modality for hemodynamically unstable patients or those with high suspicion of active, ongoing hemorrhage. It requires no bowel preparation and can be performed rapidly. CTA requires an active bleeding rate of >= 0.3 mL/min to localize a source. Experimental models show 50% sensitivity at 0.1 mL/min, rising to 95% at >= 0.5 mL/min. Clinical sensitivity ranges from 79% to 95%, with specificity between 95% and 100%. In patients in profound hemorrhagic shock requiring continuous active transfusion, CTA should be bypassed in favor of immediate catheter-based visceral angiography to avoid delaying definitive hemostasis and exposing the patient to a double contrast load.",
+      "narrative": "CTA of the abdomen and pelvis (specifically with an arterial phase) is the first-line diagnostic modality for hemodynamically unstable patients or those with high suspicion of active, ongoing hemorrhage. It requires no bowel preparation and can be performed rapidly. CTA requires an active bleeding rate of >= **0.3 mL**/min to localize a source. Experimental models show 50% sensitivity at **0.1 mL**/min, rising to 95% at >= **0.5 mL**/min. Clinical sensitivity ranges from 79% to 95%, with specificity between 95% and 100%. In patients in profound hemorrhagic shock requiring continuous active transfusion, CTA should be bypassed in favor of immediate catheter-based visceral angiography to avoid delaying definitive hemostasis and exposing the patient to a double contrast load.",
       "recommendations": [
         {
           "rec_id": null,
@@ -143,7 +143,7 @@
     {
       "order": 5,
       "topic": "Colonoscopy",
-      "narrative": "Colonoscopy is the first-line diagnostic and therapeutic intervention for hemodynamically stable patients, or those in whom CTA was negative (indicating bleeding has subsided). Urgent colonoscopy should be performed within 24 hours of admission following adequate resuscitation and bowel preparation. Early colonoscopy (< 24 hours) reduces hospital length of stay, transfusion requirements, and overall costs, while increasing diagnostic yield and therapeutic intervention rates. Polyethylene glycol (PEG) solution is superior to glycerin or enemas for bowel preparation, yielding higher diagnostic accuracy and reducing the need for repeat procedures.",
+      "narrative": "Colonoscopy is the first-line diagnostic and therapeutic intervention for hemodynamically stable patients, or those in whom CTA was negative (indicating bleeding has subsided). Urgent colonoscopy should be performed within 24 hours of admission following adequate resuscitation and bowel preparation. Early colonoscopy (< 24 hours) reduces hospital length of stay, transfusion requirements, and overall costs, while increasing diagnostic yield and therapeutic intervention rates. Polyethylene glycol (PEG) solution is **superior** to glycerin or enemas for bowel preparation, yielding higher diagnostic accuracy and reducing the need for repeat procedures.",
       "recommendations": [
         {
           "rec_id": null,
@@ -205,7 +205,7 @@
     {
       "order": 7,
       "topic": "Small Bowel Hemorrhage",
-      "narrative": "Small bowel hemorrhage accounts for 5% to 10% of all GI bleeding. Etiology is age-dependent: patients < 40 years commonly present with Meckel's diverticulum or inflammatory bowel disease (IBD); patients > 40 years commonly present with angiodysplasia (vascular lesions account for 30% to 40% of cases overall). Diagnostics are indicated when both upper endoscopy and colonoscopy are negative. Video capsule endoscopy (VCE) is the diagnostic modality of choice and is superior to push-enteroscopy. VCE should be performed within 48 hours of the bleeding episode to maximize diagnostic yield (success rate 55% to 62%).",
+      "narrative": "Small bowel hemorrhage accounts for 5% to 10% of all GI bleeding. Etiology is age-dependent: patients < 40 years commonly present with Meckel's diverticulum or inflammatory bowel disease (IBD); patients > 40 years commonly present with angiodysplasia (vascular lesions account for 30% to 40% of cases overall). Diagnostics are indicated when both upper endoscopy and colonoscopy are negative. Video capsule endoscopy (VCE) is the diagnostic modality of choice and is **superior** to push-enteroscopy. VCE should be performed within 48 hours of the bleeding episode to maximize diagnostic yield (success rate 55% to 62%).",
       "recommendations": [
         {
           "rec_id": null,
@@ -224,7 +224,7 @@
     {
       "order": 8,
       "topic": "Anticoagulation & Antiplatelet Management",
-      "narrative": "For warfarin, if therapeutic or supratherapeutic, reverse with 4-factor prothrombin complex concentrate (PCC). Bridge with low-molecular-weight heparin (LMWH) only in patients at high thrombotic risk (e.g., mechanical heart valves). Warfarin should not be restarted until 7 to 14 days after hemostasis is achieved. DOACs have a short half-life; specific reversal agents are reserved only for life-threatening, uncontrolled hemorrhage. For antiplatelets, stop aspirin if used solely for primary cardiovascular prevention. For patients on dual antiplatelet therapy (DAPT), continue aspirin and temporarily hold the second agent (e.g., P2Y12 inhibitor). Discontinuing aspirin in patients with established cardiovascular disease is associated with a significant increase in major cardiovascular events and mortality, despite reducing rebleeding.",
+      "narrative": "For warfarin, if therapeutic or supratherapeutic, reverse with 4-factor prothrombin complex concentrate (PCC). Bridge with low-molecular-weight heparin (LMWH) only in patients at high thrombotic risk (e.g., mechanical heart valves). Warfarin should not be restarted until 7 to 14 days after hemostasis is achieved. DOACs have a short half-life; specific reversal agents are reserved only for life-threatening, uncontrolled hemorrhage. For antiplatelets, stop aspirin if used solely for primary cardiovascular prevention. For patients on dual antiplatelet therapy (DAPT), continue aspirin and temporarily hold the second agent (e.g., P2Y12 inhibitor). Discontinuing aspirin in patients with established cardiovascular disease is associated with a **significant** increase in major cardiovascular events and **mortality**, despite reducing rebleeding.",
       "recommendations": [
         {
           "rec_id": null,
