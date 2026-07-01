@@ -121,6 +121,7 @@ def normalize_type(payload, allowed_types):
         low_types[t.lower().replace("_", "-").replace(" ", "-")] = t
     doc_type = (payload.get("doc_type") or "").lower()
     if doc_type == "guideline":
+        payload["article_subtype"] = "Guideline"
         return "Guideline"
     subtype = (payload.get("article_subtype") or "").strip()
     normalized = subtype.lower().replace("_", "-").replace(" ", "-")
@@ -175,7 +176,7 @@ def enrich_payload_with_markdown(payload):
 # =====================================================================
 EXCEL_HEADERS = [
     "Serial Number", "File Name", "Paper/Guideline Name", "Primary Authors",
-    "Journal Name", "DOI", "System", "Type of Article", "MD Generated",
+    "Journal Name", "DOI", "Year", "System", "Type of Article", "MD Generated",
     "Email Pushed", "Summary Saved Date", "Email Pushed Date", "Parsing Notes", "show_on_web"
 ]
 
@@ -191,6 +192,23 @@ def initialize_system_paths():
         ws.append(EXCEL_HEADERS)
         wb.save(EXCEL_TRACKER_FILE)
         print(f"Excel tracker initialized at {EXCEL_TRACKER_FILE}")
+    else:
+        migrate_ledger_schema()
+
+
+def migrate_ledger_schema():
+    """Add Year column to existing ledger if missing."""
+    try:
+        wb = load_workbook(EXCEL_TRACKER_FILE)
+        ws = wb["Registry Logs"]
+        headers = [cell.value for cell in ws[1]]
+        if "Year" not in headers:
+            col_idx = len(headers) + 1
+            ws.cell(row=1, column=col_idx, value="Year")
+            wb.save(EXCEL_TRACKER_FILE)
+            print(f"  Migrated ledger: added Year column")
+    except Exception:
+        pass
 
 def load_processed_files_from_excel():
     if not os.path.exists(EXCEL_TRACKER_FILE):
@@ -220,6 +238,7 @@ def log_transaction_to_excel(file_name, metadata, parsing_notes="Success"):
                 metadata.get("authors", metadata.get("primary_authors", "Unknown Authors")),
                 metadata.get("journal", metadata.get("journal_name", "Unknown Journal")),
                 metadata.get("doi", "None"),
+                metadata.get("year", ""),
                 ", ".join(metadata.get("specialty", [])) if isinstance(metadata.get("specialty"), list) else metadata.get("system", "Other"),
                 metadata.get("article_subtype", metadata.get("doc_type", metadata.get("type_of_article", "Other"))),
                 "Yes", "No",
@@ -254,6 +273,7 @@ CRITICAL RULES:
 14. For ARTICLES: "evidence_level" must be exactly one of: "review", "rct", "meta_analysis", "secondary_analysis", "observational", "case_series", "narrative_review".
 15. Enforce strict medical ground truth. Never generalize equations, target values, drug intervals, or data clearances.
 16. Format ALL content fields as structured bullet points (- item per finding), never as prose paragraphs. Each bullet captures one atomic finding, data point, or recommendation. Use markdown formatting for clinical emphasis: wrap key numbers, thresholds, drug names, lab values, and clinical endpoints in **bold**; use *italic* for technical terms and statistical measures. Apply this within sections[].content, narrative, recommendation statements, and key_pearls.
+17. Extract all drugs mentioned with their doses, routes, frequencies, indications, and key adverse effects into the "drugs_doses" array. One entry per drug-context pair. If a drug appears in multiple indications, include separate entries. If none, use [].
 
 ARTICLE SCHEMA:
 {
@@ -281,6 +301,14 @@ ARTICLE SCHEMA:
     }
   ],
   "strengths_limitations": "string, bulletted points for strengths and limitations",
+  "drugs_doses": [
+    {
+      "drug": "string - generic drug name",
+      "dose": "string - dose, route, frequency, duration",
+      "indication": "string - clinical context",
+      "adverse_effects": "string - key side effects, contraindications, monitoring"
+    }
+  ],
   "related_ids": [],
   "added_date": "YYYY-MM-DD"
 }
@@ -322,6 +350,14 @@ For GUIDELINES:
     }
   ],
   "strengths_limitations": "string, bulletted points for strengths and limitations",
+  "drugs_doses": [
+    {
+      "drug": "string - generic drug name",
+      "dose": "string - dose, route, frequency, duration",
+      "indication": "string - clinical context",
+      "adverse_effects": "string - key side effects, contraindications, monitoring"
+    }
+  ],
   "related_ids": [],
   "added_date": "YYYY-MM-DD"
 }"""

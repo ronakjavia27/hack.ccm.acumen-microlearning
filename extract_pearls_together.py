@@ -28,15 +28,14 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 env_path = os.path.join(script_dir, '.env')
 load_dotenv(dotenv_path=env_path)
 
-import openpyxl
-from openpyxl import Workbook, load_workbook
+
 
 # =====================================================================
 # ⚙️ CONFIG
 # =====================================================================
 OUTPUT_DIR = "./output_files"
 PEARLS_CSV = "./pearls.csv"
-PEARLS_TRACKER = "./pearls_processed.xlsx"
+PEARLS_TRACKER = "./pearls_processed.json"
 
 TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
@@ -154,35 +153,34 @@ def detect_backend():
 # =====================================================================
 def load_tracker():
     if not os.path.exists(PEARLS_TRACKER):
-        return set()
+        return {}
     try:
-        wb = load_workbook(PEARLS_TRACKER, read_only=True)
-        ws = wb.active
-        processed = set()
-        for row in ws.iter_rows(min_row=2, max_col=1, values_only=True):
-            if row[0]:
-                processed.add(str(row[0]).strip())
-        return processed
+        with open(PEARLS_TRACKER, "r", encoding="utf-8") as f:
+            return json.load(f)
     except Exception:
-        return set()
+        return {}
 
 
 def update_tracker(file_name, count, mode):
-    retries = 3
-    for attempt in range(retries):
+    tracker = {}
+    if os.path.exists(PEARLS_TRACKER):
         try:
-            if os.path.exists(PEARLS_TRACKER):
-                wb = load_workbook(PEARLS_TRACKER)
-                ws = wb.active
-            else:
-                wb = Workbook()
-                ws = wb.active
-                ws.append(["File Name", "Pearls Extracted", "Mode", "Timestamp"])
-            ws.append([file_name, count, mode, datetime.now().strftime("%Y-%m-%d %H:%M:%S")])
-            wb.save(PEARLS_TRACKER)
-            return
-        except PermissionError:
-            time.sleep(0.5)
+            with open(PEARLS_TRACKER, "r", encoding="utf-8") as f:
+                tracker = json.load(f)
+        except Exception:
+            tracker = {}
+    tracker[file_name] = {
+        "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "mode": mode,
+        "count": count
+    }
+    tmp = PEARLS_TRACKER + ".tmp"
+    try:
+        with open(tmp, "w", encoding="utf-8") as f:
+            json.dump(tracker, f, indent=2)
+        os.replace(tmp, PEARLS_TRACKER)
+    except Exception:
+        pass
 
 
 # =====================================================================
@@ -534,6 +532,24 @@ def build_prompt(payload):
             stitle = step.get("title", "")
             action = step.get("action", "")
             block += f"Step {sn}: {stitle} -> {action}\n"
+        parts.append(block)
+
+    drugs_doses = payload.get("drugs_doses", [])
+    if drugs_doses:
+        block = "\nDrugs & Doses:\n"
+        for dd in drugs_doses:
+            drug = dd.get("drug", "")
+            dose = dd.get("dose", "")
+            indication = dd.get("indication", "")
+            adverse = dd.get("adverse_effects", "")
+            block += f"- {drug}"
+            if dose:
+                block += f" | Dose: {dose}"
+            if indication:
+                block += f" | Indication: {indication}"
+            if adverse:
+                block += f" | Adverse: {adverse}"
+            block += "\n"
         parts.append(block)
 
     if strengths:

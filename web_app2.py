@@ -75,6 +75,8 @@ async def render_dashboard_portal(request: Request):
                 "type": str(row.get("Type of Article", "Unclassified")),
                 "doi": clean_doi_url,
                 "file_name": str(row.get("File Name", "")),
+                "date_added": str(row.get("Summary Saved Date", "")),
+                "year": str(row.get("Year", "")),
                 "show_on_web": str(row.get("show_on_web", "No")).strip().lower()
             })
 
@@ -422,6 +424,13 @@ async def render_dashboard_portal(request: Request):
                             <option value="All">All Types</option>
                         </select>
                     </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1 text-secondary">Sort By</label>
+                        <select id="sortBy_papers" onchange="setSortBy(this.value)" class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition">
+                            <option value="added">Date Added (newest)</option>
+                            <option value="published">Year Published (newest)</option>
+                        </select>
+                    </div>
                 </div>
 
                 <!-- Guidelines Filter Panel -->
@@ -442,6 +451,13 @@ async def render_dashboard_portal(request: Request):
                         <label class="block text-xs font-bold mb-1 text-secondary">System</label>
                         <select id="systemFilter_guidelines" onchange="executeClientSideFilter()" class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition">
                             <option value="All">All Systems</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold mb-1 text-secondary">Sort By</label>
+                        <select id="sortBy_guidelines" onchange="setSortBy(this.value)" class="w-full bg-card text-primary text-sm p-2.5 rounded-lg border border-dark focus:outline-none focus:ring-2 focus:ring-accent transition">
+                            <option value="added">Date Added (newest)</option>
+                            <option value="published">Year Published (newest)</option>
                         </select>
                     </div>
                 </div>
@@ -828,6 +844,7 @@ async def render_dashboard_portal(request: Request):
             let currentContent = '';
             let currentPearlIndex = 0;
             let filteredPearls = [];
+            let sortBy = 'added';
 
             marked.setOptions({{ gfm: true, breaks: true }});
 
@@ -839,6 +856,11 @@ async def render_dashboard_portal(request: Request):
                     hash = hash & hash;
                 }}
                 return Math.abs(hash) % baseDataset.length;
+            }}
+
+            function setSortBy(val) {{
+                sortBy = val;
+                executeClientSideFilter();
             }}
 
             function pickDailyPaper() {{
@@ -1153,6 +1175,13 @@ async def render_dashboard_portal(request: Request):
                     const systemMatches = (systemVal === "All" || item.system === systemVal);
                     const typeMatches = (typeFilterVal === "All" || item.type === typeFilterVal);
                     return tabMatches && ftMatch && textMatches && systemMatches && typeMatches;
+                }});
+
+                filtered.sort(function(a, b) {{
+                    if (sortBy === 'published') {{
+                        return (parseInt(b.year) || 0) - (parseInt(a.year) || 0);
+                    }}
+                    return (b.date_added || '').localeCompare(a.date_added || '');
                 }});
 
                 if(filtered.length === 0) {{
@@ -1533,6 +1562,25 @@ def format_new_schema_as_markdown(payload):
             action = step.get("action", "")
             protocol_parts.append(f"**Step {step_num}: {title}**  \n{action}")
         parts.append("\n".join(protocol_parts))
+
+    # Drugs & Doses
+    drugs_doses = payload.get("drugs_doses", [])
+    if drugs_doses:
+        block = "## Drugs & Doses\n"
+        for dd in drugs_doses:
+            drug = dd.get("drug", "")
+            dose = dd.get("dose", "")
+            indication = dd.get("indication", "")
+            adverse = dd.get("adverse_effects", "")
+            block += f"- **{drug}**"
+            if dose:
+                block += f"  \n  *Dose: {dose}*"
+            if indication:
+                block += f"  \n  *Indication: {indication}*"
+            if adverse:
+                block += f"  \n  *Adverse effects: {adverse}*"
+            block += "\n"
+        parts.append(block)
 
     # Strengths & limitations
     strengths = payload.get("strengths_limitations", "")
