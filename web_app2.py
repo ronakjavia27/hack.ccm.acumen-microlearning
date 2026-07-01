@@ -1501,6 +1501,17 @@ async def render_dashboard_portal(request: Request):
     """
     return HTMLResponse(content=html_content)
 
+def bold_labels(text):
+    """Bold common clinical labels before colons."""
+    return re.sub(
+        r'\b(Strengths|Limitations|Dose|Indication|Adverse effects?|Route|Frequency|'
+        r'Duration|Monitoring|Contraindications?|Precautions?|Key Point|Note|Finding|'
+        r'Result|Recommendation)\s*:',
+        r'**\1:**',
+        text
+    )
+
+
 def format_new_schema_as_markdown(payload):
     """Convert new-format JSON payload into a markdown string for the frontend viewer."""
     parts = []
@@ -1573,18 +1584,18 @@ def format_new_schema_as_markdown(payload):
             adverse = dd.get("adverse_effects", "")
             block += f"- **{drug}**"
             if dose:
-                block += f"  \n  *Dose: {dose}*"
+                block += f"  \n  **Dose:** {dose}"
             if indication:
-                block += f"  \n  *Indication: {indication}*"
+                block += f"  \n  **Indication:** {indication}"
             if adverse:
-                block += f"  \n  *Adverse effects: {adverse}*"
+                block += f"  \n  **Adverse effects:** {adverse}"
             block += "\n"
         parts.append(block)
 
     # Strengths & limitations
     strengths = payload.get("strengths_limitations", "")
     if strengths:
-        parts.append(f"## Strengths & Limitations\n{strengths}")
+        parts.append(f"## Strengths & Limitations\n{bold_labels(strengths)}")
 
     return "\n\n".join(parts)
 
@@ -1599,10 +1610,15 @@ async def get_cached_json_summary_contents(file_name: str, system: str = "Genera
     target_json_path = os.path.join(OUTPUT_DIR, clean_system, clean_type, f"{base_name}.json")
 
     if not os.path.exists(target_json_path):
-        target_json_path = os.path.join(OUTPUT_DIR, f"{base_name}.json")
+        # Fallback: search all subdirectories by basename
+        target_json_path = ""
+        for root, dirs, files in os.walk(OUTPUT_DIR):
+            if f"{base_name}.json" in files:
+                target_json_path = os.path.join(root, f"{base_name}.json")
+                break
 
-    if not os.path.exists(target_json_path):
-        return JSONResponse(status_code=404, content={"error": f"Summary target path not found: {target_json_path}"})
+    if not target_json_path or not os.path.exists(target_json_path):
+        return JSONResponse(status_code=404, content={"error": f"Summary target path not found: {base_name}.json"})
 
     try:
         with open(target_json_path, "r", encoding="utf-8") as f:

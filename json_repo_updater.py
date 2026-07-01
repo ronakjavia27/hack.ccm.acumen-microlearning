@@ -21,6 +21,44 @@ from datetime import datetime
 OUTPUT_DIR = "./output_files"
 JSON_TRACKER_FILE = "./sent_summaries.json"
 REMOVED_TRACKER_FILE = "./sent_summaries_removed.json"
+SPECIALTIES_FILE = "./specialties.txt"
+ARTICLE_TYPES_FILE = "./article_types.txt"
+
+DEFAULT_SPECIALTIES = ["Critical Care Medicine", "Cardiovascular", "Neurology", "Nephrology", "Pulmonology", "Other"]
+DEFAULT_TYPES = ["Guideline", "Review", "Meta-Analysis", "Trial", "Other"]
+
+
+def load_allowed_vocabulary(file_path, default_list):
+    if not os.path.exists(file_path):
+        return default_list
+    with open(file_path, "r", encoding="utf-8") as f:
+        return [line.strip() for line in f if line.strip()]
+
+
+def build_specialty_map(allowed):
+    m = {s.lower(): s for s in allowed}
+    m.update({
+        "infectious_disease": m.get("infectious diseases", "Infectious Diseases"),
+        "multi_system": m.get("multisystem", "Multisystem"),
+        "multisystem": m.get("multisystem", "Multisystem"),
+        "obstetrics_and_gynecology": m.get("obstetrics and gynecology", "Obstetrics and Gynecology"),
+        "cardio": m.get("cardiology", "Cardiology"),
+        "neuro": m.get("neurology", "Neurology"),
+        "nephro": m.get("nephrology", "Nephrology"),
+        "pulmo": m.get("pulmonology", "Pulmonology"),
+        "gi": m.get("gastroenterology", "Gastroenterology"),
+        "heme": m.get("hematology", "Hematology"),
+        "onc": m.get("oncology", "Oncology"),
+    })
+    return m
+
+
+def normalize_specialty(specialty_list, spec_map):
+    if not isinstance(specialty_list, list) or not specialty_list:
+        return "Other"
+    raw = str(specialty_list[0]).strip().lower().replace("_", " ").replace("-", " ")
+    mapped = spec_map.get(raw, "Other")
+    return "".join(x for x in str(mapped) if x.isalnum() or x in "._- ").strip()
 
 
 def _atomic_write_json(file_path, data):
@@ -35,7 +73,8 @@ def extract_metadata(payload):
     title = payload.get("paper_name") or payload.get("title", "")
     system = payload.get("system", "")
     if not system and payload.get("specialty"):
-        system = ", ".join(payload["specialty"]) if isinstance(payload["specialty"], list) else str(payload["specialty"])
+        spec_map = build_specialty_map(load_allowed_vocabulary(SPECIALTIES_FILE, DEFAULT_SPECIALTIES))
+        system = normalize_specialty(payload["specialty"], spec_map)
     article_type = payload.get("type_of_article") or payload.get("article_subtype") or payload.get("doc_type", "")
     journal = payload.get("journal_name") or payload.get("journal", "")
     if not journal:
@@ -153,14 +192,29 @@ def main():
     # Phase B: REMOVE — entries in repo but missing from disk
     to_remove = []
     kept = []
+    spec_map = build_specialty_map(load_allowed_vocabulary(SPECIALTIES_FILE, DEFAULT_SPECIALTIES))
+    updated_count = 0
     for entry in repo:
         fname = entry.get("file_name", "")
         if fname and fname not in disk:
             to_remove.append(entry)
             if args.verbose:
                 print(f"  [remove] {fname} -> {entry.get('title', '')[:60]}")
-        else:
-            kept.append(entry)
+            continue
+
+        # Phase C: NORMALIZE — fix existing entries with messy system values
+        if fname and fname in disk:
+            _, payload = disk[fname]
+            payload_spec = payload.get("specialty", [])
+            clean_system = normalize_specialty(payload_spec, spec_map) if payload_spec else ""
+            if clean_system and clean_system != entry.get("system", ""):
+                old_system = entry["system"]
+                entry["system"] = clean_system
+                updated_count += 1
+                if args.verbose:
+                    print(f"  [update] {fname}: system \"{old_system}\" -> \"{clean_system}\"")
+
+        kept.append(entry)
 
     # Reassign serial numbers
     for i, entry in enumerate(kept):
@@ -173,6 +227,7 @@ def main():
     print(f"\nSummary:")
     print(f"  Added:   {len(to_add)}")
     print(f"  Removed: {len(to_remove)}")
+    print(f"  Updated: {updated_count}")
     print(f"  Kept:    {len(kept)}")
     print(f"  Total:   {len(new_repo)}")
 
