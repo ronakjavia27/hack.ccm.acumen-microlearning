@@ -1,13 +1,40 @@
 # Local Automation Secrets Matrix
 .env
+email.csv
 emails.csv
 email_list_sync.py
 email_push.py
 master_app.py
 input_pdfs/
-Dockerfile
+
+# Generated data — JSON summaries from PDF processing
+old_output_files/
+
+# Generated tracker & ledger files
+sent_summaries.xlsx
+sent_summaries_removed.json
+pearls.csv
+pearls - Copy.csv
+pearls_processed.xlsx
+migration_progress.json
+migration_process.json
+
+# Runtime errors
+error_logs.txt
+
+# Quarantine (source PDF copies)
+quarantine/
 
 # Temporary system artifacts
 *.tmp
 ~$*.xlsx
 __pycache__/
+
+# IDE / OS
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
