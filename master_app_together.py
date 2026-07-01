@@ -45,6 +45,8 @@ SUB_DIRS = {
 
 OUTPUT_DIR = "./output_files"
 EXCEL_TRACKER_FILE = "./sent_summaries.xlsx"
+JSON_TRACKER_FILE = "./sent_summaries.json"
+REMOVED_TRACKER_FILE = "./sent_summaries_removed.json"
 SPECIALTIES_FILE = "./specialties.txt"
 ARTICLE_TYPES_FILE = "./article_types.txt"
 
@@ -172,7 +174,7 @@ def enrich_payload_with_markdown(payload):
 
 
 # =====================================================================
-# 📊 EXCEL TRACKING
+# 📊 EXCEL + JSON TRACKING
 # =====================================================================
 EXCEL_HEADERS = [
     "Serial Number", "File Name", "Paper/Guideline Name", "Primary Authors",
@@ -180,11 +182,9 @@ EXCEL_HEADERS = [
     "Email Pushed", "Summary Saved Date", "Email Pushed Date", "Parsing Notes", "show_on_web"
 ]
 
-def initialize_system_paths():
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    for folder_path in SUB_DIRS.values():
-        os.makedirs(folder_path, exist_ok=True)
+# --- Excel Functions (kept for user reference) ---
 
+def initialize_excel_tracker():
     if not os.path.exists(EXCEL_TRACKER_FILE):
         wb = Workbook()
         ws = wb.active
@@ -193,11 +193,9 @@ def initialize_system_paths():
         wb.save(EXCEL_TRACKER_FILE)
         print(f"Excel tracker initialized at {EXCEL_TRACKER_FILE}")
     else:
-        migrate_ledger_schema()
+        _migrate_ledger_schema()
 
-
-def migrate_ledger_schema():
-    """Add Year column to existing ledger if missing."""
+def _migrate_ledger_schema():
     try:
         wb = load_workbook(EXCEL_TRACKER_FILE)
         ws = wb["Registry Logs"]
@@ -209,20 +207,6 @@ def migrate_ledger_schema():
             print(f"  Migrated ledger: added Year column")
     except Exception:
         pass
-
-def load_processed_files_from_excel():
-    if not os.path.exists(EXCEL_TRACKER_FILE):
-        return set()
-    try:
-        wb = load_workbook(EXCEL_TRACKER_FILE, read_only=True)
-        ws = wb["Registry Logs"]
-        processed = set()
-        for row in ws.iter_rows(min_row=2, max_col=2, values_only=True):
-            if len(row) > 1 and row[1]:
-                processed.add(str(row[1]).strip())
-        return processed
-    except Exception:
-        return set()
 
 def log_transaction_to_excel(file_name, metadata, parsing_notes="Success"):
     retries = 5
@@ -250,6 +234,112 @@ def log_transaction_to_excel(file_name, metadata, parsing_notes="Success"):
             return
         except PermissionError:
             time.sleep(1.5)
+
+# --- JSON Functions (sole source of truth for web_app) ---
+
+def _map_entry_from_metadata(file_name, metadata, parsing_notes):
+    """Build a JSON entry dict from metadata, matching web_app2.py expectations."""
+    return {
+        "serial_number": 0,  # reassigned on append
+        "file_name": file_name,
+        "title": metadata.get("title", metadata.get("paper_name", "Unknown Title")),
+        "authors": metadata.get("authors", metadata.get("primary_authors", "Unknown Authors")),
+        "journal": metadata.get("journal", metadata.get("journal_name", "Unknown Journal")),
+        "doi": metadata.get("doi", "None"),
+        "year": metadata.get("year", ""),
+        "system": ", ".join(metadata.get("specialty", [])) if isinstance(metadata.get("specialty"), list) else metadata.get("system", "Other"),
+        "type": metadata.get("article_subtype", metadata.get("doc_type", metadata.get("type_of_article", "Other"))),
+        "md_generated": "Yes",
+        "email_pushed": "No",
+        "date_added": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "email_pushed_date": "",
+        "parsing_notes": parsing_notes,
+        "show_on_web": "No",
+    }
+
+def _atomic_write_json(file_path, data):
+    """Atomically write JSON data using tmp file + replace."""
+    tmp = file_path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, file_path)
+
+def load_all_entries_from_json():
+    """Return the full list of entries from sent_summaries.json."""
+    if not os.path.exists(JSON_TRACKER_FILE):
+        return []
+    try:
+        with open(JSON_TRACKER_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, Exception):
+        return []
+
+def load_processed_files_from_json():
+    """Return set of file_names that have been processed (for watcher dedup)."""
+    entries = load_all_entries_from_json()
+    return {e["file_name"] for e in entries if e.get("file_name")}
+
+def log_transaction_to_json(file_name, metadata, parsing_notes="Success"):
+    """Append one entry to sent_summaries.json atomically."""
+    entries = load_all_entries_from_json()
+    next_serial = len(entries) + 1
+    entry = _map_entry_from_metadata(file_name, metadata, parsing_notes)
+    entry["serial_number"] = next_serial
+    entries.append(entry)
+    _atomic_write_json(JSON_TRACKER_FILE, entries)
+
+def migrate_json_from_excel():
+    """One-time migration: seed sent_summaries.json from existing Excel."""
+    if os.path.exists(JSON_TRACKER_FILE):
+        return  # already migrated
+    if not os.path.exists(EXCEL_TRACKER_FILE):
+        return  # nothing to migrate from
+    try:
+        wb = load_workbook(EXCEL_TRACKER_FILE, read_only=True)
+        ws = wb["Registry Logs"]
+        headers = [str(cell.value).strip() if cell.value else "" for cell in ws[1]]
+        col_map = {h: i for i, h in enumerate(headers)}
+
+        def safe(idx, row):
+            return str(row[idx]).strip() if idx is not None and idx < len(row) and row[idx] is not None else ""
+
+        entries = []
+        for row in ws.iter_rows(min_row=2, values_only=True):
+            entry = {
+                "serial_number": safe(col_map.get("Serial Number"), row),
+                "file_name": safe(col_map.get("File Name"), row),
+                "title": safe(col_map.get("Paper/Guideline Name"), row),
+                "authors": safe(col_map.get("Primary Authors"), row),
+                "journal": safe(col_map.get("Journal Name"), row),
+                "doi": safe(col_map.get("DOI"), row),
+                "year": safe(col_map.get("Year"), row),
+                "system": safe(col_map.get("System"), row),
+                "type": safe(col_map.get("Type of Article"), row),
+                "md_generated": safe(col_map.get("MD Generated"), row),
+                "email_pushed": safe(col_map.get("Email Pushed"), row),
+                "date_added": safe(col_map.get("Summary Saved Date"), row),
+                "email_pushed_date": safe(col_map.get("Email Pushed Date"), row),
+                "parsing_notes": safe(col_map.get("Parsing Notes"), row),
+                "show_on_web": safe(col_map.get("show_on_web"), row),
+            }
+            if entry["file_name"]:
+                entries.append(entry)
+
+        if entries:
+            _atomic_write_json(JSON_TRACKER_FILE, entries)
+            print(f"  Migrated {len(entries)} entries from Excel to {JSON_TRACKER_FILE}")
+        else:
+            print(f"  No entries found in Excel to migrate")
+    except Exception as e:
+        print(f"  [X] Excel migration failed: {e}")
+
+def initialize_system_paths():
+    os.makedirs(OUTPUT_DIR, exist_ok=True)
+    for folder_path in SUB_DIRS.values():
+        os.makedirs(folder_path, exist_ok=True)
+
+    initialize_excel_tracker()
+    migrate_json_from_excel()
 
 # =====================================================================
 # 🧠 STRUCTURED SYSTEM PROMPT (from migrate_jsons.py)
@@ -603,6 +693,7 @@ def process_single_pdf(file_path, category, processed_history):
         log_meta = dict(structured_payload)
         log_meta["specialty"] = [clean_system]
         log_transaction_to_excel(file_name, log_meta, "Success")
+        log_transaction_to_json(file_name, log_meta, "Success")
         processed_history.add(file_name)
 
         if os.path.exists(file_path):
@@ -629,7 +720,7 @@ if __name__ == "__main__":
     max_files = args.max
 
     initialize_system_paths()
-    history_log = load_processed_files_from_excel()
+    history_log = load_processed_files_from_json()
     print("hack.CCM - Together AI Ingestion Engine")
     print(f"  Models: {MODEL_TOGETHER_PRO} / {MODEL_TOGETHER_FLASH}")
     print(f"  Fallback: Direct DeepSeek {MODEL_DEEPSEEK_DIRECT}")
@@ -644,7 +735,7 @@ if __name__ == "__main__":
         files_processed = 0
         while True:
             loop_counter += 1
-            history_log = load_processed_files_from_excel()
+            history_log = load_processed_files_from_json()
 
             if loop_counter % 12 == 1:
                 print(f"Heartbeat - {datetime.now().strftime('%H:%M:%S')}")

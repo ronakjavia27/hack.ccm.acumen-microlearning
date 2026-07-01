@@ -1,6 +1,5 @@
 import os
 import json
-import pandas as pd
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 
@@ -12,20 +11,20 @@ SUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSffsrF8DPWaTa-03X
 UNSUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScz864mkLh5AqBYVzAh573hWu98NdmwwPC2vaU1lfBE3WHHHg/viewform?usp=header"
 
 OUTPUT_DIR = "./output_files"
-EXCEL_TRACKER_FILE = "./sent_summaries.xlsx"
+JSON_TRACKER_FILE = "./sent_summaries.json"
 PEARLS_CSV = "./pearls.csv"
 
 app = FastAPI()
 
 def load_approved_ledger():
-    if not os.path.exists(EXCEL_TRACKER_FILE):
-        return pd.DataFrame()
+    """Load all entries from sent_summaries.json (sole source of truth)."""
+    if not os.path.exists(JSON_TRACKER_FILE):
+        return []
     try:
-        df = pd.read_excel(EXCEL_TRACKER_FILE, sheet_name="Registry Logs")
-        df.columns = df.columns.str.strip()
-        return df
-    except Exception:
-        return pd.DataFrame()
+        with open(JSON_TRACKER_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, Exception):
+        return []
 
 def load_pearls():
     if not os.path.exists(PEARLS_CSV):
@@ -50,15 +49,15 @@ def load_pearls():
 
 @app.get("/", response_class=HTMLResponse)
 async def render_dashboard_portal(request: Request):
-    df = load_approved_ledger()
+    entries = load_approved_ledger()
 
     total_published = 0
     unique_systems = 0
 
     articles_list = []
-    if not df.empty:
-        for idx, row in df.iterrows():
-            raw_doi = str(row.get("DOI", "")).strip()
+    if entries:
+        for idx, entry in enumerate(entries):
+            raw_doi = str(entry.get("doi", "")).strip()
             clean_doi_url = "#"
             if raw_doi and raw_doi.lower() not in ["none", "nan", ""]:
                 if raw_doi.startswith("http://") or raw_doi.startswith("https://"):
@@ -68,16 +67,16 @@ async def render_dashboard_portal(request: Request):
 
             articles_list.append({
                 "id": str(idx),
-                "title": str(row.get("Paper/Guideline Name", "Unknown Title")),
-                "authors": str(row.get("Primary Authors", "Unknown Authors")),
-                "system": str(row.get("System", "General")),
-                "journal": str(row.get("Journal Name", "Unknown Source")),
-                "type": str(row.get("Type of Article", "Unclassified")),
+                "title": str(entry.get("title", "Unknown Title")),
+                "authors": str(entry.get("authors", "Unknown Authors")),
+                "system": str(entry.get("system", "General")),
+                "journal": str(entry.get("journal", "Unknown Source")),
+                "type": str(entry.get("type", "Unclassified")),
                 "doi": clean_doi_url,
-                "file_name": str(row.get("File Name", "")),
-                "date_added": str(row.get("Summary Saved Date", "")),
-                "year": str(row.get("Year", "")),
-                "show_on_web": str(row.get("show_on_web", "No")).strip().lower()
+                "file_name": str(entry.get("file_name", "")),
+                "date_added": str(entry.get("date_added", "")),
+                "year": str(entry.get("year", "")),
+                "show_on_web": str(entry.get("show_on_web", "No")).strip().lower()
             })
 
     pearls = load_pearls()
@@ -91,10 +90,10 @@ async def render_dashboard_portal(request: Request):
     ))
 
     paper_to_file = {}
-    if not df.empty:
-        for _, row in df.iterrows():
-            name = str(row.get("Paper/Guideline Name", "")).strip()
-            fname = str(row.get("File Name", "")).strip()
+    if entries:
+        for entry in entries:
+            name = str(entry.get("title", "")).strip()
+            fname = str(entry.get("file_name", "")).strip()
             if name and fname and fname.lower() != "nan":
                 json_name = os.path.splitext(fname)[0] + ".json"
                 paper_to_file[name] = json_name

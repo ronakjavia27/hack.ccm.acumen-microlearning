@@ -1,0 +1,200 @@
+#!/usr/bin/env python3
+"""
+json_repo_updater.py — Reconcile sent_summaries.json with output_files/ on disk.
+
+Scans output_files/ for all .json files, cross-references against
+sent_summaries.json, adds missing entries, removes stale ones, and
+logs removed entries to sent_summaries_removed.json.
+
+Usage:
+    python json_repo_updater.py              # normal run
+    python json_repo_updater.py --dry-run     # preview only, no writes
+    python json_repo_updater.py --verbose     # detailed per-file logging
+"""
+
+import os
+import json
+import sys
+import argparse
+from datetime import datetime
+
+OUTPUT_DIR = "./output_files"
+JSON_TRACKER_FILE = "./sent_summaries.json"
+REMOVED_TRACKER_FILE = "./sent_summaries_removed.json"
+
+
+def _atomic_write_json(file_path, data):
+    tmp = file_path + ".tmp"
+    with open(tmp, "w", encoding="utf-8") as f:
+        json.dump(data, f, indent=2, ensure_ascii=False)
+    os.replace(tmp, file_path)
+
+
+def extract_metadata(payload):
+    """Extract title/system/type/journal/authors/doi/year from old or new format."""
+    title = payload.get("paper_name") or payload.get("title", "")
+    system = payload.get("system", "")
+    if not system and payload.get("specialty"):
+        system = ", ".join(payload["specialty"]) if isinstance(payload["specialty"], list) else str(payload["specialty"])
+    article_type = payload.get("type_of_article") or payload.get("article_subtype") or payload.get("doc_type", "")
+    journal = payload.get("journal_name") or payload.get("journal", "")
+    if not journal:
+        issuing = payload.get("issuing_bodies", [])
+        if issuing:
+            journal = ", ".join(issuing)
+    if not journal:
+        journal = "Unknown Journal"
+    authors = payload.get("primary_authors") or payload.get("authors", "Unknown Authors")
+    if not authors or authors == "Unknown Authors":
+        issuing = payload.get("issuing_bodies", [])
+        if issuing:
+            authors = ", ".join(issuing)
+    doi = payload.get("doi", "None")
+    if not doi:
+        doi = "None"
+    year = payload.get("year", "")
+    return title, system, article_type, journal, authors, doi, year
+
+
+def build_disk_index(verbose=False):
+    """Walk output_files/ and return dict mapping file_name → (file_path, payload)."""
+    disk = {}
+    if not os.path.exists(OUTPUT_DIR):
+        return disk
+    for root, dirs, files in os.walk(OUTPUT_DIR):
+        for fname in files:
+            if not fname.endswith(".json"):
+                continue
+            fpath = os.path.join(root, fname)
+            try:
+                with open(fpath, "r", encoding="utf-8") as f:
+                    payload = json.load(f)
+            except (json.JSONDecodeError, Exception) as e:
+                if verbose:
+                    print(f"    [skip] Invalid JSON: {fpath} ({e})")
+                continue
+            # file_name = PDF filename (strip .json → .pdf convention)
+            base = os.path.splitext(fname)[0]
+            pdf_name = base + ".pdf"
+            if pdf_name in disk:
+                if verbose:
+                    print(f"    [warn] Duplicate basename '{pdf_name}' → {fpath} (keeping first)")
+                continue
+            disk[pdf_name] = (fpath, payload)
+    return disk
+
+
+def load_repo():
+    if not os.path.exists(JSON_TRACKER_FILE):
+        return []
+    try:
+        with open(JSON_TRACKER_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, Exception):
+        return []
+
+
+def load_removed():
+    if not os.path.exists(REMOVED_TRACKER_FILE):
+        return []
+    try:
+        with open(REMOVED_TRACKER_FILE, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except (json.JSONDecodeError, Exception):
+        return []
+
+
+def entry_from_payload(file_name, payload):
+    """Build a sent_summaries.json entry from a JSON payload on disk."""
+    title, system, article_type, journal, authors, doi, year = extract_metadata(payload)
+    return {
+        "serial_number": 0,
+        "file_name": file_name,
+        "title": title,
+        "authors": authors,
+        "journal": journal,
+        "doi": doi,
+        "year": str(year) if year else "",
+        "system": system or "Other",
+        "type": article_type or "Other",
+        "md_generated": "Yes",
+        "email_pushed": "No",
+        "date_added": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "email_pushed_date": "",
+        "parsing_notes": "Added by json_repo_updater",
+        "show_on_web": "No",
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Reconcile sent_summaries.json with output_files/")
+    parser.add_argument("--dry-run", action="store_true", help="Preview changes without writing")
+    parser.add_argument("--verbose", action="store_true", help="Detailed per-file logging")
+    args = parser.parse_args()
+
+    print(f"Scanning {OUTPUT_DIR}/...")
+    disk = build_disk_index(args.verbose)
+    print(f"  Found {len(disk)} .json files on disk")
+
+    repo = load_repo()
+    print(f"  Loaded {len(repo)} entries from {JSON_TRACKER_FILE}")
+
+    repo_by_file = {e["file_name"]: e for e in repo if e.get("file_name")}
+
+    # Phase A: ADD — entries on disk not in repo
+    to_add = []
+    for file_name, (fpath, payload) in disk.items():
+        if file_name not in repo_by_file:
+            entry = entry_from_payload(file_name, payload)
+            to_add.append(entry)
+            if args.verbose:
+                print(f"  [add] {file_name} -> {entry['title'][:60]}")
+
+    # Phase B: REMOVE — entries in repo but missing from disk
+    to_remove = []
+    kept = []
+    for entry in repo:
+        fname = entry.get("file_name", "")
+        if fname and fname not in disk:
+            to_remove.append(entry)
+            if args.verbose:
+                print(f"  [remove] {fname} -> {entry.get('title', '')[:60]}")
+        else:
+            kept.append(entry)
+
+    # Reassign serial numbers
+    for i, entry in enumerate(kept):
+        entry["serial_number"] = i + 1
+    for i, entry in enumerate(to_add):
+        entry["serial_number"] = len(kept) + i + 1
+
+    new_repo = kept + to_add
+
+    print(f"\nSummary:")
+    print(f"  Added:   {len(to_add)}")
+    print(f"  Removed: {len(to_remove)}")
+    print(f"  Kept:    {len(kept)}")
+    print(f"  Total:   {len(new_repo)}")
+
+    if args.dry_run:
+        print("\n[Dry-run] No files written.")
+        if to_remove:
+            print(f"  Would log {len(to_remove)} removed entries to {REMOVED_TRACKER_FILE}")
+        return
+
+    # Write updated repo
+    _atomic_write_json(JSON_TRACKER_FILE, new_repo)
+    print(f"\n  Wrote {len(new_repo)} entries to {JSON_TRACKER_FILE}")
+
+    # Append removed entries to removed tracker
+    if to_remove:
+        removed = load_removed()
+        for entry in to_remove:
+            entry["removed_date"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            removed.append(entry)
+        _atomic_write_json(REMOVED_TRACKER_FILE, removed)
+        print(f"  Logged {len(to_remove)} removed entries to {REMOVED_TRACKER_FILE}")
+
+
+if __name__ == "__main__":
+    main()
