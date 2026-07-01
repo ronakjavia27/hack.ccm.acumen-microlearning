@@ -1,0 +1,285 @@
+{
+  "id": "funginos-management-ipa-icu-2025",
+  "doc_type": "guideline",
+  "title": "Management of Invasive Pulmonary Aspergillosis in Intensive Care Units: Guidelines From the Fungal Infection Network of Switzerland (FUNGINOS)",
+  "issuing_bodies": [
+    "FUNGINOS"
+  ],
+  "year": 2025,
+  "doi": "10.1111/myc.70132",
+  "specialty": [
+    "infectious_disease",
+    "pulmonology",
+    "multi_system"
+  ],
+  "tags": [
+    "invasive pulmonary aspergillosis",
+    "icu",
+    "antifungal therapy",
+    "aspergillus",
+    "critical care",
+    "galactomannan",
+    "voriconazole",
+    "isavuconazole"
+  ],
+  "one_line_summary": "Swiss multidisciplinary guideline providing consensus recommendations on epidemiology, risk stratification, diagnosis, definitions, and antifungal management of invasive pulmonary aspergillosis in ICU patients, including those with influenza, COVID-19, COPD, and liver disease.",
+  "key_pearls": [
+    "IPA incidence in general ICU is <1%, but rises to **5–10%** in intermediate-risk groups (severe COVID-19, COPD, liver disease) and **>10%** in high-risk groups (severe influenza, prolonged neutropenia without prophylaxis).",
+    "Serum GM screening is **recommended** for high-risk hematologic cancer patients (A I), but has limited sensitivity for CAPA (**10–20%**) and should trigger bronchoscopy if positive.",
+    "Probable IPA in non-immunocompromised ICU patients requires deterioration plus new infiltrates AND **BALF GM ≥1.0 ODI**, positive BALF culture, or positive serum/BALF PCR (twice).",
+    "Isavuconazole is favored over voriconazole in selected **critically** ill patients due to better pharmacokinetic and safety profile (fewer drug–drug interactions, no QTc prolongation, no cyclodextrin accumulation).",
+    "Therapeutic drug monitoring (TDM) is **recommended** for all patients on voriconazole (target trough **1.5–5 mg/L**) and posaconazole (target trough **>1 mg/L** for therapy), measured from day 5.",
+    "For proven/probable IPA without EORTC-MSGERC host criteria, minimum AFT duration is **4–6 weeks**; with host criteria, **6–12 weeks**, guided by clinical/radiological/microbiological response and ICU discharge.",
+    "Posaconazole prophylaxis is **recommended** in high-risk hematologic cancer patients (A I) but not in severe influenza due to early IAPA onset; it may be considered in severe COVID-19 if local CAPA incidence is **≥10%** (C II)."
+  ],
+  "consensus_method": "Modified ESCMID grading system (SoR A–D, QoE I–III) with ≥75% panel approval during plenary voting; working groups performed independent literature review.",
+  "search_period": null,
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Epidemiology and Risk Stratification",
+      "narrative": "- IPA in general ICU population has overall low incidence (<1%) except in specific subgroups stratified as low risk (1%–5%), intermediate risk (5%–10%), and high risk (>10%) (Table 1).\n- High-risk category includes hematologic cancer with prolonged neutropenia (≥10 days) not receiving mould-active prophylaxis, allogeneic HCT without prophylaxis, and severe influenza.\n- Intermediate-risk category includes lung/heart transplantation, severe acute/chronic liver disease, severe COPD, chronic immunosuppressive therapy, severe COVID-19, and cumulative low-risk conditions.\n- Additional risk factors increasing IPA risk: high illness severity scores, intensive supportive care (prolonged mechanical ventilation, vasopressors, ECMO, RRT), antibiotic use, and immunomodulatory therapies (corticosteroids, IL-6 inhibitors).\n- IAPA pooled incidence in hospitalized patients is **11%** (95% CI 6%–18%), rising to **20%–30%** in **critically** ill; about **75%** of IAPA patients have no classical immunosuppression.\n- CAPA pooled incidence is **10%** with wide variability (0%–47%); most patients are not immunocompromised (**93%**) but receive steroids/IL-6 inhibitors (**70%**).\n- Overall **mortality**: general ICU IPA **55%–>90%**; IAPA **30%–50%**; CAPA **40%–60%** in meta-analyses.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "ICU patients with hematologic conditions classified within the high-risk category should undergo serial serum GM screening (A I).",
+          "strength": "strong",
+          "evidence_grade": "I"
+        },
+        {
+          "rec_id": null,
+          "statement": "For other high-risk categories, a marginal recommendation for screening is proposed (C II); if applied, use serum GM in severe influenza, or NBR samples (GM, fungal culture, or PCR) in order of preference.",
+          "strength": "conditional",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "Screening frequency should be every 3 to 4 days (e.g., twice weekly); a negative test does not rule out IPA and a positive test should trigger bronchoscopy.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Diagnosis: CT Scan and Bronchoscopy",
+      "narrative": "- Chest CT should be performed in any patient with worsening respiratory conditions without clear explanation (A III).\n- Classical IPA findings (nodules, halo sign) are present in ≤25% and ≤12% of ICU cases, respectively; cavitary lesions in **10%–30%** (up to 73% in one study).\n- Most frequent pattern (>70%) is non-specific consolidation or ground-glass opacities; bronchiectasis reported in **40%–80%** of CAPA.\n- Bronchoscopy is indicated in all ICU patients (low/intermediate/high risk) with new radiological abnormality without alternative explanation (A II).\n- Bronchoscopy is also indicated after positive Aspergillus test in serum (GM) or NBR samples (culture, GM, PCR) (A II).\n- BALF should be tested with direct microscopy (A II), fungal culture (A II), GM testing (A II), and Aspergillus PCR (A II); their conjunction improves diagnostic accuracy.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Lung CT-scan should be performed in any patient with worsening respiratory conditions (A III).",
+          "strength": "strong",
+          "evidence_grade": "III"
+        },
+        {
+          "rec_id": null,
+          "statement": "All ICU patients (at low, intermediate or high risk for IPA) with a new radiological abnormality in the absence of alternative explanation should undergo bronchoscopy (A II).",
+          "strength": "strong",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "Bronchoscopy is also indicated in case of a positive test for Aspergillus detection in serum (GM) or NBR samples (culture, GM, PCR) (A II).",
+          "strength": "strong",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "BALF samples should be tested using direct microscopy (A II), fungal culture (A II), GM testing (A II) and Aspergillus PCR (A II).",
+          "strength": "strong",
+          "evidence_grade": "II"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Definitions of IPA in ICU",
+      "narrative": "- For immunocompromised hosts fulfilling EORTC-MSGERC host criteria, use EORTC-MSGERC definitions.\n- For non-immunocompromised ICU patients, a distinct classification is proposed (Table 3).\n- Proven IPA requires direct observation of hyphae consistent with Aspergillus spp. and signs of tissue invasion, or positive culture/PCR from normally sterile tissue.\n- Probable IPA requires host criteria (severe influenza, severe COVID-19, exacerbated severe COPD GOLD 3/4, severe acute/chronic liver disease, other respiratory viral infection, burns >35% TBSA) plus clinical/radiological criteria (deterioration, new infiltrates, or tracheobronchitis signs at bronchoscopy) plus microbiological criteria: GM ≥0.5 ODI in serum OR GM ≥1.0 ODI in BALF OR positive BALF culture OR positive Aspergillus PCR in serum (twice) OR positive PCR in serum and BALF.\n- Possible IPA requires host and clinical/radiological criteria plus positive culture in NBR OR GM ≥4.5 in NBR OR GM ≥1.2 in NBR (twice) OR GM ≥1.2 and positive PCR in NBR.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "For immunocompromised hosts, use EORTC-MSGERC criteria. For patients who do not fulfill EORTC-MSGERC host criteria, adapted definitions of IPA in ICU are proposed (Table 3).",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "First-Line Antifungal Therapy",
+      "narrative": "- Patients fulfilling criteria of probable/proven IPA or Aspergillus tracheobronchitis should be treated with AFT as soon as possible (A II).\n- Patients with possible IPA or clinical suspicion should undergo further diagnostic work-up (bronchoscopy) as soon as possible; AFT may be considered if bronchoscopy is not feasible/delayed or in case of persisting (≥2 consecutive) positive NBR results (A III).\n- Isavuconazole or voriconazole are **recommended** as first-line therapy (A I for hematologic cancer patients, A II for other ICU patients).\n- Isavuconazole may be preferred in selected **critically** ill patients due to better pharmacokinetic/safety profile (less variable exposure, fewer DDIs, no cyclodextrin component, less neurological/hepatic toxicity, no QTc prolongation).\n- Liposomal amphotericin B (L-AMB) and posaconazole are acceptable alternatives (B II, B I/II respectively).\n- Echinocandins can be considered in combination therapy for selected cases (C I/III) but should be avoided as monotherapy unless no alternative option.\n- For suspected/proven azole resistance, L-AMB is first-line (A II); novel antifungals (fosmanogepix, olorofim) may be considered if available (B III).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Patients fulfilling criteria of probable or proven IPA or Aspergillus tracheobronchitis should be treated with AFT as soon as possible (A II).",
+          "strength": "strong",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "Patients with criteria of possible IPA or clinical suspicion should undergo further diagnostic work-up (bronchoscopy) as soon as possible; AFT should be considered if bronchoscopy is not feasible/delayed or in case of persisting (≥2 consecutive) positive NBR results (A III).",
+          "strength": "strong",
+          "evidence_grade": "III"
+        },
+        {
+          "rec_id": null,
+          "statement": "Isavuconazole or voriconazole are **recommended** as first-line therapy for IPA in ICU patients (A I for patients with hematologic cancer, A II for other ICU patients). Isavuconazole might be preferred in selected **critically** ill patients.",
+          "strength": "strong",
+          "evidence_grade": "I"
+        },
+        {
+          "rec_id": null,
+          "statement": "Liposomal amphotericin B and posaconazole are acceptable alternatives (B II, B I/II respectively). Echinocandins can be considered in combination therapy for selected cases (C I/III) but should be avoided as monotherapy.",
+          "strength": "conditional",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "For suspected or documented azole resistance, liposomal amphotericin B is first-line agent (A II); novel antifungal drugs (fosmanogepix, olorofim) may be considered if available (B III).",
+          "strength": "strong",
+          "evidence_grade": "II"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Refractory IPA and Adjunctive Interventions",
+      "narrative": "- In case of worsening clinical/radiological signs despite AFT for >7 days, repeat bronchoscopy and search for alternative explanation (e.g., insufficient drug exposure, alternative diagnosis).\n- Switch of antifungal drug classes (from triazoles to L-AMB, or inversely) or combination therapies including an echinocandin represent preferred options.\n- Change of antifungal within same class (mainly triazoles) should be restricted to situations where failure is attributed to insufficient drug exposure or toxicity (C III).\n- Echinocandin monotherapy should be avoided unless no other option (C II/III).\n- Adjunctive interventions: nebulized L-AMB (B III) mainly for Aspergillus tracheobronchitis; bronchoscopic debridement (C III); surgery (C III) for large lung lesions or extra-pulmonary lesions; arterial embolization (C III) for pseudoaneurysms/hemoptysis; immunomodulatory drugs (interferon gamma, G-CSF) (C III) for refractory IPA.\n- Continuation of short-term corticosteroid therapy should be reassessed individually; benefit demonstrated for CAPA but not **recommended** in IAPA.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Switch of antifungal drug classes (from triazoles to L-AMB, or inversely) or combination therapies including an echinocandin represent preferred options for refractory IPA (A II/III).",
+          "strength": "strong",
+          "evidence_grade": "III"
+        },
+        {
+          "rec_id": null,
+          "statement": "Nebulized L-AMB may be considered as adjunctive therapy mainly in Aspergillus tracheobronchitis (B III).",
+          "strength": "conditional",
+          "evidence_grade": "III"
+        },
+        {
+          "rec_id": null,
+          "statement": "Bronchoscopic debridement (C III), surgery (C III), arterial embolization (C III), and immunomodulatory drugs (C III) can be considered for selected cases.",
+          "strength": "conditional",
+          "evidence_grade": "III"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Therapeutic Drug Monitoring and Dosing Adjustments",
+      "narrative": "- TDM is **recommended** for all patients receiving voriconazole (A II) and posaconazole (A II); target trough: voriconazole **1.5–5 mg/L**, posaconazole >**0.7 mg**/L (prophylaxis) / >**1 mg**/L (therapy), measured from day 5.\n- Isavuconazole TDM is not routinely **recommended** but may be considered in selected cases (ECMO, obesity, severe liver dysfunction) (C II); target trough >**2 mg**/L based on population PK.\n- TDM for echinocandins is not routinely **recommended** but may be considered in selected **critically** ill patients to ensure adequate exposure (C III).\n- In severe liver impairment, voriconazole clearance is affected (favor alternative); isavuconazole safe in mild/moderate impairment without dose adjustment; caspofungin clearance decreased in moderate/severe (consider anidulafungin).\n- For ECMO patients, some circuit loss expected for triazoles but exposure usually not **significantly** affected; initial dosing adjustment not warranted but TDM **recommended**.\n- In obese patients, dose L-AMB and voriconazole based on adjusted body weight (max **100 kg**); posaconazole increase to **400 mg** q24h if weight >**140 kg**; echinocandin dose increase may be considered if >**80 kg**.\n- Oral administration via nasogastric tube is possible: crushed tablets (voriconazole, posaconazole), opened capsules (isavuconazole), or intravenous solution (isavuconazole).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "TDM is **recommended** for all patients receiving voriconazole (A II) and posaconazole (A II); target trough concentrations: voriconazole 1.5–**5 mg**/L, posaconazole >**0.7 mg**/L (prophylaxis) / >**1 mg**/L (therapy), measured from day 5.",
+          "strength": "strong",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "Isavuconazole TDM is not routinely **recommended** but may be considered in selected cases (C II); target trough >**2 mg**/L.",
+          "strength": "conditional",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "TDM for echinocandins is not routinely **recommended** and is not available in most centers; may be considered in selected **critically** ill patients (C III).",
+          "strength": "conditional",
+          "evidence_grade": "III"
+        },
+        {
+          "rec_id": null,
+          "statement": "In patients with severe liver impairment, alternative AFT should be considered; isavuconazole safe in mild/moderate impairment without dose adjustment; anidulafungin preferred over caspofungin in moderate/severe impairment.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Follow-up, Treatment Duration, and Prophylaxis",
+      "narrative": "- Follow-up chest CT is **recommended** at 4–6 weeks from start of AFT or earlier in case of lack of clinical improvement (A III).\n- Monitoring of serum GM is **recommended** once weekly if initial value was positive (≥0.5 ODI) until negative (A II).\n- Duration of AFT: minimum 6–12 weeks in patients with EORTC-MSGERC host criteria (B III); minimum 4–6 weeks in patients without host criteria (B III), provided favorable clinical/radiological/microbiological response, mechanical ventilation discontinued, and ICU discharge.\n- In patients with possible IPA, earlier discontinuation of AFT (<4 weeks) can be considered in selected situations.\n- Safety monitoring: hepatic tests twice during first week then once weekly (A III); serum creatinine and potassium 3 times weekly for L-AMB (A III); ECG QT interval at initiation, after 2–3 days, and at every change of medications with potential QT effect (A III).\n- Antifungal prophylaxis with posaconazole is **recommended** in high-risk hematologic cancer patients (prolonged neutropenia or allogeneic HCT with severe GvHD) (A I).\n- Prophylaxis is generally not **recommended** in other ICU patients; may be considered in severe COVID-19 in setting of high CAPA incidence (≥10%) (C II); not **recommended** in severe influenza due to early IAPA onset (D I).\n- Nebulized L-AMB can be administered for prevention of IPA in lung transplant recipients during immediate post-transplantation period (B II).\n- Close adherence to local infection prevention and control protocols should be followed to avoid spore contamination (A III).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Follow-up chest CT is **recommended** at 4–6 weeks from start of AFT or earlier in case of lack of clinical improvement (A III).",
+          "strength": "strong",
+          "evidence_grade": "III"
+        },
+        {
+          "rec_id": null,
+          "statement": "Monitoring of serum GM is **recommended** once weekly if the initial value was positive (≥0.5 ODI) until it turns negative (A II).",
+          "strength": "strong",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "In patients with proven or probable IPA, minimum duration of AFT is 4–6 weeks without EORTC-MSGERC host criteria and 6–12 weeks with host criteria (B III).",
+          "strength": "conditional",
+          "evidence_grade": "III"
+        },
+        {
+          "rec_id": null,
+          "statement": "Antifungal prophylaxis with posaconazole is **recommended** in high-risk hematologic cancer patients (prolonged neutropenia or allogeneic HCT with severe GvHD) (A I).",
+          "strength": "strong",
+          "evidence_grade": "I"
+        },
+        {
+          "rec_id": null,
+          "statement": "Prophylaxis with posaconazole or nebulized L-AMB may be considered in severe COVID-19 patients in a setting of high CAPA incidence (≥10%) (C II). Prophylaxis is not **recommended** in severe influenza (D I).",
+          "strength": "conditional",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "Nebulized L-AMB can be administered for the prevention of IPA in lung transplant recipients during the immediate post-transplantation period (B II).",
+          "strength": "conditional",
+          "evidence_grade": "II"
+        },
+        {
+          "rec_id": null,
+          "statement": "Close adherence to local infection prevention and control protocols should be followed in ICU to avoid spore contamination (A III).",
+          "strength": "strong",
+          "evidence_grade": "III"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Risk Stratification on ICU Admission",
+      "action": "Classify patient into low (1%–5%), intermediate (5%–10%), or high (>10%) risk category for IPA based on underlying conditions (Table 1) and presence of additional risk factors (high illness severity scores, intensive supportive care, antibiotic/immunomodulatory therapies)."
+    },
+    {
+      "step": 2,
+      "title": "Screening Strategy",
+      "action": "For high-risk hematologic cancer patients, perform serial serum GM screening every 3–4 days. For other high-risk categories, consider screening with serum GM (severe influenza) or NBR samples (GM, fungal culture, or PCR). A positive test triggers bronchoscopy."
+    },
+    {
+      "step": 3,
+      "title": "Diagnostic Work-up for Clinical/Radiological Deterioration",
+      "action": "Perform chest CT in any patient with worsening respiratory conditions without clear explanation. If new pulmonary infiltrates without alternative diagnosis or any positive Aspergillus test in non-invasive samples, perform bronchoscopy with BALF for direct microscopy, fungal culture, GM, and Aspergillus PCR."
+    },
+    {
+      "step": 4,
+      "title": "Classification and Treatment Initiation",
+      "action": "Classify as proven, probable, or possible IPA using Table 3 criteria. For proven/probable IPA or Aspergillus tracheobronchitis, start AFT immediately (isavuconazole or voriconazole first-line). For possible IPA, complete bronchoscopy; if not feasible or delayed, consider AFT and reassess later."
+    },
+    {
+      "step": 5,
+      "title": "Therapeutic Drug Monitoring and Dose Adjustment",
+      "action": "Perform TDM for voriconazole and posaconazole from day5 (target troughs: voriconazole 1.5–5 mg/L, posaconazole >1 mg/L). Adjust dosing for organ dysfunction, ECMO, obesity, and nasogastric administration according to Table5. Monitor hepatic tests, renal function, potassium, and ECG QT interval."
+    },
+    {
+      "step": 6,
+      "title": "Follow-up and Duration",
+      "action": "Monitor serum GM weekly if initially positive. Perform follow-up chest CT at 4–6 weeks. Treat for minimum 4–6 weeks (without host criteria) or 6–12 weeks (with EORT C-MSGER C criteria), guided by clinical/radiological/microbiological response and ICU discharge."
+    }
+  ],
+  "strengths_limitations": "Strengths: - Multidisciplinary panel covering infectious diseases, intensive care, pulmonology, microbiology, radiology, and pathology. - Adapted to Swiss epidemiology and healthcare system with explicit risk stratification tables. - Detailed practical algorithms for diagnostic work-up and therapeutic choices. - Comprehensive TDM and dosing adjustment recommendations for ICU-specific scenarios. Limitations: - Recommendations based largely on observational cohort studies and expert consensus due to lack of randomized trials in ICU populations. - Incidence data and diagnostic test performance derived from heterogeneous studies with variable definitions. - Limited evidence for many adjunctive interventions and salvage therapies. - Funding from pharmaceutical companies for logistical support, though without involvement in recommendation development or manuscript review.",
+  "related_ids": [],
+  "added_date": "2025-12-16"
+}

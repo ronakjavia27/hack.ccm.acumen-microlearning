@@ -1,0 +1,426 @@
+{
+  "id": "who-guidelines-prevention-bsi-cvc-part2-2026",
+  "doc_type": "guideline",
+  "title": "Guidelines for the prevention of bloodstream infections and other infections associated with the use of intravascular catheters. Part 2: central venous catheters",
+  "issuing_bodies": [
+    "WHO"
+  ],
+  "year": 2026,
+  "doi": "978-92-4-012180-5",
+  "specialty": [
+    "infectious_disease",
+    "surgery",
+    "multi_system"
+  ],
+  "tags": [
+    "clabsi",
+    "central venous catheter",
+    "infection prevention",
+    "bloodstream infection",
+    "ipc",
+    "catheter-related infection",
+    "intravascular",
+    "who guideline",
+    "antiseptic",
+    "guideline"
+  ],
+  "one_line_summary": "WHO evidence-based guidelines providing 25 recommendations and 16 good practice statements for preventing central line-associated bloodstream infections (CLABSI) and other infections associated with central venous catheters in adults, adolescents, children, and neonates.",
+  "key_pearls": [
+    "CLABSI rates in ICUs can be as high as **44.6 per 1000 central line days** in LMICs, compared to **0.8 per 1000** in HICs, highlighting a **critical** prevention gap.",
+    "Use **alcohol-chlorhexidine (≥1% concentration)** for skin disinfection prior to CVC insertion; avoid chlorhexidine in neonates due to the risk of chemical burns.",
+    "A **chlorhexidine-impregnated sponge or dressing** at the insertion site probably reduces CLABSI (RR: 0.66; 95% CI: 0.52 to 0.84), but should not be used in neonates.",
+    "For CVC insertion site selection, prefer the **subclavian or jugular veins over the femoral vein** to reduce infection risk, balancing against the increased risk of pneumothorax with subclavian access.",
+    "Implement **CVC practice bundles** using a multimodal improvement strategy (MMIS) that includes system change, training, monitoring, reminders, and culture change to sustainably reduce CLABSI.",
+    "Do not routinely replace CVCs unless clinically indicated; routine replacement increases mechanical complications without reducing infection risk.",
+    "Use **normal sterile saline** for 'lock-off' flushing of CVCs rather than heparinized saline to avoid heparin-induced thrombocytopenia, despite a potential, non-**significant** increase in CLABSI risk.",
+    "- Use **GRADE methodology** to assess certainty of evidence, downgrading from high to moderate, low, or very low based on risk of bias, inconsistency, indirectness, imprecision, or publication bias.",
+    "- Systematic review included **194 RCTs** and **244 non-randomized studies of interventions (NRSIs)** from 10,587 screened records.",
+    "- For dichotomous outcomes, calculate **RR with 95% CIs**; for continuous data, use **mean differences or standardized mean differences** with generic inverse variance for cluster-RCTs.",
+    "- Contextual factors for evidence-to-decision include **outcome importance, resource use, equity, acceptability, and feasibility** of interventions.",
+    "- Publication bias is assessed via **funnel plot asymmetry** only when ≥10 studies are included in a meta-analysis.",
+    "- Full evidence-to-decision tables and summary of findings are available at **https://doi.org/10.2471/B09725**."
+  ],
+  "consensus_method": "GRADE evidence-to-decision framework with Guideline Development Group (GDG) consensus; conditional recommendations required >70% vote for strong recommendations.",
+  "search_period": "Systematic reviews searched from 1 January 1980 to 31 August 2024.",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "General Statements regarding education and hand hygiene",
+      "narrative": "- **GPS 1:** WHO recommends clinicians be appropriately educated and formally trained about the indications for CVC insertion, maintenance, access, replacement and removal, the proper procedures for their use, and the appropriate infection control measures to prevent catheter-related infections in adults, adolescents, children and neonates.\n- **GPS 2:** WHO recommends clinicians be regularly assessed for their knowledge of and adherence to guidelines for appropriately managing CVCs in adults, adolescents, children and neonates.\n- **GPS 3:** WHO recommends clinicians be appropriately trained in an aseptic technique to prevent CVC-related infections in adults, adolescents, children and neonates.\n- **GPS 4:** WHO recommends clinicians be appropriately trained in hand hygiene procedures in the context of the WHO multimodal improvement strategy for hand hygiene to prevent CVC-related infections in adults, adolescents, children and neonates.\n- **GPS 5:** WHO recommends clinicians perform hand hygiene according to the 'Five moments' during catheter insertion, maintenance, access, replacement and removal, preferably using the WHO hand rubbing technique with alcohol-based hand rub products or by handwashing with soap and water and using single-use or clean towels.",
+      "recommendations": [
+        {
+          "rec_id": "GPS 1",
+          "statement": "WHO recommends that clinicians be appropriately educated and formally trained about the indications for CVC insertion, maintenance, access, replacement and removal, the proper procedures for their use, and the appropriate infection control measures to prevent catheter-related infections in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "GPS 2",
+          "statement": "WHO recommends that clinicians be regularly assessed for their knowledge of and adherence to guidelines for appropriately managing CVCs in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "GPS 3",
+          "statement": "WHO recommends that clinicians be appropriately trained in an aseptic technique to prevent CVC-related infections in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "GPS 4",
+          "statement": "WHO recommends that clinicians be appropriately trained in hand hygiene procedures in the context of the WHO multimodal improvement strategy for hand hygiene to prevent CVC-related infections in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "GPS 5",
+          "statement": "WHO recommends that clinicians perform hand hygiene at any time indicated according to the 'Five moments' during catheter insertion, maintenance, access, replacement and removal, preferably using the WHO hand rubbing technique with alcohol-based hand rub products or by handwashing with soap and water and using single-use or clean towels.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Pre-insertion",
+      "narrative": "- **REC 1:** WHO suggests using a chlorhexidine-containing body wash (liquid or impregnated wipes) daily in **critically**-ill adults, adolescents and children.\n- The evidence did not differentiate between liquid and impregnated wipes and evaluated chlorhexidine concentrations ranging from 2% to 4%.\n- The recommendation is restricted to chlorhexidine only and to adults, adolescents and children, but not neonates (due to the risk of chemical burns).\n- The GDG noted that the use of this intervention would be particularly beneficial in settings with high baseline CLABSI rates.\n- Chlorhexidine products should be used with caution in patients with burns and according to the manufacturer's instructions.\n- **Summary of evidence:** Low certainty of evidence that daily antiseptic body washing may result in fewer CLABSI than no routine antiseptic body washing (RR: 0.67; 95% CI: 0.45 to 0.99; 10 RCTs).",
+      "recommendations": [
+        {
+          "rec_id": "REC 1",
+          "statement": "WHO suggests using a chlorhexidine-containing body wash (liquid or impregnated wipes) daily in **critically**-ill adults, adolescents and children.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Insertion",
+      "narrative": "- **GPS 6:** WHO recommends that clinicians use a standardized insertion pack/kit when placing a CVC in adults, adolescents, children and neonates.\n- **No recommendation** regarding the use of a dedicated CVC insertion team; evidence remains inconclusive. The GDG considered both the desirable and undesirable effects to be small and judged that adequate training of the clinician inserting the CVC is the crucial factor.\n- **GPS 7:** WHO recommends using a sterile technique for the insertion of all CVCs in adults, adolescents, children and neonates.\n- **GPS 8:** WHO recommends that clinicians use sterile single-use gloves compared to non-sterile gloves when inserting a CVC in adults, adolescents, children and neonates.\n- **REC 2:** WHO suggests using a sterile technique involving maximal sterile barrier precautions over a sterile technique not involving maximal sterile barrier precautions at the time of CVC insertion in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).\n- **GPS 9:** WHO recommends that skin disinfection should always be used prior to the insertion of all CVCs in adults, adolescents, children and neonates.\n- **REC 3:** WHO suggests using an alcohol-based formulation over an aqueous-based antiseptic formulation for skin disinfection before CVC insertion in adults, adolescents, children, and neonates (Conditional recommendation, low certainty of evidence).\n- **REC 4:** WHO suggests using an alcohol-chlorhexidine antiseptic (1% or 2%) over other antiseptics (alcohol-iodine or alcohol alone or aqueous formulations) for skin disinfection before CVC insertion in adults, adolescents and children (Conditional recommendation, low certainty of evidence). The recommendation applies to adults, adolescents and children, but not neonates (due to the risk of chemical burns).\n- **No recommendation** regarding the use of ultrasound-guided assistance when inserting a CVC to reduce infection risk, as the evidence remains inconclusive. Regardless, it is important to use sterile, single-use ultrasound gel and an appropriately disinfected ultrasound probe.\n- **REC 5:** WHO suggests using either a transparent semi-permeable dressing or gauze dressing after CVC insertion in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).\n- **REC 6:** WHO suggests using an antiseptic patch or dressing (for example, chlorhexidine-gluconate-impregnated sponge or dressing or any other antiseptic) at the CVC insertion site in adults, adolescents and children (Conditional recommendation, low certainty of evidence). The recommendation applies to adults, adolescents and children, but not neonates (due to the risk of chemical burns).",
+      "recommendations": [
+        {
+          "rec_id": "GPS 6",
+          "statement": "WHO recommends that clinicians use a standardized insertion pack/kit when inserting a CVC in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "GPS 7",
+          "statement": "WHO recommends using a sterile technique for the insertion of all CVCs in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "GPS 8",
+          "statement": "WHO recommends that clinicians use sterile single-use gloves compared to non-sterile gloves when inserting a CVC in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "REC 2",
+          "statement": "WHO suggests using a sterile technique involving maximal sterile barrier precautions over a sterile technique not involving maximal sterile barrier precautions at the time of CVC insertion in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "GPS 9",
+          "statement": "WHO recommends that skin disinfection should always be used prior to insertion of all CVCs in adults, adolescents, children, and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "REC 3",
+          "statement": "WHO suggests using an alcohol-based formulation over an aqueous-based antiseptic formulation for skin disinfection before CVC insertion in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 4",
+          "statement": "WHO suggests using an alcohol-chlorhexidine antiseptic (1% or 2%) over other antiseptics (alcohol-iodine or alcohol alone or aqueous formulations) for skin disinfection before CVC insertion in adults, adolescents and children.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 5",
+          "statement": "WHO suggests using either a transparent semi-permeable dressing or gauze dressing after CVC insertion in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 6",
+          "statement": "WHO suggests using an antiseptic patch or dressing (for example, a chlorhexidine-gluconate-impregnated sponge or dressing or any other antiseptic) at the CVC insertion site in adults, adolescents and children.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Maintenance",
+      "narrative": "- **GPS 10:** WHO recommends using a sterile dressing protocol at the insertion site of a CVC in adults, adolescents, children and neonates.\n- **REC 7:** WHO suggests using a formal schedule of CVC dressing changes in adults, adolescents, children, and neonates (Conditional recommendation, very low certainty of evidence).\n- **REC 8:** If a formal schedule of CVC dressing changes is to be used, WHO suggests using dressing change intervals of 3 days or more in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).\n- **REC 9:** WHO suggests using either a continuous IV infusion or an intermittent infusion for the maintenance of CVCs in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).\n- **REC 10:** WHO suggests a system of 'lock-off' flushing with normal sterile saline over 'lock-off' flushing with heparinized saline for CVCs in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).\n- **GPS 11:** WHO recommends flushing a CVC with a compatible sterile fluid (saline or other) after product administration in adults, adolescents, children and neonates.\n- **REC 11:** WHO suggests using a schedule of regular changing of the CVC administration set (tubing/giving) every 7 days over other schedules (2, 3, 4 days) when administering routine IV fluids only in adults, adolescents, children and neonates (Conditional recommendation, low certainty of evidence).\n- **REC 12:** WHO suggests regular changing of the CVC administration set (tubing/giving) after administering total parenteral nutrition or lipid products in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).",
+      "recommendations": [
+        {
+          "rec_id": "GPS 10",
+          "statement": "WHO recommends using a sterile dressing protocol at the insertion site of a CVC in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "REC 7",
+          "statement": "WHO suggests using a formal schedule of CVC dressing changes in adults, adolescents, children, and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 8",
+          "statement": "If a formal schedule of CVC dressing changes is to be used, WHO suggests using dressing change intervals of 3 days or more in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 9",
+          "statement": "WHO suggests using either a continuous IV infusion or an intermittent infusion for the maintenance of CVCs in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 10",
+          "statement": "WHO suggests a system of 'lock-off' flushing with normal sterile saline over 'lock-off' flushing with heparinized saline for CVCs in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "GPS 11",
+          "statement": "WHO recommends flushing a CVC with a compatible sterile fluid (saline or other) after product administration in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "REC 11",
+          "statement": "WHO suggests using a schedule of regular changing of the CVC administration set (tubing/giving) every 7 days over other schedules (2, 3, 4 days) when administering routine IV fluids only in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 12",
+          "statement": "WHO suggests regular changing of the CVC administration set (tubing/giving) after administering total parenteral nutrition or lipid products in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Access",
+      "narrative": "- **GPS 12:** WHO recommends using an aseptic technique to access CVCs in adults, adolescents, children and neonates.\n- **REC 13:** WHO suggests using either a closed-access or an open-access CVC hub system in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).",
+      "recommendations": [
+        {
+          "rec_id": "GPS 12",
+          "statement": "WHO recommends using an aseptic technique to access CVCs in adults, adolescents, children and neonates.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "REC 13",
+          "statement": "WHO suggests using either a closed-access or an open-access CVC hub system in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Replacement and removal",
+      "narrative": "- **GPS 13:** WHO recommends inspecting the insertion site of CVCs in adults, adolescents, children and neonates at least daily to assess for signs of inflammation and infection in order to guide whether the catheter should be removed.\n- **GPS 14:** WHO recommends promptly removing any CVC no longer **essential** for patient care.\n- **REC 14:** WHO suggests against routinely replacing a CVC (unless clinically indicated) in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).",
+      "recommendations": [
+        {
+          "rec_id": "GPS 13",
+          "statement": "WHO recommends inspecting the insertion site of CVCs in adults, adolescents, children and neonates at least daily to assess for signs of inflammation and infection in order to guide whether the catheter should be removed.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "GPS 14",
+          "statement": "WHO recommends promptly removing any CVC no longer **essential** for patient care.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "REC 14",
+          "statement": "WHO suggests against routinely replacing a CVC (unless clinically indicated) in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Site and catheter selection",
+      "narrative": "- **REC 15:** WHO suggests using the subclavian or jugular veins over the femoral vein for CVC insertion in adults, adolescents, children and neonates (Conditional recommendation, low certainty of evidence).\n- **REC 16:** WHO suggests using the subclavian veins as the preferred site over jugular veins (if no contraindications) for CVC insertion in adults, adolescents, children and neonates (Conditional recommendation, low certainty of evidence).\n- **REC 17:** WHO suggests using either antibiotic-impregnated or non-impregnated CVCs in adults, adolescents, children and neonates (Conditional recommendation, low certainty of evidence).\n- **REC 18:** WHO suggests using antiseptic-coated CVCs in adults, adolescents, children and neonates (Conditional recommendation, low certainty of evidence).\n- **REC 19:** WHO suggests using a single lumen over a multi-lumen catheter (unless there is a specific reason that requires multiple lumens) in adults, adolescents and children requiring a long-term central line (Conditional recommendation, very low certainty of evidence).\n- **REC 20:** WHO suggests using either a Hickman CVC or a Port-a-Cath in adults, adolescents and children requiring a long-term central line (Conditional recommendation, low certainty of evidence).",
+      "recommendations": [
+        {
+          "rec_id": "REC 15",
+          "statement": "WHO suggests using the subclavian or jugular veins over the femoral vein for CVC insertion in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 16",
+          "statement": "WHO suggests using the subclavian veins as the preferred site over jugular veins (if no contraindications) for CVC insertion in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 17",
+          "statement": "WHO suggests using either antibiotic-impregnated or non-impregnated CVCs in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 18",
+          "statement": "WHO suggests using antiseptic-coated CVCs in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 19",
+          "statement": "WHO suggests using a single lumen over a multi-lumen catheter (unless there is a specific reason that requires multiple lumens) in adults, adolescents and children requiring a long-term central line.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 20",
+          "statement": "WHO suggests using either a Hickman CVC or a Port-a-Cath in adults, adolescents and children requiring a long-term central line.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Other preventive measures (including surveillance and bundles)",
+      "narrative": "- **REC 21:** WHO suggests using either a suture-less or suture-based securement of CVCs in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).\n- **REC 22:** WHO suggests not using an antimicrobial lock solution in patients with short-term CVCs for the prevention of CVC infections in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).\n- **No recommendation** regarding the routine use of prophylactic antimicrobial lock therapy in patients with long-term CVCs, as the evidence remains inconclusive.\n- **REC 23:** WHO suggests either using antiseptic-impregnated or non-impregnated line caps in adults, adolescents, children and neonates with short- and long-term catheters (Conditional recommendation, low certainty of evidence).\n- **REC 24:** WHO suggests not using IV prophylactic antibiotics in adults, adolescents, children and neonates with short- and long-term catheters (Conditional recommendation, very low certainty of evidence).\n- **GPS 15:** WHO recommends that HAI surveillance (including CLABSI or related BSI and to detect AMR and outbreaks) should be performed to guide IPC interventions, combined with timely feedback of results to health care workers and stakeholders, including through national networks.\n- **GPS 16:** WHO recommends that national HAI surveillance programmes and networks that include mechanisms for timely data feedback and with the potential to be used for benchmarking purposes should be established to reduce HAI and AMR.\n- **REC 25:** WHO suggests using CVC practice bundles in adults, adolescents, children and neonates (Conditional recommendation, very low certainty of evidence).",
+      "recommendations": [
+        {
+          "rec_id": "REC 21",
+          "statement": "WHO suggests using either a suture-less or suture-based securement of CVCs in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 22",
+          "statement": "WHO suggests not using an antimicrobial lock solution in patients with short-term CVCs for the prevention of CVC infections in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 23",
+          "statement": "WHO suggests either using antiseptic-impregnated or non-impregnated line caps in adults, adolescents, children and neonates with short- and long-term catheters.",
+          "strength": "conditional",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "REC 24",
+          "statement": "WHO suggests not using IV prophylactic antibiotics in adults, adolescents, children and neonates with short- and long-term catheters.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "GPS 15",
+          "statement": "WHO recommends that HAI surveillance (including CLABSI or related BSI and to detect AMR and outbreaks) should be performed to guide IPC interventions, combined with timely feedback of results to health care workers and stakeholders, including through national networks.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "GPS 16",
+          "statement": "WHO recommends that national HAI surveillance programmes and networks that include mechanisms for timely data feedback and with the potential to be used for benchmarking purposes should be established to reduce HAI and AMR.",
+          "strength": "strong",
+          "evidence_grade": "NA (Good practice statement)"
+        },
+        {
+          "rec_id": "REC 25",
+          "statement": "WHO suggests using CVC practice bundles in adults, adolescents, children and neonates.",
+          "strength": "conditional",
+          "evidence_grade": "Very low certainty of evidence"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Good Practice Statements and Recommendations for Prevention of BSI and Other Infections Associated with Central Venous Catheters",
+      "narrative": "- Table 1 summarizes the complete set of good practice statements and evidence-based recommendations for CVC-related infection prevention.\n- Recommendations address the continuum from insertion to maintenance and removal of central venous catheters.\n- Interventions evaluated include antimicrobial agents, antiseptic preparations, catheter lock solutions, dressing types, insertion site selection, and bundle approaches.\n- Evidence profiles incorporate both RCT and observational data, with explicit grading of certainty.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Implement multimodal infection prevention and control (IPC) strategies, including minimum requirements at national and facility levels, to reduce central line-associated bloodstream infections (CLABSI).",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "WHO Evidence-Based Recommendations on Multimodal Improvement Strategies (MMIS) for IPC Interventions",
+      "narrative": "- Table 2 details the WHO recommendations on MMIS for IPC interventions.\n- MMIS includes integrated bundles of evidence-based practices, education and training, monitoring and feedback, and culture of safety.\n- Implementation should be adapted to local context, resources, and epidemiology.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Adopt a multimodal improvement strategy (MMIS) for the implementation of IPC interventions to prevent CLABSI.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "topic": "Minimum Requirements for IPC Programmes at National and Facility Level Related to MMIS Implementation",
+      "narrative": "- Table 3 outlines minimum requirements for IPC programmes to support MMIS.\n- National-level requirements include policies, guidelines, and surveillance systems.\n- Facility-level requirements include dedicated IPC staff, training, supplies, and infrastructure.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Ensure national and facility-level IPC programmes meet minimum structural and process requirements to enable effective MMIS implementation.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "topic": "Research Needs and Related Domains for Prevention of CLABSI",
+      "narrative": "- Table 4 identifies key research gaps across domains: epidemiology, pathogenesis, and risk factors; surveillance and diagnosis; prevention strategies; implementation science; and health economics.\n- Priority areas include comparative effectiveness of antiseptic agents, optimal dressing change intervals, and novel lock solutions.\n- Research is needed in low-resource settings to assess feasibility and cost-effectiveness.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Prioritize research on comparative effectiveness of antiseptic agents, optimal dressing change intervals, and novel lock solutions, especially in low-resource settings.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Assess local guidelines and practices",
+      "action": "Evaluate local guidelines and/or standard operating procedures for the prevention of BSI and other infections associated with central line catheters. Determine whether any update is needed by exploring their alignment with this WHO guideline. Assess local practices to identify the most common gaps."
+    },
+    {
+      "step": 2,
+      "title": "Develop improvement plans",
+      "action": "Based on the identified gaps, develop improvement plans including interventions based upon the relevant recommendations and/or good practice statements of this guideline. Use the WHO multimodal improvement strategy (MMIS) and five-step cycle (assess, plan, implement, evaluate, sustain) to guide implementation."
+    },
+    {
+      "step": 3,
+      "title": "Implement multimodal strategies",
+      "action": "Implement IPC activities using multimodal strategies that include: system change ('Build it'), training and education ('Teach it'), monitoring and feedback ('Check it'), reminders and communication ('Sell it'), and culture change ('Live it'). Ensure bundles and checklists are developed by multidisciplinary teams that consider local conditions."
+    },
+    {
+      "step": 4,
+      "title": "Monitor and evaluate impact",
+      "action": "Measure clinician education, training and competencies in CVC management using an ongoing system of regular assessment. Monitor clinician adherence to the practices recommended in the guidelines' good practice statements and recommendations. Assess any complications associated with CVC and correlate these data with adherence to the guidelines in clinical practices. Investigate all health care-associated BSI to determine the source and whether they are associated with intravascular catheters."
+    }
+  ],
+  "strengths_limitations": "**Strengths:** Comprehensive, evidence-based guidelines developed using the GRADE methodology with a diverse, international Guideline Development Group; addresses all phases of CVC management (insertion, maintenance, access, removal) across all age groups; provides clear, actionable recommendations with explicit certainty of evidence ratings; includes a dedicated chapter on the WHO Multimodal Improvement Strategy for implementation.\n**Limitations:** The majority of recommendations are conditional and based on low or very low certainty of evidence, reflecting the paucity of high-quality RCTs in this field; several recommendations rely on expert opinion due to absent evidence; the guideline excludes haemodialysis and extracorporeal membrane oxygenation catheters; cost-effectiveness analyses were primarily from HICs, limiting generalizability to LMICs.\n- Strengths: Comprehensive systematic review using Cochrane methods and GRADE framework; inclusion of both RCTs and NRSIs; transparent evidence-to-decision process; explicit consideration of resource use, equity, and feasibility.\n- Limitations: Heterogeneity in study designs and settings; limited data from low-resource contexts; potential publication bias for outcomes with <10 studies; reliance on observational data for some PICO questions.",
+  "related_ids": [],
+  "added_date": "2025-07-11"
+}

@@ -1,0 +1,376 @@
+{
+  "id": "srlff-gfrup-sfmu-scd-emergencies-critical-illness-2025",
+  "doc_type": "guideline",
+  "title": "Guidelines for the management of emergencies and critical illness in pediatric and adult patients with sickle cell disease",
+  "issuing_bodies": [
+    "SRLF",
+    "GFRUP",
+    "SFMU"
+  ],
+  "year": 2025,
+  "doi": "10.1186/s13613-025-01479-3",
+  "specialty": [
+    "hematology",
+    "multi_system",
+    "pulmonology"
+  ],
+  "tags": [
+    "sickle cell disease",
+    "vaso-occlusive crisis",
+    "acute chest syndrome",
+    "transfusion",
+    "priapism",
+    "intensive care",
+    "emergency medicine",
+    "pediatrics"
+  ],
+  "one_line_summary": "French multidisciplinary guidelines providing 45 recommendations for managing emergencies and **critical** illness in pediatric and adult patients with sickle cell disease, covering referral, vaso-occlusive crisis, acute chest syndrome, transfusion therapy, and priapism.",
+  "key_pearls": [
+    "- For adults with SCD and severe ACS, target **intracellular bacteria** with empirical antibiotics (macrolide) combined with **pyogenic bacteria** coverage (cephalosporin) to reduce morbidity.",
+    "- In children with SCD and VOC, initiate a protocolized analgesic algorithm immediately, favoring **intravenous opioids via PCA** with a basal infusion and bolus doses for severe pain (Grade 2+).",
+    "- For acute stroke in SCD patients, perform urgent transfusion therapy ideally within **two hours** of symptom onset, prioritizing automated exchange transfusion to achieve **HbS < 30%** and hematocrit **30 ± 3%**.",
+    "- Use the **Mekontso Dessap nomogram** (requiring post-transfusion HbA% and hemoglobin concentration) to diagnose delayed hemolytic transfusion reaction (DHTR) in adults (Grade 2+) and children (Expert opinion).",
+    "- In adults with SCD and severe ACS, assess right ventricular stress via echocardiography (looking for **Vmax TR ≥ 3 m/s** or acute cor pulmonale) for prognostic evaluation, as it is associated with increased in-hospital **mortality** (Grade 2+).",
+    "- For priapism persisting **≥ 4 hours** in adults with SCD, perform cavernosal blood aspiration followed by intracavernous injection of alpha-adrenergic agonists, repeating multiple times before considering surgery to minimize long-term sequelae.",
+    "- Administer intravenous beta-lactams in SCD patients with severe infections and normal renal function using a **loading dose followed by continuous infusion** or increased dosing frequency to overcome glomerular hyperfiltration and ensure pharmacokinetic targets (Grade 2+)."
+  ],
+  "consensus_method": "GRADE methodology with expert panel consensus; strong agreement defined as ≥70% expert agreement on a 1-9 scale after two rounds of scoring.",
+  "search_period": "Literature search via MEDLINE (PubMed) and Cochrane databases; included English and French publications, prioritizing recent meta-analyses, RCTs, and observational studies.",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Referral of Patients (ICU Admission & Reference Centers)",
+      "narrative": "- ICU admission should be considered for patients with SCD exhibiting clinical or biological signs of severe illness, such as tachypnea, acute kidney injury, or arterial hypotension.\n- Adults: Two retrospective studies identified risk factors for adverse outcomes in ICU, including tachypnea, acute renal failure, and hypotension [3, 4].\n- Pediatrics: Five retrospective studies describe PICU stays [5-8]; clinical experience suggests admission for uncontrolled hyperalgic crises, poorly tolerated acute anemia, acute neurological events, or hypoxemic respiratory distress [9].\n- Consulting a reference center is **recommended** for severe acute complications (e.g., ACS requiring respiratory support, acute anemia with DHTR risk, stroke, severe hepatic VOC, splenic sequestration, sepsis, acute priapism) to improve diagnosis, treatment, and enable transfer if needed.\n- Pediatric studies show reduced length of stay (39%) in day hospitals for uncomplicated VOC [10] and lower transfer rates in high-activity SCD centers [12].",
+      "recommendations": [
+        {
+          "rec_id": "R1.1",
+          "statement": "Adults: Admission to ICU should probably be considered in adults with SCD who need red blood cell exchange or are at risk of an unfavourable outcome, such as those with tachypnea, acute kidney injury, or arterial hypotension.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        },
+        {
+          "rec_id": "R1.2",
+          "statement": "Pediatrics: The experts suggest considering ICU admission for children with SCD in cases of uncontrolled hyperalgic crisis, poorly tolerated acute anemia, acute neurological event, hypoxemic respiratory distress, or any acute organ failure.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R2",
+          "statement": "The experts recommend consulting a reference center for an expert opinion or arranging a transfer for adult and pediatric patients with severe acute complications of SCD or those at risk of rapid deterioration. While the list is not exhaustive, it includes: any acute organ failure requiring ICU/HDU; ACS requiring respiratory support or associated with pulmonary hypertension (TRV > 3 m/s); acute anemia with DHTR risk; stroke; severe hepatic VOC, sequestration, or cholestasis; extensive medullary necrosis; splenic sequestration; acute complication in a transplanted or pregnant patient; sepsis or septic shock; meningitis in children; acute priapism; acute complication requiring surgery; sudden deafness or blindness.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Vaso-Occlusive Crisis (VOC) Management",
+      "narrative": "- Pain management follows the '5 P's': Precocious, Plurality of strong agents, Personalized, Participatory, and Psychological considerations.\n- Adults: A protocolized analgesic algorithm (Fig. 1) should be initiated immediately, prioritizing intravenous strong opioids via PCA for severe pain (VAS ≥ 60 mm).\n- Pediatrics: A protocolized algorithm (Fig. 2) should probably be initiated immediately (Grade 2+). Intranasal fentanyl is **superior** to placebo for 20-min pain relief [53]; early opioid administration within **30 min** is crucial to improve outcomes [51, 52].\n- Oxygen saturation target: Maintain SpO2 ≥ 95% during VOC to prevent sickling, though routine oxygen lacks strong evidence of benefit [77-79].\n- Incentive spirometry: Should probably be used to prevent ACS in adults and children with VOC, especially with chest or back pain (Grade 2+). Pediatric RCT showed reduced incidence of atelectasis and pulmonary infiltrates [85].\n- Hydration: Systematic overhydration is probably not advisable (Grade 2-). In children, limit fluid intake to **1.5 L**/m²/day, not exceeding **2 L**/m²/day (or max **3 L**/day). In adults, adjust fluid intake based on clinical status, other inputs, and daily requirements.",
+      "recommendations": [
+        {
+          "rec_id": "R3.1",
+          "statement": "Adults: The experts suggest immediately initiating a protocolized analgesic treatment algorithm (Fig. 1) in adults with SCD presenting with a painful crisis.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R3.2",
+          "statement": "Pediatrics: A protocolized analgesic treatment algorithm (Fig. 2) should probably be initiated immediately in children with SCD presenting with a painful crisis.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        },
+        {
+          "rec_id": "R4",
+          "statement": "The experts suggest maintaining a transcutaneous oxygen saturation target of 95% during VOC in adults and children with SCD.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R5",
+          "statement": "Incentive spirometry should probably be used to prevent the onset of ACS in adults and children with SCD who experience VOC, especially in cases of chest or back pain in adults.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        },
+        {
+          "rec_id": "R6.1",
+          "statement": "Systematic overhydration is probably not advisable in adults and children with SCD experiencing VOC, due to the potential for serious complications and the lack of demonstrated benefits.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2-"
+        },
+        {
+          "rec_id": "R6.2",
+          "statement": "Adults: The experts suggest adjusting fluid intake, whether oral or intravenous in adults with VOC, based on the patient's clinical status (hydration, respiratory), other fluid inputs (such as erythrocyte transfusions), and daily fluid requirements.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R6.3",
+          "statement": "Pediatrics: The experts suggest initially limiting fluid intake in children with VOC to **1.5 L**/m²/day, without exceeding **2 L**/m²/day (or a maximum of **3 L**/day).",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Acute Chest Syndrome (ACS) Diagnosis and Management",
+      "narrative": "- Lung ultrasound (LUS): In adults, LUS should probably be used to improve ACS diagnosis, showing better sensitivity (72% vs 44%) and agreement with CT than CXR [104]. In children, either LUS or standard CXR should probably be used (Grade 2+).\n- CT scan: In adults, perform CT scan to search for pulmonary artery thrombosis (PAT) after pretest clinical probability assessment using the PAT-ACS score (Hb > **8.2 g**/dL, no trigger, platelets > **440 G**/L, PaCO2 < **38 mmHg**). In children, consider CT for severe ACS with right ventricular failure in PICU.\n- Echocardiography: Assess right ventricular stress for prognostic evaluation in severe ACS. In adults, Vmax TR ≥ 3 m/s is associated with increased in-hospital **mortality** [124].\n- Systemic corticosteroids: Should probably not be used routinely for ACS (Grade 2-). Meta-analysis shows increased risk of early readmission (OR 3.36, 95% CI 1.84-6.15) [142].\n- Non-invasive ventilation (NIV): Should probably not be used routinely in adults (Grade 2-). In children, test efficacy and tolerance on a case-by-case basis.\n- Inhaled nitric oxide: High-dose should probably not be used routinely for VOC or ACS (Grade 2-).\n- Anticoagulation: No recommendation for therapeutic anticoagulation in ACS without documented DVT or PAT. Prophylactic anticoagulation is indicated in acutely ill medical adults; in children, consider for pubertal onset, history of DVT, central venous catheter, COVID-19, or Moya-Moya disease (Grade 2+).\n- Procalcitonin: No recommendation for initiating antibiotics based solely on procalcitonin in ACS.\n- Antibiotics: In adults, administer empirical antibiotics targeting intracellular bacteria (macrolide) combined with anti-pyogenic bacteria for severe ACS. In children, this combination should probably be used (Grade 2+).\n- Beta-lactams: In severe infections without renal insufficiency, use a loading dose followed by continuous administration or increased dosing frequency to improve pharmacokinetics (Grade 2+).",
+      "recommendations": [
+        {
+          "rec_id": "R7.1",
+          "statement": "Adults: Lung ultrasound should probably be used to improve the diagnosis of ACS in adults with SCD exhibiting clinical signs suggestive of ACS.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        },
+        {
+          "rec_id": "R7.2",
+          "statement": "Pediatrics: Either lung ultrasound or standard chest X-ray should probably be used for the diagnosis of ACS in children with SCD exhibiting clinical signs suggestive of ACS.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        },
+        {
+          "rec_id": "R8.1",
+          "statement": "Adults: The experts suggest that, after assessment of pretest clinical probability, adults with ACS undergo a CT scan to search for pulmonary artery thrombosis.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R8.2",
+          "statement": "Pediatrics: The experts suggest that children admitted to the PICU with severe ACS complicated by right ventricular failure undergo a CT scan to search for pulmonary artery thrombosis.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R9.1",
+          "statement": "Adults: Right ventricular stress should probably be assessed with echocardiography for prognostic evaluation in adult patients with severe ACS.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        },
+        {
+          "rec_id": "R9.2",
+          "statement": "Pediatrics: The experts suggest that in children, right ventricular stress be assessed with echocardiography for prognostic evaluation in pediatric patients with severe ACS.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R10",
+          "statement": "Systemic corticosteroid therapy should probably not be used routinely for the management of ACS in adults and children with SCD.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2-"
+        },
+        {
+          "rec_id": "R11.1",
+          "statement": "Adults: Non-invasive ventilation should probably not be used routinely during ACS in adults with SCD.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2-"
+        },
+        {
+          "rec_id": "R11.2",
+          "statement": "Pediatrics: The experts suggest testing the efficacy and tolerance of non-invasive ventilation on a case-by-case basis during ACS in children with SCD.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R12",
+          "statement": "High-dose nitric oxide should probably not be used routinely for the management of adults and children with SCD developing VOC or ACS.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2-"
+        },
+        {
+          "rec_id": "R13",
+          "statement": "Currently available data do not allow a recommendation to be made regarding the use of therapeutic anticoagulation in adult and pediatric patients with ACS without documented deep vein thrombosis or pulmonary artery thrombosis.",
+          "strength": null,
+          "evidence_grade": "No specific recommendation"
+        },
+        {
+          "rec_id": "R14.1",
+          "statement": "Adults: Thromboprophylaxis is indicated in acutely ill medical patients, including those with ACS.",
+          "strength": null,
+          "evidence_grade": "No specific recommendation"
+        },
+        {
+          "rec_id": "R14.2",
+          "statement": "Pediatrics: Prophylactic anticoagulation should probably be used in children with SCD with ACS in the following cases: pubertal onset, a history of deep vein thrombosis, central venous catheterization, COVID-19, or Moya-Moya disease (after an individual assessment of the risk-benefit ratio).",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        },
+        {
+          "rec_id": "R15",
+          "statement": "The panel makes no recommendation on procalcitonin for initiating antibiotic treatment in adult and children with ACS.",
+          "strength": null,
+          "evidence_grade": "No recommendation"
+        },
+        {
+          "rec_id": "R16.1",
+          "statement": "Adults: The experts suggest administering empirical antibiotic targeting intracellular bacteria in combination with an antibiotic targeting pyogenic bacteria in cases of severe ACS in adults.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R16.2",
+          "statement": "Pediatrics: Empirical antibiotic therapy targeting intracellular pathogens should probably be used in combination with an antibiotic targeting pyogenic bacteria in children with ACS.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        },
+        {
+          "rec_id": "R17",
+          "statement": "In adult and pediatric patients with SCD experiencing severe or difficult-to-treat infections, and without renal insufficiency, intravenous beta-lactams should probably be administered using a loading dose followed by continuous administration, or an increased number of doses per day, in order to improve their pharmacokinetics and pharmacodynamics.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Transfusion Therapy",
+      "narrative": "- Transfusion modality: Prioritize simple transfusion if anemia is severe (total Hb < **7 g**/dL); otherwise, immediately perform exchange transfusion (manual or automated). In children, do not exceed post-procedure hematocrit of 33% ± 3%.\n- Indications: Systematic transfusion is not **recommended** for uncomplicated VOC. For ACS, transfuse adults with severe hypoxemia, severe pulmonary hypertension (TRV > 3 m/s or acute cor pulmonale), or associated organ failure; transfuse children with rapidly worsening hypoxemia or associated organ failure.\n- Stroke: Urgent transfusion therapy ideally within 2 hours of symptom onset. Prioritize automated exchange; if Hb < **7 g**/dL, give simple transfusion while awaiting exchange to reach HbS < 30% and hematocrit 30 ± 3%.\n- Priapism: Consider transfusion if non-invasive/invasive treatments fail or priapism lasts ≥ 4 hours.\n- Splenic sequestration: Transfusion therapy is suggested.\n- Acute organ failure: Transfusion therapy is suggested.\n- DHTR: Transfusion therapy should probably not be performed (Grade 2-). If unavoidable, consult an expert center and consider immunological therapies.\n- Diagnosis of DHTR: Use the Mekontso Dessap nomogram (adults: Grade 2+, pediatrics: Expert opinion). Systematically perform complete blood count and hemoglobin electrophoresis within 48 h post-transfusion in at-risk patients.\n- Prediction of DHTR: In adults, use the Narbey predictive score (score ≥ 8 or history of DHTR indicates **significant** risk). In children, the Narbey score should probably not be used (Grade 2-).",
+      "recommendations": [
+        {
+          "rec_id": "R18.1",
+          "statement": "In the event of an acute complication warranting a transfusion in an adult or pediatric patient with SCD, the experts suggest prioritizing simple transfusion if the anemia is severe (total hemoglobin < **7 g**/dL) and immediately performing an exchange transfusion (manual or automated) in other cases.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R18.2",
+          "statement": "Pediatrics: In the case of an acute complication warranting a transfusion in a child with SCD, the experts suggest not to exceed a post-procedure hematocrit of 33% ± 3%.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R19.1",
+          "statement": "The experts suggest against the systematic use of transfusion therapy for uncomplicated VOC in adult and pediatric patients with SCD.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R19.2",
+          "statement": "Adults: The experts suggest performing a transfusion therapy for the management of ACS in adult patients with SCD who meet severity criteria with regard to hypoxemia, severe pulmonary hypertension (tricuspid regurgitation velocity > 3 m/s or acute cor pulmonale), or any associated organ failure.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R19.3",
+          "statement": "Pediatrics: The experts suggest performing a transfusion therapy for the management of ACS in pediatric patients with SCD who meet severity criteria, with regard to rapidly worsening hypoxemia, or any associated organ failure.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R19.4",
+          "statement": "The experts suggest urgent transfusion therapy, ideally within two hours of symptom onset, for adult and pediatric patients with SCD showing signs of stroke. Automated exchange transfusion should be prioritized if time allows, or manual exchange if there are delays. In cases where hemoglobin levels are below **7 g**/dl, a simple transfusion is suggested while awaiting exchange transfusion to reach hemoglobin S (or S + C) below 30% with hematocrit 30 ± 3%. Hemorrhagic stroke may also require exchange transfusion or simple transfusion, especially when neurosurgical procedures are indicated.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R19.5",
+          "statement": "The experts suggest transfusion therapy for persistent acute ischemic priapism in adult and pediatric patients with SCD when non-invasive and invasive treatments (aspiration and/or intracavernosal injection) fail or when priapism has been ongoing for at least four hours.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R19.6",
+          "statement": "The experts suggest transfusion therapy in cases of splenic sequestration in adult and pediatric patients with SCD.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R19.7",
+          "statement": "The experts suggest transfusion therapy in the event of acute organ failure.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R19.8",
+          "statement": "Transfusion therapy should probably not be performed in adult and pediatric patients with SCD presenting with Delayed Haemolytic Transfusion Reaction.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2-"
+        },
+        {
+          "rec_id": "R20.1",
+          "statement": "Adults: The Mekontso Dessap nomogram should probably be used to diagnose DHTR in adult patients with SCD.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2+"
+        },
+        {
+          "rec_id": "R20.2",
+          "statement": "Pediatrics: The experts suggest using the Mekontso Dessap nomogram to diagnose DHTR in children with SCD.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R20.3",
+          "statement": "The experts suggest systematically performing a complete blood count and hemoglobin electrophoresis within 48 h following RBC transfusion in adult and pediatric patients with SCD at risk of DHTR.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R21.1",
+          "statement": "Adults: The experts suggest using the Narbey predictive score to assess the risk of DHTR before transfusion in adult patients with SCD. They suggest categorizing the risk as: i) not **significant** if the score is less than 8; and ii) **significant** if the score equals or exceeds 8, or if the patient has a history of confirmed DHTR.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R21.2",
+          "statement": "Pediatrics: The Narbey predictive score should probably not be used in children with SCD to assess the risk of DHTR.",
+          "strength": "conditional",
+          "evidence_grade": "Grade 2-"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Priapism",
+      "narrative": "- Priapism is a prolonged erection without sexual stimulation; ischemic priapism (low-flow, painful) is an emergency due to risk of irreversible erectile dysfunction from tissue hypoxia and acidosis.\n- Adults: For priapism lasting > 1 hour, start with intracavernous injection of alpha-adrenergic agonists (etilefrine or phenylephrine), repeating after **20 min** if ineffective. For priapism ≥ 4 hours, perform cavernosal aspiration followed by injection, repeating multiple times before considering surgery.\n- Pediatrics: For priapism lasting > 1 hour, perform intracavernous injection of alpha-adrenergic agonists and drainage of corpora cavernosa.\n- General measures (oxygen, analgesics, hydration, physical exertion) have low efficacy alone (0-37% resolution). Local interventions (aspiration + injection) are more effective.",
+      "recommendations": [
+        {
+          "rec_id": "R22.1",
+          "statement": "Adults: In cases of persistent, painful erection in an adult with SCD suggesting acute ischemic priapism, experts recommend promptly initiating non-invasive measures (such as massages, physical exertion, and possibly oral alpha-adrenergic agonists). If priapism lasts for more than an hour, an intracavernosal injection of alpha-adrenergic agonists should be considered, with a repeat injection after **20 min** if the first is ineffective, the objective being to minimize complications and long-term sequelae.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R22.2",
+          "statement": "Adults: For ischemic priapism persisting for four hours or more in adults with SCD, experts recommend aspirating cavernosal blood, followed by an intracavernous injection of alpha-adrenergic agonists. These steps should be repeated multiple times before considering surgical intervention, the objective being to minimize complications and long-term sequelae.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "R22.3",
+          "statement": "Pediatrics: Experts suggest performing an intracavernous injection of alpha-adrenergic agonists and draining the corpora cavernosa in a child with SCD who has been experiencing acute priapism for more than an hour.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Initial Pain Management for Adult VOC",
+      "action": "Immediately initiate protocolized analgesic treatment algorithm (Fig. 1). For severe pain (VAS ≥ 60 mm or VRS ≥ 6) without immediate IV access, use sublingual fentanyl (100-200 µg). Prioritize obtaining venous access for IV strong opioid titration (morphine or oxycodone 0.1 mg/kg then 3-5 mg/5 min) or PCA. Combine with non-opioid analgesics (paracetamol, nefopam, tramadol)."
+    },
+    {
+      "step": 2,
+      "title": "Initial Pain Management for Pediatric VOC",
+      "action": "Immediately initiate protocolized analgesic treatment algorithm (Fig. 2). For severe pain, use intranasal fentanyl or IV morphine via PCA (basal infusion + bolus doses). Combine with paracetamol and consider short-term NSAIDs if no contraindications. Use non-pharmacological measures (music, relaxation, virtual reality) if accepted."
+    },
+    {
+      "step": 3,
+      "title": "ACS Diagnosis and Respiratory Support",
+      "action": "Perform bedside lung ultrasound (LUS) or chest X-ray for suspected ACS. For severe ACS in adults, assess right ventricular stress via echocardiography. Consider CT scan to rule out pulmonary artery thrombosis if pretest probability is high (PAT-ACS score ≥ 2). Provide oxygen to maintain SpO2 ≥ 95%. Use incentive spirometry to prevent ACS during VOC."
+    },
+    {
+      "step": 4,
+      "title": "Transfusion Decision in Acute Complications",
+      "action": "For acute complications requiring transfusion: if total Hb < 7 g/dL, prioritize simple transfusion; otherwise, perform immediate exchange transfusion (manual or automated). Target post-procedure hematocrit 33% ± 3% in children. For stroke, initiate transfusion within 2 hours, targeting HbS < 30% and hematocrit 30% ± 3%."
+    },
+    {
+      "step": 5,
+      "title": "Priapism Emergency Management",
+      "action": "For priapism > 1 hour in adults: perform intracavernous injection of alpha-adrenergic agonist (etilefrine or phenylephrine), repeat after 20 min if ineffective. For priapism ≥ 4 hours: aspirate cavernosal blood, then inject alpha-adrenergic agonist, repeating multiple times before considering surgery. In children: perform intracavernous injection and drainage for priapism > 1 hour."
+    }
+  ],
+  "strengths_limitations": "- Strengths: Formal multidisciplinary consensus process involving three major French **critical** care and emergency medicine societies (SRLF, GFRUP, SFMU); rigorous GRADE methodology with strong agreement achieved for all 45 recommendations after two rounds of scoring; comprehensive coverage of five **critical** domains (referral, VOC, ACS, transfusion, priapism) with separate pediatric and adult guidance.\n- Limitations: 26 of 45 recommendations were expert opinions due to insufficient high-quality evidence; only 16 recommendations were based on a GRADE 2 level of evidence; three key PICOs could not be addressed with any recommendation; literature search limited to English and French publications; many recommendations rely on observational studies and retrospective data rather than RCTs.",
+  "related_ids": [],
+  "added_date": "2025-04-17"
+}

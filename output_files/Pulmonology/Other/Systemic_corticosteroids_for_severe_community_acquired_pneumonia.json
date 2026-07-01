@@ -1,0 +1,95 @@
+{
+  "id": "systemic-corticosteroids-severe-community-acquired-pneumonia-narrative-review-2026",
+  "doc_type": "article",
+  "article_subtype": "Other",
+  "title": "Systemic corticosteroids for severe community-acquired pneumonia: a narrative review of mechanisms and critical appraisal of recent trials in ICU",
+  "authors": "Benjamin Eastwood et al.",
+  "journal": "European Respiratory Review",
+  "year": 2026,
+  "doi": "10.1183/16000617.0259-2025",
+  "specialty": [
+    "pulmonology",
+    "infectious_disease"
+  ],
+  "tags": [
+    "severe community-acquired pneumonia",
+    "corticosteroids",
+    "intensive care unit",
+    "heterogeneity of treatment effect",
+    "immunomodulation",
+    "CAPE COD",
+    "ESCAPe",
+    "REMAP-CAP",
+    "endotypes",
+    "CRP"
+  ],
+  "one_line_summary": "This narrative review explores immune- and nonimmune-mediated mechanisms underlying heterogeneous outcomes in recent ICU trials of systemic corticosteroids for severe community-acquired pneumonia, emphasizing the need for endotype-based patient selection.",
+  "key_pearls": [
+    "Recent large ICU trials (ESCAPe, CAPE COD, REMAP-CAP) show conflicting **mortality** results for corticosteroids in sCAP, likely due to heterogeneous disease endotypes and trial design differences.",
+    "An individual patient data meta-analysis identified baseline **CRP >204 mg·L⁻¹** as predictive of **mortality** benefit from corticosteroids, but this requires prospective validation before use as a treatment rule.",
+    "Hydrocortisone (with mineralocorticoid activity) may drive **mortality** benefit more than predominantly glucocorticoid steroids like methylprednisolone, though evidence is mixed.",
+    "Early corticosteroid administration (within **24 hours** of hospital admission) was associated with greater benefit, while initiation after **48 hours** may attenuate benefit or signal harm.",
+    "Corticosteroid-responsive sCAP mimics (e.g., organizing pneumonia, eosinophilic pneumonia) may be inadvertently included in trials, contributing to heterogeneity of treatment effect.",
+    "Future trials should incorporate multi-omics endotyping, rapid molecular pathogen identification, PK-PD monitoring, and longer-term follow-up beyond 90 days to enable precision therapy.",
+    "Control group **mortality** varied widely across trials (9.8%–18.1%), often lower than real-world sCAP **mortality** (~25%), suggesting trial populations may not capture the most severely ill patients."
+  ],
+  "evidence_level": "narrative_review",
+  "sample_size": null,
+  "population": "Adults with severe community-acquired pneumonia (sCAP) requiring ICU or HDU admission, including patients from recent large RCTs (ESCAPe, CAPE COD, REMAP-CAP).",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction",
+      "content": "- sCAP is a leading cause of sepsis-related ICU admissions, with **10%** of hospitalized CAP patients requiring ICU and **mortality** of **30–50%** (closer to **20%** in trial populations).\n- No specific therapies beyond antibiotics and supportive care exist for non-COVID-19 sCAP; corticosteroids have been investigated for decades.\n- Three recent large multicentre trials (ESCAPe, CAPE COD, REMAP-CAP) produced heterogeneous results, prompting this review of mechanisms and **critical** appraisal.\n- The review adopts ICU/HDU admission as the primary operational definition of sCAP and explores immune- and nonimmune-mediated mechanisms beyond the standard 'hyperinflammatory' hypothesis.",
+      "section_pearls": []
+    },
+    {
+      "order": 2,
+      "heading": "Pathophysiology of sCAP",
+      "content": "- Initial insult: invasive pathogens exceed capacity of resident macrophages and dendritic cells, triggering inflammatory pathways.\n- Early pathogenesis: 'Alarm' cytokines (IL-1β) activate inflammasome, releasing IL-6, CXCL-8; neutrophil recruitment and emergency granulopoiesis cause 'left shift' with lymphopenia, monocytopenia, eosinopenia.\n- Neutrophils release lytic enzymes, ROS, and NETs, damaging the alveolar barrier and causing plasma leakage, impairing gas exchange.\n- Perpetuating processes: surfactant dysfunction, platelet activation, endothelial glycocalyx damage, and capillary microthrombosis contribute to multiorgan dysfunction.\n- Table 1 summarizes initial insult, early pathogenesis, and late processes including alveolar repair and fluid clearance.",
+      "section_pearls": []
+    },
+    {
+      "order": 3,
+      "heading": "Mechanisms of Corticosteroids in sCAP",
+      "content": "- Corticosteroids as immunomodulators:\n  - Genomic mechanisms: bind glucocorticoid receptors, suppress NF-κβ and AP-1, reducing pro-inflammatory cytokines (TNF-α, IL-1β, IL-6, IL-8); increase anti-inflammatory cytokines (IL-1ra, IL-10).\n  - Nongenomic mechanisms: modulate endothelial nitric oxide synthase, inhibit prostaglandin synthesis, rewire macrophage metabolism to suppress cytokine release, reduce neutrophil recruitment and degranulation.\n  - Distinct alveolar inflammation patterns (including non-neutrophil driven endotypes) suggest different immunomodulatory therapies may be needed for different endotypes.\n- Corticosteroids modulate oxidative stress and alveolar hyperoxia:\n  - Increase antioxidant capacity (ferric reducing ability, GSH/GSSG ratio); reduce markers of free radical damage (8-isoprostane); upregulate superoxide dismutase and GSH in animal models.\n  - Direct human confirmation in sCAP is lacking.\n- Corticosteroids may hasten injury recovery and repair of alveolar epithelium:\n  - Protect AT-II cells by reducing apoptosis (via decreased intracellular Ca²⁺, TNF-α, Bax, caspase-8); restore TNF-α-mediated epithelial barrier dysfunction.\n  - Context-dependent: can induce epithelial cell apoptosis and delay wound repair if given prior to injury, but not after.\n- Corticosteroids may improve lung surfactant synthesis:\n  - Prenatal corticosteroids enhance surfactant synthesis in animal models; stimulate SP-A, SP-B, SP-C, SP-D expression in premature lungs.\n  - Direct effect on surfactant synthesis in injured adult human lungs is unstudied.\n- Corticosteroids enhance alveolar fluid clearance:\n  - Increase expression of apical ENaC and basolateral Na⁺/K⁺ ATPase; improve AFC and pulmonary oedema in animal models.\n  - Detailed human studies in lung injury are lacking.",
+      "section_pearls": [
+        "Corticosteroids have both genomic (transcriptional) and nongenomic (direct pathway modulation) immunomodulatory effects, but benefit is likely confined to specific inflammatory endotypes.",
+        "Nonimmune mechanisms (oxidative stress modulation, alveolar repair, surfactant synthesis, fluid clearance) may contribute to therapeutic benefit beyond anti-inflammatory effects."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "The Corticosteroid Trials in sCAP: Critical Appraisal",
+      "content": "- Patient population:\n  - All three recent large trials (ESCAPe n=584, CAPE COD n=800, REMAP-CAP n=658) were conducted in ICU/HDU settings.\n  - ESCAPe: 95% male veterans; CAPE COD: 69% male; REMAP-CAP: 60.8% male. Subgroup analysis suggests greater benefit in females.\n  - ESCAPe and CAPE COD were underpowered (recruited 584 and 800 vs. powered for 1420 and 1146, respectively).\n  - Baseline CRP >**204 mg**·L⁻¹ was present in 29.4% of ESCAPe vs. 58.6% of CAPE COD, potentially enriching for steroid-responsive endotype.\n  - CAPE COD excluded vasopressor-dependent septic shock; ESCAPe and REMAP-CAP included shock as severity criterion.\n  - HCAP was excluded in CAPE COD and REMAP-CAP but comprised 34% of ESCAPe; influenza excluded from CAPE COD but included in others.\n  - High proportions of patients had pre-existing airways disease (COPD 43–47% in ESCAPe; 27–31% in CAPE COD; 34–35% 'respiratory disease' in REMAP-CAP), raising concerns about confounding.\n- Intervention:\n  - Corticosteroid type varied: hydrocortisone (mineralocorticoid + glucocorticoid) in CAPE COD and REMAP-CAP; methylprednisolone (predominantly glucocorticoid) in ESCAPe.\n  - Timing: CAPE COD and REMAP-CAP required initiation within 24 h; ESCAPe allowed 72–96 h (65% within 48 h). Early administration (<24 h) associated with greater benefit.\n  - Duration and delivery: ESCAPe 20-day taper; REMAP-CAP 7 days fixed; CAPE COD adaptive 8–14 days. Continuous vs. intermittent infusion.\n  - Compliance issues and crossover (23% in REMAP-CAP control received corticosteroids) may dilute effect size.\n- Comparator **mortality**:\n  - Control group 90-day **mortality**: ESCAPe 18.1%, CAPE COD 14.7%, REMAP-CAP 9.8% (vs. expected ~25% in real-world sCAP).\n  - Low control group **mortality** in REMAP-CAP (9.8%) and small control size (n=122) may reflect less systemically compromised patients.\n- Outcomes:\n  - Primary outcomes varied (60-day, 90-day, 30-day **mortality**), prohibiting direct comparison. Secondary outcomes suggest trends toward shorter ICU stays and mechanical ventilation duration.",
+      "section_pearls": [
+        "Differences in corticosteroid type, timing, duration, and delivery across trials likely contribute to heterogeneous outcomes.",
+        "Low control group mortality rates in trials compared to real-world sCAP mortality (~25%) suggest trial populations may not capture the most severely ill patients."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Underlying Causes for Heterogeneity of Treatment Effect",
+      "content": "- Corticosteroid-responsive sCAP mimics:\n  - Organising pneumonia, eosinophilic pneumonia, hypersensitivity pneumonitis, NSIP, pulmonary vasculitis, drug-induced pneumonitis, and P. jirovecii pneumonia in HIV/AIDS may be inadvertently included in sCAP trials.\n  - Assessment should include occupational/exposure history, medication review, BALF analysis, differential cell count, autoimmune panel, and HRCT.\n- Patient factors – inflammatory endotypes:\n  - Three distinct pneumotypes characterised by different immune cell infiltrates and prognoses, not correlating with pathogen or disease stage.\n  - Systemic cytokines do not always reflect local lung inflammatory processes.\n  - CRP >**204 mg**·L⁻¹ identified as an effect modifier for corticosteroid benefit in IPDMA; CRP >**150 mg**·L⁻¹ previously used to enrich for steroid-responsive patients.\n- Patient factors – vascular endotypes:\n  - Endothelial glycocalyx damage (syndecan-1, hyaluronan) contributes to microvascular dysfunction; dexamethasone decreases syndecan-1 release in animal models.\n  - Multi-omics approaches may identify endotypes of endovascular dysfunction.\n- Pathogen and microbiome factors:\n  - No pathogen isolated in ~50% of sCAP cases; virulence factors and host response vary by organism.\n  - Lung microbiome diversity and composition (influenced by COPD, antibiotics, ventilation) affect pneumonia susceptibility and outcomes.\n  - Corticosteroids may alter lung microbiome composition, diversity, and abundance, impacting disease progression.\n- Corticosteroid treatment factors – PK-PD:\n  - PK-PD of corticosteroids in **critical** illness is under-investigated; different dosing regimens of **equivalent** daily quantities alter efficacy.\n  - Protein binding varies in ICU; only free fraction binds glucocorticoid receptor.\n  - Fixed dosing does not account for inter-individual variability (e.g., **120 kg** young male vs. **50 kg** frail older female).\n  - Biological half-lives differ between molecules (hydrocortisone 12 h, methylprednisolone 18–36 h, dexamethasone up to 54 h).",
+      "section_pearls": [
+        "sCAP is a heterogeneous disease; local lung processes are not always reflected in systemic features, necessitating endotype-based precision medicine approaches.",
+        "CRP >204 mg·L⁻¹ is the only variable identified as an effect modifier for corticosteroid benefit, but requires prospective validation before clinical implementation."
+      ]
+    },
+    {
+      "order": 6,
+      "heading": "Future Trial Recommendations",
+      "content": "- Incorporate multi-omics endotyping (transcriptomics, proteomics, cellular functions) to create clinically applicable signatures for real-time patient stratification.\n- Combine host-response data with rapid molecular pathogen identification and complete microbial metagenomic sequencing.\n- Clarify PK-PD relationships of corticosteroids in sCAP; evaluate different steroid types, regimens, and incorporate PK-PD monitoring.\n- Include relevant biomarkers (PCT, CRP, IL-6) and pathogen-specific analyses.\n- Follow patients beyond 90 days to capture metabolic sequelae (e.g., post-ICU diabetes).\n- Apply consistent definitions of sCAP across trials.",
+      "section_pearls": []
+    },
+    {
+      "order": 7,
+      "heading": "Conclusion",
+      "content": "- Evidence from pathophysiological and clinical studies explains potential mechanisms underlying heterogeneous outcomes of systemic corticosteroids in adult sCAP.\n- Further characterisation of these mechanisms in human patients will allow exploration of inter-individual variations in treatment response and better trial design.\n- Multi-omics approaches and noninvasive techniques to interrogate localised lung pathophysiological mechanisms may facilitate developments in this area.",
+      "section_pearls": []
+    }
+  ],
+  "strengths_limitations": "- Strengths: Comprehensive exploration of both immune and nonimmune mechanisms of corticosteroids; detailed **critical** appraisal of three recent large RCTs with tabulated comparisons; discussion of under-recognised contributors to HTE including sCAP mimics, microbiome, and PK-PD variability.\n- Limitations: Narrative review design without systematic search methodology; reliance on post-hoc subgroup analyses and IPDMA findings not adjusted for multiplicity; limited direct human evidence for several proposed mechanistic pathways (oxidative stress, surfactant, AFC) in sCAP.",
+  "related_ids": [],
+  "added_date": "2026-06-27"
+}
