@@ -45,6 +45,23 @@ def load_pearls():
             for k in expected:
                 if k not in entry:
                     entry[k] = ""
+        # Backfill system from source summaries
+        try:
+            with open("sent_summaries.json", "r", encoding="utf-8") as f:
+                summaries = json.load(f)
+            summary_map = {}
+            for s in summaries:
+                fn = str(s.get("file_name", "")).strip()
+                sys = str(s.get("system", "")).strip()
+                if fn and sys:
+                    summary_map[fn] = sys
+            for p in data:
+                fn = str(p.get("file_name", "")).strip()
+                cur = str(p.get("system", "")).strip()
+                if fn in summary_map and (not cur or cur == "Other"):
+                    p["system"] = summary_map[fn]
+        except Exception:
+            pass
         return data
     except (json.JSONDecodeError, Exception):
         return []
@@ -174,7 +191,7 @@ async def render_dashboard(request: Request):
 
   *{{box-sizing:border-box;}}
   html,body{{margin:0;padding:0;}}
-  body{{ background:var(--bg); color:var(--ink); font-family:var(--font-body); font-size:16px; line-height:1.5; transition:background .25s ease, color .25s ease; padding-bottom:76px; }}
+  body{{ background:var(--bg); color:var(--ink); font-family:var(--font-body); font-size:var(--site-fs,16px); line-height:1.5; transition:background .25s ease, color .25s ease; padding-bottom:76px; }}
   h1,h2,h3,.display{{ font-family:var(--font-display); letter-spacing:-.01em; margin:0; }}
   .mono{{ font-family:var(--font-mono); }}
   a{{color:inherit;}}
@@ -257,6 +274,10 @@ async def render_dashboard(request: Request):
   body.sheet-open .sheet{{ transform:translateY(0); }}
   .sheet-handle{{ width:36px; height:4px; background:var(--border); border-radius:99px; margin:0 auto 10px; }}
 
+  .coming-soon{{ text-align:center; padding:80px 20px; }}
+  .coming-soon-icon{{ font-size:3rem; margin-bottom:10px; }}
+  .coming-soon-text{{ color:var(--ink-muted); max-width:40ch; margin:8px auto; }}
+
   .doc-list{{ display:grid; grid-template-columns:1fr; gap:10px; }}
   .doc-card{{ display:flex; gap:0; background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius); cursor:pointer; overflow:hidden; text-align:left; width:100%; padding:0; font:inherit; color:var(--ink); }}
   .doc-card:hover{{ border-color:var(--accent); }}
@@ -321,14 +342,15 @@ async def render_dashboard(request: Request):
   .size-chip-row{{ display:flex; gap:4px; }}
   .size-chip{{ border:1px solid var(--border); background:transparent; color:var(--ink); border-radius:6px; cursor:pointer; padding:5px 9px; font-family:var(--font-display); line-height:1; }}
   .size-chip.active{{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }}
-  .reader-body{{ padding:20px 20px 60px; max-width:60ch; margin:0 auto; font-size:var(--reader-fs,1rem); }}
+  .reader-body{{ padding:20px 20px 60px; max-width:720px; margin:0 auto; font-size:var(--site-fs, 16px); }}
   .reader-body h2{{ font-size:1.35em; margin-bottom:6px; }}
   .reader-body .meta{{ color:var(--ink-muted); font-size:.82em; margin-bottom:18px; }}
   .reader-body p{{ font-size:1em; }}
   .pearl-box{{ background:var(--bg-sunk); border-left:3px solid var(--accent); border-radius:6px; padding:12px 14px; font-size:.92em; margin:16px 0; }}
   .evidence-head{{ margin:22px 0 6px; font-size:.85em; text-transform:uppercase; letter-spacing:.05em; color:var(--ink-muted); }}
-  .evidence-row{{ display:flex; justify-content:space-between; gap:10px; font-size:.85em; padding:7px 0; border-bottom:1px dashed var(--border); }}
-  .evidence-row .stat{{ font-family:var(--font-mono); color:var(--accent); }}
+.evidence-row{{ font-size:.85em; padding:7px 0; border-bottom:1px dashed var(--border); }}
+.evidence-statement{{ line-height:1.45; }}
+.evidence-stat{{ font-family:var(--font-mono); color:var(--accent); font-size:.78em; margin-top:3px; }}
 
   /* reader extra: collapsible sections, print btn, loading */
   .reader-body .summary-section{{ margin-bottom:.5rem; border:1px solid var(--border); border-radius:8px; overflow:hidden; }}
@@ -339,6 +361,9 @@ async def render_dashboard(request: Request):
 
   .ai-fab{{ position:fixed; right:18px; bottom:88px; z-index:50; width:52px; height:52px; border-radius:50%; background:var(--accent); color:var(--accent-ink); border:none; box-shadow:var(--shadow); font-size:20px; cursor:pointer; }}
   @media (min-width:860px){{ .ai-fab{{ bottom:24px; }} }}
+  .reader-nav{{ display:flex; gap:8px; margin-top:16px; flex-wrap:wrap; }}
+  .nav-btn{{ flex:1; min-width:80px; text-align:center; font-size:.82rem; }}
+
   .ai-panel{{ position:fixed; right:16px; bottom:150px; z-index:51; width:min(320px, 90vw); background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:14px; display:none; }}
   @media (min-width:860px){{ .ai-panel{{ bottom:86px; }} }}
   body.ai-open .ai-panel{{ display:block; }}
@@ -576,31 +601,32 @@ async def render_dashboard(request: Request):
 
   <!-- STUB VIEWS -->
   <section class="view" id="view-antibiotics">
-    <p class="eyebrow">Planned &mdash; Phase 6</p>
-    <h2>Antibiotics Hub</h2>
-    <p style="color:var(--ink-muted);max-width:60ch">Searchable drug reference: class, mechanism, indication, dose, renal adjustment, adverse effects &mdash; filterable by class, sortable narrow&rarr;broad spectrum. Not wired up with real data in this mockup yet.</p>
-    <div class="card feature-card" style="max-width:420px;margin-top:16px">
-      <table class="mini-table">
-        <tr><td>Meropenem</td><td>1g q8h</td><td>CrCl-adj</td></tr>
-        <tr><td>Pip-Tazo</td><td>4.5g q6h ext.</td><td>CrCl-adj</td></tr>
-        <tr><td>Vancomycin</td><td>Load 25mg/kg</td><td>Levels</td></tr>
-      </table>
+    <div class="coming-soon">
+      <p class="coming-soon-icon">&#128679;</p>
+      <h2>Coming Soon</h2>
+      <p class="coming-soon-text">The Antibiotics Hub is under development. Check back soon.</p>
     </div>
   </section>
   <section class="view" id="view-theory">
-    <p class="eyebrow">Planned &mdash; Phase 6</p>
-    <h2>Theory Library</h2>
-    <p style="color:var(--ink-muted);max-width:60ch">Structured CCM curriculum with per-topic read/unread tracking and Quick Read vs Deep Dive badges.</p>
+    <div class="coming-soon">
+      <p class="coming-soon-icon">&#128679;</p>
+      <h2>Coming Soon</h2>
+      <p class="coming-soon-text">The Theory Library is under development. Check back soon.</p>
+    </div>
   </section>
   <section class="view" id="view-rrt">
-    <p class="eyebrow">Planned</p>
-    <h2>Rapid Response / RRT</h2>
-    <p style="color:var(--ink-muted);max-width:60ch">Escalation checklists and RRT-activation criteria, condensed to bedside-speed reads.</p>
+    <div class="coming-soon">
+      <p class="coming-soon-icon">&#128679;</p>
+      <h2>Coming Soon</h2>
+      <p class="coming-soon-text">The RRT section is under development. Check back soon.</p>
+    </div>
   </section>
   <section class="view" id="view-ai">
-    <p class="eyebrow">Planned &mdash; Phase 10</p>
-    <h2>AI Assistant</h2>
-    <p style="color:var(--ink-muted);max-width:60ch">A full-page version of the chat bubble in the corner &mdash; context-aware, source-cited, embedded in the page rather than a new tab.</p>
+    <div class="coming-soon">
+      <p class="coming-soon-icon">&#128679;</p>
+      <h2>Coming Soon</h2>
+      <p class="coming-soon-text">The AI Assistant page is under development. Check back soon.</p>
+    </div>
   </section>
   <section class="view" id="view-subscribe">
     <p class="eyebrow">Stay updated</p>
@@ -810,6 +836,9 @@ function getDailyIndex(){{
 }}
 
 var _pearlOfDay = null;
+var _currentPearlList = [];
+var _currentPearlIndex = -1;
+var _readerHistoryStack = [];
 function renderHomeHero(){{
   if (!baseDataset.length) {{ document.getElementById('homeHero').innerHTML = ''; return; }}
   var sorted = [].concat(baseDataset).sort(function(a,b){{ return parseInt(a.id)-parseInt(b.id); }});
@@ -878,28 +907,20 @@ function jumpToSpecialty(name){{
 // =====================================================================
 // FILTER PANEL (papers)
 // =====================================================================
-function filterGroupsHTML(showTypes){{
+function filterGroupsHTML(){{
   var specHTML = SPECS.map(function(s){{
     return '<label><input type="checkbox" data-spec="'+s.name+'" '+(filterState.specialties[s.name]?'checked':'')+'><span class="dot" style="background:var('+s.var+')"></span>'+s.name+'</label>';
   }}).join('');
-  var html = ''+
-    '<div class="filter-actions"><button class="btn filter-reset" type="button" style="width:100%">Reset filters</button></div>'+
+  return ''+
+    '<div class="filter-actions">'+
+      '<button class="btn filter-reset" type="button" style="width:48%">Reset</button>'+
+      '<button class="btn primary apply-btn" type="button" style="width:48%">Apply</button>'+
+    '</div>'+
     '<div class="filter-group">'+
       '<h4>Specialty</h4>'+
       '<label><input type="checkbox" class="all-check" data-group="specialties"><strong>All</strong></label>'+
       specHTML+
     '</div>';
-  if(showTypes){{
-    var typeHTML = TYPES.map(function(t){{
-      return '<label><input type="checkbox" data-type="'+t+'" '+(filterState.types[t]?'checked':'')+'>'+t+'</label>';
-    }}).join('');
-    html += '<div class="filter-group">'+
-      '<h4>Type</h4>'+
-      '<label><input type="checkbox" class="all-check" data-group="types"><strong>All</strong></label>'+
-      typeHTML+
-    '</div>';
-  }}
-  return html;
 }}
 
 function updateAllCheckboxState(container, group){{
@@ -912,19 +933,12 @@ function updateAllCheckboxState(container, group){{
 }}
 
 function renderFilterCheckboxes(){{
-  var papersIds = ['filterPanelDesktop','filterSheetBody'];
-  papersIds.forEach(function(id){{
+  ['filterPanelDesktop','filterSheetBody','filterPanelGuidelines'].forEach(function(id){{
     var el = document.getElementById(id);
     if(!el) return;
-    el.innerHTML = filterGroupsHTML(false);
+    el.innerHTML = filterGroupsHTML();
     updateAllCheckboxState(el,'specialties');
   }});
-  var glEl = document.getElementById('filterPanelGuidelines');
-  if(glEl){{
-    glEl.innerHTML = filterGroupsHTML(true);
-    updateAllCheckboxState(glEl,'specialties');
-    updateAllCheckboxState(glEl,'types');
-  }}
 }}
 
 function renderPapers(){{
@@ -1006,9 +1020,12 @@ function renderSpecialty(name){{
 // PEARLS
 // =====================================================================
 function renderPearlChips(){{
+  var pearlCounts = {{}};
+  allPearls.forEach(function(p){{ var sys=p.system||'Other'; pearlCounts[sys]=(pearlCounts[sys]||0)+1; }});
   var chipsHTML = SPECS.map(function(s){{
+    var count = pearlCounts[s.name]||0;
     var active = activePearlSpecs.has(s.name);
-    return '<button class="chip '+(active?'active':'')+'" data-pearl-chip="'+s.name+'" style="--chip-color:var('+s.var+')"><span class="dot" style="background:'+(active?'currentColor':'var('+s.var+')')+'"></span>'+s.name+'</button>';
+    return '<button class="chip '+(active?'active':'')+'" data-pearl-chip="'+s.name+'" style="--chip-color:var('+s.var+')"><span class="dot" style="background:'+(active?'currentColor':'var('+s.var+')')+'"></span>'+s.name+' ('+count+')</button>';
   }}).join('');
   document.getElementById('pearlChips').innerHTML = chipsHTML + '<button class="chip" data-pearl-chip-reset>Reset</button><button class="chip" data-pearl-chip-uncheck>Uncheck all</button>';
 }}
@@ -1024,14 +1041,17 @@ function renderPearls(){{
   }} else {{
     filtered = [].concat(filtered).sort(function(a,b){{ return parseInt(a.id||0) - parseInt(b.id||0); }});
   }}
+  _currentPearlList = filtered;
   var shown = filtered.slice(0, pearlsShown);
+  var noPearlsHTML = emptyStateHTML('pearls');
+  if(activePearlSpecs.size===0){{ noPearlsHTML = '<p style="color:var(--ink-muted);text-align:center;padding:20px">Select a specialty above to see pearls.</p>'; }}
   document.getElementById('pearlsList').innerHTML = shown.map(function(p){{
     var v = SPEC_VAR[p.system] || '--spec-other';
     return '<button class="pearl-row" data-open-pearl="'+p.id+'">'+
       '<span class="dot" style="background:var('+v+')"></span>'+
       '<span class="txt">'+escapeHtml((p.pearl||'').substring(0,150))+(p.pearl&&p.pearl.length>150?'&hellip;':'')+'<span class="src">'+(p.system||'')+' &middot; '+(p.source_paper||'Clinical pearl')+' &middot; '+(p.timestamp||'')+'</span></span>'+
     '</button>';
-  }}).join('') || emptyStateHTML('pearls');
+  }}).join('') || noPearlsHTML;
   document.getElementById('pearlsCount').textContent = 'Showing '+shown.length+' of '+filtered.length+' pearls';
   document.getElementById('loadMorePearls').style.display = shown.length < filtered.length ? 'inline-flex' : 'none';
 }}
@@ -1047,22 +1067,26 @@ function openReader(entry, kind){{
   document.getElementById('readerProgress').style.width = '0%';
 
   if(kind==='pearl'){{
-    var relatedHTML = '';
-    if(entry.relatedPaper) {{
-      relatedHTML = '<button class="btn" data-open-paper="'+entry.relatedPaper+'" style="margin-top:6px">Read the full paper &rarr;</button>';
-    }}
+    _currentPearlIndex = _currentPearlList.findIndex(function(p){{ return String(p.id)===String(entry.id); }});
+    var idx = _currentPearlIndex;
+    var prevBtn = idx>0 ? '<button class="btn nav-btn" data-pearl-nav="prev">&#9664; Previous</button>' : '';
+    var nextBtn = idx>=0 && idx<_currentPearlList.length-1 ? '<button class="btn nav-btn" data-pearl-nav="next">Next &#9654;</button>' : '';
+    var articleBtn = entry.file_name ? '<button class="btn nav-btn" data-open-pearl-article="'+entry.id+'">&#128196; Open article</button>' : '';
+    var navRow = (prevBtn||nextBtn||articleBtn) ? '<div class="reader-nav">'+articleBtn+prevBtn+nextBtn+'</div>' : '';
     body.innerHTML = ''+
       pillHTML(entry.system||'General', (entry.system||'General')+' &middot; Pearl')+
       '<h2 style="font-size:1.15rem;line-height:1.4">"'+escapeHtml(entry.pearl||'')+'"</h2>'+
       '<p class="meta">'+(entry.source_paper||'Clinical pearl')+' &middot; '+(entry.timestamp||'')+'</p>'+
-      relatedHTML;
+      navRow;
     document.body.classList.add('reader-open');
+    pushReaderState();
     return;
   }}
 
   // Paper
   body.innerHTML = '<div class="reader-loading"><p>&#128270; Loading summary&hellip;</p></div>';
   document.body.classList.add('reader-open');
+  pushReaderState();
 
   var file_name = encodeURIComponent(entry.file_name || '');
   var system = encodeURIComponent(entry.system || 'General');
@@ -1088,7 +1112,7 @@ function openReader(entry, kind){{
               if(rec.evidence_grade) stat = stat + (stat ? ' ' : '') + rec.evidence_grade;
               var label = rec.statement ? rec.statement : '';
               if(rec.rec_id) label = '['+rec.rec_id+'] '+label;
-              evidenceHTML += '<div class="evidence-row"><span>'+escapeHtml(label)+'</span>'+(stat?'<span class="stat mono">'+escapeHtml(stat)+'</span>':'')+'</div>';
+              evidenceHTML += '<div class="evidence-row"><div class="evidence-statement">'+escapeHtml(label)+'</div>'+(stat?'<div class="evidence-stat">'+escapeHtml(stat)+'</div>':'')+'</div>';
             }});
           }}
         }});
@@ -1115,6 +1139,9 @@ function openReader(entry, kind){{
 }}
 
 function closeReader(){{ document.body.classList.remove('reader-open'); }}
+
+var _readerStatePushed = false;
+function pushReaderState(){{ _readerStatePushed = true; history.pushState(null, ''); }}
 
 function makeCollapsible(html){{
   var parts = html.split(/(<h2[^>]*>[\\s\\S]*?<\\/h2>)/i);
@@ -1174,7 +1201,7 @@ function setTheme(t){{
   try {{ localStorage.setItem('hackccm_theme', t); }} catch(e){{}}
 }}
 function setSiteFontSize(px){{
-  document.documentElement.style.fontSize = px + 'px';
+  document.body.style.setProperty('--site-fs', px + 'px');
   document.querySelectorAll('#fontChips .chip').forEach(function(c){{ c.classList.toggle('active', c.dataset.fontPx===String(px)); }});
   try {{ localStorage.setItem('hackccm_fontSize', String(px)); }} catch(e){{}}
 }}
@@ -1228,7 +1255,14 @@ document.getElementById('guidelinesSort').addEventListener('change', renderGuide
 document.getElementById('pearlsSearch').addEventListener('input', function(){{ pearlsShown = pearlsPageSize; renderPearls(); }});
 document.getElementById('pearlsSort').addEventListener('change', renderPearls);
 document.getElementById('loadMorePearls').addEventListener('click', function(){{ pearlsShown += pearlsPageSize; renderPearls(); }});
-document.getElementById('closeReader').addEventListener('click', closeReader);
+document.getElementById('closeReader').addEventListener('click', function(){{
+  if(_readerHistoryStack.length>0){{
+    var prev = _readerHistoryStack.pop();
+    openReader(prev.entry, prev.kind);
+  }} else {{
+    closeReader();
+  }}
+}});
 document.getElementById('readerBackdrop').addEventListener('click', closeReader);
 document.getElementById('readerBody').addEventListener('scroll', function(){{
   var pct = this.scrollTop / (this.scrollHeight - this.clientHeight) * 100;
@@ -1245,6 +1279,20 @@ document.getElementById('specGuidelinesSort').addEventListener('change', functio
 }});
 window.addEventListener('scroll', function(){{
   document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY>400);
+}});
+window.addEventListener('popstate', function(e){{
+  if(document.body.classList.contains('reader-open')){{
+    if(_readerHistoryStack.length>0){{
+      var prev = _readerHistoryStack.pop();
+      openReader(prev.entry, prev.kind);
+    }} else {{
+      closeReader();
+    }}
+    return;
+  }}
+  if(document.body.classList.contains('drawer-open')){{ closeDrawer(); return; }}
+  if(document.body.classList.contains('sheet-open')){{ closeSheet(); return; }}
+  if(document.body.classList.contains('search-open')){{ closeSearch(); return; }}
 }});
 document.getElementById('aiFab').addEventListener('click', function(){{ document.body.classList.toggle('ai-open'); }});
 document.getElementById('subscribeBtn').addEventListener('click', function(){{
@@ -1286,7 +1334,7 @@ document.addEventListener('click', function(e){{
   var pearlChip = e.target.closest('[data-pearl-chip]');
   if(pearlChip){{
     var name = pearlChip.dataset.pearlChip;
-    if(activePearlSpecs.has(name)) activePearlSpecs['delete'](name); else activePearlSpecs.add(name);
+    if(activePearlSpecs.has(name)) activePearlSpecs.delete(name); else activePearlSpecs.add(name);
     pearlsShown = pearlsPageSize; renderPearlChips(); renderPearls(); return;
   }}
   if(e.target.closest('[data-pearl-chip-reset]')){{
@@ -1298,32 +1346,53 @@ document.addEventListener('click', function(e){{
     pearlsShown = pearlsPageSize; renderPearlChips(); renderPearls(); return;
   }}
 
-  /* filter change — immediate reflection */
-  var filterContainer = e.target.closest('#filterPanelDesktop, #filterSheetBody, #filterPanelGuidelines');
-  if(filterContainer && e.target.closest('input[type="checkbox"]')){{
-    var container = filterContainer;
-    /* handle All checkbox — toggle all children */
-    var allCheck = e.target.closest('.all-check');
-    if(allCheck){{
-      var group = allCheck.dataset.group;
-      var selector = group==='specialties' ? '[data-spec]' : '[data-type]';
-      [].slice.call(container.querySelectorAll(selector)).forEach(function(c){{ c.checked = allCheck.checked; }});
+  /* Pearl navigation (prev/next) */
+  var pearlNav = e.target.closest('[data-pearl-nav]');
+  if(pearlNav){{
+    var step = pearlNav.dataset.pearlNav==='next' ? 1 : -1;
+    var targetIdx = _currentPearlIndex + step;
+    if(targetIdx>=0 && targetIdx<_currentPearlList.length){{
+      _readerHistoryStack = [];
+      openReader(_currentPearlList[targetIdx], 'pearl');
     }}
-    SPECS.forEach(function(s){{ filterState.specialties[s.name] = !!container.querySelector('[data-spec="'+s.name+'"]').checked; }});
-    TYPES.forEach(function(t){{ filterState.types[t] = !!container.querySelector('[data-type="'+t+'"]').checked; }});
-    renderFilterCheckboxes();
+    return;
+  }}
+
+  /* Open pearl article in same reader */
+  var openArticle = e.target.closest('[data-open-pearl-article]');
+  if(openArticle){{
+    var pearlId = openArticle.dataset.pearlArticle;
+    var pearl = allPearls.find(function(p){{ return String(p.id)===String(pearlId); }});
+    if(pearl && pearl.file_name){{
+      var paper = baseDataset.find(function(d){{ return d.file_name === pearl.file_name; }});
+      if(paper){{
+        _readerHistoryStack.push({{kind:'pearl', entry:pearl}});
+        openReader(paper, 'paper');
+      }}
+    }}
+    return;
+  }}
+
+  /* Apply filters button */
+  var applyBtn = e.target.closest('.apply-btn');
+  if(applyBtn){{
+    var container = applyBtn.closest('#filterPanelDesktop, #filterSheetBody, #filterPanelGuidelines');
+    if(container){{
+      SPECS.forEach(function(s){{ var el = container.querySelector('[data-spec="'+s.name+'"]'); if(el) filterState.specialties[s.name] = el.checked; }});
+      renderFilterCheckboxes();
+    }}
     var activeView = document.querySelector('.view.active');
     if(activeView){{
       if(activeView.id==='view-papers') renderPapers();
       if(activeView.id==='view-guidelines') renderGuidelines();
     }}
+    if(container && container.id==='filterSheetBody') closeSheet();
     return;
   }}
 
   var resetBtn = e.target.closest('.filter-reset');
   if(resetBtn){{
     SPECS.forEach(function(s){{ filterState.specialties[s.name] = true; }});
-    TYPES.forEach(function(t){{ filterState.types[t] = true; }});
     renderFilterCheckboxes();
     var activeView = document.querySelector('.view.active');
     if(activeView){{
@@ -1362,16 +1431,13 @@ document.addEventListener('click', function(e){{
 }});
 
 document.addEventListener('change', function(e){{
-  var container = e.target.closest('#filterPanelDesktop, #filterSheetBody');
+  var container = e.target.closest('#filterPanelDesktop, #filterSheetBody, #filterPanelGuidelines');
   if(!container) return;
   if(e.target.classList.contains('all-check')){{
-    var group = e.target.dataset.group;
-    container.querySelectorAll(group==='specialties' ? '[data-spec]' : '[data-type]').forEach(function(b){{ b.checked = e.target.checked; }});
-  }} else if(e.target.dataset.spec){{
-    updateAllCheckboxState(container,'specialties');
-  }} else if(e.target.dataset.type){{
-    updateAllCheckboxState(container,'types');
+    container.querySelectorAll('[data-spec]').forEach(function(b){{ b.checked = e.target.checked; }});
   }}
+  SPECS.forEach(function(s){{ var el = container.querySelector('[data-spec="'+s.name+'"]'); if(el) filterState.specialties[s.name] = el.checked; }});
+  renderFilterCheckboxes();
 }});
 
 document.addEventListener('keydown', function(e){{
