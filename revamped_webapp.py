@@ -342,7 +342,7 @@ async def render_dashboard(request: Request):
   .size-chip-row{{ display:flex; gap:4px; }}
   .size-chip{{ border:1px solid var(--border); background:transparent; color:var(--ink); border-radius:6px; cursor:pointer; padding:5px 9px; font-family:var(--font-display); line-height:1; }}
   .size-chip.active{{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }}
-  .reader-body{{ padding:20px 20px 60px; max-width:720px; margin:0 auto; font-size:var(--site-fs, 16px); }}
+  .reader-body{{ padding:20px 20px 60px; max-width:720px; margin:0 auto; font-size:var(--reader-fs, var(--site-fs, 16px)); }}
   .reader-body h2{{ font-size:1.35em; margin-bottom:6px; }}
   .reader-body .meta{{ color:var(--ink-muted); font-size:.82em; margin-bottom:18px; }}
   .reader-body p{{ font-size:1em; }}
@@ -1007,12 +1007,13 @@ function renderSpecialty(name){{
   document.getElementById('specPanelGuidelines').classList.remove('open');
 
   document.getElementById('specPanelPearlsTitle').innerHTML = 'Pearls ('+pearlsInSpec.length+')';
+  var specV = SPEC_VAR[name] || '--spec-other';
   document.getElementById('specPanelPearlsBody').innerHTML = pearlsInSpec.map(function(p){{
-    return '<div class="pearl-row" style="cursor:pointer" data-open-pearl="'+p.id+'">'+
-      '<span class="pearl-text">'+p.pearl+'</span>'+
-      '<span class="pearl-source">'+p.source_paper+'</span>'+
+    return '<div class="pearl-row" style="cursor:pointer;display:block;padding:11px 4px;border-bottom:1px solid var(--border)" data-open-pearl="'+p.id+'">'+
+      '<div style="margin-bottom:4px;font-size:.88rem;line-height:1.4">'+escapeHtml(p.pearl||'')+'</div>'+
+      '<div style="font-size:.7rem;color:var('+specV+');opacity:.85">'+escapeHtml(p.source_paper||'')+'</div>'+
     '</div>';
-  }}).join('') || '<p style="color:var(--ink-muted)">No pearls for this specialty yet.</p>';
+  }}).join('') || '<p style="color:var(--ink-muted);padding:11px 4px">No pearls for this specialty yet.</p>';
   document.getElementById('specPanelPearls').classList.remove('open');
 }}
 
@@ -1071,7 +1072,8 @@ function openReader(entry, kind){{
     var idx = _currentPearlIndex;
     var prevBtn = idx>0 ? '<button class="btn nav-btn" data-pearl-nav="prev">&#9664; Previous</button>' : '';
     var nextBtn = idx>=0 && idx<_currentPearlList.length-1 ? '<button class="btn nav-btn" data-pearl-nav="next">Next &#9654;</button>' : '';
-    var articleBtn = entry.file_name ? '<button class="btn nav-btn" data-open-pearl-article="'+entry.id+'">&#128196; Open article</button>' : '';
+    var hasPrintablePaper = entry.file_name && baseDataset.some(function(d){{ return d.file_name === entry.file_name.replace(/\.json$/, '.pdf'); }});
+    var articleBtn = hasPrintablePaper ? '<button class="btn nav-btn" data-open-pearl-article="'+entry.id+'">&#128196; Open article</button>' : '';
     var navRow = (prevBtn||nextBtn||articleBtn) ? '<div class="reader-nav">'+articleBtn+prevBtn+nextBtn+'</div>' : '';
     body.innerHTML = ''+
       pillHTML(entry.system||'General', (entry.system||'General')+' &middot; Pearl')+
@@ -1361,10 +1363,11 @@ document.addEventListener('click', function(e){{
   /* Open pearl article in same reader */
   var openArticle = e.target.closest('[data-open-pearl-article]');
   if(openArticle){{
-    var pearlId = openArticle.dataset.pearlArticle;
+    var pearlId = openArticle.dataset.openPearlArticle;
     var pearl = allPearls.find(function(p){{ return String(p.id)===String(pearlId); }});
     if(pearl && pearl.file_name){{
-      var paper = baseDataset.find(function(d){{ return d.file_name === pearl.file_name; }});
+      var pdfFn = pearl.file_name.replace(/\.json$/, '.pdf');
+      var paper = baseDataset.find(function(d){{ return d.file_name === pdfFn; }});
       if(paper){{
         _readerHistoryStack.push({{kind:'pearl', entry:pearl}});
         openReader(paper, 'paper');
