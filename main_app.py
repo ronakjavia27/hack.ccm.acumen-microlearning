@@ -7,11 +7,32 @@ from fastapi.responses import HTMLResponse, JSONResponse
 # =====================================================================
 # CONFIGURATION
 # =====================================================================
-DISCLAIMER_TEXT = ""
 
 FEEDBACK_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd6xRmmimmVc0Sv4AeNls-oxLR6k_zX8D_QERFZwPP6zlfjRw/viewform?usp=header"
 SUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSffsrF8DPWaTa-03XisMqSU5Da_8QdE-JrINdDP5iRmvWAI8Q/viewform?usp=header"
 UNSUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScz864mkLh5AqBYVzAh573hWu98NdmwwPC2vaU1lfBE3WHHHg/viewform?usp=header"
+
+DISCLAIMER_TEXT = """**Welcome to hack.CCM \U0001F9A9 — Please Read Before You Explore**
+
+Welcome! This platform is a hobby passion project designed to make critical care education more structured, accessible, and easily retainable.
+
+To help you get the most out of your study sessions, we use AI to condense massive volumes of medical text, guidelines, and open-source research papers into highly readable summaries. However, before you dive in, please note the following:
+
+**\u26A0\uFE0F For Education, Not Consultation**
+This is a tool for knowledge enhancement and personal study only. It is not a clinical decision-making tool. Always rely on official guidelines and your own institutional protocols for real-world patient care.
+
+**\U0001F916 The AI Factor**
+As the saying goes, "To err is human; to hallucinate is AI." While we have taken immense care to review the data and eliminate errors, AI-assisted formatting isn't always flawless.
+
+**\U0001F6D1 Use Responsibly**
+Double-check critical values and protocols. You are the clinician; this is just your study buddy.
+
+**\U0001F50D Spotted a Discrepancy?**
+If you find any errors, outdated data, or weird AI quirks, please help us improve! Report it via our Feedback button below.
+
+The ultimate aim here is to format large information into quick, retainable reads. This does not replace the need to study original papers or guidelines in full detail. Adequate emphasis and credit have been given to the original authors and journals wherever possible—I claim no personal ownership over this data.
+
+By clicking "Proceed" below, you acknowledge that you understand this tool's educational purpose and agree to use it responsibly."""
 
 OUTPUT_DIR = "./output_files"
 JSON_TRACKER_FILE = "./sent_summaries.json"
@@ -57,9 +78,10 @@ def load_pearls():
                     summary_map[fn] = sys
             for p in data:
                 fn = str(p.get("file_name", "")).strip()
+                fn_pdf = fn[:-5] + ".pdf" if fn.endswith(".json") else fn
                 cur = str(p.get("system", "")).strip()
-                if fn in summary_map and (not cur or cur == "Other"):
-                    p["system"] = summary_map[fn]
+                if fn_pdf in summary_map and not cur:
+                    p["system"] = summary_map[fn_pdf]
         except Exception:
             pass
         return data
@@ -631,27 +653,26 @@ async def render_dashboard(request: Request):
   <section class="view" id="view-subscribe">
     <p class="eyebrow">Stay updated</p>
     <h2>Subscribe to the daily pearl</h2>
-    <p style="color:var(--ink-muted);max-width:52ch">One email a day &mdash; today&rsquo;s pearl plus any new guideline summaries. Unsubscribe any time.</p>
+    <p style="color:var(--ink-muted);max-width:52ch">Coming soon &mdash; this feature is presently not active. Click the button below to access the Google Form.</p>
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;max-width:420px">
-      <input id="subscribeEmail" type="email" placeholder="you@hospital.org" style="flex:1;min-width:200px">
-      <button class="btn primary" id="subscribeBtn" type="button">Subscribe</button>
+      <button class="btn primary" id="subscribeBtn" type="button">Subscribe via Google Form</button>
     </div>
   </section>
   <section class="view" id="view-unsubscribe">
     <p class="eyebrow">Manage email</p>
     <h2>Unsubscribe</h2>
-    <p style="color:var(--ink-muted);max-width:52ch">Enter the email you subscribed with &mdash; you can always resubscribe later.</p>
+    <p style="color:var(--ink-muted);max-width:52ch">Coming soon &mdash; this feature is presently not active. Click the button below to access the Google Form.</p>
     <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;max-width:420px">
-      <input id="unsubscribeEmail" type="email" placeholder="you@hospital.org" style="flex:1;min-width:200px">
-      <button class="btn" id="unsubscribeBtn" type="button">Unsubscribe</button>
+      <button class="btn" id="unsubscribeBtn" type="button">Unsubscribe via Google Form</button>
     </div>
   </section>
   <section class="view" id="view-feedback">
     <p class="eyebrow">We&rsquo;re listening</p>
     <h2>Feedback</h2>
     <p style="color:var(--ink-muted);max-width:52ch">Bug reports, feature requests, or a pearl that felt wrong &mdash; all of it helps.</p>
-    <textarea id="feedbackText" rows="4" style="width:100%;max-width:480px;margin-top:12px" placeholder="What should we fix or add?"></textarea><br>
-    <button class="btn primary" id="feedbackBtn" type="button" style="margin-top:10px">Send feedback</button>
+    <div style="margin-top:14px">
+      <button class="btn primary" id="feedbackBtn" type="button">&#128172; Send feedback via Google Form</button>
+    </div>
   </section>
   <section class="view" id="view-about">
     <p class="eyebrow">About</p>
@@ -699,6 +720,7 @@ async def render_dashboard(request: Request):
   <button class="drawer-link" data-view="unsubscribe">&#9995; Unsubscribe</button>
   <button class="drawer-link" data-view="feedback">&#128172; Feedback</button>
   <button class="drawer-link" data-view="about">&#8505;&#65039; About us</button>
+  <button class="drawer-link" data-open-disclaimer>&#9888;&#65039; Disclaimer</button>
 </nav>
 
 <!-- GLOBAL SEARCH -->
@@ -755,9 +777,11 @@ async def render_dashboard(request: Request):
 <!-- DISCLAIMER -->
 <div id="disclaimerOverlay" class="disclaimer-backdrop" style="display:none">
   <div class="disclaimer-box">
-    <h2>&#9888;&#65039; Disclaimer</h2>
     <div id="disclaimerText"></div>
-    <button class="btn primary" onclick="dismissDisclaimer()" style="margin-top:10px;width:100%;padding:10px;border-radius:8px;border:none;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:.9rem;">I Understand</button>
+    <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+      <button class="btn primary" onclick="dismissDisclaimer()" style="flex:1;padding:12px;border-radius:8px;border:none;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:.9rem;">Proceed to Dashboard</button>
+      <button class="btn" onclick="window.open('{FEEDBACK_FORM_URL}','_blank')" style="flex:1;padding:12px;border-radius:8px;font-size:.85rem;">\U0001F50D Report Issue</button>
+    </div>
   </div>
 </div>
 
@@ -1228,7 +1252,9 @@ function dismissDisclaimer(){{
   try {{ sessionStorage.setItem('hackccm_disclaimer','1'); }} catch(e){{}}
 }}
 if(showDisclaimer && !(function(){{ try {{ return sessionStorage.getItem('hackccm_disclaimer'); }} catch(e){{ return null; }} }})()){{
-  document.getElementById('disclaimerText').textContent = `{DISCLAIMER_TEXT.replace('`','\\`').replace('$','\\$')}`;
+  var md = `{DISCLAIMER_TEXT.replace('`','\\`').replace('$','\\$')}`;
+  var html = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
+  document.getElementById('disclaimerText').innerHTML = '<h2>\u26A0\uFE0F Disclaimer</h2><p>'+html+'</p>';
   document.getElementById('disclaimerOverlay').style.display='flex';
 }}
 
@@ -1298,16 +1324,15 @@ window.addEventListener('popstate', function(e){{
 }});
 document.getElementById('aiFab').addEventListener('click', function(){{ document.body.classList.toggle('ai-open'); }});
 document.getElementById('subscribeBtn').addEventListener('click', function(){{
-  var v = document.getElementById('subscribeEmail').value.trim();
-  showToast(v ? 'Subscribed &mdash; check your inbox for a confirmation.' : 'Enter an email first.');
+  showToast('Coming soon — redirecting to Google Form for now.');
+  window.open('{SUBSCRIBE_FORM_URL}', '_blank');
 }});
 document.getElementById('unsubscribeBtn').addEventListener('click', function(){{
-  var v = document.getElementById('unsubscribeEmail').value.trim();
-  showToast(v ? 'Unsubscribed. Sorry to see you go.' : 'Enter an email first.');
+  showToast('Coming soon — redirecting to Google Form for now.');
+  window.open('{UNSUBSCRIBE_FORM_URL}', '_blank');
 }});
 document.getElementById('feedbackBtn').addEventListener('click', function(){{
-  var v = document.getElementById('feedbackText').value.trim();
-  showToast(v ? 'Thanks &mdash; feedback sent.' : 'Write something first.');
+  window.open('{FEEDBACK_FORM_URL}', '_blank');
 }});
 
 // =====================================================================
@@ -1315,6 +1340,16 @@ document.getElementById('feedbackBtn').addEventListener('click', function(){{
 // =====================================================================
 document.addEventListener('click', function(e){{
   if(e.target.closest('[data-close-search]')) closeSearch();
+
+  /* Re-open disclaimer from hamburger */
+  if(e.target.closest('[data-open-disclaimer]')){{
+    closeDrawer();
+    var md = `{DISCLAIMER_TEXT.replace('`','\\\\`').replace('$','\\\\$')}`;
+    var html = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
+    document.getElementById('disclaimerText').innerHTML = '<h2>\u26A0\uFE0F Disclaimer</h2><p>'+html+'</p>';
+    document.getElementById('disclaimerOverlay').style.display='flex';
+    return;
+  }}
 
   var openPaperBtn = e.target.closest('[data-open-paper]');
   if(openPaperBtn){{ var id=openPaperBtn.dataset.openPaper; var paper=baseDataset.find(function(x){{ return x.id===id; }}); if(paper) openReader(paper,'paper'); return; }}
@@ -1627,8 +1662,8 @@ def format_new_schema_as_markdown(payload):
             step_num = step.get("step", "")
             title = step.get("title", "")
             action = step.get("action", "")
-            protocol_parts.append(f"**Step {step_num}: {title}**  \n{action}")
-        parts.append("\n".join(protocol_parts))
+            protocol_parts.append(f"**Step {step_num}: {title}**\n\n{action}")
+        parts.append("\n\n".join(protocol_parts))
     drugs_doses = payload.get("drugs_doses", [])
     if drugs_doses:
         block = "## Drugs & Doses\n"
