@@ -1662,8 +1662,8 @@ def format_new_schema_as_markdown(payload):
             step_num = step.get("step", "")
             title = step.get("title", "")
             action = step.get("action", "")
-            protocol_parts.append(f"**Step {step_num}: {title}**  \n{action}")
-        parts.append("\n".join(protocol_parts))
+            protocol_parts.append(f"**Step {step_num}: {title}**\n\n{action}")
+        parts.append("\n\n".join(protocol_parts))
     drugs_doses = payload.get("drugs_doses", [])
     if drugs_doses:
         block = "## Drugs & Doses\n"
