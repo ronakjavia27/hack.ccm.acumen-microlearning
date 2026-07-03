@@ -1,0 +1,277 @@
+================================================================================
+  FILE INDEX — Root-Level Files
+  Project: AI Microlearning (hack.CCM)
+  Generated: 2026-07-03
+================================================================================
+
+This file documents all key files in the project root directory —
+their purpose, structure, and relationship to each other.
+
+================================================================================
+JSON DATA FILES — Pearls & Extracted Content
+================================================================================
+
+pearls.json
+  - Purpose: Master database of all individual clinical pearls extracted
+    from papers. Each entry stores one atomic pearl with source metadata.
+  - Key fields: id, source_paper, doi, system, type, pearl, topic, file_name
+  - Used by: extract_pearls*.py (populated), correct_pearls_system.py
+    (reclassifies systems), web apps for display
+  - Size: ~11,000+ pearls
+
+pearls_processed.json
+  - Purpose: Tracks which source JSON files (by ID/slug) have already had
+    their pearls extracted into pearls.json. Prevents duplicate extraction.
+  - Structure: { "paper_id": { "timestamp": "...", "mode": "local|api", "count": N } }
+
+pearls - Copy.json / pearls - Copy.csv
+  - Purpose: Manual backups of pearls.json and its CSV export, created
+    before bulk operations (e.g., system reclassification).
+
+pearls.csv
+  - Purpose: CSV export of pearls.json for spreadsheet review or email push.
+
+pearls_processed.xlsx
+  - Purpose: Excel export of processed pearl tracking for human review.
+
+================================================================================
+JSON DATA FILES — Summary Tracking
+================================================================================
+
+sent_summaries.json
+  - Purpose: Master registry of all article summaries generated/sent to
+    users. Links each PDF to metadata + push status (email/web).
+  - Fields: serial_number, file_name, title, authors, journal, doi,
+    system, type, md_generated, email_pushed, show_on_web
+  - Size: ~2,300+ entries
+
+sent_summaries_removed.json
+  - Purpose: Archive of entries removed from sent_summaries.json during
+    reconciliation (files deleted from output_files/).
+
+sent_summaries.xlsx
+  - Purpose: Excel export of sent_summaries.json for offline review.
+
+================================================================================
+JSON DATA FILES — Migration & Processing Tracking
+================================================================================
+
+migration_progress.json
+  - Purpose: Progress tracker for migrate_jsons.py (old → new schema).
+    Structure: { "relative\\path\\file.json": { "status": "ok|error", ... } }
+
+migration_errors.jsonl
+  - Purpose: JSONL error log from migrate_jsons.py (one error per line).
+
+format_progress.json
+  - Purpose: Progress tracker for json_summary_updater.py. Marks files as
+    "skipped_well_formatted" or "reformatted" to avoid re-processing.
+
+format_updates_log.txt
+  - Purpose: Append-only log of all reformatting actions by
+    json_summary_updater.py. Each line is a JSON entry.
+
+================================================================================
+CONFIGURATION FILES
+================================================================================
+
+package.json
+  - Purpose: Node.js config. Tailwind CSS deps for the web frontend.
+
+package-lock.json
+  - Purpose: Auto-generated Node.js lockfile.
+
+vercel.json
+  - Purpose: Vercel deployment config. Routes all traffic to main_app.py.
+
+Dockerfile
+  - Purpose: Docker image definition for containerized deployment.
+
+requirements.txt
+  - Purpose: Python pip dependencies for the project.
+
+.env (not committed / ignored)
+  - Purpose: Stores API keys (TOGETHER_API_KEY, PRIMARY_GEMINI_API_KEY,
+    BACKUP_GEMINI_API_KEY, GMAIL credentials, etc.). Loaded by dotenv.
+
+================================================================================
+UTILITY / DATA FILES
+================================================================================
+
+specialties.txt
+  - Purpose: Controlled vocabulary of medical specialties (one per line).
+    Used to normalize/normalize the "system" field across JSONs.
+
+article_types.txt
+  - Purpose: Controlled vocabulary of article types (Guideline, Review,
+    Meta-Analysis, Trial, etc.).
+
+email.csv / emails.csv
+  - Purpose: Subscriber email lists. emails.csv is the live version
+    maintained by email_list_sync.py; email.csv is legacy/backup.
+
+error_logs.txt
+  - Purpose: Runtime error log from various scripts (web apps, email
+    push, extraction).
+
+last_processed.txt
+  - Purpose: Timestamp of the last email push run, used by email_push.py
+    to determine which summaries to send.
+
+how to run.txt
+  - Purpose: Human-readable setup/run instructions for the project.
+
+================================================================================
+PYTHON SCRIPTS — PDF Ingestion & Summary Extraction
+================================================================================
+
+master_app.py
+  - Purpose: Ingests PDFs from input_pdfs/ via Google Gemini (primary +
+    fallback model chain), extracts structured clinical summaries as JSON,
+    saves to output_files/, and logs to Excel trackers.
+  - Usage: python master_app.py
+
+master_app_together.py
+  - Purpose: Same as master_app.py but uses Together AI (DeepSeek V4 Pro)
+    instead of Gemini for structured JSON extraction from PDFs.
+  - Usage: python master_app_together.py
+
+refined_masterapp.py
+  - Purpose: Refined PDF ingestion pipeline using Google Gemini. Reads
+    PDFs from input_pdfs/, extracts text via PyPDF2, sends to Gemini for
+    structured summary extraction, logs results to Excel + JSON trackers.
+  - Usage: python refined_masterapp.py
+
+migrate_jsons.py
+  - Purpose: Bulk-migrates old-format JSON summaries (with
+    clinical_summary_markdown field) into the new structured schema using
+    Google Gemini with fallback chain.
+  - Flags: --max N, --force, --model, --fallback-models
+  - Usage: python migrate_jsons.py
+
+organise.py
+  - Purpose: Reads the Excel ledger (sent_summaries.xlsx) and copies/moves
+    JSON files from output_files/ into a folder tree organized by system
+    (specialty) name and article type.
+
+================================================================================
+PYTHON SCRIPTS — Pearl Extraction & Correction
+================================================================================
+
+extract_pearls.py
+  - Purpose: Extracts clinical pearls from structured JSON summaries using
+    Google Gemini models (primary + fallback). Writes results to pearls.json,
+    tracks progress in pearls_processed.json.
+  - Usage: python extract_pearls.py
+
+extract_pearls_together.py
+  - Purpose: Extracts pearls from JSON summaries using Ollama (local) or
+    Together AI as backend. Configurable batch size and model selection.
+  - Usage: python extract_pearls_together.py
+
+correct_pearls_system.py
+  - Purpose: Reclassifies pearl specialties in pearls.json using Together
+    AI (openai/gpt-oss-20b primary, gpt-oss-120b fallback). Batches 25
+    pearls at a time, corrects the "system" field based on content.
+  - Usage: python correct_pearls_system.py
+
+correct_pearl_systems.py
+  - Purpose: Same reclassification goal, but uses local Ollama (Gemma 4)
+    instead of Together AI. Reviews each pearl + source paper against its
+    assigned system field, logs changes to an audit file.
+  - Usage: python correct_pearl_systems.py
+
+reclassify_pearls.py
+  - Purpose: Reclassifies pearl specialties via cross-referencing each
+    pearl's source filename against the system field in sent_summaries.json
+    (exact-filename + fuzzy-title matching). No API calls needed.
+  - Usage: python reclassify_pearls.py
+
+migrate_pearls_to_json.py
+  - Purpose: One-time migration script — reads pearls.csv and writes it
+    as pearls.json using atomic file writes (tmp + replace).
+  - Usage: python migrate_pearls_to_json.py
+
+backfill_markdown.py
+  - Purpose: Scans all JSONs in output_files/ and applies markdown
+    formatting (bold numbers, units, keywords) to any saved before the
+    enrichment pipeline. Has optional dry-run and verbose modes.
+  - Usage: python backfill_markdown.py
+
+================================================================================
+PYTHON SCRIPTS — Content Reformatting
+================================================================================
+
+json_summary_updater.py
+  - Purpose: Scans output_files/ JSONs and reformats unformatted content
+    fields (one_line_summary, sections[].content, strengths_limitations,
+    bedside_protocol[].action, etc.) via Together AI (openai/gpt-oss-120b).
+    Skips already well-formatted files (DeepSeek-processed).
+  - Flags: --dry-run, --force, --limit N, --model, --verbose
+  - Usage: python json_summary_updater.py
+
+restructure_summaries.py
+  - Purpose: Earlier reformatting script — restructures unstructured prose
+    in the old clinical_summary_markdown field into clean markdown using
+    Together AI.
+  - Flags: --dry-run, --limit N, --model
+  - Usage: python restructure_summaries.py
+
+================================================================================
+PYTHON SCRIPTS — Email & Web Publishing
+================================================================================
+
+email_push.py
+  - Purpose: Sends daily clinical summary emails to subscribers in
+    emails.csv. Reads approved entries from sent_summaries.json, constructs
+    HTML emails, routes via Gmail SMTP. Uses last_processed.txt to track.
+  - Usage: python email_push.py
+
+email_list_sync.py
+  - Purpose: Fetches subscribe/unsubscribe lists from two Google Sheets
+    via CSV export, merges into local emails.csv (removes unsubscribed).
+  - Usage: python email_list_sync.py
+
+cloud_sync.py
+  - Purpose: Checks sent_summaries.xlsx ledger for web-approved articles,
+    then orchestrates git add/commit/push to deploy approved content.
+  - Usage: python cloud_sync.py
+
+json_repo_updater.py
+  - Purpose: Reconciles sent_summaries.json against actual files on disk
+    in output_files/. Adds new files, removes stale entries (archived to
+    sent_summaries_removed.json), normalizes specialty/system fields.
+  - Flags: --dry-run, --verbose
+  - Usage: python json_repo_updater.py
+
+================================================================================
+PYTHON SCRIPTS — Web Applications
+================================================================================
+
+main_app.py
+  - Purpose: FastAPI web app serving approved summaries and pearls as an
+    HTML portal. Reads from sent_summaries.json + pearls.json. Features:
+    specialty/article-type filtering, search, feedback/subscribe forms.
+  - Deployment: Entrypoint for Vercel (vercel.json routes here).
+  - Usage: uvicorn main_app:app  OR  vercel dev
+
+revamped_webapp.py
+  - Purpose: Refactored version of the FastAPI microlearning portal. Reads
+    JSON data sources (sent_summaries.json + pearls.json) with improved
+    data loading and HTML rendering.
+  - Usage: uvicorn revamped_webapp:app
+
+web_app.py
+  - Purpose: Earlier FastAPI web portal version. Reads from Excel tracker
+    (sent_summaries.xlsx) and CSV pearls file instead of JSON.
+  - Usage: uvicorn web_app:app
+
+web_app2.py
+  - Purpose: Alternative FastAPI web app serving approved summaries and
+    pearls as an HTML portal with topic filtering, search, and JSON API
+    endpoints. Reads from JSON data sources.
+  - Usage: uvicorn web_app2:app
+
+================================================================================
+  END OF INDEX
+================================================================================

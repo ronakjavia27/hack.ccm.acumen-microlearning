@@ -3,13 +3,21 @@
 master_app_together.py - hack.CCM medical PDF ingestion engine
 using Together AI (DeepSeek V4 Pro) for structured JSON extraction.
 
-Usage:
-    pip install together openai pypdf openpyxl python-dotenv
+Usage (no OCR — fast path, default):
+    pip install -r requirements.txt
     python master_app_together.py
+  Watches input_pdfs/{articles,guidelines,other}/ for new PDFs,
+  extracts text via PyPDF, sends to DeepSeek V4 Pro on Together AI,
+  saves structured JSON to output_files/ and logs to sent_summaries.json/xlsx.
+  Source PDFs are moved to quarantine/YYYY-MM-DD/{category}/.
 
-Watches input_pdfs/{articles,guidelines,other}/ for new PDFs,
-extracts text via PyPDF2, sends to DeepSeek V4 Pro on Together AI,
-saves structured JSON to output_files/ and logs to sent_summaries.xlsx.
+Usage (with OCR — scanned PDFs + figure/flowchart transcription):
+    # Requires: tesseract-ocr (system), poppler-utils (system),
+    #           PRIMARY_GEMINI_API_KEY in .env
+    python master_app_together.py --ocr
+  Falls back to page-level Tesseract OCR when PyPDF returns < 150 chars,
+  and sends embedded figures/flowcharts to Gemini Vision for description.
+  All OCR text is appended to the document text fed to the LLM.
 """
 
 import os
@@ -18,6 +26,7 @@ import time
 import json
 import re
 import argparse
+import shutil
 from copy import deepcopy
 from datetime import datetime
 from pypdf import PdfReader
@@ -25,6 +34,12 @@ from together import Together
 from openai import OpenAI
 
 from dotenv import load_dotenv
+
+import fitz  # PyMuPDF — embedded image extraction
+from PIL import Image
+import pytesseract
+from pdf2image import convert_from_path
+import io
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 env_path = os.path.join(script_dir, '.env')
@@ -46,6 +61,7 @@ SUB_DIRS = {
 OUTPUT_DIR = "./output_files"
 EXCEL_TRACKER_FILE = "./sent_summaries.xlsx"
 JSON_TRACKER_FILE = "./sent_summaries.json"
+QUARANTINE_BASE = "./quarantine"
 REMOVED_TRACKER_FILE = "./sent_summaries_removed.json"
 SPECIALTIES_FILE = "./specialties.txt"
 ARTICLE_TYPES_FILE = "./article_types.txt"
@@ -633,9 +649,120 @@ def merge_chunks_programmatically(results):
 
 
 # =====================================================================
+# 🖼️ OCR & IMAGE EXTRACTION
+# =====================================================================
+
+def extract_embedded_images(pdf_path):
+    """Extract embedded images from PDF using PyMuPDF.
+    Returns list of {page_num, image_index, pil_image, width, height}.
+    """
+    images = []
+    try:
+        doc = fitz.open(pdf_path)
+        for page_num in range(len(doc)):
+            page = doc[page_num]
+            image_list = page.get_images(full=True)
+            for img_idx, img in enumerate(image_list):
+                xref = img[0]
+                base_image = doc.extract_image(xref)
+                image_bytes = base_image["image"]
+                width = base_image["width"]
+                height = base_image["height"]
+                if width < 50 or height < 50:
+                    continue
+                pil_image = Image.open(io.BytesIO(image_bytes))
+                images.append({
+                    "page_num": page_num + 1,
+                    "image_index": img_idx,
+                    "pil_image": pil_image,
+                    "width": width,
+                    "height": height,
+                })
+        doc.close()
+    except Exception:
+        pass
+    return images
+
+
+def ocr_pil_image(image):
+    """Run pytesseract OCR on a PIL Image, return cleaned text."""
+    try:
+        gray = image.convert("L")
+        text = pytesseract.image_to_string(gray)
+        return text.strip()
+    except Exception:
+        return ""
+
+
+def describe_image_via_gemini(image):
+    """Send image to Gemini Vision for rich description of flowcharts/figures."""
+    try:
+        from google import genai
+        api_key = os.getenv("PRIMARY_GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY")
+        if not api_key:
+            return ""
+        client = genai.Client(api_key=api_key)
+        prompt = (
+            "This is a medical figure or flowchart from a clinical paper. "
+            "Transcribe ALL visible text exactly as written. "
+            "Then describe the structure: arrows, relationships, decision nodes, "
+            "and clinical pathways shown. Be precise and complete."
+        )
+        response = client.models.generate_content(
+            model="gemini-2.0-flash",
+            contents=[prompt, image]
+        )
+        return response.text.strip()
+    except Exception:
+        return ""
+
+
+def fallback_page_ocr(pdf_path):
+    """Convert PDF pages to images and OCR each page (scanned PDF fallback)."""
+    texts = []
+    try:
+        pages = convert_from_path(pdf_path, dpi=300)
+        for page_num, page_image in enumerate(pages, 1):
+            text = ocr_pil_image(page_image)
+            if text:
+                texts.append(f"[Page {page_num}]\n{text}")
+    except Exception as e:
+        print(f"  Page-level OCR failed: {e}")
+    return "\n\n".join(texts)
+
+
+def extract_figure_text(pdf_path):
+    """Extract embedded images, transcribe via OCR or Gemini."""
+    images = extract_embedded_images(pdf_path)
+    if not images:
+        return ""
+
+    figure_texts = []
+    for img_info in images:
+        page_num = img_info["page_num"]
+        pil_image = img_info["pil_image"]
+        area = img_info["width"] * img_info["height"]
+
+        if area >= 150000:
+            description = describe_image_via_gemini(pil_image)
+            if description:
+                figure_texts.append(
+                    f"[Figure/Flowchart from page {page_num}]\n{description}"
+                )
+        else:
+            text = ocr_pil_image(pil_image)
+            if text:
+                figure_texts.append(
+                    f"[Figure text from page {page_num}]\n{text}"
+                )
+
+    return "\n\n".join(figure_texts)
+
+
+# =====================================================================
 # 📥 SINGLE PDF PROCESSING (with chunking)
 # =====================================================================
-def process_single_pdf(file_path, category, processed_history):
+def process_single_pdf(file_path, category, processed_history, ocr_enabled=False):
     file_name = os.path.basename(file_path)
     if file_name in processed_history:
         return
@@ -643,11 +770,25 @@ def process_single_pdf(file_path, category, processed_history):
     print(f"\nIngesting [{category.upper()}]: {file_name}")
 
     try:
-        # Extract text from PDF
+        # Phase A: PyPDF text extraction (fast path)
         print("  Reading PDF...")
         reader = PdfReader(file_path)
         chunks = [page.extract_text() or "" for page in reader.pages]
         full_text = "\n".join(chunks).strip()
+
+        # Phase B: Page-level OCR fallback for scanned/image-only PDFs
+        if ocr_enabled and len(full_text) < 150:
+            print(f"  PyPDF returned only {len(full_text)} chars, trying page-level OCR...")
+            full_text = fallback_page_ocr(file_path)
+            print(f"  OCR extracted {len(full_text)} chars")
+
+        # Phase C: Extract and transcribe embedded figures/flowcharts
+        if ocr_enabled:
+            print("  Extracting embedded figures...")
+            figure_text = extract_figure_text(file_path)
+            if figure_text:
+                print(f"  Found {len(figure_text)} chars from figures/flowcharts")
+                full_text += f"\n\n--- FIGURE AND FLOWCHART TRANSCRIPTIONS ---\n{figure_text}"
 
         if len(full_text) < 150:
             raise ValueError("Extracted text too short or unreadable")
@@ -697,8 +838,12 @@ def process_single_pdf(file_path, category, processed_history):
         processed_history.add(file_name)
 
         if os.path.exists(file_path):
-            os.remove(file_path)
-            print(f"  Deleted source PDF: {file_name}")
+            processed_date = datetime.now().strftime("%Y-%m-%d")
+            dest_dir = os.path.join(QUARANTINE_BASE, processed_date, category)
+            os.makedirs(dest_dir, exist_ok=True)
+            dest_path = os.path.join(dest_dir, file_name)
+            shutil.move(file_path, dest_path)
+            print(f"  Moved to quarantine: {dest_path}")
 
     except Exception as process_error:
         print(f"  [X] Failed: {process_error}")
@@ -716,8 +861,10 @@ def process_single_pdf(file_path, category, processed_history):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="hack.CCM - Together AI Ingestion Engine")
     parser.add_argument("--max", type=int, default=0, help="Max files to process (0 = all)")
+    parser.add_argument("--ocr", action="store_true", help="Enable OCR fallback and figure/flowchart extraction (needs tesseract + Gemini API key)")
     args = parser.parse_args()
     max_files = args.max
+    ocr_enabled = args.ocr
 
     initialize_system_paths()
     history_log = load_processed_files_from_json()
@@ -727,6 +874,7 @@ if __name__ == "__main__":
     print(f"  Chunk size: {CHUNK_SIZE:,} chars")
     if max_files > 0:
         print(f"  Max files: {max_files}")
+    print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
     print(f"  Watching: {BASE_INPUT_DIR}/{{articles,guidelines,other}}/")
     print()
 
@@ -757,7 +905,7 @@ if __name__ == "__main__":
                             initial_size = os.path.getsize(path)
                             time.sleep(1.5)
                             if os.path.getsize(path) == initial_size:
-                                process_single_pdf(path, category, history_log)
+                                process_single_pdf(path, category, history_log, ocr_enabled)
                                 files_processed += 1
                         except Exception:
                             continue
