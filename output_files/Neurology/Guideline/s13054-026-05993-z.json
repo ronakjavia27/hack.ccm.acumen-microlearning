@@ -1,0 +1,532 @@
+{
+  "id": "helmy-2025-delphi-cerebral-microdialysis-critical-care",
+  "doc_type": "guideline",
+  "title": "Consensus statement from the 2025 Delphi panel on cerebral microdialysis in critical care",
+  "issuing_bodies": [
+    "International Microdialysis Forum"
+  ],
+  "year": 2026,
+  "doi": "10.1186/s13054-026-05993-z",
+  "specialty": [
+    "neurology",
+    "trauma",
+    "surgery"
+  ],
+  "tags": [
+    "cerebral microdialysis",
+    "traumatic brain injury",
+    "subarachnoid hemorrhage",
+    "intracerebral hemorrhage",
+    "neuromonitoring",
+    "multimodal monitoring",
+    "delphi consensus",
+    "neurocritical care"
+  ],
+  "one_line_summary": "A 2025 modified Delphi consensus provides updated, evidence-informed recommendations for cerebral microdialysis (CMD) use in **critical** care, extending guidance to intracerebral hemorrhage and expanding reporting standards.",
+  "key_pearls": [
+    "CMD monitoring should be considered for TBI or SAH when there is a concurrent indication for invasive cerebral monitoring or neurosurgical access.",
+    "The most reliable and clinically actionable CMD parameters are **glucose** and the **lactate/pyruvate ratio (LPR)**.",
+    "An elevated **LPR > 25** with insufficient substrate (brain glucose < **1.0 mM** or pyruvate < **70 µM**) indicates ischemia; with sufficient substrate, it indicates *mitochondrial dysfunction*.",
+    "A prioritized treatment approach for deranged metabolism targets **ICP ≤ 20 mmHg** first, then **PbtO₂ ≥ 15 mmHg**, and finally brain glucose, with CPP optimization considered for refractory LPR elevation.",
+    "Hourly CMD sampling is sufficient for clinical benefit, but higher-frequency or continuous monitoring may increase utility as online systems develop.",
+    "Nineteen core reporting items were established to standardize CMD research, including catheter location, perfusion flow rate, and handling of artifacts.",
+    "Ten key barriers to clinical implementation were identified, including financial constraints, staff training, and lack of automated data streaming to electronic medical records."
+  ],
+  "consensus_method": "Three-round modified Delphi study with 40 international experts; consensus defined as ≥ 75% agreement among ≥ 30 non-abstaining respondents.",
+  "search_period": null,
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Indications and Patient Selection",
+      "narrative": "- CMD for TBI has the strongest evidence base; use in SAH is practiced at specialized centers for vasospasm and delayed cerebral ischemia detection.\n- Access at the time of neurosurgical procedure refers to placement during open craniotomy or craniectomy.\n- Evidence for CMD in ICH is less established but suggests potential value for monitoring perihematomal metabolism.\n- Clinical utility in ICH depends on accurate catheter placement in perihematomal tissue.\n- Panelists with clinical ICH experience voted more conservatively on ICH statements, suggesting cautious endorsement.",
+      "recommendations": [
+        {
+          "rec_id": "1.1",
+          "statement": "CMD monitoring should be considered for TBI or SAH when there is a concurrent indication for invasive cerebral monitoring (e.g., intracranial pressure) or when access is available at the time of neurosurgical procedure.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "1.2",
+          "statement": "CMD monitoring should be considered for ICH to monitor the particularly at-risk perihematomal zone in selected cases of severe injury when there is a concurrent indication for invasive cerebral monitoring or when access is available at the time of neurosurgical procedure.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "1.3",
+          "statement": "Although evidence supporting CMD use in ICH patients is still emerging, studies thus far are promising and highlight the importance of continued research in this area.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Technical and Procedural Considerations",
+      "narrative": "- Various placement methods (twist drill hole, transcranial bolt, open craniotomy) are safe and effective; a transcranial bolt may be ideal for security and replacement.\n- The first hour of microdialysate should be discarded due to catheter insertion and pump flushing confounders.\n- CMD data is inherently focal but may be cautiously interpreted as representative of hemispheric metabolism in diffuse injury if the catheter tip is in radiologically normal-appearing brain.\n- Using two CMD catheters can provide more comprehensive insight in heterogeneous injury patterns but is an optional adjunct, not routine practice.\n- Integration of CMD data with multimodal physiological signals is **essential** for holistic clinical decision-making.",
+      "recommendations": [
+        {
+          "rec_id": "2.1",
+          "statement": "CMD catheter placement should be performed by an appropriately trained clinician (e.g., neurosurgeon, neurosurgical trainee, or intensivist), with a consultant/attending neurosurgeon having overall responsibility.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "2.2",
+          "statement": "CMD catheters can be placed by twist drill hole, transcranial bolt, or during open craniotomy or craniectomy, with each of these procedures being safe and effective.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "2.3",
+          "statement": "The first hour of microdialysate should not be used to make clinical decisions due to the confounders of catheter insertion and pump flushing.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "2.4",
+          "statement": "CMD data may be cautiously interpreted as representative of the hemispheric metabolic state in diffuse injury patterns, provided the catheter tip is placed in brain tissue which does not have a focal injury on neuroimaging.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "2.5",
+          "statement": "The use of two CMD catheters can provide a more comprehensive insight than single catheter monitoring in cases with heterogeneous injury patterns.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "2.6",
+          "statement": "Integration of CMD data with multimodal physiological signals is **essential** for holistic clinical decision making.",
+          "strength": "strong",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Detecting Deterioration and Secondary Injury",
+      "narrative": "- In TBI, brain tissue lactate elevations can precede intracranial hypertension episodes.\n- In SAH, ischemic metabolic patterns can precede symptomatic neurological deficits, supporting CMD for vasospasm and delayed cerebral ischemia monitoring.\n- For ICH, metabolic changes may reflect general metabolic vulnerability rather than edema specifically; precise catheter placement in the perihematomal zone is **critical**.",
+      "recommendations": [
+        {
+          "rec_id": "3.1",
+          "statement": "CMD can provide early indication of impending deterioration and secondary injury, such as intracranial hypertension in TBI and symptomatic delayed ischemia in SAH.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "3.2",
+          "statement": "CMD is capable of indicating metabolic changes associated with the development of cerebral edema in the perihematomal zone of ICH, particularly when the catheter tip is placed in this region.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Metabolic Interpretation",
+      "narrative": "- Glucose and LPR are the most clinically actionable parameters; clinical actionability entails therapeutic interventions available to target these parameters.\n- Differentiating the etiology of elevated LPR (> 25) is required to guide appropriate intervention (e.g., succinate or cyclosporin A for mitochondrial dysfunction).\n- A systematic review established that 'metabolic crisis' can be differentiated into ischemia (insufficient substrate) versus mitochondrial dysfunction (adequate substrate but inadequate utilization).\n- LPR above 25 correlates with worse outcome; a higher threshold of 40 does not show a stronger association.\n- Practical LPR interpretation requires examining concurrent CMD analyte concentrations (lactate, pyruvate, glucose) to differentiate ischemic from non-ischemic energy failure.\n- Temporal patterns (trends and duration) are more reliable than isolated values.\n- Elevated cerebral glycerol is an indicator of cell death and damage from secondary injury after TBI.\n- Increases in CMD glutamate could indicate active, potentially reversible episodes of excitotoxic secondary injury, perhaps corresponding to spreading depolarizations.",
+      "recommendations": [
+        {
+          "rec_id": "4.1",
+          "statement": "The most reliable clinical CMD parameters are glucose and the lactate/pyruvate ratio (LPR), which provide more clinically actionable information than monitoring glutamate or glycerol.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "4.2",
+          "statement": "For patients with abnormally high LPR (> 25) despite normalized multimodal parameters: Ischemia is indicated by concurrently insufficient substrate (e.g., brain glucose < 1.0 mM or pyruvate < 70 µM). Clinical mitochondrial dysfunction is indicated by concurrently sufficient substrate (e.g., brain glucose ≥ 1.0 mM and pyruvate ≥ 70 µM).",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "4.3",
+          "statement": "**Absolute** lactate and pyruvate concentrations, alongside glucose, should be considered when interpreting heightened LPR, as this can indicate if the abnormality relates to a failure of metabolic substrate delivery.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "4.4",
+          "statement": "The interpretation of an elevated LPR should consider the trend over time and the duration of the elevation, as an isolated value may be insufficient to change clinical management.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "4.5",
+          "statement": "Elevated cerebral glycerol is an indicator of cell death and damage from secondary injury after TBI.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "4.6",
+          "statement": "An increase in cerebral glutamate is indicative of secondary injury, such as from excitotoxicity, after TBI.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "4.7",
+          "statement": "Increased cerebral glutamate is associated with poor clinical outcome.",
+          "strength": null,
+          "evidence_grade": "No Consensus (73.5% agreement)"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Treatment Algorithms",
+      "narrative": "- The suggested sequence is a conditionally modifiable guide, not a strict rule; parameters are often managed simultaneously.\n- Some panelists advocated for CPP optimization above targeting PbtO₂.\n- An evidence-based PbtO₂ target of **15 mmHg** was suggested, though thresholds should be interpreted as guidance.\n- Both low glucose and elevated LPR can independently indicate metabolic insufficiency.\n- Safe serum glucose ranges (e.g., below **180 mg**/dL or 10 mM) should be maintained even when treating neuroglycopenia.\n- CMD could potentially inform individualization of CPP targets, provided it complements rather than replaces optimization guided by cerebral autoregulation and PbtO₂.\n- CMD values should be interpreted as additional information to other clinical and neurological parameters when guiding de-escalation of therapy.\n- CMD's low temporal resolution limits its utility for real-time decisions during brief neurological wake-up tests; its value is in identifying pre-existing metabolic instability.\n- Recent randomized trials generally favor liberal transfusion thresholds (hemoglobin 9–**10 g**/dL) in acute brain injury; LPR can be one contributing factor to further individualize RBCT decisions.\n- For NBO in TBI, there may be particular CMD-indicated benefit when pyruvate and lactate are < 120 µM and > 3.5 mM respectively.",
+      "recommendations": [
+        {
+          "rec_id": "5.1",
+          "statement": "In a prioritized approach to treating deranged metabolism with the intention of lowering the LPR, the following general sequence of priorities is suggested: (1) ICP should be addressed with priority (target ≤ **20 mmHg**), (2) then PbtO₂ (target ≥ **15 mmHg**), (3) and finally, brain glucose should be monitored, with investigation and management of systemic causes for levels below 1.0 mM. (4) Further interventions (e.g., targeting CPP) should be considered for refractory metabolic derangement as indicated by a persistently increased LPR (> 25).",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "5.2",
+          "statement": "Although a CPP of 60–**70 mmHg** is **recommended** within Brain Trauma Foundation Guidelines, metabolic state as indicated by CMD has the potential to inform individualization of CPP targets.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "5.3",
+          "statement": "Disturbance of the brain’s metabolic state as indicated by CMD can guide de-escalation of therapy because it demonstrates a remaining vulnerability to physiological perturbations.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "5.4",
+          "statement": "Worsening CMD values may indicate tissue vulnerability and can help inform the decision to defer, modify, or abort a neurological wake-up test or a trial of sedation lightening.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "5.5",
+          "statement": "When taken in a wider context including systemic physiology and cerebral oxygenation, raised LPR (> 25) can contribute to a decision to perform red blood cell transfusion (RBCT) in order to improve cerebral oxygenation.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "5.6",
+          "statement": "In TBI patients with a CMD pattern suggestive of ischemia (e.g., LPR > 25 and pyruvate < 70 µM), the initial response should be to evaluate and optimize cerebral perfusion pressure, brain tissue oxygenation, cerebral autoregulation, and brain glucose levels. If the ischemic pattern persists despite these measures, a short (e.g., up to 2 h) trial of normobaric hyperoxia (NBO) may be considered as a diagnostic challenge to assess the responsiveness of the metabolic derangement.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "5.7",
+          "statement": "In patients undergoing ICH resection, CMD may be considered as an adjunct to standard monitoring to assess the metabolic response to surgery. With the catheter tip placed in the perihematomal zone, worsening or non-recovering metabolic derangements despite resection may signal an evolving secondary injury, prompting further investigation to identify potential causes.",
+          "strength": null,
+          "evidence_grade": "No Consensus (60.6% agreement)"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Glucose Management",
+      "narrative": "- A positive linear relationship exists between peripheral and brain glucose in non-injured TBI tissue, though this relationship is modulated by local factors (catheter tip location, local CBF, metabolic rate).\n- Low CMD glucose may reflect local flow-demand mismatch rather than systemic insufficiency.\n- Reduced brain/serum glucose ratios predict metabolic distress and **mortality**, but the **absolute** cerebral glucose value remains clinically **critical**.\n- The plasma glucose ceiling of 10 mM (**180 mg**/dL) aligns with conventional glycemic control, which is less associated with neuroglycopenia than tight control.\n- The relationship between LPR and glucose is only well-defined below 1.0 mM; there is insufficient evidence to define a **critical** upper limit for brain glucose.\n- Optimizing enteral nutrition is a complementary strategy for treating neuroglycopenia, though its effect is slower than intravenous administration.\n- Alternative energy substrates such as lactate, ketone bodies, and succinate are investigational.",
+      "recommendations": [
+        {
+          "rec_id": "6.1",
+          "statement": "In the traumatically injured brain, interstitial fluid glucose measured by microdialysis in tissue presumed to be uninjured has a positive correlation with plasma glucose. Consequently, brain glucose can be modulated by altering plasma glucose levels (e.g., via insulin or glucose). However, the predictability of this response should be determined empirically.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "6.2",
+          "statement": "Systemic (plasma) glucose levels should be considered when interpreting cerebral microdialysis glucose data.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "6.3",
+          "statement": "Administration of intravenous dextrose may be used to raise plasma glucose up to 10 mM (**180 mg**/dL) in an effort to resolve neuroglycopenia.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "6.4",
+          "statement": "Despite the association of increased cerebral glutamate with brain glucose > 5.0 mM, there is insufficient evidence to define a **critical** upper limit for brain glucose.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "6.5",
+          "statement": "Strategies to treat neuroglycopenia should include optimizing enteral nutrition.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "6.6",
+          "statement": "The administration of alternative energy substrates, such as lactate or ketone bodies, to manage neuroglycopenia is an investigational strategy that requires further study before it can be **recommended** for clinical use.",
+          "strength": "strong",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Sampling Frequency",
+      "narrative": "- Hourly sampling is suboptimal for multimodal triangulation of pathophysiology or detecting rapid metabolic changes.\n- 20–30-minute sampling intervals may offer a practical compromise for current manual workflows.\n- Manual sub-hourly sampling is logistically prohibitive; the development and adoption of reliable online CMD systems is the **critical** enabler of higher frequency monitoring.",
+      "recommendations": [
+        {
+          "rec_id": "7.1",
+          "statement": "Hourly CMD sampling is sufficient to add clinical benefit.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "7.2",
+          "statement": "Higher frequency sampling (sub-hourly) or continuous monitoring may increase the utility of CMD as online monitoring systems are developed.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Core Reporting Items",
+      "narrative": "- The 2014 consensus identified 6 **essential** data reporting elements; this panel developed more comprehensive guidance (19 items) to enable multi-center collaboration and facilitate pooled analyses.\n- The suggested reporting items are intended as guidance for best practice rather than **mandatory** requirements.\n- Item 8.17 recommends reporting the reference values used for clinical interpretation, accounting for institutional variability.",
+      "recommendations": [
+        {
+          "rec_id": "8.1",
+          "statement": "Catheter type should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.2",
+          "statement": "Probe membrane length should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.3",
+          "statement": "Perfusion fluid composition should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.4",
+          "statement": "Perfusion flow rate should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.5",
+          "statement": "Mechanism used for catheter placement (e.g., twist drill hole, transcranial bolt, during open craniotomy or craniectomy) should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.6",
+          "statement": "Lesion-relative catheter location, confirmed by imaging, should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.7",
+          "statement": "Depth of CMD catheter tip should be reported.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.8",
+          "statement": "Time from ictus (or time from injury for TBI) should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.9",
+          "statement": "Time from operation (if applicable) should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.10",
+          "statement": "Duration of adequate CMD system functioning and total duration of CMD monitoring should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.11",
+          "statement": "Handling of early samples (e.g., if the first hour or two of samples were discarded) should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.12",
+          "statement": "Handling of values outside analyzer limits of detection, missing values, and artifacts should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.13",
+          "statement": "Method of aligning multimodal data streams with different sampling frequencies (e.g., windowed averaging, nearest-neighbor sampling, weighted averaging) should be reported.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.14",
+          "statement": "Other concurrent monitoring modalities should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.15",
+          "statement": "Neuroprotective procedures during monitoring should be reported.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.16",
+          "statement": "Complications associated with probe placement or removal should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.17",
+          "statement": "Reference values used for each monitored CMD parameter (e.g., 0.2 mM, 0.8 mM, or 1.0 mM for brain glucose; 25 or 40 for LPR) should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.18",
+          "statement": "If available, plasma glucose records in conjunction with cerebral glucose records should be reported.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "8.19",
+          "statement": "If intravenous glucose supplementation is provided, the rate (mmol/hour) and concentration of the supplementation alongside the set of, if available, associated plasma and cerebral glucose records should be reported.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Barriers to Clinical Implementation",
+      "narrative": "- The lack of randomized controlled trial evidence demonstrating that CMD improves outcomes is the most fundamental obstacle.\n- Robust outcome data would likely diminish the significance of logistical barriers such as cost and training.",
+      "recommendations": [
+        {
+          "rec_id": "9.1",
+          "statement": "Financial constraints are a barrier to CMD implementation.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "9.2",
+          "statement": "Training of staff on operating procedures is a barrier to CMD implementation.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "9.3",
+          "statement": "Time demand on staff from handling CMD samples (usually hourly) is a barrier to CMD implementation.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "9.4",
+          "statement": "Lack of buy-in for CMD catheter placement is a barrier to CMD implementation.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "9.5",
+          "statement": "Integration of CMD trends with other multimodal device outputs is a barrier to CMD implementation.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "9.6",
+          "statement": "Difficulty of interpreting high-dimensional data is a barrier to CMD implementation.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "9.7",
+          "statement": "Lack of automated streaming of CMD data to electronic medical records is a barrier to CMD implementation.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "9.8",
+          "statement": "Limiting preconception of CMD being exclusive to research applications is a barrier to CMD implementation.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "9.9",
+          "statement": "Limiting preconception that CMD usage does not affect patient outcomes is a barrier to CMD implementation.",
+          "strength": "conditional",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "9.10",
+          "statement": "Lack of approval of CMD for routine clinical use by some regulatory agencies is a barrier to CMD implementation.",
+          "strength": "strong",
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Address Intracranial Pressure (ICP)",
+      "action": "Prioritize ICP management with a target of **≤ 20 mmHg**."
+    },
+    {
+      "step": 2,
+      "title": "Optimize Brain Tissue Oxygenation (PbtO₂)",
+      "action": "Target **PbtO₂ ≥ 15 mmHg**."
+    },
+    {
+      "step": 3,
+      "title": "Monitor and Manage Brain Glucose",
+      "action": "Investigate and manage systemic causes for brain glucose levels below **1.0 mM**. Maintain safe serum glucose ranges (< **10 mM** or **180 mg/dL**)."
+    },
+    {
+      "step": 4,
+      "title": "Consider Further Interventions for Refractory Derangement",
+      "action": "If LPR remains persistently elevated (> **25**) despite optimization of ICP, PbtO₂, and brain glucose, consider further escalation including CPP optimization."
+    }
+  ],
+  "strengths_limitations": "Strengths: Rigorous modified Delphi process with high panel retention (85% in Round 3) and adherence to a priori consensus definitions (≥ 75% agreement); high consensus achieved (97% of items); provides updated, comprehensive guidance expanding on the 2014 consensus. Limitations: Geographic concentration of panelists from the UK, US, and Sweden may under-represent perspectives from less resource-capable settings; only 37.8% of panelists had clinical ICH experience, warranting cautious interpretation of ICH-related guidance; consensus focused on conceptual principles rather than prescriptive numerical cut-offs, reflecting substantial practice variation.",
+  "drugs_doses": [
+    {
+      "drug": "Dextrose",
+      "dose": "Intravenous, titrated to raise plasma glucose up to 10 mM (180 mg/dL)",
+      "indication": "Resolution of neuroglycopenia (brain glucose < 1.0 mM)",
+      "adverse_effects": "Risk of hyperglycemia if plasma glucose exceeds 10 mM (180 mg/dL); maintain safe serum glucose ranges."
+    },
+    {
+      "drug": "Succinate",
+      "dose": "Focally perfused (investigational)",
+      "indication": "Mitochondrial dysfunction in traumatic brain injury",
+      "adverse_effects": "Investigational strategy; not recommended for routine clinical use."
+    },
+    {
+      "drug": "Cyclosporin A",
+      "dose": "Not specified (investigational)",
+      "indication": "Mitochondrial dysfunction after severe traumatic brain injury",
+      "adverse_effects": "Investigational strategy; not recommended for routine clinical use."
+    },
+    {
+      "drug": "Lactate",
+      "dose": "Not specified (investigational)",
+      "indication": "Alternative energy substrate for neuroglycopenia",
+      "adverse_effects": "Investigational strategy; requires further study before clinical recommendation."
+    },
+    {
+      "drug": "Ketone bodies",
+      "dose": "Not specified (investigational)",
+      "indication": "Alternative energy substrate for neuroglycopenia",
+      "adverse_effects": "Investigational strategy; requires further study before clinical recommendation."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-04-04",
+  "article_subtype": "Guideline"
+}

@@ -57,9 +57,10 @@ def load_pearls():
                     summary_map[fn] = sys
             for p in data:
                 fn = str(p.get("file_name", "")).strip()
+                fn_pdf = fn[:-5] + ".pdf" if fn.endswith(".json") else fn
                 cur = str(p.get("system", "")).strip()
-                if fn in summary_map and (not cur or cur == "Other"):
-                    p["system"] = summary_map[fn]
+                if fn_pdf in summary_map and not cur:
+                    p["system"] = summary_map[fn_pdf]
         except Exception:
             pass
         return data

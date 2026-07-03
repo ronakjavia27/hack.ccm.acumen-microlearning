@@ -1,0 +1,84 @@
+{
+  "id": "yokoyama-2026-ttt-map-septic-shock-mortality",
+  "doc_type": "article",
+  "article_subtype": "Other",
+  "title": "Association between time to target mean arterial pressure and 90-day mortality in septic shock: a post hoc analysis of the OPTPRESS trial",
+  "authors": "Yokoyama R et al.",
+  "journal": "Annals of Intensive Care",
+  "year": 2026,
+  "doi": "10.1016/j.aicoj.2026.100088",
+  "specialty": [
+    "cardiology",
+    "multi_system"
+  ],
+  "tags": [
+    "septic shock",
+    "mean arterial pressure",
+    "vasopressors",
+    "mortality",
+    "hemodynamic resuscitation",
+    "time to target",
+    "hypotension burden"
+  ],
+  "one_line_summary": "In this post hoc analysis of the OPTPRESS trial, delayed attainment (≥12 h) of the randomized lower-bound MAP target was associated with higher 90-day **mortality**, but no clear dose-response pattern was observed within 1-12 hours.",
+  "key_pearls": [
+    "Time to target MAP (TTT-MAP) ≥12 h was associated with higher 90-day **mortality** compared to <1 h (adjusted OR **1.48**, 95% CI **1.11–1.98**; p = 0.008).",
+    "No **significant** association with 90-day **mortality** was found for TTT-MAP categories of 1–3 h, 3–6 h, or 6–12 h.",
+    "Continuous TTT-MAP analysis (per 1-h increase) in patients achieving target within 24 h showed no **significant** association with **mortality** (aOR **1.025**, 95% CI **0.972–1.082**; p = 0.362).",
+    "Prolonged TTT-MAP (≥12 h or unreached) was associated with increased 90-day **mortality** in Cox models (adjusted HR **3.24**, 95% CI **2.19–4.80**; p < 0.001).",
+    "Hypotension burden metrics (time-below-threshold and AUC deficit) during the first 24 h were independently associated with 90-day **mortality**, particularly at MAP thresholds of **65–80 mmHg**.",
+    "TTT-MAP reflects time to first target attainment and does not directly quantify hypotension depth, duration, or recurrent hypotension; it should not be interpreted as a clinically acceptable duration of hypotension."
+  ],
+  "evidence_level": "secondary_analysis",
+  "sample_size": 476,
+  "population": "Patients aged ≥65 years with septic shock from the multicenter OPTPRESS RCT in Japan; median age 78 years, 55.5% male.",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Background",
+      "content": "- Septic shock **mortality** remains high at **30–40%** in contemporary ICUs.\n- Guidelines recommend maintaining MAP **≥65 mmHg** and early vasopressor initiation with *norepinephrine*.\n- Evidence on optimal timing of vasopressor intervention is inconsistent; some studies show benefit for early initiation, while others show no association.\n- Hypotension burden metrics (time below threshold, AUC deficit) are associated with organ dysfunction and **mortality**.\n- The clinical relevance of time to target MAP (TTT-MAP) is unclear and may reflect a different dimension of resuscitation.",
+      "section_pearls": []
+    },
+    {
+      "order": 2,
+      "heading": "Methods",
+      "content": "- **Study Design:** Post hoc secondary analysis of the OPTPRESS multicenter, open-label RCT.\n- **Population:** 476 patients from the complete-case cohort; median age **78 years** (IQR 73–85), **55.5%** male.\n- **Exposure Definition:** TTT-MAP defined as time from randomization to first attainment of the randomized-arm lower-bound MAP target (**80 mmHg** in high-target arm; **65 mmHg** in low-target arm).\n- **Exposure Categories:** <1 h (reference), 1–3 h, 3–6 h, 6–12 h, ≥12 h, and unreached.\n- **Primary Outcome:** 90-day all-cause **mortality**.\n- **Primary Analysis:** Doubly robust (DR) estimation combining IPTW and outcome regression.\n- **Secondary Analyses:** Continuous TTT-MAP modeling, Cox proportional hazards models, restricted cubic spline analysis, hypotension burden analysis, and vasopressor exposure assessment.\n- **Covariates:** Age, sex, BMI, SOFA score, initial lactate, initial MAP, corticosteroid use within 72 h, history of hypertension, chronic kidney disease, and malignancy.",
+      "section_pearls": []
+    },
+    {
+      "order": 3,
+      "heading": "Results",
+      "content": "- **Primary Analysis:** TTT-MAP ≥12 h was associated with higher 90-day **mortality** vs. <1 h (aOR **1.48**, 95% CI **1.11–1.98**; p = 0.008). No **significant** differences for 1–3 h, 3–6 h, or 6–12 h.\n- **Continuous Analysis (n=448):** Per 1-h increase in TTT-MAP was not **significantly** associated with **mortality** (aOR **1.025**, 95% CI **0.972–1.082**; p = 0.362).\n- **Cox Models:** Prolonged TTT-MAP (≥12 h or unreached) vs. early attainment had aHR **3.24** (95% CI **2.19–4.80**; p < 0.001).\n- **Spline Analysis:** No **significant** non-linearity (p = 0.445) and no clear threshold identified within the achieved range.\n- **Hypotension Burden:** Time-below-threshold and AUC deficit at **65–80 mmHg** were associated with 90-day **mortality**.\n- **Vasopressor Exposure:** Cumulative 72-h *norepinephrine* and *vasopressin* exposure were associated with higher **mortality**; the pre-randomization escalation-rate proxy was not.",
+      "section_pearls": []
+    },
+    {
+      "order": 4,
+      "heading": "Discussion",
+      "content": "- Delayed target attainment (≥12 h) was associated with higher **mortality**, but this is a pragmatic category, not a biological threshold.\n- TTT-MAP captures time to first attainment, not hypotension depth, duration, or maintenance; it is not a substitute for hypotension burden metrics.\n- Hypotension burden analysis reproduced established associations between depth-duration of hypotension and **mortality**.\n- The norepinephrine escalation-rate proxy was not associated with prolonged TTT-MAP, suggesting prolonged TTT-MAP is not simply \"slow vasopressor escalation.\"\n- Findings should be contextualized with emerging evidence on permissive hypotension and individualized resuscitation strategies (e.g., ANDROMEDA-SHOCK-2).\n- **Limitations:** Post hoc design, residual confounding, exposure misclassification from measurement frequency/modality, complete separation in the unreached group, limited generalizability (≥65 years, Japanese cohort), and heterogeneity in TTT-MAP onset definition.",
+      "section_pearls": []
+    },
+    {
+      "order": 5,
+      "heading": "Conclusions",
+      "content": "- Delayed attainment of the randomized lower-bound MAP target was associated with higher 90-day **mortality**.\n- TTT-MAP reflects time to first target attainment, not hypotension burden; findings should not define a clinically acceptable duration of hypotension or a threshold effect.\n- Future prospective studies should integrate process-oriented variables with tissue perfusion indices for individualized resuscitation.",
+      "section_pearls": []
+    }
+  ],
+  "strengths_limitations": "- **Strengths:** Uses randomized trial data with explicitly defined target blood pressure ranges and attainment protocols; employs doubly robust estimation to reduce model misspecification bias; provides comprehensive secondary analyses including hypotension burden and vasopressor exposure.\n- **Limitations:** Post hoc secondary analysis with potential for residual confounding; TTT-MAP based on first attainment and may be influenced by measurement frequency/modality; complete separation in the unreached group (100% **mortality**) leads to unstable estimates; limited generalizability to younger populations and other settings; exposure misclassification possible due to non-invasive vs. invasive BP measurement and scheduled MAP observation intervals.",
+  "drugs_doses": [
+    {
+      "drug": "norepinephrine",
+      "dose": "Titrated to target MAP; vasopressin could be added at doses ≥0.1 μg/kg/min. Doses reported as norepinephrine base-equivalent (BASE format).",
+      "indication": "First-line vasopressor for septic shock to achieve target MAP (65–70 mmHg or 80–85 mmHg per randomization).",
+      "adverse_effects": "Higher cumulative 72-h exposure associated with increased mortality, likely reflecting refractory shock severity."
+    },
+    {
+      "drug": "vasopressin",
+      "dose": "Initiated and titrated up to 0.04 U/min when norepinephrine dose ≥0.1 μg/kg/min was required.",
+      "indication": "Adjunctive vasopressor in septic shock when target MAP not achieved with norepinephrine alone.",
+      "adverse_effects": "Higher cumulative 72-h exposure associated with increased mortality, likely reflecting illness trajectory."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-07-20"
+}

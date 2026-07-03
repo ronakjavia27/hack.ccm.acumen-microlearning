@@ -1,0 +1,122 @@
+{
+  "id": "sepsis-associated-sarcopenia-emerging-insights-2026",
+  "doc_type": "article",
+  "article_subtype": "Review",
+  "title": "Sepsis-associated sarcopenia: Emerging insights into mechanisms and therapeutic approaches",
+  "authors": "Xiujun Chang et al.",
+  "journal": "Journal of Intensive Medicine",
+  "year": 2026,
+  "doi": "10.1016/j.jointm.2026.03.005",
+  "specialty": [
+    "multi_system",
+    "rehabilitation",
+    "infectious_disease"
+  ],
+  "tags": [
+    "sarcopenia",
+    "sepsis",
+    "muscle atrophy",
+    "mitochondrial dysfunction",
+    "nutritional support",
+    "early mobilization",
+    "intensive care unit-acquired weakness"
+  ],
+  "one_line_summary": "This review synthesizes the multi-level molecular mechanisms, diagnostic parameters, and therapeutic approaches for sepsis-associated sarcopenia, highlighting a **critical** translational gap between preclinical findings and clinical practice.",
+  "key_pearls": [
+    "Sarcopenia affects **40%–70%** of sepsis survivors and can persist for up to **2 years** after ICU discharge, **significantly** impacting long-term quality of life and **mortality**.",
+    "The pathogenesis of SASP is a multi-level cascade involving mitochondrial failure, endoplasmic reticulum stress, hyperactivation of the **ubiquitin–proteasome system (UPS)**, and suppression of anabolic pathways like **IGF-1/mTOR**.",
+    "Clinical diagnosis relies on non-invasive tools: **handgrip strength**, **MRC score**, bedside **ultrasound** (rectus femoris/diaphragm), and **CT-derived muscle indices** (PMI, SMI), as muscle biopsy is not routinely **recommended**.",
+    "A **1% reduction** in rectus femoris cross-sectional area on ultrasound is linked to a **6% rise in 28-day mortality**, establishing it as an independent prognostic factor.",
+    "Current clinical evidence for interventions is limited to small studies suggesting benefits from **early enteral nutrition (within 48 hours)** and **early mobilization (within 3 days)**, but no large-scale RCTs have validated a specific therapy.",
+    "Preclinical studies have identified numerous therapeutic targets (anti-inflammatory, antioxidant, anti-proteolytic), but a major translational gap exists due to a lack of human tissue validation and clinical trials.",
+    "No specific clinical guidelines exist for SASP; management is extrapolated from general **critical** care nutrition and rehabilitation principles, with a focus on preventing net protein catabolism."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": "Sepsis patients and animal models of sepsis/septic shock",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction",
+      "content": "- Sarcopenia diagnosis per **EWGSOP2** guidelines: low muscle strength (probable), plus low muscle quantity/quality (confirmed), plus low physical performance (severe).\n- Primary sarcopenia is age-related; secondary sarcopenia is caused by disease (sepsis), inactivity, or malnutrition.\n- **ICU-acquired weakness (ICU-AW)** is fundamentally characterized by sarcopenia.\n- Sepsis causes rapid and enduring muscle damage, leading to prolonged ventilator use, extended hospitalization, and high **mortality**.\n- Post-discharge **prognosis** is unfavorable, with reduced exercise capacity, muscle strength, and quality of life, contributing to elevated readmission and **1-year mortality**.\n- A **critical** research-clinical gap exists due to scarce high-quality clinical evidence and a lack of reliable diagnostic tools and effective therapies."
+    },
+    {
+      "order": 2,
+      "heading": "Methods and Search Strategy",
+      "content": "- Systematic search in **PubMed, Embase, and Web of Science** from January 1, 2015, to October 30, 2025.\n- MeSH terms and free-text terms used for sepsis/septic shock and sarcopenia/muscle atrophy.\n- Inclusion criteria: clinical patients or animal models with sepsis; content related to sarcopenia/muscle atrophy; English language.\n- Exclusion criteria: clinical trial registrations, conference abstracts, incomplete data, ex vivo/cell studies, duplicates.\n- Quality assessed using **Cochrane RoB-2.0** for RCTs, **Newcastle-Ottawa Scale (NOS)** for cohort studies, and **SYRCLE's tool** for animal studies."
+    },
+    {
+      "order": 3,
+      "heading": "Mechanisms of SASP",
+      "content": "- SASP is a multi-level dysregulation from organelles to distant organs, forming a self-sustaining vicious cycle.\n- Sepsis acts as a trigger, simultaneously causing mitochondrial bioenergetic crisis, endoplasmic reticulum stress (ERS), and systematic activation of protein degradation pathways (UPS, ALP, calpains).\n- Anabolic and repair pathways are suppressed (IGF-1 shutdown, MuSC dysfunction).\n- Only three core pathological changes have been reliably confirmed in human septic muscle biopsies: **UPS activation**, **inflammatory cell infiltration**, and **ERS**.\n- Most mechanistic evidence is from rodent models, creating a substantial gap in human pathophysiology understanding.\n- **Organelle Dysfunction**:\n  - *Mitochondrial Failure*: Disrupted quality control (suppressed biogenesis/fusion/mitophagy, enhanced fission) leads to accumulation of dysfunctional mitochondria. This causes heightened oxidative stress (reduced **SOD, CAT, GPX**; suppressed **Sirt-1/Nrf-2/HO-1** axis), diminished **ATP** synthesis, and **Ca2+ overload**.\n  - *ERS and UPR*: Upregulated ERS markers temporally align with atrophy-related gene expression. **CHOP** deletion mitigates UPS-mediated degradation. Excessive ERS promotes apoptosis via **STAT3** and **Smad3** pathways.\n- **Collapse of Myofibrillar Proteostasis**:\n  - *Hypercatabolism*: UPS is the principal degradation pathway, with **Atrogin-1** and **MuRF1** as key markers. Autophagy is dysregulated (impaired selective clearance but excessive overall flux). Calpains are activated by disrupted calcium homeostasis, cleaving contractile proteins.\n  - *Programmed Cell Death*: Apoptosis is well-characterized (**PLK1-AKT** axis). Pyroptosis, ferroptosis, and cuproptosis are emerging but lack robust in vivo validation.\n  - *Anabolic Suppression*: MuSC differentiation is profoundly disrupted. **MSTN** signaling is abnormally activated, though knockout studies show conflicting results. **IGF-1/mTOR** signaling is suppressed, leading to anabolic resistance.\n- **Structural and Functional Disintegration**:\n  - *Inflammatory Infiltration*: Cytokines (**IL-6, TNF-α, IL-1β**) activate **NF-κB, JAK-STAT, TGF-β, and p38 MAPK** pathways, amplifying catabolic signaling. Clinical studies confirm sustained serum **IL-6** elevation and upregulation of **TLR2/4** in muscle.\n  - *NMJ Dysfunction*: Reduced **AChE** activity, aberrant expression of **γ-nAChR** and **α7-nAChR**, and dysregulated SR Ca2+ handling (reduced **RyR** and **SERCA** expression) lead to excitation-contraction uncoupling.\n- **Systemic Crosstalk**:\n  - *Hypothalamic Suppression*: Reduced ghrelin suppresses **NPY/AgRP** and increases **POMC/CART**, suppressing appetite and promoting catabolism.\n  - *Thyroid Axis*: Local **T3** deficiency due to upregulated **Dio3** impairs mitochondrial biogenesis and activates UPS.\n  - *Hypercortisolemia*: Elevated glucocorticoids upregulate **Atrogin-1/MuRF1** and stimulate autophagy.\n  - *Gut-Muscle Axis*: Sepsis-induced gut dysbiosis and barrier disruption contribute to muscle impairment, with fecal microbiota transplantation showing benefit in animal models."
+    },
+    {
+      "order": 4,
+      "heading": "Measuring Parameters",
+      "content": "- Clinical manifestations: limb muscle atrophy, weakness, reduced tone, diminished reflexes, and motor incoordination; facial/ocular muscles typically spared.\n- **Simple Assessment & Biomarkers**:\n  - Non-invasive: **Handgrip strength**, **MRC score**, mid-upper arm circumference, triceps skinfold thickness.\n  - Neurophysiological: Sural nerve **SNAP** and peroneal nerve testing for early neuropathy.\n  - Emerging biomarkers: Plasma **NT-proBNP** and rate of **UCR** change show promise but lack large-scale validation.\n- **Ultrasound Assessment**:\n  - Bedside tool for quantitative assessment of limb (rectus femoris, vastus intermedius) and respiratory (diaphragm) muscles.\n  - **Significant** wasting occurs within the **1st week** of ICU stay; rectus femoris cross-sectional area and thickness decrease by averages of **23.2%** and **17.9%**, respectively.\n  - A **1% reduction** in rectus femoris area is linked to a **6% rise in 28-day mortality**.\n  - Diaphragm and intercostal muscle ultrasound (echogenicity, thickening fraction) may help predict weaning outcomes.\n- **CT Assessment**:\n  - Most reliable imaging modality. Key metrics: **Psoas Muscle Index (PMI)** and **Skeletal Muscle Index (SMI)** at the **L3** level, and pectoralis muscle index.\n  - Reduced PMI independently correlates with **28- and 90-day mortality**, ICU/hospital length of stay.\n  - Low SMI is linked to higher in-hospital **mortality**, multiple organ failure, and **1-year mortality**.\n  - Limitations: mostly retrospective studies, lack of standardized thresholds, radiation exposure.\n- **MRI and Biopsy**: MRI offers **superior** soft tissue characterization but is limited by lack of protocols and long acquisition times. Muscle biopsy is the gold standard for histopathology but is not **recommended** for routine diagnosis due to its invasive nature."
+    },
+    {
+      "order": 5,
+      "heading": "Therapeutic Approaches",
+      "content": "- No therapeutic strategy has been validated by large-scale RCTs; a pronounced translational gap exists.\n- **Nutritional Support**:\n  - Guidelines recommend initiating **EN within 48 hours** of hemodynamic stabilization. Early EN correlates with lower in-hospital **mortality** in patients with pre-existing sarcopenia (OCEBM Level 2b).\n  - Adequate energy supply may reduce sarcopenia risk (OCEBM Level 2b), but high-calorie vs. low-calorie feeding remains controversial.\n  - Preclinical studies suggest benefits from specific supplements (octanoic acid, leucine, selenomethionine), but clinical guidelines do not recommend routine supplementation of specific amino acids.\n- **Drugs and Targeted Therapy**:\n  - Preclinical multi-level framework targets mitochondrial dysfunction, oxidative stress, UPS/ALP hypercatabolism, and inflammatory cytokines.\n  - Key limitation: many agents (melatonin, anisodamine, enoxaparin) are administered *before* sepsis induction in animal models, limiting clinical applicability.\n  - No targeted drugs have been translated to clinical practice due to lack of human validation.\n- **Early Rehabilitation**:\n  - **Early Mobilization (EM)** within the first **3 days** of ICU admission **significantly** improves outcomes (OCEBM Level 2b). A small clinical study suggests this may be due to suppressed myofiber autophagy (OCEBM Level 1b).\n  - **Neuromuscular Electrical Stimulation (NMES)** is safe and may enhance muscle strength and compound muscle action potentials, but large-scale efficacy trials are lacking."
+    },
+    {
+      "order": 6,
+      "heading": "Conclusions",
+      "content": "- SASP is a severe complication manifesting as progressive muscle failure, **significantly** impacting long-term **prognosis**.\n- No standardized clinical assessment system exists; CT is reliable but impractical for routine use, while bedside strength testing lacks sensitivity.\n- Pathophysiology is a cumulative process from organelle dysfunction to multi-organ damage, but clinical translation of targeted therapies has shown limited effectiveness.\n- Current clinical interventions (early EN, EM, NMES) are preliminarily safe and somewhat effective but lack strong evidence-based recommendations.\n- Future directions: (1) Elucidate molecular networks and inter-organ crosstalk to accelerate translation of targeted therapies; (2) Conduct large-scale interventional clinical studies to establish high-quality evidence-based prevention and treatment strategies focused on long-term quality of life and functional recovery."
+    }
+  ],
+  "strengths_limitations": "- **Strengths**: Provides a comprehensive, multi-level analysis of SASP mechanisms from organelle to organ-system crosstalk; systematically reviews both clinical and preclinical therapeutic evidence; clearly identifies **critical** translational gaps in the field.\n- **Limitations**: As a narrative review, it lacks a quantitative meta-analysis; the vast majority of mechanistic evidence is derived from animal models with a scarcity of human tissue validation; clinical therapeutic evidence is limited to small, exploratory studies with a high risk of bias.",
+  "drugs_doses": [
+    {
+      "drug": "Levosimendan",
+      "dose": "Loading dose of 6 μg/kg for 10 min, followed by continuous infusion at 0.2 μg/(kg·min)",
+      "indication": "Diaphragmatic dysfunction in sepsis patients",
+      "adverse_effects": "No effect on ventilator weaning; moderate risk of bias in supporting study."
+    },
+    {
+      "drug": "Edaravone",
+      "dose": "Single dose of 5 mg/kg, i.p.",
+      "indication": "Preclinical model of sepsis-induced diaphragmatic dysfunction",
+      "adverse_effects": "Preclinical only; risk of bias unclear."
+    },
+    {
+      "drug": "Melatonin",
+      "dose": "30 mg/(kg·d) ×7 d, i.p. (preclinical); 10 mg/kg ×3 times, i.p. (preclinical)",
+      "indication": "Preclinical model of sepsis-induced muscle atrophy",
+      "adverse_effects": "Preclinical only; administered before sepsis induction in some studies, limiting clinical applicability."
+    },
+    {
+      "drug": "Selenomethionine",
+      "dose": "0.4 mg/(kg·d) ×7 d, i.p.",
+      "indication": "Preclinical model of sepsis-induced skeletal muscle atrophy",
+      "adverse_effects": "Preclinical only; risk of bias unclear."
+    },
+    {
+      "drug": "Anisodamine",
+      "dose": "Single dose of 0.02 mg/kg, i.p.",
+      "indication": "Preclinical model of sepsis-induced diaphragm atrophy",
+      "adverse_effects": "Preclinical only; administered before sepsis induction."
+    },
+    {
+      "drug": "Enoxaparin",
+      "dose": "Single dose of 4 mg/kg, i.v.",
+      "indication": "Preclinical model of ventilation-induced diaphragm dysfunction in endotoxemia",
+      "adverse_effects": "Preclinical only; administered before mechanical ventilation."
+    },
+    {
+      "drug": "Hydrocortisone",
+      "dose": "3 mg/(kg·d) ×5 d, i.p.",
+      "indication": "Preclinical model of ICU-acquired weakness in sepsis with limb immobilization",
+      "adverse_effects": "Preclinical only; dual role of glucocorticoids noted."
+    },
+    {
+      "drug": "Dexmedetomidine",
+      "dose": "50 μg/kg, i.v.",
+      "indication": "Preclinical model of endotoxemia-induced muscle wasting",
+      "adverse_effects": "Preclinical only."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-05-17"
+}

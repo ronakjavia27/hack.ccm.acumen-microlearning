@@ -1,0 +1,113 @@
+{
+  "id": "clinical-application-electrical-impedance-tomography-emergency-critical-care-2026",
+  "doc_type": "article",
+  "article_subtype": "Review",
+  "title": "Clinical Application of Electrical Impedance Tomography in Emergency and Critical Care Medicine",
+  "authors": "Yoshiaki Iwashita et al.",
+  "journal": "Journal of Clinical Medicine",
+  "year": 2026,
+  "doi": "10.3390/jcm15103779",
+  "specialty": [
+    "pulmonology",
+    "neurology",
+    "gastroenterology"
+  ],
+  "tags": [
+    "electrical impedance tomography",
+    "mechanical ventilation",
+    "peep titration",
+    "ards",
+    "pendelluft",
+    "perfusion imaging",
+    "bedside monitoring",
+    "critical care"
+  ],
+  "one_line_summary": "This review synthesizes emerging evidence on electrical impedance tomography as a versatile, radiation-free bedside imaging modality for monitoring regional ventilation, perfusion, and other physiological functions in **critical** care, while discussing its limitations and future directions.",
+  "key_pearls": [
+    "EIT provides continuous, radiation-free, real-time bedside visualization of regional lung ventilation and perfusion, making it ideal for titrating PEEP and assessing recruitability in ARDS.",
+    "EIT-guided PEEP titration consistently improves physiological variables (compliance, driving pressure, mechanical power) compared to standard tables, but definitive **mortality** benefit remains unproven and likely depends on patient phenotype.",
+    "EIT can detect occult pendelluft and quantify regional lung stress not captured by global ventilator signals, offering a physiological rationale to adjust support and potentially mitigate patient-self-inflicted lung injury (P-SILI).",
+    "Saline-contrast EIT enables bedside V/Q mismatch mapping and detection of pulmonary embolism, with newer first-pass kinetic models allowing perfusion estimation during uninterrupted breathing.",
+    "EIT is a 'soft-field' modality with inherently limited spatial resolution and should be viewed as a complementary functional monitor to CT's anatomical 'snapshot', not a replacement.",
+    "Emerging applications in neuro-**critical** care (stroke detection, cerebral edema monitoring) and gastrointestinal monitoring (gastric emptying) remain investigational due to anatomical barriers and signal-processing challenges.",
+    "Future progress depends on standardization, automation, AI-assisted reconstruction, 3D volumetric imaging, and multimodal integration to move EIT from a research tool to routine clinical decision support."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": null,
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction",
+      "content": "- EIT principles originated in geophysics; medical application pioneered in the 1980s by Barber and Brown at the University of Sheffield for cross-sectional imaging using surface electrodes.\n- The thorax exhibits the highest natural contrast for EIT: air is electrically insulating, while blood and tissue are conductive, allowing robust time-difference image reconstruction during ventilation without radiation.\n- Biological tissues exhibit distinct bioimpedance properties based on physiological state (fluid content, blood volume, cellular integrity), expanding EIT's potential beyond the lungs.\n- This review provides a comprehensive overview of EIT as a versatile bedside imaging modality, covering its established role in respiratory failure, emerging applications in hemodynamics, neuro-**critical** care, and abdominal imaging, and its strategic positioning relative to CT.",
+      "section_pearls": []
+    },
+    {
+      "order": 2,
+      "heading": "Respiratory Monitoring",
+      "content": "- ARDS is characterized by heterogeneous lung injury along the tandem axis; bedside cross-sectional imaging is needed but difficult due to attached devices (ventilators, ECMO, Impella).\n- EIT visualizes cross-sectional lung images at the bedside in real-time, radiation-free; three commercial devices (Dräger, Swisstom/SenTec, Timpel) have accumulated clinical data since the 2010s.\n- **PEEP Titration**:\n  - Costa et al. proposed an EIT-based method to quantify regional collapse and overdistension during a decremental PEEP trial.\n  - An RCT by Hsu et al. compared EIT-guided PEEP balancing collapse/overdistension vs. P-V curve method in moderate-to-severe ARDS, reporting lower selected PEEP and driving pressure at 48h and improved **survival** in the EIT group.\n  - EIT has highlighted limitations of standardized ARDSNet PEEP/FiO2 tables; Somhorst et al. reported clinically meaningful deviations (≥**2 cmH2O**) from table-derived PEEP in over 60% of COVID-19 ARDS patients.\n  - He et al. conducted an RCT of early individualized EIT-guided PEEP in ARDS; Jimenez et al. showed EIT-guided PEEP reduced mechanical power in a randomized crossover pilot trial; Mauri et al. evaluated personalized PEEP in spontaneously breathing ARDS using simultaneous EIT and transpulmonary pressure monitoring.\n  - A meta-analysis by Songsangvorn et al. reported EIT-guided PEEP improved lung compliance and reduced driving pressure and mechanical power vs. conventional methods, but interpretation of patient-centered outcomes was limited by heterogeneity.\n  - Evidence on **mortality** remains mixed: Van Trung et al. showed improved oxygenation/mechanics but no definitive **mortality** benefit; Maia et al. found no **significant** difference in compliance between four PEEP strategies and poor agreement; the EITVent RCT demonstrated a non-**significant** reduction in 28-day **mortality** and was terminated early for futility.\n  - EIT is a physiologically informative tool for individualized PEEP selection; whether it improves **prognosis** depends on patient phenotype (recruitability), protocol standardization, and implementation context.\n- **Pendelluft Visualization**:\n  - In spontaneously breathing patients, strong inspiratory efforts cause rapid gas redistribution from non-dependent to dependent lung regions (pendelluft), detected in real-time by EIT but not apparent on global ventilator signals (Yoshida et al.).\n  - Quantitative assessment shows pendelluft can generate regional dynamic stress with local driving pressures markedly exceeding the global ventilator displayed value.\n  - EIT-based monitoring provides a physiological rationale for interventions: increasing PEEP can stabilize dependent lung units and reduce pendelluft amplitude; pendelluft magnitude and expiratory muscle activity are modulated by ventilatory settings (pressure support level, PEEP).\n  - EIT offers a bedside approach to identify occult regional phenomena and guide individualized adjustments, though thresholds and protocols require further validation.\n- **Recruitability Assessment**:\n  - EIT enables dynamic bedside assessment of regional impedance changes during recruitment maneuvers (stepwise PEEP elevation), estimating recruited volume vs. overdistension in real-time to support individualized decisions on proceeding with or terminating an RM.\n  - Prone positioning: EIT visualizes redistribution of ventilation toward dorsal regions; EIT-derived changes in regional ventilation and/or V/Q indices during early prone positioning are associated with oxygenation response and clinical trajectory.\n  - Posture alters chest wall mechanics and regional lung stress; PEEP titrated supine may no longer be appropriate once prone; continuous EIT monitoring supports re-titration of PEEP during prone positioning to maintain dorsal recruitment while avoiding ventral overdistension.\n  - A prospective study suggested early EIT-derived indices may help predict prone responsiveness and identify non-responders who may require earlier reassessment of ventilator settings or alternative strategies.\n- **Weaning and Extubation Readiness**:\n  - EIT detects physiological deterioration during spontaneous breathing trials (SBTs) before overt clinical failure: an observational study showed patients with SBT failure developed greater ventilation inhomogeneity; the VISION study suggested increased ventral-to-dorsal ventilation difference early during SBT was associated with liberation failure.\n  - In difficult-to-wean patients, pendelluft detected via EIT during T-piece trials was associated with prolonged ventilation and higher 28-day **mortality**.\n  - Physiology-oriented work examined stepwise reductions in pressure support and the balance between over-assistance and under-assistance using EIT-derived regional ventilation distribution.\n  - EIT may complement conventional global weaning indices by adding regional physiological information; larger prospective validation studies are required to define clinically actionable thresholds and confirm whether EIT-guided weaning improves patient-centered outcomes.",
+      "section_pearls": [
+        "EIT-guided PEEP titration consistently improves physiological variables (compliance, driving pressure, mechanical power) compared to standard tables, but definitive mortality benefit remains unproven and likely depends on patient phenotype.",
+        "EIT can detect occult pendelluft and quantify regional lung stress not captured by global ventilator signals, offering a physiological rationale to adjust support and potentially mitigate patient-self-inflicted lung injury (P-SILI)."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Imaging of Pulmonary Perfusion and Hemodynamics",
+      "content": "- **Pulmonary Perfusion**:\n  - EIT perfusion technique relies on the indicator dilution principle: injecting a bolus of hypertonic saline (a highly conductive contrast agent) through a central venous catheter during a brief breath-hold; the transit causes a transient drop in impedance outlining the pulmonary vascular bed.\n  - Modern commercial devices (e.g., Timpel) have dedicated software modules that automatically synchronize impedance changes and instantly generate bedside V/Q mismatch maps.\n  - Apneic pauses may be poorly tolerated in severe ARDS; Victor et al. described a first-pass kinetic model for saline-contrast EIT enabling pulmonary perfusion estimation during uninterrupted breathing, showing good agreement with the conventional apnea-based method.\n  - Clinical application: EIT can reveal characteristic patterns of ventilated but non-perfused lung regions, consistent with increased dead space, facilitating rapid bedside recognition of pulmonary embolism (PE).\n  - Prognostic significance: Spinelli et al. reported that unmatched ventilation and perfusion measured by EIT were independently associated with **mortality** in ARDS patients; during COVID-19, Mauri et al. showed patients often exhibited substantial V/Q mismatch with ventilated non-perfused regions predominating.\n- **Fluid Responsiveness and Non-Contrast Heart-Lung Interactions**:\n  - By separating cardiac-related impedance oscillations from the respiratory signal, thoracic EIT may provide continuous information on cardiac activity and possibly stroke volume.\n  - Experimental work showed EIT-derived stroke volume variation (SVV) can be calculated automatically from cardiac-related impedance changes and may reflect dynamic indices of fluid responsiveness, though accuracy is influenced by the type of lung injury.\n  - EIT has the potential to evolve into a more integrated cardiopulmonary monitoring tool by simultaneously tracking ventilation-related lung distension and cardiac-related impedance signals; however, clinical validation for routine assessment of fluid responsiveness remains limited.",
+      "section_pearls": [
+        "Saline-contrast EIT enables bedside V/Q mismatch mapping and detection of pulmonary embolism, with newer first-pass kinetic models allowing perfusion estimation during uninterrupted breathing."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Detection of Thoracic Complications",
+      "content": "- **Pneumothorax**: Air in the pleural space produces a characteristic high-impedance region on thoracic EIT images; continuous cross-sectional monitoring may facilitate early detection, including during mechanical ventilation, before overt hemodynamic deterioration occurs.\n- **Pleural Effusion**: Associated with characteristic out-of-phase impedance changes in dependent lung regions; Becher et al. showed these changes were markedly greater in patients with pleural effusion and decreased **significantly** after drainage, suggesting EIT may be useful for bedside monitoring of pleural fluid accumulation and response to thoracentesis.\n- **Endotracheal Tube Placement**: EIT can provide rapid bedside information on right-left ventilation distribution and may help identify endobronchial intubation or malposition of double-lumen tubes by demonstrating marked asymmetry or absence of ventilation; however, it should be regarded as an adjunct rather than a replacement for fiberoptic bronchoscopy when precise airway confirmation is required.",
+      "section_pearls": []
+    },
+    {
+      "order": 5,
+      "heading": "Neuro-Monitoring: Brain EIT (Current Challenges and Future Frontiers)",
+      "content": "- **The 'Time Is Brain' Paradigm and EIT's Potential**:\n  - In acute stroke care, rapid differentiation between ischemic and hemorrhagic stroke is **essential** before intravenous thrombolysis; mobile stroke units (MSUs) with onboard imaging can shorten treatment delays but are constrained by cost and logistical complexities.\n  - Brain EIT could provide a portable adjunctive approach for prehospital stroke assessment because ischemic and hemorrhagic lesions are expected to differ in their electrical properties.\n  - Preclinical studies: contrast-enhanced electrical impedance tomography perfusion (EITP) successfully mapped regional cerebral perfusion deficits and detected acute ischemic stroke within **5 minutes** of onset in an experimental rabbit model; a preceding pilot study using a rabbit internal carotid artery occlusion model demonstrated that contrast-enhanced EIT could visualize cerebral perfusion patterns after intra-arterial glucose injection.\n- **The Anatomical Barrier and the Multi-Frequency Frontier**:\n  - A major challenge is the high resistivity of the skull that reduces current penetration into the brain and promotes current shunting through superficial tissues.\n  - Multi-frequency EIT (MFEIT) has been investigated as a possible strategy for stroke assessment because frequency-dependent tissue properties may help distinguish lesion types without relying entirely on a prior baseline image; however, robust human imaging and classification methods are still under development.\n- **Investigational Uses in the ICU**:\n  - Brain EIT has been explored as a noninvasive monitoring tool for cerebral edema; in patients with cerebral hemorrhage undergoing dehydration therapy, EIT-derived impedance changes correlate with simultaneously measured intracranial pressure trends, suggesting a potential value for bedside trend monitoring rather than definitive ICP replacement.",
+      "section_pearls": []
+    },
+    {
+      "order": 6,
+      "heading": "Gastrointestinal Imaging",
+      "content": "- **The Clinical Dilemma of Gastrointestinal Monitoring**:\n  - Gastrointestinal dysfunction (feeding intolerance, ileus, acute mesenteric ischemia) is common in **critically** ill patients and associated with worse outcomes and higher **mortality**; despite its clinical importance, continuous bedside monitoring of abdominal function remains limited.\n  - Current diagnostic approaches are often imperfect in unstable ICU patients: endoscopy is invasive, while abdominal CT may be constrained by the need for transport, contrast administration, and the patient's hemodynamic condition.\n- **Monitoring Gastric Emptying and Enteral Feeding**:\n  - Abdominal electrical impedance-based monitoring has been explored as a noninvasive approach for functional gastrointestinal assessment; one of the earliest proposed applications was the evaluation of gastric emptying.\n  - Changes in abdominal impedance have been used to track the distribution and emptying of gastric contents during enteral feeding, suggesting a potential value for bedside assessment of feeding tolerance and gastric residual dynamics.\n- **Technical Challenges and the Path Forward**:\n  - Abdominal applications remain far less developed than thoracic EIT; abdominal signals are weaker and less regular because gastrointestinal motility is slow, intermittent, and spatially heterogeneous.\n  - Bowel gas, respiratory motion, and changing abdominal geometry can substantially distort impedance measurements; future progress will depend on improved signal-processing methods and validation studies that can better isolate gastrointestinal activity from respiratory- and motion-related artifacts.",
+      "section_pearls": []
+    },
+    {
+      "order": 7,
+      "heading": "Technical Challenge and Future Direction",
+      "content": "- EIT is a 'soft-field' technique where injected current propagates diffusely, inherently limiting spatial resolution and anatomical precision compared to CT's 'hard-field' X-rays; EIT should not be regarded as a direct substitute for high-resolution anatomical imaging.\n- CT and EIT are strategically complementary: CT provides definitive anatomical 'snapshot' information, whereas EIT offers dynamic trend monitoring and repeated functional assessment over time.\n- The absence of ionizing radiation broadens potential deployment beyond conventional radiology environments (ambulances, emergency transport systems, point-of-care settings) where radiation shielding is impractical.\n- **Three-Dimensional EIT**: A major future direction is the transition from conventional 2D belt-based monitoring toward 3D EIT; an initial clinical report on multi-slice 3D EIT suggests volumetric impedance imaging is beginning to move from technical development toward early clinical application.\n- **AI and Machine Learning**: Deep learning approaches, including D-bar-based neural network methods, are being developed to mitigate the classical inverse problem, improve robustness to noise, and enhance structural image quality beyond traditional reconstruction alone.\n- **Multimodal Integration**: EIT may become more powerful when combined with complementary modalities (CT, ultrasound, arterial blood gas analysis, ventilator waveforms, hemodynamic monitoring), adding continuous regional functional information that static anatomical imaging cannot provide.\n- **Non-Attached EIT**: Future direction may be the development of non-contact impedance-based tomographic imaging; a newly proposed approach applies a weak alternating current in space and detects resulting subtle magnetic field changes to estimate conductivity and generate tomographic images; capacitively coupled EIT has been investigated for brain imaging as an approach that reduces dependence on direct electrode-skin contact.",
+      "section_pearls": [
+        "EIT is a 'soft-field' modality with inherently limited spatial resolution and should be viewed as a complementary functional monitor to CT's anatomical 'snapshot', not a replacement.",
+        "Future progress depends on standardization, automation, AI-assisted reconstruction, 3D volumetric imaging, and multimodal integration to move EIT from a research tool to routine clinical decision support."
+      ]
+    },
+    {
+      "order": 8,
+      "heading": "Conclusions",
+      "content": "- EIT is a promising bedside imaging modality providing continuous, radiation-free assessment of regional physiological functions.\n- Respiratory monitoring is the most widely used application, with established usefulness in evaluating regional ventilation distribution and growing roles in PEEP titration, prone-position management, recruitability assessment, and weaning support.\n- Other applications (perfusion imaging, hemodynamic monitoring, neuromonitoring, abdominal imaging) remain promising but are generally less validated and should currently be regarded as adjunctive or investigational.\n- EIT is not intended to replace conventional high-resolution imaging modalities such as CT; its clinical value lies in repeated functional monitoring at the bedside, particularly when dynamic physiological changes and treatment responses must be monitored over time without radiation exposure.\n- Further progress requires standardization of methodology, improved reproducibility across devices and centers, automated and interpretable reconstruction strategies, and stronger outcome-based clinical evidence.\n- With ongoing advances in 3D imaging, artificial intelligence, multimodal integration, and emerging non-contact impedance-based technologies, the role of impedance-based imaging may continue to expand in the point-of-care era.",
+      "section_pearls": []
+    }
+  ],
+  "strengths_limitations": "- Strengths: Comprehensive synthesis of emerging evidence across multiple organ systems (respiratory, hemodynamic, neurologic, gastrointestinal); clear delineation of EIT's complementary role to CT; detailed, referenced discussion of key clinical trials and physiological studies.\n- Limitations: Narrative review format without systematic search methodology; inherent limitations of EIT technology (low spatial resolution, 'soft-field' physics, lack of standardized protocols) are acknowledged but not systematically analyzed; evidence for **mortality** benefit remains mixed and is appropriately highlighted as a key gap.",
+  "drugs_doses": [
+    {
+      "drug": "hypertonic saline",
+      "dose": "bolus injection via central venous catheter",
+      "indication": "EIT-based pulmonary perfusion imaging (indicator dilution principle) to map V/Q mismatch and detect pulmonary embolism",
+      "adverse_effects": "Requires brief breath-hold which may be poorly tolerated in severe ARDS; alternative first-pass kinetic model allows use during uninterrupted breathing"
+    },
+    {
+      "drug": "glucose",
+      "dose": "intra-arterial injection (preclinical)",
+      "indication": "Contrast-enhanced EIT for cerebral perfusion imaging in experimental stroke models",
+      "adverse_effects": "Investigational use only; not for clinical application"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-05-14"
+}

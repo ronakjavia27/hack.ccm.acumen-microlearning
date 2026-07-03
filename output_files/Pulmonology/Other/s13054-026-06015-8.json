@@ -1,0 +1,103 @@
+{
+  "id": "schippers-measuring-managing-pulmonary-edema-ards-2026",
+  "doc_type": "article",
+  "article_subtype": "Other",
+  "title": "Measuring and managing pulmonary edema in ARDS: a narrative review",
+  "authors": "Schippers JR et al.",
+  "journal": "Critical Care",
+  "year": 2026,
+  "doi": "10.1186/s13054-026-06015-8",
+  "specialty": [
+    "pulmonology",
+    "multi_system"
+  ],
+  "tags": [
+    "ards",
+    "pulmonary edema",
+    "extravascular lung water",
+    "transpulmonary thermodilution",
+    "endothelial permeability",
+    "lung ultrasound",
+    "chest ct",
+    "phase ii trials"
+  ],
+  "one_line_summary": "This narrative review evaluates current and emerging modalities for quantifying pulmonary edema in ARDS and discusses their potential application as meaningful endpoints in early-phase clinical trials targeting vascular leakage.",
+  "key_pearls": [
+    "The 2024 global ARDS definition now includes non-intubated patients and no longer requires arterial blood gas analysis, enabling earlier diagnosis in wards and resource-limited settings.",
+    "Transpulmonary thermodilution is the clinical gold standard for measuring pulmonary edema, with **EVLWi > 10 mL/kg** indicating pulmonary edema and **PVPi > 3** confirming hyperpermeability edema.",
+    "Lung ultrasound shows variable correlation with transpulmonary thermodilution (r = 0.4–0.9) and is not yet a precise surrogate for quantifying pulmonary edema.",
+    "Chest CT quantification of ground-glass opacity correlates well with gravimetry or thermodilution in ARDS populations (r = 0.71–0.91) and holds promise as a non-invasive modality.",
+    "Pulmonary edema typically peaks by the time of intubation, suggesting therapies aimed at preventing edema formation should be administered early, in pre-ICU patients.",
+    "No single blood biomarker accurately estimates pulmonary edema, but proteomic pathway analyses show close relationships between acute-phase inflammatory pathways and pulmonary vascular permeability.",
+    "Using pulmonary edema as a primary endpoint in phase II trials may improve translation of preclinical vascular leakage studies and increase success rates for phase III trials."
+  ],
+  "evidence_level": "narrative_review",
+  "sample_size": null,
+  "population": "Patients with or at risk for acute respiratory distress syndrome (ARDS)",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction to ARDS",
+      "content": "- ARDS is characterized by **protein-rich pulmonary edema** throughout the lungs, first described by Ashbaugh et al. in 1967.\n- The latest global definition (January 2024) includes three consistent criteria: a) pulmonary edema not fully explained by cardiogenic origin or fluid overload, b) acute onset of symptoms (< 7 days), c) bilateral opacities on chest radiography, CT, or lung ultrasound.\n- Key 2024 revisions: **non-intubated patients** are now included, and **arterial blood gas analysis is no longer required**, enabling diagnosis in > 80% of global ARDS patients in resource-limited settings.\n- Limitations persist: the definition still relies on parameters impacted by patient management (e.g., **PaO2/FiO2 or SpO2/FiO2 ratios** by PEEP) and does not incorporate measurements of underlying pathophysiology.\n- Supportive therapies (lung-protective ventilation, neuromuscular blockade, prone positioning) have **significantly** reduced **mortality**, but no direct therapies targeting pathophysiological mechanisms exist.\n- Personalized medicine approaches, such as hyper- and hypo-inflammatory subphenotyping (Calfee et al.), have shown benefit in post-hoc studies targeting inflammation.",
+      "section_pearls": [
+        "The 2024 global ARDS definition expands diagnosis to non-intubated patients and settings without blood gas analysis."
+      ]
+    },
+    {
+      "order": 2,
+      "heading": "Pathophysiology of Pulmonary Edema",
+      "content": "- Types and mechanisms of pulmonary edema:\n  - Pulmonary edema is the net result of enhanced efflux of fluid across the capillary barrier versus impaired reabsorption and drainage, governed by the **Starling equation**.\n  - **Hydrostatic pulmonary edema**: caused by increased hydrostatic pressure, often associated with left-sided cardiac disease; the endothelial barrier (glycocalyx, adherens junctions) remains intact, filtering out larger molecules like albumins.\n  - **Hyperpermeability pulmonary edema**: caused by disruption of the endothelial and alveolar epithelial barrier; fluid has high protein content; hallmark of ARDS with diffuse alveolar damage (DAD), though only **45% of patients meeting Berlin criteria** have DAD on autopsy.\n  - Both mechanisms often coexist in ARDS; increased pulmonary microvascular pressure may result from pulmonary vasoconstriction and thrombi.\n  - Fluid outflow may be compromised by overwhelmed lymphatic drainage and necrotic type I pneumocytes impairing alveolar reabsorption.\n  - Pulmonary edema formation occurs in stages: interstitial edema develops once lymphatic drainage capacity is exceeded; alveolar flooding occurs when interstitium reaches full capacity.\n  - Hypoxemia in ARDS is primarily caused by **right-to-left shunt** (V/Q ratio < 0.01), not diffusion limitation.\n- Biology of pulmonary vascular permeability:\n  - The alveolar endothelium consists of two subtypes: **alveolar capillary cells (aCaps)** for gas exchange and barrier function, and **general capillary cells (gCaps)** for regeneration.\n  - The **glycocalyx** filters macromolecules and maintains oncotic pressure; damage to it is a central step in ARDS vascular permeability.\n  - **Weibel-Palade bodies** contain von Willebrand factor, P-selectin, angiopoietin-2, and other mediators released upon inflammatory stimuli.\n  - Paracellular transport occurs via tight junctions (claudins, occludins, JAMs) and adherens junctions (VE-cadherin); transcellular transport occurs via caveolae.\n  - Preclinical studies targeting endothelial barrier: **imatinib** protects VE-cadherin junctions via the Arg/Abl2 pathway; **ROBO4** upregulation suppresses TNF-α-induced hyperpermeability; **BMP-9** is an endothelial protective factor.\n  - Ultrastructural analyses in COVID-19 show extensive capillary network destruction, suggesting cell–matrix interaction is as important as cell–cell junction integrity.",
+      "section_pearls": [
+        "Only 45% of patients meeting Berlin ARDS criteria show diffuse alveolar damage on autopsy.",
+        "Imatinib stabilizes endothelial barriers by inhibiting the Abl-related gene (Arg/Abl2) pathway, reducing vascular leakage."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Current and Future Modalities to Measure Pulmonary Edema",
+      "content": "- Gravimetry:\n  - Gold standard for measuring pulmonary edema, but only performable post-mortem.\n  - Lung is weighed wet, dried to remove all water, and weighed again; the difference is the **wet-to-dry ratio**.\n  - Correction for intravascular fluid is done using hemoglobin as an intravascular tracer.\n- Transpulmonary thermodilution:\n  - Current clinical gold standard for measuring pulmonary edema in the ICU.\n  - Principle: Volume = Mean Transit Time × Flow; cardiac output approximates flow.\n  - Single-indicator method (PiCCO catheter) uses cold saline; double-indicator method adds a plasma-bound dye but is cumbersome.\n  - Key parameters: **Extravascular Lung Water Index (EVLWi)** and **Pulmonary Vascular Permeability Index (PVPi)**.\n  - **EVLWi > 10 mL/kg** indicates pulmonary edema; **PVPi < 2** indicates hydrostatic edema, **PVPi > 3** indicates hyperpermeability edema.\n  - EVLWi has moderate correlations with ventilator parameters (compliance, PaO2/FiO2) and lung injury scores; **significant** differences between Berlin classifications and survivors vs. non-survivors.\n  - Limitations: invasive, requires ICU setting, altered by massive pulmonary embolism, intracardiac shunt, or cardiac arrhythmias.\n- Lung ultrasound:\n  - Relies on interpretation of artifacts; **B-lines** (vertical lines) indicate pulmonary edema, **A-lines** (horizontal) indicate well-aerated lung.\n  - Correlation with transpulmonary thermodilution ranges from **r = 0.4 to 0.9**; multi-center studies show lower correlations (r = 0.59) than single-center studies (r = 0.94).\n  - High specificity for diagnosing ARDS and distinguishing focal from non-focal ARDS; interobserver variability < 10% for B-line interpretation.\n  - Cannot distinguish between hydrostatic and hyperpermeability pulmonary edema.\n- Chest computed tomography:\n  - Quantifies ground-glass opacity using automated or semi-automated software; recent studies use AI programs.\n  - Correlation with gravimetry or thermodilution: **r = 0.49** in undifferentiated ICU population, **r = 0.71–0.91** in ARDS populations.\n  - Advantages: standardized, non-invasive, available in ward and ICU.\n  - Limitations: lack of large prospective studies, variations in CT protocols, most deep-learning models not yet corrected for vascular volume.\n- Chest radiography:\n  - **RALE score** divides chest X-ray into four quadrants, scoring extent of consolidation and density of opacification.\n  - Correlation with gravimetry: **r = 0.59**; no **significant** correlation with transpulmonary thermodilution in COVID-19 ARDS (r = 0.15).\n  - Association with clinical outcomes is inconsistent across studies.\n- Blood biomarkers:\n  - No single biomarker accurately estimates pulmonary edema or vascular permeability.\n  - Angiopoietin-2 and sRAGE are associated with ARDS development; soluble VE-cadherin represents endothelial barrier damage in sepsis.\n  - Pathway analysis shows close relationship between acute-phase inflammatory pathways and pulmonary vascular permeability.\n- Other modalities:\n  - MRI: good results vs. gravimetry in preclinical models, but impractical for ventilated ICU patients.\n  - Lung scintigraphy: uses radiolabeled albumin; not commonly used due to availability of better alternatives.\n  - PET-CT: uses 15O-H2O and 11CO tracers; varying results, mainly in animal models and heart failure patients.",
+      "section_pearls": [
+        "EVLWi > 10 mL/kg confirms pulmonary edema; PVPi > 3 confirms hyperpermeability edema with certainty.",
+        "Chest CT quantification of pulmonary edema shows promising correlation (r = 0.71–0.91) in ARDS populations and may become a viable non-invasive modality."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Designing the Optimal Phase II Trial to Target Lung Vascular Leak",
+      "content": "- Pulmonary edema remains underutilized in clinical practice and underrepresented in clinical research despite being a hallmark of ARDS.\n- Three clinical trials have used pulmonary edema as a primary endpoint: **BALTI** (intravenous salbutamol), **HARP** (statins), and **InventCOVID** (imatinib).\n- Pulmonary edema is consistently associated with **mortality**, clinical status, and ventilator outcomes.\n- Timing of intervention:\n  - Pulmonary edema typically peaks by the time of intubation and does not substantially increase thereafter during ICU admission.\n  - Therapies preventing edema formation (e.g., enhancing endothelial barrier function) may be most effective when administered early, in pre-ICU patients on the ward.\n  - Therapies promoting edema resolution may be more appropriate after intubation.\n  - Chest CT may emerge as a suitable alternative to transpulmonary thermodilution for assessing pulmonary edema on the ward.\n- Patient heterogeneity:\n  - Hyper- and hypo-inflammatory subphenotypes respond differently to targeted therapies; subphenotypes may be time-dependent.\n  - A subgroup with elevated **IL-6, TNFR1, and SP-D** responded favorably to imatinib, showing specific reduction in pulmonary edema.\n  - Pulmonary causes of ARDS are associated with greater pulmonary edema and PVPi burden compared to extrapulmonary causes.\n- Outcome parameters:\n  - Ideal parameter should be precise, valid, pathophysiologically relevant, non-invasive, and feasible for longitudinal monitoring.\n  - Emerging tools: chest CT imaging and plasma biomarkers offer promise for bridging the gap.\n- Therapeutic targets:\n  - Direct mechanisms: strengthening cell–cell and cell–matrix junctions.\n  - Indirect mechanisms: immune modulation and promotion of endothelial regeneration.",
+      "section_pearls": [
+        "Pulmonary edema peaks by the time of intubation, so prevention trials should target pre-ICU patients using non-invasive measures like chest CT.",
+        "A subgroup with elevated IL-6, TNFR1, and SP-D showed specific reduction in pulmonary edema with imatinib, suggesting personalized therapy potential."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Future Perspectives",
+      "content": "- Quantification of pulmonary edema holds promise for bridging pre-clinical findings with large-scale clinical trials.\n- Emerging non-invasive modalities provide novel insights, particularly in detecting stages before ARDS, potentially opening a new therapeutic window for preventing pulmonary edema formation.\n- Earlier recognition of ARDS is facilitated by the new global guidelines.\n- Availability of pulmonary edema-reducing agents may further enhance these efforts.\n- Quantification of pulmonary edema enables both initiation of targeted therapies and evaluation of treatment responses.",
+      "section_pearls": []
+    }
+  ],
+  "strengths_limitations": "- Strengths: Comprehensive overview of pathophysiology linking endothelial barrier biology to clinical measurement techniques; detailed technical explanations of transpulmonary thermodilution principles; practical framework for designing phase II trials using pulmonary edema endpoints.\n- Limitations: Narrative review without systematic search methodology; limited discussion of pediatric or neonatal ARDS populations; no meta-analysis of diagnostic accuracy across modalities; reliance on single-center studies for some modality comparisons.",
+  "drugs_doses": [
+    {
+      "drug": "imatinib",
+      "dose": "Not specified in this review (referenced from InventCOVID and CounterCOVID trials using oral and intravenous formulations)",
+      "indication": "Targeting endothelial permeability in ARDS; stabilizes VE-cadherin junctions via Arg/Abl2 pathway inhibition",
+      "adverse_effects": "Not detailed in this review"
+    },
+    {
+      "drug": "salbutamol",
+      "dose": "Intravenous (referenced from BALTI trial)",
+      "indication": "Increasing fluid clearance of pulmonary edema in ARDS",
+      "adverse_effects": "Not detailed in this review"
+    },
+    {
+      "drug": "statins (simvastatin)",
+      "dose": "Not specified in this review (referenced from HARP trial)",
+      "indication": "Inhibiting HMG-CoA reductase to modify multiple processes including downregulation of TNF-α in ARDS",
+      "adverse_effects": "Not detailed in this review"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2025-03-20"
+}

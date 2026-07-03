@@ -1,0 +1,197 @@
+{
+  "id": "sepsis-in-end-stage-liver-disease-and-acute-on-chronic-liver-failure-2026",
+  "doc_type": "article",
+  "article_subtype": "Review",
+  "title": "Sepsis in end-stage liver disease and acute-on-chronic liver failure: pathophysiology, diagnostic challenges, and pharmacological management",
+  "authors": "Jacopo Belfiore et al.",
+  "journal": "Frontiers in Pharmacology",
+  "year": 2026,
+  "doi": "10.3389/fphar.2026.1775585",
+  "specialty": [
+    "hepatology",
+    "infectious_disease",
+    "multi_system"
+  ],
+  "tags": [
+    "acute-on-chronic liver failure",
+    "antimicrobial pharmacotherapy",
+    "cirrhosis-associated immune dysfunction",
+    "immunomodulation therapy",
+    "sepsis",
+    "end-stage liver disease",
+    "multidrug-resistant organisms",
+    "biomarkers"
+  ],
+  "one_line_summary": "Sepsis in end-stage liver disease and acute-on-chronic liver failure is driven by cirrhosis-associated immune dysfunction and requires integrated management combining early diagnosis, individualized pharmacotherapy, and tailored organ support, though outcomes remain poor.",
+  "key_pearls": [
+    "Approximately **30%–40%** of patients admitted with acutely decompensated cirrhosis have an ongoing bacterial infection, which is the most frequent precipitant of ACLF.",
+    "Cirrhosis-associated immune dysfunction (CAID) is a dynamic spectrum ranging from systemic inflammation to immune paralysis, increasing susceptibility to MDROs and invasive fungal infections.",
+    "Procalcitonin (PCT) has limited discriminatory value in ACLF (AUROC **69%**); presepsin and sTREM-1, especially combined with CLIF-SOFA, show **superior** diagnostic accuracy (AUROC up to **91%**).",
+    "Empirical antimicrobial therapy must be administered within **1 hour** for septic shock, with regimens tailored to local MDRO epidemiology, colonization status, and PK/PD alterations like hypoalbuminemia and expanded volume of distribution.",
+    "Norepinephrine is the first-line vasopressor; targeting a higher MAP (**80–85 mmHg**) may improve renal recovery and lactate clearance in cirrhotic patients with septic shock, though without proven **survival** benefit.",
+    "Precision immunotherapy guided by biomarkers like ferritin and HLA-DR expression shows biological promise in sepsis but faces challenges in ESLD/ACLF due to altered baseline levels and lack of validated cut-offs.",
+    "Continuous renal replacement therapy (CRRT) is associated with improved overall and transplant-free **survival** in acute liver failure, while liver support systems like MARS and Prometheus are not currently **recommended**."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": "Patients with end-stage liver disease (ESLD) and acute-on-chronic liver failure (ACLF) complicated by sepsis.",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction: Epidemiology of ESLD/ACLF",
+      "content": "- Bacterial infections and sepsis are central determinants of disease progression and short-term **prognosis** in advanced cirrhosis.\n- Approximately **30%–40%** of patients admitted with acutely decompensated cirrhosis have an ongoing bacterial infection, the most frequent precipitant of ACLF.\n- ACLF occurs in **25%–35%** of hospitalized patients with decompensated cirrhosis, characterized by intense systemic inflammation, rapid extrahepatic organ failure, and high short-term **mortality**.\n- Sepsis is the predominant trigger of ACLF, most commonly arising from spontaneous bacterial peritonitis (SBP), pneumonia, and urinary tract infections.\n- Infection in cirrhotic patients is associated with a **fourfold increase in mortality**; 28- and 90-day **mortality** exceeds **50%–60%** in ACLF grade 2–3.\n- Multidrug-resistant organisms (MDROs) are increasingly prevalent and independently predict poor short-term and post-transplant outcomes.",
+      "section_pearls": [
+        "Sepsis in ESLD/ACLF is a core pathobiological event at the intersection of immune dysfunction, systemic inflammation, and organ failure."
+      ]
+    },
+    {
+      "order": 2,
+      "heading": "Pathogenesis of Cirrhosis-Associated Immune Dysfunction (CAID)",
+      "content": "- CAID encompasses a dynamic, bidirectional spectrum from chronic systemic inflammation to profound immunodeficiency.\n- **Innate immunity alterations**: Impaired phagocytic capacity of Kupffer cells, reduced complement synthesis, defective neutrophil chemotaxis and oxidative burst, downregulated HLA-DR on monocytes/macrophages.\n- **Gut–liver axis**: Dysbiosis and bacterial translocation cause continuous PAMP/DAMP exposure, driving TLR-mediated systemic inflammation and immune cell exhaustion.\n- **Adaptive immunity alterations**: CD4+ T-cell lymphopenia, expansion of dysfunctional immunosuppressive CD8+ T-cells, increased Tregs, impaired B-cell function and vaccine responses.\n- CAID evolves from a pro-inflammatory phenotype in compensated cirrhosis to immune paralysis in advanced decompensation and ACLF.\n- Nutritional factors like zinc deficiency impair neutrophil, NK cell, and macrophage function; oxidized albumin loses immunomodulatory properties and sustains inflammation.",
+      "section_pearls": [
+        "CAID is not static; it shifts from systemic inflammation to immune paralysis as cirrhosis advances, directly increasing infection susceptibility."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Epidemiology of Bacterial and Fungal Infections in ESLD",
+      "content": "- Up to **50%** of infections are community-acquired; **30%–50%** are healthcare-associated or nosocomial.\n- Invasive fungal infections (IFI) account for **<10%** of culture-positive infections, mainly nosocomial (candidiasis > aspergillosis).\n- **Spontaneous bacterial peritonitis (SBP)** is the most frequent infection (**30%–40%**), followed by UTIs, pneumonia, bloodstream infections, and catheter-related infections.\n- **Antimicrobial resistance (AMR)**: MDROs are increasing globally; key mechanisms include ESBLs (CTX-M), carbapenemases (KPC, NDM, VIM, IMP), and MRSA/VRE.\n- *Pseudomonas aeruginosa* and *Acinetobacter baumannii* exhibit intrinsic and acquired resistance via beta-lactamases, efflux pumps, and porin modifications.\n- *Candida parapsilosis* is an emerging fluconazole-resistant pathogen causing nosocomial outbreaks and device-associated infections.",
+      "section_pearls": [
+        "Knowledge of local MDRO epidemiology and colonization status is fundamental for guiding empirical therapy in ESLD patients."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Diagnostic Tools and Biomarkers",
+      "content": "- **Initial workup**: Clinical, imaging, and microbiological assessments; diagnostic paracentesis with ascitic fluid culture and PMN count (**>250 cells/µL**) is **mandatory**.\n- Blood cultures (at least two sets, peripheral and central) must be taken before empirical antimicrobials.\n- **Rapid diagnostics**: Multiplex PCR panels (e.g., FilmArray) on blood cultures and BAL reduce identification time from days to hours; rectal swabs for CRE screening use PCR for carbapenemase genes.\n- **Biomarker limitations**: Baseline inflammation in ESLD elevates WBC, NLR, and CRP, reducing specificity; fever is absent in up to **56%** of ACLF patients.\n- **CRP**: Pooled sensitivity **80%**, specificity **61%**; lag time of 12–24 h limits early utility.\n- **Procalcitonin (PCT)**: AUROC **85%** in general population but only **69%** in ACLF; modest discriminatory value.\n- **IL-6**: Pooled sensitivity **85%**, specificity **91%** for bacterial infection in ESLD; independent predictor of **mortality** in HBV-ACLF.\n- **Presepsin and sTREM-1**: Higher diagnostic efficiency than WBC, PCT, CRP in ACLF; combining with CLIF-SOFA increases AUROC to **87%–91%**.\n- Presepsin level **≥2300 pg/mL** is associated with early diagnosis of bacterial infections in ACLF.",
+      "section_pearls": [
+        "Presepsin and sTREM-1 outperform conventional biomarkers for sepsis diagnosis in ACLF, especially when combined with CLIF-SOFA."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Empirical Antimicrobial Treatments",
+      "content": "- Antimicrobials must be administered within **1 hour** for septic shock or high sepsis likelihood; within **3 hours** for sepsis without shock.\n- **Risk stratification**: Assess colonization status (rectal, nasal, multisite) for MDROs; positive status mandates active coverage in empirical regimen.\n- **Gram-negative coverage (low MDRO risk)**: Ceftriaxone/cefotaxime/ceftazidime/cefepime + metronidazole or amox–clav/piperacillin–tazobactam.\n- **Gram-negative coverage (high MDRO risk)**:\n  - ESBL: Meropenem/imipenem or carbapenem-sparing agents (ceftazidime-avibactam, cefepime–enmetazobactam, ceftolozane–tazobactam).\n  - KPC: Meropenem–vaborbactam, imipenem–relebactam, ceftazidime–avibactam, cefiderocol, colistin.\n  - MBL: Avibactam–aztreonam, ceftazidime–avibactam + aztreonam, cefiderocol, colistin.\n  - *P. aeruginosa* DTR: Cefiderocol, ceftolozane–tazobactam + second agent, colistin.\n  - *A. baumannii* CR: Cefiderocol + second agent (ampicillin/sulbactam, tigecycline) or colistin + second agent.\n- **Gram-positive coverage (MRSA)**: Vancomycin, daptomycin, linezolid, ceftobiprole, ceftaroline.\n- **Fungal coverage**: Echinocandin or liposomal amphotericin B for Candida; voriconazole, isavuconazole, or liposomal amphotericin B for molds; co-trimoxazole for Pneumocystis.\n- **PK/PD considerations**: Hypoalbuminemia and increased volume of distribution alter hydrophilic antibiotic levels; loading doses and continuous infusions are **recommended**. Avoid dose reduction for sepsis-related AKI in the first **48–72 h**.\n- Short-course regimens are effective for most common infections; combination therapy is reserved for deep-seated *S. aureus*, difficult-to-treat non-fermenters, or severe aspergillosis.",
+      "section_pearls": [
+        "Empirical regimens must be tailored to local MDRO epidemiology and adjusted daily based on microbiological results to narrow therapy."
+      ]
+    },
+    {
+      "order": 6,
+      "heading": "Hemodynamic Support and Organ Support Strategies",
+      "content": "- **Fluid management**: Dynamic parameters (fluid responsiveness, lactate clearance, capillary refill time) guide resuscitation; POCUS aids in assessing volume and cardiac status.\n- IVC ultrasound may be unreliable in large-volume ascites; post-paracentesis assessment is more accurate.\n- Echocardiographic markers of cirrhotic cardiomyopathy (septal e' velocity **<7 cm/s**, E/e' ratio **>15**, LAVI **>34 mL/m²**, TR velocity **>2.8 m/s**) independently predict vasopressor requirement and 28-day **mortality**.\n- **Resuscitation fluid**: Balanced crystalloids and albumin are preferred over saline; 5% albumin improved hypotension reversal and 1-week **survival** vs. saline in one trial, but 20% albumin increased pulmonary complications without **survival** benefit.\n- **Vasopressors**: Norepinephrine is first-line; target MAP **≥65 mmHg**. A higher MAP target (**80–85 mmHg**) improved lactate clearance and renal recovery but not **survival**, with more adverse events.\n- Vasopressin (0.03 units/min) is added if NE dose exceeds **0.5 μg/kg/min**. Terlipressin was **inferior** to NE as first-line in ACLF septic shock.\n- Hydrocortisone (**200 mg/day**) is **recommended** for refractory shock; it increases shock reversal in ACLF.\n- **Renal replacement therapy (RRT)**: Indications are similar to the general population; CRRT is associated with improved overall and transplant-free **survival** in acute liver failure.\n- **Liver support systems**: MARS, SPAD, and Prometheus are not **recommended** due to inconsistent transplant-free **survival** benefit.\n- **Plasma exchange (PE)**: Reduces SOFA score, cytokines, lactate, and ammonia; improves 21-day transplant-free **survival** in acute liver failure and reduces **mortality** in septic shock.\n- **CytoSorb hemoadsorption**: Reduces bilirubin and pro-inflammatory cytokines in ACLF; retrospective data suggest **mortality** reduction in sepsis.\n- **ECMO**: **Survival** in refractory septic shock ranges **15%–36%**; high **mortality** in unselected cirrhotic patients; decisions must be individualized.",
+      "section_pearls": [
+        "POCUS-guided volume management and dynamic assessment are critical to avoid over-resuscitation in cirrhotic patients with sepsis."
+      ]
+    },
+    {
+      "order": 7,
+      "heading": "Precision Medicine and Immune Modulation Therapies",
+      "content": "- Sepsis in ESLD/ACLF occurs against a background of immune paralysis, providing a rationale for immune-modulating therapies.\n- **PROVIDE trial**: Personalized immunotherapy (anakinra for MALS with ferritin **>4,420 ng/mL**; rhIFNγ for SII with HLA-DR **<5,000 receptors/monocyte**) improved SOFA score at 7 days in **42.9%** vs. placebo (p=0.042), but no 28-day **mortality** benefit.\n- **ImmunoSep trial**: Precision immunotherapy improved organ dysfunction by day 9 (SOFA decrease in **35.1%** vs. **17.9%**, p=0.002), without **significant** **mortality** benefit.\n- **Challenges in ESLD/ACLF**: Baseline ferritin is often elevated, reducing specificity for MALS; monocyte HLA-DR may already be reduced without sepsis, invalidating standard cut-offs.\n- **G-CSF**: The GRAFT trial was terminated early for no 90-day transplant-free **survival** benefit and increased severe adverse events; routine use is not **recommended**.\n- **IVIG**: Surviving Sepsis Campaign advises against routine use due to low-quality evidence; no specific studies exist in ESLD/ACLF with sepsis.\n- **Anakinra (IL-1 blockade)**: Biologically plausible in ACLF but remains investigational; subgroup analyses suggest benefit in macrophage activation syndrome features.",
+      "section_pearls": [
+        "Precision immunotherapy for sepsis shows biological efficacy signals but faces unique challenges in ESLD/ACLF due to altered baseline biomarker levels."
+      ]
+    },
+    {
+      "order": 8,
+      "heading": "Future Directions: PK/PD Optimization in Cirrhosis",
+      "content": "- Profound pathophysiological alterations in cirrhosis (capillary leak, expanded Vd, hypoalbuminemia, altered metabolism, dynamic renal dysfunction) cause high interindividual variability in drug exposure.\n- **Therapeutic drug monitoring (TDM)** and **model-informed precision dosing (MIPD)** are promising tools to achieve PK/PD targets and limit resistance emergence.\n- Prolonged or continuous infusion of β-lactams, early loading doses, and real-time dose adjustment should be systematically evaluated in cirrhotic populations.\n- Future studies should integrate population PK models specific to ESLD/ACLF and assess the clinical impact of PK/PD-guided therapy on treatment failure, toxicity, and **survival**.\n- Multidisciplinary antimicrobial stewardship programs incorporating clinical pharmacology expertise and TDM may be key to improving outcomes.",
+      "section_pearls": []
+    }
+  ],
+  "strengths_limitations": "- **Strengths**: Comprehensive narrative synthesis of epidemiology, immunopathophysiology, diagnostics, and management; practical tables summarizing empirical treatment regimens and PK/PD alterations; integration of recent RCTs and precision medicine trials.\n- **Limitations**: Narrative review design without systematic methodology; limited high-quality evidence specific to ESLD/ACLF populations for many interventions; emerging therapies discussed remain investigational with no definitive outcome data.",
+  "drugs_doses": [
+    {
+      "drug": "Ceftriaxone",
+      "dose": "Not specified; standard dosing",
+      "indication": "Empirical gram-negative coverage in low MDRO risk sepsis",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Piperacillin-tazobactam",
+      "dose": "Not specified; standard dosing",
+      "indication": "Empirical gram-negative and Enterococcus spp. coverage in low MDRO risk sepsis",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Meropenem",
+      "dose": "Not specified; consider loading dose and continuous infusion",
+      "indication": "Empirical coverage for ESBL-producing Enterobacterales in high MDRO risk sepsis",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Ceftazidime-avibactam",
+      "dose": "Not specified; standard dosing",
+      "indication": "Carbapenem-sparing strategy for ESBL; treatment of KPC-producing Enterobacterales",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Cefiderocol",
+      "dose": "Not specified; standard dosing",
+      "indication": "Treatment of KPC, MBL-producing organisms, P. aeruginosa DTR, and A. baumannii CR",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Vancomycin",
+      "dose": "Not specified; standard dosing with TDM",
+      "indication": "Empirical gram-positive coverage for MRSA",
+      "adverse_effects": "Nephrotoxicity; requires TDM"
+    },
+    {
+      "drug": "Daptomycin",
+      "dose": "Not specified; standard dosing",
+      "indication": "Empirical gram-positive coverage for MRSA and VRE",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Linezolid",
+      "dose": "Not specified; standard dosing",
+      "indication": "Empirical gram-positive coverage for MRSA and VRE",
+      "adverse_effects": "Myelosuppression; requires closer blood exam monitoring in cirrhosis"
+    },
+    {
+      "drug": "Norepinephrine",
+      "dose": "Titrate to MAP target; add vasopressin if dose exceeds **0.5 μg/kg/min**",
+      "indication": "First-line vasopressor for septic shock",
+      "adverse_effects": "Catecholamine-related adverse effects at high doses"
+    },
+    {
+      "drug": "Vasopressin",
+      "dose": "**0.03 units/min** fixed dose",
+      "indication": "Adjunctive vasopressor in septic shock with inadequate MAP despite norepinephrine",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Hydrocortisone",
+      "dose": "**200 mg/day**",
+      "indication": "Refractory septic shock requiring high-dose vasopressors",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Anakinra",
+      "dose": "Not specified; investigational",
+      "indication": "Precision immunotherapy for sepsis with macrophage activation-like syndrome (ferritin >4,420 ng/mL)",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Recombinant human interferon-gamma (rhIFNγ)",
+      "dose": "Not specified; investigational",
+      "indication": "Precision immunotherapy for sepsis-induced immunoparalysis (HLA-DR <5,000 receptors/monocyte)",
+      "adverse_effects": "Not detailed"
+    },
+    {
+      "drug": "Albumin (5%)",
+      "dose": "Not specified; fluid resuscitation dosing",
+      "indication": "Fluid resuscitation in sepsis-induced hypotension in cirrhosis",
+      "adverse_effects": "Higher 1-week survival vs. saline in one trial"
+    },
+    {
+      "drug": "Albumin (20%)",
+      "dose": "Not specified; fluid resuscitation dosing",
+      "indication": "Fluid resuscitation in sepsis-induced hypotension in cirrhosis",
+      "adverse_effects": "Increased pulmonary complications; no survival benefit vs. crystalloid"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-05-07"
+}
