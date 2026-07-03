@@ -1,0 +1,126 @@
+{
+  "id": "ats-noninvasive-respiratory-support-acute-respiratory-failure-2026",
+  "doc_type": "guideline",
+  "title": "Noninvasive Respiratory Support for Adult Patients with Acute Respiratory Failure: An Official American Thoracic Society Clinical Practice Guideline",
+  "issuing_bodies": [
+    "ATS"
+  ],
+  "year": 2026,
+  "doi": "10.1093/ajrccm/aamag302",
+  "specialty": [
+    "pulmonology",
+    "multi_system"
+  ],
+  "tags": [
+    "noninvasive respiratory support",
+    "acute hypoxemic respiratory failure",
+    "acute hypercapnic respiratory failure",
+    "high-flow nasal cannula",
+    "noninvasive ventilation",
+    "preoxygenation",
+    "post-extubation",
+    "clinical practice guideline"
+  ],
+  "one_line_summary": "This ATS guideline provides evidence-based recommendations for using high-flow nasal cannula, noninvasive ventilation, and CPAP in adults with acute hypoxemic or hypercapnic respiratory failure, during preoxygenation for intubation, and post-extubation.",
+  "key_pearls": [
+    "For de novo acute hypoxemic respiratory failure, **HFNC** is strongly **recommended** over standard oxygen to reduce the need for intubation (moderate certainty).",
+    "For acute hypercapnic respiratory failure, **NIV via facemask** is strongly **recommended** over standard oxygen to reduce **mortality** and intubation (moderate certainty).",
+    "**HFNC** is a conditional alternative to NIV for hypercapnic respiratory failure with mild acidemia (e.g., **pH > 7.25**), provided close monitoring and prompt escalation to NIV are available.",
+    "For preoxygenation before endotracheal intubation, **HFNC or NIV** is strongly **recommended** over standard oxygen to prevent peri-intubation hypoxemia (moderate certainty).",
+    "Post-extubation, **HFNC or NIV** is conditionally suggested over standard oxygen, with **NIV preferred for patients at high risk of extubation failure** (e.g., age >65, obesity, hypercapnia, prolonged mechanical ventilation).",
+    "The success of noninvasive respiratory support depends on appropriate patient selection, close monitoring for signs of failure, and timely escalation to invasive mechanical ventilation when needed.",
+    "Helmet NIV may reduce intubation in hypoxemic failure but requires specific institutional expertise and is not universally available; its use should be guided by local experience."
+  ],
+  "consensus_method": "GRADE approach with Evidence-to-Decision (EtD) framework",
+  "search_period": "Updated through comprehensive literature searches; specific end date not provided, but includes trials up to early 2026.",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Acute Hypoxemic Respiratory Failure",
+      "narrative": "- Evidence from 39 RCTs (n=2913) was analyzed.\n- **HFNC** probably reduces **mortality** (RR 0.81, 95% CI 0.67 to 0.97; low certainty) and intubation (RR 0.76, 95% CI 0.64 to 0.89; moderate certainty) vs. standard oxygen.\n- **Helmet NIV** probably reduces intubation (RR 0.22, 95% CI 0.11 to 0.43; moderate certainty) with uncertain **mortality** benefit (RR 0.72, 95% CI 0.48 to 1.07; very low certainty).\n- **Facemask NIV** may reduce intubation (RR 0.79, 95% CI 0.67 to 0.93; low certainty) with uncertain **mortality** benefit (RR 0.93, 95% CI 0.75 to 1.14; very low certainty).\n- **Helmet CPAP** probably reduces intubation (RR 0.53, 95% CI 0.35 to 0.79; moderate certainty).\n- **Facemask CPAP** may reduce intubation (RR 0.77, 95% CI 0.59 to 1.01; low certainty).\n- Patient comfort is highest with **HFNC** (MD +1.3 points on a 10-point scale, 95% CI –0.64 to 3.5; low certainty).\n- No credible subgroup effects were found for baseline hypoxemia severity, disease etiology, or immune status.\n- The RENOVATE and SOHO trials, published after evidence synthesis, were reviewed and deemed not to change the recommendations.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend HFNC as compared to standard oxygen therapy for adults with de novo acute hypoxemic respiratory failure.",
+          "strength": "strong",
+          "evidence_grade": "moderate certainty"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest NIV via facemask or helmet as compared to standard oxygen therapy for adults with de novo acute hypoxemic respiratory failure.",
+          "strength": "conditional",
+          "evidence_grade": "low certainty"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest CPAP via facemask or helmet as compared to standard oxygen therapy for adults with de novo acute hypoxemic respiratory failure.",
+          "strength": "conditional",
+          "evidence_grade": "low certainty"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Acute Hypercapnic Respiratory Failure",
+      "narrative": "- Evidence from 43 RCTs (n=5354) was analyzed, primarily in COPD exacerbation.\n- **NIV** probably reduces **mortality** (RR 0.47, 95% CI 0.34 to 0.65; moderate certainty) and intubation (RR 0.43, 95% CI 0.32 to 0.56; moderate certainty) vs. standard oxygen.\n- **HFNC** reduces **mortality** (RR 0.39, 95% CI 0.17 to 0.87; high certainty) and probably reduces intubation (RR 0.38, 95% CI 0.24 to 0.59; moderate certainty) vs. standard oxygen, but trials were mostly in patients with mild hypercapnia.\n- The effect of **NIV vs. HFNC** on **mortality** (RR 1.21, 95% CI 0.56 to 2.60) and intubation (RR 1.14, 95% CI 0.77 to 1.68) is uncertain (very low certainty).\n- **CPAP** probably reduces **mortality** (RR 0.33, 95% CI 0.12 to 0.94) and intubation (RR 0.38, 95% CI 0.17 to 0.88), but evidence is from older, heterogeneous studies.\n- One-third of patients initially on HFNC required escalation to NIV, highlighting the need for close monitoring.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend NIV via facemask as compared to standard oxygen therapy for adults with acute hypercapnic respiratory failure.",
+          "strength": "strong",
+          "evidence_grade": "moderate certainty"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest HFNC as an alternative to NIV as compared to standard oxygen therapy for patients with acute hypercapnic respiratory failure and mild acidemia (e.g. pH > 7.25) provided that monitoring and escalation to NIV are promptly available.",
+          "strength": "conditional",
+          "evidence_grade": "low certainty"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Preoxygenation during Endotracheal Intubation",
+      "narrative": "- Evidence from 15 RCTs (n=3420) was analyzed.\n- **NIV** (RR 0.51, 95% CI 0.39 to 0.65; high certainty) and **HFNC** (RR 0.69, 95% CI 0.54 to 0.88; high certainty) decrease peri-intubation hypoxemia vs. standard oxygen.\n- **NIV** probably reduces hypoxemia compared to **HFNC** head-to-head (RR 0.73, 95% CI 0.55 to 0.98; moderate certainty).\n- No **significant** effect on **mortality** was found for NIV (RR 0.94; 95% CI 0.83 to 1.08) or HFNC (RR 0.86; 95% CI 0.73 to 1.01).\n- **NIV** probably reduces serious adverse events (aspiration, cardiac arrest) vs. standard oxygen (RR 0.30, 95% CI 0.12 to 0.77; moderate certainty).\n- Initiation of NIRS should not delay emergent intubation.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend using HFNC or NIV via facemask as compared to standard oxygen therapy for preoxygenation in adults with acute respiratory failure undergoing endotracheal intubation.",
+          "strength": "strong",
+          "evidence_grade": "moderate certainty"
+        },
+        {
+          "rec_id": null,
+          "statement": "We make no recommendation for or against HFNC compared with NIV for preoxygenation in adults with acute respiratory failure undergoing endotracheal intubation.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Post-Extubation Respiratory Support",
+      "narrative": "- Evidence from 53 RCTs (n=5304) was analyzed.\n- **NIV** probably reduces reintubation (RR 0.75, 95% CI 0.63 to 0.88; moderate certainty) and may reduce short-term **mortality** (RR 0.88, 95% CI 0.74 to 1.04; low certainty) vs. standard oxygen.\n- **HFNC** may reduce reintubation (RR 0.80, 95% CI 0.64 to 1.00; low certainty) and short-term **mortality** (RR 0.87, 95% CI 0.71 to 1.06; low certainty) vs. standard oxygen.\n- Subgroup analysis suggests **NIV is more effective than HFNC in high-risk patients** for preventing reintubation (interaction p=0.006).\n- **HFNC** used as rescue therapy may increase reintubation risk compared to standard oxygen (interaction p=0.001).\n- **NIV** probably increases discomfort vs. standard oxygen (RD +14.5%, 95% CI +7.5 to +21.4%; moderate certainty), while **HFNC** probably reduces discomfort vs. NIV (RD –12.2%, 95% CI –17.8 to –6.6%; moderate certainty).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We suggest using HFNC or NIV via facemask as compared to standard oxygen therapy in patients extubated in the intensive care unit after **critical** illness.",
+          "strength": "conditional",
+          "evidence_grade": "moderate certainty"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest using NIV via facemask as compared to standard oxygen therapy or HFNC in patients extubated in the intensive care unit after **critical** illness at high-risk of extubation failure (e.g., age >65 years, obesity, hypercapnia, prolonged mechanical ventilation, or severe illness, among others).",
+          "strength": "conditional",
+          "evidence_grade": "moderate certainty"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: Comprehensive network meta-analyses for all four PICO questions; multidisciplinary international panel; use of rigorous GRADE methodology; inclusion of patient representative.\n- Limitations: Limited data from low- and middle-income countries; heterogeneity in study populations and intervention protocols; frequent crossover between modalities within RCTs; most studies conducted in high-resource settings under close supervision, limiting generalizability; patient representative engaged later in the process.",
+  "drugs_doses": [],
+  "related_ids": [],
+  "added_date": "2026-07-02",
+  "article_subtype": "Guideline"
+}

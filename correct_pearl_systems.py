@@ -30,43 +30,14 @@ SENT_SUMMARIES_JSON = "sent_summaries.json"
 CHANGES_LOG = "pearl_changes.json"
 OLLAMA_URL = "http://localhost:11434/api/generate"
 OLLAMA_MODEL = "gemma4:latest"
-PROMPT_TEMPLATE = """You are a medical specialty classifier. Given a clinical pearl and its source paper title, determine which SINGLE specialty from the provided list best matches the pearl content.
+PROMPT_TEMPLATE = """Classify the clinical pearl into ONE specialty from this list. Respond with ONLY the specialty name, no explanation, no punctuation.
 
-Specialties:
-{specialties}
+Specialties: {specialties}
 
-Rules:
-- Classify based on the pearl CONTENT (the clinical nugget), NOT the source paper's specialty.
-- If the pearl content clearly belongs to a specific specialty, choose that one.
-- If the pearl content is generic (e.g., basic sepsis management, general ICU care, ABCDE approach), classify as "General".
-- If the pearl discusses multiple systems without a clear primary specialty, use "Multisystem".
-- Only use specialties from the list above.
-- Respond with ONLY the specialty name, nothing else.
+Pearl: {pearl}
+Paper: {source_paper}
 
-Pearl content:
-{pearl}
-
-Source paper:
-{source_paper}
-
-Specialty:"""
-
-BATCH_PROMPT_TEMPLATE = """You are a medical specialty classifier. Given a batch of clinical pearls with their source paper titles, determine which SINGLE specialty from the provided list best matches EACH pearl's content.
-
-Specialties:
-{specialties}
-
-Rules:
-- Classify based on the pearl CONTENT (the clinical nugget), NOT the source paper's specialty.
-- If generic (ABC, sepsis basics, ICU basics, ABCDE), use "General".
-- If multiple systems without a clear primary, use "Multisystem".
-- Only use specialties from the list.
-- Respond with one line per pearl, format: ID:SPECIALTY
-
-Pearls:
-{batch}
-
-Respond with ONLY the lines, nothing else:"""
+Answer:"""
 
 # ── helpers ────────────────────────────────────────────────────────────
 
@@ -107,9 +78,7 @@ def parse_line_number(line):
 
 def classify_pearl(pearl_text, source_paper, specialties_list, dry_run=False, retries=5):
     """Call Ollama Gemma4 to classify a pearl. Returns (specialty_name, error)."""
-    combined_specialties = "\n".join(
-        "%d. %s" % (i + 1, s) for i, s in enumerate(specialties_list)
-    )
+    combined_specialties = ", ".join(specialties_list)
     prompt = PROMPT_TEMPLATE.format(
         specialties=combined_specialties,
         pearl=pearl_text[:800] if pearl_text else "",

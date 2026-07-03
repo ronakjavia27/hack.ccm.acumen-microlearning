@@ -1,0 +1,322 @@
+{
+  "id": "aga-clinical-practice-update-management-clostridioides-difficile-infection-adults-2026",
+  "doc_type": "guideline",
+  "title": "AGA Clinical Practice Update on Management of Clostridioides difficile Infection in Adults: Expert Review",
+  "issuing_bodies": [
+    "AGA"
+  ],
+  "year": 2026,
+  "doi": "10.1016/j.cgh.2026.05.007",
+  "specialty": [
+    "gastroenterology",
+    "infectious_disease"
+  ],
+  "tags": [
+    "clostridioides difficile",
+    "cdi",
+    "fidaxomicin",
+    "vancomycin",
+    "fecal microbiota transplant",
+    "infection prevention",
+    "recurrence"
+  ],
+  "one_line_summary": "This AGA Clinical Practice Update provides best practice advice on the prevention, diagnosis, and management of Clostridioides difficile infection in adults, emphasizing fidaxomicin as first-line therapy and fecal microbiota-based therapies for recurrent disease.",
+  "key_pearls": [
+    "Diagnose CDI based on compatible symptoms (≥3 unformed stools/24h) plus a positive multistep lab test (e.g., PCR+/toxin+); treat high-suspicion patients even with discordant results.",
+    "Classify CDI severity at diagnosis: **WBC >15,000 cells/μL** and/or **creatinine >1.5 × baseline** indicates severe disease; shock, ileus, or megacolon defines fulminant disease.",
+    "Use **fidaxomicin 200 mg twice daily for 10 days** as first-line therapy for nonfulminant CDI due to lower recurrence rates; **vancomycin 125 mg four times daily for 10 days** is an acceptable alternative.",
+    "Treat a first recurrence with a **vancomycin taper/pulse regimen** or **fidaxomicin EXTEND pulsed protocol**; begin discussing fecal microbiota-based therapies to prevent further episodes.",
+    "Offer fecal microbiota-based therapies (conventional FMT, fecal microbiota spores live-brpk, or fecal microbiota live-jslm) after a second recurrence; consider earlier use in high-risk patients.",
+    "Manage fulminant CDI with a multidisciplinary team using **high-dose vancomycin 500 mg every 6 hours** (oral/enteral) plus **intravenous metronidazole 500 mg every 8 hours**; add **rectal vancomycin 500 mg every 6 hours** if ileus is present.",
+    "Do not perform a routine test of cure; avoid probiotics for CDI prevention; counsel patients to avoid unnecessary antibiotics and consume a high-fiber diet to support gut microbiota restoration."
+  ],
+  "consensus_method": "Expert review and literature review; no formal systematic review or evidence grading was performed.",
+  "search_period": null,
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Prevention of CDI",
+      "narrative": "- CDI prevention requires a multifaceted approach: strict hand hygiene, environmental disinfection, and patient education.\n- *C. difficile* spores can survive up to **6 months** on surfaces and resist alcohol, drying, and temperature.\n- Alcohol-based sanitizers are ineffective against spores; mechanical handwashing with soap and water is **essential**.\n- Use EPA-approved sporicidal agents (e.g., diluted bleach: **1 part bleach to 9 parts water**) on high-touch areas, allowing at least **10 minutes** of contact time.\n- Bedding and clothes should be dried on high heat; professional cleaning is advised for soiled carpets and upholstery.\n- Shoe soles and pet paws may carry spores and should be cleaned.\n- The **absolute** risk of household-acquired CDI is low (<5%); healthy family members with intact gut microbiota are unlikely to be affected.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 1",
+          "statement": "Prevention of CDI should include proper barrier protection and disinfection with EPA-approved sporicidal agents in health care settings. Patients should be counseled on the importance of hand washing and to consider disinfecting areas of the home potentially contaminated with *C. difficile* spores to prevent reinfection. Reassurance should be provided that CDI transmission to unaffected family members is uncommon.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Diagnosis of CDI",
+      "narrative": "- CDI is a clinical diagnosis requiring compatible symptoms (typically acute diarrhea following antibiotics) plus supportive laboratory testing.\n- Overreliance on lab tests alone risks overdiagnosis due to high *C. difficile* colonization rates (community: **4%–15%**; hospital: **3%–21%**; long-term care: up to **50%**).\n- Multistep testing is preferred: initial screening with a highly sensitive test (glutamate dehydrogenase or PCR) followed by a toxin A/B enzyme immunoassay to confirm toxin production.\n- In cases of discordant results (e.g., PCR+/toxin−) with high clinical suspicion, treatment should not be withheld.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 2",
+          "statement": "CDI is a clinical diagnosis that requires compatible symptoms (typically acute diarrhea, following antibiotics) in combination with supportive laboratory testing. Multistep testing is preferred for best diagnostic accuracy; however, patients with discordant testing who have a high clinical suspicion for CDI should be treated.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Disease Severity Classification",
+      "narrative": "- Disease severity guides treatment and predicts **prognosis**.\n- Severe CDI markers: **WBC >15,000 cells/μL** and/or **serum creatinine >1.5 mg/dL** (or 1.5 × baseline).\n- Fulminant CDI (1%–3% of cases) is defined by systemic toxicity and/or end-organ dysfunction: hypotension/shock, ileus, or toxic megacolon.\n- Pseudomembranes are universally present in fulminant CDI; their absence should prompt investigation for an alternative cause.\n- Fulminant CDI **mortality** rate is **30%–40%**.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 3",
+          "statement": "Clinicians should classify hospitalized patients with CDI as having nonsevere, severe, or fulminant disease at diagnosis. White blood cell count >15,000 cells/uL and/or creatinine >1.5 × baseline are indicative of severe CDI and increased risk for recurrence and poor outcomes. Patients with additional findings of shock, ileus, or megacolon have fulminant CDI, which can be fatal.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Treatment of Nonfulminant CDI",
+      "narrative": "- **Fidaxomicin (200 mg twice daily oral for 10 days)** is favored as first-line therapy due to narrower spectrum and lower recurrence rates (6%–11% fewer events vs vancomycin).\n- In a randomized trial, fidaxomicin clinical cure rates were noninferior to vancomycin (modified intention-to-treat: **88.2% vs 85.8%**).\n- A Cochrane review found fidaxomicin more effective for sustained symptomatic cure at 1 month (**71% vs 61%**; relative risk, **1.17**; 95% CI, **1.07–1.27**).\n- **Vancomycin (125 mg 4 times daily oral for 10 days)** is an acceptable alternative; shared decision-making should consider recurrence risk, dosing ease, access, and cost.\n- Metronidazole is **inferior** and should not be used outside of fulminant disease.\n- Patients should demonstrate symptomatic response (≥50% reduction in loose stools) within **3–5 days** of therapy initiation.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 4",
+          "statement": "Fidaxomicin (**200 mg** twice daily oral for 10 days) is a narrower spectrum agent, and given lower recurrence rates, is favored as first-line therapy for nonfulminant CDI. However, given practical considerations, vancomycin (**125 mg** 4 times daily oral for 10 days) is also acceptable therapy. Metronidazole should not be used outside of fulminant disease.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Adjunctive and Supportive Therapies",
+      "narrative": "- Cholestyramine and other bile acid–binding agents should not be used as monotherapy or concurrently with oral vancomycin or fidaxomicin, as they may bind the antibiotic.\n- Psyllium fiber can be used to bulk stools in patients who have recovered from the infection.\n- Antimotility agents (e.g., loperamide) are **contraindicated** in untreated CDI, fulminant CDI, and severe colonic IBD; if used, limit to the shortest duration after anti-CDI therapy is initiated.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 5",
+          "statement": "Cholestyramine and other bile acid–binding agents should not be used as monotherapy or concurrently with oral vancomycin or fidaxomicin. Psyllium fiber can be used to bulk stools in patients who have recovered from the infection.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Post-Treatment Monitoring and Testing",
+      "narrative": "- Asymptomatic carriage and persistent shedding of *C. difficile* toxin for weeks after successful treatment is common.\n- Current tests cannot accurately distinguish CDI from asymptomatic colonization on formed stool.\n- Negative PCR testing during or following treatment does not guarantee sustained cure.\n- Testing should only be performed for persistent worsening of diarrheal symptoms (≥3 watery stools/day sustained over ≥2 days).",
+      "recommendations": [
+        {
+          "rec_id": "BPA 6",
+          "statement": "Following treatment of CDI, clinicians should not perform routine test of cure. Stool testing should only be performed for persistent worsening of diarrheal symptoms.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Management of First Recurrence",
+      "narrative": "- Recurrence is defined as clinically **significant** diarrhea with positive stool testing within **8 weeks** of completing antibiotic therapy; experts also consider recurrence within **1 year** as possible.\n- Approximately **90%** of recurrences occur within the first 8 weeks.\n- For patients initially treated with fidaxomicin, treat first recurrence with a **vancomycin taper and pulsed regimen** or **fidaxomicin EXTEND pulsed protocol** (**200 mg** twice daily on days 1–5, then once daily on alternate days on days 7–25).\n- For patients initially treated with vancomycin, treat first recurrence with fidaxomicin (standard 10-day course or EXTEND pulsed regimen).\n- Begin discussions around fecal microbiota-based therapies; consider microbiota restoration if episodes were severe, required hospitalization, or patient is high-risk (advanced age, immunocompromised).\n- For patients with ongoing antibiotic requirements or cytotoxic chemotherapy, consider continued suppressive vancomycin **125 mg daily** after the initial 10-day treatment course.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 7",
+          "statement": "First CDI recurrence (second episode) within 8 weeks of completing anti-CDI therapy should be treated with either a tapering course of vancomycin or fidaxomicin. Treatment of CDI should include a risk assessment for CDI recurrence and consideration of microbiota restoration therapy to prevent recurrence.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Fecal Microbiota-Based Therapies for Recurrent CDI",
+      "narrative": "- Fecal microbiota-based therapies are the most effective options for preventing further recurrence in multiply recurrent CDI.\n- Options include conventional FMT or FDA-approved products: **fecal microbiota spores, live-brpk** and **fecal microbiota, live-jslm**.\n- Standard practice is to offer after a second recurrence (third episode); earlier use may be considered for severe prior episodes, hospitalization, prolonged/difficult treatment, or high-risk patients (age >65, immunocompromised, skilled nursing facility resident).\n- Prior to therapy, patients should complete standard CDI antimicrobial treatment and remain on suppressive oral vancomycin (≥**125 mg** daily) until the microbiota restoration therapy is accessible.\n- Antibacterial therapy for CDI should be stopped **1–4 days** prior to microbiota restoration.\n- In severely immunocompromised patients (cytotoxic chemotherapy, recent stem cell transplant, severe neutropenia with ANC <500 cells/μL, advanced/untreated HIV with CD4 <200/mm³), AGA guidelines recommend against any type of fecal microbiota-based therapies; defer therapy in favor of continued antibiotic suppression.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 8",
+          "statement": "Fecal microbiota-based therapies (fecal microbiota spores, live-brpk, fecal microbiota, live-jslm, or conventional fecal microbiota transplant) should be offered after treatment of a second recurrence (third CDI episode). Microbiota restoration therapy may be considered after treatment of an initial infection or first recurrence in patients who are at high risk for further recurrence or in patients whose initial CDI episode was particularly morbid or difficult to treat.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Suppressive Vancomycin for Secondary Prophylaxis",
+      "narrative": "- In patients with multiple recurrences who are not candidates for fecal microbiota-based therapies (due to severe immunosuppression, ongoing chemotherapy, pregnancy, frequent systemic antibiotics, extreme frailty, limited life expectancy, or lack of access), long-term low-dose oral vancomycin (**125 mg once daily**) is a safe and effective suppressive strategy.\n- No emergence of vancomycin-resistant enterococci has been observed.\n- The likelihood of recurrent CDI exceeds **30%** following discontinuation of vancomycin prophylaxis; ongoing suppressive therapy may be required.\n- Systemic absorption of oral vancomycin is extremely limited; a prospective study showed no detectable serum levels in **98%** of patients, even with renal insufficiency.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 9",
+          "statement": "Prolonged, low-dose, suppressive vancomycin regimen (**125 mg** daily) for secondary prophylaxis may be considered in patients with multiple recurrent episodes who are not candidates for fecal microbiota-based therapies due to ongoing comorbidities, limited life expectancy, or ongoing/frequent systemic antibiotics or who have failed multiple courses of fecal microbiota-based therapy.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Management of Fulminant CDI",
+      "narrative": "- Fulminant CDI requires multidisciplinary management (gastroenterology, infectious disease, **critical** care, surgery).\n- Initial treatment: **high-dose vancomycin 500 mg every 6 hours** (oral or enteral) for at least the first **48 hours**, plus **intravenous metronidazole 500 mg every 8 hours**.\n- If ileus is present, add **rectal vancomycin 500 mg every 6 hours**.\n- Following clinical response (typically after 3–5 days), narrow to vancomycin **125 mg** 4 times daily monotherapy; treat for a minimum of **10 days**, favoring **14 days**.\n- Patients who have not responded or worsened after **48 hours** of aggressive medical therapy should be considered for FMT or colectomy.\n- Empiric non-CDI antibiotics should be avoided; if coinfection requires antibiotics, continue low-dose suppressive vancomycin (**125 mg** daily or twice daily).",
+      "recommendations": [
+        {
+          "rec_id": "BPA 10",
+          "statement": "Fulminant CDI should be managed by a multidisciplinary team (gastroenterology/infectious disease, surgery, medicine/**critical** care) and treated with high-dose vancomycin **500 mg** every 6 hours (oral or enteral), with metronidazole **500 mg** intravenously every 8 hours, and if ileus is present, rectal vancomycin **500 mg** every 6 hours should be added.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "topic": "FMT for Severe/Fulminant CDI",
+      "narrative": "- No RCTs exist for FMT in fulminant CDI, but observational data suggest benefit.\n- An AGA guideline suggests conventional FMT over no FMT in adults hospitalized with severe/fulminant CDI not responding to antimicrobial therapy, based on 5 observational studies (n=647).\n- FMT was associated with reduced **mortality** risk (relative risk, **0.37**; 95% CI, **0.23–0.59**) and a number needed to treat of **4** to prevent 1 death.\n- Commercial microbiota products (fecal microbiota, live-jslm; fecal microbiota spores, live-brpk) have not been studied and are not approved for treatment of severe/fulminant CDI.\n- FMT is not advised in patients with bowel perforation, obstruction, or high-grade colonic stricture; caution in severely immunocompromised patients.\n- Most individuals need **2–3** administrations of liquid FMT product via lower endoscopy.\n- After resolution of severe/fulminant symptoms, continue oral vancomycin **125 mg** 4 times daily for a total of 14 days, then decrease to **125 mg** once or twice daily until outpatient follow-up and treatment with FDA-approved fecal microbiota-based therapies.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 11",
+          "statement": "Multi-dose fecal microbiota transplantation (fresh-directed donors, or institutional stool banks) delivered via lower endoscopy, should be considered in individuals with fulminant CDI. Fecal microbiota, live-jslm (Rebyota), and fecal microbiota spores, live-brpk (Vowst) have not been studied and are not approved for treatment of severe and/or fulminant CDI. Due to high risk of CDI recurrence, patients who recover from severe or fulminant CDI should be maintained on a suppressive vancomycin regimen until a final fecal microbiota transplantation can be administered as an outpatient.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "topic": "Prevention Strategies: Vancomycin Prophylaxis, Probiotics, and Diet",
+      "narrative": "- Limited and conflicting evidence exists for oral vancomycin prophylaxis (OVP) to prevent CDI; the only RCT did not show a statistically **significant** difference.\n- Probiotics are ineffective for primary or secondary prevention of CDI and are not **recommended**.\n- A diet varied in fruits and vegetables rich in soluble and insoluble fiber is **recommended** to promote microbial diversity.\n- Consumption of a low-fiber diet after antibiotics contributes to prolonged susceptibility to CDI.\n- Ultra-processed foods should be avoided as they are detrimental to the microbiome.\n- Patients should not be instructed to eat bland or clear liquid diets while suffering from CDI.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 12",
+          "statement": "Use of vancomycin is not advised during systemic antibiotic administration to prevent CDI. Probiotics are not advised to prevent an initial or recurrent CDI. To promote restoration of healthy gut microbiota, patients should be instructed to consume a healthy diet including a variety of fruits and vegetables, rich in both soluble and insoluble fiber.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "topic": "Proton Pump Inhibitor Use",
+      "narrative": "- PPIs may increase the risk of CDI, but the **absolute** magnitude of risk is low.\n- Pooled observational data suggests an increased risk of recurrent CDI (**24%** in PPI users vs **18%** in nonusers).\n- The largest RCT (>17,000 patients, 3-year follow-up) found no **significant** increase in CDI cases with PPI use (11 cases vs 4 cases; number needed to harm = **1800** with daily pantoprazole).\n- Recent meta-analyses found no **significant** difference in CDI risk among PPI users compared with placebo, H2 blocker, or potassium-competitive acid blocker users.\n- If a legitimate indication exists (e.g., ulcer prevention, severe GERD), PPI discontinuation is not necessary; in the absence of an indication, cessation should be discussed.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 13",
+          "statement": "During the treatment of CDI or the prevention of its recurrence, the use of proton pump inhibitors should be evaluated. If a legitimate indication exists for their use, proton pump inhibitor discontinuation is not necessary.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "topic": "Antibiotic Stewardship",
+      "narrative": "- Antibiotic stewardship should always be practiced.\n- Patients with a history of CDI should be specifically counseled to inform other health care providers and avoid unnecessary antibiotic therapy.\n- Prophylactic antibiotics are no longer routinely **recommended** before dental procedures for most patients with prosthetic joint implants or certain heart conditions.\n- Patients should take antibiotics if they have an appropriate indication and should not fear antibiotic use; concomitant vancomycin or probiotics are not advised.",
+      "recommendations": [
+        {
+          "rec_id": "BPA 14",
+          "statement": "Individuals with a history of CDI should be specifically counseled to avoid unnecessary antibiotic therapy.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Diagnose CDI",
+      "action": "Confirm compatible symptoms (≥3 unformed stools/24h, typically after antibiotics) and perform multistep lab testing (e.g., PCR or GDH screen followed by toxin A/B EIA). Treat if high clinical suspicion even with discordant results."
+    },
+    {
+      "step": 2,
+      "title": "Classify Severity",
+      "action": "Assess for severe disease (WBC >15,000 cells/μL and/or creatinine >1.5 × baseline) or fulminant disease (shock, ileus, megacolon)."
+    },
+    {
+      "step": 3,
+      "title": "Treat Nonfulminant CDI",
+      "action": "Prescribe fidaxomicin 200 mg twice daily oral for 10 days (preferred) or vancomycin 125 mg 4 times daily oral for 10 days. Do not use metronidazole."
+    },
+    {
+      "step": 4,
+      "title": "Treat First Recurrence",
+      "action": "Use a vancomycin taper/pulse regimen or fidaxomicin EXTEND pulsed protocol. Begin discussing fecal microbiota-based therapies."
+    },
+    {
+      "step": 5,
+      "title": "Treat Multiple Recurrences",
+      "action": "Offer fecal microbiota-based therapies (conventional FMT or FDA-approved products) after a second recurrence. Consider earlier use in high-risk patients."
+    },
+    {
+      "step": 6,
+      "title": "Treat Fulminant CDI",
+      "action": "Assemble multidisciplinary team. Start high-dose vancomycin 500 mg every 6 hours (oral/enteral) + IV metronidazole 500 mg every 8 hours. Add rectal vancomycin 500 mg every 6 hours if ileus present. Assess response at 48 hours; consider FMT or colectomy if worsening."
+    },
+    {
+      "step": 7,
+      "title": "Provide Supportive Care and Prevention",
+      "action": "Counsel on hand hygiene with soap and water, environmental disinfection with sporicidal agents, high-fiber diet, and avoidance of unnecessary antibiotics and probiotics."
+    }
+  ],
+  "strengths_limitations": "Strengths: Provides timely, practical, evidence-based advice from a multidisciplinary expert panel on a high-importance clinical topic. Limitations: Best Practice Advice statements do not carry formal ratings of evidence quality or strength of recommendations, as systematic reviews were not performed.",
+  "drugs_doses": [
+    {
+      "drug": "fidaxomicin",
+      "dose": "200 mg orally twice daily for 10 days",
+      "indication": "First-line treatment of nonfulminant CDI",
+      "adverse_effects": "Narrower spectrum; preserves beneficial anaerobic commensals; lower recurrence rates vs vancomycin."
+    },
+    {
+      "drug": "fidaxomicin",
+      "dose": "200 mg orally twice daily on days 1–5, then once daily on alternate days on days 7–25 (EXTEND pulsed protocol)",
+      "indication": "Treatment of first CDI recurrence",
+      "adverse_effects": "Narrower spectrum; preserves beneficial anaerobic commensals."
+    },
+    {
+      "drug": "vancomycin (oral)",
+      "dose": "125 mg orally 4 times daily for 10 days",
+      "indication": "Alternative first-line treatment of nonfulminant CDI",
+      "adverse_effects": "Systemic absorption extremely limited; no detectable serum levels in 98% of patients; no observed emergence of vancomycin-resistant enterococci."
+    },
+    {
+      "drug": "vancomycin (oral)",
+      "dose": "125 mg 4 times daily for 14 days, then 125 mg twice daily for 14 days, then 125 mg once daily for 14 days, then every third day for 14 days (taper and pulsed regimen)",
+      "indication": "Treatment of first CDI recurrence",
+      "adverse_effects": "Systemic absorption extremely limited."
+    },
+    {
+      "drug": "vancomycin (oral)",
+      "dose": "125 mg once daily (long-term suppressive)",
+      "indication": "Secondary prophylaxis for multiple recurrent CDI when fecal microbiota-based therapies are not feasible or have failed",
+      "adverse_effects": "Likelihood of recurrent CDI exceeds 30% following discontinuation; negligible risk of ototoxicity."
+    },
+    {
+      "drug": "vancomycin (oral)",
+      "dose": "500 mg every 6 hours (oral or enteral) for at least 48 hours",
+      "indication": "Initial treatment of fulminant CDI",
+      "adverse_effects": "High-dose to ensure adequate colonic exposure; narrow to 125 mg 4 times daily after clinical response."
+    },
+    {
+      "drug": "vancomycin (rectal)",
+      "dose": "500 mg every 6 hours",
+      "indication": "Adjunctive treatment of fulminant CDI with ileus",
+      "adverse_effects": "Used when oral delivery to colon is impaired due to ileus."
+    },
+    {
+      "drug": "metronidazole (intravenous)",
+      "dose": "500 mg intravenously every 8 hours",
+      "indication": "Combination treatment of fulminant CDI (with high-dose vancomycin)",
+      "adverse_effects": "Secreted into the colon ensuring intracolonic antibiotic exposure; not recommended for nonfulminant CDI due to inferior efficacy and higher recurrence risk."
+    },
+    {
+      "drug": "fecal microbiota spores, live-brpk",
+      "dose": "Per product labeling",
+      "indication": "Prevention of recurrent CDI",
+      "adverse_effects": "Not studied or approved for treatment of severe/fulminant CDI; presumed safety profile comparable to conventional FMT."
+    },
+    {
+      "drug": "fecal microbiota, live-jslm",
+      "dose": "Per product labeling",
+      "indication": "Prevention of recurrent CDI",
+      "adverse_effects": "Not studied or approved for treatment of severe/fulminant CDI; presumed safety profile comparable to conventional FMT."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-04-09",
+  "article_subtype": "Guideline"
+}
