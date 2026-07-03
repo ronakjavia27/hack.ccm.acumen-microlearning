@@ -64,6 +64,174 @@ SPECIALTIES_ALIASES = {
     "onc": "Oncology",
 }
 
+TITLE_SPECIALTY_KEYWORDS = {
+    # Cardiology
+    "cardiologist": "Cardiology",
+    "cardiology": "Cardiology",
+    "cardiac": "Cardiology",
+    "coronary": "Cardiology",
+    "myocardial": "Cardiology",
+    "heart": "Cardiology",
+    "arrhythmia": "Cardiology",
+    "ventricular": "Cardiology",
+    "atrial": "Cardiology",
+    "aortic": "Cardiology",
+    "mitral": "Cardiology",
+    "valvular": "Cardiology",
+    "pericardial": "Cardiology",
+    "defibrillator": "Cardiology",
+    "stent": "Cardiology",
+    "angioplasty": "Cardiology",
+    "statin": "Cardiology",
+    # Neurology
+    "neurologist": "Neurology",
+    "neurology": "Neurology",
+    "neurologic": "Neurology",
+    "brain": "Neurology",
+    "stroke": "Neurology",
+    "cerebral": "Neurology",
+    "intracranial": "Neurology",
+    "cranial": "Neurology",
+    "seizure": "Neurology",
+    "epilepsy": "Neurology",
+    "neurocritical": "Neurology",
+    "subarachnoid": "Neurology",
+    "intracerebral": "Neurology",
+    "encephalopathy": "Neurology",
+    "spinal": "Neurology",
+    "neuromuscular": "Neurology",
+    # Nephrology
+    "nephrologist": "Nephrology",
+    "nephrology": "Nephrology",
+    "kidney": "Nephrology",
+    "renal": "Nephrology",
+    "dialysis": "Nephrology",
+    "glomerular": "Nephrology",
+    "creatinine": "Nephrology",
+    # Pulmonology
+    "pulmonologist": "Pulmonology",
+    "pulmonology": "Pulmonology",
+    "lung": "Pulmonology",
+    "respiratory": "Pulmonology",
+    "pulmonary": "Pulmonology",
+    "airway": "Pulmonology",
+    "tracheostomy": "Pulmonology",
+    "bronchoscopy": "Pulmonology",
+    "pleural": "Pulmonology",
+    "copd": "Pulmonology",
+    # Gastroenterology
+    "gastroenterologist": "Gastroenterology",
+    "gastroenterology": "Gastroenterology",
+    "biliary": "Gastroenterology",
+    "pancreas": "Gastroenterology",
+    "pancreatic": "Gastroenterology",
+    "colon": "Gastroenterology",
+    "colonic": "Gastroenterology",
+    "gastric": "Gastroenterology",
+    "esophageal": "Gastroenterology",
+    "intestine": "Gastroenterology",
+    "intestinal": "Gastroenterology",
+    # Hepatology
+    "hepatologist": "Hepatology",
+    "hepatology": "Hepatology",
+    "cirrhosis": "Hepatology",
+    "portal": "Hepatology",
+    # Infectious Diseases
+    "infectious": "Infectious Diseases",
+    "tuberculosis": "Infectious Diseases",
+    "hiv": "Infectious Diseases",
+    "bacteremia": "Infectious Diseases",
+    "antimicrobial": "Infectious Diseases",
+    "fungal": "Infectious Diseases",
+    # Hematology
+    "hematologist": "Hematology",
+    "hematology": "Hematology",
+    "coagulation": "Hematology",
+    "thrombosis": "Hematology",
+    "thromboembolism": "Hematology",
+    "anemia": "Hematology",
+    "hemoglobin": "Hematology",
+    "platelet": "Hematology",
+    "neutropenia": "Hematology",
+    # Oncology
+    "oncologist": "Oncology",
+    "oncology": "Oncology",
+    "cancer": "Oncology",
+    "tumor": "Oncology",
+    "carcinoma": "Oncology",
+    "malignancy": "Oncology",
+    "neoplasm": "Oncology",
+    "chemotherapy": "Oncology",
+    "immunotherapy": "Oncology",
+    "metastasis": "Oncology",
+    # Endocrinology
+    "endocrinologist": "Endocrinology",
+    "endocrinology": "Endocrinology",
+    "diabetes": "Endocrinology",
+    "thyroid": "Endocrinology",
+    "hormone": "Endocrinology",
+    "pituitary": "Endocrinology",
+    "adrenal": "Endocrinology",
+    "glycemic": "Endocrinology",
+    "glucose": "Endocrinology",
+    "insulin": "Endocrinology",
+    "cortisol": "Endocrinology",
+    # Surgery
+    "surgeon": "Surgery",
+    "surgery": "Surgery",
+    "surgical": "Surgery",
+    "thoracotomy": "Surgery",
+    "laparotomy": "Surgery",
+    "laparoscopic": "Surgery",
+    "resection": "Surgery",
+    "bypass": "Surgery",
+    "craniotomy": "Surgery",
+    # Trauma
+    "traumatic": "Trauma",
+    "hemorrhagic shock": "Trauma",
+    "damage control": "Trauma",
+    # Obstetrics and Gynecology
+    "obstetric": "Obstetrics and Gynecology",
+    "obstetrics": "Obstetrics and Gynecology",
+    "gynecology": "Obstetrics and Gynecology",
+    "pregnancy": "Obstetrics and Gynecology",
+    "pregnant": "Obstetrics and Gynecology",
+    "fetal": "Obstetrics and Gynecology",
+    "maternal": "Obstetrics and Gynecology",
+    "placental": "Obstetrics and Gynecology",
+    "preeclampsia": "Obstetrics and Gynecology",
+    "eclampsia": "Obstetrics and Gynecology",
+    "postpartum": "Obstetrics and Gynecology",
+    # Immunology
+    "immunologist": "Immunology",
+    "immunology": "Immunology",
+    "autoimmune": "Immunology",
+    "immunodeficiency": "Immunology",
+    "immunosuppression": "Immunology",
+    # Rheumatology
+    "rheumatologist": "Rheumatology",
+    "rheumatology": "Rheumatology",
+    "rheumatic": "Rheumatology",
+    "vasculitis": "Rheumatology",
+    "lupus": "Rheumatology",
+    "scleroderma": "Rheumatology",
+    # Toxicology
+    "toxicologist": "Toxicology",
+    "toxicology": "Toxicology",
+    "poisoning": "Toxicology",
+    "overdose": "Toxicology",
+    "toxin": "Toxicology",
+    "intoxication": "Toxicology",
+    # Nutrition
+    "nutritional": "Nutrition",
+    "enteral": "Nutrition",
+    "parenteral": "Nutrition",
+    "malnutrition": "Nutrition",
+    # Sepsis
+    "septic shock": "Sepsis",
+    "septic": "Sepsis",
+}
+
 PEARLS_JSON_FIELDS = [
     "id", "timestamp", "source_paper", "doi",
     "author", "system", "type", "pearl", "remarks", "file_name", "topic"
@@ -119,6 +287,20 @@ def normalize_specialty(specialty_list, spec_map):
     raw = str(specialty_list[0]).strip().lower().replace("_", " ").replace("-", " ")
     mapped = spec_map.get(raw, "Other")
     return "".join(x for x in str(mapped) if x.isalnum() or x in "._- ").strip()
+
+
+def infer_specialty_from_title(title, spec_map):
+    if not title:
+        return "Other"
+    title_lower = title.lower()
+    scores = {}
+    for keyword, specialty in TITLE_SPECIALTY_KEYWORDS.items():
+        if keyword.lower() in title_lower:
+            scores[specialty] = scores.get(specialty, 0) + 1
+    if not scores:
+        return "Other"
+    best = max(scores, key=scores.get)
+    return spec_map.get(best.lower(), best)
 
 
 # =====================================================================
@@ -432,9 +614,13 @@ def extract_local(payload):
 
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     spec_map = load_specialties_map()
+    source = payload.get("title") or payload.get("paper_name", "")
     specialty_list = payload.get("specialty", [])
     system = normalize_specialty(specialty_list, spec_map)
-    source = payload.get("title") or payload.get("paper_name", "")
+    if system == "Other":
+        inferred = infer_specialty_from_title(source, spec_map)
+        if inferred != "Other":
+            system = inferred
     doi = payload.get("doi", "")
     author = payload.get("authors") or payload.get("primary_authors", "")
     ptype = payload.get("article_subtype") or payload.get("doc_type", "")
@@ -648,6 +834,10 @@ def main():
         author = payload.get("authors") or payload.get("primary_authors", "")
         specialty_list = payload.get("specialty", [])
         system = normalize_specialty(specialty_list, spec_map)
+        if system == "Other":
+            inferred = infer_specialty_from_title(source, spec_map)
+            if inferred != "Other":
+                system = inferred
         ptype = payload.get("article_subtype") or payload.get("doc_type", "")
 
         # Extract pearls via selected backend

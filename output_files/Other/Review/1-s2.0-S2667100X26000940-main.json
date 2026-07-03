@@ -70,7 +70,7 @@
   "drugs_doses": [
     {
       "drug": "Levosimendan",
-      "dose": "Loading dose of 6 μg/kg for 10 min, followed by continuous infusion at 0.2 μg/(kg·min)",
+      "dose": "- **Loading dose:** **6 μg/kg** over **10 min**  \n- **Continuous infusion:** **0.2 μg/(kg·min)**",
       "indication": "Diaphragmatic dysfunction in sepsis patients",
       "adverse_effects": "No effect on ventilator weaning; moderate risk of bias in supporting study."
     },
@@ -84,7 +84,7 @@
       "drug": "Melatonin",
       "dose": "30 mg/(kg·d) ×7 d, i.p. (preclinical); 10 mg/kg ×3 times, i.p. (preclinical)",
       "indication": "Preclinical model of sepsis-induced muscle atrophy",
-      "adverse_effects": "Preclinical only; administered before sepsis induction in some studies, limiting clinical applicability."
+      "adverse_effects": "- **Preclinical** only; administered before **sepsis induction** in some studies, limiting **clinical applicability**."
     },
     {
       "drug": "Selenomethionine",
@@ -118,5 +118,6 @@
     }
   ],
   "related_ids": [],
-  "added_date": "2026-05-17"
+  "added_date": "2026-05-17",
+  "_format_version": "reformatted_via_gpt-oss"
 }

@@ -11,6 +11,10 @@ Files already well-formatted (processed by DeepSeek) are SKIPPED.
 Poorly formatted fields are sent to Together AI (openai/gpt-oss-120b)
 which reformats WITHOUT changing any content — just adding markdown structure.
 
+Before modifying, the ORIGINAL (unformatted) file is COPIED to
+quarantine/modified_json/ preserving the same nested folder structure.
+The reformatted version overwrites the original in output_files/.
+
 Usage:
     python json_summary_updater.py                    # normal run
     python json_summary_updater.py --dry-run           # preview only
@@ -39,6 +43,7 @@ if sys.stdout.encoding != "utf-8":
 load_dotenv()
 
 OUTPUT_DIR = "./output_files"
+QUARANTINE_DIR = "./quarantine/modified_json"
 CHANGE_LOG = "format_updates_log.txt"
 PROCESSED_TRACKER = "format_progress.json"
 
@@ -81,6 +86,15 @@ def save_json(filepath, data):
     with open(tmp, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
     os.replace(tmp, filepath)
+
+
+def quarantine_original(filepath, relpath):
+    """Copy original file to quarantine/modified_json before modification."""
+    dest = os.path.join(QUARANTINE_DIR, relpath)
+    os.makedirs(os.path.dirname(dest), exist_ok=True)
+    with open(filepath, "r", encoding="utf-8") as src:
+        with open(dest, "w", encoding="utf-8") as dst:
+            dst.write(src.read())
 
 
 def log_change(log_path, entry):
@@ -188,32 +202,19 @@ def set_nested(data, path_str, value):
 
 
 def call_together_api(text, api_key, model="openai/gpt-oss-120b"):
-    import urllib.request
-    import ssl
+    from together import Together
 
-    url = "https://api.together.xyz/v1/chat/completions"
-    payload = {
-        "model": model,
-        "messages": [
+    client = Together(api_key=api_key)
+    response = client.chat.completions.create(
+        model=model,
+        messages=[
             {"role": "system", "content": SYSTEM_PROMPT},
             {"role": "user", "content": text}
         ],
-        "temperature": 0.1,
-        "max_tokens": 8192,
-    }
-    req = urllib.request.Request(
-        url,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={
-            "Authorization": f"Bearer {api_key}",
-            "Content-Type": "application/json",
-        },
-        method="POST",
+        temperature=0.1,
+        max_tokens=8192,
     )
-    ctx = ssl.create_default_context()
-    resp = urllib.request.urlopen(req, context=ctx, timeout=180)
-    result = json.loads(resp.read().decode("utf-8"))
-    return result["choices"][0]["message"]["content"].strip()
+    return response.choices[0].message.content.strip()
 
 
 def main():
@@ -322,6 +323,7 @@ def main():
 
         data["_format_version"] = "reformatted_via_gpt-oss" if all_ok else "partial_reformat"
 
+        quarantine_original(filepath, relpath)
         save_json(filepath, data)
 
         log_change(change_log_path, {
@@ -353,6 +355,7 @@ def main():
     print(f"  Total fields fixed:    {stats['fields_fixed']}")
     print(f"  Change log:            {change_log_path}")
     print(f"  Progress tracker:      {PROCESSED_TRACKER}")
+    print(f"  Originals quarantined: {QUARANTINE_DIR}/")
 
 
 if __name__ == "__main__":

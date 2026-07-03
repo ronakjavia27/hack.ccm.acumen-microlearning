@@ -21,7 +21,7 @@
     "phenotyping",
     "eit"
   ],
-  "one_line_summary": "This review highlights how advanced lung imaging (CT, EIT, LUS) combined with AI and radiomics can transition ARDS management from a one-size-fits-all approach to a physiology-guided, precision-medicine decision loop, addressing its heterogeneity.",
+  "one_line_summary": "- This review highlights how **advanced lung imaging (CT, EIT, LUS)** combined with **AI** and **radiomics** can transition **ARDS** management from a **one-size-fits-all approach** to a **physiology-guided, precision-medicine decision loop**, addressing its **heterogeneity**.",
   "key_pearls": [
     "Prioritize lung morphology assessment (LUS/CT) before aggressive PEEP titration in ARDS.",
     "For focal ARDS, prioritize early prone positioning and avoid excessive PEEP; for diffuse ARDS, consider higher PEEP titration.",
@@ -36,7 +36,7 @@
     {
       "order": 1,
       "heading": "The Obstacles in Identifying Actionable Traits",
-      "content": "Current guidelines mandate low-tidal volume ventilation, PEEP, and prone positioning for moderate-to-severe ARDS, but applying uniform strategies fails to account for individual physiological variability. The LIVE Trial (2019) demonstrated that morphological phenotypes (diffuse vs. focal/predominantly dorsal) respond differently to higher PEEP and prone positioning. Focal ARDS responds well to prone positioning but can suffer from alveolar overdistension with high PEEP, whereas diffuse ARDS may benefit from higher PEEP recruitment. The trial's intention-to-treat analysis was neutral due to clinician misclassification, but it proved the concept of differential responses.",
+      "content": "- **Current guidelines** mandate **low-tidal volume ventilation**, **PEEP**, and **prone positioning** for **moderate-to-severe ARDS**, but applying uniform strategies fails to account for individual physiological variability.  \n- The **LIVE Trial (2019)** demonstrated that **morphological phenotypes** (**diffuse** vs. **focal/predominantly dorsal**) respond differently to **higher PEEP** and **prone positioning**.  \n- **Focal ARDS**:  \n  - Responds well to **prone positioning**  \n  - Can suffer from **alveolar overdistension** with **high PEEP**  \n- **Diffuse ARDS**:  \n  - May benefit from **higher PEEP recruitment**  \n- The trial's **intention-to-treat analysis** was neutral due to **clinician misclassification**, but it proved the concept of **differential responses**.",
       "section_pearls": []
     },
     {
@@ -48,7 +48,7 @@
     {
       "order": 3,
       "heading": "Lung Imaging, Radiomics, and AI-Driven Analytics",
-      "content": "Radiomics involves the high-throughput extraction of quantitative, sub-visual features from medical images (CT, LUS, EIT) that correlate with underlying biological processes like regional inflammation, tissue density, and vascular changes. AI and foundation models, particularly vision-language architectures, are being applied to chest imaging to automate lung segmentation, recognize complex injury patterns, and integrate imaging data with clinical and molecular biomarkers. However, current AI models in ARDS are limited by being trained on single-center, retrospective cohorts, lacking external validation, and raising concerns regarding algorithmic bias, lack of interpretability ('black box' decisions), and clinical generalizability.",
+      "content": "- **Radiomics** involves the high‑throughput extraction of quantitative, sub‑visual features from medical images (**CT**, **LUS**, **EIT**) that correlate with underlying biological processes such as **regional inflammation**, **tissue density**, and **vascular changes**.  \n- **AI** and **foundation models**, particularly **vision‑language architectures**, are being applied to chest imaging to:  \n  - automate **lung segmentation**  \n  - recognize complex **injury patterns**  \n  - integrate imaging data with **clinical** and **molecular biomarkers**  \n- **Current limitations** of AI models in **ARDS**:  \n  - trained on **single‑center**, **retrospective cohorts**  \n  - lacking **external validation**  \n  - concerns regarding **algorithmic bias**, lack of **interpretability** (“**black box**” decisions), and **clinical generalizability**.",
       "section_pearls": []
     },
     {
@@ -58,7 +58,8 @@
       "section_pearls": []
     }
   ],
-  "strengths_limitations": "Strengths include providing a clear, physiology-driven framework for ARDS management and highlighting the clinical utility of real-time bedside imaging (EIT, LUS) over static CT scans. Limitations involve the current lack of prospective validation for AI and radiomic models, potential clinician misclassification of phenotypes, and a lack of standardized protocols across ICU centers.",
+  "strengths_limitations": "- **Strengths**\n  - Providing a clear, physiology-driven framework for **ARDS** management  \n  - Highlighting the clinical utility of **real-time bedside imaging (EIT, LUS)** over **static CT scans**\n\n- **Limitations**\n  - Current lack of **prospective validation** for **AI** and **radiomic models**  \n  - Potential **clinician misclassification** of **phenotypes**  \n  - Lack of **standardized protocols** across **ICU centers**",
   "related_ids": [],
-  "added_date": "2026-06-30"
+  "added_date": "2026-06-30",
+  "_format_version": "reformatted_via_gpt-oss"
 }

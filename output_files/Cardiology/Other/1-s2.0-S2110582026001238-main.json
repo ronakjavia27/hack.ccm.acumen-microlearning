@@ -68,17 +68,18 @@
   "drugs_doses": [
     {
       "drug": "norepinephrine",
-      "dose": "Titrated to target MAP; vasopressin could be added at doses ≥0.1 μg/kg/min. Doses reported as norepinephrine base-equivalent (BASE format).",
-      "indication": "First-line vasopressor for septic shock to achieve target MAP (65–70 mmHg or 80–85 mmHg per randomization).",
-      "adverse_effects": "Higher cumulative 72-h exposure associated with increased mortality, likely reflecting refractory shock severity."
+      "dose": "- Titrated to target **MAP**  \n- **Vasopressin** could be added at doses **≥0.1 μg/kg/min**  \n- Doses reported as **norepinephrine** base‑equivalent (**BASE** format)",
+      "indication": "- **First-line vasopressor** for **septic shock** to achieve target **MAP** (**65–70 mmHg** or **80–85 mmHg** per randomization)",
+      "adverse_effects": "- **Higher cumulative 72‑h exposure** associated with **increased mortality**, likely reflecting **refractory shock severity**."
     },
     {
       "drug": "vasopressin",
-      "dose": "Initiated and titrated up to 0.04 U/min when norepinephrine dose ≥0.1 μg/kg/min was required.",
-      "indication": "Adjunctive vasopressor in septic shock when target MAP not achieved with norepinephrine alone.",
-      "adverse_effects": "Higher cumulative 72-h exposure associated with increased mortality, likely reflecting illness trajectory."
+      "dose": "- Initiated and titrated up to **0.04 U/min** when **norepinephrine** dose **≥ 0.1 μg/kg/min** was required.",
+      "indication": "- **Adjunctive vasopressor** in septic shock when target **MAP** not achieved with **norepinephrine** alone.",
+      "adverse_effects": "- **Higher cumulative 72‑h exposure** associated with **increased mortality**, likely reflecting **illness trajectory**."
     }
   ],
   "related_ids": [],
-  "added_date": "2026-07-20"
+  "added_date": "2026-07-20",
+  "_format_version": "reformatted_via_gpt-oss"
 }

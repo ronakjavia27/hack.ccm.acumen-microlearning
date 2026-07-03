@@ -122,15 +122,15 @@
   "drugs_doses": [
     {
       "drug": "Labetalol",
-      "dose": "Initial: 20 mg slow IV injection over 3 min; titrate additional 40 mg at 10 min intervals until desired BP or max 300 mg",
+      "dose": "- **Initial:** **20 mg** slow IV injection over **3 min**  \n- **Titrate:** additional **40 mg** at **10 min** intervals until desired **BP** or max **300 mg**",
       "indication": "First-line antihypertensive for acute BP control in PRES",
-      "adverse_effects": "Alpha-1 blocker/non-selective beta blocker; avoid in bradycardia, heart failure, asthma"
+      "adverse_effects": "- **Alpha-1 blocker** / **non-selective beta blocker**; avoid in **bradycardia**, **heart failure**, **asthma**"
     },
     {
       "drug": "Nicardipine",
       "dose": "Initial: 5 mg/h IV; titrate by 2.5 mg/h every 5–15 min",
       "indication": "First-line antihypertensive for acute BP control in PRES",
-      "adverse_effects": "Dihydropyridine calcium channel blocker; monitor for hypotension, reflex tachycardia"
+      "adverse_effects": "- **Dihydropyridine calcium channel blocker**; monitor for **hypotension**, **reflex tachycardia**"
     },
     {
       "drug": "Nimodipine",
@@ -158,41 +158,42 @@
     },
     {
       "drug": "Sodium valproate",
-      "dose": "Loading: 30–40 mg/kg IV (max 3500 mg); maintenance: 400–1000 mg BID (max 2000 mg BID)",
+      "dose": "- **Loading:** **30–40 mg/kg IV** (**max 3500 mg**)  \n- **Maintenance:** **400–1000 mg BID** (**max 2000 mg BID**)",
       "indication": "Antiepileptic for PRES-associated seizures",
-      "adverse_effects": "GABA enhancer/sodium channel blocker; hepatotoxicity, pancreatitis, teratogenicity, thrombocytopenia"
+      "adverse_effects": "- **GABA enhancer** / **sodium channel blocker**\n- **Hepatotoxicity**\n- **Pancreatitis**\n- **Teratogenicity**\n- **Thrombocytopenia**"
     },
     {
       "drug": "Phenytoin",
-      "dose": "Loading: 15–20 mg/kg IV (max 1500 mg, rate ≤50 mg/min); maintenance: 4–8 mg/kg, target plasma 15–20 mg/L",
+      "dose": "- **Loading**: **15–20 mg/kg IV** (**max 1500 mg**, rate **≤ 50 mg/min**)  \n- **Maintenance**: **4–8 mg/kg**, target plasma **15–20 mg/L**",
       "indication": "Antiepileptic for PRES-associated seizures",
-      "adverse_effects": "Voltage-gated sodium channel blocker; infusion site reactions, arrhythmias, CYP450 interactions"
+      "adverse_effects": "- **Voltage-gated sodium channel blocker**\n- **Infusion site reactions**\n- **Arrhythmias**\n- **CYP450 interactions**"
     },
     {
       "drug": "Levetiracetam",
-      "dose": "Loading: 40–60 mg/kg IV (max 6000 mg); maintenance: 500–1000 mg BID (max 2000 mg BID)",
+      "dose": "- **Loading:** **40–60 mg/kg IV** (**max 6000 mg**)  \n- **Maintenance:** **500–1000 mg BID** (**max 2000 mg BID**)",
       "indication": "Antiepileptic for PRES-associated seizures",
-      "adverse_effects": "SV2A synaptic vesicle modulator; sedation, behavioral changes, dose adjustment in renal impairment"
+      "adverse_effects": "- **SV2A synaptic vesicle modulator**\n- **Sedation**\n- **Behavioral changes**\n- **Dose adjustment in renal impairment**"
     },
     {
       "drug": "Magnesium sulfate",
       "dose": "Per standard eclampsia protocols (not specified in detail)",
       "indication": "Seizure prophylaxis and treatment in eclampsia-associated PRES",
-      "adverse_effects": "Improved endothelial stability; monitor for respiratory depression, loss of deep tendon reflexes, hypotension"
+      "adverse_effects": "- **Improved endothelial stability**\n- **Monitor for**:\n  - **respiratory depression**\n  - **loss of deep tendon reflexes**\n  - **hypotension**"
     },
     {
       "drug": "Cyclosporine",
       "dose": "Not specified; dose reduction or discontinuation recommended in PRES",
-      "indication": "Transplant immunosuppression; strongly associated with PRES as precipitating agent",
-      "adverse_effects": "Calcineurin inhibitor; direct endothelial toxicity, vasoconstriction, hypertension, nephrotoxicity"
+      "indication": "- **Transplant immunosuppression**; strongly associated with **PRES** as precipitating agent",
+      "adverse_effects": "- **Calcineurin inhibitor**\n  - **Direct endothelial toxicity**\n  - **Vasoconstriction**\n  - **Hypertension**\n  - **Nephrotoxicity**"
     },
     {
       "drug": "Tacrolimus",
       "dose": "Not specified; dose reduction or discontinuation recommended in PRES",
-      "indication": "Transplant immunosuppression; strongly associated with PRES as precipitating agent",
-      "adverse_effects": "Calcineurin inhibitor; direct endothelial toxicity, vasoconstriction, hypertension, nephrotoxicity, neurotoxicity"
+      "indication": "- **Transplant immunosuppression**; strongly associated with **PRES** as precipitating agent",
+      "adverse_effects": "- **Calcineurin inhibitor**\n- **Endothelial toxicity**\n- **Vasoconstriction**\n- **Hypertension**\n- **Nephrotoxicity**\n- **Neurotoxicity**"
     }
   ],
   "related_ids": [],
-  "added_date": "2026-04-09"
+  "added_date": "2026-04-09",
+  "_format_version": "reformatted_via_gpt-oss"
 }
