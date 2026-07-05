@@ -215,6 +215,68 @@ NUM_UNIT_PATTERN = re.compile(
 )
 
 
+GENERIC_MEDICAL_WORDS = {
+    "acute", "chronic", "severe", "clinical", "patient", "patients", "management",
+    "treatment", "therapy", "therapeutic", "recommended", "recommendation",
+    "guideline", "guidelines", "standard", "criteria", "diagnosis", "diagnostic",
+    "prognostic", "assessment", "evaluation", "intervention", "procedure",
+    "outcome", "outcomes", "mortality", "survival", "benefit", "benefits",
+    "risk", "risks", "factor", "factors", "increase", "decrease", "reduction",
+    "significant", "associated", "compared", "evidence", "study", "studies",
+    "trial", "trials", "analysis", "meta", "systematic", "review", "literature",
+    "data", "results", "effect", "effects", "effective", "efficacy", "safety",
+    "dose", "dosing", "dosage", "administer", "administration", "oral", "intravenous",
+    "infusion", "bolus", "titrate", "titration", "target", "goal", "goals",
+    "optimal", "optimize", "maintain", "maintenance", "monitor", "monitoring",
+    "require", "required", "consider", "considered", "indicate", "indicated",
+    "suggest", "suggested", "recommend", "support", "supported", "based",
+    "according", "following", "including", "during", "before", "after",
+    "initial", "early", "late", "prior", "previous", "current", "additional",
+    "alternative", "multiple", "various", "common", "frequent", "rare",
+    "presence", "absence", "status", "level", "levels", "range", "value",
+    "values", "score", "scores", "scale", "grade", "stage", "phase",
+    "group", "groups", "cohort", "population", "sample", "size",
+    "approach", "strategy", "strategies", "option", "options", "role",
+    "important", "critical", "essential", "necessary", "appropriate",
+    "overall", "primary", "secondary", "major", "minor", "key", "central",
+    "general", "specific", "standard", "routine", "typical", "usual",
+    "potential", "possible", "likely", "unlikely", "usually", "often",
+    "however", "although", "despite", "addition", "example", "including",
+    "well", "also", "may", "can", "will", "must", "should", "could", "would",
+    "show", "shown", "demonstrate", "demonstrated", "observe", "observed",
+    "report", "reported", "publish", "published", "perform", "performed",
+    "undergo", "undergone", "receive", "received", "present", "presented",
+    "describe", "described", "identify", "identified",
+    "define", "defined", "measure", "measured", "calculate", "calculated",
+    "estimate", "estimated", "determine", "determined", "assess", "assessed",
+    "evaluate", "evaluated", "compare", "compared", "contrast",
+    "respiratory", "ventilation", "ventilator", "oxygenation", "oxygen",
+    "pulmonary", "lung", "airway", "cardiac", "cardio", "heart",
+    "hemodynamic", "hemodynamics", "circulation", "circulatory",
+    "infection", "infections", "sepsis", "septic", "antibiotic", "antibiotics",
+    "surgical", "surgery", "operative", "trauma", "injury", "injuries",
+    "position", "positioning", "pressure", "volume", "fluid", "fluids",
+    "blood", "plasma", "serum", "tissue", "organ", "organs",
+    "failure", "dysfunction", "damage", "disorder", "disease",
+    "syndrome", "condition", "pathology", "abnormal", "normal",
+    "improve", "improvement", "worsen", "worsening", "progress", "progression",
+    "prevent", "prevention", "prophylaxis", "reduce", "reducing",
+    "source", "control", "tension", "drainage", "manage", "manageable",
+    "cornerstone", "achieve", "achieved", "setting", "remain", "remains",
+    "ongoing", "until", "unless", "despite", "without", "within",
+    "cause", "caused", "leading", "result", "resulting", "related",
+    "high", "higher", "low", "lower", "raised", "elevated", "reduced",
+    "supportive", "aggressive", "conservative", "standardized",
+    "continuously", "concurrently", "simultaneously", "subsequently",
+    "intermittent", "continuous", "prolonged", "prolongation",
+    "limited", "extended", "expanded", "restricted", "liberal",
+    "newborn", "mother", "maternal", "fetal", "placental",
+    "gestation", "gestational", "pregnancy", "pregnant", "delivery",
+    "neonatal", "neonate", "uterus", "uterine", "cervical",
+    "trimester", "amniotic", "umbilical",
+}
+
+
 def extract_source_terms(payload):
     """Extract key medical terms from source payload for consistency checking."""
     all_text = ""
@@ -255,39 +317,45 @@ def extract_source_terms(payload):
     units = set(NUM_UNIT_PATTERN.findall(all_text))
 
     # Extract capitalized multi-word medical terms (diseases, drugs, procedures)
-    caps_terms = set(re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b', all_text))
+    # Require 2+ words to avoid generic capitalized single words
+    caps_terms = set(re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,}\b', all_text))
     caps_terms = {t.lower() for t in caps_terms if len(t) > 4}
 
-    # Extract standalone lowercase disease/drug terms longer than 4 chars
-    lower_terms = set(re.findall(r'\b[a-z]{5,}\b', all_text))
+    # Extract standalone specific terms (longer than 4 chars, not in generic list)
+    all_lower = set(re.findall(r'\b[a-z]{5,}\b', all_text))
+    specific_terms = all_lower - GENERIC_MEDICAL_WORDS
 
     units_lower = {u.lower() for u in units}
 
-    return units_lower, caps_terms, lower_terms
+    return units_lower, caps_terms, specific_terms
 
 
 def check_consistency(pearl_text, source_terms):
-    """Check if pearl text shares at least one meaningful term with source."""
-    if not source_terms[0] and not source_terms[1] and not source_terms[2]:
+    """Check if pearl text shares at least one specific term with source."""
+    units, caps, specific = source_terms
+    if not units and not caps and not specific:
         return True  # can't check, pass through
 
     pearl_lower = pearl_text.lower()
 
-    # Check numbers with units
+    # Check numbers with units (specific — e.g., "80 mmHg" must be in source)
     pearl_units = set(NUM_UNIT_PATTERN.findall(pearl_text))
     pearl_units_lower = {u.lower() for u in pearl_units}
-    if pearl_units_lower & source_terms[0]:
+    if pearl_units_lower & units:
         return True
 
-    # Check capitalized terms
-    for term in source_terms[1]:
+    # Check capitalized medical terms from source
+    for term in caps:
         if term in pearl_lower:
             return True
 
-    # Check lowercase terms (require at least 2 matches to avoid false positives)
-    matches = sum(1 for t in source_terms[2] if t in pearl_lower)
-    if matches >= 2:
-        return True
+    # Check specific lowercase terms (require at least 3 matches)
+    matches = 0
+    for term in specific:
+        if term in pearl_lower:
+            matches += 1
+            if matches >= 3:
+                return True
 
     return False
 
