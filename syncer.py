@@ -149,7 +149,7 @@ def verify_before_sync(verbose=False):
 # =====================================================================
 # GIT SYNC MODES
 # =====================================================================
-def git_sync(mode="all", verbose=False, skip_verify=False):
+def git_sync(mode="all", verbose=False, skip_verify=False, dry_run=False):
     """Stage, commit, and push based on mode."""
     print(f"\n  [GIT-SYNC] Mode: {mode}")
 
@@ -165,6 +165,20 @@ def git_sync(mode="all", verbose=False, skip_verify=False):
     if verbose:
         for line in status.split("\n"):
             print(f"    {line}")
+
+    if dry_run:
+        print("  [Dry-run] Would stage, commit, and push.")
+        by_mode = {
+            "web": ["main_app.py"],
+            "data": ["all except main_app.py"],
+            "pearls": ["pearls.json", "sent_summaries.json"],
+            "all": ["all (respecting .gitignore)"],
+        }
+        for f in by_mode.get(mode, by_mode["all"]):
+            print(f"    git add {f}")
+        print(f"    git commit -m \"...\"")
+        print(f"    git push {GIT_REMOTE} {GIT_BRANCH}")
+        return True
 
     # Stage based on mode
     if mode == "web":
@@ -575,7 +589,7 @@ def full_sync(dry_run=False, verbose=False):
 
     print("\n  Step 3/3: Git sync (all)")
     if not dry_run:
-        git_sync(mode="all", verbose=verbose, skip_verify=False)
+        git_sync(mode="all", verbose=verbose, skip_verify=False, dry_run=False)
 
     print("\n  " + "=" * 50)
     print("  [FULL] Complete!\n")
@@ -617,7 +631,7 @@ Examples:
         sync_subscribers(dry_run=args.dry_run, verbose=args.verbose)
     else:
         # Git modes: all, data, web, pearls
-        git_sync(mode=args.mode, verbose=args.verbose, skip_verify=not args.verify)
+        git_sync(mode=args.mode, verbose=args.verbose, skip_verify=not args.verify, dry_run=args.dry_run)
 
 
 if __name__ == "__main__":
