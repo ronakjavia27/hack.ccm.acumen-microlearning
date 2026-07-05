@@ -172,6 +172,9 @@ def normalize_specialty(specialty_list, spec_map):
         return "Other"
     raw = str(specialty_list[0]).strip().lower().replace("_", " ").replace("-", " ")
     mapped = spec_map.get(raw, "Other")
+    if mapped == "Other":
+        raw_orig = str(specialty_list[0]).strip().lower()
+        mapped = spec_map.get(raw_orig, "Other")
     return "".join(x for x in str(mapped) if x.isalnum() or x in "._- ").strip()
 
 

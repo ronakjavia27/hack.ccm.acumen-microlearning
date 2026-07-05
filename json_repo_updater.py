@@ -58,6 +58,9 @@ def normalize_specialty(specialty_list, spec_map):
         return "Other"
     raw = str(specialty_list[0]).strip().lower().replace("_", " ").replace("-", " ")
     mapped = spec_map.get(raw, "Other")
+    if mapped == "Other":
+        raw_orig = str(specialty_list[0]).strip().lower()
+        mapped = spec_map.get(raw_orig, "Other")
     return "".join(x for x in str(mapped) if x.isalnum() or x in "._- ").strip()
 
 
@@ -143,9 +146,21 @@ def load_removed():
         return []
 
 
-def entry_from_payload(file_name, payload):
-    """Build a sent_summaries.json entry from a JSON payload on disk."""
+def entry_from_payload(file_name, payload, fpath=None):
+    """Build a sent_summaries.json entry from a JSON payload on disk.
+    Uses the directory path (output_files/{system}/{type}/...) as ground truth
+    for system and type when fpath is provided.
+    """
     title, system, article_type, journal, authors, doi, year = extract_metadata(payload)
+    if fpath:
+        parts = fpath.replace("\\", "/").rstrip("/").split("/")
+        if len(parts) >= 3:
+            ps = parts[-3]
+            if ps and ps != "output_files":
+                system = ps
+                pt = parts[-2]
+                if pt:
+                    article_type = pt
     return {
         "serial_number": 0,
         "file_name": file_name,
@@ -184,7 +199,7 @@ def main():
     to_add = []
     for file_name, (fpath, payload) in disk.items():
         if file_name not in repo_by_file:
-            entry = entry_from_payload(file_name, payload)
+            entry = entry_from_payload(file_name, payload, fpath)
             to_add.append(entry)
             if args.verbose:
                 print(f"  [add] {file_name} -> {entry['title'][:60]}")
@@ -192,7 +207,6 @@ def main():
     # Phase B: REMOVE — entries in repo but missing from disk
     to_remove = []
     kept = []
-    spec_map = build_specialty_map(load_allowed_vocabulary(SPECIALTIES_FILE, DEFAULT_SPECIALTIES))
     updated_count = 0
     for entry in repo:
         fname = entry.get("file_name", "")
@@ -202,17 +216,21 @@ def main():
                 print(f"  [remove] {fname} -> {entry.get('title', '')[:60]}")
             continue
 
-        # Phase C: NORMALIZE — fix existing entries with messy system values
+        # Phase C: NORMALIZE — use directory path as ground truth for system/type
         if fname and fname in disk:
-            _, payload = disk[fname]
-            payload_spec = payload.get("specialty", [])
-            clean_system = normalize_specialty(payload_spec, spec_map) if payload_spec else ""
-            if clean_system and clean_system != entry.get("system", ""):
-                old_system = entry["system"]
-                entry["system"] = clean_system
-                updated_count += 1
-                if args.verbose:
-                    print(f"  [update] {fname}: system \"{old_system}\" -> \"{clean_system}\"")
+            fpath, _ = disk[fname]
+            parts = fpath.replace("\\", "/").rstrip("/").split("/")
+            if len(parts) >= 3:
+                path_system = parts[-3]
+                if path_system and path_system != "output_files" and path_system != entry.get("system", ""):
+                    old_system = entry["system"]
+                    entry["system"] = path_system
+                    updated_count += 1
+                    if args.verbose:
+                        print(f"  [update] {fname}: system \"{old_system}\" -> \"{path_system}\"")
+                path_type = parts[-2]
+                if path_type and path_type != entry.get("type", ""):
+                    entry["type"] = path_type
 
         kept.append(entry)
 

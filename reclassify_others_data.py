@@ -37,8 +37,6 @@ def find_source_file(file_name, article_type):
     expected = OUTPUT_DIR / "Other" / article_type / jname
     if expected.exists():
         return expected
-    for found in OUTPUT_DIR.rglob(jname):
-        return found
     return None
 
 
