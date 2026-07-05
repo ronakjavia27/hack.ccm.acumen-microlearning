@@ -138,12 +138,10 @@ PEARLS_JSON_FIELDS = [
 # =====================================================================
 PEARL_PROMPT = """You are an expert critical care clinician. Your task is to EXTRACT high-yield clinical pearls STRICTLY from the provided text below.
 
-CRITICAL — This is an EXTRACTION task, NOT a generation task:
+CRITICAL — This is an EXTRACTION task, NOT a generation task, each pearl should have some meaninful clinical data, do not blindly quote line from text, working of trial, criteria used in guideline or haphazard information having no bedside clinical bearing:
 
 1. ONLY extract pearls that are DIRECTLY STATED in the provided text. Each pearl must be a close paraphrase of specific sentences found below.
-2. Do NOT generate, infer, extrapolate, or add any clinical knowledge that is not present in the text — even if it is common knowledge in your training data.
-3. If the text does NOT contain a high-yield actionable pearl on a given topic, return {"pearls": []}. Returning nothing is better than fabricating.
-4. Each pearl must be traceable back to at least one specific sentence or recommendation in the text below.
+2. If the text does NOT contain a high-yield actionable pearl on a given topic, return {"pearls": []}. Returning nothing is better than fabricating.
 
 Prioritize:
 - **Clinical updates** — recent practice changes, new guideline recommendations
@@ -270,10 +268,19 @@ GENERIC_MEDICAL_WORDS = {
     "continuously", "concurrently", "simultaneously", "subsequently",
     "intermittent", "continuous", "prolonged", "prolongation",
     "limited", "extended", "expanded", "restricted", "liberal",
-    "newborn", "mother", "maternal", "fetal", "placental",
-    "gestation", "gestational", "pregnancy", "pregnant", "delivery",
-    "neonatal", "neonate", "uterus", "uterine", "cervical",
+    "newborn", "mother", "placental",
+    "delivery", "neonatal", "neonate",
+    "uterus", "uterine", "cervical",
     "trimester", "amniotic", "umbilical",
+    "window", "refractory", "obtain", "obtaining", "suspected",
+    "possible", "feasible", "feasibility", "within", "before",
+    "start", "starting", "initiate", "initiation", "guide", "guided",
+    "prevent", "prevention", "preventing", "further",
+    "deterioration", "deteriorate", "worsening", "progression",
+    "resuscitation", "resuscitate", "resuscitative",
+    "intervention", "interventional", "multidisciplinary",
+    "facilitate", "facilitating", "coordinate", "coordinated",
+    "collaborative", "multimodal", "multisystem",
 }
 
 
@@ -316,10 +323,15 @@ def extract_source_terms(payload):
     # Extract numbers with units (e.g., "80 mmHg", "0.25 mg/kg")
     units = set(NUM_UNIT_PATTERN.findall(all_text))
 
-    # Extract capitalized multi-word medical terms (diseases, drugs, procedures)
-    # Require 2+ words to avoid generic capitalized single words
-    caps_terms = set(re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,}\b', all_text))
-    caps_terms = {t.lower() for t in caps_terms if len(t) > 4}
+    # Extract capitalized terms — both single (Levetiracetam, ICP, TBI) and multi-word
+    # Single-word caps must not be common English sentence-start words
+    caps_single = set(re.findall(r'\b[A-Z][a-z]{3,}\b', all_text))
+    caps_single = {t.lower() for t in caps_single
+                   if t.lower() not in GENERIC_MEDICAL_WORDS
+                   and not re.match(r'^(this|that|these|those|they|them|their|from|with|when|what|which|where|would|could|should|shall|will|hence|thus|then|than|also|both|each|every|other|another|after|before|into|over|under|above|below|between|among|about|while|since|until|during|because|there|here|first|second|third|fourth|fifth|such|some|more|most|only|very|just|now|then|than|had|has|were|was|been|being|done|having|making|taking|given|using|based|used|seen|known|found|shown|called|defined|described|following)$', t.lower())}
+    # Multi-word caps (2+ words) — almost always specific
+    caps_multi = set(re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+){1,}\b', all_text))
+    caps_terms = {t.lower() for t in caps_multi if len(t) > 4} | caps_single
 
     # Extract standalone specific terms (longer than 4 chars, not in generic list)
     all_lower = set(re.findall(r'\b[a-z]{5,}\b', all_text))
@@ -344,9 +356,9 @@ def check_consistency(pearl_text, source_terms):
     if pearl_units_lower & units:
         return True
 
-    # Check capitalized medical terms from source
+    # Check capitalized medical terms from source (whole-word match)
     for term in caps:
-        if term in pearl_lower:
+        if re.search(r'\b' + re.escape(term) + r'\b', pearl_lower):
             return True
 
     # Check specific lowercase terms (require at least 3 matches)
@@ -666,6 +678,8 @@ def main():
     )
     parser.add_argument("--max", type=int, default=None,
                         help="Max papers to process (default: all)")
+    parser.add_argument("--limit", type=str, default=None,
+                        help="Comma-separated filenames to process (bypasses tracker)")
     parser.add_argument("--model", type=str, default=None,
                         help=f"Together AI model (default: {PRIMARY_MODEL})")
     parser.add_argument("--force-local", action="store_true",
@@ -680,6 +694,7 @@ def main():
 
     max_papers = args.max if args.max is not None else MAX_PAPERS
     model = args.model or PRIMARY_MODEL
+    limit_files = set(f.strip() for f in args.limit.split(",")) if args.limit else None
 
     print("[AI] hack.CCM Pearl Extractor (Together AI)")
     print(f"  Model: {model}  |  Fallback: {FALLBACK_MODEL}")
@@ -692,6 +707,8 @@ def main():
         print(f"  Backend: Together AI")
 
     print(f"  Max papers: {'all' if max_papers == 0 else max_papers}")
+    if limit_files:
+        print(f"  Limit to {len(limit_files)} specific file(s)")
     if args.consistency_check:
         print("  Consistency check: ON")
     print()
@@ -702,23 +719,33 @@ def main():
     json_files = []
     for root, dirs, files in os.walk(OUTPUT_DIR):
         for fname in files:
-            if fname.endswith(".json"):
-                json_files.append(os.path.join(root, fname))
+            if not fname.endswith(".json"):
+                continue
+            if limit_files and fname not in limit_files:
+                continue
+            json_files.append(os.path.join(root, fname))
+
+    if limit_files:
+        found = set(os.path.basename(f) for f in json_files)
+        missing = limit_files - found
+        if missing:
+            print(f"  Warning: {len(missing)} file(s) not found in {OUTPUT_DIR}: {', '.join(sorted(missing))}")
 
     print(f"  Found {len(json_files)} total JSON files")
     print(f"  Already processed: {len(processed_files)} files")
-    print(f"  Already in CSV: {len(existing_papers)} papers")
 
     to_process = []
     for fpath in json_files:
         fname = os.path.basename(fpath)
-        if fname in processed_files:
+        if not limit_files and fname in processed_files:
             continue
+        if limit_files and fname in processed_files:
+            print(f"  [NOTE] {fname} was already processed — force-processing due to --limit")
         try:
             with open(fpath, "r", encoding="utf-8") as f:
                 payload = json.load(f)
             paper_name = payload.get("title") or payload.get("paper_name", "")
-            if paper_name in existing_papers:
+            if not limit_files and paper_name in existing_papers:
                 continue
             to_process.append((fpath, payload, fname))
         except Exception as e:

@@ -584,6 +584,8 @@ def main():
     parser = argparse.ArgumentParser(description="Extract clinical pearls from JSON summaries using Ollama")
     parser.add_argument("--max", type=int, default=None,
                         help="Max papers to process (default: all)")
+    parser.add_argument("--limit", type=str, default=None,
+                        help="Comma-separated filenames to process (bypasses tracker)")
     parser.add_argument("--model", type=str, default=None,
                         help="Ollama model name (default: gemma4:latest)")
     parser.add_argument("--force-local", action="store_true",
@@ -592,6 +594,7 @@ def main():
 
     max_papers = args.max if args.max is not None else MAX_PAPERS
     model = args.model or DEFAULT_OLLAMA_MODEL
+    limit_files = set(f.strip() for f in args.limit.split(",")) if args.limit else None
 
     print("[AI] hack.CCM Pearl Extractor (Ollama)")
     print(f"  Model: {model}")
@@ -609,6 +612,8 @@ def main():
             print("  Ollama not available. Using rule-based extraction.")
 
     print(f"  Max papers: {'all' if max_papers == 0 else max_papers}")
+    if limit_files:
+        print(f"  Limit to {len(limit_files)} specific file(s)")
     print()
 
     processed_files = load_tracker()
@@ -617,8 +622,17 @@ def main():
     json_files = []
     for root, dirs, files in os.walk(OUTPUT_DIR):
         for fname in files:
-            if fname.endswith(".json"):
-                json_files.append(os.path.join(root, fname))
+            if not fname.endswith(".json"):
+                continue
+            if limit_files and fname not in limit_files:
+                continue
+            json_files.append(os.path.join(root, fname))
+
+    if limit_files:
+        found = set(os.path.basename(f) for f in json_files)
+        missing = limit_files - found
+        if missing:
+            print(f"  Warning: {len(missing)} file(s) not found in {OUTPUT_DIR}: {', '.join(sorted(missing))}")
 
     print(f"  Found {len(json_files)} total JSON files")
     print(f"  Already processed: {len(processed_files)} files")
@@ -627,13 +641,15 @@ def main():
     to_process = []
     for fpath in json_files:
         fname = os.path.basename(fpath)
-        if fname in processed_files:
+        if not limit_files and fname in processed_files:
             continue
+        if limit_files and fname in processed_files:
+            print(f"  [NOTE] {fname} was already processed — force-processing due to --limit")
         try:
             with open(fpath, "r", encoding="utf-8") as f:
                 payload = json.load(f)
             paper_name = payload.get("title") or payload.get("paper_name", "")
-            if paper_name in existing_papers:
+            if not limit_files and paper_name in existing_papers:
                 continue
             to_process.append((fpath, payload, fname))
         except Exception as e:

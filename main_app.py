@@ -677,7 +677,7 @@ async def render_dashboard(request: Request):
   <section class="view" id="view-about">
     <p class="eyebrow">About</p>
     <h2>hack.CCM</h2>
-    <p style="color:var(--ink-muted);max-width:56ch">A critical care education portal built by and for ICU clinicians &mdash; summarized papers, guidelines, and pearls, kept short enough to read between patients. Companion content also runs on Instagram as HACK-CCM.</p>
+    <p style="color:var(--ink-muted);max-width:56ch">A critical care education portal built by and for ICU clinicians &mdash; summarized papers, guidelines, and pearls, kept short enough to read between patients and heavy icu duties. Companion content also runs on Instagram as <a href="https://www.instagram.com/hack.ccm?igsh=b284enFubWYxdWpu"<b>"hack.CCM" by Dr RONAK JAVIA</b></a>, an innovator and budding intensivist.</p>
   </section>
 
 </main>
