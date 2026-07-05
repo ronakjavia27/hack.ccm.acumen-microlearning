@@ -1,22 +1,13 @@
 #!/usr/bin/env python3
 """
-extract_pearls_together.py — Extract clinical pearls via Together AI cloud.
+extract_pearls_ollama.py — Extract clinical pearls via local Ollama.
 Extracts high-yield, evidence-based pearls from structured JSON summaries
-using Together AI (openai/gpt-oss-20b primary, openai/gpt-oss-120b fallback),
-with rule-based extraction as final fallback.
-
-Features:
-  - Strengthened prompt to prevent AI hallucination (pearls must be grounded
-    in the source text)
-  - Optional consistency check that verifies pearl content overlaps with
-    source terms
-  - Tracks processed files in pearls_processed.json to avoid rework
+using Ollama (local LLM), with rule-based extraction as fallback.
 
 Usage:
-    python extract_pearls_together.py
-    python extract_pearls_together.py --max 5
-    python extract_pearls_together.py --consistency-check
-    python extract_pearls_together.py --model openai/gpt-oss-120b
+    python extract_pearls_ollama.py
+    python extract_pearls_ollama.py --max 5
+    python extract_pearls_ollama.py --model gemma4:27b
 """
 
 import os
@@ -25,6 +16,7 @@ import json
 import re
 import time
 import argparse
+import subprocess
 from datetime import datetime
 
 from dotenv import load_dotenv
@@ -41,12 +33,11 @@ OUTPUT_DIR = "./output_files"
 PEARLS_JSON = "./pearls.json"
 PEARLS_TRACKER = "./pearls_processed.json"
 
-TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
-PRIMARY_MODEL = "openai/gpt-oss-20b"
-FALLBACK_MODEL = "openai/gpt-oss-120b"
+OLLAMA_HOST = os.getenv("OLLAMA_HOST", "http://localhost:11434")
+DEFAULT_OLLAMA_MODEL = "gemma4:latest"
 
-MAX_TOKENS = 8192
-TEMPERATURE = 0.1
+MAX_TOKENS = 4096
+TEMPERATURE = 0.2
 MAX_PAPERS = 0
 
 # Specialty aliases
@@ -133,27 +124,20 @@ PEARLS_JSON_FIELDS = [
 ]
 
 # =====================================================================
-# STRENGTHENED PEARL EXTRACTION PROMPT
-# Hallucination-proof: explicitly forbids generating content not in source
+# PEARL EXTRACTION PROMPT
 # =====================================================================
-PEARL_PROMPT = """You are an expert critical care clinician. Your task is to EXTRACT high-yield clinical pearls STRICTLY from the provided text below.
+PEARL_PROMPT = """You are an expert critical care clinician extracting high-yield clinical pearls from a structured medical summary (article or guideline). You will receive the full extracted content below.
 
-CRITICAL — This is an EXTRACTION task, NOT a generation task:
-
-1. ONLY extract pearls that are DIRECTLY STATED in the provided text. Each pearl must be a close paraphrase of specific sentences found below.
-2. Do NOT generate, infer, extrapolate, or add any clinical knowledge that is not present in the text — even if it is common knowledge in your training data.
-3. If the text does NOT contain a high-yield actionable pearl on a given topic, return {"pearls": []}. Returning nothing is better than fabricating.
-4. Each pearl must be traceable back to at least one specific sentence or recommendation in the text below.
-
-Prioritize:
+Extract ALL high-yield, evidence-based pearls from the provided text. Prioritize:
 - **Clinical updates** — recent practice changes, new guideline recommendations
 - **Practice-changing concepts** — shifts in standard of care, updated thresholds
 - **Bedside actionable items** — doses, cutoffs, protocols, diagnostic criteria, management algorithms you can apply immediately
 
 Each pearl must be:
 - Specific and concrete (thresholds, cutoffs, dosing ranges, timing, risk modifiers, diagnostic criteria, prognostic markers)
+- Traceable to evidence when present in the text (RCTs, meta-analyses, guideline recommendations)
 - Self-contained (1-2 sentences, maximally information-dense)
-- NOT generic advice or truisms
+- NOT generic advice or truisms (avoid "always assess level of evidence" or "more research is needed")
 
 Deduplicate: if the same finding appears in multiple sections, include it only once.
 
@@ -162,7 +146,7 @@ Format: {"pearls": [{"text": "...", "topic": "..."}]}
 
 If no qualifying pearls can be extracted, return: {"pearls": []}
 
-Each pearl's "topic" should be 1-3 comma-separated keywords specific to the clinical domain."""
+Each pearl's "topic" should be 1-3 comma-separated keywords (e.g., "hemodynamics, vasopressors", "ventilation, ARDS", "antibiotics, sepsis")."""
 
 
 # =====================================================================
@@ -206,90 +190,23 @@ def infer_specialty_from_title(title, spec_map):
 
 
 # =====================================================================
-# CONSISTENCY CHECK
+# BACKEND DETECTION
 # =====================================================================
-# Numbers with medical units or percentages
-NUM_UNIT_PATTERN = re.compile(
-    r'\b\d+(?:\.\d+)?\s*(?:mg|mEq|mmHg|cmH2O|%|mcg|g|dL|mL|L|kg|mOsm|mmol|IU|U|hr|min|h|d|wk|mo|y|mg/dL|mg/kg|μg|ng)\b',
-    re.IGNORECASE
-)
-
-
-def extract_source_terms(payload):
-    """Extract key medical terms from source payload for consistency checking."""
-    all_text = ""
-
-    fields = ["title", "one_line_summary"]
-    for f in fields:
-        v = payload.get(f, "")
-        if isinstance(v, str):
-            all_text += " " + v
-
-    for kp in payload.get("key_pearls", []):
-        if isinstance(kp, str):
-            all_text += " " + kp
-
-    for s in payload.get("sections", []):
-        if isinstance(s.get("content"), str):
-            all_text += " " + s["content"]
-
-    for b in payload.get("recommendation_blocks", []):
-        if isinstance(b.get("narrative"), str):
-            all_text += " " + b["narrative"]
-        for r in b.get("recommendations", []):
-            if isinstance(r.get("statement"), str):
-                all_text += " " + r["statement"]
-
-    protocol = payload.get("bedside_protocol", [])
-    for step in protocol:
-        if isinstance(step.get("action"), str):
-            all_text += " " + step["action"]
-
-    dd = payload.get("drugs_doses", [])
-    for d in dd:
-        for k in ("drug", "dose", "indication"):
-            if isinstance(d.get(k), str):
-                all_text += " " + d[k]
-
-    # Extract numbers with units (e.g., "80 mmHg", "0.25 mg/kg")
-    units = set(NUM_UNIT_PATTERN.findall(all_text))
-
-    # Extract capitalized multi-word medical terms (diseases, drugs, procedures)
-    caps_terms = set(re.findall(r'\b[A-Z][a-z]+(?:\s+[A-Z][a-z]+)*\b', all_text))
-    caps_terms = {t.lower() for t in caps_terms if len(t) > 4}
-
-    # Extract standalone lowercase disease/drug terms longer than 4 chars
-    lower_terms = set(re.findall(r'\b[a-z]{5,}\b', all_text))
-
-    units_lower = {u.lower() for u in units}
-
-    return units_lower, caps_terms, lower_terms
-
-
-def check_consistency(pearl_text, source_terms):
-    """Check if pearl text shares at least one meaningful term with source."""
-    if not source_terms[0] and not source_terms[1] and not source_terms[2]:
-        return True  # can't check, pass through
-
-    pearl_lower = pearl_text.lower()
-
-    # Check numbers with units
-    pearl_units = set(NUM_UNIT_PATTERN.findall(pearl_text))
-    pearl_units_lower = {u.lower() for u in pearl_units}
-    if pearl_units_lower & source_terms[0]:
-        return True
-
-    # Check capitalized terms
-    for term in source_terms[1]:
-        if term in pearl_lower:
-            return True
-
-    # Check lowercase terms (require at least 2 matches to avoid false positives)
-    matches = sum(1 for t in source_terms[2] if t in pearl_lower)
-    if matches >= 2:
-        return True
-
-    return False
+def detect_ollama():
+    """Check if Ollama is available."""
+    try:
+        result = subprocess.run(
+            ["ollama", "list"],
+            capture_output=True, text=True, timeout=5
+        )
+        if result.returncode == 0 and result.stdout.strip():
+            models = [line.split()[0] for line in result.stdout.strip().split("\n")[1:] if line.strip()]
+            if models:
+                print(f"  Detected Ollama models: {', '.join(models)}")
+                return True, models
+    except (FileNotFoundError, subprocess.TimeoutExpired, IndexError):
+        pass
+    return False, []
 
 
 # =====================================================================
@@ -315,7 +232,7 @@ def update_tracker(file_name, count):
             tracker = {}
     tracker[file_name] = {
         "timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "mode": "together",
+        "mode": "ollama",
         "count": count
     }
     tmp = PEARLS_TRACKER + ".tmp"
@@ -388,45 +305,116 @@ def append_pearls_to_json(pearls):
 # =====================================================================
 # AI CALLER
 # =====================================================================
-def call_together(prompt, model):
-    """Call Together AI with primary/fallback models."""
-    from together import Together
-    client = Together(api_key=TOGETHER_API_KEY)
-    models_to_try = [model, FALLBACK_MODEL]
-    last_error = None
+def try_parse_ollama_response(raw):
+    """Attempt multiple strategies to extract valid JSON from Ollama output."""
+    if not raw:
+        return None
 
-    for m in models_to_try:
-        for attempt in range(2):
+    # Strategy 1: direct parse
+    try:
+        return json.loads(raw)
+    except json.JSONDecodeError:
+        pass
+
+    # Strategy 2: strip markdown fences
+    cleaned = re.sub(r'^```(?:json)?\s*', '', raw.strip())
+    cleaned = re.sub(r'\s*```$', '', cleaned)
+    try:
+        return json.loads(cleaned)
+    except json.JSONDecodeError:
+        pass
+
+    # Strategy 3: fix truncated JSON
+    opens = raw.count('{') + raw.count('[')
+    closes = raw.count('}') + raw.count(']')
+    missing = opens - closes
+    if 0 < missing < 20:
+        repaired = raw.strip()
+        repaired += ']' * (repaired.count('[') - repaired.count(']'))
+        repaired += '}' * (repaired.count('{') - repaired.count('}'))
+        if repaired.count('"') % 2 != 0:
+            repaired += '"'
+        try:
+            return json.loads(repaired)
+        except json.JSONDecodeError:
+            # Strategy 3b: extract first valid JSON object
+            brace_start = repaired.find('{')
+            if brace_start >= 0:
+                depth = 0
+                for i in range(brace_start, len(repaired)):
+                    if repaired[i] == '{':
+                        depth += 1
+                    elif repaired[i] == '}':
+                        depth -= 1
+                        if depth == 0:
+                            candidate = repaired[brace_start:i + 1]
+                            try:
+                                return json.loads(candidate)
+                            except json.JSONDecodeError:
+                                break
+        except Exception:
+            pass
+
+    # Strategy 4: regex search
+    for pattern in [r'\{.*\}', r'\[.*\]']:
+        match = re.search(pattern, raw, re.DOTALL)
+        if match:
             try:
-                response = client.chat.completions.create(
-                    model=m,
-                    messages=[
-                        {"role": "system", "content": PEARL_PROMPT},
-                        {"role": "user", "content": prompt}
-                    ],
-                    response_format={"type": "json_object"},
-                    temperature=TEMPERATURE,
-                    max_tokens=MAX_TOKENS,
-                    timeout=300
-                )
-                raw = response.choices[0].message.content
-                if raw is None or raw.strip() == "":
-                    raise ValueError("Empty response")
-                raw = raw.strip()
-                if raw.startswith("```"):
-                    raw = re.sub(r'^```(?:json)?\s*', '', raw)
-                    raw = re.sub(r'\s*```$', '', raw)
-                return json.loads(raw)
-            except Exception as e:
-                last_error = e
-                time.sleep(2)
-        if len(models_to_try) > 1:
-            print(f"    {m} failed, trying fallback model...")
-    raise RuntimeError(f"Together AI failed: {last_error}")
+                return json.loads(match.group(0))
+            except (json.JSONDecodeError, ValueError):
+                pass
+
+    return None
+
+
+def call_ollama(prompt, model, is_retry=False):
+    """Call Ollama API with JSON format constraint."""
+    if is_retry and len(prompt) > 4000:
+        print(f"  Truncating prompt to 4000 chars and retrying...")
+        prompt = prompt[:4000]
+
+    payload = {
+        "model": model,
+        "messages": [
+            {"role": "system", "content": PEARL_PROMPT},
+            {"role": "user", "content": prompt}
+        ],
+        "format": "json",
+        "stream": False,
+        "options": {
+            "temperature": TEMPERATURE,
+            "num_predict": MAX_TOKENS
+        }
+    }
+    try:
+        import requests
+        resp = requests.post(
+            f"{OLLAMA_HOST}/api/chat",
+            json=payload,
+            timeout=300
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        raw = data.get("message", {}).get("content", "").strip()
+        if not raw:
+            raise ValueError("Empty response from Ollama")
+
+        result = try_parse_ollama_response(raw)
+        if result is not None:
+            return result
+
+        if not is_retry and len(prompt) > 4000:
+            print(f"  JSON parse failed, retrying with truncated prompt...")
+            return call_ollama(prompt, model, is_retry=True)
+
+        raise ValueError("Could not parse JSON from Ollama response")
+
+    except Exception as e:
+        raise RuntimeError(f"Ollama call failed: {e}")
 
 
 # =====================================================================
-# LOCAL FALLBACK (rule-based)
+# LOCAL FALLBACK
 # =====================================================================
 def extract_local(payload):
     """Rule-based extraction from payload fields."""
@@ -593,39 +581,34 @@ def build_prompt(payload):
 # MAIN
 # =====================================================================
 def main():
-    parser = argparse.ArgumentParser(
-        description="Extract clinical pearls from JSON summaries using Together AI"
-    )
+    parser = argparse.ArgumentParser(description="Extract clinical pearls from JSON summaries using Ollama")
     parser.add_argument("--max", type=int, default=None,
                         help="Max papers to process (default: all)")
     parser.add_argument("--model", type=str, default=None,
-                        help=f"Together AI model (default: {PRIMARY_MODEL})")
+                        help="Ollama model name (default: gemma4:latest)")
     parser.add_argument("--force-local", action="store_true",
-                        help="Skip Together AI, use rule-based extraction only")
-    parser.add_argument("--consistency-check", action="store_true",
-                        help="Verify each pearl has content overlap with source text")
+                        help="Skip Ollama, use rule-based extraction only")
     args = parser.parse_args()
 
-    if not TOGETHER_API_KEY and not args.force_local:
-        print("ERROR: TOGETHER_API_KEY not found in .env. Use --force-local for rule-based extraction.")
-        sys.exit(1)
-
     max_papers = args.max if args.max is not None else MAX_PAPERS
-    model = args.model or PRIMARY_MODEL
+    model = args.model or DEFAULT_OLLAMA_MODEL
 
-    print("[AI] hack.CCM Pearl Extractor (Together AI)")
-    print(f"  Model: {model}  |  Fallback: {FALLBACK_MODEL}")
+    print("[AI] hack.CCM Pearl Extractor (Ollama)")
+    print(f"  Model: {model}")
 
     if args.force_local:
         backend = "local"
         print("  Backend: local (rule-based)")
     else:
-        backend = "together"
-        print(f"  Backend: Together AI")
+        available, _ = detect_ollama()
+        if available:
+            backend = "ollama"
+            print(f"  Backend: Ollama ({model})")
+        else:
+            backend = "local"
+            print("  Ollama not available. Using rule-based extraction.")
 
     print(f"  Max papers: {'all' if max_papers == 0 else max_papers}")
-    if args.consistency_check:
-        print("  Consistency check: ON")
     print()
 
     processed_files = load_tracker()
@@ -691,14 +674,9 @@ def main():
                 system = inferred
         ptype = payload.get("article_subtype") or payload.get("doc_type", "")
 
-        # Extract source terms for consistency check
-        source_terms = None
-        if args.consistency_check:
-            source_terms = extract_source_terms(payload)
-
         try:
-            if backend == "together":
-                result = call_together(prompt, model)
+            if backend == "ollama":
+                result = call_ollama(prompt, model)
             else:
                 result = extract_local(payload)
 
@@ -728,7 +706,6 @@ def main():
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         dedup_seen = set()
         pearl_rows = []
-        consistency_warnings = 0
 
         for p in raw_pearls[:25]:
             if isinstance(p, dict):
@@ -742,15 +719,6 @@ def main():
 
             if len(text) < 15:
                 continue
-
-            # Consistency check
-            if args.consistency_check and source_terms:
-                if not check_consistency(text, source_terms):
-                    consistency_warnings += 1
-                    if args.consistency_check > 1:  # strict mode — skip
-                        if args.consistency_check == 2:
-                            print(f"  [CC-SKIP] No source overlap: {text[:80]}...")
-                            continue
 
             key = text[:100].lower()
             if key in dedup_seen:
@@ -770,9 +738,6 @@ def main():
                 "file_name": fname,
                 "topic": topic,
             })
-
-        if consistency_warnings > 0:
-            print(f"  [CC] {consistency_warnings} pearls had no source term overlap")
 
         if not pearl_rows:
             print(f"  [SKIP] No new pearls after dedup")
