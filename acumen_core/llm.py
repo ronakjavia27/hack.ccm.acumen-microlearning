@@ -254,6 +254,138 @@ def execute_with_fallback(
     raise last_error or RuntimeError("All models exhausted")
 
 
+def _get_openai_compatible_client(api_key, base_url=None):
+    """Get OpenAI-compatible client for custom provider."""
+    if not api_key:
+        return None
+    try:
+        from openai import OpenAI
+        kwargs = {"api_key": api_key}
+        if base_url:
+            kwargs["base_url"] = base_url
+        return OpenAI(**kwargs)
+    except Exception:
+        return None
+
+
+def execute_with_gemini(
+    system_prompt,
+    user_content,
+    category_tag,
+    max_retries=None,
+    retry_delay=None,
+):
+    """
+    Gemini-only extraction with retry and backup fallback.
+    Uses MODEL_GEMINI_ARTICLES primary, MODEL_GEMINI_BACKUP fallback.
+    Returns parsed JSON dict.
+    """
+    max_retries = max_retries or MAX_RETRIES
+    retry_delay = retry_delay or RETRY_DELAY
+    last_error = None
+
+    primary_client = _get_gemini_client()
+    backup_client = _get_backup_gemini_client()
+    models = [MODEL_GEMINI_ARTICLES, MODEL_GEMINI_BACKUP]
+
+    if primary_client:
+        for attempt in range(max_retries):
+            try:
+                model = MODEL_GEMINI_ARTICLES
+                print(f"    Gemini: {model} (attempt {attempt + 1}/{max_retries})")
+                return call_gemini_api(
+                    primary_client, model, system_prompt, [user_content],
+                    temperature=TEMPERATURE_EXTRACTION,
+                )
+            except json.JSONDecodeError as e:
+                last_error = e
+                print(f"    [X] JSON parse error: {e}")
+                break
+            except Exception as e:
+                last_error = e
+                if _is_retryable(e) and attempt < max_retries - 1:
+                    wait = retry_delay * (attempt + 1)
+                    print(f"    [!] {e}")
+                    print(f"    Retrying in {wait}s...")
+                    time.sleep(wait)
+                else:
+                    print(f"    [X] Gemini primary failed: {e}")
+                    break
+
+    # Fallback to backup Gemini key
+    if backup_client:
+        for attempt in range(max_retries):
+            try:
+                model = models[1] if len(models) > 1 else MODEL_GEMINI_BACKUP
+                print(f"    Gemini Backup: {model} (attempt {attempt + 1}/{max_retries})")
+                return call_gemini_api(
+                    backup_client, model, system_prompt, [user_content],
+                    temperature=TEMPERATURE_EXTRACTION,
+                )
+            except json.JSONDecodeError as e:
+                last_error = e
+                print(f"    [X] JSON parse error: {e}")
+                break
+            except Exception as e:
+                last_error = e
+                if _is_retryable(e) and attempt < max_retries - 1:
+                    wait = retry_delay * (attempt + 1)
+                    time.sleep(wait)
+                else:
+                    print(f"    [X] Gemini backup failed: {e}")
+                    break
+
+    raise last_error or RuntimeError("Gemini models exhausted")
+
+
+def execute_with_custom(
+    api_key,
+    model,
+    system_prompt,
+    user_content,
+    base_url=None,
+    max_retries=None,
+    retry_delay=None,
+):
+    """
+    Custom OpenAI-compatible provider extraction with retries.
+    Returns parsed JSON dict.
+    """
+    max_retries = max_retries or MAX_RETRIES
+    retry_delay = retry_delay or RETRY_DELAY
+    last_error = None
+
+    client = _get_openai_compatible_client(api_key, base_url)
+    if not client:
+        raise RuntimeError("Failed to create custom API client (check --api-key)")
+
+    base_url_str = base_url or "(default)"
+    for attempt in range(max_retries):
+        try:
+            print(f"    Custom: {model} @ {base_url_str} (attempt {attempt + 1}/{max_retries})")
+            return call_chat_api(
+                client, model, system_prompt, user_content,
+                temperature=TEMPERATURE_EXTRACTION,
+                max_tokens=MAX_TOKENS_EXTRACTION,
+            )
+        except json.JSONDecodeError as e:
+            last_error = e
+            print(f"    [X] JSON parse error: {e}")
+            break
+        except Exception as e:
+            last_error = e
+            if _is_retryable(e) and attempt < max_retries - 1:
+                wait = retry_delay * (attempt + 1)
+                print(f"    [!] {e}")
+                print(f"    Retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"    [X] Custom API failed: {e}")
+                break
+
+    raise last_error or RuntimeError("Custom API exhausted")
+
+
 def execute_pearl_extraction(markdown_text, file_name=""):
     """
     Separate Pass 2: Extract clinical pearls using cheaper model.

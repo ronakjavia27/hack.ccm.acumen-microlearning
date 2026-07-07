@@ -90,6 +90,9 @@ REPEATED_FAILURE_THRESHOLD = 3        # files with >= N failures -> HIGH priorit
 # --- Error types that warrant automatic reprocessing ---
 AUTOREPROCESS_TYPES = {"API_TIMEOUT", "EMPTY_RESPONSE", "JSON_PARSE_ERROR", "TEXT_EXTRACTION_FAILED"}
 
+# --- Reset pearls settings ---
+RESET_PEARL_BACKUP_BEFORE = True     # backup pearls.json before resetting a file
+
 
 # =====================================================================
 # DISK INDEX - Scan output_files/ for all JSONs
@@ -750,13 +753,18 @@ def reprocess_pearls(dry_run=False, verbose=False, max_files=None):
 # =====================================================================
 # ERROR PRIORITY REPORT
 # =====================================================================
-def error_priority_report(full_scan=False, verbose=False):
+def error_priority_report(full_scan=False, verbose=False, since_date=None):
     """
     Read master_error_list files and display prioritized action plan.
     Reads current month only, unless full_scan=True.
+    If since_date is provided, only errors on or after that date are included.
     """
     print("\n  [ERROR-PRIORITY] Analyzing master_error_list...")
-    if full_scan:
+    if since_date:
+        errors = read_all_errors()
+        errors = [e for e in errors if e.get("timestamp") and _is_on_or_after(e["timestamp"], since_date)]
+        print(f"    Filtered from ALL monthly logs (since {since_date})")
+    elif full_scan:
         errors = read_all_errors()
         print(f"    Reading ALL monthly error lists ({len(get_all_error_list_paths())} files)")
     else:
@@ -874,12 +882,18 @@ def error_priority_report(full_scan=False, verbose=False):
 # =====================================================================
 # HEALTH REPORT GENERATION
 # =====================================================================
-def generate_health_report(full_scan=False, verbose=False):
+def generate_health_report(full_scan=False, verbose=False, since_date=None):
     """Generate health_report.json + health_report.md."""
     print("\n  [HEALTH-REPORT] Generating health report...")
 
     # Collect data
-    errors = read_all_errors() if full_scan else read_current_month_errors()
+    if since_date:
+        errors = read_all_errors()
+        errors = [e for e in errors if e.get("timestamp") and _is_on_or_after(e["timestamp"], since_date)]
+    elif full_scan:
+        errors = read_all_errors()
+    else:
+        errors = read_current_month_errors()
 
     # Count files on disk
     disk = build_disk_index()
@@ -980,6 +994,17 @@ def _is_within_days(timestamp_str, days):
         return False
 
 
+def _is_on_or_after(timestamp_str, cutoff_date):
+    """Check if ISO timestamp is on or after a given date."""
+    if not timestamp_str:
+        return False
+    try:
+        ts = datetime.fromisoformat(timestamp_str)
+        return ts.date() >= cutoff_date
+    except Exception:
+        return False
+
+
 def _generate_markdown_report(report):
     """Generate Markdown string from health report data."""
     lines = []
@@ -1050,9 +1075,94 @@ def _generate_markdown_report(report):
 
 
 # =====================================================================
+# RESET PEARLS - remove and re-extract pearls for a specific JSON file
+# =====================================================================
+def reset_pearls_for_file(json_path, dry_run=False, verbose=False):
+    """
+    Remove all pearls belonging to a specific JSON file from pearls.json,
+    then re-run Pass 2 to extract fresh pearls.
+    """
+    print(f"\n  [RESET-PEARLS] Resetting pearls for: {json_path}")
+    json_name = os.path.basename(json_path)
+
+    # 1. Load current pearls
+    all_pearls = load_json_safe(PEARLS_JSON, [])
+    before_count = len(all_pearls)
+
+    # 2. Remove pearls belonging to this file
+    kept = [p for p in all_pearls if p.get("file") != json_name]
+    removed = before_count - len(kept)
+    if removed == 0:
+        print(f"    No existing pearls found for {json_name}")
+    else:
+        print(f"    Removed {removed} existing pearls for {json_name}")
+
+    if not dry_run:
+        # 3. Save backup
+        backup_path = PEARLS_JSON + ".reset_backup"
+        if RESET_PEARL_BACKUP_BEFORE and not os.path.exists(backup_path):
+            save_json_atomic(backup_path, all_pearls)
+            print(f"    Backup saved to: {os.path.basename(backup_path)}")
+        # 4. Save cleaned pearls.json
+        save_json_atomic(PEARLS_JSON, kept)
+        # 5. Reset the pearl tracker entry so generator knows to re-process
+        update_pearl_tracker(PEARLS_TRACKER, json_name, 0, "maintainer-reset")
+        print(f"    Pearl tracker reset for {json_name}")
+
+    # 6. Re-run pearl extraction
+    if not os.path.exists(json_path):
+        print(f"    [X] JSON file not found: {json_path}")
+        return 0
+
+    with open(json_path, "r", encoding="utf-8") as f:
+        payload = json.load(f)
+
+    pdf_name = payload.get("file_name") or payload.get("pdf_filename") or json_name.replace(".json", ".pdf")
+    abstract = payload.get("abstract") or payload.get("summary") or ""
+    full_text = payload.get("full_text") or payload.get("text") or ""
+
+    if not abstract and not full_text:
+        print(f"    [X] No text content in {json_name} to extract pearls from")
+        return 0
+
+    if verbose:
+        print(f"    Extracting pearls from {len(full_text or abstract)} chars of text...")
+
+    if not dry_run:
+        try:
+            result = execute_pearl_extraction(
+                text=full_text or abstract,
+                abstract=abstract,
+                payload=payload,
+                verbose=verbose,
+            )
+            new_pearls_raw = result if isinstance(result, list) else []
+            # Re-attach file/system info
+            new_pearls = []
+            for p in new_pearls_raw:
+                p["file"] = json_name
+                p["system"] = payload.get("specialty", [""])[0] if isinstance(payload.get("specialty"), list) else payload.get("system", "")
+                new_pearls.append(p)
+
+            if new_pearls:
+                current_all = load_json_safe(PEARLS_JSON, [])
+                current_all.extend(new_pearls)
+                save_json_atomic(PEARLS_JSON, current_all)
+                update_pearl_tracker(PEARLS_TRACKER, json_name, len(new_pearls), "maintainer-reset")
+                print(f"    Extracted {len(new_pearls)} new pearls")
+            else:
+                print(f"    No pearls extracted")
+                update_pearl_tracker(PEARLS_TRACKER, json_name, 0, "maintainer-reset")
+        except Exception as e:
+            print(f"    [X] Re-extraction failed: {e}")
+
+    return removed
+
+
+# =====================================================================
 # AUTO-FIX - run all maintenance operations
 # =====================================================================
-def auto_fix(dry_run=False, verbose=False, full_scan=False):
+def auto_fix(dry_run=False, verbose=False, full_scan=False, since_date=None):
     """Run reconcile + validate + repair + reprocess-pearls in sequence."""
     print("\n  [AUTO-FIX] Running full maintenance sequence...")
     print("  " + "=" * 50)
@@ -1060,7 +1170,7 @@ def auto_fix(dry_run=False, verbose=False, full_scan=False):
     results = {}
 
     # 1. Error priority (read-only, informs what to fix)
-    error_report = error_priority_report(full_scan=full_scan, verbose=verbose)
+    error_report = error_priority_report(full_scan=full_scan, verbose=verbose, since_date=since_date)
     results["error_priority"] = error_report
 
     # 2. Reconcile
@@ -1082,7 +1192,7 @@ def auto_fix(dry_run=False, verbose=False, full_scan=False):
             results["reprocess_pearls"] = reprocess_pearls(dry_run=dry_run, verbose=verbose)
 
     # 7. Generate health report
-    results["health_report"] = generate_health_report(full_scan=full_scan, verbose=verbose)
+    results["health_report"] = generate_health_report(full_scan=full_scan, verbose=verbose, since_date=since_date)
 
     print("\n  " + "=" * 50)
     print("  [AUTO-FIX] Complete!\n")
@@ -1111,6 +1221,9 @@ Examples:
   python maintainer.py --dry-run                 # Preview only, no writes
   python maintainer.py --verbose                  # Detailed per-file logging
   python maintainer.py --report-only               # Health report only, no fixes
+  python maintainer.py --reset-pearls FILE        # Remove & re-extract pearls for a file
+  python maintainer.py --since YYYY-MM-DD         # Filter errors/reports since a date
+  python maintainer.py --error-priority --since 2026-06-01  # Errors since June 1
         """,
     )
     parser.add_argument("--reconcile", action="store_true", help="Sync disk <-> sent_summaries.json")
@@ -1124,16 +1237,32 @@ Examples:
     parser.add_argument("--dry-run", action="store_true", help="Preview only, no writes")
     parser.add_argument("--verbose", action="store_true", help="Detailed per-file logging")
     parser.add_argument("--report-only", action="store_true", help="Generate health report, no fixes")
+    parser.add_argument("--reset-pearls", type=str, metavar="FILE", help="Remove & re-extract pearls for a JSON file")
+    parser.add_argument("--since", type=str, metavar="YYYY-MM-DD", help="Filter errors/reports since a specific date")
     args = parser.parse_args()
+
+    # Parse --since date if provided
+    since_date = None
+    if args.since:
+        try:
+            since_date = datetime.strptime(args.since, "%Y-%m-%d").date()
+        except ValueError:
+            print(f"  [X] Invalid --since date format: {args.since}. Use YYYY-MM-DD.")
+            sys.exit(1)
+
+    # --- Mode: Reset pearls ---
+    if args.reset_pearls:
+        reset_pearls_for_file(args.reset_pearls, dry_run=args.dry_run, verbose=args.verbose)
+        return
 
     # --- Mode: Auto-fix (run everything) ---
     if args.auto_fix:
-        auto_fix(dry_run=args.dry_run, verbose=args.verbose, full_scan=args.full_scan)
+        auto_fix(dry_run=args.dry_run, verbose=args.verbose, full_scan=args.full_scan, since_date=since_date)
         return
 
     # --- Mode: Error priority ---
     if args.error_priority:
-        error_priority_report(full_scan=args.full_scan, verbose=args.verbose)
+        error_priority_report(full_scan=args.full_scan, verbose=args.verbose, since_date=since_date)
         return
 
     # --- Mode: Reconcile ---
@@ -1158,9 +1287,10 @@ Examples:
 
     # --- Default / Report-only: Generate health report ---
     no_action = not any([args.reconcile, args.validate, args.repair, args.reclassify,
-                         args.reprocess_pearls, args.error_priority, args.auto_fix])
+                         args.reprocess_pearls, args.error_priority, args.auto_fix,
+                         args.reset_pearls])
     if no_action or args.report_only:
-        generate_health_report(full_scan=args.full_scan, verbose=args.verbose)
+        generate_health_report(full_scan=args.full_scan, verbose=args.verbose, since_date=since_date)
 
 
 if __name__ == "__main__":

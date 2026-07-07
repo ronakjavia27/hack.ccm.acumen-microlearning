@@ -2,14 +2,17 @@
 """
 syncer.py - hack.CCM Cloud Sync & Email Dispatch Engine
 =========================================================
-Handles git sync, Vercel deployment (via git push), email dispatch, and
+Handles git sync (with automatic backup tags), email dispatch, and
 subscriber list sync — all via a single script with mode flags.
 
+Default mode is git sync (`--mode all`). Email/subscribers require explicit flags.
+
 USAGE (single commands or combine):
-    python syncer.py --mode all                  # Git add -A, commit, push
-    python syncer.py --mode data                 # Git all except main_app.py
-    python syncer.py --mode web                  # Git main_app.py only
-    python syncer.py --mode pearls               # Git pearls.json + sent_summaries.json
+    python syncer.py                              # Git add -A, commit, push (default)
+    python syncer.py --mode all                   # Git add -A, commit, push
+    python syncer.py --mode data                  # Git all except main_app.py
+    python syncer.py --mode web                   # Git main_app.py only
+    python syncer.py --mode pearls                # Git pearls.json + sent_summaries.json
     python syncer.py --mode email                 # Dispatch pending emails
     python syncer.py --mode subscribers           # Sync Google Sheets -> emails.csv
     python syncer.py --mode full                  # subscribers -> email -> all (sequential)
@@ -53,6 +56,7 @@ GIT_REMOTE = "origin"
 GIT_BRANCH = "main"
 COMMIT_PREFIX = "hack.CCM Sync"
 AUTO_COMMIT = True  # auto-commit if there are staged changes
+BACKUP_BEFORE_PUSH = True  # create a local tag before pushing (backup-YYYYMMDD-HHMMSS)
 
 # --- Vercel / Web App ---
 WEB_APP_URL = "hack-ccm-acumen-microlearning.vercel.app"
@@ -215,6 +219,15 @@ def git_sync(mode="all", verbose=False, skip_verify=False, dry_run=False):
     else:
         print("  AUTO_COMMIT=False — staged but not committed.")
         return True
+
+    # Backup (local tag before push)
+    if BACKUP_BEFORE_PUSH:
+        tag_name = f"backup-{datetime.now().strftime('%Y%m%d-%H%M%S')}"
+        result = run_git("tag", tag_name)
+        if result.returncode == 0:
+            print(f"  [OK] Backup tag created: {tag_name}")
+        else:
+            print(f"  [!] Backup tag failed: {result.stderr.strip()}")
 
     # Push
     print(f"  Pushing to {GIT_REMOTE}/{GIT_BRANCH}...")

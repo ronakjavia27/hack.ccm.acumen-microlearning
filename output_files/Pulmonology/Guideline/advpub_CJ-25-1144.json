@@ -1,0 +1,489 @@
+{
+  "id": "jcs-jpcphs-2025-guideline-ph-vte",
+  "doc_type": "guideline",
+  "title": "JCS/JPCPHS 2025 Guideline on Pulmonary Hypertension and Pulmonary Embolism/Deep Vein Thrombosis",
+  "issuing_bodies": [
+    "JCS",
+    "JPCPHS"
+  ],
+  "year": 2025,
+  "doi": "10.1253/circj.CJ-25-1144",
+  "specialty": [
+    "pulmonology",
+    "cardiology",
+    "hematology"
+  ],
+  "tags": [
+    "pulmonary hypertension",
+    "pulmonary embolism",
+    "deep vein thrombosis",
+    "chronic thromboembolic pulmonary hypertension",
+    "balloon pulmonary angioplasty",
+    "anticoagulation",
+    "risk stratification",
+    "venous thromboembolism",
+    "pediatric cardiology",
+    "thrombolysis",
+    "vena cava filters",
+    "post-thrombotic syndrome"
+  ],
+  "one_line_summary": "This integrated guideline consolidates three prior JCS documents on pulmonary embolism, deep vein thrombosis, and pulmonary hypertension, incorporating 2024 WSPH definitions and providing comprehensive, evidence-based recommendations for prevention, diagnosis, and treatment across the pulmonary circulation.",
+  "key_pearls": [
+    "Pulmonary hypertension (PH) is now defined by right heart catheterization as a mean pulmonary arterial pressure (mPAP) >**20 mmHg**, a change from the previous threshold, but this does not imply a recommendation for therapeutic intervention in patients with mPAP of 21–**24 mmHg**.",
+    "The treatment algorithm for idiopathic, heritable, and drug-induced PAH is based on a **3-tier risk stratification model** (low, intermediate, high) using WHO-FC, 6MWD, RAP, CI, and mPAP, with initial oral combination therapy (ERA + PDE5i) for low/intermediate-risk and triple therapy including parenteral prostacyclin for high-risk patients.",
+    "Balloon pulmonary angioplasty (BPA) is a Class I recommendation for patients with chronic thromboembolic pulmonary hypertension (CTEPH) who are not candidates for pulmonary endarterectomy (PEA), with evidence showing it can achieve near-normalization of hemodynamics.",
+    "For acute pulmonary embolism (PE), treatment strategy is based on severity: high-risk patients in shock require immediate reperfusion therapy, while low-risk patients (sPESI=0, no RV dysfunction) may be candidates for early discharge or outpatient treatment with direct oral anticoagulants (DOACs).",
+    "The optimal duration of anticoagulation for venous thromboembolism (VTE) is determined by balancing recurrence risk (provoked vs. unprovoked) against bleeding risk, with extended therapy **recommended** for unprovoked VTE, cancer-associated VTE, and recurrent events.",
+    "Inhaled treprostinil is the first pulmonary vasodilator to show efficacy in a randomized controlled trial for pulmonary hypertension associated with interstitial lung disease (ILD-PH), **significantly** improving the 6-minute walk distance.",
+    "A new activin signaling inhibitor, sotatercept, has demonstrated **significant** improvement in 6MWD as an add-on therapy for PAH patients not responding adequately to initial combination therapy, representing a potential fourth therapeutic pathway.",
+    "For pediatric PAH, risk stratification tools incorporating **BNP/NT-proBNP**, **uric acid**, and imaging are **essential** for prognostication and treatment escalation.",
+    "In acute high-risk PE with shock, **systemic thrombolysis** is the first-line reperfusion strategy; surgical embolectomy or catheter-directed therapy are alternatives if thrombolysis is **contraindicated** or fails.",
+    "Direct oral anticoagulants (**DOACs**) are preferred over warfarin for extended treatment of VTE in non-cancer patients due to a lower risk of major bleeding.",
+    "For cancer-associated VTE, **edoxaban** or **rivaroxaban** are effective; the ONCO DVT trial supports 12-month over 3-month edoxaban for isolated distal DVT.",
+    "**Inferior** vena cava (**IVC**) filters are indicated only when anticoagulation is absolutely **contraindicated** in patients with acute proximal DVT or PE, and should be retrieved once the bleeding risk resolves.",
+    "Early ambulation and compression stockings are **recommended** for acute DVT to reduce pain and edema, but stockings do not prevent post-thrombotic syndrome.",
+    "Inhaled nitric oxide (**iNO**) selectively reduces pulmonary artery pressure in acute massive PE, but its use is limited to hemodynamic stabilization as a bridge to definitive therapy."
+  ],
+  "consensus_method": "Expert consensus based on systematic review of evidence, including proposals from the 6th (2018) and 7th (2024) World Symposia on Pulmonary Hypertension (WSPH), and integration of Japanese-specific data.",
+  "search_period": null,
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Definition, Diagnosis, and Testing of Pulmonary Hypertension",
+      "narrative": "- PH is defined as mPAP >**20 mmHg** at rest by RHC (Class I, Level C).\n- Precapillary PH is defined as PVR >**2 Wood units** and PAWP ≤**15 mmHg**.\n- Exercise PH is defined as an mPAP/CO slope >**3 mmHg/L/min** during exercise (Class I, Level C).\n- The diagnostic algorithm involves a stepwise approach from primary care to regional core hospitals and specialized PH centers, with echocardiography as the central non-invasive tool.\n- A V/Q scan is the **critical** initial test to rule out CTEPH due to its high sensitivity (Class I, Level C).\n- Echocardiographic probability of PH is assessed using peak TRV and additional signs from the ventricles, pulmonary artery, and IVC/RA (Class I, Level B).\n- RHC is **essential** for definitive diagnosis, classification, and severity assessment (Class I, Level B).\n- Vasoreactivity testing is **recommended** only in idiopathic, heritable, or drug-induced PAH to identify candidates for high-dose calcium channel blockers (Class I, Level C).\n- A positive vasoreactivity test is defined as a decrease in mPAP ≥**10 mmHg** to an **absolute** value of ≤**40 mmHg** with stable or increased CO (Class I, Level C).\n- Genetic testing and counseling are **recommended** for PAH patients, especially for *BMPR2* mutations (Class I, Level A).\n- A new 3-tier JCS risk stratification model for PAH uses five low-risk parameters: WHO-FC I/II, 6MWD >**440 m**, RAP <**8 mmHg**, CI ≥**2.5 L/min/m²**, and mPAP ≤**40 mmHg**.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "PH is defined as mPAP >**20 mmHg** at rest, measured by right heart catheterization.",
+          "strength": "strong",
+          "evidence_grade": "C"
+        },
+        {
+          "rec_id": null,
+          "statement": "It is **recommended** to perform a ventilation–perfusion (V/Q) scan or a lung perfusion scan to assess for CTEPH in patients with PH.",
+          "strength": "strong",
+          "evidence_grade": "C"
+        },
+        {
+          "rec_id": null,
+          "statement": "It is **recommended** to perform RHC to confirm the diagnosis, classification, and severity of PH, and to determine and assess the treatment strategy.",
+          "strength": "strong",
+          "evidence_grade": "B"
+        },
+        {
+          "rec_id": null,
+          "statement": "It is **recommended** to perform vasoreactivity testing in patients with idiopathic, heritable or drug-induced PAH (I/H/DPAH) to identify candidates for high-dose calcium channel blocker therapy.",
+          "strength": "strong",
+          "evidence_grade": "C"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Group 1 Pulmonary Arterial Hypertension (PAH) Treatment Algorithm",
+      "narrative": "- The treatment algorithm applies to I/HPAH, drug-induced PAH, and SSc-PAH, and is based on a 3-tier risk stratification (low, intermediate, high).\n- For patients with a positive acute vasoreactivity test, high-dose calcium channel blockers are **recommended** (Class I, Level A).\n- For low- or intermediate-risk patients, initial oral combination therapy with an ERA (ambrisentan or macitentan) and a PDE5 inhibitor (tadalafil) is **recommended** (Class I, Level A).\n- For high-risk patients, initial triple combination therapy including a parenteral prostacyclin analog (epoprostenol or treprostinil), an ERA, and a PDE5 inhibitor is **recommended** (Class I, Level B).\n- Treatment response should be reassessed within 3-4 months, with hemodynamic evaluation within 6 months if medications are changed (Class I, Level C).\n- For intermediate-risk patients on dual oral therapy, adding an oral prostacyclin receptor agonist (selexipag) or inhaled prostacyclin analog (treprostinil) should be considered (Class IIa, Level B).\n- For patients with PAH and cardiopulmonary comorbidities, initial monotherapy should be considered (Class IIa, Level C).\n- Adding an activin signaling inhibitor (sotatercept) should be considered for patients assessed as intermediate- or high-risk during follow-up (Class IIa, Level B).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "It is **recommended** to initiate combination therapy with an ERA (ambrisentan or macitentan) and a PDE5 inhibitor (tadalafil) in low- to intermediate-risk patients at the time of diagnosis of IPAH, HPAH, DPAH or SSc-PAH.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": null,
+          "statement": "It is **recommended** to initiate triple combination therapy consisting of parenteral prostacyclin analogs (epoprostenol or treprostinil), an ERA, and a PDE5 inhibitor in high-risk patients at the time of diagnosis of IPAH, HPAH, DPAH or SSc-PAH.",
+          "strength": "strong",
+          "evidence_grade": "B"
+        },
+        {
+          "rec_id": null,
+          "statement": "It should be considered to add an activin signaling inhibitor in patients with IPAH, HPAH, DPAH or SSc-PAH who are assessed as intermediate- or high-risk during follow-up.",
+          "strength": "conditional",
+          "evidence_grade": "B"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Chronic Thromboembolic Pulmonary Hypertension (CTEPH) Diagnosis and Treatment",
+      "narrative": "- All patients diagnosed with PH should be evaluated for CTEPH using a V/Q scan (Class I, Level C).\n- Treatment strategy must be determined by a multidisciplinary team at a specialized CTEPH/BPA center (Class I, Level C).\n- Lifelong anticoagulation with warfarin is **recommended** (Class I, Level C), with DOACs as an alternative (Class IIa, Level B).\n- PEA under deep hypothermic circulatory arrest is **recommended** for surgically accessible CTEPH (Class I, Level C).\n- BPA is **recommended** for patients who are not candidates for PEA (Class I, Level A).\n- Pulmonary vasodilators (riociguat or selexipag) are **recommended** for inoperable CTEPH or residual/recurrent PH after PEA (Class I, Level A).\n- Initiating pulmonary vasodilator therapy before BPA should be considered (Class IIa, Level B).\n- BPA should be considered for symptomatic patients with CTEPD without PH (Class IIa, Level C).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "It is **recommended** to perform BPA in patients with CTEPH who are not candidates for surgery.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": null,
+          "statement": "It is **recommended** to administer pulmonary vasodilators (riociguat or selexipag) in patients with CTEPH who are not candidates for surgery.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": null,
+          "statement": "It is **recommended** to perform PEA under deep hypothermic circulatory arrest in patients with CTEPH who are eligible for surgery.",
+          "strength": "strong",
+          "evidence_grade": "C"
+        },
+        {
+          "rec_id": null,
+          "statement": "It should be considered to use DOACs as an alternative to lifelong vitamin K antagonist therapy in patients with CTEPH.",
+          "strength": "conditional",
+          "evidence_grade": "B"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Treatment of Acute Pulmonary Embolism (PE)",
+      "narrative": "- Treatment strategy is based on severity, combining hemodynamic parameters, imaging, biomarkers, and clinical scores like sPESI.\n- For high-risk PE (cardiac arrest or shock), immediate reperfusion therapy (thrombolysis, surgical or catheter embolectomy) and hemodynamic support (VA-ECMO) are indicated.\n- Thrombolytic therapy is **recommended** for patients with acute PE who are in shock or hemodynamically unstable (Class I, Level B).\n- For intermediate-high risk PE (RV dysfunction + positive biomarkers), anticoagulation with close monitoring is first-line; rescue reperfusion is considered if deterioration occurs (Class IIa, Level B).\n- For low-risk PE (sPESI=0, no RV dysfunction), early discharge or outpatient treatment with DOACs may be considered.\n- Anticoagulation with DOACs (edoxaban, rivaroxaban, apixaban) is **recommended** for acute treatment of hemodynamically stable PE (Class I, Level A).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Thrombolytic therapy is **recommended** for patients with acute PE who are in shock or hemodynamically unstable due to prolonged hypotension.",
+          "strength": "strong",
+          "evidence_grade": "B"
+        },
+        {
+          "rec_id": null,
+          "statement": "DOACs are administered as acute treatment for hemodynamically stable acute PE.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": null,
+          "statement": "For PE provoked by major transient risk factors or minor transient risk factors (without additional risk factors for recurrence), anticoagulation therapy for 3 months should be considered.",
+          "strength": "conditional",
+          "evidence_grade": "B"
+        },
+        {
+          "rec_id": null,
+          "statement": "For unprovoked PE, if the bleeding risk is not high, extended anticoagulant therapy should be considered.",
+          "strength": "conditional",
+          "evidence_grade": "C"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Prevention of Venous Thromboembolism (VTE)",
+      "narrative": "- VTE risk in surgical patients is categorized into 4 levels (low, moderate, high, highest) based on procedure type, age, and additional risk factors.\n- Early mobilization and active exercise are **recommended** for all at-risk patients (Class I, Level C).\n- For high-risk patients, IPC or anticoagulation therapy is **recommended** (Class I, Level A).\n- For the highest-risk patients, pharmacologic prophylaxis combined with IPC or elastic stockings is **recommended** (Class I, Level A).\n- In medical inpatients, early mobilization is **recommended** for all (Class I, Level C), and IPC is **recommended** for acute stroke patients with reduced mobility (Class I, Level A).\n- Anticoagulation therapy should be considered for patients with moderate to severe COVID-19 (requiring oxygen) (Class IIa, Level B).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "For high-risk patients, intermittent pneumatic compression or anticoagulation therapy is **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": null,
+          "statement": "For patients at highest risk, pharmacologic prophylaxis and intermittent pneumatic compression are used or pharmacologic prophylaxis and compression stockings are used.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": null,
+          "statement": "Intermittent pneumatic compression is performed on acute stroke patients with reduced mobility.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": null,
+          "statement": "Consider anticoagulant therapy for the prevention of thrombosis and improvement of the condition in patients with moderate to severe COVID-19 disease (requiring oxygen administration).",
+          "strength": "conditional",
+          "evidence_grade": "B"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Pediatric Pulmonary Arterial Hypertension (PAH) Management",
+      "narrative": "- Genetic testing for **BMPR2** and **ALK1** mutations informs **prognosis** in childhood PAH.\n- Risk stratification tools in pediatric PAH incorporate **BNP/NT-proBNP** levels, **uric acid**, and echocardiographic parameters.\n- The TOPP Registry provides current clinical practice data on acute vasodilator response testing in children.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Risk stratification using multimodal tools including biomarkers and imaging is **recommended** for pediatric PAH patients to guide therapy.",
+          "strength": "strong",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Pharmacotherapy for Pediatric PAH",
+      "narrative": "- **Sildenafil**: STARTS-1 and STARTS-2 trials showed efficacy but the FDA issued a warning against its use in pediatric PAH, particularly at high doses.\n- **Tadalafil**: A phase 3 RCT demonstrated efficacy and safety in a pediatric PAH population.\n- **Bosentan**: FUTURE-1, -2, and -3 studies established pharmacokinetics, safety, and dosing regimens for the pediatric formulation.\n- **Ambrisentan**: RCT data supports safety and efficacy in children aged 8-18 years.\n- **Macitentan**: Evaluated in patients with Eisenmenger syndrome; real-world data supports safety in pediatric PAH.\n- **Prostanoids**: Parenteral prostanoids should be started early, dosed high, and combined. Epoprostenol, treprostinil (subcutaneous/IV), and inhaled iloprost have demonstrated efficacy.\n- **Selexipag**: Multicenter experience and systematic reviews indicate safety and efficacy in children with idiopathic/heritable PAH.\n- **Riociguat**: PATENT-CHILD study and population PK modeling support its use in children aged ≥6 years.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Parenteral prostanoids should be initiated early and at high doses for children with severe PAH.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Oral endothelin receptor antagonists (bosentan, ambrisentan, macitentan) and PDE5 inhibitors (tadalafil) are treatment options for pediatric PAH, with careful monitoring for adverse effects.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Acute Pulmonary Embolism (PE) Risk Stratification and Outpatient Management",
+      "narrative": "- The **Hestia criteria** and **simplified PESI score** can identify low-risk PE patients suitable for outpatient treatment.\n- The **HoT-PE** trial and **ONCO PE** companion report support home treatment with rivaroxaban for low-risk PE, including in active cancer patients.\n- Early discharge and home treatment with **rivaroxaban** is safe and effective for low-risk PE.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Outpatient management or early discharge is **recommended** for patients with acute low-risk PE, using validated clinical decision rules (Hestia, sPESI).",
+          "strength": "strong",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Advanced Therapies for High-Risk and Intermediate-Risk PE",
+      "narrative": "- **Systemic Thrombolysis**: Meta-analysis confirms reduced **mortality** in high-risk PE but increases major bleeding and intracranial hemorrhage. Low-dose rt-PA is effective and potentially safer.\n- **Catheter-Directed Therapy (CDT)**: Ultrasound-assisted thrombolysis (SEATTLE II, SUNSET sPE) and mechanical thrombectomy (FLARE, EXTRACT-PE, FLASH registry) are options for intermediate-risk PE.\n- **Surgical Embolectomy**: Multi-institutional studies show acceptable outcomes for acute massive and submassive PE, particularly as first-line therapy in experienced centers.\n- **VA-ECMO**: Meta-analyses support its use as a bridge to definitive reperfusion (thrombolysis or embolectomy) in massive PE with cardiac arrest or refractory shock. Systemic thrombolysis during ECMO may improve outcomes.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Systemic thrombolysis is **recommended** for acute high-risk PE with hemodynamic instability.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Catheter-directed therapies or surgical embolectomy should be considered for intermediate-risk PE with evidence of right ventricular dysfunction and deterioration, or when thrombolysis is **contraindicated**.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Anticoagulation Duration and Agents for VTE",
+      "narrative": "- **Extended anticoagulation** beyond 3-6 months reduces recurrence risk in unprovoked VTE but increases bleeding risk.\n- **DOACs** (rivaroxaban, apixaban, edoxaban) are preferred over warfarin for extended treatment due to a better safety profile.\n- **Aspirin** is **inferior** to anticoagulation for extended secondary prevention but may be considered if anticoagulation is stopped.\n- The **VTE-BLEED score** predicts major bleeding during prolonged anticoagulation.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Extended anticoagulation with a DOAC is **recommended** over warfarin for secondary prevention in patients with unprovoked VTE and low bleeding risk.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "For patients who stop anticoagulation, low-dose aspirin may be considered for extended prevention of recurrent VTE.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "topic": "Inferior Vena Cava (IVC) Filters",
+      "narrative": "- The **PREPIC** and **PREPIC 2** trials showed IVC filters reduce short-term PE risk but increase long-term DVT risk without a **mortality** benefit.\n- Guidelines from SIR, ACC, AHA, and CHEST recommend IVC filters only when anticoagulation is **contraindicated** in patients with acute VTE.\n- Retrievable filters should be removed once the contraindication to anticoagulation resolves.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "IVC filter placement is **recommended** for patients with acute proximal DVT or PE and an **absolute** contraindication to anticoagulation.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Routine use of IVC filters in addition to anticoagulation is not **recommended**.",
+          "strength": "strong",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "topic": "Compression Therapy and Early Ambulation for DVT",
+      "narrative": "- Meta-analyses show **early ambulation** does not increase the risk of PE and reduces acute leg pain and edema.\n- **Graduated compression stockings (GCS)** reduce acute symptoms but the **SOX trial** and **OCTAVIA study** showed they do not prevent post-thrombotic syndrome (PTS).\n- Individualized duration of compression therapy (IDEAL DVT) is non-**inferior** to standard 24-month therapy for PTS prevention.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Early ambulation is **recommended** over bed rest in patients with acute DVT.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Compression stockings may be used to relieve acute DVT symptoms but are not routinely **recommended** for the prevention of post-thrombotic syndrome.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "topic": "Cancer-Associated VTE (CA-VTE)",
+      "narrative": "- The **Khorana score** predicts chemotherapy-associated thrombosis; the **ONCO DVT trial** showed 12-month edoxaban is **superior** to 3-month for isolated distal DVT in cancer patients.\n- **DOACs** (rivaroxaban, edoxaban) are effective for CA-VTE treatment; the **SELECT-D** and **Hokusai-VTE Cancer** trials inform practice.\n- Primary thromboprophylaxis with DOACs (apixaban, rivaroxaban) in high-risk ambulatory cancer patients (Khorana score ≥2) reduces VTE but increases bleeding.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "DOACs (edoxaban or rivaroxaban) are **recommended** for the treatment of cancer-associated VTE in patients without high bleeding risk.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Primary thromboprophylaxis with a DOAC may be considered in high-risk ambulatory cancer patients with a Khorana score ≥2 and low bleeding risk.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "topic": "VTE Prophylaxis in Hospitalized and Surgical Patients",
+      "narrative": "- **Caprini** and **Padua** risk assessment models identify high-risk surgical and medical patients.\n- **Pharmacologic prophylaxis** (LMWH, fondaparinux, DOACs) reduces VTE in high-risk groups; the **IMPROVE** score assesses bleeding risk.\n- **Intermittent pneumatic compression (IPC)** is effective for VTE prevention in patients with contraindications to anticoagulation (e.g., stroke, ICU).\n- Combined mechanical and pharmacologic prophylaxis is more effective than either alone in very high-risk patients.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Risk assessment with validated tools (Caprini/Padua) is **recommended** for all hospitalized patients to guide VTE prophylaxis.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Pharmacologic prophylaxis with LMWH or DOACs is **recommended** for high-risk surgical and medical patients without contraindications.",
+          "strength": "strong",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "topic": "COVID-19 Associated Coagulopathy and VTE",
+      "narrative": "- COVID-19 is associated with a high incidence of thrombotic complications, particularly in **critically** ill ICU patients.\n- ISTH and CHEST guidelines recommend standard-dose prophylactic anticoagulation for hospitalized patients; therapeutic-dose anticoagulation may benefit non-**critically** ill patients but not **critically** ill patients (REMAP-CAP, ATTACC, ACTIV-4a).\n- Japanese CLOT-COVID study and nationwide surveys provide local epidemiological data.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "Standard prophylactic-dose anticoagulation is **recommended** for hospitalized patients with COVID-19.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": null,
+          "statement": "Therapeutic-dose anticoagulation may be considered in select non-**critically** ill hospitalized COVID-19 patients with elevated D-dimer.",
+          "strength": "conditional",
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Initial Assessment for Suspected PH",
+      "action": "Primary care physician evaluates medical/family history, physical exam, chest X-ray, ECG, BNP/NT-proBNP, and oxygen saturation. If abnormalities are detected, refer to a regional core hospital."
+    },
+    {
+      "step": 2,
+      "title": "Non-Invasive Testing at Regional Core Hospital",
+      "action": "Perform echocardiography to estimate PH probability. Conduct pulmonary function tests, arterial blood gas analysis, and chest CT/CTPA to evaluate for lung disease. If PH probability is intermediate/high, refer to a specialized PH center."
+    },
+    {
+      "step": 3,
+      "title": "Confirmatory Diagnosis at PH Center",
+      "action": "Perform a V/Q scan to rule out CTEPH. Conduct RHC for definitive hemodynamic diagnosis, classification, and severity assessment. Perform acute vasoreactivity testing in I/H/DPAH patients."
+    },
+    {
+      "step": 4,
+      "title": "Acute PE Severity Stratification",
+      "action": "Assess for cardiac arrest or shock (high-risk). If stable, evaluate using sPESI score and assess for RV dysfunction on echocardiography or CT and cardiac biomarkers to classify as intermediate-high, intermediate-low, or low risk."
+    },
+    {
+      "step": 5,
+      "title": "Immediate Management of High-Risk PE",
+      "action": "Initiate VA-ECMO if in cardiac arrest. For shock, start anticoagulation and consider immediate reperfusion therapy (systemic thrombolysis, or surgical/catheter embolectomy if contraindications exist). Administer norepinephrine for hypotension."
+    }
+  ],
+  "strengths_limitations": "- Strengths: This is the first comprehensive national guideline to integrate three prior documents on pulmonary circulation into a single, coherent volume, and the first to be issued following the 7th WSPH (2024), incorporating updated hemodynamic definitions and a new risk stratification model. It systematically incorporates high-quality Japanese-led evidence, particularly for BPA in CTEPH.\n- Limitations: Many recommendations are based on expert consensus (Level C evidence) due to a lack of randomized controlled trials in specific areas. The guideline notes that some **recommended** drug regimens, such as low-dose DOACs for extended VTE treatment, are not yet covered by health insurance in Japan, limiting their practical application.\n- Strengths: Comprehensive, multidisciplinary guideline covering the full spectrum of PH and VTE management from pediatrics to adults, incorporating the latest RCTs and real-world data, with a focus on Japanese clinical practice.\n- Limitations: As a narrative guideline, the strength of individual recommendations is not formally graded; some recommendations rely on expert consensus due to limited high-quality evidence in specific subpopulations.",
+  "drugs_doses": [
+    {
+      "drug": "ambrisentan",
+      "dose": "10 mg, once daily",
+      "indication": "PAH (initial oral combination therapy)",
+      "adverse_effects": null
+    },
+    {
+      "drug": "macitentan",
+      "dose": "10 mg, once daily",
+      "indication": "PAH (initial oral combination therapy)",
+      "adverse_effects": null
+    },
+    {
+      "drug": "tadalafil",
+      "dose": "40 mg, once daily",
+      "indication": "PAH (initial oral combination therapy)",
+      "adverse_effects": null
+    },
+    {
+      "drug": "epoprostenol",
+      "dose": "1-2 ng/kg/min continuous IV infusion, titrated to effect (typical range at 1 year: 40-60 ng/kg/min)",
+      "indication": "High-risk PAH (initial triple combination therapy)",
+      "adverse_effects": "Headache, flushing, jaw/limb pain, nausea, diarrhea; high-dose therapy can trigger IgG4-related disease, thyroid dysfunction, pituitary disorders."
+    },
+    {
+      "drug": "selexipag",
+      "dose": "200 μg twice daily, titrated to max tolerated dose (≤1600 μg twice daily)",
+      "indication": "PAH (add-on to dual oral therapy); CTEPH (inoperable or residual PH after PEA)",
+      "adverse_effects": null
+    },
+    {
+      "drug": "riociguat",
+      "dose": "1 mg three times daily, titrated to 2.5 mg three times daily",
+      "indication": "CTEPH (inoperable or residual PH after PEA)",
+      "adverse_effects": null
+    },
+    {
+      "drug": "sotatercept",
+      "dose": "Not specified (approved in Japan Aug 2025)",
+      "indication": "PAH (add-on therapy for intermediate/high-risk patients on background therapy)",
+      "adverse_effects": "Bleeding, worsening telangiectasia, increased hemoglobin, decreased platelet counts."
+    },
+    {
+      "drug": "treprostinil (inhaled)",
+      "dose": "18 μg four times daily, titrated to 54 μg four times daily for PAH; target dose 72 μg four times daily for ILD-PH",
+      "indication": "PAH; ILD-PH",
+      "adverse_effects": null
+    },
+    {
+      "drug": "monteplase",
+      "dose": "Not specified",
+      "indication": "Acute PE (thrombolytic therapy for high-risk patients)",
+      "adverse_effects": "Major bleeding (8.1%), intracranial hemorrhage (1.7%)."
+    },
+    {
+      "drug": "edoxaban",
+      "dose": "Not specified",
+      "indication": "Acute VTE treatment; CTEPH (alternative to warfarin)",
+      "adverse_effects": "Clinically relevant bleeding."
+    },
+    {
+      "drug": "rivaroxaban",
+      "dose": "Not specified",
+      "indication": "Acute VTE treatment",
+      "adverse_effects": null
+    },
+    {
+      "drug": "apixaban",
+      "dose": "Not specified",
+      "indication": "Acute VTE treatment",
+      "adverse_effects": null
+    },
+    {
+      "drug": "warfarin",
+      "dose": "Adjusted to PT-INR 1.5-2.5",
+      "indication": "CTEPH (lifelong anticoagulation); VTE treatment/secondary prevention",
+      "adverse_effects": "Bleeding; embryopathy when used during 6-12 weeks of gestation."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-06-30",
+  "article_subtype": "Guideline"
+}

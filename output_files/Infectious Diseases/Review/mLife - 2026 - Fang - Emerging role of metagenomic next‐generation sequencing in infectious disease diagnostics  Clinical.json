@@ -1,0 +1,94 @@
+{
+  "id": "emerging-role-of-metagenomic-next-generation-sequencing-in-infectious-disease-diagnostics-2026",
+  "doc_type": "article",
+  "article_subtype": "Review",
+  "title": "Emerging role of metagenomic next‐generation sequencing in infectious disease diagnostics: Clinical integration and future directions",
+  "authors": "Tingting Fang et al.",
+  "journal": "mLife",
+  "year": 2026,
+  "doi": "10.1002/mlf2.70078",
+  "specialty": [
+    "infectious_disease",
+    "multi_system"
+  ],
+  "tags": [
+    "metagenomic next-generation sequencing",
+    "mNGS",
+    "infectious disease diagnostics",
+    "bioinformatics",
+    "antimicrobial resistance",
+    "clinical metagenomics",
+    "pathogen detection",
+    "public health surveillance"
+  ],
+  "one_line_summary": "Metagenomic next-generation sequencing (mNGS) is an unbiased diagnostic tool that overcomes limitations of conventional tests by detecting bacteria, viruses, fungi, and parasites in a single assay, improving pathogen detection and clinical outcomes in complex infections.",
+  "key_pearls": [
+    "mNGS provides an unbiased approach that can detect bacteria, viruses, fungi, and parasites in a single assay, overcoming the narrow scope of conventional tests.",
+    "In CNS infections, mNGS identified a pathogen in **14.4%** of cases and was the sole diagnostic method in **21.8%** of confirmed infections, with a sensitivity of **63.1%** vs. **28.8%** for serology.",
+    "For sepsis, mNGS demonstrates a positivity rate of ~**74.7%**, more than double the **33.9%** rate of blood culture, and can identify genotypic resistance markers like *mecA* and *vanA*.",
+    "A multicenter RCT in severe ICU community-acquired pneumonia showed mNGS reduced the median time to clinical improvement from **13 to 10 days** and increased the 14-day clinical improvement rate (**62.0% vs. 46.5%**).",
+    "A major clinical challenge is distinguishing infection from colonization; a structured approach using read metrics, organism pathogenicity, and clinical correlates is **essential** for accurate interpretation.",
+    "A negative mNGS result cannot definitively rule out infection, with reported false-negative rates of **59.6%** in CSF and **69.8%** in other sterile body fluids.",
+    "Future directions include a two-tier diagnostic model combining rapid targeted NGS (tNGS) for common pathogens with broad mNGS for unexpected organisms, and integrating host-response analysis to improve diagnostic specificity."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": "Patients with a broad range of infectious syndromes including CNS infections, sepsis, pneumonia, and immunocompromised states.",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction",
+      "content": "- Infectious diseases are a leading cause of global morbidity and **mortality**, requiring timely and accurate pathogen identification.\n- Traditional diagnostics (culture, serology, targeted PCR) are limited by narrow detection scope and long turnaround time, failing to yield a cause in up to **50%** of meningitis/encephalitis or pneumonia cases.\n- mNGS performs unbiased sequencing of all nucleic acids in a clinical sample, detecting bacteria, viruses, fungi, and parasites in a single assay without *a priori* assumptions.\n- Early proof-of-concept in 2014 diagnosed unexplained neuroleptospirosis, highlighting clinical potential.\n- Meta-analytic data show **superior** etiologic yield for mNGS versus conventional testing, with pooled sensitivity estimates around **70%–80%** across syndromes.\n- In fever of unknown origin (FUO) cohorts, mNGS approximately doubled diagnostic yield compared to culture-based strategies.\n- mNGS provides genomic data on antimicrobial resistance (AMR) and pathogen lineage, supporting personalized therapy and outbreak tracking.\n- Challenges hindering routine adoption include high cost, data complexity, and lack of standardization.",
+      "section_pearls": []
+    },
+    {
+      "order": 2,
+      "heading": "Technology Advances of mNGS",
+      "content": "- **Sequencing Platforms:** High-throughput short-read sequencers like *Illumina* are the workhorse of clinical mNGS, offering high accuracy and deep coverage, yielding results in as fast as **14–24 h**.\n- *BGI (MGI)* platforms (e.g., MGISEQ-2000) use DNA nanoball (DNB) arrays and cPAS chemistry, generating ~**1.4 terabases** of data per run at ~**$10 per gigabyte**, with comparable sensitivity and specificity to Illumina.\n- Third-generation platforms like *Oxford Nanopore Technology (ONT)* provide real-time long-read sequencing, enabling ultra-rapid diagnostics (e.g., a nanopore-based targeted sequencing assay delivered results in ~**7 h** from blood draw for bloodstream infections).\n- *PacBio HiFi* sequencing excels at generating high-accuracy genomes for complete pathogen characterization but has slower throughput and higher cost, limiting routine clinical use.\n- **Sample Pre-processing:** Clinical specimens contain >**95%–99%** human nucleic acids, necessitating host depletion strategies like differential centrifugation, selective DNA/RNA depletion, and chemistry-based host lysis.\n- A simple **15-min** centrifugation step achieved the highest viral-read recovery among tested protocols for respiratory samples.\n- **Bioinformatics Pipeline:** Key steps include host-read subtraction by aligning to a human reference genome (e.g., GRCh38), k-mer-based screening, deduplication, and quality trimming.\n- Pipelines like *SURPI+* use curated reference databases (e.g., FDA-ARGOS) and tiered classification; unclassified reads undergo de novo assembly to detect novel organisms.\n- ISO 24420:2023 provides a standard for shotgun metagenomic data processing and quality evaluation.\n- AMR gene prediction is integrated by cross-referencing against databases like CARD, ResFinder, and NCBI. Nanopore sequencing correctly identified *mecA* and *vanA* genes with an **80.6%** correlation with phenotypic susceptibility.\n- An ESCV-led evaluation of 13 metagenomic virus pipelines found all detected high-load viruses, but only **3/13** correctly identified low-abundance pathogens in mixed infections.\n- AI/ML is being explored to differentiate true infection from contaminants, with one model reducing false positives by **10%** using a background knowledge base and multidimensional thresholds.\n- **Quality Management:** The US FDA granted Breakthrough Device designation in 2023 to an mNGS-based viral test, which achieved **93.7%** overall accuracy versus gold-standard PCR.\n- ISO 17822:2020 provides a laboratory quality practice guide for nucleic acid amplification-based pathogen detection.\n- An expert-consensus framework was developed to guide clinical interpretation of respiratory mNGS results, integrating host-response information to improve diagnostic accuracy.",
+      "section_pearls": [
+        "Current clinical mNGS relies primarily on high-throughput short-read sequencing (Illumina, BGI/MGI), while third-generation platforms (ONT, PacBio) offer advantages for rapid or high-resolution applications.",
+        "Combining wet-lab host depletion with in silico host-read subtraction materially increases the probability of detecting low-abundance pathogens."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Clinical Applications and Decision Impact",
+      "content": "- **CNS Infections:** In a 7-year UCSF study of >4800 CSF samples, mNGS identified a pathogen in **14.4%** of cases and was the sole diagnostic method in **21.8%** of confirmed CNS infections, with higher sensitivity (**63.1%**) than serology (**28.8%**).\n- A multicenter cohort of 111 suspected CNS infection cases found mNGS identified pathogens in **68.7%** of patients vs. **26.5%** by culture (*p* < 0.0001).\n- A 2024 multicenter study in China found a targeted amplicon-based NGS panel identified **57/89** definite infections vs. **39/89** for broad mNGS, suggesting a complementary approach.\n- In a study of 369 CNS infection patients, **49%** required a change in therapy based on mNGS results, with reduced overall drug usage and slightly shorter hospital stays.\n- **Bloodstream Infections and Sepsis:** In a prospective study of 387 sepsis patients, mNGS had a positivity rate of ~**74.7%**, more than double blood culture's **33.9%**.\n- Plasma cell-free DNA mNGS achieved **100%** detection of bacteria/fungi in one cohort, outperforming the **88%** sensitivity of cellular blood mNGS.\n- **Respiratory Tract Infections:** mNGS increased TB detection rates from ~**35%** with conventional tests to ~**50%** in clinical samples, though about half of mNGS-positive TB cases had only **1–5** sequencing reads.\n- A multicenter RCT in severe ICU CAP showed mNGS reduced the median time to clinical improvement from **13 to 10 days** and increased the 14-day clinical improvement rate (**62.0% vs. 46.5%**).\n- **Other Applications:** In prosthetic joint infections, mNGS detected pathogens in culture-negative cases. For intraocular infections, mNGS achieved **92%** sensitivity in vitreous fluid and **85%** in aqueous humor.\n- In skin and soft tissue infections, mNGS identified pathogens in **67.7%** of cases vs. **35.4%** by culture, with **41.7%** of mNGS-positive cases having targeted antibiotic adjustments.\n- **Impact on Treatment:** In a pulmonary infection cohort, **77.4%** of patients with positive mNGS had antibiotic regimens modified vs. **25.7%** of those with negative mNGS.\n- A systematic review of severe pneumonia found mNGS-guided management was associated with **significantly** lower 28-day **mortality** (~**15% vs. 33%**) and 90-day **mortality** (~**22% vs. 43%**).\n- A health economic analysis in China estimated an average gain of **0.18 life-years** per patient and a net cost saving of **¥3069 ($450)** per case when mNGS was added to traditional methods.",
+      "section_pearls": [
+        "mNGS is particularly valuable for immunocompromised, pediatric, and ICU patients with atypical infections where conventional diagnostics often fail.",
+        "Incorporating mNGS at strategic decision points can improve the overall diagnostic rate while minimizing unnecessary testing, with evidence levels ranging from A (CNS infections) to C (bone/joint infections)."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Challenges of mNGS",
+      "content": "- **Distinguishing Infection from Colonization:** A structured, semi-quantitative approach is needed, integrating read-level metrics (unique reads, genome breadth/coverage, microbe-to-human RPM ratios), organism-specific prior probabilities, internal/negative controls, and clinical correlates.\n- For nonsterile specimens, higher reporting thresholds and dominance criteria (e.g., rank abundance, fold-over-background) reduce overcalling colonizers.\n- For sterile compartments (e.g., CSF, blood), even low-level signals of a plausible pathogen may be actionable after orthogonal confirmation.\n- The 'Zhongshan standard' uses tailored thresholds and compartment-specific rules to improve sensitivity for respiratory mycobacterial and invasive fungal disease without inflating false positives.\n- **Handling Unexpected or Novel Pathogens:** mNGS has identified obscure infections like *Chrysosporium* lung infection, *Bartonella vinsonii* endocarditis, and a new circovirus in a transplant patient.\n- Truly novel pathogens present a reporting dilemma; one strategy is to report the closest known relative to hint at the pathogen class.\n- Major commercial mNGS services currently utilize databases referencing over **21,000** microbial genomes.\n- **Interpreting Clinical Significance:** mNGS generates an abundance of data requiring expert interpretation to assess if the identified organism is a plausible cause of disease.\n- A structured reporting approach classifies organisms with >**30%** of microbial reads as dominant, **5%–30%** as minor, and <**5%** as trace, with interpretive comments.\n- AI tools and ML algorithms have reported >**95%** accuracy in distinguishing infection from non-infectious inflammation.\n- **Negative mNGS Report:** A negative result cannot be regarded as definitively exclusionary; false-negative rates are **59.6%** in CSF and **69.8%** in other sterile body fluids, while negative plasma results have higher accuracy (**72.0%**).",
+      "section_pearls": [
+        "DNA-based mNGS cannot differentiate between viable organisms and residual nucleic acids, necessitating clinical correlation and interpretive caveats in reports.",
+        "Building multidisciplinary teams (infectious disease physicians, microbiologists, bioinformaticians) for mNGS result review is a practical strategy to ensure reports are accurate and clinically meaningful."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Development Roadmap of mNGS",
+      "content": "- **Emerging Technologies:** Targeted NGS (tNGS) panels are rising as a complement to unbiased mNGS, achieving higher depth on specific pathogens and improving sensitivity and turnaround.\n- A two-tier model is proposed: a quick tNGS for a defined pathogen set (results in <**6–12 h**) in parallel with an mNGS run (~**24 h**) to capture unexpected pathogens.\n- Ultra-rapid library preparation and sequencing efforts aim to compress the timeline to a few hours; preliminary pathogen identification within **30 min** of sequencing initiation has been demonstrated.\n- Integrated, automated platforms combining extraction, library preparation, sequencing, and bioinformatics have achieved sensitivities approaching **87%** and specificities near **100%** for viral pathogens.\n- POC mNGS platforms like Oxford Nanopore's MinION provide portable, real-time sequencing for outbreak settings, though routine hospital use is limited by modest throughput.\n- **Clinical Integration Strategies:** A hub-and-spoke model allows hospitals to send samples to specialized regional mNGS reference labs with results returned within **24–48 h**.\n- Hospital guidelines recommend considering mNGS after **3 days** of negative routine tests in life-threatening infections, or earlier when an atypical pathogen is suspected.\n- International efforts are aiming to publish **recommended** reporting elements, including listing organisms by descending abundance and flagging pathogens of **critical** public health concern.\n- **Standardization and Future Directions:** Establishing reference standards and controls (e.g., synthetic microbial communities) is a priority for proficiency testing.\n- The first FDA-approved mNGS diagnostic kits are anticipated within the next 5 years, likely for CNS and respiratory infections.\n- Professional societies are expected to issue clinical practice guidelines on the use of metagenomic sequencing.\n- mNGS has substantial potential for public health surveillance, including wastewater monitoring for emerging pathogens and AMR gene prevalence as an early-warning system.",
+      "section_pearls": [
+        "The 'Zhongshan standard' expert consensus has helped standardize respiratory mNGS interpretation and reporting practices across numerous clinical centers in China.",
+        "A 'One Health' approach integrating human, animal, and environmental mNGS data streams can rapidly detect zoonotic diseases and emerging health threats."
+      ]
+    },
+    {
+      "order": 6,
+      "heading": "Concluding Remarks",
+      "content": "- mNGS has evolved from an emerging concept into a practical clinical tool, summarized by the **3 Ts**: Technology, Translation, and Training.\n- **Technology:** Continued innovation in sequencing platforms, bioinformatics, and automation is needed to make mNGS faster and more cost-effective, including integrating host-response analysis.\n- **Translation:** Bridging the gap between bench and bedside requires standardized protocols (like the 'Zhongshan standard'), clinical trials (like the SCAP RCT), and securing regulatory approvals.\n- **Training:** Educating clinicians, microbiologists, and data scientists is **essential**, with a need for dedicated training centers and cross-disciplinary learning.\n- Broader clinical integration depends on health insurance reimbursement, standardized protocols, and integration with traditional diagnostics like culture and PCR.\n- Certain populations, particularly immunocompromised, pediatric, and **critically** ill ICU patients, may derive substantial benefits from wider mNGS adoption.\n- On a global scale, mNGS holds potential for resource-limited settings, with portable technologies like nanopore sequencing strengthening global infectious disease preparedness and surveillance.",
+      "section_pearls": [
+        "mNGS does not replace traditional methods but complements them; combined diagnostic approaches have demonstrated superior performance, especially in complex clinical scenarios.",
+        "The vision is that mNGS will enable clinicians to identify pathogens swiftly and accurately, ushering in an era of precision infectious disease therapy."
+      ]
+    }
+  ],
+  "strengths_limitations": "- **Strengths:** Comprehensive review of a transformative diagnostic technology with broad clinical evidence synthesis; provides a practical clinical diagnostic algorithm and structured reporting framework; addresses the full pipeline from pre-analytical processing to clinical integration and future public health applications.\n- **Limitations:** As a narrative review, it lacks a systematic search methodology; cost-effectiveness data are based on modeling and selected studies rather than large-scale randomized trials; the proposed 'Zhongshan standard' is a single-center framework requiring broader external validation.",
+  "drugs_doses": [],
+  "related_ids": [],
+  "added_date": "2026-04-30"
+}

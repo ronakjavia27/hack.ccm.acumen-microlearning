@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-06T01:02:41",
+  "timestamp": "2026-07-06T12:33:27",
   "summary": {
     "total_json_files": 134,
     "total_pearls": 1545,
@@ -33,40 +33,34 @@
     "Meta-Analysis": 1
   },
   "pearls_by_system": {
-    "Cardiology": 233,
-    "Gastroenterology": 83,
-    "Other": 49,
-    "Hepatology": 112,
+    "Cardiology": 191,
+    "Gastroenterology": 78,
+    "General": 5,
+    "Hepatology": 117,
     "Hematology": 44,
-    "Sepsis": 121,
-    "Infectious Diseases": 154,
+    "Sepsis": 133,
+    "Infectious Diseases": 138,
     "Multisystem": 41,
-    "Nephrology": 43,
-    "Neurology": 178,
-    "Nutrition": 24,
-    "Obstetrics and Gynecology": 33,
-    "Pulmonology": 313,
-    "Surgery": 63,
+    "Nephrology": 29,
+    "Neurology": 222,
+    "Nutrition": 34,
+    "Obstetrics And Gynecology": 58,
+    "Pulmonology": 323,
+    "Surgery": 44,
     "Trauma": 38,
-    "Endocrinology": 16
+    "Other": 16,
+    "Endocrinology": 34
   },
   "errors": {
-    "total": 5,
-    "last_7_days": 5,
-    "last_30_days": 5,
-    "by_type": {
-      "QUOTA_EXHAUSTED": 1,
-      "API_TIMEOUT": 2,
-      "EMPTY_RESPONSE": 1,
-      "VALIDATION_ERROR": 1
-    }
+    "total": 0,
+    "last_7_days": 0,
+    "last_30_days": 0,
+    "by_type": {}
   },
   "api_status": {
     "together": "ok",
     "deepseek": "missing_key",
-    "gemini": "quota_exhausted"
+    "gemini": "ok"
   },
-  "error_list_files": [
-    "master_error_list_2026-07.txt"
-  ]
+  "error_list_files": []
 }

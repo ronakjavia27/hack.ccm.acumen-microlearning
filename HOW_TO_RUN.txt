@@ -1,0 +1,198 @@
+██╗  ██╗ █████╗  ██████╗██╗  ██╗    ██████╗██████╗ ███╗   ███╗
+██║  ██║██╔══██╗██╔════╝██║ ██╔╝   ██╔════╝██╔══██╗████╗ ████║
+███████║███████║██║     █████╔╝    ██║     ██████╔╝██╔████╔██║
+██╔══██║██╔══██║██║     ██╔═██╗    ██║     ██╔══██╗██║╚██╔╝██║
+██║  ██║██║  ██║╚██████╗██║  ██╗   ╚██████╗██║  ██║██║ ╚═╝ ██║
+╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝    ╚═════╝╚═╝  ╚═╝╚═╝     ╚═╝
+            AI-Powered Clinical Microlearning Platform
+================================================================
+
+QUICK START
+-----------
+1. Copy .env.example to .env and fill in your API keys
+2. Place PDF files inside input_pdfs/articles/ or input_pdfs/guidelines/
+3. Run:    python generator.py
+   This watches the input folder and processes PDFs one by one
+
+THE THREE SCRIPTS
+-----------------
+  generator.py    Ingests PDFs, creates summaries + pearls (daily use)
+  maintainer.py   Checks & fixes the output files (weekly maintenance)
+  syncer.py       Syncs to git, sends emails (periodic sync)
+
+================================================================
+1. GENERATOR.PY - PDF INGESTION PIPELINE
+================================================================
+
+WHAT IT DOES:
+  Takes PDF files from input_pdfs/ and produces:
+  - Structured JSON summaries (Pass 1 - configurable LLM)
+  - Clinical pearls / key takeaways (Pass 2 - uses Together AI)
+  
+  All output goes into output_files/ organized by specialty and type.
+
+MODES:
+  --mode watch         (DEFAULT) Watch folder, process each PDF fully
+                       Runs Pass 1 (summary) + Pass 2 (pearls) per PDF
+  
+  --mode summary       Only run Pass 1 (summaries). Skip pearls.
+                       Use when you only want structured summaries.
+  
+  --mode pearls        Only run Pass 2 on files that are missing pearls.
+                       Use to fill in pearls for already-summarized files.
+  
+  --mode summary_pearls
+                       Phase 1: Run Pass 1 on ANY pending PDF
+                       Phase 2: Run Pass 2 on ALL files missing pearls
+                       Use for a complete run from scratch.
+
+LLM PROVIDER (for Pass 1 extraction):
+  --llm together        Use Together AI (default, requires TOGETHER_API_KEY)
+  --llm gemini          Use Google Gemini (requires PRIMARY_GEMINI_API_KEY)
+  --llm other           Custom OpenAI-compatible API (also set --api-key and --model)
+
+COMMON COMMANDS:
+  python generator.py                              # Watch mode (default)
+  python generator.py --mode summary               # Summaries only
+  python generator.py --mode pearls                # Pearls only for pending
+  python generator.py --mode summary_pearls        # Both, sequential
+  python generator.py --status                     # Quick dashboard
+  python generator.py --once                       # Process once, then exit
+  python generator.py --dry-run                    # Preview only, no AI calls
+  python generator.py --max 10                     # Process at most 10 files
+  python generator.py --ocr                        # Enable OCR for scanned PDFs
+  python generator.py --verbose                    # Show detailed per-file output
+  python generator.py --reprocess path/to/pdf      # Force re-process one PDF
+  python generator.py --extract-pearls path.json   # Run pearls only on one JSON
+  python generator.py --llm gemini                  # Use Gemini for extraction
+  python generator.py --llm other --api-key sk-xxx --model my-model  # Custom API
+
+EXAMPLES:
+  # Quick status check:
+  python generator.py --status
+
+  # Process 5 new files with summaries only:
+  python generator.py --mode summary --max 5
+
+  # Add pearls to files that are missing them:
+  python generator.py --mode pearls
+
+  # Full pipeline from scratch:
+  python generator.py --mode summary_pearls
+
+  # Test run - see what would happen without making changes:
+  python generator.py --dry-run
+
+  # Use Gemini instead of Together for extraction:
+  python generator.py --llm gemini
+
+  # Use a custom OpenAI-compatible API:
+  python generator.py --llm other --api-key sk-xxx --model gpt-4
+
+================================================================
+2. MAINTAINER.PY - REPOSITORY HEALTH & REPAIRS
+================================================================
+
+WHAT IT DOES:
+  - Ensures all output JSON files are valid
+  - Removes duplicates from sent_summaries.json
+  - Re-extracts pearls for files that failed
+  - Checks for schema violations and fixes them
+  - Generates health_report.json + health_report.md
+  - Reads master_error_list YYYY-MM.txt to prioritize fixes
+
+MODES:
+  (no args)    Generate full health report (JSON + Markdown)
+  --reconcile         Sync disk files with sent_summaries.json
+  --validate          Schema-check all JSON output files
+  --repair            Auto-fix safe issues (DOIs, specialties, etc.)
+  --reclassify        Fix pearl system assignments from summaries
+  --reprocess-pearls  Re-run pearl extraction for failed files
+  --error-priority    Show prioritized action plan from error logs
+  --auto-fix          Run EVERYTHING: reconcile + validate + repair + reprocess
+  --full-scan         Include ALL monthly error logs (not just current month)
+  --report-only       Generate health report without any fixes
+  --reset-pearls FILE Remove and re-extract pearls for one JSON file
+  --since YYYY-MM-DD  Filter error/report analysis to recent entries only
+  --dry-run           Preview only, no changes
+  --verbose           Show detailed per-file output
+
+COMMON COMMANDS:
+  python maintainer.py                              # Health report (default)
+  python maintainer.py --repair                     # Fix safe issues
+  python maintainer.py --error-priority             # See what needs attention
+  python maintainer.py --auto-fix                   # Fix everything
+  python maintainer.py --reprocess-pearls           # Re-run failed pearl extractions
+  python maintainer.py --reset-pearls output_files/Cardiology/Review/paper.json
+  python maintainer.py --error-priority --since 2026-06-01
+  python maintainer.py --dry-run --auto-fix         # Preview auto-fix without changes
+
+================================================================
+3. SYNCER.PY - CLOUD SYNC & EMAIL DISPATCH
+================================================================
+
+WHAT IT DOES:
+  - Syncs output files to git (with automatic backup tags)
+  - Sends email digests to subscribers
+  - Syncs subscriber list from Google Forms/Sheets
+
+MODES:
+  (no args)    Same as --mode all (git sync)
+  --mode all           Git add -A, commit, push (DEFAULT)
+  --mode data          Git all files EXCEPT main_app.py
+  --mode web           Git ONLY main_app.py
+  --mode pearls        Git ONLY pearls.json + sent_summaries.json
+  --mode email         Send pending emails to subscribers
+  --mode subscribers   Sync Google Sheets -> emails.csv
+  --mode full          subscribers -> email -> git all (sequential)
+  --verify             Pre-flight health check before syncing
+  --dry-run            Preview only
+  --verbose            Detailed logging
+
+COMMON COMMANDS:
+  python syncer.py                              # Git sync (default)
+  python syncer.py --mode all --verify          # Check + git sync
+  python syncer.py --mode data                  # Sync data files only
+  python syncer.py --mode pearls                # Sync pearls only
+  python syncer.py --mode email                 # Send pending emails
+  python syncer.py --mode subscribers           # Sync subscriber list
+  python syncer.py --mode full                  # Everything sequentially
+  python syncer.py --dry-run                    # Preview without changes
+
+NOTE: Each git push creates a local backup tag named backup-YYYYMMDD-HHMMSS
+      so you can always recover the previous state.
+
+================================================================
+FILE & FOLDER STRUCTURE
+================================================================
+ai-microlearning/
+  acumen_core/              Shared utility modules (do not edit)
+  input_pdfs/
+    articles/               Place medical PDF articles here
+    guidelines/             Place clinical guidelines here
+  output_files/             Generated JSON summaries and pearls
+  generator.py              Main PDF ingestion script
+  maintainer.py             Health check and repair script
+  syncer.py                 Cloud sync and email dispatch script
+  .env                      API keys (copy from .env.example)
+  .env.example              Template for API keys
+  sent_summaries.json       Tracker of all processed files
+  pearls.json               All extracted clinical pearls
+  health_report.json        JSON health report (auto-generated)
+  health_report.md          Markdown health report (auto-generated)
+  generator.log             Log file for generator runs
+  master_error_list_YYYY-MM.txt   Monthly error log (auto-created)
+  emails.csv                Local subscriber list (auto-synced)
+
+================================================================
+CONFIGURATION (For Non-Coders)
+================================================================
+Each script has a CONFIGURATION section at the top (after imports)
+where you can change settings like:
+  - Folder paths         (which directories to watch)
+  - API models           (which AI models to use)
+  - Thresholds           (how many retries, batch sizes)
+  - Colors               (email visual styling)
+  - Git settings         (remote, branch, commit prefix)
+
+Just edit the VARIABLE = VALUE lines. No coding knowledge needed.
