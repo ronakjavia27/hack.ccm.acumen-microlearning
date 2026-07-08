@@ -1,14 +1,14 @@
 # hack.CCM Repository Health Report
 
-**Generated:** 2026-07-06T12:33:27
+**Generated:** 2026-07-08T14:35:11
 
 ## Summary
 
 | Metric | Value |
 |--------|-------|
-| Total JSON Files | 134 |
-| Total Pearls | 1545 |
-| Quarantined PDFs | 2 |
+| Total JSON Files | 167 |
+| Total Pearls | 1971 |
+| Quarantined PDFs | 36 |
 | Errors (Total) | 0 |
 | Errors (Last 7 days) | 0 |
 | Errors (Last 30 days) | 0 |
@@ -17,31 +17,31 @@
 
 | System | Count |
 |--------|-------|
-| Cardiology | 26 |
-| Pulmonology | 26 |
-| Neurology | 15 |
-| Sepsis | 11 |
+| Cardiology | 33 |
+| Pulmonology | 31 |
+| Neurology | 21 |
+| Infectious Diseases | 15 |
+| Sepsis | 12 |
 | Hepatology | 10 |
-| Infectious Diseases | 9 |
 | Gastroenterology | 6 |
-| Hematology | 4 |
-| Multisystem | 4 |
-| Nephrology | 4 |
+| Multisystem | 6 |
+| Hematology | 5 |
+| Nephrology | 5 |
+| Trauma | 5 |
 | Obstetrics And Gynecology | 4 |
+| Other | 4 |
 | Surgery | 4 |
-| Trauma | 4 |
 | Nutrition | 3 |
 | Endocrinology | 2 |
 | General | 1 |
-| Other | 1 |
 
 ## Files by Type
 
 | Type | Count |
 |------|-------|
-| Review | 68 |
-| Guideline | 30 |
-| Other | 24 |
+| Review | 88 |
+| Guideline | 36 |
+| Other | 31 |
 | Meta-analysis | 8 |
 | Trial | 3 |
 | Meta-Analysis | 1 |
@@ -50,22 +50,22 @@
 
 | System | Pearl Count |
 |--------|-------------|
-| Pulmonology | 323 |
-| Neurology | 222 |
-| Cardiology | 191 |
-| Infectious Diseases | 138 |
-| Sepsis | 133 |
+| Pulmonology | 402 |
+| Neurology | 296 |
+| Cardiology | 290 |
+| Infectious Diseases | 219 |
+| Sepsis | 118 |
 | Hepatology | 117 |
 | Gastroenterology | 78 |
+| Multisystem | 71 |
+| Other | 59 |
+| Hematology | 58 |
 | Obstetrics And Gynecology | 58 |
-| Hematology | 44 |
+| Trauma | 48 |
 | Surgery | 44 |
-| Multisystem | 41 |
-| Trauma | 38 |
+| Nephrology | 40 |
 | Nutrition | 34 |
 | Endocrinology | 34 |
-| Nephrology | 29 |
-| Other | 16 |
 | General | 5 |
 
 ## Error Breakdown
