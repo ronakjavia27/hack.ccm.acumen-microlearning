@@ -56,8 +56,11 @@ def load_processed_files_from_json():
     return {e["file_name"] for e in entries if e.get("file_name")}
 
 
-def build_entry_from_metadata(file_name, metadata, parsing_notes="Success"):
+def build_entry_from_metadata(file_name, metadata, parsing_notes="Success", subtopic=None):
     """Build a sent_summaries.json entry dict from extraction metadata."""
+    system = ", ".join(metadata.get("specialty", [])) if isinstance(metadata.get("specialty"), list) else metadata.get("system", "Other")
+    if subtopic is None:
+        subtopic = system
     return {
         "serial_number": 0,
         "file_name": file_name,
@@ -66,8 +69,9 @@ def build_entry_from_metadata(file_name, metadata, parsing_notes="Success"):
         "journal": metadata.get("journal", metadata.get("journal_name", "Unknown Journal")),
         "doi": metadata.get("doi", "None"),
         "year": metadata.get("year", ""),
-        "system": ", ".join(metadata.get("specialty", [])) if isinstance(metadata.get("specialty"), list) else metadata.get("system", "Other"),
+        "system": system,
         "type": metadata.get("article_subtype", metadata.get("doc_type", metadata.get("type_of_article", "Other"))),
+        "subtopic": subtopic,
         "md_generated": "Yes",
         "email_pushed": "No",
         "date_added": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -77,11 +81,11 @@ def build_entry_from_metadata(file_name, metadata, parsing_notes="Success"):
     }
 
 
-def log_transaction_to_json(file_name, metadata, parsing_notes="Success"):
+def log_transaction_to_json(file_name, metadata, parsing_notes="Success", subtopic=None):
     """Append one entry to sent_summaries.json atomically."""
     entries = load_all_entries_from_json()
     next_serial = len(entries) + 1
-    entry = build_entry_from_metadata(file_name, metadata, parsing_notes)
+    entry = build_entry_from_metadata(file_name, metadata, parsing_notes, subtopic=subtopic)
     entry["serial_number"] = next_serial
     entries.append(entry)
     _atomic_write_json(JSON_TRACKER_FILE, entries)
@@ -197,3 +201,67 @@ def update_pearl_tracker(tracker_file, file_name, pearl_count, mode):
         wb.save(tracker_file)
     except Exception as e:
         print(f"  Warning: failed to update pearl tracker: {e}")
+
+
+# =====================================================================
+# SUBTOPIC TRACKING - pending queue + completed mappings
+# =====================================================================
+def load_pending_subtopics():
+    """Load pending_subtopics.json. Returns list."""
+    return load_json_safe(getattr(__import__('acumen_core.config', fromlist=['PENDING_SUBTOPICS_FILE']), 'PENDING_SUBTOPICS_FILE', 'pending_subtopics.json'), [])
+
+
+def save_pending_subtopics(entries):
+    """Save pending_subtopics.json atomically."""
+    from acumen_core.config import PENDING_SUBTOPICS_FILE
+    _atomic_write_json(PENDING_SUBTOPICS_FILE, entries)
+
+
+def append_pending_subtopic(title, system, type_val, file_name, timestamp=None):
+    """Add one entry to pending_subtopics.json."""
+    if timestamp is None:
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    entries = load_pending_subtopics()
+    entries.append({
+        "title": title,
+        "system": system,
+        "type": type_val,
+        "file_name": file_name,
+        "subtopic": system,
+        "timestamp": timestamp,
+        "processed": False,
+    })
+    save_pending_subtopics(entries)
+    return len(entries)
+
+
+def load_subtopic_mapping():
+    """Load subtopic_mapping.json. Returns list."""
+    from acumen_core.config import SUBTOPIC_MAPPING_FILE
+    return load_json_safe(SUBTOPIC_MAPPING_FILE, [])
+
+
+def save_subtopic_mapping(entries):
+    """Save subtopic_mapping.json atomically."""
+    from acumen_core.config import SUBTOPIC_MAPPING_FILE
+    _atomic_write_json(SUBTOPIC_MAPPING_FILE, entries)
+
+
+def append_subtopic_mapping(title, system, type_val, file_name, subtopic, timestamp=None):
+    """Add one entry to subtopic_mapping.json (cumulative registry)."""
+    if timestamp is None:
+        from datetime import datetime
+        timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    entries = load_subtopic_mapping()
+    entries.append({
+        "title": title,
+        "system": system,
+        "type": type_val,
+        "file_name": file_name,
+        "subtopic": subtopic,
+        "timestamp": timestamp,
+        "processed": True,
+    })
+    save_subtopic_mapping(entries)
+    return len(entries)

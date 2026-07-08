@@ -257,6 +257,10 @@ def save_extracted_json(payload, file_name, output_dir=None):
 
     payload = enrich_payload_with_markdown(payload)
 
+    # Set subtopic = system name as placeholder (to be refined later via subtopic_mapper)
+    subtopic = clean_system
+    payload["subtopic"] = subtopic
+
     sharded_output_dir = os.path.join(output_dir, clean_system, clean_type)
     os.makedirs(sharded_output_dir, exist_ok=True)
     base_name = os.path.splitext(file_name)[0]
@@ -269,7 +273,7 @@ def save_extracted_json(payload, file_name, output_dir=None):
     log_meta = dict(payload)
     log_meta["specialty"] = [clean_system]
     log_meta["system"] = clean_system
-    return destination_json_path, log_meta, clean_system, clean_type
+    return destination_json_path, log_meta, clean_system, clean_type, subtopic
 
 
 # =====================================================================
@@ -353,6 +357,7 @@ def append_pearls_to_json(new_pearls, source_paper, metadata, file_name):
             "author": metadata.get("authors", metadata.get("primary_authors", "")),
             "system": metadata.get("system", ""),
             "type": metadata.get("type", metadata.get("article_subtype", "")),
+            "subtopic": metadata.get("subtopic", metadata.get("system", "")),
             "pearl": text[:500], "remarks": "",
             "file_name": file_name, "topic": topic,
         })
@@ -422,12 +427,22 @@ def process_single_pdf(file_path, category, processed_history, ocr_enabled=False
         return False, 0, 0
 
     try:
-        json_path, log_meta, clean_system, clean_type = save_extracted_json(payload, file_name)
+        json_path, log_meta, clean_system, clean_type, subtopic = save_extracted_json(payload, file_name)
         log_transaction_to_excel(file_name, log_meta, "Success")
-        log_transaction_to_json(file_name, log_meta, "Success")
+        log_transaction_to_json(file_name, log_meta, "Success", subtopic=subtopic)
         processed_history.add(file_name)
         pass1_success = True
         print(f"  Pass 1: OK (system={clean_system}, type={clean_type})")
+
+        # Queue to pending_subtopics.json for later assignment
+        from acumen_core.tracking import append_pending_subtopic
+        paper_title = payload.get("title", payload.get("paper_name", file_name))
+        append_pending_subtopic(
+            title=paper_title,
+            system=clean_system,
+            type_val=clean_type,
+            file_name=file_name,
+        )
     except Exception as e:
         print(f"  [X] Failed to save/log Pass 1: {e}")
         write_error(file_name=file_name, stage="save", pass_number=1, error=e, action="log_only")
@@ -658,6 +673,7 @@ def run_pearls_mode(max_files=0, verbose=False, dry_run=False):
             "authors": payload.get("authors", ""),
             "system": payload.get("specialty", [""])[0] if isinstance(payload.get("specialty"), list) else payload.get("system", ""),
             "type": payload.get("article_subtype", payload.get("doc_type", "")),
+            "subtopic": payload.get("subtopic", payload.get("system", "")),
         }
         count, err = run_pearl_extraction_pass(payload, file_name, metadata)
         total_pearls += count
@@ -792,6 +808,7 @@ def run_summary_pearls_mode(ocr_enabled=False, max_files=0, verbose=False, once=
                 "authors": payload.get("authors", ""),
                 "system": payload.get("specialty", [""])[0] if isinstance(payload.get("specialty"), list) else payload.get("system", ""),
                 "type": payload.get("article_subtype", payload.get("doc_type", "")),
+                "subtopic": payload.get("subtopic", payload.get("system", "")),
             }
             count, err = run_pearl_extraction_pass(payload, file_name, metadata)
             total_pearls += count
@@ -1021,6 +1038,7 @@ def extract_pearls_from_one_json(json_path):
         "authors": payload.get("authors", ""),
         "system": payload.get("specialty", [""])[0] if isinstance(payload.get("specialty"), list) else payload.get("system", ""),
         "type": payload.get("article_subtype", payload.get("doc_type", "")),
+        "subtopic": payload.get("subtopic", payload.get("system", "")),
     }
     initialize_system()
     run_pearl_extraction_pass(payload, file_name, metadata)

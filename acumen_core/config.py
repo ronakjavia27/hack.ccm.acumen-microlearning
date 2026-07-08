@@ -38,6 +38,12 @@ ERROR_LOG_FILE = os.path.join(PROJECT_DIR, "error_logs.txt")
 FORMAT_LOG_FILE = os.path.join(PROJECT_DIR, "format_updates_log.txt")
 
 # =====================================================================
+# SUBTOPIC FILES
+# =====================================================================
+PENDING_SUBTOPICS_FILE = os.path.join(PROJECT_DIR, "pending_subtopics.json")
+SUBTOPIC_MAPPING_FILE = os.path.join(PROJECT_DIR, "subtopic_mapping.json")
+
+# =====================================================================
 # ERROR LIST - Monthly rotation
 # Format: master_error_list_YYYY-MM.txt
 # =====================================================================
@@ -111,7 +117,7 @@ FILE_STABILITY_WAIT = 1.5  # seconds to wait for file size to stabilize
 # =====================================================================
 PEARLS_JSON_FIELDS = [
     "id", "timestamp", "source_paper", "doi",
-    "author", "system", "type", "pearl", "remarks", "file_name", "topic"
+    "author", "system", "type", "pearl", "remarks", "file_name", "topic", "subtopic"
 ]
 
 # =====================================================================

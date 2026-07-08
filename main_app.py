@@ -143,6 +143,7 @@ async def render_dashboard(request: Request):
                 "file_name": str(entry.get("file_name", "")),
                 "date_added": str(entry.get("date_added", "")),
                 "year": str(entry.get("year", "")),
+                "subtopic": str(entry.get("subtopic", sys)).strip(),
             })
 
     pearls = load_pearls()
@@ -161,6 +162,16 @@ async def render_dashboard(request: Request):
     pearl_count = len(pearls)
 
     show_disclaimer = "true" if DISCLAIMER_TEXT.strip() else "false"
+
+    # Build subtopic map per system (from data + approved subtopics)
+    raw_subtopic_map = {}
+    for entry in entries:
+        sys = entry.get("system", "General").strip()
+        st = entry.get("subtopic", sys).strip()
+        if sys not in raw_subtopic_map:
+            raw_subtopic_map[sys] = set()
+        raw_subtopic_map[sys].add(st)
+    subtopic_map = {k: sorted(v) for k, v in raw_subtopic_map.items()}
 
     # Build CSS variable mapping for specialties
     spec_css_vars = {}
@@ -445,6 +456,12 @@ async def render_dashboard(request: Request):
   .spec-view-head{{ display:flex; align-items:center; gap:12px; margin-bottom:16px; }}
   .spec-view-head .dot{{ width:14px; height:14px; }}
   .spec-view-head h2{{ font-size:1.1rem; }}
+  .subtopic-chip-row{{ display:flex; gap:6px; flex-wrap:wrap; padding:0 0 12px; margin-bottom:8px; border-bottom:1px solid var(--border); }}
+  .subtopic-chip{{ border:1px solid var(--border); background:var(--bg-elev); color:var(--ink-muted); padding:4px 11px; border-radius:99px; font-size:.72rem; cursor:pointer; font-family:var(--font-mono); white-space:nowrap; transition:all .15s; }}
+  .subtopic-chip:hover{{ border-color:var(--accent); color:var(--ink); }}
+  .subtopic-chip.active{{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }}
+  .subtopic-chip-clear{{ border:1px solid var(--border); background:transparent; color:var(--ink-muted); padding:4px 11px; border-radius:99px; font-size:.72rem; cursor:pointer; font-family:var(--font-mono); }}
+  .subtopic-chip-clear:hover{{ border-color:var(--accent); color:var(--ink); }}
 
   ::-webkit-scrollbar{{ width:5px; }}
   ::-webkit-scrollbar-track{{ background:transparent; }}
@@ -563,6 +580,7 @@ async def render_dashboard(request: Request):
   <!-- SPECIALTY VIEW -->
   <section class="view" id="view-specialty">
     <div class="spec-view-head"><span class="dot" id="specViewDot"></span><h2 id="specViewTitle"></h2></div>
+    <div class="subtopic-chip-row" id="specSubtopicChips"></div>
     <div class="spec-panel" id="specPanelPapers">
       <div class="spec-panel-head" role="button" tabindex="0">
         <span>&#128196;</span><span id="specPanelPapersTitle">Papers</span><span class="toggle-icon">&#9660;</span>
@@ -677,7 +695,7 @@ async def render_dashboard(request: Request):
   <section class="view" id="view-about">
     <p class="eyebrow">About</p>
     <h2>hack.CCM</h2>
-    <p style="color:var(--ink-muted);max-width:56ch">A critical care education portal built by and for ICU clinicians &mdash; summarized papers, guidelines, and pearls, kept short enough to read between patients and heavy icu duties. Companion content also runs on Instagram as <a href="https://www.instagram.com/hack.ccm?igsh=b284enFubWYxdWpu"<b>"hack.CCM" by Dr RONAK JAVIA</b></a>, an innovator and budding intensivist.</p>
+    <p style="color:var(--ink-muted);max-width:56ch">A critical care education portal built by and for ICU clinicians &mdash; summarized papers, guidelines, and pearls, kept short enough to read between patients. Companion content also runs on Instagram as HACK-CCM.</p>
   </section>
 
 </main>
@@ -795,6 +813,7 @@ const TYPES = {type_list_js};
 
 const baseDataset = {json.dumps(articles_list)};
 const allPearls = {json.dumps(pearls)};
+const SUBTOPIC_MAP = {json.dumps(subtopic_map)};
 const showDisclaimer = {show_disclaimer};
 
 // =====================================================================
@@ -807,6 +826,7 @@ const filterState = {{
 let activePearlSpecs = new Set(SPECS.map(function(s){{ return s.name; }}));
 let pearlsPageSize = 25;
 let pearlsShown = pearlsPageSize;
+let activeSubtopic = null;
 
 // =====================================================================
 // HELPERS
@@ -924,6 +944,7 @@ function renderHomeRecent(){{
 }}
 
 function jumpToSpecialty(name){{
+  activeSubtopic = null;
   showView('specialty');
   renderSpecialty(name);
 }}
@@ -1008,6 +1029,13 @@ function renderSpecialty(name){{
   var guidelinesInSpec = baseDataset.filter(function(p){{ return p.system===name && p.type.toLowerCase()==='guideline'; }});
   var pearlsInSpec = allPearls.filter(function(p){{ return p.system===name; }});
 
+  /* apply subtopic filter */
+  if(activeSubtopic){{
+    papersInSpec = papersInSpec.filter(function(p){{ return (p.subtopic||p.system)===activeSubtopic; }});
+    guidelinesInSpec = guidelinesInSpec.filter(function(p){{ return (p.subtopic||p.system)===activeSubtopic; }});
+    pearlsInSpec = pearlsInSpec.filter(function(p){{ return (p.subtopic||p.system)===activeSubtopic; }});
+  }}
+
   /* apply sort */
   var specPapersSort = document.getElementById('specPapersSort').value;
   if(specPapersSort==='newest'){{
@@ -1039,6 +1067,21 @@ function renderSpecialty(name){{
     '</div>';
   }}).join('') || '<p style="color:var(--ink-muted);padding:11px 4px">No pearls for this specialty yet.</p>';
   document.getElementById('specPanelPearls').classList.remove('open');
+
+  renderSpecialtySubtopicChips(name);
+}}
+
+function renderSpecialtySubtopicChips(name){{
+  var subtopics = SUBTOPIC_MAP[name] || [];
+  var chipsHTML = '<button class="subtopic-chip-clear" data-subtopic-clear>Clear all</button>';
+  subtopics.forEach(function(st){{
+    var paperCount = baseDataset.filter(function(p){{ return p.system===name && (p.subtopic||p.system)===st && p.type.toLowerCase()!=='guideline'; }}).length;
+    var guidelineCount = baseDataset.filter(function(p){{ return p.system===name && (p.subtopic||p.system)===st && p.type.toLowerCase()==='guideline'; }}).length;
+    var pearlCount = allPearls.filter(function(p){{ return p.system===name && (p.subtopic||p.system)===st; }}).length;
+    var active = activeSubtopic===st ? ' active' : '';
+    chipsHTML += '<button class="subtopic-chip'+active+'" data-subtopic="'+st+'">'+st+' <span style="opacity:.6">'+paperCount+'p '+guidelineCount+'g '+pearlCount+'&#9679;</span></button>';
+  }});
+  document.getElementById('specSubtopicChips').innerHTML = chipsHTML;
 }}
 
 // =====================================================================
@@ -1381,6 +1424,21 @@ document.addEventListener('click', function(e){{
   if(e.target.closest('[data-pearl-chip-uncheck]')){{
     activePearlSpecs = new Set();
     pearlsShown = pearlsPageSize; renderPearlChips(); renderPearls(); return;
+  }}
+
+  /* Subtopic chips in specialty view */
+  var subtopicBtn = e.target.closest('[data-subtopic]');
+  if(subtopicBtn){{
+    activeSubtopic = subtopicBtn.dataset.subtopic;
+    var specName = document.getElementById('specViewTitle').textContent;
+    if(specName) renderSpecialty(specName);
+    return;
+  }}
+  if(e.target.closest('[data-subtopic-clear]')){{
+    activeSubtopic = null;
+    var specName = document.getElementById('specViewTitle').textContent;
+    if(specName) renderSpecialty(specName);
+    return;
   }}
 
   /* Pearl navigation (prev/next) */

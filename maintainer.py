@@ -166,6 +166,7 @@ def entry_from_payload(file_name, payload, fpath=None):
                 pt = parts[-2]
                 if pt:
                     article_type = pt
+    subtopic_val = payload.get("subtopic", "") or system or "Other"
     return {
         "serial_number": 0,
         "file_name": file_name,
@@ -176,6 +177,7 @@ def entry_from_payload(file_name, payload, fpath=None):
         "year": str(year) if year else "",
         "system": system or "Other",
         "type": article_type or "Other",
+        "subtopic": subtopic_val,
         "md_generated": "Yes",
         "email_pushed": "No",
         "date_added": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -678,6 +680,7 @@ def reprocess_pearls(dry_run=False, verbose=False, max_files=None):
             "authors": payload.get("authors", ""),
             "system": payload.get("specialty", [""])[0] if isinstance(payload.get("specialty"), list) else payload.get("system", ""),
             "type": payload.get("article_subtype", payload.get("doc_type", "")),
+            "subtopic": payload.get("subtopic", payload.get("system", "")),
         }
 
         source_paper = payload.get("title", json_name)
@@ -723,6 +726,7 @@ def reprocess_pearls(dry_run=False, verbose=False, max_files=None):
                         "author": metadata["authors"],
                         "system": metadata["system"],
                         "type": metadata["type"],
+                        "subtopic": metadata.get("subtopic", metadata["system"]),
                         "pearl": text[:500],
                         "remarks": "",
                         "file_name": json_name,
@@ -1224,6 +1228,7 @@ Examples:
   python maintainer.py --reset-pearls FILE        # Remove & re-extract pearls for a file
   python maintainer.py --since YYYY-MM-DD         # Filter errors/reports since a date
   python maintainer.py --error-priority --since 2026-06-01  # Errors since June 1
+  python maintainer.py --subtopics                # Sync subtopic_mapping.json -> data files
         """,
     )
     parser.add_argument("--reconcile", action="store_true", help="Sync disk <-> sent_summaries.json")
@@ -1237,6 +1242,7 @@ Examples:
     parser.add_argument("--dry-run", action="store_true", help="Preview only, no writes")
     parser.add_argument("--verbose", action="store_true", help="Detailed per-file logging")
     parser.add_argument("--report-only", action="store_true", help="Generate health report, no fixes")
+    parser.add_argument("--subtopics", action="store_true", help="Sync subtopic_mapping.json into sent_summaries.json and pearls.json")
     parser.add_argument("--reset-pearls", type=str, metavar="FILE", help="Remove & re-extract pearls for a JSON file")
     parser.add_argument("--since", type=str, metavar="YYYY-MM-DD", help="Filter errors/reports since a specific date")
     args = parser.parse_args()
@@ -1249,6 +1255,11 @@ Examples:
         except ValueError:
             print(f"  [X] Invalid --since date format: {args.since}. Use YYYY-MM-DD.")
             sys.exit(1)
+
+    # --- Mode: Subtopics ---
+    if args.subtopics:
+        sync_subtopics(dry_run=args.dry_run, verbose=args.verbose)
+        return
 
     # --- Mode: Reset pearls ---
     if args.reset_pearls:
@@ -1291,6 +1302,116 @@ Examples:
                          args.reset_pearls])
     if no_action or args.report_only:
         generate_health_report(full_scan=args.full_scan, verbose=args.verbose, since_date=since_date)
+
+
+# =====================================================================
+# SUBTOPICS - Sync subtopic_mapping.json -> sent_summaries.json & pearls.json
+# =====================================================================
+def sync_subtopics(dry_run=False, verbose=False):
+    """
+    Read subtopic_mapping.json and update subtopic field in
+    sent_summaries.json and pearls.json for all mapped entries.
+    Also backfills subtopic for entries that lack it (default = system name).
+    """
+    print("\n  [SUBTOPICS] Syncing subtopics from mapping to data files...\n")
+
+    from acumen_core.tracking import load_subtopic_mapping, save_json_atomic
+    from acumen_core.config import JSON_TRACKER_FILE, PEARLS_JSON
+
+    # --- Load mapping ---
+    mapping = load_subtopic_mapping()
+    print(f"    Loaded {len(mapping)} entries from subtopic_mapping.json")
+
+    # Build lookup: normalized title -> subtopic
+    mapping_lookup = {}
+    for m in mapping:
+        title = m.get("title", "").strip().lower()
+        subtopic = m.get("subtopic", "").strip()
+        if title and subtopic:
+            mapping_lookup[title] = subtopic
+
+    print(f"    Built lookup for {len(mapping_lookup)} unique titles")
+
+    # --- Update sent_summaries.json ---
+    summaries = load_json_safe(JSON_TRACKER_FILE, [])
+    summary_updates = 0
+    summary_backfills = 0
+
+    for entry in summaries:
+        title = entry.get("title", "").strip().lower()
+        mapped = mapping_lookup.get(title)
+
+        if mapped:
+            current = entry.get("subtopic", "")
+            if current != mapped:
+                if verbose:
+                    old_val = current or "(missing)"
+                    print(f"    [summary update] '{entry.get('title', '')[:60]}'")
+                    print(f"      subtopic: '{old_val}' -> '{mapped}'")
+                if not dry_run:
+                    entry["subtopic"] = mapped
+                summary_updates += 1
+        elif not entry.get("subtopic"):
+            # No mapping entry and no subtopic -> backfill with system name
+            system = entry.get("system", "Other")
+            if verbose:
+                print(f"    [summary backfill] '{entry.get('title', '')[:60]}' -> '{system}'")
+            if not dry_run:
+                entry["subtopic"] = system
+            summary_backfills += 1
+
+    if not dry_run:
+        save_json_atomic(JSON_TRACKER_FILE, summaries)
+
+    print(f"\n    sent_summaries.json:")
+    print(f"      Updated (from mapping): {summary_updates}")
+    print(f"      Backfilled (system name): {summary_backfills}")
+
+    # --- Update pearls.json ---
+    pearls = load_json_safe(PEARLS_JSON, [])
+    pearl_updates = 0
+    pearl_backfills = 0
+
+    for p in pearls:
+        source = p.get("source_paper", "").strip().lower()
+        mapped = mapping_lookup.get(source)
+        file_name = p.get("file_name", "")
+
+        if mapped:
+            current = p.get("subtopic", "")
+            if current != mapped:
+                if verbose:
+                    old_val = current or "(missing)"
+                    print(f"    [pearl update] id={p.get('id', '?')} subtopic: '{old_val}' -> '{mapped}'")
+                if not dry_run:
+                    p["subtopic"] = mapped
+                pearl_updates += 1
+        elif not p.get("subtopic"):
+            system = p.get("system", "Other")
+            if verbose:
+                print(f"    [pearl backfill] id={p.get('id', '?')} -> '{system}'")
+            if not dry_run:
+                p["subtopic"] = system
+            pearl_backfills += 1
+
+    if not dry_run:
+        save_json_atomic(PEARLS_JSON, pearls)
+
+    print(f"    pearls.json:")
+    print(f"      Updated (from mapping): {pearl_updates}")
+    print(f"      Backfilled (system name): {pearl_backfills}")
+    print(f"\n    Total summaries processed: {len(summaries)}")
+    print(f"    Total pearls processed:    {len(pearls)}")
+
+    if dry_run:
+        print("    [Dry-run] No files written.")
+
+    return {
+        "summary_updates": summary_updates,
+        "summary_backfills": summary_backfills,
+        "pearl_updates": pearl_updates,
+        "pearl_backfills": pearl_backfills,
+    }
 
 
 if __name__ == "__main__":
