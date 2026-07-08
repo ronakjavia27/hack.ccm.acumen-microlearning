@@ -18,7 +18,7 @@ from ..storage import (
 PEARLS_PATH = REPO_ROOT / "pearls.json"
 
 EDITABLE_FIELDS = [
-    "pearl", "system", "type", "subtopic", "remarks", "topic",
+    "pearl", "system", "type", "subtopic", "remarks", "topic", "visibility",
 ]
 
 
@@ -135,6 +135,44 @@ def update_item(item_id: str, fields: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+def delete_item(item_id: str) -> Dict[str, Any]:
+    rows = _load()
+    rid = str(item_id)
+    target_idx = None
+    target = None
+    for i, r in enumerate(rows):
+        if str(r.get("id")) == rid:
+            target_idx = i
+            target = dict(r)
+            break
+    if target_idx is None:
+        raise ItemNotFound(f"pearl {item_id}")
+
+    removed = rows.pop(target_idx)
+    _save(rows)
+
+    audit("pearls", item_id, "delete",
+          note=f"file={removed.get('file_name','')}")
+    return {
+        "id": rid,
+        "deleted": True,
+        "affected_paths": [str(PEARLS_PATH.relative_to(REPO_ROOT))],
+    }
+
+
+def bulk_delete(ids: List[str]) -> Dict[str, Any]:
+    rows = _load()
+    id_set = {str(i) for i in ids}
+    before = len(rows)
+    rows = [r for r in rows if str(r.get("id")) not in id_set]
+    deleted = before - len(rows)
+    if deleted:
+        _save(rows)
+    audit("pearls", ",".join(ids), "bulk_delete", note=f"deleted={deleted}")
+    return {"deleted": deleted,
+            "affected_paths": [str(PEARLS_PATH.relative_to(REPO_ROOT))]}
+
+
 def bulk_set_status(ids: List[str], status: str) -> Dict[str, Any]:
     """Pearls have no native `show_on_web` flag yet. We add an inline
     `visibility` field on each pearl so the dashboard can hide/show without
@@ -183,6 +221,9 @@ SPEC = ModuleSpec(
     list_fn=list_items,
     get_fn=get_item,
     update_fn=update_item,
+    delete_fn=delete_item,
+    bulk_delete_fn=bulk_delete,
+    bulk_status_fn=bulk_set_status,
     has_visibility_flag=True,                   # uses inline `visibility` field
     visible_value_field="visibility",
     extra_endpoints={

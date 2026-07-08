@@ -30,6 +30,9 @@ class ModuleSpec:
     list_fn: Callable[[Optional[Dict[str, str]]], List[Dict[str, Any]]]
     get_fn: Callable[[str], Dict[str, Any]]
     update_fn: Callable[[str, Dict[str, Any]], Dict[str, Any]]
+    delete_fn: Callable[[str], Dict[str, Any]] = lambda id: {"deleted": False}
+    bulk_delete_fn: Callable[[List[str]], Dict[str, Any]] = lambda ids: {"deleted": 0}
+    bulk_status_fn: Callable[[List[str], str], None] = lambda ids, st: None
     list_columns: List[Dict[str, Any]] = field(default_factory=list)
     drawer_fields: List[Dict[str, Any]] = field(default_factory=list)
     has_visibility_flag: bool = True

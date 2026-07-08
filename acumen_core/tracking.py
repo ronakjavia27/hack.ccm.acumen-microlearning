@@ -91,6 +91,48 @@ def log_transaction_to_json(file_name, metadata, parsing_notes="Success", subtop
     _atomic_write_json(JSON_TRACKER_FILE, entries)
 
 
+def update_entry_in_json(file_name, updates):
+    """Update fields of an entry in sent_summaries.json by file_name.
+
+    Args:
+        file_name: The file_name to match (string).
+        updates: Dict of fields to update.
+    Returns:
+        True if entry was found and updated, False otherwise.
+    """
+    entries = load_all_entries_from_json()
+    found = False
+    for entry in entries:
+        if entry.get("file_name") == file_name:
+            entry.update(updates)
+            found = True
+            break
+    if found:
+        _atomic_write_json(JSON_TRACKER_FILE, entries)
+    return found
+
+
+def update_pearls_by_file_name(file_name, updates):
+    """Update fields of all pearls in pearls.json that match file_name.
+
+    Args:
+        file_name: The file_name to match (string).
+        updates: Dict of fields to update.
+    Returns:
+        Number of pearls updated.
+    """
+    from acumen_core.config import PEARLS_JSON
+    pearls = load_json_safe(PEARLS_JSON, [])
+    count = 0
+    for pearl in pearls:
+        if pearl.get("file_name") == file_name:
+            pearl.update(updates)
+            count += 1
+    if count:
+        _atomic_write_json(PEARLS_JSON, pearls)
+    return count
+
+
 # =====================================================================
 # EXCEL TRACKER (sent_summaries.xlsx)
 # =====================================================================

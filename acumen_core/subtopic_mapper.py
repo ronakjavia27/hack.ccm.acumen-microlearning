@@ -24,9 +24,11 @@ from acumen_core.tracking import (
     load_pending_subtopics, save_pending_subtopics,
     load_subtopic_mapping, save_subtopic_mapping,
     append_subtopic_mapping,
+    update_entry_in_json, update_pearls_by_file_name,
 )
 from acumen_core.subtopics_config import (
     get_subtopics_for_system, format_subtopics_for_prompt,
+    get_all_systems,
 )
 
 
@@ -95,6 +97,7 @@ def run_interactive():
     print("  Found %d pending papers (%d already processed)\n" % (len(unprocessed), len(processed)))
     input("  Press Enter to start assigning subtopics...")
 
+    all_systems = get_all_systems()
     total = len(unprocessed)
     for idx, entry in enumerate(unprocessed, 1):
         title = entry.get("title", "Unknown")
@@ -102,6 +105,55 @@ def run_interactive():
         type_val = entry.get("type", "Other")
         file_name = entry.get("file_name", "")
 
+        # Step 1: Confirm / correct the specialty
+        while True:
+            clear_screen()
+            print("=" * 60)
+            print("  Paper %d of %d" % (idx, total))
+            print("=" * 60)
+            print("  Title:   %s" % title[:90])
+            print("  System:  %s" % system)
+            print("  Type:    %s" % type_val)
+            print("  File:    %s" % file_name)
+            print()
+            resp = input("  Specialty is '%s'. Correct? [Y/n/s]kip/e[x]it: " % system).strip().lower()
+            if resp in ("", "y", "yes"):
+                break
+            if resp in ("n", "no"):
+                print("\n  Available specialties:")
+                sys_list = all_systems
+                for i, s in enumerate(sys_list, 1):
+                    print("    %2d. %s" % (i, s))
+                print("    %2d. Cancel (keep current)" % (len(sys_list) + 1))
+                sys_choice = input("\n  Select correct specialty (1-%d): " % (len(sys_list) + 1)).strip()
+                if sys_choice.isdigit():
+                    n = int(sys_choice)
+                    if 1 <= n <= len(sys_list):
+                        system = sys_list[n - 1]
+                        print("  Specialty updated to: %s" % system)
+                        break
+                # fall through to re-prompt
+                continue
+            if resp in ("s", "skip"):
+                resp2 = input("  Skip means subtopic = system name. Proceed? [y/N]: ").strip().lower()
+                if resp2 in ("", "y", "yes"):
+                    chosen = system
+                    entry["processed"] = True
+                    entry["subtopic"] = chosen
+                    save_pending_subtopics(pending)
+                    print("\n  Skipped: %s -> %s" % (system, chosen))
+                    if idx < total:
+                        input("  Press Enter for next paper...")
+                    break
+                continue
+            if resp in ("x", "exit", "e"):
+                print("\n  Progress saved. Exiting.")
+                return
+
+        if entry.get("processed"):
+            continue  # already handled via skip path
+
+        # Step 2: Show subtopics for final specialty
         subtopics = get_subtopics_for_system(system)
 
         while True:
@@ -158,6 +210,16 @@ def run_interactive():
         entry["processed"] = True
         entry["subtopic"] = chosen
         save_pending_subtopics(pending)
+
+        # Write back to sent_summaries.json and pearls.json
+        sent_ok = update_entry_in_json(file_name, {"system": system, "subtopic": chosen})
+        pearl_count = update_pearls_by_file_name(file_name, {"system": system, "subtopic": chosen})
+        if sent_ok:
+            print("  sent_summaries.json: updated")
+        else:
+            print("  sent_summaries.json: entry not found (file_name mismatch)")
+        if pearl_count:
+            print("  pearls.json: %d pearl(s) updated" % pearl_count)
 
         print("\n  Assigned: %s -> %s" % (system, chosen))
         if idx < total:

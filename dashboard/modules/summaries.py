@@ -34,6 +34,9 @@ from ..storage import (
 
 LEDGER_PATH = REPO_ROOT / "sent_summaries.json"
 OUTPUT_DIR = REPO_ROOT / "output_files"
+PENDING_SUBTOPICS_PATH = REPO_ROOT / "pending_subtopics.json"
+SUBTOPIC_MAPPING_PATH = REPO_ROOT / "subtopic_mapping.json"
+PEARLS_PATH = REPO_ROOT / "pearls.json"
 
 # Fields the dashboard may edit on the ledger (flat metadata).
 LEDGER_FIELDS = [
@@ -226,6 +229,51 @@ def update_item(item_id: str, fields: Dict[str, Any]) -> Dict[str, Any]:
     if dirty_ledger:
         _save_ledger(rows)
 
+    # Sync system/subtopic changes to subtopic tracking files and pearls
+    if sys_changed or subtopic_changed:
+        file_name = new.get("file_name", "")
+        title = new.get("title", "")
+        new_system = new.get("system", "")
+        new_subtopic = new.get("subtopic", "")
+
+        # Update pending_subtopics.json (match by file_name)
+        pending = read_json(PENDING_SUBTOPICS_PATH, default=[])
+        if isinstance(pending, list):
+            p_dirty = False
+            for p in pending:
+                if p.get("file_name") == file_name:
+                    if p.get("system") != new_system:
+                        p["system"] = new_system
+                        p_dirty = True
+                    if p.get("subtopic") != new_subtopic:
+                        p["subtopic"] = new_subtopic
+                        p_dirty = True
+            if p_dirty:
+                write_json_atomic(PENDING_SUBTOPICS_PATH, pending)
+
+        # Update subtopic_mapping.json (match by title)
+        mapping = read_json(SUBTOPIC_MAPPING_PATH, default=[])
+        if isinstance(mapping, list):
+            m_dirty = False
+            for m in mapping:
+                if m.get("title", "").strip().lower() == title.strip().lower():
+                    if m.get("system") != new_system:
+                        m["system"] = new_system
+                        m_dirty = True
+                    if m.get("subtopic") != new_subtopic:
+                        m["subtopic"] = new_subtopic
+                        m_dirty = True
+            if m_dirty:
+                write_json_atomic(SUBTOPIC_MAPPING_PATH, mapping)
+
+        # Cascade to pearls (match by file_name)
+        if file_name:
+            from .pearls import reclassify_by_file_name
+            try:
+                reclassify_by_file_name(file_name, new_system, new_subtopic)
+            except Exception:
+                pass  # non-critical; already logged by reclassify
+
     # Body content edit (the theory-shaped full doc in output_files)
     content_edits = fields.get("_content_edits")
     content_path = None
@@ -280,6 +328,91 @@ def update_item(item_id: str, fields: Dict[str, Any]) -> Dict[str, Any]:
     }
 
 
+def delete_item(item_id: str) -> Dict[str, Any]:
+    rows = _load_ledger()
+    rid = str(item_id)
+    target_idx = None
+    target = None
+    for i, r in enumerate(rows):
+        if str(r.get("serial_number")) == rid:
+            target_idx = i
+            target = dict(r)
+            break
+    if target_idx is None:
+        raise ItemNotFound(f"summary {item_id}")
+
+    file_name = target.get("file_name", "")
+    deleted_pearls = 0
+    if file_name:
+        pearls_path = REPO_ROOT / "pearls.json"
+        pearls = read_json(pearls_path, default=[])
+        if isinstance(pearls, list):
+            before = len(pearls)
+            pearls = [p for p in pearls if p.get("file_name") != file_name]
+            deleted_pearls = before - len(pearls)
+            if deleted_pearls:
+                write_json_atomic(pearls_path, pearls)
+
+    # Remove content file
+    content_path = _content_path_for_row(target)
+    if content_path and content_path.exists():
+        content_path.unlink()
+
+    # Remove from ledger
+    entry = rows.pop(target_idx)
+    _save_ledger(rows)
+
+    audit("summaries", item_id, "delete",
+          note=f"file={file_name} pearls_deleted={deleted_pearls}")
+    return {
+        "id": rid,
+        "deleted": True,
+        "file_name": file_name,
+        "pearls_deleted": deleted_pearls,
+        "affected_paths": [
+            str(LEDGER_PATH.relative_to(REPO_ROOT)),
+            *(str(p) for p in ([content_path] if content_path else [])),
+        ],
+    }
+
+
+def bulk_delete(ids: List[str]) -> Dict[str, Any]:
+    rows = _load_ledger()
+    id_set = {str(i) for i in ids}
+    pearls_path = REPO_ROOT / "pearls.json"
+    pearls = read_json(pearls_path, default=[])
+    total_pearls_deleted = 0
+    removed_file_names = []
+    affected = [str(LEDGER_PATH.relative_to(REPO_ROOT))]
+
+    kept_ledger = []
+    for r in rows:
+        if str(r.get("serial_number")) in id_set:
+            fn = r.get("file_name", "")
+            if fn:
+                removed_file_names.append(fn)
+                before = len(pearls) if isinstance(pearls, list) else 0
+                if isinstance(pearls, list):
+                    pearls = [p for p in pearls if p.get("file_name") != fn]
+                    total_pearls_deleted += before - len(pearls)
+            content_path = _content_path_for_row(r)
+            if content_path and content_path.exists():
+                content_path.unlink()
+                affected.append(str(content_path))
+        else:
+            kept_ledger.append(r)
+
+    _save_ledger(kept_ledger)
+    if total_pearls_deleted:
+        write_json_atomic(pearls_path, pearls)
+        affected.append(str(pearls_path.relative_to(REPO_ROOT)))
+
+    audit("summaries", ",".join(ids), "bulk_delete",
+          note=f"pearls_deleted={total_pearls_deleted}")
+    return {"deleted": len(ids) - len(kept_ledger), "pearls_deleted": total_pearls_deleted,
+            "affected_paths": list(dict.fromkeys(affected))}
+
+
 def bulk_set_status(ids: List[str], status: str) -> Dict[str, Any]:
     """`status` is one of published/queued/hidden/removed which, for summaries,
     maps to `show_on_web` Yes (published, queued) → or No (hidden, removed).
@@ -310,6 +443,9 @@ SPEC = ModuleSpec(
     list_fn=list_items,
     get_fn=get_item,
     update_fn=update_item,
+    delete_fn=delete_item,
+    bulk_delete_fn=bulk_delete,
+    bulk_status_fn=bulk_set_status,
     has_visibility_flag=True,
     visible_value_field="show_on_web",
     extra_endpoints={

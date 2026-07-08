@@ -12,11 +12,20 @@ from fastapi import APIRouter, HTTPException, Query, Request
 from fastapi.responses import HTMLResponse, JSONResponse
 
 from .modules import bootstrap, all_kinds, get_spec, ItemNotFound, list_specs
-from .storage import REPO_ROOT, PUSH, audit_tail, LOCKS, audit
+from .modules.summaries import get_content as summaries_get_content
+from .storage import REPO_ROOT, PUSH, audit_tail, LOCKS, audit, read_json
 from . import backup as backup_mod
 from .cascade import cascade_summary_update, cascade_preview
 
 router = APIRouter(prefix="/console")
+
+
+@router.get("/api/subtopics")
+async def api_subtopics():
+    """Return the master system→subtopic vocabulary from acumen_core/subtopics.json."""
+    path = REPO_ROOT / "acumen_core" / "subtopics.json"
+    data = read_json(path, default={})
+    return data
 
 
 @router.post("/api/summaries/{item_id}/cascade-preview")
@@ -189,7 +198,64 @@ async def api_list(
     return spec.list_fn(filters or None)
 
 
-@router.get("/api/{kind}/{item_id}")
+@router.get("/api/summaries/{item_id}/content")
+async def api_summary_content(item_id: str):
+    _ensure_bootstrap()
+    try:
+        return summaries_get_content(item_id)
+    except ItemNotFound:
+        raise HTTPException(404, f"summary {item_id} not found")
+
+@router.post("/api/{kind}/bulk-status")
+async def api_bulk_status(kind: str, body: Dict[str, Any]):
+    _ensure_bootstrap()
+    try:
+        spec = get_spec(kind)
+    except ItemNotFound:
+        raise HTTPException(404, f"unknown module: {kind}")
+    ids = body.get("ids", [])
+    status = body.get("status", "")
+    if not ids or not status:
+        raise HTTPException(400, "ids and status required")
+    result = spec.bulk_status_fn(ids, status)
+    audit(kind, "bulk", f"bulk set {len(ids)} items to {status}")
+    return result
+
+
+@router.post("/api/{kind}/bulk-delete")
+async def api_bulk_delete(kind: str, body: Dict[str, Any]):
+    _ensure_bootstrap()
+    try:
+        spec = get_spec(kind)
+    except ItemNotFound:
+        raise HTTPException(404, f"unknown module: {kind}")
+    ids = body.get("ids", [])
+    if not ids:
+        raise HTTPException(400, "ids required")
+    result = spec.bulk_delete_fn(ids)
+    audit(kind, "bulk", f"bulk delete {len(ids)} items")
+    return result
+
+
+@router.delete("/api/{kind}/{item_id:path}")
+async def api_delete(kind: str, item_id: str):
+    _ensure_bootstrap()
+    try:
+        spec = get_spec(kind)
+    except ItemNotFound:
+        raise HTTPException(404, f"unknown module: {kind}")
+    LOCKS.acquire(kind, item_id)
+    try:
+        result = spec.delete_fn(item_id)
+        audit(kind, item_id, "delete")
+        return result
+    except ItemNotFound:
+        raise HTTPException(404, f"{kind}/{item_id} not found")
+    finally:
+        LOCKS.release(kind, item_id)
+
+
+@router.get("/api/{kind}/{item_id:path}")
 async def api_get(kind: str, item_id: str):
     _ensure_bootstrap()
     try:
@@ -202,7 +268,7 @@ async def api_get(kind: str, item_id: str):
         raise HTTPException(404, f"{kind}/{item_id} not found")
 
 
-@router.put("/api/{kind}/{item_id}")
+@router.put("/api/{kind}/{item_id:path}")
 async def api_update(kind: str, item_id: str, body: Dict[str, Any]):
     _ensure_bootstrap()
     try:

@@ -136,6 +136,13 @@ WHAT IT DOES:
   - Sends email digests to subscribers
   - Syncs subscriber list from Google Forms/Sheets
 
+You run 
+		python -m acumen_core.subtopic_mapper → interactive prompt to assign proper subtopic
+Or 
+		python -m acumen_core.subtopic_mapper --batch-llm → auto-classify via LLM
+Then 
+		python maintainer.py --subtopics → syncs to both JSON files
+
 MODES:
   (no args)    Same as --mode all (git sync)
   --mode all           Git add -A, commit, push (DEFAULT)
@@ -184,8 +191,90 @@ ai-microlearning/
   master_error_list_YYYY-MM.txt   Monthly error log (auto-created)
   emails.csv                Local subscriber list (auto-synced)
 
-================================================================
-CONFIGURATION (For Non-Coders)
+=============================================================
+ACUMEN =  DASHBOARD
+============================================================
+
+WHAT IT IS:
+  A FastAPI web dashboard and admin console for managing the
+  hack.CCM content repository. Mounted at /console alongside
+  the existing FastAPI app (main_app.py).
+
+MODULES (content types):
+  - Summaries   (sent_summaries.json ledger + output_files/*.json)
+  - Pearls      (pearls.json — 1991 clinical pearls)
+  - Theory      (theory.json — guideline documents with blocks)
+
+DASHBOARD:
+  Open http://localhost:8878/console in a browser.
+  Browse, search, edit, and push content through a web UI.
+
+  Features:
+  - Table view for each module with text search + specialty/subtopic filters
+  - Click any row to open the full editor with toolbar (bold, italic, lists)
+  - Change a summary's System/Subtopic → cascade preview shows affected
+    pearls → confirm to bulk-update all pearls for that file
+  - Per-file and bulk git push with live status polling
+  - Backup / restore (working tree + git bundle)
+  - Audit log of all edits
+  - Orphan scan: find files on disk not tracked in the ledger
+  - Failed scan: flag items that failed pearl extraction
+
+API ENDPOINTS (all under /console/api):
+  GET  /info                         Server info
+  GET  /modules                      Module specs (name, label, fields)
+  GET  /{kind}                       List items (?q=&system=&status=&type=)
+  GET  /{kind}/{id}                  Single item detail
+  PUT  /{kind}/{id}                  Update item fields
+  POST /push                         Push one file to git
+  POST /push-all                     Push multiple files
+  GET  /push/{job_id}                Poll push status
+  GET  /backup                       List backups
+  POST /backup                       Create backup (?label=...)
+  POST /backup/restore               Restore from backup
+  GET  /backup/verify/{name}         Verify backup integrity
+  GET  /audit                        Tail audit log (?n=200)
+
+CONSOLE ENVIRONMENT:
+  PYTHONPATH is set automatically; just run from repo root.
+
+  Quick start (from repo root):
+    pip install -r requirements.txt
+    uvicorn dashboard_app:app --host 0.0.0.0 --port 8878
+
+  Or:
+    python dashboard_app.py
+
+  Then open: http://localhost:8878/console
+  (Or http://localhost:8878 will redirect there)
+
+  Go to http://localhost:8878/console
+
+BACKUP CLI (standalone):
+  python ccm_backup.py backup --label "before-big-edit"
+  python ccm_backup.py list
+  python ccm_backup.py verify <name>
+  python ccm_backup.py restore --from-backup <name> --to <target-dir>
+
+  Note: restore needs --force to overwrite existing target.
+
+FILE LAYOUT (dashboard-specific):
+  dashboard/
+    __init__.py           Package marker
+    app.py                FastAPI router (all endpoints)
+    storage.py            Atomic JSON writer, edit locks, git push worker
+    cascade.py            Bulk pearl reclassification on summary change
+    backup.py             Cross-platform backup/restore logic
+    modules/
+      __init__.py         Module registry (ModuleSpec, bootstrap)
+      summaries.py        Summary CRUD (ledger + file system)
+      pearls.py           Pearl CRUD (inline visibility field)
+      theory.py           Theory CRUD (nested recommendation blocks)
+    static/
+      dashboard.html      Single-page web UI
+
+  ccm_backup.py           CLI entry point for backup operations
+  theory.json              Seeded automatically on first dashboard load
 ================================================================
 Each script has a CONFIGURATION section at the top (after imports)
 where you can change settings like:
