@@ -1,0 +1,781 @@
+{
+  "id": "surviving-sepsis-campaign-international-guidelines-management-sepsis-septic-shock-2026",
+  "doc_type": "guideline",
+  "title": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock 2026",
+  "issuing_bodies": [
+    "SCCM",
+    "ESICM"
+  ],
+  "year": 2026,
+  "doi": "10.1097/CCM.0000000000007075",
+  "specialty": [
+    "multi_system",
+    "infectious_disease",
+    "pulmonology"
+  ],
+  "tags": [
+    "sepsis",
+    "septic shock",
+    "resuscitation",
+    "antimicrobial therapy",
+    "vasopressors",
+    "mechanical ventilation",
+    "adjunctive therapy",
+    "goals of care",
+    "post-intensive care syndrome",
+    "pics",
+    "icu recovery",
+    "rehabilitation",
+    "cognitive impairment",
+    "mental health",
+    "physical function",
+    "follow-up"
+  ],
+  "one_line_summary": "The 2026 Surviving Sepsis Campaign guidelines provide evidence-based recommendations for the management of adult patients with sepsis and septic shock, focusing on screening, infection, hemodynamics, respiratory support, and long-term outcomes.",
+  "key_pearls": [
+    "For hospitals, a performance improvement program including sepsis screening, standard operating procedures, and quality improvement strategies is **strongly recommended**.",
+    "Administer antimicrobial therapy **immediately, ideally within 1 hour** for adults with septic shock or probable/definite sepsis, and within **3 hours** for possible sepsis without shock.",
+    "For initial fluid resuscitation in sepsis-induced hypoperfusion or septic shock, suggest administering **at least 30 mL/kg of IV crystalloid** in the first 3 hours.",
+    "**Norepinephrine** is the **recommended** first-line vasopressor; suggest adding **vasopressin** on escalating doses, then **epinephrine** if MAP remains inadequate.",
+    "Recommend using **prolonged infusion of beta-lactams** for maintenance over bolus administration to reduce short-term **mortality**.",
+    "For adults with sepsis and ARDS, recommend a **low tidal volume ventilation strategy (6 mL/kg)** and an upper limit goal for plateau pressure of **30 cm H2O**.",
+    "Suggest using **IV corticosteroids** for adults with septic shock, as they may result in a small reduction in **mortality** and increase shock reversal.",
+    "Post-Intensive Care Syndrome (PICS) encompasses new or worsening impairments in physical, cognitive, or mental health status arising after **critical** illness and persisting beyond acute care hospitalization.",
+    "Time-limited trials (TLTs) are a structured approach to manage prognostic uncertainty and reduce nonbeneficial ICU treatments, defined by clear treatment goals and a predetermined timeframe for reevaluation.",
+    "A pharmacy-based electronic handoff tool can **significantly** reduce the discharge prescribing of atypical antipsychotics initiated in the ICU.",
+    "A multicomponent sepsis transition and recovery program (IMPACTS) demonstrated a reduction in 30-day **mortality** and readmissions in a randomized clinical trial.",
+    "Nurse-led preventive psychological interventions, such as the POPPI trial, did not show a **significant** reduction in PTSD symptom severity at 6 months compared to usual care.",
+    "Early combined cognitive and physical therapy (ACT-ICU) is feasible and safe for **critically** ill patients, showing promise for improving cognitive outcomes.",
+    "Home-based exercise training programs can improve health-related quality of life and functional capacity in survivors of severe/**critical** COVID-19."
+  ],
+  "consensus_method": "GRADE methodology with Evidence to Decision framework; minimum 75% response rate and 80% agreement required for consensus.",
+  "search_period": "Not explicitly stated, but evidence synthesis updated from 2021 guidelines.",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Screening and Early Management",
+      "narrative": "- Performance improvement programs for sepsis, including screening and standard operating procedures, are **strongly recommended** (moderate to very low certainty).\n- A 'code sepsis' or 'sepsis huddle' protocol is **suggested** over no protocol (conditional, low certainty).\n- Prehospital sepsis screening is **suggested** for adults en route to hospital (conditional, very low certainty).\n- For in-hospital screening, **NEWS, NEWS2, MEWS, or SIRS** are **recommended** over qSOFA as a single tool (strong, moderate certainty).\n- Sepsis is a clinical diagnosis and should not be ruled in/out by a single biomarker (good practice statement).\n- Blood cultures should be collected **as soon as possible, ideally before antimicrobials** (strong, low certainty).\n- Measuring blood lactate is **suggested** (conditional, low certainty).\n- Treatment and resuscitation should begin immediately (good practice statement).\n- Initial fluid resuscitation of **at least 30 mL/kg IV crystalloid** in the first 3 hours is **suggested** (conditional, low certainty).\n- For sepsis-induced hypotension, **suggest** initial fluid bolus followed by vasopressors if hypotension persists (conditional, very low certainty).\n- Starting vasopressors **peripherally** is **suggested** over delaying for central access (conditional, very low certainty).\n- An initial MAP target of **65 mm Hg** is **recommended** (strong, moderate certainty); for patients ≥65 years, a MAP of **60–65 mm Hg** is **suggested** (conditional, low certainty).\n- ICU admission within **6 hours** is **suggested** for those requiring it (conditional, low certainty).",
+      "recommendations": [
+        {
+          "rec_id": "1",
+          "statement": "For hospitals and health systems, we recommend using a performance improvement program for sepsis, including sepsis screening for acutely ill, high-risk patients; standard operating procedures for treatment; and implementation of sepsis quality improvement strategies.",
+          "strength": "strong",
+          "evidence_grade": "moderate (screening), very low (standard operating procedures), moderate (quality improvement)"
+        },
+        {
+          "rec_id": "2",
+          "statement": "For hospitals and health systems, we suggest using a 'code sepsis' or 'sepsis huddle' protocol over not using such a protocol.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "3",
+          "statement": "In acutely ill adults en route to hospital by ambulance or flight, we suggest using a standard sepsis screening tool over not using a screening tool.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "4",
+          "statement": "For acutely ill patients in hospital, we recommend using NEWS, NEW2, MEWS, or SIRS over qSOFA as a single tool to screen for sepsis.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "5",
+          "statement": "Sepsis is a clinical diagnosis and should not be ruled in or ruled out using a single biomarker or diagnostic test.",
+          "strength": null,
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "7",
+          "statement": "For adults with possible, probable, or definite sepsis or septic shock, we recommend collecting blood cultures as soon as possible and ideally before the administration of antimicrobial therapy.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "8",
+          "statement": "For adults with possible, probable, or definite sepsis or septic shock, we suggest measuring blood lactate.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "9",
+          "statement": "Sepsis and septic shock are medical emergencies; treatment and resuscitation should begin immediately.",
+          "strength": null,
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "10",
+          "statement": "For adults with sepsis-induced hypoperfusion or septic shock, we suggest administering at least **30 mL**/kg of IV crystalloid in the first **3 hr**.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "11",
+          "statement": "For adults with sepsis-induced hypotension, we suggest initial IV crystalloid fluid bolus resuscitation followed by vasopressor support if hypotension persists.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "12",
+          "statement": "In adults with septic shock, we suggest starting vasopressors peripherally to restore mean arterial pressure rather than delaying initiation until central venous access is secured.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "13",
+          "statement": "For adults with septic shock, we recommend an initial MAP target of 65 mm Hg over higher MAP targets.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "14",
+          "statement": "For adults with septic shock 65 years old or older, we suggest an initial MAP range of 60–65 mm Hg over higher ranges.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "15",
+          "statement": "For adults with sepsis or septic shock who require ICU admission, we suggest admitting the patients to the ICU within **6 hr**.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Infection",
+      "narrative": "- For septic shock or probable/definite sepsis, administer antimicrobials **immediately, ideally within 1 hour** (strong, very low certainty).\n- For possible sepsis without shock, suggest a time-limited investigation and antimicrobials **within 3 hours** if concern persists (conditional, very low certainty).\n- For adults with definite/probable sepsis and hypotension with anticipated transport >**60 min**, **suggest** prehospital antibiotics (conditional, very low certainty).\n- Suggest **clinical evaluation alone** over procalcitonin-guided initiation (conditional, very low certainty).\n- Rapid evaluation for source control is a good practice statement; **suggest early source control (ideally within 6 hours)** (conditional, very low certainty).\n- For high-risk MDR pathogen infection, **suggest** empiric MDR coverage; for low risk, **suggest against** it (conditional, very low certainty).\n- **Suggest against** empiric antifungal therapy in general, but consider in high-risk patients (conditional, low certainty).\n- **Suggest** empiric antibiotic regimen without anaerobic coverage for patients without risk factors; with coverage for those with risk factors (conditional, very low certainty).\n- **Suggest** using pathogen-specific rapid diagnostic tests on a case-by-case basis (conditional, low certainty).\n- **Suggest against** using Candida biomarkers to guide antifungal therapy initiation or discontinuation (conditional, low certainty).\n- **Recommend** prolonged infusion of beta-lactams over bolus (strong, moderate certainty).\n- **Suggest** antimicrobial TDM on a case-by-case basis (conditional, very low certainty).\n- **Recommend** de-escalation of antimicrobials when susceptibilities are known (strong, very low certainty).\n- **Suggest** shorter over longer duration of antimicrobial therapy (conditional, very low certainty).\n- **Suggest** using procalcitonin AND clinical evaluation to decide when to discontinue antibiotics (conditional, low certainty).\n- **Suggest** using SDD in mechanically ventilated patients in units with low antimicrobial resistance prevalence (conditional, moderate certainty).",
+      "recommendations": [
+        {
+          "rec_id": "16",
+          "statement": "For adults with possible, probable, or definite septic shock, we recommend administering antimicrobial therapy immediately, ideally within **1 hr** of recognition.",
+          "strength": "strong",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "17",
+          "statement": "For adults with probable or definite sepsis without shock, we recommend administering antimicrobial therapy immediately, ideally within **1 hr** of recognition.",
+          "strength": "strong",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "18",
+          "statement": "For adults with possible sepsis without shock, we suggest a time-limited course of rapid investigation and if concern for infection persists, the administration of antimicrobial therapy within 3 hours from the time when sepsis was first suspected.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "21",
+          "statement": "For adults with definite or probable sepsis and hypotension (i.e., septic shock) and who have an anticipated time to in-hospital medical evaluation of over **60 min**, we suggest administering antimicrobial therapy in ambulance or flight.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "22",
+          "statement": "For adults with possible or probable sepsis or septic shock, we suggest using clinical evaluation alone over procalcitonin plus clinical evaluation to decide whether to start antimicrobial therapy.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "24",
+          "statement": "For adults with sepsis or septic shock and a specific anatomical diagnosis or source of infection that requires source control, we suggest early source control over late source control, ideally within **6 hr** of diagnosis of sepsis or septic shock requiring source control.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "25",
+          "statement": "For adults with sepsis or septic shock at high risk of infection with a specific multidrug resistant (MDR) pathogen, we suggest using empirical antimicrobial therapy with coverage for this MDR pathogen.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "26",
+          "statement": "For adults with sepsis or septic shock at low risk of infection with a specific MDR pathogen, we suggest against using empirical antimicrobial therapy with coverage for this MDR pathogen.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "27",
+          "statement": "For adults with sepsis or septic shock, we suggest against using empirical antifungal therapy.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "28",
+          "statement": "For adults with sepsis or septic shock without risk factors for anaerobic infection, we suggest using an empiric antibiotic regimen without anaerobic coverage.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "29",
+          "statement": "For adults with sepsis or septic shock with specific risk factors for anaerobic infection, we suggest using an empiric antibiotic regimen that includes anaerobic coverage.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "31",
+          "statement": "For adults with sepsis or septic shock, we suggest using pathogen-specific rapid diagnostic tests on a case-by-case basis in selected patients based on clinical features, local pathogen- and resistance patterns, seasonality, and availability of tests and antibiotic stewardship guidance.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "32",
+          "statement": "For adults with sepsis or septic shock, we suggest against using Candida fungal biomarkers to guide initiation of empiric antifungal therapy.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "33",
+          "statement": "For adults with sepsis or septic shock, we recommend using prolonged infusion of beta-lactams for maintenance (after an initial loading dose) over bolus administration.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "34",
+          "statement": "For adults with sepsis or septic shock, we suggest using antimicrobial therapeutic drug monitoring (TDM) on a case-by-case basis in selected patients, based on clinical features, local pathogen- and resistance patterns, drug class, and availability of TDM.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "36",
+          "statement": "For adults with sepsis or septic shock, we recommend de-escalation of antimicrobial therapy over no de-escalation when a confirmed microbiological diagnosis and susceptibility profile is available.",
+          "strength": "strong",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "37",
+          "statement": "For adults with sepsis or septic shock, we suggest de-escalation of antimicrobial therapy over no de-escalation when no pathogens are identified on final culture results.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "38",
+          "statement": "For adults with sepsis or septic shock who are receiving empiric antifungal therapy, we suggest against use of Candida fungal biomarkers to guide discontinuation of empiric antifungal therapy.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "39",
+          "statement": "For adults with an initial diagnosis of sepsis or septic shock and adequate source control, we suggest using shorter over longer duration of antimicrobial therapy.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "40",
+          "statement": "For adults with an initial diagnosis of sepsis or septic shock and adequate source control where optimal duration of therapy is unclear, we suggest using procalcitonin AND clinical evaluation to decide when to discontinue antimicrobial therapy over clinical evaluation alone.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "41",
+          "statement": "In mechanically ventilated adults with sepsis or septic shock in units with a low prevalence of antimicrobial resistance, we suggest using selective decontamination of the digestive tract.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Hemodynamic Management",
+      "narrative": "- **Suggest** using either invasive or noninvasive blood pressure monitoring (conditional, very low certainty).\n- **Recommend** using crystalloids as first-line fluid (strong, moderate certainty); **suggest** using balanced crystalloids over 0.9% saline (conditional, moderate certainty).\n- **Suggest** using crystalloids alone over crystalloids with supplemental albumin (conditional, moderate certainty).\n- **Recommend against** using starches (strong, high certainty) and **suggest against** using gelatin (conditional, moderate certainty).\n- For ongoing resuscitation after **30 mL**/kg, **suggest** either a liberal or restrictive fluid strategy (conditional, low certainty).\n- **Suggest** using dynamic measures to guide fluid resuscitation over static measures (conditional, low certainty).\n- **Suggest** using serial lactate measurements (conditional, low certainty) and capillary refill time (conditional, low certainty) to guide resuscitation.\n- **Recommend** norepinephrine as first-line vasopressor (strong); **suggest** adding vasopressin on escalating doses (conditional, moderate certainty), then epinephrine (conditional, very low certainty).\n- **Suggest** using inotropes (e.g., dobutamine) for persistent hypoperfusion with cardiac dysfunction (conditional, very low certainty).\n- **Suggest against** using beta-blockers as a treatment for septic shock (conditional, very low certainty).",
+      "recommendations": [
+        {
+          "rec_id": "42",
+          "statement": "For adults with septic shock, we suggest using either invasive or noninvasive blood pressure monitoring.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "43",
+          "statement": "For adults with sepsis or septic shock, we recommend using crystalloids as first-line fluid for resuscitation.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "44",
+          "statement": "For adults with sepsis or septic shock undergoing initial resuscitation, we suggest using balanced crystalloids over 0.9% saline.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "45",
+          "statement": "For adults with sepsis or septic shock, we suggest using crystalloids alone over crystalloids with supplemental albumin for fluid resuscitation.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "46",
+          "statement": "For adults with sepsis or septic shock, we recommend against using starches for resuscitation.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "47",
+          "statement": "For adults with sepsis and septic shock, we suggest against using gelatin for resuscitation.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "48",
+          "statement": "For adults with sepsis or septic shock who have already received fluid resuscitation with **30 mL**/kg and have persistent hypoperfusion, we suggest using either a liberal or a restrictive fluid resuscitation strategy based on individual patient and health system factors.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "49",
+          "statement": "For adults with sepsis or septic shock, we suggest using dynamic measures to guide fluid resuscitation over physical examination or static measures alone.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "51",
+          "statement": "For adults with sepsis and elevated lactate or septic shock, we suggest using serial lactate measurements to guide resuscitation.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "52",
+          "statement": "For adults with sepsis or septic shock, we suggest using capillary refill time to guide resuscitation as an adjunct to other measures of perfusion.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "53",
+          "statement": "For adults with septic shock, we recommend using norepinephrine as the first-line agent over dopamine, epinephrine, or selepressin.",
+          "strength": "strong",
+          "evidence_grade": "high (dopamine), low (epinephrine, selepressin)"
+        },
+        {
+          "rec_id": "55",
+          "statement": "For adults with septic shock, we suggest using norepinephrine as the first-line agent over vasopressin or angiotensin II.",
+          "strength": "conditional",
+          "evidence_grade": "low (vasopressin), very low (angiotensin II)"
+        },
+        {
+          "rec_id": "56",
+          "statement": "For adults with septic shock on escalating doses of norepinephrine, we suggest adding vasopressin.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "57",
+          "statement": "For adults with septic shock and inadequate MAP levels despite norepinephrine and vasopressin, we suggest adding epinephrine.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "60",
+          "statement": "For adults with septic shock and cardiac dysfunction with persistent hypoperfusion despite adequate fluid status and arterial blood pressure, we suggest using inotropes over no inotropes.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "64",
+          "statement": "For adults with septic shock, we suggest against using beta-blockers as a treatment for septic shock.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Respiratory Support",
+      "narrative": "- **Suggest** measuring oxygenation by pulse oximeter or ABG (conditional, very low certainty).\n- **Suggest** titrating Fio2 to either higher, more liberal or lower, conservative oxygen targets (conditional, low certainty).\n- **Suggest** using HFNC over conventional oxygen therapy and NIPPV for acute hypoxemic respiratory failure (conditional, very low to low certainty).\n- **Suggest** a trial of awake proning (conditional, very low certainty).\n- **Recommend** low tidal volume ventilation (**6 mL**/kg) and plateau pressure ≤30 cm H2O for ARDS (strong, high certainty).\n- **Suggest** higher PEEP, prone ventilation >**12 hr** daily, and intermittent NMBA boluses for moderate-severe ARDS (conditional, moderate certainty).\n- **Suggest** using VV-ECMO when conventional ventilation fails in experienced centers (conditional, low certainty).",
+      "recommendations": [
+        {
+          "rec_id": "65",
+          "statement": "For adults with sepsis, we suggest measuring oxygenation by either pulse oximeter (Spo2) or arterial blood gas (Sao2) in conjunction with physical examination and clinical acumen.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "66",
+          "statement": "For adults with sepsis and acute hypoxemic respiratory failure, we suggest titrating Fio2 to target either higher, more liberal oxygen levels or lower, conservative oxygen levels depending on patient factors and resource limitations.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "67",
+          "statement": "For adults with sepsis and acute hypoxemic respiratory failure, we suggest using high flow nasal cannula (HFNC) therapy over conventional oxygen therapy.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "68",
+          "statement": "For adults with sepsis and acute hypoxemic respiratory failure, we suggest using HFNC as the initial therapy over noninvasive positive pressure ventilation.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "69",
+          "statement": "For adults with sepsis and acute hypoxemic respiratory failure, we suggest using HFNC over high flow alternating with noninvasive positive pressure ventilation.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "70",
+          "statement": "For adults with sepsis and acute hypoxemic respiratory failure who are not intubated, we suggest a trial of awake proning.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "71",
+          "statement": "For adults with sepsis and ARDS, we recommend using a low tidal volume ventilation strategy (**6 mL**/kg) over a high tidal volume strategy (> **10 mL**/kg).",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "72",
+          "statement": "For adults with sepsis-associated hypoxemic respiratory failure without ARDS, we suggest using a tidal volume of 6—**8 mL**/kg ideal body weight (IBW) over a lower (4 to < **6 mL**/kg IBW) tidal volume.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "73",
+          "statement": "For adults with sepsis and ARDS, we recommend using an upper limited goal for plateau pressure of 30 cm H2O over higher plateau pressures.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "74",
+          "statement": "For adults with sepsis and moderate-severe ARDS, we suggest using higher positive end-expiratory pressure (PEEP) over lower PEEP.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "76",
+          "statement": "For adults with sepsis and moderate-severe ARDS, we suggest using prone ventilation for greater than **12 hr** daily.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "77",
+          "statement": "For adults with sepsis and moderate-severe ARDS, we suggest using intermittent NMBA boluses over continuous NMBA infusion.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "78",
+          "statement": "For adults with severe ARDS due to sepsis, we suggest using veno-venous ECMO when conventional mechanical ventilation fails in experienced centers with infrastructure to support its use.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Adjunctive Therapies",
+      "narrative": "- **Suggest** using IV corticosteroids in septic shock (conditional, low certainty).\n- **Suggest against** antipyretic therapy for improving outcomes (conditional, very low certainty).\n- **Suggest against** IV vitamin C (conditional, low certainty), IVIG (conditional, low certainty), and blood purification techniques (conditional, very low certainty).\n- **Suggest against** Vitamin D therapy for sepsis treatment (conditional, very low certainty).\n- **Suggest against** XueBiJing injection outside of regulatory-approved jurisdictions (conditional, very low certainty).",
+      "recommendations": [
+        {
+          "rec_id": "79",
+          "statement": "For adults with septic shock, we suggest using IV corticosteroids.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "80",
+          "statement": "For adults with sepsis or septic shock, we suggest against the use of antipyretic therapy, either pharmacologic or surface cooling, for the purpose of improving clinical outcomes.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "81",
+          "statement": "For adults with sepsis or septic shock, we suggest against using IV vitamin C in patients with sepsis or septic shock.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "82",
+          "statement": "For adults with sepsis or septic shock, we suggest against using IV immunoglobulins.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "83",
+          "statement": "For adults with sepsis or septic shock, we suggest against using blood purification techniques, including hemoperfusion, high-dose hemofiltration, or plasma exchange.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "85",
+          "statement": "For adults with sepsis and septic shock, we suggest against using Vitamin D therapy for sepsis treatment.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "86",
+          "statement": "For adults with sepsis or septic shock, we suggest against using XueBiJing injection outside of jurisdictions where it has regulatory approval.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Additional Supportive Therapies",
+      "narrative": "- **Suggest** using stress ulcer prophylaxis with PPIs for patients with risk factors for GI bleeding (conditional, moderate certainty).\n- **Suggest against** using probiotics (conditional, very low certainty).\n- **Suggest** using active fluid removal after the acute resuscitation phase (conditional, very low certainty).\n- **Recommend** a restrictive transfusion strategy (strong, moderate certainty).\n- **Suggest** early initiation of enteral nutrition within **72 hr** (conditional, very low certainty).\n- **Recommend** initiating insulin therapy at glucose ≥**180 mg**/dL (strong, moderate certainty).\n- **Suggest against** RRT in AKI without definitive indication (conditional, moderate certainty).\n- **Suggest against** sodium bicarbonate for hypoperfusion-induced lactic acidemia (conditional, low certainty), but **suggest** it for severe metabolic acidemia (pH ≤7.2) and AKI (conditional, very low certainty).\n- **Recommend** pharmacologic VTE prophylaxis with LMWH over UFH (strong, moderate certainty).",
+      "recommendations": [
+        {
+          "rec_id": "87",
+          "statement": "For adults with sepsis or septic shock, and who have risk factors for GI bleeding, we suggest using stress ulcer prophylaxis with proton-pump inhibitors over not using stress ulcer prophylaxis.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "88",
+          "statement": "For adults with sepsis or septic shock, we suggest against using probiotics.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "89",
+          "statement": "For adults with septic shock after the acute resuscitation phase, we suggest using active fluid removal.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "90",
+          "statement": "For adults with sepsis or septic shock, we recommend using a restrictive transfusion strategy over a liberal transfusion strategy.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "91",
+          "statement": "For adults with sepsis or septic shock, we suggest early (within 72 h) initiation of enteral nutrition.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "92",
+          "statement": "For adults with sepsis or septic shock, we recommend initiating insulin therapy at a glucose level of ≥**180 mg**/dL (**10 mmol**/L).",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "93",
+          "statement": "For adults with sepsis or septic shock and acute kidney injury, with no definitive indication for renal replacement therapy, we suggest against using renal replacement therapy.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "95",
+          "statement": "For adults with septic shock and hypoperfusion-induced lactic acidemia, we suggest against using sodium bicarbonate therapy to improve hemodynamics or to reduce vasopressor requirements.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "96",
+          "statement": "For adults with septic shock, severe metabolic acidemia (pH ≤7.2), and acute kidney injury (AKIN score 2 or 3), we suggest using sodium bicarbonate therapy.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "97",
+          "statement": "For adults with sepsis or septic shock, we recommend using pharmacologic venous thromboembolism (VTE) prophylaxis unless a contraindication exists.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "98",
+          "statement": "For adults with sepsis or septic shock, we recommend using low molecular weight heparin over unfractionated heparin for VTE prophylaxis.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "99",
+          "statement": "For adults with sepsis or septic shock, we suggest using pharmacological VTE prophylaxis alone over pharmacological VTE prophylaxis plus mechanical VTE prophylaxis.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Goals of Care and Transitions of Care",
+      "narrative": "- Discuss goals of care and **prognosis** with patients/families (good practice statement); **suggest** addressing goals of care early (within **72 hr**) (conditional, low certainty).\n- Health systems should ensure patients can execute advanced directives (good practice statement).\n- Principles of palliative care should be integrated (good practice statement); **suggest against** routine formal palliative care consultation for all (conditional, low certainty).\n- **Suggest** using a **critical** care transition program and handoff process at transitions of care (conditional, very low certainty).\n- Comprehensive medication reconciliation should be performed (good practice statement); **suggest** a pharmacist-based approach (conditional, very low certainty).\n- Clinical teams should provide shared decision-making in discharge planning (good practice statement).\n- **Suggest** offering written and verbal sepsis education before discharge (conditional, very low certainty).",
+      "recommendations": [
+        {
+          "rec_id": "100",
+          "statement": "For adults with sepsis or septic shock, clinicians should discuss goals of care and **prognosis** with patients and/or families.",
+          "strength": null,
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "101",
+          "statement": "For adults with sepsis or septic shock, we suggest addressing goals of care early (within 72 h) over late (72 h or later).",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "103",
+          "statement": "Health systems should implement strategies to ensure that patients being discharged from hospital after sepsis or septic shock have the opportunity to execute advanced directives.",
+          "strength": null,
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "106",
+          "statement": "The principles of palliative care (which may include palliative care consultation based on clinician judgement) should be integrated into the treatment plan, when appropriate, to address patient and family symptoms and suffering.",
+          "strength": null,
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "107",
+          "statement": "For adults with sepsis or septic shock, we suggest against routine formal palliative care consultation for all patients over palliative care consultation based on clinician judgement.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "108",
+          "statement": "For adults with sepsis and septic shock admitted to ICU, we suggest using a **critical** care transition program, compared with usual care, upon transfer to the floor.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "109",
+          "statement": "For adults with sepsis or septic shock, we suggest using a handoff process of **critically** important information at transitions of care over no such handoff process.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "111",
+          "statement": "For adults with sepsis or septic shock, comprehensive medication reconciliation should be performed at transitions in care, including at ICU and hospital discharge.",
+          "strength": null,
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "112",
+          "statement": "For adults with sepsis or septic shock, we suggest comprehensive medication reconciliation using a pharmacist-based approach at transitions in care.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "113",
+          "statement": "Clinical teams should provide adults with sepsis or septic shock and their families the opportunity to participate in shared decision making in post-ICU and hospital discharge planning to ensure discharge plans are acceptable and feasible.",
+          "strength": null,
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "119",
+          "statement": "For adults with sepsis and septic shock and their families, we suggest offering written and verbal sepsis education (diagnosis, treatment, post-ICU/sepsis syndrome) before hospital discharge and in the follow-up setting.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Long-Term Outcomes and Recovery",
+      "narrative": "- Health systems should facilitate assessment and follow-up for physical, cognitive, and emotional problems (good practice statement).\n- **Suggest** offering post **critical** illness follow-up services (conditional, low certainty).\n- **Suggest** offering physical rehabilitation services after discharge for patients ventilated >**48 hr** (conditional, low certainty).\n- **Suggest** offering services that support mental health after discharge (conditional, low certainty).\n- Adult survivors demonstrating mental health symptoms should be referred for evaluation (good practice statement).",
+      "recommendations": [
+        {
+          "rec_id": "124",
+          "statement": "Health systems should facilitate assessment and follow-up for physical, cognitive, and emotional problems after hospital discharge for sepsis or septic shock.",
+          "strength": null,
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "125",
+          "statement": "For adult survivors of hospitalization for sepsis or septic shock, we suggest offering post **critical** illness follow-up services.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "126",
+          "statement": "For adult survivors of hospitalization for sepsis or septic shock who received invasive mechanical ventilation >**48 hr**, we suggest offering physical rehabilitation services after hospital discharge.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "127",
+          "statement": "For adult survivors of hospitalization for sepsis or septic shock, we suggest offering services that support mental health after hospital discharge.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "128",
+          "statement": "Adult survivors of hospitalization for sepsis or septic shock who demonstrate clinical symptoms of mental health disorders should be referred to appropriate healthcare professionals for evaluation and management.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Initial Resuscitation",
+      "action": "Immediately begin treatment and resuscitation. Administer **at least 30 mL/kg of IV crystalloid** in the first 3 hours for sepsis-induced hypoperfusion or septic shock."
+    },
+    {
+      "step": 2,
+      "title": "Antimicrobial Timing",
+      "action": "Administer antimicrobial therapy **immediately, ideally within 1 hour** for septic shock or probable/definite sepsis. For possible sepsis without shock, investigate and administer within **3 hours** if concern persists."
+    },
+    {
+      "step": 3,
+      "title": "Hemodynamic Support",
+      "action": "Start **norepinephrine** as first-line vasopressor if hypotension persists after fluids. Target an initial **MAP of 65 mm Hg** (or **60-65 mm Hg** for patients ≥65 years). Add **vasopressin** on escalating norepinephrine doses, then **epinephrine** if needed."
+    },
+    {
+      "step": 4,
+      "title": "Respiratory Support",
+      "action": "For ARDS, use **low tidal volume ventilation (6 mL/kg)** and maintain plateau pressure **≤30 cm H2O**. Use **higher PEEP** and consider **prone ventilation >12 hr daily** for moderate-severe ARDS."
+    },
+    {
+      "step": 5,
+      "title": "Adjunctive Therapies",
+      "action": "Consider **IV corticosteroids** (e.g., hydrocortisone **200 mg**/day) for septic shock. Avoid routine use of IV vitamin C, IVIG, or blood purification."
+    }
+  ],
+  "strengths_limitations": "Strengths: Broad geographic and multidisciplinary panel; rigorous GRADE methodology with transparent EtD framework; inclusion of patient and family advisory panel. Limitations: Many recommendations are based on low or very low certainty evidence; potential for residual confounding in observational studies; generalizability may be limited in low-resource settings for some interventions.\nThis is a comprehensive reference list from a review article, providing a broad overview of the literature on post-ICU recovery. It does not contain the narrative synthesis, **critical** appraisal, or meta-analytic data from the parent article, limiting the ability to assess the quality and conclusions of the cited studies.",
+  "drugs_doses": [
+    {
+      "drug": "norepinephrine",
+      "dose": "Titrated to MAP target (initial 65 mm Hg); first-line vasopressor",
+      "indication": "Septic shock",
+      "adverse_effects": "Tachyarrhythmias, peripheral ischemia"
+    },
+    {
+      "drug": "vasopressin",
+      "dose": "Added to norepinephrine at a median dose of 0.3 μg/kg/min of norepinephrine",
+      "indication": "Septic shock with escalating norepinephrine doses",
+      "adverse_effects": "Digital ischemia"
+    },
+    {
+      "drug": "epinephrine",
+      "dose": "Added to norepinephrine and vasopressin; initiated at a median norepinephrine dose of 0.8 μg/kg/min",
+      "indication": "Septic shock with inadequate MAP despite norepinephrine and vasopressin; also an option for first-line with cardiac dysfunction",
+      "adverse_effects": "Tachyarrhythmias, increased lactate production"
+    },
+    {
+      "drug": "hydrocortisone",
+      "dose": "200 mg IV per 24-hour period, typically as intermittent doses",
+      "indication": "Septic shock",
+      "adverse_effects": "Hyperglycemia, hypernatremia, potential neuromuscular weakness"
+    },
+    {
+      "drug": "balanced crystalloids",
+      "dose": "At least 30 mL/kg IV for initial resuscitation",
+      "indication": "Sepsis-induced hypoperfusion or septic shock",
+      "adverse_effects": "Fluid overload, edema"
+    },
+    {
+      "drug": "proton-pump inhibitors",
+      "dose": "Not specified",
+      "indication": "Stress ulcer prophylaxis in patients with risk factors for GI bleeding",
+      "adverse_effects": "Potential increased risk of C. difficile infection, pneumonia"
+    },
+    {
+      "drug": "low molecular weight heparin",
+      "dose": "Not specified",
+      "indication": "VTE prophylaxis",
+      "adverse_effects": "Bleeding"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-04-01",
+  "article_subtype": "Guideline",
+  "subtopic": "Multisystem"
+}
