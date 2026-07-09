@@ -1,0 +1,399 @@
+{
+  "id": "esicm-circulatory-shock-hemodynamic-monitoring-2025",
+  "doc_type": "guideline",
+  "title": "ESICM guidelines on circulatory shock and hemodynamic monitoring 2025",
+  "issuing_bodies": [
+    "ESICM"
+  ],
+  "year": 2025,
+  "doi": "10.1007/s00134-025-08137-z",
+  "specialty": [
+    "multi_system",
+    "cardiology",
+    "pulmonology"
+  ],
+  "tags": [
+    "shock",
+    "hemodynamic monitoring",
+    "fluid responsiveness",
+    "echocardiography",
+    "tissue perfusion",
+    "arterial pressure",
+    "cardiac output"
+  ],
+  "one_line_summary": "The 2025 ESICM guidelines provide 50 evidence-based and expert recommendations for the diagnosis of shock and hemodynamic monitoring in adult **critically** ill patients, updating the 2014 consensus.",
+  "key_pearls": [
+    "Shock is defined as a life-threatening acute circulatory failure with decreased tissue perfusion, leading to inadequate oxygen delivery/utilization; **hypotension is not required** for diagnosis.",
+    "Monitor skin perfusion using **capillary refill time (CRT)**, complemented by skin temperature and mottling assessment; serial measurements of **S(c)vO2** and **Pv-aCO2** should be performed when catheters are in place.",
+    "In patients with persistent shock after initial fluid resuscitation, **assess fluid responsiveness** before continuing fluid resuscitation; use **dynamic variables** over static preload markers.",
+    "The **passive leg raising (PLR) test** and **pulse pressure variation (PPV)** (in patients with tidal volume ≥**8 mL**/kg and no spontaneous breathing) are **recommended** to assess fluid responsiveness.",
+    "Target an initial **MAP of 65–70 mmHg** in septic shock; a higher MAP may be considered in patients with chronic hypertension or high CVP who show clinical improvement.",
+    "**Echocardiography is suggested as the first-line imaging modality** to assess shock type; echocardiographically defined phenotypes of left and right ventricular dysfunction may have prognostic significance.",
+    "**Cardiac output (CO) and/or stroke volume should be monitored** in patients not responding to initial therapy; transpulmonary thermodilution or pulmonary artery catheter may be considered."
+  ],
+  "consensus_method": "GRADE methodology with ungraded good practice statements (UGPS) and anonymous online voting for consensus.",
+  "search_period": "January 1993 to April 2023",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Definition of Shock",
+      "narrative": "- Shock is a life-threatening acute circulatory failure characterized by decreased tissue perfusion, leading to inadequate oxygen delivery and/or oxygen utilization to meet cellular metabolic demands.\n- Typical features include hypotension, tachycardia, and signs of hypoperfusion (abnormal skin perfusion, decreased urine output, altered mental status). **Hypotension is commonly present but not required** to define shock.\n- **Lactate levels are typically increased (> 2 mmol/L)** in shock states.\n- A multimodal assessment combining several tissue perfusion variables is **recommended** rather than relying on a single variable.\n- Diastolic arterial pressure and pulse pressure should be used to characterize the shock profile (e.g., low diastolic pressure and preserved pulse pressure suggest distributive shock).",
+      "recommendations": [
+        {
+          "rec_id": "1.1.1",
+          "statement": "Shock is defined as a life-threatening acute circulatory failure characterized by decreased tissue perfusion, leading to inadequate oxygen delivery and/or oxygen utilization to meet cellular metabolic demands.",
+          "strength": null,
+          "evidence_grade": "Ungraded definition"
+        },
+        {
+          "rec_id": "1.1.2",
+          "statement": "The typical features are hypotension, tachycardia, and signs of hypoperfusion, such as abnormal skin perfusion, decreased urine output, and altered mental status. Although hypotension is commonly present, it is not required to define shock.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "1.1.3",
+          "statement": "Lactate levels are typically increased (> **2 mmol**/L) in shock states.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Markers of Regional Circulation and Tissue Oxygenation",
+      "narrative": "- Skin perfusion should be monitored using **capillary refill time (CRT)**, complemented by skin temperature and mottling.\n- In patients with a central venous catheter, serial measurements of **(central) venous oxygen saturation (S(c)vO2)** should be performed.\n- In patients with central venous and arterial catheters, serial measurement of the **veno-arterial difference in carbon dioxide partial pressure (Pv-aCO2)** should be performed.\n- One may consider serial measurements of the **Pv-aCO2/Ca-vO2 ratio**.\n- A **Pv-aCO2 > 6 mmHg** suggests a persistent shock state that may be responsive to fluid and/or inotrope administration.\n- These markers should not be used in isolation but interpreted simultaneously with macrohemodynamic indices.",
+      "recommendations": [
+        {
+          "rec_id": "1.2.4",
+          "statement": "Serial assessment of tissue perfusion should be performed to follow shock evolution and to help assess the underlying pattern and the adequacy of CO and vascular function.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "1.2.5",
+          "statement": "Monitoring skin perfusion should be performed using the assessment of CRT and this could be complemented with the assessment of skin temperature and mottling.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "1.2.6",
+          "statement": "In patients with a central venous catheter, serial measurements of (central) venous oxygen saturation (S(c)vO2) should be performed.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "1.2.7",
+          "statement": "In patients with a central venous catheter and an arterial catheter, serial measurement of the veno-arterial difference in carbon dioxide partial pressure (Pv-aCO2) should be performed.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "1.2.8",
+          "statement": "In patients with a central venous catheter and an arterial catheter, one may consider performing serial measurements of the ratio of Pv-aCO2 over the arterio-venous difference in oxygen partial content (Pv-aCO2/Ca-vO2).",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Microcirculation Assessment",
+      "narrative": "- When feasible, the assessment of microcirculation may be considered as an adjunct to comprehensive hemodynamic evaluation.\n- Persistent abnormal microcirculatory perfusion is associated with morbidity and **mortality**.\n- There is no strong evidence that exploring microcirculation improves outcome, but it may help optimize global, regional, and microcirculatory perfusion.",
+      "recommendations": [
+        {
+          "rec_id": "1.3.9",
+          "statement": "When feasible, the assessment of microcirculation may be considered as an adjunct to comprehensive hemodynamic evaluation.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Fluid Responsiveness Assessment",
+      "narrative": "- In patients with persistent shock after initial fluid resuscitation, fluid responsiveness should be assessed before continuing fluid resuscitation.\n- The potential benefit of fluid administration should be weighed against the potential risk.\n- A fluid challenge is defined as a bolus of **200 to 500 mL given over 5–10 min**.\n- The effectiveness of a fluid bolus should be assessed by changes in CO, or if not available, pulse pressure, and by evaluating tissue perfusion variables (CRT, S(c)vO2, Pv-aCO2, lactate).",
+      "recommendations": [
+        {
+          "rec_id": "2.1.10",
+          "statement": "In patients with persistent shock after initial fluid resuscitation, fluid responsiveness should be assessed before continuing fluid resuscitation.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "2.1.11",
+          "statement": "The potential benefit of fluid administration, predicted by the assessment of fluid responsiveness, should be weighed against the potential risk of fluid administration.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "2.3.13",
+          "statement": "A fluid challenge is defined as a bolus of 200 to **500 mL** given over 5–**10 min** while evaluating its effects.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded definition"
+        },
+        {
+          "rec_id": "2.3.14",
+          "statement": "One may consider assessing the effects of a fluid bolus on CO and, when not available, on pulse pressure rather than MAP.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "2.3.15",
+          "statement": "The effectiveness of a fluid bolus in improving tissue perfusion should be evaluated by considering changes in variables such as CRT, skin mottling, S(c)vO2, carbon dioxide partial pressure (pCO2)-derived variables, and lactate.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Markers to Evaluate Risk of Fluid Administration",
+      "narrative": "- The risk of harm from fluid administration could be assessed using markers such as intravascular filling pressures, intra-abdominal pressure (IAP), extravascular lung water (EVLW), pulmonary vascular permeability index (PVPI), venous excess ultrasound (VExUS) grading, PaO2/FiO2 ratio, or lung ultrasound score.\n- **EVLW > 10 mL/kg** defines pulmonary edema, and **> 15 mL/kg** has a 99% positive predictive value for diffuse alveolar damage.\n- High CVP values are associated with venous congestion and increased incidence of acute kidney injury (AKI).",
+      "recommendations": [
+        {
+          "rec_id": "2.2.12",
+          "statement": "The risk of harm from fluid administration could be assessed using markers such as intravascular filling pressures, intra-abdominal pressure, extravascular lung water (EVLW), pulmonary vascular permeability index (PVPI), venous excess ultrasound (VExUS) grading, the ratio of the arterial oxygen partial pressure over the inspired oxygen fraction (PaO2/FiO2) ratio, or lung ultrasound score.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Methods to Assess Fluid Responsiveness",
+      "narrative": "- **Dynamic variables are recommended over static markers of preload** for predicting fluid responsiveness.\n- The **passive leg raising (PLR) test** is **recommended** for mechanically ventilated patients with and without spontaneous breathing activity (pooled AUROC 0.94).\n- The **end-expiratory occlusion test (EEOT)** is an alternative to PLR in patients without spontaneous breathing.\n- **Pulse pressure variation (PPV)** is **recommended** for patients without spontaneous breathing and with tidal volume **≥ 8 mL/kg** (pooled AUROC 0.94).\n- PPV alone is suggested against in patients with spontaneous breathing or tidal volume < **8 mL**/kg.\n- The use of changes in **IVC diameter alone** to assess fluid responsiveness is suggested against.",
+      "recommendations": [
+        {
+          "rec_id": "2.4.16",
+          "statement": "We recommend using dynamic variables over static markers of preload for predicting fluid responsiveness, when applicable.",
+          "strength": "strong",
+          "evidence_grade": "High certainty of evidence"
+        },
+        {
+          "rec_id": "2.4.17",
+          "statement": "We recommend the passive leg raising (PLR) test to assess fluid responsiveness in mechanically ventilated patients in shock, with and without spontaneous breathing activity.",
+          "strength": "strong",
+          "evidence_grade": "High certainty of evidence"
+        },
+        {
+          "rec_id": "2.4.18",
+          "statement": "We recommend the end-expiratory occlusion test as an alternative to PLR test in mechanically ventilated patients in shock without spontaneous breathing activity.",
+          "strength": "strong",
+          "evidence_grade": "Moderate certainty of evidence"
+        },
+        {
+          "rec_id": "2.4.20",
+          "statement": "We recommend pulse pressure variation (PPV) to assess fluid responsiveness in mechanically ventilated patients in shock without spontaneous breathing activity and a tidal volume ≥ **8 mL**/kg.",
+          "strength": "strong",
+          "evidence_grade": "High certainty of evidence"
+        },
+        {
+          "rec_id": "2.4.21",
+          "statement": "We suggest against the use of PPV alone to assess fluid responsiveness in mechanically ventilated patients in shock with spontaneous breathing activity and a tidal volume < **8 mL**/kg.",
+          "strength": "conditional",
+          "evidence_grade": "Moderate certainty of evidence"
+        },
+        {
+          "rec_id": "2.4.22",
+          "statement": "We suggest using stroke volume variation (SVV) to assess fluid responsiveness in mechanically ventilated patients in shock without spontaneous breathing activity and a tidal volume ≥ **8 mL**/kg.",
+          "strength": "weak",
+          "evidence_grade": "Moderate certainty of evidence"
+        },
+        {
+          "rec_id": "2.4.26",
+          "statement": "We suggest against the use of changes in IVC diameter alone in **critically** ill patients to assess fluid responsiveness.",
+          "strength": "conditional",
+          "evidence_grade": "Moderate certainty of evidence"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Cardiac Output Monitoring",
+      "narrative": "- CO and/or stroke volume should be monitored in patients who do not respond to initial therapy.\n- Frequent reevaluation of CO may be considered.\n- The adequacy of CO should be interpreted by evaluating organ function, tissue oxygenation, metabolism, and perfusion.\n- Transpulmonary thermodilution or PAC may be considered for CO monitoring; in ARDS without RV failure, transpulmonary thermodilution is preferred for EVLW measurement; in RV failure, PAC is preferred for pulmonary artery pressure.\n- Echocardiography is suggested as the first-line imaging modality; serial evaluations should be performed.",
+      "recommendations": [
+        {
+          "rec_id": "3.1.27",
+          "statement": "CO and/or stroke volume should be monitored in patients who do not respond to initial therapy to assess the type of shock, evaluate hemodynamic status, and determine therapeutic response.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.1.28",
+          "statement": "Frequent reevaluation of CO may be considered.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.1.29",
+          "statement": "When CO is monitored, its adequacy should be interpreted by evaluating organ function, tissue oxygenation, metabolism, and perfusion.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.2.30",
+          "statement": "Transpulmonary thermodilution or pulmonary artery dilution with the PAC may be considered in patients for whom CO monitoring is required.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.2.31",
+          "statement": "Transpulmonary thermodilution or the PAC in patients with shock and moderate-to-severe ARDS may be considered be used for guiding fluid therapy.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.2.34",
+          "statement": "We suggest using echocardiography as the first-line imaging modality to assess the type of shock and hemodynamic status.",
+          "strength": "weak",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "3.2.35",
+          "statement": "Serial echocardiographic evaluations should be performed to provide additional information on cardiac function, even when CO is monitored.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Arterial Pressure Monitoring and Targets",
+      "narrative": "- Arterial pressure should be monitored in patients with shock; an arterial catheter is indicated in shock not responsive to initial therapy and/or requiring vasopressor infusion.\n- The target blood pressure should be individualized.\n- An initial **MAP of 65–70 mmHg** should be targeted in septic shock.\n- A higher MAP target may be considered in septic shock with chronic hypertension or high CVP.\n- In traumatic hemorrhagic shock without brain injury, target a systolic arterial pressure of **80–90 mmHg (MAP 50–60 mmHg)** until major bleeding is stopped.\n- In traumatic brain injury (GCS ≤ 8), target an initial **MAP ≥ 80 mmHg**.\n- An initial **MAP of ≥ 65 mmHg** may be considered in cardiogenic shock.",
+      "recommendations": [
+        {
+          "rec_id": "3.3.36",
+          "statement": "Arterial pressure should be monitored in patients with shock.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.3.37",
+          "statement": "Arterial pressure should be monitored with an arterial catheter in shock that is not responsive to initial therapy and/or requiring vasopressor infusion.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.4.38",
+          "statement": "The target blood pressure should be individualized during resuscitation of patients with shock.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.4.39",
+          "statement": "An initial MAP of 65–**70 mmHg** should be targeted in patients with septic shock.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.4.40",
+          "statement": "A higher MAP target may be considered in patients with septic shock and a history of chronic arterial hypertension who show clinical improvement with higher blood pressure.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.4.41",
+          "statement": "A higher MAP target may be considered in patients with septic shock with high CVP values who show clinical improvement with higher blood pressure.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.4.42",
+          "statement": "Lower MAP targets may be considered in patients with traumatic hemorrhagic shock and uncontrolled bleeding in the absence of traumatic brain injury.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.4.43",
+          "statement": "In the initial phase following trauma, a target systolic arterial pressure of 80–**90 mmHg** (MAP 50–**60 mmHg**) should be used until major bleeding has been stopped when there is no clinical evidence of traumatic brain injury and coma (Glasgow Coma Score ≤ 8). In traumatic brain injury (Glasgow Coma Score ≤ 8), we recommend targeting an initial mean arterial pressure ≥ **80 mmHg**.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.4.44",
+          "statement": "Targeting an initial MAP of ≥ **65 mmHg** may be considered in patients with cardiogenic shock.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Intra-Abdominal Pressure (IAP) Monitoring",
+      "narrative": "- Serial monitoring of IAP may be considered in patients with shock and established risk factors for intra-abdominal hypertension.\n- Intra-abdominal hypertension is defined as sustained IAP **≥ 12 mmHg**; abdominal compartment syndrome is sustained IAP **> 20 mmHg** with new organ dysfunction.",
+      "recommendations": [
+        {
+          "rec_id": "3.5.45",
+          "statement": "Serial monitoring of IAP may be considered in patients with shock and established risk factors for intra-abdominal hypertension.",
+          "strength": "weak",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Central Venous Pressure (CVP) Monitoring",
+      "narrative": "- CVP should be measured in patients with shock who have a central venous catheter.\n- A pre-specified CVP value should not be targeted during resuscitation.\n- CVP is valuable for assessing right heart preload, detecting right heart failure, and as a safety index for fluid administration (high CVP associated with AKI).",
+      "recommendations": [
+        {
+          "rec_id": "3.6.46",
+          "statement": "Central venous pressure (CVP) should be measured in patients with shock who have a central venous catheter.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        },
+        {
+          "rec_id": "3.6.47",
+          "statement": "A pre-specified CVP value should not be targeted during the resuscitation of patients with shock.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "topic": "Echocardiography in Shock",
+      "narrative": "- Echocardiography is suggested as the first-line imaging modality.\n- Echocardiographically defined phenotypes of left and right ventricular systolic function may be of prognostic significance.\n- Echocardiography leads to changes in management and supports therapeutic impact.\n- A U-shaped relationship between LVEF and in-hospital **mortality** was observed in septic shock, with higher **mortality** at extreme values (< 25% and > 70%).\n- RV dysfunction is associated with short- and long-term **mortality** in septic shock.",
+      "recommendations": [
+        {
+          "rec_id": "4.1.48",
+          "statement": "We suggest performing one or more echocardiograms in patients with circulatory shock.",
+          "strength": "weak",
+          "evidence_grade": "Low certainty of evidence"
+        },
+        {
+          "rec_id": "4.2.49",
+          "statement": "In patients with shock, echocardiographically defined phenotypes of left and RV systolic function may be of prognostic significance.",
+          "strength": "weak",
+          "evidence_grade": "Very low certainty of evidence"
+        },
+        {
+          "rec_id": "4.3.50",
+          "statement": "In patients with circulatory shock, echocardiography leads to changes in management and supports therapeutic impact.",
+          "strength": "strong",
+          "evidence_grade": "Ungraded good practice statement"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: Comprehensive update of the 2014 ESICM consensus using rigorous GRADE methodology; inclusion of a large international expert panel; addresses a wide scope of shock diagnosis and monitoring with 50 structured recommendations.\n- Limitations: Many recommendations are ungraded good practice statements due to lack of high-quality RCT evidence; heterogeneity in included studies limits meta-analysis; **mortality** may not be the ideal primary outcome for hemodynamic monitoring trials.",
+  "drugs_doses": [
+    {
+      "drug": "norepinephrine",
+      "dose": "Not specified; dose-dependent effects on arterial tone and CO measurement reliability noted",
+      "indication": "Vasopressor support in shock, particularly septic shock",
+      "adverse_effects": "May affect reliability of uncalibrated pulse wave analysis CO measurements; excessive vasoconstriction may impair tissue perfusion"
+    },
+    {
+      "drug": "dobutamine",
+      "dose": "Not specified; use guided by echocardiography and tissue perfusion markers",
+      "indication": "Inotropic support in septic shock with myocardial dysfunction, guided by echocardiography",
+      "adverse_effects": "Excessive doses may increase aerobic CO2 production, increasing Pv-aCO2; tachycardia; arrhythmias"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2025-10-26",
+  "article_subtype": "Guideline",
+  "subtopic": "Multisystem"
+}
