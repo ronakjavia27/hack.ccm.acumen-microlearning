@@ -1,0 +1,218 @@
+{
+  "id": "esicm-fluid-therapy-choice-resuscitation-fluids-2024",
+  "doc_type": "guideline",
+  "title": "European Society of Intensive Care Medicine clinical practice guideline on fluid therapy in adult critically ill patients. Part 1: the choice of resuscitation fluids",
+  "issuing_bodies": [
+    "ESICM"
+  ],
+  "year": 2024,
+  "doi": "10.1007/s00134-024-07369-9",
+  "specialty": [
+    "multi_system"
+  ],
+  "tags": [
+    "fluid resuscitation",
+    "crystalloids",
+    "albumin",
+    "isotonic saline",
+    "balanced crystalloids",
+    "sepsis",
+    "traumatic brain injury",
+    "critical care"
+  ],
+  "one_line_summary": "This ESICM guideline provides 11 conditional recommendations on the choice of resuscitation fluids (albumin vs. crystalloids, balanced crystalloids vs. isotonic saline, and small-volume hypertonic vs. isotonic crystalloids) in adult **critically** ill patients.",
+  "key_pearls": [
+    "For volume expansion in general **critically** ill patients, use **crystalloids rather than albumin** (conditional, moderate certainty).",
+    "In patients with **cirrhosis**, use **albumin rather than crystalloids** for volume expansion (conditional, very low certainty).",
+    "In patients with **traumatic brain injury (TBI)**, use **isotonic saline rather than albumin** and **isotonic saline rather than balanced crystalloids** (conditional, very low certainty).",
+    "For general **critically** ill patients, patients with **sepsis**, and patients with **kidney injury**, use **balanced crystalloids rather than isotonic saline** (conditional, low to very low certainty).",
+    "Use **isotonic crystalloids rather than small-volume hypertonic crystalloids** for volume expansion in general **critically** ill patients (conditional, very low certainty).",
+    "In settings with limited balanced crystalloid supply, prioritize their use for patients requiring **large resuscitation volumes** or those with **hyperchloremia or acidosis**.",
+    "Avoid **Ringer's lactate (or acetate)** in patients with TBI due to hypotonicity and potential harm."
+  ],
+  "consensus_method": "GRADE methodology with Evidence-to-Decision (EtD) framework and panel consensus.",
+  "search_period": "Inception to April 2022, with subsequent relevant trials included.",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Albumin vs. Crystalloids in General Critically Ill Patients",
+      "narrative": "- Pooled analysis of RCTs showed **no difference in mortality** (16 trials, n=11,896, **RR 0.98, 95% CI 0.93-1.04**, I² 0%, high certainty).\n- No difference in need for renal replacement therapy (RRT) (5 trials, n=3508, **RR 1.04, 95% CI 0.88-1.24**, low certainty).\n- No difference in duration of mechanical ventilation (high certainty) or ICU/hospital length of stay (low/very low certainty).\n- Albumin is **significantly** more costly (~27 times more than saline) and less available, especially in resource-limited settings.\n- The volume-sparing effect of albumin is less pronounced than historically thought (ratio of albumin to saline volume ~1:1.2 to 1:1.6 in the SAFE trial).",
+      "recommendations": [
+        {
+          "rec_id": "Q1",
+          "statement": "We suggest using crystalloids rather than albumin for volume expansion in adult **critically** ill patients in general.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Albumin vs. Crystalloids in Sepsis",
+      "narrative": "- Pooled analysis showed **no difference in mortality** (9 trials, n=5725, **RR 0.96, 95% CI 0.89-1.02**, I² 0%, high certainty).\n- Probably no difference in need for RRT (moderate certainty) or ICU length of stay (moderate certainty).\n- The role of albumin in subgroups (hypoalbuminemia, large-volume crystalloid recipients, septic shock) remains uncertain due to limited data.\n- A SAFE sub-study suggested a non-**significant** trend toward benefit with albumin in patients with baseline serum albumin ≤**25 g**/L (ratio of odds ratios 0.80, P=0.08).",
+      "recommendations": [
+        {
+          "rec_id": "Q2",
+          "statement": "We suggest using crystalloids rather than albumin for volume expansion in adult **critically** ill patients with sepsis.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Albumin vs. Crystalloids in Acute Respiratory Failure",
+      "narrative": "- Evidence from 3 RCTs (n=197) including a small subgroup from the SAFE trial.\n- No effect on **mortality**, but evidence is very uncertain (**RR 1.01, 95% CI 0.73-1.39**, very low certainty).\n- No other patient-centered outcomes were reported for this population.",
+      "recommendations": [
+        {
+          "rec_id": "Q3",
+          "statement": "We suggest using crystalloids rather than albumin for volume expansion in adult **critically** ill patients with acute respiratory failure.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Albumin vs. Crystalloids in Traumatic Brain Injury (TBI)",
+      "narrative": "- Evidence from a SAFE trial subgroup analysis (n=460).\n- 4% albumin compared to isotonic saline **increased mortality** at 28 days (26.1% vs. 15.7%, **RR 1.68, 95% CI 1.16-2.43**, very low certainty) and at 2 years (**RR 1.63, 95% CI 1.17-2.26**).\n- Albumin was associated with worse neurologic outcomes (GOSE) and higher intracranial pressure.\n- The harm may be driven by the hypotonicity of the 4% albumin solution (260 mOsm/L).",
+      "recommendations": [
+        {
+          "rec_id": "Q4",
+          "statement": "We suggest using isotonic saline rather than albumin for volume expansion in adult **critically** ill patients with TBI.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Albumin vs. Crystalloids in Perioperative Period and Patients at Risk for Bleeding",
+      "narrative": "- Evidence from 9 RCTs (n=1754), mostly >15 years old, in major vascular surgery and trauma.\n- No effect on **mortality** (**RR 0.96, 95% CI 0.57-1.62**, very low certainty).\n- No **significant** difference in blood transfusion volume (mean difference -**224 ml**, 95% CI -490 to 42, very low certainty).",
+      "recommendations": [
+        {
+          "rec_id": "Q5",
+          "statement": "We suggest using crystalloids rather than albumin for volume expansion in **critically** ill patients in the perioperative period and patients with bleeding or at risk for bleeding.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Albumin vs. Crystalloids in Cirrhosis",
+      "narrative": "- Evidence from 3 RCTs (n=464) comparing hyper-oncotic albumin to crystalloids.\n- No statistically **significant** difference in **mortality**, but point estimate favors albumin (**RR 0.89, 95% CI 0.75-1.07**, very low certainty).\n- Albumin may have beneficial non-volume-related effects (antioxidant, anti-inflammatory, toxin binding).\n- Albumin is considered cost-effective for decompensated cirrhosis in some high-income settings.",
+      "recommendations": [
+        {
+          "rec_id": "Q6",
+          "statement": "We suggest using albumin rather than crystalloids for volume expansion in adult **critically** ill patients with cirrhosis.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Balanced Crystalloids vs. Isotonic Saline in General Critically Ill Patients",
+      "narrative": "- Meta-analysis of 11 RCTs (n=35,884) showed no statistically **significant** **mortality** difference (**RR 0.93, 95% CI 0.76-1.15**).\n- A Bayesian individual patient data meta-analysis (6 RCTs, n=34,653) showed an OR for 90-day **mortality** of **0.962 (95% CrI 0.909-1.019)** with an 89.5% posterior probability of benefit.\n- No difference in RRT, ventilation-free days, or ICU LOS.\n- Balanced crystalloids are more costly and less available than isotonic saline in many settings.",
+      "recommendations": [
+        {
+          "rec_id": "Q7",
+          "statement": "We suggest using balanced crystalloids rather than isotonic saline for volume expansion in adult **critically** ill patients.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Balanced Crystalloids vs. Isotonic Saline in Sepsis",
+      "narrative": "- Pooled analysis of 6 RCTs (n=6914) showed a non-**significant** reduction in **mortality** (**RR 0.93, 95% CI 0.85-1.01**).\n- An individual patient data meta-analysis showed an OR for 90-day **mortality** of **0.935 (95% CrI 0.847-1.040)** with an 89.3% posterior probability of benefit.\n- No **significant** difference in RRT or ventilation-free days.",
+      "recommendations": [
+        {
+          "rec_id": "Q8",
+          "statement": "We suggest using balanced crystalloids rather than isotonic saline for volume expansion in adult **critically** ill patients with sepsis.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Balanced Crystalloids vs. Isotonic Saline in Traumatic Brain Injury (TBI)",
+      "narrative": "- Subgroup data from 3 RCTs (n=1896) showed **increased mortality** with balanced crystalloids (**RR 1.25, 95% CI 1.01-1.54**, I²=7%).\n- An individual patient data meta-analysis showed an OR for **mortality** of **1.424 (95% CrI 1.1-1.818)** with a 97.5% posterior probability of harm.\n- A secondary analysis of the SMART trial showed worse discharge disposition with balanced crystalloids (aOR 1.38, 95% CI 1.02-1.86).\n- Harm may be related to the lower osmolarity of balanced solutions, especially Ringer's lactate (273 mOsm/L).",
+      "recommendations": [
+        {
+          "rec_id": "Q9",
+          "statement": "We suggest using isotonic saline rather than balanced crystalloids for volume expansion in adult **critically** ill patients with TBI.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Balanced Crystalloids vs. Isotonic Saline in Kidney Injury",
+      "narrative": "- Direct evidence from 1 small RCT (n=38) in prerenal AKI with CKD showed no difference in kidney function.\n- Indirect evidence from 8 RCTs (n=1526) in renal transplantation showed balanced crystalloids **reduced the need for RRT** (**RR 0.85, 95% CI 0.73-0.99**, low certainty) and delayed graft function (moderate certainty).",
+      "recommendations": [
+        {
+          "rec_id": "Q10",
+          "statement": "We suggest using balanced crystalloids rather than isotonic saline for volume expansion in adult **critically** ill patients with kidney injury.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "topic": "Small-Volume Hypertonic vs. Isotonic Crystalloids",
+      "narrative": "- Pooled analysis of 17 RCTs (n=2195) in trauma, hypovolemia, sepsis, and surgery showed **no difference in mortality** (**RR 0.99, 95% CI 0.88-1.12**, low certainty).\n- No difference in RRT, ventilation-free days, ICU LOS, or functional outcomes.\n- Hypertonic saline has variable availability, additional cost, and limited acceptability.",
+      "recommendations": [
+        {
+          "rec_id": "Q11",
+          "statement": "We suggest using isotonic crystalloids rather than small-volume hypertonic fluids for volume expansion in adult **critically** ill patients.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: Rigorous GRADE methodology applied by an international, multidisciplinary panel; comprehensive systematic reviews updated for each PICO; use of individual patient data meta-analysis; consideration of cost, equity, and patient values.\n- Limitations: Most recommendations are conditional and based on low to very low certainty of evidence; several subgroup analyses (TBI, ARF) are based on small sample sizes from post-hoc analyses; the guideline does not address other colloids (HES, gelatin) or fluid choice in burns.",
+  "drugs_doses": [
+    {
+      "drug": "Albumin (4% or 5%)",
+      "dose": "Variable, for volume expansion",
+      "indication": "Volume expansion in critically ill patients with cirrhosis (conditional recommendation for use)",
+      "adverse_effects": "Rare allergic reactions; increased mortality and intracranial pressure in TBI (hypotonic 4% solution); higher cost and limited availability."
+    },
+    {
+      "drug": "Albumin (20-25%)",
+      "dose": "Variable, hyperoncotic solution",
+      "indication": "Volume expansion in critically ill patients with cirrhosis (studied in trials)",
+      "adverse_effects": "Safety and efficacy in severe TBI are unknown."
+    },
+    {
+      "drug": "Isotonic Saline (0.9% Sodium Chloride)",
+      "dose": "Variable, for volume expansion",
+      "indication": "Volume expansion in critically ill patients with TBI (conditional recommendation for use over albumin and balanced crystalloids); alternative when balanced crystalloids are unavailable.",
+      "adverse_effects": "Hyperchloremic metabolic acidosis; potential association with acute kidney injury."
+    },
+    {
+      "drug": "Balanced Crystalloids (e.g., Ringer's Lactate, Plasma-Lyte)",
+      "dose": "Variable, for volume expansion",
+      "indication": "Volume expansion in general critically ill patients, sepsis, and kidney injury (conditional recommendation for use over isotonic saline).",
+      "adverse_effects": "Ringer's Lactate/Acetate is hypotonic and should be avoided in TBI due to risk of cerebral edema and increased mortality."
+    },
+    {
+      "drug": "Hypertonic Saline (3%, 5%, 7.5%, etc.)",
+      "dose": "Small-volume boluses",
+      "indication": "Not recommended over isotonic crystalloids for general volume expansion; may be used for management of increased intracranial pressure (not addressed in this guideline).",
+      "adverse_effects": "High chloride content may cause acidosis, coagulopathy, and impaired renal function."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2024-07-30",
+  "article_subtype": "Guideline",
+  "subtopic": "Multisystem"
+}
