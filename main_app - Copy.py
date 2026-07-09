@@ -37,81 +37,6 @@ By clicking "Proceed" below, you acknowledge that you understand this tool's edu
 OUTPUT_DIR = "./output_files"
 JSON_TRACKER_FILE = "./sent_summaries.json"
 PEARLS_JSON = "./pearls.json"
-ESBICM_INDEX_PATH = "./output_files/esbicm_trials/esbicm_trials_index.json"
-
-CREDITS_TEXT = """**Editor(s)**
-
-**Dr. Ankur Gupta**, MBBS, EDIC, FCCCM, AFIC, PGDID, FICM, PGDMLE
-Consultant Intensivist, Apollo Hospitals, Indore, INDIA
-Founder President, Educational Society of Bedside Intensive Care Medicine (ESBICM)
-
-**Dr. Pranay Bajpai**, MD (Medicine), FCCS, IDCC, MBA (HA)
-Assistant Professor, Department of Medicine
-MGM Medical College & M.Y. Group of Hospitals, Indore, INDIA
-Consultant, Critical Care & Respiratory Medicine, Apollo Hospitals, Indore
-
-**Co-Editor**
-
-**Dr. Sonal Kaushika**, MBBS, FCCCM, AFIC
-Associate Consultant, Critical Care
-Shalby Hospital, Ahmedabad, Gujarat, INDIA
-
-**A project by:**
-Academic Committee of ESBICM (ACE)
-
-**Contributors**
-
-**Dr. Nikhilesh Jain**, DNB (Med), MRCPI, IDCCM, FCCCM, PGDHM, FIECMO
-Director and Operational Head, Department of Critical Care Services
-Care CHL Hospital, Indore
-
-**Dr. Vivek Joshi**, DA, IDCCM, FCCCM, MBA (HA)
-Medical Superintendent and Head, Critical Care
-Shalby Hospital, Indore
-
-**Dr. Vivek Baxi**, MD, FCCCM, AFIC, PGCDM
-Head, Department of Critical Care Medicine
-Consultant Intensivist and Physician
-Shalby Hospitals (Naroda), Ahmedabad, Gujarat
-
-**Dr. Prerna Bedi Lakhotia**, MBBS, DNB (Anesthesia), IDCCM, FGID
-Consultant Intensivist
-Apollo Hospitals, Indore
-
-**Dr. Benjamin Baby Johnson**, MBBS, AFIC, PGDMLE
-Consultant, Critical Care & ICU In-charge
-Sankeshwar Mission Hospital
-
-**Dr. Abhi Paliwal**, MBBS, DNB (Family Medicine), AFIC
-Associate Consultant, Critical Care
-Apollo Hospitals, Indore"""
-
-TRIAL_DISCLAIMER_TEXT = """**Legal Disclaimer**
-
-**Educational Purpose Only**
-This website provides summaries of published clinical trials for informational and educational purposes only. It is not a substitute for professional medical advice, diagnosis, or treatment.
-
-**No Warranties & Evolving Information**
-Medical knowledge changes rapidly. While we aim for accuracy, the authors and publishers make no express or implied warranties regarding the completeness, accuracy, or currency of this content. We assume no liability for errors, omissions, or clinical outcomes resulting from the use of this data.
-
-**Professional Duty**
-Practitioners must exercise independent clinical judgment. Always consult original trial publications and manufacturer guidelines to verify dosages, contraindications, and administration methods before treating patients."""
-
-ESBICM_SPEC_COLORS = {
-    "Airway & Procedures": "#8B5CF6",
-    "ARDS & Mechanical Ventilation": "#0EA5E9",
-    "Cardiac Arrest & Post-Resuscitation Care": "#EF4444",
-    "Cardiovascular Critical Care": "#C6554B",
-    "General ICU & Miscellaneous": "#6B7280",
-    "Hematology & Transfusion": "#E11D48",
-    "Infection & Antibiotic Stewardship": "#10B981",
-    "Neurological Critical Care": "#6B5B95",
-    "Nutrition, GI & Glycemic Control": "#84CC16",
-    "Renal & Electrolytes (AKI, RRT)": "#D97706",
-    "Sedation, Analgesia & Delirium": "#F97316",
-    "Sepsis & Septic Shock": "#DC2626",
-    "Trauma, Hemorrhage, Coagulopathy & VTE": "#9333EA",
-}
 
 app = FastAPI()
 
@@ -160,15 +85,6 @@ def load_pearls():
         except Exception:
             pass
         return data
-    except (json.JSONDecodeError, Exception):
-        return []
-
-def load_trial_index():
-    if not os.path.exists(ESBICM_INDEX_PATH):
-        return []
-    try:
-        with open(ESBICM_INDEX_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
     except (json.JSONDecodeError, Exception):
         return []
 
@@ -245,23 +161,6 @@ async def render_dashboard(request: Request):
     specialties_list = sorted(systems_set)
     pearl_count = len(pearls)
 
-    trial_index = load_trial_index()
-    trial_specialties = sorted(set(t["specialty"] for t in trial_index))
-    trial_subtopic_map = {}
-    for t in trial_index:
-        sp = t["specialty"]
-        st = t.get("subtopic", "General")
-        if sp not in trial_subtopic_map:
-            trial_subtopic_map[sp] = set()
-        trial_subtopic_map[sp].add(st)
-    trial_subtopic_map = {k: sorted(v) for k, v in trial_subtopic_map.items()}
-    trial_spec_counts = {}
-    for t in trial_index:
-        sp = t["specialty"]
-        trial_spec_counts[sp] = trial_spec_counts.get(sp, 0) + 1
-    trial_result_cats = sorted(set(t["result_category"] for t in trial_index))
-    trial_types_list = sorted(set(t["trial_type"] for t in trial_index))
-
     show_disclaimer = "true" if DISCLAIMER_TEXT.strip() else "false"
 
     # Build subtopic map per system (from data + approved subtopics)
@@ -300,21 +199,6 @@ async def render_dashboard(request: Request):
         t for t in types_set if t and t.lower() not in ["none", "nan"]
     ))
 
-    # Trial CSS vars
-    trial_spec_css = {}
-    for s in trial_specialties:
-        color = ESBICM_SPEC_COLORS.get(s, "#6B7280")
-        var_name = "--tspec-" + re.sub(r"[^a-zA-Z0-9]", "", s.lower())
-        trial_spec_css[var_name] = color
-    trial_spec_str = "; ".join(f"{k}:{v}" for k, v in trial_spec_css.items()) + ";"
-    trial_spec_labels_js = json.dumps(list(trial_specialties))
-    trial_spec_vars_js = json.dumps({s: "--tspec-" + re.sub(r"[^a-zA-Z0-9]", "", s.lower()) for s in trial_specialties})
-    trial_spec_counts_js = json.dumps(trial_spec_counts)
-    trial_subtopic_map_js = json.dumps(trial_subtopic_map)
-    trial_result_cats_js = json.dumps(trial_result_cats)
-    trial_types_list_js = json.dumps(trial_types_list)
-    trial_index_js = json.dumps(trial_index)
-
     html = f"""<!DOCTYPE html>
 <html lang="en" data-theme="dim">
 <head>
@@ -331,7 +215,6 @@ async def render_dashboard(request: Request):
     --font-body:'Atkinson Hyperlegible',sans-serif;
     --font-mono:'JetBrains Mono',monospace;
     {spec_css_str}
-    {trial_spec_str}
     --radius:10px;
     --shadow:0 1px 2px rgba(0,0,0,.12), 0 4px 16px rgba(0,0,0,.08);
   }}
@@ -583,82 +466,6 @@ async def render_dashboard(request: Request):
   ::-webkit-scrollbar{{ width:5px; }}
   ::-webkit-scrollbar-track{{ background:transparent; }}
   ::-webkit-scrollbar-thumb{{ background:var(--border); border-radius:3px; }}
-
-  /* ===== TRIALS ===== */
-  .trials-hero-card{{ display:block; background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius); padding:24px; cursor:pointer; text-align:center; transition:border-color .2s; }}
-  .trials-hero-card:hover{{ border-color:var(--accent); }}
-  .trials-hero-card .trophy{{ font-size:2.4rem; display:block; margin-bottom:8px; }}
-  .trials-hero-card h3{{ font-size:1.1rem; margin:6px 0; }}
-  .trials-hero-card .sub{{ color:var(--ink-muted); font-size:.82rem; }}
-
-  .trials-filter-bar{{ display:flex; gap:8px; flex-wrap:wrap; align-items:flex-end; margin-bottom:18px; padding:14px; background:var(--bg-sunk); border-radius:var(--radius); border:1px solid var(--border); }}
-  .trials-filter-group{{ display:flex; flex-direction:column; gap:4px; min-width:150px; flex:1; }}
-  .trials-filter-group label{{ font-size:.7rem; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.06em; color:var(--ink-muted); }}
-  .trials-filter-group select{{ padding:7px 8px; border-radius:6px; border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); font-size:.85rem; }}
-  .trials-filter-actions{{ display:flex; gap:6px; align-items:flex-end; padding-bottom:2px; }}
-
-  .trials-spec-grid{{ display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:10px; }}
-  .trials-spec-tile{{ border:1px solid var(--border); background:var(--bg-elev); border-radius:var(--radius); padding:14px 12px; cursor:pointer; text-align:left; width:100%; font:inherit; color:var(--ink); border-left:3px solid var(--tile-color,var(--accent)); transition:border-color .2s; }}
-  .trials-spec-tile:hover{{ border-color:var(--tile-color,var(--accent)); }}
-  .trials-spec-tile .dot{{ width:10px; height:10px; margin-bottom:8px; }}
-  .trials-spec-tile .count{{ color:var(--ink-muted); font-size:.72rem; font-family:var(--font-mono); margin-top:2px; }}
-
-  .trial-card{{ border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-elev); padding:14px 16px; cursor:pointer; transition:border-color .2s; margin-bottom:8px; }}
-  .trial-card:hover{{ border-color:var(--accent); }}
-  .trial-card h4{{ font-size:.95rem; margin:0 0 4px; }}
-  .trial-card .one-liner{{ color:var(--ink-muted); font-size:.84rem; margin:0 0 8px; }}
-  .trial-card .meta-row{{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; font-size:.75rem; }}
-
-  .trial-result-negneu{{ color:#A855F7; border-color:#A855F7; }}
-  .trial-result-positive{{ color:#10B981; border-color:#10B981; }}
-  .trial-result-negative{{ color:#EF4444; border-color:#EF4444; }}
-  .trial-result-neutral{{ color:#6B7280; border-color:#6B7280; }}
-
-  .trials-back-header{{ display:flex; align-items:center; gap:10px; margin-bottom:16px; flex-wrap:wrap; }}
-  .trials-back-header h2{{ font-size:1.1rem; flex:1; }}
-  .trials-back-btn{{ background:none; border:none; color:var(--accent); cursor:pointer; font-size:.88rem; font-weight:600; padding:6px 10px; border-radius:6px; }}
-  .trials-back-btn:hover{{ background:var(--bg-sunk); }}
-
-  /* Trial detail page */
-  .trial-detail{{ max-width:800px; margin:0 auto; }}
-  .trial-credits-bar{{ display:flex; align-items:center; gap:8px; padding:10px 14px; background:var(--bg-sunk); border:1px solid var(--border); border-radius:8px; margin-bottom:18px; font-size:.82rem; color:var(--ink-muted); flex-wrap:wrap; }}
-  .trial-credits-bar .trophy{{ font-size:1.1rem; }}
-  .trial-credits-bar .spacer{{ flex:1; }}
-  .icon-btn-sm{{ background:none; border:1px solid var(--border); border-radius:6px; cursor:pointer; padding:4px 8px; font-size:.78rem; color:var(--ink-muted); display:inline-flex; align-items:center; gap:4px; font-family:inherit; }}
-  .icon-btn-sm:hover{{ background:var(--bg-elev); color:var(--ink); }}
-
-  .trial-detail h1{{ font-size:1.3rem; margin-bottom:4px; }}
-  .trial-journal{{ color:var(--ink-muted); font-size:.85rem; margin-bottom:12px; }}
-  .trial-meta-strip{{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }}
-  .trial-meta-strip .badge{{ font-size:.75rem; padding:3px 10px; }}
-  .trial-one-liner{{ font-style:italic; color:var(--ink-muted); border-left:3px solid var(--accent); padding:10px 14px; margin:0 0 20px; background:var(--bg-sunk); border-radius:0 8px 8px 0; }}
-
-  .trial-nav-bar{{ display:flex; gap:8px; margin:20px 0; }}
-  .trial-nav-bar .nav-btn{{ flex:1; }}
-
-  .trial-section{{ margin-bottom:.6rem; border:1px solid var(--border); border-radius:8px; overflow:hidden; }}
-  .trial-section summary{{ padding:.7rem 1rem; font-weight:700; font-size:.85rem; cursor:pointer; background:var(--bg-sunk); user-select:none; font-family:var(--font-display); }}
-  .trial-section .section-body{{ padding:.7rem 1rem; }}
-  .trial-section .section-body p{{ margin:.4em 0; }}
-  .trial-section .section-body ul{{ padding-left:1.2em; }}
-  .trial-section .section-body li{{ margin:.2em 0; }}
-
-  /* Trial overlays */
-  .trial-overlay-backdrop{{ position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:90; display:flex; align-items:center; justify-content:center; padding:20px; }}
-  .trial-overlay-box{{ background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; max-width:520px; width:100%; padding:24px; box-shadow:var(--shadow); max-height:80vh; overflow-y:auto; }}
-  .trial-overlay-box h2{{ font-size:1.1rem; margin-bottom:12px; }}
-  .trial-overlay-box p{{ font-size:.88rem; color:var(--ink-muted); line-height:1.6; margin-bottom:12px; white-space:pre-wrap; }}
-  .trial-overlay-box .btn{{ margin-top:8px; }}
-
-  .result-badge{{ font-size:.68rem; font-family:var(--font-mono); padding:2px 7px; border-radius:99px; border:1px solid; }}
-  .result-badge.pos{{ color:#10B981; border-color:#10B981; background:rgba(16,185,129,.1); }}
-  .result-badge.neg{{ color:#EF4444; border-color:#EF4444; background:rgba(239,68,68,.1); }}
-  .result-badge.neu{{ color:#A855F7; border-color:#A855F7; background:rgba(168,85,247,.1); }}
-  .result-badge.negneu{{ color:#D97706; border-color:#D97706; background:rgba(217,119,6,.1); }}
-
-  .trial-empty{{ text-align:center; padding:60px 20px; color:var(--ink-muted); }}
-  .trial-empty .icon{{ font-size:2.5rem; display:block; margin-bottom:8px; }}
-
 </style>
 </head>
 <body>
@@ -676,7 +483,6 @@ async def render_dashboard(request: Request):
       <button data-view="papers">Papers</button>
       <button data-view="guidelines">Guidelines</button>
       <button data-view="pearls">Pearls</button>
-      <button data-view="trials">Trials</button>
       <button data-view="antibiotics">Antibiotics</button>
       <button data-view="theory">Theory</button>
       <button data-view="rrt">RRT</button>
@@ -892,85 +698,6 @@ async def render_dashboard(request: Request):
     <p style="color:var(--ink-muted);max-width:56ch">A critical care education portal built by and for ICU clinicians &mdash; summarized papers, guidelines, and pearls, kept short enough to read between patients. Companion content also runs on Instagram as HACK-CCM.</p>
   </section>
 
-  <!-- TRIALS MAIN VIEW -->
-  <section class="view" id="view-trials">
-    <div class="section-head" style="margin-top:0"><h2>Trials</h2></div>
-
-    <!-- ESBICM hero card — click opens the ESBICM dashboard directly -->
-    <div class="trials-hero-card" style="cursor:pointer">
-      <div data-view="trials-esbicm" role="button" tabindex="0">
-        <span class="trophy">&#127942;</span>
-        <h3>Recent Landmark Trials in Critical Care</h3>
-        <p class="sub">Sourced from ESBICM</p>
-        <p class="sub" style="margin-top:4px">{len(trial_index)} trials across {len(trial_specialties)} specialties &mdash; tap to explore</p>
-      </div>
-      <div style="display:flex;gap:8px;justify-content:center;margin-top:14px">
-        <button class="icon-btn-sm" onclick="event.stopPropagation();openTrialOverlay('trialCreditsOverlay','credits')">&#127942; Credits</button>
-        <button class="icon-btn-sm" onclick="event.stopPropagation();openTrialOverlay('trialDisclaimerOverlay','disclaimer')">&#8505;&#65039;</button>
-      </div>
-    </div>
-  </section>
-
-  <!-- ESBICM MAIN (specialty grid + filter) -->
-  <section class="view" id="view-trials-esbicm">
-    <div class="trials-back-header">
-      <button class="trials-back-btn" data-view="trials">&larr; Back</button>
-      <h2>ESBICM Landmark Trials</h2>
-    </div>
-
-    <div class="trials-filter-bar">
-      <div class="trials-filter-group">
-        <label>Specialty</label>
-        <select id="trialFilterSpecialty">
-          <option value="">All Specialties</option>
-          {''.join(f'<option value="{s}">{s}</option>' for s in trial_specialties)}
-        </select>
-      </div>
-      <div class="trials-filter-group">
-        <label>Result</label>
-        <select id="trialFilterResult">
-          <option value="">All Results</option>
-          {''.join(f'<option value="{c}">{c}</option>' for c in trial_result_cats)}
-        </select>
-      </div>
-      <div class="trials-filter-group">
-        <label>Trial Type</label>
-        <select id="trialFilterType">
-          <option value="">All Types</option>
-          {''.join(f'<option value="{t}">{t}</option>' for t in trial_types_list)}
-        </select>
-      </div>
-      <div class="trials-filter-actions">
-        <button class="btn" id="trialFilterBtn">Filter</button>
-        <button class="btn" id="trialClearBtn">Clear</button>
-      </div>
-    </div>
-
-    <div id="trialsEsbicmResults"></div>
-  </section>
-
-  <!-- ESBICM SPECIALTY VIEW -->
-  <section class="view" id="view-trials-specialty">
-    <div class="trials-back-header">
-      <button class="trials-back-btn" id="trialsSpecBackBtn">&larr; Back</button>
-      <span class="dot" id="trialsSpecDot" style="width:14px;height:14px"></span>
-      <h2 id="trialsSpecTitle"></h2>
-    </div>
-    <div class="subtopic-chip-row" id="trialsSubtopicChips"></div>
-    <div id="trialsSpecList"></div>
-  </section>
-
-  <!-- TRIAL DETAIL FULL PAGE -->
-  <section class="view" id="view-trial-detail">
-    <div class="trials-back-header">
-      <button class="trials-back-btn" id="trialDetailBackBtn">&larr; Back</button>
-      <div style="flex:1"></div>
-      <button class="trials-back-btn" id="trialDetailPrevBtn" data-trial-prev style="display:none">&larr; Prev</button>
-      <button class="trials-back-btn" id="trialDetailNextBtn" data-trial-next style="display:none">Next &rarr;</button>
-    </div>
-    <div class="trial-detail" id="trialDetailBody"></div>
-  </section>
-
 </main>
 
 <!-- MOBILE FILTER SHEET -->
@@ -988,7 +715,6 @@ async def render_dashboard(request: Request):
   <button class="drawer-link" data-view="papers">&#128196; Papers</button>
   <button class="drawer-link" data-view="guidelines">&#128203; Guidelines</button>
   <button class="drawer-link" data-view="pearls">&#128142; Pearls</button>
-  <button class="drawer-link" data-view="trials">&#127942; Trials</button>
   <button class="drawer-link" data-view="antibiotics">&#128137; Antibiotics</button>
   <button class="drawer-link" data-view="theory">&#129504; Theory Library</button>
   <button class="drawer-link" data-view="rrt">&#128680; RRT</button>
@@ -1060,7 +786,7 @@ async def render_dashboard(request: Request):
   <button class="nav-item" data-view="papers"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128196;</span>Papers</button>
   <button class="nav-item" data-view="guidelines"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128203;</span>Guidelines</button>
   <button class="nav-item" data-view="pearls"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128142;</span>Pearls</button>
-  <button class="nav-item" data-view="trials"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#127942;</span>Trials</button>
+  <button class="nav-item" data-view="antibiotics"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128137;</span>Abx</button>
   <button class="nav-item" data-view="theory"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#129504;</span>Theory</button>
 </nav>
 
@@ -1077,24 +803,6 @@ async def render_dashboard(request: Request):
   </div>
 </div>
 
-<!-- TRIAL CREDITS OVERLAY -->
-<div id="trialCreditsOverlay" class="trial-overlay-backdrop" style="display:none">
-  <div class="trial-overlay-box">
-    <h2>&#127942; Credits</h2>
-    <div id="trialCreditsText"></div>
-    <button class="btn" onclick="closeTrialOverlay('trialCreditsOverlay')" style="margin-top:14px">Close</button>
-  </div>
-</div>
-
-<!-- TRIAL DISCLAIMER OVERLAY -->
-<div id="trialDisclaimerOverlay" class="trial-overlay-backdrop" style="display:none">
-  <div class="trial-overlay-box">
-    <h2>&#9888;&#65039; Disclaimer</h2>
-    <div id="trialDisclaimerText"></div>
-    <button class="btn" onclick="closeTrialOverlay('trialDisclaimerOverlay')" style="margin-top:14px">Close</button>
-  </div>
-</div>
-
 <script>
 // =====================================================================
 // DATA (injected from Python)
@@ -1107,19 +815,6 @@ const baseDataset = {json.dumps(articles_list)};
 const allPearls = {json.dumps(pearls)};
 const SUBTOPIC_MAP = {json.dumps(subtopic_map)};
 const showDisclaimer = {show_disclaimer};
-
-// Trial data
-const TRIAL_INDEX = {trial_index_js};
-const TRIAL_SPECS = {trial_spec_labels_js};
-const TRIAL_SPEC_VAR = {trial_spec_vars_js};
-const TRIAL_SPEC_COUNTS = {trial_spec_counts_js};
-const TRIAL_SUBTOPIC_MAP = {trial_subtopic_map_js};
-const TRIAL_RESULT_CATS = {trial_result_cats_js};
-const TRIAL_TYPES = {trial_types_list_js};
-
-let _trialFilterState = {{ specialty: '', result_category: '', trial_type: '' }};
-let _currentTrialList = [];
-let _currentTrialIdx = -1;
 
 // =====================================================================
 // STATE
@@ -1173,8 +868,6 @@ function showView(name){{
   if(name==='papers') renderPapers();
   if(name==='guidelines') renderGuidelines();
   if(name==='pearls'){{ renderPearlChips(); renderPearls(); }}
-  if(name==='trials') renderTrials();
-  if(name==='trials-esbicm') renderESBICM();
 }}
 
 // =====================================================================
@@ -1595,233 +1288,6 @@ function escapeHtml(str){{
 }}
 
 // =====================================================================
-// TRIALS
-// =====================================================================
-function renderTrials(){{
-  // My Trials placeholder is static HTML
-  // ESBICM hero card is static HTML
-}}
-
-function renderESBICM(){{
-  var container = document.getElementById('trialsEsbicmResults');
-  var spec = document.getElementById('trialFilterSpecialty').value;
-  var res = document.getElementById('trialFilterResult').value;
-  var typ = document.getElementById('trialFilterType').value;
-  var hasFilter = spec || res || typ;
-
-  if(!hasFilter){{
-    // Show specialty grid
-    var html = '<div class="trials-spec-grid">';
-    TRIAL_SPECS.forEach(function(s){{
-      var c = TRIAL_SPEC_COUNTS[s] || 0;
-      var v = TRIAL_SPEC_VAR[s] || '--tspec-general';
-      html += '<button class="trials-spec-tile" style="--tile-color:var('+v+')" data-trial-spec="'+s+'" role="button">'+
-        '<div class="dot" style="background:var('+v+')"></div>'+
-        '<div style="font-weight:700;font-size:.9rem">'+s+'</div>'+
-        '<div class="count">'+c+' trial'+(c!==1?'s':'')+'</div>'+
-        '</button>';
-    }});
-    html += '</div>';
-    container.innerHTML = html;
-    return;
-  }}
-
-  // Filtered: fetch from API
-  var params = new URLSearchParams({{specialty:spec, result_category:res, trial_type:typ, page:1, limit:300}});
-  fetch('/api/trials?'+params.toString())
-    .then(function(r){{ return r.json(); }})
-    .then(function(data){{
-      var list = data.trials || [];
-      _currentTrialList = list;
-      if(!list.length){{
-        container.innerHTML = '<div class="trial-empty"><span class="icon">&#128270;</span><p style="color:var(--ink-muted)">No trials match your filters.</p></div>';
-        return;
-      }}
-      var html = '<p style="font-size:.82rem;color:var(--ink-muted);margin-bottom:10px">'+list.length+' trial'+(list.length!==1?'s':'')+' found</p>';
-      list.forEach(function(t, i){{
-        html += renderTrialCard(t, i);
-      }});
-      container.innerHTML = html;
-    }});
-}}
-
-function renderTrialCard(t, idx){{
-  var resClass = (t.result_category||'').toLowerCase().replace(/[^a-z]/g,'');
-  var resColor = 'neu';
-  if(resClass.indexOf('pos')>=0) resColor = 'pos';
-  else if(resClass.indexOf('neg')>=0 && resClass.indexOf('neu')>=0) resColor = 'negneu';
-  else if(resClass.indexOf('neg')>=0) resColor = 'neg';
-  return '<div class="trial-card" data-open-trial="'+t.slug+'" data-idx="'+idx+'" role="button" tabindex="0">'+
-    '<h4>'+escapeHtml(t.trial_name)+'</h4>'+
-    '<p class="one-liner">'+escapeHtml((t.one_liner||'').substring(0,200))+'</p>'+
-    '<div class="meta-row">'+
-      '<span class="badge">'+escapeHtml(t.trial_type||'')+'</span>'+
-      '<span class="result-badge '+resColor+'">'+escapeHtml(t.result_category||'')+'</span>'+
-      (t.sample_size ? '<span class="badge">n='+t.sample_size+'</span>' : '')+
-      '<span class="badge">'+t.year+'</span>'+
-    '</div>'+
-    '</div>';
-}}
-
-function renderTrialsSpecialty(name){{
-  showView('trials-specialty');
-  document.getElementById('trialsSpecTitle').textContent = name;
-  var dot = document.getElementById('trialsSpecDot');
-  var v = TRIAL_SPEC_VAR[name] || '--tspec-general';
-  dot.style.background = 'var('+v+')';
-
-  // Subtopic chips
-  var sts = TRIAL_SUBTOPIC_MAP[name] || ['General'];
-  var chipHtml = '<button class="subtopic-chip active" data-st="">All</button>';
-  sts.forEach(function(st){{
-    chipHtml += '<button class="subtopic-chip" data-st="'+escapeHtml(st)+'">'+escapeHtml(st)+'</button>';
-  }});
-  document.getElementById('trialsSubtopicChips').innerHTML = chipHtml;
-
-  // Back button
-  document.getElementById('trialsSpecBackBtn').onclick = function(){{ showView('trials-esbicm'); }};
-
-  _filterTrialsBySpecialty(name, '');
-}}
-
-function _filterTrialsBySpecialty(name, subtopic){{
-  var filtered = TRIAL_INDEX.filter(function(t){{
-    if(t.specialty !== name) return false;
-    if(subtopic && t.subtopic !== subtopic) return false;
-    return true;
-  }});
-  _currentTrialList = filtered;
-  var html = '';
-  filtered.forEach(function(t, i){{
-    html += renderTrialCard(t, i, filtered);
-  }});
-  if(!html) html = '<div class="trial-empty"><span class="icon">&#128270;</span><p style="color:var(--ink-muted)">No trials in this category.</p></div>';
-  document.getElementById('trialsSpecList').innerHTML = html;
-}}
-
-function openTrialDetail(slug, list, idx){{
-  showView('trial-detail');
-  _currentTrialList = list || [];
-  _currentTrialIdx = typeof idx === 'number' ? idx : -1;
-
-  var body = document.getElementById('trialDetailBody');
-  body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--ink-muted)">Loading&hellip;</div>';
-
-  fetch('/api/trial/'+slug)
-    .then(function(r){{ return r.json(); }})
-    .then(function(data){{
-      if(data.error){{ body.innerHTML = '<div class="trial-empty"><span class="icon">&#9888;</span><p>Could not load trial.</p></div>'; return; }}
-      renderTrialDetailHTML(data, body);
-    }});
-}}
-
-function renderTrialDetailHTML(data, body){{
-  // Credits bar
-  var html = '<div class="trial-credits-bar">'+
-    '<span class="trophy">&#127942;</span>'+
-    '<span>Data sourced from <strong>ESBICM Trials Database</strong></span>'+
-    '<span class="spacer"></span>'+
-    '<button class="icon-btn-sm" onclick="openTrialOverlay(&#x27;trialCreditsOverlay&#x27;,&#x27;credits&#x27;)">&#127942; Credits</button>'+
-    '<button class="icon-btn-sm" onclick="openTrialOverlay(&#x27;trialDisclaimerOverlay&#x27;,&#x27;disclaimer&#x27;)">&#8505;&#65039;</button>'+
-    '</div>';
-
-  // Title + journal
-  html += '<h1>'+escapeHtml(data.trial_name || data.trial_title || '')+'</h1>';
-  html += '<div class="trial-journal">';
-  if(data.journal) html += escapeHtml(data.journal);
-  if(data.year) html += ' &middot; '+data.year;
-  if(data.doi){{
-    var doiUrl = data.doi;
-    if(doiUrl && doiUrl!=='#' && !doiUrl.startsWith('http')) doiUrl = 'https://doi.org/'+doiUrl;
-    if(doiUrl && doiUrl!=='#') html += ' &middot; <a href="'+doiUrl+'" target="_blank" rel="noopener" style="color:var(--accent)">&#128279; DOI</a>';
-  }}
-  html += '</div>';
-
-  // Meta strip
-  html += '<div class="trial-meta-strip">';
-  if(data.trial_type) html += '<span class="badge">'+escapeHtml(data.trial_type)+'</span>';
-  if(data.result_category){{
-    var rc = data.result_category.toLowerCase().replace(/[^a-z]/g,'');
-    var rcls = 'neu';
-    if(rc.indexOf('pos')>=0) rcls = 'pos';
-    else if(rc.indexOf('neg')>=0 && rc.indexOf('neu')>=0) rcls = 'negneu';
-    else if(rc.indexOf('neg')>=0) rcls = 'neg';
-    html += '<span class="result-badge '+rcls+'">'+escapeHtml(data.result_category)+'</span>';
-  }}
-  if(data.sample_size) html += '<span class="badge">n='+data.sample_size+'</span>';
-  if(data.evidence_level) html += '<span class="badge">&#11088; '+escapeHtml(data.evidence_level)+'</span>';
-  html += '</div>';
-
-  // One-liner
-  if(data.one_liner) html += '<div class="trial-one-liner">'+escapeHtml(data.one_liner)+'</div>';
-
-  // Sections as collapsible
-  if(data.sections && data.sections.length){{
-    data.sections.forEach(function(s){{
-      var secContent = preprocessTrialContent(s.content || '');
-      var secHtml = '<div class="trial-section"><details'+(s.id<=2?' open':'')+'><summary>'+escapeHtml(s.heading||'')+'</summary><div class="section-body">';
-      if (typeof marked !== 'undefined' && marked.parse) {{
-        secHtml += marked.parse(secContent);
-      }} else {{
-        secHtml += '<p>'+secContent.replace(/\\n/g, '<br>')+'</p>';
-      }}
-      secHtml += '</div></details></div>';
-      html += secHtml;
-    }});
-  }}
-
-  // Prev/Next nav
-  html += '<div class="trial-nav-bar">';
-  if(_currentTrialIdx > 0 && _currentTrialList.length){{
-    var prev = _currentTrialList[_currentTrialIdx - 1];
-    html += '<button class="btn nav-btn" onclick="openTrialDetail(&#x27;'+prev.slug+'&#x27;,_currentTrialList,'+(_currentTrialIdx-1)+')">&larr; '+escapeHtml(prev.toc_name||'Previous')+'</button>';
-  }}
-  if(_currentTrialIdx >= 0 && _currentTrialIdx < _currentTrialList.length - 1){{
-    var next = _currentTrialList[_currentTrialIdx + 1];
-    html += '<button class="btn nav-btn" onclick="openTrialDetail(&#x27;'+next.slug+'&#x27;,_currentTrialList,'+(_currentTrialIdx+1)+')">'+escapeHtml(next.toc_name||'Next')+' &rarr;</button>';
-  }}
-  html += '</div>';
-
-  body.innerHTML = html;
-}}
-
-function preprocessTrialContent(text){{
-  if(!text) return '';
-  // Convert bullet characters to markdown list syntax
-  var out = text.replace(/^\u2022\s*/gm, '- ').replace(/^o\s+/gm, '  - ');
-  return out;
-}}
-
-function filterTrials(){{
-  renderESBICM();
-}}
-
-function clearTrialFilters(){{
-  document.getElementById('trialFilterSpecialty').value = '';
-  document.getElementById('trialFilterResult').value = '';
-  document.getElementById('trialFilterType').value = '';
-  renderESBICM();
-}}
-
-function openTrialOverlay(id, kind){{
-  document.getElementById(id).style.display = 'flex';
-  if(kind==='credits'){{
-    var md = `{CREDITS_TEXT.replace('`','\\`').replace('$','\\$')}`;
-    var html = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
-    document.getElementById('trialCreditsText').innerHTML = '<p>'+html+'</p>';
-  }}
-  if(kind==='disclaimer'){{
-    var md = `{TRIAL_DISCLAIMER_TEXT.replace('`','\\`').replace('$','\\$')}`;
-    var html = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
-    document.getElementById('trialDisclaimerText').innerHTML = '<p>'+html+'</p>';
-  }}
-}}
-
-function closeTrialOverlay(id){{
-  document.getElementById(id).style.display = 'none';
-}}
-
-// =====================================================================
 // DISCLAIMER
 // =====================================================================
 function dismissDisclaimer(){{
@@ -1911,15 +1377,6 @@ document.getElementById('unsubscribeBtn').addEventListener('click', function(){{
 document.getElementById('feedbackBtn').addEventListener('click', function(){{
   window.open('{FEEDBACK_FORM_URL}', '_blank');
 }});
-
-// Trial filter/clear buttons
-var trialFilterBtn = document.getElementById('trialFilterBtn');
-if(trialFilterBtn) trialFilterBtn.addEventListener('click', filterTrials);
-var trialClearBtn = document.getElementById('trialClearBtn');
-if(trialClearBtn) trialClearBtn.addEventListener('click', clearTrialFilters);
-// Trial detail back button
-var trialDetailBack = document.getElementById('trialDetailBackBtn');
-if(trialDetailBack) trialDetailBack.addEventListener('click', function(){{ showView('trials-esbicm'); }});
 
 // =====================================================================
 // DELEGATED EVENT HANDLING (for dynamically rendered elements)
@@ -2067,39 +1524,6 @@ document.addEventListener('click', function(e){{
 
   var themeChip = e.target.closest('[data-theme-choice]');
   if(themeChip){{ setTheme(themeChip.dataset.themeChoice); return; }}
-
-  /* Trial specialty grid tile */
-  var trialSpecTile = e.target.closest('[data-trial-spec]');
-  if(trialSpecTile){{ renderTrialsSpecialty(trialSpecTile.dataset.trialSpec); return; }}
-
-  /* Open trial detail from card */
-  var trialCard = e.target.closest('[data-open-trial]');
-  if(trialCard){{
-    var slug = trialCard.dataset.openTrial;
-    var idx = parseInt(trialCard.dataset.idx, 10);
-    if(!isNaN(idx) && idx>=0 && idx<_currentTrialList.length){{
-      openTrialDetail(slug, _currentTrialList, idx);
-    }} else {{
-      openTrialDetail(slug, [], -1);
-    }}
-    return;
-  }}
-
-  /* Trials subtopic chips */
-  var trialSubBtn = e.target.closest('#trialsSubtopicChips .subtopic-chip');
-  if(trialSubBtn){{
-    document.querySelectorAll('#trialsSubtopicChips .subtopic-chip').forEach(function(c){{ c.classList.remove('active'); }});
-    trialSubBtn.classList.add('active');
-    var st = trialSubBtn.dataset.st || '';
-    var name = document.getElementById('trialsSpecTitle').textContent;
-    _filterTrialsBySpecialty(name, st);
-    return;
-  }}
-
-  /* Close trial overlays on backdrop click */
-  if(e.target.matches('.trial-overlay-backdrop')){{
-    e.target.style.display = 'none';
-  }}
 }});
 
 document.addEventListener('change', function(e){{
@@ -2220,70 +1644,6 @@ async def get_pearls(q: str = "", system: str = "", type: str = "", page: int = 
     start = (page - 1) * limit
     end = start + limit
     return {"pearls": filtered[start:end], "total": total, "page": page, "totalPages": (total + limit - 1) // limit if limit > 0 else 1}
-
-
-@app.get("/api/trials/stats")
-async def get_trials_stats():
-    idx = load_trial_index()
-    counts = {}
-    for t in idx:
-        sp = t.get("specialty", "Other")
-        counts[sp] = counts.get(sp, 0) + 1
-    return {"stats": counts}
-
-
-@app.get("/api/trials")
-async def get_trials(
-    specialty: str = "",
-    result_category: str = "",
-    trial_type: str = "",
-    q: str = "",
-    page: int = 1,
-    limit: int = 50
-):
-    idx = load_trial_index()
-    filtered = []
-    for t in idx:
-        if specialty and t.get("specialty", "") != specialty:
-            continue
-        if result_category and t.get("result_category", "") != result_category:
-            continue
-        if trial_type and t.get("trial_type", "") != trial_type:
-            continue
-        if q and q.lower() not in t.get("trial_name", "").lower() and q.lower() not in t.get("one_liner", "").lower():
-            continue
-        filtered.append(t)
-    total = len(filtered)
-    start = (page - 1) * limit
-    end = start + limit
-    return {
-        "trials": filtered[start:end],
-        "total": total,
-        "page": page,
-        "totalPages": (total + limit - 1) // limit if limit > 0 else 1
-    }
-
-
-@app.get("/api/trial/{slug}")
-async def get_trial(slug: str):
-    idx = load_trial_index()
-    match = None
-    for t in idx:
-        if t.get("slug", "") == slug:
-            match = t
-            break
-    if not match:
-        return JSONResponse(status_code=404, content={"error": f"Trial not found: {slug}"})
-    file_path = match.get("file_path", "")
-    target = os.path.join(OUTPUT_DIR, file_path)
-    if not os.path.exists(target):
-        return JSONResponse(status_code=404, content={"error": f"Trial file not found: {file_path}"})
-    try:
-        with open(target, "r", encoding="utf-8") as f:
-            payload = json.load(f)
-        return payload
-    except Exception as e:
-        return JSONResponse(status_code=500, content={"error": str(e)})
 
 
 # =====================================================================
