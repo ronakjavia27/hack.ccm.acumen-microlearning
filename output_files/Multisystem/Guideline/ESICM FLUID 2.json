@@ -1,0 +1,195 @@
+{
+  "id": "esicm-2025-fluid-therapy-volume-resuscitation",
+  "doc_type": "guideline",
+  "title": "European Society of Intensive Care Medicine (ESICM) 2025 clinical practice guideline on fluid therapy in adult critically ill patients: part 2—the volume of resuscitation fluids",
+  "issuing_bodies": [
+    "ESICM"
+  ],
+  "year": 2025,
+  "doi": "10.1007/s00134-025-07840-1",
+  "specialty": [
+    "multi_system",
+    "trauma",
+    "cardiology"
+  ],
+  "tags": [
+    "fluid resuscitation",
+    "septic shock",
+    "hemorrhagic shock",
+    "cardiogenic shock",
+    "obstructive shock",
+    "ARDS",
+    "critical care",
+    "guideline"
+  ],
+  "one_line_summary": "This ESICM guideline provides evidence-based recommendations on the volume of early resuscitation fluid for adult **critically** ill patients with circulatory failure of various etiologies, including sepsis, hemorrhage, and cardiogenic shock.",
+  "key_pearls": [
+    "In adults with sepsis or septic shock, administer up to **30 ml/kg** of intravenous crystalloids in the initial phase (typically first 3 h), with adjustments based on clinical context and frequent reassessments (conditional recommendation, very low certainty).",
+    "In the optimization phase of sepsis resuscitation, use an individualized approach over a non-individualized one, incorporating hemodynamic monitoring and fluid responsiveness assessment (conditional recommendation, very low certainty).",
+    "For hemorrhagic shock following blunt or penetrating trauma, use a restrictive fluid resuscitation strategy as part of a permissive hypotension approach (target SBP **80–90 mmHg** or MAP **50–60 mmHg**) prior to definitive hemorrhage control.",
+    "In left-sided cardiogenic shock, fluid resuscitation should not be the primary treatment; if fluids are administered, monitor closely for pulmonary edema (ungraded best practice statement).",
+    "For circulatory failure due to acute pulmonary embolism, base fluid administration decisions on measured surrogate markers of right heart congestion, such as **CVP > 10 mmHg** or RV size > LV size on echocardiography (ungraded best practice statement).",
+    "In cardiac tamponade, administer fluids cautiously as a temporary measure until definitive management can be undertaken; only **47%** of patients are fluid responders (ungraded best practice statement).",
+    "No recommendation could be made for or against systematic restrictive or liberal fluid administration in the optimization phase of sepsis due to moderate certainty of no effect on **mortality** (RR **0.99**, 97% CI **0.89–1.08**)."
+  ],
+  "consensus_method": "GRADE methodology with Evidence-to-Decision (EtD) framework; panel consensus.",
+  "search_period": "Inception to June 2022",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Sepsis: Initial Resuscitation Volume (30 ml/kg)",
+      "narrative": "- No RCTs specifically address **30 ml/kg** vs. other volumes.\n- Current practice in recent RCTs shows a mean/median initial volume of **1 to 3 L** of crystalloids, or **20–35 mL/kg**, within 3–6 h, with wide variability (lowest quartile: **500 mL**, highest quartile: **5 L**).\n- A single RCT in a low-income country found higher **mortality** with protocol-based care including a fixed volume of up to **4 L** of fluid compared to standard care (median **3.5 L** vs. **2 L** in 6 h).\n- An RCT in pediatric patients with febrile illness and hypoperfusion in low-income countries found higher **mortality** with fluid boluses of **20 to 40 ml/kg** over 1 h compared to no bolus.\n- A meta-analysis reported that higher volumes of fluid resuscitation were associated with increased **mortality** in LMICs and settings with limited access to mechanical ventilation.\n- Observational studies in high-risk populations (CHF, CKD, cirrhosis) show conflicting results on the safety of standard volume resuscitation (≥ **30 mL/kg**).",
+      "recommendations": [
+        {
+          "rec_id": "Q1",
+          "statement": "In adults with sepsis or septic shock who require fluid resuscitation for circulatory failure, we suggest administering up to **30 ml/kg** of intravenous crystalloids in the initial phase (when hemodynamic monitoring is not yet available, typically within the first 3 h), with adjustments based on clinical context and frequent reassessments.",
+          "strength": "conditional",
+          "evidence_grade": "Very Low"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Sepsis: Liberal vs. Restrictive Strategy in Optimization Phase",
+      "narrative": "- A meta-analysis of 13 RCTs (4,006 patients) found no difference in **mortality** between restrictive and liberal strategies: RR **0.99**, 97% CI **0.89–1.08**, *p* = 0.69; moderate certainty of evidence.\n- No difference in serious adverse events (SAEs): RR **0.95**, 97% CI **0.83–1.07**, *p* = 0.28; low certainty of evidence.\n- No **significant** difference in duration of mechanical ventilation, ventilator-free days, vasopressor-free days, use or duration of RRT, or AKI.\n- The CLASSIC and CLOVERS trials contributed 3,385 of 4,006 patients. In CLASSIC, the median cumulative fluid volume in ICU was **10,433 mL** (restrictive) vs. **12,747 mL** (standard).",
+      "recommendations": [
+        {
+          "rec_id": "Q2",
+          "statement": "In adults with sepsis or septic shock who need fluid resuscitation for circulatory failure, we cannot recommend for or against systematic restrictive or liberal fluid administration.",
+          "strength": null,
+          "evidence_grade": "Moderate certainty of no effect"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Sepsis: Individualized vs. Non-Individualized Approach in Optimization Phase",
+      "narrative": "- Eight RCTs compared fluid responsiveness assessment with usual care. Short-term **mortality** was assessed in 363 vs. 321 patients (83 vs. 95 deaths; RR **0.82**, 95% CI **0.63–1.07**, *I²* = 10%, *p* = 0.14).\n- No difference in ventilator-free days (mean difference **−0.33**, 95% CI **−2.65, 2**) or need for RRT (RR **0.69**, 95% CI **0.38–1.24**, *I²* = 56%, *p* = 0.21).\n- Individualization includes fluid challenge approach, systematic fluid responsiveness assessment, and consideration of hemodynamic phenotypes.",
+      "recommendations": [
+        {
+          "rec_id": "Q3",
+          "statement": "In adults with sepsis or septic shock who require fluid resuscitation for circulatory failure, we suggest using an individualized approach compared with a non-individualized approach during the optimization phase.",
+          "strength": "conditional",
+          "evidence_grade": "Very Low"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Hemorrhagic Shock: Penetrating Trauma",
+      "narrative": "- An updated meta-analysis of 3 trials (831 patients) found a reduction in **mortality** with permissive hypotension: RR **0.80**, 95% CI **0.65–0.90**.\n- Fluid resuscitation endpoint was maintained at a systolic blood pressure of around **80–90 mmHg**, or a mean arterial pressure of **50–60 mmHg**.\n- The Bickell et al. trial contributed 72% of the weight for the **mortality** outcome.",
+      "recommendations": [
+        {
+          "rec_id": "Q4",
+          "statement": "In adults with hemorrhagic shock after penetrating trauma, we suggest using a restrictive fluid resuscitation strategy (as part of a permissive hypotension approach) compared with a liberal fluid resuscitation strategy prior to definitive hemorrhage control.",
+          "strength": "conditional",
+          "evidence_grade": "Moderate"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Hemorrhagic Shock: Blunt Trauma",
+      "narrative": "- Only two RCTs included mixed trauma types, so a meta-analysis specific to blunt trauma could not be performed.\n- The meta-analysis for all trauma indicated that permissive hypotension was protective in patients with hemorrhagic shock.\n- In blunt trauma without TBI, a target SBP of **80–90 mmHg** or MAP of **50–60 mmHg** may be required. With TBI, target SBP may be **100–110 mmHg** or MAP ≥ **80 mmHg**.",
+      "recommendations": [
+        {
+          "rec_id": "Q5",
+          "statement": "In adults with hemorrhagic shock following blunt trauma, we suggest a restrictive fluid resuscitation strategy (as part of a permissive hypotensive approach) compared with a liberal fluid resuscitation strategy before definitive hemorrhage control.",
+          "strength": "conditional",
+          "evidence_grade": "Low"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Hemorrhagic Shock: Non-Traumatic Origin",
+      "narrative": "- A study of 51 patients found conservative fluid resuscitation beneficial in acute upper GI hemorrhage.\n- An RCT of 249 women with postpartum hemorrhage < **1500 mL** found restrictive fluid resuscitation had no **significant** effect on thromboelastometric parameters.\n- Conditions to correct include metabolic acidosis, hypothermia, and coagulopathy.",
+      "recommendations": [
+        {
+          "rec_id": "Q6",
+          "statement": "In adults with hemorrhagic shock of non-traumatic origin, fluid administration should be guided by hemodynamic and biochemical parameters in the context of the primary disease state prior to definitive hemorrhage control.",
+          "strength": "expert_opinion",
+          "evidence_grade": "Ungraded Best Practice Statement"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Obstructive Shock: Pulmonary Embolism",
+      "narrative": "- Nine studies (4 animal, 5 human) were identified. The human literature included 456 patients, with only one study (13 patients) including patients in shock.\n- In that study, the increase in cardiac index induced by a **500 mL** dextran fluid bolus was inversely related to baseline right ventricular end-diastolic volume index.\n- Four human trials in patients without shock used a diuretic as the intervention and found it well-tolerated with beneficial effects on surrogate markers.\n- Surrogate markers of right heart congestion include CVP > **10 mmHg**, echocardiography (RV size > LV size), and VEXUS > grade 1.",
+      "recommendations": [
+        {
+          "rec_id": "Q7",
+          "statement": "In adult patients with circulatory failure due to acute pulmonary embolism, clinicians should be cautious about administering fluids and should base their decision on measured surrogate markers of right heart congestion.",
+          "strength": "expert_opinion",
+          "evidence_grade": "Ungraded Best Practice Statement"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Obstructive Shock: Cardiac Tamponade",
+      "narrative": "- Four studies (1 animal, 3 human) were identified. The human literature included 88 patients who received IV fluid boluses (**NaCl 500 mL**).\n- Fluid boluses induced either no **significant** improvement or an improvement in blood pressure and cardiac output.\n- Only **47%** of patients were fluid responders (increase in cardiac index > 10%), while cardiac index remained unchanged in **22%** and decreased in **31%**.\n- Predictors of a favorable response were low systolic blood pressure and low cardiac index at baseline.",
+      "recommendations": [
+        {
+          "rec_id": "Q8",
+          "statement": "In adult patients with circulatory failure due to cardiac tamponade, fluid should be given cautiously as a temporary measure until definitive management can be undertaken.",
+          "strength": "expert_opinion",
+          "evidence_grade": "Ungraded Best Practice Statement"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Left-Sided Cardiogenic Shock",
+      "narrative": "- Fluid administration can exacerbate heart failure and lead to pulmonary edema.\n- Some patients may benefit from a cautious fluid challenge, but the high risk of inducing or worsening pulmonary edema precludes widespread use as an initial measure.\n- A tailored approach with advanced hemodynamic monitoring to assess fluid responsiveness and tolerance is suggested.",
+      "recommendations": [
+        {
+          "rec_id": "Q9",
+          "statement": "In adults with circulatory failure due to left-sided cardiogenic shock, fluid resuscitation should not be the primary treatment. If fluids are administered, the patient should be monitored closely, especially for pulmonary edema.",
+          "strength": "expert_opinion",
+          "evidence_grade": "Ungraded Best Practice Statement"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Acute Respiratory Distress Syndrome (ARDS)",
+      "narrative": "- No RCT specifically compared restrictive vs. liberal fluid resuscitation in patients with circulatory failure and ARDS.\n- The FACTT trial (1000 patients with acute lung injury, ~30% with shock) found no difference in 60-day **mortality** between conservative and liberal strategies but noted more ventilator-free and ICU-free days in the conservative group.\n- A re-analysis identified two subphenotypes (hypoinflammatory and hyperinflammatory) with differing responses: in the hypoinflammatory group, **mortality** was **26%** (liberal) vs. **18%** (conservative); in the hyperinflammatory group, **mortality** was **40%** (liberal) vs. **50%** (conservative).",
+      "recommendations": [
+        {
+          "rec_id": "Q10",
+          "statement": "In adults with circulatory failure and ARDS, we cannot make a recommendation about the volume of fluid administration.",
+          "strength": null,
+          "evidence_grade": "Very Low"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: Rigorous GRADE methodology applied by an international, multidisciplinary panel; comprehensive scope covering multiple etiologies of circulatory failure; clear separation of resuscitation phases (initial vs. optimization).\n- Limitations: Most recommendations are conditional and based on low or very low certainty of evidence; no RCTs exist for several **critical** questions (e.g., **30 ml**/kg in sepsis, fluid volume in ARDS with shock); the evidence base for trauma is heavily weighted by a single older trial.",
+  "drugs_doses": [
+    {
+      "drug": "Crystalloids",
+      "dose": "Up to 30 ml/kg IV",
+      "indication": "Initial resuscitation phase (first 3 h) of sepsis or septic shock",
+      "adverse_effects": "Risk of fluid overload, pulmonary edema, especially in patients with heart failure or chronic kidney disease"
+    },
+    {
+      "drug": "Dextran",
+      "dose": "500 mL IV bolus",
+      "indication": "Studied in acute massive pulmonary embolism for hemodynamic assessment",
+      "adverse_effects": "Potential to worsen right heart congestion if baseline RVEDVI is high"
+    },
+    {
+      "drug": "Sodium Chloride 0.9%",
+      "dose": "500 mL IV bolus",
+      "indication": "Studied in cardiac tamponade for temporary hemodynamic support",
+      "adverse_effects": "Only 47% of patients are fluid responders; may decrease cardiac index in 31% of patients"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2025-03-29",
+  "article_subtype": "Guideline",
+  "subtopic": "Multisystem"
+}
