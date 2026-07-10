@@ -1,0 +1,477 @@
+{
+  "id": "idsa-ats-management-hap-vap-2016",
+  "doc_type": "guideline",
+  "title": "Management of Adults With Hospital-acquired and Ventilator-associated Pneumonia: 2016 Clinical Practice Guidelines by the Infectious Diseases Society of America and the American Thoracic Society",
+  "issuing_bodies": [
+    "IDSA",
+    "ATS"
+  ],
+  "year": 2016,
+  "doi": "10.1093/cid/ciw353",
+  "specialty": [
+    "pulmonology",
+    "infectious_disease",
+    "multi_system"
+  ],
+  "tags": [
+    "hap",
+    "vap",
+    "nosocomial pneumonia",
+    "antibiotic stewardship",
+    "mdr pathogens",
+    "pseudomonas aeruginosa",
+    "mrsa",
+    "de-escalation"
+  ],
+  "one_line_summary": "2016 IDSA/ATS guideline for managing hospital-acquired and ventilator-associated pneumonia, emphasizing local antibiograms, short-course therapy, and de-escalation to balance early appropriate coverage against antibiotic resistance.",
+  "key_pearls": [
+    "Use local antibiograms, ideally ICU-specific, to guide empiric therapy for HAP and VAP to ensure adequate coverage while minimizing unnecessary broad-spectrum antibiotic use.",
+    "Empiric VAP therapy should cover *S. aureus*, *Pseudomonas aeruginosa*, and other gram-negative bacilli; add MRSA coverage if local MRSA prevalence is >10-20% or patient has risk factors.",
+    "For most patients with HAP or VAP, a **7-day** course of antibiotic therapy is **recommended** over longer durations, regardless of microbial etiology.",
+    "De-escalation of antibiotics is suggested over fixed broad-spectrum regimens, changing to narrower agents or monotherapy based on culture results.",
+    "In patients with VAP due to *P. aeruginosa* who are not in septic shock, use monotherapy based on susceptibility testing; combination therapy is suggested only for those in septic shock or at high risk of death.",
+    "Avoid using serum procalcitonin (PCT), BALF sTREM-1, CRP, or CPIS plus clinical criteria to decide initiation of antibiotic therapy for suspected HAP/VAP; use clinical criteria alone.",
+    "For carbapenem-resistant pathogens sensitive only to polymyxins, use intravenous polymyxins (colistin or polymyxin B) and suggest adjunctive inhaled colistin."
+  ],
+  "consensus_method": "GRADE methodology",
+  "search_period": "Initial searches 2012-2013, updated July 2014; studies up to November 2015 included.",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Microbiologic Methods to Diagnose VAP and HAP",
+      "narrative": "- Invasive sampling includes bronchoscopic techniques (BAL, PSB) and blind bronchial sampling (mini-BAL). Noninvasive sampling refers to endotracheal aspiration.\n- Meta-analysis of 5 randomized trials found no **significant** differences in 28-day **mortality**, overall **mortality**, ICU length of stay, or duration of mechanical ventilation between invasive and noninvasive sampling.\n- Performance characteristics: Semi-quantitative ETAs are the most sensitive but least specific; quantitative BAL has intermediate performance.",
+      "recommendations": [
+        {
+          "rec_id": "I.1",
+          "statement": "We suggest noninvasive sampling with semiquantitative cultures to diagnose VAP, rather than invasive sampling with quantitative cultures and rather than noninvasive sampling with quantitative cultures.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "II.1",
+          "statement": "For patients with suspected VAP whose invasive quantitative culture results are below the diagnostic threshold for VAP (PSB <10^3 CFU/mL, BAL <10^4 CFU/mL), we suggest that antibiotics be withheld rather than continued.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "III.1",
+          "statement": "We suggest that patients with suspected HAP (non-VAP) be treated according to the results of microbiologic studies performed on respiratory samples obtained noninvasively, rather than being treated empirically.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Use of Biomarkers and CPIS to Diagnose VAP and HAP",
+      "narrative": "- Serum PCT meta-analysis (6 studies, 665 participants): sensitivity 67%, specificity 83%, AUC 0.76.\n- BALF sTREM-1 meta-analysis (6 studies, 208 patients): sensitivity 84%, specificity 49%, AUC 0.78.\n- CRP studies showed no reliable distinction between patients with and without VAP.\n- CPIS meta-analysis (13 studies): sensitivity 65%, specificity 64%, AUC 0.748.",
+      "recommendations": [
+        {
+          "rec_id": "IV.1",
+          "statement": "For patients with suspected HAP/VAP, we recommend using clinical criteria alone, rather than using serum PCT plus clinical criteria, to decide whether or not to initiate antibiotic therapy.",
+          "strength": "strong",
+          "evidence_grade": "moderate-quality evidence"
+        },
+        {
+          "rec_id": "V.1",
+          "statement": "For patients with suspected HAP/VAP, we recommend using clinical criteria alone, rather than using BALF sTREM-1 plus clinical criteria, to decide whether or not to initiate antibiotic therapy.",
+          "strength": "strong",
+          "evidence_grade": "moderate-quality evidence"
+        },
+        {
+          "rec_id": "VI.1",
+          "statement": "For patients with suspected HAP/VAP, we recommend using clinical criteria alone rather than using CRP plus clinical criteria, to decide whether or not to initiate antibiotic therapy.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "VII.1",
+          "statement": "For patients with suspected HAP/VAP, we suggest using clinical criteria alone, rather than using CPIS plus clinical criteria, to decide whether or not to initiate antibiotic therapy.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Treatment of Ventilator-Associated Tracheobronchitis (VAT)",
+      "narrative": "- One randomized trial (n=58) showed lower ICU **mortality** (18% vs 47%), less subsequent VAP (13% vs 47%), and more mechanical ventilation-free days with antibiotics.\n- Observational studies showed antibiotic therapy was associated with shorter duration of mechanical ventilation (-3.5 days) but no difference in **mortality** or ICU stay.\n- MDR organisms comprised 61% of all isolates in observational studies.",
+      "recommendations": [
+        {
+          "rec_id": "VIII.1",
+          "statement": "In patients with VAT, we suggest not providing antibiotic therapy.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Initial Treatment of VAP",
+      "narrative": "- Surveillance data: S. aureus (20-30%), P. aeruginosa (10-20%), enteric gram-negative bacilli (20-40%), A. baumannii (5-10%).\n- Inadequate/delayed treatment is associated with higher **mortality** (OR 2.34).\n- Meta-analysis of 9 trials: carbapenem-based regimens showed a 22% relative decrease in **mortality** (RR 0.78) but no difference in clinical response.\n- Aminoglycoside-containing regimens had lower clinical response rates (56% vs 68%).\n- No differences in **mortality**, clinical response, or adverse effects between monotherapy and combination therapy for empiric gram-negative coverage in trials, but trials excluded patients with resistant pathogens.",
+      "recommendations": [
+        {
+          "rec_id": "IX.1",
+          "statement": "We recommend that all hospitals regularly generate and disseminate a local antibiogram, ideally one that is specific to their intensive care population(s) if possible.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "IX.2",
+          "statement": "We recommend that empiric treatment regimens be informed by the local distribution of pathogens associated with VAP and their antimicrobial susceptibilities.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "X.1",
+          "statement": "In patients with suspected VAP, we recommend including coverage for S. aureus, Pseudomonas aeruginosa, and other gram-negative bacilli in all empiric regimens.",
+          "strength": "strong",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "X.1.i",
+          "statement": "We suggest including an agent active against MRSA for the empiric treatment of suspected VAP only in patients with a risk factor for antimicrobial resistance, patients in units where >10%-20% of S. aureus isolates are methicillin resistant, and patients in units where the prevalence of MRSA is not known.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "X.1.ii",
+          "statement": "We suggest including an agent active against MSSA (and not MRSA) for the empiric treatment of suspected VAP in patients without risk factors for antimicrobial resistance, who are being treated in ICUs where <10%-20% of S. aureus isolates are methicillin resistant.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "X.2",
+          "statement": "If empiric coverage for MRSA is indicated, we recommend either vancomycin or linezolid.",
+          "strength": "strong",
+          "evidence_grade": "moderate-quality evidence"
+        },
+        {
+          "rec_id": "X.3",
+          "statement": "When empiric treatment that includes coverage for MSSA (and not MRSA) is indicated, we suggest a regimen including piperacillin-tazobactam, cefepime, levofloxacin, imipenem, or meropenem.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "X.4",
+          "statement": "We suggest prescribing 2 antipseudomonal antibiotics from different classes for the empiric treatment of suspected VAP only in patients with a risk factor for antimicrobial resistance, patients in units where >10% of gram-negative isolates are resistant to an agent being considered for monotherapy, and patients in an ICU where local antimicrobial susceptibility rates are not available.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "X.5",
+          "statement": "We suggest prescribing one antibiotic active against P. aeruginosa for the empiric treatment of suspected VAP in patients without risk factors for antimicrobial resistance who are being treated in ICUs where <=10% of gram-negative isolates are resistant to the agent being considered for monotherapy.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "X.6",
+          "statement": "In patients with suspected VAP, we suggest avoiding aminoglycosides if alternative agents with adequate gram-negative activity are available.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "X.7",
+          "statement": "In patients with suspected VAP, we suggest avoiding colistin if alternative agents with adequate gram-negative activity are available.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Initial Treatment of HAP (Non-VAP)",
+      "narrative": "- Meta-analysis of 24 studies: S. aureus (16% of isolates, MRSA 10%, MSSA 6%), non-glucose-fermenting gram-negative bacilli (19%, Pseudomonas 13%), enteric gram-negative bacilli (16%).\n- Inadequate initial treatment of S. aureus may be associated with increased **mortality**.\n- No specific antimicrobial regimen demonstrated better outcomes than comparator regimens in randomized trials.",
+      "recommendations": [
+        {
+          "rec_id": "XI.1",
+          "statement": "We recommend that all hospitals regularly generate and disseminate a local antibiogram, ideally one that is tailored to their HAP population, if possible.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "XI.2",
+          "statement": "We recommend that empiric antibiotic regimens be based upon the local distribution of pathogens associated with HAP and their antimicrobial susceptibilities.",
+          "strength": "strong",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "XII.1",
+          "statement": "For patients being treated empirically for HAP, we recommend prescribing an antibiotic with activity against S. aureus.",
+          "strength": "strong",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XII.1.i",
+          "statement": "For patients with HAP who are being treated empirically and have either a risk factor for MRSA infection or who are at high risk for **mortality**, we suggest prescribing an antibiotic with activity against MRSA.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XII.1.ii",
+          "statement": "For patients with HAP who require empiric coverage for MRSA, we recommend vancomycin or linezolid rather than an alternative antibiotic.",
+          "strength": "strong",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "XII.1.iii",
+          "statement": "For patients with HAP who are being treated empirically and have no risk factors for MRSA infection and are not at high risk of **mortality**, we suggest prescribing an antibiotic with activity against MSSA.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XII.2",
+          "statement": "For patients with HAP who are being treated empirically, we recommend prescribing antibiotics with activity against P. aeruginosa and other gram-negative bacilli.",
+          "strength": "strong",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XII.2.i",
+          "statement": "For patients with HAP who are being treated empirically and have factors increasing the likelihood for Pseudomonas or other gram-negative infection or a high risk for **mortality**, we suggest prescribing antibiotics from 2 different classes with activity against P. aeruginosa.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XII.2.ii",
+          "statement": "For patients with HAP who are being treated empirically, we recommend not using an aminoglycoside as the sole antipseudomonal agent.",
+          "strength": "strong",
+          "evidence_grade": "very low-quality evidence"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Pharmacokinetic/Pharmacodynamic Optimization of Antibiotic Therapy",
+      "narrative": "- Meta-analysis of 3 studies: PK/PD-optimized dosing reduced **mortality** (12% vs 24%; RR 0.49) and ICU length of stay (mean difference -2.48 days).\n- Meta-analysis of 5 studies: PK/PD-optimized dosing improved clinical cure rate (81% vs 64%; RR 1.40).",
+      "recommendations": [
+        {
+          "rec_id": "XIII.1",
+          "statement": "For patients with HAP/VAP, we suggest that antibiotic dosing be determined using PK/PD data, rather than the manufacturer's prescribing information.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Role of Inhaled Antibiotic Therapy",
+      "narrative": "- Meta-analysis of 9 studies: addition of inhaled antibiotic to systemic regimen improved clinical cure rate (RR 1.29) but had no definitive effect on **mortality** (RR 0.84) or nephrotoxicity (RR 1.11).",
+      "recommendations": [
+        {
+          "rec_id": "XIV.1",
+          "statement": "For patients with VAP due to gram-negative bacilli that are susceptible to only aminoglycosides or polymyxins (colistin or polymyxin B), we suggest both inhaled and systemic antibiotics, rather than systemic antibiotics alone.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Pathogen-Specific Therapy",
+      "narrative": "- MRSA: Meta-analyses of 4 RCTs comparing linezolid and vancomycin found no difference in **mortality**.\n- P. aeruginosa: No RCTs comparing regimens specifically for HAP/VAP. Observational studies suggest combination therapy is beneficial for initial empiric therapy but not definitive therapy once susceptibilities are known, except possibly in septic shock.\n- ESBL-producing gram-negative bacilli: No RCTs or observational studies exist specifically for HAP/VAP.\n- Acinetobacter species: Carbapenems, ampicillin-sulbactam, and colistin are equally effective for susceptible isolates. Tigecycline decreased clinical cure rates compared to imipenem.\n- Carbapenem-resistant pathogens: Meta-analysis of 4 studies showed improved clinical cure rate (RR 1.29) with adjunctive inhaled colistin plus IV colistin vs IV colistin alone.",
+      "recommendations": [
+        {
+          "rec_id": "XV.1",
+          "statement": "We recommend that MRSA HAP/VAP be treated with either vancomycin or linezolid rather than other antibiotics or antibiotic combinations.",
+          "strength": "strong",
+          "evidence_grade": "moderate-quality evidence"
+        },
+        {
+          "rec_id": "XVI.1",
+          "statement": "For patients with HAP/VAP due to P. aeruginosa, we recommend that the choice of an antibiotic for definitive (not empiric) therapy be based upon the results of antimicrobial susceptibility testing.",
+          "strength": "strong",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "XVI.2",
+          "statement": "For patients with HAP/VAP due to P. aeruginosa, we recommend against aminoglycoside monotherapy.",
+          "strength": "strong",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XVII.1",
+          "statement": "For patients with HAP/VAP due to P. aeruginosa who are not in septic shock or at a high risk for death, and for whom the results of antibiotic susceptibility testing are known, we recommend monotherapy using an antibiotic to which the isolate is susceptible rather than combination therapy.",
+          "strength": "strong",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "XVII.2",
+          "statement": "For patients with HAP/VAP due to P. aeruginosa who remain in septic shock or at a high risk for death when the results of antibiotic susceptibility testing are known, we suggest combination therapy using 2 antibiotics to which the isolate is susceptible rather than monotherapy.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XVIII.1",
+          "statement": "For patients with HAP/VAP due to ESBL-producing gram-negative bacilli, we recommend that the choice of an antibiotic for definitive (not empiric) therapy be based upon the results of antimicrobial susceptibility testing and patient-specific factors.",
+          "strength": "strong",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XIX.1",
+          "statement": "In patients with HAP/VAP caused by Acinetobacter species, we suggest treatment with either a carbapenem or ampicillin/sulbactam if the isolate is susceptible to these agents.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "XIX.2",
+          "statement": "In patients with HAP/VAP caused by Acinetobacter species that is sensitive only to polymyxins, we recommend intravenous polymyxin (colistin or polymyxin B), and we suggest adjunctive inhaled colistin.",
+          "strength": "strong",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "XIX.3",
+          "statement": "In patients with HAP/VAP caused by Acinetobacter species that is sensitive only to colistin, we suggest not using adjunctive rifampicin.",
+          "strength": "weak",
+          "evidence_grade": "moderate-quality evidence"
+        },
+        {
+          "rec_id": "XIX.4",
+          "statement": "In patients with HAP/VAP caused by Acinetobacter species, we recommend against the use of tigecycline.",
+          "strength": "strong",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "XX.1",
+          "statement": "In patients with HAP/VAP caused by a carbapenem-resistant pathogen that is sensitive only to polymyxins, we recommend intravenous polymyxins (colistin or polymyxin B), and we suggest adjunctive inhaled colistin.",
+          "strength": "strong",
+          "evidence_grade": "moderate-quality evidence"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Length of Therapy and De-escalation",
+      "narrative": "- Meta-analysis of 6 RCTs: Short-course (7-8 days) increased 28-day antibiotic-free days (mean difference 4.02 days) and reduced recurrent VAP due to MDR pathogens (OR 0.44) compared to long-course (10-15 days). No difference in **mortality**.\n- De-escalation: Pooled analysis of 6 studies found no difference in **mortality** (OR 0.81).\n- PCT-guided discontinuation: Meta-analysis of 3 RCTs (308 patients) found shorter duration of antibiotic therapy (9.1 vs 12.1 days) with no difference in **mortality**.",
+      "recommendations": [
+        {
+          "rec_id": "XXI.1",
+          "statement": "For patients with VAP, we recommend a 7-day course of antimicrobial therapy rather than a longer duration.",
+          "strength": "strong",
+          "evidence_grade": "moderate-quality evidence"
+        },
+        {
+          "rec_id": "XXII.1",
+          "statement": "For patients with HAP, we recommend a 7-day course of antimicrobial therapy.",
+          "strength": "strong",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XXIII.1",
+          "statement": "For patients with HAP/VAP, we suggest that antibiotic therapy be de-escalated rather than fixed.",
+          "strength": "weak",
+          "evidence_grade": "very low-quality evidence"
+        },
+        {
+          "rec_id": "XXIV.1",
+          "statement": "For patients with HAP/VAP, we suggest using PCT levels plus clinical criteria to guide the discontinuation of antibiotic therapy, rather than clinical criteria alone.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        },
+        {
+          "rec_id": "XXV.1",
+          "statement": "For patients with suspected HAP/VAP, we suggest not using the CPIS to guide the discontinuation of antibiotic therapy.",
+          "strength": "weak",
+          "evidence_grade": "low-quality evidence"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: Utilizes GRADE methodology; provides specific thresholds for MRSA and gram-negative coverage based on local antibiograms; emphasizes antibiotic stewardship with short-course therapy and de-escalation.\n- Limitations: Many recommendations are based on low or very low-quality evidence; thresholds for broad-spectrum coverage are arbitrary; lack of RCTs for many specific pathogen treatments; HCAP definition removed, which may cause confusion.",
+  "drugs_doses": [
+    {
+      "drug": "Vancomycin",
+      "dose": "15 mg/kg IV q8-12h (consider loading dose 25-30 mg/kg for severe illness)",
+      "indication": "Empiric and definitive therapy for MRSA HAP/VAP",
+      "adverse_effects": "Nephrotoxicity; requires therapeutic drug monitoring (trough 15-20 mg/L)"
+    },
+    {
+      "drug": "Linezolid",
+      "dose": "600 mg IV q12h",
+      "indication": "Empiric and definitive therapy for MRSA HAP/VAP",
+      "adverse_effects": "Thrombocytopenia; serotonin syndrome risk with concurrent SSRIs"
+    },
+    {
+      "drug": "Piperacillin-tazobactam",
+      "dose": "4.5 g IV q6h (extended infusion may be appropriate)",
+      "indication": "Empiric therapy for VAP/HAP covering MSSA, P. aeruginosa, and gram-negative bacilli",
+      "adverse_effects": "Standard beta-lactam risks"
+    },
+    {
+      "drug": "Cefepime",
+      "dose": "2 g IV q8h (extended infusion may be appropriate)",
+      "indication": "Empiric therapy for VAP/HAP covering MSSA, P. aeruginosa, and gram-negative bacilli",
+      "adverse_effects": "Neurotoxicity risk in renal impairment"
+    },
+    {
+      "drug": "Levofloxacin",
+      "dose": "750 mg IV q24h",
+      "indication": "Empiric therapy for VAP/HAP covering MSSA, P. aeruginosa, and gram-negative bacilli",
+      "adverse_effects": "QTc prolongation; tendon rupture; C. difficile infection"
+    },
+    {
+      "drug": "Imipenem",
+      "dose": "500 mg IV q6h (dose may need to be lowered in patients <70 kg to prevent seizures)",
+      "indication": "Empiric therapy for VAP/HAP covering MSSA, P. aeruginosa, and gram-negative bacilli",
+      "adverse_effects": "Seizure risk; selection of carbapenem-resistant organisms"
+    },
+    {
+      "drug": "Meropenem",
+      "dose": "1 g IV q8h",
+      "indication": "Empiric therapy for VAP/HAP covering MSSA, P. aeruginosa, and gram-negative bacilli",
+      "adverse_effects": "Selection of carbapenem-resistant organisms"
+    },
+    {
+      "drug": "Ciprofloxacin",
+      "dose": "400 mg IV q8h",
+      "indication": "Empiric gram-negative coverage for VAP/HAP",
+      "adverse_effects": "QTc prolongation; tendon rupture; C. difficile infection"
+    },
+    {
+      "drug": "Amikacin",
+      "dose": "15-20 mg/kg IV q24h",
+      "indication": "Alternative gram-negative coverage for VAP/HAP when other agents not available",
+      "adverse_effects": "Nephrotoxicity; ototoxicity; lower clinical response rates"
+    },
+    {
+      "drug": "Gentamicin",
+      "dose": "5-7 mg/kg IV q24h",
+      "indication": "Alternative gram-negative coverage for VAP/HAP when other agents not available",
+      "adverse_effects": "Nephrotoxicity; ototoxicity; lower clinical response rates"
+    },
+    {
+      "drug": "Tobramycin",
+      "dose": "5-7 mg/kg IV q24h",
+      "indication": "Alternative gram-negative coverage for VAP/HAP when other agents not available",
+      "adverse_effects": "Nephrotoxicity; ototoxicity; lower clinical response rates"
+    },
+    {
+      "drug": "Colistin",
+      "dose": "IV: 5 mg/kg x 1 (loading dose) followed by 2.5 mg x (1.5 x CrCl + 30) IV q12h (maintenance dose). Inhaled: dose not standardized.",
+      "indication": "Empiric therapy in units with high MDR prevalence; definitive therapy for carbapenem-resistant pathogens sensitive only to polymyxins",
+      "adverse_effects": "Nephrotoxicity (19-33%); neurotoxicity"
+    },
+    {
+      "drug": "Polymyxin B",
+      "dose": "2.5-3.0 mg/kg/day divided in 2 daily IV doses",
+      "indication": "Empiric therapy in units with high MDR prevalence; definitive therapy for carbapenem-resistant pathogens sensitive only to polymyxins",
+      "adverse_effects": "Nephrotoxicity; neurotoxicity"
+    },
+    {
+      "drug": "Aztreonam",
+      "dose": "2 g IV q8h",
+      "indication": "Adjunctive gram-negative coverage, especially in severe penicillin allergy",
+      "adverse_effects": "Standard beta-lactam risks (lower cross-reactivity in penicillin allergy)"
+    },
+    {
+      "drug": "Ampicillin-sulbactam",
+      "dose": "Not specified in guideline",
+      "indication": "Definitive therapy for Acinetobacter species if susceptible",
+      "adverse_effects": "Standard beta-lactam risks"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2024-07-25",
+  "article_subtype": "Guideline",
+  "subtopic": "Pulmonology"
+}
