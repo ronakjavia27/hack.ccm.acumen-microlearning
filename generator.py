@@ -210,9 +210,11 @@ def run_extraction_pass(file_path, category, ocr_enabled=False,
                     system, user, cat,
                     max_retries=MAX_RETRIES_OVERRIDE, retry_delay=RETRY_DELAY_OVERRIDE,
                 )
-            elif llm_choice == "other":
+            elif llm_choice in ("openrouter", "other"):
+                base_url = "https://openrouter.ai/api/v1" if llm_choice == "openrouter" else None
                 return execute_with_custom(
                     custom_key, custom_model, system, user,
+                    base_url=base_url,
                     max_retries=MAX_RETRIES_OVERRIDE, retry_delay=RETRY_DELAY_OVERRIDE,
                 )
             else:
@@ -1061,6 +1063,7 @@ MODES:
 LLM PROVIDER (for Pass 1 extraction):
   --llm together         Use Together AI (default, requires TOGETHER_API_KEY)
   --llm gemini           Use Google Gemini (requires PRIMARY_GEMINI_API_KEY)
+  --llm openrouter       Use OpenRouter (requires --api-key and --model)
   --llm other            Custom OpenAI-compatible API (also set --api-key and --model)
 
 EXAMPLES:
@@ -1074,6 +1077,7 @@ EXAMPLES:
   python generator.py --reprocess input_pdfs/articles/paper.pdf
   python generator.py --extract-pearls output_files/Cardiology/Review/paper.json
   python generator.py --llm gemini                       # use Gemini for extraction
+  python generator.py --llm openrouter --api-key sk-xxx --model anthropic/claude-3.5-sonnet
   python generator.py --llm other --api-key sk-xxx --model my-model  # custom API
         """,
     )
@@ -1088,12 +1092,12 @@ EXAMPLES:
     parser.add_argument("--reprocess", type=str, default=None, help="Force re-process a specific PDF")
     parser.add_argument("--extract-pearls", type=str, default=None,
                         help="Run Pass 2 only on one specific existing JSON file")
-    parser.add_argument("--llm", choices=["together", "gemini", "other"], default="together",
+    parser.add_argument("--llm", choices=["together", "gemini", "openrouter", "other"], default="together",
                         help="LLM provider for Pass 1 extraction (default: together)")
     parser.add_argument("--api-key", type=str, default="",
-                        help="API key for --llm other (custom provider)")
+                        help="API key for --llm openrouter/other (custom provider)")
     parser.add_argument("--model", type=str, default="",
-                        help="Model name for --llm other (custom provider)")
+                        help="Model name for --llm openrouter/other (custom provider)")
     args = parser.parse_args()
 
     # --- Status dashboard ---
@@ -1110,10 +1114,10 @@ EXAMPLES:
         extract_pearls_from_one_json(args.extract_pearls)
         return
 
-    # --- Validate --llm other requires --api-key and --model ---
-    if args.llm == "other" and (not args.api_key or not args.model):
-        print("  [X] --llm other requires both --api-key and --model")
-        print("  Example: --llm other --api-key sk-xxx --model my-model")
+    # --- Validate --llm openrouter/other requires --api-key and --model ---
+    if args.llm in ("openrouter", "other") and (not args.api_key or not args.model):
+        print("  [X] --llm openrouter/other requires both --api-key and --model")
+        print("  Example: --llm openrouter --api-key sk-xxx --model anthropic/claude-3.5-sonnet")
         sys.exit(1)
 
     # --- Re-process single PDF ---

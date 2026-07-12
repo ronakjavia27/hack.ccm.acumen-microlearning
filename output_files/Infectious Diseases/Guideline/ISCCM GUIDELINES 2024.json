@@ -1,0 +1,897 @@
+{
+  "id": "indian-society-of-critical-care-medicine-antibiotics-prescription-critically-ill-2024",
+  "doc_type": "guideline",
+  "title": "Guidelines for Antibiotics Prescription in Critically Ill Patients",
+  "issuing_bodies": [
+    "ISCCM"
+  ],
+  "year": 2024,
+  "doi": "10.5005/jp-journals-10071-24677",
+  "specialty": [
+    "infectious_disease",
+    "pulmonology",
+    "multi_system"
+  ],
+  "tags": [
+    "antibiotics",
+    "intensive care unit",
+    "infections",
+    "prescription",
+    "sepsis",
+    "pneumonia",
+    "immunocompromised",
+    "febrile neutropenia",
+    "antifungal therapy",
+    "empiric therapy",
+    "invasive fungal infection",
+    "echinocandins",
+    "voriconazole",
+    "amphotericin b",
+    "immunocompromised host"
+  ],
+  "one_line_summary": "Indian Society of **Critical** Care Medicine guidelines providing evidence-based recommendations for empiric antibiotic prescription in **critically** ill patients with common bacterial infections and in immunocompromised hosts.",
+  "key_pearls": [
+    "For severe CAP in ICU without pseudomonal risk, a non-pseudomonal beta-lactam plus a macrolide is preferred over beta-lactam/fluoroquinolone combinations (1A).",
+    "In VAP with high MDR risk, empiric therapy should include an agent active against MRSA and at least two agents against gram-negative organisms including *P. aeruginosa* (3A).",
+    "Monotherapy with newer beta-lactamase inhibitor combinations (e.g., **ceftazidime-avibactam**) is preferred over polymyxin-based combinations for MDR gram-negative VAP when susceptibility is confirmed (2A).",
+    "Short-course antibiotic therapy (**7-8 days**) is **recommended** for VAP with good clinical response, except for non-fermenting gram-negative bacilli which may require **14 days** (1A).",
+    "Serum **procalcitonin** should not be used to diagnose VAP or to initiate antibiotics but can guide de-escalation when the anticipated duration is >7 days (1A).",
+    "In febrile neutropenia with shock, empiric therapy should be escalated to a carbapenem, and **colistin/polymyxin B** should be added if there is a high risk of carbapenem-resistant organisms (3A).",
+    "Routine empiric anaerobic coverage is not **recommended** for VAP unless specific risk factors like aspiration or necrotizing pneumonia are present (2A).",
+    "Empiric antifungal therapy is indicated for persistent or recurrent neutropenic fever despite **4–7 days** of empiric antibiotic therapy, or earlier in **critically** ill patients with risk factors.",
+    "**Echinocandins** (caspofungin, micafungin, anidulafungin) are the first choice for empiric antifungal therapy in **critically** ill patients with febrile neutropenia due to their favorable safety and efficacy profile.",
+    "**Voriconazole** is the drug of choice for proven, probable, or possible invasive aspergillosis, with IV administration preferred due to variable bioavailability.",
+    "**Liposomal Amphotericin B** is the first-line treatment for suspected or confirmed Mucormycosis (Zygomycosis) at a dose of **3–5 mg/kg daily**.",
+    "For candidemia without metastatic complications, the minimum duration of therapy is **2 weeks** after documented clearance of *Candida* from the bloodstream and resolution of neutropenia.",
+    "Chest CT is preferred over chest radiograph for detection of pneumonia in febrile neutropenia due to poor sensitivity of radiography.",
+    "Routine use of combination antifungal therapy for probable or proven invasive aspergillosis is not **recommended** due to lack of strong evidence."
+  ],
+  "consensus_method": "Modified GRADE system",
+  "search_period": null,
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Pharmacokinetics and Pharmacodynamics",
+      "narrative": "- Time-dependent antibiotics require drug concentrations > MIC for **40-50%** of the inter-dose interval.\n- Continuous infusions of beta-lactams are preferred over intermittent infusions and are associated with decreased hospital stay, cost, and **mortality**.\n- Continuous vancomycin infusion is associated with reduced nephrotoxicity but no **mortality** benefit.",
+      "recommendations": []
+    },
+    {
+      "order": 2,
+      "topic": "Newer Diagnostics Including Multiplex PCR",
+      "narrative": "- Rapid molecular diagnostics (multiplex PCR, NGS) on respiratory specimens enable faster pathogen identification compared to culture.\n- Appropriate use of these methods leads to reduced antibiotic usage and earlier targeted therapy.\n- Syndromic multiplex panels can detect co-infections in **30-40%** of cases and have high negative predictive value (>97%).",
+      "recommendations": []
+    },
+    {
+      "order": 3,
+      "topic": "Community-acquired Pneumonia (CAP) in the ICU",
+      "narrative": "- Common organisms: Viruses (influenza), *S. pneumoniae*, gram-negative bacilli (*Klebsiella*), *H. influenzae*, and atypicals.\n- *P. aeruginosa* is a key pathogen in structural lung disease.\n- MRSA and MDR gram-negatives are infrequent in India but linked to prior antibiotics and structural lung disease.\n- *S. pneumoniae* remains largely sensitive to beta-lactams and macrolides.\n- Newer agents like **omadacycline**, **delafloxacin**, and **lefamulin** cover MRSA and atypicals.",
+      "recommendations": [
+        {
+          "rec_id": "R3.1",
+          "statement": "All patients admitted with CAP in ICU should be evaluated for risk factors for infection with MDR organisms.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R3.2",
+          "statement": "Antibiotic therapy should be individualized to cover commonly implicated organisms according to risk factors, including *Pseudomonas*, ESBL-producing Enterobacteriaceae, or MRSA.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R3.3",
+          "statement": "If antipseudomonal, MRSA-specific, or non-standard antibiotics are initiated empirically, early microbiologic diagnosis of respiratory secretions and blood cultures should be sought for early de-escalation.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R3.4",
+          "statement": "Serum Procalcitonin should not be used to differentiate bacterial and viral etiology in CAP in ICU.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R3.5",
+          "statement": "Serum procalcitonin levels should be measured at baseline and serially for use in antibiotic de-escalation for CAP in ICU.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R3.6",
+          "statement": "Appropriate antimicrobial therapy should be initiated as early as possible in patients of CAP requiring ICU admission, preferably within the first hour after obtaining necessary microbiologic samples.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R3.7",
+          "statement": "Multiplex PCR may be used to obtain precise microbiologic diagnosis in patients with CAP admitted to ICU if feasible.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": "R3.8",
+          "statement": "Empirical therapy covering common etiologic organisms should be initiated for severe CAP requiring ICU admission.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R3.9",
+          "statement": "Patients with CAP requiring ICU admission should initially receive a combination of empirical antimicrobial agents covering common causative organisms.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R3.10",
+          "statement": "For patients with CAP requiring ICU admission, a non-pseudomonal beta-lactam (cefotaxime, ceftriaxone, or amoxicillin–clavulanic acid) plus a macrolide (azithromycin or clarithromycin) should be preferred if there are no risk factors for *Pseudomonas aeruginosa* infection.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R3.11",
+          "statement": "If *P. aeruginosa* is an etiological consideration, an antipneumococcal, antipseudomonal antibiotic (like ceftazidime, cefoperazone, piperacillin–tazobactam, cefoperazone–sulbactam, imipenem, meropenem, or cefepime) should be used.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R3.12",
+          "statement": "If MRSA is a consideration, empiric linezolid (1A), vancomycin (1A), or teicoplanin (2A) should be added to the regimen. Linezolid should be used for vancomycin-intolerant patients, VRSA, or patients with renal failure (1A).",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R3.13",
+          "statement": "Empirical antibiotics with anaerobic coverage should be considered for treatment of CAP in ICU in the presence of witnessed aspiration, lung abscess, empyema, or necrotizing pneumonia.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R3.14",
+          "statement": "Patients with CAP requiring ICU admission should receive antibiotics for **7 to 10 days**.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R3.15",
+          "statement": "Short courses of systemic steroids should be given for patients with severe CAP after careful risk-benefit analysis. Hydrocortisone **200 mg** infusion over 24 hours for **5 to 7 days** should be used.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R3.16",
+          "statement": "Procalcitonin levels can be used along with clinical judgement for de-escalation of antibiotics in CAP in ICU in patients treated beyond **5-7 days**.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Hospital-acquired and Ventilator-associated Pneumonia (HAP/VAP)",
+      "narrative": "- In Indian ICUs, gram-negative organisms (*Acinetobacter*, *Klebsiella*, *Pseudomonas*) are the most common etiologic agents, and most are MDR.\n- Pan-resistant organisms are increasingly reported.\n- Invasive sampling (BAL) leads to better microbiologic diagnosis but has not been associated with improved outcomes.\n- Risk factors for MDR VAP include prior antibiotic use, prolonged mechanical ventilation, and high local prevalence of MDR organisms.",
+      "recommendations": [
+        {
+          "rec_id": "R4.1",
+          "statement": "Serum procalcitonin should not be used for diagnosis of VAP/HAP or for decision making regarding antibiotic initiation.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R4.2",
+          "statement": "Among patients with VAP at high risk of MDR pathogens or in ICU with high prevalence of MRSA (>15%) and resistant gram-negative organisms (>10%), an agent active against MRSA and at least two agents active against gram-negative organisms including *P. aeruginosa* is **recommended**.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R4.3",
+          "statement": "In patients with high risk for MDR GNBs and prior isolation of MDR or carbapenem-resistant GNBs, monotherapy with newer agents (Ceftazidime-avibactam, Ceftolozane-tazobactam, Imipenem-cilastatin-relebactam, or Meropenem-vaborbactam) should be preferred to combination therapy.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R4.4",
+          "statement": "Polymyxin B (preferred) or colistin as part of an empiric combination regimen can be used in ICUs with high prevalence of carbapenem-resistant Enterobacteriaceae (>20%) in patients with risk factors for MDR or XDR gram-negative pathogens.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R4.5",
+          "statement": "Short course (**7-8 days**) of antibiotic therapy should be used in case of VAP with good clinical response to therapy.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R4.6",
+          "statement": "Longer duration (**14 days**) of antibiotic therapy should be considered in case of VAP caused by NF-GNBs or associated with severe immunodeficiency, structural lung disease, empyema, lung abscess, necrotizing pneumonia, or inappropriate initial therapy.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R4.7",
+          "statement": "Empirical antibiotic regimen for VAP should not include coverage for anaerobic organisms routinely.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R4.8",
+          "statement": "Empirical antibiotic regimen for VAP should not include coverage for atypical organisms routinely.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R4.9",
+          "statement": "Serum procalcitonin may be used to guide the de-escalation of antibiotics in VAP when the anticipated duration of therapy is **>7–8 days**.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R4.10",
+          "statement": "Non-responding VAP should be evaluated for non-infectious mimics, unsuspected or drug-resistant pathogens, extrapulmonary sites of infection, and complications.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Catheter-related Bloodstream Infections (CRBSI)",
+      "narrative": "- Global incidence of CRBSI ranges from **2.4% to 12.5%**; higher in Indian ICUs (up to **16.1 per 1000 catheter days**).\n- Common organisms: CONS, *S. aureus*, Enterococcus, and *Candida* species.\n- High proportion of MRSA (up to 87%) and ESBL-producing gram-negatives.",
+      "recommendations": [
+        {
+          "rec_id": "R5.1",
+          "statement": "Empirical antibiotic regimen for CRBSI should include coverage for both gram-positive and gram-negative organisms.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R5.2",
+          "statement": "Vancomycin or teicoplanin is the **recommended** first-line drug for empiric treatment of CRBSI for MRSA and MR-CONS.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R5.3",
+          "statement": "An echinocandin should be used as the empirical antifungal agent for treatment of suspected central line-associated candidemia.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R5.4",
+          "statement": "Minimum **2 weeks** of antibiotics should be given for uncomplicated and **4-6 weeks** for complicated *Staphylococcus aureus* CRBSI and infective endocarditis.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R5.5",
+          "statement": "Minimum **7 days** of antibiotics should be given for gram-negative CRBSI.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Empirical Antibiotics for Urinary and Urogenital Sepsis in ICU",
+      "narrative": "- Incidence of CA-UTI ranges from **5-30%** of all ICU admissions.\n- Most common organisms: gram-negative bacteria (*E. coli*, *Klebsiella*) and fungi (*Candida*).\n- Risk factors: duration of catheterization, length of ICU stay, prior antibiotic use, female gender.",
+      "recommendations": [
+        {
+          "rec_id": "R6.1",
+          "statement": "Initial choice of antibiotics should cover for ESBL-producing gram-negative organisms and includes aminoglycosides, beta-lactam along with a beta-lactamase inhibitor, or carbapenems.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R6.2",
+          "statement": "In the initial empirical regimen for UTI, antibiotics against gram-positive organisms are not **recommended**.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R6.3",
+          "statement": "Catheter removal, if no longer indicated, or intermittent catheterization should be done in patients with catheter-associated urinary tract infection.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Acute Infective Diarrhea and Clostridium difficile in the ICU",
+      "narrative": "- *Clostridium difficile* is responsible for the majority of infectious cases of diarrhea in the ICU.\n- Risk factors for CDI include prior antibiotic therapy, advanced age, prolonged ICU stay, and PPI use.",
+      "recommendations": [
+        {
+          "rec_id": "R7.1",
+          "statement": "Empiric metronidazole should be used for therapy of patients with acute diarrhea in the ICU with suspected *Clostridium difficile* infection.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R7.2",
+          "statement": "Metronidazole is **recommended** as the first-line treatment of mild to moderate CDI/CDAD.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R7.3",
+          "statement": "Oral vancomycin is **recommended** as the first-line treatment of microbiologically proven severe CDI/CDAD.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R7.4",
+          "statement": "Fecal microbiota transplantation is **recommended** as an alternate treatment of recurrent CDI/CDAD infection.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R7.5",
+          "statement": "Implicated antibiotics should be discontinued as soon as clinically feasible.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R7.6",
+          "statement": "Probiotics are not **recommended** as an adjunct for the treatment of CDI/CDAD.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Abdominal Infections in ICU: Acute Pancreatitis and Infected Pancreatic Necrosis",
+      "narrative": "- Incidence of pancreatic infection following acute pancreatitis ranges from **12-37%**.\n- Gram-negative organisms are the most common isolates from infected pancreatic necrosis in Indian patients.\n- Prophylactic antibiotics are not **recommended** to prevent pancreatic infection.",
+      "recommendations": [
+        {
+          "rec_id": "R8.1",
+          "statement": "Routine use of prophylactic antibiotics to prevent pancreatic infection following acute pancreatitis of any severity is not **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R8.2",
+          "statement": "In treatment-naïve patients with evidence of infected pancreatic necrosis, empirical treatment with either carbapenems, piperacillin-tazobactam, or cefoperazone-sulbactam is **recommended**.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R8.3",
+          "statement": "In patients not responding or already exposed to piperacillin-tazobactam, cefoperazone-sulbactam, or carbapenems, colistin should be added to the empirical regime.",
+          "strength": "weak",
+          "evidence_grade": "3B"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Biliary Sepsis and Acute Cholangitis",
+      "narrative": "- Incidence of acute cholangitis varies with underlying etiology (0.2% to 10%).\n- Gram-negative organisms are the most common isolates.\n- Biliary drainage is required in addition to antibiotic use.",
+      "recommendations": [
+        {
+          "rec_id": "R9.1",
+          "statement": "Either beta-lactam/beta-lactamase inhibitor (such as cefoperazone-sulbactam or piperacillin/tazobactam) or carbapenems (imipenem/meropenem) is **recommended** as monotherapy in patients with moderate to severe cholangitis.",
+          "strength": "weak",
+          "evidence_grade": "3B"
+        },
+        {
+          "rec_id": "R9.2",
+          "statement": "Antibiotic duration for **4-7 days** is **recommended** in patients with acute cholangitis after adequate source control.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": "R9.3",
+          "statement": "Biliary drainage should be considered in all patients with cholangitis in addition to empirical antibiotic therapy.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Liver Abscess",
+      "narrative": "- Amoebic liver abscess is the most common cause in the Indian setup.\n- For pyogenic abscess, gram-negative organisms (*E. coli* and *Klebsiella*) are most common.\n- Metronidazole is the drug of choice for amoebic liver abscess.",
+      "recommendations": [
+        {
+          "rec_id": "R10.1",
+          "statement": "Metronidazole is **recommended** as an initial antibiotic of choice in patients with amoebic liver abscess.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R10.2",
+          "statement": "Beta-lactam/beta-lactamase inhibitors with metronidazole are **recommended** in patients with pyogenic liver abscess for a duration of **4-6 weeks**.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R10.3",
+          "statement": "Carbapenems are **recommended** in case of infection with ESBL-producing organisms or melioidosis.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "topic": "Peritonitis",
+      "narrative": "- Primary peritonitis risk factors: decompensated cirrhosis, nephrotic syndrome, peritoneal dialysis.\n- Secondary peritonitis risk factors: organ perforation, post-surgery, trauma.\n- Gram-negative enteric organisms are common causes.",
+      "recommendations": [
+        {
+          "rec_id": "R11.1",
+          "statement": "Third-generation cephalosporins (such as cefotaxime and ceftriaxone) are **recommended** for a duration of **7-10 days** in patients with primary peritonitis.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R11.2",
+          "statement": "Either beta-lactam/beta-lactamase inhibitor or carbapenems with an anaerobic cover (using metronidazole) is **recommended** for the treatment of secondary peritonitis.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R11.3",
+          "statement": "For secondary peritonitis, antibiotic treatment is required for at least **4 days** after adequate source control; longer treatment is required if adequate source control is not achieved.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "topic": "CNS Infections in ICU",
+      "narrative": "- Community-acquired meningitis: *S. pneumoniae*, *N. meningitidis*, *L. monocytogenes*.\n- Nosocomial meningitis: CONS, *S. aureus*, *Acinetobacter*, *Pseudomonas*.\n- Brain abscess: Streptococci, staphylococci, gram-negative bacilli, anaerobes.",
+      "recommendations": [
+        {
+          "rec_id": "R12.1",
+          "statement": "Third-generation cephalosporin (preferably ceftriaxone) plus vancomycin is **recommended** as empirical antibiotics of choice for community-acquired meningitis.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R12.2",
+          "statement": "Vancomycin plus cefepime or ceftazidime or meropenem is **recommended** as empirical antibiotics of choice for nosocomial meningitis.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R12.3",
+          "statement": "Third-generation cephalosporins plus metronidazole is **recommended** as the empirical antibiotic of choice for brain abscess.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R12.4",
+          "statement": "A minimum **4 weeks** of therapy is **recommended** for brain abscess; duration may be extended according to clinico-radiological response.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "topic": "Skin and Soft Tissue Infections (SSTI) in ICU",
+      "narrative": "- *S. aureus* is the most common organism; MRSA and ESBL-producing gram-negatives are common causative agents in ICU.\n- Risk factors: older age, diabetes mellitus, obesity, malignancy, cirrhosis, longer ICU stay.",
+      "recommendations": [
+        {
+          "rec_id": "R13.1",
+          "statement": "Severe non-purulent SSTI should be treated with a combination of piperacillin-tazobactam along with coverage for MRSA (vancomycin, teicoplanin, daptomycin, or linezolid).",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R13.2",
+          "statement": "Penicillin plus clindamycin is **recommended** for monomicrobial necrotizing infection caused by *Streptococcus pyogenes* or clostridial species.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R13.3",
+          "statement": "Severe nonpurulent SSTIs should be treated with at least **5 days** of antibiotics; severe SSTIs with organ dysfunction should be treated with a prolonged course of **2-3 weeks**.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "topic": "Sepsis of Unknown Cause in ICU",
+      "narrative": "- Empirical therapy with dual-class combination antimicrobial therapy is associated with better clinical outcomes.\n- Therapy should cover the most likely pathogens based on clinical features and local resistance patterns.",
+      "recommendations": [
+        {
+          "rec_id": "R14.1",
+          "statement": "Empirical antimicrobial therapy with a combination of ceftriaxone and doxycycline or macrolide is **recommended** for community-acquired sepsis of unknown origin in ICU.",
+          "strength": "expert_opinion",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": "R14.2",
+          "statement": "Empirical antimicrobial therapy with a combination of beta-lactam/beta-lactamase inhibitor and fluoroquinolone or aminoglycoside is **recommended** for nosocomial sepsis of unknown origin in ICU.",
+          "strength": "expert_opinion",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": "R14.3",
+          "statement": "Duration of therapy is **7 to 10 days**, though longer courses may be appropriate in patients with slow response.",
+          "strength": "weak",
+          "evidence_grade": "3B"
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "topic": "Empirical Antifungals for Non-neutropenic Patients in ICU",
+      "narrative": "- Risk factors for IFI: surgery, TPN, RRT, CVC, broad-spectrum antibiotics, mechanical ventilation >3 days, APACHE II >16.\n- Routine empirical antifungals are not **recommended** for all non-neutropenic patients.",
+      "recommendations": [
+        {
+          "rec_id": "R15.1",
+          "statement": "Routine use of empirical antifungals in non-neutropenic patients in ICU is not **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R15.2",
+          "statement": "Empirical antifungals may be considered in **critically** ill patients with high risk of invasive fungal infections to reduce the incidence of subsequent invasive fungal infections.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R15.3",
+          "statement": "Fluconazole or caspofungin is **recommended** as the preferred empirical antifungal agents in non-neutropenic ICU patients at risk for invasive fungal infection.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R15.4",
+          "statement": "**Recommended** duration of empirical antifungal therapy is **2 weeks**.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "topic": "Antibiotic Stewardship",
+      "narrative": "- Antibiotic stewardship programs reduce antibiotic days, hospital stay, and **mortality**.\n- Strategies include prospective audit and feedback, and preauthorization.\n- Antibiotic cycling is not **recommended**.",
+      "recommendations": [
+        {
+          "rec_id": "R16.1",
+          "statement": "All hospitals should have an antibiotic stewardship program including the intensive care units.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R16.2",
+          "statement": "Prospective audit of antibiotic use and/or preauthorization (if feasible) along with feedback to the treating team is **recommended** as part of the antibiotic stewardship program.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R16.3",
+          "statement": "Antibiotic cycling should not be used as a method of antibiotic stewardship program.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R16.4",
+          "statement": "Antibiotic stewardship programs should implement strategies to improve timely transition from parenteral to oral antibiotic therapy.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R16.5",
+          "statement": "Antibiotic de-escalation in the ICU is **recommended** as part of the antibiotic stewardship program.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R16.6",
+          "statement": "Procalcitonin-based algorithms may be used for antibiotic de-escalation.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "topic": "Antimicrobial Prescription in Critically Ill Immunocompromised Patients: Febrile Neutropenia",
+      "narrative": "- Gram-negative organisms predominate in India (*E. coli*, *Klebsiella*, *Pseudomonas*).\n- High prevalence of MDR and carbapenem-resistant organisms.\n- Empiric therapy should be escalated to carbapenems in **critically** ill patients with organ failure.",
+      "recommendations": [
+        {
+          "rec_id": "R17.1",
+          "statement": "In a **critically** ill febrile neutropenic patient presenting to the ICU with organ failure, empiric antibiotic therapy should be initiated with or escalated to a broad-spectrum carbapenem like imipenem or meropenem.",
+          "strength": "expert_opinion",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": "R17.2",
+          "statement": "Empiric combination of Meropenem and Colistin/Polymyxin B should be considered in patients having high risk of infection with resistant gram-negative organisms (e.g., acute leukemia, prior MDR infection, vasopressor requirement).",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R17.3",
+          "statement": "Vancomycin/Teicoplanin should be added as empiric therapy in **critically** ill febrile neutropenic patients with risk factors for MRSA infection (e.g., catheter infection, SSTI, severe mucositis, prior MRSA).",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R17.4",
+          "statement": "We recommend collection of at least 2 sets of blood cultures, with a set collected simultaneously from a peripheral site and one central.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R17.5",
+          "statement": "Caspofungin (echinocandin group) is **recommended** as initial antifungal therapy in high-risk patients with persistent or recurrent fever after >3 days of broad-spectrum antibiotics.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R17.6",
+          "statement": "Voriconazole is the drug of choice for proven, probable, or possible aspergillosis.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R17.7",
+          "statement": "Liposomal Amphotericin B is the drug of choice for suspected or confirmed Mucormycosis.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R17.8",
+          "statement": "Antibiotic de-escalation should be considered once a pathogen is identified or if the patient is afebrile for >48 hours with evidence of marrow recovery (neutrophil count ≥500 cells/mm3).",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        }
+      ]
+    },
+    {
+      "order": 18,
+      "topic": "Antimicrobial Guidelines in Solid Organ Transplant (SOT) Recipients",
+      "narrative": "- Nosocomial infections predominate in the first month post-transplant.\n- *E. coli* is the most common etiology for UTI.\n- CMV is the most common infection from 1 month up to 3 months.\n- TMP-SMX prophylaxis reduces UTI, bacteremia, and PJP.",
+      "recommendations": [
+        {
+          "rec_id": "R18.1",
+          "statement": "Trimethoprim-sulfamethoxazole (TMP-SMX) is **recommended** for primary prophylaxis for UTI in renal transplant patients.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R18.2",
+          "statement": "Asymptomatic bacteriuria should not be treated unless the same pathogen has been isolated twice consecutively >10^5 CFU/mL in the first 2 months post-SOT.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R18.3",
+          "statement": "Empiric antibiotic therapy with carbapenem based on local susceptibility patterns is **recommended** for suspected community-acquired bacterial pneumonia in SOT patients.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R18.4",
+          "statement": "Valganciclovir (oral **900 mg** once daily) or intravenous ganciclovir (**5 mg**/kg IV once daily) should be used for CMV prophylaxis in all SOT recipients.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R18.5",
+          "statement": "Treatment of CMV disease with intravenous ganciclovir (**5 mg**/kg 12th hourly) or oral valganciclovir (**900 mg** twice daily) is **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R18.6",
+          "statement": "Voriconazole is **recommended** for invasive aspergillosis (IA) in the dose of **6 mg**/kg bd for 1 day f/b **3 mg**/kg bd.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R18.7",
+          "statement": "TMP-SMX is **recommended** as the first-line agent for PJP treatment with the Trimethoprim component being 15-**20 mg**/kg/day in 3 to 4 divided doses.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R18.8",
+          "statement": "Empiric treatment for suspected CNS infections should be started with Ceftriaxone + Vancomycin + Acyclovir.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 19,
+      "topic": "The HIV-positive Patient in the ICU",
+      "narrative": "- Respiratory failure is the most important cause of ICU admission among HIV patients.\n- Causes of CAP are similar to non-HIV patients, but TB and opportunistic infections (PCP, cryptococcus, CMV) are also common.\n- cART should be initiated promptly within 2 weeks of initiating therapy for pneumonia if not started.",
+      "recommendations": [
+        {
+          "rec_id": "R19.1",
+          "statement": "Patients with severe pneumonia without risk of *Pseudomonas aeruginosa* should be empirically treated with an IV β-lactam plus IV macrolide.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "R19.2",
+          "statement": "If patients with HIV/AIDS develop acute respiratory failure and have risk factors for *Pseudomonas* infection, dual antipseudomonal coverage is **recommended**.",
+          "strength": "expert_opinion",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "R19.3",
+          "statement": "All diagnosed cases of HIV should receive cART and trimethoprim-sulfamethoxazole (TMP-SMX) for PCP prophylaxis to reduce the risk of pneumonia.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R19.4",
+          "statement": "For a patient coming to ICU with altered CNS function and suspicion of meningitis, a third-generation cephalosporin at higher doses (e.g., Ceftriaxone 2 gm BD intravenously) is **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 20,
+      "topic": "Congenital and Acquired Hyposplenism and Asplenia",
+      "narrative": "- Patients are at high risk for encapsulated bacterial infections (*N. meningitidis*, *S. pneumoniae*, *H. influenzae* type b).\n- Overwhelming post-splenectomy infection (OPSI) can progress rapidly to septic shock.",
+      "recommendations": [
+        {
+          "rec_id": "R20.1",
+          "statement": "Empiric antibiotic therapy for asplenic patients with suspected sepsis should be a combination of ceftriaxone and vancomycin.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R20.2",
+          "statement": "All asplenic patients should receive immunization against encapsulated bacteria (*S. pneumoniae*, *H. influenzae*, and *N. meningitidis*).",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R20.3",
+          "statement": "Antibiotic prophylaxis is indicated in patients for **1-2 years** after splenectomy and lifelong for patients who had an episode of overwhelming infection or are immunocompromised.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        }
+      ]
+    },
+    {
+      "order": 21,
+      "topic": "Patients with Primary Immune Deficiency in the ICU",
+      "narrative": "- A diagnosis of primary immunodeficiency should be considered in patients with serious, recurrent, or unusual infections.\n- Empiric coverage should be broad-spectrum, often including carbapenems and vancomycin/teicoplanin.\n- IV Immunoglobulin (IVIg) is **recommended** for antibody deficiencies.",
+      "recommendations": [
+        {
+          "rec_id": "R21.1",
+          "statement": "For all **critically** ill patients with suspicion of PID, empirical antimicrobial treatment with IV Carbapenems with IV Vancomycin/Teicoplanin for broad-spectrum coverage is **recommended**.",
+          "strength": "expert_opinion",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": "R21.2",
+          "statement": "IV Immunoglobulin (IVIg) at a dose of 1 gm/kg weekly is **recommended** in cases of severe infections, especially ECHO/Enterovirus/Polio virus-induced encephalitis.",
+          "strength": "expert_opinion",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": "R21.3",
+          "statement": "PCP prophylaxis should be given to all patients with Combined B and T or T cell deficiency with the drug of choice being Trimethoprim-Sulfamethoxazole.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 22,
+      "topic": "Empiric Antifungal Therapy in Febrile Neutropenia",
+      "narrative": "- High-risk patients receiving intensive cytotoxic chemotherapy are at risk for invasive fungal infection (IFI), typically presenting as persistent or recurrent fever in prolonged neutropenia.\n- Empirical antifungal therapy is instituted for persistent neutropenic fever despite **4–7 days** of empirical antibiotic therapy; early initiation may be needed in **critically** ill patients with risk factors.\n- Chest radiograph has poor sensitivity for pneumonia compared to CT scan.\n- *Galactomannan* assay is highly specific for *Aspergillus* species; false positives can occur with piperacillin/tazobactam.\n- BAL *galactomannan* had a sensitivity of **0.88** and specificity of **0.81** at a cut-off of **0.5 OD**; increasing to **OD>1** led to sensitivity of **0.78** and specificity of **0.93**.\n- *Beta-D Glucan* (BDG) alone has limited sensitivity for invasive candidiasis but good sensitivity (**76.8%**) and specificity (**85.3%**) for differentiating probable/proven IFI from no IFI.\n- Pre-emptive antifungal therapy, using serial screening with biomarkers and CT chest, is similar to empiric therapy in terms of all-cause **mortality**.\n- **Echinocandins** (caspofungin, micafungin, anidulafungin) are the first choice for empiric antifungal therapy in **critically** ill patients due to fungicidal activity, IV formulation, limited drug interactions, and favorable safety profile.\n- **Caspofungin**: Loading dose **70 mg** followed by **50 mg daily**; requires dose adjustment for moderate to severe hepatic dysfunction.\n- **Micafungin** and **anidulafungin** do not require dose adjustments in liver or renal failure.\n- Echinocandins do not cover *Cryptococcus*, *Trichosporon*, non-*Aspergillus* molds (e.g., *Fusarium*), or endemic fungi; poor penetration in eye, CNS, and urine.\n- **Voriconazole** did not achieve noninferiority vs. liposomal amphotericin B for empiric therapy but had fewer breakthrough fungal infections (**2% vs 5%**).\n- **Voriconazole** is an option due to activity against *Candida* and *Aspergillus* species.\n- **Posaconazole** is noninferior for treatment of invasive aspergillosis; **Isavuconazole** is efficacious for invasive aspergillosis and mucormycosis but **inferior** for invasive candidiasis.\n- **Itraconazole** is not preferred due to variable bioavailability, negative inotropic properties, and safety concerns.\n- **Lipid formulations of amphotericin B** should be used as first-line if Mucormycosis is suspected; **recommended** dose is **3–5 mg/kg daily**.\n- Amphotericin B deoxycholate should be avoided in patients with renal impairment or on nephrotoxic drugs.\n- **Voriconazole** dose for invasive pulmonary aspergillosis: **400 mg (6 mg/kg) twice daily** for 2 doses, then **4 mg/kg twice daily**.\n- Minimum duration of therapy for candidemia: **2 weeks** after documented clearance of *Candida* from bloodstream and resolution of neutropenia.\n- Duration of invasive pulmonary aspergillosis treatment: **6–12 weeks** based on resolution of symptoms and neutropenia.\n- Combination antifungal therapy (e.g., voriconazole + anidulafungin) showed an **8.2%** **absolute** reduction in **mortality** for invasive aspergillosis, but this was not statistically **significant**.",
+      "recommendations": [
+        {
+          "rec_id": "2A",
+          "statement": "Consider initiation of antifungal therapy in patients presenting to ICU with shock or respiratory distress, especially with persistent/recurrent fever or clinical deterioration after **>3 days** of broad-spectrum antibiotics, if they have: allogenic HSCT, severe mucositis with diarrhea, prolonged/anticipated neutropenia **>10 days**, worsening on broad-spectrum antibiotics, **>2 weeks** of high-dose steroids (**>15–20 mg** prednisolone **equivalent**), history of IFI, or new onset lung infiltrate.",
+          "strength": "conditional",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "2A",
+          "statement": "We recommend the use of **caspofungin** (echinocandin group) as initial antifungal therapy. Caspofungin should be avoided in patients with chronic liver disease (Child-Pugh C).",
+          "strength": "conditional",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": "3A",
+          "statement": "**Anidulafungin** and **Micafungin** can be considered if there are contraindications to use of caspofungin.",
+          "strength": "weak",
+          "evidence_grade": "3A"
+        },
+        {
+          "rec_id": "1A",
+          "statement": "**Voriconazole** is the drug of choice for proven, probable or possible aspergillosis. Due to its variable bioavailability, voriconazole should be administered IV. In patients with renal dysfunction, caspofungin can be given instead of IV voriconazole.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "1A",
+          "statement": "**Liposomal Amphotericin B** is the drug of choice for suspected or confirmed Mucormycosis.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "1A",
+          "statement": "All efforts should be made to confirm presence of invasive fungal infection with tests including CT Chest/suspected site, β–D-glucan, serum and BAL Galactomannan, fungal culture, and tissue biopsy if feasible and safe.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "3A",
+          "statement": "We do not recommend routine use of combination antifungal therapy for probable or proven Invasive aspergillosis (IA) due to lack of strong evidence.",
+          "strength": "weak",
+          "evidence_grade": "3A"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: Comprehensive update of previous ISCCM guidelines covering a wide range of ICU infections and immunocompromised states; utilizes a modified GRADE system for evidence quality and recommendation strength.\n- Limitations: Many recommendations are based on expert opinion (UPP/3A) due to a lack of high-quality RCTs specific to the Indian ICU context; local antibiogram data is **critical** but highly variable, limiting generalizability.\n- Provides clear, evidence-based recommendations for empiric antifungal therapy in a high-risk population.\n- Addresses specific diagnostic tools and their performance characteristics.\n- Limited by the quality of underlying evidence, with many recommendations based on moderate or weak evidence grades (2A, 3A).",
+  "drugs_doses": [
+    {
+      "drug": "Ceftriaxone",
+      "dose": "2 gm BD intravenously",
+      "indication": "HIV-positive patient with suspected CNS infection/meningitis",
+      "adverse_effects": "Not specified in this context"
+    },
+    {
+      "drug": "Hydrocortisone",
+      "dose": "200 mg infusion over 24 hours for 5 to 7 days",
+      "indication": "Severe CAP in ICU",
+      "adverse_effects": "Not specified in this context"
+    },
+    {
+      "drug": "Valganciclovir",
+      "dose": "Oral 900 mg once daily (prophylaxis); 900 mg twice daily (treatment)",
+      "indication": "CMV prophylaxis and treatment in SOT recipients",
+      "adverse_effects": "Hematologic toxicity (neutropenia), renal toxicity"
+    },
+    {
+      "drug": "Ganciclovir",
+      "dose": "5 mg/kg IV once daily (prophylaxis); 5 mg/kg 12th hourly IV (treatment)",
+      "indication": "CMV prophylaxis and treatment in SOT recipients",
+      "adverse_effects": "Hematologic toxicity (neutropenia), renal toxicity"
+    },
+    {
+      "drug": "Voriconazole",
+      "dose": "6 mg/kg IV BD for 1 day, then 3 mg/kg IV BD",
+      "indication": "Invasive aspergillosis in immunocompromised patients",
+      "adverse_effects": "Hepatotoxicity, visual disturbances, drug interactions; requires TDM"
+    },
+    {
+      "drug": "Trimethoprim-Sulfamethoxazole (TMP-SMX)",
+      "dose": "15-20 mg/kg/day (TMP component) in 3-4 divided doses",
+      "indication": "Treatment of Pneumocystis jirovecii pneumonia (PJP)",
+      "adverse_effects": "Rash, hyperkalemia, renal impairment, myelosuppression"
+    },
+    {
+      "drug": "Metronidazole",
+      "dose": "Not specified",
+      "indication": "Mild to moderate Clostridium difficile infection (CDI)",
+      "adverse_effects": "Not specified in this context"
+    },
+    {
+      "drug": "Vancomycin",
+      "dose": "125 mg PO QID (CDI); IV dosing not specified",
+      "indication": "Severe Clostridium difficile infection (CDI); MRSA infections",
+      "adverse_effects": "Nephrotoxicity (IV), thrombocytopenia"
+    },
+    {
+      "drug": "Caspofungin",
+      "dose": "Not specified",
+      "indication": "Empirical antifungal therapy in febrile neutropenia; invasive candidiasis",
+      "adverse_effects": "Hepatotoxicity; avoid in Child-Pugh C liver disease"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2024-08-10",
+  "article_subtype": "Guideline",
+  "subtopic": "Infectious Diseases"
+}

@@ -1,0 +1,717 @@
+{
+  "id": "isccm-guidelines-on-aki-and-rrt-2022",
+  "doc_type": "guideline",
+  "title": "ISCCM Guidelines on Acute Kidney Injury and Renal Replacement Therapy",
+  "issuing_bodies": [
+    "ISCCM"
+  ],
+  "year": 2022,
+  "doi": "10.5005/jp-journals-10071-24109",
+  "specialty": [
+    "nephrology",
+    "multi_system"
+  ],
+  "tags": [
+    "acute kidney injury",
+    "renal replacement therapy",
+    "critical care",
+    "crrt",
+    "dialysis",
+    "aki biomarkers",
+    "fluid resuscitation",
+    "rrt anticoagulation"
+  ],
+  "one_line_summary": "The Indian Society of **Critical** Care Medicine (ISCCM) provides evidence-based recommendations for the definition, prevention, diagnosis, and management of acute kidney injury (AKI) and renal replacement therapy (RRT) in **critically** ill adult patients.",
+  "key_pearls": [
+    "Use **KDIGO criteria** to diagnose and stage AKI in the ICU, which defines AKI as an increase in SCr by **≥0.3 mg/dL within 48 hours** or a rise to **≥1.5 times baseline within 7 days**, or urine volume **<0.5 mL/kg/hour for 6 hours**.",
+    "For fluid resuscitation, use **crystalloids** and avoid **starch**; prefer **balanced salt solutions** over **0.9% saline** for large-volume resuscitation to reduce the risk of AKI and need for RRT.",
+    "In hemodynamically unstable patients, **CRRT or SLED** is preferred over **IHD**; use **IHD** for rapid correction of life-threatening **hyperkalemia** with cardiac arrhythmias.",
+    "The **recommended** delivered dose for **CRRT** is an effluent volume of **20–25 mL/kg/hour**; higher intensity doses do not improve **survival** and may increase complications.",
+    "For anticoagulation during **CRRT**, **Regional Citrate Anticoagulation (RCA)** is **recommended** in centers with expertise to prolong filter life and reduce bleeding risk compared to systemic heparin.",
+    "Weaning from RRT should be considered when spontaneous urine output improves to **>400 mL/day** or urine creatinine clearance is **>15–20 mL/minute**, indicating sufficient intrinsic kidney capacity.",
+    "For patients with AKI on **CRRT**, target a protein intake of up to **1.7 g/kg/day** and an energy intake of **25–30 kcal/kg/day** to meet metabolic demands."
+  ],
+  "consensus_method": "GRADE methodology",
+  "search_period": "Not specified, guideline developed from June 2020",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "AKI Nomenclature, Definition, and Staging",
+      "narrative": "- The term **AKI** should replace ARF to signify the impact of even mild kidney function decline.\n- The **KDIGO** definition is **superior** to RIFLE and AKIN criteria for diagnosing AKI, showing higher sensitivity and better prediction of hospital **mortality**.\n- AKI is defined by an increase in SCr by **≥0.3 mg/dL within 48 hours**, or to **≥1.5 times baseline within 7 days**, or urine volume **<0.5 mL/kg/hour for 6 hours**.\n- Staging is based on the magnitude of SCr rise and duration of oliguria.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend using the term AKI alone, to describe the sudden decline in kidney function in the **critically** ill.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the use of KDIGO criteria to diagnose AKI in the ICU.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the staging of AKI according to KDIGO criteria.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "AKI Risk Stratification",
+      "narrative": "- All ICU patients should be stratified for AKI risk to enable systematic care decisions.\n- Common risk factors include advanced age, **HT, DM, CKD**, sepsis, hypovolemia, nephrotoxins, and large positive fluid balance.\n- A decrease in serum albumin of **1.0 gm/dL** is associated with a **1.685 times** higher risk of AKI.\n- Specific risk factors exist for conditions like sepsis, CIN, burns, and post-operative states.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend that all patients admitted to the ICU be stratified based on their susceptibility to developing AKI.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "AKI Prevention and Early Management",
+      "narrative": "- **Early Recognition**: Use clinical tools and machine learning algorithms to identify subclinical AKI. Monitor urine output, fluid balance, and intra-abdominal pressure.\n- **AKI Care Bundles**: Bundled interventions (hemodynamic optimization, nephrotoxin stewardship) reduce AKI incidence in high-risk surgical patients.\n- **Hemodynamic Management**: Target **MAP >70–75 mm Hg** (or **>80–85 mm Hg** in chronic HT), **DBP >55 mm Hg**, and **MPP >60 mm Hg**.\n- **Volume Optimization**: Use crystalloids; avoid starch. Balanced solutions are preferred over 0.9% saline for large-volume resuscitation. Monitor for hyperchloremia if using saline.\n- **Vasopressors**: Norepinephrine is the first choice. Avoid low-dose dopamine for renoprotection. Terlipressin is suggested for HRS.\n- **Glycemic Control**: Avoid hyperglycemia with a target blood glucose **<180 mg/dL**.\n- **Nephrotoxin Stewardship**: Use less nephrotoxic alternatives, monitor drug levels, and adjust dosing. Avoid aminoglycosides if alternatives exist.\n- **Perioperative Prevention**: Statins may be used preoperatively in cardiac/vascular surgery. RIPC is not **recommended**.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend that patients at an increased risk of AKI should be recognized early and managed and monitored using a custom-made clinical approach.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the utilization of clinical tools to identify subclinical AKI and recognize the patients who are likely to benefit from early interventions to prevent AKI.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest the use of computerized and or machine learning algorithms, wherever possible, that incorporate multiple risk factors for recognition of AKI, rather than a single criterion.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend applying bundled care plan or intervention for all patients undergoing major surgery and cardiac surgery who are at risk of developing AKI.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest using bundled care for all **critically** ill patients with early AKI.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest functional and/or dynamic hemodynamic (HD) monitoring in patients with AKI.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the following blood pressure targets in **critically** ill patients to prevent AKI and progression of AKI: MAP >70–75 mm Hg (1B); DBP >55 mm Hg (2B); MPP >60 mm Hg (2B); MAP >80–85 mm Hg in patients with chronic hypertension (1B).",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend an individualized approach to volume expansion in the initial management of shock and hypervolemia be avoided.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the use of crystalloids for fluid resuscitation.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against the use of starch for fluid resuscitation.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest against the use of gelatin or dextrans for fluid resuscitation.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest that the balanced salt solutions be preferred over 0.9% saline in patients requiring large-volume resuscitation.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest that if isotonic 0.9% saline (NS) is used for large-volume resuscitation, the patient should be monitored for the development of hyperchloremia.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend norepinephrine over other vasopressors to achieve blood pressure targets in circulatory shock.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against the use of low-dose dopamine or fenoldopam for preventing AKI.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest the use of terlipressin as a vasopressor of choice in patients with HRS.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend avoiding hyperglycemia, of blood glucose concentration above **180 mg**/dL in patients at risk of AKI.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest against the use of nephrotoxic drugs and recommend less nephrotoxic drugs of the same class.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the monitoring of blood concentration of nephrotoxic drugs, if such a facility is available.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest the use of strategies such as modification of drug interval or dose to limit nephrotoxicity, where a potentially nephrotoxic agent cannot be discontinued.",
+          "strength": "weak",
+          "evidence_grade": "2A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest the use of statins in the perioperative period in patients undergoing vascular or cardiac surgery to prevent AKI.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against the use of remote ischemic preconditioning (RIPC) to reduce the incidence of perioperative AKI.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Laboratory-based Diagnosis and Biomarkers in AKI",
+      "narrative": "- **Diagnosis**: Serum creatinine is the standard biomarker but is a late and imperfect marker. A systematic work-up is **essential** to determine AKI etiology.\n- **Biomarkers for Early Diagnosis**: Urine **NGAL** (AUC-ROC 0.81) and **L-FABP** are suggested for early detection. Urine Cystatin C is not **recommended**.\n- **Biomarkers for Severity/Mortality**: Urine **NGAL** is suggested to predict AKI severity and **mortality** (AUC-ROC 0.8 for predicting dialysis-dependent AKI). L-FABP and Cystatin C are not **recommended** for this purpose.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend a systematic diagnostic work-up to determine the etiology of AKI.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest measuring the urine NGAL and L-type fatty acid-binding protein (L-FABP) for early diagnosis of AKI.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against the use of Urine Cystatin C for early diagnosis of AKI.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest measuring urine NGAL to predict AKI severity and **mortality**.",
+          "strength": "weak",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against the use of urine L-FABP and Cystatin C to predict AKI severity and **mortality**.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Drug Dosing in AKI",
+      "narrative": "- Drug dosing is complex due to altered pharmacokinetics, fluid status, and RRT modality.\n- A clinical pharmacist review reduces adverse events and dosing errors.\n- Aminoglycosides should be avoided if less nephrotoxic alternatives are available. If **essential**, use a single daily dose with therapeutic drug monitoring.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We suggest regular review of medications in ICU by a Clinical Pharmacist to reduce drug-related adverse events and dosing errors in patients with AKI.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against the use of aminoglycosides in patients with AKI if less nephrotoxic alternatives are available.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Nutrition in AKI",
+      "narrative": "- Energy intake should be **25–30 kcal/kg/day**.\n- Protein intake varies by RRT status: **1.3–1.7 g/kg/day** (no RRT), **1–1.5 g/kg/day** (intermittent RRT), and up to **1.7 g/kg/day** (CRRT).\n- Protein restriction to delay RRT initiation is not **recommended** due to the risk of negative nitrogen balance and increased **mortality**.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend that ICU patients with AKI receive energy upto 25–30 kcal/kg/day, **equivalent** to 100–130% of resting energy expenditure.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest the following protein intake in patients of AKI with **critical** illness: Not on RRT: **1.3 g**/kg/day up to **1.7 g**/kg/day; On intermittent RRT: **1 g**/kg/day up to **1.5 g**/kg/day; On CRRT: up to **1.7 g**/kg/day.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend not to restrict the protein intake with renal insufficiency to avoid or delay initiating RRT.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "AKI Recovery and Follow-up",
+      "narrative": "- Post-AKI monitoring aims to mitigate CKD progression. Patients are categorized by risk.\n- A follow-up bundle (BP, SCr, eGFR, urine protein, medication review) should be performed at **1 month** post-AKI.\n- Long-term monitoring frequency depends on risk category: annually for Category-1, every **6 months** for Category-2, and nephrologist-directed for high-risk Category-3 patients.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend that all patients who survive an episode of AKI of any stage, be assessed at the end of 1 month of onset of AKI with AKI follow-up bundle and reviewed by a primary care physician or nephrologist.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest that for long-term monitoring, the AKI follow-up bundle be performed by a physician or a nephrologist, once a year for category-1, and once in 6 months for category-2 patients.",
+          "strength": "weak",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend that category-3 patients, who carry a high risk of progression to CKD and end-stage renal disease (ESRD), be followed up by a nephrologist from the time of hospital discharge, at an interval deemed necessary by the nephrologist.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Indications and Timing of RRT in AKI",
+      "narrative": "- **Indications**: RRT is for life-threatening conditions refractory to medical therapy (e.g., severe hyperkalemia, acidosis, fluid overload). Prophylactic RRT for uremic complications or contrast removal is not **recommended**.\n- **Timing**: Urgent initiation is for **absolute** indications. For non-urgent cases, initiation is considered when metabolic/fluid demands exceed kidney capacity. Early initiation in the absence of **absolute** indications has not shown a **mortality** benefit in large RCTs (AKIKI, IDEAL-ICU, STARRT-AKI).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend RRT for life-threatening conditions such as severe hyperkalemia, severe metabolic acidosis, fluid overload that are resistant to medical therapy causing severe cardiopulmonary compromise and other uremic complications that are unresponsive to medical therapy.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against the prophylactic use of RRT to prevent uremic complications.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against prophylactic RRT for removal of contrast agent in patients with increased risk of contrast induced nephropathy (CIN).",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend that RRT be initiated urgently in patients who meet one or more of the **absolute** indications.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "For nonurgent indications we suggest RRT be considered when the capacity of the kidneys cannot meet the metabolic demands imposed by AKI on the body.",
+          "strength": "weak",
+          "evidence_grade": "UPP"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Modality of RRT in AKI",
+      "narrative": "- Choice depends on patient hemodynamics, resource availability, and clinical goals.\n- **CRRT or SLED** is preferred over IHD for hemodynamically unstable patients.\n- **IHD** is preferred for rapid correction of life-threatening hyperkalemia.\n- **CRRT** is preferred in patients with acute brain injury or increased intracranial tension.\n- **CRRT, SLED, or IHD** are preferred over PD for hypercatabolic patients.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We suggest that the choice of RRT modality be based on the availability of the facility, experience, and expertise of medical staff and the clinical status of the patient.",
+          "strength": "weak",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the use of continuous renal replacement therapy (CRRT) or sustained low efficiency dialysis (SLED) rather than intermittent hemodialysis (IHD) in patients who are hemodynamically unstable and may have intolerance to fluid removal.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend IHD for rapid correction of life-threatening hyperkalemia with cardiac arrhythmias.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest the use of IHD or SLED over CRRT and peritoneal dialysis (PD) for rapid correction of metabolic acidosis.",
+          "strength": "weak",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend CRRT over IHD or SLED in patients with acute brain injury or increased intracranial tension.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest the use of CRRT, SLED, or IHD over PD, for hyper-catabolic patients.",
+          "strength": "weak",
+          "evidence_grade": "2C"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "RRT Hardware",
+      "narrative": "- **Catheters**: Use non-tunneled, double-lumen catheters for short-term RRT. Insert under USG guidance, preferably in the right IJV. Confirm position radiologically. Avoid routine antibiotic prophylaxis and scheduled catheter changes.\n- **Membranes**: Biocompatible membranes are **recommended** for a **survival** advantage.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We suggest using nontunneled dialysis catheter in the **critically** ill patients who are expected to receive RRT for a short duration.",
+          "strength": "weak",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the use of double lumen catheters over triple lumen or single lumen catheters.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the use of ultrasonography (USG) guidance for the insertion of vascular access by trained personnel when available.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend that the position of dialysis catheter inserted in the internal jugular and subclavian veins be confirmed radiologically.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend internal jugular vein (IJV) preferably right IJV as the first choice for vascular access followed by the femoral veins. The subclavian veins are the least preferred sites for dialysis catheter.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against antibiotic prophylaxis prior to catheter insertion.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against regular timed change of dialysis catheters unless it is blocked or shows signs of infection.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the use of biocompatible membranes for hemodialysis in patients with AKI.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "topic": "Monitoring and Dose of RRT",
+      "narrative": "- **Monitoring**: Use a protocol-based template to monitor patient hemodynamics, biochemical parameters, and delivered dose to ensure safe and effective therapy.\n- **Dose**: Prescribe an individualized dose. The **recommended** delivered dose for **CRRT** is **20–25 mL/kg/hour** of effluent volume. High-intensity doses are not **recommended**. Account for pre-dilution to prevent under-delivery.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend a protocol-based template for prescribing and monitoring RRT and detailed documentation of the treatment.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend monitoring patient-related factors (hemodynamics, vasopressor dose, volume status, temperature and level of sensorium during RRT) and blood tests to monitor biochemical parameters tailored as per the individual need of the patient.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest monitoring the delivered dose of RRT.",
+          "strength": "weak",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend an individualized and prescribed dose of RRT, signed by an intensivist or nephrologist before the start of each session.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend that RRT prescription be assessed and revised from time to time till the optimal goal of therapy is achieved.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend a delivered dose of CRRT of 20–**25 mL**/kg/hour of effluent volume.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against using a high intensity or intensive dose of CRRT.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest that the predilution factor be taken into consideration while prescribing CRRT to prevent under delivery of the dose.",
+          "strength": "weak",
+          "evidence_grade": "UPP"
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "topic": "Replacement Fluids for CRRT",
+      "narrative": "- **Bicarbonate-based fluids** are preferred over lactate-based fluids, especially in shock and liver failure, for better hemodynamic stability.\n- Commercial CRRT solutions are preferred over custom-made admixtures to avoid compounding errors and sterility breaches.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend bicarbonate-based fluids over the lactate-based fluids for dialysis and replacement in CRRT.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest against the use of custom-made fluids for replacement in CRRT.",
+          "strength": "weak",
+          "evidence_grade": "UPP"
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "topic": "Anticoagulation during RRT",
+      "narrative": "- Anticoagulation is required to prevent circuit clotting.\n- For intermittent RRT in patients without bleeding risk, use **UFH**.\n- For **CRRT** without bleeding risk, **RCA** is **recommended** in centers with expertise; otherwise, use **UFH**.\n- In patients with bleeding risk, use an anticoagulant-free strategy or **RCA** for CRRT.\n- For **HIT**, use direct thrombin inhibitors (e.g., Argatroban) or Factor Xa inhibitors (e.g., Danaparoid).",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend anticoagulant therapy in AKI patients requiring RRT if there is no increased risk of bleeding. The patients who are on systemic anticoagulation do not usually require additional anticoagulation during RRT.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "In patients with no clotting abnormalities, with no increased risk of bleeding, we recommend unfractionated heparin during intermittent modalities of RRT. In the case of CRRT, we recommend RCA in centers with adequate expertise and experience with this strategy; and in centers lacking the expertise and experience for RCA, anticoagulation with unfractionated heparin may be carried out.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "In patients with impaired coagulation or increased risk of bleeding we suggest either no anticoagulation or RCA during CRRT, an anticoagulant-free strategy for intermittent RRT.",
+          "strength": "weak",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend the following options for anticoagulation in heparin-induced thrombocytopenia (HIT): Direct thrombin inhibitors, including Argatroban and Factor Xa inhibitors, such as Danaparoid or Fondaparinux.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "topic": "RRT for Dyselectrolytemia",
+      "narrative": "- Use high-efficiency RRT (**IHD or SLED**) for rapid correction of life-threatening electrolyte emergencies.\n- For chronic dysnatremias, the rate of correction should not exceed **4–6 mEq/L/day** (max **12 mEq/L/day**). Acute symptomatic dysnatremias can be corrected rapidly.\n- RRT can be used for severe, refractory dysnatremia even without AKI.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend a high-efficiency RRT modality such as IHD or SLED when a rapid correction of electrolytes is needed in life-threatening emergencies.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend that while RRT is performed the rate of correction of chronic hypo and hypernatremia should not exceed the **recommended** rate of correction. Serum Sodium can be corrected rapidly in acute symptomatic dysnatremia.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest using RRT for the management of severe dysnatremia refractory to medical treatment whether with or without AKI.",
+          "strength": "weak",
+          "evidence_grade": "UPP"
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "topic": "RRT in Toxicology",
+      "narrative": "- RRT should be initiated based on clinical signs of toxicity, not solely on toxin dose or serum levels.\n- **IHD** is the modality of choice for most dialyzable toxins.\n- Discontinue RRT upon clinical improvement and resolution of toxicity.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend against the routine use of RRT based only on the dose of ingested toxin or serum drug level in the absence of signs of toxicity. RRT should be initiated where the benefit outweighs the risk of the procedure and associated cost.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest discontinuing RRT upon clinical improvement and resolution of manifestations of toxicity.",
+          "strength": "weak",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend IHD as the modality of choice for most dialysable toxins.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        }
+      ]
+    },
+    {
+      "order": 16,
+      "topic": "Weaning from RRT",
+      "narrative": "- Wean when intrinsic kidney capacity meets metabolic/fluid demands.\n- Reliable clinical parameters include spontaneous urine output **>400 mL/day** or urine creatinine clearance **>15–20 mL/minute**.\n- Withdrawal may be considered if continuing RRT is futile after comprehensive deliberation.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We recommend that weaning from RRT may be considered in AKI when the intrinsic capacity of the kidneys has increased to a degree sufficient enough to cope with the metabolic and fluid demands.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend that spontaneous improvement in urine output from oliguric to nonoliguric state (UO >**400 mL**/day) or urine creatinine clearance of more than 15–**20 mL**/minute may be considered as the reliable clinical parameters to consider weaning from RRT.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": null,
+          "statement": "We suggest that withdrawal from RRT may be considered in case the deteriorating condition renders the continuation of RRT to be futile after a comprehensive deliberation with all involved in the care of the patient and family.",
+          "strength": "weak",
+          "evidence_grade": "UPP"
+        }
+      ]
+    },
+    {
+      "order": 17,
+      "topic": "RRT and ECMO",
+      "narrative": "- **25–68%** of ECMO patients need RRT. **CRRT** is the preferred mode due to hemodynamic fragility.\n- Initiation timing is individualized based on fluid overload and metabolic status.\n- No single technique (integrated vs. parallel system) is **superior**; choice depends on local expertise.",
+      "recommendations": [
+        {
+          "rec_id": null,
+          "statement": "We suggest combining the use of RRT with ECMO in patients on ECMO having AKI, with CRRT as the preferred mode for RRT.",
+          "strength": "weak",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend an individualized approach with close monitoring of fluid and metabolic status for timely initiation of RRT with ECMO.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        },
+        {
+          "rec_id": null,
+          "statement": "We recommend against one technique over another (Integrated vs parallel system) for CRRT on ECMO and the choice should be based on local expertise and human resources.",
+          "strength": "strong",
+          "evidence_grade": "UPP"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: Comprehensive guideline covering all major aspects of AKI and RRT in the ICU, developed using the rigorous GRADE methodology by a multidisciplinary panel. Addresses resource-limited settings with practical suggestions (e.g., SLED as an alternative to CRRT).\n- Limitations: A large number of recommendations are based on UPP (Useful Practice Point) or low-quality evidence due to a paucity of high-quality RCTs in many areas. The guideline does not cover pediatric patients or those with CKD not in the ICU setting.",
+  "drugs_doses": [
+    {
+      "drug": "Norepinephrine",
+      "dose": "Not specified, titrated to MAP target",
+      "indication": "First-line vasopressor for circulatory shock to achieve blood pressure targets and prevent AKI progression",
+      "adverse_effects": "Not detailed in this guideline"
+    },
+    {
+      "drug": "Terlipressin",
+      "dose": "Not specified",
+      "indication": "Vasopressor of choice in patients with hepatorenal syndrome (HRS)",
+      "adverse_effects": "Not detailed in this guideline"
+    },
+    {
+      "drug": "Unfractionated Heparin (UFH)",
+      "dose": "Not specified, titrated to aPTT target (e.g., 45-60 seconds)",
+      "indication": "Anticoagulation for intermittent RRT modalities and for CRRT when RCA expertise is lacking",
+      "adverse_effects": "Bleeding complications, heparin-induced thrombocytopenia (HIT)"
+    },
+    {
+      "drug": "Sodium Citrate (Regional Citrate Anticoagulation - RCA)",
+      "dose": "Infused into inflow limb of CRRT circuit, titrated to systemic ionized calcium target of 1.0-1.4 mg/dL",
+      "indication": "Anticoagulation for CRRT to prolong filter life and reduce bleeding risk",
+      "adverse_effects": "Electrolyte imbalances (hypocalcemia, hypercalcemia, hypernatremia), metabolic alkalosis, citrate accumulation"
+    },
+    {
+      "drug": "Argatroban",
+      "dose": "Not specified",
+      "indication": "Anticoagulation for RRT in patients with heparin-induced thrombocytopenia (HIT)",
+      "adverse_effects": "Bleeding; monitor aPTT"
+    },
+    {
+      "drug": "Fondaparinux",
+      "dose": "Not specified",
+      "indication": "Anticoagulation for RRT in patients with heparin-induced thrombocytopenia (HIT)",
+      "adverse_effects": "Bleeding"
+    },
+    {
+      "drug": "Aminoglycosides",
+      "dose": "Single daily dose for minimal duration, with therapeutic drug monitoring",
+      "indication": "Should be avoided in AKI if less nephrotoxic alternatives are available; use only when essential",
+      "adverse_effects": "Nephrotoxicity (up to 25% increased risk), ototoxicity"
+    },
+    {
+      "drug": "Statins",
+      "dose": "Not specified",
+      "indication": "Perioperative period in patients undergoing vascular or cardiac surgery to prevent AKI",
+      "adverse_effects": "Not detailed in this guideline"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2024-07-31",
+  "article_subtype": "Guideline",
+  "subtopic": "Nephrology"
+}
