@@ -324,6 +324,7 @@ async def render_dashboard(request: Request):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 {ECG_SVG}
 <style>
   :root{{
@@ -1446,7 +1447,7 @@ function openReader(entry, kind){{
     var idx = _currentPearlIndex;
     var prevBtn = idx>0 ? '<button class="btn nav-btn" data-pearl-nav="prev">&#9664; Previous</button>' : '';
     var nextBtn = idx>=0 && idx<_currentPearlList.length-1 ? '<button class="btn nav-btn" data-pearl-nav="next">Next &#9654;</button>' : '';
-    var hasPrintablePaper = entry.file_name && baseDataset.some(function(d){{ return d.file_name === entry.file_name.replace(/\.json$/, '.pdf'); }});
+    var hasPrintablePaper = entry.file_name && baseDataset.some(function(d){{ return d.file_name === entry.file_name.replace(/\\.json$/, '.pdf'); }});
     var articleBtn = hasPrintablePaper ? '<button class="btn nav-btn" data-open-pearl-article="'+entry.id+'">&#128196; Open article</button>' : '';
     var navRow = (prevBtn||nextBtn||articleBtn) ? '<div class="reader-nav">'+articleBtn+prevBtn+nextBtn+'</div>' : '';
     body.innerHTML = ''+
@@ -1788,7 +1789,7 @@ function renderTrialDetailHTML(data, body){{
 function preprocessTrialContent(text){{
   if(!text) return '';
   // Convert bullet characters to markdown list syntax
-  var out = text.replace(/^\u2022\s*/gm, '- ').replace(/^o\s+/gm, '  - ');
+  var out = text.replace(/^\u2022\\s*/gm, '- ').replace(/^o\\s+/gm, '  - ');
   return out;
 }}
 
@@ -1807,12 +1808,12 @@ function openTrialOverlay(id, kind){{
   document.getElementById(id).style.display = 'flex';
   if(kind==='credits'){{
     var md = `{CREDITS_TEXT.replace('`','\\`').replace('$','\\$')}`;
-    var html = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
+    var html = md.replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
     document.getElementById('trialCreditsText').innerHTML = '<p>'+html+'</p>';
   }}
   if(kind==='disclaimer'){{
     var md = `{TRIAL_DISCLAIMER_TEXT.replace('`','\\`').replace('$','\\$')}`;
-    var html = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
+    var html = md.replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
     document.getElementById('trialDisclaimerText').innerHTML = '<p>'+html+'</p>';
   }}
 }}
@@ -1830,7 +1831,7 @@ function dismissDisclaimer(){{
 }}
 if(showDisclaimer && !(function(){{ try {{ return sessionStorage.getItem('hackccm_disclaimer'); }} catch(e){{ return null; }} }})()){{
   var md = `{DISCLAIMER_TEXT.replace('`','\\`').replace('$','\\$')}`;
-  var html = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
+  var html = md.replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
   document.getElementById('disclaimerText').innerHTML = '<h2>\u26A0\uFE0F Disclaimer</h2><p>'+html+'</p>';
   document.getElementById('disclaimerOverlay').style.display='flex';
 }}
@@ -1931,7 +1932,7 @@ document.addEventListener('click', function(e){{
   if(e.target.closest('[data-open-disclaimer]')){{
     closeDrawer();
     var md = `{DISCLAIMER_TEXT.replace('`','\\\\`').replace('$','\\\\$')}`;
-    var html = md.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
+    var html = md.replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
     document.getElementById('disclaimerText').innerHTML = '<h2>\u26A0\uFE0F Disclaimer</h2><p>'+html+'</p>';
     document.getElementById('disclaimerOverlay').style.display='flex';
     return;
@@ -2002,7 +2003,7 @@ document.addEventListener('click', function(e){{
     var pearlId = openArticle.dataset.openPearlArticle;
     var pearl = allPearls.find(function(p){{ return String(p.id)===String(pearlId); }});
     if(pearl && pearl.file_name){{
-      var pdfFn = pearl.file_name.replace(/\.json$/, '.pdf');
+      var pdfFn = pearl.file_name.replace(/\\.json$/, '.pdf');
       var paper = baseDataset.find(function(d){{ return d.file_name === pdfFn; }});
       if(paper){{
         _readerHistoryStack.push({{kind:'pearl', entry:pearl}});

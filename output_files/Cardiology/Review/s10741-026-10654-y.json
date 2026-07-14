@@ -1,0 +1,174 @@
+{
+  "id": "post-viral-myocarditis-review-2026",
+  "doc_type": "article",
+  "article_subtype": "Review",
+  "title": "Post-viral myocarditis",
+  "authors": "Mateusz Sokolski et al.",
+  "journal": "Heart Failure Reviews",
+  "year": 2026,
+  "doi": "10.1007/s10741-026-10654-y",
+  "specialty": [
+    "cardiology",
+    "infectious_disease",
+    "immunology"
+  ],
+  "tags": [
+    "myocarditis",
+    "viral myocarditis",
+    "post-viral cardiomyopathy",
+    "inflammatory cardiomyopathy",
+    "dilated cardiomyopathy",
+    "endomyocardial biopsy",
+    "cardiac mri",
+    "immunosuppression"
+  ],
+  "one_line_summary": "This review details the pathophysiological mechanisms from viral myocardial infection to chronic inflammatory cardiomyopathy and dilated cardiomyopathy, emphasizing viral persistence, immune-mediated injury, and current diagnostic and management strategies.",
+  "key_pearls": [
+    "Viral genomes are present in approximately **67%** of patients with suspected idiopathic left ventricular dysfunction, with parvovirus B19 (B19V) showing a pooled prevalence of **23.7%** in myocarditis and **34.1%** in DCM.",
+    "A B19V viral load of **>500 gene copies per microgram** of myocardial DNA is the threshold associated with sustained myocardial inflammation, distinguishing pathogenic infection from latent persistence.",
+    "The updated Lake Louise Criteria for cardiac MRI diagnosis of myocarditis require at least **two main criteria** (one T2-based for edema and one T1-based for non-ischemic injury) for a definitive diagnosis.",
+    "Endomyocardial biopsy (EMB) with immunohistochemistry (CD3, CD68) increases diagnostic sensitivity to **~51%**, with a cutoff of **≥14 leucocytes/mm²** including **≥7 T lymphocytes/mm²**.",
+    "Immunosuppressive therapy is generally **contraindicated** in virus-positive myocarditis; interferon-beta therapy in the BICC trial reduced viral load and improved LV systolic function in chronic viral cardiomyopathy.",
+    "Fulminant myocarditis carries an in-hospital **mortality** rate of approximately **11.8%**, often requiring mechanical circulatory support (e.g., VA-ECMO, Impella) as a bridge to recovery.",
+    "Guideline-directed heart failure therapy (beta-blockers, ACEi) should be continued for at least **6 months** and until complete recovery of LV systolic function, though myocarditis-specific randomized trial evidence is limited."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": "Patients with viral myocarditis, post-viral chronic inflammatory cardiomyopathy, and dilated cardiomyopathy.",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction",
+      "content": "- Myocarditis is an inflammatory disease of the heart muscle defined by histological, immunological, and molecular changes, diagnosed per **WHO** and **2025 ESC Guidelines** based on inflammatory infiltrates with myocyte necrosis of non-ischemic origin.\n- Post-viral chronic inflammatory cardiomyopathy (chronic infl-CMP) and a dilated cardiomyopathy (DCM) phenotype can develop when inflammation persists after viral infection, driven by viral genome persistence or virus-induced immune responses.\n- Viral pathogens like **parvovirus B19 (B19V)**, **human herpesvirus 6 (HHV-6)**, and **enteroviruses** are main etiological agents; viral genomes are found in **~67%** of patients with suspected idiopathic left ventricular dysfunction.\n- Pathogenesis is a three-phase process: **acute** (direct viral cardiomyocyte damage), **subacute** (host immune-mediated injury), and **chronic** (adverse remodeling and fibrosis leading to post-viral cardiomyopathy).\n- Viral myocarditis accounts for **12–22%** of sudden cardiac deaths (SCD) in people under **35 years**, and approximately **30%** of biopsy-confirmed myocarditis cases progress to chronic systolic dysfunction and heart failure (HF).",
+      "section_pearls": [
+        "Viral myocarditis is a leading cause of SCD in young adults, with progression to chronic HF in nearly one-third of biopsy-confirmed cases."
+      ]
+    },
+    {
+      "order": 2,
+      "heading": "Viral Infections as a Cause of Cardiomyopathy",
+      "content": "- **Cardiotropic viruses**: Primary cardiotropic viruses (e.g., **Coxsackievirus A and B**, **adenoviruses**) use the Coxsackievirus and Adenovirus Receptor (CAR) for direct cardiomyocyte infection, typically associated with acute myocarditis.\n- **Vasculotropic and lymphotropic viruses**: **B19V** targets myocardial microvascular endothelial cells; **Herpesviridae** family (HHV-6, EBV, CMV) are lymphotropic and capable of long-term myocardial persistence.\n- **Classical vs. emerging pathogens**: Molecular diagnostics (PCR) have shifted identification from classical enteroviruses/adenoviruses to emerging pathogens like **B19V** and **HHV-6**; **SARS-CoV-2** causes injury via ACE2 receptors and cytokine storm.\n- **Latent viral presence**: B19V persists in a latent state in endothelial cells; active infection is defined by viral load **>500 gene copies/µg DNA** and detection of viral mRNA, which is linked to poorer outcomes.\n- **Epidemiology**: A meta-analysis reported B19V prevalence of **23.7%** in myocarditis and **34.1%** in DCM, with a **significant** association (OR **4.317**, 95% CI 1.83–10.18, *p* = 0.001). Regional prevalence varies widely, up to **78.8%** in some European studies.",
+      "section_pearls": [
+        "A B19V viral load >500 copies/µg DNA is the threshold for clinically significant myocardial inflammation.",
+        "B19V shows a strong statistical association with myocarditis (OR 4.317), confirming its role as a major pathogen."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Pathophysiology from Viral Infection to Cardiomyopathy",
+      "content": "- **Virus internalization**: **CVB3** enters via CAR, using viral proteases (2A, 3C) that degrade host proteins like mitochondrial antiviral-signaling protein, impairing stress responses and accelerating necrosis. **B19V** uses the P-antigen receptor on coronary endothelial cells, impairing microcirculation. **SARS-CoV-2** binds ACE2, disrupting the RAAS axis.\n- **Inflammatory process**: Release of PAMPs and DAMPs activates PRRs (TLR3, TLR4, NLRs), triggering NF-κB and production of **IL-1β**, **IL-6**, **type I interferons**, and **TNF-α**. This recruits lymphocytes, neutrophils, and monocytes, potentially causing systemic inflammation.\n- **Immune-mediated injury**: Sustained interferon signaling upregulates MHC class I on cardiomyocytes, enhancing CD8+ T-cell cytotoxicity via perforin/granzyme. NLRP3 inflammasome activation releases IL-1β and IL-18, inducing pyroptosis and ROS production. Molecular mimicry (e.g., CVB antigens resembling cardiac myosin heavy chain-α) triggers autoantibodies and autoreactive T-cells, perpetuating damage.\n- **Chronic remodeling**: Persistent viral genomes (e.g., Herpesviridae) maintain a pro-inflammatory environment. Cytokines (TNF-α, IL-1β, IL-6, IL-17) promote apoptosis and loss of contractility. TGF-β/SMAD axis activation differentiates cardiac fibroblasts, increasing collagen I/III deposition, causing wall stiffness and arrhythmogenic substrate. MMP/TIMP imbalance leads to ECM weakening and DCM phenotype. RAAS and sympathetic overdrive create a vicious cycle of fibrosis. Metabolic disturbances include mitochondrial dysfunction and calcium mishandling.",
+      "section_pearls": [
+        "Molecular mimicry between CVB and cardiac myosin can transform acute viral myocarditis into a chronic autoimmune inflammatory cardiomyopathy.",
+        "Persistent 'smoldering inflammation' from latent viral genomes drives fibrosis and adverse remodeling even without active viral replication."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Clinical Phenotypes",
+      "content": "- **Acute myocarditis (AM)**: Symptom duration **≤4 weeks**; fulminant subtype involves hemodynamic instability requiring inotropic/mechanical support. Up to **80%** have prodromal symptoms (fever, GI disturbances).\n- **Age-related differences**: Incidence is lower in children (**0.9–2 per 100,000/year**) than adults (**14.4–22 per 100,000/year**), but pediatric cases more frequently present with fulminant myocarditis and cardiogenic shock.\n- **Arrhythmic complications**: Risk of supraventricular (SVAs) and ventricular arrhythmias (VAs) is increased independent of LVEF. Detection of viral nucleic acids on EMB is associated with increased VAs and late myocardial injury.\n- **Chronic myocarditis**: Ongoing inflammation lasting **>3 months**, histologically marked by fibrosis without necrosis, representing an intermediate stage to chronic infl-CMP.\n- **Chronic infl-CMP**: Persistent inflammation, myocyte abnormalities, and fibrosis causing ventricular remodeling and dysfunction, presenting as DCM or hypokinetic non-dilated phenotype after **>1 month** of symptoms.\n- **DCM**: Left ventricular dilatation and systolic dysfunction not explained by abnormal loading or CAD, with a prevalence of **0.036%–0.400%**. Etiology includes post-viral injury, immune-mediated mechanisms, toxins, and genetics.",
+      "section_pearls": [
+        "Arrhythmic risk in myocarditis is independent of LVEF and linked to viral nucleic acid detection on EMB.",
+        "Pediatric myocarditis has a lower incidence but a higher proportion of fulminant presentations compared to adults."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Diagnostic Approach",
+      "content": "- **Biomarkers**: **Cardiac troponin** is a sensitive but non-specific marker of myocardial damage. **NT-proBNP** correlates with ventricular wall stress and inflammatory activity (leukocyte count, CRP).\n- **Electrocardiography**: Common changes include prolonged PR, widened QRS, ST–T changes, and pathological Q waves; pathological Q waves are associated with poor **prognosis** in fulminant myocarditis.\n- **Echocardiography**: 2D-TTE is **essential** to exclude alternative causes; findings may include regional/global LV dysfunction, dilatation, pericardial effusion, or increased wall thickness. Speckle-tracking echocardiography detects subclinical dysfunction.\n- **Cardiac Magnetic Resonance (CMR)**: Updated **Lake Louise Criteria** define a definite diagnosis by fulfilling at least **two main criteria** (one T2-based for edema, one T1-based for non-ischemic injury). Supportive criteria (LV dysfunction, wall-motion abnormalities) increase confidence but are not definitive.\n- **Endomyocardial Biopsy (EMB)**: **Recommended** in high-risk or hemodynamically unstable patients per **ESC 2025 guidelines**. Immunohistochemistry (CD3, CD68) increases sensitivity to **~51%**; a cutoff of **≥14 leucocytes/mm²** with **≥7 T lymphocytes/mm²** defines myocarditis. Quantitative PCR detects viral genomes and load, guiding therapy (e.g., contraindication to immunosuppression in virus-positive cases).\n- **Differential diagnosis**: **ICI-associated myocarditis** is distinguished from viral myocarditis by recent checkpoint inhibitor exposure, concomitant immune-related adverse events, and absence of cardiotropic viral genomes on EMB.",
+      "section_pearls": [
+        "The updated Lake Louise Criteria require at least one T2-based and one T1-based criterion for a definitive CMR diagnosis of myocarditis.",
+        "EMB with immunohistochemistry and quantitative viral PCR is crucial for distinguishing viral from autoimmune myocarditis and guiding immunosuppression decisions."
+      ]
+    },
+    {
+      "order": 6,
+      "heading": "Management Strategies",
+      "content": "- **General measures**: Most AM cases are self-limiting. **NSAIDs** may be used in patients with preserved LV function. **Colchicine** is often combined with NSAIDs and may reduce recurrence risk. Physical activity restriction is advised based on murine models.\n- **Standard HF therapy**: Haemodynamically stable patients with LV systolic impairment should receive guideline-directed therapy (beta-blockers, ACEi). Animal models show reduced necrosis and scar formation. Retrospective data suggest beta-blockers reduce **mortality** and need for transplantation. ESC guidelines recommend continuing HF therapy for at least **6 months** and until complete LV recovery. The **TRED-HF trial** supports a cautious approach to therapy withdrawal in recovered DCM.\n- **Immunosuppressive therapy**: Use in viral AM is controversial. Guidelines recommend excluding active viral infection via EMB before starting immunosuppression. A meta-analysis of corticosteroids found no **mortality** benefit but a slight improvement in LV function. The only RCT in viral AM found no **survival** or LV function benefit at **28 weeks**. **IVIG** has not shown consistent benefit in RCTs or meta-analyses for **mortality** or LV function. **Anakinra** (IL-1 receptor antagonist) was safe but did not reduce complications in the low-risk **ARAMIS trial**.\n- **Antiviral approaches**: **Interferon-beta (IFN-beta)** reduced viral load and improved NYHA class, LV function, and BNP in the **BICC trial** for chronic virus-positive cardiomyopathy, but is not guideline-**recommended** due to lack of large trials. **Neuraminidase inhibitors** are used in influenza-associated myocarditis; **HAART** reduces cardiac complications in HIV-associated myocarditis; anti-herpes drugs can be considered for EBV, HHV-6, or CMV.\n- **Mechanical circulatory support/Transplantation**: Fulminant myocarditis has **~11.8%** in-hospital **mortality**. Temporary mechanical support (IABP, Impella, VA-ECMO) is preferred to avoid pro-arrhythmic inotropes. Impella registry data show a **62%** hospitalization **survival** rate. Only **16%** of patients requiring mechanical support have chronic LV impairment at one year; transplant/LVAD is considered if weaning fails after **2–3 weeks**.",
+      "section_pearls": [
+        "ESC guidelines recommend continuing HF therapy for at least 6 months post-myocarditis until complete LV recovery.",
+        "Immunosuppression is contraindicated in virus-positive myocarditis; IFN-beta shows promise for viral clearance and functional improvement in chronic cases."
+      ]
+    },
+    {
+      "order": 7,
+      "heading": "Emerging Concepts and Future Directions",
+      "content": "- **Advances in imaging**: Speckle tracking echocardiography (GLS) can predict adverse cardiac events and identify myocarditis before LVEF declines. CMR feature-tracking and ECV fraction mapping improve diagnostic performance. AI and texture analysis outperform traditional regression for **mortality** prediction in pediatric AM. Cardiac CT with ECV mapping correlates with CMR and identifies diseased myocardium.\n- **Advances in molecular diagnostics**: EMB with PCR remains the gold standard but carries risks. Circulating **micro-RNAs** (e.g., miR-155, miR-4763-3p, miR-29b, miR-133a) correlate with edema, fibrosis, LV function, and **mortality**, offering non-invasive diagnostic and prognostic potential. **Next-generation sequencing (NGS)** may improve viral genome detection sensitivity and identify novel etiologies, guiding immunosuppression decisions.",
+      "section_pearls": [
+        "Global longitudinal strain (GLS) on echocardiography and CMR provides independent prognostic value beyond LVEF and LGE in myocarditis.",
+        "Circulating micro-RNAs are emerging as non-invasive biomarkers that correlate with disease severity and may distinguish myocarditis from myocardial infarction."
+      ]
+    },
+    {
+      "order": 8,
+      "heading": "Conclusions",
+      "content": "- Post-viral myocarditis is a heterogeneous entity where interplay between viral injury, immune response, and remodeling determines long-term outcomes.\n- Persistent viral genomes, transcriptionally active infection, dysregulated interferon signaling, inflammasome activation, autoimmunity, and neurohormonal activation contribute to ongoing injury beyond the acute phase.\n- Disease course ranges from self-limiting inflammation to progressive ventricular dysfunction and HF.\n- Advances in CMR, EMB-based molecular diagnostics, micro-RNA profiling, NGS, and AI-assisted imaging may improve risk stratification and distinguish infectious from non-infectious forms.\n- Future research should integrate viral activity assessment with host immune profiling to develop individualized therapeutic strategies and limit progression to HF.",
+      "section_pearls": []
+    }
+  ],
+  "strengths_limitations": "- Provides a comprehensive, up-to-date overview of the pathophysiological mechanisms linking viral myocarditis to DCM, integrating molecular, immunological, and clinical perspectives. - Clearly delineates the diagnostic criteria and management strategies based on the latest 2025 ESC guidelines. - Limited by the scarcity of high-quality, myocarditis-specific randomized controlled trials for many discussed therapies, with recommendations often extrapolated from broader HF populations or based on retrospective data.",
+  "drugs_doses": [
+    {
+      "drug": "NSAIDs",
+      "dose": "Not specified",
+      "indication": "Symptomatic management of acute myocarditis in patients with preserved LV systolic function",
+      "adverse_effects": "Historical concern for exacerbating myocarditis based on murine models; use in patients with impaired LV function is cautioned."
+    },
+    {
+      "drug": "Colchicine",
+      "dose": "Not specified",
+      "indication": "Often combined with NSAIDs for myopericarditis; may reduce recurrence risk",
+      "adverse_effects": "Not detailed in this review."
+    },
+    {
+      "drug": "Beta-blockers",
+      "dose": "Not specified",
+      "indication": "Goal-directed medical therapy for LV systolic impairment in myocarditis; management of ventricular arrhythmias",
+      "adverse_effects": "Not detailed; retrospective data suggest reduced mortality and need for transplantation."
+    },
+    {
+      "drug": "ACE inhibitors (ACEi)",
+      "dose": "Not specified",
+      "indication": "Goal-directed medical therapy for LV systolic impairment in myocarditis; may reduce risk of chronic HF",
+      "adverse_effects": "Not detailed; recommended for at least 6 months and until complete LV recovery."
+    },
+    {
+      "drug": "Corticosteroids",
+      "dose": "Not specified",
+      "indication": "Investigated for acute and chronic viral myocarditis; use is controversial and generally contraindicated in virus-positive cases",
+      "adverse_effects": "A meta-analysis found no mortality benefit; an RCT found no survival or LV function benefit at 28 weeks."
+    },
+    {
+      "drug": "Intravenous Immunoglobulin (IVIG)",
+      "dose": "Not specified",
+      "indication": "Investigated for acute myocarditis for anti-inflammatory effects and transfer of neutralizing antibodies",
+      "adverse_effects": "Meta-analyses found no improvement in mortality, functional capacity, or LV function."
+    },
+    {
+      "drug": "Anakinra",
+      "dose": "Not specified",
+      "indication": "Recombinant human interleukin-1 receptor antagonist investigated for acute myocarditis (ARAMIS trial)",
+      "adverse_effects": "Safe but did not reduce the incidence of myocarditis complications in a low-risk cohort."
+    },
+    {
+      "drug": "Interferon-beta (IFN-beta)",
+      "dose": "Not specified",
+      "indication": "Chronic inflammatory, virus-positive cardiomyopathy to reinforce native immune response (BICC trial)",
+      "adverse_effects": "Associated with viral load reduction and improved LV function, but not currently guideline-recommended due to lack of large trials."
+    },
+    {
+      "drug": "Neuraminidase inhibitors (e.g., Zanamivir)",
+      "dose": "Not specified",
+      "indication": "Influenza-associated myocarditis",
+      "adverse_effects": "Not detailed; successful treatment reported in case studies."
+    },
+    {
+      "drug": "Hydroxychloroquine",
+      "dose": "Not specified; combined with prednisolone",
+      "indication": "Chronic inflammatory cardiomyopathy after fulminant myocarditis in virus-negative patients (HYPIC trial)",
+      "adverse_effects": "Not detailed; improved composite cardiovascular outcomes and ventricular function compared to prednisolone alone."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-07-17",
+  "subtopic": "Cardiology"
+}
