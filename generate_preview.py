@@ -88,6 +88,7 @@ html = f"""<!DOCTYPE html>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>ESBICM Landmark Trials — Preview</title>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<script defer src="/_vercel/insights/script.js"></script>
 <style>
 :root {{
   --bg:#1F1B14; --bg-elev:#29241B; --bg-sunk:#241F17;
