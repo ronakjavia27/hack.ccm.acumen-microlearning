@@ -1,0 +1,122 @@
+{
+  "id": "diagnosis-of-nontuberculous-mycobacterial-infections-using-genomics-and-ai-2025",
+  "doc_type": "article",
+  "article_subtype": "Review",
+  "title": "Diagnosis of nontuberculous mycobacterial infections using genomics and artificial intelligence-machine learning approaches: scope, progress and challenges",
+  "authors": "Murthy MK et al.",
+  "journal": "Frontiers in Microbiology",
+  "year": 2025,
+  "doi": "10.3389/fmicb.2025.1665685",
+  "specialty": [
+    "infectious_disease",
+    "pulmonology"
+  ],
+  "tags": [
+    "non tuberculous mycobacteria",
+    "diagnosis",
+    "genomics",
+    "artificial intelligence",
+    "machine learning",
+    "next generation sequencing",
+    "targeted next generation",
+    "metagenomic next generation sequencing"
+  ],
+  "one_line_summary": "This comprehensive review discusses the strides made in genomics and AI-based approaches for diagnosing NTM infections, highlighting advancements in sequencing technologies and machine learning to improve accuracy and speed.",
+  "key_pearls": [
+    "NTM diagnosis is challenging due to non-specific symptoms and ubiquitous environmental presence, requiring correlation of clinical, radiological, and microbiological findings per **ATS/IDSA guidelines**.",
+    "**WGS** provides comprehensive species identification, detects drug resistance, and differentiates reinfection from relapse, but is limited by high cost and need for specialized expertise.",
+    "**mNGS** demonstrates **superior** sensitivity (up to **90.2%**) compared to acid-fast staining (**42.0%**) and culture (**77.0%**) for NTM-PD diagnosis, with a faster turnaround time.",
+    "**AI and machine learning models** analyzing CT scans can distinguish NTM-PD from TB with an AUC up to **0.9**, **significantly** improving diagnostic accuracy over physician assessment alone.",
+    "**MGIT-seq** achieves **99.1% accuracy** for species-level identification and simultaneously detects macrolide and amikacin resistance in a single test.",
+    "**CRISPR-Cas12a** based detection (MyTRACK) shows **100% specificity** and **92.59–100% sensitivity** for mycobacterial identification directly from clinical specimens within 1 hour.",
+    "Treatment of NTM is prolonged (typically **12 months** for NTM-PD), requires multi-drug regimens, and **prognosis** is worse with *M. abscessus*, cavitary disease, and in immunocompromised or elderly patients."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": "Immunocompromised individuals, patients with underlying lung conditions (e.g., bronchiectasis, COPD, cystic fibrosis), and the elderly.",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction",
+      "content": "- NTM infections predominantly affect immunocompromised individuals and those with lung disease, causing **NTM pulmonary disease (NTM-PD)** and **NTM non-pulmonary disease (NTM-NPD)**.\n- The chronicity of NTM infections, especially *Mycobacterium abscessus* complex (MABC) and *Mycobacterium avium* complex (MAC) lung disease, causes **significant** morbidity and **mortality**.\n- Accurate and timely diagnosis is crucial for distinguishing NTM from other lung infections like TB and for initiating appropriate treatment.",
+      "section_pearls": []
+    },
+    {
+      "order": 2,
+      "heading": "Epidemiology of NTM Infections",
+      "content": "- **Incidence and Prevalence**: NTM incidence is rising globally. US prevalence was **13.9 per 100,000** (2013); German incidence was **3.3 per 100,000** (2009-2014). In India, incidence ranges from **0.7 to 34%**.\n- **Mortality**: Global NTM **mortality** doubled from **0.36 to 0.77 deaths per 1,000,000** (2000-2022). A 15-year study in Korea showed cumulative **mortality** of **36.4%**. **Mortality** is associated with old age, male gender, low BMI, comorbidities, and cavitary disease forms.\n- **Geographic Distribution**: MAC is most common worldwide. *M. abscessus* is prevalent in East Asia and Singapore. *M. kansasii* is common in the US and Europe. *M. xenopi* is more frequent in Southern Europe.\n- **Healthcare Settings**: NTM outbreaks are linked to contaminated medical devices (bronchoscopes), infected needles, and cosmetic surgery. *M. abscessus* and *M. massiliense* are common in post-procedure infections. **Peracetic acid** is **recommended** over glutaraldehyde for disinfection due to better efficacy against NTM.",
+      "section_pearls": [
+        "NTM mortality rates are rising, particularly in the geriatric population (≥65 years), necessitating improved diagnostic and treatment strategies."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Conventional and Molecular Diagnostic Methods",
+      "content": "- **ATS/IDSA Guidelines**: Diagnosis of NTM-PD requires consistent positive sputum culture on two different time points, or one positive BAL sample.\n- **AFB Staining**: Cannot differentiate between NTM and TB.\n- **PCR-RFLP**: Targets *hsp65* gene; reported **100% sensitivity and specificity** for MTB and MAC identification.\n- **Real-Time PCR (qPCR)**: Uses fluorescent probes for real-time detection and quantification; High-resolution melting (HRM) analysis can differentiate species.\n- **Line Probe Assays (LPA)**: Combine PCR and reverse hybridization for rapid, high-sensitivity species identification and drug resistance mutation detection.\n- **MALDI-TOF MS**: Identifies NTM based on protein spectral fingerprints; rapid and cost-effective, with **98.4% accuracy** in one study.\n- **Gene Sequencing**: Targets 16S rRNA, *hsp65*, *rpoB*, and ITS regions for species identification. Multigene sequencing enhances accuracy for closely related species.\n- **MGIT-seq**: Extracts DNA from MGIT broth for NGS; achieves **99.1% species-level accuracy** and detects macrolide/amikacin resistance.\n- **CRISPR-Cas12a (MyTRACK)**: A portable assay combining RPA and CRISPR-Cas12a targeting the *rpoB* gene; provides results in **1 hour** with **100% specificity** and **92.59–100% sensitivity**.",
+      "section_pearls": [
+        "Overdiagnosis is a critical concern; a positive molecular test from a non-sterile respiratory specimen does not necessarily indicate active disease and must be correlated with clinical and radiographic findings."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Genomics in NTM Diagnosis",
+      "content": "- **Targeted Gene Sequencing**:\n  - *16S rDNA*: Highly conserved, rapid, and accurate but cannot distinguish between *M. chimaera* and *M. intracellulare* or *M. chelonae* and *M. abscessus*.\n  - *hsp65*: More variable than 16S rDNA; useful for identifying RGM and SGM. *hsp65*-PRA is a widely used, rapid, and inexpensive method.\n  - *16S-23S ITS*: Highly variable region useful for species-level identification; ITS-SCGE is rapid and reproducible.\n  - *rpoB*: Useful for identifying RGM and MAC species and detecting drug resistance.\n  - *dnaJ*: Has higher discriminatory ability (mean sequence similarity **80.4%**) compared to 16S rDNA (**96.6%**) and *hsp65* (**91.1%**).\n- **Whole Genome Sequencing (WGS)**:\n  - Overcomes limitations of conventional methods; identifies mixed infections, detects drug resistance, and aids in transmission pathway analysis.\n  - Can differentiate reinfection from relapse and identify NTM at the clone level.\n  - Has shown evidence of human-to-human transmission of *M. abscessus* among cystic fibrosis patients.\n  - Limitations include high cost, need for culture, specialized labs, and bioinformatics expertise.\n- **Targeted Next Generation Sequencing (tNGS)**:\n  - Cost-efficient approach focusing on specific genomic regions; provides rapid, comprehensive diagnosis and drug resistance detection directly from clinical samples.\n  - The **Deeplex Myc-TB assay** can identify *M. abscessus* subspecies in 1-2 days.\n- **Metagenomic Next Generation Sequencing (mNGS)**:\n  - Analyzes all DNA/RNA in a sample; highly accurate for differential diagnosis of MTB and NTM from BALF.\n  - Sensitivity for NTM-PD diagnosis is **90.2%**, **significantly** higher than AFS (**42.0%**) and culture (**77.0%**), with **100% specificity**.\n  - Combined sensitivity of mNGS and MGIT 960 is **91.8%**.",
+      "section_pearls": [
+        "WGS is the most comprehensive method but is not yet standard in all clinical settings due to cost; tNGS offers a more cost-effective, targeted alternative.",
+        "mNGS has a faster turnaround time and broader pathogen detection capability, making it valuable for complex infections, while tNGS is preferred where specificity and cost are paramount."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Artificial Intelligence in NTM Diagnosis",
+      "content": "- **Utility in Genomics**: AI models (ML/DL) analyze vast genomic datasets for species identification, drug resistance mutation detection, and phylogenetic analysis, integrating genomic and clinical data for personalized treatment.\n- **Imaging Analysis**:\n  - A **3D-ResNet model** distinguished NTM from TB on CT scans with an AUC of **0.86** (test set) and **0.78** (external validation).\n  - A radiomics framework achieved an AUC of **0.9** for NTM classification.\n  - Combining a DL model for CT analysis with T-SPOT results improved diagnostic accuracy for NTM-PD vs. PTB to **89.8%**.\n- **Clinical Prediction**: A machine learning model applied to primary care data improved NTM-LD detection **1,000-fold** (AUC **0.94**) by identifying pre-diagnostic features like asthma, COPD, and macrolide use.\n- **Pathology**: AI-supported pathology for AFB detection showed higher sensitivity than bacteriologic diagnosis (**86% vs. 29%**) with **100% specificity**.\n- **Challenges**: Limited availability of large, well-annotated datasets; need for rigorous clinical validation; high computational cost; and ethical/regulatory concerns regarding data privacy.",
+      "section_pearls": [
+        "AI significantly enhances diagnostic accuracy and speed, outperforming physician assessment in some imaging studies, but widespread clinical implementation requires robust validation in diverse settings."
+      ]
+    },
+    {
+      "order": 6,
+      "heading": "Treatment, Prognosis, and Future Directions",
+      "content": "- **Treatment**: Involves multi-drug regimens for prolonged periods (e.g., **12 months** for NTM-PD, continuing after culture conversion). Treatment is challenging due to intrinsic/acquired drug resistance, biofilm formation, and drug side effects.\n- **Prognosis**: Depends on NTM strain (*M. abscessus* has worse **prognosis** than MAC), site/extent of disease (cavitary lesions, extensive lung damage), and host factors (immunosuppression, age >65, comorbidities).\n- **Future Directions**: Focus on rapid, non-culture-based diagnostics (e.g., CRISPR-based blood tests like the **CRISPR MAC assay** with **97.6% sensitivity**), advanced imaging with AI, and harnessing AI for early detection and treatment outcome prediction. MALDI-TOF is highlighted as a rapid protein-fingerprint-based method.",
+      "section_pearls": [
+        "The future of NTM diagnostics lies in accurate, rapid, culture-independent methods, with AI poised to integrate clinical, radiological, and genomic data for personalized management."
+      ]
+    }
+  ],
+  "strengths_limitations": "- **Strengths**: Comprehensive review covering the full spectrum from conventional to advanced genomic and AI-based diagnostics; provides detailed performance metrics (sensitivity, specificity, AUC) for multiple techniques; discusses practical challenges in resource-limited settings.\n- **Limitations**: As a narrative review, it lacks a systematic search methodology and quantitative meta-analysis; the rapidly evolving nature of AI tools means some discussed models may not be fully validated; does not provide original data.",
+  "drugs_doses": [
+    {
+      "drug": "Macrolides",
+      "dose": "Not specified in document",
+      "indication": "Treatment of NTM infections; pre-existing use is a predictor for NTM-LD",
+      "adverse_effects": "Not specified in document"
+    },
+    {
+      "drug": "Amikacin",
+      "dose": "Not specified in document",
+      "indication": "Treatment of NTM infections; resistance detected by MGIT-seq in 1.9% of MAC and M. abscessus isolates",
+      "adverse_effects": "Not specified in document"
+    },
+    {
+      "drug": "Fluoroquinolones (e.g., Moxifloxacin, Ciprofloxacin)",
+      "dose": "Not specified in document",
+      "indication": "Treatment of NTM infections; resistance linked to mutations in *gyrA* gene (e.g., Ala-90 → Val in *M. massiliense*)",
+      "adverse_effects": "Not specified in document"
+    },
+    {
+      "drug": "Penicillin",
+      "dose": "Not specified in document",
+      "indication": "Common pre-existing treatment in patients later diagnosed with NTM-LD",
+      "adverse_effects": "Not specified in document"
+    },
+    {
+      "drug": "Corticosteroids (inhaled)",
+      "dose": "Not specified in document",
+      "indication": "Common pre-existing treatment in patients later diagnosed with NTM-LD; use is a risk factor for mortality",
+      "adverse_effects": "Not specified in document"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2025-10-27",
+  "subtopic": "Infectious Diseases"
+}

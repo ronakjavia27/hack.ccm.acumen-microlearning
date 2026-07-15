@@ -1,0 +1,294 @@
+{
+  "id": "acg-hepatic-encephalopathy-guideline-2026",
+  "doc_type": "guideline",
+  "title": "ACG Clinical Guideline: Hepatic Encephalopathy",
+  "issuing_bodies": [
+    "ACG"
+  ],
+  "year": 2026,
+  "doi": "10.14309/ajg.0000000000003899",
+  "specialty": [
+    "hepatology",
+    "gastroenterology",
+    "neurology"
+  ],
+  "tags": [
+    "hepatic encephalopathy",
+    "cirrhosis",
+    "lactulose",
+    "rifaximin",
+    "covert hepatic encephalopathy",
+    "overt hepatic encephalopathy",
+    "liver transplant",
+    "sarcopenia"
+  ],
+  "one_line_summary": "This ACG guideline presents 24 recommendations for the diagnosis, management, and prevention of hepatic encephalopathy in patients with cirrhosis, emphasizing a multidisciplinary approach and the impact on quality of life.",
+  "key_pearls": [
+    "For MHE/CHE diagnosis, a **single-test strategy** is suggested over a 2-test combination, and **serum ammonia levels alone** should not be used for diagnosis.",
+    "In OHE, **lactulose** is strongly **recommended** to improve outcomes, with **high-volume PEG** as an alternative; adding **rifaximin** to lactulose is suggested for acute OHE.",
+    "After an initial OHE episode, **lactulose titrated to 2–3 soft bowel movements daily** is first-line for prevention; the **Bristol Stool Scale** should guide outpatient titration.",
+    "For patients with OHE on lactulose who experience recurrence, **adding rifaximin** is strongly **recommended**; for persistent symptoms, consider **zinc supplementation** if levels are low.",
+    "A **protein intake target of 1.2–1.5 g/kg/d** is **recommended** for outpatients with HE; **BCAA supplementation** is **recommended** if protein needs cannot be met by food alone.",
+    "**Rifaximin therapy initiated 14 days before elective TIPS** and continued for at least 6 months is **recommended** to decrease the risk of post-TIPS OHE.",
+    "For patients with multiple HE episodes and **MELD score <15**, evaluate candidacy for **living donor liver transplantation**; adding **4–5 MELD points** more accurately reflects **mortality** risk."
+  ],
+  "consensus_method": "GRADE",
+  "search_period": null,
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Covert and Minimal Hepatic Encephalopathy (CHE/MHE)",
+      "narrative": "- CHE is defined by excluding OHE (grade 2 or higher) in the appropriate clinical context due to low reproducibility of clinical diagnosis.\n- Isolated asterixis without alterations in behavior or alertness is not enough to diagnose OHE.\n- Patients with cirrhosis and features like **hypoalbuminemia**, decompensated cirrhosis, clinically **significant** portal hypertension, or nonspecific cognitive complaints should be prioritized for MHE testing.\n- A large proportion of patients with cirrhosis and cognitive complaints could have conditions other than MHE, such as sleep apnea, alcohol-related conditions, or mild cognitive impairment.\n- Cognitive testing for CHE/MHE and subsequent therapy with lactulose or rifaximin may improve health-related quality of life.\n- Several testing options are available: **psychometric hepatic encephalopathy score, Stroop EncephalApp, QuickStroop, animal naming test, inhibitory control test, continuous reaction time, and critical flicker frequency**.\n- A second-line agent (e.g., BCAA/LOLA for sarcopenia/frailty, zinc for low serum levels, l-carnitine for muscle cramps) could be considered for treating MHE/CHE.\n- A theragnostic approach with lactulose should be followed by an evaluation of adherence and symptom improvement **4–8 weeks** after prescription.",
+      "recommendations": [
+        {
+          "rec_id": "1",
+          "statement": "In patients being evaluated for MHE or CHE, we suggest a single-test strategy over a 2-test combination strategy.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "2",
+          "statement": "In patients being evaluated for MHE or CHE, we suggest against using serum ammonia levels alone to make the diagnosis.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "3",
+          "statement": "In patients with MHE/CHE, we suggest treatment with lactulose vs no treatment.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "4",
+          "statement": "There is insufficient evidence to recommend for or against routine treatment of MHE/CHE for prevention of OHE.",
+          "strength": null,
+          "evidence_grade": "insufficient evidence"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Inpatient Management of Overt Hepatic Encephalopathy (OHE)",
+      "narrative": "- Clinical scores (West Haven criteria, Glasgow Coma Scale) identify patients with high-grade HE requiring appropriate triage/transfer to SDU/MICU to prevent complications such as aspiration pneumonia.\n- A thorough evaluation for bleeding, infection, sedating medications, and toxic and metabolic abnormalities is necessary to identify and treat possible precipitating factors.\n- A normal blood ammonia level in patients with altered mental status should prompt consideration of other potential diagnoses in addition to OHE.\n- If a patient does not recover their mental status after **48–72 hours** of adequate HE therapy and precipitating factor reversal, evaluation for alternative causes, unrecognized precipitating factors, or shunts should be considered.",
+      "recommendations": [
+        {
+          "rec_id": "5",
+          "statement": "In patients with HE, we suggest against routine testing of serum ammonia to guide HE treatment decisions.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "6",
+          "statement": "In patients with cirrhosis and confusion without new-onset focal neurologic deficits, we suggest against routine brain imaging.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "7",
+          "statement": "In patients with OHE, we recommend treatment with lactulose to improve patient outcomes and prevent recurrence of OHE episodes.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "8",
+          "statement": "In patients with OHE, we suggest treatment with high-volume (e.g., **4 L**) polyethylene glycol preparations as an alternative option to lactulose therapy.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "9",
+          "statement": "In patients with acute OHE, we suggest adding rifaximin to lactulose therapy vs lactulose therapy alone.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Prevention of HE Recurrence",
+      "narrative": "- Engaging in a multidisciplinary medication reconciliation process at hospital discharge is necessary to ensure appropriate prophylactic therapies and that potentially harmful medications are dose reduced or stopped.\n- Serum ammonia levels should not be used to guide initiation or titration of HE therapies or in the evaluation of HE recurrence in the outpatient setting.\n- A thorough review of medication lists should be performed to identify and minimize therapies that may affect mental status (e.g., opiates, benzodiazepines, gabapentin, pregabalin, zolpidem, proton pump inhibitors).\n- HE therapy may be deescalated and potentially discontinued in a stepwise fashion in patients who clinically recompensate.\n- Oral and written advice to avoid driving should be given to patients and caregivers in patients with recent (<3 months) episodes of OHE.\n- All patients with HE and their caregivers should receive HE-based educational materials (e.g., www.cirrhosiscare.ca).\n- Caregivers should be screened for caregiver burnout and provided necessary support as appropriate.",
+      "recommendations": [
+        {
+          "rec_id": "10",
+          "statement": "After an initial episode of OHE, we recommend lactulose titrated to 2–3 soft bowel movements daily as outpatient first-line therapy for prevention of HE recurrence.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "11",
+          "statement": "In patients treated with lactulose for HE, we suggest using the Bristol Stool Scale along with bowel movement frequency for the outpatient titration of lactulose to reduce readmissions.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "12",
+          "statement": "In patients with cirrhosis and OHE, we suggest rifaximin therapy in the outpatient setting to prevent HE recurrence.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "13",
+          "statement": "In patients with OHE on lactulose maintenance therapy who experience recurrent episodes of HE, we recommend addition of rifaximin treatment.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "14",
+          "statement": "In patients with OHE and persistent symptoms despite lactulose and rifaximin therapy, we suggest the addition of zinc supplementation in those with low blood zinc levels.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "15",
+          "statement": "We suggest implementing health information technology interventions, such as the Patient Buddy App or electronic clinical reminders, when feasible, to optimize HE management.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "16",
+          "statement": "We suggest shunt embolization in patients with refractory HE on optimized medical therapy who have adequate hepatic function and no contraindications.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Sarcopenia and Nutrition",
+      "narrative": "- All patients with HE (including MHE/CHE) should be evaluated for impaired muscle health/physical fitness using available tools (e.g., sarcopenia/myosteatosis, skeletal muscle strength, physical function, frailty, or cardiorespiratory fitness).\n- Patients with impaired muscle health/physical fitness or myosteatosis have an increased risk for HE.\n- **Critically** ill patients with HE should receive up to **2 g/kg/d** protein intake.\n- Although sarcopenia is not an indication or contraindication for TIPS, it could be associated with increased post-TIPS HE and **mortality**.\n- Increases in ammonia levels after anaerobiosis have not been associated with an elevated risk for HE and should not discourage clinicians from prescribing exercise.\n- Patients with any form of HE may experience an increased risk of exercise-induced injury; supervision by exercise professionals or caregivers is key to prevent adverse events.",
+      "recommendations": [
+        {
+          "rec_id": "17",
+          "statement": "We recommend a protein intake target of 1.2–**1.5 g**/kg/d in outpatients with HE.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "18",
+          "statement": "We recommend BCAA supplementation in individuals with HE if protein needs cannot be met by food alone.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "19",
+          "statement": "We suggest a late-night snack for patients with cirrhosis to reduce frailty and HE.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "20",
+          "statement": "We suggest against protein restriction in patients with HE because it increases muscle breakdown and does not reduce the duration of HE.",
+          "strength": "conditional",
+          "evidence_grade": "very low"
+        },
+        {
+          "rec_id": "21",
+          "statement": "We suggest exercise interventions in patients with HE to reduce the risk for falls, lower portal pressure, and increase the capacity of skeletal muscle for ammonia metabolism.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "HE in the Context of TIPS",
+      "narrative": "- Post-TIPS HE occurs in 30%–40% of patients and is associated with poor HRQoL and **prognosis**.\n- Factors influencing post-TIPS HE include increased age, worse liver function, hyponatremia, pre-TIPS SPSSs, HE history, larger stent diameter, and sarcopenia.\n- Embolization of extrahepatic collaterals may decrease post-TIPS HE.",
+      "recommendations": [
+        {
+          "rec_id": "22",
+          "statement": "We recommend initiating rifaximin therapy 14 days before elective TIPS insertion and continuing for at least 6 months in patients with decompensated cirrhosis with or without a prior episode of OHE to decrease the risk of recurrent or de novo OHE.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "23",
+          "statement": "We suggest embolizing extrahepatic collaterals at the time of TIPS to reduce post-TIPS HE.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Liver Transplant and HE",
+      "narrative": "- Adding **4–5 MELD points** regardless of the MELD score iteration used more accurately reflects the 90-day **mortality** of inpatient OHE and outpatient CHE.\n- Multiple HE episodes lead to persistent cognitive impairment which may not recover after LT; early LT could have additional benefits to improve brain function.\n- Early evaluation for liver transplantation should be considered in patients with high MELD3.0 scores, severe HE (grades III–IV), or frequent HE episodes.\n- Persistent confusion in an inpatient setting is a relative contraindication to transplant.",
+      "recommendations": [
+        {
+          "rec_id": "24",
+          "statement": "For patients with multiple HE episodes and MELD score <15, we suggest evaluating candidacy for living donor liver transplantation.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Initial Evaluation of Altered Mental Status in Cirrhosis",
+      "action": "Grade severity using West Haven criteria or Glasgow Coma Scale. Triage to SDU/MICU for high-grade HE (grade III-IV) to prevent aspiration. Determine if HE is the cause vs. other conditions."
+    },
+    {
+      "step": 2,
+      "title": "Identify and Treat Precipitating Factors",
+      "action": "Perform thorough evaluation for infection (culture blood, ascites, urine), GI bleeding, electrolyte disorders (hyponatremia), dehydration, and sedating medications. Treat identified precipitants."
+    },
+    {
+      "step": 3,
+      "title": "Initiate First-Line Therapy for OHE",
+      "action": "Administer lactulose 10–**20 g** (15–**30 mL**) PO/NGT every 2 hours until 2 soft bowel movements, then titrate to 2–3 BMs daily. For grade III-IV HE unable to swallow, use NGT or lactulose enema (**200 g** in **700 mL** water/saline, retain 30–**60 min**, repeat every 4–6 hours)."
+    },
+    {
+      "step": 4,
+      "title": "Consider Add-on Therapy",
+      "action": "Add rifaximin to lactulose for acute OHE. Consider high-volume PEG (e.g., **4 L**) as an alternative to lactulose. Do not routinely check serum ammonia to guide therapy."
+    },
+    {
+      "step": 5,
+      "title": "Re-evaluate Non-Responders at 48–72 Hours",
+      "action": "If no mental status improvement after 48–72 hours of adequate therapy and precipitant reversal, investigate alternative causes, unrecognized precipitants, or portosystemic shunts with cross-sectional imaging."
+    },
+    {
+      "step": 6,
+      "title": "Discharge Planning",
+      "action": "Perform multidisciplinary medication reconciliation. Prescribe lactulose titrated to 2–3 soft BMs daily for secondary prophylaxis. Add rifaximin if recurrent episodes. Provide HE education and driving avoidance advice if recent OHE (<3 months)."
+    }
+  ],
+  "strengths_limitations": "- Strengths: Utilizes the rigorous GRADE methodology for evidence assessment; provides comprehensive, multidisciplinary recommendations covering the full spectrum of HE from diagnosis to transplant; includes practical bedside protocols and key concepts for clinical application.\n- Limitations: Many recommendations are based on low or very low certainty of evidence, reflecting gaps in high-quality RCTs; the guideline does not fully resolve the challenge of incorporating HE into liver transplant allocation models; some emerging therapies (e.g., FMT) are confined to clinical trials.",
+  "drugs_doses": [
+    {
+      "drug": "lactulose",
+      "dose": "10–20 g (15–30 mL) PO/NGT every 2 hours until 2 soft BMs, then 2–4 times/day to maintain 2–3 BMs daily; enema: 200 g in 700 mL water/saline, retain 30–60 min, repeat every 4–6 hours",
+      "indication": "Treatment of acute OHE; prevention of HE recurrence (titrated to 2–3 soft BMs daily)",
+      "adverse_effects": "Perianal skin irritation, ileus, aspiration, dehydration, hypernatremia, hypokalemia; overuse can precipitate HE recurrence"
+    },
+    {
+      "drug": "rifaximin",
+      "dose": "550 mg PO twice daily",
+      "indication": "Add-on therapy for acute OHE; prevention of HE recurrence (especially in patients with breakthrough episodes on lactulose); prophylaxis before elective TIPS (initiate 14 days prior, continue for at least 6 months)",
+      "adverse_effects": "Generally safe and well-tolerated; high cost and third-payer approval challenges"
+    },
+    {
+      "drug": "polyethylene glycol 3350-electrolyte solution (PEG3350)",
+      "dose": "High-volume (e.g., 4 L) PO or via NGT",
+      "indication": "Alternative to lactulose for treatment of OHE, especially in patients with abdominal discomfort, gas distension, or ileus from lactulose",
+      "adverse_effects": "Not specified in detail; related to catharsis"
+    },
+    {
+      "drug": "zinc",
+      "dose": "Not specified (supplementation dosing)",
+      "indication": "Adjunctive therapy for persistent HE symptoms despite lactulose and rifaximin in patients with low blood zinc levels",
+      "adverse_effects": "Generally safe as adjunctive therapy"
+    },
+    {
+      "drug": "branched-chain amino acids (BCAAs)",
+      "dose": "Not specified (supplementation to meet protein needs)",
+      "indication": "Supplementation in individuals with HE if protein needs (1.2–1.5 g/kg/d) cannot be met by food alone",
+      "adverse_effects": "Not specified; long-term supplementation not necessary if needs met by food"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2025-07-29",
+  "article_subtype": "Guideline",
+  "subtopic": "Hepatology"
+}
