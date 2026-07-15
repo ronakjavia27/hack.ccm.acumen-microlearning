@@ -607,7 +607,7 @@ async def render_dashboard(request: Request):
   .trial-card{{ border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-elev); padding:14px 16px; cursor:pointer; transition:border-color .2s; margin-bottom:8px; }}
   .trial-card:hover{{ border-color:var(--accent); }}
   .trial-card h4{{ font-size:.95rem; margin:0 0 4px; }}
-  .trial-card .one-liner{{ color:var(--ink-muted); font-size:.84rem; margin:0 0 8px; }}
+  .trial-card .one-liner{{ color:var(--ink-muted); font-size:.84rem; margin:0 0 8px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }}
   .trial-card .meta-row{{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; font-size:.75rem; }}
 
   .trial-result-negneu{{ color:#A855F7; border-color:#A855F7; }}
@@ -1489,7 +1489,7 @@ function openReader(entry, kind){{
               if(rec.evidence_grade) stat = stat + (stat ? ' ' : '') + rec.evidence_grade;
               var label = rec.statement ? rec.statement : '';
               if(rec.rec_id) label = '['+rec.rec_id+'] '+label;
-              evidenceHTML += '<div class="evidence-row"><div class="evidence-statement">'+escapeHtml(label)+'</div>'+(stat?'<div class="evidence-stat">'+escapeHtml(stat)+'</div>':'')+'</div>';
+              evidenceHTML += '<div class="evidence-row"><div class="evidence-statement">'+marked.parse(label)+'</div>'+(stat?'<div class="evidence-stat">'+escapeHtml(stat)+'</div>':'')+'</div>';
             }});
           }}
         }});
@@ -1654,7 +1654,7 @@ function renderTrialCard(t, idx){{
   else if(resClass.indexOf('neg')>=0) resColor = 'neg';
   return '<div class="trial-card" data-open-trial="'+t.slug+'" data-idx="'+idx+'" role="button" tabindex="0">'+
     '<h4>'+escapeHtml(t.trial_name)+'</h4>'+
-    '<p class="one-liner">'+escapeHtml((t.one_liner||'').substring(0,200))+'</p>'+
+    '<p class="one-liner">'+escapeHtml(t.one_liner||'')+'</p>'+
     '<div class="meta-row">'+
       '<span class="badge">'+escapeHtml(t.trial_type||'')+'</span>'+
       '<span class="result-badge '+resColor+'">'+escapeHtml(t.result_category||'')+'</span>'+
