@@ -49,6 +49,12 @@ header.topbar{grid-column:1/-1;display:flex;flex-direction:column;background:var
 .btn-ghost:hover{background:var(--bg-hover);color:var(--text-primary)}
 .btn-sm{padding:5px 10px;font-size:11.5px}
 .btn:disabled{opacity:.4;cursor:not-allowed}
+.fc-reader-container{background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:16px;max-width:900px}
+.fc-subtopic-label{font-family:var(--mono);font-size:11px;color:var(--phosphor);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
+.fc-card-content{font-size:14px;line-height:1.7;white-space:pre-wrap}
+.fc-card-content strong{color:var(--text-primary);font-weight:600}
+.fc-card-content p{margin:6px 0}
+.section-actions{display:flex;align-items:center;gap:8px}
 .ecg-wrap{height:22px;width:100%;overflow:hidden;background:var(--bg-void);border-bottom:1px solid var(--line)}
 .ecg-wrap svg{display:block}
 .ecg-path{fill:none;stroke:var(--text-faint);stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1400;stroke-dashoffset:1400;animation:draw 2.4s ease-out forwards}
@@ -190,6 +196,7 @@ td.check-col,th.check-col{width:30px}
   <div class="nav-item" onclick="switchSection('summaries')"><span>Summaries</span><span class="nav-count" id="countSummaries">0</span></div>
   <div class="nav-item" onclick="switchSection('pearls')"><span>Pearls</span><span class="nav-count" id="countPearls">0</span></div>
   <div class="nav-item" onclick="switchSection('theory')"><span>Theory</span><span class="nav-count" id="countTheory">0</span></div>
+  <div class="nav-item" onclick="switchSection('flashcards')"><span>Flashcards</span><span class="nav-count" id="countFlashcards">0</span></div>
   <div class="nav-section-label">System</div>
   <div class="nav-item" onclick="switchSection('backups')"><span>Backups</span></div>
   <div class="nav-item" onclick="switchSection('audit')"><span>Audit log</span></div>
@@ -257,6 +264,53 @@ td.check-col,th.check-col{width:30px}
   </div>
   <table><thead><tr><th>Title</th><th>Specialty</th><th>Sections</th><th>Status</th></tr></thead><tbody id="theoryTableBody"></tbody></table>
   <div class="empty-state" id="theoryEmpty" style="display:none">No documents match this filter.</div>
+</section>
+<!-- FLASHCARDS -->
+<section class="section" id="section-flashcards">
+  <div class="section-head">
+    <div>
+      <div class="section-title">Flashcards</div>
+      <div class="section-sub">Study cards generated from theory notes</div>
+    </div>
+    <div class="section-actions" id="flashcardActions" style="display:none">
+      <button class="btn btn-sm" onclick="flashcardReaderPrev()" id="fcPrev" disabled>&larr; Prev</button>
+      <span class="result-count" id="fcProgress">0 / 0</span>
+      <button class="btn btn-sm" onclick="flashcardReaderNext()" id="fcNext">Next &rarr;</button>
+      <span class="filter-spacer"></span>
+      <button class="btn btn-sm btn-primary" onclick="flashcardPreserve()">&#10003; Preserve</button>
+      <button class="btn btn-sm" onclick="flashcardDiscard()" style="color:var(--text-muted)">&#10005; Discard</button>
+      <button class="btn btn-sm" onclick="flashcardEdit()">Edit</button>
+      <button class="btn btn-sm btn-ghost" onclick="flashcardExitReader()">Exit reader</button>
+    </div>
+  </div>
+  <!-- Deck list view (default) -->
+  <div id="fcDeckView">
+    <div class="filter-bar">
+      <input type="text" id="fcSearch" placeholder="Search title, id…">
+      <select id="fcSpecialtyFilter"><option value="">All specialties</option></select>
+      <select id="fcStatusFilter"><option value="">All statuses</option><option value="pending">Pending</option><option value="preserved">Preserved</option><option value="discarded">Discarded</option></select>
+      <select id="fcCardFilter"><option value="">All cards</option><option value="pending">Pending</option><option value="preserved">Preserved</option><option value="discarded">Discarded</option></select>
+      <div class="filter-spacer"></div>
+      <span class="result-count" id="fcResultCount"></span>
+    </div>
+    <table><thead><tr><th>Title</th><th>Specialty</th><th>Cards</th><th>Preserved</th><th>Status</th></tr></thead><tbody id="fcTableBody"></tbody></table>
+    <div class="empty-state" id="fcEmpty" style="display:none">No flashcards match this filter.</div>
+  </div>
+  <!-- Card reader view (hidden until deck clicked) -->
+  <div id="fcReaderView" style="display:none">
+    <div class="fc-reader-container">
+      <div class="fc-subtopic-label" id="fcSubtopic"></div>
+      <div class="fc-card-content" id="fcCardContent"></div>
+    </div>
+    <div class="fc-edit-area" id="fcEditArea" style="display:none">
+      <div style="font-weight:600;font-size:13px;margin-bottom:8px">Edit this card</div>
+      <textarea id="fcEditInput" rows="4" placeholder="Describe what change you want (e.g., 'Add dosing details for norepinephrine', 'Fix the SCAI stage thresholds')" style="width:100%;background:var(--bg-void);border:1px solid var(--line);color:var(--text-primary);padding:8px;border-radius:var(--radius);font-size:13px;resize:vertical"></textarea>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button class="btn btn-primary btn-sm" onclick="flashcardSubmitEdit()">Submit edit to LLM</button>
+        <button class="btn btn-sm" onclick="flashcardCancelEdit()">Cancel</button>
+      </div>
+    </div>
+  </div>
 </section>
 <!-- BACKUPS -->
 <section class="section" id="section-backups">
@@ -345,7 +399,7 @@ const state = {
   section: 'overview',
   edits: {},  // key `${kind}:${id}` -> partial field overrides already sent to backend (for showing "modified" badge)
   dirtyPaths: {}, // key `${kind}:${id}` -> array of git paths to push
-  cache: { summaries: [], pearls: [], theory: [] },
+  cache: { summaries: [], pearls: [], theory: [], flashcards: [] },
   subtopics: {},
   selected: { summaries: new Set(), pearls: new Set() },
   drawer: { open: false, kind: null, id: null },
@@ -353,8 +407,11 @@ const state = {
     summaries: { q: '', system: '', status: '' },
     pearls: { q: '', system: '', type: '', status: '' },
     theory: { q: '' },
+    flashcards: { q: '', specialty: '', status: '', cardFilter: '' },
   },
   pushJobs: {},
+  // Flashcard reader state
+  fc: { deck: null, cardIndex: 0, editing: false },
 };
 
 // ---- utilities ----
@@ -399,12 +456,13 @@ const apiDelete = (p) => api('DELETE', p);
 
 async function loadData(){
   try {
-    const [summaries, pearls, theory, subtopics] = await Promise.all([
-      apiGet('/summaries'), apiGet('/pearls'), apiGet('/theory'), apiGet('/subtopics'),
+    const [summaries, pearls, theory, flashcards, subtopics] = await Promise.all([
+      apiGet('/summaries'), apiGet('/pearls'), apiGet('/theory'), apiGet('/flashcards'), apiGet('/subtopics'),
     ]);
     state.cache.summaries = summaries;
     state.cache.pearls = pearls;
     state.cache.theory = theory;
+    state.cache.flashcards = flashcards;
     state.subtopics = subtopics;
   } catch (e) {
     toast('Load failed: ' + e.message, true);
@@ -418,6 +476,7 @@ async function reloadSection(){
     else if (state.section === 'summaries') state.cache.summaries = await apiGet('/summaries');
     else if (state.section === 'pearls') state.cache.pearls = await apiGet('/pearls');
     else if (state.section === 'theory') state.cache.theory = await apiGet('/theory');
+    else if (state.section === 'flashcards') state.cache.flashcards = await apiGet('/flashcards');
   } catch (e) {
     toast('Reload failed: ' + e.message, true);
     console.error('reloadSection error:', e);
@@ -473,6 +532,15 @@ function populateTheorySpecialtyFilter(){
   }));
 });
 $('theorySearch').addEventListener('input', ()=>{ state.filters.theory.q = $('theorySearch').value; renderTheory(); });
+$('fcSearch').addEventListener('input', ()=>{ state.filters.flashcards.q = $('fcSearch').value; renderFlashcards(); });
+['fcSpecialtyFilter','fcStatusFilter','fcCardFilter'].forEach(id => {
+  ['change','input'].forEach(evt => $(id).addEventListener(evt, ()=>{
+    state.filters.flashcards.specialty = $('fcSpecialtyFilter').value;
+    state.filters.flashcards.status = $('fcStatusFilter').value;
+    state.filters.flashcards.cardFilter = $('fcCardFilter').value;
+    renderFlashcards();
+  }));
+});
 ['theorySpecialtyFilter','theoryStatusFilter'].forEach(id => {
   ['change','input'].forEach(evt => $(id).addEventListener(evt, ()=>{
     state.filters.theory.specialty = $('theorySpecialtyFilter').value;
@@ -489,12 +557,14 @@ $('globalSearch').addEventListener('input', async ()=>{
   const sums = state.cache.summaries.filter(s=>(s.title+' '+s.doi+' '+s.id).toLowerCase().includes(q)).slice(0,5);
   const pearls = state.cache.pearls.filter(p=>(p.pearl+' '+p.doi+' '+p.id).toLowerCase().includes(q)).slice(0,5);
   const theory = state.cache.theory.filter(t=>(t.title+' '+t.id).toLowerCase().includes(q)).slice(0,3);
+  const fc = state.cache.flashcards.filter(d=>(d.title+' '+d.id).toLowerCase().includes(q)).slice(0,3);
   const hits = [...sums.map(s=>({kind:'summaries',id:s.id,title:s.title,meta:s.system})),
     ...pearls.map(p=>({kind:'pearls',id:p.id,title:trunc(p.pearl,80),meta:p.system})),
-    ...theory.map(t=>({kind:'theory',id:t.id,title:t.title,meta:t.specialty||''}))];
+    ...theory.map(t=>({kind:'theory',id:t.id,title:t.title,meta:t.specialty||''})),
+    ...fc.map(d=>({kind:'flashcards',id:d.id,title:d.title,meta:d.specialty||''}))];
   r.innerHTML = hits.length ? hits.map(h=>`<div class="search-result-item" data-kind="${h.kind}" data-id="${h.id}"><span class="search-result-kind">${h.kind.slice(0,-1)}</span><span class="search-result-title">${esc(h.title)}</span><span class="search-result-meta">${esc(h.meta||'')}</span></div>`).join('') : '<div class="search-result-item"><span class="search-result-meta">No matches.</span></div>';
   r.classList.add('show');
-  r.querySelectorAll('[data-kind]').forEach(el=>el.addEventListener('click',()=>{switchSection(el.dataset.kind);openDrawer(el.dataset.kind,el.dataset.id);r.classList.remove('show');$('globalSearch').value=''}));
+  r.querySelectorAll('[data-kind]').forEach(el=>el.addEventListener('click',()=>{const k=el.dataset.kind;switchSection(k);if(k==='flashcards'){openFlashcardReader(el.dataset.id)}else{openDrawer(k,el.dataset.id)};r.classList.remove('show');$('globalSearch').value=''}));
 });
 document.addEventListener('click',e=>{if(!e.target.closest('.search-global'))$('searchResults').classList.remove('show')});
 
@@ -503,7 +573,9 @@ function renderOverview(){
   const s = state.cache.summaries;
   const p = state.cache.pearls;
   const t = state.cache.theory;
-  $('overviewSub').textContent = `${s.length} summaries · ${p.length} pearls · ${t.length} theory docs`;
+  const f = state.cache.flashcards;
+  const fcTotal = f.reduce((acc, d) => acc + (d.card_count||0), 0);
+  $('overviewSub').textContent = `${s.length} summaries · ${p.length} pearls · ${t.length} theory · ${f.length} flashcard decks (${fcTotal} cards)`;
   const pub = s.filter(x=>x.show_on_web==='Yes').length;
   const hidd = s.length - pub;
   const cards = [
@@ -512,12 +584,14 @@ function renderOverview(){
     {label:'Hidden', val:hidd, cls:'red'},
     {label:'Pearls', val:p.length, cls:''},
     {label:'Theory docs', val:t.length, cls:''},
+    {label:'Flashcard decks', val:f.length, cls:''},
     {label:'Unsaved edits', val:dirtyCount(), cls:dirtyCount()?'amber':''},
   ];
   $('overviewStats').innerHTML = cards.map(c=>`<div class="stat-card"><div class="stat-num ${c.cls}">${c.val}</div><div class="stat-label">${c.label}</div></div>`).join('');
   $('countSummaries').textContent = s.length;
   $('countPearls').textContent = p.length;
   $('countTheory').textContent = t.length;
+  $('countFlashcards').textContent = f.length;
 }
 
 // ---- summaries ----
@@ -601,6 +675,149 @@ function renderTheory(){
     tr.addEventListener('click',()=>openDrawer('theory',t.id));
     tbody.appendChild(tr);
   });
+}
+// ---- flashcards ----
+function filteredFlashcards(){
+  const f = state.filters.flashcards;
+  return state.cache.flashcards.filter(d=>{
+    if (f.specialty && d.specialty!==f.specialty) return false;
+    if (f.status && d.status!==f.status) return false;
+    if (f.cardFilter) {
+      if (f.cardFilter==='pending' && d.pending_count===0) return false;
+      if (f.cardFilter==='preserved' && d.preserved_count===0) return false;
+      if (f.cardFilter==='discarded' && d.discarded_count===0) return false;
+    }
+    if (f.q){const hay=[d.title,d.id,d.specialty].join(' ').toLowerCase(); if(!hay.includes(f.q)) return false}
+    return true;
+  });
+}
+function populateFcSpecialtyFilter(){
+  const sel = $('fcSpecialtyFilter');
+  const current = sel.value;
+  sel.innerHTML = '<option value="">All specialties</option>';
+  const specs = [...new Set((state.cache.flashcards||[]).map(d=>d.specialty).filter(Boolean))].sort();
+  specs.forEach(v=>{const o=document.createElement('option');o.value=v;o.textContent=v;sel.appendChild(o)});
+  sel.value = current;
+}
+function renderFlashcards(){
+  // If reader is active, just update reader display
+  if (state.fc.deck) { renderFlashcardReader(); return; }
+  const rows = filteredFlashcards();
+  $('fcResultCount').textContent = rows.length + ' of ' + state.cache.flashcards.length;
+  $('fcEmpty').style.display = rows.length?'none':'block';
+  $('fcDeckView').style.display = 'block';
+  $('fcReaderView').style.display = 'none';
+  $('flashcardActions').style.display = 'none';
+  const tbody = $('fcTableBody'); tbody.innerHTML = '';
+  rows.forEach(d=>{
+    const tr = document.createElement('tr');
+    const total = d.card_count || 0;
+    const preserved = d.preserved_count || 0;
+    tr.innerHTML = `<td class="row-title">${esc(d.title)}</td><td class="row-sub">${esc(d.specialty||'—')}</td><td class="row-sub">${total}</td><td class="row-sub" style="color:var(--phosphor)">${preserved}/${total}</td><td>${pillHtml(d.status||'pending')}</td>`;
+    tr.addEventListener('click',()=>openFlashcardReader(d.id));
+    tbody.appendChild(tr);
+  });
+}
+// ---- flashcard reader ----
+async function openFlashcardReader(deckId){
+  try {
+    const deck = await apiGet('/flashcards/'+deckId);
+    state.fc.deck = deck;
+    state.fc.cardIndex = 0;
+    state.fc.editing = false;
+    $('fcDeckView').style.display = 'none';
+    $('fcReaderView').style.display = 'block';
+    $('flashcardActions').style.display = 'flex';
+    $('fcEditArea').style.display = 'none';
+    renderFlashcardReader();
+  } catch (e) { toast(e.message, true); }
+}
+function flashcardExitReader(){
+  state.fc.deck = null;
+  state.fc.cardIndex = 0;
+  state.fc.editing = false;
+  $('fcDeckView').style.display = 'block';
+  $('fcReaderView').style.display = 'none';
+  $('flashcardActions').style.display = 'none';
+  renderFlashcards();
+}
+function renderFlashcardReader(){
+  const deck = state.fc.deck;
+  if (!deck) return;
+  const cards = deck.cards || [];
+  const idx = state.fc.cardIndex;
+  if (idx >= cards.length || idx < 0) { state.fc.cardIndex = 0; return; }
+  const card = cards[idx];
+  $('fcPrev').disabled = idx === 0;
+  $('fcNext').disabled = idx >= cards.length - 1;
+  const preserved = cards.filter(c=>c.status==='preserved').length;
+  const discarded = cards.filter(c=>c.status==='discarded').length;
+  $('fcProgress').textContent = (idx+1) + ' / ' + cards.length + '  (' + preserved + ' preserved, ' + discarded + ' discarded)';
+  $('fcSubtopic').textContent = card.subtopic || 'Card ' + (idx+1);
+  $('fcCardContent').textContent = card.content || '';
+  if (state.fc.editing) {
+    $('fcEditArea').style.display = 'block';
+  }
+}
+function flashcardReaderPrev(){
+  if (state.fc.cardIndex > 0) { state.fc.cardIndex--; state.fc.editing = false; renderFlashcardReader(); }
+}
+function flashcardReaderNext(){
+  const cards = state.fc.deck.cards || [];
+  if (state.fc.cardIndex < cards.length - 1) { state.fc.cardIndex++; state.fc.editing = false; renderFlashcardReader(); }
+}
+async function flashcardPreserve(){
+  const deck = state.fc.deck;
+  const card = (deck.cards||[])[state.fc.cardIndex];
+  if (!card) return;
+  try {
+    await apiPut('/flashcards/'+deck.id, {action:'preserve', card_id:card.id});
+    card.status = 'preserved';
+    toast('Card preserved.');
+    renderFlashcardReader();
+  } catch (e) { toast(e.message, true); }
+}
+async function flashcardDiscard(){
+  const deck = state.fc.deck;
+  const card = (deck.cards||[])[state.fc.cardIndex];
+  if (!card) return;
+  try {
+    await apiPut('/flashcards/'+deck.id, {action:'discard', card_id:card.id});
+    card.status = 'discarded';
+    toast('Card discarded.');
+    renderFlashcardReader();
+  } catch (e) { toast(e.message, true); }
+}
+function flashcardEdit(){
+  state.fc.editing = true;
+  $('fcEditInput').value = '';
+  $('fcEditArea').style.display = 'block';
+  $('fcEditInput').focus();
+}
+function flashcardCancelEdit(){
+  state.fc.editing = false;
+  $('fcEditArea').style.display = 'none';
+}
+async function flashcardSubmitEdit(){
+  const deck = state.fc.deck;
+  const card = (deck.cards||[])[state.fc.cardIndex];
+  const comment = $('fcEditInput').value.trim();
+  if (!card || !comment) { toast('Enter an edit description.', true); return; }
+  try {
+    $('fcEditInput').disabled = true;
+    const result = await apiPost('/flashcards/'+deck.id+'/regenerate-card', {card_id: card.id, edit_comment: comment});
+    if (result.updated && result.card) {
+      card.subtopic = result.card.subtopic;
+      card.content = result.card.content;
+      toast('Card updated via LLM.');
+      state.fc.editing = false;
+      $('fcEditArea').style.display = 'none';
+      renderFlashcardReader();
+    } else {
+      toast('Edit failed — LLM did not return a revision.', true);
+    }
+  } catch (e) { toast(e.message, true); }
+  finally { $('fcEditInput').disabled = false; }
 }
 // ---- bulk selection ----
 function wireSelectAll(kind){
@@ -1115,9 +1332,11 @@ async function findFailed(){
 function render(){
   renderOverview();
   populateTheorySpecialtyFilter();
+  populateFcSpecialtyFilter();
   renderSummaries();
   renderPearls();
   renderTheory();
+  renderFlashcards();
   updateBulk('summaries');
   updateBulk('pearls');
 }

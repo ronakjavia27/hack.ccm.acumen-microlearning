@@ -446,6 +446,163 @@ Output ONLY valid JSON. No preamble, no markdown fences, no commentary."""
 # =====================================================================
 # CHUNKING & MERGE
 # =====================================================================
+# =====================================================================
+# OPENROUTER / FLASHCARD EXECUTION
+# =====================================================================
+
+def _get_openrouter_client():
+    """Get OpenRouter OpenAI-compatible client."""
+    from acumen_core.config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL
+    if not OPENROUTER_API_KEY:
+        return None
+    try:
+        from openai import OpenAI
+        return OpenAI(api_key=OPENROUTER_API_KEY, base_url=OPENROUTER_BASE_URL)
+    except Exception:
+        return None
+
+
+def call_openrouter_api(client, model, system_prompt, user_content, temperature=0.2, max_tokens=8192, json_mode=True):
+    """
+    Call OpenRouter (OpenAI-compatible). Returns parsed dict (json_mode=True) or raw text.
+    """
+    messages = [
+        {"role": "system", "content": system_prompt},
+        {"role": "user", "content": user_content},
+    ]
+
+    kwargs = {
+        "model": model,
+        "messages": messages,
+        "temperature": temperature,
+        "max_tokens": max_tokens,
+    }
+    if json_mode:
+        kwargs["response_format"] = {"type": "json_object"}
+
+    response = client.chat.completions.create(**kwargs)
+    raw = response.choices[0].message.content
+    if raw is None or raw.strip() == "":
+        raise ValueError("Empty response from model")
+
+    raw = raw.strip()
+    raw = re.sub(r'^```(?:json)?\s*\n?', '', raw)
+    raw = re.sub(r'\n?\s*```$', '', raw)
+
+    if json_mode:
+        return json.loads(raw)
+    return raw
+
+
+def execute_with_openrouter(
+    system_prompt,
+    user_content,
+    max_retries=None,
+    retry_delay=None,
+):
+    """
+    Execute via OpenRouter with retries.
+    Returns parsed JSON dict.
+    """
+    from acumen_core.config import (
+        OPENROUTER_MODEL,
+        TEMPERATURE_FLASHCARDS,
+        MAX_TOKENS_FLASHCARDS,
+        MAX_RETRIES,
+        RETRY_DELAY,
+    )
+    max_retries = max_retries or MAX_RETRIES
+    retry_delay = retry_delay or RETRY_DELAY
+    last_error = None
+
+    client = _get_openrouter_client()
+    if not client:
+        raise RuntimeError("OpenRouter client not available (check OPENROUTER_API_KEY)")
+
+    model = OPENROUTER_MODEL
+    for attempt in range(max_retries):
+        try:
+            print(f"    OpenRouter: {model} (attempt {attempt + 1}/{max_retries})")
+            return call_openrouter_api(
+                client, model, system_prompt, user_content,
+                temperature=TEMPERATURE_FLASHCARDS,
+                max_tokens=MAX_TOKENS_FLASHCARDS,
+            )
+        except json.JSONDecodeError as e:
+            last_error = e
+            print(f"    [X] JSON parse error: {e}")
+            break
+        except Exception as e:
+            last_error = e
+            if _is_retryable(e) and attempt < max_retries - 1:
+                wait = retry_delay * (attempt + 1)
+                print(f"    [!] {e}")
+                print(f"    Retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"    [X] OpenRouter failed: {e}")
+                break
+
+    raise last_error or RuntimeError("OpenRouter exhausted")
+
+
+def execute_with_openrouter_text(
+    system_prompt,
+    user_content,
+    max_retries=None,
+    retry_delay=None,
+):
+    """
+    Execute via OpenRouter with TEXT output (no JSON mode).
+    Returns raw text string.
+    """
+    from acumen_core.config import (
+        OPENROUTER_MODEL,
+        TEMPERATURE_FLASHCARDS,
+        MAX_TOKENS_FLASHCARDS,
+        MAX_RETRIES,
+        RETRY_DELAY,
+    )
+    max_retries = max_retries or MAX_RETRIES
+    retry_delay = retry_delay or RETRY_DELAY
+    last_error = None
+
+    client = _get_openrouter_client()
+    if not client:
+        raise RuntimeError("OpenRouter client not available (check OPENROUTER_API_KEY)")
+
+    model = OPENROUTER_MODEL
+    for attempt in range(max_retries):
+        try:
+            print(f"    OpenRouter Text: {model} (attempt {attempt + 1}/{max_retries})")
+            messages = [
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_content},
+            ]
+            response = client.chat.completions.create(
+                model=model,
+                messages=messages,
+                temperature=TEMPERATURE_FLASHCARDS,
+                max_tokens=MAX_TOKENS_FLASHCARDS,
+            )
+            raw = response.choices[0].message.content
+            if raw is None or raw.strip() == "":
+                raise ValueError("Empty response from model")
+            return raw.strip()
+        except Exception as e:
+            last_error = e
+            if _is_retryable(e) and attempt < max_retries - 1:
+                wait = retry_delay * (attempt + 1)
+                print(f"    [!] {e}")
+                print(f"    Retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"    [X] OpenRouter Text failed: {e}")
+                break
+
+    raise last_error or RuntimeError("OpenRouter text exhausted")
+
+
 def chunk_text(text, chunk_size=None, overlap=None):
     """Split text at paragraph boundaries. Each chunk <= chunk_size with overlap."""
     chunk_size = chunk_size or CHUNK_SIZE

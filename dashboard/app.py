@@ -165,6 +165,48 @@ async def api_backup_verify(name: str):
     return backup_mod.verify_backup(name)
 
 
+@router.post("/api/flashcards/{item_id}/regenerate-card")
+async def api_flashcard_regenerate(item_id: str, body: Dict[str, Any]):
+    """Regenerate a single flashcard card with an edit comment."""
+    _ensure_bootstrap()
+    try:
+        spec = get_spec("flashcards")
+        deck = spec.get_fn(item_id)
+    except ItemNotFound:
+        raise HTTPException(404, f"flashcards/{item_id} not found")
+    card_id = body.get("card_id", "")
+    edit_comment = body.get("edit_comment", "")
+    if not card_id or not edit_comment:
+        raise HTTPException(400, "card_id and edit_comment required")
+    source = Path(deck["_source"])
+
+    # Use the deck from get_item (cards already have IDs assigned)
+    from datetime import datetime
+    found = False
+    for card in deck.get("cards", []):
+        if card.get("id") == card_id:
+            from .modules.flashcards import _regenerate_card
+            revised = _regenerate_card(card, edit_comment)
+            if revised:
+                card["subtopic"] = revised.get("subtopic", card["subtopic"])
+                card["content"] = revised.get("content", card["content"])
+                history = deck.setdefault("edit_history", [])
+                history.append({
+                    "card_id": card_id,
+                    "edit_comment": edit_comment,
+                    "timestamp": datetime.now().isoformat(),
+                })
+                deck["updated_at"] = datetime.now().isoformat()
+                from ..storage import write_json_atomic
+                write_json_atomic(source, deck)
+                found = True
+                return {"updated": True, "card": card}
+            break
+    if not found:
+        raise HTTPException(404, f"card {card_id} not found or regeneration failed")
+    return {"updated": False}
+
+
 @router.get("/api/audit")
 async def api_audit(n: int = Query(200)):
     return audit_tail(n)

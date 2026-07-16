@@ -607,7 +607,7 @@ async def render_dashboard(request: Request):
   .trial-card{{ border:1px solid var(--border); border-radius:var(--radius); background:var(--bg-elev); padding:14px 16px; cursor:pointer; transition:border-color .2s; margin-bottom:8px; }}
   .trial-card:hover{{ border-color:var(--accent); }}
   .trial-card h4{{ font-size:.95rem; margin:0 0 4px; }}
-  .trial-card .one-liner{{ color:var(--ink-muted); font-size:.84rem; margin:0 0 8px; display:-webkit-box; -webkit-line-clamp:3; -webkit-box-orient:vertical; overflow:hidden; }}
+  .trial-card .one-liner{{ color:var(--ink-muted); font-size:.84rem; margin:0 0 8px; }}
   .trial-card .meta-row{{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; font-size:.75rem; }}
 
   .trial-result-negneu{{ color:#A855F7; border-color:#A855F7; }}

@@ -115,6 +115,20 @@ FILE_STABILITY_WAIT = 1.5  # seconds to wait for file size to stabilize
 # =====================================================================
 # PEARL JSON FIELDS
 # =====================================================================
+# =====================================================================
+# FLASHCARD PATHS
+# =====================================================================
+FLASHCARDS_DIR = os.path.join(OUTPUT_DIR, "flashcards")
+
+# =====================================================================
+# OPENROUTER CONFIG
+# =====================================================================
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
+OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
+OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "tencent/hy3:free")
+TEMPERATURE_FLASHCARDS = 0.2
+MAX_TOKENS_FLASHCARDS = 8192
+
 PEARLS_JSON_FIELDS = [
     "id", "timestamp", "source_paper", "doi",
     "author", "system", "type", "pearl", "remarks", "file_name", "topic", "subtopic"
