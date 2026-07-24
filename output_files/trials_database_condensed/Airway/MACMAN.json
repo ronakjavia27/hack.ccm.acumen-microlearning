@@ -1,0 +1,292 @@
+{
+  "id": "MACMAN",
+  "trial_name": "MACMAN — Video Laryngoscopy vs Direct Laryngoscopy on Successful First-Pass Orotracheal Intubation Among ICU Patients (2017)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2017,
+  "journal": "JAMA",
+  "citation": "Lascarrou JB, Boisrame-Helms J, Bailly A, et al; Clinical Research in Intensive Care and Sepsis (CRICS) Group. Video laryngoscopy vs direct laryngoscopy on successful first-pass orotracheal intubation among ICU patients: a randomized clinical trial. JAMA. 2017;317(5):483-493.",
+  "doi": "https://doi.org/10.1001/jama.2016.20603",
+  "registration": "",
+  "trial_type": "RCT — multicenter, parallel-group, investigator-initiated, unblinded, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 371,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU patients, first-attempt McGrath MAC videolaryngoscopy improved glottic view but did not increase first-pass intubation success compared with Macintosh direct laryngoscopy.",
+  "pico": {
+    "population": "Adults (≥18 years) requiring orotracheal intubation in the ICU for any indication.",
+    "intervention": "First-attempt McGrath MAC videolaryngoscope with indirect view on the screen, no stylet or bougie.",
+    "comparison": "First-attempt standard Macintosh direct laryngoscope, no stylet or bougie.",
+    "outcome": "Successful first-pass orotracheal intubation confirmed by waveform capnography."
+  },
+  "keywords": [
+    "videolaryngoscopy",
+    "direct laryngoscopy",
+    "first-pass success",
+    "ICU intubation",
+    "McGrath MAC",
+    "airway management"
+  ],
+  "related_trials": [
+    "FELLOW",
+    "DEVICE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Tracheal intubation in the ICU is frequent and physiologically hazardous, with high rates of hypoxaemia, cardiovascular collapse, and cardiac arrest. First-pass success is a plausible, modifiable driver of safety because repeated attempts increase duration of apnoea and airway trauma and may compound haemodynamic instability. Videolaryngoscopy improves glottic visualisation in operating theatres.",
+      "knowledge_gap": "Effectiveness and safety of videolaryngoscopy in ICU intubations were uncertain given different case-mix (hypoxaemia, shock), operator mix, and urgency. Prior ICU data were dominated by observational studies and small trials, with inconsistent signals for first-pass success and limited harms reporting.",
+      "hypothesis": "In adults requiring ICU orotracheal intubation, first-attempt use of a Macintosh-blade videolaryngoscope (McGrath MAC) would increase successful first-pass intubation from 65% to 80% (15% absolute improvement) compared with standard Macintosh direct laryngoscopy."
+    },
+    "methods": {
+      "design": "Multicentre, parallel-group, investigator-initiated, unblinded randomised clinical trial.",
+      "setting": "7 adult ICUs in France; enrolled May 2015 to January 2016.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) requiring orotracheal intubation in ICU for any indication."
+        ],
+        "exclusion": [
+          "Pregnancy",
+          "Contraindication to orotracheal intubation",
+          "Nasotracheal intubation planned",
+          "Fibreoptic intubation planned",
+          "No time for inclusion/randomisation",
+          "Previous study inclusion",
+          "Protected persons (guardianship/curatorship)",
+          "Persons deprived of liberty",
+          "No health insurance",
+          "Refusal"
+        ]
+      },
+      "intervention": "McGrath MAC videolaryngoscope (Covidien). First-pass technique: indirect view on the screen mandated for the first attempt. Adjuncts on first attempt: no endotracheal tube stylet and no gum elastic bougie. After first-attempt failure: repeat laryngoscopy or alternative airway technique at the operator’s discretion, consistent with local guidelines; subsequent laryngoscopy attempts could use videolaryngoscopy with indirect or direct view.",
+      "comparison": "Standard Macintosh direct laryngoscope. Adjuncts on first attempt: no endotracheal tube stylet and no gum elastic bougie. After first-attempt failure: repeat laryngoscopy or alternative airway technique at the operator’s discretion, consistent with local guidelines.",
+      "blinding": "Unblinded (operators and bedside staff); primary endpoint objective (capnography-confirmed), but open-label delivery could influence process measures and some complication reporting.",
+      "sample_size_power": "A total of 370 patients were required to detect a 15% absolute increase in first-pass success (from 65% to 80%) with 90% power at a 2-sided 5% significance level.",
+      "primary_outcome": "Successful first-pass orotracheal intubation (waveform capnography for ≥4 breaths).",
+      "secondary_outcomes": [
+        "Glottic view (Cormack–Lehane grade)",
+        "Time to successful intubation",
+        "Any life-threatening complication (prespecified composite: severe hypoxaemia, severe cardiovascular collapse, cardiac arrest, death)",
+        "Severe life-threatening complication (post hoc composite)",
+        "Day-28 mortality"
+      ],
+      "follow_up": "Peri-intubation outcomes during the procedure and up to 1 hour post-intubation; ICU outcomes followed to day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "Videolaryngoscopy improved glottic view (Cormack–Lehane grade I 75.6% vs 52.5%) but did not improve first-pass success (67.7% vs 70.3%).",
+        "A post hoc severe life-threatening complication composite was higher with videolaryngoscopy (9.5% vs 2.8%), but this requires cautious interpretation.",
+        "Day-28 mortality was similar between groups (35.7% vs 36.4%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Successful first-pass orotracheal intubation (primary; ITT)",
+          "group_a": "126/186 (67.7%)",
+          "group_b": "130/185 (70.3%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-2.5%",
+          "ci_95": "-11.9 to 6.9",
+          "p_value": "0.60",
+          "note": "Success required waveform capnography for ≥4 breaths."
+        },
+        {
+          "outcome": "Successful first-pass orotracheal intubation (per-protocol)",
+          "group_a": "126/183 (68.9%)",
+          "group_b": "130/182 (71.4%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-2.5%",
+          "ci_95": "-12.3 to 6.4",
+          "p_value": "0.54",
+          "note": "Per-protocol population n=365."
+        },
+        {
+          "outcome": "Glottic view: Cormack–Lehane grade I",
+          "group_a": "133/176 (75.6%)",
+          "group_b": "93/177 (52.5%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "23.1%",
+          "ci_95": "13.3 to 32.7",
+          "p_value": "<0.001",
+          "note": "Better visualisation with videolaryngoscopy did not translate into higher first-pass success."
+        },
+        {
+          "outcome": "Time to successful intubation (min; median [IQR])",
+          "group_a": "3.9 (2.8 to 7.0)",
+          "group_b": "3.8 (2.4 to 6.4)",
+          "effect_measure": "Median difference",
+          "effect_value": "0.0 min",
+          "ci_95": "-0.6 to 0.4",
+          "p_value": "0.74",
+          "note": "Measured from start of anaesthetic induction to capnography confirmation."
+        },
+        {
+          "outcome": "Any life-threatening complication (prespecified composite)",
+          "group_a": "24/180 (13.3%)",
+          "group_b": "17/179 (9.5%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "3.8%",
+          "ci_95": "-2.7 to 10.4",
+          "p_value": "0.25",
+          "note": "Composite included severe hypoxaemia, severe cardiovascular collapse, cardiac arrest, and death."
+        },
+        {
+          "outcome": "Severe life-threatening complication (post hoc composite)",
+          "group_a": "17/179 (9.5%)",
+          "group_b": "5/179 (2.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "6.7%",
+          "ci_95": "1.8 to 11.6",
+          "p_value": "0.01",
+          "note": "Post hoc severity categorisation; no multiplicity adjustment across secondary outcomes."
+        },
+        {
+          "outcome": "Day-28 mortality",
+          "group_a": "66/185 (35.7%)",
+          "group_b": "67/184 (36.4%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-0.7%",
+          "ci_95": "-10.5 to 9.1",
+          "p_value": "0.88",
+          "note": "Follow-up outcome; trial not powered for mortality."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "MACOCHA >4 (ITT sensitivity analysis)",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "aOR for first-pass failure",
+          "effect_value": "1.10",
+          "ci_95": "0.69 to 1.75",
+          "p_interaction": "0.69",
+          "note": "Adjusting for MACOCHA >4 showed no difference in first-pass failure."
+        },
+        {
+          "subgroup": "MACOCHA >4 (per-protocol)",
+          "group_a": "64.9%",
+          "group_b": "67.7%",
+          "effect_measure": "Absolute difference",
+          "effect_value": "2.9%",
+          "ci_95": "-19.6 to 25.4",
+          "p_interaction": "0.55",
+          "note": "First-pass success remained similar in MACOCHA >4."
+        }
+      ]
+    },
+    "safety": [
+      "Any life-threatening complication (prespecified composite): 13.3% vs 9.5% (P=0.25).",
+      "Severe life-threatening complication (post hoc composite): 9.5% vs 2.8% (P=0.01).",
+      "Day-28 mortality: 35.7% vs 36.4% (P=0.88)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised, computer-generated randomisation using permuted blocks of 4, stratified by centre and operator status (expert vs non-expert). Analytic approach matched the stratified design."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded intervention and bedside outcome recording introduce potential performance and detection bias. Primary outcome was objective and pre-specified (capnography-confirmed). Many complications used physiologic thresholds, limiting subjectivity."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "371 patients randomised. Primary endpoint missing in 5 participants; counted as first-pass failures per protocol. Per-protocol analysis included 365 participants."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Allocated device used for first attempt in 98.4% of both groups. Induction and preoxygenation were protocol-guided but clinician-selected; key elements were similar between groups. Mandated technique differences enhanced between-group separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Overall severity was high and balanced (SAPS II mean 58.0 vs 57.7; SOFA median 7 vs 7; PaO2:FiO2 median 95 vs 91). Indications for intubation were similar."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong given robust randomisation, minimal attrition, and an objective primary endpoint; however, open-label delivery and extensive, unadjusted secondary comparisons (including a post hoc 'severe' composite) limit confidence in some secondary and harm inferences."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High-severity adult ICU population (SAPS II ~58; PaO2:FiO2 ~90–95), broadly reflective of many ICU intubations in high-income systems. Exclusions (e.g., 'no time for inclusion/randomisation', planned fibreoptic/nasotracheal intubation, pregnancy) reduce applicability to crash intubations and selected airway pathologies."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Device-specific (McGrath MAC) and technique-specific (indirect view mandated on first attempt; no stylet/bougie on first attempt), which may not map to current practice in some ICUs. Operator-mix (majority non-expert intubators) enhances relevance to training environments. Centres were in France with guideline-informed practice; transferability to systems with different drug availability, staffing, and airway pathways is uncertain."
+        }
+      ],
+      "verdict": "External validity is moderate: findings are most generalisable to routine ICU intubations in resourced centres using Macintosh-blade videolaryngoscopy with mixed-experience operators, but extrapolation to crash scenarios, other device designs, or different adjunct strategies is less secure."
+    },
+    "strengths": [
+      "Multicentre, pragmatic ICU trial with broad indications and high illness severity.",
+      "Central randomisation with stratification by centre and operator status.",
+      "Objective, clinically relevant primary endpoint (capnography-confirmed first-pass success).",
+      "High protocol delivery for first attempt (~98% received allocated device) and minimal missingness for the primary endpoint."
+    ],
+    "limitations": [
+      "Unblinded design may influence operator behaviour and reporting of some complications.",
+      "Mandated technique (indirect view on first attempt; no stylet/bougie on first attempt) may not reflect optimised or contemporary videolaryngoscopy practice in all ICUs.",
+      "Control first-pass success was higher than expected (observed ~70% vs assumed 65%), reducing power to detect smaller benefits than the prespecified 15% absolute increase.",
+      "Secondary outcomes were not multiplicity-adjusted, and the 'severe life-threatening complications' signal was based on a post hoc composite definition."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, pragmatic RCT with an objective primary endpoint that found no benefit of a specific videolaryngoscopy technique on first-pass success, though confidence in secondary harm signals is limited by unblinding and lack of multiplicity adjustment.",
+      "strengths": [
+        "Robust randomisation and stratification",
+        "Objective primary endpoint with minimal missing data",
+        "High protocol adherence"
+      ],
+      "weaknesses": [
+        "Unblinded design",
+        "Constrained technique may not reflect current practice",
+        "Post hoc secondary outcome analysis"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Routine first-attempt McGrath MAC videolaryngoscopy (as delivered in this trial) did not improve first-pass success compared with Macintosh direct laryngoscopy. Improved visualisation alone is an insufficient surrogate for success in ICU intubation, where tube delivery, apnoea tolerance, and haemodynamic instability are dominant constraints.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support routine first-line use of a Macintosh-blade videolaryngoscope with a constrained technique (no stylet/bougie) to improve first-pass success in ICU intubations. The decision to use videolaryngoscopy should be integrated with a physiology-first airway bundle and not based on laryngeal view alone.",
+      "applies_to": "Routine ICU intubations in resourced centres with mixed-experience operators, using a Macintosh-blade videolaryngoscope.",
+      "does_not_mean": "Videolaryngoscopy is harmful or has no role in ICU. The trial tested a specific device and technique; other devices, adjunct strategies, or patient populations may yield different results.",
+      "implementation_caveats": [
+        "Device and technique matter: a 'see more, struggle to pass' phenomenon was observed, suggesting adjuncts like stylets or bougies may be critical for tube delivery.",
+        "Focus on patient-centred endpoints (first-pass success, complications), not just laryngeal view.",
+        "Implement alongside physiologically optimised airway bundles, minimised attempts, and structured training/supervision."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Post hoc severe-complication signal",
+        "notes": "The higher rate of 'severe life-threatening complications' with videolaryngoscopy (9.5% vs 2.8%; P=0.01) was derived from a post hoc severity categorisation, within a framework of multiple unadjusted secondary outcomes, increasing the probability of a chance finding and limiting causal inference."
+      },
+      {
+        "topic": "Correspondence on definitions and technique",
+        "notes": "Time-to-success was measured from start of anaesthetic induction rather than from laryngoscope insertion, potentially obscuring device-specific effects. Mandating indirect view and prohibiting a stylet/bougie on the first attempt was challenged as potentially suboptimal and not reflective of common videolaryngoscopy technique. The authors’ reply emphasised a pragmatic comparison with symmetrical adjunct restrictions."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "FELLOW",
+        "relation": "A single-centre ICU trial that also found no difference in first-pass success (68.9% vs 65.8%; unadjusted P=0.68), aligning with MACMAN’s neutral primary outcome despite improved view with videolaryngoscopy."
+      },
+      {
+        "trial": "DEVICE",
+        "relation": "A larger multicentre trial of critically ill adults where videolaryngoscopy improved first-attempt success (85.1% vs 70.8%; absolute risk difference 14.3 points; 95% CI 9.9 to 18.7) with similar severe complications, implying that context, operator factors, and device/technique implementation materially influence clinical effect."
+      }
+    ],
+    "unresolved_questions": [
+      "Does a different videolaryngoscope blade design (e.g., hyperangulated) or routine use of a stylet/bougie improve first-pass success in ICU?",
+      "Is there a subgroup of ICU patients (e.g., predicted difficult airway) who benefit from first-line videolaryngoscopy?",
+      "What is the true safety signal for severe complications with videolaryngoscopy in ICU, independent of post hoc analyses?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=371",
+        "First-pass success: 67.7% vs 70.3% (P=0.60)",
+        "Cormack–Lehane grade I: 75.6% vs 52.5% (P<0.001)",
+        "Post hoc severe complications: 9.5% vs 2.8% (P=0.01)"
+      ],
+      "one_line_takeaway": "A better view doesn't guarantee a better pass; don't rely on videolaryngoscopy alone to solve a difficult ICU intubation without a plan for tube delivery and physiological optimisation."
+    }
+  },
+  "_source_id": "MACMAN",
+  "_source_system": "Airway"
+}

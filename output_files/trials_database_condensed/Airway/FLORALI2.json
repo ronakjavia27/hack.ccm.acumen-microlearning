@@ -1,0 +1,277 @@
+{
+  "id": "FLORALI2",
+  "trial_name": "FLORALI-2 — NIV vs HFNC for Preoxygenation Before Intubation in AHRF (2019)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2019,
+  "journal": "The Lancet Respiratory Medicine",
+  "citation": "Frat JP, Ricard JD, Quenot JP, et al; FLORALI-2 study group and REVA network. Non-invasive ventilation versus high-flow nasal cannula oxygen therapy with apnoeic oxygenation for preoxygenation before intubation of patients with acute hypoxaemic respiratory failure: a randomised, multicentre, open-label trial. Lancet Respir Med. 2019;7(4):303-312.",
+  "doi": "https://doi.org/10.1016/S2213-2600(19)30048-7",
+  "registration": "",
+  "trial_type": "RCT — multicentre, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 322,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU adults with acute hypoxaemic respiratory failure requiring intubation, NIV preoxygenation did not significantly reduce severe hypoxaemia compared with HFNC with apnoeic oxygenation (23% vs 27%).",
+  "pico": {
+    "population": "Adults (>18 years) in ICU requiring intubation for acute hypoxaemic respiratory failure (PaO2/FiO2 ≤300 mm Hg)",
+    "intervention": "NIV preoxygenation (FiO2 1.0, PEEP 5 cm H2O, pressure support for tidal volume 6–8 mL/kg) for 3–5 min, continued between induction and laryngoscopy",
+    "comparison": "HFNC preoxygenation (FiO2 1.0, flow 60 L/min) for 3–5 min, continued during laryngoscopy for apnoeic oxygenation",
+    "outcome": "Severe hypoxaemia (SpO2 <80% for ≥5 s) during the intubation procedure (induction to 5 min post-intubation)"
+  },
+  "keywords": [
+    "preoxygenation",
+    "NIV",
+    "HFNC",
+    "apnoeic oxygenation",
+    "intubation",
+    "acute hypoxaemic respiratory failure",
+    "AHRF"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Tracheal intubation in AHRF carries a high risk of peri-procedural desaturation and cardiovascular collapse. NIV preoxygenation can deliver high FiO2, PEEP, and active ventilation; prior evidence showed less severe desaturation versus standard oxygen. HFNC delivers high FiO2 at high flows, modest distending pressure, and can remain in place during laryngoscopy for apnoeic oxygenation.",
+      "knowledge_gap": "Specific comparative evidence for NIV versus HFNC (with apnoeic oxygenation) as the preoxygenation strategy immediately before ICU intubation in AHRF was uncertain.",
+      "hypothesis": "In ICU adults with AHRF requiring intubation, NIV preoxygenation would reduce the incidence of severe hypoxaemia during the intubation procedure compared with HFNC with apnoeic oxygenation continued throughout laryngoscopy."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, parallel-group, open-label trial in 28 ICUs in France; stratified randomisation by centre and PaO2/FiO2 category (≤200 vs >200 mm Hg).",
+      "setting": "28 ICUs in France; enrolled Feb 8, 2016, to May 6, 2017",
+      "population": {
+        "inclusion": [
+          "Adults (>18 years) in ICU requiring intubation for acute hypoxaemic respiratory failure",
+          "AHRF definition: respiratory rate >25/min and/or signs of respiratory distress, with PaO2/FiO2 ≤300 mm Hg"
+        ],
+        "exclusion": [
+          "Intubation for cardiac arrest",
+          "Glasgow Coma Score <8",
+          "Contraindication to NIV (e.g., recent laryngeal/oesophageal/gastric surgery, facial fractures)",
+          "Inability to obtain pulse oximetry",
+          "Pregnancy/breastfeeding",
+          "Refusal"
+        ]
+      },
+      "intervention": "NIV via face mask connected to an ICU ventilator for 3–5 min in 30° semi-recumbent position. FiO2 1.0; PEEP 5 cm H2O; pressure support adjusted to achieve expired tidal volume 6–8 mL/kg predicted body weight. NIV used for preoxygenation and continued between induction and laryngoscopy; mask removed for laryngoscopy.",
+      "comparison": "HFNC preoxygenation for 3–5 min in 30° semi-recumbent position. FiO2 1.0; gas flow 60 L/min via heated humidifier and binasal prongs. HFNC maintained during laryngoscopy until endotracheal tube placement (apnoeic oxygenation).",
+      "blinding": "Open-label to treating clinicians; primary outcome and complications assessed by an independent adjudication committee blinded to group assignment; investigators blinded to adjudicated outcomes until database lock.",
+      "sample_size_power": "320 patients required to detect a 15% absolute reduction in severe hypoxaemia (assumed 25% in HFNC group, to 10% with NIV) with 95% power at a 5% two-sided significance level.",
+      "primary_outcome": "Severe hypoxaemia during intubation procedure (SpO2 <80% for ≥5 s), defined from induction to 5 min post-intubation.",
+      "secondary_outcomes": [
+        "Lowest SpO2 during intubation procedure",
+        "SpO2 at end of preoxygenation",
+        "Hypotension (SBP <90 mm Hg)",
+        "Cardiac arrest during and after intubation",
+        "Oesophageal intubation",
+        "Death at day 28"
+      ],
+      "follow_up": "In-procedure outcomes from induction to 5 min after intubation; additional outcomes during ICU stay; mortality to day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "Severe hypoxaemia occurred in 23% (NIV) vs 27% (HFNC), a non-significant difference (P=0.39).",
+        "In the pre-specified PaO2/FiO2 ≤200 subgroup, severe hypoxaemia was lower with NIV (24% vs 35%), with borderline unadjusted significance (P=0.0553).",
+        "Major immediate complications like hypotension were common and similar between groups."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Severe hypoxaemia during intubation procedure (SpO2 <80% for ≥5 s)",
+          "group_a": "33/142 (23%)",
+          "group_b": "47/171 (27%)",
+          "effect_measure": "RD",
+          "effect_value": "-4.2%",
+          "ci_95": "-13.7 to 5.5",
+          "p_value": "0.39",
+          "note": "Primary outcome"
+        },
+        {
+          "outcome": "Lowest SpO2 during intubation procedure (mean [SD])",
+          "group_a": "87% (13)",
+          "group_b": "84% (16)",
+          "effect_measure": "MD",
+          "effect_value": "3.0%",
+          "ci_95": "-0.3 to 6.3",
+          "p_value": "0.13",
+          "note": ""
+        },
+        {
+          "outcome": "SpO2 at end of preoxygenation (mean [SD])",
+          "group_a": "97% (4)",
+          "group_b": "96% (5)",
+          "effect_measure": "MD",
+          "effect_value": "1.0%",
+          "ci_95": "0.0 to 2.0",
+          "p_value": "0.08",
+          "note": ""
+        },
+        {
+          "outcome": "Hypotension (SBP <90 mm Hg)",
+          "group_a": "70/142 (50%)",
+          "group_b": "86/171 (50%)",
+          "effect_measure": "RD",
+          "effect_value": "-1.0%",
+          "ci_95": "-12.0 to 10.0",
+          "p_value": "0.86",
+          "note": ""
+        },
+        {
+          "outcome": "Cardiac arrest during and after intubation",
+          "group_a": "1/142 (1%)",
+          "group_b": "5/171 (5%)",
+          "effect_measure": "RD",
+          "effect_value": "-3.2%",
+          "ci_95": "-6.0 to 13.7",
+          "p_value": "0.23",
+          "note": "Rare event; interpreted cautiously"
+        },
+        {
+          "outcome": "Oesophageal intubation",
+          "group_a": "8/142 (6%)",
+          "group_b": "6/171 (4%)",
+          "effect_measure": "RD",
+          "effect_value": "2.1%",
+          "ci_95": "-2.7 to 7.5",
+          "p_value": "0.42",
+          "note": ""
+        },
+        {
+          "outcome": "Death at day 28",
+          "group_a": "53/142 (37%)",
+          "group_b": "58/171 (34%)",
+          "effect_measure": "RD",
+          "effect_value": "3.4%",
+          "ci_95": "-7.1 to 14.0",
+          "p_value": "0.53",
+          "note": "Not powered for mortality"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "PaO2/FiO2 ≤200: severe hypoxaemia (SpO2 <80%)",
+          "group_a": "28/117 (24%)",
+          "group_b": "44/125 (35%)",
+          "effect_measure": "RD",
+          "effect_value": "-11.3%",
+          "ci_95": "-22.3 to 0.3",
+          "p_interaction": "0.0553",
+          "note": "Adjusted analysis: OR 0.56; 95% CI 0.32 to 0.99; P=0.0459"
+        }
+      ]
+    },
+    "safety": [
+      "Hypotension (SBP <90 mm Hg): 50% in both groups (P=0.86)",
+      "Cardiac arrest during and after intubation: 1% (NIV) vs 5% (HFNC) (P=0.23)",
+      "Oesophageal intubation: 6% (NIV) vs 4% (HFNC) (P=0.42)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Concealed, web-based randomisation; block size 4 (unknown to investigators); stratified by centre and PaO2/FiO2 category (≤200 vs >200 mm Hg)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery could influence co-interventions; primary endpoint (SpO2 threshold) is objective and was adjudicated by a blinded committee, mitigating detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "322 randomised; 9 excluded from analysis (NIV: 5; HFNC: 4) due to not intubated (n=1), legal protection (n=1), withdrawal of consent (n=1), and no recorded data (n=5); analysed population 313."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Assigned technique duration was similar (both groups: mean 5 min; SD 2 [NIV] vs SD 4 [HFNC]; P=0.45). NIV settings achieved mean pressure support 9 cm H2O (SD 4), PEEP 5 cm H2O (SD 0.5), FiO2 0.99 (SD 0.06), expired tidal volume 8.3 mL/kg (SD 2.6); HFNC mean flow 58 L/min (SD 9), FiO2 0.99 (SD 0.08). Minimal crossover."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly comparable (e.g., PaO2/FiO2 142 [SD 65] vs 148 [SD 70]; SAPS II 52 [20] vs 51 [19]); stratification imbalance remained (PaO2/FiO2 >200: 18% vs 27%; P=0.06)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong: allocation concealment and protocolised delivery were robust with blinded adjudication of an objective primary endpoint, but open-label management, reliance on pulse oximetry, and post-randomisation exclusions modestly increase bias risk."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU patients with AHRF (PaO2/FiO2 ≤300 mm Hg) requiring intubation; exclusions (GCS <8, cardiac arrest, NIV contraindications, inability to obtain oximetry) limit applicability to some high-risk airway phenotypes."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "28 ICUs in France with access to ICU ventilators for NIV and dedicated HFNC devices; results most applicable to similarly resourced ICUs with staff familiar with an intubation bundle. Generalisability to emergency department, prehospital, and resource-limited settings is uncertain."
+        }
+      ],
+      "verdict": "External validity is moderate for adult ICU AHRF populations in similar health systems, and limited for settings without advanced monitoring/equipment or for excluded airway phenotypes (e.g., coma, arrest, NIV contraindication)."
+    },
+    "strengths": [
+      "Multicentre randomised design",
+      "Concealed, stratified randomisation",
+      "Pragmatic ICU population",
+      "Protocolised intubation bundle",
+      "Blinded adjudication of an objective primary endpoint",
+      "Pre-specified oxygenation-severity strata (PaO2/FiO2 ≤200 vs >200)"
+    ],
+    "limitations": [
+      "Open-label delivery with potential co-intervention differences",
+      "Primary endpoint uses a severe desaturation threshold (SpO2 <80%) that may not capture clinically important lesser hypoxaemia",
+      "Pulse oximetry lag and artefact are intrinsic measurement constraints",
+      "Fixed NIV PEEP (5 cm H2O) may underdose PEEP for some severe AHRF",
+      "Post-randomisation exclusions and unequal analysed group sizes",
+      "Not powered for mortality or rare safety outcomes"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, pragmatic RCT with moderate-to-strong internal validity that found no overall benefit of NIV over HFNC for preventing severe desaturation during intubation, but suggests a potential benefit in the most hypoxaemic patients.",
+      "strengths": [
+        "Robust randomisation and allocation concealment",
+        "Blinded adjudication of the primary outcome",
+        "Standardised intubation bundle reducing co-intervention variability"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Reliance on pulse oximetry for the primary endpoint",
+        "Fixed, potentially submaximal PEEP in the NIV arm",
+        "Post-randomisation exclusions"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In ICU adults with AHRF requiring intubation, NIV preoxygenation did not significantly reduce severe hypoxaemia versus HFNC with apnoeic oxygenation, supporting HFNC as a reasonable default strategy when NIV is impractical or poorly tolerated. A severity-dependent effect was observed, with NIV potentially preferred in more severe AHRF.",
+    "clinical_bottom_line": {
+      "verdict": "FLORALI-2 reframes preoxygenation as a physiology-targeted choice rather than a single universal approach. HFNC is a reasonable default, but NIV may be preferred in patients with more severe hypoxaemia (PaO2/FiO2 ≤200).",
+      "applies_to": "Adult ICU patients with AHRF requiring intubation, particularly those with PaO2/FiO2 ≤200, in settings with access to both NIV and HFNC.",
+      "does_not_mean": "NIV is superior to HFNC for all patients. The overall trial result was negative, and the subgroup finding requires cautious interpretation.",
+      "implementation_caveats": [
+        "The trial used a fixed PEEP of 5 cm H2O; higher PEEP might be considered in severe AHRF.",
+        "HFNC offers the practical advantage of uninterrupted apnoeic oxygenation during laryngoscopy.",
+        "The severe desaturation threshold (SpO2 <80%) may not capture all clinically relevant hypoxaemia."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Endpoint selection",
+        "notes": "The primary endpoint (SpO2 <80% for ≥5 s) focuses on profound desaturation; alternative thresholds (e.g., <90%) might yield different sensitivity to smaller but still clinically meaningful oxygenation differences."
+      },
+      {
+        "topic": "Physiology and 'what was really tested'",
+        "notes": "NIV requires mask removal for laryngoscopy; HFNC remains in place throughout laryngoscopy, so the comparison is not simply 'NIV vs HFNC' but 'ventilatory/PEEP support before laryngoscopy vs uninterrupted apnoeic oxygenation during laryngoscopy'."
+      },
+      {
+        "topic": "Subgroup interpretation",
+        "notes": "Oxygenation-severity strata were pre-specified; however, the borderline unadjusted subgroup P value (P=0.0553) and the reliance on an adjusted analysis (P=0.0459) should be interpreted alongside multiplicity and potential residual confounding despite randomisation."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Optimal PEEP level during NIV preoxygenation for severe AHRF",
+      "Role of hybrid approaches (e.g., NIV for preoxygenation plus apnoeic oxygenation)",
+      "Comparative effectiveness in non-ICU settings (ED, prehospital)"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=322",
+        "Primary outcome: severe hypoxaemia 23% vs 27% (RD -4.2%, P=0.39)",
+        "PaO2/FiO2 ≤200 subgroup: severe hypoxaemia 24% vs 35% (P=0.0553)"
+      ],
+      "one_line_takeaway": "For preoxygenation before intubation in AHRF, HFNC is a reasonable default, but consider NIV for the sickest patients (PaO2/FiO2 ≤200) to potentially reduce severe desaturation."
+    }
+  },
+  "_source_id": "FLORALI2",
+  "_source_system": "Airway"
+}

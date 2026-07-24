@@ -1,0 +1,277 @@
+{
+  "id": "PreVent",
+  "trial_name": "PreVent — Bag-Mask Ventilation during Tracheal Intubation of Critically Ill Adults (2019)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2019,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Casey JD, Janz DR, Russell DW, Vonderhaar DJ, Joffe AM, Dischert KM, et al. Bag-mask ventilation during tracheal intubation of critically ill adults. N Engl J Med. 2019;380:811-821.",
+  "doi": "https://doi.org/10.1056/NEJMoa1812405",
+  "registration": "NCT03026322",
+  "trial_type": "RCT — multicenter, pragmatic, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 401,
+  "result_category": "Positive",
+  "one_liner": "In critically ill adults undergoing tracheal intubation, gentle bag-mask ventilation between induction and laryngoscopy increased the lowest oxygen saturation and reduced severe hypoxemia compared with no ventilation, without a detected increase in aspiration.",
+  "pico": {
+    "population": "Adults in an ICU undergoing tracheal intubation with planned induction medication, where clinicians had equipoise about bag-mask ventilation.",
+    "intervention": "Bag-mask ventilation between induction and laryngoscopy (oropharyngeal airway, two-handed mask seal, PEEP 5-10 cm H2O, rate 10/min, minimal tidal volume).",
+    "comparison": "No bag-mask ventilation between induction and laryngoscopy (apnoea strategy).",
+    "outcome": "Lowest oxygen saturation from induction to 2 minutes post-intubation."
+  },
+  "keywords": [
+    "bag-mask ventilation",
+    "tracheal intubation",
+    "rapid sequence intubation",
+    "peri-intubation hypoxemia",
+    "airway management"
+  ],
+  "related_trials": [
+    "FLORALI-2",
+    "PREOXI"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Peri-intubation hypoxaemia is common in ICU airway management and is strongly associated with peri-procedural cardiovascular collapse and subsequent morbidity. Classic rapid-sequence intubation (RSI) doctrine discouraged mask ventilation after induction to reduce gastric insufflation and aspiration risk.",
+      "knowledge_gap": "Critically ill adults often have reduced functional residual capacity, high shunt fraction, and poor preoxygenation efficiency, increasing desaturation risk. The trade-off between tolerating apnoea without ventilation (risking severe hypoxaemia) versus providing gentle bag-mask ventilation (risking aspiration) was unresolved with limited randomised evidence.",
+      "hypothesis": "Bag-mask ventilation with a controlled technique would improve oxygenation during the peri-induction apnoeic window and not increase clinically important aspiration events."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, parallel-group randomised trial; open-label.",
+      "setting": "7 ICUs in the United States.",
+      "population": {
+        "inclusion": [
+          "Adults in an ICU undergoing tracheal intubation with planned administration of induction medication.",
+          "Clinical equipoise regarding whether bag-mask ventilation between induction and laryngoscopy should be performed or withheld."
+        ],
+        "exclusion": [
+          "Clinician judged bag-mask ventilation was required to prevent hypoxaemia.",
+          "Clinician judged bag-mask ventilation should not be provided because aspiration risk was unacceptably high (e.g., active emesis/haematemesis).",
+          "Insufficient time to enrol prior to induction."
+        ]
+      },
+      "intervention": "Bag-mask ventilation starting after induction and continuing until laryngoscopy. Technique: oropharyngeal airway; two-handed mask seal with jaw-thrust/head-tilt–chin-lift; oxygen flow ≥15 L/min; PEEP valve set at 5–10 cm H2O; ventilation rate 10 breaths/min; smallest tidal volume to produce visible chest rise.",
+      "comparison": "No bag-mask ventilation between induction and laryngoscopy. Therapeutic bag-mask ventilation was permitted for rescue (e.g., failed laryngoscopy or SpO2 <90%).",
+      "blinding": "Unblinded allocation. Primary outcome was objective (pulse oximetry), but co-interventions could be influenced by knowledge of group assignment.",
+      "sample_size_power": "Planned 350 patients to detect a 5 percentage-point difference in lowest oxygen saturation (SD 14), with 90% power and two-sided alpha 0.05. An interim assessment found SD 15, increasing the target sample size to 400. Final enrolment: 401.",
+      "primary_outcome": "Lowest oxygen saturation from induction through 2 minutes post-intubation.",
+      "secondary_outcomes": [
+        "Severe hypoxaemia (SpO2 <80%)",
+        "Hypoxaemia (SpO2 <90%)",
+        "Profound hypoxaemia (SpO2 <70%)",
+        "Operator-reported aspiration",
+        "New radiographic opacity within 48 hours post-intubation",
+        "In-hospital mortality",
+        "Ventilator-free days to day 28"
+      ],
+      "follow_up": "Primary and most secondary physiological outcomes measured from induction through 2 minutes post-intubation; radiographic outcomes assessed within 48 hours; clinical outcomes followed to hospital discharge and ventilator-free days to day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "Bag-mask ventilation increased median lowest SpO2 from 93% to 96%.",
+        "Severe hypoxaemia (SpO2 <80%) was reduced from 22.8% to 10.9% (RR 0.48).",
+        "Aspiration was uncommon (2.5% vs 4.0%) with wide confidence intervals, meaning clinically important harm could not be excluded.",
+        "Clinical endpoints (ventilator-free days, in-hospital mortality) were not different."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Lowest oxygen saturation (primary)",
+          "group_a": "96% (IQR 87–99) (n=193)",
+          "group_b": "93% (IQR 81–99) (n=197)",
+          "effect_measure": "Adjusted MD",
+          "effect_value": "+4.7 percentage points",
+          "ci_95": "2.5 to 6.8",
+          "p_value": "0.01",
+          "note": "Primary comparison by rank-based testing."
+        },
+        {
+          "outcome": "Severe hypoxaemia (SpO2 <80%)",
+          "group_a": "21/193 (10.9%)",
+          "group_b": "45/197 (22.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.48",
+          "ci_95": "0.30 to 0.77",
+          "p_value": null,
+          "note": "Absolute reduction 11.9 percentage points."
+        },
+        {
+          "outcome": "Hypoxaemia (SpO2 <90%)",
+          "group_a": "57/193 (29.5%)",
+          "group_b": "79/197 (40.1%)",
+          "effect_measure": "RR",
+          "effect_value": "0.74",
+          "ci_95": "0.56 to 0.97",
+          "p_value": null,
+          "note": null
+        },
+        {
+          "outcome": "Profound hypoxaemia (SpO2 <70%)",
+          "group_a": "8/193 (4.1%)",
+          "group_b": "20/197 (10.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.41",
+          "ci_95": "0.18 to 0.90",
+          "p_value": null,
+          "note": null
+        },
+        {
+          "outcome": "Aspiration (operator-reported)",
+          "group_a": "5/199 (2.5%)",
+          "group_b": "8/202 (4.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.63",
+          "ci_95": "0.21 to 1.91",
+          "p_value": "0.41",
+          "note": "Trial not powered to exclude modest harm."
+        },
+        {
+          "outcome": "New radiographic opacity <48 h post-intubation",
+          "group_a": "30/183 (16.4%)",
+          "group_b": "28/189 (14.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.11",
+          "ci_95": "0.70 to 1.77",
+          "p_value": "0.73",
+          "note": "Non-specific surrogate."
+        },
+        {
+          "outcome": "In-hospital mortality",
+          "group_a": "52/196 (26.5%)",
+          "group_b": "53/201 (26.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.71 to 1.41",
+          "p_value": "0.99",
+          "note": "Not powered for mortality."
+        },
+        {
+          "outcome": "Ventilator-free days to day 28",
+          "group_a": "19 (IQR 0–25)",
+          "group_b": "18 (IQR 0–25)",
+          "effect_measure": "MD",
+          "effect_value": "+0.6 days",
+          "ci_95": "−1.7 to 2.9",
+          "p_value": "0.61",
+          "note": null
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Aspiration (operator-reported): 2.5% vs 4.0% (RR 0.63; 95% CI 0.21 to 1.91; P=0.41).",
+      "New radiographic opacity <48 h post-intubation: 16.4% vs 14.8% (RR 1.11; 95% CI 0.70 to 1.77; P=0.73)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Randomised, stratified by ICU; allocation concealment was operationally feasible up to enrolment, but blinding post-allocation was not feasible."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design creates risk of co-intervention differences; detection bias was mitigated for the primary outcome by its objective nature (pulse oximetry), but aspiration ascertainment relied on clinical recognition and was vulnerable to under-detection."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "401 patients randomised; lowest SpO2 missing for 11/401 (2.7%) (193 analysed in bag-mask group; 197 analysed in no-ventilation group for the primary outcome)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Excellent separation for the intended exposure between induction and laryngoscopy: bag-mask ventilation 198/199 (99.5%) vs 5/202 (2.5%). Contamination/rescue ventilation was clinically common later in the peri-intubation period: bag-mask ventilation between induction and intubation occurred in 198/199 (99.5%) vs 44/202 (21.8%)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Oxygen saturation at induction was similar (median 99% [IQR 97–100] vs 99% [IQR 96–100]). Positive-pressure preoxygenation was more frequent in the bag-mask group (99/199 [49.7%] vs 47/202 [23.4%]), consistent with potential allocation-influenced co-intervention. The intervention arm had longer time from induction to laryngoscopy (median 98 s [IQR 65–135] vs 72 s [IQR 52–120])."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong: randomisation and near-complete follow-up support causal inference for oxygenation outcomes, but open-label design, allocation-influenced co-interventions, and limited power/ascertainment for aspiration constrain certainty about harms."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU cohort across seven ICUs in the United States; applicability is strongest to medical ICU intubations performed with RSI-style induction where clinicians are uncertain about whether to ventilate during the apnoeic window. Important exclusions: patients in whom clinicians believed ventilation was mandatory to avoid immediate hypoxaemia, and patients in whom ventilation was considered unsafe because of aspiration risk, were excluded; this limits generalisability precisely in the extremes of physiological and aspiration risk."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The protocolised two-handed mask seal, PEEP valve use, and airway adjunct (oropharyngeal airway) may not be routinely available or consistently performed in all ICUs, emergency departments, or resource-limited settings. Where skilled mask ventilation and PEEP are available, the intervention is highly scalable."
+        }
+      ],
+      "verdict": "Generalisability is moderate: results are highly applicable to typical ICU RSI intubations without prohibitive aspiration risk, but less certain for crash intubations, profoundly unstable patients, or those at very high aspiration risk."
+    },
+    "strengths": [
+      "Pragmatic multicentre randomised design in the ICU environment (high clinical relevance).",
+      "Clear, protocolised description of the bag-mask technique (oxygen flow, PEEP, rate, airway adjuncts), enabling reproducibility.",
+      "Objective primary physiological endpoint with low missingness.",
+      "Clinically meaningful reduction in severe hypoxaemia (SpO2<80%)."
+    ],
+    "limitations": [
+      "Open-label design with plausible allocation-influenced co-interventions (notably preoxygenation modality and timing), potentially inflating or attenuating the measured effect.",
+      "Primary endpoint is a surrogate (lowest SpO2) rather than patient-centred outcomes; the trial was not powered for mortality or longer-term clinical benefit.",
+      "Aspiration and pulmonary harms were uncommon with wide confidence intervals; ascertainment relied on recognised events and non-specific radiographic surrogates.",
+      "Exclusion of patients at very high aspiration risk or those deemed unable to tolerate apnoea limits inference about safety in those populations."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic RCT demonstrating a clear physiological benefit of gentle bag-mask ventilation on peri-intubation oxygenation, but open-label co-interventions and imprecise safety estimates for aspiration prevent definitive conclusions about the overall risk-benefit ratio.",
+      "strengths": [
+        "Pragmatic, multicentre design enhances real-world applicability.",
+        "Objective primary outcome with minimal missing data.",
+        "Protocolised intervention allows for replication."
+      ],
+      "weaknesses": [
+        "Open-label design led to differential use of positive-pressure preoxygenation, confounding the isolated effect of ventilation between induction and laryngoscopy.",
+        "Underpowered and reliant on imperfect ascertainment for the key safety outcome of aspiration."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Among critically ill adults undergoing tracheal intubation, bag-mask ventilation between induction and laryngoscopy resulted in higher oxygen saturations and a lower incidence of severe hypoxemia than no ventilation.",
+    "clinical_bottom_line": {
+      "verdict": "For ICU intubations where aspiration risk is acceptable, a protocolised gentle bag-mask ventilation strategy between induction and laryngoscopy should be used to reduce severe hypoxaemia, challenging the traditional 'no ventilation' RSI dogma.",
+      "applies_to": "Critically ill adults undergoing tracheal intubation in an ICU with RSI-style induction, where clinicians have equipoise about mask ventilation and aspiration risk is not prohibitive.",
+      "does_not_mean": "Bag-mask ventilation is proven safe in all patients, including those at very high risk of aspiration (e.g., active haematemesis), who were excluded from the trial.",
+      "implementation_caveats": [
+        "Requires a controlled technique: oropharyngeal airway, two-handed mask seal, PEEP valve (5-10 cm H2O), low rate (10/min), and minimal tidal volume.",
+        "The benefit is on peri-procedural oxygenation, not mortality or ventilator-free days."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Aspiration risk",
+        "notes": "Aspiration events were uncommon (2.5% vs 4.0%) with wide confidence intervals (RR 0.63; 95% CI 0.21 to 1.91), leaving limited ability to exclude clinically important harm. Reliance on clinically recognised aspiration and non-specific radiographic opacities constrains inference about occult aspiration."
+      },
+      {
+        "topic": "Open-label co-interventions",
+        "notes": "Clinicians provided positive-pressure preoxygenation more often in the bag-mask group (49.7% vs 23.4%), plausibly amplifying oxygen reserve before induction and contributing to outcome differences beyond 'between induction and laryngoscopy' ventilation alone."
+      },
+      {
+        "topic": "Endpoint hierarchy and clinical meaning",
+        "notes": "Lowest SpO2 is a surrogate, but the consistent reduction across clinically consequential thresholds (SpO2<80%, <70%) supports relevance to peri-intubation safety, even if downstream patient-centred benefits were not demonstrated."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PREOXI",
+        "relation": "A later large trial of noninvasive ventilation for preoxygenation before ICU intubation demonstrated improved oxygenation outcomes, reinforcing the broader concept that active ventilatory support around induction can be beneficial."
+      },
+      {
+        "trial": "FLORALI-2",
+        "relation": "A contemporary network meta-analysis comparing peri-intubation oxygenation strategies supports the view that strategy selection (NIV, HFNC, facemask, combinations) meaningfully affects oxygenation endpoints, with the practical implication that 'no assistance' during critical windows is rarely optimal for hypoxaemia-prone patients."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the true risk of clinically significant aspiration with gentle bag-mask ventilation in a larger, more diverse population, including those at higher baseline risk?",
+      "Does the oxygenation benefit of bag-mask ventilation translate to improved patient-centred outcomes like mortality or length of stay?",
+      "What is the independent effect of bag-mask ventilation when preoxygenation strategy is standardised across groups?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=401",
+        "Lowest SpO2: 96% vs 93% (MD +4.7%)",
+        "Severe hypoxaemia (SpO2<80%): 10.9% vs 22.8% (RR 0.48)"
+      ],
+      "one_line_takeaway": "Gentle bag-mask ventilation between induction and laryngoscopy should replace the 'no ventilation' interval in standard ICU RSI to prevent severe hypoxaemia."
+    }
+  },
+  "_source_id": "PreVent",
+  "_source_system": "Airway"
+}

@@ -1,0 +1,338 @@
+{
+  "id": "PREPARE_II",
+  "trial_name": "PREPARE II — Fluid Bolus vs No Bolus Before ICU Intubation (2022)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2022,
+  "journal": "JAMA",
+  "citation": "Russell DW, Casey JD, Gibbs KW, et al; PREPARE II Investigators and the Pragmatic Critical Care Research Group. Effect of fluid bolus administration on cardiovascular collapse among critically ill patients undergoing tracheal intubation: a randomized clinical trial. JAMA. 2022;328(3):270-279.",
+  "doi": "https://doi.org/10.1001/jama.2022.9792",
+  "registration": "NCT03787732",
+  "trial_type": "RCT — multicenter, pragmatic, parallel-group, unblinded, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1065,
+  "result_category": "Negative/Neutral",
+  "one_liner": "A 500 mL crystalloid bolus before induction did not reduce cardiovascular collapse in ICU patients undergoing tracheal intubation with planned positive pressure ventilation.",
+  "pico": {
+    "population": "Critically ill adults (≥18 years) undergoing ICU tracheal intubation with planned positive pressure ventilation between induction and laryngoscopy.",
+    "intervention": "500 mL isotonic crystalloid bolus initiated after randomization and before induction.",
+    "comparison": "No new fluid bolus initiated between randomization and 2 minutes after intubation.",
+    "outcome": "Cardiovascular collapse (composite of new/increased vasopressor or SBP <65 mm Hg between induction and 2 min, or cardiac arrest/death between induction and 1 hour)."
+  },
+  "keywords": [
+    "tracheal intubation",
+    "fluid bolus",
+    "cardiovascular collapse",
+    "peri-intubation hypotension",
+    "positive pressure ventilation",
+    "vasopressor"
+  ],
+  "related_trials": [
+    "PrePARE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Peri-intubation haemodynamic instability and hypoxaemia are common in the ICU. Induction-related vasodilation, blunting of sympathetic tone, and conversion to positive pressure ventilation can reduce venous return and cardiac output, providing physiologic rationale for pre-induction volume loading. Despite limited trial evidence, fluid boluses were commonly incorporated into intubation bundles.",
+      "knowledge_gap": "Randomised evidence before PREPARE II was sparse; the earlier PrePARE trial found no overall benefit of a fluid bolus, but suggested possible effect modification among patients receiving positive pressure ventilation during the procedure.",
+      "hypothesis": "Prophylactic pre-induction fluid administration reduces cardiovascular collapse."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, parallel-group, randomised, unblinded trial conducted in 11 academic ICUs in the US; allocation stratified by ICU/site; enrolment February 2019 to May 2021.",
+      "setting": "11 academic ICUs in the US.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Decision for tracheal intubation",
+          "Planned positive pressure ventilation between induction and laryngoscopy (bag-mask ventilation and/or noninvasive ventilation during the procedure)",
+          "Planned use of sedative induction medication (with or without neuromuscular blockade)"
+        ],
+        "exclusion": [
+          "Clinician judgement that a new fluid bolus was required (mandatory) or contraindicated for safe care",
+          "Intubation deemed too urgent to permit trial procedures",
+          "Pregnancy",
+          "Prisoner/incarceration status",
+          "Intubation without sedation",
+          "Planned intubation without positive pressure ventilation between induction and laryngoscopy"
+        ]
+      },
+      "intervention": "500 mL isotonic crystalloid (type at clinician discretion) connected to existing IV/intraosseous access and started after randomisation and before induction. Infused rapidly by gravity and/or pressure bag; clinicians instructed not to delay induction solely to complete infusion; infusion could continue through the procedure until the 500 mL was delivered.",
+      "comparison": "No new fluid bolus initiated between randomisation and 2 minutes after intubation (maintenance infusions already running could continue). Rescue bolus permitted if cardiovascular collapse developed, or if clinicians deemed a bolus mandatory for safe care.",
+      "blinding": "Unblinded (open-label) due to the nature of the fluid intervention.",
+      "sample_size_power": "Initial planned sample size of 750 was calculated to detect an 8.75% absolute reduction in cardiovascular collapse (25.0% to 16.25%) with 80% power at two-sided α=0.05; a blinded sample-size re-estimation after the interim analysis increased enrolment to 1,065 to preserve power with a lower-than-anticipated event rate.",
+      "primary_outcome": "Cardiovascular collapse (composite of new/increased vasopressor or SBP <65 mm Hg between induction and 2 min, or cardiac arrest/death between induction and 1 hour).",
+      "secondary_outcomes": [
+        "In-hospital death by day 28",
+        "Invasive mechanical ventilation–free days (through day 28)",
+        "ICU-free days (through day 28)"
+      ],
+      "follow_up": "Physiologic and collapse outcomes assessed from induction to 2 minutes (vasopressor/hypotension) and to 1 hour (cardiac arrest/death); additional physiologic data to 24 hours; clinical outcomes to ICU discharge and in-hospital day 28 (or discharge, whichever occurred first)."
+    },
+    "results": {
+      "headline_bullets": [
+        "A 500 mL crystalloid bolus did not reduce cardiovascular collapse (21.0% vs 18.2%; absolute difference 2.8%; 95% CI -2.2 to 7.7; P=0.25).",
+        "The composite outcome was numerically higher in the bolus group, largely driven by vasopressor initiation/escalation rather than severe hypotension or arrest.",
+        "No signal of downstream clinical benefit or harm was observed in mortality or ICU/ventilator-free days."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Cardiovascular collapse (primary composite)",
+          "group_a": "113/538 (21.0%)",
+          "group_b": "96/527 (18.2%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "2.8%",
+          "ci_95": "-2.2 to 7.7",
+          "p_value": "0.25",
+          "note": "Composite: new/increased vasopressor or SBP <65 mm Hg (induction to 2 min) OR cardiac arrest/death (induction to 1 h)"
+        },
+        {
+          "outcome": "New or increased vasopressor (composite component)",
+          "group_a": "111/538 (20.6%)",
+          "group_b": "93/527 (17.6%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "3.0%",
+          "ci_95": "-1.9 to 7.9",
+          "p_value": null,
+          "note": "Between induction and 2 minutes; clinician-directed initiation/escalation"
+        },
+        {
+          "outcome": "SBP <65 mm Hg (composite component)",
+          "group_a": "21/535 (3.9%)",
+          "group_b": "22/524 (4.2%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-0.3%",
+          "ci_95": "-2.8 to 2.3",
+          "p_value": null,
+          "note": "Between induction and 2 minutes; denominators exclude missing SBP data"
+        },
+        {
+          "outcome": "Cardiac arrest (composite component)",
+          "group_a": "9/538 (1.7%)",
+          "group_b": "8/527 (1.5%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.2%",
+          "ci_95": "-1.3 to 1.7",
+          "p_value": null,
+          "note": "Between induction and 1 hour"
+        },
+        {
+          "outcome": "Death (composite component)",
+          "group_a": "4/538 (0.7%)",
+          "group_b": "3/527 (0.6%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.2%",
+          "ci_95": "-0.9 to 1.2",
+          "p_value": null,
+          "note": "Between induction and 1 hour"
+        },
+        {
+          "outcome": "In-hospital death by day 28",
+          "group_a": "218/538 (40.5%)",
+          "group_b": "223/527 (42.3%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-1.8%",
+          "ci_95": "-7.9 to 4.3",
+          "p_value": "0.55",
+          "note": "Secondary clinical outcome"
+        },
+        {
+          "outcome": "IV fluid volume from randomisation to induction (mL)",
+          "group_a": "300 (150–450)",
+          "group_b": "0 (0–0)",
+          "effect_measure": "Median difference",
+          "effect_value": "300 mL",
+          "ci_95": "300 to 400",
+          "p_value": null,
+          "note": "Process separation (majority did not receive the full 500 mL before induction)"
+        },
+        {
+          "outcome": "IV fluid volume from randomisation to 2 min after intubation (mL)",
+          "group_a": "500 (300–500)",
+          "group_b": "0 (0–0)",
+          "effect_measure": "Median difference",
+          "effect_value": "500 mL",
+          "ci_95": "499 to 500",
+          "p_value": null,
+          "note": "Strong process separation by the primary outcome window"
+        },
+        {
+          "outcome": "Lowest SBP (mm Hg)",
+          "group_a": "116 (93–139)",
+          "group_b": "113 (95–134)",
+          "effect_measure": "Median difference",
+          "effect_value": "3.0",
+          "ci_95": "-3.0 to 7.0",
+          "p_value": null,
+          "note": "Between induction and 2 minutes; SBP missing in 6 patients"
+        },
+        {
+          "outcome": "Change in SBP from induction to nadir (mm Hg)",
+          "group_a": "-7 (-26 to 0)",
+          "group_b": "-9 (-27 to 0)",
+          "effect_measure": "Median difference",
+          "effect_value": "2.0",
+          "ci_95": "-2.0 to 5.0",
+          "p_value": null,
+          "note": "Negative values indicate a fall in SBP"
+        },
+        {
+          "outcome": "Oxygen saturation <80%",
+          "group_a": "79/531 (14.9%)",
+          "group_b": "71/518 (13.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.2%",
+          "ci_95": "-3.3 to 5.6",
+          "p_value": null,
+          "note": "Between induction and 2 minutes; denominators exclude missing saturation data"
+        },
+        {
+          "outcome": "Invasive mechanical ventilation–free days (through day 28)",
+          "group_a": "14 (0–25)",
+          "group_b": "12 (0–25)",
+          "effect_measure": "Median difference",
+          "effect_value": "2.0",
+          "ci_95": "-10.0 to 15.0",
+          "p_value": null,
+          "note": "Exploratory clinical outcome"
+        },
+        {
+          "outcome": "ICU-free days (through day 28)",
+          "group_a": "9 (0–22)",
+          "group_b": "9 (0–22)",
+          "effect_measure": "Median difference",
+          "effect_value": "-0.5",
+          "ci_95": "-9.0 to 9.5",
+          "p_value": null,
+          "note": "Exploratory clinical outcome"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No specific adverse events were reported beyond the components of the primary composite outcome."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Randomised 1:1 with stratification by ICU/site and variable block sizes; allocation concealment used sequentially numbered, opaque envelopes opened after eligibility confirmed. Envelope-based concealment reduces selection bias but remains more vulnerable than fully centralised allocation if local processes are imperfect."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded design; vasopressor initiation/escalation (20.6% vs 17.6%) is partly discretionary and could be influenced by clinicians’ perceptions of fluid status and trial assignment. Other composite components were objective (SBP threshold, cardiac arrest, death), but these were relatively infrequent (SBP <65 ~4%; cardiac arrest ~1.6%)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1067 randomised; 2 excluded after randomisation because they were ineligible (incarcerated); 1065 included in the primary analysis. SBP data were missing for 6 patients for the SBP <65 component; all 6 met the composite outcome via other components."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High adherence: 535/538 (99.4%) in the fluid-bolus group received the assigned bolus; 521/527 (98.9%) in the no-bolus group received no bolus (crossovers: 3 vs 6). Target physiological context achieved: positive pressure ventilation between induction and laryngoscopy occurred in 526/538 (97.8%) vs 513/527 (97.3%)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly similar: age 61 (50–70) vs 62 (50–70) years; APACHE II 20 (14–25) vs 18 (14–25); vasopressor use within 1 hour before enrolment 107/534 (20.0%) vs 102/525 (19.4%); sepsis or septic shock 312/538 (58.0%) vs 318/527 (60.3%). Baseline procedural physiology was similar: SBP at induction 128 (110–147) vs 126 (110–145) mm Hg; oxygen saturation at induction 99 (96–100) vs 99 (96–100) %."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate to strong, supported by randomisation, minimal attrition, and strong exposure separation; the main limitation is the unblinded, clinician-influenced vasopressor component of the primary composite and the incomplete delivery of the full bolus before induction in many patients."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents ICU intubations in academic centres with high uptake of modern supportive practices (high neuromuscular blocker use, frequent noninvasive ventilation/HFNC use around intubation). Clinician equipoise was required: patients in whom clinicians deemed a bolus mandatory or contraindicated were excluded, limiting applicability to extreme hypovolaemia or marked volume intolerance."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Intervention is highly feasible in most ICUs (500 mL crystalloid via existing access) and requires minimal additional resources. Findings apply specifically to intubations with planned positive pressure ventilation between induction and laryngoscopy; generalisability to ED, theatre, prehospital settings, or intubations without intra-procedural positive pressure ventilation is uncertain."
+        }
+      ],
+      "verdict": "External validity is moderate for adult academic ICU intubations with planned positive pressure ventilation and clinician equipoise about fluids, but is limited for patients at physiological extremes and for non-ICU or non-PPV intubation contexts."
+    },
+    "strengths": [
+      "Large pragmatic multicentre RCT in a high-risk procedural window with minimal loss to follow-up.",
+      "Clear biological rationale and targeted enrolment of patients with planned positive pressure ventilation (97% received PPV between induction and laryngoscopy).",
+      "Strong separation in early fluid exposure (median 500 mL vs 0 by 2 minutes) and minimal crossover."
+    ],
+    "limitations": [
+      "Open-label design with a primary composite substantially influenced by clinician vasopressor decisions (susceptible to performance/detection bias).",
+      "Many patients received less than the full bolus before induction (median 300 mL pre-induction), potentially under-testing “pre-induction loading” as practised in some bundles.",
+      "Fixed-volume intervention without physiology-guided selection; exclusion of patients with mandated bolus or contraindication may reduce detectable benefit in the most fluid-responsive phenotypes.",
+      "Powered for a relatively large absolute risk reduction; confidence intervals do not exclude smaller effects."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic trial with strong internal validity for its primary finding, though the unblinded, clinician-driven primary outcome component and incomplete pre-induction fluid delivery temper confidence in excluding a small benefit.",
+      "strengths": [
+        "Large, multicentre, randomised design with minimal loss to follow-up.",
+        "Strong protocol adherence and clear separation of the intervention by the primary outcome window.",
+        "Targeted enrolment of a physiologically relevant subgroup (planned PPV)."
+      ],
+      "weaknesses": [
+        "Unblinded design with a subjective primary outcome component (vasopressor initiation).",
+        "Incomplete delivery of the intervention before the critical pre-induction period.",
+        "Exclusion of patients with a clear clinical mandate for or against fluids limits generalizability to physiological extremes."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Among critically ill adults undergoing tracheal intubation, administration of a 500 mL crystalloid fluid bolus did not significantly decrease the incidence of cardiovascular collapse compared with no fluid bolus.",
+    "clinical_bottom_line": {
+      "verdict": "A routine 500 mL crystalloid bolus initiated before induction should not be expected to prevent peri-intubation cardiovascular collapse in ICU patients with planned positive pressure ventilation. The results support an approach prioritising readiness for vasopressors and careful induction strategy over universal prophylactic fluids.",
+      "applies_to": "ICU patients undergoing tracheal intubation with planned positive pressure ventilation where the treating clinician has equipoise about the need for a fluid bolus.",
+      "does_not_mean": "Fluid boluses are harmful or should be withheld in patients with a clear clinical indication for volume resuscitation prior to intubation.",
+      "implementation_caveats": [
+        "The median pre-induction volume was only 300 mL, so a strategy of ensuring a full 500 mL is infused before induction was not tested.",
+        "The primary outcome was driven by clinician-initiated vasopressors, not severe hypotension or cardiac arrest."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite endpoint sensitivity to clinician behaviour",
+        "notes": "The primary outcome was dominated by “new or increased vasopressors” (~18–21%), raising concern that open-label clinician thresholds could meaningfully influence event classification and dilute an underlying physiological effect on true hypotension."
+      },
+      {
+        "topic": "Intervention timing versus intended mechanism",
+        "notes": "The median pre-induction volume was 300 mL, so many patients did not receive the full 500 mL before induction; critique focused on whether PREPARE II tested “pre-induction loading” or “peri-induction fluid exposure”."
+      },
+      {
+        "topic": "Population selection and physiology mismatch",
+        "notes": "Excluding patients where clinicians judged a bolus mandatory/contraindicated improves safety and equipoise but may preferentially remove patients most likely to benefit (clear hypovolaemia/preload dependence) or be harmed (overt volume intolerance), potentially attenuating effect size."
+      },
+      {
+        "topic": "Induction medication strategy as an interacting determinant",
+        "notes": "Critique highlighted fixed dosing patterns (e.g., etomidate median 20 mg in both arms) and the broader issue that sedation depth and vasoplegia may overwhelm any modest haemodynamic effect of a 500 mL bolus, particularly in septic physiology."
+      },
+      {
+        "topic": "Investigator response",
+        "notes": "The authors emphasised high protocol adherence, strong early fluid separation by 2 minutes, and that the sample-size re-estimation was performed blinded to preserve power; they also clarified that the enrolled cohort remained clinically high risk (~60% sepsis/septic shock; ~20% on vasopressors prior to enrolment)."
+      },
+      {
+        "topic": "Guidelines after PREPARE II",
+        "notes": "Subsequent Society of Critical Care Medicine guidance for rapid sequence intubation in critically ill adults emphasised individualised haemodynamic optimisation and does not endorse routine prophylactic fluid boluses for all patients, consistent with the PREPARE II findings."
+      },
+      {
+        "topic": "Subsequent syntheses",
+        "notes": "Systematic reviews evaluating pre-intubation fluid infusion strategies have not demonstrated a consistent reduction in peri-intubation haemodynamic collapse with routine fixed-volume fluids, reinforcing the likelihood of strong treatment-effect heterogeneity and the need for targeted strategies."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PrePARE",
+        "relation": "The earlier PrePARE trial found no overall benefit of a fluid bolus, but suggested possible effect modification among patients receiving positive pressure ventilation during the procedure, motivating this focused trial in that subgroup."
+      }
+    ],
+    "unresolved_questions": [
+      "Would a physiology-guided fluid strategy (e.g., targeting preload dependence) be effective?",
+      "Is a prophylactic vasopressor strategy superior to a prophylactic fluid strategy?",
+      "Would ensuring the full 500 mL bolus is completed before induction change the outcome?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1065",
+        "Primary composite: 21.0% vs 18.2% (absolute difference 2.8%, 95% CI -2.2 to 7.7, P=0.25)",
+        "28-day mortality: 40.5% vs 42.3% (absolute difference -1.8%, P=0.55)"
+      ],
+      "one_line_takeaway": "Do not routinely give a 500 mL fluid bolus solely to prevent cardiovascular collapse during ICU intubation; instead, focus on individualised haemodynamic optimisation and vasopressor readiness."
+    }
+  },
+  "_source_id": "PREPARE_II",
+  "_source_system": "Airway"
+}

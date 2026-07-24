@@ -1,0 +1,310 @@
+{
+  "id": "STYLETO",
+  "trial_name": "STYLETO — Stylet vs. No Stylet for First-Attempt Intubation in ICU (2021)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2021,
+  "journal": "Intensive Care Medicine",
+  "citation": "Jaber S, Rollé A, Godet T, Terzi N, Riu B, Asfar P, et al. Effect of the use of an endotracheal tube and stylet versus an endotracheal tube alone on first-attempt intubation success: a multicentre, randomised clinical trial in 999 patients. Intensive Care Med. 2021;47:653-664.",
+  "doi": "https://doi.org/10.1007/s00134-021-06417-y",
+  "registration": "",
+  "trial_type": "RCT — multicenter, parallel-group, pragmatic, investigator-initiated",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 999,
+  "result_category": "Mixed",
+  "one_liner": "Routine stylet use during direct laryngoscopy in the ICU improved first-pass success by 6.7% but did not reduce intubation-related complications or mortality.",
+  "pico": {
+    "population": "Adults requiring orotracheal intubation for invasive mechanical ventilation in 32 French ICUs",
+    "intervention": "First attempt with a standard endotracheal tube preloaded with a straight-to-cuff stylet (distal bend ~25–35°) during direct laryngoscopy",
+    "comparison": "First attempt with an endotracheal tube alone (no stylet) during direct laryngoscopy",
+    "outcome": "First-attempt intubation success (primary); composite of intubation-related complications within 1 hour (main secondary)"
+  },
+  "keywords": [
+    "stylet",
+    "intubation",
+    "first-pass success",
+    "direct laryngoscopy",
+    "airway management",
+    "ICU"
+  ],
+  "related_trials": [
+    "Bougie vs. stylet in ICU/ED",
+    "Bougie vs. stylet in ED difficult airways",
+    "Video laryngoscopy trials in ICU",
+    "Preoxygenation strategy trials (e.g., NIV)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Tracheal intubation in the ICU is frequently performed under physiological instability, where multiple attempts are associated with hypoxaemia, haemodynamic collapse, and peri-intubation cardiac arrest. Routine stylet use is common in theatre practice, but ICU evidence had largely been extrapolated from non-ICU settings and non-randomised data.",
+      "knowledge_gap": "The net benefit of routine stylet use in the ICU (efficacy, complications, and trauma) was uncertain.",
+      "hypothesis": "Routine first-attempt use of a straight-to-cuff stylet with direct laryngoscopy increases first-pass success (FPS) compared with an endotracheal tube alone, without increasing intubation-related complications or airway trauma."
+    },
+    "methods": {
+      "design": "Multicentre, parallel-group, randomised clinical trial in 32 French ICUs; pragmatic delivery alongside an ICU intubation bundle; operator unblinded with efforts to blind research staff/outcome recording.",
+      "setting": "32 ICUs in France; emergency and non-emergency intubations for invasive ventilation.",
+      "population": {
+        "inclusion": [
+          "Adults requiring orotracheal intubation for invasive mechanical ventilation"
+        ],
+        "exclusion": [
+          "Cardiac arrest at the time of intubation",
+          "Prior trial inclusion",
+          "Protected persons",
+          "Refusal/withdrawal of consent"
+        ]
+      },
+      "intervention": "First attempt performed with a standard endotracheal tube preloaded with a straight-to-cuff stylet (distal bend approximately 25–35°) during direct laryngoscopy. Subsequent attempts/rescue devices permitted according to local practice after first-attempt failure.",
+      "comparison": "First attempt performed with an endotracheal tube alone (no stylet) during direct laryngoscopy. Stylet and other adjuncts allowed for subsequent attempts/rescue after first-attempt failure.",
+      "blinding": "Operators were necessarily unblinded; allocations were concealed until assignment, and peri-intubation data collection was designed to be performed by research staff not performing the intubation.",
+      "sample_size_power": "1040 planned to detect a 10% absolute increase in FPS (70% to 80%) with 95% power at the 5% two-sided significance level (allowing <10% missing).",
+      "primary_outcome": "First-attempt intubation success",
+      "secondary_outcomes": [
+        "Complications related to intubation within 1 hour",
+        "Severe complications within 1 hour",
+        "Operator-assessed difficult intubation",
+        "Oesophageal intubation",
+        "Operator-reported aspiration",
+        "Traumatic injuries (serious adverse events)",
+        "28-day mortality",
+        "90-day mortality",
+        "ICU-free days",
+        "Ventilator-free days"
+      ],
+      "follow_up": "Procedural outcomes immediately and within 1 hour; exploratory physiological outcomes up to 24 hours; clinical outcomes and mortality to 90 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "Routine stylet use increased FPS by 6.7% (78.2% vs 71.5%), NNT 14.8.",
+        "No reduction in the composite of intubation-related complications within 1 hour (38.7% vs 40.2%).",
+        "Severe complications were common (~26%) and unaffected by stylet use.",
+        "No differences in 28-day or 90-day mortality."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "First-attempt intubation success",
+          "group_a": "392/501 (78.2%)",
+          "group_b": "356/498 (71.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.10",
+          "ci_95": "1.02 to 1.18",
+          "p_value": "0.01",
+          "note": "Absolute difference 6.7% (95% CI 1.4 to 12.1); NNT 14.8 (95% CI 8.3 to 71.7)"
+        },
+        {
+          "outcome": "Complications related to intubation within 1 hour",
+          "group_a": "194/501 (38.7%)",
+          "group_b": "200/498 (40.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.96",
+          "ci_95": "0.83 to 1.12",
+          "p_value": "0.64",
+          "note": "Absolute difference −1.5% (95% CI −7.5 to 4.6)"
+        },
+        {
+          "outcome": "Severe complications within 1 hour",
+          "group_a": "128/501 (25.6%)",
+          "group_b": "128/498 (25.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.99",
+          "ci_95": "0.81 to 1.23",
+          "p_value": "1.00",
+          "note": "Includes severe hypoxaemia and severe haemodynamic collapse components"
+        },
+        {
+          "outcome": "Operator-assessed difficult intubation",
+          "group_a": "86/501 (17.2%)",
+          "group_b": "116/498 (23.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.74",
+          "ci_95": "0.57 to 0.95",
+          "p_value": "0.15",
+          "note": "Exploratory; P adjusted (false discovery rate)"
+        },
+        {
+          "outcome": "Oesophageal intubation",
+          "group_a": "10/501 (2.0%)",
+          "group_b": "12/498 (2.4%)",
+          "effect_measure": "RR",
+          "effect_value": "0.83",
+          "ci_95": "0.36 to 1.90",
+          "p_value": "0.97",
+          "note": "Component of moderate complications"
+        },
+        {
+          "outcome": "Operator-reported aspiration",
+          "group_a": "13/501 (2.6%)",
+          "group_b": "5/498 (1.0%)",
+          "effect_measure": "RR",
+          "effect_value": "2.58",
+          "ci_95": "0.93 to 7.19",
+          "p_value": "0.33",
+          "note": "Exploratory; wide CI; P adjusted (false discovery rate)"
+        },
+        {
+          "outcome": "Traumatic injuries (serious adverse events)",
+          "group_a": "20/501 (4.0%)",
+          "group_b": "18/498 (3.6%)",
+          "effect_measure": "RR",
+          "effect_value": "1.10",
+          "ci_95": "0.59 to 2.06",
+          "p_value": "0.76",
+          "note": "Includes mucosal bleeding; laryngeal, tracheal, mediastinal, and oesophageal injuries were rare"
+        },
+        {
+          "outcome": "28-day mortality",
+          "group_a": "158/501 (31.5%)",
+          "group_b": "150/498 (30.1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.05",
+          "ci_95": "0.87 to 1.26",
+          "p_value": "0.99",
+          "note": "Exploratory clinical outcome; P adjusted (false discovery rate)"
+        },
+        {
+          "outcome": "90-day mortality",
+          "group_a": "180/501 (35.9%)",
+          "group_b": "188/498 (37.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.81 to 1.12",
+          "p_value": "1.00",
+          "note": "Exploratory clinical outcome; P adjusted (false discovery rate)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Severe complications were common (~26%) and were not reduced by the intervention.",
+      "Traumatic injuries were uncommon (~4%) and similar between groups.",
+      "Operator-reported aspiration was numerically higher in the stylet group (2.6% vs 1.0%), but the difference was not statistically significant (RR 2.58, 95% CI 0.93 to 7.19, P=0.33)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with allocation concealment until assignment; multicentre implementation reduced centre-specific selection bias risk."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Operators unblinded; peri-intubation data collection was structured to be performed by non-operator research staff, but subjective components (e.g., operator-reported aspiration; perceived difficulty) remain at risk of bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1040 randomised; modified ITT analysed 999 (stylet 501; control 498); exclusions after randomisation were balanced (21 vs 20)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High uptake of the accompanying ICU intubation bundle elements. Post-failure use of a stylet occurred more often in the stylet group (60.6%) than control (6.3%), limiting contamination of the first-attempt comparison."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were clinically similar (age 63 ± 15 vs 62 ± 15 years; SAPS II 46 ± 18 vs 47 ± 20; SOFA 6.0 ± 3.6 vs 5.9 ± 3.7; expert operator 23.0% vs 23.5%)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong, supported by concealed randomisation, balanced attrition, objective primary endpoint, and high protocol adherence; limitations chiefly relate to unavoidable operator unblinding and the mixed objectivity of complication outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU patients requiring urgent intubation for invasive ventilation; common ICU indications (acute respiratory failure ~49% vs ~47%; coma ~25%; shock ~5%). Excluded cardiac arrest at the time of intubation."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The tested strategy is specific to direct laryngoscopy with a standard stylet configuration; applicability to routine video laryngoscopy practice is uncertain. Conducted in 32 French ICUs with an established intubation bundle culture and high RSI uptake."
+        }
+      ],
+      "verdict": "Generalisability is good to ICUs using direct laryngoscopy with RSI-based practice and similar staffing, but more limited where video laryngoscopy is standard, in peri-arrest intubations, or in systems without comparable team/bundle support."
+    },
+    "strengths": [
+      "Large, multicentre ICU RCT (32 ICUs) with a clinically relevant procedural primary endpoint.",
+      "Pragmatic conduct aligned with ICU “bundle” practice, enhancing real-world relevance.",
+      "Clear intervention standardisation (stylet configuration) and objective primary outcome.",
+      "Pre-specified protocol and statistical framework published prior to completion."
+    ],
+    "limitations": [
+      "Unavoidable operator unblinding with potential bias for subjective outcomes (e.g., aspiration; perceived difficulty).",
+      "Primary endpoint is a surrogate for patient-centred outcomes; clinical benefit depends on whether improved FPS reduces harms.",
+      "Complication outcomes are common but heterogeneous; some components may be influenced by co-interventions and local practice.",
+      "Direct laryngoscopy-only context may be less aligned with contemporary increases in video laryngoscopy uptake.",
+      "Rare harms (major airway injury) remain imprecisely estimated despite large sample size."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, pragmatic RCT demonstrating that a simple technical adjunct improves first-pass success but fails to translate this into a reduction in patient-centred complications, highlighting that physiological and process factors are the dominant determinants of peri-intubation risk.",
+      "strengths": [
+        "Concealed randomisation and balanced groups",
+        "Objective primary endpoint",
+        "High protocol adherence and pragmatic design"
+      ],
+      "weaknesses": [
+        "Unblinded operators risk bias for subjective outcomes",
+        "Surrogate primary endpoint",
+        "Limited applicability to video laryngoscopy-dominant practice"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Routine first-attempt stylet use improved FPS but did not reduce the composite of early intubation-related complications or mortality.",
+    "clinical_bottom_line": {
+      "verdict": "In ICUs where direct laryngoscopy remains common, a stylet-first approach is a reasonable default for increasing FPS, but it should not be expected to reduce complications or mortality on its own.",
+      "applies_to": "Adult ICU patients requiring urgent intubation with direct laryngoscopy in settings with established intubation bundles and RSI practice.",
+      "does_not_mean": "Improved first-pass success with a stylet will automatically lead to fewer complications or better survival.",
+      "implementation_caveats": [
+        "Maintain vigilance for complications and retain a structured rescue plan.",
+        "The benefit is specific to direct laryngoscopy; the role of a stylet with video laryngoscopy is less clear.",
+        "Physiological optimisation (haemodynamics, preoxygenation) and team/process factors remain dominant determinants of outcome."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Surrogate endpoint versus patient-centred benefit",
+        "notes": "The trial demonstrated improved FPS but no reduction in early complications; commentary highlighted that “first-pass success without adverse events” may better reflect net clinical benefit than FPS alone."
+      },
+      {
+        "topic": "Adjunct choice (stylet vs bougie) remains context-dependent",
+        "notes": "In critically ill adults, a subsequent ICU/ED RCT comparing bougie-first vs tube+stylet-first found no difference in FPS, contrasting with an ED RCT in difficult airways where bougie improved FPS vs tube+stylet."
+      },
+      {
+        "topic": "Shifting device landscape",
+        "notes": "Subsequent large pragmatic evidence suggests video laryngoscopy increases FPS in critically ill adults versus direct laryngoscopy, and updated meta-analyses support improved first-pass success and fewer oesophageal intubations with video laryngoscopy; how routine stylet use interacts with video laryngoscopy in ICU remains less directly tested."
+      },
+      {
+        "topic": "Process optimisation may dominate complication risk",
+        "notes": "Contemporary trials and syntheses emphasise preoxygenation strategy (e.g., non-invasive ventilation) as a key modifiable factor for peri-intubation hypoxaemia, potentially exerting larger effects on complications than small technical adjunct effects alone."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Bougie vs. stylet in ICU/ED",
+        "relation": "A subsequent RCT comparing bougie-first vs tube+stylet-first in critically ill adults found no difference in FPS."
+      },
+      {
+        "trial": "Bougie vs. stylet in ED difficult airways",
+        "relation": "An ED RCT in difficult airways found bougie improved FPS vs tube+stylet, contrasting with the ICU/ED trial."
+      },
+      {
+        "trial": "Video laryngoscopy trials in ICU",
+        "relation": "Subsequent large pragmatic evidence and meta-analyses suggest video laryngoscopy increases FPS and reduces oesophageal intubations compared to direct laryngoscopy in critically ill adults."
+      },
+      {
+        "trial": "Preoxygenation strategy trials (e.g., NIV)",
+        "relation": "Contemporary trials and syntheses emphasise preoxygenation strategy as a key modifiable factor for peri-intubation hypoxaemia, potentially exerting larger effects on complications than small technical adjunct effects alone."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the role of a stylet as an adjunct to video laryngoscopy in the ICU?",
+      "Does a composite outcome of 'first-pass success without adverse events' better capture net clinical benefit?",
+      "How does a stylet-first strategy compare directly to a bougie-first or video laryngoscopy-first strategy in a general ICU population?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=999",
+        "FPS: 78.2% vs 71.5% (ARR 6.7%, NNT 14.8)",
+        "Complications within 1h: 38.7% vs 40.2% (no difference)",
+        "90-day mortality: 35.9% vs 37.8% (no difference)"
+      ],
+      "one_line_takeaway": "A stylet improves first-pass success with direct laryngoscopy but does not reduce complications or mortality, so it's a reasonable technical default, not a solution for peri-intubation risk."
+    }
+  },
+  "_source_id": "STYLETO",
+  "_source_system": "Airway"
+}

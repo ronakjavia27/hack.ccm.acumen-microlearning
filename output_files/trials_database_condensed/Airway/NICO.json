@@ -1,0 +1,306 @@
+{
+  "id": "NICO",
+  "trial_name": "NICO — Noninvasive Airway Management in Comatose Patients With Acute Poisoning (2023)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2023,
+  "journal": "JAMA",
+  "citation": "Freund Y, Viglino D, Cachanado M, Cassard C, Montassier E, Douay B, et al. Effect of noninvasive airway management of comatose patients with acute poisoning: a randomized clinical trial. JAMA. 2023;330(23):2267-2274.",
+  "doi": "https://doi.org/10.1001/jama.2023.24391",
+  "registration": "",
+  "trial_type": "RCT — multicenter, parallel-group, pragmatic, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 225,
+  "result_category": "Positive",
+  "one_liner": "In selected poisoned comatose adults (GCS <9) without early instability, a restricted-intubation strategy improved a hierarchical composite outcome (win ratio 1.85), driven by reduced ICU admission and length of stay, with no deaths in either group.",
+  "pico": {
+    "population": "Adults (≥18 years) with suspected acute poisoning and GCS <9 in the prehospital setting or ED, without immediate indications for intubation.",
+    "intervention": "Restricted intubation strategy for the first 4 hours: noninvasive airway management with close monitoring and rescue intubation only for pre-specified emergency criteria (seizure, SpO2<90% despite O2, vomiting, shock).",
+    "comparison": "Routine practice: airway management at clinician discretion, including early intubation if preferred.",
+    "outcome": "Hierarchical composite of in-hospital death, ICU length of stay, and hospital length of stay, reported as a win ratio."
+  },
+  "keywords": [
+    "airway management",
+    "coma",
+    "poisoning",
+    "GCS",
+    "intubation",
+    "noninvasive"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Tracheal intubation is traditionally taught for coma to 'protect the airway', often operationalised as a Glasgow Coma Scale threshold (commonly ≤8). Pre-trial evidence for intubation based on neurological score alone was predominantly observational and confounded.",
+      "knowledge_gap": "In acute poisoning, coma is frequently transient and reversible, yet intubation exposes patients to procedure-related harms, sedation/neuromuscular blockade effects, mechanical ventilation complications, and increased ICU utilisation. Randomised evidence was lacking.",
+      "hypothesis": "Avoiding systematic early intubation would reduce ICU admission and length of stay without increasing serious complications."
+    },
+    "methods": {
+      "design": "Multicentre, parallel-group, pragmatic, open-label randomised clinical trial.",
+      "setting": "20 emergency departments in France, including a physician-led prehospital emergency system.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with suspected acute poisoning",
+          "Comatose with GCS <9 in the prehospital setting or ED"
+        ],
+        "exclusion": [
+          "Indication for immediate intubation (seizures, respiratory distress, shock)",
+          "Suspicion of brain injury",
+          "Cardiotropic drug poisoning (beta-blockers, calcium channel blockers, ACE inhibitors)",
+          "Isolated reversible intoxication (opioids or benzodiazepines with naloxone/flumazenil response)",
+          "Inability to complete follow-up"
+        ]
+      },
+      "intervention": "Restricted intubation strategy for the first 4 hours after admission or until GCS >8 for ≥30 minutes. Prioritised noninvasive airway management and close monitoring (assessments at least every 30 minutes). Rescue intubation criteria: seizure; respiratory distress (SpO2<90% despite oxygen via nasal cannula); vomiting; shock (systolic BP <90 mm Hg despite 1 L crystalloid).",
+      "comparison": "Routine practice: airway management at clinician discretion (including early intubation if preferred), without protocolised restriction during the first 4 hours.",
+      "blinding": "Unblinded (participants and clinicians); outcomes not blinded.",
+      "sample_size_power": "240 patients required (α 0.05; 98% power) based on simulations assuming ICU stay mean 0 vs 1 day, hospital stay mean 2 vs 4 days, and 3% mortality in both groups.",
+      "primary_outcome": "Finkelstein-Schoenfeld hierarchical composite (death, ICU length of stay, hospital length of stay), reported as a win ratio.",
+      "secondary_outcomes": [
+        "In-hospital death",
+        "ICU admission",
+        "ICU length of stay",
+        "Hospital length of stay",
+        "Any tracheal intubation",
+        "Mechanical ventilation",
+        "Pneumonia",
+        "Adverse event from intubation attempt",
+        "First-pass failure (intubation attempt)"
+      ],
+      "follow_up": "In-hospital outcomes through discharge, truncated at 28 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "The primary hierarchical composite favoured the restricted strategy (win ratio 1.85; 95% CI 1.33 to 2.58), driven mainly by reduced ICU admission and ICU length of stay.",
+        "Large protocol separation was achieved: intubation 16.4% (restricted) vs 57.8% (routine), and mechanical ventilation 18.1% vs 59.6%.",
+        "No deaths occurred in either group; pneumonia was numerically lower but imprecise (OR 0.43; 95% CI 0.18 to 1.05).",
+        "Hospital length of stay effect was uncertain (RR 0.74; 95% CI 0.53 to 1.03)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary outcome: hierarchical composite (death, ICU LOS, hospital LOS)",
+          "group_a": "N/A (pairwise ranking)",
+          "group_b": "N/A (pairwise ranking)",
+          "effect_measure": "Win ratio",
+          "effect_value": "1.85",
+          "ci_95": "1.33 to 2.58",
+          "p_value": "",
+          "note": "12,644 pairwise comparisons; wins 8,166; losses 4,404; ties 74; 5 comparisons excluded due to missing data"
+        },
+        {
+          "outcome": "In-hospital death",
+          "group_a": "0/116 (0%)",
+          "group_b": "0/109 (0%)",
+          "effect_measure": "Not estimable",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "No deaths in either group"
+        },
+        {
+          "outcome": "ICU admission",
+          "group_a": "46/116 (39.7%)",
+          "group_b": "72/109 (66.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.23",
+          "ci_95": "0.12 to 0.44",
+          "p_value": "",
+          "note": "Absolute difference −29.2% (95% CI −41.0 to −17.4)"
+        },
+        {
+          "outcome": "ICU length of stay (hours)",
+          "group_a": "Median 0 (IQR 0 to 18.5)",
+          "group_b": "Median 24.0 (IQR 0 to 57.0)",
+          "effect_measure": "RR",
+          "effect_value": "0.39",
+          "ci_95": "0.24 to 0.66",
+          "p_value": "",
+          "note": "Duration from ICU admission to ICU discharge"
+        },
+        {
+          "outcome": "Hospital length of stay (hours)",
+          "group_a": "Median 21.5 (IQR 10.5 to 44.5)",
+          "group_b": "Median 37.0 (IQR 16.0 to 79.0)",
+          "effect_measure": "RR",
+          "effect_value": "0.74",
+          "ci_95": "0.53 to 1.03",
+          "p_value": "",
+          "note": "Censored at day 28"
+        },
+        {
+          "outcome": "Any tracheal intubation (process separation)",
+          "group_a": "19/116 (16.4%)",
+          "group_b": "63/109 (57.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Prehospital 3.4% vs 25.7%; ED 4.3% vs 22.9%; ICU 8.6% vs 9.2%"
+        },
+        {
+          "outcome": "Mechanical ventilation",
+          "group_a": "21/116 (18.1%)",
+          "group_b": "65/109 (59.6%)",
+          "effect_measure": "OR",
+          "effect_value": "0.12",
+          "ci_95": "0.06 to 0.24",
+          "p_value": "",
+          "note": "Absolute difference −42.5% (95% CI −54.1 to −30.9)"
+        },
+        {
+          "outcome": "Pneumonia",
+          "group_a": "8/116 (6.9%)",
+          "group_b": "16/109 (14.7%)",
+          "effect_measure": "OR",
+          "effect_value": "0.43",
+          "ci_95": "0.18 to 1.05",
+          "p_value": "",
+          "note": "Absolute difference −7.8% (95% CI −15.9 to 0.3)"
+        },
+        {
+          "outcome": "Adverse event from intubation attempt",
+          "group_a": "7/113 (6.0%)",
+          "group_b": "16/107 (14.7%)",
+          "effect_measure": "OR",
+          "effect_value": "0.37",
+          "ci_95": "0.15 to 0.95",
+          "p_value": "",
+          "note": "Denominators reflect those with an intubation attempt captured"
+        },
+        {
+          "outcome": "First-pass failure (intubation attempt)",
+          "group_a": "1/113 (0.9%)",
+          "group_b": "14/107 (13.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.06",
+          "ci_95": "0.01 to 0.46",
+          "p_value": "",
+          "note": "Absolute difference −12.2% (95% CI −18.8 to −5.6)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No deaths occurred in either group.",
+      "Pneumonia was numerically lower in the restricted group (6.9% vs 14.7%; OR 0.43; 95% CI 0.18 to 1.05).",
+      "Adverse events from intubation attempts were lower in the restricted group (6.0% vs 14.7%; OR 0.37; 95% CI 0.15 to 0.95).",
+      "First-pass intubation failure was lower in the restricted group (0.9% vs 13.1%; OR 0.06; 95% CI 0.01 to 0.46)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Hospital-stratified, block-balanced randomisation with concealed block size. Allocation by sealed envelopes (pragmatic concealment but more vulnerable than centralised electronic allocation)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded clinicians and patients. Key outcome components (ICU admission and ICU/hospital discharge timing) are susceptible to clinician and system decision-making."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "12/237 randomised excluded from analysis due to deferred consent issues or legal protection measures: 9/121 (7.4%) in the restricted group vs 3/116 (2.6%) in routine practice. This constitutes a modified intention-to-treat population rather than a strict ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Restricted strategy applied for 4 hours after admission or until GCS >8 for ≥30 minutes. Among 19 intubations in the restricted group, 16 were triggered by emergency criteria; 3 were performed for 'routine practice'. Most rescue intubations occurred within 2 hours."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly comparable: median age 33 vs 34 years; median GCS 6 vs 6; suspected mixed poisoning 59.5% vs 67.9%. Low baseline risk population: no in-hospital deaths."
+        }
+      ],
+      "verdict": "Moderate. Randomisation and large between-group separation support causal inference for reduced intubation and ICU utilisation, but post-randomisation exclusions, unblinded care, and decision-sensitive outcome components increase susceptibility to performance and measurement bias."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Median age in the early 30s with no deaths suggests a comparatively low-risk poisoned coma cohort. Commonly suspected agents included alcohol and benzodiazepines; cardiotropic drug poisonings and isolated reversible intoxications were excluded."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in France with a physician-led prehospital emergency system; intubation patterns and monitoring capacity may differ substantially in paramedic-led EMS models. Safe replication requires an environment capable of frequent reassessment (≥30-minute intervals) and rapid rescue intubation by skilled clinicians. Generalisability is uncertain to older, comorbid patients; toxin profiles with delayed deterioration; and resource-limited settings where close monitoring outside ICU is difficult."
+        }
+      ],
+      "verdict": "Moderate. Findings are most generalisable to young-to-middle-aged poisoned coma patients without early physiological instability in systems able to provide close ED monitoring and rapid airway rescue; extrapolation to higher-risk toxins, different EMS structures, or constrained monitoring environments is uncertain."
+    },
+    "strengths": [
+      "Pragmatic, multicentre randomised design addressing a high-variation, dogma-driven clinical decision.",
+      "Clear operationalisation of a restricted-intubation strategy with pre-specified rescue criteria and structured monitoring.",
+      "Large separation in exposure (intubation and mechanical ventilation) enabling meaningful inference about strategy effects on utilisation outcomes.",
+      "Appropriate hierarchical composite approach for competing outcomes in low-mortality populations."
+    ],
+    "limitations": [
+      "Open-label design with outcome components strongly influenced by clinician/system decisions (ICU admission and length-of-stay).",
+      "Modified intention-to-treat due to deferred-consent exclusions, with differential exclusions between groups.",
+      "Low event rates and no deaths, limiting precision for rare but critical harms (aspiration, cardiac arrest, catastrophic airway events).",
+      "Predominance of alcohol/benzodiazepine intoxication and a physician-led prehospital system may constrain generalisability.",
+      "Intervention applied for only the first 4 hours; later trajectory management was not protocolised."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed pragmatic RCT demonstrating that a restricted-intubation strategy reduces resource utilisation in a low-risk poisoned coma cohort, but open-label design and decision-sensitive endpoints limit confidence in patient-centred benefit.",
+      "strengths": [
+        "Pragmatic, multicentre design with clear protocolised intervention and rescue criteria.",
+        "Large between-group separation in the key process variable (intubation).",
+        "Appropriate statistical handling of a low-mortality cohort with a hierarchical composite."
+      ],
+      "weaknesses": [
+        "Unblinded design with outcomes susceptible to clinician decision-making.",
+        "Differential post-randomisation exclusions undermine strict ITT principle.",
+        "Low event rates preclude safety conclusions for rare catastrophic events."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In selected poisoned comatose adults (GCS <9) without early instability, a restricted-intubation strategy can substantially reduce intubation and mechanical ventilation without a detected increase in pneumonia or mortality, though safety precision is limited by low event rates.",
+    "clinical_bottom_line": {
+      "verdict": "This trial challenges the dogma of GCS-driven intubation in acute poisoning. A strategy of close observation with protocolised rescue criteria is a safe and resource-efficient alternative to routine early intubation in a selected, low-risk cohort.",
+      "applies_to": "Young-to-middle-aged adults with suspected acute poisoning (predominantly alcohol/benzodiazepines), GCS <9, and no immediate physiological instability, managed in a setting with capacity for frequent reassessment and rapid rescue intubation.",
+      "does_not_mean": "This is not a 'no intubation' strategy. It requires a commitment to frequent monitoring and rapid response. It does not apply to patients with cardiotoxic drug poisoning, brain injury, or early shock/respiratory failure.",
+      "implementation_caveats": [
+        "Requires staff bandwidth for assessments at least every 30 minutes.",
+        "Requires immediate access to skilled airway management for rescue intubation.",
+        "Generalisability is uncertain for paramedic-led EMS systems and resource-limited settings."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Endpoint choice and interpretability",
+        "notes": "The hierarchical composite incorporated ICU admission/ICU length of stay and hospital length of stay, outcomes that can be directly altered by the decision to intubate and admit to ICU, raising concerns about circularity and 'resource-use dominance' in a low-mortality cohort. The trial observed zero deaths, which removed the 'hardest' hierarchy component and increased reliance on length-of-stay metrics for separation of the primary outcome."
+      },
+      {
+        "topic": "Population, setting, and generalisability",
+        "notes": "The cohort was dominated by alcohol and benzodiazepine intoxication, and the intervention required close observation; correspondence highlighted uncertainty about applying this approach to toxins associated with prolonged coma or delayed deterioration, and to systems without robust ED monitoring capacity. The authors' reply emphasised that the strategy presupposes a setting where clinicians can monitor closely and intubate rapidly when rescue criteria occur."
+      },
+      {
+        "topic": "Attribution of intubation-related harms",
+        "notes": "Letters emphasised that routine-practice intubations occurred more frequently in the prehospital setting, and differences in environment and operator experience could contribute to observed differences in first-pass failure and intubation-attempt adverse events, complicating interpretation that harms were intrinsic to the 'routine' strategy rather than the conditions under which intubations occurred. The reply acknowledged the difference in intubation location between groups as a plausible contributor to procedural outcomes."
+      },
+      {
+        "topic": "Safety signal uncertainty",
+        "notes": "Correspondence questioned whether pneumonia and aspiration events were sufficiently captured and whether a time-limited intervention window could miss later complications related to aspiration risk or toxin trajectory."
+      },
+      {
+        "topic": "Subsequent evidence synthesis",
+        "notes": "Post-trial reviews highlight that NICO remains a key randomised datapoint in an evidence base otherwise dominated by observational designs, with wide practice variation and low event rates; they support moving beyond GCS thresholds alone while underscoring the need for further prospective evaluation across toxin profiles and system contexts."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Safety and efficacy in higher-risk toxin profiles (e.g., tricyclic antidepressants, polypharmacy with delayed deterioration).",
+      "Applicability in paramedic-led EMS systems without physician oversight.",
+      "Optimal duration and intensity of monitoring required for safe implementation.",
+      "Whether the strategy reduces patient-centred outcomes beyond resource utilisation."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=225",
+        "Win ratio 1.85 (95% CI 1.33–2.58) for primary hierarchical composite",
+        "Intubation: 16.4% vs 57.8%",
+        "ICU admission: 39.7% vs 66.1%",
+        "0 deaths in either group"
+      ],
+      "one_line_takeaway": "For a young poisoned patient with a low GCS but stable vitals, hold the tube, watch them closely for 4 hours, and intubate only if they seize, vomit, desaturate, or become shocked."
+    }
+  },
+  "_source_id": "NICO",
+  "_source_system": "Airway"
+}

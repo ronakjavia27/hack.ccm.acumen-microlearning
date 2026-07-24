@@ -1,0 +1,283 @@
+{
+  "id": "IRIS",
+  "trial_name": "IRIS — Cricoid Pressure vs Sham in Rapid Sequence Induction (2019)",
+  "specialty": "Airway",
+  "subtopic": "Airway Emergencies",
+  "year": 2019,
+  "journal": "JAMA Surgery",
+  "citation": "Birenbaum A, Hajage D, Roche S, et al. Effect of cricoid pressure compared with a sham procedure in the rapid sequence induction of anesthesia: The IRIS randomized clinical trial. JAMA Surg. 2019;154(1):9-17.",
+  "doi": "https://doi.org/10.1001/jamasurg.2018.3577",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, non-inferiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3472,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Sham procedure could not be declared non-inferior to cricoid pressure for preventing pulmonary aspiration, but cricoid pressure worsened laryngoscopic view and prolonged intubation.",
+  "pico": {
+    "population": "Adults undergoing surgery under general anaesthesia requiring RSI with aspiration risk factors (full stomach or ≥1 risk factor)",
+    "intervention": "Sham procedure (no cricoid pressure applied)",
+    "comparison": "Cricoid pressure (Sellick manoeuvre) with target force 30 N",
+    "outcome": "Pulmonary aspiration (primary); Cormack-Lehane grade, intubation time, traumatic complications (secondary)"
+  },
+  "keywords": [
+    "cricoid pressure",
+    "Sellick manoeuvre",
+    "rapid sequence induction",
+    "RSI",
+    "pulmonary aspiration",
+    "airway management"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Cricoid pressure (Sellick manoeuvre) has been widely incorporated into rapid sequence induction (RSI) as an aspiration-prevention manoeuvre, despite limited direct trial evidence linking it to reduced pulmonary aspiration.",
+      "knowledge_gap": "Physiologic and imaging studies have raised concern that cricoid pressure can distort upper airway anatomy (including postcricoid hypopharyngeal compression), potentially worsening laryngoscopic view and prolonging intubation. The aspiration endpoint is rare in modern practice; therefore, prior studies were underpowered to address clinically important outcomes (aspiration/aspiration pneumonia) rather than surrogate endpoints.",
+      "hypothesis": "Whether omitting cricoid pressure (sham procedure) is non-inferior to cricoid pressure during RSI for preventing pulmonary aspiration in surgical patients with a “full stomach” or other aspiration risk factors."
+    },
+    "methods": {
+      "design": "Randomised, multicentre (10 academic centres), double-blind, non-inferiority, parallel-group trial (France); enrolment February 2014 to February 2017; follow-up to 28 days or hospital discharge.",
+      "setting": "10 academic centres in France",
+      "population": {
+        "inclusion": [
+          "Adults undergoing surgery under general anaesthesia requiring RSI.",
+          "“Full stomach” defined as <6 hours fasting.",
+          "Or ≥1 aspiration risk factor: gastro-oesophageal reflux; diabetes; opioid use; peptic ulcer; previous gastric surgery; obesity (BMI >30); pregnancy; intestinal obstruction; delayed gastric emptying."
+        ],
+        "exclusion": [
+          "Inability to provide informed consent (notably, emergency RSI in patients unable to consent)",
+          "Outpatient surgery",
+          "RSI without tracheal intubation"
+        ]
+      },
+      "intervention": "Cricoid pressure (Sellick manoeuvre) applied with target force 30 N using the first three fingers on the cricoid cartilage. Operator training used a 50 mL syringe model (compressing from 40 mL to 33 mL to approximate 30 N) to standardise applied force. Applied by an anaesthesiologist not otherwise involved in patient care; a screen/cover was used to blind the intubating clinician to manoeuvre allocation.",
+      "comparison": "Sham manoeuvre with identical positioning/ritualisation but without applying cricoid pressure. Same blinding approach (screen/cover) to preserve clinician blinding. Cricoid pressure/sham could be interrupted if requested by the intubating clinician (e.g., impaired view).",
+      "blinding": "Double-blind for the anaesthesiologist and intubating clinician (screen/cover over neck); the individual applying the manoeuvre was not blinded but was not otherwise involved in airway management.",
+      "sample_size_power": "A total of 3434 patients (1717 per arm) were required to test non-inferiority of sham vs Sellick for pulmonary aspiration, assuming 1% event incidence and a non-inferiority margin corresponding to a 50% relative increase (RR margin 1.5), with 80% power and a one-sided alpha of 2.5% (reported as 0.025). Target sample size was 3500 allowing 1.5% consent withdrawal; primary analysis was per-protocol with supportive intention-to-treat analysis.",
+      "primary_outcome": "Pulmonary aspiration",
+      "secondary_outcomes": [
+        "Aspiration pneumonia (first 24 hours)",
+        "Severe aspiration pneumonia (first 7 days)",
+        "Suspected aspiration pneumonia (first 24 hours)",
+        "Mortality (day 28)",
+        "Cormack–Lehane grade 3–4 (first attempt)",
+        "Intubation time",
+        "Traumatic complications"
+      ],
+      "follow_up": "Primary endpoint assessed peri-intubation; secondary outcomes included early pulmonary outcomes (first 24 hours and first 7 days) and mortality to day 28 (or hospital discharge)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Sham could not be declared non-inferior to Sellick for pulmonary aspiration because the upper confidence limit for RR (2.00) exceeded the pre-specified non-inferiority margin (1.50), despite very low absolute aspiration rates (~0.5–0.6%).",
+        "Cricoid pressure meaningfully worsened airway process metrics (Cormack–Lehane grade 3–4: 10% vs 5%; P<0.001) and prolonged intubation time (median 27 vs 23 seconds; P<0.001).",
+        "Cricoid pressure was interrupted more often (14% vs 5%; P<0.001) and was associated with more traumatic complications (3% vs 1%; P<0.001)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Pulmonary aspiration (primary; per-protocol)",
+          "group_a": "10/1729 (0.6%)",
+          "group_b": "9/1730 (0.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.90",
+          "ci_95": "90% CI 0.39 to 2.00",
+          "p_value": "0.14",
+          "note": "RR expressed as Sham/Sellick; upper CI (2.00) exceeded non-inferiority margin (1.50); non-inferiority not demonstrated."
+        },
+        {
+          "outcome": "Pulmonary aspiration (primary; intention-to-treat)",
+          "group_a": "10/1784 (0.6%)",
+          "group_b": "9/1736 (0.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.90",
+          "ci_95": "90% CI 0.39 to 1.99",
+          "p_value": "0.14",
+          "note": "Risk difference (Sham − Sellick) −0.06% (two-sided 95% CI −0.57 to 0.42); non-inferiority not demonstrated."
+        },
+        {
+          "outcome": "Aspiration pneumonia (first 24 hours)",
+          "group_a": "16/1735 (0.9%)",
+          "group_b": "15/1736 (0.9%)",
+          "effect_measure": "OR",
+          "effect_value": "0.94",
+          "ci_95": "95% CI 0.46 to 1.93",
+          "p_value": "0.86",
+          "note": "Secondary endpoint; odds ratios reported in trial publication."
+        },
+        {
+          "outcome": "Severe aspiration pneumonia (first 7 days)",
+          "group_a": "5/1735 (0.3%)",
+          "group_b": "7/1736 (0.4%)",
+          "effect_measure": "OR",
+          "effect_value": "1.40",
+          "ci_95": "95% CI 0.45 to 4.40",
+          "p_value": "0.56",
+          "note": "Secondary endpoint; wide CI due to rarity."
+        },
+        {
+          "outcome": "Suspected aspiration pneumonia (first 24 hours)",
+          "group_a": "160/1735 (9.2%)",
+          "group_b": "169/1736 (9.7%)",
+          "effect_measure": "OR",
+          "effect_value": "1.06",
+          "ci_95": "95% CI 0.84 to 1.35",
+          "p_value": "0.61",
+          "note": "Defined as new infiltrate on chest radiography within 24 hours."
+        },
+        {
+          "outcome": "Mortality (day 28)",
+          "group_a": "30/1735 (1.7%)",
+          "group_b": "27/1736 (1.6%)",
+          "effect_measure": "OR",
+          "effect_value": "0.90",
+          "ci_95": "95% CI 0.53 to 1.54",
+          "p_value": "0.70",
+          "note": "Follow-up to day 28 or discharge."
+        },
+        {
+          "outcome": "Cormack–Lehane grade 3–4 (first attempt)",
+          "group_a": "175/1736 (10%)",
+          "group_b": "93/1736 (5%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Worse laryngoscopic view with cricoid pressure."
+        },
+        {
+          "outcome": "Intubation time, median (IQR)",
+          "group_a": "27 (20–38) s",
+          "group_b": "23 (18–32) s",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Prolonged intubation time with cricoid pressure."
+        },
+        {
+          "outcome": "Traumatic complications",
+          "group_a": "47/1736 (3%)",
+          "group_b": "25/1736 (1%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Includes dental damage (0.6% vs 0.2%; P=0.03) and other recorded trauma events."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Traumatic complications were more frequent with cricoid pressure (3% vs 1%; P<0.001), including higher dental injury (0.6% vs 0.2%; P=0.03)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised web-based randomisation (block size 6), stratified by centre; allocation concealment maintained until assignment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Intubating clinician and managing anaesthesiologist were blinded using a neck screen/cover; the manoeuvre performer was unblinded but not otherwise involved in airway management."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "3472 randomised; intention-to-treat population 1735 vs 1736; per-protocol population 1729 vs 1730; major protocol violations were uncommon (12/3471; 0.3%). Primary endpoint had no missing values; for day-28 outcomes, losses to follow-up were 33/1735 (1.9%) vs 28/1736 (1.6%)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Substantial “release” of the assigned manoeuvre occurred by clinical request: interruption of cricoid pressure/sham 246/1736 (14%) vs 86/1736 (5%); P<0.001."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Not explicitly detailed in source, but randomisation was stratified and protocol violations were rare."
+        }
+      ],
+      "verdict": "Moderate-to-strong: randomisation and blinding were methodologically robust and protocol violations were rare, but frequent manoeuvre interruption and a markedly lower-than-anticipated primary event rate limited the inferential strength of the non-inferiority conclusion."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Surgical RSI population with defined aspiration risks (including emergency surgery); highest-acuity “crash” intubations and patients unable to consent (a common real-world emergency RSI cohort) were excluded."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Operating theatre environment with anaesthesia-trained teams and standardised application training; transferability to ED/ICU/pre-hospital RSI (different operator mix, time pressure, physiology, and aspiration-risk distributions) is uncertain. Target force (30 N) and formal training may not reflect real-world variability in technique; conversely, frequent interruption suggests that “persistent” cricoid pressure may be uncommon in challenging airways. Extremely low aspiration incidence in this trial may not match contexts with higher baseline aspiration risk (e.g., profoundly obtunded emergency presentations), limiting the ability to extrapolate absolute risks."
+        }
+      ],
+      "verdict": "Moderate: findings are most applicable to elective/emergency surgical RSI under anaesthesia care in well-resourced settings; generalisability to ED/ICU RSI and to patients unable to consent is limited."
+    },
+    "strengths": [
+      "Large multicentre double-blind RCT",
+      "Clinically meaningful primary endpoint (aspiration)",
+      "Pre-specified non-inferiority design and analysis strategy",
+      "Low protocol violation rate",
+      "Objective reporting of airway process metrics and complications"
+    ],
+    "limitations": [
+      "Primary event rarer than assumed (reduced precision)",
+      "Non-inferiority not demonstrated (inconclusive rather than equivalence)",
+      "Frequent manoeuvre interruption",
+      "Exclusion of patients unable to consent (limits applicability to the sickest emergency RSI cohort)",
+      "Inability to directly measure applied force at the bedside beyond training approximation"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed non-inferiority trial that was inconclusive for its primary endpoint due to a low event rate, but which provides strong evidence that cricoid pressure worsens intubating conditions.",
+      "strengths": [
+        "Robust randomization and blinding",
+        "Clinically relevant primary outcome",
+        "Large, multicenter design"
+      ],
+      "weaknesses": [
+        "Underpowered due to lower-than-expected event rate",
+        "High rate of protocol non-adherence (manoeuvre interruption)",
+        "Exclusion of patients unable to consent limits generalizability"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Sham could not be declared non-inferior to cricoid pressure for pulmonary aspiration, largely due to imprecision from very low aspiration event rates. Cricoid pressure worsened laryngoscopic conditions and prolonged intubation, with more recorded traumatic complications.",
+    "clinical_bottom_line": {
+      "verdict": "IRIS does not prove that omitting cricoid pressure is safe, but it strongly suggests that the airway harm from cricoid pressure is real and more common than the aspiration it seeks to prevent. Practice should shift toward a readiness to immediately release cricoid pressure if it impairs laryngoscopy or ventilation.",
+      "applies_to": "Elective and emergency surgical patients undergoing RSI in the operating theatre with standard aspiration risk factors.",
+      "does_not_mean": "Cricoid pressure is proven to be ineffective or harmful for preventing aspiration. The trial was inconclusive on this point.",
+      "implementation_caveats": [
+        "Findings are least applicable to crash intubations in the ED/ICU where patients cannot consent and aspiration risk may be higher.",
+        "Clinicians must be trained not just to apply cricoid pressure, but to recognize when it is causing harm and to release it immediately."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of non-inferiority result",
+        "notes": "The accompanying commentary argued that the IRIS result should not be interpreted as vindication of cricoid pressure, emphasising long-standing evidentiary fragility, plausible mechanisms of airway compromise, and the need for clinician readiness to release pressure when it impairs laryngoscopy or ventilation."
+      },
+      {
+        "topic": "Mechanism of cricoid pressure",
+        "notes": "Mechanistic and imaging work (pre-dating IRIS) has demonstrated that cricoid pressure may not reliably compress the oesophagus as traditionally conceptualised, with compression of postcricoid hypopharyngeal structures occurring instead; these data support biologic plausibility for worsened laryngoscopic conditions observed in IRIS."
+      },
+      {
+        "topic": "Practice variability and evidence quality",
+        "notes": "Comprehensive reviews have highlighted variability in cricoid pressure technique, uncertainty regarding effectiveness in aspiration prevention, and the potential for harm via airway distortion—contextualising IRIS as a necessary but not definitive trial in an area with persistent practice heterogeneity."
+      },
+      {
+        "topic": "Role in trauma airway guidelines",
+        "notes": "Trauma airway guidance has historically included cricoid pressure among RSI adjuncts, but recommendations have been constrained by evidence quality and balanced against airway management priorities; IRIS reinforces the clinical logic embedded in such guidance that airway management success and oxygenation take precedence when cricoid pressure impairs intubation."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is cricoid pressure effective in populations with a higher baseline risk of aspiration (e.g., emergency department, ICU, or pre-hospital RSI)?",
+      "What is the optimal force and technique for cricoid pressure application, and can it be reliably measured and maintained in real-world practice?",
+      "Would a larger trial, or one using a different non-inferiority margin, yield a definitive answer on the efficacy of cricoid pressure for preventing aspiration?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3472",
+        "Pulmonary aspiration: 0.6% vs 0.5% (non-inferiority not met)",
+        "Cormack-Lehane grade 3-4: 10% vs 5% (P<0.001)",
+        "Traumatic complications: 3% vs 1% (P<0.001)"
+      ],
+      "one_line_takeaway": "Cricoid pressure worsens laryngoscopic view and prolongs intubation without a proven reduction in the already-rare event of pulmonary aspiration; be ready to release it immediately if it causes difficulty."
+    }
+  },
+  "_source_id": "IRIS",
+  "_source_system": "Airway"
+}

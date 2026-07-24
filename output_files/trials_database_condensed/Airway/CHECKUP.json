@@ -1,0 +1,342 @@
+{
+  "id": "CHECKUP",
+  "trial_name": "CHECKUP — Ramped vs Sniffing Position During ICU Intubation (2017)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2017,
+  "journal": "CHEST",
+  "citation": "Semler MW, Janz DR, Russell DW, Casey JD, Lentz RJ, Zouk AN, et al. A Multicenter, Randomized Trial of Ramped Position vs Sniffing Position During Endotracheal Intubation of Critically Ill Adults. Chest. 2017;152(4):712-722.",
+  "doi": "https://doi.org/10.1016/j.chest.2017.03.061",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, 2x2 factorial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 260,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU intubations by trainees, ramped positioning (25° head-of-bed elevation) did not improve peri-intubation oxygenation compared to sniffing position and was associated with worse laryngoscopic view and lower first-pass success.",
+  "pico": {
+    "population": "Critically ill adults requiring endotracheal intubation in ICU with planned sedative and neuromuscular blockade",
+    "intervention": "Ramped position (25° head-of-bed elevation, occiput at upper bed edge, face parallel to ceiling)",
+    "comparison": "Sniffing position (bed horizontal, neck flexion/head extension with folded blankets)",
+    "outcome": "Lowest oxygen saturation between induction and 2 minutes post-intubation"
+  },
+  "keywords": [
+    "ramped position",
+    "sniffing position",
+    "endotracheal intubation",
+    "peri-intubation hypoxaemia",
+    "airway management",
+    "ICU"
+  ],
+  "related_trials": [
+    "Check-UP checklist component"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Peri-intubation hypoxaemia is the most frequent complication of tracheal intubation in critically ill adults, with plausible links to peri-arrest haemodynamic collapse and death. 'Ramped' positioning improves preoxygenation and/or laryngoscopic view in elective operating theatre studies, especially in obesity.",
+      "knowledge_gap": "ICU intubation differs materially from elective anaesthesia (physiological instability, urgency, variable preoxygenation, trainee operators), so translation from theatre practice was uncertain.",
+      "hypothesis": "Ramped positioning would increase the lowest oxygen saturation measured during and immediately after intubation compared with sniffing position."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, randomised trial conducted in four ICUs; part of a 2x2 factorial design (positioning and a pre-intubation checklist).",
+      "setting": "ICU intubations performed by pulmonary and critical care medicine fellows (July 2015 to July 2016).",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) requiring endotracheal intubation where the intubating clinician planned induction with sedative medication and neuromuscular blockade."
+        ],
+        "exclusion": [
+          "Intubations deemed too urgent to permit enrolment procedures.",
+          "Clinician requirement for a specific position.",
+          "Awake intubation.",
+          "Age <18 years."
+        ]
+      },
+      "intervention": "Ramped position: bed adjusted to elevate the head-of-bed to 25° while maintaining the lower half of the bed parallel to the floor. Occiput positioned at the upper edge of the bed so that the patient’s face was parallel to the ceiling.",
+      "comparison": "Sniffing position: bed kept horizontal (no torso elevation permitted). Neck flexion/head extension achieved using folded blankets under the head and neck.",
+      "blinding": "Unblinded (operators and bedside staff aware of assigned position); primary outcome was objective (pulse oximetry) but procedural outcomes were operator-reported.",
+      "sample_size_power": "260 patients required to detect a 5% absolute increase in lowest oxygen saturation (assumed SD 14%) with 80% power at the 5% significance level.",
+      "primary_outcome": "Lowest oxygen saturation between induction and 2 minutes after intubation.",
+      "secondary_outcomes": [
+        "Lowest oxygen saturation <90%",
+        "Lowest oxygen saturation <80%",
+        "Decrease in oxygen saturation from induction",
+        "Cormack–Lehane grade III or IV view",
+        "Difficult intubation (operator-reported)",
+        "Successful intubation on first attempt",
+        "Endotracheal tube introducer (bougie) use",
+        "Second laryngoscope type required",
+        "Time from induction to secured airway",
+        "New or increased vasopressor dose after induction",
+        "Hospital mortality"
+      ],
+      "follow_up": "Primary outcome measured from induction through 2 minutes post-intubation; clinical outcomes followed through ICU stay and hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "Ramped positioning did not improve oxygenation: median lowest SpO2 93% vs 92% (P=0.27).",
+        "Ramped positioning was associated with worse laryngoscopy-related outcomes (grade III/IV view 25.4% vs 11.5%; first-pass success 76.2% vs 85.4%).",
+        "Greater use of rescue adjuncts in the ramped group (bougie 19.2% vs 6.2%).",
+        "No significant differences in haemodynamic endpoints or hospital mortality, though the trial was not powered for these outcomes."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Lowest oxygen saturation between induction and 2 min after intubation (primary), % (median [IQR])",
+          "group_a": "93 (84–99)",
+          "group_b": "92 (79–98)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.27",
+          "note": "n=127 per group; data missing for 3/130 in each arm"
+        },
+        {
+          "outcome": "Lowest oxygen saturation <90%, n/N (%)",
+          "group_a": "50/127 (39.4)",
+          "group_b": "53/127 (41.7)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.70",
+          "note": ""
+        },
+        {
+          "outcome": "Lowest oxygen saturation <80%, n/N (%)",
+          "group_a": "26/127 (20.5)",
+          "group_b": "36/127 (28.3)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.14",
+          "note": ""
+        },
+        {
+          "outcome": "Decrease in oxygen saturation from induction, % (median [IQR])",
+          "group_a": "3.0 (0–13)",
+          "group_b": "4.0 (0–15)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.37",
+          "note": "n=127 per group"
+        },
+        {
+          "outcome": "Decrease in oxygen saturation >3% from induction, n (%)",
+          "group_a": "62 (48.8)",
+          "group_b": "65 (51.6)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.66",
+          "note": ""
+        },
+        {
+          "outcome": "Cormack–Lehane grade III or IV view, %",
+          "group_a": "25.4",
+          "group_b": "11.5",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.01",
+          "note": "Operator-reported; denominator 130 per group"
+        },
+        {
+          "outcome": "Difficult intubation, %",
+          "group_a": "12.3",
+          "group_b": "4.6",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.04",
+          "note": "Operator-reported; denominator 130 per group"
+        },
+        {
+          "outcome": "Successful intubation on first attempt, %",
+          "group_a": "76.2",
+          "group_b": "85.4",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.02",
+          "note": "Denominator 130 per group"
+        },
+        {
+          "outcome": "Endotracheal tube introducer used, n (%)",
+          "group_a": "25 (19.2)",
+          "group_b": "8 (6.2)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.002",
+          "note": ""
+        },
+        {
+          "outcome": "Second laryngoscope type required, n (%)",
+          "group_a": "21 (16.2)",
+          "group_b": "8 (6.2)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.01",
+          "note": ""
+        },
+        {
+          "outcome": "Time from induction to secured airway, seconds (median [IQR])",
+          "group_a": "119 (81–214)",
+          "group_b": "110 (75–157)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.09",
+          "note": ""
+        },
+        {
+          "outcome": "New or increased vasopressor dose after induction, n (%)",
+          "group_a": "24 (18.5)",
+          "group_b": "24 (18.5)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": ">0.99",
+          "note": ""
+        },
+        {
+          "outcome": "Died before hospital discharge, n (%)",
+          "group_a": "53 (40.8)",
+          "group_b": "64 (49.2)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.17",
+          "note": "Exploratory endpoint; trial not powered for mortality"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "BMI ≥30 kg/m²",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "",
+          "note": "Prespecified analyses did not show benefit of ramped positioning by BMI category. Obese subgroup comprised 37.1% of participants."
+        }
+      ]
+    },
+    "safety": [
+      "No statistically significant differences were observed in haemodynamic endpoints (new or increased vasopressor dose: 18.5% in both groups, P>0.99).",
+      "Hospital mortality was not significantly different (40.8% vs 49.2%, P=0.17), though the trial was not powered for this outcome."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated permuted blocks with stratification by ICU; concealed allocation via sequentially numbered opaque envelopes opened after the decision to intubate."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded intervention; primary outcome (SpO2) objective, but procedural outcomes (e.g., Cormack–Lehane grade, 'difficulty') were operator-reported and susceptible to expectation/measurement bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "No post-randomisation exclusions reported; primary outcome missing for 3/130 in each arm (analysed n=127 per group). Crossovers were rare (1 assigned sniffing received ramped; 2 assigned ramped received sniffing)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "In a measured convenience sample (n=35), head-of-bed angle was 25° (IQR 23–25) in the ramped group vs 0° (IQR 0–0) in the sniffing group (P<0.001), confirming good separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well matched (e.g., age median 56 years in both; APACHE II median 22 vs 21; baseline SpO2 at induction 99% [93–100] vs 99% [95–100])."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong given concealed randomisation, minimal crossover, and an objective primary outcome; key limitations are lack of blinding, operator-reported procedural endpoints, and potential performance effects related to differential operator familiarity with the assigned positions."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical ICU adult cohort (high illness severity; common indications included hypoxaemic respiratory failure), but restricted to intubations performed by pulmonary/critical care fellows with planned sedative + neuromuscular blockade. Most urgent intubations were frequently excluded (too urgent to enrol)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings are most applicable to academic ICUs with trainee intubators. Transferability to anaesthesia-led teams, emergency departments, prehospital care, and resource-limited settings is uncertain. 'Ramped' positioning was delivered via ICU bed head-of-bed elevation to 25°; results may not translate to other ramping techniques (e.g., blanket 'ramp' to align external auditory meatus with sternal notch)."
+        }
+      ],
+      "verdict": "Generalisability is moderate for routine ICU intubations in similar academic contexts, but is limited for highly emergent airways, non-ICU settings, and different 'ramped' implementations or operator skill-mix."
+    },
+    "strengths": [
+      "Randomised, multicentre ICU trial addressing a common practice extrapolated from theatre to critical care.",
+      "Objective, clinically relevant primary endpoint with prespecified power calculation and intention-to-treat analysis.",
+      "Clear, protocolised definitions for the two positioning strategies and low crossover.",
+      "Independent observers collected physiologic data during the procedure."
+    ],
+    "limitations": [
+      "Unblinded intervention; important procedural outcomes were operator-reported.",
+      "Restricted to fellow-performed intubations; differential familiarity with sniffing vs ramped may have influenced procedural success (median prior intubations 37 vs 10).",
+      "Many urgent intubations were not enrolled, potentially limiting applicability to the highest-risk scenarios.",
+      "Single 'dose' of ramping (25° head-of-bed elevation) may not reproduce theatre-style ramping geometry in obesity; the degree of head/neck alignment achieved was not routinely measured.",
+      "Trial not powered for downstream clinical outcomes (e.g., mortality), so neutral findings there are imprecise."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic RCT with an objective primary outcome that provides moderate-to-strong internal validity, though unblinding and operator-reported procedural endpoints introduce potential bias; external validity is limited to non-emergent intubations by trainees in academic ICUs.",
+      "strengths": [
+        "Concealed randomisation and low crossover.",
+        "Objective primary outcome (lowest SpO2).",
+        "Prespecified power calculation met."
+      ],
+      "weaknesses": [
+        "Lack of blinding for a procedural intervention.",
+        "Operator-reported secondary outcomes susceptible to bias.",
+        "Differential operator experience with the two positions."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Among critically ill adults undergoing tracheal intubation, ramped position did not improve oxygenation, and was associated with worse laryngoscopic view and lower first-pass success compared with sniffing position.",
+    "clinical_bottom_line": {
+      "verdict": "For routine ICU intubations using the study’s technique (25° head-of-bed elevation), ramped positioning did not improve peri-intubation oxygenation and was associated with worse procedural outcomes; sniffing position appears a reasonable default when no other indication mandates head-up positioning.",
+      "applies_to": "Non-emergent ICU intubations performed by trainees in academic settings.",
+      "does_not_mean": "The findings do not exclude benefit from alternative ramping techniques (e.g., true 'ramp' alignment in severe obesity) or in subgroups under-represented by enrolment constraints.",
+      "implementation_caveats": [
+        "Operator familiarity with the chosen position is crucial.",
+        "The specific ramping technique (25° bed elevation) may differ from other methods.",
+        "Positioning choice should be part of a comprehensive airway strategy, not a standalone intervention."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Why oxygenation benefit was not observed (mechanistic debate)",
+        "notes": "The accompanying editorial highlighted that preoxygenation and peri-procedural management were not standardised, and that ICU 'ramping' via bed elevation may differ from theatre ramping geometry, potentially blunting physiological benefit while introducing procedural difficulty."
+      },
+      {
+        "topic": "Position definitions and the obesity question",
+        "notes": "Investigators emphasised that the trial included a substantial obese subgroup (BMI ≥30 kg/m² in 37.1%) and that prespecified analyses did not show benefit of ramped positioning by BMI category; they also noted ongoing uncertainty about the optimal technique at BMI extremes and the practical challenge of achieving ideal head/neck alignment in the ICU environment."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Check-UP checklist component",
+        "relation": "The factorial checklist component of the same trial platform was subsequently published separately; the written pre-intubation checklist did not improve oxygenation or key safety outcomes in critically ill adults."
+      },
+      {
+        "trial": "Subsequent meta-analysis",
+        "relation": "A systematic review and meta-analysis evaluating ramped vs sniffing positioning across studies reported no consistent advantage of ramped positioning for key intubation outcomes, broadly aligning with the direction of effect observed in this ICU trial."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal ramping technique and geometry, especially at BMI extremes.",
+      "Benefit of ramped positioning in settings with different operator skill-mix (e.g., anaesthesia-led teams).",
+      "Role of ramped positioning in the most time-critical, emergent airways excluded from this trial."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=260",
+        "Lowest SpO2: 93% vs 92% (P=0.27)",
+        "Grade III/IV view: 25.4% vs 11.5% (P=0.01)",
+        "First-pass success: 76.2% vs 85.4% (P=0.02)"
+      ],
+      "one_line_takeaway": "In trainee-performed ICU intubations, a pragmatic ramped position (25° head-up) does not improve oxygenation and worsens laryngoscopic view and first-pass success compared to the sniffing position."
+    }
+  },
+  "_source_id": "CHECKUP",
+  "_source_system": "Airway"
+}

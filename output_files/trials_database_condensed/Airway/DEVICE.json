@@ -1,0 +1,347 @@
+{
+  "id": "DEVICE",
+  "trial_name": "DEVICE — Video vs Direct Laryngoscopy for Tracheal Intubation of Critically Ill Adults (2023)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2023,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Prekker ME, Driver BE, Trent SA, et al. Video versus direct laryngoscopy for tracheal intubation of critically ill adults. N Engl J Med. 2023;389(5):418-429.",
+  "doi": "https://doi.org/10.1056/NEJMoa2301601",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1417,
+  "result_category": "Positive",
+  "one_liner": "In critically ill adults, a video-first laryngoscopy strategy increased first-attempt intubation success by 14.3 percentage points compared to direct laryngoscopy, with no significant difference in a composite of severe peri-intubation complications.",
+  "pico": {
+    "population": "Adults (≥18 years) in EDs and ICUs requiring emergency orotracheal intubation, where the operator believed either laryngoscopy approach was reasonable.",
+    "intervention": "Assignment to a video laryngoscope for the first intubation attempt.",
+    "comparison": "Assignment to a direct laryngoscope for the first intubation attempt.",
+    "outcome": "Successful intubation on the first attempt."
+  },
+  "keywords": [
+    "video laryngoscopy",
+    "direct laryngoscopy",
+    "tracheal intubation",
+    "first-pass success",
+    "airway management",
+    "emergency department",
+    "intensive care unit"
+  ],
+  "related_trials": [
+    "MACMAN"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Emergency tracheal intubation in the ED/ICU frequently requires repeated attempts and is associated with peri-intubation hypoxaemia and cardiovascular instability. Video laryngoscopy improves glottic visualisation, but earlier ICU and ED trials showed mixed effects on first-pass success and complications.",
+      "knowledge_gap": "Contemporary systematic reviews/meta-analyses in critically ill adults continued to show heterogeneity by setting, operator experience, and device type, with uncertainty about whether improved visualisation translates into fewer complications or better patient-centred outcomes.",
+      "hypothesis": "In critically ill adults undergoing emergency tracheal intubation in the ED/ICU, initial use of a video laryngoscope (vs a direct laryngoscope) will increase successful intubation on the first attempt without increasing peri-intubation severe complications."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, parallel-group, randomised superiority trial conducted in 17 emergency departments and ICUs; open-label (no blinding) with concealed allocation using sealed opaque envelopes; outcome data collected by trained independent observers when feasible.",
+      "setting": "17 EDs and ICUs.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) located in a participating unit with a planned orotracheal intubation using a laryngoscope, performed by a clinician who routinely performs tracheal intubation.",
+          "The operator believed that either laryngoscopy approach could reasonably be used (i.e., no perceived requirement for a specific approach for that patient)."
+        ],
+        "exclusion": [
+          "Age <18 years",
+          "Known pregnancy",
+          "Known prisoner status",
+          "An immediate need for intubation that precluded safe performance of the randomisation process",
+          "Operator believed one approach was necessary or that one approach was contraindicated"
+        ]
+      },
+      "intervention": "Assignment to a video laryngoscope for the first intubation attempt (first attempt defined by a single laryngoscope blade insertion and either a single tracheal tube insertion or a bougie insertion followed by tracheal tube insertion); video laryngoscope type/blade geometry left to clinician discretion (pragmatic).",
+      "comparison": "Assignment to a direct laryngoscope for the first intubation attempt; subsequent attempts and adjuncts (e.g., bougie, stylet) at clinician discretion (pragmatic).",
+      "blinding": "Unblinded (operators and bedside team not blinded); the primary outcome is operationally defined and intended to be objectively observed; lack of blinding increases risk of performance bias (choice of adjuncts/backup strategy) and detection bias for more subjective complications.",
+      "sample_size_power": "Power calculation targeted a 5% absolute increase in first-attempt success (from 80% to 85%) with 90% power at a two-sided 5% significance level; planned enrolment 1920 patients (inflated to 2000 allowing for up to 4% missing data), with one interim analysis at 1000 patients and a Haybittle–Peto-style efficacy boundary of P≤0.001.",
+      "primary_outcome": "Successful intubation on the first attempt.",
+      "secondary_outcomes": [
+        "Severe complication during intubation (composite: SpO2<80%, SBP <65 mmHg or new/increased vasopressor, or cardiac arrest from induction to 2 min after intubation)",
+        "Median duration of intubation attempt",
+        "Successful intubation on first laryngoscope blade insertion",
+        "Successful first attempt without severe complication",
+        "Oesophageal intubation",
+        "Aspiration",
+        "ICU-free days at 28 days",
+        "Ventilator-free days at 28 days",
+        "In-hospital death within 28 days",
+        "In-hospital death within 1 hour"
+      ],
+      "follow_up": "Peri-procedural outcomes measured during the intubation sequence (from induction through shortly after intubation); ICU-free days, ventilator-free days, and in-hospital death assessed up to 28 days after enrolment."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early for efficacy after an interim analysis at 1420 enrolled patients.",
+        "Video laryngoscopy increased first-attempt success by 14.3 percentage points (85.1% vs 70.8%).",
+        "The prespecified severe-complication composite was similar between groups (21.4% vs 20.9%).",
+        "Exploratory analysis suggested a larger absolute benefit for operators with less experience."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Successful intubation on first attempt (primary)",
+          "group_a": "600/705 (85.1%)",
+          "group_b": "504/712 (70.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+14.3 pp",
+          "ci_95": "9.9 to 18.7",
+          "p_value": "<0.001",
+          "note": "First attempt = 1 laryngoscope blade insertion and 1 tube insertion (or bougie + tube insertion)."
+        },
+        {
+          "outcome": "Severe complication during intubation (prespecified)",
+          "group_a": "151/705 (21.4%)",
+          "group_b": "149/712 (20.9%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+0.5 pp",
+          "ci_95": "−3.9 to 4.9",
+          "p_value": "",
+          "note": "Composite from induction to 2 min after intubation: SpO2<80%, SBP <65 mmHg or new/increased vasopressor, or cardiac arrest."
+        },
+        {
+          "outcome": "Median duration of intubation attempt",
+          "group_a": "38 s (IQR 27–60)",
+          "group_b": "46 s (IQR 32–72)",
+          "effect_measure": "Median difference",
+          "effect_value": "−8 s",
+          "ci_95": "−12 to −4",
+          "p_value": "",
+          "note": "Duration from laryngoscope insertion to laryngoscope removal (or end of first attempt)."
+        },
+        {
+          "outcome": "Successful intubation on first laryngoscope blade insertion (exploratory)",
+          "group_a": "636/704 (90.3%)",
+          "group_b": "546/706 (77.3%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+13.0 pp",
+          "ci_95": "9.1 to 16.9",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Successful first attempt without severe complication (exploratory)",
+          "group_a": "484/705 (68.7%)",
+          "group_b": "420/712 (59.0%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+9.7 pp",
+          "ci_95": "4.5 to 14.8",
+          "p_value": "",
+          "note": "Exploratory composite of procedural success and safety."
+        },
+        {
+          "outcome": "Oesophageal intubation",
+          "group_a": "6/705 (0.9%)",
+          "group_b": "9/712 (1.3%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−0.4 pp",
+          "ci_95": "−1.5 to 0.7",
+          "p_value": "",
+          "note": "Operator-reported complication."
+        },
+        {
+          "outcome": "Aspiration",
+          "group_a": "7/705 (1.0%)",
+          "group_b": "12/712 (1.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−0.7 pp",
+          "ci_95": "−2.1 to 0.8",
+          "p_value": "",
+          "note": "Operator-reported complication."
+        },
+        {
+          "outcome": "ICU-free days at 28 days",
+          "group_a": "20 (IQR 0–25)",
+          "group_b": "19 (IQR 0–24)",
+          "effect_measure": "Median difference",
+          "effect_value": "+1 day",
+          "ci_95": "−1 to 3",
+          "p_value": "",
+          "note": "Death = 0; discharge before day 28 = 28."
+        },
+        {
+          "outcome": "Ventilator-free days at 28 days",
+          "group_a": "24 (IQR 0–26)",
+          "group_b": "23 (IQR 0–26)",
+          "effect_measure": "Median difference",
+          "effect_value": "+1 day",
+          "ci_95": "0 to 2",
+          "p_value": "",
+          "note": "Death = 0; discharge before day 28 = 28."
+        },
+        {
+          "outcome": "In-hospital death within 28 days (post hoc)",
+          "group_a": "184/705 (26.1%)",
+          "group_b": "191/712 (26.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−0.7 pp",
+          "ci_95": "−5.5 to 4.0",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "In-hospital death within 1 hour (post hoc)",
+          "group_a": "15/705 (2.1%)",
+          "group_b": "27/712 (3.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−1.7 pp",
+          "ci_95": "−3.6 to 0.2",
+          "p_value": "",
+          "note": "Low event counts."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Operator experience: <25 prior intubations",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Absolute difference",
+          "effect_value": "26.1 pp",
+          "ci_95": "15.4 to 36.8",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Operator experience: 25–100 prior intubations",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Absolute difference",
+          "effect_value": "12.3 pp",
+          "ci_95": "6.8 to 17.7",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Operator experience: >100 prior intubations",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Absolute difference",
+          "effect_value": "5.9 pp",
+          "ci_95": "−4.1 to 16.0",
+          "p_interaction": ""
+        }
+      ]
+    },
+    "safety": [
+      "Severe complication composite (SpO2<80%, SBP <65 mmHg or new/increased vasopressor, or cardiac arrest) was similar between groups: 21.4% vs 20.9% (absolute difference +0.5 pp; 95% CI −3.9 to 4.9).",
+      "Oesophageal intubation: 0.9% vs 1.3% (absolute difference −0.4 pp; 95% CI −1.5 to 0.7).",
+      "Aspiration: 1.0% vs 1.7% (absolute difference −0.7 pp; 95% CI −2.1 to 0.8).",
+      "In-hospital death within 1 hour: 2.1% vs 3.8% (absolute difference −1.7 pp; 95% CI −3.6 to 0.2)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Block randomisation stratified by site, implemented via sealed opaque envelopes; allocation revealed only immediately before laryngoscopy, supporting concealment and reducing selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded operators and teams could influence adjunct choices and escalation strategies; primary endpoint is largely procedural/objective, and observer-based capture was intended to reduce misclassification."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Three patients identified after enrolment as prisoners were excluded from subsequent data collection and analysis (pragmatic exclusion that introduces a small risk of bias if not random). Primary analysis was by intention-to-treat."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Laryngoscope on first attempt was video in 705/705 (100%) of the video group and direct in 704/712 (98.9%) of the direct group (video crossover 8/712, 1.1%). Randomisation applied only to the first attempt; subsequent attempts were at clinician discretion."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Key baseline variables were well balanced (e.g., age median 55 vs 55 years; APACHE II median 16 vs 16; ED location 69.7% vs 70.2%)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears strong for the primary procedural endpoint (concealed randomisation, minimal crossover, explicit endpoint definitions), with moderate limitations for safety/clinical outcomes due to open-label conduct, some missing physiological data, and early stopping."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "ED/ICU adults undergoing emergency intubation reflect a common real-world critically ill airway population; however, very time-critical cases (where randomisation could not be safely performed), pregnancy, and prisoners were excluded, and clinicians could exclude patients when they believed one approach was required or contraindicated."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most intubations were performed by emergency medicine residents or critical care fellows (91.5%), which is typical of many academic ED/ICU systems but may differ from settings where anaesthetists are the primary operators. Benefit may depend on access to modern video laryngoscopes, training, and routine use of adjuncts (bougie/stylet) and physiological optimisation; translation to resource-limited settings or systems without reliable video equipment/training may be constrained. Findings directly apply to ED/ICU (not operating theatre, elective intubation, prehospital, or paediatric practice)."
+        }
+      ],
+      "verdict": "Generalisability is moderate to high for adult ED/ICU airway management in similarly resourced systems, but is limited for very time-critical airways, settings lacking video equipment/training, and non-ED/ICU contexts."
+    },
+    "strengths": [
+      "Large, pragmatic multicentre design",
+      "Concealed randomisation",
+      "High adherence to assigned first-attempt device",
+      "Clinically meaningful, operationally defined primary endpoint",
+      "Broad operator and setting mix (ED and ICU)",
+      "Detailed procedural and safety outcome capture"
+    ],
+    "limitations": [
+      "Unblinded trial with potential performance/detection bias for some outcomes",
+      "Early stopping for efficacy (risk of overestimating effect size for the primary endpoint)",
+      "Severe-complication composite may be underpowered for modest differences and relies on available physiological measurements",
+      "Device type/blade geometry and adjunct strategies were not standardised (pragmatic heterogeneity)"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, pragmatic trial with strong internal validity for its primary procedural endpoint, though open-label design and early stopping warrant caution in interpreting safety and clinical outcomes.",
+      "strengths": [
+        "Concealed randomisation and high protocol adherence",
+        "Large sample size across multiple centres",
+        "Clinically relevant, objective primary endpoint"
+      ],
+      "weaknesses": [
+        "Unblinded design introduces potential for bias in adjunct use and safety reporting",
+        "Early stopping may inflate the observed treatment effect",
+        "Safety composite underpowered and dependent on complete physiological data capture"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In critically ill adults undergoing tracheal intubation, the use of a video laryngoscope resulted in a higher incidence of successful intubation on the first attempt than the use of a direct laryngoscope.",
+    "clinical_bottom_line": {
+      "verdict": "A 'video-first' strategy should be the default approach for emergency tracheal intubation in the ED and ICU to maximise first-pass success.",
+      "applies_to": "Critically ill adults in EDs and ICUs requiring intubation, particularly when performed by less experienced operators.",
+      "does_not_mean": "Video laryngoscopy eliminates peri-intubation complications or improves mortality; it is one component of a comprehensive airway safety bundle.",
+      "implementation_caveats": [
+        "Requires structured training in video laryngoscopy and maintenance of direct laryngoscopy skills for rescue.",
+        "Must be integrated with clear rescue pathways and physiological optimisation bundles.",
+        "Benefit may be greatest for operators with less experience."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Discordant prior trial evidence",
+        "notes": "The earlier ICU multicentre MACMAN RCT reported similar first-pass success (67.7% video vs 70.3% direct) but higher severe life-threatening complications with video laryngoscopy (45.2% vs 27.1%); DEVICE’s contrasting findings highlight how operator experience, device/blade selection, adjunct use (bougie/stylet), and local airway workflows can modify real-world effectiveness."
+      },
+      {
+        "topic": "Early stopping and effect inflation",
+        "notes": "Stopping after interim efficacy increases the probability that the observed primary effect size is overestimated; this is particularly relevant for technology adoption decisions where training and workflow change can alter baseline performance."
+      },
+      {
+        "topic": "Choice of endpoints",
+        "notes": "First-attempt success is a plausible safety surrogate but is not a patient-centred endpoint; DEVICE did not demonstrate clear differences in ICU-free days, ventilator-free days, or 28-day in-hospital mortality (all post hoc or exploratory), leaving uncertainty about downstream clinical benefit."
+      },
+      {
+        "topic": "Safety composite and measurement",
+        "notes": "The severe-complication composite mixes hypoxaemia, haemodynamic collapse, and cardiac arrest; it is clinically coherent but sensitive to missing vital sign data and to the chosen observation window (induction to 2 minutes post-intubation)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "MACMAN",
+        "relation": "An earlier ICU multicentre RCT that reported similar first-pass success but higher severe complications with video laryngoscopy, contrasting with DEVICE's findings and highlighting the impact of operator experience and local workflows."
+      }
+    ],
+    "unresolved_questions": [
+      "Does a 'video-first' strategy improve patient-centred outcomes like mortality or ICU-free days?",
+      "What is the optimal device, blade geometry, and adjunct strategy for video laryngoscopy in critically ill adults?",
+      "How should training programs balance video and direct laryngoscopy skills to ensure competence in both?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1417",
+        "First-attempt success: 85.1% vs 70.8% (absolute difference +14.3%)",
+        "Severe complication composite: 21.4% vs 20.9% (no significant difference)"
+      ],
+      "one_line_takeaway": "Use a video laryngoscope as the default first device for emergency intubations in the ED and ICU to significantly improve first-pass success, but don't expect it to single-handedly reduce complications or mortality."
+    }
+  },
+  "_source_id": "DEVICE",
+  "_source_system": "Airway"
+}

@@ -1,0 +1,287 @@
+{
+  "id": "KETASED",
+  "trial_name": "KETASED — Etomidate vs Ketamine for RSI in Acutely Ill Patients (2009)",
+  "specialty": "Airway",
+  "subtopic": "Airway Emergencies",
+  "year": 2009,
+  "journal": "The Lancet",
+  "citation": "Jabre P, Combes X, Lapostolle F, Dhaouadi M, Ricard JD, et al. Etomidate versus ketamine for rapid sequence intubation in acutely ill patients: a multicentre randomised controlled trial. Lancet. 2009;374(9686):293-300.",
+  "doi": "https://doi.org/10.1016/S0140-6736(09)60949-1",
+  "registration": "",
+  "trial_type": "RCT — multicenter, single-blind, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 655,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In acutely ill adults requiring emergency RSI, etomidate and ketamine resulted in similar early organ dysfunction and 28-day mortality, despite etomidate causing significantly more adrenal suppression.",
+  "pico": {
+    "population": "Adults (≥18 years) requiring sedation for emergency tracheal intubation with RSI in prehospital or emergency department settings.",
+    "intervention": "Etomidate 0.3 mg/kg IV bolus for induction.",
+    "comparison": "Ketamine 2 mg/kg IV bolus for induction.",
+    "outcome": "Maximum SOFA score over the first 3 ICU days."
+  },
+  "keywords": [
+    "etomidate",
+    "ketamine",
+    "rapid sequence intubation",
+    "RSI",
+    "adrenal insufficiency",
+    "SOFA",
+    "emergency airway"
+  ],
+  "related_trials": [
+    "EvK trial"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Emergency RSI is a high-frequency intervention. Etomidate was widely used for hemodynamic stability but inhibits adrenal steroidogenesis, raising concern for adrenal insufficiency in critical illness. Ketamine provides cardiovascular stability without this effect.",
+      "knowledge_gap": "Comparative outcome data for etomidate vs. ketamine in acutely ill RSI populations were sparse, with debate driven by observational data and biochemical endpoints rather than pragmatic randomized evidence.",
+      "hypothesis": "In acutely ill adults requiring emergency RSI, etomidate (0.3 mg/kg) compared with ketamine (2 mg/kg) would increase early organ dysfunction (maximum SOFA over the first 3 ICU days), particularly in higher-risk subgroups like sepsis or trauma."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, controlled, single-blind trial (ICU clinicians blinded); investigator-initiated.",
+      "setting": "12 participating centres in France across prehospital/emergency departments, with subsequent ICU care across 65 ICUs. Enrolled April 2007 to February 2008.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) requiring sedation for emergency tracheal intubation with RSI."
+        ],
+        "exclusion": [
+          "Cardiac arrest",
+          "Contraindication to succinylcholine, ketamine, or etomidate",
+          "Known pregnancy"
+        ]
+      },
+      "intervention": "Induction agent: Etomidate 0.3 mg/kg IV bolus. Neuromuscular blockade: Succinylcholine 1 mg/kg IV. Post-intubation sedation: Midazolam infusion 0.1 mg/kg/h plus fentanyl 2–5 μg/kg/h or sufentanil 0.2–0.5 μg/kg/h (target Ramsay sedation score 3–4).",
+      "comparison": "Induction agent: Ketamine 2 mg/kg IV bolus. Neuromuscular blockade: Succinylcholine 1 mg/kg IV. Post-intubation sedation: Same protocolised midazolam + opioid regimen as the etomidate group.",
+      "blinding": "Single-blind: ICU nurses and intensivists were blinded to the induction agent; the intubating emergency physician was not blinded.",
+      "sample_size_power": "Planned 650 participants to ensure at least 130 evaluable patients with suspected sepsis or trauma, powered to detect a 2-point difference in maximum SOFA score (assumed SD 4) with 80% power at a 5% two-sided significance level, allowing for ~30% exclusions and ~5% missing data.",
+      "primary_outcome": "Maximum SOFA score over the first 3 ICU days.",
+      "secondary_outcomes": [
+        "28-day mortality",
+        "Catecholamine support (any)",
+        "Difficult intubation",
+        "Cardiac arrest during intubation",
+        "Adrenal insufficiency (ACTH test subset)"
+      ],
+      "follow_up": "Primary endpoint assessed over the first 3 ICU days; clinical outcomes reported to day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in the primary outcome of maximum SOFA score over 3 days (mean difference 0.7; P=0.056).",
+        "28-day mortality was 35% for etomidate vs 31% for ketamine (P=0.36).",
+        "Etomidate caused significantly more adrenal insufficiency in a tested subset (86% vs 48%; OR 6.7)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Maximum SOFA score over first 3 ICU days",
+          "group_a": "10.3 ± 3.7",
+          "group_b": "9.6 ± 3.9",
+          "effect_measure": "Mean difference (E−K)",
+          "effect_value": "0.7",
+          "ci_95": "0.0 to 1.4",
+          "p_value": "0.056",
+          "note": "Primary endpoint; modified ITT population (n=234 vs 235). ITT sensitivity analysis mean difference 0.4 (95% CI −0.2 to 1.0; P=0.20)."
+        },
+        {
+          "outcome": "28-day mortality",
+          "group_a": "81/234 (35%)",
+          "group_b": "72/235 (31%)",
+          "effect_measure": "Absolute difference (E−K)",
+          "effect_value": "4%",
+          "ci_95": "−4 to 12",
+          "p_value": "0.36",
+          "note": "Modified ITT population."
+        },
+        {
+          "outcome": "Catecholamine support (any)",
+          "group_a": "137/234 (59%)",
+          "group_b": "120/235 (51%)",
+          "effect_measure": "Absolute difference (E−K)",
+          "effect_value": "7.5%",
+          "ci_95": "−1.5 to 16.5",
+          "p_value": "0.10",
+          "note": "Modified ITT population."
+        },
+        {
+          "outcome": "Difficult intubation",
+          "group_a": "24/234 (10%)",
+          "group_b": "20/235 (9%)",
+          "effect_measure": "Absolute difference (E−K)",
+          "effect_value": "2%",
+          "ci_95": "−4 to 7",
+          "p_value": "0.52",
+          "note": "Modified ITT population."
+        },
+        {
+          "outcome": "Cardiac arrest during intubation",
+          "group_a": "7/234 (3%)",
+          "group_b": "4/235 (2%)",
+          "effect_measure": "Absolute difference (E−K)",
+          "effect_value": "1.3%",
+          "ci_95": "−1.5 to 4.0",
+          "p_value": "0.36",
+          "note": "Procedural adverse event; modified ITT population."
+        },
+        {
+          "outcome": "Non-responder to ACTH test",
+          "group_a": "93/116 (81%)",
+          "group_b": "49/116 (42%)",
+          "effect_measure": "OR (E vs K)",
+          "effect_value": "5.8",
+          "ci_95": "3.2 to 10.5",
+          "p_value": "<0.0001",
+          "note": "ACTH testing subset (n=116 vs 116); test performed ~48 h after ICU admission."
+        },
+        {
+          "outcome": "Adrenal insufficiency (study definition)",
+          "group_a": "100/116 (86%)",
+          "group_b": "56/116 (48%)",
+          "effect_measure": "OR (E vs K)",
+          "effect_value": "6.7",
+          "ci_95": "3.5 to 12.7",
+          "p_value": "<0.0001",
+          "note": "ACTH testing subset (n=116 vs 116)."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Sepsis (28-day mortality)",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "OR (E vs K)",
+          "effect_value": "1.4",
+          "ci_95": "0.5 to 3.5",
+          "p_interaction": "N/A"
+        },
+        {
+          "subgroup": "Trauma (28-day mortality)",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "OR (E vs K)",
+          "effect_value": "0.8",
+          "ci_95": "0.4 to 2.0",
+          "p_interaction": "N/A"
+        },
+        {
+          "subgroup": "Non-trauma/non-septic (28-day mortality)",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "OR (E vs K)",
+          "effect_value": "1.3",
+          "ci_95": "0.8 to 2.1",
+          "p_interaction": "N/A"
+        }
+      ]
+    },
+    "safety": [
+      "Difficult intubation: 10% (etomidate) vs 9% (ketamine), P=0.52.",
+      "Cardiac arrest during intubation: 3% (etomidate) vs 2% (ketamine), P=0.36."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated list (block size 4), stratified by centre; sequentially numbered identical drug boxes supported allocation concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Intubating clinicians were unblinded (potential performance bias), but ICU clinicians were blinded (mitigating detection bias for ICU-delivered outcomes and SOFA ascertainment)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "655 randomised; 650 in ITT population. Primary endpoint analysed in a modified ITT population of 469 (234 vs 235) after excluding patients discharged from ICU alive within 3 days (79 vs 75) and patients dying before reaching hospital (12 vs 15). This complicates a strict ITT interpretation."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "All randomised patients received allocated induction agent. Procedural separation appeared good (intubation difficulty scale median 1 in both groups). Endocrine separation was large in the tested subset."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Broadly similar severity at inclusion (e.g., age 57 ± 18 vs 59 ± 19 years; SAPS II 51.2 ± 16.0 vs 50.5 ± 15.7)."
+        }
+      ],
+      "verdict": "Overall, internal validity is moderate: randomisation and blinded ICU outcome assessment support causal inference for ICU endpoints, but the pre-specified modified ITT primary analysis excluded a substantial post-randomisation fraction, weakening a strict intention-to-treat interpretation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Included a broad spectrum of critically ill adults undergoing emergency RSI in prehospital and ED pathways; excluded cardiac arrest and specific contraindications."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in a French physician-led prehospital model. Transferability to paramedic-led or anaesthetist-led systems may differ. RSI used succinylcholine; applicability may be limited where rocuronium is routine. Primary endpoint evaluated only in those remaining in ICU ≥3 days, limiting applicability to patients with rapidly resolving illness or very early death."
+        }
+      ],
+      "verdict": "Generalisability is moderate: findings are most applicable to similar emergency RSI pathways with ICU admission and comparable drug dosing, but should be extrapolated cautiously to different prehospital systems, paralytic choices, and patients at the extremes of early death or rapid recovery."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre randomised comparison of two commonly used induction agents in real-world emergency RSI, including prehospital enrolment.",
+      "Blinding of ICU clinicians for downstream outcomes, reducing detection bias for SOFA and ICU co-interventions.",
+      "High protocol fidelity with standardised paralytic dosing and post-intubation sedation targets, and objective outcome definitions.",
+      "Mechanistic endocrine testing (ACTH stimulation) provided clear biological separation between agents."
+    ],
+    "limitations": [
+      "Single-blind design: intubating clinicians were unblinded at drug administration.",
+      "Primary endpoint analysed in a modified ITT cohort, excluding patients with early ICU discharge and prehospital death, which complicates population-level interpretation.",
+      "Not powered for mortality, and subgroup analyses (particularly sepsis) were imprecise with wide confidence intervals.",
+      "ACTH testing was performed in a subset (116 per group) and at ~48 h, limiting inference about endocrine effects across the full cohort and across earlier time windows."
+    ],
+    "critical_appraisal": {
+      "summary": "A landmark pragmatic RCT with moderate internal and external validity that shifted the debate from endocrine surrogates to clinical outcomes, but its modified ITT analysis and imprecise mortality/subgroup findings leave residual uncertainty.",
+      "strengths": [
+        "Pragmatic, multicenter design with prehospital enrolment enhances real-world applicability.",
+        "Blinded ICU outcome assessment reduces detection bias for the primary endpoint.",
+        "Clear biological separation confirmed by ACTH testing validates the intervention contrast."
+      ],
+      "weaknesses": [
+        "Unblinded intubating clinicians introduces potential performance bias.",
+        "Modified ITT analysis for the primary endpoint excludes a post-randomisation cohort, weakening the intention-to-treat principle.",
+        "Underpowered for mortality and key subgroups, leading to imprecise effect estimates."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Etomidate and ketamine yielded similar procedural conditions and no clear difference in early organ dysfunction or 28-day mortality within the analysed primary endpoint population, despite etomidate producing substantial adrenal suppression.",
+    "clinical_bottom_line": {
+      "verdict": "KETASED does not mandate a change in practice away from etomidate for all patients but reinforces that ketamine is a reasonable alternative without the endocrine side effects. Agent selection should be individualized.",
+      "applies_to": "Acutely ill adults requiring emergency RSI in systems with physician-led prehospital care or emergency departments, using succinylcholine as a paralytic.",
+      "does_not_mean": "Etomidate is proven safe in septic shock. The trial was not powered for mortality in this subgroup, and confidence intervals remain wide.",
+      "implementation_caveats": [
+        "Integrate agent choice into a broader airway bundle (preoxygenation, haemodynamic optimisation, vasopressor readiness).",
+        "Exercise particular caution with etomidate in biologically vulnerable phenotypes like sepsis where harm is not excluded.",
+        "Applicability may differ in systems using rocuronium or with different post-intubation sedation practices."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Modified ITT primary endpoint population",
+        "notes": "Excluding patients dying before hospital arrival and those discharged alive from ICU within 3 days improves SOFA data completeness but departs from classical intention-to-treat reasoning, potentially removing patients in whom early drug effects are most consequential."
+      },
+      {
+        "topic": "Biochemistry–outcomes disconnect",
+        "notes": "KETASED demonstrated marked endocrine effects of etomidate without a definitive downstream organ dysfunction or mortality signal, leaving the clinical significance of single-dose etomidate-associated adrenal inhibition unresolved."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "EvK trial",
+        "relation": "A later RCT using 7-day survival as the primary endpoint reported lower day-7 survival with etomidate (77.3%) than ketamine (85.1%) (P=0.005), while day-28 survival was similar, sustaining debate about early, context-dependent harm from etomidate."
+      }
+    ],
+    "unresolved_questions": [
+      "Is there a mortality difference between etomidate and ketamine in specific subgroups like septic shock, which KETASED was underpowered to detect?",
+      "What is the clinical significance of transient adrenal suppression after a single dose of etomidate?",
+      "Do the results generalize to systems using rocuronium as the primary paralytic agent?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=655",
+        "Primary outcome (max SOFA): 10.3 vs 9.6 (mean diff 0.7, P=0.056)",
+        "28-day mortality: 35% vs 31% (P=0.36)",
+        "Adrenal insufficiency: 86% vs 48% (OR 6.7)"
+      ],
+      "one_line_takeaway": "For emergency RSI, etomidate and ketamine have similar clinical outcomes, but etomidate causes significant adrenal suppression, so choose based on individual patient risk, not a perceived mortality benefit of one agent over the other."
+    }
+  },
+  "_source_id": "KETASED",
+  "_source_system": "Airway"
+}

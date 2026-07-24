@@ -26,7 +26,7 @@ THE THREE SCRIPTS
 
 WHAT IT DOES:
   Takes PDF files from input_pdfs/ and produces:
-  - Structured JSON summaries (Pass 1 - configurable LLM)
+  - Structured JSON summaries (Pass 1 - uses OpenRouter with deepseek-ai/DeepSeek-V4-Pro by default)
   - Clinical pearls / key takeaways (Pass 2 - uses Together AI)
   
   All output goes into output_files/ organized by specialty and type.
@@ -47,7 +47,8 @@ MODES:
                        Use for a complete run from scratch.
 
 LLM PROVIDER (for Pass 1 extraction):
-  --llm together        Use Together AI (default, requires TOGETHER_API_KEY)
+  --llm openrouter      Use OpenRouter (DEFAULT, reads OPENROUTER_API_KEY from .env)
+  --llm together        Use Together AI (requires TOGETHER_API_KEY)
   --llm gemini          Use Google Gemini (requires PRIMARY_GEMINI_API_KEY)
   --llm other           Custom OpenAI-compatible API (also set --api-key and --model)
 
@@ -64,8 +65,9 @@ COMMON COMMANDS:
   python generator.py --verbose                    # Show detailed per-file output
   python generator.py --reprocess path/to/pdf      # Force re-process one PDF
   python generator.py --extract-pearls path.json   # Run pearls only on one JSON
-  python generator.py --llm gemini                  # Use Gemini for extraction
-  python generator.py --llm other --api-key sk-xxx --model my-model  # Custom API
+  python generator.py --llm together                # Use Together AI instead of OpenRouter
+  python generator.py --llm gemini                  # Use Gemini instead
+  python generator.py --llm openrouter --model anthropic/claude-3.5-sonnet  # Override OpenRouter model
 
 EXAMPLES:
   # Quick status check:
@@ -83,11 +85,11 @@ EXAMPLES:
   # Test run - see what would happen without making changes:
   python generator.py --dry-run
 
-  # Use Gemini instead of Together for extraction:
+  # Use Gemini instead of OpenRouter for extraction:
   python generator.py --llm gemini
 
-  # Use a custom OpenAI-compatible API:
-  python generator.py --llm other --api-key sk-xxx --model gpt-4
+  # Use Together AI (original default):
+  python generator.py --llm together
 
 ================================================================
 2. MAINTAINER.PY - REPOSITORY HEALTH & REPAIRS

@@ -1,0 +1,327 @@
+{
+  "id": "PREOXYFLOW",
+  "trial_name": "PREOXYFLOW — HFNC vs Face Mask for Preoxygenation in Hypoxemic ICU Intubation (2015)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2015,
+  "journal": "Intensive Care Medicine",
+  "citation": "Vourc’h M, Asfar P, Volteau C, Bachoumas K, Clavieras N, Egreteau PY, et al. High-flow nasal cannula oxygen during endotracheal intubation in hypoxemic patients: a randomized controlled clinical trial. Intensive Care Med. 2015;41(9):1538-1548.",
+  "doi": "https://doi.org/10.1007/s00134-015-3796-z",
+  "registration": "NCT01747109",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 119,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In hypoxemic ICU adults, HFNC used for preoxygenation and left in place during laryngoscopy did not improve the lowest SpO2 during intubation compared with a high FiO2 face mask.",
+  "pico": {
+    "population": "ICU adults with acute hypoxemic respiratory failure (PaO2/FiO2 <300 mmHg, RR ≥30/min, requiring FiO2 ≥0.50 for SpO2 ≥90%)",
+    "intervention": "HFNC (Optiflow™) at 60 L/min, FiO2 1.0 for 4 min preoxygenation, left in place throughout laryngoscopy",
+    "comparison": "High FiO2 face mask at 15 L/min for 4 min preoxygenation, removed after induction for laryngoscopy",
+    "outcome": "Lowest SpO2 during the intubation procedure"
+  },
+  "keywords": [
+    "HFNC",
+    "preoxygenation",
+    "apneic oxygenation",
+    "intubation",
+    "hypoxemia",
+    "airway management"
+  ],
+  "related_trials": [
+    "OPTINIV",
+    "FLORALI-2",
+    "PREOXI"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Peri-intubation hypoxemia and hemodynamic collapse are frequent during ICU intubation. Conventional preoxygenation with a high FiO2 face mask is standard but offers no oxygen delivery during laryngoscopy once the mask is removed. HFNC can deliver heated, humidified oxygen at high flow rates and can remain in place during laryngoscopy (theoretical 'peroxygenation' / apneic oxygenation).",
+      "knowledge_gap": "Before PREOXYFLOW, ICU data supporting HFNC during intubation were mainly non-randomised and at risk of confounding, including a before–after study suggesting reduced desaturation in mild-to-moderate hypoxemia.",
+      "hypothesis": "HFNC would increase nadir SpO2 during intubation by an absolute 6% compared with face mask preoxygenation."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, open-label, controlled, parallel-group trial (six French ICUs)",
+      "setting": "Six French ICUs",
+      "population": {
+        "inclusion": [
+          "Adults intubated for acute hypoxemic respiratory failure",
+          "PaO2/FiO2 <300 mmHg",
+          "Respiratory rate ≥30/min",
+          "Required FiO2 ≥0.50 to achieve SpO2 ≥90% within the hour before enrolment"
+        ],
+        "exclusion": [
+          "Not reported in full in the manuscript text extract; examples include scenarios incompatible with protocolised rapid sequence intubation or situations requiring immediate airway control"
+        ]
+      },
+      "intervention": "HFNC (Optiflow™) at 60 L/min, heated/humidified oxygen with FiO2 1.0 for 4 minutes preoxygenation. HFNC left in place throughout induction and laryngoscopy until connection to mechanical ventilation.",
+      "comparison": "High FiO2 face mask preoxygenation at 15 L/min oxygen flow for 4 minutes. Mask removed after induction to permit laryngoscopy.",
+      "blinding": "Open-label",
+      "sample_size_power": "Powered to detect a 6% absolute increase in nadir SpO2 (from 85% to 91%) with 80% power at a two-sided 5% alpha, assuming 2% attrition; required sample size 122, increased to 124 after early exclusions.",
+      "primary_outcome": "Lowest SpO2 during the intubation procedure",
+      "secondary_outcomes": [
+        "Severe desaturation during procedure (SpO2 <80%)",
+        "Cardiovascular collapse",
+        "At least one complication (any severity)",
+        "At least one severe complication",
+        "Duration of mechanical ventilation",
+        "Ventilator-free days (day 28)",
+        "ICU length of stay",
+        "28-day mortality",
+        "Cardiac arrest during procedure/first hour"
+      ],
+      "follow_up": "Clinical outcomes to day 28; SOFA recorded through day 5."
+    },
+    "results": {
+      "headline_bullets": [
+        "HFNC did not improve nadir SpO2 during intubation versus high FiO2 face mask (median 91.5% vs 89.5%; p=0.44).",
+        "Severe peri-intubation events were common in both groups: SpO2 <80% occurred in 25.8% (HFNC) vs 22.8% (mask) and cardiovascular collapse in 38.7% vs 52.6%.",
+        "A shorter duration of mechanical ventilation was observed with HFNC (median 6 vs 10 days; p=0.02), while other ICU outcomes were not significantly different."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: Lowest SpO2 during intubation procedure, median (IQR), %",
+          "group_a": "91.5 (80–96)",
+          "group_b": "89.5 (81–95)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.44",
+          "note": "One missing value in control group; sensitivity analysis with best-case imputation reported no difference."
+        },
+        {
+          "outcome": "Severe desaturation during procedure (SpO2 <80%), n (%)",
+          "group_a": "16/62 (25.8)",
+          "group_b": "13/57 (22.8)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.70",
+          "note": "Some episodes occurred after connection to ventilation."
+        },
+        {
+          "outcome": "Cardiovascular collapse, n (%)",
+          "group_a": "24/62 (38.7)",
+          "group_b": "30/57 (52.6)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.13",
+          "note": "Defined as SBP <80 mmHg, vasopressor initiation, or >30% increase."
+        },
+        {
+          "outcome": "At least one complication (any severity), n (%)",
+          "group_a": "36/62 (58.1)",
+          "group_b": "39/57 (68.4)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.24",
+          "note": ""
+        },
+        {
+          "outcome": "At least one severe complication, n (%)",
+          "group_a": "36/62 (58.1)",
+          "group_b": "38/57 (66.6)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.33",
+          "note": "Includes desaturation <80% and cardiovascular collapse."
+        },
+        {
+          "outcome": "Duration of mechanical ventilation, median (IQR), days",
+          "group_a": "6 (4–14)",
+          "group_b": "10 (5–17)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.02",
+          "note": "Statistically significant secondary outcome; multiplicity adjustments not reported."
+        },
+        {
+          "outcome": "Ventilator-free days (day 28), median (IQR), days",
+          "group_a": "14 (0–22)",
+          "group_b": "5 (0–16)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.09",
+          "note": ""
+        },
+        {
+          "outcome": "ICU length of stay, median (IQR), days",
+          "group_a": "10 (6–16)",
+          "group_b": "13 (7–24)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.12",
+          "note": ""
+        },
+        {
+          "outcome": "28-day mortality, n (%)",
+          "group_a": "22/62 (35.4)",
+          "group_b": "24/57 (42.1)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.48",
+          "note": "Not powered for mortality."
+        },
+        {
+          "outcome": "Cardiac arrest during procedure/first hour, n (%)",
+          "group_a": "0/62 (0)",
+          "group_b": "1/57 (1.8)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.48",
+          "note": "No deaths during intubation or within the first post-procedure hour; no device-related injury reported."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No deaths during intubation or within the first post-procedure hour.",
+      "No device-related injury reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised, computer-generated randomisation (block size 4) stratified by centre; allocation via an online system (concealment likely, but detailed safeguards not reported)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; operators knew allocation, and co-interventions around induction/airway technique were not protocolised. Primary endpoint (lowest SpO2) is objective but still susceptible to procedural differences."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "5/124 randomised patients were excluded from the analysis set (2 withdrew consent, 2 did not meet inclusion criteria, 1 improved before intubation), resulting in a modified ITT population of 119; this introduces potential attrition/selection bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "4-minute preoxygenation completed in 93.5% (HFNC) vs 94.7% (mask); failure to raise SpO2 to 90% during preoxygenation occurred in 6.5% vs 3.5% (p=0.49)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar for illness severity and oxygenation (SAPS II mean 54.5 vs 51.3; PaO2/FiO2 mean 120.2 vs 115.7 mmHg), but clinically important imbalances existed (age 64.9 vs 59.3 years; vasopressor support at inclusion 29% vs 19.3%; and 'real emergency' intubations 19.3% vs 50.8%)."
+        }
+      ],
+      "verdict": "Moderate—randomisation was centralised and the primary outcome objective, but open-label delivery, post-randomisation exclusions, and baseline imbalances (notably urgency of intubation) may have biased estimates and reduced sensitivity to detect true effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU patients with acute hypoxemic respiratory failure (mean PaO2/FiO2 ~120 mmHg) reflect a common, high-risk real-world ICU intubation population."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "HFNC is widely available in high-income ICUs and feasible to deploy rapidly; effect may differ where non-invasive ventilation is routinely used as the preoxygenation comparator in severe hypoxemia. Generalisability to crash intubations and non-RSI contexts may be limited."
+        }
+      ],
+      "verdict": "Generally good for hypoxemic ICU intubations in resourced settings, but limited for settings where NIV is standard preoxygenation in severe hypoxemia or where immediate 'crash' intubations predominate."
+    },
+    "strengths": [
+      "Pragmatic multicentre ICU randomised design",
+      "Objective primary endpoint (nadir SpO2)",
+      "Clear, protocolised oxygen delivery strategies with mechanistic separation (HFNC maintained during laryngoscopy vs mask removed)",
+      "Clinically relevant secondary outcomes"
+    ],
+    "limitations": [
+      "Open-label delivery",
+      "Modified ITT with post-randomisation exclusions",
+      "Comparator was high FiO2 face mask rather than NIV (potentially suboptimal in severe hypoxemia)",
+      "Baseline imbalances in urgency and airway difficulty predictors",
+      "Primary endpoint may not fully capture clinically meaningful 'time-below-threshold' hypoxemia burden"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed pragmatic trial with an objective primary endpoint, but open-label design, post-randomisation exclusions, and baseline imbalances limit confidence in the null finding, particularly given the high complication rates in both groups.",
+      "strengths": [
+        "Multicentre, randomised design",
+        "Objective primary outcome",
+        "Clear mechanistic separation of interventions"
+      ],
+      "weaknesses": [
+        "Open-label with potential for performance bias",
+        "Modified ITT analysis",
+        "Baseline imbalance in intubation urgency"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In hypoxemic ICU adults, HFNC used for preoxygenation and left in place during laryngoscopy did not improve the lowest SpO2 during intubation compared with a high FiO2 face mask.",
+    "clinical_bottom_line": {
+      "verdict": "HFNC alone should not be relied upon to prevent severe hypoxemia during ICU intubation in patients with moderate-to-severe hypoxemic respiratory failure.",
+      "applies_to": "ICU patients with acute hypoxemic respiratory failure (PaO2/FiO2 <300 mmHg) undergoing intubation.",
+      "does_not_mean": "HFNC is harmful or has no role; it simply did not show superiority over a face mask for this specific endpoint in this population.",
+      "implementation_caveats": [
+        "Subsequent evidence suggests NIV or combination strategies (NIV + HFNC) may be more effective in severe hypoxemia.",
+        "Operator expertise and local airway management bundles should guide preoxygenation strategy."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Comparator choice (mask vs NIV)",
+        "notes": "Editorial critique emphasised that HFNC generates limited PEEP and may be an inadequate standalone strategy in severe hypoxemia, arguing that NIV is a more biologically plausible comparator for maximising preoxygenation in shunt-dominant physiology."
+      },
+      {
+        "topic": "Signal versus noise in secondary outcomes",
+        "notes": "The reduction in duration of mechanical ventilation (6 vs 10 days) occurred without statistically significant differences in ventilator-free days, ICU length of stay, or mortality, raising concern for chance findings amid multiple secondary comparisons."
+      },
+      {
+        "topic": "Non-randomised precursor evidence",
+        "notes": "A before–after ICU study suggested HFNC might reduce desaturation in mild-to-moderate hypoxemia, but PREOXYFLOW did not reproduce a benefit in a more hypoxemic cohort with high baseline complication rates."
+      },
+      {
+        "topic": "Combination strategies (NIV + HFNC)",
+        "notes": "The blinded single-centre OPTINIV trial tested NIV preoxygenation combined with HFNC apneic oxygenation (vs NIV alone) and demonstrated improved oxygenation during intubation, supporting the concept that positive-pressure preoxygenation and apneic oxygenation may be complementary rather than competing approaches."
+      },
+      {
+        "topic": "NIV versus HFNC in hypoxemic respiratory failure",
+        "notes": "In FLORALI-2, NIV preoxygenation did not reduce severe hypoxemia overall compared with HFNC plus apneic oxygenation, but a pre-specified subgroup with PaO2/FiO2 ≤200 mmHg showed less severe hypoxemia with NIV, reinforcing the likelihood of effect modification by baseline severity."
+      },
+      {
+        "topic": "Pragmatic contemporary evidence favouring NIV versus oxygen mask",
+        "notes": "The multicentre PREOXI trial (ED/ICU) found lower hypoxemia incidence with NIV preoxygenation compared with an oxygen mask, updating the evidence base towards positive-pressure preoxygenation when feasible."
+      },
+      {
+        "topic": "Guideline synthesis",
+        "notes": "Major airway management guidance for critically ill adults emphasises primacy of oxygenation and supports escalation to non-invasive respiratory support strategies (including NIV and HFNC) tailored to physiology and operator expertise."
+      },
+      {
+        "topic": "Evidence integration",
+        "notes": "Recent comparative syntheses (including network meta-analysis) increasingly frame preoxygenation as a strategy bundle (positioning, positive pressure, apneic oxygenation, and post-induction ventilation decisions) with likely effect modification by baseline hypoxemia severity."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "OPTINIV",
+        "relation": "Tested NIV preoxygenation combined with HFNC apneic oxygenation vs NIV alone, demonstrating improved oxygenation during intubation, supporting combination strategies."
+      },
+      {
+        "trial": "FLORALI-2",
+        "relation": "Compared NIV preoxygenation to HFNC plus apneic oxygenation; found no overall difference but a benefit for NIV in the subgroup with PaO2/FiO2 ≤200 mmHg."
+      },
+      {
+        "trial": "PREOXI",
+        "relation": "A multicentre ED/ICU trial that found lower hypoxemia incidence with NIV preoxygenation compared with an oxygen mask, strengthening the evidence for positive-pressure preoxygenation."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal preoxygenation strategy for patients with severe hypoxemia (PaO2/FiO2 <100 mmHg)?",
+      "Does the addition of HFNC to NIV preoxygenation provide incremental benefit over NIV alone in a broader ICU population?",
+      "What is the role of HFNC alone in patients with mild hypoxemia or for apneic oxygenation during elective intubations?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=119",
+        "Primary outcome: median nadir SpO2 91.5% vs 89.5% (p=0.44)",
+        "Severe desaturation (SpO2 <80%): 25.8% vs 22.8% (p=0.70)",
+        "Mechanical ventilation duration: 6 vs 10 days (p=0.02)"
+      ],
+      "one_line_takeaway": "HFNC alone for preoxygenation and apneic oxygenation does not prevent desaturation during intubation in hypoxemic ICU patients; consider NIV or combination strategies for severe hypoxemia."
+    }
+  },
+  "_source_id": "PREOXYFLOW",
+  "_source_system": "Airway"
+}

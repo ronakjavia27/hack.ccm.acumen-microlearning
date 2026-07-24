@@ -1,0 +1,339 @@
+{
+  "id": "PREOXI",
+  "trial_name": "PREOXI — Noninvasive Ventilation for Preoxygenation during Emergency Intubation (2024)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2024,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Gibbs KW, Semler MW, Driver BE, et al. Noninvasive Ventilation for Preoxygenation during Emergency Intubation. N Engl J Med. 2024;390:2165-2177.",
+  "doi": "https://doi.org/10.1056/NEJMoa2313680",
+  "registration": "NCT05267652",
+  "trial_type": "RCT — multicenter, pragmatic, parallel-group, unblinded, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1301,
+  "result_category": "Positive",
+  "one_liner": "In critically ill adults undergoing emergency intubation, NIV preoxygenation halved the incidence of peri-intubation hypoxaemia (SpO2 <85%) compared with an oxygen mask (9.1% vs 18.5%).",
+  "pico": {
+    "population": "Adults (≥18 years) in an ED or ICU requiring emergency tracheal intubation with planned induction and laryngoscopy, excluding those needing immediate intubation, already on positive-pressure ventilation, or with contraindications to NIV.",
+    "intervention": "Preoxygenation with NIV via tight-fitting facemask (FiO2 1.0, expiratory pressure ≥5 cm H2O, inspiratory pressure ≥10 cm H2O, rate ≥10 breaths/min) from randomization until laryngoscopy, with continuation permitted between induction and laryngoscopy.",
+    "comparison": "Preoxygenation with an oxygen mask (non-rebreather or bag-mask without manual ventilation) at ≥15 L/min from randomization until laryngoscopy.",
+    "outcome": "Incidence of hypoxaemia (SpO2 <85%) between induction of anaesthesia and 2 minutes after tracheal intubation."
+  },
+  "keywords": [
+    "preoxygenation",
+    "noninvasive ventilation",
+    "NIV",
+    "emergency intubation",
+    "peri-intubation hypoxaemia",
+    "critical care"
+  ],
+  "related_trials": [
+    "PREVENT",
+    "BLING III"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Emergency tracheal intubation in the ED/ICU is frequently complicated by peri-intubation hypoxaemia, which is associated with cardiovascular collapse, cardiac arrest, and death. Common standard preoxygenation (non-rebreather facemask or bag-mask without positive-pressure ventilation) can deliver high inspired oxygen but does not recruit atelectatic lung.",
+      "knowledge_gap": "Prior RCT evidence for NIV preoxygenation in critically ill adults was limited and often restricted to acute hypoxaemic respiratory failure, leaving uncertainty about general ED/ICU intubation populations and safety.",
+      "hypothesis": "In critically ill adults undergoing emergency tracheal intubation, preoxygenation with NIV (vs oxygen mask) reduces the incidence of hypoxaemia (SpO2 <85%) between induction of anaesthesia and 2 minutes after tracheal intubation."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, parallel-group randomised controlled trial (1:1), unblinded; conducted in 7 emergency departments and 15 intensive care units at 17 hospitals in the United States; stratified by trial site.",
+      "setting": "7 EDs and 15 ICUs across 17 US hospitals.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) in an ED or ICU with a clinician decision to perform tracheal intubation using planned induction of anaesthesia and laryngoscopy.",
+          "Planned operator was a clinician expected to routinely perform tracheal intubation."
+        ],
+        "exclusion": [
+          "Immediate need for intubation precluding trial procedures.",
+          "Receipt of positive-pressure ventilation at enrolment.",
+          "Factors increasing aspiration risk or making NIV difficult to apply (vomiting, haematemesis, haemoptysis, epistaxis, facial injury, severe agitation, profound encephalopathy).",
+          "Pregnancy, prisoner, prior enrolment."
+        ]
+      },
+      "intervention": "Preoxygenation with NIV from randomisation until initiation of laryngoscopy. Delivered via a tight-fitting facemask connected to an NIV device or ventilator; recommended settings: FiO2 1.0, expiratory pressure ≥5 cm H2O, inspiratory pressure ≥10 cm H2O, and respiratory rate ≥10 breaths/min. NIV could be continued during the interval between induction and initiation of laryngoscopy.",
+      "comparison": "Preoxygenation with an oxygen mask (non-rebreather facemask or bag-mask without manual ventilation) from randomisation until initiation of laryngoscopy; oxygen flow rate ≥15 L/min. Supplemental oxygen via nasal cannula or high-flow nasal oxygen was permitted; bag-mask ventilation after induction was permitted at clinician discretion.",
+      "blinding": "Unblinded. Primary outcome was objective (pulse oximetry) and recorded continuously by an independent observer.",
+      "sample_size_power": "1264 patients required to detect a 6 percentage point absolute reduction in hypoxaemia (from 17% to 11%) with 85% power at a two-sided alpha of 0.05. Planned enrolment was 1300 to account for ~3% missing primary outcome data.",
+      "primary_outcome": "Incidence of hypoxaemia (SpO2 <85%) between induction of anaesthesia and 2 minutes after tracheal intubation.",
+      "secondary_outcomes": [
+        "Lowest oxygen saturation (median, IQR) between induction and 2 minutes post-intubation.",
+        "Incidence of severe hypoxaemia (SpO2 <80%).",
+        "Incidence of very severe hypoxaemia (SpO2 <70%).",
+        "Cardiovascular collapse (composite: SBP <65 mmHg, new/increased vasopressors, or cardiac arrest).",
+        "Cardiac arrest.",
+        "Operator-reported aspiration.",
+        "New infiltrate on chest imaging within 24 hours.",
+        "Ventilator-free days to day 28.",
+        "ICU-free days to day 28.",
+        "In-hospital death to day 28."
+      ],
+      "follow_up": "Physiological outcomes from induction through 2 minutes after intubation; safety outcomes to 24 hours; ICU/ventilator-free days and mortality assessed to day 28 (censored at discharge)."
+    },
+    "results": {
+      "headline_bullets": [
+        "NIV reduced the primary outcome of hypoxaemia (SpO2 <85%) by 9.4 percentage points (9.1% vs 18.5%, P<0.001).",
+        "NIV increased the median lowest peri-intubation SpO2 (99% vs 97%) and reduced severe desaturation (SpO2 <80%: 6.2% vs 13.2%).",
+        "Safety outcomes were similar for aspiration (0.9% vs 1.4%) and new infiltrate on imaging (28.3% vs 29.8%).",
+        "Patient-centred outcomes (mortality, ICU-free days) were not different, but the trial was not powered for these endpoints."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: Hypoxaemia (SpO2 <85%)",
+          "group_a": "57/624 (9.1%)",
+          "group_b": "118/637 (18.5%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-9.4 percentage points",
+          "ci_95": "-13.2 to -5.6",
+          "p_value": "<0.001",
+          "note": "Induction to 2 min post-intubation."
+        },
+        {
+          "outcome": "Lowest oxygen saturation, median (IQR)",
+          "group_a": "99 (95–100)",
+          "group_b": "97 (89–100)",
+          "effect_measure": "Median Difference",
+          "effect_value": "2 percentage points",
+          "ci_95": "1 to 3",
+          "p_value": "Not reported",
+          "note": "Key secondary outcome."
+        },
+        {
+          "outcome": "Severe hypoxaemia (SpO2 <80%)",
+          "group_a": "39/624 (6.2%)",
+          "group_b": "84/637 (13.2%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-6.9 percentage points",
+          "ci_95": "-10.2 to -3.7",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Very severe hypoxaemia (SpO2 <70%)",
+          "group_a": "15/624 (2.4%)",
+          "group_b": "36/637 (5.7%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-3.2 percentage points",
+          "ci_95": "-5.4 to -1.1",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Cardiovascular collapse",
+          "group_a": "113/645 (17.5%)",
+          "group_b": "127/656 (19.4%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-1.8 percentage points",
+          "ci_95": "-6.1 to 2.4",
+          "p_value": "Not reported",
+          "note": "Composite: SBP <65 mmHg, new/increased vasopressors, or cardiac arrest."
+        },
+        {
+          "outcome": "Cardiac arrest",
+          "group_a": "1/645 (0.2%)",
+          "group_b": "7/656 (1.1%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-0.9 percentage points",
+          "ci_95": "-1.8 to -0.1",
+          "p_value": "Not reported",
+          "note": "4/8 arrests died within 1 hour (1 NIV; 3 oxygen mask)."
+        },
+        {
+          "outcome": "Operator-reported aspiration",
+          "group_a": "6/645 (0.9%)",
+          "group_b": "9/656 (1.4%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-0.4 percentage points",
+          "ci_95": "-1.6 to 0.7",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "New infiltrate on chest imaging within 24 h",
+          "group_a": "144/509 (28.3%)",
+          "group_b": "148/497 (29.8%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-1.5 percentage points",
+          "ci_95": "-7.1 to 4.1",
+          "p_value": "Not reported",
+          "note": "Denominator reflects those with available imaging."
+        },
+        {
+          "outcome": "Ventilator-free days to day 28, median (IQR)",
+          "group_a": "21 (0–26)",
+          "group_b": "17 (0–25)",
+          "effect_measure": "Median Difference",
+          "effect_value": "4 days",
+          "ci_95": "-1 to 9",
+          "p_value": "Not reported",
+          "note": "Not adjusted for multiplicity; censored at discharge."
+        },
+        {
+          "outcome": "ICU-free days to day 28, median (IQR)",
+          "group_a": "16 (0–23)",
+          "group_b": "14 (0–23)",
+          "effect_measure": "Median Difference",
+          "effect_value": "2 days",
+          "ci_95": "-1 to 8",
+          "p_value": "Not reported",
+          "note": "Not adjusted for multiplicity; censored at discharge."
+        },
+        {
+          "outcome": "In-hospital death to day 28",
+          "group_a": "209/645 (32.4%)",
+          "group_b": "217/656 (33.1%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-0.7 percentage points",
+          "ci_95": "-5.8 to 4.4",
+          "p_value": "Not reported",
+          "note": "Trial not powered for mortality."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Receiving FiO2 >0.70 in the prior hour",
+          "group_a": "18/106 (17.0%)",
+          "group_b": "45/137 (32.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "Body-mass index ≥30",
+          "group_a": "20/222 (9.0%)",
+          "group_b": "58/220 (26.4%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "Not reported"
+        }
+      ]
+    },
+    "safety": [
+      "Operator-reported aspiration: 0.9% (NIV) vs 1.4% (oxygen mask).",
+      "New infiltrate on chest imaging within 24 h: 28.3% (NIV) vs 29.8% (oxygen mask).",
+      "Pneumothorax among those with imaging: 1.4% in both groups."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "1:1 randomisation stratified by trial site; allocation concealment via sequential opaque envelopes; randomisation occurred after the clinical decision to intubate, reducing selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded care team; however, oxygen saturation and haemodynamics were recorded continuously by an independent observer, and the primary endpoint (SpO2 <85%) is objective. The main residual risk is differential co-interventions rather than biased outcome measurement."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1301 randomised; primary outcome oxygen-saturation data were missing for 40/1301 (3.1%), leaving 624 and 637 patients in the primary analysis. Missingness is small but not completely ignorable if related to severity or workflow."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Assigned preoxygenation was delivered in 95.5% (NIV) and 98.8% (oxygen-mask). Crossover occurred in 4.5% and 1.2%, respectively, likely biasing the primary estimate towards the null."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well balanced for illness severity (median APACHE II score 17 in both groups) and pre-enrolment oxygenation. Small imbalances (e.g., BMI 27.6 vs 26.6) are unlikely to explain the effect size."
+        }
+      ],
+      "verdict": "Overall, internal validity is strong for the primary physiological endpoint, supported by concealed randomisation, high protocol adherence, objective outcome measurement, and consistent subgroup effects; the main residual threats are lack of blinding and co-intervention variability."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Participants reflect common ED/ICU intubation indications with moderate-to-high illness severity, but the trial preferentially enrolled cases where clinicians judged both NIV and oxygen-mask preoxygenation acceptable. Patients requiring immediate 'crash' intubation, those already receiving positive-pressure ventilation, and those with clear aspiration risk or practical contraindications to NIV were commonly not enrolled."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The intervention requires rapid access to NIV-capable equipment and staff familiar with NIV setup during airway management; applicability is strongest in well-resourced ED/ICUs and may be more limited in resource-constrained settings or prehospital environments."
+        }
+      ],
+      "verdict": "Generalisability is moderate-to-high for adult ED/ICU intubations where NIV is feasible and not contraindicated, but is limited for immediate/emergent intubations, patients already on positive-pressure support, and those with high aspiration risk or facial/behavioural barriers to NIV."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre RCT across both ED and ICU settings (n=1301), improving credibility and clinical relevance.",
+      "Objective primary outcome with continuous physiological data collection by an independent observer.",
+      "High adherence to assigned preoxygenation strategy (95.5% and 98.8%) with low crossover.",
+      "Broad clinical case-mix with consistent direction of effect across prespecified subgroups."
+    ],
+    "limitations": [
+      "Open-label design permits differential co-interventions (e.g., bag-mask ventilation and high-flow nasal oxygen), complicating mechanistic attribution and likely attenuating the estimated treatment effect.",
+      "Primary endpoint is a physiological surrogate; the trial was not powered for definitive conclusions about mortality or other patient-centred outcomes.",
+      "Selection based on clinician judgement that both strategies were acceptable, plus frequent non-enrolment of very urgent cases, limits inference for 'crash' intubations and those with clear NIV contraindications.",
+      "NIV settings and devices were pragmatic and variable across sites; the optimal NIV 'dose' for preoxygenation in different physiological phenotypes remains uncertain."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, pragmatic RCT providing high-certainty evidence that NIV preoxygenation substantially reduces peri-intubation hypoxaemia, though the open-label design and use of a physiological surrogate primary outcome limit definitive conclusions about patient-centred benefits.",
+      "strengths": [
+        "Concealed randomisation and objective primary outcome measurement by an independent observer.",
+        "High protocol adherence and low crossover.",
+        "Consistent treatment effect across a broad case-mix and prespecified subgroups."
+      ],
+      "weaknesses": [
+        "Unblinded design allows for differential co-interventions.",
+        "Primary outcome is a physiological surrogate, not a patient-centred endpoint.",
+        "Exclusion of 'crash' intubations and patients with NIV contraindications limits generalisability to these groups."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "For adult ED/ICU intubations where NIV is feasible and not contraindicated, NIV preoxygenation should be considered the default strategy to reduce peri-intubation hypoxaemia.",
+    "clinical_bottom_line": {
+      "verdict": "NIV preoxygenation should be the default strategy for emergency intubation in the ED/ICU when feasible, as it substantially reduces peri-intubation hypoxaemia without an observed increase in aspiration.",
+      "applies_to": "Adult ED/ICU patients requiring emergency intubation where NIV is not contraindicated (e.g., no active vomiting, facial trauma, or immediate need for intubation).",
+      "does_not_mean": "This trial does not prove that NIV preoxygenation improves mortality or other patient-centred outcomes, nor does it support its use in 'crash' intubations or patients with contraindications to NIV.",
+      "implementation_caveats": [
+        "Requires a reliable NIV setup (mask fit, rapid circuit connection, FiO2 1.0, EPAP/pressure support) and explicit contraindication screening.",
+        "Continuing NIV until laryngoscopy (rather than stopping at induction) is likely a key component of the tested strategy.",
+        "Training and standardised airway checklists can help ensure NIV is applied early enough (≥3 minutes when feasible)."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Comparator choice and co-interventions",
+        "notes": "Critique focused on whether an 'oxygen mask' comparator best represents contemporary best practice; the oxygen-mask group received bag-mask ventilation between induction and laryngoscopy in 30.8% and high-flow nasal oxygen during preoxygenation in 12.2%, potentially diluting the incremental effect of NIV and complicating mechanistic attribution."
+      },
+      {
+        "topic": "Bundled intervention vs 'pure' preoxygenation",
+        "notes": "NIV was commonly continued during the interval between induction and laryngoscopy (82.5% received NIV in this interval), so PREOXI tests a package of preoxygenation plus peri-induction positive-pressure support; this complicates translation to environments that avoid post-induction ventilation because of aspiration concerns."
+      },
+      {
+        "topic": "Harms and rare events",
+        "notes": "Aspiration (0.9% vs 1.4%) and pneumothorax (1.4% vs 1.4% among those with imaging) were uncommon; the trial cannot exclude small increases in rare complications, so careful patient selection and vigilance for gastric insufflation/aspiration remain necessary."
+      },
+      {
+        "topic": "Selection and workflow constraints",
+        "notes": "Screening-to-enrolment attrition was substantial (4567 screened; 3266 not enrolled), with common non-enrolment due to urgency and pre-existing positive-pressure ventilation; findings apply most directly to intubations where clinicians have time and equipoise to apply either strategy."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PREVENT",
+        "relation": "Demonstrated that routine bag-mask ventilation during tracheal intubation reduces hypoxaemia compared with no ventilation, supporting the argument that the 'true' incremental benefit of NIV may depend on how aggressively the control strategy provides peri-induction ventilation."
+      },
+      {
+        "trial": "BLING III",
+        "relation": "A 2025 systematic review and network meta-analysis of preoxygenation strategies for intubation in critically ill adults ranked NIV-based strategies as most effective for reducing hypoxaemia, supporting PREOXI's direction and magnitude of effect."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal NIV 'dose' (pressure settings, duration) for preoxygenation in different physiological phenotypes?",
+      "Does the benefit of NIV preoxygenation translate to improved patient-centred outcomes like mortality in a trial powered for these endpoints?",
+      "What is the role of NIV preoxygenation in settings where bag-mask ventilation or high-flow nasal oxygen is already standard during induction?",
+      "Can the findings be safely extrapolated to patients with higher aspiration risk or those requiring immediate 'crash' intubation?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1301",
+        "Primary outcome (SpO2 <85%): 9.1% vs 18.5% (Risk Difference -9.4%, P<0.001)",
+        "Cardiac arrest: 0.2% vs 1.1% (Risk Difference -0.9%)"
+      ],
+      "one_line_takeaway": "For emergency intubation in the ED/ICU, default to NIV preoxygenation when feasible—it halves the risk of severe desaturation without increasing aspiration."
+    }
+  },
+  "_source_id": "PREOXI",
+  "_source_system": "Airway"
+}

@@ -1,0 +1,314 @@
+{
+  "id": "Terrangi",
+  "trial_name": "Terrangi — Early vs Late Tracheotomy for Prevention of Pneumonia in Mechanically Ventilated Adult ICU Patients (2010)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2010,
+  "journal": "JAMA",
+  "citation": "Terragni PP, Antonelli M, Fumagalli R, Faggiano C, Berardino M, Pallavicini FB, et al. Early vs late tracheotomy for prevention of pneumonia in mechanically ventilated adult ICU patients: a randomized controlled trial. JAMA. 2010;303(15):1483-1489.",
+  "doi": "https://doi.org/10.1001/jama.2010.447",
+  "registration": "NCT00262431",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 419,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In mechanically ventilated ICU patients with persistent severe respiratory dysfunction, early tracheotomy (day 6-8) did not significantly reduce VAP compared to late tracheotomy (day 13-15), but improved ventilator liberation and ICU discharge metrics.",
+  "pico": {
+    "population": "Adult ICU patients mechanically ventilated for acute respiratory failure, with persistent severe respiratory dysfunction at 48 hours and no pneumonia",
+    "intervention": "Early tracheotomy planned for day 6-8 of translaryngeal intubation",
+    "comparison": "Late tracheotomy planned for day 13-15 of translaryngeal intubation",
+    "outcome": "28-day cumulative incidence of ventilator-associated pneumonia (VAP)"
+  },
+  "keywords": [
+    "tracheotomy",
+    "tracheostomy",
+    "ventilator-associated pneumonia",
+    "VAP",
+    "mechanical ventilation",
+    "weaning",
+    "timing"
+  ],
+  "related_trials": [
+    "TracMan"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Tracheotomy is frequently used to replace translaryngeal intubation when prolonged mechanical ventilation is anticipated, aiming to improve comfort, reduce sedative exposure, facilitate weaning, and optimise secretion clearance. Ventilator-associated pneumonia (VAP) is a clinically important complication of prolonged ventilation; tracheotomy timing was biologically plausible as a modifier of VAP risk (e.g., airway colonisation, microaspiration, secretion management).",
+      "knowledge_gap": "Before this trial, evidence for “early” tracheotomy was limited by heterogeneity in definitions (timing thresholds), patient selection, and outcome ascertainment, with inconsistent signals for VAP and mortality. Because tracheotomy carries procedural risks, a credible demonstration of benefit (particularly for infection prevention or hard outcomes) was needed to justify routinely accelerating the procedure.",
+      "hypothesis": "In mechanically ventilated adult ICU patients with persistent severe respiratory dysfunction after 48 hours and without pneumonia, early tracheotomy (day 6–8 after intubation) reduces the 28-day cumulative incidence of VAP compared with late tracheotomy (day 13–15). Secondary hypothesis: earlier tracheotomy would improve process outcomes (earlier ventilator liberation and ICU discharge) without increasing harms."
+    },
+    "methods": {
+      "design": "Multicentre, investigator-initiated, open-label, parallel-group randomised controlled trial in 12 ICUs in Italy (June 2004 to June 2008).",
+      "setting": "12 adult ICUs in Italy.",
+      "population": {
+        "inclusion": [
+          "Mechanical ventilation ≥24 hours",
+          "No active lung infection (composite pulmonary infection score <6)",
+          "SAPS II 35–65",
+          "SOFA score ≥5",
+          "At 48 hours after enrolment: worsening respiratory condition (PaO2≤60 mm Hg on FiO2 0.5 and PEEP 8 cm H2O, or PaO2≤100 mm Hg on FiO2 0.9 and PEEP 12 cm H2O)",
+          "At 48 hours after enrolment: unchanged or worsening SOFA score",
+          "At 48 hours after enrolment: no pneumonia"
+        ],
+        "exclusion": [
+          "Chronic obstructive pulmonary disease",
+          "Neck anatomical deformity (including thyromegaly) or cervical tumours",
+          "History of oesophageal/tracheal/pulmonary cancer",
+          "Previous tracheotomy",
+          "Soft tissue infection of the neck",
+          "Haematological malignancy",
+          "Pregnancy",
+          "Pre-specified conditions to defer tracheotomy: severe haemodynamic instability; severe arrhythmias; acute myocardial infarction; acute peritonitis; platelet count <50 ×10³/µL; bleeding time >2× normal (within 24 hours)"
+        ]
+      },
+      "intervention": "Early tracheotomy planned for day 6–8 of translaryngeal intubation. Technique/setting not standardised (performed in ICU or operating theatre; percutaneous or surgical at clinician discretion). Co-interventions: semirecumbent positioning protocol; weaning, sedative, and analgesic strategies restricted according to protocol.",
+      "comparison": "Late tracheotomy planned for day 13–15 of translaryngeal intubation. Otherwise identical supportive care and prevention bundle elements (including semirecumbency; protocolised approach to sedation/weaning).",
+      "blinding": "Unblinded trial. For VAP ascertainment, nonobjective composite pulmonary infection score components (radiography and secretion quality) were assessed by independent clinicians blinded to randomisation group.",
+      "sample_size_power": "320 patients required to detect a 35% relative reduction in VAP (from 30% to 20%) with 80% power at the 5% significance level.",
+      "primary_outcome": "28-day cumulative incidence of ventilator-associated pneumonia (VAP).",
+      "secondary_outcomes": [
+        "Ventilator-free days at day 28",
+        "ICU-free days at day 28",
+        "Successful weaning by day 28",
+        "Discharge from ICU by day 28",
+        "Survival at day 28",
+        "Time to ventilator disconnection within 28 days",
+        "Time to ICU discharge within 28 days",
+        "Any tracheotomy-related adverse event",
+        "Hospital length of stay",
+        "One-year survival"
+      ],
+      "follow_up": "28 days after randomisation for primary/secondary endpoints; hospital outcomes during index admission; one-year survival and long-term care needs reported among hospital survivors with follow-up data available."
+    },
+    "results": {
+      "headline_bullets": [
+        "VAP incidence was numerically lower with the early strategy (14% vs 21%) but did not meet conventional statistical significance (HR 0.66; 95% CI 0.42 to 1.04; P=0.07).",
+        "Process outcomes favoured early tracheotomy (ventilator-free days median 11 vs 6; ICU-free days median 0 vs 0 with wider IQR; successful weaning 77% vs 68%).",
+        "No detectable mortality benefit at 28 days (74% vs 68% survival; P=0.25); tracheotomy-related adverse event rates were 39% in both groups among patients who underwent tracheotomy."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Ventilator-associated pneumonia by day 28 (primary)",
+          "group_a": "30/209 (14%)",
+          "group_b": "44/210 (21%)",
+          "effect_measure": "HR",
+          "effect_value": "0.66",
+          "ci_95": "0.42 to 1.04",
+          "p_value": "0.07",
+          "note": "28-day cumulative incidence; competing risk analysis"
+        },
+        {
+          "outcome": "Ventilator-free days at day 28",
+          "group_a": "Median 11 (IQR 0–21)",
+          "group_b": "Median 6 (IQR 0–17)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.02",
+          "note": "Higher values indicate more days alive and free of mechanical ventilation"
+        },
+        {
+          "outcome": "ICU-free days at day 28",
+          "group_a": "Median 0 (IQR 0–13)",
+          "group_b": "Median 0 (IQR 0–8)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.02",
+          "note": "Higher values indicate more days alive and out of ICU"
+        },
+        {
+          "outcome": "Successful weaning by day 28",
+          "group_a": "161/209 (77%)",
+          "group_b": "142/210 (68%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.002",
+          "note": "Defined as disconnection from ventilator for >48 hours"
+        },
+        {
+          "outcome": "Discharge from ICU by day 28",
+          "group_a": "101/209 (48%)",
+          "group_b": "82/210 (39%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.03",
+          "note": "Time-to-event signal also favoured early strategy"
+        },
+        {
+          "outcome": "Survival at day 28",
+          "group_a": "154/209 (74%)",
+          "group_b": "144/210 (68%)",
+          "effect_measure": "HR",
+          "effect_value": "0.80",
+          "ci_95": "0.56 to 1.15",
+          "p_value": "0.25",
+          "note": "Hazard ratio refers to death within 28 days"
+        },
+        {
+          "outcome": "Time to ventilator disconnection within 28 days",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "HR",
+          "effect_value": "0.70",
+          "ci_95": "0.56 to 0.87",
+          "p_value": "N/A",
+          "note": "Hazard ratio for remaining connected to ventilator (lower = earlier liberation)"
+        },
+        {
+          "outcome": "Time to ICU discharge within 28 days",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "HR",
+          "effect_value": "0.73",
+          "ci_95": "0.55 to 0.97",
+          "p_value": "N/A",
+          "note": "Hazard ratio for remaining in ICU (lower = earlier discharge)"
+        },
+        {
+          "outcome": "Any tracheotomy-related adverse event (among those receiving tracheotomy)",
+          "group_a": "57/145 (39%)",
+          "group_b": "46/119 (39%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "N/A",
+          "note": "Most events were minor; individual event comparisons not statistically significant"
+        },
+        {
+          "outcome": "Hospital length of stay",
+          "group_a": "Median 31 days (IQR 17–49)",
+          "group_b": "Median 32 days (IQR 18–59)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "N/A",
+          "note": "Reported as “no difference” without a p value"
+        },
+        {
+          "outcome": "One-year survival (among patients discharged alive with follow-up)",
+          "group_a": "72/144 (50%)",
+          "group_b": "63/148 (43%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.25",
+          "note": "Follow-up data available in 292 hospital survivors"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Any tracheotomy-related adverse event (among those receiving tracheotomy): 57/145 (39%) in early group vs 46/119 (39%) in late group.",
+      "Most events were minor; individual event comparisons not statistically significant."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-generated randomisation with concealed allocation was reported. Randomisation occurred after a 48-hour “enrichment” period, which improves clinical plausibility for prolonged ventilation but introduces a pre-randomisation selection step (600 enrolled; 419 randomised)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design creates risk that clinician behaviour (sedation/weaning decisions, diagnostic work-up for pneumonia) could be influenced by knowledge of group assignment. VAP outcome ascertainment attempted partial blinding: nonobjective composite pulmonary infection score components were assessed by blinded clinicians; nevertheless, VAP diagnosis remains a complex, partly subjective construct."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Pre-randomisation exclusions were substantial (181/600), mainly due to improved respiratory status (n=82), moribund/death (n=30), pulmonary infection (n=24), and other reasons (n=45). Post-randomisation “non-receipt” of the assigned procedure was common: 64/209 (31%) in early and 91/210 (43%) in late did not undergo tracheotomy (mostly improvement/extubation or death), diluting any causal effect of the procedure itself. Long-term follow-up outcomes were reported only for hospital survivors with data available (292 patients), which is vulnerable to incomplete capture beyond discharge."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Timing separation among those who received tracheotomy was clear: mean 7 (SD 1) days vs 14 (SD 1) days of translaryngeal intubation before tracheotomy. Strategy adherence was incomplete: tracheotomy performed in 145/209 (69%) early vs 119/210 (57%) late. Key co-interventions (semirecumbent positioning; protocol restrictions on sedation/weaning) were specified, aiming to reduce between-group contamination; tracheotomy technique and location were not standardised."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Baseline characteristics were well balanced at enrolment: age 61±16 vs 61±15 years; SAPS II 49.8±9.2 vs 49.8±9.5; SOFA 7.8±2.1 vs 7.7±2.0. At randomisation, respiratory severity was similar: PaO2 76±21 vs 73±21 mm Hg; FiO2 0.57±0.16 vs 0.57±0.16; PEEP 10.1±2.2 vs 10.0±2.0 cm H2O. Diagnosis categories were closely matched (e.g., neurological 28% vs 30%; respiratory 22% vs 22%; sepsis 7% vs 7%)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate: allocation concealment and intention-to-treat analysis support causal inference, but open-label care, substantial non-receipt of tracheotomy, and reliance on a partly subjective VAP construct likely attenuated detectable between-group differences."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Patients were selected for moderate–high severity early in mechanical ventilation (SAPS II 35–65; SOFA ≥5) and then enriched at 48 hours for persistent/worsening respiratory dysfunction without pneumonia. Key exclusions (notably COPD and significant neck pathology) remove clinically common phenotypes and limit applicability to mixed ICUs with high COPD prevalence."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in 12 Italian ICUs with protocol elements (semirecumbency; constrained sedation/weaning) that may not be implemented with equal fidelity in all health systems. Because tracheotomy technique and location were not standardised, the “strategy” likely reflects real-world practice variability, improving pragmatic relevance for similar resource settings. Findings are most applicable to patients who remain severely impaired at 48 hours and in whom a prolonged course is anticipated; extrapolation to lower-acuity cohorts is uncertain."
+        }
+      ],
+      "verdict": "Generalisability is moderate: results are most relevant to higher-severity, persistently hypoxaemic ICU patients in systems with established VAP prevention and weaning protocols, but less applicable to COPD-heavy case-mix or settings with different procedural thresholds/resources."
+    },
+    "strengths": [
+      "Multicentre randomised design with concealed allocation and intention-to-treat analysis.",
+      "Clinically coherent enrichment approach (48-hour reassessment) focusing on patients plausibly at risk for prolonged ventilation and VAP.",
+      "Use of competing risk methods for VAP, acknowledging the methodological challenge that death/extubation preclude pneumonia diagnosis.",
+      "Meaningful patient-centred and system outcomes reported (ventilator-free days, ICU discharge, adverse events; longer-term outcomes among hospital survivors)."
+    ],
+    "limitations": [
+      "Open-label care with potential for performance bias in sedation, weaning, and diagnostic intensity for VAP.",
+      "Primary endpoint (VAP) depends on clinical criteria and scoring (composite pulmonary infection score), which may misclassify pneumonia and is susceptible to ascertainment bias despite partial blinding.",
+      "Substantial non-receipt of tracheotomy in both groups (31% early; 43% late) dilutes the effect of the procedure and shifts inference towards a “timing strategy” rather than a “tracheotomy vs no tracheotomy” effect.",
+      "Observed control VAP incidence (21%) was lower than assumed (30%), weakening statistical power; the primary endpoint narrowly missed significance (P=0.07)."
+    ],
+    "critical_appraisal": {
+      "summary": "A moderate-quality RCT with a borderline primary outcome, where process-of-care benefits are confounded by an open-label design and substantial non-adherence to the assigned procedure.",
+      "strengths": [
+        "Concealed allocation and intention-to-treat analysis.",
+        "Clinically coherent enrichment strategy.",
+        "Use of competing risk analysis for the primary outcome."
+      ],
+      "weaknesses": [
+        "Open-label design introduces performance and detection bias.",
+        "High rate of non-receipt of tracheotomy dilutes the intervention effect.",
+        "Underpowered due to lower-than-expected event rate in the control group."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Early tracheotomy did not demonstrate a statistically significant reduction in 28-day VAP but improved process outcomes like ventilator-free days and weaning, with no mortality benefit and similar adverse event rates.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support routine early tracheotomy as a universal VAP-prevention strategy. It may be a reasonable option for individualised care when goals prioritise sedation minimisation, comfort, and a plausible trajectory towards weaning.",
+      "applies_to": "Higher-severity, persistently hypoxaemic ICU patients without COPD or neck pathology, in settings with established VAP prevention and weaning protocols.",
+      "does_not_mean": "Early tracheotomy improves survival or should be performed on all patients anticipated to have prolonged ventilation.",
+      "implementation_caveats": [
+        "Imperfect prediction of prolonged ventilation can lead to unnecessary procedures if an early strategy is adopted broadly.",
+        "The benefit on weaning and ICU discharge may be partly behavioural (influenced by open-label care) rather than purely mechanistic."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Predicting “prolonged ventilation” and the risk of unnecessary procedures",
+        "notes": "The trial’s design highlights prognostic uncertainty: 181/600 enrolled patients were not randomised, and after randomisation 64/209 (31%) early and 91/210 (43%) late never received tracheotomy due to extubation or death before the target window. The accompanying editorial emphasised that imperfect prediction can lead to avoidable tracheotomy exposure when an “early” strategy is adopted broadly."
+      },
+      {
+        "topic": "Endpoint selection and interpretability",
+        "notes": "VAP was chosen as the primary outcome, but its diagnosis is inherently challenging; even with partial blinding of some components, misclassification and ascertainment variation can bias towards null. The study’s observed VAP rate in the control strategy (21%) was lower than the 30% assumed for powering, plausibly contributing to the borderline primary result (P=0.07) and wide confidence interval crossing unity."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TracMan",
+        "relation": "A large UK trial that also found no survival benefit from early versus late tracheostomy in mechanically ventilated ICU patients, reinforcing the view that routine early timing does not improve hard outcomes."
+      }
+    ],
+    "unresolved_questions": [
+      "Can better predictive models identify patients who will truly require prolonged ventilation, minimising unnecessary early tracheotomies?",
+      "What is the effect of early tracheotomy on patient-centred outcomes like long-term quality of life, speech, and swallowing, which were not assessed?",
+      "Does the benefit on weaning and ICU discharge persist in a blinded or more tightly protocolised trial design?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=419 randomised",
+        "Primary VAP outcome: 14% vs 21% (HR 0.66, 95% CI 0.42-1.04, P=0.07)",
+        "Ventilator-free days: median 11 vs 6 (P=0.02)",
+        "28-day survival: 74% vs 68% (P=0.25)"
+      ],
+      "one_line_takeaway": "Early tracheotomy does not reduce VAP or mortality but may speed up weaning and ICU discharge in selected patients; it should not be a routine protocol for all."
+    }
+  },
+  "_source_id": "Terrangi",
+  "_source_system": "Airway"
+}

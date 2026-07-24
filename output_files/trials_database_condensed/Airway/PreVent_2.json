@@ -1,0 +1,311 @@
+{
+  "id": "PreVent_2",
+  "trial_name": "PreVent 2 — Subglottic Suction & Polyurethane Cuff vs Standard ETT in Emergency Intubation (2025)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Airway Emergencies",
+  "year": 2025,
+  "journal": "The Lancet Respiratory Medicine",
+  "citation": "Treggiari MM, Sharp ES, Ohnuma T, et al. Hospital and long-term outcomes for subglottic suction and polyurethane cuff versus standard endotracheal tubes in emergency intubation (PreVent 2): a randomised controlled phase 2 trial. Lancet Respir Med. 2025; published online Nov 27.",
+  "doi": "https://doi.org/10.1016/S2213-2600(25)00294-2",
+  "registration": "NCT03705286",
+  "trial_type": "RCT — multicenter, phase 2, pragmatic, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1068,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In emergency intubation ICU patients, a polyurethane-cuff ETT with subglottic secretion drainage did not reduce ventilator-associated events or improve 6-month outcomes and was associated with a longer hospital stay.",
+  "pico": {
+    "population": "Adults (≥18 years) requiring emergency endotracheal intubation for acute respiratory distress/failure in the ED or hospital, with ICU admission and mechanical ventilation",
+    "intervention": "PU-EVAC ETT (polyurethane cuff with subglottic secretion drainage port); continuous suction at –20 mm Hg with manual air bolus (5–10 mL) every 4 hours",
+    "comparison": "Standard PVC-cuff ETT without SSD port",
+    "outcome": "Primary: laryngeal injury at 6 months. Secondary: VAC, IVAC, possible VAP, hospital/ICU length of stay, mortality, SF-36 scores, cognitive impairment at 6 months."
+  },
+  "keywords": [
+    "subglottic secretion drainage",
+    "polyurethane cuff",
+    "ventilator-associated pneumonia",
+    "ventilator-associated events",
+    "emergency intubation",
+    "endotracheal tube"
+  ],
+  "related_trials": [
+    "PreVent 1",
+    "BLING III"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "VAP and VAE are frequent complications of invasive mechanical ventilation. Microaspiration around the ETT cuff is a plausible mechanism. ETTs with SSD and polyurethane cuffs aim to reduce aspiration, but prior evidence focused on VAP incidence, not patient-centred outcomes.",
+      "knowledge_gap": "Effects of SSD on mortality, long-term function, and airway injury in emergency intubation populations are uncertain. Older VAP-centric evidence may not generalize to current VAE/IVAC surveillance frameworks.",
+      "hypothesis": "A polyurethane-cuff ETT with continuous SSD (PU-EVAC) would improve hospital and 6-month outcomes compared with a standard PVC-cuff ETT in adults undergoing emergency intubation."
+    },
+    "methods": {
+      "design": "Randomised, controlled, phase 2 trial. Pragmatic enrolment under exception from informed consent (EFIC). Stratified randomisation by hospital and ETT size.",
+      "setting": "Two US academic hospitals (Yale New Haven Hospital; Oregon Health & Science University). Emergency department and in-hospital emergency intubations with subsequent ICU admission.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) requiring emergency endotracheal intubation for acute respiratory distress/failure in the ED or hospital",
+          "Intubation using study kits",
+          "ICU admission and mechanical ventilation",
+          "ETT sizes 7.0–8.0"
+        ],
+        "exclusion": [
+          "Elective operating theatre intubation",
+          "Intubation not using study kit",
+          "Pre-existing/permanent tracheostomy",
+          "Protected populations (children, pregnancy, prisoners)",
+          "Inability/unwillingness to participate at deferred consent stage"
+        ]
+      },
+      "intervention": "PU-EVAC ETT (polyurethane cuff with subglottic secretion drainage port). Continuous subglottic suction applied at –20 mm Hg, with manual air bolus (5–10 mL) every 4 hours during intubation period.",
+      "comparison": "Standard PVC-cuff ETT without SSD port.",
+      "blinding": "Allocation concealment at enrolment via sealed, opaque envelopes and pre-prepared intubation kits. Clinical teams were not blinded post-intubation. Long-term outcome assessor blinding was not reported.",
+      "sample_size_power": "1074 participants required to detect a 10% absolute difference in laryngeal injury incidence (assumed 40% in the PVC group) with 80% power at a two-sided 5% significance level. Planned group sequential design with one interim analysis.",
+      "primary_outcome": "Laryngeal injury at 6 months",
+      "secondary_outcomes": [
+        "Ventilator-associated condition (VAC)",
+        "Infection-related ventilator-associated complication (IVAC)",
+        "Possible VAP (PVAP)",
+        "Hospital and ICU length of stay",
+        "ICU, in-hospital, and 6-month mortality",
+        "SF-36 Physical and Mental Component Scores at 6 months",
+        "Overall cognitive impairment at 6 months"
+      ],
+      "follow_up": "Index admission outcomes through ICU/hospital discharge. 6-month follow-up for laryngeal injury, quality of life, and cognition."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in the primary outcome of laryngeal injury at 6 months (83% vs 70%, P=0.098), but analysis was limited to only 157 participants.",
+        "No reduction in VAC, IVAC, or possible VAP with the intervention.",
+        "Hospital length of stay was significantly longer in the PU-EVAC group (26.0 vs 22.0 days, P=0.046).",
+        "Mortality was similar between groups at all time points."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Laryngeal injury at 6 months",
+          "group_a": "72/87 (83%)",
+          "group_b": "49/70 (70%)",
+          "effect_measure": "RD",
+          "effect_value": "0.11",
+          "ci_95": "–0.03 to 0.20",
+          "p_value": "0.098",
+          "note": "Assessed only in participants completing 6-month follow-up (n=157)."
+        },
+        {
+          "outcome": "SF-36 Physical Component Score at 6 months",
+          "group_a": "39.97 (SD 13.04)",
+          "group_b": "40.49 (SD 12.17)",
+          "effect_measure": "MD",
+          "effect_value": "–0.52",
+          "ci_95": "–4.24 to 3.20",
+          "p_value": "0.78",
+          "note": "Assessed only in participants completing 6-month follow-up (n=157)."
+        },
+        {
+          "outcome": "SF-36 Mental Component Score at 6 months",
+          "group_a": "45.91 (SD 12.33)",
+          "group_b": "48.89 (SD 12.35)",
+          "effect_measure": "MD",
+          "effect_value": "–2.98",
+          "ci_95": "–6.93 to 0.97",
+          "p_value": "0.15",
+          "note": "Assessed only in participants completing 6-month follow-up (n=157)."
+        },
+        {
+          "outcome": "Overall cognitive impairment at 6 months",
+          "group_a": "74/87 (85%)",
+          "group_b": "57/70 (81%)",
+          "effect_measure": "RD",
+          "effect_value": "0.05",
+          "ci_95": "–0.07 to 0.17",
+          "p_value": "0.44",
+          "note": "Assessed only in participants completing 6-month follow-up (n=157)."
+        },
+        {
+          "outcome": "Possible VAP (PVAP) during index admission",
+          "group_a": "33/535 (6%)",
+          "group_b": "29/533 (5%)",
+          "effect_measure": "RD",
+          "effect_value": "0.01",
+          "ci_95": "–0.02 to 0.04",
+          "p_value": "0.56",
+          "note": "CDC/NHSN possible VAP definition."
+        },
+        {
+          "outcome": "Infection-related ventilator-associated complication (IVAC)",
+          "group_a": "42/535 (8%)",
+          "group_b": "33/533 (6%)",
+          "effect_measure": "RD",
+          "effect_value": "0.02",
+          "ci_95": "–0.01 to 0.05",
+          "p_value": "0.32",
+          "note": "CDC/NHSN IVAC definition."
+        },
+        {
+          "outcome": "Ventilator-associated condition (VAC)",
+          "group_a": "52/535 (10%)",
+          "group_b": "39/533 (7%)",
+          "effect_measure": "RD",
+          "effect_value": "0.02",
+          "ci_95": "–0.01 to 0.05",
+          "p_value": "0.17",
+          "note": "CDC/NHSN VAC definition."
+        },
+        {
+          "outcome": "Hospital length of stay",
+          "group_a": "26.0 (SD 28.1) days",
+          "group_b": "22.0 (SD 22.0) days",
+          "effect_measure": "MD",
+          "effect_value": "4.0 days",
+          "ci_95": "0.1 to 7.9",
+          "p_value": "0.046",
+          "note": "Only statistically significant between-group difference among major in-hospital endpoints."
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "172/535 (32%)",
+          "group_b": "184/533 (35%)",
+          "effect_measure": "RD",
+          "effect_value": "–0.02",
+          "ci_95": "–0.08 to 0.04",
+          "p_value": "0.53",
+          "note": "Index admission."
+        },
+        {
+          "outcome": "In-hospital mortality",
+          "group_a": "219/535 (41%)",
+          "group_b": "240/533 (45%)",
+          "effect_measure": "RD",
+          "effect_value": "–0.04",
+          "ci_95": "–0.10 to 0.03",
+          "p_value": "0.24",
+          "note": "Index admission."
+        },
+        {
+          "outcome": "Mortality at 6 months",
+          "group_a": "274/535 (51%)",
+          "group_b": "284/533 (53%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Reported as counts/percentages; effect estimate not provided."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Laryngeal injury was numerically higher with PU-EVAC (83% vs 70%) among the small subset completing 6-month evaluation."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated randomisation with stratification by hospital and ETT size; allocation concealment via sealed, opaque envelopes and prepared intubation kits. EFIC enrolment enabled randomisation at the point of emergency intubation."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label post-intubation design with potential for performance bias, although major infection outcomes were algorithmic (CDC/NHSN VAE)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Of 1074 enrolled, 1068 were included in ITT analyses. For 6-month outcomes, attrition was substantial: 558 deaths, 167 non-consents, and 186 lost to follow-up; only 157 completed follow-up, limiting power and introducing potential selection bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "43 crossovers occurred; a per-protocol analysis showed similar findings. Reintubation was managed by re-randomisation, adding analytic complexity."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly comparable, but there was an imbalance in intubation location: ED intubation 64% (PU-EVAC) vs 54% (PVC)."
+        }
+      ],
+      "verdict": "Internal validity is moderate: allocation concealment and pragmatic enrolment support credibility for in-hospital endpoints, but the very low completion of 6-month assessments materially limits inference for long-term outcomes and airway safety signals."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Emergency intubation ICU patients represent a common real-world pathway. Exclusions (elective OR intubations, pre-existing tracheostomy, tube sizes outside 7.0–8.0) limit applicability to other populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings are most applicable to resource-adequate systems able to deploy continuous subglottic suction protocols and prevention bundles similar to those in US academic ICUs."
+        }
+      ],
+      "verdict": "External validity is moderate: the emergency intubation ICU population is clinically relevant, but the two-centre US academic setting and device/size constraints restrict broader generalisability."
+    },
+    "strengths": [
+      "Large pragmatic randomised trial (n=1068 analysed) in an emergency intubation pathway where randomisation is logistically challenging.",
+      "Use of standardised CDC/NHSN VAE framework (VAC/IVAC/possible VAP), aligning outcomes with contemporary surveillance constructs.",
+      "Prespecified 6-month patient-centred outcomes (laryngeal injury, quality of life, cognition) beyond traditional VAP endpoints.",
+      "Allocation concealment at point of intubation with stratification by site and ETT size."
+    ],
+    "limitations": [
+      "Open-label post-intubation design with potential for performance bias.",
+      "Very low completion of 6-month follow-up (157/1068), limiting power and increasing risk of selection bias for long-term outcomes.",
+      "Reintubation with re-randomisation introduces analytic complexity and potential contamination across exposure groups.",
+      "Device 'dose' (–20 mm Hg suction with scheduled air bolus) may not be generalisable to other SSD systems or suction settings."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed pragmatic trial with moderate internal and external validity, showing no benefit of a PU-EVAC tube on VAE or long-term outcomes, but the primary and key secondary long-term endpoints are severely underpowered due to high attrition.",
+      "strengths": [
+        "Pragmatic, EFIC-based enrolment in a challenging emergency setting.",
+        "Use of objective, algorithmic VAE surveillance definitions.",
+        "Inclusion of patient-centred long-term outcomes."
+      ],
+      "weaknesses": [
+        "Unblinded post-intubation care.",
+        "Critically low follow-up rate for the primary outcome, rendering it uninterpretable.",
+        "Imbalance in baseline intubation location."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In emergency intubation ICU patients, PU-EVAC did not reduce VAC/IVAC/possible VAP and was associated with longer hospital length of stay, arguing against routine 'device-first' adoption in this context without clearer benefit.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support the routine use of PU-EVAC tubes for emergency intubation in the ICU. The intervention showed no benefit on VAE or long-term outcomes and was associated with a longer hospital stay.",
+      "applies_to": "Adults requiring emergency intubation in the ED or hospital who are admitted to the ICU, in settings with established VAP prevention bundles.",
+      "does_not_mean": "This does not mean SSD tubes are harmful, but that any potential benefit is not large enough to be detected in a contemporary VAE framework, and the signal for increased length of stay warrants caution.",
+      "implementation_caveats": [
+        "The primary outcome (laryngeal injury) and other 6-month outcomes are uninterpretable due to very high loss to follow-up.",
+        "The suction protocol (–20 mm Hg continuous) is specific and may not apply to other SSD systems.",
+        "The trial was conducted in two US academic centres, which may limit generalisability."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Reassessment of SSD as a default prevention strategy",
+        "notes": "The accompanying editorial argued that the null findings on VAE/VAP outcomes and lack of demonstrable long-term benefit should prompt reconsideration of SSD tubes as routine practice in emergency intubation pathways."
+      },
+      {
+        "topic": "Guideline uncertainty and evolving recommendations",
+        "notes": "The 2022 SHEA/IDSA-aligned guidance framed SSD as an 'unresolved issue' (downgraded from earlier recommendations), reflecting heterogeneity and uncertainty in older VAP-focused evidence; PreVent 2 adds a large pragmatic emergency intubation trial to this evidentiary tension."
+      },
+      {
+        "topic": "Meta-analytic signals versus trial-level outcomes",
+        "notes": "Updated syntheses have reported reductions in VAP incidence with SSD, but device heterogeneity, varying suction protocols, and outcome ascertainment differences complicate translation to patient-centred endpoints. PreVent 2 suggests that any VAP signal may not map cleanly to VAC/IVAC or long-term outcomes in contemporary care."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PreVent 1",
+        "relation": "A prior trial by the same group evaluating a similar intervention, likely informing the design and hypothesis of PreVent 2."
+      },
+      {
+        "trial": "BLING III",
+        "relation": "Another large trial evaluating a different intervention (continuous vs intermittent beta-lactam infusion) in sepsis, mentioned in the context of shifting from surrogate to patient-centred outcomes in critical care trials."
+      }
+    ],
+    "unresolved_questions": [
+      "A formal updated meta-analysis incorporating PreVent 2 (and stratifying by setting, suction 'dose', and outcome framework: VAP vs VAE/IVAC) is needed to reconcile older VAP-focused evidence with contemporary emergency-intubation data."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1068",
+        "Hospital LOS: 26.0 vs 22.0 days (MD 4.0, P=0.046)",
+        "6-month follow-up completed in only 157 patients"
+      ],
+      "one_line_takeaway": "PU-EVAC tubes do not reduce VAE or improve long-term outcomes after emergency intubation and may prolong hospital stay; routine use is not supported."
+    }
+  },
+  "_source_id": "PreVent_2",
+  "_source_system": "Airway"
+}

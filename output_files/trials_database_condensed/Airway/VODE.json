@@ -1,0 +1,362 @@
+{
+  "id": "VODE",
+  "trial_name": "VODE — Video vs Direct Laryngoscopy for Urgent Intubation of Newborn Infants (2024)",
+  "specialty": "Neonatology",
+  "subtopic": "Airway Emergencies",
+  "year": 2024,
+  "journal": "New England Journal of Medicine",
+  "citation": "Geraghty LE, Dunne EA, Ní Chathasaigh CM, Vellinga A, Adams NC, O’Currain EM, et al. Video versus Direct Laryngoscopy for Urgent Intubation of Newborn Infants. N Engl J Med. 2024;390(20):1885-94.",
+  "doi": "https://doi.org/10.1056/NEJMoa2402785",
+  "registration": "",
+  "trial_type": "RCT — single-center, pragmatic, parallel-group, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 214,
+  "result_category": "Positive",
+  "one_liner": "In urgent neonatal intubations, video laryngoscopy significantly increased first-attempt success compared to direct laryngoscopy (74% vs 45%), with no increase in major resuscitation events.",
+  "pico": {
+    "population": "Newborn infants of any gestational age requiring urgent oral endotracheal intubation in the delivery room or NICU",
+    "intervention": "First attempt with C-MAC video laryngoscope (Miller blade)",
+    "comparison": "First attempt with conventional direct laryngoscope (Heine straight blade)",
+    "outcome": "Successful intubation on the first attempt, confirmed by exhaled CO2 detection"
+  },
+  "keywords": [
+    "video laryngoscopy",
+    "direct laryngoscopy",
+    "neonatal intubation",
+    "first-pass success",
+    "airway management",
+    "NICU",
+    "delivery room"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Urgent neonatal endotracheal intubation is technically challenging, often performed by trainees, and frequently requires multiple attempts. Repeated attempts are associated with hypoxaemia, bradycardia, airway trauma, and escalation to chest compressions and epinephrine. Video laryngoscopy provides a shared external view of the glottis that may improve glottic visualisation, facilitate supervision and coaching, and increase first-pass success.",
+      "knowledge_gap": "Pre-trial neonatal evidence was limited by small trials (often teaching-focussed), heterogeneous devices and settings, and uncertainty regarding clinical effectiveness and physiologic safety during urgent real-world intubations.",
+      "hypothesis": "In newborn infants requiring urgent oral endotracheal intubation, video laryngoscopy (vs direct laryngoscopy) increases successful intubation on the first attempt without an excess of physiologic deterioration (desaturation, bradycardia) or procedural complications."
+    },
+    "methods": {
+      "design": "Pragmatic, single-centre, parallel-group, superiority randomised trial; 1:1 allocation; stratified by gestational age (<32 weeks vs ≥32 weeks) with blocks of four; open-label; no interim analyses reported.",
+      "setting": "Delivery rooms and neonatal intensive care unit in a tertiary maternity hospital (Dublin, Ireland).",
+      "population": {
+        "inclusion": [
+          "Newborn infants of any gestational age requiring urgent oral endotracheal intubation in the delivery room or NICU",
+          "Each infant participated once"
+        ],
+        "exclusion": [
+          "Known or suspected upper airway anomaly (e.g., cleft palate, craniofacial anomaly, intracranial tumour abutting the airway)",
+          "Parental/guardian refusal",
+          "Clinician device preference precluding randomisation"
+        ]
+      },
+      "intervention": "First attempt with C-MAC video laryngoscope using Miller blade (size 0 for <1500 g; size 1 for ≥1500 g); airway visualised on an external monitor. Operators and supervisors could view the monitor; real-time supervision/coaching permitted. Subsequent attempts and adjuncts (stylet, premedication, etc.) at clinician discretion.",
+      "comparison": "First attempt with conventional direct laryngoscope (Heine Optotechnik) using straight blade (size 00 for <1000 g; size 0 for 1000–3000 g; size 1 for >3000 g). After the initial attempt, device choice for further attempts was not restricted (including crossover to video laryngoscopy).",
+      "blinding": "Unblinded (device visible to operator and team); blinding not feasible; primary outcome confirmation used objective exhaled CO2 detection.",
+      "sample_size_power": "A total of 214 intubations were planned to detect an absolute increase in first-attempt success from 40% to 60% with 80% power at a two-sided 5% significance level (194 required, inflated for attrition).",
+      "primary_outcome": "Successful intubation on the first attempt, confirmed by exhaled CO2 detection.",
+      "secondary_outcomes": [
+        "Median number of attempts to achieve successful intubation",
+        "Lowest oxygen saturation during laryngoscopy",
+        "Oxygen saturation <90% during laryngoscopy (post-hoc)",
+        "Lowest heart rate during laryngoscopy",
+        "Heart rate <60 bpm during laryngoscopy",
+        "Chest compressions during the procedure",
+        "Epinephrine during the procedure",
+        "Oral trauma",
+        "Crossover to alternative device",
+        "Endotracheal tube tip in correct position on chest radiograph",
+        "Intubation successfully completed with assigned device (post-hoc)",
+        "Total laryngoscopy time to successful intubation (post-hoc)"
+      ],
+      "follow_up": "Immediate peri-intubation period (success, physiologic nadirs, procedural events) and post-procedure chest radiograph for endotracheal tube tip position; longer-term clinical outcomes were not reported."
+    },
+    "results": {
+      "headline_bullets": [
+        "First-attempt success was significantly higher with video laryngoscopy (74%) than with direct laryngoscopy (45%) (P<0.001).",
+        "Procedural difficulty proxies favoured video laryngoscopy (median 1 attempt to success and 3% crossover) vs direct laryngoscopy (median 2 attempts and 29% crossover).",
+        "Physiologic instability remained common: median lowest oxygen saturation was 74% (video) vs 68% (direct), while chest compressions (6% vs 5%) and epinephrine use (3% vs 1%) were uncommon and similar."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Successful intubation on first attempt",
+          "group_a": "79/107 (74%)",
+          "group_b": "48/107 (45%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.001",
+          "note": "Primary outcome; success confirmed by exhaled CO2 detection."
+        },
+        {
+          "outcome": "Median number of attempts to achieve successful intubation",
+          "group_a": "1",
+          "group_b": "2",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Assessed in 107 vs 107 infants."
+        },
+        {
+          "outcome": "Lowest oxygen saturation during laryngoscopy (median)",
+          "group_a": "74%",
+          "group_b": "68%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Assessed in 98 vs 100 infants."
+        },
+        {
+          "outcome": "Oxygen saturation <90% during laryngoscopy",
+          "group_a": "79/107 (74%)",
+          "group_b": "96/107 (90%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Post-hoc outcome (added after data collection completed)."
+        },
+        {
+          "outcome": "Lowest heart rate during laryngoscopy (median)",
+          "group_a": "153 bpm",
+          "group_b": "148 bpm",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Assessed in 98 vs 100 infants."
+        },
+        {
+          "outcome": "Heart rate <60 bpm during laryngoscopy",
+          "group_a": "6/107 (6%)",
+          "group_b": "9/107 (8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Physiologic safety outcome."
+        },
+        {
+          "outcome": "Chest compressions during the procedure",
+          "group_a": "6/107 (6%)",
+          "group_b": "5/107 (5%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Serious procedural deterioration."
+        },
+        {
+          "outcome": "Epinephrine during the procedure",
+          "group_a": "3/107 (3%)",
+          "group_b": "1/107 (1%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Low-frequency serious event."
+        },
+        {
+          "outcome": "Oral trauma",
+          "group_a": "0/107 (0%)",
+          "group_b": "1/107 (1%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Assessed as procedural complication."
+        },
+        {
+          "outcome": "Crossover to alternative device",
+          "group_a": "3/99 (3%)",
+          "group_b": "29/99 (29%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Assessed in 99 vs 99 infants."
+        },
+        {
+          "outcome": "Endotracheal tube tip in correct position on chest radiograph",
+          "group_a": "56/105 (53%)",
+          "group_b": "52/105 (50%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Correct position defined as between T1 and T2; assessed in 105 vs 105 infants."
+        },
+        {
+          "outcome": "Intubation successfully completed with assigned device",
+          "group_a": "103/107 (96.3%)",
+          "group_b": "74/107 (69.2%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Post-hoc outcome (supplement)."
+        },
+        {
+          "outcome": "Total laryngoscopy time to successful intubation (median)",
+          "group_a": "66 sec",
+          "group_b": "96 sec",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Post-hoc outcome (supplement)."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Neonatologists",
+          "group_a": "6/8 (75.0%)",
+          "group_b": "1/3 (33.3%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "Neonatology trainees",
+          "group_a": "25/31 (80.6%)",
+          "group_b": "20/36 (55.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "Paediatric trainees",
+          "group_a": "38/54 (70.4%)",
+          "group_b": "25/61 (41.0%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "Not reported"
+        }
+      ]
+    },
+    "safety": [
+      "Chest compressions during the procedure: 6/107 (6%) in video group vs 5/107 (5%) in direct group.",
+      "Epinephrine during the procedure: 3/107 (3%) in video group vs 1/107 (1%) in direct group.",
+      "Oral trauma: 0/107 (0%) in video group vs 1/107 (1%) in direct group.",
+      "Oxygen saturation <90% during laryngoscopy: 79/107 (74%) in video group vs 96/107 (90%) in direct group.",
+      "Heart rate <60 bpm during laryngoscopy: 6/107 (6%) in video group vs 9/107 (8%) in direct group."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Allocation by sealed opaque envelopes; stratified by gestational age (<32 vs ≥32 weeks) in blocks of four. Randomisation occurred immediately before the first attempt, limiting post-allocation co-intervention planning but requiring envelope access in emergent settings."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded clinicians; device visibility could influence behaviour (including supervision and coaching intensity). Primary outcome was objectively confirmed by exhaled CO2 detection, reducing susceptibility to subjective outcome assessment. Secondary outcomes included objective physiologic measures (oxygen saturation, heart rate) but with incomplete capture (e.g., lowest oxygen saturation assessed in 98 vs 100 infants)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Randomised: 226 infants (115 video; 111 direct). Excluded post-randomisation: 12/226 (5.3%) — deferred consent not obtained (7 video; 4 direct) and clinical improvement/no intubation (1 video). Analysed: 214 infants (107 per group)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Protocol violation: 1 infant allocated to video laryngoscopy had direct laryngoscopy on the first attempt because the video laryngoscope was not available. Median attempts to success: 1 (video) vs 2 (direct). Crossover to an alternative device: 3/99 (3%) in video vs 29/99 (29%) in direct. Intubation completed with assigned device (post-hoc): 103/107 (96.3%) in video vs 74/107 (69.2%) in direct."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Gestational age (median): 29.6 weeks (video) vs 28.4 weeks (direct); birth weight (median): 1235 g vs 1040 g. FiO2 at randomisation (mean ± SD): 0.66 ± 0.29 vs 0.65 ± 0.28. Premedication: 67/107 (63%) vs 80/107 (75%); stylet use: 104/107 (97%) vs 104/107 (97%)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate: randomisation and protocol delivery produced clear separation for the primary intervention (and an objective primary endpoint), but post-randomisation consent-related exclusions, lack of blinding, and substantial crossover in the direct laryngoscopy group could influence the magnitude of the observed benefit."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Single tertiary maternity hospital; results are most directly applicable to similar delivery room and NICU settings with comparable staffing and training models. High proportion of preterm infants (~70% <32 weeks), reflecting many tertiary NICU populations but potentially differing from lower-acuity units. First attempts were commonly performed by trainees (paediatric trainees: 54/107 vs 61/107; neonatology trainees: 31/107 vs 36/107), aligning with real-world practice in many centres."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Device-specific (C-MAC video laryngoscope; Heine direct laryngoscope); effect size may differ with other video systems, blade geometries, or screen configurations. Peri-intubation practice (including premedication strategy and oxygen delivery during attempts) may vary across units, affecting physiologic event rates and potential benefit. Pragmatic co-interventions improve real-world relevance but may limit transportability to settings with more standardised airway bundles or different supervision structures."
+        }
+      ],
+      "verdict": "External validity is moderate: the findings likely generalise to comparable delivery room/NICU environments with trainee operators and access to video laryngoscopy, but the observed effect size and safety profile may differ with alternative devices, oxygenation strategies, and operator experience."
+    },
+    "strengths": [
+      "Randomised, stratified trial addressing a high-stakes neonatal procedure in real-world delivery room and NICU settings.",
+      "Clinically relevant, objective primary endpoint (first-attempt success confirmed by exhaled CO2 detection).",
+      "High procedural detail with quantification of physiologic deterioration and resuscitation interventions.",
+      "Pragmatic approach (adjuncts and escalation at clinician discretion) enhances clinical relevance."
+    ],
+    "limitations": [
+      "Single-centre and unblinded; performance effects (including supervision/coaching enabled by a shared screen) could contribute to the observed benefit.",
+      "Post-randomisation exclusions due to deferred consent not obtained (and one infant not intubated) limit a strict intention-to-treat analysis among all randomised infants.",
+      "Secondary outcomes were largely descriptive (no hypothesis testing) and some were post-hoc, increasing risk of over-interpretation.",
+      "Meaningful downstream clinical outcomes (e.g., longer-term respiratory or neurological morbidity) were not reported."
+    ],
+    "critical_appraisal": {
+      "summary": "VODE is a pragmatic, single-centre RCT with moderate internal and external validity, demonstrating a large increase in first-pass success with video laryngoscopy, though the effect size may be amplified by unblinded supervision and crossover in the control group.",
+      "strengths": [
+        "Objective primary endpoint confirmed by exhaled CO2 detection",
+        "Pragmatic design reflecting real-world urgent neonatal intubations",
+        "Detailed capture of physiologic deterioration and procedural events"
+      ],
+      "weaknesses": [
+        "Unblinded, single-centre design with potential for performance bias",
+        "Post-randomisation exclusions due to deferred consent",
+        "Descriptive and post-hoc secondary outcomes without hypothesis testing"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Video laryngoscopy substantially increased first-pass success for urgent neonatal intubation (74% vs 45%), a process outcome strongly linked to procedural safety and escalation risk.",
+    "clinical_bottom_line": {
+      "verdict": "Video laryngoscopy should be considered the preferred first-line device for urgent neonatal intubations, particularly in settings with trainee operators, as it significantly improves first-pass success without increasing major resuscitation events.",
+      "applies_to": "Newborn infants of any gestational age requiring urgent oral intubation in delivery rooms or NICUs, especially in centres with trainee operators and access to video laryngoscopy equipment.",
+      "does_not_mean": "Video laryngoscopy eliminates physiologic instability during neonatal intubation; desaturation and bradycardia remain common.",
+      "implementation_caveats": [
+        "Effect size may be device-specific (C-MAC used in this trial).",
+        "Benefit may be partly mediated by improved supervision and coaching enabled by the shared screen.",
+        "Requires equipment availability, staff training, and integration into local airway bundles."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Pre-VODE evidence base",
+        "notes": "Pre-VODE neonatal evidence was dominated by smaller and heterogeneous studies (including teaching-focussed trials and anaesthesia settings), limiting certainty regarding physiologic harms and generalisability to urgent delivery room/NICU intubations."
+      },
+      {
+        "topic": "Design features influencing effect size",
+        "notes": "Post-randomisation exclusions due to deferred consent (12/226), an open-label setting with potential 'teaching/supervision' amplification for video laryngoscopy, and substantial crossover away from direct laryngoscopy (29% vs 3%) may influence the observed effect size."
+      },
+      {
+        "topic": "Post-VODE systematic reviews",
+        "notes": "Post-VODE systematic reviews incorporating larger pragmatic data continue to show improved first-pass success with video laryngoscopy, while effects on hypoxaemia/bradycardia and clinically important downstream outcomes remain less certain due to imprecision, inconsistent outcome definitions, and risk-of-bias concerns."
+      },
+      {
+        "topic": "Resuscitation guidance",
+        "notes": "Contemporary resuscitation guidance now explicitly includes video laryngoscopy as an option for newborn endotracheal intubation, reflecting the evolving evidence base and potential training advantages."
+      },
+      {
+        "topic": "Implementation and technique standardisation",
+        "notes": "Large observational datasets and video-based technique analyses demonstrate persistent variation in intubation performance and complications, and suggest that effective implementation may require explicit training and technique standardisation rather than device substitution alone."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does improved first-pass success with video laryngoscopy translate to reduced longer-term respiratory or neurological morbidity?",
+      "What is the comparative effectiveness of different video laryngoscope brands and blade types in neonatal intubation?",
+      "What is the optimal training and implementation strategy to maximise the benefits of video laryngoscopy in neonatal care?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=214",
+        "First-pass success: 74% (video) vs 45% (direct), P<0.001",
+        "Crossover to alternative device: 3% (video) vs 29% (direct)"
+      ],
+      "one_line_takeaway": "For urgent neonatal intubations, use video laryngoscopy first-line to nearly double your chance of first-pass success, but don't expect it to eliminate desaturation."
+    }
+  },
+  "_source_id": "VODE",
+  "_source_system": "Airway"
+}

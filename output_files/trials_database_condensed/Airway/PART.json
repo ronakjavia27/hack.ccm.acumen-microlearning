@@ -1,0 +1,320 @@
+{
+  "id": "PART",
+  "trial_name": "PART — Initial Laryngeal Tube vs Endotracheal Intubation in OHCA (2018)",
+  "specialty": "Cardiac Arrest",
+  "subtopic": "Airway Emergencies",
+  "year": 2018,
+  "journal": "JAMA",
+  "citation": "Wang HE, Schmicker RH, Daya MR, et al. Effect of a strategy of initial laryngeal tube insertion vs endotracheal intubation on 72-hour survival in adults with out-of-hospital cardiac arrest: a randomized clinical trial. JAMA. 2018;320(8):769-778.",
+  "doi": "https://doi.org/10.1001/jama.2018.7044",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, cluster-crossover, unblinded",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3004,
+  "result_category": "Positive",
+  "one_liner": "In adult OHCA, an initial laryngeal tube strategy improved 72-hour survival by 2.9% compared to initial endotracheal intubation.",
+  "pico": {
+    "population": "Adults with non-traumatic out-of-hospital cardiac arrest in US EMS systems",
+    "intervention": "Initial laryngeal tube insertion strategy",
+    "comparison": "Initial endotracheal intubation strategy",
+    "outcome": "72-hour survival"
+  },
+  "keywords": [
+    "cardiac arrest",
+    "airway management",
+    "laryngeal tube",
+    "endotracheal intubation",
+    "supraglottic airway",
+    "prehospital",
+    "EMS"
+  ],
+  "related_trials": [
+    "AIRWAYS-2",
+    "CAAM"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Advanced airway management is frequently used during OHCA, but optimal practice was uncertain. Endotracheal intubation offers a definitive airway but is technically difficult in the field and can disrupt compressions. Supraglottic airways are quicker and easier to insert but raise concerns about seal, aspiration, and subsequent conversion to endotracheal intubation.",
+      "knowledge_gap": "Pre-trial evidence was dominated by observational studies with strong confounding by indication and time-dependent bias.",
+      "hypothesis": "An EMS strategy of initial laryngeal tube insertion improves 72-hour survival compared with a strategy of initial endotracheal intubation in adult, non-traumatic OHCA."
+    },
+    "methods": {
+      "design": "Pragmatic, multicenter, cluster-crossover RCT within the Resuscitation Outcomes Consortium (ROC). 27 EMS agencies grouped into 13 clusters; crossover every 3 or 5 months.",
+      "setting": "US prehospital EMS systems participating in ROC. Enrolled Dec 2015–Nov 2017.",
+      "population": {
+        "inclusion": [
+          "Adult (≥18 years or local definition) with OHCA of non-traumatic aetiology",
+          "Required ventilatory support and eligible for advanced airway management by participating EMS",
+          "EMS-witnessed arrests and recurrent arrests during the same care episode included by design"
+        ],
+        "exclusion": [
+          "Traumatic arrest, major facial trauma, major bleeding/exsanguination, or obvious asphyxial cause",
+          "Advanced airway already placed before participating EMS arrival, pre-existing tracheostomy, or mechanical circulatory support (LVAD/TAH)",
+          "Interfacility transport, DNAR status, or 'do not enrol' bracelet",
+          "Known pregnancy and known prisoners"
+        ]
+      },
+      "intervention": "Initial laryngeal tube insertion (King LT) as the first advanced airway approach. Bag-valve-mask ventilation could be used at provider discretion. Rescue airway approaches (including endotracheal intubation or bag-valve-mask) were permitted if the assigned approach was unsuccessful or inadequate.",
+      "comparison": "Initial endotracheal intubation as the first advanced airway approach. Bag-valve-mask ventilation could be used at provider discretion. Rescue airway approaches (including laryngeal tube or bag-valve-mask) were permitted if the assigned approach was unsuccessful or inadequate.",
+      "blinding": "Unblinded. Strategy assignment was operational and could not be masked. Primary outcome was objective (survival).",
+      "sample_size_power": "Minimum 2612 patients required to detect a 4.5% absolute difference in 72-hour survival with 85% power at two-sided α=0.05 (group sequential design: 3 interim and 1 final analysis; 5% inflation for cluster-crossover design). Target enrolment 3000.",
+      "primary_outcome": "Survival to 72 hours after arrest",
+      "secondary_outcomes": [
+        "ROSC on ED arrival",
+        "Survival to hospital discharge",
+        "Favourable neurological status at discharge (modified Rankin Scale ≤3)"
+      ],
+      "follow_up": "Primary outcome at 72 hours; secondary outcomes at ED arrival and hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary outcome (72-hour survival) favoured laryngeal tube: 18.3% vs 15.4% (risk difference 2.9%, P=0.04).",
+        "All secondary outcomes (ROSC, survival to discharge, favourable neurological status) also significantly favoured the laryngeal tube strategy.",
+        "Laryngeal tube insertion had higher first-attempt success (90.3% vs 51.6%) and fewer multiple attempts (4.5% vs 18.9%), but more inadequate ventilation events (1.8% vs 0.6%).",
+        "A post hoc adjusted ITT model attenuated the primary result (adjusted difference 2.1%; 95% CI −0.5 to 4.8; P=0.11)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival to 72 h (primary, ITT)",
+          "group_a": "275/1505 (18.3%)",
+          "group_b": "230/1495 (15.4%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "2.9%",
+          "ci_95": "0.2 to 5.6",
+          "p_value": "0.04",
+          "note": "Relative risk 1.19; 95% CI 1.01 to 1.39. 4 ETI-group patients had unknown 72-h status."
+        },
+        {
+          "outcome": "ROSC on ED arrival",
+          "group_a": "420/1505 (27.9%)",
+          "group_b": "365/1499 (24.3%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "3.6%",
+          "ci_95": "0.3 to 6.8",
+          "p_value": "0.03",
+          "note": ""
+        },
+        {
+          "outcome": "Survival to hospital discharge",
+          "group_a": "163/1504 (10.8%)",
+          "group_b": "121/1495 (8.1%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "2.7%",
+          "ci_95": "0.6 to 4.8",
+          "p_value": "0.01",
+          "note": "Discharge status missing for 1 participant in the laryngeal tube group."
+        },
+        {
+          "outcome": "Favourable neurological status at discharge (mRS ≤3)",
+          "group_a": "107/1500 (7.1%)",
+          "group_b": "75/1495 (5.0%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "2.1%",
+          "ci_95": "0.3 to 3.8",
+          "p_value": "0.02",
+          "note": "Neurological status not available for all participants."
+        },
+        {
+          "outcome": "Unsuccessful insertion of the first airway technique (out-of-hospital adverse event)",
+          "group_a": "159/1353 (11.8%)",
+          "group_b": "573/1299 (44.1%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "−32.4%",
+          "ci_95": "−35.6 to −29.1",
+          "p_value": "<0.001",
+          "note": "Denominators exclude patients managed with bag-valve-mask only."
+        },
+        {
+          "outcome": "≥3 airway insertion attempts across all airway interventions (out-of-hospital adverse event)",
+          "group_a": "61/1353 (4.5%)",
+          "group_b": "245/1299 (18.9%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "−14.4%",
+          "ci_95": "−17.0 to −11.7",
+          "p_value": "<0.001",
+          "note": "Denominators exclude patients managed with bag-valve-mask only."
+        },
+        {
+          "outcome": "Unrecognised airway misplacement or dislodgement (out-of-hospital adverse event)",
+          "group_a": "10/1353 (0.7%)",
+          "group_b": "24/1299 (1.8%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "−1.1%",
+          "ci_95": "−2.0 to −0.3",
+          "p_value": "0.01",
+          "note": "Denominators exclude patients managed with bag-valve-mask only."
+        },
+        {
+          "outcome": "Inadequate ventilation requiring airway device change (out-of-hospital adverse event)",
+          "group_a": "25/1353 (1.8%)",
+          "group_b": "8/1299 (0.6%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "1.2%",
+          "ci_95": "0.3 to 2.1",
+          "p_value": "0.01",
+          "note": "Denominators exclude patients managed with bag-valve-mask only."
+        },
+        {
+          "outcome": "Pneumothorax (in-hospital adverse event; first ED chest radiograph)",
+          "group_a": "17/485 (3.5%)",
+          "group_b": "30/428 (7.0%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "−3.6%",
+          "ci_95": "−6.5 to −0.7",
+          "p_value": "0.02",
+          "note": "Among ED admissions with a chest radiograph performed."
+        },
+        {
+          "outcome": "Rib fractures (in-hospital adverse event; first ED chest radiograph)",
+          "group_a": "16/485 (3.3%)",
+          "group_b": "30/428 (7.0%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "−3.8%",
+          "ci_95": "−6.9 to −0.7",
+          "p_value": "0.01",
+          "note": "Among ED admissions with a chest radiograph performed."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "As-treated analysis by initial airway attempted",
+          "group_a": "227/1423 (16.0%)",
+          "group_b": "165/1224 (13.5%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "2.5%",
+          "ci_95": "−0.2 to 5.2",
+          "p_interaction": "0.07",
+          "note": "72-hour survival"
+        },
+        {
+          "subgroup": "Randomisation order (before vs after crossover)",
+          "group_a": "2.5%",
+          "group_b": "3.6%",
+          "effect_measure": "Risk Difference",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.69",
+          "note": "72-hour survival difference"
+        }
+      ]
+    },
+    "safety": [
+      "Pneumothorax (in-hospital): 3.5% vs 7.0% (risk difference −3.6%, P=0.02)",
+      "Rib fractures (in-hospital): 3.3% vs 7.0% (risk difference −3.8%, P=0.01)",
+      "Unrecognised airway misplacement or dislodgement (out-of-hospital): 0.7% vs 1.8% (risk difference −1.1%, P=0.01)",
+      "Inadequate ventilation requiring airway device change (out-of-hospital): 1.8% vs 0.6% (risk difference 1.2%, P=0.01)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Cluster-crossover assignment (13 clusters) limited patient-level selection bias. Allocation concealment at the provider level was not feasible."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded treatment delivery was unavoidable and could influence procedural persistence and reporting of adverse events. Primary outcome (survival) is objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary outcome unknown for 4 participants in the ETI group (0.1%). Survival to discharge missing for 1 participant in the LT group. Neurological outcome not available for all participants."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Compliance was 95.5% (LT) vs 90.7% (ETI). Crossover: 4.5% of LT group received ETI; 9.2% of ETI group received LT. Bag-valve-mask only occurred in 10.1% vs 13.3%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Median age 64 in both groups. Male sex 61.7% vs 60.1%. Initial shockable rhythm 20.0% vs 18.0%. Epinephrine before hospital arrival 92.0% vs 93.7%."
+        }
+      ],
+      "verdict": "Moderate. Randomised cluster-crossover design and near-complete primary outcome ascertainment support causal inference, but lack of blinding, differential technical performance, and substantial rescue/crossover mean the estimate primarily reflects a pragmatic system-level airway strategy rather than isolated device efficacy."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Participants were typical adult, non-traumatic OHCA patients in North American paramedic-based EMS systems. Exclusions (trauma, asphyxia, pre-existing airway, LVAD/TAH, DNAR) may limit applicability to these subgroups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings are most applicable to EMS systems with similar training, scope of practice, and ETI success rates. Generalisation to physician-led systems or systems using different supraglottic devices (e.g., i-gel) is uncertain. Substantial in-hospital conversion of LT to ETI suggests the trial supports an 'initial airway' strategy, not definitive avoidance of intubation."
+        }
+      ],
+      "verdict": "Moderate. The results are generalisable to similar North American ALS systems using laryngeal tubes and with variable intubation performance, but may not translate to settings with different provider expertise, devices, or post-resuscitation pathways."
+    },
+    "strengths": [
+      "Large pragmatic RCT (n=3004) embedded in a mature multicentre research network (ROC).",
+      "Cluster-crossover design enabled within-agency comparisons across time, reducing confounding.",
+      "Objective primary outcome with minimal missingness and prespecified analysis accounting for clustering and interim monitoring.",
+      "Rich process and safety reporting enabled interpretation of mechanistic plausibility and trade-offs."
+    ],
+    "limitations": [
+      "Unblinded delivery and reliance on EMS documentation for some adverse events introduce potential reporting/ascertainment bias.",
+      "Comparison was of airway management strategies in a pragmatic pathway, not a tightly controlled device efficacy study.",
+      "Endotracheal intubation performance and procedural persistence were system-dependent, potentially limiting generalisability.",
+      "Primary endpoint at 72 hours captures early survival effects but does not directly measure long-term functional outcome."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic trial showing a modest survival benefit for an initial laryngeal tube strategy, but the effect is system-dependent and the unblinded design with substantial crossover limits confidence in the precise magnitude of benefit.",
+      "strengths": [
+        "Large, multicentre, randomised design with objective primary outcome.",
+        "Cluster-crossover design minimised confounding by stable system characteristics."
+      ],
+      "weaknesses": [
+        "Unblinded, with potential for performance and ascertainment bias.",
+        "High crossover and system-dependent ETI success rates limit generalisability."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In adult OHCA, an initial laryngeal tube strategy improved 72-hour survival compared with an initial endotracheal intubation strategy.",
+    "clinical_bottom_line": {
+      "verdict": "Supports a 'supraglottic-first' strategy in EMS systems where tracheal intubation success is variable and minimising interruptions is prioritised.",
+      "applies_to": "Adult, non-traumatic OHCA patients in paramedic-based EMS systems with similar training and intubation success rates to the ROC agencies.",
+      "does_not_mean": "That laryngeal tubes are superior to endotracheal intubation in all settings, or that endotracheal intubation should be avoided entirely. The benefit is at the system-strategy level.",
+      "implementation_caveats": [
+        "Benefit is likely dependent on achieving high first-pass success and minimising chest compression interruptions.",
+        "Inadequate ventilation events were higher with laryngeal tubes, requiring quality assurance.",
+        "Substantial in-hospital conversion of laryngeal tubes to endotracheal intubation is common and acceptable."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation as system strategy vs device efficacy",
+        "notes": "The trial tested a pragmatic strategy, not isolated device efficacy. Benefit is intertwined with system performance, training, and rescue pathways."
+      },
+      {
+        "topic": "Generalisability and ETI proficiency",
+        "notes": "The large disparity in initial airway success (LT 90.3% vs ETI 51.6%) raises questions about whether benefit reflects a simpler device or comparatively limited ETI proficiency in participating systems."
+      },
+      {
+        "topic": "Endpoint selection and sensitivity",
+        "notes": "A Bayesian reanalysis illustrates the sensitivity of inference framing for modest effects. The post hoc adjusted ITT model attenuated the primary result (P=0.11)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "AIRWAYS-2",
+        "relation": "A contemporaneous UK cluster trial comparing i-gel supraglottic airway vs tracheal intubation reported no improvement in patient-centred functional outcome, emphasising device- and system-dependence."
+      },
+      {
+        "trial": "CAAM",
+        "relation": "A French physician-led RCT comparing bag-mask ventilation vs endotracheal intubation found bag-mask to be non-inferior for favourable neurological outcome, reinforcing that de-emphasising complex airway manoeuvres can be acceptable."
+      }
+    ],
+    "unresolved_questions": [
+      "Long-term functional outcomes beyond hospital discharge are unknown.",
+      "Optimal supraglottic device choice (e.g., laryngeal tube vs i-gel) remains uncertain.",
+      "Benefit in physician-led systems with higher ETI proficiency is unclear."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3004",
+        "72-h survival: 18.3% vs 15.4% (risk diff 2.9%, P=0.04)",
+        "First-pass success: LT 90.3% vs ETI 51.6%"
+      ],
+      "one_line_takeaway": "In a pragmatic US EMS trial, an initial laryngeal tube strategy for OHCA modestly improved early survival and discharge outcomes compared to initial endotracheal intubation, driven by higher first-pass success and fewer attempts."
+    }
+  },
+  "_source_id": "PART",
+  "_source_system": "Airway"
+}

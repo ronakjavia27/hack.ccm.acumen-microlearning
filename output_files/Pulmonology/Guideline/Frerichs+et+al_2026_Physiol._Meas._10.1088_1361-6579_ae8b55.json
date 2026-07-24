@@ -1,0 +1,96 @@
+{
+  "id": "updated-consensus-terminology-definitions-chest-eit-2026",
+  "doc_type": "guideline",
+  "title": "Updated consensus terminology and definitions in chest electrical impedance tomography",
+  "issuing_bodies": [
+    "TREND Group"
+  ],
+  "year": 2026,
+  "doi": "10.1088/1361-6579/ae8b55",
+  "specialty": [
+    "pulmonology",
+    "multi_system"
+  ],
+  "tags": [
+    "electrical impedance tomography",
+    "EIT",
+    "lung ventilation",
+    "lung perfusion",
+    "consensus",
+    "terminology",
+    "functional imaging"
+  ],
+  "one_line_summary": "This TREND group consensus updates and extends the 2017 chest EIT terminology, systematically categorizing measures based on ventilation-related, heartbeat-related, and contrast-enhanced signals to unify reporting and analysis.",
+  "key_pearls": [
+    "Electrical impedance tomography (EIT) is used primarily for assessing regional lung ventilation, aeration changes, and respiratory mechanics, with growing application in imaging regional lung perfusion and cardiac function.",
+    "A decremental PEEP trial with EIT analysis of the crossing point between overdistension and collapse curves (OD-CL) can individualize PEEP selection to minimize both overdistension and collapse.",
+    "Ventilation-related EIT measures include tidal impedance variation, centre of ventilation, global inhomogeneity index, regional ventilation delay, and expiratory time constants.",
+    "Heartbeat-related and contrast-enhanced EIT methods allow quantification of regional lung perfusion and ventilation-perfusion matching, especially when combined with ventilation images.",
+    "Standardized EIT terminology, image types, and measurement definitions are **essential** for consistent study design, data analysis, reporting, and cross-device comparability.",
+    "EIT provides continuous bedside, radiation-free functional imaging with high temporal resolution but lower spatial resolution (~10% of chest diameter) compared with CT or MRI.",
+    "A comprehensive set of equations for calculating EIT-derived parameters is provided to enhance uniformity across research and clinical centers."
+  ],
+  "consensus_method": "Expert consensus by the TRanslational EIT development stuDy (TREND) group members, in cooperation with EIT technology producers.",
+  "search_period": "PubMed search until December 31, 2025",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "General EIT terminology and ventilation maneuvers (Tables 1 & 2)",
+      "narrative": "- **Absolute EIT (aEIT)**: EIT mode calculating each image from a single data frame; not yet clinical.\n- **Aeration change**: Change in regional lung aeration due to varying air content, e.g., from **PEEP** changes.\n- **Baseline (BL)**: Reference measurement for time-difference EIT; choice impacts all derived parameters.\n- **Chest EIT**: Electrode placement on the chest to assess regional lung ventilation, aeration, heart action, or perfusion.\n- **Current stimulation frequency**: Alternating drive current frequency, typically **10 kHz – 250 kHz**.\n- **Adjacent stimulation pattern**: Sequential current through adjacent electrode pairs; focuses measurement to boundary.\n- **Opposite stimulation pattern**: Sequential current through opposite pairs; more homogeneous sensitivity.\n- **EIT data frame**: Complete voltage measurements from one cycle of current stimulations; used to reconstruct one primary image.\n- **Electrode-skin contact impedance**: Should be low to ensure high-quality recordings; continuously monitored.\n- **Frequency-difference EIT (fdEIT)**: Images show difference in tissue properties between two or more stimulation frequencies.\n- **Impedance (Z)**: Opposition to alternating current; air-filled lungs have high impedance, fluids low.\n- **Scan rate (frame rate)**: Frequency of scans; typically **20-50 Hz** for ventilation, higher for cardiac events.\n- **Signal quality**: Indicator of EIT data accuracy; impaired by poor contact, movement, interference.\n- **Ventilation maneuvers**:\n   - *Incremental/decremental airway pressure step*: Step change to assess regional filling/emptying dynamics and time constants.\n   - *Breath holding (apnoea)*: Used to isolate heartbeat-related signal or for contrast bolus injection.\n   - *Forced or slow full lung deflation/inflation*: Regional analogs of **FVC**, **FEV1**, flow, and timing from spirometry.\n   - *Decremental PEEP trial*: Stepwise PEEP reduction; EIT identifies overdistension (compliance gain) and collapse (compliance loss) to determine individualized **'optimal PEEP'**.\n   - *Incremental PEEP trial*: Stepwise PEEP increase; used less commonly but shows aeration change distribution.",
+      "recommendations": [
+        {
+          "rec_id": "R1",
+          "statement": "Users should adopt the standardized general EIT terminology and execute ventilation maneuvers as defined in this consensus to improve uniformity of data acquisition and reporting.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Types of EIT images and image-related terminology (Table 3)",
+      "narrative": "- **Aeration change image (ΔEELZ image)**: Shows regional change in lung impedance (end-expiratory lung volume change) between two time points.\n- **Absolute EIT image**: Impedance distribution from a single frame; requires accurate geometry models; not in current clinical devices.\n- **Combined / Superimposed EIT image**: EIT functional image overlaid on CT or another EIT image; provides anatomical context or multi-parameter fusion.\n- **Curvilinearity image**: Displays 2nd-degree polynomial coefficient from pixel vs. global EIT signal; identifies regions of decelerating or accelerating air filling.\n- **Dynamic image (EIT movie)**: Real-time sequence of relative impedance changes, updated at the scan rate.\n- **Global EIT waveform**: Sum or average of pixel values across the entire plane; used for reference timing.\n- **Heartbeat-related impedance variation image (Pulsatility image)**: Distribution of impedance changes synchronous with heart rate; reflects blood volume changes in heart and large vessels.\n- **Images of regional compliance change (OD-CL images)**: From decremental PEEP trial; show compliance loss towards higher PEEP (overdistension) and towards lower PEEP (collapse).\n- **Linear regression image (Slope image)**: Shows slope of linear fit between regional and global EIT signal; identifies ventilated regions.\n- **Normalized tidal impedance variation image**: Pixel tidal values normalized to maximum; pixels with <10% of max (\"**silent spaces**\") may indicate overdistension or atelectasis.\n- **Pendelluft image**: Highlights regions with reverse air flow during inspiration, indicative of intrapulmonary gas redistribution.\n- **Perfusion image**: Derived from contrast-enhanced EIT; shows distribution of pulmonary blood flow; not to be confused with pulsatility image.\n- **Phase image**: Displays phase shift between regional and global EIT signals; identifies temporal heterogeneity of air filling.\n- **Regional ventilation delay (RVD) image**: Based on time to reach a preset percentage of maximum pixel impedance during inflation; used during low-flow maneuvers.\n- **Tidal impedance variation image (TIV)**: Most common ventilation image; pixel values reflect regional tidal volume distribution.\n- **Ventilation-perfusion (V̇/Q) image**: Combines ventilation and perfusion images; can categorize regions of shunt, dead space, and matched V̇/Q.\n- **Region-of-interest (ROI) conventions**: Ventral (ROI 1), mid-ventral (ROI 2), mid-dorsal (ROI 3), dorsal (ROI 4) for horizontal layers; quadrants numbered clockwise from upper left.\n- **Image orientation**: Conventional radiological view (viewing from feet, ventral at top, right side on left of image).",
+      "recommendations": [
+        {
+          "rec_id": "R2",
+          "statement": "The **recommended** image types and ROI definitions should be used to standardize visualization and quantification of EIT data.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Ventilation- and aeration-related EIT measures (Table 4)",
+      "narrative": "- **Tidal impedance variation (TIV)**: **Absolute** difference between end-expiratory and end-inspiratory impedance; calculated globally, regionally, or per pixel.\n- **Global inhomogeneity (GI) index**: Sum of **absolute** differences between median and individual pixel TIV within lung region, normalized to total; higher = more spatial heterogeneity.\n- **Centre of ventilation (CoV)**: Geometric centre of TIV distribution; ventrodorsal (CoVvd) reflects ventral-to-dorsal shift ( >50% = dorsal); right-to-left (CoVrl) detects unilateral changes.\n- **Ventilation ratio, ventrodorsal (V/D)**: Ratio of summed TIV in ventral half to dorsal half; posture-dependent.\n- **Ventilation ratio, right-to-left (R/L)**: Ratio of right lung TIV to left lung TIV.\n- **Fraction of ventilation**: Regional TIV divided by global TIV; expressed as percentage.\n- **Ventilation defect score**: Categorical score (0–8) based on TIV fractions in four quadrants; higher = more asymmetry.\n- **Ventilated lung area**: Number of pixels with TIV above a threshold (e.g., 20% of max).\n- **Change in end-expiratory lung impedance (ΔEELZ)**: Global or regional difference in EELI between time points; positive = increased aeration.\n- **Coefficient of variation (CV)**: Ratio of standard deviation to mean of pixel TIV; measure of spatial heterogeneity.\n- **Phase angle**: From cross-spectra; positive = earlier filling; negative = delayed filling relative to global.\n- **Intratidal volume distribution**: Relative contribution of image regions to impedance change during 8 equal volume fractions of inspiration.\n- **Linearity/Curvilinearity**: Linear regression coefficient (slope) and 2nd-order polynomial coefficient from pixel vs. global EIT curves; characterizes filling pattern.\n- **Filling index (FI)**: Exponent in power-law fit Zpixel = a*Zglobal^FI; FI >1 = slow initial filling (tidal recruitment); <1 = fast initial filling.\n- **Regional ventilation delay (RVD)**: Time to reach **40%** of maximum pixel impedance, normalized to inspiratory time; RVDI is standard deviation of pixel RVD.\n- **Pendelluft**: Visualized by reverse flow; quantified by time differences between pixel and global inspiratory/expiratory peaks or by **fraction of reverse impedance change (FRIC)**.\n- **Expiration time (tE)**: Time to exhale 25%, 50%, 75%, 90% of pixel forced vital capacity; derived from forced expiration maneuvers.\n- **Regional time constant (τ)**: Obtained by exponential fitting of passive deflation after pressure step; single- or multi-breath.\n- **Regional respiratory system compliance (Crs)**: Regional TIV divided by driving pressure; used during PEEP trial to identify overdistension and collapse.\n- **Overdistension (OD) and collapse (CL) curves**: Plots of fraction of pixels with compliance increase (OD) and decrease (CL) vs PEEP; their **crossing point** guides PEEP selection.\n- **Regional opening pressure (ROP) / closing pressure (RCP)**: Airway pressure at which pixel impedance reaches a threshold (e.g., 10%) during low-flow inflation/deflation.\n- **Recruitment-to-inflation ratio (R/I)**: EIT-based index comparing measured and predicted end-expiratory lung volume change after PEEP drop to estimate recruitability.\n- **Atelectrauma index (AtI)**: Fraction of ventilated pixels with identifiable lower inflection points on both inflation and deflation limbs during quasi-static P-V maneuver.",
+      "recommendations": [
+        {
+          "rec_id": "R3",
+          "statement": "The primary **recommended** terms and calculation methods for ventilation-related EIT measures should be used to ensure comparability of study results.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Heartbeat-related and contrast-enhanced EIT measures (Table 5)",
+      "narrative": "- **Heartbeat-related impedance variation**: Global or regional signal synchronous with heart rate; reflects blood volume changes in heart and large vessel pulsatility.\n- **Cardiac filtering**: Band-pass filtering or ECG-gated averaging to separate heartbeat-related from ventilation-related signal.\n- **Contrast-enhanced EIT**: Bolus injection of **hypertonic saline (≤10%)** via central venous line to track indicator passage through right heart, pulmonary circulation, left heart, and aorta; allows perfusion imaging.\n- **Lung perfusion (Q)**: Regional blood flow derived from first-pass kinetics of contrast agent; quantified by **gamma-variate area** or **maximum slope** methods.\n- **Perfusion image**: Pixel distribution of Q; combined with ventilation image yields **V̇/Q image**.\n- **Fraction of perfusion**: Regional perfusion divided by total perfusion.\n- **Centre of perfusion (CoP)**: Geometric centre of perfusion distribution; analogous to CoV.\n- **Centre of heart (CoH)**: Centre of saline distribution in right heart during contrast passage; right-to-left shift may indicate intracardiac shunt.\n- **Stroke volume (SV)**: Volume pumped per heartbeat; estimated from heartbeat-related impedance or contrast dilution.\n- **Cardiac output (CO)**: SV × heart rate; experimental estimation by EIT.\n- **Pulse transit time (PTT) / Pulse arrival time (PAT)**: Time for pressure wave to travel between two arterial sites; EIT-derived PTT as surrogate for **pulmonary artery pressure (PAP)**.\n- **Stroke volume variation (SSVEIT)**: Ventilation-induced modulation of aortic EIT signal; investigated for fluid responsiveness.",
+      "recommendations": [
+        {
+          "rec_id": "R4",
+          "statement": "The **recommended** terminology for heartbeat-related and contrast-enhanced EIT measures should be applied, with preference for contrast-based methods when assessing regional lung perfusion.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: Comprehensive update covering all current EIT applications; systematic taxonomy of measures; extensive reference to founding and clinical studies; inclusion of calculation equations; multinational expert consensus.\n- Limitations: EIT spatial resolution (~10% chest diameter) is lower than CT/MRI; measures remain in arbitrary units unless calibrated; signal quality dependent on electrode contact and patient movement; some cardiovascular measures lack robust clinical validation; no formal evidence grading.",
+  "drugs_doses": [],
+  "related_ids": [],
+  "added_date": "2025-07-20",
+  "article_subtype": "Guideline",
+  "subtopic": "Pulmonology"
+}

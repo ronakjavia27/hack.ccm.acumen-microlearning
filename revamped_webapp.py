@@ -38,6 +38,7 @@ OUTPUT_DIR = "./output_files"
 JSON_TRACKER_FILE = "./sent_summaries.json"
 PEARLS_JSON = "./pearls.json"
 ESBICM_INDEX_PATH = "./output_files/esbicm_trials/esbicm_trials_index.json"
+CONDENSED_TRIALS_DIR = "./output_files/trials_database_condensed"
 
 CREDITS_TEXT = """**Editor(s)**
 
@@ -172,6 +173,43 @@ def load_trial_index():
     except (json.JSONDecodeError, Exception):
         return []
 
+def load_condensed_trial_index():
+    if not os.path.exists(CONDENSED_TRIALS_DIR):
+        return []
+    index = []
+    for root, dirs, fnames in os.walk(CONDENSED_TRIALS_DIR):
+        for fname in fnames:
+            if not fname.endswith(".json"):
+                continue
+            rel = os.path.relpath(os.path.join(root, fname), CONDENSED_TRIALS_DIR)
+            parts = rel.split(os.sep)
+            system = parts[0] if len(parts) > 1 else "Other"
+            name = os.path.splitext(fname)[0]
+            entry = {"system": system, "name": name, "file_rel": rel}
+            try:
+                with open(os.path.join(root, fname), "r", encoding="utf-8") as f:
+                    payload = json.load(f)
+                entry["trial_name"] = payload.get("trial_name", "")
+                entry["one_liner"] = payload.get("one_liner", "")
+                entry["trial_type"] = payload.get("trial_type", "")
+                entry["result_category"] = payload.get("result_category", "")
+                entry["sample_size"] = payload.get("sample_size", "")
+                y = payload.get("year", "")
+                entry["year"] = int(y) if y and str(y).isdigit() else 0
+                keywords = payload.get("keywords", [])
+                entry["keywords_str"] = " ".join(keywords) if isinstance(keywords, list) else str(keywords)
+            except Exception:
+                pass
+            index.append(entry)
+    return sorted(index, key=lambda x: x["name"])
+
+def load_condensed_trial(system, name):
+    target = os.path.join(CONDENSED_TRIALS_DIR, system, f"{name}.json")
+    if not os.path.exists(target):
+        return None
+    with open(target, "r", encoding="utf-8") as f:
+        return json.load(f)
+
 # =====================================================================
 # SVG — ECG motif (embedded)
 # =====================================================================
@@ -247,6 +285,8 @@ async def render_dashboard(request: Request):
 
     trial_index = load_trial_index()
     trial_specialties = sorted(set(t["specialty"] for t in trial_index))
+    condensed_index = load_condensed_trial_index()
+    condensed_systems = sorted(set(c["system"] for c in condensed_index))
     trial_subtopic_map = {}
     for t in trial_index:
         sp = t["specialty"]
@@ -314,6 +354,12 @@ async def render_dashboard(request: Request):
     trial_result_cats_js = json.dumps(trial_result_cats)
     trial_types_list_js = json.dumps(trial_types_list)
     trial_index_js = json.dumps(trial_index)
+    condensed_index_js = json.dumps(condensed_index)
+    condensed_systems_js = json.dumps(condensed_systems)
+    condensed_result_cats = sorted(set(t.get("result_category", "") for t in condensed_index if t.get("result_category")))
+    condensed_types_list = sorted(set(t.get("trial_type", "") for t in condensed_index if t.get("trial_type")))
+    condensed_result_cats_js = json.dumps(condensed_result_cats)
+    condensed_types_list_js = json.dumps(condensed_types_list)
 
     html = f"""<!DOCTYPE html>
 <html lang="en" data-theme="dim">
@@ -591,6 +637,8 @@ async def render_dashboard(request: Request):
   .trials-hero-card .trophy{{ font-size:2.4rem; display:block; margin-bottom:8px; }}
   .trials-hero-card h3{{ font-size:1.1rem; margin:6px 0; }}
   .trials-hero-card .sub{{ color:var(--ink-muted); font-size:.82rem; }}
+  .trials-hero-condensed{{ border-color:var(--accent); border-style:dashed; }}
+  .trials-hero-condensed:hover{{ border-color:var(--accent); background:color-mix(in srgb, var(--accent) 6%, transparent); }}
 
   .trials-filter-bar{{ display:flex; gap:8px; flex-wrap:wrap; align-items:flex-end; margin-bottom:18px; padding:14px; background:var(--bg-sunk); border-radius:var(--radius); border:1px solid var(--border); }}
   .trials-filter-group{{ display:flex; flex-direction:column; gap:4px; min-width:150px; flex:1; }}
@@ -643,6 +691,18 @@ async def render_dashboard(request: Request):
   .trial-section .section-body p{{ margin:.4em 0; }}
   .trial-section .section-body ul{{ padding-left:1.2em; }}
   .trial-section .section-body li{{ margin:.2em 0; }}
+  .pico-table{{ width:100%; border-collapse:collapse; font-size:.85rem; }}
+  .pico-table th{{ text-align:left; width:120px; padding:6px 10px; color:var(--ink-muted); vertical-align:top; }}
+  .pico-table td{{ padding:6px 10px; }}
+  .outcomes-table{{ width:100%; border-collapse:collapse; font-size:.78rem; }}
+  .outcomes-table th, .outcomes-table td{{ border:1px solid var(--border); padding:5px 8px; text-align:left; }}
+  .outcomes-table th{{ background:var(--bg-sunk); font-weight:700; white-space:nowrap; }}
+  .outcomes-table tr:hover{{ background:var(--bg-sunk); }}
+  .quick-recall-box{{ background:color-mix(in srgb, var(--accent) 8%, transparent); border:1px solid var(--accent); border-radius:8px; padding:14px 16px; margin:0 0 16px; }}
+  .quick-recall-box .qr-title{{ font-weight:700; font-size:.85rem; margin-bottom:8px; font-family:var(--font-display); }}
+  .quick-recall-box .qr-numbers{{ display:flex; flex-wrap:wrap; gap:6px; margin-bottom:8px; }}
+  .quick-recall-box .qr-num{{ background:var(--bg-elev); border:1px solid var(--border); border-radius:6px; padding:4px 10px; font-family:var(--font-mono); font-size:.78rem; }}
+  .quick-recall-box .qr-takeaway{{ font-style:italic; font-size:.85rem; color:var(--ink-muted); }}
 
   /* Trial overlays */
   .trial-overlay-backdrop{{ position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:90; display:flex; align-items:center; justify-content:center; padding:20px; }}
@@ -910,6 +970,16 @@ async def render_dashboard(request: Request):
         <button class="icon-btn-sm" onclick="event.stopPropagation();openTrialOverlay('trialDisclaimerOverlay','disclaimer')">&#8505;&#65039;</button>
       </div>
     </div>
+
+    <!-- Core Critical Care Trials hero card -->
+    <div class="trials-hero-card trials-hero-condensed" style="cursor:pointer;margin-top:16px">
+      <div data-view="trials-condensed" role="button" tabindex="0">
+        <span class="trophy">&#128221;</span>
+        <h3>Core Critical Care Trials</h3>
+        <p class="sub">Summaries with PICO, outcomes &amp; critical appraisal</p>
+        <p class="sub" style="margin-top:4px">{len(condensed_index)} trials &mdash; tap to explore</p>
+      </div>
+    </div>
   </section>
 
   <!-- ESBICM MAIN (specialty grid + filter) -->
@@ -959,6 +1029,62 @@ async def render_dashboard(request: Request):
     </div>
     <div class="subtopic-chip-row" id="trialsSubtopicChips"></div>
     <div id="trialsSpecList"></div>
+  </section>
+
+  <!-- CONDENSED TRIALS MAIN (system grid + filter) -->
+  <section class="view" id="view-trials-condensed">
+    <div class="trials-back-header">
+      <button class="trials-back-btn" data-view="trials">&larr; Back</button>
+      <h2>Core Critical Care Trials</h2>
+    </div>
+
+    <div class="trials-filter-bar">
+      <div class="trials-filter-group">
+        <label>Specialty</label>
+        <select id="condensedFilterSpecialty">
+          <option value="">All Specialties</option>
+          {''.join(f'<option value="{s}">{s}</option>' for s in condensed_systems)}
+        </select>
+      </div>
+      <div class="trials-filter-group">
+        <label>Result</label>
+        <select id="condensedFilterResult">
+          <option value="">All Results</option>
+          {''.join(f'<option value="{c}">{c}</option>' for c in condensed_result_cats)}
+        </select>
+      </div>
+      <div class="trials-filter-group">
+        <label>Trial Type</label>
+        <select id="condensedFilterType">
+          <option value="">All Types</option>
+          {''.join(f'<option value="{t}">{t}</option>' for t in condensed_types_list)}
+        </select>
+      </div>
+      <div class="trials-filter-actions">
+        <button class="btn" id="condensedFilterBtn">Filter</button>
+        <button class="btn" id="condensedClearBtn">Clear</button>
+      </div>
+    </div>
+
+    <div id="condensedTrialsContent"></div>
+  </section>
+
+  <!-- CONDENSED TRIALS SYSTEM VIEW -->
+  <section class="view" id="view-condensed-system">
+    <div class="trials-back-header">
+      <button class="trials-back-btn" data-view="trials-condensed">&larr; Back</button>
+      <h2 id="condensedSysTitle"></h2>
+    </div>
+    <div id="condensedSysList"></div>
+  </section>
+
+  <!-- CONDENSED TRIAL DETAIL -->
+  <section class="view" id="view-condensed-detail">
+    <div class="trials-back-header">
+      <button class="trials-back-btn" id="condensedDetailBackBtn">&larr; Back</button>
+      <div style="flex:1"></div>
+    </div>
+    <div class="trial-detail" id="condensedDetailBody"></div>
   </section>
 
   <!-- TRIAL DETAIL FULL PAGE -->
@@ -1118,6 +1244,12 @@ const TRIAL_SUBTOPIC_MAP = {trial_subtopic_map_js};
 const TRIAL_RESULT_CATS = {trial_result_cats_js};
 const TRIAL_TYPES = {trial_types_list_js};
 
+// Condensed trial data
+const CONDENSED_INDEX = {condensed_index_js};
+const CONDENSED_SYSTEMS = {condensed_systems_js};
+const CONDENSED_RESULT_CATS = {condensed_result_cats_js};
+const CONDENSED_TYPES = {condensed_types_list_js};
+
 let _trialFilterState = {{ specialty: '', result_category: '', trial_type: '' }};
 let _currentTrialList = [];
 let _currentTrialIdx = -1;
@@ -1176,6 +1308,7 @@ function showView(name){{
   if(name==='pearls'){{ renderPearlChips(); renderPearls(); }}
   if(name==='trials') renderTrials();
   if(name==='trials-esbicm') renderESBICM();
+  if(name==='trials-condensed') renderCondensedTrials();
 }}
 
 // =====================================================================
@@ -1550,10 +1683,24 @@ function renderSearchResults(qRaw){{
   if(q===''){{ box.innerHTML = '<div class="search-empty">Try &ldquo;troponin&rdquo;, &ldquo;pip-tazo&rdquo;, &ldquo;KDIGO&rdquo;, or a specialty name.</div>'; return; }}
   var pMatches = baseDataset.filter(function(p){{ return p.title.toLowerCase().indexOf(q)!==-1; }}).slice(0,5);
   var plMatches = allPearls.filter(function(p){{ return (p.pearl||'').toLowerCase().indexOf(q)!==-1; }}).slice(0,5);
-  if(!pMatches.length && !plMatches.length){{ box.innerHTML = '<div class="search-empty">No results for &ldquo;'+qRaw+'&rdquo;.</div>'; return; }}
+  var ctMatches = CONDENSED_INDEX.filter(function(t){{
+    return t.trial_name.toLowerCase().indexOf(q)!==-1
+        || (t.one_liner||'').toLowerCase().indexOf(q)!==-1
+        || (t.keywords_str||'').toLowerCase().indexOf(q)!==-1
+        || t.system.toLowerCase().indexOf(q)!==-1;
+  }}).slice(0,5);
+  var esMatches = TRIAL_INDEX.filter(function(t){{
+    return (t.trial_name||'').toLowerCase().indexOf(q)!==-1
+        || (t.one_liner||'').toLowerCase().indexOf(q)!==-1
+        || (t.specialty||'').toLowerCase().indexOf(q)!==-1;
+  }}).slice(0,5);
+  var total = pMatches.length + plMatches.length + ctMatches.length + esMatches.length;
+  if(!total){{ box.innerHTML = '<div class="search-empty">No results for &ldquo;'+qRaw+'&rdquo;.</div>'; return; }}
   var html = '';
   if(pMatches.length) html += '<div class="search-group-label">Papers &amp; guidelines ('+pMatches.length+')</div>' + pMatches.map(function(p){{ return '<button class="search-result" data-open-paper="'+p.id+'" data-close-search>'+escapeHtml(p.title)+'</button>'; }}).join('');
   if(plMatches.length) html += '<div class="search-group-label">Pearls ('+plMatches.length+')</div>' + plMatches.map(function(p){{ return '<button class="search-result" data-open-pearl="'+p.id+'" data-close-search>'+escapeHtml((p.pearl||'').substring(0,80))+'</button>'; }}).join('');
+  if(ctMatches.length) html += '<div class="search-group-label">Core Critical Care Trials ('+ctMatches.length+')</div>' + ctMatches.map(function(t){{ return '<button class="search-result" data-open-condensed="'+t.system+'/'+t.name+'" data-close-search>'+escapeHtml(t.trial_name)+'</button>'; }}).join('');
+  if(esMatches.length) html += '<div class="search-group-label">ESBICM Landmark Trials ('+esMatches.length+')</div>' + esMatches.map(function(t){{ return '<button class="search-result" data-open-trial="'+t.slug+'" data-close-search>'+escapeHtml(t.trial_name||'')+' &middot; '+escapeHtml(t.specialty||'')+'</button>'; }}).join('');
   box.innerHTML = html;
 }}
 
@@ -1593,6 +1740,22 @@ function showToast(msg){{
 function escapeHtml(str){{
   if(!str) return '';
   return String(str).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}}
+
+function capitalizeFirst(str){{
+  if(!str) return '';
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}}
+
+function renderListItem(v){{
+  if(typeof v === 'string') return '<li>'+escapeHtml(v)+'</li>';
+  if(v && typeof v === 'object'){{
+    if(v.domain && v.notes) return '<li><strong>'+escapeHtml(v.domain)+':</strong> '+escapeHtml(v.notes)+'</li>';
+    if(v.topic && v.notes) return '<li><strong>'+escapeHtml(v.topic)+':</strong> '+escapeHtml(v.notes)+'</li>';
+    if(v.trial && v.relation) return '<li><strong>'+escapeHtml(v.trial)+':</strong> '+escapeHtml(v.relation)+'</li>';
+    return '<li>'+escapeHtml(JSON.stringify(v))+'</li>';
+  }}
+  return '<li>'+escapeHtml(String(v))+'</li>';
 }}
 
 // =====================================================================
@@ -1823,6 +1986,272 @@ function closeTrialOverlay(id){{
 }}
 
 // =====================================================================
+// CONDENSED TRIALS
+// =====================================================================
+
+function renderCondensedTrials(){{
+  var container = document.getElementById('condensedTrialsContent');
+  var spec = document.getElementById('condensedFilterSpecialty').value;
+  var res = document.getElementById('condensedFilterResult').value;
+  var typ = document.getElementById('condensedFilterType').value;
+  var hasFilter = spec || res || typ;
+
+  if(!hasFilter){{
+    // Show specialty grid
+    var html = '<div class="trials-spec-grid">';
+    CONDENSED_SYSTEMS.forEach(function(s){{
+      var count = CONDENSED_INDEX.filter(function(t){{ return t.system === s; }}).length;
+      var v = TRIAL_SPEC_VAR[s] || '--tspec-general';
+      html += '<button class="trials-spec-tile" style="--tile-color:var('+v+')" data-condensed-spec="'+s+'" role="button">'+
+        '<div class="dot" style="background:var('+v+')"></div>'+
+        '<div style="font-weight:700;font-size:.9rem">'+s+'</div>'+
+        '<div class="count">'+count+' trial'+(count!==1?'s':'')+'</div>'+
+        '</button>';
+    }});
+    html += '</div>';
+    container.innerHTML = html;
+    return;
+  }}
+
+  // Filtered: show trial cards sorted by year descending
+  var filtered = CONDENSED_INDEX.filter(function(t){{
+    if(spec && t.system !== spec) return false;
+    if(res && t.result_category !== res) return false;
+    if(typ && t.trial_type !== typ) return false;
+    return true;
+  }}).sort(function(a,b){{ return (b.year||0) - (a.year||0); }});
+  if(!filtered.length){{
+    container.innerHTML = '<div class="trial-empty"><span class="icon">&#128270;</span><p style="color:var(--ink-muted)">No trials match your filters.</p></div>';
+    return;
+  }}
+  var html = '<p style="font-size:.82rem;color:var(--ink-muted);margin-bottom:10px">'+filtered.length+' trial'+(filtered.length!==1?'s':'')+' found</p>';
+  filtered.forEach(function(t, i){{
+    var resClass = (t.result_category||'').toLowerCase().replace(/[^a-z]/g,'');
+    var resColor = 'neu';
+    if(resClass.indexOf('pos')>=0) resColor = 'pos';
+    else if(resClass.indexOf('neg')>=0 && resClass.indexOf('neu')>=0) resColor = 'negneu';
+    else if(resClass.indexOf('neg')>=0) resColor = 'neg';
+    html += '<div class="trial-card" data-open-condensed="'+t.system+'/'+t.name+'" data-idx="'+i+'" role="button" tabindex="0">'+
+      '<h4>'+escapeHtml(t.trial_name || t.name.replace(/_/g,' '))+'</h4>'+
+      '<p class="one-liner">'+escapeHtml(t.one_liner||'')+'</p>'+
+      '<div class="meta-row">'+
+        (t.trial_type ? '<span class="badge">'+escapeHtml(t.trial_type)+'</span>' : '')+
+        (t.result_category ? '<span class="result-badge '+resColor+'">'+escapeHtml(t.result_category)+'</span>' : '')+
+        (t.sample_size ? '<span class="badge">n='+t.sample_size+'</span>' : '')+
+        (t.year ? '<span class="badge">'+t.year+'</span>' : '')+
+      '</div>'+
+      '</div>';
+  }});
+  container.innerHTML = html;
+}}
+
+function filterCondensed(){{
+  renderCondensedTrials();
+}}
+
+function clearCondensedFilters(){{
+  document.getElementById('condensedFilterSpecialty').value = '';
+  document.getElementById('condensedFilterResult').value = '';
+  document.getElementById('condensedFilterType').value = '';
+  renderCondensedTrials();
+}}
+
+function renderCondensedSystem(name){{
+  showView('condensed-system');
+  document.getElementById('condensedSysTitle').textContent = name;
+  var trials = CONDENSED_INDEX.filter(function(t){{ return t.system === name; }}).sort(function(a,b){{ return (b.year||0) - (a.year||0); }});
+  var html = '';
+  trials.forEach(function(t, i){{
+    var resClass = (t.result_category||'').toLowerCase().replace(/[^a-z]/g,'');
+    var resColor = 'neu';
+    if(resClass.indexOf('pos')>=0) resColor = 'pos';
+    else if(resClass.indexOf('neg')>=0 && resClass.indexOf('neu')>=0) resColor = 'negneu';
+    else if(resClass.indexOf('neg')>=0) resColor = 'neg';
+    html += '<div class="trial-card" data-open-condensed="'+t.system+'/'+t.name+'" data-idx="'+i+'" role="button" tabindex="0">'+
+      '<h4>'+escapeHtml(t.trial_name || t.name.replace(/_/g,' '))+'</h4>'+
+      '<p class="one-liner">'+escapeHtml(t.one_liner||'')+'</p>'+
+      '<div class="meta-row">'+
+        (t.trial_type ? '<span class="badge">'+escapeHtml(t.trial_type)+'</span>' : '')+
+        (t.result_category ? '<span class="result-badge '+resColor+'">'+escapeHtml(t.result_category)+'</span>' : '')+
+        (t.sample_size ? '<span class="badge">n='+t.sample_size+'</span>' : '')+
+        (t.year ? '<span class="badge">'+t.year+'</span>' : '')+
+      '</div>'+
+      '</div>';
+  }});
+  if(!html) html = '<div class="trial-empty"><span class="icon">&#128270;</span><p style="color:var(--ink-muted)">No trials in this category.</p></div>';
+  document.getElementById('condensedSysList').innerHTML = html;
+}}
+
+function openCondensedTrialDetail(system, name){{
+  showView('condensed-detail');
+  var body = document.getElementById('condensedDetailBody');
+  body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--ink-muted)">Loading&hellip;</div>';
+  document.getElementById('condensedDetailBackBtn').onclick = function(){{ renderCondensedSystem(system); }};
+  fetch('/api/condensed-trial/'+encodeURIComponent(system)+'/'+encodeURIComponent(name))
+    .then(function(r){{ return r.json(); }})
+    .then(function(data){{
+      if(data.error){{ body.innerHTML = '<div class="trial-empty"><span class="icon">&#9888;</span><p>Could not load trial.</p></div>'; return; }}
+      renderCondensedDetailHTML(data, body);
+    }});
+}}
+
+function renderCondensedDetailHTML(data, body){{
+  var html = '';
+
+  // Title + journal
+  html += '<h1>'+escapeHtml(data.trial_name || '')+'</h1>';
+  html += '<div class="trial-journal">';
+  if(data.journal) html += escapeHtml(data.journal);
+  if(data.year) html += ' &middot; '+data.year;
+  if(data.doi){{
+    var doiUrl = data.doi;
+    if(doiUrl && doiUrl!=='#' && !doiUrl.startsWith('http')) doiUrl = 'https://doi.org/'+doiUrl;
+    if(doiUrl && doiUrl!=='#') html += ' &middot; <a href="'+doiUrl+'" target="_blank" rel="noopener" style="color:var(--accent)">&#128279; DOI</a>';
+  }}
+  html += '</div>';
+
+  // Meta strip
+  html += '<div class="trial-meta-strip">';
+  if(data.trial_type) html += '<span class="badge">'+escapeHtml(data.trial_type)+'</span>';
+  if(data.result_category){{
+    var rc = data.result_category.toLowerCase().replace(/[^a-z]/g,'');
+    var rcls = 'neu';
+    if(rc.indexOf('pos')>=0) rcls = 'pos';
+    else if(rc.indexOf('neg')>=0 && rc.indexOf('neu')>=0) rcls = 'negneu';
+    else if(rc.indexOf('neg')>=0) rcls = 'neg';
+    html += '<span class="result-badge '+rcls+'">'+escapeHtml(data.result_category)+'</span>';
+  }}
+  if(data.sample_size) html += '<span class="badge">n='+data.sample_size+'</span>';
+  if(data.evidence_level) html += '<span class="badge">&#11088; '+escapeHtml(data.evidence_level)+'</span>';
+  html += '</div>';
+
+  // One-liner
+  if(data.one_liner) html += '<div class="trial-one-liner">'+escapeHtml(data.one_liner)+'</div>';
+
+  var sec = data.sections || {{}};
+
+  // PICO card
+  if(data.pico){{
+    html += '<div class="trial-section"><details open><summary>PICO</summary><div class="section-body"><table class="pico-table"><tr><th>Population</th><td>'+escapeHtml(data.pico.population||'')+'</td></tr><tr><th>Intervention</th><td>'+escapeHtml(data.pico.intervention||'')+'</td></tr><tr><th>Comparison</th><td>'+escapeHtml(data.pico.comparison||'')+'</td></tr><tr><th>Outcome</th><td>'+escapeHtml(data.pico.outcome||'')+'</td></tr></table></div></details></div>';
+  }}
+
+  // Quick recall box
+  if(sec.quick_recall){{
+    var qr = sec.quick_recall;
+    html += '<div class="quick-recall-box">'+
+      '<div class="qr-title">&#128161; Quick Recall</div>'+
+      '<div class="qr-numbers">';
+    if(qr.numbers_to_remember){{
+      qr.numbers_to_remember.forEach(function(n){{ html += '<div class="qr-num">'+escapeHtml(n)+'</div>'; }});
+    }}
+    html += '</div>';
+    if(qr.one_line_takeaway) html += '<div class="qr-takeaway">'+escapeHtml(qr.one_line_takeaway)+'</div>';
+    html += '</div>';
+  }}
+
+  // Clinical Summary (renamed from clinical_bottom_line)
+  if(sec.clinical_bottom_line){{
+    var cbl = sec.clinical_bottom_line;
+    html += '<div class="trial-section"><details open><summary>Clinical Summary</summary><div class="section-body">';
+    if(cbl.verdict) html += '<p><strong>Verdict:</strong> '+escapeHtml(cbl.verdict)+'</p>';
+    if(cbl.applies_to) html += '<p><strong>Applies to:</strong> '+escapeHtml(cbl.applies_to)+'</p>';
+    if(cbl.does_not_mean) html += '<p><strong>Does not mean:</strong> '+escapeHtml(cbl.does_not_mean)+'</p>';
+    if(cbl.implementation_caveats && cbl.implementation_caveats.length){{
+      html += '<p><strong>Implementation caveats:</strong></p><ul>';
+      cbl.implementation_caveats.forEach(function(c){{ html += '<li>'+escapeHtml(c)+'</li>'; }});
+      html += '</ul>';
+    }}
+    html += '</div></details></div>';
+  }}
+
+  // Critical Appraisal
+  if(sec.critical_appraisal){{
+    var ca = sec.critical_appraisal;
+    html += '<div class="trial-section"><details open><summary>Critical Appraisal</summary><div class="section-body">';
+    if(ca.summary) html += '<p><strong>Summary:</strong> '+escapeHtml(ca.summary)+'</p>';
+    if(ca.rating) html += '<p><strong>Rating:</strong> <span class="badge">'+escapeHtml(ca.rating)+'</span></p>';
+    if(ca.strengths && ca.strengths.length){{
+      html += '<p><strong>Strengths:</strong></p><ul>';
+      ca.strengths.forEach(function(s){{ html += '<li>'+escapeHtml(s)+'</li>'; }});
+      html += '</ul>';
+    }}
+    if(ca.weaknesses && ca.weaknesses.length){{
+      html += '<p><strong>Weaknesses:</strong></p><ul>';
+      ca.weaknesses.forEach(function(w){{ html += '<li>'+escapeHtml(w)+'</li>'; }});
+      html += '</ul>';
+    }}
+    html += '</div></details></div>';
+  }}
+
+  // Outcomes table
+  if(sec.results && sec.results.outcomes_table && sec.results.outcomes_table.length){{
+    html += '<div class="trial-section"><details open><summary>Outcomes</summary><div class="section-body"><div style="overflow-x:auto"><table class="outcomes-table"><thead><tr><th>Outcome</th><th>Intervention</th><th>Control</th><th>Measure</th><th>Value</th><th>95% CI</th><th>P</th><th>Note</th></tr></thead><tbody>';
+    sec.results.outcomes_table.forEach(function(r){{
+      html += '<tr><td>'+escapeHtml(r.outcome||'')+'</td><td>'+escapeHtml(r.group_a||'')+'</td><td>'+escapeHtml(r.group_b||'')+'</td><td>'+escapeHtml(r.effect_measure||'')+'</td><td>'+escapeHtml(r.effect_value||'')+'</td><td>'+escapeHtml(r.ci_95||'')+'</td><td>'+escapeHtml(r.p_value||'')+'</td><td>'+escapeHtml(r.note||'')+'</td></tr>';
+    }});
+    html += '</tbody></table></div></div></details></div>';
+  }}
+
+  // Subgroup table
+  if(sec.results && sec.results.subgroup_table && sec.results.subgroup_table.length){{
+    html += '<div class="trial-section"><details><summary>Subgroup Analyses</summary><div class="section-body"><div style="overflow-x:auto"><table class="outcomes-table"><thead><tr><th>Subgroup</th><th>Intervention</th><th>Control</th><th>Measure</th><th>Value</th><th>95% CI</th><th>P-interaction</th></tr></thead><tbody>';
+    sec.results.subgroup_table.forEach(function(r){{
+      html += '<tr><td>'+escapeHtml(r.subgroup||'')+'</td><td>'+escapeHtml(r.group_a||'')+'</td><td>'+escapeHtml(r.group_b||'')+'</td><td>'+escapeHtml(r.effect_measure||'')+'</td><td>'+escapeHtml(r.effect_value||'')+'</td><td>'+escapeHtml(r.ci_95||'')+'</td><td>'+escapeHtml(r.p_interaction||'')+'</td></tr>';
+    }});
+    html += '</tbody></table></div></div></details></div>';
+  }}
+
+  // Collapsible: background, methods, internal/external validity, strengths, limitations, etc.
+  var collapsibleSections = [
+    {{key:'background', label:'Background &amp; Hypothesis'}},
+    {{key:'methods', label:'Methods'}},
+    {{key:'internal_validity', label:'Internal Validity'}},
+    {{key:'external_validity', label:'External Validity'}},
+    {{key:'safety', label:'Safety'}},
+    {{key:'strengths', label:'Strengths'}},
+    {{key:'limitations', label:'Limitations'}},
+    {{key:'authors_conclusion', label:"Authors' Conclusion"}},
+    {{key:'controversies', label:'Controversies'}},
+    {{key:'context_related_trials', label:'Related Trials'}},
+    {{key:'unresolved_questions', label:'Unresolved Questions'}},
+  ];
+
+  collapsibleSections.forEach(function(cs){{
+    var val = sec[cs.key];
+    if(!val) return;
+    var content = '';
+    if(Array.isArray(val)){{
+      content = '<ul>'+val.map(function(v){{
+        if(typeof v === 'string') return '<li>'+escapeHtml(v)+'</li>';
+        if(v.topic && v.notes) return '<li><strong>'+escapeHtml(v.topic)+':</strong> '+escapeHtml(v.notes)+'</li>';
+        if(v.domain && v.notes) return '<li><strong>'+escapeHtml(v.domain)+':</strong> '+escapeHtml(v.notes)+'</li>';
+        if(v.trial && v.relation) return '<li><strong>'+escapeHtml(v.trial)+':</strong> '+escapeHtml(v.relation)+'</li>';
+        return '<li>'+escapeHtml(JSON.stringify(v))+'</li>';
+      }}).join('')+'</ul>';
+    }} else if(typeof val === 'object'){{
+      var pairs = [];
+      Object.keys(val).forEach(function(k){{
+        var v = val[k];
+        var label = capitalizeFirst(k.replace(/_/g,' '));
+        if(Array.isArray(v)){{
+          pairs.push('<p><strong>'+label+':</strong></p><ul>'+v.map(function(i){{ return renderListItem(i); }}).join('')+'</ul>');
+        }} else if(typeof v === 'object'){{
+          pairs.push('<p><strong>'+label+':</strong></p><ul>'+Object.keys(v).map(function(sk){{ return '<li><strong>'+capitalizeFirst(sk.replace(/_/g,' '))+':</strong> '+escapeHtml(v[sk])+'</li>'; }}).join('')+'</ul>');
+        }} else {{
+          pairs.push('<p><strong>'+label+':</strong> '+escapeHtml(v)+'</p>');
+        }}
+      }});
+      content = pairs.join('');
+    }} else {{
+      content = '<p>'+escapeHtml(val)+'</p>';
+    }}
+    if(content) html += '<div class="trial-section"><details><summary>'+cs.label+'</summary><div class="section-body">'+content+'</div></details></div>';
+  }});
+
+  body.innerHTML = html;
+}}
+
+// =====================================================================
 // DISCLAIMER
 // =====================================================================
 function dismissDisclaimer(){{
@@ -1918,6 +2347,11 @@ var trialFilterBtn = document.getElementById('trialFilterBtn');
 if(trialFilterBtn) trialFilterBtn.addEventListener('click', filterTrials);
 var trialClearBtn = document.getElementById('trialClearBtn');
 if(trialClearBtn) trialClearBtn.addEventListener('click', clearTrialFilters);
+// Condensed filter/clear buttons
+var condFilterBtn = document.getElementById('condensedFilterBtn');
+if(condFilterBtn) condFilterBtn.addEventListener('click', filterCondensed);
+var condClearBtn = document.getElementById('condensedClearBtn');
+if(condClearBtn) condClearBtn.addEventListener('click', clearCondensedFilters);
 // Trial detail back button
 var trialDetailBack = document.getElementById('trialDetailBackBtn');
 if(trialDetailBack) trialDetailBack.addEventListener('click', function(){{ showView('trials-esbicm'); }});
@@ -2073,6 +2507,18 @@ document.addEventListener('click', function(e){{
   var trialSpecTile = e.target.closest('[data-trial-spec]');
   if(trialSpecTile){{ renderTrialsSpecialty(trialSpecTile.dataset.trialSpec); return; }}
 
+  /* Condensed trial spec tile */
+  var condensedSpecTile = e.target.closest('[data-condensed-spec]');
+  if(condensedSpecTile){{ renderCondensedSystem(condensedSpecTile.dataset.condensedSpec); return; }}
+
+  /* Open condensed trial detail */
+  var condensedCard = e.target.closest('[data-open-condensed]');
+  if(condensedCard){{
+    var parts = condensedCard.dataset.openCondensed.split('/');
+    openCondensedTrialDetail(parts[0], parts[1]);
+    return;
+  }}
+
   /* Open trial detail from card */
   var trialCard = e.target.closest('[data-open-trial]');
   if(trialCard){{
@@ -2142,6 +2588,11 @@ document.addEventListener('keydown', function(e){{
 # =====================================================================
 # API ENDPOINTS
 # =====================================================================
+
+@app.get("/favicon.ico")
+async def favicon():
+    return JSONResponse(status_code=204)
+
 
 @app.get("/api/summary")
 async def get_json_summary(file_name: str, system: str = "General", type: str = "Unclassified"):
@@ -2287,6 +2738,25 @@ async def get_trial(slug: str):
         return JSONResponse(status_code=500, content={"error": str(e)})
 
 
+@app.get("/api/condensed-trials")
+async def get_condensed_trials(system: str = ""):
+    idx = load_condensed_trial_index()
+    if system:
+        idx = [c for c in idx if c["system"] == system]
+    return {"trials": idx}
+
+
+@app.get("/api/condensed-trial/{system}/{name}")
+async def get_condensed_trial(system: str, name: str):
+    from urllib.parse import unquote
+    system = unquote(system)
+    name = unquote(name)
+    payload = load_condensed_trial(system, name)
+    if payload is None:
+        return JSONResponse(status_code=404, content={"error": f"Condensed trial not found: {system}/{name}"})
+    return payload
+
+
 # =====================================================================
 # HELPERS
 # =====================================================================
@@ -2388,6 +2858,8 @@ def format_new_schema_as_markdown(payload):
 
 def extract_search_text(payload):
     text_parts = []
+
+    # Paper/guideline format
     text_parts.append(payload.get("paper_name", ""))
     text_parts.append(payload.get("clinical_summary_markdown", ""))
     text_parts.append(payload.get("primary_authors", ""))
@@ -2403,11 +2875,14 @@ def extract_search_text(payload):
     text_parts.append(payload.get("one_line_summary", ""))
     for p in payload.get("key_pearls", []):
         text_parts.append(p)
-    for s in payload.get("sections", []):
-        text_parts.append(s.get("heading", ""))
-        text_parts.append(s.get("content", ""))
-        for sp in s.get("section_pearls", []):
-            text_parts.append(sp)
+    secs_array = payload.get("sections", [])
+    if isinstance(secs_array, list):
+        for s in secs_array:
+            if isinstance(s, dict):
+                text_parts.append(s.get("heading", ""))
+                text_parts.append(s.get("content", ""))
+                for sp in s.get("section_pearls", []):
+                    text_parts.append(sp)
     text_parts.append(payload.get("consensus_method", ""))
     for b in payload.get("recommendation_blocks", []):
         text_parts.append(b.get("topic", ""))
@@ -2422,17 +2897,51 @@ def extract_search_text(payload):
     text_parts.append(payload.get("strengths_limitations", ""))
     for tag in payload.get("tags", []):
         text_parts.append(tag)
+
+    # Trial format (condensed)
+    text_parts.append(payload.get("trial_name", ""))
+    text_parts.append(payload.get("trial_title", ""))
+    text_parts.append(payload.get("one_liner", ""))
+    text_parts.append(payload.get("citation", ""))
+    text_parts.append(payload.get("specialty", ""))
+    for kw in payload.get("keywords", []):
+        text_parts.append(kw)
+
+    # Trial sections (condensed — object with named keys like background, methods, results)
+    trial_sec = payload.get("sections", {})
+    if isinstance(trial_sec, dict):
+        for sec_key, sec_val in trial_sec.items():
+            if isinstance(sec_val, str):
+                text_parts.append(sec_val)
+            elif isinstance(sec_val, dict):
+                for sub_val in sec_val.values():
+                    if isinstance(sub_val, str):
+                        text_parts.append(sub_val)
+                    elif isinstance(sub_val, list):
+                        for item in sub_val:
+                            if isinstance(item, str):
+                                text_parts.append(item)
+                            elif isinstance(item, dict):
+                                for iv in item.values():
+                                    if isinstance(iv, str):
+                                        text_parts.append(iv)
+
     return " ".join(text_parts).lower()
 
 
 def extract_metadata(payload):
-    title = payload.get("paper_name") or payload.get("title", "")
+    title = payload.get("paper_name") or payload.get("title") or payload.get("trial_name") or payload.get("trial_title", "")
     system = payload.get("system") or ""
     if not system and payload.get("specialty"):
-        system = ", ".join(payload["specialty"])
+        if isinstance(payload["specialty"], list):
+            system = ", ".join(payload["specialty"])
+        else:
+            system = payload["specialty"]
     article_type = payload.get("type_of_article") or ""
     if not article_type and payload.get("doc_type"):
         article_type = payload["doc_type"]
+    if not article_type and payload.get("trial_type"):
+        article_type = payload["trial_type"]
     journal = payload.get("journal_name") or payload.get("journal", "")
     if not journal:
         issuing = payload.get("issuing_bodies", [])

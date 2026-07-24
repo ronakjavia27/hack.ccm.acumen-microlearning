@@ -1,0 +1,302 @@
+{
+  "id": "TracMan",
+  "trial_name": "TracMan — Early vs Late Tracheostomy in Prolonged Mechanical Ventilation (2013)",
+  "specialty": "Critical Care",
+  "subtopic": "Weaning & Liberation from Ventilation",
+  "year": 2013,
+  "journal": "JAMA",
+  "citation": "Young D, Harrison DA, Cuthbertson BH, Rowan K; TracMan Collaborators. Effect of early vs late tracheostomy placement on survival in patients receiving mechanical ventilation: the TracMan randomized trial. JAMA. 2013;309(20):2121-2129.",
+  "doi": "https://doi.org/10.1001/jama.2013.5154",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 909,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Routine early tracheostomy (≤4 days) did not improve 30-day mortality compared with a deferred strategy (≥10 days, only if still indicated) in patients predicted to need prolonged ventilation.",
+  "pico": {
+    "population": "Adult ICU patients invasively ventilated for <4 days and predicted to need ≥7 further days of ventilatory support.",
+    "intervention": "Early tracheostomy placed within 4 days of ICU admission.",
+    "comparison": "Deferred strategy: tracheostomy on day 10 or later, and only if still clinically indicated.",
+    "outcome": "30-day all-cause mortality."
+  },
+  "keywords": [
+    "tracheostomy",
+    "mechanical ventilation",
+    "timing",
+    "weaning",
+    "sedation"
+  ],
+  "related_trials": [
+    "SETPOINT2"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Tracheostomy was commonly performed when clinicians predicted prolonged invasive ventilation, with expected advantages over translaryngeal intubation (comfort, reduced sedative exposure, easier weaning, fewer airway complications, and possibly fewer infections).",
+      "knowledge_gap": "Before TracMan, evidence to guide timing was limited, with practice variation (including early procedures) despite uncertainty about patient-centred benefits.",
+      "hypothesis": "Does performing tracheostomy early (within 4 days of ICU admission) reduce mortality compared with deferring tracheostomy until day 10 or later and only if still clinically indicated, among adult ICU patients predicted to require prolonged mechanical ventilation?"
+    },
+    "methods": {
+      "design": "Pragmatic, open, multicentre, randomised clinical trial.",
+      "setting": "72 adult general and cardiothoracic critical care units in the UK (13 university and 59 non-university hospitals); recruitment 2004–2011.",
+      "population": {
+        "inclusion": [
+          "Invasively mechanically ventilated.",
+          "Identified within the first 4 ICU days as likely to require ≥7 further days of ventilatory support."
+        ],
+        "exclusion": [
+          "Immediate life-saving tracheostomy required.",
+          "Tracheostomy contraindicated (anatomical/other).",
+          "Respiratory failure due to chronic neurological disease (where early tracheostomy was usual practice in participating centres)."
+        ]
+      },
+      "intervention": "Early tracheostomy placed within 4 days of ICU admission. Technique (percutaneous or surgical), location, and operator seniority followed local unit practice.",
+      "comparison": "Deferred strategy: tracheostomy on day 10 or later, and only if still clinically indicated by the treating clinician. Until then, usual care with translaryngeal intubation and clinician-directed co-interventions (sedation/weaning/antibiotics).",
+      "blinding": "Unblinded (care teams and analysts could not be blinded because timing/airway status is apparent); primary endpoint (mortality) is objective.",
+      "sample_size_power": "Planned N=1692 to detect a 6.3% absolute (21% relative) mortality reduction with 80% power at 5% significance (two-sided), based on updated effect-size estimates. Recruitment stopped early at 909 due to study fatigue and exhaustion of funding.",
+      "primary_outcome": "30-day all-cause mortality.",
+      "secondary_outcomes": [
+        "Mortality at ICU discharge, hospital discharge, 1 year, and 2 years.",
+        "Total days of respiratory support.",
+        "Days in critical care among 30-day survivors.",
+        "Days of any IV sedation among 30-day survivors.",
+        "Days alive and free of antibiotics among 30-day survivors (proxy for hospital-acquired infection).",
+        "Procedure-related complications."
+      ],
+      "follow_up": "Primary endpoint at 30 days after randomisation; mortality follow-up to 2 years."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in 30-day mortality: 30.8% (early) vs 31.5% (deferred); RR 0.98 (95% CI 0.81–1.19).",
+        "Early tracheostomy reduced sedative exposure in 30-day survivors (median 5 vs 8 days; P<0.001) but did not shorten ICU stay or days of respiratory support.",
+        "The deferred strategy avoided tracheostomy in 55.1% of patients, highlighting prediction uncertainty."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "30-day all-cause mortality (primary)",
+          "group_a": "139/451 (30.8%)",
+          "group_b": "141/448 (31.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.98",
+          "ci_95": "0.81–1.19",
+          "p_value": "0.89",
+          "note": "Absolute risk reduction 0.7%; 95% CI −5.4 to 6.7"
+        },
+        {
+          "outcome": "Mortality at ICU discharge",
+          "group_a": "134/451 (29.7%)",
+          "group_b": "133/448 (29.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.82–1.22",
+          "p_value": "0.99",
+          "note": ""
+        },
+        {
+          "outcome": "Mortality at hospital discharge",
+          "group_a": "146/451 (32.4%)",
+          "group_b": "151/448 (33.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.96",
+          "ci_95": "0.80–1.16",
+          "p_value": "0.68",
+          "note": ""
+        },
+        {
+          "outcome": "Mortality at 1 year",
+          "group_a": "207/451 (45.9%)",
+          "group_b": "219/447 (49.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.94",
+          "ci_95": "0.82–1.08",
+          "p_value": "0.38",
+          "note": "Denominators differ (late group n=447)"
+        },
+        {
+          "outcome": "Mortality at 2 years",
+          "group_a": "230/451 (51.0%)",
+          "group_b": "240/447 (53.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.84–1.08",
+          "p_value": "0.47",
+          "note": "Cause of death not recorded"
+        },
+        {
+          "outcome": "Total days of respiratory support (mean (SD))",
+          "group_a": "13.6 (12.0)",
+          "group_b": "15.2 (14.4)",
+          "effect_measure": "Mean difference",
+          "effect_value": "−1.7 days",
+          "ci_95": "−3.4 to 0.1",
+          "p_value": "0.06",
+          "note": "Defined as any day receiving positive pressure ventilation or CPAP"
+        },
+        {
+          "outcome": "Days in critical care among 30-day survivors (median (IQR))",
+          "group_a": "13.0 (8.0–27.0)",
+          "group_b": "13.1 (8.0–27.0)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.74",
+          "note": ""
+        },
+        {
+          "outcome": "Days of any IV sedation among 30-day survivors (median (IQR))",
+          "group_a": "5 (3–9)",
+          "group_b": "8 (4–12)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Days alive and free of antibiotics among 30-day survivors (median (IQR))",
+          "group_a": "5 (1–8)",
+          "group_b": "5 (1–10)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.95",
+          "note": "Used as a proxy for hospital-acquired infection"
+        },
+        {
+          "outcome": "Procedure-related complications (among those receiving tracheostomy)",
+          "group_a": "23/418 (5.5%)",
+          "group_b": "16/204 (7.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": "Overall 39/622 (6.3%); most frequent was bleeding requiring IV fluids/other intervention (19/622; 3.1%)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Overall procedure-related complication rate was 6.3% (39/622) among those who received a tracheostomy.",
+      "Most frequent complication was bleeding requiring IV fluids/other intervention (3.1%)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "24-hour automated telephone randomisation used minimisation (80% probability to the group that minimised imbalance) across centre, age, sex, and seven diagnostic groups; baseline characteristics were closely balanced (mean age 63.9 years; men 58.6%; mean APACHE II 19.8)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded design could influence co-interventions and process measures (sedation, extubation decisions); primary outcome (mortality) is objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "899/909 (98.9%) were included in the primary analysis after exclusions for duplicate randomisation/randomisation error and withdrawals."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "385/455 (84.6%) received tracheostomy within 4 days as randomised; 66/455 did not (reasons included instability and recovery). In the deferred group, 33/454 received tracheostomy before day 10 (protocol deviation), and only 204/454 (44.9%) received a tracheostomy at any time."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Closely balanced across groups."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate: randomisation and follow-up for mortality were strong, but unblinded care plus substantial dilution (many deferred-group patients never needing tracheostomy and protocol deviations in both directions) limits sensitivity to detect anything other than larger effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Pragmatic enrolment across 72 UK ICUs (university and non-university) with predominantly medical admissions (79.2%) and pulmonary pathology common (69.3%); severity typical of general ICU ventilation cohorts (mean APACHE II 19.8)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The 'predicted prolonged ventilation' inclusion criterion mirrors real-world decision-making, making results relevant to everyday ICU practice. Patients with chronic neurological disease causing respiratory failure were excluded, limiting generalisability to that subgroup. UK ICU bed constraints and practice patterns may differ from systems with different ventilation thresholds, step-down capacity, and reimbursement incentives."
+        }
+      ],
+      "verdict": "Generalisability is good for general adult ICU patients with early invasive ventilation in high-income settings, but extrapolation is more limited for specialised neuro/trauma cohorts and for health systems where tracheostomy thresholds and downstream resources differ materially."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre randomised evaluation of a common ICU procedure.",
+      "Objective primary endpoint (30-day all-cause mortality) with longer-term mortality follow-up to 2 years.",
+      "Centralised randomisation with minimisation to balance key prognostic factors across diverse centres.",
+      "Clinically realistic comparator (watchful waiting with selective tracheostomy after day 10 if still indicated)."
+    ],
+    "limitations": [
+      "Stopped before the revised target sample size (1692), reducing power for modest but clinically important effects.",
+      "Unblinded design with plausible influence on co-interventions and process outcomes.",
+      "Dilution of treatment contrast: only 44.9% of the deferred group ultimately received tracheostomy; protocol deviations occurred in both groups.",
+      "Technique and peri-procedural practices were not standardised (percutaneous vs surgical), which increases pragmatic relevance but introduces heterogeneity in delivery.",
+      "Nosocomial infection was not adjudicated as ventilator-associated pneumonia; antibiotic-free days were used as a proxy, which may not capture infection epidemiology precisely."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic trial with an objective primary endpoint, but early termination and significant dilution of the treatment contrast reduce confidence in excluding a modest benefit from early tracheostomy.",
+      "strengths": [
+        "Pragmatic, multicentre design with centralised randomisation.",
+        "Objective primary outcome (mortality) with long-term follow-up."
+      ],
+      "weaknesses": [
+        "Stopped early for non-scientific reasons, leading to underpowering.",
+        "Unblinded design and substantial crossover dilute the treatment effect."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine early tracheostomy (≤4 days) for patients predicted to need prolonged ventilation did not improve survival and did not shorten ICU stay compared with a deferred, selective strategy.",
+    "clinical_bottom_line": {
+      "verdict": "Routine early tracheostomy (≤4 days) does not improve survival or shorten ICU stay. A deferred, selective strategy (waiting until day 10 or later) is supported, avoiding unnecessary procedures in many patients.",
+      "applies_to": "General adult ICU patients predicted to need prolonged ventilation, excluding those with chronic neurological disease.",
+      "does_not_mean": "Tracheostomy is never indicated early. It may still be required for specific indications like airway protection or secretion management.",
+      "implementation_caveats": [
+        "Bedside prediction of prolonged ventilation is inaccurate, supporting a 'watchful waiting' approach.",
+        "The primary benefit of early tracheostomy appears to be reduced sedative exposure, not improved survival or shorter ICU stay."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Predicting 'prolonged ventilation'",
+        "notes": "TracMan demonstrated that many patients expected to require prolonged ventilation can recover (or die) before a delayed tracheostomy threshold, creating dilution when comparing a routine early approach against a selective deferred strategy."
+      },
+      {
+        "topic": "Early stopping and effect-size interpretation",
+        "notes": "Although recruitment stopped early, the observed relative risks for mortality outcomes clustered near 1.0 with confidence intervals that do not support a large mortality benefit from routine early placement."
+      },
+      {
+        "topic": "Financial and policy implications",
+        "notes": "The accompanying editorial emphasised that evidence favouring a 'wait-and-see' strategy could conflict with reimbursement structures in some health systems, potentially creating misaligned incentives for early tracheostomy."
+      },
+      {
+        "topic": "Meta-analytic synthesis after TracMan",
+        "notes": "Subsequent systematic reviews and meta-analyses report that earlier tracheostomy may reduce pneumonia and ventilator days in some settings, but without consistent mortality benefit—reinforcing TracMan’s central message that routine early timing is not a survival intervention."
+      },
+      {
+        "topic": "Selected populations and endpoints",
+        "notes": "Later randomised evidence in severe stroke (e.g., SETPOINT2) evaluated early vs standard tracheostomy with longer-horizon functional outcomes, illustrating that the 'best' timing question can be population- and outcome-dependent rather than ICU-generic."
+      },
+      {
+        "topic": "Quality and safety emphasis",
+        "notes": "Beyond timing, post-TracMan work has increasingly focused on standardisation and safety of tracheostomy care delivery, including multi-hospital quality improvement programmes."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "SETPOINT2",
+        "relation": "Later RCT in severe stroke evaluating early vs standard tracheostomy with functional outcomes, showing the timing question is population-dependent."
+      }
+    ],
+    "unresolved_questions": [
+      "Is there a subgroup of patients (e.g., those with certain neurological injuries) who benefit from early tracheostomy?",
+      "What is the optimal timing for tracheostomy when indicated for reasons other than predicted prolonged ventilation (e.g., airway protection)?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=909",
+        "30-day mortality: 30.8% vs 31.5% (RR 0.98, 95% CI 0.81–1.19)",
+        "Sedation days in survivors: 5 vs 8 (P<0.001)",
+        "Tracheostomy avoided in 55.1% of the deferred group"
+      ],
+      "one_line_takeaway": "Wait until day 10 for tracheostomy in patients predicted to need prolonged ventilation; early placement reduces sedation but not mortality or ICU stay."
+    }
+  },
+  "_source_id": "TracMan",
+  "_source_system": "Airway"
+}

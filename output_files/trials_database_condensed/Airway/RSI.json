@@ -1,0 +1,353 @@
+{
+  "id": "RSI",
+  "trial_name": "RSI — Ketamine vs Etomidate for Tracheal Intubation of Critically Ill Adults (2025)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2025,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Casey JD, Seitz KP, Driver BE, et al. Ketamine or etomidate for tracheal intubation of critically ill adults. N Engl J Med. 2025;epublished December 9th",
+  "doi": "https://doi.org/10.1056/NEJMoa2511420",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, parallel-group, unblinded, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2365,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In critically ill adults undergoing emergency intubation, ketamine did not reduce 28-day in-hospital mortality compared with etomidate but increased peri-intubation cardiovascular collapse.",
+  "pico": {
+    "population": "Critically ill adults undergoing emergency tracheal intubation in EDs and ICUs",
+    "intervention": "Ketamine for induction (1–2 mg/kg IV)",
+    "comparison": "Etomidate for induction (0.15–0.30 mg/kg IV)",
+    "outcome": "Death by day 28 while in hospital"
+  },
+  "keywords": [
+    "ketamine",
+    "etomidate",
+    "emergency tracheal intubation",
+    "rapid sequence intubation",
+    "peri-intubation hypotension",
+    "cardiovascular collapse",
+    "induction agent"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Emergency tracheal intubation is common in critical care and emergency medicine, with high downstream morbidity and mortality; peri-intubation hypotension/cardiovascular collapse is frequent and prognostically adverse. Etomidate is widely used because of rapid onset and relative haemodynamic stability, but a single dose inhibits adrenal 11β-hydroxylase and suppresses cortisol synthesis for up to ~72 hours, raising concern for worse outcomes (particularly in sepsis). Ketamine is an alternative with analgesia and sympathetic stimulation, but in catecholamine-depleted shock its direct myocardial depressant effects may predominate, plausibly increasing hypotension/collapse.",
+      "knowledge_gap": "Pre-RSI evidence (small randomised trials and heterogeneous meta-analyses) did not establish whether the net clinical effect favours ketamine (avoid adrenal suppression) or etomidate (haemodynamic stability).",
+      "hypothesis": "Ketamine would lower mortality by avoiding etomidate-associated adrenal suppression while maintaining acceptable peri-intubation haemodynamics."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, parallel-group, investigator-initiated randomised trial; 1:1 allocation; stratified by site with variable block sizes; unblinded.",
+      "setting": "14 US sites (6 emergency departments; 8 intensive care units); enrolment April 2022 to August 2025.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) undergoing emergency tracheal intubation with an induction agent, where the treating clinician judged both ketamine and etomidate to be reasonable options."
+        ],
+        "exclusion": [
+          "Trauma-related intubation",
+          "Immediate need precluding randomisation without delaying care",
+          "Clinician-determined requirement for (or contraindication to) one of the two study drugs",
+          "Known pregnancy",
+          "Prisoners"
+        ]
+      },
+      "intervention": "Ketamine as the induction agent for intubation (intravenous), with clinician-selected dose within a protocol-specified range (1–2 mg/kg). Other peri-intubation care at clinician discretion.",
+      "comparison": "Etomidate as the induction agent for intubation (intravenous), with clinician-selected dose within a protocol-specified range (0.15–0.30 mg/kg). Other peri-intubation care at clinician discretion.",
+      "blinding": "Unblinded (treating clinicians, patients, and data collectors); mortality outcome objective; peri-intubation haemodynamic outcomes based on recorded blood pressure/vasopressor use.",
+      "sample_size_power": "2308 patients required to detect a 5.2 percentage-point absolute reduction in 28-day in-hospital mortality (30.0% to 24.8%) with 90% power at two-sided α=0.05; inflation for withdrawal yielded a target sample size of 2364.",
+      "primary_outcome": "Death by day 28 while in hospital.",
+      "secondary_outcomes": [
+        "Cardiovascular collapse between induction and 2 min after intubation (composite: new/increased vasopressor, SBP <65 mmHg, or cardiac arrest)",
+        "First-attempt intubation success",
+        "Time from induction to successful intubation",
+        "Lowest systolic BP between induction and 2 min",
+        "Vasopressor use at 24 hours",
+        "Cardiac arrest requiring CPR between induction and hospital discharge",
+        "Ventricular tachycardia between induction and 2 min (post hoc)"
+      ],
+      "follow_up": "Primary endpoint through day 28 while in hospital (censored at discharge); peri-intubation endpoints from induction through 2 minutes after intubation; additional safety/organ support outcomes through 24 hours and to discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in 28-day in-hospital mortality: 29.6% ketamine vs 30.9% etomidate (adjusted RD −0.8 pp; P=0.65).",
+        "Ketamine increased peri-intubation cardiovascular collapse (22.1% vs 17.0%; RD 5.1 pp).",
+        "Ketamine was associated with a lower nadir systolic BP (86 vs 90 mmHg; median difference −6 mmHg).",
+        "No difference in first-pass intubation success (87.4% vs 87.0%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death by day 28 while in hospital (primary)",
+          "group_a": "348/1176 (29.6%)",
+          "group_b": "367/1189 (30.9%)",
+          "effect_measure": "Adjusted RD",
+          "effect_value": "−0.8 pp",
+          "ci_95": "−4.5 to 2.9",
+          "p_value": "0.65",
+          "note": "ITT; adjusted for site (random effect) with marginal standardisation"
+        },
+        {
+          "outcome": "Cardiovascular collapse between induction and 2 min after intubation (secondary)",
+          "group_a": "260/1176 (22.1%)",
+          "group_b": "202/1189 (17.0%)",
+          "effect_measure": "RD",
+          "effect_value": "5.1 pp",
+          "ci_95": "1.9 to 8.3",
+          "p_value": "",
+          "note": "Composite: new/increased vasopressor, SBP <65 mmHg, or cardiac arrest"
+        },
+        {
+          "outcome": "New or increased vasopressor use (component)",
+          "group_a": "252/1173 (21.5%)",
+          "group_b": "192/1186 (16.2%)",
+          "effect_measure": "RD",
+          "effect_value": "5.3 pp",
+          "ci_95": "2.1 to 8.6",
+          "p_value": "",
+          "note": "Component of cardiovascular collapse"
+        },
+        {
+          "outcome": "Systolic BP <65 mmHg (component)",
+          "group_a": "93/1173 (7.9%)",
+          "group_b": "71/1186 (6.0%)",
+          "effect_measure": "RD",
+          "effect_value": "1.9 pp",
+          "ci_95": "−0.1 to 3.9",
+          "p_value": "",
+          "note": "Component of cardiovascular collapse"
+        },
+        {
+          "outcome": "Cardiac arrest between induction and 2 min after intubation (component)",
+          "group_a": "22/1176 (1.9%)",
+          "group_b": "17/1189 (1.4%)",
+          "effect_measure": "RD",
+          "effect_value": "0.4 pp",
+          "ci_95": "−0.5 to 1.4",
+          "p_value": "",
+          "note": "Component of cardiovascular collapse"
+        },
+        {
+          "outcome": "First-attempt intubation success (exploratory)",
+          "group_a": "1028/1176 (87.4%)",
+          "group_b": "1034/1189 (87.0%)",
+          "effect_measure": "RD",
+          "effect_value": "0.4 pp",
+          "ci_95": "−2.3 to 3.2",
+          "p_value": "",
+          "note": "No clinically meaningful difference"
+        },
+        {
+          "outcome": "Time from induction to successful intubation (sec), median (IQR)",
+          "group_a": "79 (56–115)",
+          "group_b": "70 (50–100)",
+          "effect_measure": "Median difference",
+          "effect_value": "9 sec",
+          "ci_95": "3 to 14",
+          "p_value": "",
+          "note": "Exploratory; small absolute delay with ketamine"
+        },
+        {
+          "outcome": "Lowest systolic BP between induction and 2 min (mmHg), median (IQR)",
+          "group_a": "86 (75–98)",
+          "group_b": "90 (79–102)",
+          "effect_measure": "Median difference",
+          "effect_value": "−6 mmHg",
+          "ci_95": "−8 to −3",
+          "p_value": "",
+          "note": "Physiological separation consistent with higher collapse rates in ketamine group"
+        },
+        {
+          "outcome": "Systolic BP <80 mmHg between induction and 2 min (post hoc threshold)",
+          "group_a": "294/1167 (25.2%)",
+          "group_b": "254/1183 (21.5%)",
+          "effect_measure": "RD",
+          "effect_value": "3.7 pp",
+          "ci_95": "0.2 to 7.2",
+          "p_value": "",
+          "note": "Post hoc analysis"
+        },
+        {
+          "outcome": "Vasopressor use at 24 hours (safety)",
+          "group_a": "457/1176 (38.9%)",
+          "group_b": "503/1189 (42.3%)",
+          "effect_measure": "RD",
+          "effect_value": "−3.4 pp",
+          "ci_95": "−7.5 to 0.7",
+          "p_value": "",
+          "note": "No clear between-group difference at 24 hours"
+        },
+        {
+          "outcome": "Cardiac arrest requiring CPR between induction and hospital discharge (safety)",
+          "group_a": "88/1176 (7.5%)",
+          "group_b": "63/1189 (5.3%)",
+          "effect_measure": "RD",
+          "effect_value": "2.1 pp",
+          "ci_95": "0.0 to 4.2",
+          "p_value": "",
+          "note": "Safety outcome reported through hospital discharge"
+        },
+        {
+          "outcome": "Ventricular tachycardia between induction and 2 min (post hoc safety signal)",
+          "group_a": "9/884 (1.0%)",
+          "group_b": "2/905 (0.2%)",
+          "effect_measure": "RD",
+          "effect_value": "0.8 pp",
+          "ci_95": "0.1 to 1.5",
+          "p_value": "",
+          "note": "Collected after an early event prompted systematic ascertainment; denominators reflect those with data"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Sepsis/septic shock (mortality)",
+          "group_a": "38.8%",
+          "group_b": "38.2%",
+          "effect_measure": "Adjusted RD",
+          "effect_value": "1.0 pp",
+          "ci_95": "−4.8 to 6.7",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Sepsis/septic shock (cardiovascular collapse)",
+          "group_a": "23.5%",
+          "group_b": "17.0%",
+          "effect_measure": "RD",
+          "effect_value": "6.4 pp",
+          "ci_95": "2.0 to 10.8",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "APACHE II ≥20 (cardiovascular collapse)",
+          "group_a": "27.9%",
+          "group_b": "20.9%",
+          "effect_measure": "RD",
+          "effect_value": "7.0 pp",
+          "ci_95": "3.0 to 11.1",
+          "p_interaction": ""
+        }
+      ]
+    },
+    "safety": [
+      "Cardiac arrest requiring CPR between induction and hospital discharge: 7.5% ketamine vs 5.3% etomidate (RD 2.1 pp; 95% CI 0.0 to 4.2).",
+      "Ventricular tachycardia between induction and 2 min (post hoc): 1.0% ketamine vs 0.2% etomidate (RD 0.8 pp; 95% CI 0.1 to 1.5)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Site-stratified randomisation with variable block sizes and allocation concealment via sequential opaque envelopes; randomisation occurred after the clinician decided to intubate and to use an induction agent but before administration."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded design; mortality is objective, but the secondary composite includes clinician-driven vasopressor initiation (potentially behaviour-sensitive). Objective blood pressure separation (nadir SBP) supports that the haemodynamic signal was not solely definitional."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "2367 patients randomised; 2365 included in the primary analysis after post-enrolment withdrawals (very low proportion); primary outcome ascertainment was complete for analysed participants."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High adherence (99.2% received induction medication consistent with assignment); dose separation was clinically substantial (median ketamine 1.6 mg/kg [IQR 1.2–1.9] vs etomidate 0.28 mg/kg [IQR 0.23–0.30])."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were similar in key prognostic variables (e.g., median age 61 vs 60 years; median APACHE II 20 vs 20; sepsis/septic shock 37.1% vs 37.4%; vasopressors within 1 hour before induction 22.0% vs 22.9%), supporting successful randomisation."
+        }
+      ],
+      "verdict": "Strong overall: large sample size, robust randomisation with high protocol adherence, and objective primary outcome; the main internal validity caveat is the unblinded nature of haemodynamic co-interventions embedded in the secondary composite."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad adult, non-trauma critically ill population across emergency department and ICU settings, including a high prevalence of sepsis/septic shock and respiratory failure; enrolment under emergency research consent processes mirrors real-world urgency."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Pragmatic co-intervention flexibility and dosing ranges aligned with common practice support translation to similar high-resource ED/ICU environments; generalisability is more limited for trauma, prehospital settings, paediatrics, and healthcare systems where etomidate is unavailable or dosing/RSI bundles differ materially. The trial answers a two-agent question (ketamine vs etomidate) and does not directly inform settings where propofol or midazolam are the dominant induction agents."
+        }
+      ],
+      "verdict": "Good generalisability to adult non-trauma emergency intubations in ED/ICU practice; extrapolation to trauma, prehospital, and markedly different resource contexts should be cautious."
+    },
+    "strengths": [
+      "Large, multicentre pragmatic randomised trial powered for a patient-centred endpoint (28-day in-hospital mortality).",
+      "High treatment adherence (99.2%) with clear physiological separation in haemodynamics.",
+      "Clinically relevant secondary endpoint (peri-intubation cardiovascular collapse) aligned with prior airway trials and implementation priorities."
+    ],
+    "limitations": [
+      "Unblinded design, with potential influence on clinician-triggered components of the cardiovascular collapse composite (vasopressor initiation).",
+      "Exclusion of trauma and situations where clinicians required a specific agent may restrict inference in those high-stakes subgroups.",
+      "No direct measurement of adrenal function/cortisol response; the mechanistic pathway for etomidate-related harm could not be adjudicated.",
+      "Some safety signals (e.g., ventricular tachycardia) were collected after early events prompted additional ascertainment, and should be interpreted as hypothesis-generating."
+    ],
+    "critical_appraisal": {
+      "summary": "A large, well-conducted pragmatic trial with high internal validity for its primary mortality outcome, though the unblinded design introduces potential bias for clinician-driven secondary haemodynamic endpoints.",
+      "strengths": [
+        "Pragmatic, multicentre design with high protocol adherence and complete follow-up for the primary outcome.",
+        "Objective primary outcome (mortality) is robust to the unblinded design.",
+        "Clear physiological separation in haemodynamics supports the secondary endpoint findings."
+      ],
+      "weaknesses": [
+        "Unblinded design may have influenced clinician-triggered vasopressor use, a key component of the secondary composite outcome.",
+        "Exclusion of trauma patients limits generalisability to that population.",
+        "Post hoc safety signals require prospective validation."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In critically ill adults undergoing emergency tracheal intubation, ketamine did not reduce 28-day in-hospital mortality compared with etomidate but increased peri-intubation cardiovascular collapse.",
+    "clinical_bottom_line": {
+      "verdict": "Etomidate is favoured over ketamine for haemodynamic stability in many critically ill intubations, as ketamine offers no mortality benefit and increases peri-intubation cardiovascular collapse.",
+      "applies_to": "Adult non-trauma emergency intubations in ED/ICU settings where both agents are reasonable options.",
+      "does_not_mean": "Ketamine is contraindicated or that etomidate is risk-free; the absolute mortality was high in both groups, and proactive haemodynamic optimisation is essential regardless of agent.",
+      "implementation_caveats": [
+        "If ketamine is used (e.g., etomidate unavailable or contraindicated), anticipate and mitigate hypotension with early vasopressor readiness and careful dose selection.",
+        "Findings do not apply to trauma, prehospital, or paediatric settings."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Reconciling prior randomised evidence with RSI",
+        "notes": "Earlier smaller trials comparing ketamine and etomidate suggested mixed short-term morbidity signals and were not mortality-definitive, leaving persistent uncertainty that RSI was designed to resolve."
+      },
+      {
+        "topic": "Meta-analytic synthesis pre-RSI",
+        "notes": "Recent meta-analyses reached differing conclusions depending on inclusion criteria and analytic frameworks (frequentist vs Bayesian), reflecting small trial sizes, heterogeneity, and outcome definition variability—limitations addressed by RSI’s scale and pragmatic design."
+      },
+      {
+        "topic": "Observational signals and confounding",
+        "notes": "Large observational analyses have associated etomidate use with worse outcomes in some cohorts, but confounding by indication and practice-pattern effects remain plausible; RSI provides randomised evidence that any net mortality disadvantage of etomidate (relative to ketamine) is not large in the studied population."
+      },
+      {
+        "topic": "Composite haemodynamic endpoint interpretation",
+        "notes": "The cardiovascular collapse endpoint includes clinician-triggered vasopressor escalation; in an unblinded trial this can embed practice behaviour. RSI mitigates (but does not eliminate) this concern by also demonstrating objective blood pressure separation (median nadir SBP 86 vs 90 mmHg; median difference −6 mmHg)."
+      },
+      {
+        "topic": "Guideline implications",
+        "notes": "The most recent RSI-specific guideline from the Society of Critical Care Medicine (pre-RSI) recommended either ketamine or etomidate as reasonable options, emphasising individualisation; RSI provides large randomised evidence favouring etomidate for peri-intubation haemodynamic stability without showing a ketamine mortality advantage, and should inform future updates."
+      },
+      {
+        "topic": "Positioning within evolving airway guidance",
+        "notes": "Contemporary Difficult Airway Society guidance (post-RSI publication window) addresses rapid sequence induction and difficult intubation management; RSI’s findings are directly relevant to haemodynamically fragile patients undergoing RSI within these frameworks."
+      },
+      {
+        "topic": "Post-publication commentary emphasis",
+        "notes": "Expert commentary has highlighted that induction-agent choice should prioritise outcomes that matter (mortality and major complications) while acknowledging that peri-intubation haemodynamics are a near-term, modifiable mediator; RSI meaningfully shifts the evidentiary balance towards etomidate in many critically ill intubations."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Whether the post hoc safety signal for ventricular tachycardia with ketamine is reproducible.",
+      "The role of ketamine vs etomidate in trauma and prehospital intubations.",
+      "The impact of induction agent choice in settings where propofol or midazolam are the dominant agents."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2365",
+        "28-day mortality: 29.6% ketamine vs 30.9% etomidate (RD −0.8 pp; P=0.65)",
+        "Cardiovascular collapse: 22.1% ketamine vs 17.0% etomidate (RD 5.1 pp)",
+        "Nadir SBP: 86 mmHg ketamine vs 90 mmHg etomidate (median difference −6 mmHg)"
+      ],
+      "one_line_takeaway": "For emergency intubation in critically ill adults, use etomidate over ketamine when both are options, as ketamine does not improve survival and causes more peri-intubation hypotension."
+    }
+  },
+  "_source_id": "RSI",
+  "_source_system": "Airway"
+}

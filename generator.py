@@ -32,7 +32,7 @@ ERRORS:
   maintainer.py reads these to prioritize repairs.
 
 EXAMPLES:
-  python generator.py                                   # watch mode (default)
+  python generator.py                                   # watch mode, openrouter (default)
   python generator.py --mode summary                    # only summaries, no pearls
   python generator.py --mode pearls                     # only pearls for pending files
   python generator.py --mode summary_pearls             # both, sequential
@@ -57,6 +57,7 @@ from acumen_core.config import (
     BASE_INPUT_DIR, SUB_DIRS, OUTPUT_DIR, QUARANTINE_BASE,
     EXCEL_TRACKER_FILE, JSON_TRACKER_FILE, PEARLS_JSON, PEARLS_TRACKER,
     PEARLS_JSON_FIELDS, PROJECT_DIR,
+    OPENROUTER_API_KEY, OPENROUTER_MODEL, OPENROUTER_BASE_URL,
     get_error_list_path,
 )
 from acumen_core.vocabulary import (
@@ -534,7 +535,7 @@ def run_summary_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, 
     print(f"{'#'*60}")
     print(f"  Pearls: DISABLED for this run")
     print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
-    print(f"  LLM: {llm_choice}{f' [{custom_model}]' if llm_choice == 'other' else ''}")
+    print(f"  LLM: {llm_choice}{f' [{custom_model}]' if llm_choice in ('openrouter', 'other') else ''}")
     if max_files > 0:
         print(f"  Max files: {max_files}")
     print()
@@ -707,7 +708,7 @@ def run_summary_pearls_mode(ocr_enabled=False, max_files=0, verbose=False, once=
     print(f"  hack.CCM Generator - SUMMARY+PEARLS MODE (both passes)")
     print(f"{'#'*60}")
     print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
-    print(f"  LLM: {llm_choice}{f' [{custom_model}]' if llm_choice == 'other' else ''}")
+    print(f"  LLM: {llm_choice}{f' [{custom_model}]' if llm_choice in ('openrouter', 'other') else ''}")
     if max_files > 0:
         print(f"  Max files (Pass 1): {max_files}")
     print()
@@ -836,7 +837,7 @@ def run_watch_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, dr
     print(f"  Watching: {SUB_DIRS}")
     print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
     print(f"  Pearls: {'enabled' if PEARLS_ENABLED else 'disabled'}")
-    print(f"  LLM: {llm_choice}{f' [{custom_model}]' if llm_choice == 'other' else ''}")
+    print(f"  LLM: {llm_choice}{f' [{custom_model}]' if llm_choice in ('openrouter', 'other') else ''}")
     if max_files > 0:
         print(f"  Max files: {max_files}")
     print(f"  Loop: {'once' if once else 'continuous'}")
@@ -957,9 +958,10 @@ def status_report():
         TOGETHER_API_KEY, DEEPSEEK_API_KEY, PRIMARY_GEMINI_API_KEY,
     )
     print(f"\n  API KEY STATUS:")
+    print(f"    OpenRouter: {'OK' if OPENROUTER_API_KEY else 'MISSING (default --llm)'}")
     print(f"    Together:  {'OK' if TOGETHER_API_KEY else 'MISSING'}")
     print(f"    Gemini:    {'OK' if PRIMARY_GEMINI_API_KEY else 'MISSING'}")
-    print(f"    DeepSeek:  {'OK' if DEEPSEEK_API_KEY else 'missing (optional)'}")
+    print(f"    DeepSeek:  {'OK' if DEEPSEEK_API_KEY else 'MISSING (optional)'}")
 
     # Recent log entries
     if os.path.exists(GENERATOR_LOG_FILE):
@@ -1061,13 +1063,13 @@ MODES:
   --mode summary_pearls  Run Pass 1 on pending PDFs, then Pass 2 on all missing
 
 LLM PROVIDER (for Pass 1 extraction):
-  --llm together         Use Together AI (default, requires TOGETHER_API_KEY)
+  --llm openrouter       Use OpenRouter (default, reads OPENROUTER_API_KEY + OPENROUTER_MODEL from .env)
+  --llm together         Use Together AI (requires TOGETHER_API_KEY)
   --llm gemini           Use Google Gemini (requires PRIMARY_GEMINI_API_KEY)
-  --llm openrouter       Use OpenRouter (requires --api-key and --model)
-  --llm other            Custom OpenAI-compatible API (also set --api-key and --model)
+  --llm other            Custom OpenAI-compatible API (provide --api-key and --model)
 
 EXAMPLES:
-  python generator.py                                   # watch mode (default)
+  python generator.py                                   # openrouter, deepseek-ai/DeepSeek-V4-Pro (default)
   python generator.py --mode summary                    # only summaries
   python generator.py --mode pearls                     # only pearls for pending files
   python generator.py --mode summary_pearls             # both sequential
@@ -1076,9 +1078,9 @@ EXAMPLES:
   python generator.py --status                          # quick dashboard
   python generator.py --reprocess input_pdfs/articles/paper.pdf
   python generator.py --extract-pearls output_files/Cardiology/Review/paper.json
-  python generator.py --llm gemini                       # use Gemini for extraction
-  python generator.py --llm openrouter --api-key sk-xxx --model anthropic/claude-3.5-sonnet
-  python generator.py --llm other --api-key sk-xxx --model my-model  # custom API
+  python generator.py --llm together                     # use Together AI instead
+  python generator.py --llm gemini                       # use Gemini instead
+  python generator.py --llm openrouter --model anthropic/claude-3.5-sonnet  # override model
         """,
     )
     parser.add_argument("--mode", choices=["watch", "summary", "pearls", "summary_pearls"],
@@ -1092,12 +1094,12 @@ EXAMPLES:
     parser.add_argument("--reprocess", type=str, default=None, help="Force re-process a specific PDF")
     parser.add_argument("--extract-pearls", type=str, default=None,
                         help="Run Pass 2 only on one specific existing JSON file")
-    parser.add_argument("--llm", choices=["together", "gemini", "openrouter", "other"], default="together",
-                        help="LLM provider for Pass 1 extraction (default: together)")
+    parser.add_argument("--llm", choices=["together", "gemini", "openrouter", "other"], default="openrouter",
+                        help="LLM provider for Pass 1 extraction (default: openrouter)")
     parser.add_argument("--api-key", type=str, default="",
-                        help="API key for --llm openrouter/other (custom provider)")
-    parser.add_argument("--model", type=str, default="",
-                        help="Model name for --llm openrouter/other (custom provider)")
+                        help="API key for --llm openrouter/other (falls back to OPENROUTER_API_KEY from .env)")
+    parser.add_argument("--model", type=str, default=OPENROUTER_MODEL,
+                        help=f"Model name for --llm openrouter/other (default: {OPENROUTER_MODEL})")
     args = parser.parse_args()
 
     # --- Status dashboard ---
@@ -1114,11 +1116,17 @@ EXAMPLES:
         extract_pearls_from_one_json(args.extract_pearls)
         return
 
-    # --- Validate --llm openrouter/other requires --api-key and --model ---
-    if args.llm in ("openrouter", "other") and (not args.api_key or not args.model):
-        print("  [X] --llm openrouter/other requires both --api-key and --model")
-        print("  Example: --llm openrouter --api-key sk-xxx --model anthropic/claude-3.5-sonnet")
-        sys.exit(1)
+    # --- Validate --llm openrouter/other: use config key if no --api-key, require model ---
+    if args.llm in ("openrouter", "other"):
+        api_key = args.api_key or OPENROUTER_API_KEY
+        if not api_key:
+            print("  [X] --llm openrouter/other requires an API key. Provide --api-key or set OPENROUTER_API_KEY in .env")
+            sys.exit(1)
+        if not args.model:
+            print(f"  [X] --llm openrouter/other requires a model. Provide --model or set OPENROUTER_MODEL in .env / config.py")
+            sys.exit(1)
+        # Patch resolved key back for downstream use
+        args.api_key = api_key
 
     # --- Re-process single PDF ---
     if args.reprocess:

@@ -1,0 +1,331 @@
+{
+  "id": "BOUGIE",
+  "trial_name": "BOUGIE — Bougie vs Stylet for First-Attempt Intubation in Critically Ill Adults (2021)",
+  "specialty": "Critical Care",
+  "subtopic": "Airway Emergencies",
+  "year": 2021,
+  "journal": "JAMA",
+  "citation": "Driver BE, Semler MW, Self WH, et al. Effect of use of a bougie vs endotracheal tube with stylet on successful intubation on the first attempt among critically ill patients undergoing tracheal intubation: a randomized clinical trial. JAMA. 2021;326(24):2488-2497.",
+  "doi": "https://doi.org/10.1001/jama.2021.22002",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, parallel-group, unblinded, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1102,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In a broad ED/ICU population, a bougie-first strategy did not improve first-attempt intubation success compared with a styleted tube (80.4% vs 83.0%).",
+  "pico": {
+    "population": "Adults (≥18 years) undergoing emergency tracheal intubation in the ED or ICU with a planned direct or non-hyperangulated video laryngoscope",
+    "intervention": "Bougie-first strategy for the first attempt",
+    "comparison": "Stylet-first strategy for the first attempt",
+    "outcome": "Successful tracheal intubation on the first attempt"
+  },
+  "keywords": [
+    "bougie",
+    "stylet",
+    "tracheal intubation",
+    "first-pass success",
+    "airway management",
+    "critical care"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Emergency tracheal intubation in critically ill adults is high risk. First-pass success is targeted because repeated attempts are associated with escalating complications. Bougie-assisted intubation is widely used as a rescue adjunct and was increasingly adopted as a default first-pass strategy after a prior single-centre ED trial suggested improved first-pass success.",
+      "knowledge_gap": "It was unknown if a bougie-first strategy would improve first-pass success in a broad, multicentre critical care population (ED and ICU).",
+      "hypothesis": "Initial use of a bougie (vs a styleted endotracheal tube) would increase successful tracheal intubation on the first attempt."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, parallel-group, unblinded RCT; 1:1 allocation; stratified by site and location (ED vs ICU).",
+      "setting": "7 EDs and 8 ICUs in the US.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) undergoing tracheal intubation in participating EDs/ICUs.",
+          "Operator planned to use direct laryngoscopy or a non-hyperangulated video laryngoscope blade.",
+          "Operator clinically willing to use either strategy for the first attempt."
+        ],
+        "exclusion": [
+          "Prisoner status.",
+          "Known pregnancy.",
+          "Prior enrolment.",
+          "Intubation already attempted.",
+          "Planned hyperangulated blade.",
+          "Clinician judged that trial procedures would cause unacceptable delay (e.g., immediate 'crash' intubation).",
+          "Clinician judged that only one device strategy was appropriate."
+        ]
+      },
+      "intervention": "Bougie-first strategy for the first attempt: bougie inserted under laryngoscopy, then endotracheal tube advanced over bougie into the trachea. Subsequent attempts and rescue devices were at clinician discretion.",
+      "comparison": "Stylet-first strategy for the first attempt: endotracheal tube preloaded with a stylet and advanced directly under laryngoscopy. Subsequent attempts and rescue devices were at clinician discretion (including crossover to bougie if desired).",
+      "blinding": "Unblinded. Outcomes were defined a priori and assessed by observer report when available and operator report when not available.",
+      "sample_size_power": "Sample size of 1100 planned to detect a 6% absolute increase in first-attempt success (from 82% to 88%) with 90% power at a two-sided 5% alpha, allowing ~3% missing outcome data.",
+      "primary_outcome": "Successful tracheal intubation on the first attempt.",
+      "secondary_outcomes": [
+        "Severe hypoxaemia (SpO2<80%)",
+        "Time from induction to intubation",
+        "Cardiovascular collapse",
+        "Ventilator-free days to day 28",
+        "Death prior to day 28",
+        "In-hospital mortality"
+      ],
+      "follow_up": "Primary outcome assessed during the intubation procedure; clinical outcomes reported through day 28 (censored at hospital discharge) and to hospital discharge for in-hospital outcomes."
+    },
+    "results": {
+      "headline_bullets": [
+        "Bougie-first did not increase first-attempt success (80.4% vs 83.0%; P=0.27).",
+        "Induction-to-intubation time was longer with bougie (median 124 vs 112 seconds).",
+        "Exploratory outcomes showed lower cardiovascular collapse and lower day-28 mortality with bougie, but these were hypothesis-generating."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Successful intubation on first attempt (primary)",
+          "group_a": "447/556 (80.4%)",
+          "group_b": "453/546 (83.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-2.6 percentage points",
+          "ci_95": "-7.3 to 2.2",
+          "p_value": "0.27",
+          "note": "Pragmatic, unadjusted primary analysis."
+        },
+        {
+          "outcome": "Primary outcome (adjusted analysis)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.88",
+          "ci_95": "0.64 to 1.22",
+          "p_value": "Not reported",
+          "note": "Prespecified regression adjustment (supportive)."
+        },
+        {
+          "outcome": "Sensitivity analysis: first attempt defined by single laryngoscope insertion",
+          "group_a": "487/556 (87.6%)",
+          "group_b": "484/546 (88.6%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-1.1 percentage points",
+          "ci_95": "-5.1 to 2.9",
+          "p_value": "Not reported",
+          "note": "Addresses 'attempt definition' critique."
+        },
+        {
+          "outcome": "Severe hypoxaemia (SpO2<80%)",
+          "group_a": "58/528 (11.0%)",
+          "group_b": "46/522 (8.8%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "2.2 percentage points",
+          "ci_95": "-1.6 to 6.0",
+          "p_value": "Not reported",
+          "note": "Key secondary safety outcome (exploratory inference; no multiplicity adjustment)."
+        },
+        {
+          "outcome": "Time from induction to intubation (seconds; median [IQR])",
+          "group_a": "124 (81 to 187)",
+          "group_b": "112 (74 to 177)",
+          "effect_measure": "Difference in medians",
+          "effect_value": "12 seconds",
+          "ci_95": "4 to 20",
+          "p_value": "Not reported",
+          "note": "Key secondary process outcome."
+        },
+        {
+          "outcome": "Cardiovascular collapse (exploratory)",
+          "group_a": "68/556 (12.2%)",
+          "group_b": "91/546 (16.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-4.4 percentage points",
+          "ci_95": "-8.8 to -0.1",
+          "p_value": "Not reported",
+          "note": "Composite definition per trial protocol; interpret as hypothesis-generating."
+        },
+        {
+          "outcome": "Cardiac arrest after induction (exploratory harm)",
+          "group_a": "9/556 (1.6%)",
+          "group_b": "14/546 (2.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Event counts only reported in main tables."
+        },
+        {
+          "outcome": "Oesophageal intubation (procedural harm)",
+          "group_a": "4/544 (0.7%)",
+          "group_b": "5/540 (0.9%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Very low event rates; trial not powered for rare harms."
+        },
+        {
+          "outcome": "Airway injury (procedural harm)",
+          "group_a": "4/544 (0.7%)",
+          "group_b": "3/540 (0.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Includes injury to airway structures noted during procedure."
+        },
+        {
+          "outcome": "Composite airway complications (procedural harm)",
+          "group_a": "10/544 (1.8%)",
+          "group_b": "10/540 (1.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Composite of aspiration, oesophageal intubation, airway injury."
+        },
+        {
+          "outcome": "Ventilator-free days to day 28 (median [IQR])",
+          "group_a": "0 (0 to 25)",
+          "group_b": "0 (0 to 23)",
+          "effect_measure": "Difference in medians",
+          "effect_value": "0 days",
+          "ci_95": "-1 to 1",
+          "p_value": "Not reported",
+          "note": "Exploratory clinical outcome; interpret cautiously."
+        },
+        {
+          "outcome": "Death prior to day 28 (censored at hospital discharge)",
+          "group_a": "152/556 (27.3%)",
+          "group_b": "184/546 (33.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-6.4 percentage points",
+          "ci_95": "-12.0 to -0.8",
+          "p_value": "Not reported",
+          "note": "Exploratory; not adjusted for multiplicity."
+        },
+        {
+          "outcome": "In-hospital mortality",
+          "group_a": "141/556 (25.4%)",
+          "group_b": "163/546 (29.9%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-4.5 percentage points",
+          "ci_95": "-9.8 to 0.8",
+          "p_value": "Not reported",
+          "note": "Exploratory."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Severe hypoxaemia (SpO2<80%): 11.0% bougie vs 8.8% stylet (risk difference 2.2 percentage points; 95% CI -1.6 to 6.0).",
+      "Cardiovascular collapse: 12.2% bougie vs 16.7% stylet (risk difference -4.4 percentage points; 95% CI -8.8 to -0.1).",
+      "Cardiac arrest after induction: 1.6% bougie vs 2.6% stylet.",
+      "Oesophageal intubation: 0.7% bougie vs 0.9% stylet.",
+      "Airway injury: 0.7% bougie vs 0.6% stylet.",
+      "Composite airway complications: 1.8% bougie vs 1.8% stylet."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "1:1 allocation by sequential, opaque envelopes; stratified by site and clinical location (ED vs ICU); variable block sizes; randomisation occurred after laryngoscope selection."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded operators; 'number of attempts' and procedural complications may be susceptible to reporting bias; outcomes were protocol-defined, and a sensitivity analysis addressed an alternative 'attempt' definition."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1106 randomised; 4 excluded post-randomisation after discovery of prisoner status; 1102 included in the primary analysis; primary outcome available for all analysed participants."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High separation of assigned strategy: bougie used on first attempt in 98.4% of bougie group vs 2.3% in stylet group."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well balanced (median age 58 years in both; women 41.4% vs 41.2%; ED location 62.9% vs 61.4%; medical ICU 30.4% vs 31.3%)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears strong to moderate: randomisation and group balance were robust with excellent protocol separation, but pragmatic unblinding and potential variability in attempt/complication ascertainment introduce residual risk of measurement and performance bias."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical adult ED/ICU emergency intubations in a US multicentre network; high proportion of video laryngoscopy use reflects contemporary practice in well-resourced centres."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings likely generalise best to ED/ICU services using direct or non-hyperangulated video laryngoscopy where operators have baseline competence with both bougie and stylet strategies. External validity may be reduced where staffing, training, and laryngoscopy equipment differ materially, or in crash intubations and hyperangulated video laryngoscopy workflows."
+        }
+      ],
+      "verdict": "Generalisability is moderate: applicable to many contemporary ED/ICU airway contexts with equipoise and non-hyperangulated laryngoscopy, but less applicable to crash intubations, hyperangulated video laryngoscopy workflows, or settings with markedly different operator experience and baseline success rates."
+    },
+    "strengths": [
+      "Multicentre pragmatic design across ED and ICU.",
+      "Large sample size with high protocol adherence.",
+      "Clinically meaningful primary endpoint.",
+      "Prespecified analysis plan.",
+      "Sensitivity analysis addressing attempt definition."
+    ],
+    "limitations": [
+      "Unblinded operators and partial reliance on operator-report for procedural outcomes.",
+      "Exclusion of hyperangulated blades and crash intubations limits applicability.",
+      "Not powered for rare harms or for clinical outcomes such as mortality.",
+      "Secondary/exploratory outcomes not adjusted for multiplicity."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic RCT with robust internal validity that convincingly demonstrates no benefit of a routine bougie-first strategy on first-pass success in a broad critical care population, though unblinding and exploratory outcome analyses warrant cautious interpretation.",
+      "strengths": [
+        "Multicentre, pragmatic design with high protocol adherence.",
+        "Prespecified analysis plan with a sensitivity analysis for attempt definition."
+      ],
+      "weaknesses": [
+        "Unblinded design introduces potential for bias in outcome reporting.",
+        "Exploratory clinical outcomes are not adjusted for multiplicity and are hypothesis-generating only."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Among critically ill adults undergoing tracheal intubation, use of a bougie did not result in a significantly higher incidence of successful intubation on the first attempt compared with use of an endotracheal tube with stylet.",
+    "clinical_bottom_line": {
+      "verdict": "Routine bougie-first is not supported for all-comers in ED/ICU emergency intubation. It does not improve first-pass success and may modestly prolong time to intubation.",
+      "applies_to": "Adults undergoing emergency intubation in ED/ICU with a non-hyperangulated laryngoscope, where operators are competent with both techniques.",
+      "does_not_mean": "Bougies are ineffective or should be abandoned. They remain a valuable rescue device and may be preferred in specific anatomical scenarios.",
+      "implementation_caveats": [
+        "Consider the modestly longer apnoea time (+12 seconds) and potential for increased hypoxaemia in patients with severe respiratory failure.",
+        "The exploratory mortality signal is hypothesis-generating and should not drive a change in practice without further evidence."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Discordance with prior RCT evidence",
+        "notes": "An earlier single-centre ED RCT in 'difficult airway' emergency intubations reported improved first-pass success with bougie vs stylet, whereas BOUGIE did not. Plausible drivers include different case mix, baseline success rates, and operator workflow."
+      },
+      {
+        "topic": "Attempt definition and procedural mechanics",
+        "notes": "Bougie-assisted intubation is a two-step manoeuvre, raising concern that 'first attempt' definitions could differentially penalise bougie workflows. The trial's sensitivity analysis using 'single laryngoscope insertion' showed similarly null results, mitigating but not eliminating this critique."
+      },
+      {
+        "topic": "Later meta-analytic synthesis",
+        "notes": "A subsequent meta-analysis reported higher first-attempt success with bougie use overall (RR 1.11; 95% CI 1.01 to 1.22), but with heterogeneity across settings. BOUGIE materially influences the pooled estimate and emphasises that benefit is not uniform."
+      },
+      {
+        "topic": "Heterogeneity of treatment effect",
+        "notes": "A post hoc machine-learning reanalysis of BOUGIE suggested clinically meaningful heterogeneity, underscoring the need for better phenotyping of 'anatomically' vs 'physiologically' difficult intubation."
+      },
+      {
+        "topic": "Where guidelines land",
+        "notes": "ICU intubation guidance historically positions bougie as an adjunct/rescue tool. BOUGIE supports a more selective, context-dependent approach rather than a universal mandate."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is there a subgroup of patients (e.g., those with specific anatomical features) who benefit from a bougie-first strategy?",
+      "What is the mechanism for the exploratory signal of lower cardiovascular collapse and mortality with bougie use?",
+      "How do these results apply to settings with lower baseline first-pass success rates or different operator training?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1102",
+        "First-pass success: 80.4% bougie vs 83.0% stylet (P=0.27)",
+        "Induction-to-intubation time: +12 seconds with bougie"
+      ],
+      "one_line_takeaway": "Routine bougie-first does not improve first-pass success in a broad ED/ICU population and may prolong apnoea time; reserve it as a selective or rescue strategy."
+    }
+  },
+  "_source_id": "BOUGIE",
+  "_source_system": "Airway"
+}

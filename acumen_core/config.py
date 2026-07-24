@@ -125,9 +125,42 @@ FLASHCARDS_DIR = os.path.join(OUTPUT_DIR, "flashcards")
 # =====================================================================
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "tencent/hy3:free")
+OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "deepseek-ai/DeepSeek-V4-Pro")
 TEMPERATURE_FLASHCARDS = 0.2
 MAX_TOKENS_FLASHCARDS = 8192
+
+# =====================================================================
+# TRIAL CONDENSATION
+# =====================================================================
+CONDENSED_TRIALS_DIR = os.path.join(PROJECT_DIR, "output_files", "trials_database_condensed")
+CONDENSATION_PROGRESS_FILE = os.path.join(PROJECT_DIR, "trial_condensation_progress.json")
+CONDENSATION_PROMPT_FILE = os.path.join(PROJECT_DIR, "trial_condensation_prompt.md")
+TRIALS_DATABASE_DIR = os.path.join(PROJECT_DIR, "trials_database")
+TEMPERATURE_CONDENSATION = 0.1
+MAX_TOKENS_CONDENSATION = 16384
+
+SYSTEM_TO_SPECIALTY = {
+    "Neuro": "Neurology",
+    "Circulatory": "Cardiology",
+    "Resuscitation": "Multisystem",
+    "Airway": "Pulmonology",
+    "Respiratory": "Pulmonology",
+    "Gastrointestinal": "Gastroenterology",
+    "Nutrition": "Nutrition",
+    "Liver": "Hepatology",
+    "Renal": "Nephrology",
+    "Haematology": "Hematology",
+    "Sepsis": "Sepsis",
+    "Trauma": "Trauma",
+    "Endocrine": "Endocrinology",
+    "Miscellaneous": "Other",
+}
+
+# Model aliases for condense_trials.py --model flag
+CONDENSATION_MODELS = {
+    "deepseek": "deepseek-ai/DeepSeek-V4-Pro",
+    "tencent": "tencent/hy3:free",
+}
 
 PEARLS_JSON_FIELDS = [
     "id", "timestamp", "source_paper", "doi",

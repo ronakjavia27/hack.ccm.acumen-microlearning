@@ -1,0 +1,310 @@
+{
+  "id": "65",
+  "trial_name": "65 Trial — Permissive Hypotension vs Usual Care in Older ICU Patients (2020)",
+  "specialty": "Critical Care",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 2020,
+  "journal": "JAMA",
+  "citation": "Lamontagne F, Richards-Belle A, Thomas K, Harrison DA, Sadique MZ, Grieve RD, et al; 65 Trial Investigators. Effect of reduced exposure to vasopressors on 90-day mortality in older critically ill patients with vasodilatory hypotension: a randomized clinical trial. JAMA. 2020;323(10):938-949.",
+  "doi": "https://doi.org/10.1001/jama.2020.0930",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2600,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In older ICU patients with vasodilatory hypotension, a permissive hypotension strategy (MAP 60-65 mmHg) reduced vasopressor exposure but did not significantly reduce 90-day mortality compared to usual care.",
+  "pico": {
+    "population": "Adults ≥65 years in UK ICUs receiving vasopressors for vasodilatory hypotension, randomized within 6 hours of initiation.",
+    "intervention": "Permissive hypotension strategy: target MAP 60–65 mm Hg while receiving vasopressors, with active down-titration.",
+    "comparison": "Usual care: MAP management and vasopressor titration at clinician discretion.",
+    "outcome": "All-cause mortality at 90 days."
+  },
+  "keywords": [
+    "vasopressors",
+    "permissive hypotension",
+    "MAP target",
+    "vasodilatory shock",
+    "sepsis",
+    "elderly",
+    "hemodynamic management"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Vasopressors are standard for vasodilatory hypotension to prevent organ injury, but carry risks from excess vasoconstriction and metabolic effects. Guidelines recommend an initial MAP target of 65 mm Hg in septic shock, but practice often results in higher achieved MAPs.",
+      "knowledge_gap": "It was unknown if a strategy of actively reducing vasopressor exposure by targeting a lower MAP range (60-65 mmHg) could improve outcomes in older patients, who have high baseline mortality and vasopressor exposure.",
+      "hypothesis": "A permissive hypotension strategy (target MAP 60–65 mm Hg) would reduce 90-day all-cause mortality compared with usual care."
+    },
+    "methods": {
+      "design": "Pragmatic, multicenter, parallel-group, open-label, randomized clinical trial.",
+      "setting": "65 UK adult general ICUs.",
+      "population": {
+        "inclusion": [
+          "Age ≥65 years",
+          "Receiving a vasopressor infusion for vasodilatory hypotension",
+          "Randomized within 6 hours of starting vasopressors",
+          "Clinician intent that vasopressors would be required for at least a further 6 hours",
+          "Adequate fluid resuscitation completed or ongoing",
+          "Not previously enrolled"
+        ],
+        "exclusion": [
+          "Vasopressors used solely for hemorrhage, acute ventricular failure, or post-cardiopulmonary bypass vasoplegia",
+          "Ongoing treatment for brain injury or spinal cord injury",
+          "Death deemed imminent",
+          "Prior enrolment in the trial"
+        ]
+      },
+      "intervention": "Permissive hypotension strategy: while receiving vasopressors, target MAP 60–65 mm Hg. Vasopressor infusions were reduced when MAP exceeded the upper range and increased if MAP fell below the lower range. The operational focus was to reduce exposure to vasopressors (dose and/or duration).",
+      "comparison": "Usual care: MAP management and vasopressor titration at clinician discretion, with no mandated MAP target or titration algorithm.",
+      "blinding": "Unblinded (open-label). Mortality outcomes were objective and derived from routine data linkage.",
+      "sample_size_power": "Final planned sample size 2600 participants; powered to detect a 6% absolute reduction in 90-day mortality (from 35% to 29%) with 90% power at a 5% 2-sided significance level. One interim analysis was planned.",
+      "primary_outcome": "All-cause mortality at 90 days.",
+      "secondary_outcomes": [
+        "Mortality at ICU discharge",
+        "Mortality at hospital discharge",
+        "Duration of survival to longest available follow-up",
+        "MAP while receiving vasopressors",
+        "Total duration of vasopressor infusion",
+        "Total norepinephrine-equivalent dose",
+        "Receipt of advanced respiratory support",
+        "Receipt of renal support",
+        "Serious adverse events",
+        "Patient-reported outcomes (EQ-5D-5L, IQCODE) at 90 days and 1 year"
+      ],
+      "follow_up": "Primary endpoint at 90 days; additional survival follow-up via routine data; patient-reported outcomes at 90 days and (in a subset) at 1 year."
+    },
+    "results": {
+      "headline_bullets": [
+        "90-day mortality was 41.0% vs 43.8% (absolute difference -2.85%, P=0.15), not statistically significant in the primary unadjusted analysis.",
+        "The intervention significantly reduced vasopressor exposure: median duration was 5 hours shorter and median norepinephrine-equivalent dose was 8.7 mg lower.",
+        "A prespecified subgroup of patients with chronic hypertension showed a larger apparent benefit (adjusted OR 0.67, interaction P=0.047)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at 90 days (primary)",
+          "group_a": "500/1221 (41.0%)",
+          "group_b": "544/1242 (43.8%)",
+          "effect_measure": "Absolute risk difference",
+          "effect_value": "-2.85%",
+          "ci_95": "-6.75 to 1.05",
+          "p_value": "0.15",
+          "note": "Unadjusted RR 0.93 (0.85–1.03); Adjusted OR 0.82 (0.68–0.98)"
+        },
+        {
+          "outcome": "Mortality at discharge from ICU",
+          "group_a": "362/1212 (29.9%)",
+          "group_b": "380/1237 (30.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-0.85%",
+          "ci_95": "-4.49 to 2.79",
+          "p_value": "0.66",
+          "note": "Adjusted OR 0.90 (0.73–1.10)"
+        },
+        {
+          "outcome": "Mortality at discharge from acute hospital",
+          "group_a": "484/1232 (39.3%)",
+          "group_b": "519/1250 (41.5%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-2.23%",
+          "ci_95": "-6.09 to 1.63",
+          "p_value": "0.27",
+          "note": "Adjusted OR 0.86 (0.71–1.03)"
+        },
+        {
+          "outcome": "Duration of survival to longest available follow-up",
+          "group_a": "Median follow-up 14.3 months",
+          "group_b": "Median follow-up 14.2 months",
+          "effect_measure": "Adjusted HR",
+          "effect_value": "0.94",
+          "ci_95": "0.84 to 1.05",
+          "p_value": "",
+          "note": "Unadjusted HR 0.96 (0.86–1.07)"
+        },
+        {
+          "outcome": "MAP while receiving vasopressors (first episode, median)",
+          "group_a": "66.7 (64.5–69.8) mm Hg",
+          "group_b": "72.6 (69.4–76.5) mm Hg",
+          "effect_measure": "Median difference",
+          "effect_value": "-5.9 mm Hg",
+          "ci_95": "-6.4 to -5.5",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Total duration of vasopressor infusion after randomization",
+          "group_a": "33.0 (19.0–55.0) hours",
+          "group_b": "38.0 (22.0–63.0) hours",
+          "effect_measure": "Median difference",
+          "effect_value": "-5.0 hours",
+          "ci_95": "-7.8 to -2.2",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Total norepinephrine-equivalent dose after randomization",
+          "group_a": "17.7 (6.0–47.6) mg",
+          "group_b": "26.4 (8.6–71.8) mg",
+          "effect_measure": "Median difference",
+          "effect_value": "-8.7 mg",
+          "ci_95": "-12.8 to -4.6",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Receipt of advanced respiratory support",
+          "group_a": "708/1218 (58.1%)",
+          "group_b": "691/1239 (55.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "2.3%",
+          "ci_95": "-1.6 to 6.2",
+          "p_value": "0.26",
+          "note": "Adjusted difference 3.2% (-0.5 to 6.9)"
+        },
+        {
+          "outcome": "Receipt of renal support",
+          "group_a": "303/1222 (24.8%)",
+          "group_b": "306/1241 (24.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.1%",
+          "ci_95": "-3.3 to 3.6",
+          "p_value": "0.94",
+          "note": "Adjusted difference 0.3% (-2.8 to 3.5)"
+        },
+        {
+          "outcome": "Any serious adverse event (to ICU discharge)",
+          "group_a": "79/1283 (6.2%)",
+          "group_b": "75/1300 (5.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.4%",
+          "ci_95": "-1.6 to 2.4",
+          "p_value": "0.69",
+          "note": "Most common SAE: severe acute renal failure 41 (3.2%) vs 33 (2.5%)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Chronic hypertension",
+          "group_a": "214/560 (38.2%)",
+          "group_b": "253/571 (44.3%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.67",
+          "ci_95": "0.51–0.88",
+          "p_interaction": "0.047"
+        }
+      ]
+    },
+    "safety": [
+      "No significant difference in any serious adverse event (6.2% vs 5.8%, P=0.69).",
+      "Severe acute renal failure occurred in 3.2% vs 2.5%.",
+      "Supraventricular arrhythmia occurred in 0.9% vs 1.0%."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with allocation concealment; large sample size and multicentre design reduce selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design. Potential for clinician behaviour changes, though mortality is an objective endpoint."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT analysis: 15 of 2600 refused data use, 1 lost to follow-up. Primary outcome analysed in 2463 patients. Nonadherence was higher in the intervention arm (11.3% vs 4.4%)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "No formal crossover. Nonadherence was the main source of contamination, likely biasing results toward the null."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly matched, but a prognostically relevant imbalance in pre-admission dependency was noted (34.4% vs 30.9%)."
+        }
+      ],
+      "verdict": "Moderate: strong randomisation and objective mortality follow-up, but open-label delivery, consent-related exclusions, modest separation from an active comparator, and a clinically relevant baseline imbalance increase uncertainty."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Older (≥65) critically ill adults in general UK ICUs with a high prevalence of sepsis. Excluded patients with brain/spinal cord injury or specific cardiogenic/haemorrhagic shock."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to high-resource ICUs with invasive BP monitoring. Generalisability may be limited in settings with fewer staff or less frequent BP measurement."
+        }
+      ],
+      "verdict": "Good for older vasodilatory shock patients in comparable ICU systems; caution is warranted when extrapolating to patients with explicit higher-perfusion-pressure requirements or resource-limited environments."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre RCT in a high-risk group.",
+      "Early randomisation after vasopressor initiation.",
+      "Clear, actionable intervention.",
+      "Near-complete mortality follow-up.",
+      "Clinically meaningful separation in vasopressor exposure metrics."
+    ],
+    "limitations": [
+      "Open-label design.",
+      "Modified intention-to-treat analysis set due to post-randomisation data permission.",
+      "Modest absolute MAP separation vs usual care.",
+      "Higher nonadherence in the intervention arm.",
+      "Risk of overinterpretation of adjusted and subgroup findings given a non-significant unadjusted primary analysis."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic trial with a neutral primary outcome, where the main effect was a reduction in vasopressor exposure without a clear mortality benefit, though adjusted and subgroup analyses suggest potential benefit in specific populations.",
+      "strengths": [
+        "Pragmatic design enhances real-world applicability.",
+        "Objective primary outcome with near-complete follow-up.",
+        "Clear separation in the process-of-care measure (vasopressor exposure)."
+      ],
+      "weaknesses": [
+        "Open-label design introduces potential for performance bias.",
+        "The primary unadjusted analysis was not statistically significant, making secondary and subgroup analyses hypothesis-generating.",
+        "A baseline imbalance in pre-admission dependency may confound results."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "A permissive hypotension strategy reduced vasopressor exposure but did not result in a statistically significant reduction in 90-day mortality in the primary analysis.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not mandate a universal change to lower MAP targets for all older patients but supports a strategy of avoiding MAP overshoot and reducing unnecessary vasopressor exposure when clinically appropriate.",
+      "applies_to": "Older (≥65 years) ICU patients with vasodilatory hypotension, particularly in settings where active down-titration of vasopressors is feasible.",
+      "does_not_mean": "That targeting a MAP of 60-65 mmHg is proven to save lives. The primary mortality outcome was neutral.",
+      "implementation_caveats": [
+        "Requires a cultural shift towards active down-titration of vasopressors.",
+        "The benefit may be greater in patients with chronic hypertension, but this is not definitive.",
+        "Clinicians must still assess individual perfusion adequacy beyond MAP alone."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Primary (unadjusted) vs adjusted inference",
+        "notes": "The prespecified unadjusted primary analysis was non-significant (P=0.15), while adjusted modelling was significant (OR 0.82, 95% CI 0.68–0.98), prompting debate on which result should guide practice."
+      },
+      {
+        "topic": "Usual care as an active comparator",
+        "notes": "Editorial commentary highlighted that 'usual care' often leads to MAP overshoot. The trial's strategy can be seen as a countermeasure to this behavioural asymmetry rather than simply allowing low MAP."
+      },
+      {
+        "topic": "Subgroup multiplicity",
+        "notes": "The chronic hypertension interaction (P=0.047) is clinically provocative but risks false-positive inference given the neutral primary outcome and multiple subgroup tests."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is there a true mortality benefit in the subgroup of patients with chronic hypertension?",
+      "What is the optimal MAP target for younger patients with vasodilatory shock?",
+      "How should clinicians individualize MAP targets beyond age and hypertension history (e.g., using perfusion markers)?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2600",
+        "90-day mortality: 41.0% vs 43.8% (P=0.15)",
+        "Median vasopressor duration reduced by 5 hours",
+        "Chronic hypertension subgroup: adjusted OR 0.67"
+      ],
+      "one_line_takeaway": "For older ICU patients on vasopressors, actively targeting a lower MAP (60-65) reduces drug exposure but doesn't significantly improve survival, though it may benefit those with chronic hypertension."
+    }
+  },
+  "_source_id": "65",
+  "_source_system": "Circulatory"
+}

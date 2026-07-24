@@ -1,0 +1,319 @@
+{
+  "id": "CURASMUR",
+  "trial_name": "CURASMUR — Rocuronium vs Succinylcholine for Out-of-Hospital RSI (2019)",
+  "specialty": "Airway",
+  "subtopic": "Airway Emergencies",
+  "year": 2019,
+  "journal": "JAMA",
+  "citation": "Guihard B, Chollet-Xémard C, Lakhnati P, et al. Effect of rocuronium vs succinylcholine on endotracheal intubation success rate among patients undergoing out-of-hospital rapid sequence intubation: a randomized clinical trial. JAMA. 2019;322(23):2303-2312.",
+  "doi": "https://doi.org/10.1001/jama.2019.18254",
+  "registration": "",
+  "trial_type": "RCT — multicenter, parallel-group, single-blind, noninferiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1248,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In out-of-hospital RSI, rocuronium did not demonstrate noninferiority to succinylcholine for first-attempt intubation success (74.6% vs 79.4%).",
+  "pico": {
+    "population": "Adults (≥18 years) requiring out-of-hospital emergency RSI and tracheal intubation, excluding cardiac arrest and those with contraindications to either paralytic or sugammadex.",
+    "intervention": "Rocuronium 1.2 mg/kg IV for neuromuscular blockade.",
+    "comparison": "Succinylcholine 1 mg/kg IV for neuromuscular blockade.",
+    "outcome": "Successful first-attempt endotracheal intubation (noninferiority margin -7% absolute difference)."
+  },
+  "keywords": [
+    "rocuronium",
+    "succinylcholine",
+    "rapid sequence intubation",
+    "prehospital",
+    "first-pass success",
+    "airway management"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "RSI aims to optimise first-pass tracheal intubation and minimise aspiration and physiological deterioration. Succinylcholine offers rapid onset and short duration but has contraindications (hyperkalaemia, malignant hyperthermia). High-dose rocuronium (≥1 mg/kg) can achieve a rapid onset comparable to succinylcholine in controlled settings, with a different contraindication profile, but produces longer paralysis.",
+      "knowledge_gap": "Comparative evidence for neuromuscular blocking agent choice in out-of-hospital RSI was limited, largely extrapolated from peri-operative studies and heterogeneous emergency department/ICU data.",
+      "hypothesis": "In adult out-of-hospital patients undergoing physician-led RSI, rocuronium (1.2 mg/kg) is noninferior to succinylcholine (1 mg/kg) for successful first-attempt endotracheal intubation (noninferiority margin -7% absolute difference)."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, parallel-group, single-blind, noninferiority trial.",
+      "setting": "17 physician-staffed out-of-hospital emergency medical units in France; enrolled January 9, 2014 to August 31, 2016.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) requiring out-of-hospital emergency RSI and tracheal intubation as assessed by the treating emergency physician."
+        ],
+        "exclusion": [
+          "Cardiac arrest",
+          "Pregnancy",
+          "No health insurance",
+          "Adults under guardianship",
+          "Any contraindication to rocuronium, succinylcholine, or sugammadex (e.g., malignant hyperthermia history, myopathy/neuromuscular disease, pseudocholinesterase deficiency, allergy, hyperkalaemia)"
+        ]
+      },
+      "intervention": "Rocuronium 1.2 mg/kg IV after hypnotic induction. Intubation recommended 60 seconds after injection. Direct laryngoscopy with metallic Macintosh blades (sizes 3 and 4), no stylet, Sellick manoeuvre recommended. Rescue: bougie, ILMA, cricothyrotomy; sugammadex permitted.",
+      "comparison": "Succinylcholine 1 mg/kg IV after hypnotic induction. Same laryngoscopy approach, timing recommendation, sedation/analgesia approach, and rescue algorithms (without rocuronium reversal).",
+      "blinding": "Single-blind (patients); operators were not blinded.",
+      "sample_size_power": "Assuming 75% first-attempt success in the succinylcholine group and a noninferiority margin of 7% (absolute difference), 602 patients per group were required (power 80%, type I error 5%). Target enrolment was 1300 to account for protocol deviations.",
+      "primary_outcome": "Successful first-attempt endotracheal intubation.",
+      "secondary_outcomes": [
+        "Intubation conditions",
+        "Need for alternative airway techniques",
+        "Early intubation-related complications"
+      ],
+      "follow_up": "Procedural outcomes and complications assessed during RSI and within 15 minutes after intubation; additional reporting during prehospital care until hospital arrival."
+    },
+    "results": {
+      "headline_bullets": [
+        "Rocuronium did not meet the prespecified noninferiority criterion for first-pass success (absolute difference -4.8%; 1-sided 97.5% CI lower bound -9.0%, crossing the -7% margin).",
+        "Airway escalation (ILMA use, direct-laryngoscopy failure) was more frequent with rocuronium, despite a lower proportion of Cormack–Lehane grade II views.",
+        "Early complications were lower with rocuronium (18.2% vs 23.2%), including fewer severe arrhythmias and hypotension episodes, but these were secondary/exploratory outcomes."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Successful first-attempt intubation (primary; per protocol)",
+          "group_a": "455/610 (74.6%)",
+          "group_b": "489/616 (79.4%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-4.8%",
+          "ci_95": "1-sided 97.5% CI -9.0% to ∞",
+          "p_value": "",
+          "note": "Noninferiority margin -7%; noninferiority not demonstrated"
+        },
+        {
+          "outcome": "Successful first-attempt intubation (sensitivity; randomised-group)",
+          "group_a": "456/613 (74.4%)",
+          "group_b": "489/617 (79.2%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-4.8%",
+          "ci_95": "1-sided 97.5% CI -9.1% to ∞",
+          "p_value": "",
+          "note": "Consistent with per-protocol primary analysis"
+        },
+        {
+          "outcome": "Cormack–Lehane grade II view",
+          "group_a": "125/609 (20.5%)",
+          "group_b": "173/615 (28.1%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-7.6%",
+          "ci_95": "95% CI -11.5% to -3.7%",
+          "p_value": "<0.001",
+          "note": "Grade I proportion 61.6% vs 56.2%; P=0.06"
+        },
+        {
+          "outcome": "ILMA use (alternative airway procedure)",
+          "group_a": "10/610 (1.6%)",
+          "group_b": "2/616 (0.3%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.3%",
+          "ci_95": "95% CI 0.5% to 2.4%",
+          "p_value": "0.003",
+          "note": "ILMA = intubating laryngeal mask airway"
+        },
+        {
+          "outcome": "Intubation failure under direct laryngoscopy",
+          "group_a": "11/610 (1.8%)",
+          "group_b": "4/616 (0.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.1%",
+          "ci_95": "95% CI 0.3% to 2.3%",
+          "p_value": "0.01",
+          "note": "Among 15 failures: blind ILMA intubation (n=6), ILMA ventilation then hospital intubation (n=6), cricothyrotomy (n=1), face-mask ventilation to hospital (n=2)"
+        },
+        {
+          "outcome": "At least 1 intubation-related complication within 15 minutes",
+          "group_a": "111/610 (18.2%)",
+          "group_b": "143/616 (23.2%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-5.0%",
+          "ci_95": "95% CI -9.8% to -0.03%",
+          "p_value": "0.04",
+          "note": "Composite of prespecified complications"
+        },
+        {
+          "outcome": "Severe arrhythmia within 15 minutes",
+          "group_a": "12/610 (2.0%)",
+          "group_b": "26/616 (4.2%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-2.2%",
+          "ci_95": "95% CI -3.8% to -0.7%",
+          "p_value": "Not reported",
+          "note": "Defined as ventricular tachycardia or ventricular fibrillation"
+        },
+        {
+          "outcome": "Hypotension episode within 15 minutes",
+          "group_a": "39/610 (6.4%)",
+          "group_b": "62/616 (10.1%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-3.7%",
+          "ci_95": "95% CI -6.8% to -0.3%",
+          "p_value": "Not reported",
+          "note": "Defined as a new episode of systolic blood pressure <90 mmHg"
+        },
+        {
+          "outcome": "Cardiac arrest within 15 minutes",
+          "group_a": "22/610 (3.6%)",
+          "group_b": "13/616 (2.1%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.5%",
+          "ci_95": "95% CI -0.1% to 3.3%",
+          "p_value": "Not reported",
+          "note": "Prespecified complication component"
+        },
+        {
+          "outcome": "Mean number of intubation attempts (exploratory)",
+          "group_a": "1.4 (SD 0.8)",
+          "group_b": "1.3 (SD 0.6)",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.1",
+          "ci_95": "95% CI 0.05 to 0.2",
+          "p_value": "<0.001",
+          "note": "Exploratory post hoc analysis"
+        },
+        {
+          "outcome": "At least 1 severe complication (exploratory)",
+          "group_a": "115/610 (18.9%)",
+          "group_b": "150/616 (24.4%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-5.5%",
+          "ci_95": "95% CI -10.8% to -0.05%",
+          "p_value": "0.04",
+          "note": "Exploratory post hoc definition (as per trial report)"
+        },
+        {
+          "outcome": "Death during prehospital care",
+          "group_a": "6/606 (1.0%)",
+          "group_b": "3/613 (0.5%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.5%",
+          "ci_95": "95% CI -0.4% to 1.3%",
+          "p_value": "0.26",
+          "note": "Follow-up limited to prehospital phase"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Severe arrhythmia within 15 minutes: 2.0% (rocuronium) vs 4.2% (succinylcholine), absolute difference -2.2% (95% CI -3.8% to -0.7%).",
+      "Hypotension episode within 15 minutes: 6.4% (rocuronium) vs 10.1% (succinylcholine), absolute difference -3.7% (95% CI -6.8% to -0.3%).",
+      "Cardiac arrest within 15 minutes: 3.6% (rocuronium) vs 2.1% (succinylcholine), absolute difference 1.5% (95% CI -0.1% to 3.3%).",
+      "Death during prehospital care: 1.0% (rocuronium) vs 0.5% (succinylcholine), absolute difference 0.5% (95% CI -0.4% to 1.3%)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Permuted block randomisation (block sizes 4, 6, and 8), stratified by centre. Numbered, sealed opaque envelopes used; emergency physicians blinded to envelope contents until allocation."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Single-blind design: operators were not blinded; first-pass success is clinically objective but operator-dependent. Time from paralytic injection to first laryngoscopy attempt was not reported, limiting assessment of whether onset time differed by group."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Randomised: 1248 patients (624 per group). Primary analysis (per protocol): 1226 patients (610 rocuronium; 616 succinylcholine). Did not receive allocated paralytic: 11/624 (rocuronium) vs 7/624 (succinylcholine); received the alternative paralytic: 1 in each group."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Paralytic dosing was protocolised with a recommended 60-second wait. Induction hypnotic use was similar (etomidate in ~88% of both groups; median dose 30 mg). Post-intubation sedation/analgesia and vasopressor use differed in post hoc analyses (e.g., norepinephrine 9.9% vs 16.5%)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly comparable (age mean 57.2 vs 54.6 years; median GCS 6 in both; mean SpO2 95.4% in both). Centre effects accounted for using a clustered model; prespecified subgroup analyses did not demonstrate heterogeneity by indication or patient position."
+        }
+      ],
+      "verdict": "Internal validity is moderate: randomisation and follow-up were robust and the primary endpoint is clinically objective, but operator unblinding and unreported timing from paralytic administration to laryngoscopy introduce plausible performance bias; secondary safety outcomes are additionally sensitive to post-intubation co-interventions."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents adult out-of-hospital RSI candidates in a French physician-staffed system, across common indications (coma, self-poisoning, acute respiratory failure, trauma). Excludes cardiac arrest and patients with contraindications to either paralytic or sugammadex, limiting applicability to those higher-risk subgroups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to services using direct laryngoscopy (Macintosh blades) without routine stylet use and with access to bougie/ILMA/cricothyrotomy. Generalisation may be limited in paramedic-only systems, settings with routine video laryngoscopy, different sedation practices, or limited access to advanced rescue devices and reversal agents. Follow-up was confined to the prehospital phase; no in-hospital outcomes were assessed."
+        }
+      ],
+      "verdict": "External validity is moderate: findings are most generalisable to adult, non-arrest, physician-led prehospital RSI using similar technique and dosing, but apply less directly to other EMS configurations, modern video-laryngoscopy–dominant practice, and patients with paralytic contraindications."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre randomised trial in a high-risk out-of-hospital RSI context.",
+      "Clinically meaningful primary endpoint (first-pass success) with high procedural relevance.",
+      "Prespecified noninferiority framework with clustered modelling to account for centre effects and sensitivity analysis in the randomised groups.",
+      "Detailed reporting of rescue airway strategies and early complications within a defined time window."
+    ],
+    "limitations": [
+      "Single-blind design with operator unblinding; procedural decisions may be influenced by knowledge of paralytic.",
+      "Time from neuromuscular blocker injection to first laryngoscopy attempt was not reported, limiting mechanistic inference about onset-related differences.",
+      "Primary per-protocol analysis is appropriate for noninferiority but may introduce bias if protocol deviations are related to prognosis.",
+      "Multiple secondary/exploratory comparisons without multiplicity correction.",
+      "Follow-up limited to the prehospital phase; no in-hospital outcomes, ventilator-free days, ICU/hospital length of stay, or mortality beyond prehospital care.",
+      "Exclusion of patients with contraindications to either agent restricts inference to settings where both drugs are considered acceptable options."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic trial with a clinically relevant primary endpoint, but operator unblinding and unreported onset timing introduce performance bias, and secondary safety outcomes are confounded by post-intubation co-interventions, limiting confidence in the complication profile.",
+      "strengths": [
+        "Large, multicentre, pragmatic design in a real-world prehospital setting.",
+        "Clinically objective primary endpoint (first-pass success).",
+        "Prespecified noninferiority framework with appropriate sensitivity analyses."
+      ],
+      "weaknesses": [
+        "Operator unblinding creates potential for performance bias.",
+        "Unreported time from paralytic to laryngoscopy obscures onset-related differences.",
+        "Secondary safety outcomes are confounded by post-intubation sedation and vasopressor use.",
+        "No multiplicity correction for secondary/exploratory endpoints."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Rocuronium did not demonstrate noninferiority to succinylcholine for first-attempt intubation success in out-of-hospital RSI, and was associated with more airway escalation but fewer early complications.",
+    "clinical_bottom_line": {
+      "verdict": "When both agents are clinically permissible, succinylcholine achieved higher first-attempt success than rocuronium in this prehospital RSI setting, and rocuronium could not be assumed equivalent under a prespecified noninferiority margin. Rocuronium use should be paired with careful attention to onset time and a robust rescue plan.",
+      "applies_to": "Adult, non-arrest, physician-led prehospital RSI using direct laryngoscopy and similar dosing, where both drugs are acceptable options.",
+      "does_not_mean": "Rocuronium is proven inferior or unsafe; the trial did not demonstrate noninferiority, which is a distinct statistical conclusion.",
+      "implementation_caveats": [
+        "Ensure a 60-second wait time after rocuronium administration before first laryngoscopy attempt.",
+        "Have immediate access to advanced rescue airway adjuncts (bougie, ILMA) and consider availability of sugammadex for reversal.",
+        "The lower complication rate with rocuronium is a secondary finding and may be influenced by post-intubation sedation and vasopressor practices."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Noninferiority interpretation and reporting",
+        "notes": "Emphasised that the appropriate inference is 'noninferiority not demonstrated' rather than proof of inferiority, given the confidence interval crossed the noninferiority margin."
+      },
+      {
+        "topic": "Co-interventions and haemodynamic outcomes",
+        "notes": "Differences in post-intubation sedation/analgesia and vasoactive support could influence hypotension and other physiological complications, complicating causal attribution of safety signals to the paralytic alone."
+      },
+      {
+        "topic": "Trialist clarifications",
+        "notes": "Clarified the intended interpretation of the noninferiority analysis and discussed the observed differences in sedative/analgesic use as potential contributors to haemodynamic findings."
+      },
+      {
+        "topic": "Follow-up analyses and external datasets",
+        "notes": "Secondary analysis of CURASMUR data found first-attempt failure (23.2% overall) was associated with higher complication rates. A large emergency department airway registry study found no significant difference in first-pass success between succinylcholine and rocuronium (87.0% vs 87.5%), underscoring that observed effects may vary by setting, operator, technique, and case mix."
+      },
+      {
+        "topic": "Guideline synthesis",
+        "notes": "Recent ICU and emergency airway guidance generally supports either succinylcholine or rocuronium for RSI, with drug selection guided by contraindications, haemodynamic physiology, and system capability for rescue/reversal; CURASMUR is incorporated as part of the evidence base informing these recommendations."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Would the results differ with routine video laryngoscopy use?",
+      "What is the impact of strict adherence to a 60-second onset time on first-pass success with rocuronium?",
+      "How do these findings translate to paramedic-only or non-physician EMS systems?",
+      "What are the longer-term in-hospital outcomes (e.g., ventilator-free days, ICU length of stay, mortality) associated with paralytic choice?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1248",
+        "First-pass success: 74.6% (rocuronium) vs 79.4% (succinylcholine), absolute difference -4.8%",
+        "Noninferiority margin -7%; 1-sided 97.5% CI lower bound -9.0% (noninferiority not demonstrated)",
+        "ILMA use: 1.6% vs 0.3%"
+      ],
+      "one_line_takeaway": "In out-of-hospital RSI, rocuronium did not meet noninferiority for first-pass success compared to succinylcholine and required more airway rescue, so if you use rocuronium, ensure a robust backup plan."
+    }
+  },
+  "_source_id": "CURASMUR",
+  "_source_system": "Airway"
+}
