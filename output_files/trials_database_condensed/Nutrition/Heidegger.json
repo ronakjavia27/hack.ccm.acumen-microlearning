@@ -1,0 +1,311 @@
+{
+  "id": "Heidegger",
+  "trial_name": "Heidegger (Optimisation of energy provision with supplemental parenteral nutrition in critically ill patients)",
+  "specialty": "Nutrition & Metabolic Support",
+  "subtopic": "Parenteral Nutrition",
+  "year": 2013,
+  "journal": "The Lancet",
+  "citation": "Heidegger CP, Berger MM, Graf S, et al. Optimisation of energy provision with supplemental parenteral nutrition in critically ill patients: a randomised controlled clinical trial. Lancet. 2013;381(9864):385-393.",
+  "doi": "10.1016/S0140-6736(12)61351-8",
+  "registration": "",
+  "trial_type": "RCT — two-centre, open-label, stratified, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 305,
+  "result_category": "Positive",
+  "one_liner": "Adding supplemental parenteral nutrition from days 4–8 to achieve energy targets in ICU patients with persistent EN underfeeding reduces nosocomial infections and antibiotic exposure, but not mortality.",
+  "pico": {
+    "population": "Adult ICU patients receiving EN but achieving <60% of calculated energy target by day 3, expected ICU stay >5 days and survival >7 days",
+    "intervention": "Supplemental parenteral nutrition (SPN) added to EN from day 4 to day 8, titrated to 100% of prespecified energy target (indirect calorimetry preferred), using all-in-one PN admixture",
+    "comparison": "EN alone during days 4–8, no supplemental PN per protocol",
+    "outcome": "Primary: nosocomial infection (CDC criteria) between day 9 and day 28; Secondary: antibiotic days, ventilation hours in patients without infection, 28-day and ICU mortality"
+  },
+  "keywords": [
+    "nutrition",
+    "supplemental parenteral nutrition",
+    "enteral nutrition",
+    "nosocomial infection",
+    "critical illness"
+  ],
+  "related_trials": [
+    "EPaNIC",
+    "CALORIES",
+    "NUTRIREA-3"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Enteral nutrition is first-line in critical illness, but delivery commonly falls short of energy/protein targets. Observational data associate cumulative deficits with worse outcomes including infections. Early full parenteral nutrition is controversial due to overfeeding, hyperglycaemia, and infection risk.",
+      "knowledge_gap": "Whether a delayed step‑up strategy—adding supplemental PN only when EN remains insufficient after several days—can improve outcomes without the harms of early PN.",
+      "hypothesis": "In ICU patients still underfed after 3 days of EN, adding SPN from days 4–8 to reach 100% of energy target will reduce subsequent nosocomial infections."
+    },
+    "methods": {
+      "design": "Randomised, controlled, investigator-initiated, two-centre (Swiss university hospital ICUs), open-label trial; stratified block randomisation (block size 4); infection ascertainment by blinded cross-centre investigator and confirmatory infectious disease specialist; statisticians masked.",
+      "setting": "Two mixed medical-surgical ICUs in two Swiss university hospitals (Geneva and Lausanne).",
+      "population": {
+        "inclusion": [
+          "Adult ICU patients receiving EN but failing to reach 60% of calculated/measured energy target by day 3",
+          "Expected ICU stay >5 days and expected survival >7 days"
+        ],
+        "exclusion": []
+      },
+      "intervention": "EN continued plus supplemental PN (SPN) for 5 days (days 4–8 after enrolment). SPN titrated daily to achieve 100% of the prespecified energy target, using an all-in-one PN admixture delivered via central venous catheter if present (otherwise peripheral). Co-interventions: daily calorie/protein tracking, glycaemic management with algorithmised insulin.",
+      "comparison": "EN alone during the intervention window (days 4–8), with ongoing attempts to optimise EN as per routine care. No supplemental PN allowed per protocol.",
+      "blinding": "Open-label to clinicians/patients. Infection data collected by a blinded investigator from the alternate centre and diagnoses confirmed by an independent infectious diseases specialist. Statisticians masked to group assignment.",
+      "sample_size_power": "296 patients required to detect a 33% relative reduction in nosocomial infection rate (assumed 50% baseline) with 80% power; alpha not reported. 305 patients randomised.",
+      "primary_outcome": "Time from day 9 to first nosocomial infection (defined by CDC criteria across five categories: respiratory, bloodstream, urogenital, abdominal, other) up to day 28.",
+      "secondary_outcomes": [
+        "Energy delivery (kcal/kg/day) during days 4–8",
+        "Protein delivery (g/kg/day) during days 4–8",
+        "Days with antibiotic therapy (day 9–28)",
+        "Mechanical ventilation hours in patients without nosocomial infection (day 9–28)",
+        "28-day all-cause mortality",
+        "ICU mortality"
+      ],
+      "follow_up": "28 days"
+    },
+    "results": {
+      "headline_bullets": [
+        "SPN achieved near-target energy delivery: 28 ± 6 vs 20 ± 5 kcal/kg/day (P<0.0001)",
+        "Primary endpoint: nosocomial infection 27% vs 38% (HR 0.65, 95% CI 0.43–0.97, P=0.0338)",
+        "No significant difference in 28-day mortality (13% vs 18%, HR 0.6, 95% CI 0.3–1.2)",
+        "Antibiotic days reduced: 6 (7) vs 8 (8) days (adjusted difference −2.3, 95% CI −4.1 to −0.5, P=0.001)"
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Nosocomial infection (day 9–28)",
+          "group_a": "41/153 (27%)",
+          "group_b": "58/152 (38%)",
+          "effect_measure": "HR",
+          "effect_value": 0.65,
+          "ci_95": "0.43 to 0.97",
+          "p_value": 0.0338,
+          "note": "Primary endpoint; time-to-first infection; CDC criteria, confirmed by independent specialist."
+        },
+        {
+          "outcome": "Energy delivery (days 4–8)",
+          "group_a": "28 ± 6 kcal/kg/day",
+          "group_b": "20 ± 5 kcal/kg/day",
+          "effect_measure": "mean difference",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.0001",
+          "note": "Process measure; group separation achieved."
+        },
+        {
+          "outcome": "Protein delivery (days 4–8)",
+          "group_a": "1.2 ± 0.3 g/kg/day",
+          "group_b": "0.8 ± 0.2 g/kg/day",
+          "effect_measure": "mean difference",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.0001",
+          "note": "Process measure; protein delivery increased alongside energy."
+        },
+        {
+          "outcome": "Days with antibiotic therapy (day 9–28)",
+          "group_a": "6 (7)",
+          "group_b": "8 (8)",
+          "effect_measure": "adjusted difference (β)",
+          "effect_value": -2.3,
+          "ci_95": "-4.1 to -0.5",
+          "p_value": 0.001,
+          "note": "Adjusted regression model."
+        },
+        {
+          "outcome": "Mechanical ventilation hours in patients without nosocomial infection (day 9–28)",
+          "group_a": "15 (59)",
+          "group_b": "29 (61)",
+          "effect_measure": "adjusted difference (β)",
+          "effect_value": -1.3,
+          "ci_95": "-2.1 to -0.4",
+          "p_value": 0.0028,
+          "note": "Post-hoc restriction to those without infection; interpret cautiously."
+        },
+        {
+          "outcome": "28-day all-cause mortality",
+          "group_a": "20/153 (13%)",
+          "group_b": "28/152 (18%)",
+          "effect_measure": "HR",
+          "effect_value": 0.6,
+          "ci_95": "0.3 to 1.2",
+          "p_value": 0.1193,
+          "note": "Not statistically significant."
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "8/153 (5%)",
+          "group_b": "12/152 (8%)",
+          "effect_measure": "HR",
+          "effect_value": 0.6,
+          "ci_95": "0.2 to 1.6",
+          "p_value": 0.2118,
+          "note": "Not statistically significant."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation concealment",
+          "notes": "Stratified allocation with block size of four; sequentially numbered, sealed, opaque envelopes used, supporting concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label trial; risk of co-intervention bias (e.g., antibiotic thresholds, line care) mitigated by blinded cross-centre infection data collection and independent confirmation by infectious diseases specialist; statisticians masked."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Discontinuation higher in SPN arm (20/153 vs 10/152, mainly protocol violations); primary analysis was intention-to-treat, preserving randomisation integrity."
+        },
+        {
+          "domain": "Protocol adherence / exposure separation",
+          "notes": "Substantial separation in nutrition delivery: 28±6 vs 20±5 kcal/kg/day and 1.2±0.3 vs 0.8±0.2 g/kg/day during days 4–8, confirming intervention fidelity."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar in severity (SAPS II 49 vs 47, APACHE II 22 vs 23), age (61 vs 60), surgical admissions (46% vs 45%); minor diagnostic imbalances reduced by adjusted analyses."
+        },
+        {
+          "domain": "Timing of outcome assessment",
+          "notes": "Infection window (day 9–28) after intervention window (days 4–8) reduces contamination by early infections unlikely related to intervention."
+        },
+        {
+          "domain": "Outcome assessment / adjudication",
+          "notes": "Primary outcome requires clinical adjudication; use of prespecified CDC definitions and independent confirmation strengthens confidence, but complete objectivity impossible in open-label design."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Prespecified sample size met (305 vs 296); ITT with time-to-event analysis (Cox regression) appropriate; multiplicity control (Benjamini‑Hochberg) for secondary outcomes."
+        }
+      ],
+      "verdict": "Moderate-to-strong: allocation concealment and meaningful exposure separation support causal inference, but open-label delivery and a partly adjudicated primary outcome leave residual risk of performance and ascertainment bias."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enriched for a selected subgroup: patients still receiving <60% of energy targets by EN at day 3 and expected prolonged ICU stay; not generalisable to all ICU patients."
+        },
+        {
+          "domain": "Setting and feasibility",
+          "notes": "Two well-resourced Swiss ICUs with access to indirect calorimetry; infection reduction may be harder to reproduce where PN delivery, line care, and calorimetry are less standardised."
+        },
+        {
+          "domain": "Applicability",
+          "notes": "Results support a ‘step‑up’ SPN strategy in persistently underfed patients at centres capable of safe PN delivery and overfeeding avoidance; not for routine early PN."
+        }
+      ],
+      "verdict": "Generalisability is focused rather than broad: the results support a step‑up SPN strategy for persistently underfed ICU patients, particularly in centres capable of safe PN delivery and avoidance of overfeeding."
+    },
+    "strengths": [
+      "Concealed allocation using sequentially numbered opaque envelopes",
+      "Clinically meaningful primary endpoint with prespecified CDC definitions",
+      "Deliberate separation window (intervention days 4–8; infections counted days 9–28) to reduce contamination",
+      "Preference for indirect calorimetry to set energy targets, reducing overfeeding risk",
+      "Meaningful separation in energy and protein delivery between groups",
+      "Masked statisticians and partially blinded infection ascertainment/confirmation by independent specialist"
+    ],
+    "limitations": [
+      "Open-label care allows potential co-intervention bias (e.g., antibiotic use, feeding advancement)",
+      "Two-centre design may limit external validity",
+      "Protocol violations and discontinuations more frequent in SPN arm (20/153 vs 10/152)",
+      "Primary endpoint depends on clinical adjudication of infections, less objective than mortality",
+      "Intervention increased both energy and protein, preventing attribution of benefit to a specific nutrient or route",
+      "No statistically significant mortality benefit demonstrated"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted RCT with concealed allocation and meaningful between-group nutrition separation; however, open-label design, adjudicated primary endpoint, and higher discontinuation in the intervention arm introduce some bias. The observed reduction in nosocomial infections is likely real but should be interpreted in the context of these limitations.",
+      "strengths": [
+        "Concealed allocation and ITT analysis preserve internal validity",
+        "Blinded infection ascertainment and independent confirmation reduce detection bias",
+        "Large and significant separation in energy/protein delivery confirms fidelity",
+        "Use of indirect calorimetry to guide targets limits overfeeding risk"
+      ],
+      "weaknesses": [
+        "Open-label design introduces potential for co-intervention bias",
+        "Primary outcome is a soft, adjudicated endpoint",
+        "Two-centre, selected population limits generalisability",
+        "Higher protocol deviations in SPN group raise concerns about adherence"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Among ICU patients still substantially underfed by EN on day 3, a time-limited SPN strategy to reach energy targets reduced nosocomial infection and antibiotic exposure without a clear signal of mortality benefit.",
+    "clinical_bottom_line": {
+      "verdict": "In select ICU patients with persistent EN underfeeding at day 3, supplemental PN (days 4–8) targeting 100% of measured energy expenditure reduces nosocomial infections and antibiotic days, but does not improve mortality.",
+      "applies_to": "Patients with expected ICU stay >5 days, still receiving <60% of energy target by day 3 despite optimized EN.",
+      "does_not_mean": "Not applicable to all ICU patients; not a license for early PN or overfeeding; the benefit could be from energy, protein, or both, not necessarily a route-specific effect.",
+      "implementation_caveats": [
+        "Use indirect calorimetry to guide energy target and minimize overfeeding risk",
+        "Ensure safe PN delivery processes (line care, infection prevention)",
+        "Limit SPN duration to the intervention window (5 days) unless EN remains insufficient and patient continues to meet high-risk criteria"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Editorial interpretation",
+        "notes": "Editorial framed trial as supporting delayed, targeted SPN with indirect calorimetry as safeguard against overfeeding, not routine early PN."
+      },
+      {
+        "topic": "Underfeeding of control group",
+        "notes": "Control group remained markedly underfed (20 kcal/kg/day); observed effect may reflect correction of energy/protein deficit rather than a route-specific benefit; an isocaloric/isoprotein comparator was not tested."
+      },
+      {
+        "topic": "Bias vector from open-label design",
+        "notes": "Open-label delivery and adjudicated infection endpoint may introduce co-intervention and ascertainment bias, partially mitigated by blinded cross‑centre infection collection and independent confirmation."
+      },
+      {
+        "topic": "Enrolment timing and infection window",
+        "notes": "Authors emphasised enrolment of patients with persistent EN failure at day 3; infections counted from day 9 to avoid misclassification of early infections unrelated to intervention."
+      },
+      {
+        "topic": "Comparison with other trials",
+        "notes": "Subsequent RCTs (EPaNIC, CALORIES, NUTRIREA‑3) highlight that timing and patient selection are critical; early full PN in broad populations differs from delayed SPN in underfed patients, and pragmatic route comparison found no mortality difference."
+      },
+      {
+        "topic": "Early PN in short-term barriers",
+        "notes": "Early PN has been used without excess infectious harm in patients with short-term EN barriers, supporting context‑dependent use when EN is not feasible."
+      },
+      {
+        "topic": "Guidelines and step‑up approach",
+        "notes": "Guidelines endorse early EN when feasible and a step‑up SPN approach after several days if EN remains insufficient, emphasising nutritional risk and safe PN delivery processes."
+      },
+      {
+        "topic": "Meta‑analytic synthesis",
+        "notes": "Meta‑analyses of SPN trials report heterogeneous effects; trial context (timing, calorimetry, baseline deficits, protein co‑delivery) materially shapes estimated benefit."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "EPaNIC",
+        "relation": "Compared early full PN with late PN in a broad ICU population; showed potential harm with early PN, contrasting with delayed SPN in selected underfed patients where benefit was seen."
+      },
+      {
+        "trial": "CALORIES",
+        "relation": "Pragmatic comparison of early EN vs early PN found no mortality difference; supports that route may matter less than timing and nutritional adequacy in broad populations."
+      },
+      {
+        "trial": "NUTRIREA-3",
+        "relation": "Trial comparing early enteral vs parenteral nutrition in shock patients; reinforces that route questions are highly context-dependent and population-specific."
+      }
+    ],
+    "unresolved_questions": [
+      "Is the reduction in infections attributable to energy, protein, or both?",
+      "Would an isocaloric, isoprotein comparator yield the same benefit?",
+      "Does SPN reduce long-term functional outcomes or mortality in larger trials?",
+      "Is indirect calorimetry essential to guide targets, or can predictive equations suffice?",
+      "What is the optimal duration of SPN – would longer treatment increase benefit or harm?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=305",
+        "Primary: nosocomial infection 27% vs 38%, HR 0.65 (95% CI 0.43-0.97)",
+        "Energy delivered: 28 vs 20 kcal/kg/day; Protein: 1.2 vs 0.8 g/kg/day",
+        "28-day mortality: 13% vs 18% (HR 0.60, P=0.12, not significant)"
+      ],
+      "one_line_takeaway": "In persistently underfed ICU patients, delayed supplemental PN cuts nosocomial infections, but the benefit may be from protein/energy correction and requires safe delivery."
+    }
+  },
+  "_source_id": "Heidegger",
+  "_source_system": "Nutrition"
+}

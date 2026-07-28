@@ -1,0 +1,274 @@
+{
+  "id": "PAMPer",
+  "trial_name": "PAMPer — Prehospital Plasma during Air Medical Transport in Trauma Patients at Risk for Hemorrhagic Shock (2018)",
+  "specialty": "Trauma & Emergency Surgery",
+  "subtopic": "Massive Transfusion",
+  "year": 2018,
+  "journal": "N Engl J Med",
+  "citation": "Sperry JL, Guyette FX, Brown JB, et al. Prehospital Plasma during Air Medical Transport in Trauma Patients at Risk for Hemorrhagic Shock. N Engl J Med. 2018;379(4):315-326.",
+  "doi": "https://doi.org/10.1056/NEJMoa1802345",
+  "registration": "",
+  "trial_type": "RCT — multicenter, cluster-randomized, crossover, pragmatic",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 501,
+  "result_category": "Positive",
+  "one_liner": "Prehospital plasma (2 units) during air transport reduced 30-day mortality in severely hypotensive trauma patients (23.0% vs 32.8%, absolute difference -9.8 percentage points).",
+  "pico": {
+    "population": "Adult trauma patients (18–90 years) at risk for hemorrhagic shock (SBP ≤70 mmHg or SBP 71–90 mmHg with HR ≥108 bpm) undergoing air medical transport.",
+    "intervention": "Prehospital transfusion of 2 units of plasma during air transport, in addition to standard resuscitation.",
+    "comparison": "Standard prehospital resuscitation without plasma (crystalloids, red cells, or both).",
+    "outcome": "30-day mortality."
+  },
+  "keywords": [
+    "prehospital plasma",
+    "trauma",
+    "hemorrhagic shock",
+    "air medical transport",
+    "coagulopathy",
+    "massive transfusion"
+  ],
+  "related_trials": [
+    "COMBAT",
+    "RePHILL"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Early deaths after major trauma are commonly driven by haemorrhage and trauma-induced coagulopathy, with a narrow window for effective haemostatic resuscitation. In most civilian systems, plasma is initiated after hospital arrival; logistical delays can push 'first plasma' beyond the period when haemorrhage mortality is highest. Military and civilian observational data suggested potential benefit from earlier plasma, but confounding by indication and survivorship bias limited inference.",
+      "knowledge_gap": "Whether prehospital plasma during air transport improves survival in at-risk trauma patients was unknown.",
+      "hypothesis": "Prehospital plasma would reduce 30-day mortality compared with standard care."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, cluster-randomised, crossover trial (air medical base-level assignment alternating in 1-month blocks), investigator-initiated; conducted across 27 air medical bases and 10 receiving trauma centres (9 Level I, 1 Level II) in the United States (May 2014 to October 2017).",
+      "setting": "Prehospital air medical transport (scene responses and interfacility transfers).",
+      "population": {
+        "inclusion": [
+          "Adult trauma (18–90 years) meeting physiologic 'at-risk' criteria: systolic blood pressure ≤70 mmHg, or systolic blood pressure 71–90 mmHg with heart rate ≥108 beats/min."
+        ],
+        "exclusion": [
+          "Age <18 or >90 years; known objection to blood products; pregnancy; prisoner; traumatic arrest with CPR >5 minutes; burn injury >5% total body surface area; drowning or hanging; isolated penetrating head injury; isolated ground-level fall."
+        ]
+      },
+      "intervention": "Prehospital transfusion of 2 units of plasma, initiated during air medical transport (plasma stored onboard and administered as early as feasible during flight), in addition to other standard resuscitation as clinically indicated.",
+      "comparison": "Standard prehospital resuscitation without plasma, consisting of crystalloids, red cells, or both according to local protocols and clinician judgement.",
+      "blinding": "Unblinded (plasma delivery is operationally apparent in the prehospital environment); primary endpoint (mortality) is objective, but co-intervention and performance bias remain plausible.",
+      "sample_size_power": "Planned sample size 564, incorporating cluster-design multiplier of 1.75 and 12% anticipated missingness, to provide approximately 88% power to detect a 14-percentage-point absolute mortality reduction (from 22% to 8%) at two-sided alpha 0.05 (adjusted to 0.037 for two planned interim analyses).",
+      "primary_outcome": "30-day mortality.",
+      "secondary_outcomes": [
+        "24-hour mortality",
+        "in-hospital mortality",
+        "total blood components transfused in first 24 hours",
+        "initial prothrombin-time ratio",
+        "allergic or transfusion-related reaction",
+        "multiorgan failure",
+        "nosocomial infection"
+      ],
+      "follow_up": "30 days for primary endpoint; in-hospital outcomes and early physiological/transfusion outcomes assessed during index admission (including first 24 hours)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary outcome: 30-day mortality 23.0% vs 32.8% (absolute difference -9.8 percentage points; 95% CI -18.6 to -1.0; P=0.03).",
+        "Early mortality and in-hospital mortality were directionally concordant but lost statistical support after multiple-comparison adjustment.",
+        "Arrival coagulation profile improved: prothrombin-time ratio 1.2 vs 1.3 (P<0.001).",
+        "Prehospital red-cell and crystalloid use differed between groups, introducing potential confounding."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "30-day mortality (primary)",
+          "group_a": "53/230 (23.0%)",
+          "group_b": "89/271 (32.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-9.8 percentage points",
+          "ci_95": "-18.6 to -1.0",
+          "p_value": "0.03",
+          "note": "Primary outcome data available for 220 vs 261; 10 outcomes imputed in each group"
+        },
+        {
+          "outcome": "Time-to-death (overall survival)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "0.64",
+          "ci_95": "0.45 to 0.91",
+          "p_value": "0.01",
+          "note": "Survival curves separated early"
+        },
+        {
+          "outcome": "24-hour mortality",
+          "group_a": "32/230 (13.9%)",
+          "group_b": "60/271 (22.1%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-8.2 percentage points",
+          "ci_95": "-14.9 to -1.6",
+          "p_value": "0.02",
+          "note": "Adjusted P=0.55 (multiple comparisons)"
+        },
+        {
+          "outcome": "In-hospital mortality",
+          "group_a": "51/230 (22.2%)",
+          "group_b": "88/271 (32.5%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-10.3 percentage points",
+          "ci_95": "-18.0 to -2.6",
+          "p_value": "0.01",
+          "note": "Adjusted P=0.33 (multiple comparisons)"
+        },
+        {
+          "outcome": "Total blood components transfused, first 24 hours (median, IQR)",
+          "group_a": "3 (0 to 10) units",
+          "group_b": "4 (2 to 16) units",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.02",
+          "note": "Adjusted P=0.41 (multiple comparisons)"
+        },
+        {
+          "outcome": "Initial prothrombin-time ratio (median, IQR)",
+          "group_a": "1.2 (1.1 to 1.4)",
+          "group_b": "1.3 (1.1 to 1.6)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.001",
+          "note": "Adjusted P<0.001 (multiple comparisons)"
+        },
+        {
+          "outcome": "Allergic or transfusion-related reaction",
+          "group_a": "5/230 (2.2%)",
+          "group_b": "1/271 (0.4%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.8 percentage points",
+          "ci_95": "-0.2 to 3.8",
+          "p_value": "0.10",
+          "note": "Adjusted P>0.99 (multiple comparisons)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Allergic or transfusion-related reaction: 2.2% vs 0.4% (P=0.10)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Cluster randomisation at air medical base with monthly crossover reduces stable centre-level confounding, but does not conceal allocation from crews and permits month-level behavioural drift."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded prehospital teams could influence co-interventions (fluids, red cells, vasopressors); primary endpoint is objective, but secondary endpoints and process measures are susceptible to performance bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "564 eligible; 523 enrolled; 230 (plasma base) and 271 (standard-care base) included in modified intention-to-treat; exclusions occurred after eligibility screening and intervention assignment, creating potential for selection bias if exclusions were differential. Primary outcome data missing for 10 in each group, imputed."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Among those assigned to plasma bases, 205/230 (89.1%) received 2 units, 21/230 (9.1%) received 1 unit, and 4/230 (1.7%) received none."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Major injury severity was similar (median ISS 22 in both groups), but several prehospital care variables differed: prehospital red-cell transfusion 26.1% vs 42.1% (P<0.001); prehospital crystalloid volume median 700 mL (IQR 200–1100) vs 900 mL (IQR 400–1600) (P=0.03). Median air medical transport time was similar (40 minutes plasma vs 42 minutes standard care)."
+        }
+      ],
+      "verdict": "Overall, internal validity is moderate: the cluster crossover design strengthens causal inference for system-level implementation, but lack of blinding and evident separation in co-interventions (notably prehospital red-cell and crystalloid use) introduce plausible performance-related confounding around a biologically intertwined exposure."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult trauma patients with profound hypotension (or combined hypotension/tachycardia) requiring air medical transport; enriched for patients at risk of haemorrhagic shock (median ISS 22)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The intervention presumes a mature blood bank–air EMS interface (thawed plasma availability, cold-chain logistics, staff training, storage monitoring) and may be less feasible in smaller or resource-limited systems. Median transport times were ~40 minutes; generalisability to short urban ground transports is uncertain. Important subgroups (pregnancy, burns, drowning/hanging, isolated penetrating head injury, isolated ground-level falls) were excluded, limiting breadth of applicability across 'all-comer' trauma."
+        }
+      ],
+      "verdict": "Generalisability is best for air medical systems caring for severely hypotensive trauma patients with non-trivial prehospital times; translation to short-transport ground EMS or markedly different transfusion infrastructures is more limited."
+    },
+    "strengths": [
+      "Pragmatic multicentre design; clinically meaningful primary endpoint (30-day mortality); cluster crossover reducing stable centre confounding; high intervention delivery (89.1% received 2 units); mechanistic signal consistent with haemostatic effect (lower prothrombin-time ratio on arrival)."
+    ],
+    "limitations": [
+      "Unblinded crews (performance and co-intervention bias); cluster design with post-screening exclusions and missing primary outcomes requiring imputation; measurable imbalance in co-interventions (prehospital red cells/crystalloids); mixed-significance secondary outcomes after multiple comparisons; applicability may be transport-time and system dependent."
+    ],
+    "critical_appraisal": {
+      "summary": "PAMPer provides moderate-quality evidence that prehospital plasma reduces 30-day mortality in air-transported severely hypotensive trauma patients, but unblinded co-intervention differences and mixed secondary outcomes temper confidence.",
+      "strengths": [
+        "Pragmatic design with high intervention fidelity",
+        "Objective primary endpoint",
+        "Mechanistic coherence with improved coagulation profile"
+      ],
+      "weaknesses": [
+        "Unblinded with differential co-interventions",
+        "Missing primary outcome data requiring imputation",
+        "Secondary outcomes not robust after multiplicity adjustment"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In severely hypotensive trauma patients transported by air, initiating plasma during transport was associated with lower 30-day mortality and improved early coagulation metrics, supporting the concept that 'time-to-haemostatic resuscitation' matters in select high-risk patients.",
+    "clinical_bottom_line": {
+      "verdict": "Prehospital plasma may be considered in air medical systems for severely hypotensive trauma patients, particularly when transport times exceed 20 minutes, but its benefit is context-dependent and must be weighed against logistical complexity.",
+      "applies_to": "Adult trauma patients with SBP ≤70 mmHg or SBP 71-90 mmHg with HR ≥108 bpm, transported by air with transport times >20 minutes.",
+      "does_not_mean": "Prehospital plasma is universally beneficial for all trauma patients or in short ground transports.",
+      "implementation_caveats": [
+        "Requires robust blood bank logistics and cold-chain management",
+        "Benefit may be limited to longer transport times",
+        "Co-intervention with red cells and crystalloids may influence outcomes"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Discordance with COMBAT trial",
+        "notes": "The contemporaneous ground-transport RCT (COMBAT) reported no mortality benefit from prehospital plasma, raising concern that PAMPer’s signal may be transport-time or system dependent."
+      },
+      {
+        "topic": "Editorial emphasis on logistics and phenotype",
+        "notes": "The accompanying editorial framed PAMPer as an operationally important proof-of-concept for getting the blood bank to the field while stressing that 'who' and 'when' (including transport time) likely determine benefit."
+      },
+      {
+        "topic": "Correspondence on unmeasured adjuncts and mortality context",
+        "notes": "Letters questioned the absence of detailed reporting/regulation of adjunct haemostatic therapies (e.g., tranexamic acid, cryoprecipitate) and the relatively high mortality in the standard-care arm; the author reply noted these therapies were not regulated/monitored within the pragmatic design and could vary by system."
+      },
+      {
+        "topic": "Pooled post hoc analysis suggesting transport time >20 minutes as effect modifier",
+        "notes": "A post hoc analysis pooling PAMPer and COMBAT suggested the association between prehospital plasma and survival was concentrated when transport times exceeded 20 minutes, supporting transport time as an effect modifier hypothesis rather than a settled conclusion."
+      },
+      {
+        "topic": "RePHILL trial mixed results",
+        "notes": "The RePHILL trial evaluated prehospital packed red cells plus lyophilised plasma; its results contribute to an overall evidence base in which benefit appears context- and implementation-dependent rather than uniform."
+      },
+      {
+        "topic": "Guideline uptake cautious and conditional",
+        "notes": "European trauma bleeding guidelines discuss early balanced blood component resuscitation and recognise the potential role of prehospital blood products in appropriate systems, while reflecting persisting uncertainty and heterogeneity of trial results."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "COMBAT",
+        "relation": "Contemporaneous ground-transport RCT showing no mortality benefit from prehospital plasma, raising concern that PAMPer’s signal may be transport-time or system dependent."
+      },
+      {
+        "trial": "RePHILL",
+        "relation": "Evaluated prehospital packed red cells plus lyophilised plasma; results contribute to mixed evidence base."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal transport time threshold for benefit",
+      "Role of co-interventions (red cells, crystalloids, TXA) in modulating effect",
+      "Generalizability to ground EMS and resource-limited settings",
+      "Long-term functional outcomes beyond mortality"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=501 (mITT)",
+        "30-day mortality: 23.0% vs 32.8% (absolute difference -9.8%)",
+        "HR for death 0.64 (95% CI 0.45-0.91)",
+        "Prothrombin-time ratio on arrival: 1.2 vs 1.3"
+      ],
+      "one_line_takeaway": "In air-transported severely hypotensive trauma patients, prehospital plasma reduced 30-day mortality by ~10 percentage points, but benefit is context-dependent and co-intervention differences complicate interpretation."
+    }
+  },
+  "_source_id": "PAMPer",
+  "_source_system": "Haematology"
+}

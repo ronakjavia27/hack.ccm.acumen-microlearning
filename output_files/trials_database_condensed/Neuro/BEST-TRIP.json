@@ -1,0 +1,369 @@
+{
+  "id": "BEST-TRIP",
+  "trial_name": "BEST:TRIP — A Trial of Intracranial-Pressure Monitoring in Traumatic Brain Injury (2012)",
+  "specialty": "Neuro",
+  "subtopic": "Neurocritical Care Monitoring",
+  "year": 2012,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Chesnut RM, Temkin N, Carney N, et al. A trial of intracranial-pressure monitoring in traumatic brain injury. N Engl J Med. 2012;367:2471-2481.",
+  "doi": "http://dx.doi.org/10.1056/NEJMoa1207363",
+  "registration": "",
+  "trial_type": "RCT — multicenter, parallel-group superiority trial, open-label with blinded outcome assessment",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 324,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In severe TBI, protocolized care guided by invasive ICP monitoring did not improve a composite outcome or mortality compared with protocolized care guided by imaging and clinical exam.",
+  "pico": {
+    "population": "Adolescents and adults aged ≥13 years with severe TBI (GCS 3–8), closed head injury, within 24 hours of admission or deterioration.",
+    "intervention": "ICP-guided strategy: intraparenchymal ICP monitor, tiered therapy driven by ICP/CPP targets (ICP threshold 20 mm Hg, CPP target 50–70 mm Hg); protocolised escalation included hyperosmolar therapy, hyperventilation, barbiturates, and decompressive craniectomy.",
+    "comparison": "Imaging–clinical examination strategy: tiered management triggered by scheduled/triggered CT imaging and neurological deterioration, without continuous ICP data; same broad categories of brain-directed therapies available but initiated based on clinical/CT criteria.",
+    "outcome": "21-item percentile-based composite of mortality, functional, neuropsychological, and clinical course outcomes over 6 months; secondary: 6-month mortality, GOS-E distribution, ICU resource use, and process-of-care measures."
+  },
+  "keywords": [
+    "intracranial pressure monitoring",
+    "traumatic brain injury",
+    "neurocritical care",
+    "ICP",
+    "BEST-TRIP",
+    "RCT"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Invasive ICP monitoring had become a de facto standard for severe TBI in many ICUs, embedded in practice pathways and guideline recommendations, despite limited randomised evidence.",
+      "knowledge_gap": "Whether invasive ICP monitoring improves patient-centred outcomes versus repeated clinical and CT-based assessment was uncertain; the device carries risks and resource implications.",
+      "hypothesis": "ICP-guided protocolised management would reduce mortality and improve functional/neuropsychological recovery compared with a protocolised imaging–clinical strategy."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, parallel-group superiority trial; 6 hospitals in Bolivia and Ecuador; stratified randomisation (site, severity group, age group) with variable block sizes; open-label management with blinded outcome assessment.",
+      "setting": "ICU management of severe TBI in trauma hospitals in Bolivia and Ecuador.",
+      "population": {
+        "inclusion": [
+          "Age ≥13 years",
+          "Severe TBI (GCS 3–8, motor score substitutes if intubated)",
+          "Closed head injury",
+          "Admission or deterioration within 24 hours permitting randomisation and protocol initiation"
+        ],
+        "exclusion": [
+          "Penetrating injury",
+          "Pregnancy",
+          "Inability to obtain consent",
+          "No ICU bed available",
+          "No ICP monitor available",
+          "Incarceration",
+          "Planned withdrawal/limitations of therapy",
+          "Anticipated inability to complete follow-up (e.g., no stable contact)"
+        ]
+      },
+      "intervention": "ICP-guided strategy: intraparenchymal ICP monitor; tiered management driven by ICP/CPP targets (ICP threshold 20 mm Hg; CPP target 50–70 mm Hg); protocolised therapies: sedation/analgesia, hyperosmolar therapy, ventilatory adjustments (including hyperventilation), barbiturate therapy, decompressive craniectomy.",
+      "comparison": "Imaging–clinical examination strategy: tiered management driven by scheduled/triggered CT imaging and neurological examination (deterioration signals, radiological signs of raised ICP), without continuous ICP data. Same broad categories of brain-directed therapies triggered by clinical/CT criteria.",
+      "blinding": "Clinicians unblinded (by necessity); outcome assessors masked for follow-up assessments.",
+      "sample_size_power": "324 patients (162/group) provided 80% power (two-sided α=0.05) to detect a 10 percentage point increase in good/moderate recovery on the GOS-E (from 51.4% to 61.4%), equivalent to an odds ratio of 1.5, with concordant improvement across other components using a simulation-based composite test.",
+      "primary_outcome": "21-item composite outcome measured as a percentile score (0–100, higher = better) integrating mortality, functional status, neuropsychological performance, and clinical course over 6 months.",
+      "secondary_outcomes": [
+        "6-month mortality",
+        "14-day mortality (post hoc)",
+        "GOS-E distribution at 6 months (death, unfavourable, favourable)",
+        "ICU length of stay",
+        "Days receiving brain-specific treatment in ICU",
+        "Integrated brain-specific treatment intensity (treatment-hours, post hoc)",
+        "Use of mannitol, hypertonic saline, hyperventilation, barbiturates, decompressive craniectomy"
+      ],
+      "follow_up": "Acute hospital course (including 14-day outcomes); structured face-to-face follow-up at 3 and 6 months post-injury."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in the primary 21-item composite outcome (median percentile 56 ICP vs 53 imaging; proportional odds ratio 1.09, 95% CI 0.74–1.58; P=0.49).",
+        "6-month mortality was similar: 39% ICP vs 41% imaging (HR 1.10, 95% CI 0.77–1.57; P=0.60).",
+        "The imaging–clinical strategy used significantly more brain-directed therapies: hypertonic saline 72% vs 58% (P=0.008), hyperventilation 73% vs 60% (P=0.003), and greater total treatment intensity (median 125 vs 69 treatment-hours; P<0.001).",
+        "Catheter-related complications in the ICP group occurred in 6%; serious adverse events were similar (45% vs 46%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary 21-item composite (percentile score)",
+          "group_a": "Median 56 (IQR 22–77)",
+          "group_b": "Median 53 (IQR 21–76)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "1.09",
+          "ci_95": "0.74–1.58",
+          "p_value": "0.49",
+          "note": "Higher percentile indicates better outcome; OR >1 favours ICP-guided strategy."
+        },
+        {
+          "outcome": "Cumulative mortality at 6 months",
+          "group_a": "58/157 (39%)",
+          "group_b": "69/167 (41%)",
+          "effect_measure": "HR",
+          "effect_value": "1.10",
+          "ci_95": "0.77–1.57",
+          "p_value": "0.60",
+          "note": ""
+        },
+        {
+          "outcome": "14-day mortality (post hoc)",
+          "group_a": "33/157 (21%)",
+          "group_b": "51/167 (30%)",
+          "effect_measure": "HR",
+          "effect_value": "1.36",
+          "ci_95": "0.87–2.11",
+          "p_value": "0.18",
+          "note": "Post hoc analysis."
+        },
+        {
+          "outcome": "6-month GOS-E distribution (death/unfavourable/favourable)",
+          "group_a": "56 / 24 / 63",
+          "group_b": "67 / 26 / 60",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "1.23",
+          "ci_95": "0.77–1.96",
+          "p_value": "0.40",
+          "note": "Categories among those with available 6-month GOS-E; OR >1 favours ICP-guided strategy."
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "Median 12 (IQR 6–20)",
+          "group_b": "Median 9 (IQR 4–17)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "0.81",
+          "ci_95": "0.55–1.18",
+          "p_value": "0.25",
+          "note": "OR >1 would favour shorter ICU stay for ICP group; OR 0.81 suggests longer stay in ICP group."
+        },
+        {
+          "outcome": "Days with brain-specific treatment in ICU",
+          "group_a": "Median 3.4 (IQR 1.4–6.3)",
+          "group_b": "Median 4.8 (IQR 2.9–7.0)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "1.87",
+          "ci_95": "1.28–2.75",
+          "p_value": "0.002",
+          "note": "Fewer days of brain-specific interventions in ICP-guided strategy; OR >1 favours ICP."
+        },
+        {
+          "outcome": "Integrated brain-specific treatment intensity (treatment-hours; post hoc)",
+          "group_a": "Median 69 (IQR 47–104)",
+          "group_b": "Median 125 (IQR 71–245)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "2.36",
+          "ci_95": "1.60–3.47",
+          "p_value": "<0.001",
+          "note": "Lower intensity better; OR >1 favours ICP-guided strategy."
+        },
+        {
+          "outcome": "Mannitol use (any)",
+          "group_a": "80/157 (51%)",
+          "group_b": "95/167 (57%)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "1.32",
+          "ci_95": "0.82–2.13",
+          "p_value": "0.25",
+          "note": "OR >1 indicates greater use in imaging–clinical strategy."
+        },
+        {
+          "outcome": "Hypertonic saline use (any)",
+          "group_a": "91/157 (58%)",
+          "group_b": "121/167 (72%)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "1.95",
+          "ci_95": "1.19–3.22",
+          "p_value": "0.008",
+          "note": "More frequent in imaging–clinical strategy."
+        },
+        {
+          "outcome": "Hyperventilation use (any)",
+          "group_a": "94/157 (60%)",
+          "group_b": "122/167 (73%)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "2.16",
+          "ci_95": "1.29–3.61",
+          "p_value": "0.003",
+          "note": "More frequent in imaging–clinical strategy."
+        },
+        {
+          "outcome": "Barbiturate use (any)",
+          "group_a": "38/157 (24%)",
+          "group_b": "21/167 (13%)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "0.46",
+          "ci_95": "0.25–0.83",
+          "p_value": "0.02",
+          "note": "More frequent in ICP-guided strategy; OR <1 indicates less use in imaging."
+        },
+        {
+          "outcome": "Decompressive craniectomy (any)",
+          "group_a": "44/157 (28%)",
+          "group_b": "50/167 (30%)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "1.04",
+          "ci_95": "0.63–1.69",
+          "p_value": "0.81",
+          "note": ""
+        },
+        {
+          "outcome": "Decubitus ulcers",
+          "group_a": "18/157 (12%)",
+          "group_b": "8/167 (5%)",
+          "effect_measure": "Proportional odds ratio",
+          "effect_value": "0.35",
+          "ci_95": "0.15–0.85",
+          "p_value": "0.03",
+          "note": "Higher in ICP-guided strategy; may reflect longer ICU exposure."
+        },
+        {
+          "outcome": "Serious adverse events (any)",
+          "group_a": "70/157 (45%)",
+          "group_b": "76/167 (46%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.91",
+          "note": "No difference in overall SAE frequency."
+        },
+        {
+          "outcome": "Catheter-related complications (ICP group only)",
+          "group_a": "10/157 (6%)",
+          "group_b": "0/167 (0%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Haemorrhage: 2/157 (1%); Infection: 0/157 (0%)."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No significant difference in overall serious adverse events: 45% ICP vs 46% imaging (P=0.91).",
+      "Decubitus ulcers more frequent in ICP group: 12% vs 5% (OR 0.35, 95% CI 0.15–0.85; P=0.03), possibly due to longer ICU stay.",
+      "Catheter-related complications in ICP group: 10/157 (6%) — haemorrhage 2 (1%), infection 0."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Stratified by site, severity group, and age group with variable block sizes; allocation via local database tool with telephone back-up (coin flip) — minor vulnerability to allocation integrity if not strictly standardised."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label (clinicians unblinded, risk of differential co-interventions); outcome assessors masked for follow-up assessments, reducing detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "324 randomised; composite required sufficient component measures or known death; 6-month GOS-E categories reported among those with available data (not all participants contributed to every component)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "6/157 (4%) in ICP group did not receive monitor; 2/167 (1%) in imaging group received ICP monitor. Both groups remained in their assigned arms for analysis."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups similar in age (median 29), sex, pupillary reactivity; imbalance in CT strata (normal CT 8% vs 14%) but overall severity markers comparable."
+        }
+      ],
+      "verdict": "Moderate-to-strong: randomisation and masked outcome assessment were robust, but open-label management and protocol deviations introduce some risk of performance-related bias."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Cohort predominantly young (median age 29), male, from Latin American trauma hospitals; may differ from high-income settings in prehospital care, transfer patterns, ICU staffing, and imaging access."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Comparison arm highly protocolised, relying on repeated clinical exam and CT; results may not apply to settings without such protocols or frequent imaging. Also used intraparenchymal monitors; centres using ventricular catheters with CSF drainage may not extrapolate directly."
+        },
+        {
+          "domain": "Process-of-care translation",
+          "notes": "Findings most transportable to settings capable of delivering structured, protocolised severe TBI care, not to unstructured usual care or extremely resource-limited environments."
+        }
+      ],
+      "verdict": "Context-dependent: the trial is highly informative for protocolised severe TBI management models, but generalisability to older populations, different monitoring modalities, and settings without frequent CT/standardised neurocritical care resources may be limited."
+    },
+    "strengths": [
+      "First RCT to address the evidentiary gap for ICP monitoring in severe TBI, an area dominated by observational inference.",
+      "Large multicentre design with prespecified statistical methods tailored to complex outcomes (composite percentile approach).",
+      "Substantial separation of processes of care between strategies (treatment intensity and specific interventions differed materially).",
+      "Masked outcome assessment for structured follow-up outcomes."
+    ],
+    "limitations": [
+      "Compares two protocolised strategies; does not answer 'ICP monitoring versus usual care' where usual care is unstructured or resource-constrained.",
+      "Primary composite outcome is methodologically defensible but clinically non-intuitive; percentile differences difficult to translate to bedside.",
+      "Open-label management unavoidably permits differential co-interventions; protocol deviations (crossovers, monitor non-placement) could dilute true effects.",
+      "Younger cohort in Latin American centres may not mirror older or more comorbid TBI populations in other regions."
+    ],
+    "critical_appraisal": {
+      "summary": "BEST-TRIP was a well-conducted multicentre RCT comparing two intensive protocolised management strategies; it found no outcome benefit with ICP-guided management in a setting where both arms received structured care, but its open-label design and specific context limit generalizability.",
+      "strengths": [
+        "First randomised evidence directly testing ICP monitoring",
+        "Large, multicentre with prespecified complex endpoint",
+        "Masked outcome assessment"
+      ],
+      "weaknesses": [
+        "Open-label (by necessity) with risk of differential co-interventions",
+        "Composite outcome not easily interpreted clinically",
+        "Limited to younger, Latin American population"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "When severe TBI care is protocolised and resourced to allow intensive serial neurological assessment and CT-based decision-making, adding invasive ICP monitoring did not improve the prespecified composite outcome or 6-month mortality.",
+    "clinical_bottom_line": {
+      "verdict": "Protocolised care matters more than the monitor: in severe TBI, adding invasive ICP monitoring to a structured clinical/CT-based protocol did not improve composite outcome or survival, though it reduced brain-specific treatment intensity.",
+      "applies_to": "Severe TBI patients managed in settings with capacity for frequent CT imaging, repeated neurological examinations, and protocol-driven escalation/de-escalation of brain-directed therapies.",
+      "does_not_mean": "ICP monitoring is useless in all contexts; rather, comparable outcomes can be achieved without continuous ICP data when high-quality, protocolised non-invasive assessment and CT availability are in place.",
+      "implementation_caveats": [
+        "Generalizability is limited to young, predominantly male populations and to centres that can replicate the intensive imaging–clinical protocol.",
+        "Results may not apply where ventricular catheters (with CSF drainage) are standard or where CT/clinical exam resources are scarce.",
+        "Monitoring strategy selection should consider the local infrastructure's ability to deliver one of the two protocolised approaches reliably."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation error (device vs strategy)",
+        "notes": "The trial compares two protocolised management strategies, not 'ICP monitoring versus no monitoring' in typical practice; misreading it as proof that ICP monitoring is useless is a category error."
+      },
+      {
+        "topic": "Control arm intensity and generalisability",
+        "notes": "The imaging–clinical arm required sustained clinical scrutiny and CT access; where such resources or protocols are absent, the trial may not represent usual care and does not settle the question for low-resource settings."
+      },
+      {
+        "topic": "Composite primary endpoint",
+        "notes": "The 21-component percentile composite increases sensitivity to consistent directional effects but obscures clinically interpretable effect sizes in individual domains, fueling methodological debate."
+      },
+      {
+        "topic": "Therapeutic intensity as a mediator",
+        "notes": "Monitoring strategy substantially altered therapy use (more hypertonic saline, hyperventilation in the imaging arm), raising the question of whether ICP monitoring primarily prevents overtreatment, prevents undertreatment, or just changes the pattern of treatment without net outcome benefit."
+      },
+      {
+        "topic": "Meta-analyses and observational evidence remain heterogeneous",
+        "notes": "Systematic reviews of predominantly observational data show variable associations between ICP monitoring and outcome, sensitive to study design and confounding."
+      },
+      {
+        "topic": "Guidelines after BEST-TRIP",
+        "notes": "Major guidelines continue to recommend ICP monitoring in selected severe TBI populations where resources and expertise permit, while acknowledging low certainty of evidence and emphasising protocolised, high-quality neurocritical care."
+      },
+      {
+        "topic": "Consensus algorithms (SIBICC) reflect a “protocol-first” evolution",
+        "notes": "Post-BEST-TRIP expert consensus has emphasised stepwise algorithms for ICP/CPP management (and for combined ICP + brain tissue oxygen monitoring) aimed at standardising escalation/de-escalation and avoiding therapeutic excess, echoing the trial’s central lesson about protocolised care."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "What is the role of ICP monitoring in settings without access to frequent CT and protocolised care?",
+      "How does ICP monitoring affect long-term cognitive/functional outcomes beyond 6 months?",
+      "What is the optimal ICP/CPP protocol for preventing secondary injury in the current era?",
+      "How does the addition of brain tissue oxygen monitoring (PbtO2) or other multimodality monitoring change outcomes compared to ICP alone or clinical assessment?",
+      "Can a combined protocol—integrating both ICP thresholds and clinical/CT triggers—outperform either strategy alone?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=324",
+        "Primary composite OR 1.09 (95% CI 0.74–1.58; P=0.49)",
+        "6-month mortality 39% vs 41% (P=0.60)",
+        "Imaging arm had higher brain-specific treatment intensity: median 125 vs 69 treatment-hours (P<0.001)"
+      ],
+      "one_line_takeaway": "In severe TBI, protocolized care matters more than the monitoring device: adding invasive ICP monitoring to a structured clinical/CT-based protocol did not improve composite outcome or survival, but it reduced brain-specific treatment intensity."
+    }
+  },
+  "_source_id": "BEST-TRIP",
+  "_source_system": "Neuro"
+}

@@ -1,0 +1,324 @@
+{
+  "id": "INTERACT2",
+  "trial_name": "INTERACT2 — Rapid Blood-Pressure Lowering in Acute Intracerebral Hemorrhage (2013)",
+  "specialty": "Neurocritical Care",
+  "subtopic": "Intracerebral Hemorrhage",
+  "year": 2013,
+  "journal": "New England Journal of Medicine",
+  "citation": "Anderson CS, Heeley E, Huang Y, Wang J, Stapf C, Delcourt C, et al; INTERACT2 Investigators. Rapid blood-pressure lowering in patients with acute intracerebral hemorrhage. N Engl J Med. 2013;368(25):2355-65.",
+  "doi": "https://doi.org/10.1056/NEJMoa1214609",
+  "registration": "",
+  "trial_type": "RCT — multicenter, prospective, open-label with blinded endpoint assessment (PROBE), superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2839,
+  "result_category": "Mixed",
+  "one_liner": "Early intensive BP lowering to <140 mmHg in hyperacute ICH did not significantly reduce death/major disability (OR 0.87, p=0.06) but showed a favorable functional shift (ordinal OR 0.87, p=0.04) and was safe.",
+  "pico": {
+    "population": "Adults with spontaneous intracerebral haemorrhage confirmed by CT/MRI, systolic BP 150–220 mm Hg, randomisation feasible within 6 hours of symptom onset",
+    "intervention": "Early intensive BP lowering targeting systolic BP <140 mm Hg within 1 hour of randomisation, maintained for 7 days using protocolised IV antihypertensive agents (site-specific escalation), transition to oral when feasible",
+    "comparison": "Guideline-recommended BP management targeting systolic BP <180 mm Hg using locally available agents and usual care",
+    "outcome": "Composite of death or major disability (mRS 3–6) at 90 days"
+  },
+  "keywords": [
+    "intracerebral haemorrhage",
+    "blood pressure lowering",
+    "acute stroke",
+    "hypertension",
+    "INTERACT2"
+  ],
+  "related_trials": [
+    "ATACH-2",
+    "INTERACT3",
+    "BASC meta-analysis",
+    "INTERACT1"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Spontaneous ICH has high early mortality and long-term disability with few proven acute therapies. Haematoma expansion occurs early and is strongly associated with worse outcomes. Markedly elevated BP is common post-ICH and linked to haematoma expansion and poor prognosis, yet aggressive BP lowering raised concerns about cerebral hypoperfusion, especially in chronic hypertension or raised ICP. Pilot INTERACT1 suggested feasibility and safety of targeting <140 mm Hg with a signal of reduced haematoma growth.",
+      "knowledge_gap": "Whether a strategy of rapid, intensive systolic BP lowering to <140 mm Hg improves clinical outcomes compared with conservative <180 mm Hg targets in acute spontaneous ICH.",
+      "hypothesis": "Early intensive systolic BP lowering to <140 mm Hg within 1 hour (maintained for 7 days) would reduce death or major disability at 90 days."
+    },
+    "methods": {
+      "design": "International, multicentre, prospective, randomised, open-treatment with blinded endpoint assessment (PROBE)",
+      "setting": "144 hospitals in 21 countries, acute stroke/critical care-capable settings; enrolled May 2008 – Aug 2012",
+      "population": {
+        "inclusion": [
+          "Adults with spontaneous intracerebral haemorrhage confirmed by CT/MRI",
+          "Systolic BP 150–220 mm Hg",
+          "Randomisation and commencement of BP-lowering management feasible within 6 hours of symptom onset"
+        ],
+        "exclusion": [
+          "Structural cause for ICH",
+          "Deep coma (GCS 3–5)",
+          "Massive haematoma with very poor prognosis",
+          "Planned early surgical evacuation",
+          "Definite indication for, or contraindication to, protocolised BP lowering"
+        ]
+      },
+      "intervention": "Early intensive BP lowering targeting systolic BP <140 mm Hg within 1 hour, maintained for 7 days. Locally available IV antihypertensive agents via prespecified dose-escalation protocols; transition to oral agents when feasible.",
+      "comparison": "Guideline-recommended BP management with target systolic BP <180 mm Hg using locally available agents and usual care.",
+      "blinding": "Open-label treatment delivery; blinded endpoint assessment at 90 days (masked outcome assessors).",
+      "sample_size_power": "Planned 2800 participants to detect a 14% relative reduction in primary event rate (from 50% to 43%) with 90% power, α=0.05, allowing ~10% non-adherence and ~3% loss to follow-up. Two interim analyses with Haybittle–Peto stopping boundary (nominal p<0.048 for final analyses).",
+      "primary_outcome": "Death or major disability (mRS 3–6) at 90 days",
+      "secondary_outcomes": [
+        "Ordinal shift of mRS at 90 days",
+        "All-cause mortality at 90 days",
+        "Health-related quality of life (EQ-5D utility score)",
+        "Neurologic deterioration within 24 hours (NIHSS ≥4-point increase or GCS decrease ≥2)",
+        "Nonfatal serious adverse events",
+        "Severe hypotension with clinical consequences",
+        "Haematoma growth on repeat CT at 24 hours (subgroup)"
+      ],
+      "follow_up": "90 days for primary and key secondary outcomes; BP monitoring from randomisation to day 7; repeat CT at 24 hours in a prespecified subgroup."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary composite endpoint (death/major disability) was 52.0% vs 55.6% (OR 0.87, 95% CI 0.75–1.01, p=0.06), narrowly missing conventional significance.",
+        "Prespecified ordinal mRS analysis showed a favourable shift with intensive treatment (common OR 0.87, 95% CI 0.77–1.00, p=0.04).",
+        "BP separation was achieved but modest: mean SBP at 1 hour was 150 vs 164 mm Hg (difference 14 mm Hg); only 33.4% reached <140 mm Hg at 1 hour.",
+        "Severe hypotension was rare (0.5% vs 0.6%) and nonfatal serious adverse events similar (23.3% vs 23.6%).",
+        "Haematoma growth in the repeat-CT subgroup showed no significant difference (adjusted mean difference 1.4 mL, 95% CI −0.6 to 3.4, p=0.18)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: death or major disability (mRS 3–6) at 90 days",
+          "group_a": "719/1382 (52.0%)",
+          "group_b": "785/1412 (55.6%)",
+          "effect_measure": "OR",
+          "effect_value": "0.87",
+          "ci_95": "0.75 to 1.01",
+          "p_value": "0.06",
+          "note": "Major disability defined as mRS 3–6"
+        },
+        {
+          "outcome": "Key secondary: ordinal shift in mRS at 90 days",
+          "group_a": "mRS distribution (0–6)",
+          "group_b": "mRS distribution (0–6)",
+          "effect_measure": "Common OR",
+          "effect_value": "0.87",
+          "ci_95": "0.77 to 1.00",
+          "p_value": "0.04",
+          "note": "Pooled OR for shift to higher (worse) mRS score"
+        },
+        {
+          "outcome": "Death by 90 days",
+          "group_a": "166/1394 (11.9%)",
+          "group_b": "170/1421 (12.0%)",
+          "effect_measure": "OR",
+          "effect_value": "0.99",
+          "ci_95": "0.79 to 1.25",
+          "p_value": "0.96",
+          "note": "All-cause mortality"
+        },
+        {
+          "outcome": "Health-related quality of life: EQ-5D utility score (mean ± SD)",
+          "group_a": "0.60 ± 0.39",
+          "group_b": "0.55 ± 0.40",
+          "effect_measure": "Not reported",
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": "0.002",
+          "note": null
+        },
+        {
+          "outcome": "Neurologic deterioration in first 24 hours",
+          "group_a": "198/1369 (14.5%)",
+          "group_b": "211/1395 (15.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.95",
+          "ci_95": "0.77 to 1.17",
+          "p_value": "0.62",
+          "note": "NIHSS increase ≥4 points or GCS decrease ≥2 points"
+        },
+        {
+          "outcome": "Nonfatal serious adverse events (any)",
+          "group_a": "326/1399 (23.3%)",
+          "group_b": "338/1430 (23.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": "0.92",
+          "note": "Composite SAE to 90 days"
+        },
+        {
+          "outcome": "Severe hypotension with clinical consequences",
+          "group_a": "7/1399 (0.5%)",
+          "group_b": "8/1430 (0.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": "Not reported",
+          "note": "Hypotension requiring corrective therapy (IV fluids/vasopressors/haemodialysis)"
+        },
+        {
+          "outcome": "Haematoma growth to 24 hours (repeat CT subgroup)",
+          "group_a": "Mean 3.1 mL (95% CI 2.1 to 4.1)",
+          "group_b": "Mean 4.9 mL (95% CI 3.1 to 6.6)",
+          "effect_measure": "Adjusted mean difference (guideline minus intensive)",
+          "effect_value": "1.4 mL",
+          "ci_95": "−0.6 to 3.4",
+          "p_value": "0.18",
+          "note": "Subgroup: 491 intensive vs 473 guideline participants"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Severe hypotension with clinical consequences: 0.5% vs 0.6% (similar).",
+      "Nonfatal serious adverse events: 23.3% vs 23.6% (p=0.92).",
+      "Withdrawal of active treatment more frequent in intensive group: 75/1399 (5.4%) vs 46/1430 (3.3%).",
+      "No excess renal adverse events reported in trial, but note ATACH-2 later showed increased early renal events with very intensive targets.",
+      "Neurologic deterioration within 24 hours: 14.5% vs 15.1% (p=0.62)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation concealment",
+          "notes": "Central secure web-based randomisation with minimisation (country, hospital, time from onset ≤4/>4 h); allocation concealed, groups well balanced at baseline."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery creates risk of differential co-interventions; endpoints assessed by masked assessors, reducing detection bias. However, withdrawal of active treatment more common in intensive arm (5.4% vs 3.3%) may reflect performance bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary outcome determined for 98.5% (intensive) and 98.3% (guideline); ITT preserved. Loss mostly due to withdrawal/lost follow-up."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Intensive target poorly achieved early: only 33.4% reached <140 mm Hg at 1 hour; mean SBP difference 14 mm Hg at 1 hour. Modest separation may have diluted efficacy."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Baseline characteristics well balanced; exclusions removed very severe patients (GCS≤5, massive haematoma) so inferences limited to moderate-severity cohort."
+        }
+      ],
+      "verdict": "Moderate internal validity: robust allocation and blinded outcome assessment, but open-label care, limited early BP target attainment, and borderline significance for the primary endpoint introduce uncertainty."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Large, pragmatic enrolment across 21 countries (strong regional weighting to China). Excluded very severe (deep coma, massive haematoma) and surgical cases. Relevant to typical hyperacute, non-surgical ICH managed in monitored units."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires capacity for rapid, titrated IV BP control. Use of locally available antihypertensives improves generalisability but represents a strategy, not a specific drug. Less applicable to extreme hypertension (>220 mm Hg) or if emergent surgery required."
+        }
+      ],
+      "verdict": "Moderate to strong external validity for the targeted moderate-severity ICH population in settings that can deliver monitored IV BP control; limited for extremes of severity or resource-limited environments."
+    },
+    "strengths": [
+      "Large, international, pragmatic RCT with high follow-up completeness.",
+      "Patient-centred primary endpoint (death/major disability) at 90 days with masked assessment.",
+      "Prespecified ordinal (shift) analysis captured distributional functional effects beyond a simple dichotomised endpoint.",
+      "Demonstrated feasibility and safety of targeted systolic BP <140 mm Hg across diverse settings."
+    ],
+    "limitations": [
+      "Open-label design allows performance bias and differential decisions (including withdrawal of active care).",
+      "Incomplete achievement of the intended BP target early (only 33.4% at <140 mm Hg at 1 hour) may have diluted the treatment effect.",
+      "Radiological mechanistic outcomes (haematoma growth) assessed in a subgroup, limiting mechanistic inference and risking selection bias.",
+      "Effect estimates modest and near statistical significance; results sensitive to analytic choices (dichotomous vs ordinal) and multiplicity."
+    ],
+    "critical_appraisal": {
+      "summary": "Early intensive BP lowering to <140 mm Hg in acute ICH appears safe and may yield modest functional benefits, though the primary dichotomous endpoint narrowly missed significance. Subsequent evidence reinforces that smooth, early control is beneficial while overly aggressive lowering (e.g., <120 mm Hg) adds renal harm without neurological gain.",
+      "strengths": [
+        "Blinded outcome assessment",
+        "Prespecified ordinal analysis",
+        "Large, pragmatic international cohort"
+      ],
+      "weaknesses": [
+        "Open-label treatment",
+        "Modest early BP separation",
+        "Borderline statistical significance for primary endpoint"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In hyperacute spontaneous ICH with systolic BP 150–220 mm Hg, a strategy targeting systolic BP <140 mm Hg was safe and associated with a favourable shift in 90-day functional outcomes (ordinal OR 0.87; 95% CI 0.77–1.00; p=0.04), despite a non-significant primary dichotomous endpoint (OR 0.87; 95% CI 0.75–1.01; p=0.06).",
+    "clinical_bottom_line": {
+      "verdict": "Early, controlled systolic BP lowering to ~140 mm Hg in acute spontaneous ICH is safe and may provide a modest functional benefit; it is a reasonable strategy in appropriate patients, but avoid extremely low targets (e.g., <120 mm Hg) based on later safety data from ATACH-2.",
+      "applies_to": "Adults with spontaneous ICH presenting within 6 hours, SBP 150–220 mm Hg, without deep coma, massive haematoma, or early surgery, managed in units capable of titrated IV BP control.",
+      "does_not_mean": "BP should be lowered as quickly and as low as possible; excessive lowering may increase renal adverse events (ATACH-2) and potentially worsen cerebral perfusion.",
+      "implementation_caveats": [
+        "Aim for smooth, sustained control around 140 mm Hg, avoiding marked fluctuations.",
+        "Local agent choice acceptable; focus on the strategy rather than a single drug.",
+        "Patients with chronic hypertension or elevated ICP may require individualised haemodynamic targets."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Primary dichotomous outcome vs ordinal shift",
+        "notes": "The trial’s conclusion depends on analytic framing: dichotomised death/major disability narrowly missed significance (p=0.06), whereas prespecified ordinal analysis reached nominal significance (p=0.04), raising interpretive sensitivity."
+      },
+      {
+        "topic": "Safety and ‘how low to go’",
+        "notes": "Cerebral perfusion risk is biologically plausible; cautious, monitored lowering is essential. Editorial commentary emphasised that trial-level strategy may not fit all patients, especially those with chronic hypertension or elevated ICP."
+      },
+      {
+        "topic": "Agent heterogeneity and physiological effects",
+        "notes": "Multiple BP-lowering drug classes permitted; unclear whether benefits/harms are strategy-, agent-, or implementation-dependent."
+      },
+      {
+        "topic": "J-shaped association concern",
+        "notes": "Subsequent correspondence referenced a potential J-shaped relationship between achieved systolic BP and outcome, cautioning against very low targets in unselected patients."
+      },
+      {
+        "topic": "ATACH-2 contrast",
+        "notes": "ATACH-2 compared more intensive targets (110–139 mm Hg) with standard (140–179 mm Hg) using nicardipine; stopped early for futility (death/disability 38.7% vs 37.7%) and showed increased early renal adverse events (9.0% vs 4.0%, p=0.002), reinforcing that ‘lower is not necessarily better’."
+      },
+      {
+        "topic": "BASC individual patient data meta-analysis",
+        "notes": "Found no overall functional benefit of BP-lowering post-ICH (adjusted common OR 0.97, 95% CI 0.88–1.06, p=0.50) despite reductions in substantial haematoma growth (absolute >6 mL OR 0.75, 95% CI 0.60–0.92). Heterogeneity by strategy and agent."
+      },
+      {
+        "topic": "BP variability and quality of control",
+        "notes": "Post-hoc INTERACT2 analyses showed greater systolic BP variability associated with poorer outcomes, suggesting smooth, sustained control matters more than single time-point targets."
+      },
+      {
+        "topic": "Systems-level implementation (INTERACT3)",
+        "notes": "Stepped-wedge cluster trial of a goal-directed acute care bundle (including SBP <140 mm Hg) improved 6‑month functional outcome (common OR 0.86, 95% CI 0.76–0.97, p=0.015) and reduced serious adverse events (16.0% vs 20.1%, p=0.0098), indicating BP control best embedded within broader physiological optimisation."
+      },
+      {
+        "topic": "Guideline synthesis",
+        "notes": "Major guidelines (AHA/ASA 2022, ESO 2021) support early systolic BP lowering towards ~140 mm Hg in eligible patients while avoiding very low targets, reflecting INTERACT2’s safety/functional signal and ATACH-2’s renal safety concerns."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ATACH‑2",
+        "relation": "Compared intensive (110–139 mm Hg) vs standard (140–179 mm Hg) SBP targets using nicardipine; stopped for futility with no functional benefit and increased renal adverse events, defining the lower safety boundary."
+      },
+      {
+        "trial": "INTERACT3",
+        "relation": "Tested a bundled physiological approach including SBP <140 mm Hg; positive, suggesting BP control may be most effective as part of a broader care bundle."
+      },
+      {
+        "trial": "BASC meta‑analysis",
+        "relation": "IPD meta-analysis combining INTERACT2, ATACH‑2, and others; overall no functional benefit despite reduced haematoma growth, with heterogeneity by strategy and agent."
+      },
+      {
+        "trial": "INTERACT1",
+        "relation": "Pilot trial that demonstrated feasibility and safety of the intensive target and informed the design of INTERACT2."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal speed and depth of BP reduction for different ICH subgroups?",
+      "Do different antihypertensive agents have specific cerebrovascular effects that modify outcome?",
+      "How does BP lowering interact with intracranial pressure and cerebral perfusion in real time?",
+      "Is the benefit of BP lowering mediated by haematoma expansion, peri‑haematomal oedema, or other pathways?",
+      "Can smoother BP control (minimising variability) translate into clearer functional gains?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2839",
+        "Primary composite (death/major disability): 52.0% vs 55.6% (OR 0.87, p=0.06)",
+        "Ordinal mRS shift: common OR 0.87 (95% CI 0.77–1.00, p=0.04)",
+        "90‑day mortality identical: 11.9% vs 12.0%",
+        "Severe hypotension: 0.5% vs 0.6%"
+      ],
+      "one_line_takeaway": "Early, smooth systolic BP reduction to ~140 mm Hg in acute ICH is safe and may yield modest functional benefit; avoid excessively low targets (<120 mm Hg) because subsequent trials show renal harm without added neurological gain."
+    }
+  },
+  "_source_id": "INTERACT2",
+  "_source_system": "Neuro"
+}

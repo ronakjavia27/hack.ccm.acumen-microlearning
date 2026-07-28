@@ -1,0 +1,296 @@
+{
+  "id": "Hemodiafe",
+  "trial_name": "Hemodiafe — Continuous venovenous haemodiafiltration versus intermittent haemodialysis for acute renal failure in patients with multiple-organ dysfunction syndrome (2006)",
+  "specialty": "Critical Care",
+  "subtopic": "Renal Replacement Therapy",
+  "year": 2006,
+  "journal": "The Lancet",
+  "citation": "Vinsonneau C, Camus C, Combes A, Costa de Beauregard MA, Klouche K, Boulain T, et al; Hemodiafe Study Group. Continuous venovenous haemodiafiltration versus intermittent haemodialysis for acute renal failure in patients with multiple-organ dysfunction syndrome: a multicentre randomised trial. Lancet. 2006;368:379-85.",
+  "doi": "https://doi.org/10.1016/S0140-6736(06)69111-3",
+  "registration": "",
+  "trial_type": "RCT — multicentre, open-label, parallel-group, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 360,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU patients with acute renal failure and MODS, CVVHDF did not improve 60-day survival compared with IHD (32.6% vs 31.5%, absolute difference 1.1%, 95% CI -8.8 to 11.1, P=0.98).",
+  "pico": {
+    "population": "Critically ill adults with acute renal failure and MODS requiring RRT (LOD score ≥6, urea ≥36 mmol/L or creatinine ≥310 μmol/L; later oliguria <320 mL/16h added)",
+    "intervention": "Continuous venovenous haemodiafiltration (CVVHDF) with mean blood flow 145.7 mL/min, dialysate flow 1099 mL/h, ultrafiltration/replacement flow 1278 mL/h, average dose 29 mL/kg/h",
+    "comparison": "Intermittent haemodialysis (IHD) with daily sessions, mean duration 5.2 h, blood flow 278 mL/min, dialysate flow 500 mL/min, with haemodynamic-tolerance strategies (high sodium, cool dialysate)",
+    "outcome": "60-day survival"
+  },
+  "keywords": [
+    "continuous renal replacement therapy",
+    "intermittent haemodialysis",
+    "acute kidney injury",
+    "multiple-organ dysfunction syndrome",
+    "RRT modality",
+    "CVVHDF",
+    "IHD"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Acute kidney injury requiring RRT in ICU patients with MODS carries high mortality. IHD and CRRT were both widely used, with physiological arguments and practice variation. Pre-trial evidence consisted of single-centre experience, small randomised studies, and confounded observational comparisons; it was unclear whether modality choice affected survival, renal recovery, or treatment tolerance.",
+      "knowledge_gap": "Whether CVVHDF improves survival compared with IHD in severe ICU AKI with MODS.",
+      "hypothesis": "CVVHDF would improve 60-day survival compared with IHD."
+    },
+    "methods": {
+      "design": "Prospective, multicentre, parallel-group, open-label, randomised trial in 21 ICUs in France (Oct 1999–Mar 2003); allocation stratified by centre; outcome assessors blinded.",
+      "setting": "21 medical or multidisciplinary ICUs in France.",
+      "population": {
+        "inclusion": [
+          "Need for RRT plus severe MODS (LOD score ≥6) and biochemical criteria (serum urea ≥36 mmol/L and/or serum creatinine ≥310 μmol/L); after ~8 months, oliguria (<320 mL over 16 h despite fluid loading) was added due to low enrolment."
+        ],
+        "exclusion": [
+          "Age <18 years; pregnancy; pre-existing chronic renal failure (pre-ARF serum creatinine >180 μmol/L); obstructive or vascular aetiology of acute renal failure; ongoing ACE inhibitor exposure; major bleeding risk (prothrombin time <20% and/or platelets <30×10^9/L) or uncontrolled haemorrhage; SAPS II ≤37; moribund/expected survival <8 days."
+        ]
+      },
+      "intervention": "CVVHDF: Delivered with Aquarius system; mean blood flow 145.7 mL/min (95% CI 138.7–152.8); dialysate flow 1099 mL/h (1053–1145); ultrafiltration/replacement flow 1278 mL/h (1222–1334); average dose 29 mL/kg/h; net fluid removal 2107 mL/day (1738–2476); anticoagulation with unfractionated heparin when feasible, non-heparin strategies if contraindicated.",
+      "comparison": "IHD: Recommended daily sessions; mean session duration 5.2 h (95% CI 4.9–5.6); blood flow 278 mL/min (269–288); dialysate flow 500 mL/min (fixed); net ultrafiltration 2213 mL/day (1944–2482); haemodynamic-tolerance strategies: high sodium dialysate ~145 mmol/L and cool dialysate ~35°C during first 24 h. Switching to other modality permitted if clinically necessary.",
+      "blinding": "Non-blinded treatment allocation; outcome assessors reported as blinded.",
+      "sample_size_power": "Initially planned 480 patients (240/group) to detect 10% absolute increase in survival (50% to 60%) with 80% power at α=0.05; after early observed survival ~22%, recalculated to 360 patients (180/group) for same absolute difference; primary analysis intention-to-treat.",
+      "primary_outcome": "Survival at day 60.",
+      "secondary_outcomes": [
+        "Survival at day 28",
+        "Survival at day 90",
+        "Duration of renal support",
+        "Length of ICU stay",
+        "Length of hospital stay",
+        "Dialysis dependence after ICU discharge",
+        "Hypothermia (adverse event)",
+        "Unplanned switch to other modality"
+      ],
+      "follow_up": "60 days (primary), with additional day 28 and day 90 survival; renal recovery/dialysis dependence assessed in survivors after ICU and hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "Neutral primary endpoint: Day 60 survival essentially identical (CVVHDF 32.6% vs IHD 31.5%; absolute difference 1.1%; 95% CI -8.8 to 11.1; P=0.98).",
+        "System-level outcomes similar: Renal support duration (11 vs 11 days), ICU stay (19 vs 20 days), hospital stay (32 vs 30 days) did not differ (all P>0.6).",
+        "Safety/tolerability signal: Hypothermia more frequent with CVVHDF (17% vs 5%; P=0.0005), and unplanned switching more frequent from CVVHDF to IHD (10% vs 3%; P=0.01)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival at day 60 (primary)",
+          "group_a": "32.6% (95% CI 25.6–39.5)",
+          "group_b": "31.5% (24.8–38.2)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.1%",
+          "ci_95": "-8.8 to 11.1",
+          "p_value": "0.98",
+          "note": "Intention-to-treat; no evidence of survival benefit with CVVHDF."
+        },
+        {
+          "outcome": "Survival at day 28",
+          "group_a": "38.9% (31.7–46.1)",
+          "group_b": "41.8% (34.6–48.9)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.65",
+          "note": "Secondary endpoint."
+        },
+        {
+          "outcome": "Survival at day 90",
+          "group_a": "28.5% (21.8–35.2)",
+          "group_b": "27.2% (20.8–33.6)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.95",
+          "note": "Secondary endpoint."
+        },
+        {
+          "outcome": "Duration of renal support (days)",
+          "group_a": "11 (95% CI 8–14)",
+          "group_b": "11 (8–13)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.84",
+          "note": "Mean (95% CI)."
+        },
+        {
+          "outcome": "Length of ICU stay (days)",
+          "group_a": "19 (95% CI 15–22)",
+          "group_b": "20 (16–23)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.73",
+          "note": "Mean (95% CI)."
+        },
+        {
+          "outcome": "Length of hospital stay (days)",
+          "group_a": "32 (95% CI 22–42)",
+          "group_b": "30 (24–35)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.66",
+          "note": "Mean (95% CI)."
+        },
+        {
+          "outcome": "Dialysis dependence after ICU discharge (among assessed survivors)",
+          "group_a": "4/61 (6.6%)",
+          "group_b": "6/61 (9.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.5",
+          "note": "Assessment denominators 61 in each arm."
+        },
+        {
+          "outcome": "Hypothermia (adverse event)",
+          "group_a": "31 (17%)",
+          "group_b": "10 (5%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.0005",
+          "note": "Clinically important modality-associated harm signal."
+        },
+        {
+          "outcome": "Unplanned switch to the other modality",
+          "group_a": "17 (10%)",
+          "group_b": "6 (3%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.01",
+          "note": "Switching permitted; higher switching from CVVHDF to IHD."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Hypothermia occurred more often with CVVHDF (17% vs 5%; P=0.0005).",
+      "Unplanned switching from CVVHDF to IHD was more frequent (10% vs 3%; P=0.01)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-generated randomisation, balanced blocks of four, stratified by centre; allocation concealed until enrolment complete."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery creates risk for clinician-mediated outcomes (switching, RRT discontinuation), though primary outcome (mortality) is objective; outcome assessors reported as blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "360 randomised (184 IHD, 176 CVVHDF); 1 patient in CVVHDF group withdrew consent and excluded from analysis; no other loss to follow-up for survival endpoints."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "IHD delivered: mean session duration 5.2 h, blood flow 278 mL/min, dialysate flow 500 mL/min. CVVHDF delivered: blood flow 145.7 mL/min, dialysate flow 1099 mL/h, ultrafiltration/replacement flow 1278 mL/h, average dose 29 mL/kg/h. Biochemical separation in azotaemia small (mean urea 14.8 vs 15.7 mmol/L). Unplanned switching more frequent in CVVHDF arm (10% vs 3%), potentially diluting modality effect."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched on key severity indicators (mean SAPS II ~64–65; mean LOD ~10; high prevalence of mechanical ventilation and vasopressor support)."
+        },
+        {
+          "domain": "Timing",
+          "notes": "Enrolment occurred early-to-intermediate in ICU course (median ~2–3 days after ICU admission), but not ultra-early; AKI pathobiology may already have been established."
+        },
+        {
+          "domain": "Heterogeneity",
+          "notes": "Multicentre conduct increases generalisability, but centre-level practice differences and permitted switching introduce treatment heterogeneity; no major centre interaction highlighted."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Intention-to-treat analysis; sample size revision and lower-than-anticipated survival reduce precision; confidence interval around primary effect permits modest benefit or harm."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate to strong for the mortality endpoint (robust randomisation; objective outcome; minimal attrition), but is limited for modality-specific mechanistic inference due to open-label care, substantial switching (especially from CVVHDF to IHD), and imperfect comparability of delivered 'dose' metrics across modalities."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Highly representative of severe ICU AKI with MODS (very high rates of mechanical ventilation and vasopressor use; majority septic), but not representative of milder AKI (SAPS II ≤37 excluded) or patients with significant pre-existing chronic kidney disease."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Both modalities delivered with relatively optimised prescriptions (e.g., haemodynamic-tolerance strategies for IHD; quantified CVVHDF dose), which may exceed consistency achievable in less-resourced settings. Findings most applicable to centres that can deliver both IHD and CVVHDF at high quality with experienced staff; comparative balance may differ where one modality is delivered suboptimally or staffing constraints limit continuous therapies."
+        }
+      ],
+      "verdict": "Generalisability is good to high-acuity ICUs managing severe AKI with MODS in well-resourced settings, but more limited for less severe AKI, pre-existing advanced CKD, and settings where consistent delivery of either modality (particularly CVVHDF) is constrained."
+    },
+    "strengths": [
+      "Multicentre randomised design",
+      "Clinically important primary endpoint (60-day survival)",
+      "Severe, high-risk population (high event rate)",
+      "Pragmatic allowance of switching reflecting real-world practice",
+      "Detailed reporting of delivered treatment parameters and adverse events"
+    ],
+    "limitations": [
+      "Non-blinded treatment assignment",
+      "Substantial switching/crossover (especially from CVVHDF to IHD) potentially diluting modality effects",
+      "'Dose' comparability between IHD and CVVHDF remains methodologically challenging",
+      "Inclusion criteria amended early in the trial (oliguria added) with potential for population drift"
+    ],
+    "critical_appraisal": {
+      "summary": "Hemodiafe is a well-conducted multicentre RCT with robust randomisation and objective primary outcome, but open-label design, substantial crossover, and imperfect dose comparability limit confidence in modality-specific mechanistic inferences; the neutral result for survival is credible, but the trial does not exclude modest benefit or harm.",
+      "strengths": [
+        "Multicentre randomised design",
+        "Objective primary outcome (mortality)",
+        "High-risk population with high event rate",
+        "Pragmatic design allowing switching"
+      ],
+      "weaknesses": [
+        "Open-label treatment",
+        "Substantial unplanned switching (10% vs 3%)",
+        "Dose comparability between modalities not directly equivalent",
+        "Inclusion criteria amendment mid-trial"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "When both modalities are delivered with careful prescriptions, CVVHDF did not improve survival over IHD in severe ICU AKI with MODS; modality choice should therefore prioritise haemodynamic stability, fluid balance needs, anticoagulation constraints, staffing, and local expertise.",
+    "clinical_bottom_line": {
+      "verdict": "CVVHDF does not improve survival over IHD in severe ICU AKI with MODS; modality choice should be individualised based on haemodynamics, fluid goals, anticoagulation feasibility, and local capability rather than expecting a mortality benefit from continuous therapy alone.",
+      "applies_to": "Severe ICU AKI with MODS in well-resourced settings where both modalities can be delivered optimally.",
+      "does_not_mean": "That continuous modalities are inferior or should be abandoned; they may still be preferred for haemodynamic instability or fluid management, but not for survival benefit.",
+      "implementation_caveats": [
+        "Ensure high-quality delivery of whichever modality is chosen (dose, continuity, complication prevention).",
+        "Monitor for and prevent hypothermia during CVVHDF.",
+        "Permit rational switching between modalities based on clinical need rather than rigid protocol adherence."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of a 'neutral' result",
+        "notes": "The accompanying editorial argued that, in a setting where both treatments are delivered competently, the absence of a mortality difference supports prioritising high-quality delivery (dose, continuity, complication prevention) over claims of intrinsic modality superiority."
+      },
+      {
+        "topic": "Switching as both strength and threat",
+        "notes": "Permitting switching improves pragmatic relevance, but higher switching from CVVHDF to IHD (10% vs 3%) can dilute effect estimates and makes 'pure modality' comparisons harder to interpret as causal."
+      },
+      {
+        "topic": "Broader evidence base",
+        "notes": "Systematic reviews aggregating randomised evidence have not demonstrated a consistent mortality advantage for continuous over intermittent modalities; differences, where present, tend to relate to haemodynamic tolerance and selected renal-recovery outcomes rather than survival."
+      },
+      {
+        "topic": "Guideline position",
+        "notes": "KDIGO recommends individualising modality choice, commonly favouring continuous modalities in haemodynamically unstable patients, while acknowledging the low-to-moderate certainty of evidence for hard outcomes. Surviving Sepsis Campaign guidelines similarly do not endorse a universal survival benefit of one RRT modality and emphasise choosing a strategy consistent with haemodynamics, fluid management goals, and available resources."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does CVVHDF improve renal recovery or long-term dialysis dependence compared with IHD?",
+      "What is the optimal delivered dose for IHD to achieve comparable solute control to CVVHDF?",
+      "How does modality choice affect long-term patient-centred outcomes (quality of life, functional status)?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=360",
+        "60-day survival: CVVHDF 32.6% vs IHD 31.5% (absolute difference 1.1%, 95% CI -8.8 to 11.1, P=0.98)",
+        "Hypothermia: 17% vs 5% (P=0.0005)",
+        "Unplanned switch: 10% vs 3% (P=0.01)"
+      ],
+      "one_line_takeaway": "In severe ICU AKI with MODS, CVVHDF does not improve survival over optimised IHD; choose modality based on haemodynamics, fluid goals, and local capability, not expected mortality benefit."
+    }
+  },
+  "_source_id": "Hemodiafe",
+  "_source_system": "Renal"
+}

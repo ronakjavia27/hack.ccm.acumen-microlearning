@@ -1,0 +1,369 @@
+{
+  "id": "PATCH-Trauma",
+  "trial_name": "PATCH-Trauma — Prehospital Tranexamic Acid for Severe Trauma (2023)",
+  "specialty": "Trauma & Critical Care",
+  "subtopic": "Coagulation Disorders",
+  "year": 2023,
+  "journal": "N Engl J Med",
+  "citation": "PATCH-Trauma Investigators and the ANZICS Clinical Trials Group. Prehospital Tranexamic Acid for Severe Trauma. N Engl J Med. 2023;389(2):127-136.",
+  "doi": "10.1056/NEJMoa2215457",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, double-dummy, placebo-controlled, pragmatic prehospital setting",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1300,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Prehospital plus in-hospital TXA did not improve 6-month favourable functional survival in severe trauma despite signals of reduced early mortality.",
+  "pico": {
+    "population": "Adults (≥18 years) with major trauma at risk of trauma-induced coagulopathy (COAST score ≥3), treated by advanced EMS, feasible initiation within 3 hours of injury",
+    "intervention": "Tranexamic acid 1 g IV/IO bolus prehospital (over ~10 min) followed by 1 g IV infusion over 8 h started in hospital",
+    "comparison": "Placebo (0.9% NaCl) in identical volumes and timings (prehospital bolus + in-hospital infusion)",
+    "outcome": "Survival with favourable functional outcome at 6 months (Glasgow Outcome Scale–Extended score 5–8)"
+  },
+  "keywords": [
+    "tranexamic acid",
+    "TXA",
+    "prehospital",
+    "trauma",
+    "coagulopathy",
+    "hyperfibrinolysis",
+    "GOS-E"
+  ],
+  "related_trials": [
+    "CRASH-2",
+    "STAAMP"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Trauma-induced coagulopathy and hyperfibrinolysis drive early haemorrhagic death. CRASH-2 showed TXA reduces mortality when given within 3 h in hospital-based settings, but external validity to advanced trauma systems and systematic prehospital use remained uncertain.",
+      "knowledge_gap": "Prehospital RCTs (e.g., STAAMP) did not consistently show improvement in long-term functional outcomes, and the balance of benefit vs thrombosis in modern trauma care was unclear.",
+      "hypothesis": "Prehospital TXA (with in-hospital continuation) would increase survival with favourable functional outcome at 6 months compared with placebo in adults with severe trauma at risk of coagulopathy."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, placebo-controlled, pragmatic trial with prehospital enrolment and in-hospital continuation.",
+      "setting": "Participating ambulance services and trauma hospitals within advanced trauma systems in Australia, New Zealand, and Germany.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with major trauma",
+          "At risk of trauma-induced coagulopathy: COAST score ≥3",
+          "Initiation of study treatment feasible within 3 hours of injury"
+        ],
+        "exclusion": [
+          "Suspected pregnancy",
+          "Nursing home or residential aged care facility residence"
+        ]
+      },
+      "intervention": "Tranexamic acid 1 g IV/IO bolus (10 mL) initiated prehospital, delivered over ~10 minutes, followed by 1 g IV infusion in 100 mL over 8 hours commenced after hospital arrival.",
+      "comparison": "Placebo (0.9% sodium chloride) bolus + infusion in identical volumes and timings.",
+      "blinding": "Double-blind (prehospital clinicians, in-hospital teams, patients/surrogates, investigators, outcome assessors); identical study packs and matched placebo.",
+      "sample_size_power": "1184 required to detect a 9% absolute increase in 6-month favourable GOS-E outcome (60% to 69%) with 90% power at two-sided α=0.05; target increased to 1316 for 10% loss to follow-up; 1310 actually randomised.",
+      "primary_outcome": "Survival with favourable functional outcome at 6 months (GOS-E 5–8).",
+      "secondary_outcomes": [
+        "Mortality at 24 hours, 28 days, and 6 months",
+        "Cause-specific mortality (bleeding, head injury) at 6 months",
+        "Any vascular occlusive event (DVT/PE/MI/stroke/other arterial) to day 28/discharge/death",
+        "Sepsis episodes to day 28/discharge/death",
+        "Red blood cell transfusion within 24 hours"
+      ],
+      "follow_up": "Clinical outcomes to 28 days (or hospital discharge/death); functional outcome at 6 months (structured telephone GOS-E interview by blinded assessors)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary endpoint neutral: 53.7% vs 53.7% (RR 1.00; 95% CI 0.90–1.12; P=0.95).",
+        "Reduced early mortality with TXA: 24‑h mortality 9.7% vs 14.1% (RR 0.69; 95% CI 0.51–0.94); 28‑d mortality 17.3% vs 21.8% (RR 0.79; 95% CI 0.63–0.99); 6‑month mortality HR 0.81 (95% CI 0.65–1.02).",
+        "No excess thrombotic events: vascular occlusive events 8.5% vs 9.8% (RR 0.87; 95% CI 0.62–1.22).",
+        "Subgroup analyses showed no convincing heterogeneity, with wide CIs in penetrating trauma and time‑to‑treatment strata."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite: 6-month favourable functional outcome (GOS-E 5–8) – complete case",
+          "group_a": "307/572 (53.7%)",
+          "group_b": "300/559 (53.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.90–1.12",
+          "p_value": "0.95",
+          "note": ""
+        },
+        {
+          "outcome": "Primary composite – multiple imputation",
+          "group_a": "56.1%",
+          "group_b": "56.1%",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.90–1.11",
+          "p_value": "0.98",
+          "note": "Supplementary analysis for missing GOS-E"
+        },
+        {
+          "outcome": "Mortality at 24 hours",
+          "group_a": "64/657 (9.7%)",
+          "group_b": "91/643 (14.1%)",
+          "effect_measure": "RR",
+          "effect_value": "0.69",
+          "ci_95": "0.51–0.94",
+          "p_value": "",
+          "note": "Secondary outcome; P not reported"
+        },
+        {
+          "outcome": "Mortality at 28 days",
+          "group_a": "114/657 (17.3%)",
+          "group_b": "140/643 (21.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.79",
+          "ci_95": "0.63–0.99",
+          "p_value": "",
+          "note": "Secondary outcome; P not reported"
+        },
+        {
+          "outcome": "Mortality at 6 months (time‑to‑event)",
+          "group_a": "122/657 (18.5%)",
+          "group_b": "148/643 (23.0%)",
+          "effect_measure": "HR",
+          "effect_value": "0.81",
+          "ci_95": "0.65–1.02",
+          "p_value": "",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Cause‑specific mortality: bleeding (to 6 months)",
+          "group_a": "35/657 (5.3%)",
+          "group_b": "48/643 (7.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.66",
+          "ci_95": "0.43–1.01",
+          "p_value": "",
+          "note": "Clinician‑assigned cause of death, blinded"
+        },
+        {
+          "outcome": "Cause‑specific mortality: head injury (to 6 months)",
+          "group_a": "72/657 (11.0%)",
+          "group_b": "79/643 (12.3%)",
+          "effect_measure": "HR",
+          "effect_value": "0.88",
+          "ci_95": "0.64–1.21",
+          "p_value": "",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Any vascular occlusive event (to day 28/discharge/death)",
+          "group_a": "56/657 (8.5%)",
+          "group_b": "63/643 (9.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.62–1.22",
+          "p_value": "",
+          "note": "DVT/PE/MI/stroke/other arterial events"
+        },
+        {
+          "outcome": "Sepsis episodes (to day 28/discharge/death)",
+          "group_a": "114/657 (17.4%)",
+          "group_b": "117/643 (18.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.76–1.20",
+          "p_value": "",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Red blood cell transfusion within 24 hours: bags used (among those transfused)",
+          "group_a": "Median 4 (IQR 2–8)",
+          "group_b": "Median 5 (IQR 2–9)",
+          "effect_measure": "Median difference",
+          "effect_value": "-1.00",
+          "ci_95": "-1.68 to -0.32",
+          "p_value": "",
+          "note": "Difference in medians (TXA minus placebo)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Time to first dose <1 hour",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.82–1.28",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Time to first dose 1 to <2 hours",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "RR",
+          "effect_value": "1.09",
+          "ci_95": "0.93–1.26",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Time to first dose ≥2 hours",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "RR",
+          "effect_value": "0.83",
+          "ci_95": "0.66–1.03",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Penetrating/burn injury",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "RR",
+          "effect_value": "1.30",
+          "ci_95": "0.92–1.83",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "AIS head/neck >2 (post hoc)",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "RR",
+          "effect_value": "0.93",
+          "ci_95": "0.73–1.18",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "AIS head/neck ≤2 (post hoc)",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "RR",
+          "effect_value": "1.06",
+          "ci_95": "0.96–1.18",
+          "p_interaction": ""
+        }
+      ]
+    },
+    "safety": [
+      "Any vascular occlusive event: 8.5% TXA vs 9.8% placebo (RR 0.87; 95% CI 0.62–1.22).",
+      "Sepsis episodes: 17.4% vs 18.2% (RR 0.95; 95% CI 0.76–1.20).",
+      "No signal of increased thrombotic or infectious harm."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation concealment",
+          "notes": "Pre-prepared identical packs, stratification by jurisdiction and GCS category, robust blinding maintained across prehospital and in‑hospital phases."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double‑blind design with matched placebo; outcome assessors blinded; open‑label TXA use in ~16% of each arm, likely biasing towards null."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "ITT analysis (n=1300). Primary outcome missing in 13% (similar between arms); multiple imputation confirmed consistency. Sensitive long‑term follow‑up in major trauma may still be informative."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Full protocol adherence 67% vs 63%; both doses received 78% vs 75%; first dose only 21% vs 25%. Open‑label TXA use 16% in both arms dilutes treatment separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched (age, ISS, blunt trauma ~92%, GCS <9 ~39‑41%, hypotension ~38‑41%)."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate: randomisation and blinding were strong, but 13% missing primary outcome and substantial protocol deviations (incomplete dosing, open‑label TXA in both arms) likely diluted separation and complicate causal interpretation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Severely injured, physiologically compromised adults (median ISS 29, ~40% with GCS <9 or systolic BP ≤75 mm Hg), predominantly blunt trauma (92%); limited penetrating and burn subgroups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires advanced EMS with IV/IO access and a receiving trauma centre able to start an 8‑hour infusion; less generalisable to resource‑limited systems or very prolonged transport."
+        }
+      ],
+      "verdict": "Highly applicable to adult severe blunt trauma managed in well‑resourced prehospital and trauma‑centre systems, but less generalisable to penetrating‑dominant settings, paediatrics, pregnancy, and settings without reliable early IV/infusion delivery."
+    },
+    "strengths": [
+      "Large pragmatic multicentre double‑blind RCT spanning prehospital to in‑hospital care.",
+      "Enrolment enriched by a prehospital coagulopathy risk score (COAST ≥3).",
+      "Patient‑centred 6‑month GOS‑E primary outcome.",
+      "Pre‑specified statistical analysis plan with sensitivity analyses for missing data."
+    ],
+    "limitations": [
+      "Primary outcome missing in 13% of participants, requiring imputation.",
+      "Only ~75–78% received both protocol doses; ~16% received open‑label TXA in each arm, reducing treatment separation.",
+      "Limited power to detect treatment‑effect heterogeneity in small subgroups (penetrating/burn).",
+      "External validity uncertain for systems without advanced trauma pathways; lack of screening denominators for non‑enrolled patients."
+    ],
+    "critical_appraisal": {
+      "summary": "A well‑designed, pragmatic prehospital trial with a patient‑centred primary endpoint that found no improvement in 6‑month favourable functional survival, though early mortality was reduced. Internal validity is weakened by missing outcomes and crossing over, while external validity is strong for similarly resourced blunt trauma systems.",
+      "strengths": [
+        "Robust blinding and allocation concealment throughout prehospital and hospital phases.",
+        "ITT analysis with pre‑specified sensitivity for missing data.",
+        "Clinically relevant primary outcome (GOS‑E) rather than surrogate."
+      ],
+      "weaknesses": [
+        "13% loss to follow‑up on primary outcome, with potential for informative missingness.",
+        "High rates of protocol non‑adherence and open‑label TXA use undermine causal attribution.",
+        "Composite primary outcome may dilute a haemorrhage‑specific benefit."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In severe trauma at risk of coagulopathy, early TXA (prehospital bolus + in‑hospital infusion) did not improve survival with favourable functional outcome at 6 months, despite signals of reduced early mortality.",
+    "clinical_bottom_line": {
+      "verdict": "Routine prehospital TXA does not improve long‑term functional recovery in unselected severe trauma, but may still prevent early haemorrhagic death.",
+      "applies_to": "Adult severe blunt trauma managed in advanced EMS/trauma systems, especially those with hyperfibrinolysis or early haemorrhage.",
+      "does_not_mean": "TXA is ineffective—a mortality reduction in the first 28 days was observed, but this did not translate into better 6‑month functional outcomes.",
+      "implementation_caveats": [
+        "Benefit is likely concentrated in preventing early haemorrhagic death, not in improving neurological or rehabilitative recovery.",
+        "Use requires robust prehospital IV/IO capability and seamless transition to hospital infusion.",
+        "Clinicians should weigh potential early survival gains against the lack of long‑term functional improvement and the absence of a clear thrombotic signal."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Endpoint selection vs mechanistic plausibility",
+        "notes": "TXA targets haemorrhage/hyperfibrinolysis, but the primary composite (6‑month GOS‑E) is heavily influenced by traumatic brain injury and rehabilitation trajectory, potentially obscuring a haemorrhage‑specific benefit."
+      },
+      {
+        "topic": "Neutral primary with early mortality signal",
+        "notes": "The reduction in 24‑h and 28‑d mortality occurred as secondary outcomes without multiplicity correction, raising interpretive tension; however, estimates align with the broader TXA trauma evidence base (CRASH‑2, STAAMP)."
+      },
+      {
+        "topic": "Phenotyping and biological enrichment",
+        "notes": "COAST score enriches for physiological shock and injury pattern but does not directly measure fibrinolysis. Without a marker of hyperfibrinolysis, any benefit may be diluted by patients unlikely to respond."
+      },
+      {
+        "topic": "Protocol contamination and ‘real‑world’ delivery",
+        "notes": "~21–25% received only the bolus, and ~16% received open‑label TXA in both arms; this reflects contemporary clinician behaviour but biases against detecting a true causal effect."
+      },
+      {
+        "topic": "Implications for meta‑analysis and guidelines",
+        "notes": "Updated meta‑analyses incorporating PATCH generally support a modest reduction in early mortality, but effects on long‑term functional outcomes remain uncertain. Guidelines continue to recommend early TXA in bleeding trauma with acknowledgment of limitations."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CRASH-2",
+        "relation": "Large hospital‑based RCT showing TXA within 3 h reduces all‑cause mortality in bleeding trauma; PATCH extends this to prehospital use with a long‑term functional endpoint."
+      },
+      {
+        "trial": "STAAMP",
+        "relation": "Prior prehospital RCT of TXA in trauma; did not show consistent improvement in patient‑important long‑term outcomes, providing impetus for PATCH’s larger, disability‑sensitive design."
+      },
+      {
+        "trial": "Subsequent meta‑analyses",
+        "relation": "Systematic reviews including PATCH confirm modest early mortality reduction; debate continues over optimal targeting and functional outcome improvement."
+      }
+    ],
+    "unresolved_questions": [
+      "Which patients (e.g., those with hyperfibrinolysis confirmed by viscoelastic testing) benefit most?",
+      "What is the optimal endpoint to detect TXA’s haemorrhage‑specific benefit without dilution by non‑haemorrhagic disability?",
+      "Can a trial with lower contamination and better dosing adherence show a meaningful improvement in long‑term functional outcomes?",
+      "What is the role of prehospital TXA in penetrating trauma, given the small subgroup in PATCH?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n = 1300",
+        "6‑month favourable functional outcome: 53.7% vs 53.7% (RR 1.00)",
+        "28‑day mortality: 17.3% vs 21.8% (RR 0.79, 95% CI 0.63–0.99)",
+        "24‑hour mortality: 9.7% vs 14.1% (RR 0.69, 95% CI 0.51–0.94)"
+      ],
+      "one_line_takeaway": "Prehospital TXA does not improve long‑term functional outcome in severe trauma despite reducing early mortality; use remains reasonable for preventing early haemorrhagic death in appropriately resourced systems."
+    }
+  },
+  "_source_id": "PATCH-Trauma",
+  "_source_system": "Haematology"
+}

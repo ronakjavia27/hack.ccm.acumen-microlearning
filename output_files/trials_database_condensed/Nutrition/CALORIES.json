@@ -1,0 +1,356 @@
+{
+  "id": "CALORIES",
+  "trial_name": "CALORIES — Trial of the Route of Early Nutritional Support in Critically Ill Adults (2014)",
+  "specialty": "Nutrition",
+  "subtopic": "Enteral Nutrition",
+  "year": 2014,
+  "journal": "New England Journal of Medicine",
+  "citation": "Harvey SE, Parrott F, Harrison DA, Bear DE, Segaran E, Beale R, et al. Trial of the route of early nutritional support in critically ill adults. N Engl J Med. 2014;371(18):1673-1684",
+  "doi": "",
+  "registration": "",
+  "trial_type": "RCT — pragmatic, multicenter, parallel-group, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2400,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In 2400 critically ill adults, early parenteral nutrition did not reduce 30-day mortality compared with early enteral nutrition (33.1% vs 34.2%; RR 0.97; 95% CI 0.86–1.08).",
+  "pico": {
+    "population": "Adult patients with unplanned ICU admission expected to require >3 days of ICU care and >2 days of nutritional support, enrolled within 36 hours of ICU admission.",
+    "intervention": "Early parenteral nutrition (PN) initiated within 36 hours of ICU admission, target ~25 kcal/kg/day for up to 5 days (or until ICU discharge/death/oral intake).",
+    "comparison": "Early enteral nutrition (EN) initiated within 36 hours of ICU admission, similar energy target (~25 kcal/kg/day).",
+    "outcome": "30-day all-cause mortality."
+  },
+  "keywords": [
+    "parenteral nutrition",
+    "enteral nutrition",
+    "route of feeding",
+    "critical care",
+    "nutritional support",
+    "CALORIES"
+  ],
+  "related_trials": [
+    "NUTRIREA-2",
+    "EPaNIC"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Enteral nutrition (EN) was the default early ICU strategy due to biological plausibility (gut integrity, immunological effects) and prior evidence suggesting fewer infections than parenteral nutrition (PN). However, EN delivery is often limited by intolerance and interruptions, while PN can provide more predictable energy/protein early but raises concerns about catheter-related infection, metabolic complications, and overfeeding.",
+      "knowledge_gap": "Whether the route of early nutritional support (PN vs EN) materially changed outcomes under contemporary practice with conservative energy targets and tighter glycaemic control was uncertain.",
+      "hypothesis": "Early PN is superior to early EN in reducing 30-day all-cause mortality."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, parallel-group RCT, open-label.",
+      "setting": "33 adult general critical care units in England.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Unplanned ICU admission",
+          "Enrolled within 36 hours of ICU admission",
+          "Clinician expected ICU stay >3 days and need for nutritional support for ≥2 days"
+        ],
+        "exclusion": [
+          "Unable to receive nutrition via either route",
+          "Clinical contraindication to PN or EN at enrolment",
+          "Received nutritional support for >7 days before ICU admission",
+          "Gastrostomy/jejunostomy in situ",
+          "Pregnant",
+          "Likely to be outside the UK within 6 months (follow-up feasibility)"
+        ]
+      },
+      "intervention": "Early PN started as soon as possible after randomisation, target ~25 kcal/kg/day, protocolised, for up to 5 days (or until ICU discharge/death/oral intake).",
+      "comparison": "Early EN started as soon as possible after randomisation, similar energy target (~25 kcal/kg/day), by nasogastric/enteral tube.",
+      "blinding": "Open-label (route could not be blinded).",
+      "sample_size_power": "2400 patients required to detect a 6.4% absolute reduction in 30-day mortality (from 32.0% to 25.6%) with 90% power at a two-sided 5% significance level.",
+      "primary_outcome": "30-day all-cause mortality.",
+      "secondary_outcomes": [
+        "Death in ICU",
+        "Death before acute hospital discharge",
+        "Death by 90 days",
+        "Infections (number per patient to 30 days)",
+        "Days alive and free of organ support to 30 days",
+        "Severe hypoglycaemia (blood glucose <2.2 mmol/L)",
+        "Vomiting",
+        "Diarrhoea",
+        "Constipation",
+        "Acute hospital length of stay (survivors)",
+        "Serious adverse events to 30 days"
+      ],
+      "follow_up": "30 days (primary), with outcomes reported through ICU discharge, hospital discharge, and 90 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "Early PN was not superior to early EN for 30-day mortality (RR 0.97, 95% CI 0.86–1.08, P=0.57); mortality similar at all time points.",
+        "Route mainly shifted tolerance/metabolic profiles: vomiting and severe hypoglycaemia were lower with PN, constipation higher with PN; infections and organ-support–free days were similar.",
+        "Prespecified subgroup analyses showed no significant effect modification."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death by 30 days (primary)",
+          "group_a": "393/1188 (33.1%)",
+          "group_b": "409/1195 (34.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.97",
+          "ci_95": "0.86–1.08",
+          "p_value": "0.57",
+          "note": "Absolute difference −1.1% (95% CI −4.2 to 2.0)"
+        },
+        {
+          "outcome": "Death in ICU",
+          "group_a": "263/1191 (22.1%)",
+          "group_b": "270/1197 (22.6%)",
+          "effect_measure": "RR",
+          "effect_value": "0.98",
+          "ci_95": "0.84–1.13",
+          "p_value": "",
+          "note": "No early survival difference"
+        },
+        {
+          "outcome": "Death before hospital discharge",
+          "group_a": "407/1191 (34.2%)",
+          "group_b": "421/1197 (35.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.97",
+          "ci_95": "0.87–1.08",
+          "p_value": "",
+          "note": "Consistent with 30-day result"
+        },
+        {
+          "outcome": "Death by 90 days",
+          "group_a": "429/1191 (36.0%)",
+          "group_b": "443/1197 (37.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.97",
+          "ci_95": "0.88–1.07",
+          "p_value": "",
+          "note": "Survival curves similar through 90 days"
+        },
+        {
+          "outcome": "Infections (number per patient to 30 days)",
+          "group_a": "0.22",
+          "group_b": "0.21",
+          "effect_measure": "Difference",
+          "effect_value": "0.01",
+          "ci_95": "−0.05 to 0.08",
+          "p_value": "0.72",
+          "note": "Antibiotic-treated infections; pragmatic adjudication"
+        },
+        {
+          "outcome": "Days alive and free of organ support to 30 days",
+          "group_a": "13.2 ± 11.8",
+          "group_b": "13.0 ± 11.6",
+          "effect_measure": "Difference",
+          "effect_value": "0.21 days",
+          "ci_95": "−0.79 to 1.20",
+          "p_value": "0.68",
+          "note": "No clinically meaningful difference"
+        },
+        {
+          "outcome": "Severe hypoglycaemia (glucose <2.2 mmol/L)",
+          "group_a": "38/1173 (3.2%)",
+          "group_b": "75/1174 (6.4%)",
+          "effect_measure": "Difference",
+          "effect_value": "−3.1 percentage points",
+          "ci_95": "−4.8 to −1.5",
+          "p_value": "<0.001",
+          "note": "Lower in PN group"
+        },
+        {
+          "outcome": "Vomiting",
+          "group_a": "100/1191 (8.4%)",
+          "group_b": "194/1197 (16.2%)",
+          "effect_measure": "Difference",
+          "effect_value": "−7.8 percentage points",
+          "ci_95": "−10.5 to −5.2",
+          "p_value": "<0.001"
+        },
+        {
+          "outcome": "Diarrhoea",
+          "group_a": "392/1191 (32.9%)",
+          "group_b": "434/1197 (36.3%)",
+          "effect_measure": "Difference",
+          "effect_value": "−3.4 percentage points",
+          "ci_95": "−7.1 to 0.4",
+          "p_value": "0.09"
+        },
+        {
+          "outcome": "Constipation",
+          "group_a": "283/1191 (23.8%)",
+          "group_b": "212/1197 (17.7%)",
+          "effect_measure": "Difference",
+          "effect_value": "6.1 percentage points",
+          "ci_95": "2.9 to 9.2",
+          "p_value": "<0.001"
+        },
+        {
+          "outcome": "Acute hospital length of stay (survivors), median (IQR) days",
+          "group_a": "32.1 (15.8–61.2)",
+          "group_b": "29.9 (14.5–55.0)",
+          "effect_measure": "Difference",
+          "effect_value": "−2.8 days",
+          "ci_95": "−5.5 to −0.1",
+          "p_value": "0.04",
+          "note": "Statistically significant but modest"
+        },
+        {
+          "outcome": "Serious adverse events to 30 days",
+          "group_a": "59/1191 (4.9%)",
+          "group_b": "57/1197 (4.8%)",
+          "effect_measure": "Difference",
+          "effect_value": "0.2 percentage points",
+          "ci_95": "−1.6 to 2.0",
+          "p_value": "0.87"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "All prespecified subgroups",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "",
+          "note": "No significant effect modification was found; interaction tests not significant."
+        }
+      ]
+    },
+    "safety": [
+      "Severe hypoglycaemia: 3.2% vs 6.4% (P<0.001), lower in PN group",
+      "Vomiting: 8.4% vs 16.2% (P<0.001), lower in PN group",
+      "Constipation: 23.8% vs 17.7% (P<0.001), higher in PN group",
+      "Diarrhoea: trend lower with PN (32.9% vs 36.3%, P=0.09)",
+      "Serious adverse events: similar (4.9% vs 4.8%, P=0.87)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central telephone/web randomisation with minimisation (ICU, age, sex, severe malnutrition, cancer) supported allocation concealment; baseline groups well matched."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; objective endpoint (mortality) robust; subjective outcomes (vomiting, feeding intolerance) potentially influenced."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "12 patients withdrew permission for any data use; primary outcome missing for 5 patients (2 PN, 3 EN); very low loss to follow-up. Analyses were ITT excluding those who withdrew all data."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Nonadherence during 5-day intervention: 150/1191 (12.6%) PN vs 127/1197 (10.6%) EN; crossover: 12 PN-assigned received EN, 4 EN-assigned received PN; 27 PN vs 18 EN received no nutrition for some/all of the period. Achieved nutritional separation: calories 89±44 vs 74±44 kcal/kg; protein 3.0±2.0 vs 3.0±2.1 g/kg; enteral exposure days 0.9±1.5 vs 3.3±1.8; prokinetic use 2.2% vs 35.6%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well matched: median age 61 vs 61 years; APACHE II 19.0 vs 18.8; ~70% mechanically ventilated; ~25% on vasoactive drugs."
+        }
+      ],
+      "verdict": "Internal validity is strong for the primary mortality outcome: robust randomisation and follow-up, objective endpoint. Limitations are open-label design and modest nonadherence/crossover that may have diluted small route effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Pragmatic enrolment of unplanned UK ICU admissions expected to require prolonged support; baseline severity and ventilation/vasopressor rates reflect typical general ICU case-mix. Excluded patients with contraindications to either route and those with >7 days pre-ICU nutrition."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Best generalised to high-income ICUs with protocolised PN and EN, contemporary infection prevention, and conservative energy targets. Applicability to resource-limited settings or those with markedly different nutrition delivery capability is less certain."
+        }
+      ],
+      "verdict": "External validity is moderate-to-strong for general adult ICUs in similar systems; may be limited where PN formulations, line-care bundles, or EN intolerance management differ substantially."
+    },
+    "strengths": [
+      "Large pragmatic RCT (n=2400) across 33 ICUs",
+      "Early randomisation with objective primary endpoint",
+      "Prespecified statistical analysis plan",
+      "Very low loss to follow-up",
+      "Clinically meaningful secondary outcomes and safety reporting"
+    ],
+    "limitations": [
+      "Open-label design",
+      "Modest separation of nutritional exposures (especially protein) and overall calorie delivery below target in both groups",
+      "Nonadherence/crossover within the intervention window",
+      "Restricted to unplanned admissions in one national health system",
+      "Outcomes beyond 90 days not reported in main publication"
+    ],
+    "critical_appraisal": {
+      "summary": "In this large pragmatic RCT, early PN did not reduce mortality compared with early EN, and the result is robust due to strong internal validity and low risk of bias for mortality. The open-label design and modest separation of nutritional exposures limit causal inference about route-specific effects on subjective outcomes, but the mortality equivalence is convincing.",
+      "strengths": [
+        "Large sample size, multicentre, pragmatic design",
+        "Objective primary outcome with minimal loss to follow-up",
+        "High protocol adherence for a nutrition trial"
+      ],
+      "weaknesses": [
+        "Open-label, potentially affecting subjective outcomes",
+        "Modest nutritional separation (protein similar, calorie difference modest)",
+        "Single-country, unplanned admissions only"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Early PN did not reduce 30-day mortality versus early EN. Route mainly altered tolerance profiles: PN reduced vomiting and severe hypoglycaemia but increased constipation. When EN is not feasible or poorly tolerated early, protocolised PN appears a reasonable alternative without clear excess infection or mortality risk, shifting emphasis towards timely, safe delivery and avoidance of overfeeding rather than route dogma.",
+    "clinical_bottom_line": {
+      "verdict": "The route of early nutritional support does not affect mortality in critically ill adults; PN is a safe alternative when EN is not feasible or tolerated.",
+      "applies_to": "Unplanned ICU admissions requiring early nutritional support in settings with protocolised nutrition delivery and contemporary glycaemic control.",
+      "does_not_mean": "EN is harmful or should be avoided; EN remains first-line when feasible, but PN is an acceptable option when EN is not.",
+      "implementation_caveats": [
+        "Monitor for constipation with PN",
+        "Be aware of lower severe hypoglycaemia with PN, potentially reducing need for IV dextrose or frequent glucose checks",
+        "Consider local PN formulations and line-care bundles to minimise infection risk",
+        "Caloric targets should be conservative (~25 kcal/kg/day) to avoid overfeeding"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Does CALORIES truly test 'route' or mostly test tolerance management?",
+        "notes": "The editorial emphasised that pragmatic delivery and modest differences in achieved macronutrient exposure can limit inference that route itself is causal for outcomes, arguing for focus on deliverability and harm avoidance."
+      },
+      {
+        "topic": "Withdrawal of permission and modified ITT",
+        "notes": "Exclusion of 12 post-randomisation withdrawals (data removal requests) represents an unavoidable ethical constraint; strict ITT is compromised in principle, but the small number makes material bias unlikely."
+      },
+      {
+        "topic": "Route interacts with haemodynamic context",
+        "notes": "NUTRIREA-2 (shock, mechanically ventilated) also found no mortality difference but more gastrointestinal complications with EN, supporting that route choice may matter more for harm profiles in specific physiological states than for survival."
+      },
+      {
+        "topic": "How CALORIES fits with 'timing of PN' debates",
+        "notes": "EPaNIC showed that early supplemental PN (when EN insufficient) can worsen outcomes compared with late PN, highlighting that timing, dose, and metabolic context may dominate route effects; CALORIES differs by comparing early PN vs early EN under contemporary targets."
+      },
+      {
+        "topic": "Systematic reviews after CALORIES",
+        "notes": "Updated analyses incorporating CALORIES and later trials generally show no consistent mortality advantage for EN vs PN, with infection differences attenuated compared with older literature and heterogeneity driven by trial era, caloric dose, and co-interventions."
+      },
+      {
+        "topic": "Guideline evolution",
+        "notes": "Post-CALORIES guidelines generally recommend early EN when feasible, but accept early PN when EN is contraindicated or clearly inadequate, framing PN as an alternative or supplement rather than an inherently inferior route."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "NUTRIREA-2",
+        "relation": "Found no mortality difference between early EN and early PN in shock patients, but more gastrointestinal complications with EN, supporting harm profiles mattering in specific physiological states."
+      },
+      {
+        "trial": "EPaNIC",
+        "relation": "Found that early supplemental PN (when EN insufficient) can worsen some outcomes compared with late PN, highlighting that timing and dose may dominate route effects."
+      }
+    ],
+    "unresolved_questions": [
+      "Long-term functional outcomes and quality of life beyond 90 days",
+      "Optimal protein dosing and timing in critical illness",
+      "Interaction between route and specific shock states or vasopressor requirements",
+      "Role of post-pyloric feeding to improve EN tolerance and reduce vomiting",
+      "Impact of early PN in low-resource settings with different PN safety profiles"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2400",
+        "30-day mortality: PN 33.1% vs EN 34.2% (RR 0.97, 95% CI 0.86–1.08)",
+        "No difference in infections or organ-support–free days",
+        "Severe hypoglycaemia: 3.2% vs 6.4% (P<0.001)"
+      ],
+      "one_line_takeaway": "The route of early nutritional support doesn't affect survival; choose PN when EN is not feasible to avoid severe hypoglycaemia and vomiting, but be mindful of constipation."
+    }
+  },
+  "_source_id": "CALORIES",
+  "_source_system": "Nutrition"
+}

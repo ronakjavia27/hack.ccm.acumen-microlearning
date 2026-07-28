@@ -1,0 +1,383 @@
+{
+  "id": "SMART",
+  "trial_name": "SMART — Balanced Crystalloids vs Saline in Critically Ill Adults (2018)",
+  "specialty": "Critical Care",
+  "subtopic": "Fluid Resuscitation",
+  "year": 2018,
+  "journal": "N Engl J Med",
+  "citation": "Semler MW, Self WH, Wanderer JP, et al; SMART Investigators and Pragmatic Critical Care Research Group. Balanced crystalloids versus saline in critically ill adults. N Engl J Med. 2018;378(9):829-839.",
+  "doi": "https://doi.org/10.1056/NEJMoa1711584",
+  "registration": "",
+  "trial_type": "Pragmatic, cluster-randomised, multiple-crossover trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 15802,
+  "result_category": "Positive",
+  "one_liner": "In a pragmatic ICU trial, default balanced crystalloids modestly reduced MAKE30 compared with saline (14.3% vs 15.4%; OR 0.90; P=0.04).",
+  "pico": {
+    "population": "Adults admitted to five ICUs at a single academic centre.",
+    "intervention": "Unit-level default to balanced crystalloids (lactated Ringer's or Plasma-Lyte A) for isotonic crystalloid orders.",
+    "comparison": "Unit-level default to 0.9% saline.",
+    "outcome": "Major Adverse Kidney Events within 30 days (MAKE30: death, new RRT, or persistent renal dysfunction)."
+  },
+  "keywords": [
+    "balanced crystalloids",
+    "saline",
+    "ICU",
+    "MAKE30",
+    "cluster-randomised",
+    "pragmatic trial",
+    "fluid resuscitation"
+  ],
+  "related_trials": [
+    "SALT-ED",
+    "BaSICS",
+    "PLUS",
+    "FLUID"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "0.9% saline was the dominant ICU crystalloid despite supraphysiological chloride; balanced crystalloids more closely match plasma chloride and include buffer anions, potentially reducing hyperchloraemic acidosis and renal vasoconstriction.",
+      "knowledge_gap": "Uncertainty whether fluid chloride load affects patient-centred outcomes (kidney failure, survival).",
+      "hypothesis": "Balanced crystalloids would reduce MAKE30 compared with saline when delivered early and pragmatically."
+    },
+    "methods": {
+      "design": "Pragmatic, cluster-randomised, multiple-crossover trial embedded in routine care; single academic centre; five adult ICUs; unit-level monthly fluid assignment.",
+      "setting": "Five adult ICUs (medical, cardiac, neurological, trauma, surgical) at Vanderbilt University Medical Center, June 2015 to April 2017.",
+      "population": {
+        "inclusion": [
+          "All adults (≥18 years) admitted to participating ICUs."
+        ],
+        "exclusion": [
+          "None for enrolment; clinician override permitted; for kidney components, patients with pre-existing RRT before ICU admission were ineligible for new RRT and persistent renal dysfunction criteria (but remained eligible for mortality)."
+        ]
+      },
+      "intervention": "Unit-level default to balanced crystalloids (predominantly lactated Ringer's; Plasma-Lyte A available) for IV isotonic crystalloids (bolus and maintenance). Electronic order sets and stocking aligned to deliver assigned fluid early.",
+      "comparison": "Unit-level default to 0.9% saline for IV isotonic crystalloids.",
+      "blinding": "Unblinded (clinicians aware of monthly assignment); outcomes largely objective and EHR-derived.",
+      "sample_size_power": "14,000 ICU admissions planned to detect 1.9% absolute reduction in MAKE30 (15.0% to 13.1%) with 90% power at two-sided 5% alpha.",
+      "primary_outcome": "MAKE30: composite of in-hospital death before day 30, new RRT, or final creatinine ≥200% of baseline (censored at day 30/discharge).",
+      "secondary_outcomes": [
+        "In-hospital death before day 30",
+        "New RRT",
+        "Persistent renal dysfunction (final creatinine ≥200% baseline)",
+        "In-hospital death before ICU discharge",
+        "In-hospital death before day 60",
+        "RRT-free days to day 28",
+        "Stage 2+ AKI developing after enrolment",
+        "ICU-free days to day 28",
+        "Ventilator-free days to day 28",
+        "Vasopressor-free days to day 28"
+      ],
+      "follow_up": "Primary outcome through hospital discharge or 30 days; mortality also at 60 days; organ support-free days through day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "MAKE30: 14.3% balanced vs 15.4% saline (adjusted OR 0.90, 95% CI 0.82–0.99, P=0.04)",
+        "Individual components directionally consistent but not individually significant",
+        "Sepsis subgroup: MAKE30 33.8% vs 38.9% (OR 0.80, 95% CI 0.67–0.94, interaction P=0.06)",
+        "Less hyperchloraemia with balanced crystalloids (24.5% vs 35.6%)"
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite MAKE30",
+          "group_a": "1139/7942 (14.3%)",
+          "group_b": "1211/7860 (15.4%)",
+          "effect_measure": "OR",
+          "effect_value": "0.90",
+          "ci_95": "0.82–0.99",
+          "p_value": "0.04",
+          "note": "Composite of in-hospital death (censored at day 30), new RRT, or final creatinine ≥200% baseline"
+        },
+        {
+          "outcome": "In-hospital death before day 30",
+          "group_a": "818/7942 (10.3%)",
+          "group_b": "875/7860 (11.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.90",
+          "ci_95": "0.80–1.01",
+          "p_value": "0.06",
+          "note": ""
+        },
+        {
+          "outcome": "New RRT",
+          "group_a": "189/7558 (2.5%)",
+          "group_b": "220/7458 (2.9%)",
+          "effect_measure": "OR",
+          "effect_value": "0.84",
+          "ci_95": "0.68–1.02",
+          "p_value": "0.08",
+          "note": "Among patients without pre-existing RRT"
+        },
+        {
+          "outcome": "Persistent renal dysfunction (final creatinine ≥200% baseline)",
+          "group_a": "437/7558 (5.8%)",
+          "group_b": "494/7458 (6.6%)",
+          "effect_measure": "OR",
+          "effect_value": "0.96",
+          "ci_95": "0.84–1.11",
+          "p_value": "0.60",
+          "note": "Among patients without pre-existing RRT"
+        },
+        {
+          "outcome": "In-hospital death before ICU discharge",
+          "group_a": "528/7942 (6.6%)",
+          "group_b": "572/7860 (7.3%)",
+          "effect_measure": "OR",
+          "effect_value": "0.89",
+          "ci_95": "0.78–1.02",
+          "p_value": "0.08",
+          "note": ""
+        },
+        {
+          "outcome": "In-hospital death before day 60",
+          "group_a": "928/7942 (11.7%)",
+          "group_b": "975/7860 (12.4%)",
+          "effect_measure": "OR",
+          "effect_value": "0.92",
+          "ci_95": "0.83–1.02",
+          "p_value": "0.13",
+          "note": ""
+        },
+        {
+          "outcome": "RRT-free days to day 28",
+          "group_a": "Mean 25.0 ± 8.6",
+          "group_b": "Mean 24.8 ± 8.9",
+          "effect_measure": "OR",
+          "effect_value": "1.11",
+          "ci_95": "1.02–1.20",
+          "p_value": "0.01",
+          "note": "Ordinal outcome; higher is better"
+        },
+        {
+          "outcome": "Stage 2+ AKI developing after enrolment",
+          "group_a": "807/7558 (10.7%)",
+          "group_b": "858/7458 (11.5%)",
+          "effect_measure": "OR",
+          "effect_value": "0.91",
+          "ci_95": "0.82–1.01",
+          "p_value": "0.09",
+          "note": ""
+        },
+        {
+          "outcome": "ICU-free days to day 28",
+          "group_a": "Mean 21.8 ± 8.3",
+          "group_b": "Mean 21.7 ± 8.6",
+          "effect_measure": "OR",
+          "effect_value": "1.00",
+          "ci_95": "0.89–1.13",
+          "p_value": "0.94",
+          "note": ""
+        },
+        {
+          "outcome": "Ventilator-free days to day 28",
+          "group_a": "Mean 24.2 ± 8.6",
+          "group_b": "Mean 23.9 ± 8.9",
+          "effect_measure": "OR",
+          "effect_value": "1.06",
+          "ci_95": "0.97–1.16",
+          "p_value": "0.22",
+          "note": ""
+        },
+        {
+          "outcome": "Vasopressor-free days to day 28",
+          "group_a": "Mean 24.7 ± 8.5",
+          "group_b": "Mean 24.4 ± 8.8",
+          "effect_measure": "OR",
+          "effect_value": "1.05",
+          "ci_95": "0.97–1.14",
+          "p_value": "0.26",
+          "note": ""
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Sepsis or septic shock at ICU admission",
+          "group_a": "395/1167 (33.8%)",
+          "group_b": "455/1169 (38.9%)",
+          "effect_measure": "OR",
+          "effect_value": "0.80",
+          "ci_95": "0.67–0.94",
+          "p_interaction": "0.06"
+        },
+        {
+          "subgroup": "Traumatic brain injury",
+          "group_a": "105/698 (15.0%)",
+          "group_b": "93/665 (14.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.09",
+          "ci_95": "0.81–1.47",
+          "p_interaction": "0.24"
+        }
+      ]
+    },
+    "safety": [
+      "Hyperchloraemia (>110 mmol/L): 24.5% balanced vs 35.6% saline",
+      "Hyperkalaemia (>5.0 mmol/L): 24.7% balanced vs 25.0% saline (similar)",
+      "No signal of increased hyperkalaemia with balanced crystalloids"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Cluster randomisation at ICU-month level with repeated crossovers; allocation unconcealed due to overt default strategy."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; primary outcome used objective endpoints (death, creatinine, RRT) reducing detection bias, but RRT initiation clinician-mediated and susceptible to expectation bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Pragmatic all-comers enrolment; 15,802 ICU admissions among 13,949 unique patients; sensitivity analysis restricted to first ICU admission attenuated primary effect (not statistically significant)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High adherence: assigned fluid accounted for 93.4% of isotonic crystalloid orders in balanced months vs 97.8% in saline months; clear separation in fluid exposure."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups closely matched (age, sex, mechanical ventilation, vasopressors, sepsis, predicted mortality)."
+        },
+        {
+          "domain": "Outcome assessment and missingness",
+          "notes": "Death and RRT complete; creatinine-based outcomes required baseline creatinine imputation; sensitivity analyses showed dependence on creatinine handling."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Analyses accounted for clustering/crossover with prespecified covariate adjustment; primary P=0.04, modest, with interim monitoring."
+        }
+      ],
+      "verdict": "Internal validity moderate to strong: pragmatic enrolment and objective endpoints support robustness; limitations include open-label, single-centre, clinician-mediated RRT, and creatinine imputation sensitivity."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad adult ICU case-mix across five specialised units, minimal exclusions, pragmatic delivery; relevant to many mixed medical-surgical ICUs."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Single-centre; results may depend on local practice patterns (baseline fluid choice, RRT thresholds, ED/OR alignment). Neurocritical care and TBI may require tailored strategies. Highly implementable where EHR defaults and supply chain can enforce unit-level assignment; resource-limited settings may differ."
+        }
+      ],
+      "verdict": "Generalisability good for adult mixed ICUs in high-resource systems, limited by single-centre nature and dependence on local RRT practices and pre-ICU fluid exposure."
+    },
+    "strengths": [
+      "Very large pragmatic ICU trial; minimal exclusion and default strategy design reduced selection bias",
+      "High protocol adherence with strong separation",
+      "Objective patient-centred composite endpoint",
+      "Rapid translation potential via EHR defaults",
+      "Paired with ED companion trial (SALT-ED) enabling broader inference"
+    ],
+    "limitations": [
+      "Unblinded and single-centre",
+      "Cluster-multiple-crossover design can introduce time-varying confounding",
+      "Primary effect size modest and driven by composite with non-significant components",
+      "RRT initiation susceptible to clinician discretion",
+      "Creatinine-based components depend on baseline/last creatinine measurement and imputation",
+      "Balanced crystalloids comprised more than one formulation without head-to-head randomisation"
+    ],
+    "critical_appraisal": {
+      "summary": "SMART demonstrated a modest reduction in MAKE30 with balanced crystalloids, supported by strong pragmatic design and clear physiological separation, but limited by single-centre, open-label design and sensitivity of composite endpoint components.",
+      "strengths": [
+        "Large, pragmatic, minimal exclusion",
+        "High protocol adherence and clear fluid separation",
+        "Objective composite endpoint",
+        "EHR-embedded default strategy enabling rapid translation"
+      ],
+      "weaknesses": [
+        "Single-centre, unblinded",
+        "Modest effect size with non-significant individual components",
+        "RRT initiation clinician-mediated",
+        "Creatinine imputation sensitivity"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Using balanced crystalloids as the ICU default produced a modest reduction in MAKE30 compared with saline, supporting balanced crystalloids as a reasonable default isotonic crystalloid for many critically ill adults, especially where kidney injury prevention is prioritised.",
+    "clinical_bottom_line": {
+      "verdict": "Balanced crystalloids are a reasonable default ICU crystalloid, offering a small reduction in MAKE30, but the absolute benefit is modest and may be context-dependent.",
+      "applies_to": "Adult mixed medical-surgical ICU patients, particularly those with sepsis or high fluid volumes; caution in traumatic brain injury.",
+      "does_not_mean": "Balanced crystalloids are not proven to reduce mortality or RRT individually; the benefit is driven by a composite endpoint.",
+      "implementation_caveats": [
+        "Single-centre results; local RRT practices and pre-ICU fluid exposure may influence effect",
+        "EHR default implementation may be needed to achieve similar adherence",
+        "Later multicentre trials did not replicate mortality benefit, suggesting benefit may be smaller or subgroup-specific"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Editorial framing (SMART + SALT-ED)",
+        "notes": "NEJM editorial interpreted SMART alongside SALT-ED, emphasising patient-centred outcomes and pragmatic value while noting small effect sizes and endpoint choice matters."
+      },
+      {
+        "topic": "Endpoint interpretation",
+        "notes": "MAKE30 is clinically meaningful but composite; primary signal emerged despite non-significant individual components, raising interpretability questions."
+      },
+      {
+        "topic": "Single-centre pragmatism vs reproducibility",
+        "notes": "Strength (system default with minimal exclusions) is also a limitation (unblinded, centre-specific pathways), increasing importance of replication."
+      },
+      {
+        "topic": "Subgroup signal (sepsis)",
+        "notes": "Larger apparent benefit in sepsis/septic shock (MAKE30 OR 0.80; interaction P=0.06) is biologically plausible but hypothesis-generating given multiplicity."
+      },
+      {
+        "topic": "Later large ICU RCTs",
+        "notes": "BaSICS (JAMA 2021) and PLUS (NEJM 2022) did not show overall mortality benefit, suggesting benefit may be smaller, context-specific, or subgroup-dependent."
+      },
+      {
+        "topic": "Hospital-wide evidence (FLUID)",
+        "notes": "FLUID trial (NEJM 2025; ~159,000 patients) found no clear difference in death/readmission composite (20.3% LR vs 21.4% saline; adjusted difference −1.1 pp; 95% CI −2.4 to 0.2)."
+      },
+      {
+        "topic": "Meta-analytic synthesis",
+        "notes": "NEJM Evidence 2022 meta-analysis estimated small mortality benefit (RR 0.96; 95% CrI 0.93–0.99; posterior probability of reduced mortality ~89.5%), but absolute effect small and heterogeneity by population (e.g., TBI) remains."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "Surviving Sepsis Campaign 2021 suggested balanced crystalloids over saline for initial resuscitation in sepsis/septic shock, reflecting aggregate evidence."
+      },
+      {
+        "topic": "Updated critical care fluid guidance",
+        "notes": "ESICM 2024 clinical practice guideline on fluid therapy (Part 1) synthesised post-SMART evidence and provides updated framework for selecting resuscitation crystalloids."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "SALT-ED",
+        "relation": "Companion ED trial; together suggested benefit across acuity settings."
+      },
+      {
+        "trial": "BaSICS",
+        "relation": "Multicentre ICU trial (JAMA 2021) with neutral primary mortality outcome."
+      },
+      {
+        "trial": "PLUS",
+        "relation": "Multicentre ICU trial (NEJM 2022) with neutral primary mortality outcome."
+      },
+      {
+        "trial": "FLUID",
+        "relation": "Hospital-wide crossover trial (NEJM 2025) with no clear difference in death/readmission composite."
+      },
+      {
+        "trial": "Meta-analysis (NEJM Evidence 2022)",
+        "relation": "Estimated small mortality benefit (RR 0.96) but with heterogeneity and small absolute effect."
+      }
+    ],
+    "unresolved_questions": [
+      "Whether balanced crystalloids confer a mortality benefit in specific subgroups (e.g., sepsis) remains uncertain.",
+      "Optimal fluid choice in traumatic brain injury requires further study.",
+      "The role of balanced crystalloids in resource-limited settings is unclear."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=15,802 ICU admissions",
+        "MAKE30: 14.3% vs 15.4% (OR 0.90, 95% CI 0.82–0.99)",
+        "Sepsis subgroup: MAKE30 33.8% vs 38.9% (OR 0.80)",
+        "60-day mortality: 11.7% vs 12.4% (OR 0.92)"
+      ],
+      "one_line_takeaway": "Default balanced crystalloids in the ICU modestly reduce MAKE30, supporting their use as a reasonable default, but later trials suggest any mortality benefit is small and context-dependent."
+    }
+  },
+  "_source_id": "SMART",
+  "_source_system": "Circulatory"
+}

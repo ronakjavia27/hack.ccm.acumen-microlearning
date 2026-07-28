@@ -1,0 +1,291 @@
+{
+  "id": "TEAM",
+  "trial_name": "TEAM — Early Active Mobilization during Mechanical Ventilation in the ICU (2022)",
+  "specialty": "Critical Care",
+  "subtopic": "Quality & Safety",
+  "year": 2022,
+  "journal": "N Engl J Med",
+  "citation": "TEAM Study Investigators and ANZICS Clinical Trials Group. Early active mobilization during mechanical ventilation in the ICU. N Engl J Med. 2022;387(19):1747-1758.",
+  "doi": "https://doi.org/10.1056/NEJMoa2209083",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, pragmatic, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 750,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In 750 ventilated ICU adults, enhanced early active mobilisation during ventilation did not improve days alive and out of hospital at 180 days (median difference -2.0 days, P=0.62) and increased adverse events (OR 2.55).",
+  "pico": {
+    "population": "Adults invasively ventilated in ICU, stable enough for mobilisation (FiO2≤0.6, PEEP≤16 cmH2O, no prone ventilation/neuromuscular blockers/ECMO).",
+    "intervention": "Physiotherapist-directed early active mobilisation (active exercises and mobilisation) delivered daily during mechanical ventilation, aiming for highest feasible ICU Mobility Scale level, up to day 28.",
+    "comparison": "Usual care rehabilitation/mobilisation at the intensity and timing normally provided in each participating ICU.",
+    "outcome": "Days alive and out of hospital to day 180 (primary); death, ventilator-free days, ICU-free days, functional outcomes, adverse events (secondary)."
+  },
+  "keywords": [
+    "early mobilisation",
+    "mechanical ventilation",
+    "intensive care",
+    "rehabilitation",
+    "functional outcomes",
+    "ICU-acquired weakness"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Critical illness and prolonged ventilation cause rapid muscle wasting, ICU-acquired weakness, and long-term disability. Early mobilisation had been widely promoted but evidence from RCTs was limited and heterogeneous, often conducted against evolving standards (lighter sedation, earlier weaning).",
+      "knowledge_gap": "Whether a structured, enhanced early mobilisation programme during mechanical ventilation improves long-term recovery when usual care already includes early mobilisation was uncertain.",
+      "hypothesis": "Enhanced early active mobilisation during ventilation would increase days alive and out of hospital at 180 days compared with usual care."
+    },
+    "methods": {
+      "design": "International, pragmatic, multicentre, randomised, parallel-group, open-label trial",
+      "setting": "49 ICUs across 6 countries (Australia, New Zealand, UK, Germany, Ireland, Brazil); enrolled patients with stability criteria.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Invasively ventilated and expected to remain on ventilation >48 hours",
+          "Cardiovascular stability: ventricular rate ≤150/min, lactate ≤4.0 mmol/L, noradrenaline/adrenaline within protocol limits",
+          "Respiratory stability: FiO2≤0.6, PEEP≤16 cmH2O, no prone ventilation, neuromuscular blockers, venovenous ECMO, nitric oxide, prostacyclin, or high-frequency oscillation"
+        ],
+        "exclusion": [
+          "Dependent for activities of daily living in the month before ICU admission",
+          "Documented cognitive impairment",
+          "Proven/suspected acute primary brain injury, spinal cord injury, or neuromuscular disease likely to cause prolonged weakness",
+          "Rest-in-bed/non-weight bearing orders",
+          "Limited life expectancy (<180 days) from chronic disease or death deemed inevitable",
+          "Inability to communicate in official local language",
+          "Not first ICU admission during index hospitalisation",
+          ">72 hours since eligibility criteria first fulfilled"
+        ]
+      },
+      "intervention": "Physiotherapist-directed functional rehabilitation (active exercises and mobilisation) delivered as early as possible while invasively ventilated, aiming for the highest feasible ICU Mobility Scale level each day; delivered daily (in one or more sessions) for the ICU stay up to day 28. Achieved mean daily active mobilisation time: 20.8±14.6 min vs. 8.8±9.0 min in usual care (mean difference 12.0 min/day, 95% CI 10.4–13.6).",
+      "comparison": "Usual care: rehabilitation/mobilisation at the intensity and timing normally provided in each participating ICU; physiotherapy not protocolised.",
+      "blinding": "Open-label; patient-reported outcomes at 180 days collected by trained staff unaware of allocation; statistical analyses blinded to allocation.",
+      "sample_size_power": "Planned 750 patients to detect a 7-day difference in days alive and out of hospital at day 180 with 90% power at a two-sided 5% significance level, with inflation for non-normality and loss to follow-up.",
+      "primary_outcome": "Days alive and out of hospital to day 180 (death counts as 0 days).",
+      "secondary_outcomes": [
+        "Death by day 180",
+        "Ventilator-free days to day 28",
+        "ICU-free days to day 28",
+        "EQ-5D-5L utility score at day 180",
+        "WHODAS 2.0 score at day 180",
+        "Adverse events potentially attributable to mobilisation",
+        "Mobility milestones (ICU Mobility Scale)"
+      ],
+      "follow_up": "180 days after randomisation; key in-hospital secondary outcomes assessed at day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial not stopped early; planned interim analysis after 400 patients showed no signal for early termination.",
+        "Primary outcome neutral: median days alive and out of hospital 143 vs. 145 (difference −2.0 days, 95% CI −10 to 6, P=0.62).",
+        "No benefit in mortality, ventilator-free days, ICU-free days, or functional outcomes at 180 days.",
+        "Adverse events from mobilisation more frequent with intervention (9.2% vs. 4.1%, OR 2.55, P=0.005)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: Days alive and out of hospital to day 180 (median, IQR)",
+          "group_a": "143 (21–161)",
+          "group_b": "145 (51–164)",
+          "effect_measure": "Median difference",
+          "effect_value": "−2.0",
+          "ci_95": "−10 to 6",
+          "p_value": "0.62",
+          "note": "Higher is better; death counts as 0 days; analysed with median regression"
+        },
+        {
+          "outcome": "Death by day 180",
+          "group_a": "83/369 (22.5%)",
+          "group_b": "71/364 (19.5%)",
+          "effect_measure": "OR",
+          "effect_value": "1.15",
+          "ci_95": "0.81 to 1.65",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Ventilator-free days to day 28 (median, IQR)",
+          "group_a": "21 (8–25)",
+          "group_b": "21 (11–25)",
+          "effect_measure": "Median difference",
+          "effect_value": "0.0",
+          "ci_95": "−1.4 to 1.4",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "ICU-free days to day 28 (median, IQR)",
+          "group_a": "16 (0–21)",
+          "group_b": "17 (3–22)",
+          "effect_measure": "Median difference",
+          "effect_value": "−1.0",
+          "ci_95": "−3.1 to 1.1",
+          "p_value": "not reported",
+          "note": "Directionally fewer ICU-free days; CI crosses 0"
+        },
+        {
+          "outcome": "EQ-5D-5L utility score in survivors at day 180 (mean ± SD)",
+          "group_a": "0.7 ± 0.3",
+          "group_b": "0.7 ± 0.3",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.0",
+          "ci_95": "−0.0 to 0.1",
+          "p_value": "not reported",
+          "note": "No detectable health-related quality-of-life benefit"
+        },
+        {
+          "outcome": "WHODAS 2.0 score in survivors at day 180 (median, IQR)",
+          "group_a": "12.5 (2.1–33.3)",
+          "group_b": "14.6 (4.2–38.9)",
+          "effect_measure": "Median difference",
+          "effect_value": "−1.8",
+          "ci_95": "−6.9 to 3.4",
+          "p_value": "not reported",
+          "note": "Lower is better; no clear functional disability improvement"
+        },
+        {
+          "outcome": "≥1 adverse event potentially due to mobilisation",
+          "group_a": "34/369 (9.2%)",
+          "group_b": "15/364 (4.1%)",
+          "effect_measure": "OR",
+          "effect_value": "2.55",
+          "ci_95": "1.33 to 4.89",
+          "p_value": "0.005",
+          "note": "Common categories: arrhythmia, oxygen desaturation"
+        },
+        {
+          "outcome": "Serious adverse events during mobilisation",
+          "group_a": "7 events",
+          "group_b": "1 event",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Mostly arrhythmias; no falls, cardiac arrest, unplanned extubation, urgent line replacement"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Adverse events potentially attributable to mobilisation: 34/369 (9.2%) vs 15/364 (4.1%); OR 2.55 (95% CI 1.33–4.89); P=0.005. Common categories: arrhythmia, oxygen desaturation.",
+      "Serious adverse events: 7 events (intervention) vs 1 event (usual care); mostly arrhythmias; no falls, cardiac arrest, unplanned extubation, or urgent line replacement during mobilisation."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised, web-based, stratified by site with permuted blocks of varying size; concealed until randomisation; open-label thereafter."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label, but primary outcome objective; patient-reported outcomes collected by trained staff unaware of allocation; statistical analyses blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary outcome available for 733/750 (3 lost in intervention, 14 in usual care, mostly withdrawal/loss to follow-up). Multiple imputation used for missing data."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Mean active mobilisation time differed: 20.8 vs 8.8 min/day (mean difference 12.0 min/day). Standing achieved in 77.4% vs 77.3%; peak ICU Mobility Scale identical (median 6, IQR 4–8 both groups). Substantial mobilisation in control arm."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: mean age 60.5 vs 59.5 years; mean APACHE II 18.2 vs 18.6; sepsis 66.3% vs 66.2%; vasopressor use 61.5% vs 62.4%."
+        }
+      ],
+      "verdict": "Moderate-to-strong internal validity: robust randomisation and follow-up, objective primary outcome, but open-label design and high mobilisation in control arm diluted treatment separation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical medical-surgical ventilated ICU patients (mean APACHE II ~18, ~66% sepsis). Excluded patients with baseline dependency, cognitive impairment, acute neurological injury, and those requiring prone ventilation, neuromuscular blockers, or ECMO."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "49 ICUs in 6 countries, predominantly Australia/New Zealand, in systems with well-resourced physiotherapy programmes. Not directly generalisable to low-resource ICUs or settings without routine physiotherapy coverage."
+        }
+      ],
+      "verdict": "Generalisable to well-resourced ICUs with stable mechanically ventilated adults, but limited for patients with severe ARDS, major premorbid disability, or in resource-constrained settings."
+    },
+    "strengths": [
+      "Large, pragmatic, multinational RCT with patient-centred 180-day outcome.",
+      "Achieved measurable increase in mobilisation dose and earlier mobility milestones.",
+      "Transparent safety reporting with quantification of mobilisation-attributable adverse events.",
+      "Objective primary outcome, blinded outcome assessment for patient-reported outcomes, and blinded statistical analysis."
+    ],
+    "limitations": [
+      "Open-label design with potential for performance bias and co-intervention differences.",
+      "High mobilisation in control arm (standing in ~77% both groups, identical peak mobility), limiting separation and increasing risk of ceiling effects.",
+      "Eligibility required cardio-respiratory stability and excluded patients requiring prone ventilation/neuromuscular blockers/ECMO, limiting applicability to the sickest ventilated patients.",
+      "Primary endpoint influenced by health-system discharge practices and post-acute care pathways.",
+      "Secondary outcomes not adjusted for multiplicity; interpretation should focus on effect sizes and confidence intervals."
+    ],
+    "critical_appraisal": {
+      "summary": "TEAM is a large, well-conducted pragmatic trial that found no benefit of enhanced early active mobilisation during ventilation on 180-day recovery, and noted increased adverse events, likely because usual care already included high mobilisation and the trial excluded the sickest patients.",
+      "strengths": [
+        "Robust randomisation and follow-up",
+        "Objective primary outcome with blinded outcome assessment",
+        "180-day follow-up capturing long-term recovery",
+        "Clear safety reporting"
+      ],
+      "weaknesses": [
+        "Open-label, potential for performance bias",
+        "Substantial control-arm mobilisation limiting separation",
+        "Exclusion of patients with severe ARDS",
+        "Secondary outcomes not multiplicity-adjusted"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In ICUs where usual care already includes frequent early mobilisation (including standing/walking while ventilated), augmenting the dose by an additional ~12 minutes/day did not translate into better 180-day recovery or reduced mortality. This supports a pragmatic expectation: 'more mobilisation during ventilation' is not, by itself, a reliable lever for improving long-term outcomes.",
+    "clinical_bottom_line": {
+      "verdict": "Early active mobilisation during mechanical ventilation, when added to already high-quality usual care, does not improve 180-day outcomes and may increase adverse events.",
+      "applies_to": "Stable ventilated ICU patients in well-resourced settings, excluding those with severe ARDS or major premorbid disability.",
+      "does_not_mean": "That early mobilisation as a whole is harmful; rather, that incremental increase in dose beyond usual care offers no additional benefit and may increase risk.",
+      "implementation_caveats": [
+        "Safety screening and physiological monitoring essential during mobilisation.",
+        "Avoid routine use in patients with haemodynamic or respiratory instability.",
+        "Consider avoiding additional mobilisation in patients already achieving standing/mobilisation goals."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of a neutral trial against high-quality usual care",
+        "notes": "Editorial emphasised that TEAM likely tested an incremental increase in mobilisation against an already proactive culture, not 'mobilisation vs no mobilisation', and that patient selection and intervention components may need refinement."
+      },
+      {
+        "topic": "Safety signal and clinical relevance",
+        "notes": "Correspondence questioned the clinical interpretation of increased adverse events without patient-centred benefit; authors highlighted protocolised screening and event adjudication."
+      },
+      {
+        "topic": "Conceptual reframing: rehabilitation effects depend on modifiable barriers and individualised goals",
+        "notes": "A subsequent commentary argued that the binary 'mobilise vs not' may be wrong, and that effects depend on barriers (sedation, delirium, catheters) and individualised goals across the ICU-to-ward continuum."
+      },
+      {
+        "topic": "Guidelines continue to recommend structured mobilisation but acknowledge inconsistent evidence",
+        "notes": "International guidelines and SCCM focused update (PADIS domain) still recommend early mobilisation as part of comprehensive ICU care, but recognise uncertainty about hard clinical endpoints and emphasise safety-led implementation."
+      },
+      {
+        "topic": "Observational signal vs causal effect",
+        "notes": "A recent prospective observational analysis linked mobilisation characteristics to adverse events and outcomes, supporting safety monitoring but underscoring confounding risks in non-randomised comparisons."
+      },
+      {
+        "topic": "Health economics",
+        "notes": "A cost-effectiveness evaluation based on TEAM examined costs and quality-adjusted life years to inform implementation decisions in resource-constrained settings."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Which patients benefit most from early mobilisation (phenotypic or physiological selection)?",
+      "What is the optimal intensity, timing, and type of activity during ventilation?",
+      "Does early mobilisation benefit patients with severe ARDS or those requiring ECMO?",
+      "What are the long-term (>1 year) functional outcomes and cost-effectiveness?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=750",
+        "Primary outcome: days alive out of hospital median 143 vs 145 (difference −2.0, 95% CI −10 to 6, P=0.62)",
+        "Adverse events: 9.2% vs 4.1% (OR 2.55, P=0.005)"
+      ],
+      "one_line_takeaway": "Enhanced early mobilisation during ventilation did not improve 180-day recovery and increased adverse events, likely because usual care already achieved high mobility levels."
+    }
+  },
+  "_source_id": "TEAM",
+  "_source_system": "Miscellaneous"
+}

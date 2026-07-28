@@ -1,0 +1,385 @@
+{
+  "id": "TRICC",
+  "trial_name": "TRICC — Transfusion Requirements in Critical Care (1999)",
+  "specialty": "Haematology",
+  "subtopic": "Blood Product Transfusion",
+  "year": 1999,
+  "journal": "N Engl J Med",
+  "citation": "Hébert PC, Wells G, Blajchman MA, et al. A multicenter, randomized, controlled clinical trial of transfusion requirements in critical care. N Engl J Med 1999;340(6):409–417",
+  "doi": "",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, equivalence",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 838,
+  "result_category": "Mixed",
+  "one_liner": "In stable ICU patients, a restrictive transfusion strategy (Hb 7–9 g/dL) reduced transfusion exposure and cardiac complications without increasing mortality compared to a liberal strategy (Hb 10–12 g/dL).",
+  "pico": {
+    "population": "Critically ill adults with early ICU anaemia (Hb ≤9.0 g/dL) and no active bleeding, expected to stay >24h",
+    "intervention": "Restrictive red-cell transfusion strategy: transfuse when Hb <7.0 g/dL, target 7.0–9.0 g/dL",
+    "comparison": "Liberal strategy: transfuse when Hb <10.0 g/dL, target 10.0–12.0 g/dL",
+    "outcome": "30-day all-cause mortality (primary), 60-day mortality, ICU/hospital mortality, organ dysfunction, cardiac complications, transfusion exposure"
+  },
+  "keywords": [
+    "red-cell transfusion",
+    "transfusion threshold",
+    "restrictive strategy",
+    "liberal strategy",
+    "anaemia",
+    "critical care"
+  ],
+  "related_trials": [
+    "TRISS",
+    "Robertson et al. 2014 (TBI transfusion threshold trial)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Red-cell transfusion was common in ICU, driven by the '10/30' paradigm (Hb ~10 g/dL / Hct ~30%) despite limited evidence. Observational studies suggested worse outcomes in transfused patients, but confounding by indication limited causal inference.",
+      "knowledge_gap": "Uncertainty over the optimal transfusion threshold in haemodynamically stable, non-bleeding critically ill adults.",
+      "hypothesis": "A restrictive transfusion strategy (trigger 7.0 g/dL, target 7.0–9.0) would be at least as safe as a liberal strategy (trigger 10.0 g/dL, target 10.0–12.0) for major outcomes."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, controlled, open-label equivalence trial.",
+      "setting": "25 ICUs (22 tertiary, 3 community) in Canada; enrolled Nov 1994–Nov 1997.",
+      "population": {
+        "inclusion": [
+          "Critically ill ICU patients expected to stay >24h",
+          "Hb ≤9.0 g/dL within 72h of ICU admission",
+          "Euvolaemic after initial treatment"
+        ],
+        "exclusion": [
+          "Age <16 years",
+          "Inability to receive blood products",
+          "Acute blood loss (Hb drop ≥3.0 g/dL in 12h or need ≥3 units in 12h)",
+          "Chronic anaemia (Hb <9.0 g/dL >1 month before admission)",
+          "Pregnancy",
+          "Brain death or anticipated death within 24h",
+          "Intent to withhold/withdraw life-sustaining treatment",
+          "Admission after routine cardiac surgery"
+        ]
+      },
+      "intervention": "Restrictive strategy: transfuse 1 unit when Hb <7.0 g/dL, target 7.0–9.0 g/dL. Packed red cells (non-leukodepleted, citrate-phosphate-dextrose-adenine).",
+      "comparison": "Liberal strategy: transfuse 1 unit when Hb <10.0 g/dL, target 10.0–12.0 g/dL.",
+      "blinding": "Open-label; mortality outcomes objective, but complication ascertainment could be biased.",
+      "sample_size_power": "Initial target 2300 to detect 4% absolute difference in 30-day mortality (18% baseline); after blinded interim analysis (n=404, mortality 23%), revised to 1620 to detect 5.5% difference; α=0.05, β=0.05 (95% power). Trial stopped early at 838 due to slow recruitment.",
+      "primary_outcome": "30-day all-cause mortality.",
+      "secondary_outcomes": [
+        "60-day mortality",
+        "ICU mortality",
+        "Hospital mortality",
+        "Multiple-organ-dysfunction score (adjusted)",
+        "ICU length of stay",
+        "Cardiac complications (composite)",
+        "Pulmonary oedema",
+        "Myocardial infarction",
+        "ARDS",
+        "Transfusion exposure (units, proportion transfused)"
+      ],
+      "follow_up": "30 days (primary), 60 days, and hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in 30-day mortality: 18.7% restrictive vs 23.3% liberal (absolute difference 4.7%, 95% CI -0.84 to 10.2, P=0.11)",
+        "Hospital mortality lower with restrictive strategy: 22.2% vs 28.1% (P=0.05)",
+        "Restrictive strategy reduced transfusion exposure: 2.6 vs 5.6 units/patient, 33% received no transfusion vs 0%",
+        "Liberal strategy increased cardiac complications: 21.0% vs 13.2% (P<0.01), including pulmonary oedema and MI"
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Mean haemoglobin during ICU stay (g/dL)",
+          "group_a": "8.5 ± 0.7",
+          "group_b": "10.7 ± 0.7",
+          "effect_measure": "Mean difference",
+          "effect_value": "2.2",
+          "ci_95": "",
+          "p_value": "<0.01",
+          "note": "Protocol period"
+        },
+        {
+          "outcome": "Units of red cells transfused per patient",
+          "group_a": "2.6 ± 4.1",
+          "group_b": "5.6 ± 5.3",
+          "effect_measure": "Mean difference",
+          "effect_value": "3.0",
+          "ci_95": "",
+          "p_value": "<0.01",
+          "note": "Protocol period"
+        },
+        {
+          "outcome": "No red-cell transfusion after randomisation",
+          "group_a": "33%",
+          "group_b": "0%",
+          "effect_measure": "Risk difference",
+          "effect_value": "33%",
+          "ci_95": "",
+          "p_value": "<0.01",
+          "note": ""
+        },
+        {
+          "outcome": "30-day all-cause mortality (primary)",
+          "group_a": "78/418 (18.7%)",
+          "group_b": "98/420 (23.3%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "4.7%",
+          "ci_95": "-0.84 to 10.2",
+          "p_value": "0.11",
+          "note": ""
+        },
+        {
+          "outcome": "60-day all-cause mortality",
+          "group_a": "95/418 (22.7%)",
+          "group_b": "111/420 (26.5%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "3.7%",
+          "ci_95": "-2.1 to 9.5",
+          "p_value": "0.23",
+          "note": "3 patients lost to follow-up (2 restrictive, 1 liberal)"
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "56/418 (13.4%)",
+          "group_b": "68/420 (16.2%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "2.3%",
+          "ci_95": "-2.0 to 7.6",
+          "p_value": "0.29",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "93/418 (22.2%)",
+          "group_b": "118/420 (28.1%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "5.8%",
+          "ci_95": "-0.3 to 11.7",
+          "p_value": "0.05",
+          "note": ""
+        },
+        {
+          "outcome": "Multiple-organ-dysfunction score (adjusted)",
+          "group_a": "10.7 ± 7.5",
+          "group_b": "11.8 ± 7.7",
+          "effect_measure": "Mean difference",
+          "effect_value": "1.1",
+          "ci_95": "0.8 to 2.2",
+          "p_value": "0.03",
+          "note": "Deaths assigned maximum score (24)"
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "11.0 ± 10.7",
+          "group_b": "11.5 ± 11.3",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.5",
+          "ci_95": "-1.0 to 2.1",
+          "p_value": "0.53",
+          "note": ""
+        },
+        {
+          "outcome": "Any cardiac complication",
+          "group_a": "55/418 (13.2%)",
+          "group_b": "88/420 (21.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "7.8%",
+          "ci_95": "2.7 to 12.9",
+          "p_value": "<0.01",
+          "note": "Composite cardiac complications during ICU stay"
+        },
+        {
+          "outcome": "Pulmonary oedema",
+          "group_a": "22/418 (5.3%)",
+          "group_b": "45/420 (10.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "5.5%",
+          "ci_95": "1.8 to 9.1",
+          "p_value": "<0.01",
+          "note": ""
+        },
+        {
+          "outcome": "Myocardial infarction",
+          "group_a": "3/418 (0.7%)",
+          "group_b": "12/420 (2.9%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "2.1%",
+          "ci_95": "",
+          "p_value": "0.02",
+          "note": "CI not reported"
+        },
+        {
+          "outcome": "ARDS",
+          "group_a": "32/418 (7.7%)",
+          "group_b": "48/420 (11.4%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "3.8%",
+          "ci_95": "-0.2 to 7.8",
+          "p_value": "0.06",
+          "note": ""
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Age <55 years (30-day mortality)",
+          "group_a": "5.7%",
+          "group_b": "13.0%",
+          "effect_measure": "Risk difference",
+          "effect_value": "7.3%",
+          "ci_95": "1.1 to 13.5",
+          "p_interaction": "",
+          "p_value": "0.02"
+        },
+        {
+          "subgroup": "APACHE II ≤20 (30-day mortality)",
+          "group_a": "8.7%",
+          "group_b": "16.1%",
+          "effect_measure": "Risk difference",
+          "effect_value": "7.4%",
+          "ci_95": "1.0 to 13.6",
+          "p_interaction": "",
+          "p_value": "0.03"
+        },
+        {
+          "subgroup": "Clinically significant cardiac disease (30-day mortality)",
+          "group_a": "20.5%",
+          "group_b": "22.9%",
+          "effect_measure": "Risk difference",
+          "effect_value": "2.3%",
+          "ci_95": "-6.7 to 11.3",
+          "p_interaction": "",
+          "p_value": "0.69"
+        }
+      ]
+    },
+    "safety": [
+      "Liberal strategy associated with higher cardiac complications (21.0% vs 13.2%, P<0.01)",
+      "Pulmonary oedema: 10.7% vs 5.3% (P<0.01)",
+      "Myocardial infarction: 2.9% vs 0.7% (P=0.02)",
+      "ARDS: 11.4% vs 7.7% (P=0.06)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated sequence, sealed opaque envelopes, stratified by centre and APACHE II (≤15 vs >15); envelopes audited."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; mortality objective, but co-interventions and complication reporting could be biased."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "ITT analysis; 3 patients lost to 60-day follow-up (2 restrictive, 1 liberal)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Hb outside target for ≥48h in 1.4% restrictive vs 4.3% liberal (P=0.02); crossover 1.8% overall."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced on age, APACHE II, MOD score, mechanical ventilation."
+        }
+      ],
+      "verdict": "Moderate-to-strong internal validity: robust randomisation and clear treatment separation, but limited by open-label design and early termination reducing precision."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad adult ICU case-mix across tertiary and community ICUs, but only 13% of assessed patients enrolled; excluded active bleeding, chronic anaemia, cardiac surgery."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings most generalisable to stable, non-bleeding ICU patients with early anaemia; caution in acute coronary syndromes or neurocritical care."
+        }
+      ],
+      "verdict": "Moderate external validity: highly applicable to many general ICU patients, but enrolment fraction and exclusions limit inference for specific high-risk subgroups."
+    },
+    "strengths": [
+      "Pragmatic multicentre design with broad diagnostic mix",
+      "Explicit transfusion triggers and targets with strong protocol separation",
+      "Clinically meaningful primary outcome (30-day mortality) with near-complete follow-up",
+      "Prospective assessment of complications, identifying increased cardiac morbidity with liberal transfusion"
+    ],
+    "limitations": [
+      "Terminated early for slow recruitment, limiting power/precision for equivalence",
+      "Unblinded strategy with potential for co-intervention and complication ascertainment bias",
+      "Low enrolment fraction (13% of assessed), with substantial physician and family refusal",
+      "Subgroup findings hypothesis-generating, not adjusted for multiplicity"
+    ],
+    "critical_appraisal": {
+      "summary": "TRICC is a landmark trial that provided randomised evidence supporting restrictive transfusion in general ICU patients, though early termination and open-label design introduce uncertainty.",
+      "strengths": [
+        "Robust randomisation and allocation concealment",
+        "Clear separation of transfusion strategies",
+        "Objective primary outcome with minimal loss to follow-up",
+        "Prospective safety data showing harm with liberal transfusion"
+      ],
+      "weaknesses": [
+        "Early termination reduced power for equivalence",
+        "Open-label design may bias non-mortality outcomes",
+        "Low enrolment fraction limits generalisability",
+        "Subgroup analyses not controlled for multiplicity"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In critically ill patients without active bleeding, a restrictive strategy of red-cell transfusion is at least as effective as and possibly superior to a liberal transfusion strategy, with the exception of patients with acute myocardial infarction and unstable angina.",
+    "clinical_bottom_line": {
+      "verdict": "A restrictive transfusion strategy (Hb 7–9 g/dL) is safe and reduces transfusion exposure and cardiac complications in stable ICU patients without active bleeding.",
+      "applies_to": "Haemodynamically stable, non-bleeding critically ill adults with early ICU anaemia (Hb ≤9 g/dL).",
+      "does_not_mean": "Does not mean that all ICU patients should have a Hb threshold of 7 g/dL; patients with acute coronary syndromes or acute brain injury may require higher thresholds.",
+      "implementation_caveats": [
+        "Use one-unit transfusion and reassess Hb after each unit",
+        "Consider higher thresholds in patients with ongoing ischaemia or acute neurological injury",
+        "Apply only after initial resuscitation and euvolaemia achieved"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Equivalence intent vs achieved precision",
+        "notes": "Early termination widened confidence intervals, so equivalence not definitively established."
+      },
+      {
+        "topic": "Subgroup findings and multiplicity",
+        "notes": "Mortality benefit in younger and less severely ill patients is hypothesis-generating."
+      },
+      {
+        "topic": "Sepsis/septic shock corroboration",
+        "notes": "TRISS trial supported restrictive thresholds in septic shock."
+      },
+      {
+        "topic": "Neurocritical care nuance",
+        "notes": "Later trials suggest potential benefit of higher thresholds in acute brain injury."
+      },
+      {
+        "topic": "Guideline uptake",
+        "notes": "Major sepsis guidelines recommend restrictive transfusion (Hb <70 g/L) in absence of extenuating ischaemic concerns."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TRISS",
+        "relation": "TRISS (Transfusion Requirements in Septic Shock) confirmed similar mortality with restrictive threshold in septic shock, supporting TRICC's findings in a high-risk subgroup."
+      },
+      {
+        "trial": "Robertson et al. 2014 (TBI transfusion threshold trial)",
+        "relation": "Subsequent RCTs in acute brain injury suggested potential harm with restrictive thresholds, indicating that TRICC's 'one threshold for most' may not apply to neurocritical care."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal transfusion threshold in acute coronary syndromes",
+      "Threshold in acute brain injury",
+      "Impact of leukodepletion and modern blood processing on outcomes",
+      "Long-term functional outcomes beyond mortality"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=838",
+        "30-day mortality: 18.7% restrictive vs 23.3% liberal (P=0.11)",
+        "Hospital mortality: 22.2% vs 28.1% (P=0.05)",
+        "Cardiac complications: 13.2% vs 21.0% (P<0.01)",
+        "Transfusion exposure: 2.6 vs 5.6 units/patient"
+      ],
+      "one_line_takeaway": "In stable ICU patients, a restrictive transfusion trigger of 7 g/dL reduces transfusion and cardiac complications without increasing mortality."
+    }
+  },
+  "_source_id": "TRIC",
+  "_source_system": "Haematology"
+}

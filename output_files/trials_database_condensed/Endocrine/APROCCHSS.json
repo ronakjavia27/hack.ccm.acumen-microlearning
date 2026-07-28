@@ -1,0 +1,391 @@
+{
+  "id": "APROCCHSS",
+  "trial_name": "APROCCHSS — Hydrocortisone plus Fludrocortisone for Adults with Septic Shock (2018)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Adrenal Disorders",
+  "year": 2018,
+  "journal": "New England Journal of Medicine",
+  "citation": "Annane D, Renault A, Brun-Buisson C, et al. Hydrocortisone plus fludrocortisone for adults with septic shock. N Engl J Med. 2018;378(9):809-818",
+  "doi": "http://dx.doi.org/10.1056/NEJMoa1705716",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1241,
+  "result_category": "Positive",
+  "one_liner": "In adults with septic shock, hydrocortisone plus fludrocortisone reduced 90-day mortality (43% vs 49%, RR 0.88) and accelerated shock reversal.",
+  "pico": {
+    "population": "Adult ICU patients with persistent septic shock requiring vasopressors despite fluid resuscitation, within 24 hours of shock onset",
+    "intervention": "Hydrocortisone 50 mg IV q6h + fludrocortisone 50 mcg daily for 7 days",
+    "comparison": "Placebo",
+    "outcome": "90-day all-cause mortality"
+  },
+  "keywords": [
+    "septic shock",
+    "corticosteroids",
+    "hydrocortisone",
+    "fludrocortisone",
+    "mortality",
+    "vasopressor-free days"
+  ],
+  "related_trials": [
+    "ADRENAL",
+    "CORTICUS"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Septic shock remains a leading cause of ICU death; corticosteroids had long been used to accelerate shock reversal, but mortality effects were uncertain and trial results conflicted.",
+      "knowledge_gap": "A prior RCT of low-dose hydrocortisone plus fludrocortisone suggested improved survival, whereas a later large trial of hydrocortisone alone did not show mortality benefit and raised questions around testing/targeting 'relative adrenal insufficiency'.",
+      "hypothesis": "In adults with persistent septic shock, adjunctive low-dose corticosteroid therapy (hydrocortisone plus fludrocortisone) would reduce all-cause 90-day mortality compared with placebo, while also hastening resolution of cardiovascular and organ failure."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, placebo-controlled trial; initially a 2×2 factorial with drotrecogin alfa, later continued as a two-group corticosteroid trial after drotrecogin withdrawal.",
+      "setting": "34 ICUs in France; enrolment 2008–2015.",
+      "population": {
+        "inclusion": [
+          "Suspected/confirmed infection with shock requiring vasopressors despite fluid resuscitation",
+          "Randomisation within 24 hours of shock onset",
+          "High illness severity (SAPS II ~56, ~92% mechanically ventilated, ~27–28% on renal-replacement therapy at baseline)"
+        ],
+        "exclusion": [
+          "Vasopressor therapy >24 hours before screening/randomisation",
+          "Contraindications to trial agents",
+          "Other protocol-defined conditions (including bleeding contraindications during the original factorial design)"
+        ]
+      },
+      "intervention": "Hydrocortisone hemisuccinate 50 mg IV every 6 hours (200 mg/day) for 7 days + Fludrocortisone 50 micrograms once daily (oral/NG) for 7 days.",
+      "comparison": "Matched IV placebo injections every 6 hours plus matched oral/NG placebo tablets daily for 7 days.",
+      "blinding": "Double-blind (patients, clinicians, investigators, outcome assessors); placebo formulations matched active drugs.",
+      "sample_size_power": "Planned 1280 patients to detect a 10% absolute reduction in 90-day mortality (from 45% to 35%) with 95% power at a two-sided 5% significance level; achieved 1241 (97% of target).",
+      "primary_outcome": "All-cause mortality at day 90.",
+      "secondary_outcomes": [
+        "All-cause mortality at day 28",
+        "ICU discharge",
+        "Hospital discharge",
+        "Day 180",
+        "Vasopressor-free days to day 28",
+        "Ventilator-free days to day 28",
+        "Organ-failure–free days to day 28",
+        "Hyperglycaemia",
+        "Gastroduodenal bleeding",
+        "Superinfection",
+        "Neurologic sequelae"
+      ],
+      "follow_up": "180 days"
+    },
+    "results": {
+      "headline_bullets": [
+        "Hydrocortisone plus fludrocortisone reduced 90-day mortality (43.0% vs 49.1%; RR 0.88; 95% CI 0.78–0.99; P=0.03) and was directionally consistent across multiple mortality timepoints.",
+        "The regimen accelerated shock recovery (vasopressor-free days to day 28: 17.8 ± 10.4 vs 15.0 ± 11.1; P<0.001) and increased organ-failure–free days (14.8 ± 11.5 vs 13.6 ± 11.9; P=0.003).",
+        "Expected metabolic harms were observed (hyperglycaemia 89.1% vs 82.3%; RR 1.07; 95% CI 1.03–1.12; P=0.002), without clear increases in gastroduodenal bleeding or superinfection in reported endpoints."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at day 90 (primary)",
+          "group_a": "264/614 (43.0%)",
+          "group_b": "308/627 (49.1%)",
+          "effect_measure": "RR",
+          "effect_value": "0.88",
+          "ci_95": "0.78–0.99",
+          "p_value": "0.03",
+          "note": "Primary comparison after continuation as two-group corticosteroid trial."
+        },
+        {
+          "outcome": "All-cause mortality at day 28",
+          "group_a": "207/614 (33.7%)",
+          "group_b": "244/627 (38.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.75–1.01",
+          "p_value": "0.06",
+          "note": "Numerical reduction; not statistically significant at 5%."
+        },
+        {
+          "outcome": "All-cause mortality at ICU discharge",
+          "group_a": "217/613 (35.4%)",
+          "group_b": "257/627 (41.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.86",
+          "ci_95": "0.75–0.99",
+          "p_value": "0.04",
+          "note": "Denominators reflect available discharge status."
+        },
+        {
+          "outcome": "All-cause mortality at hospital discharge",
+          "group_a": "239/613 (39.0%)",
+          "group_b": "284/627 (45.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.86",
+          "ci_95": "0.76–0.98",
+          "p_value": "0.02",
+          "note": "Consistent direction with primary outcome."
+        },
+        {
+          "outcome": "All-cause mortality at day 180",
+          "group_a": "285/611 (46.6%)",
+          "group_b": "328/625 (52.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.89",
+          "ci_95": "0.79–0.99",
+          "p_value": "0.04",
+          "note": "Small attrition by day 180 (denominators < randomised N)."
+        },
+        {
+          "outcome": "Decision to withhold/withdraw active treatment by day 90",
+          "group_a": "119/604 (19.7%)",
+          "group_b": "157/620 (25.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.78",
+          "ci_95": "0.63–0.97",
+          "p_value": "0.03",
+          "note": "Potentially both a mediator and an outcome influenced by clinical trajectory."
+        },
+        {
+          "outcome": "Vasopressor-free days to day 28",
+          "group_a": "17.8 ± 10.4",
+          "group_b": "15.0 ± 11.1",
+          "effect_measure": "Mean difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.001",
+          "note": "Mean ± SD; indicates faster cardiovascular recovery."
+        },
+        {
+          "outcome": "Ventilator-free days to day 28",
+          "group_a": "11.5 ± 11.0",
+          "group_b": "10.9 ± 11.1",
+          "effect_measure": "Mean difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.07",
+          "note": "Mean ± SD; borderline."
+        },
+        {
+          "outcome": "Organ-failure–free days to day 28",
+          "group_a": "14.8 ± 11.5",
+          "group_b": "13.6 ± 11.9",
+          "effect_measure": "Mean difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.003",
+          "note": "Composite recovery metric over 28 days."
+        },
+        {
+          "outcome": "Hyperglycaemia (safety), by day 28",
+          "group_a": "547/614 (89.1%)",
+          "group_b": "515/626 (82.3%)",
+          "effect_measure": "RR",
+          "effect_value": "1.07",
+          "ci_95": "1.03–1.12",
+          "p_value": "0.002",
+          "note": "Also more days with blood glucose ≥150 mg/dL: 4.3 ± 4.1 vs 3.4 ± 3.8; P<0.001."
+        },
+        {
+          "outcome": "Gastroduodenal bleeding (safety), by day 28",
+          "group_a": "39/614 (6.4%)",
+          "group_b": "45/626 (7.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.88",
+          "ci_95": "0.58–1.34",
+          "p_value": "0.56",
+          "note": "No signal for excess GI bleeding with steroids in this cohort."
+        },
+        {
+          "outcome": "Superinfection (safety), by day 180",
+          "group_a": "191/614 (31.1%)",
+          "group_b": "178/626 (28.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.09",
+          "ci_95": "0.92–1.30",
+          "p_value": "0.30",
+          "note": "Definition per trial report; interpret alongside antimicrobial stewardship context."
+        },
+        {
+          "outcome": "Neurologic sequelae (MDRS >1), by day 180",
+          "group_a": "153/614 (24.9%)",
+          "group_b": "130/626 (20.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.20",
+          "ci_95": "0.98–1.47",
+          "p_value": "0.08",
+          "note": "Non-significant trend; ascertainment depends on survival and follow-up."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Community-acquired pneumonia-related septic shock",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "OR",
+          "effect_value": "0.60",
+          "ci_95": "0.43–0.83",
+          "p_interaction": "Not reported",
+          "note": "Targeted analysis of APROCCHSS participants; suggests potential effect heterogeneity by infection phenotype."
+        }
+      ]
+    },
+    "safety": [
+      "Hyperglycaemia: 89.1% vs 82.3% (RR 1.07, P=0.002); more days with glucose ≥150 mg/dL (4.3 vs 3.4 days, P<0.001).",
+      "Gastroduodenal bleeding: 6.4% vs 7.2% (RR 0.88, P=0.56).",
+      "Superinfection by day 180: 31.1% vs 28.4% (RR 1.09, P=0.30).",
+      "Neurologic sequelae (MDRS >1) by day 180: 24.9% vs 20.8% (RR 1.20, P=0.08)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with permuted blocks (size 8), stratification by ICU; allocation concealment maintained through identical placebo preparations and blinded dispensing."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind (patients, clinicians, investigators, outcome assessors); placebo formulations matched active drugs; primary endpoint (mortality) is objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary endpoint ascertainment robust; day 180 attrition small (611/614 and 625/627), unlikely to overturn effect estimates but relevant to disability/neurologic outcomes."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Biological separation evident via metabolic effects (days with glucose ≥150 mg/dL: 4.3 vs 3.4; P<0.001) and physiological response (vasopressor-free days: 17.8 vs 15.0; P<0.001)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups clinically similar at baseline (mechanical ventilation 92.3% vs 91.3%; RRT 27.0% vs 28.1%; norepinephrine-equivalent dose ~1.02 vs 1.14 µg/kg/min; SAPS II ~56 ± 19)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears strong for the primary mortality endpoint given concealed randomisation, blinding, and objective outcome assessment, with moderate caution warranted for secondary/discharge-dependent outcomes and for interpretive complexity introduced by trial interruptions and design evolution."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled patients were severely ill (high vasopressor dose; ~92% ventilated), aligning with typical ICU septic shock populations in high-income settings, but may over-represent more severe shock compared with mixed ED/ward cohorts."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in French ICUs with structured sepsis management and access to vasopressors, ventilation, and renal replacement; transferability to resource-limited settings depends on availability of close glucose monitoring, vasopressor titration, and fludrocortisone formulations."
+        },
+        {
+          "domain": "Intervention feasibility",
+          "notes": "Hydrocortisone bolus dosing is widely feasible; adding daily fludrocortisone requires enteral access and supply, and is not a universal component of sepsis protocols."
+        },
+        {
+          "domain": "Applicability across subgroups",
+          "notes": "Subsequent analyses suggest potential effect heterogeneity by infection phenotype (e.g., community-acquired pneumonia-related septic shock), supporting cautious extrapolation beyond the dominant phenotypes enrolled."
+        }
+      ],
+      "verdict": "Generalisability is good to adult ICU septic shock in comparable high-resource systems, but is less certain in lower-acuity sepsis populations, settings without routine enteral drug delivery/monitoring capacity, and phenotypes where treatment effect may differ."
+    },
+    "strengths": [
+      "Large, multicentre, double-blind randomised design",
+      "Clinically meaningful primary endpoint (90-day mortality)",
+      "Clear and practical dosing regimen",
+      "Comprehensive follow-up to 180 days",
+      "Objective adjudication for key outcomes"
+    ],
+    "limitations": [
+      "Complex trial history (initial factorial design, discontinuation of one intervention component, enrolment interruptions)",
+      "Near-but-not-complete achievement of planned sample size",
+      "Extensive secondary outcomes without multiplicity adjustment",
+      "Discharge-related endpoints influenced by centre practice",
+      "Limited direct evidence within the trial to isolate the incremental contribution of fludrocortisone versus hydrocortisone alone"
+    ],
+    "critical_appraisal": {
+      "summary": "APROCCHSS is a well-conducted RCT with strong internal validity for its primary mortality endpoint, demonstrating a modest but clinically relevant mortality reduction with hydrocortisone plus fludrocortisone in severe septic shock; generalisability is good to similar ICU settings, though the incremental benefit of fludrocortisone remains uncertain.",
+      "strengths": [
+        "Large sample size",
+        "Double-blind, placebo-controlled",
+        "Objective primary endpoint",
+        "Consistent mortality reduction across timepoints",
+        "Accelerated shock reversal"
+      ],
+      "weaknesses": [
+        "Complex trial evolution",
+        "Secondary outcomes not adjusted for multiplicity",
+        "Uncertainty about fludrocortisone's specific contribution",
+        "Discharge-related outcomes influenced by centre practice"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In severe septic shock with ongoing vasopressor dependence, a 7-day regimen of hydrocortisone (200 mg/day in divided doses) plus fludrocortisone (50 micrograms/day) provides evidence of a modest but clinically relevant mortality reduction and faster haemodynamic recovery.",
+    "clinical_bottom_line": {
+      "verdict": "In adults with septic shock requiring vasopressors, adding hydrocortisone 50 mg IV q6h plus fludrocortisone 50 mcg daily for 7 days reduces 90-day mortality and accelerates shock resolution.",
+      "applies_to": "ICU patients with severe septic shock, within 24 hours of onset, in settings with enteral access and glucose monitoring.",
+      "does_not_mean": "Does not mean that hydrocortisone alone is ineffective; the trial cannot separate the effect of fludrocortisone.",
+      "implementation_caveats": [
+        "Monitor for hyperglycaemia",
+        "Ensure enteral access for fludrocortisone",
+        "Avoid high-dose/short-duration steroid regimens",
+        "Consider potential heterogeneity by infection phenotype"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Trial evolution as a validity stress-test",
+        "notes": "The protocol’s transition from a factorial design to a two-group corticosteroid trial, plus recruitment suspensions and near-target (not complete) sample size, complicate causal storytelling but do not negate the randomised comparison within the final corticosteroid phase."
+      },
+      {
+        "topic": "Mortality discordance across landmark trials",
+        "notes": "APROCCHSS demonstrated a statistically significant 90-day mortality reduction with hydrocortisone + fludrocortisone, while ADRENAL (hydrocortisone infusion without routine fludrocortisone) did not show a mortality benefit, although it improved shock resolution and ICU processes. Earlier CORTICUS found no mortality benefit and revived concerns about patient selection, timing, and adrenal testing paradigms."
+      },
+      {
+        "topic": "Role of fludrocortisone remains an evidence gap",
+        "notes": "APROCCHSS cannot disentangle whether benefit stems from hydrocortisone dosing strategy, fludrocortisone addition, or both; no large head-to-head RCT has definitively compared hydrocortisone + fludrocortisone versus hydrocortisone alone using mortality as a primary endpoint."
+      },
+      {
+        "topic": "Contemporary synthesis of the totality of evidence",
+        "notes": "A patient-level meta-analysis of IV hydrocortisone trials (excluding the routine mineralocorticoid component) found no mortality reduction, while showing a modest increase in vasopressor-free days (mean difference 1.24 days; 95% CI 0.74 to 1.73) and specific adverse effects such as hypernatraemia and muscle weakness."
+      },
+      {
+        "topic": "Comparative effectiveness across corticosteroid regimens",
+        "notes": "A Bayesian network meta-analysis comparing placebo/usual care, hydrocortisone alone, and hydrocortisone + fludrocortisone suggested lower mortality with hydrocortisone + fludrocortisone versus placebo (RR 0.85; 95% CrI 0.72 to 0.99) and a non-definitive difference versus hydrocortisone alone (RR 0.88; 95% CrI 0.74 to 1.03), highlighting ongoing uncertainty about incremental benefit over hydrocortisone monotherapy."
+      },
+      {
+        "topic": "Phenotype-dependent effects",
+        "notes": "In a targeted analysis of APROCCHSS participants with community-acquired pneumonia-related septic shock, hydrocortisone + fludrocortisone was associated with lower 90-day mortality (OR 0.60; 95% CI 0.43 to 0.83), raising the possibility of clinically meaningful heterogeneity by infection source/phenotype."
+      },
+      {
+        "topic": "Observational evidence (confounding risk)",
+        "notes": "A retrospective target-trial emulation in routine practice compared hydrocortisone + fludrocortisone against hydrocortisone alone and reported lower in-hospital mortality with combination therapy, supporting plausibility but remaining vulnerable to residual confounding and treatment-selection bias."
+      },
+      {
+        "topic": "Editorial and correspondence",
+        "notes": "The paired 2018 NEJM steroid trials prompted editorial emphasis on careful interpretation of ‘borderline’ mortality findings, co-interventions, and regimen differences, alongside formal correspondence debating whether fludrocortisone explains divergent trial outcomes and whether hydrocortisone trial designs were sufficiently comparable."
+      },
+      {
+        "topic": "Guideline positioning",
+        "notes": "Surviving Sepsis Campaign 2021 conditionally recommends corticosteroids for septic shock with ongoing vasopressor requirement (commonly hydrocortisone 200 mg/day), without mandating mineralocorticoid co-therapy. A 2024 focused update similarly issued a conditional recommendation for corticosteroids in septic shock and recommended against high-dose/short-duration regimens."
+      },
+      {
+        "topic": "Living evidence",
+        "notes": "The most recent Cochrane update concludes that corticosteroids probably reduce short- and longer-term mortality in sepsis overall, while uncertainties persist for optimal dosing strategy and adverse effects, which frames APROCCHSS as part of a broader, evolving evidence base rather than a standalone ‘final answer’."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ADRENAL",
+        "relation": "Hydrocortisone infusion without routine fludrocortisone did not show mortality benefit but improved shock resolution; contrasts with APROCCHSS mortality finding."
+      },
+      {
+        "trial": "CORTICUS",
+        "relation": "Earlier trial of hydrocortisone without fludrocortisone found no mortality benefit and raised concerns about patient selection and adrenal testing."
+      }
+    ],
+    "unresolved_questions": [
+      "Does fludrocortisone add incremental mortality benefit over hydrocortisone alone?",
+      "Is the treatment effect consistent across all infection phenotypes?",
+      "What is the optimal corticosteroid regimen (dose, duration, mineralocorticoid) in septic shock?",
+      "How do these findings apply to lower-acuity sepsis or resource-limited settings?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1241",
+        "90-day mortality: 43% vs 49% (RR 0.88, P=0.03)",
+        "Vasopressor-free days: 17.8 vs 15.0 (P<0.001)",
+        "Hyperglycaemia: 89% vs 82% (P=0.002)"
+      ],
+      "one_line_takeaway": "In severe septic shock, a 7-day course of hydrocortisone plus fludrocortisone reduces 90-day mortality and speeds shock reversal, with hyperglycaemia as the main trade-off."
+    }
+  },
+  "_source_id": "APROCCHSS",
+  "_source_system": "Endocrine"
+}

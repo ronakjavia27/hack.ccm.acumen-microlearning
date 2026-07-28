@@ -1,0 +1,408 @@
+{
+  "id": "EPaNIC",
+  "trial_name": "EPaNIC — Early vs Late Parenteral Nutrition in Critically Ill Adults (2011)",
+  "specialty": "Nutrition",
+  "subtopic": "Parenteral Nutrition",
+  "year": 2011,
+  "journal": "N Engl J Med",
+  "citation": "Casaer MP, Mesotten D, Hermans G, Wouters PJ, Schetz M, Meyfroidt G, et al. Early versus late parenteral nutrition in critically ill adults. N Engl J Med. 2011;365(6):506-17",
+  "doi": "https://doi.org/10.1056/NEJMoa1102662",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 4640,
+  "result_category": "Positive",
+  "one_liner": "In nutritionally at-risk adult ICU patients, delaying parenteral nutrition until day 8 (if enteral nutrition insufficient) reduced infections and accelerated ICU discharge without affecting mortality.",
+  "pico": {
+    "population": "Adults admitted to ICU, nutritionally at risk (NRS 2002 ≥3), with central venous access.",
+    "intervention": "Late initiation of parenteral nutrition (PN withheld until ICU day 8 if enteral nutrition insufficient; IV glucose hydration days 1–7).",
+    "comparison": "Early initiation of parenteral nutrition (IV glucose days 1–2, PN from day 3 to meet caloric goal).",
+    "outcome": "Time to discharge alive from ICU (primary); new infections, mortality, organ support duration, costs."
+  },
+  "keywords": [
+    "parenteral nutrition",
+    "enteral nutrition",
+    "critical illness",
+    "timing",
+    "caloric debt",
+    "infection",
+    "length of stay"
+  ],
+  "related_trials": [
+    "Heidegger 2013",
+    "Doig 2013",
+    "CALORIES",
+    "NUTRIREA-2",
+    "PEPaNIC"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Early enteral nutrition was advocated, but real-world delivery often fell short of caloric targets, prompting common 'top-up' PN. Prior guidance diverged on timing of PN initiation.",
+      "knowledge_gap": "Equipoise existed on whether early supplemental PN improves outcomes vs permissive underfeeding.",
+      "hypothesis": "In adult ICU patients at nutritional risk, early caloric completion with PN (from day 3) compared with withholding PN until day 8 would improve recovery (time to ICU discharge alive) and reduce morbidity without increasing mortality."
+    },
+    "methods": {
+      "design": "Randomised, multicentre (7 ICUs in Belgium), open-label, parallel-group trial.",
+      "setting": "7 ICUs in Belgium; enrolled patients at nutritional risk.",
+      "population": {
+        "inclusion": [
+          "Adults admitted to participating ICUs, nutritionally at risk (NRS 2002 score ≥3) on ICU admission; central venous access required."
+        ],
+        "exclusion": [
+          "Age <18 years; DNR/moribund; BMI <17 kg/m2; transfer from another ICU with established nutrition regimen; short bowel syndrome; home ventilation; pregnancy/lactation; ketoacidotic/hyperosmolar coma; not critically ill (no indication for central line / ready for oral nutrition on admission)."
+        ]
+      },
+      "intervention": "Late initiation strategy: 5% glucose IV (hydration) during ICU days 1–7; EN attempted; if EN insufficient after 7 days, PN commenced on day 8 to reach caloric goal. Micronutrients provided early.",
+      "comparison": "Early initiation strategy: 20% glucose IV (400 kcal day 1, 800 kcal day 2); PN initiated on day 3 and titrated to 100% caloric goal via combined EN+PN (reduced when EN/oral intake ≥80% goal). PN products: OliClinomel or Clinimix; max 2880 kcal/day.",
+      "blinding": "Open-label to clinicians/patients; outcome adjudicators blinded.",
+      "sample_size_power": "4640 patients (2320/arm) to detect 1-day ICU stay difference with ≥80% power and 3% ICU mortality difference with ≥70% power.",
+      "primary_outcome": "Time to discharge alive from ICU.",
+      "secondary_outcomes": [
+        "New infections",
+        "ICU mortality",
+        "Hospital mortality",
+        "90-day mortality",
+        "Mechanical ventilation duration",
+        "RRT duration",
+        "Hospital stay",
+        "Healthcare costs",
+        "Hypoglycaemia",
+        "ICU-acquired weakness (substudy)"
+      ],
+      "follow_up": "ICU and hospital outcomes to discharge; vital status to 90 days; functional outcomes at hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "Late PN was associated with faster discharge alive from ICU (median 3 vs 4 days; HR 1.06; 95% CI 1.00–1.13; P=0.04).",
+        "Fewer new infections occurred with late PN (22.8% vs 26.2%; P=0.008), with no difference in ICU, hospital, or 90-day mortality.",
+        "Late PN had more hypoglycaemia (3.5% vs 1.9%; P=0.001) despite lower insulin doses and lower mean glucose."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Time to discharge alive from ICU (primary)",
+          "group_a": "Median 3 (2–7) days",
+          "group_b": "Median 4 (2–9) days",
+          "effect_measure": "HR",
+          "effect_value": "1.06",
+          "ci_95": "1.00–1.13",
+          "p_value": "0.04",
+          "note": "Cox model; deaths censored after last surviving discharge."
+        },
+        {
+          "outcome": "Discharged alive from ICU within 8 days",
+          "group_a": "1750/2328 (75.2%)",
+          "group_b": "1658/2312 (71.7%)",
+          "effect_measure": "OR",
+          "effect_value": "1.271",
+          "ci_95": "1.080–1.495",
+          "p_value": "0.007",
+          "note": "Prespecified dichotomised endpoint."
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "141/2328 (6.1%)",
+          "group_b": "146/2312 (6.3%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.76",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "242/2328 (10.4%)",
+          "group_b": "251/2312 (10.9%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.63",
+          "note": ""
+        },
+        {
+          "outcome": "90-day mortality",
+          "group_a": "257/2289 (11.2%)",
+          "group_b": "255/2268 (11.2%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "1.00",
+          "note": "Some non-Belgian survivors censored at hospital discharge."
+        },
+        {
+          "outcome": "Any new infection",
+          "group_a": "531/2328 (22.8%)",
+          "group_b": "605/2312 (26.2%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.008",
+          "note": "Composite of adjudicated new infections during ICU stay."
+        },
+        {
+          "outcome": "Airway or lung infection",
+          "group_a": "381/2328 (16.4%)",
+          "group_b": "447/2312 (19.3%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.009",
+          "note": ""
+        },
+        {
+          "outcome": "Bloodstream infection",
+          "group_a": "142/2328 (6.1%)",
+          "group_b": "174/2312 (7.5%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.05",
+          "note": ""
+        },
+        {
+          "outcome": "Wound infection",
+          "group_a": "64/2328 (2.7%)",
+          "group_b": "98/2312 (4.2%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.006",
+          "note": ""
+        },
+        {
+          "outcome": "Hypoglycaemia (<40 mg/dL)",
+          "group_a": "81/2328 (3.5%)",
+          "group_b": "45/2312 (1.9%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.001",
+          "note": "Despite lower insulin doses (31 vs 58 IU/day) and lower mean glucose (102 vs 107 mg/dL)."
+        },
+        {
+          "outcome": "Mechanical ventilation duration",
+          "group_a": "Median 2 (1–5) days",
+          "group_b": "Median 2 (1–5) days",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.02",
+          "note": "Distributional difference; weaning HR not significant (P=0.07)."
+        },
+        {
+          "outcome": "Duration of renal replacement therapy (RRT recipients)",
+          "group_a": "Median 7 (3–16) days",
+          "group_b": "Median 10 (4–19) days",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.008",
+          "note": "Any RRT use: 8.6% vs 8.9% (P=0.77)."
+        },
+        {
+          "outcome": "Hospital stay (overall)",
+          "group_a": "Median 14 (8–28) days",
+          "group_b": "Median 16 (9–30) days",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.004",
+          "note": "Time-to-discharge-alive-from-hospital HR 1.064 (1.001–1.131; P=0.04)."
+        },
+        {
+          "outcome": "Total incremental healthcare costs",
+          "group_a": "Mean €16,863 (IQR 11,184–29,887)",
+          "group_b": "Mean €17,973 (IQR 11,617–34,568)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.04",
+          "note": "Belgium-specific costing; PN acquisition costs not directly deducted."
+        },
+        {
+          "outcome": "ICU-acquired weakness (substudy)",
+          "group_a": "—",
+          "group_b": "—",
+          "effect_measure": "Absolute difference",
+          "effect_value": "8.0%",
+          "ci_95": "4.1–11.9",
+          "p_value": "<0.0001",
+          "note": "Prespecified neuromuscular subanalysis; fewer patients with weakness in late PN group."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Surgical contraindication to EN (N=517)",
+          "group_a": "Late PN",
+          "group_b": "Early PN",
+          "effect_measure": "HR",
+          "effect_value": "1.198",
+          "ci_95": "0.999–1.437",
+          "p_interaction": "0.1197",
+          "note": "Time to ICU discharge alive; also alive ICU discharge within 8 days OR 1.749 (1.141–2.683)."
+        }
+      ]
+    },
+    "safety": [
+      "Hypoglycaemia (<40 mg/dL): 3.5% late vs 1.9% early (P=0.001), despite lower insulin doses and lower mean glucose in late PN group."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Stratified randomisation across 16 diagnostic strata; sequential sealed opaque envelopes (later digital) with permuted blocks of 10; clinicians unaware of block size."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; potential for co-intervention and discharge decision bias; mitigated by blinded outcome adjudicators and protocolised ICU care (weaning, EN escalation, insulin target)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "All randomised patients included in ITT; 15 late-initiation patients had protocol violation (inadvertent PN ≥1 L/day for ≥2 days) but retained."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clear temporal separation (early PN from day 3 vs no PN until day 8); matched-volume IV glucose in late group; PDMS calculated daily volumes."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched on baseline demographics and illness severity; large sample size reduces chance imbalance."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Primary endpoint used time-to-discharge-alive with defined censoring; however, discharge readiness criteria included nutritional intake thresholds (ability to receive ≥2/3 caloric requirements orally), making endpoint not fully independent of intervention."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Prespecified ITT analyses, time-to-event modelling, adjusted/unadjusted comparisons; multiple secondary endpoints tested without multiplicity correction."
+        }
+      ],
+      "verdict": "Moderate-to-strong: robust randomisation and allocation concealment, substantial separation, but open-label design and discharge-related endpoints introduce plausible performance and endpoint-dependence bias."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Predominantly high-income Belgian ICUs with large cardiac surgery cohort; excluded severely malnourished (BMI<17) and those without central access or already on oral nutrition."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Delivered within intensive insulin therapy (target 80–110 mg/dL) and structured EN escalation; may differ from contemporary glycaemic targets and feeding practices."
+        },
+        {
+          "domain": "Intervention feasibility",
+          "notes": "Strategy of delaying PN until day 8 is operationally feasible in most ICUs; balance of benefit vs harm may shift in populations with higher baseline malnutrition or prolonged EN intolerance."
+        },
+        {
+          "domain": "Health system transferability",
+          "notes": "Cost findings sensitive to national reimbursement; clinical endpoints more transferable than economic endpoints."
+        }
+      ],
+      "verdict": "Moderate: most applicable to well-nourished or mildly at-risk mixed ICU cohorts in high-resource settings; less certain for markedly malnourished patients or different glycaemic strategies."
+    },
+    "strengths": [
+      "Large sample size (N=4640) with stratified randomisation and high protocol operationalisation via PDMS.",
+      "Clinically relevant endpoints spanning infections, organ support, functional outcomes, and costs; blinded outcome adjudication.",
+      "Pragmatic, implementable strategies reflecting common ICU feeding dilemmas."
+    ],
+    "limitations": [
+      "Open-label design with endpoints potentially influenced by nutrition strategy and clinician behaviour.",
+      "High proportion of post-cardiac surgery and low-to-moderate nutritional risk patients may limit inference for malnourished or prolonged-stay phenotypes.",
+      "Tight glycaemic control and equation-based caloric targets represent a specific care context; macronutrient composition and protein dosing may not reflect current best practice.",
+      "Multiple secondary endpoints without multiplicity adjustment increase risk of overinterpreting isolated significant findings."
+    ],
+    "critical_appraisal": {
+      "summary": "EPaNIC is a large, well-conducted RCT that demonstrated a strategy of late PN reduced infections and accelerated recovery without mortality difference, but open-label design and discharge criteria tied to nutrition intake weaken confidence in length-of-stay benefits.",
+      "strengths": [
+        "Large sample size, robust randomisation, blinded outcome adjudication."
+      ],
+      "weaknesses": [
+        "Open-label, endpoint dependence, specific care context (tight glycaemic control, high cardiac surgery proportion)."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In a large, nutritionally at-risk but predominantly non-malnourished adult ICU cohort, deferring PN until ICU day 8 (while pursuing EN and providing micronutrients) was associated with fewer infections and faster recovery markers without a mortality penalty.",
+    "clinical_bottom_line": {
+      "verdict": "Deferring PN until day 8 in nutritionally at-risk ICU patients who can tolerate some EN reduces infections and may shorten ICU stay without affecting mortality.",
+      "applies_to": "Well-nourished or mildly at-risk mixed ICU patients in high-resource settings with tight glycaemic control.",
+      "does_not_mean": "That PN is harmful; rather, early full feeding may be unnecessary or harmful in low-risk patients. It does not apply to severely malnourished or those with prolonged EN intolerance.",
+      "implementation_caveats": [
+        "Consider early PN in patients with high nutritional risk or prolonged EN contraindication.",
+        "Avoid routine early supplemental PN in low-risk patients.",
+        "Monitor for hypoglycaemia if using tight glycaemic control with late PN strategy."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Endpoint dependence and discharge criteria",
+        "notes": "Primary endpoint (time to ICU discharge alive) incorporated nutritional intake (ability to receive ≥2/3 caloric requirements orally), which may be influenced by early PN via appetite suppression, making the endpoint not fully independent of the intervention."
+      },
+      {
+        "topic": "Care-context sensitivity (glycaemia and full feeding)",
+        "notes": "Intensive insulin therapy (80–110 mg/dL target) and early delivery of near-goal calories could potentiate harms via hypoglycaemia and overfeeding, raising uncertainty about translation to contemporary glycaemic targets and more conservative early caloric strategies."
+      },
+      {
+        "topic": "Population phenotype (nutritional risk vs reserve)",
+        "notes": "Post-hoc analysis suggested early completion feeding was not broadly beneficial; patient selection (baseline reserve) matters more than universal timing rules."
+      },
+      {
+        "topic": "Mechanistic debate (autophagy and muscle outcomes)",
+        "notes": "Trialists proposed suppression of autophagy as a mechanism; a prespecified neuromuscular subanalysis found late PN associated with fewer ICU-acquired weakness (absolute difference 8.0%; 95% CI 4.1–11.9; P<0.0001)."
+      },
+      {
+        "topic": "Health-economic implications",
+        "notes": "Formal cost analysis reported higher mean healthcare costs per patient with early PN (Crit Care 2012;16:R96), supporting resource stewardship when clinical benefit is absent."
+      },
+      {
+        "topic": "Contrasting RCT signals with different targeting strategies",
+        "notes": "Heidegger et al (indirect calorimetry-guided, supplemental PN from day 4) reduced nosocomial infection; Doig et al (early PN in EN contraindication) increased energy/protein without clear harm; CALORIES (EN vs PN) no mortality difference; NUTRIREA-2 (EN vs PN in shock) similar mortality but more GI complications with EN; PEPaNIC extended late PN benefit to children."
+      },
+      {
+        "topic": "Meta-analytic synthesis",
+        "notes": "Subsequent syntheses generally report no mortality difference between EN and PN routes but fewer bloodstream infections with EN; heterogeneity in dose, timing, and glycaemic strategies limits 'one-size' conclusions."
+      },
+      {
+        "topic": "Guideline evolution",
+        "notes": "Post-EPaNIC guidance increasingly separates 'PN when EN is contraindicated' from 'supplemental PN to meet targets', with timing influenced by nutritional risk (e.g., SCCM/ASPEN 2016 recommend withholding PN for first 7 days in low-risk patients; ESPEN 2019 suggests starting PN within 3–7 days when EN is contraindicated)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Heidegger 2013",
+        "relation": "Used indirect calorimetry-guided targets and supplemental PN from day 4; found reduced nosocomial infection, suggesting timing effects interact with energy targeting."
+      },
+      {
+        "trial": "Doig 2013",
+        "relation": "Studied early PN in patients with short-term EN contraindications; found increased energy/protein delivery without clear harm, supporting context-specific use."
+      },
+      {
+        "trial": "CALORIES",
+        "relation": "Compared early EN vs early PN; no mortality difference, suggesting route alone is less decisive than dose/timing/phenotype."
+      },
+      {
+        "trial": "NUTRIREA-2",
+        "relation": "Compared early EN vs early PN in shock; similar mortality but more GI complications with EN, complicating 'EN-first' dogma."
+      },
+      {
+        "trial": "PEPaNIC",
+        "relation": "Extended late PN concept to paediatric ICU, showing clinical superiority of late PN in children, reinforcing biological hypothesis."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal timing of PN in severely malnourished patients or those with prolonged EN intolerance remains uncertain.",
+      "Interaction between glycaemic control targets and feeding strategy needs further study.",
+      "Role of indirect calorimetry-guided targets vs fixed equations in determining PN timing."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=4640",
+        "Late PN: faster ICU discharge (HR 1.06, P=0.04)",
+        "Fewer infections: 22.8% vs 26.2% (P=0.008)",
+        "No mortality difference: 90-day 11.2% vs 11.2%",
+        "More hypoglycaemia with late PN: 3.5% vs 1.9%"
+      ],
+      "one_line_takeaway": "In nutritionally at-risk ICU patients, withholding PN until day 8 reduces infections and speeds recovery without affecting survival, but beware of hypoglycaemia in tight glycaemic control settings."
+    }
+  },
+  "_source_id": "EPaNIC",
+  "_source_system": "Nutrition"
+}

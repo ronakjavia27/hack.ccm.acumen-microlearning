@@ -1,0 +1,365 @@
+{
+  "id": "CRASH-3",
+  "trial_name": "CRASH-3 — Tranexamic Acid vs Placebo in Adults with Acute TBI within 3 Hours of Injury",
+  "specialty": "Neurocritical Care",
+  "subtopic": "Traumatic Brain Injury — Haemostatic Therapy",
+  "year": 2019,
+  "journal": "The Lancet",
+  "citation": "The CRASH-3 trial collaborators. Effects of tranexamic acid on death, disability, vascular occlusive events and other morbidities in patients with acute traumatic brain injury (CRASH-3): a randomised, placebo-controlled trial. Lancet. 2019;394:1713–23.",
+  "doi": "https://doi.org/10.1016/S0140-6736(19)32233-0",
+  "registration": "",
+  "trial_type": "Multicentre, double-blind, placebo-controlled randomised trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 12737,
+  "result_category": "Mixed",
+  "one_liner": "Early TXA within 3 hours of TBI modestly reduces head injury-related death, particularly in patients with mild-to-moderate injury and reactive pupils, without clear increase in vascular events.",
+  "pico": {
+    "population": "Adults with acute TBI within 3 hours of injury, GCS ≤12 or intracranial bleeding on CT, no major extracranial bleeding, where clinician is substantially uncertain about TXA.",
+    "intervention": "Tranexamic acid 1 g IV loading dose over 10 minutes followed by 1 g IV infusion over 8 hours.",
+    "comparison": "Matching placebo (same volume and infusion schedule).",
+    "outcome": "Primary: head injury-related death in hospital within 28 days among those treated within 3 hours."
+  },
+  "keywords": [
+    "tranexamic acid",
+    "TBI",
+    "intracranial hemorrhage",
+    "antifibrinolytic",
+    "head trauma"
+  ],
+  "related_trials": [
+    "CRASH-2"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Progressive intracranial haemorrhage after TBI is common and associated with raised ICP, herniation, death, and disability. Haemorrhage expansion occurs mainly in the first hours, providing a time-critical window for haemostatic intervention. TXA is an antifibrinolytic with proven efficacy in surgical bleeding and in reducing bleeding deaths in trauma with major extracranial haemorrhage (CRASH-2). Prior to CRASH-3, two small RCTs in TBI showed a possible mortality reduction (RR 0.63; 95% CI 0.40–0.99).",
+      "knowledge_gap": "Lack of high-quality evidence on efficacy and safety of TXA specifically in isolated TBI, especially regarding disability outcomes and risk of vascular occlusive events.",
+      "hypothesis": "Early TXA reduces head injury-related death and disability in adults with acute TBI, with greatest benefit when given within 3 hours and in patients with less severe injury."
+    },
+    "methods": {
+      "design": "Pragmatic, international, multicentre, randomised, placebo-controlled, double-blind superiority trial.",
+      "setting": "175 hospitals across 29 countries; enrolment from emergency departments/acute hospital settings.",
+      "population": {
+        "inclusion": [
+          "Adults with TBI within 3 hours of injury (amended from 8h)",
+          "GCS ≤12 OR any intracranial bleeding on CT",
+          "Clinician substantially uncertain about TXA appropriateness",
+          "No major extracranial bleeding"
+        ],
+        "exclusion": [
+          "Significant extracranial bleeding",
+          "TXA given before randomisation",
+          "Contraindication to TXA",
+          "Clinician not substantially uncertain (TXA clearly indicated or contraindicated)"
+        ]
+      },
+      "intervention": "TXA 1 g IV loading dose over 10 min, then 1 g IV infusion over 8 h.",
+      "comparison": "Matching placebo (same volume and infusion schedule).",
+      "blinding": "Double-blind; identical treatment packs numbered, allocation by selecting a pack from a box; patients, clinicians, outcome assessors masked.",
+      "sample_size_power": "Planned 10,000 to provide 90% power (two-sided alpha 1%) to detect 15% relative mortality reduction (20% to 17%). After protocol change to treat-within-3h, target increased to 13,000 to ensure ~10,000 treated within 3 h. Final: 12,737 randomised, 9,202 treated within 3 h.",
+      "primary_outcome": "Head injury-related death in hospital within 28 days among patients treated within 3 hours of injury (amended primary analysis population).",
+      "secondary_outcomes": [
+        "All-cause mortality",
+        "Head injury-related death within 24h",
+        "Vascular occlusive events (composite of MI, stroke, PE, DVT)",
+        "Seizure",
+        "Disability at discharge/28 days: inability to wash or dress, and Disability Rating Scale (DRS) score among survivors"
+      ],
+      "follow_up": "Outcomes assessed in hospital up to 28 days (or earlier discharge); disability recorded at discharge/day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "In the prespecified within-3h population, TXA showed a modest reduction in head injury-related death (RR 0.94; 95% CI 0.86–1.02), with larger effect after excluding moribund patients (RR 0.89; 0.80–1.00).",
+        "Benefit signals were concentrated in patients with milder injury severity proxies (GCS 9–15; both pupils reactive), suggesting TXA prevents expansion of salvageable intracranial haemorrhage.",
+        "Major safety outcomes showed no clear excess vascular occlusive events; seizure estimates compatible with no effect and modest harm.",
+        "The effect on head injury-related death within 24h (RR 0.81, 95% CI 0.69–0.95) supports a timely mechanism on early bleeding-related deaths."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: head injury-related death within 28 days (treated within 3h, ITT)",
+          "group_a": "855/4613 (18.5%)",
+          "group_b": "892/4514 (19.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.94",
+          "ci_95": "0.86–1.02",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Sensitivity: head injury-related death (treated within 3h, excluding GCS 3 and bilateral unreactive pupils)",
+          "group_a": "485/3880 (12.5%)",
+          "group_b": "525/3757 (14.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.89",
+          "ci_95": "0.80–1.00",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Subgroup: mild-to-moderate injury (GCS 9–15, within 3h)",
+          "group_a": "166/2846 (5.8%)",
+          "group_b": "207/2769 (7.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.78",
+          "ci_95": "0.64–0.95",
+          "p_value": "Interaction p = 0.030",
+          "note": ""
+        },
+        {
+          "outcome": "Subgroup: severe injury (GCS 3–8, within 3h)",
+          "group_a": "689/1739 (39.6%)",
+          "group_b": "685/1710 (40.1%)",
+          "effect_measure": "RR",
+          "effect_value": "0.99",
+          "ci_95": "0.91–1.07",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Subgroup: both pupils reactive (within 3h)",
+          "group_a": "440/3820 (11.5%)",
+          "group_b": "493/3728 (13.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.77–0.98",
+          "p_value": "Interaction p = 0.032",
+          "note": ""
+        },
+        {
+          "outcome": "Subgroup: any non-reactive pupil (within 3h)",
+          "group_a": "415/793 (52.3%)",
+          "group_b": "399/786 (50.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.94–1.13",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Head injury-related death within 24h (treated within 3h)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.81",
+          "ci_95": "0.69–0.95",
+          "p_value": "Not reported",
+          "note": "Early effect on bleeding-related deaths"
+        },
+        {
+          "outcome": "All vascular occlusive events (treated within 3h)",
+          "group_a": "69/4613 (1.5%)",
+          "group_b": "60/4514 (1.3%)",
+          "effect_measure": "RR",
+          "effect_value": "1.13",
+          "ci_95": "0.80–1.59",
+          "p_value": "Not reported",
+          "note": "High-specificity ascertainment (imaging/post-mortem)"
+        },
+        {
+          "outcome": "Seizure (treated within 3h)",
+          "group_a": "130/4613 (2.8%)",
+          "group_b": "105/4514 (2.3%)",
+          "effect_measure": "RR",
+          "effect_value": "1.21",
+          "ci_95": "0.94–1.56",
+          "p_value": "Not reported",
+          "note": "All-patient: 206/6359 (3.2%) vs 186/6280 (3.0%); RR 1.09 (0.90–1.33)"
+        },
+        {
+          "outcome": "Disability: unable to wash or dress (within 3h)",
+          "group_a": "580/4613 (12.6%)",
+          "group_b": "583/4514 (12.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.97",
+          "ci_95": "0.87–1.08",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "DRS score among survivors (within 3h)",
+          "group_a": "Mean 4.99 (SD 7.04); n=2758",
+          "group_b": "Mean 5.03 (SD 7.16); n=2748",
+          "effect_measure": "MD",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Continuous disability measure; no between-group estimate"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Time to treatment ≤1h",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.96",
+          "ci_95": "0.79–1.17",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "Time to treatment >1–3h",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.93",
+          "ci_95": "0.85–1.02",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "Time to treatment >3h",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.94",
+          "ci_95": "0.81–1.09",
+          "p_interaction": "Not reported"
+        }
+      ]
+    },
+    "safety": [
+      "Vascular occlusive events: 69/4613 (1.5%) TXA vs 60/4514 (1.3%) placebo; RR 1.13, 95% CI 0.80–1.59.",
+      "Seizure: 130/4613 (2.8%) TXA vs 105/4514 (2.3%) placebo; RR 1.21, 95% CI 0.94–1.56; all-patient RR 1.09 (0.90–1.33).",
+      "No other major safety signals reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Concealed, identical packs, allocation by selection from a box; baseline characteristics well balanced."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind; only 13 patients unblinded (6 TXA, 7 placebo), unlikely to bias mortality outcomes."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Minimal missing data (0.8% in each group for primary outcome); ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High adherence: loading dose given to 98.6% TXA vs 98.7% placebo; maintenance dose 93.4% vs 92.9%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Balanced age (mean 41.7 vs 41.9), sex (81.1% male both), and GCS/pupil reactivity categories."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Clinician-assigned cause of death, masked but inherently subjective; non-differential misclassification may attenuate observed effects."
+        },
+        {
+          "domain": "Protocol changes",
+          "notes": "Mid-trial amendment reduced time window from 8h to 3h and focused primary analysis on within-3h population; conducted blind to outcome data but complicates interpretation."
+        }
+      ],
+      "verdict": "Overall, internal validity is moderate-to-strong: randomisation and masking were robust, adherence high, missing data minimal, but confidence is tempered by mid-trial protocol/endpoint modification and reliance on clinician-assigned cause of death."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad international adult TBI population (29 countries, mean age ~42, 80% male); includes wide severity range."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Simple IV intervention feasible in ED/prehospital settings; benefit time-dependent (<3h). Excludes major extracranial bleeding, so polytrauma with haemorrhagic shock requires caution (better informed by CRASH-2)."
+        },
+        {
+          "domain": "Excluded groups",
+          "notes": "Children, penetrating TBI, delayed presentation >3h, and patients where TXA clearly indicated/contraindicated were excluded."
+        }
+      ],
+      "verdict": "External validity is good for adult blunt TBI patients who can receive IV TXA rapidly within 3h and without major extracranial bleeding."
+    },
+    "strengths": [
+      "Very large, international, pragmatic randomised trial with double-blind placebo control.",
+      "High protocol adherence to TXA dosing regimen, strong separation between study arms.",
+      "Low missing data for primary outcome; prespecified sensitivity analysis to mitigate dilution by non-salvageable patients.",
+      "Clinically implementable intervention with a clear biologically plausible time-sensitive mechanism."
+    ],
+    "limitations": [
+      "Protocol amendment restricted enrolment time window (8h to 3h) and modified primary analysis during the trial, increasing interpretive complexity.",
+      "Primary endpoint relied on clinician classification of cause of death; non-differential misclassification could attenuate observed effects.",
+      "Disability outcomes assessed at discharge/28 days, potentially too early to capture long-term recovery.",
+      "Thromboembolic event capture used high-specificity criteria (imaging/post-mortem), which may underestimate total events but is less likely to bias relative comparisons."
+    ],
+    "critical_appraisal": {
+      "summary": "CRASH-3 is a large, well-conducted trial suggesting early TXA modestly reduces head injury-related death, especially in milder TBI, with acceptable safety. Confidence is somewhat limited by mid-trial amendments and outcome ascertainment, but overall moderate-to-strong internal validity and good generalisability.",
+      "strengths": [
+        "Very large sample size",
+        "Robust blinding and allocation concealment",
+        "High treatment adherence",
+        "Prespecified sensitivity analysis mitigating dilution by non-salvageable cases"
+      ],
+      "weaknesses": [
+        "Protocol amendment during trial complicates interpretation",
+        "Primary outcome attribution subjective",
+        "Early disability assessment may not reflect long-term outcomes",
+        "Vascular event ascertainment may underestimate true incidence"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Early TXA should be considered for eligible adult TBI patients, especially those with mild-to-moderate injury and reactive pupils, to reduce head injury-related death; no clear excess vascular occlusive events, but seizure risk remains uncertain.",
+    "clinical_bottom_line": {
+      "verdict": "CRASH-3 supports early TXA (within 3h) in adult TBI, particularly in patients with mild-to-moderate injury and reactive pupils, to reduce head injury-related death without major safety concerns.",
+      "applies_to": "Adult blunt TBI patients with GCS ≤12 or intracranial bleeding on CT, who can receive IV TXA within 3h of injury, without significant extracranial bleeding.",
+      "does_not_mean": "TXA is not proven to improve functional disability; should not replace standard neurocritical care or be used in severe moribund TBI.",
+      "implementation_caveats": [
+        "Time-critical: benefit plausibly within 3h; systems must minimise delay.",
+        "Dose: 1g bolus over 10min, then 1g infusion over 8h.",
+        "Seizure risk may be slightly increased; monitor.",
+        "Exclude patients with known contraindications or where TXA clearly indicated/contraindicated per clinician judgement."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Endpoint selection and timing",
+        "notes": "Lancet Comment: 28-day head injury-related mortality biases toward null; early bleeding-related endpoints and optimal dosing remain uncertain. VTE under-ascertainment possible."
+      },
+      {
+        "topic": "Subgroup inference and statistical thresholds",
+        "notes": "Correspondence cautioned against over-interpreting mild-to-moderate subgroup, citing heterogeneity in severe TBI, instability of early GCS/pupils, and need for stringent interaction thresholds."
+      },
+      {
+        "topic": "Time-to-treatment confounding",
+        "notes": "Earlier-treated patients may be more severely injured, confounding 'earlier is better' analyses; supports need for adjusted models."
+      },
+      {
+        "topic": "Cause-specific vs all-cause mortality",
+        "notes": "Concerns about misclassification with cause-specific outcome; investigators argued blind allocation biases misclassification toward null, not creating spurious benefit."
+      },
+      {
+        "topic": "Trialists' reply",
+        "notes": "Investigators explained that misclassification would bias towards null, defended interaction testing, and addressed time-to-treatment confounding."
+      },
+      {
+        "topic": "Subsequent evidence overview",
+        "notes": "Post-CRASH-3 evidence generally supportive of early TXA for selected TBI; greatest plausibility in mild-to-moderate injury; uncertainty persists in severe injury, delayed treatment, and prehospital delivery."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CRASH-2",
+        "relation": "Demonstrated TXA reduces bleeding deaths in trauma with major extracranial haemorrhage, establishing safety and efficacy in polytrauma; CRASH-3 extends evidence to isolated TBI."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal TXA dosing regimen (single bolus vs continued infusion, higher doses)?",
+      "Efficacy and safety in severe TBI with fixed pupils?",
+      "Long-term functional and cognitive outcomes beyond 28 days?",
+      "Role of prehospital TXA administration?",
+      "Effect in pediatric and penetrating TBI?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=12,737 randomised; 9,202 treated within 3h",
+        "Primary outcome: 18.5% vs 19.8% (RR 0.94, 95% CI 0.86–1.02)",
+        "Sensitivity (excluding moribund): 12.5% vs 14.0% (RR 0.89, 0.80–1.00)",
+        "Mild-to-moderate GCS: RR 0.78 (0.64–0.95); reactive pupils: RR 0.87 (0.77–0.98)",
+        "24h death: RR 0.81 (0.69–0.95)"
+      ],
+      "one_line_takeaway": "For adults with TBI within 3h, give TXA 1g IV bolus + 1g infusion; it modestly reduces head injury-related death, especially if GCS 9-15 and pupils reactive, without clear excess vascular events."
+    }
+  },
+  "_source_id": "CRASH-3",
+  "_source_system": "Neuro"
+}

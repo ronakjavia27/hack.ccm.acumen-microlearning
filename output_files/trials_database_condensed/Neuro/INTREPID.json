@@ -1,0 +1,304 @@
+{
+  "id": "INTREPID",
+  "trial_name": "INTREPID — Fever Prevention in Patients With Acute Vascular Brain Injury (2024)",
+  "specialty": "Neuro",
+  "subtopic": "Neurocritical Care Monitoring",
+  "year": 2024,
+  "journal": "JAMA",
+  "citation": "Greer DM, Helbok R, Badjatia N, Ko SB, McKenna Guanci M, Sheth KN; for the INTREPID Study Group. Fever Prevention in Patients With Acute Vascular Brain Injury: The INTREPID Randomized Clinical Trial. JAMA. 2024;332(18):1525-1534",
+  "doi": "https://doi.org/10.1001/jama.2024.14745",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, blinded endpoint assessment, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 677,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Prophylactic device-based fever prevention reduced fever burden but did not improve 90-day functional outcome and significantly increased shivering.",
+  "pico": {
+    "population": "Adults in ICU with moderate-severe acute vascular brain injury (ischemic stroke NIHSS ≥6, intracerebral hemorrhage ICH score ≥2, aneurysmal subarachnoid hemorrhage WFNS grade ≥3), expected ICU stay ≥72 hours, afebrile at enrolment",
+    "intervention": "Arctic Sun 5000 surface temperature management system, target 37°C for up to 14 days or ICU discharge",
+    "comparison": "Standard care fever management (no prophylactic device; tiered antipyretic/surface cooling algorithm with rescue advanced temperature devices if needed)",
+    "outcome": "Primary: daily mean fever burden (°C-hours >37.9°C) through day 14 or ICU discharge. Principal secondary: 90-day modified Rankin Scale shift."
+  },
+  "keywords": [
+    "fever prevention",
+    "temperature management",
+    "neurocritical care",
+    "vascular brain injury",
+    "normothermia"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Fever and higher body temperature after acute vascular brain injury are consistently associated with worse outcomes (mortality and disability) across diverse neurological syndromes in observational meta-analytic evidence. Clinical practice commonly treats fever after it develops.",
+      "knowledge_gap": "Uncertain whether prophylactic fever prevention improves clinical outcomes vs. merely treating fever after onset; high-quality evidence is limited, and temperature management carries burdens (shivering, sedation, nursing workload, skin injury).",
+      "hypothesis": "Proactive, device-based fever prevention (targeted normothermia at 37°C) reduces fever burden and improves patient-centred neurological outcomes compared with standard reactive fever management in ICU patients with acute vascular brain injury."
+    },
+    "methods": {
+      "design": "Multicentre, international, randomised (1:1), open-label temperature management strategy trial with blinded functional outcome assessment; prespecified hierarchical testing and adaptive sample size/futility framework.",
+      "setting": "ICUs (neurocritical care) – multicentre, international (specific numbers not reported in primary publication).",
+      "population": {
+        "inclusion": [
+          "Adults admitted to ICU with moderate–severe acute vascular brain injury (ischemic stroke NIHSS ≥6; intracerebral hemorrhage ICH score ≥2; aneurysmal subarachnoid hemorrhage WFNS grade ≥3)",
+          "Expected ICU stay ≥72 hours",
+          "Core temperature <38.0°C at enrolment/confirmatory check",
+          "Diagnosis-specific stabilisation windows (e.g., ischemic stroke 3–24 hours from ictus; intracerebral hemorrhage 6–36 hours; subarachnoid hemorrhage 4–48 hours post-procedural stabilisation, within 72 hours of symptom onset)"
+        ],
+        "exclusion": [
+          "Fever ≥38.0°C at enrolment/confirmatory check or prolonged fever before enrolment",
+          "Substantial pre-morbid disability (premorbid mRS ≥3 if age 18–80 years; premorbid mRS ≥1 if age 81–90 years)",
+          "Limitations of care expected to preclude protocol delivery",
+          "Contraindications to device application or core temperature monitoring (not detailed)"
+        ]
+      },
+      "intervention": "Fever prevention: Arctic Sun 5000 surface temperature management system, initiated promptly, programmed to maintain 37°C continuously through day 14 or ICU discharge. Core temperature monitoring (e.g., temperature-sensing urinary catheter or oesophageal probe) for feedback; protocolised shivering prevention/management (counter-warming, pharmacologic shiver control as needed).",
+      "comparison": "Standard care: no prophylactic device-based temperature control; fever treated when it occurred using prespecified tiered algorithm (pharmacologic antipyretics, surface cooling first; rescue advanced temperature management devices when indicated).",
+      "blinding": "Open-label for clinical teams and patients; 90-day functional outcomes assessed by blinded, certified assessors; data analysts/statisticians blinded during analysis.",
+      "sample_size_power": "1,000 required to detect 10% absolute increase in favourable 90-day outcome (mRS 0–3) from 40% (standard care) to 50% (fever prevention) with 88% power at 2-sided 5% significance; planned enrolment 1,176 (15% attrition). Prespecified interim analysis at 588 patients with possible sample size increase up to 2,000 based on conditional power.",
+      "primary_outcome": "Daily mean fever burden (°C-hours >37.9°C) through day 14 or ICU discharge (objective, continuously measured).",
+      "secondary_outcomes": [
+        "Total fever duration (hours) through day 14 or ICU discharge",
+        "Any fever burden (>0 °C-hours)",
+        "90-day modified Rankin Scale shift (principal clinical secondary)",
+        "90-day favourable functional outcome (mRS 0–3)",
+        "Death through 3 months",
+        "Shivering (any, significant BSAS ≥2) during acute phase",
+        "Device suspension and therapy interruption metrics"
+      ],
+      "follow_up": "Acute physiological endpoints through day 14 (or ICU discharge); clinical follow-up at 3 months (primary), with additional 6- and 12-month follow-up (not detailed in primary publication)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Fever prevention significantly reduced daily mean fever burden (0.37 vs 0.73 °C‑hours; difference −0.35, 95% CI −0.51 to −0.20, P<.001) and total fever duration (9.0 vs 21.6 hours).",
+        "No improvement in 90-day disability: mRS shift OR 1.09 (95% CI 0.81–1.46, P=.54); favourable outcome (mRS 0–3) 39.2% vs 42.8% (RR 0.92, P=.40).",
+        "Trial stopped early for futility on functional outcome (conditional power 1.9%); mortality similar (22.1% vs 21.6%).",
+        "Shivering markedly increased: any shivering 85.5% vs 24.3% (RR 3.52), significant shivering (BSAS ≥2) 27.2% vs 5.0% (RR 5.41), both P<.0001."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Daily mean fever burden (°C‑hours >37.9°C), primary outcome",
+          "group_a": "0.37 (SD 1.0) [n=320]",
+          "group_b": "0.73 (SD 1.1) [n=329]",
+          "effect_measure": "Mean difference",
+          "effect_value": "−0.35",
+          "ci_95": "−0.51 to −0.20",
+          "p_value": "<.001",
+          "note": "Continuous physiological endpoint; fewer patients contributed due to missing temperature/time at risk."
+        },
+        {
+          "outcome": "Total fever duration (hours) through day 14/ICU discharge",
+          "group_a": "9.0 (SD 19.41) [n=320]",
+          "group_b": "21.6 (SD 29.81) [n=329]",
+          "effect_measure": "Mean difference",
+          "effect_value": "−12.4",
+          "ci_95": "−16.2 to −8.7",
+          "p_value": "Not reported",
+          "note": "Hours febrile; P value not provided."
+        },
+        {
+          "outcome": "Any fever burden (>0 °C‑hours)",
+          "group_a": "175/320 (54.7%)",
+          "group_b": "248/329 (75.4%)",
+          "effect_measure": "RR",
+          "effect_value": "0.73",
+          "ci_95": "0.65 to 0.82",
+          "p_value": "<.0001",
+          "note": "Binary indicator of any fever exposure."
+        },
+        {
+          "outcome": "90‑day mRS (shift analysis), principal secondary",
+          "group_a": "Median 4 (IQR 3–6) [n=278]",
+          "group_b": "Median 4 (IQR 2–6) [n=306]",
+          "effect_measure": "OR",
+          "effect_value": "1.09",
+          "ci_95": "0.81 to 1.46",
+          "p_value": ".54",
+          "note": "Blinded assessors; mRS 5 and 6 combined for modelling. Differential missingness (82% vs 90.5% analysed)."
+        },
+        {
+          "outcome": "Favourable functional outcome at 90 days (mRS 0–3)",
+          "group_a": "109/278 (39.2%)",
+          "group_b": "131/306 (42.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.92",
+          "ci_95": "0.75 to 1.12",
+          "p_value": ".40",
+          "note": "Direction favoured standard care."
+        },
+        {
+          "outcome": "Death through 3 months",
+          "group_a": "75/339 (22.1%)",
+          "group_b": "73/338 (21.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "Not reported",
+          "note": "Mortality similar; trial not powered for mortality after early stop."
+        },
+        {
+          "outcome": "Any shivering (acute phase; as‑treated)",
+          "group_a": "283/331 (85.5%)",
+          "group_b": "82/337 (24.3%)",
+          "effect_measure": "RR",
+          "effect_value": "3.52",
+          "ci_95": "2.89 to 4.28",
+          "p_value": "<.0001",
+          "note": "Substantial treatment burden; counter‑warming and pharmacologic shiver control commonly used."
+        },
+        {
+          "outcome": "Significant shivering (BSAS ≥2; acute phase; as‑treated)",
+          "group_a": "90/331 (27.2%)",
+          "group_b": "17/337 (5.0%)",
+          "effect_measure": "RR",
+          "effect_value": "5.41",
+          "ci_95": "3.32 to 8.81",
+          "p_value": "<.0001",
+          "note": "Clinically meaningful increase in shivering intensity."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Ischaemic stroke",
+          "group_a": "— (see difference)",
+          "group_b": "— (see difference)",
+          "effect_measure": "Mean difference in daily fever burden (°C‑hours)",
+          "effect_value": "−0.10",
+          "ci_95": "−0.35 to 0.15",
+          "p_interaction": "P<.001 (subgroup‑specific) – Note: reported as P<.001 for the reduction within this subgroup."
+        },
+        {
+          "subgroup": "Intracerebral haemorrhage",
+          "group_a": "— (see difference)",
+          "group_b": "— (see difference)",
+          "effect_measure": "Mean difference in daily fever burden (°C‑hours)",
+          "effect_value": "−0.50",
+          "ci_95": "−0.78 to −0.22",
+          "p_interaction": "P<.001 (subgroup‑specific)"
+        },
+        {
+          "subgroup": "Aneurysmal subarachnoid haemorrhage",
+          "group_a": "— (see difference)",
+          "group_b": "— (see difference)",
+          "effect_measure": "Mean difference in daily fever burden (°C‑hours)",
+          "effect_value": "−0.52",
+          "ci_95": "−0.81 to −0.23",
+          "p_interaction": "P<.001 (subgroup‑specific)"
+        }
+      ]
+    },
+    "safety": [
+      "Shivering markedly increased: any shivering 85.5% vs 24.3%, significant shivering (BSAS ≥2) 27.2% vs 5.0% (both P<.0001).",
+      "Device therapy suspended at least once in 164/339 (48.4%) fever prevention patients; mean total suspension 628.6 minutes (SD 995.78).",
+      "Mortality similar: 22.1% (fever prevention) vs 21.6% (standard care) through 3 months.",
+      "Major adverse events (death, pneumonia, sepsis, malignant cerebral oedema) adjudicated by independent committee (specific rates not detailed in primary publication)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with minimisation and stratification (site, diagnosis, age, severity). Allocation concealment presumed adequate; full mechanism not detailed."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label for clinical teams – potential for co‑intervention differences (sedation, infection workup, cooling adjuncts). Primary fever burden endpoint is objective; functional outcomes assessed by blinded certified assessors, mitigating detection bias for disability endpoints."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "ITT analysis. Differential missing 90‑day mRS data (82.0% in fever prevention vs 90.5% in standard care analysed). Premature discontinuation 15.6% vs 12.7%. Early termination for futility reduces precision."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Device delivered to most (330/339 treated). 90.3% programmed to target 37°C. Frequent therapy interruptions (suspension in 48.4% of intervention patients, mean 629 minutes). Standard care group often received fever control therapies (69.4%), including advanced temperature management devices in 14.5% of those treated – potentially attenuating treatment contrast."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: diagnosis mix (~33% ICH, ~38% ischemic stroke, ~30% SAH); temperature similar (mean 36.7°C both groups); severity strata balanced (high severity 46.2% vs 46.7%)."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate: randomisation and objective temperature endpoints support causal inference for fever burden, but open-label care, shivering-related co‑interventions, rescue temperature management in controls, and differential missing 90‑day mRS data constrain confidence in clinical endpoint neutrality."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents an ICU neurocritical care cohort with moderate–severe vascular brain injury. Excludes patients with baseline fever and those with substantial pre-morbid disability; limited applicability to very frail populations or those presenting already febrile."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires continuous core temperature monitoring, surface temperature management devices, and structured shivering management – most applicable to high‑resource ICUs. External validity depends on how closely other units mirror the structured tiered fever algorithm used in the control arm."
+        }
+      ],
+      "verdict": "Generalisability is moderate to similar high‑acuity neurocritical care settings with access to targeted temperature management and shivering‑control protocols, but limited for non‑ICU stroke populations, resource‑limited settings, and patients presenting already febrile or with high pre‑morbid disability."
+    },
+    "strengths": [
+      "International, multicentre randomised design across three major vascular brain injury syndromes.",
+      "Objective, continuously measured physiological primary endpoint with prespecified fever burden definition.",
+      "Blinded, certified assessment for functional outcomes; independent adjudication for major adverse events.",
+      "Pre‑publication of study protocol and planned analyses, enhancing transparency and reducing analytic flexibility."
+    ],
+    "limitations": [
+      "Stopped early for futility, reducing precision for clinical endpoints and increasing vulnerability to missing‑data mechanisms.",
+      "Open‑label strategy with substantial co‑intervention exposure (shivering management, sedation, procedures) that could offset or mask neurological benefit.",
+      "Differential missingness for 90‑day mRS (278 vs 306 analysed), potentially biasing the principal clinical endpoint.",
+      "Control group access to advanced temperature management (including device use in a subset) may attenuate contrasts in temperature management intensity."
+    ],
+    "critical_appraisal": {
+      "summary": "INTREPID provides moderate‑quality evidence that prophylactic normothermia reduces fever burden but does not improve 90‑day disability or mortality in unselected neurovascular brain injury ICU patients; open‑label design, differential missing data, and early stopping limit confidence in the neutral functional outcome.",
+      "strengths": [
+        "Multicentre RCT with objective primary endpoint and blinded functional outcome assessment.",
+        "Prespecified hierarchical testing and protocol publication reduce risk of selective reporting.",
+        "Demonstrates clear physiological separation (fever burden reduced) allowing valid test of clinical benefit."
+      ],
+      "weaknesses": [
+        "Open‑label care with potential for biased co‑interventions.",
+        "Differential loss to follow‑up for the primary clinical outcome (18% vs 9.5% missing).",
+        "Early termination results in imprecise estimates; conditional power for functional endpoint was only 1.9%.",
+        "Control group often received some form of temperature management, blurring the treatment contrast."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine prophylactic device‑based fever prevention (target 37°C for up to 14 days) reduced fever exposure but did not improve 90‑day disability or mortality, and substantially increased shivering‑related burden. These data support prioritising prompt detection and treatment of fever while weighing the harms and resource costs of aggressive prophylaxis.",
+    "clinical_bottom_line": {
+      "verdict": "Prophylactic device‑based normothermia is not routinely indicated for unselected ICU patients with acute vascular brain injury; focus should remain on prompt detection and treatment of established fever, with careful consideration of net benefit and resource use.",
+      "applies_to": "ICU patients with moderate–severe ischemic stroke, intracerebral haemorrhage, or aneurysmal subarachnoid haemorrhage who are afebrile at presentation, expected to stay >72 hours, and managed in high‑resource neurocritical care settings with access to surface temperature management and shivering protocols.",
+      "does_not_mean": "Does not imply that treatment of existing fever is unnecessary; prompt fever treatment remains standard of care. Does not exclude possible benefit in select high‑risk subgroups identified by future research.",
+      "implementation_caveats": [
+        "Requires continuous core temperature monitoring and a surface cooling device, adding cost and nursing workload.",
+        "Shivering management (counter‑warming, pharmacologic agents) increases pharmacologic and monitoring burden.",
+        "Trial stopped early; effect estimates for disability and mortality remain imprecise.",
+        "Cost‑effectiveness not demonstrated in this trial."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Feasibility vs value",
+        "notes": "The trial demonstrates feasibility of fever prevention and fever‑burden reduction, but clinical benefit was not shown and shivering/management burden is substantial, complicating implementation at scale."
+      },
+      {
+        "topic": "Population selection and event‑rate considerations",
+        "notes": "Enrolment criteria (anticipated ICU stay, exclusion of baseline fever) may have selected a population with lower modifiable fever‑related risk, limiting the potential for functional benefit."
+      },
+      {
+        "topic": "Interpretation of negative neurocritical care trials with strong physiological separation",
+        "notes": "INTREPID reinforces a pattern wherein modifying intermediate physiological variables (here, temperature exposure) does not necessarily translate into improved patient‑centred outcomes once co‑interventions and iatrogenic burdens are accounted for."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Whether specific subgroups with higher fever propensity (e.g., early fever, certain stroke subtypes) might derive functional benefit from prophylactic normothermia.",
+      "Optimal temperature target and duration of prophylaxis if applied to selected patients.",
+      "Strategies to minimise shivering burden without compromising temperature control.",
+      "Long‑term cognitive and functional outcomes beyond 90 days (6‑ and 12‑month data not fully reported)."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=677 (stopped early for futility after interim analysis)",
+        "Daily fever burden 0.37 vs 0.73 °C‑hours (difference −0.35, 95% CI −0.51 to −0.20)",
+        "90‑day mRS shift OR 1.09 (95% CI 0.81–1.46, P=.54)",
+        "Shivering 85.5% vs 24.3% (RR 3.52, significant shivering 27.2% vs 5.0%)"
+      ],
+      "one_line_takeaway": "Prophylactic normothermia reduces fever but does not improve disability in neurovascular brain injury, and increases shivering burden significantly."
+    }
+  },
+  "_source_id": "INTREPID",
+  "_source_system": "Neuro"
+}

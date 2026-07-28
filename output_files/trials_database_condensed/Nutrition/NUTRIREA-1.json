@@ -1,0 +1,311 @@
+{
+  "id": "NUTRIREA-1",
+  "trial_name": "NUTRIREA-1 — No Gastric Residual Volume Monitoring vs Routine Monitoring in Ventilated Patients (2013)",
+  "specialty": "Nutrition",
+  "subtopic": "Enteral Nutrition",
+  "year": 2013,
+  "journal": "JAMA",
+  "citation": "Reignier J, Mercier E, Le Gouge A, et al; for the Clinical Research in Intensive Care and Sepsis (CRICS) Group. Effect of not monitoring residual gastric volume on risk of ventilator-associated pneumonia in adults receiving mechanical ventilation and early enteral feeding: a randomized controlled trial. JAMA. 2013;309(3):249-256",
+  "doi": "https://doi.org/10.1001/jama.2012.196377",
+  "registration": "",
+  "trial_type": "RCT — multicentre, open-label, noninferiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 449,
+  "result_category": "Positive",
+  "one_liner": "In mechanically ventilated adults receiving early gastric EN, omitting routine GRV monitoring was noninferior to routine monitoring for VAP (16.7% vs 15.8%, risk difference 0.9%, 90% CI -4.8% to 6.7%), while improving calorie delivery (92.9% vs 77.2% achieved 100% target) but increasing vomiting (39.7% vs 27.0%).",
+  "pico": {
+    "population": "Adults (≥18 years) intubated <36 hours, expected mechanical ventilation >2 days, started on early gastric EN within 36 hours of intubation, from 9 French ICUs.",
+    "intervention": "No GRV monitoring: GRV not measured. Intolerance defined as vomiting or regurgitation; if intolerance, stop EN for 6h, aspirate gastric contents, restart at half previous rate and advance by 25 mL/h every 6h if tolerated.",
+    "comparison": "Routine GRV monitoring every 6h via 60 mL syringe aspiration (patient supine, content reinjected). Intolerance defined as GRV >250 mL at any measurement or vomiting/regurgitation. Same intolerance management as intervention group.",
+    "outcome": "Incidence of ventilator-associated pneumonia within 90 days (primary; noninferiority margin 10%)."
+  },
+  "keywords": [
+    "gastric residual volume",
+    "enteral nutrition",
+    "ventilator-associated pneumonia",
+    "feeding intolerance",
+    "nutrition delivery",
+    "noninferiority trial"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Routine GRV monitoring was widely used during gastric EN to identify feeding intolerance and reduce VAP risk, despite being technique-dependent and potentially unreliable. GRV-triggered interruptions commonly reduce EN delivery, creating calorie deficits.",
+      "knowledge_gap": "It was unknown if a no-GRV monitoring strategy could be noninferior to routine monitoring for VAP incidence while improving calorie delivery without excess harm.",
+      "hypothesis": "In invasively ventilated adults receiving early gastric EN, not monitoring GRV would be noninferior to routine GRV monitoring for VAP incidence, and would improve nutrition delivery."
+    },
+    "methods": {
+      "design": "Randomised, multicentre (9 French ICUs), open-label, parallel-group, noninferiority trial (investigator-initiated); web-based randomisation stratified by centre with permuted blocks (size 4); independent blinded adjudication committee for VAP and ICU-acquired infections.",
+      "setting": "9 French ICUs; gastric feeding via 14–16 Fr nasogastric tube, continuous infusion, semi-recumbent position targeted at 30–45°.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) intubated <36 hours",
+          "Expected mechanical ventilation >2 days",
+          "Enteral nutrition started within 36 hours after intubation"
+        ],
+        "exclusion": [
+          "Enteral nutrition before ICU admission",
+          "Allergy to enteral formula",
+          "Pregnancy/breastfeeding",
+          "Legal protection",
+          "Prior trial enrolment",
+          "Expected death within 48 hours",
+          "Long-term enteral nutrition",
+          "Contraindication to enteral nutrition",
+          "Pneumonia after intubation",
+          "Expected extubation",
+          "Tracheotomy performed before day 2"
+        ]
+      },
+      "intervention": "No GRV monitoring: GRV not measured. Intolerance defined as vomiting or regurgitation. If intolerance, stop EN for 6 hours, aspirate gastric contents, restart EN at half previous rate and advance by 25 mL/h every 6 hours if tolerated.",
+      "comparison": "Routine GRV monitoring: GRV measured every 6 hours by 60 mL syringe aspiration (patient supine), content reinjected. Intolerance defined as GRV >250 mL at any measurement or vomiting/regurgitation. Same intolerance management as intervention.",
+      "blinding": "Open-label at bedside (nursing/clinicians aware of allocation); VAP and ICU-acquired infection adjudication committee blinded to group.",
+      "sample_size_power": "Power calculation: assumed 19% VAP incidence in control group, noninferiority margin 10%, one-sided α=0.05, 80% power → 382 patients required; inflated to 420 to allow ~10% with ventilation <48 hours.",
+      "primary_outcome": "Ventilator-associated pneumonia within 90 days.",
+      "secondary_outcomes": [
+        "ICU-acquired infections",
+        "Vomiting",
+        "Achievement of 100% calorie target in first week",
+        "Cumulative calorie deficit during first week",
+        "Duration of mechanical ventilation",
+        "ICU length of stay",
+        "Mortality at day 28 and day 90"
+      ],
+      "follow_up": "VAP surveillance to 2 days after extubation (up to 90 days); ICU-acquired infections to ICU discharge; mortality assessed at day 28 and day 90."
+    },
+    "results": {
+      "headline_bullets": [
+        "Noninferiority met for VAP: 16.7% vs 15.8% (risk difference 0.9%, 90% CI -4.8% to 6.7%).",
+        "Improved calorie delivery: 92.9% vs 77.2% achieved 100% calorie target in week 1, median calorie deficit 94 vs 191 kcal.",
+        "More vomiting without GRV monitoring: 39.7% vs 27.0%.",
+        "No significant differences in ICU-acquired infections, duration of mechanical ventilation, ICU length of stay, or mortality."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Ventilator-associated pneumonia within 90 days (primary, modified ITT)",
+          "group_a": "38/227 (16.7%)",
+          "group_b": "35/222 (15.8%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.9%",
+          "ci_95": "90% CI -4.8% to 6.7%",
+          "p_value": "One-sided P (noninferiority) = 0.007",
+          "note": "Noninferiority margin 10%; met."
+        },
+        {
+          "outcome": "Ventilator-associated pneumonia within 90 days (per protocol)",
+          "group_a": "35/208 (16.8%)",
+          "group_b": "31/215 (14.4%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "2.4%",
+          "ci_95": "90% CI -3.7% to 8.6%",
+          "p_value": "One-sided P (noninferiority) = 0.02",
+          "note": "Per-protocol population n=423."
+        },
+        {
+          "outcome": "Vomiting (any)",
+          "group_a": "90 (39.7%)",
+          "group_b": "60 (27.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "12.7%",
+          "ci_95": "90% CI 5.4% to 20.0%",
+          "p_value": "P = 0.01",
+          "note": "Prokinetic use similar (51.1% vs 50.9%)."
+        },
+        {
+          "outcome": "Patients receiving 100% of calorie target during first week",
+          "group_a": "211 (92.9%)",
+          "group_b": "171 (77.2%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "15.7%",
+          "ci_95": "90% CI 10.1% to 21.4%",
+          "p_value": "P < 0.001",
+          "note": "Target 20–25 kcal/kg/day during week 1."
+        },
+        {
+          "outcome": "Cumulative calorie deficit during first week (kcal, median)",
+          "group_a": "94 (IQR 44–176)",
+          "group_b": "191 (IQR 66–299)",
+          "effect_measure": "Difference in medians",
+          "effect_value": "-78 kcal",
+          "ci_95": "90% CI -144 to -9",
+          "p_value": "P = 0.04",
+          "note": ""
+        },
+        {
+          "outcome": "ICU-acquired infection (any)",
+          "group_a": "60 (26.4%)",
+          "group_b": "60 (27.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-0.5%",
+          "ci_95": "90% CI -7.7% to 6.8%",
+          "p_value": "P = 0.92",
+          "note": "Adjudicated by blinded committee."
+        },
+        {
+          "outcome": "Duration of mechanical ventilation (days, median)",
+          "group_a": "7.7 (IQR 3.9–13.8)",
+          "group_b": "7.1 (IQR 3.9–14.3)",
+          "effect_measure": "Difference in medians",
+          "effect_value": "0.3 days",
+          "ci_95": "90% CI -0.8 to 1.5",
+          "p_value": "P = 0.66",
+          "note": ""
+        },
+        {
+          "outcome": "ICU length of stay (days, median)",
+          "group_a": "13.1 (IQR 7.5–22.6)",
+          "group_b": "13.8 (IQR 8.4–23.0)",
+          "effect_measure": "Difference in medians",
+          "effect_value": "0.0 days",
+          "ci_95": "90% CI -1.6 to 1.6",
+          "p_value": "P = 0.97",
+          "note": ""
+        },
+        {
+          "outcome": "Mortality at day 28",
+          "group_a": "59 (25.7%)",
+          "group_b": "56 (25.3%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-0.4%",
+          "ci_95": "90% CI -6.9% to 6.1%",
+          "p_value": "P = 0.92",
+          "note": ""
+        },
+        {
+          "outcome": "Mortality at day 90",
+          "group_a": "78 (34.4%)",
+          "group_b": "72 (32.4%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "2.0%",
+          "ci_95": "90% CI -5.3% to 9.3%",
+          "p_value": "P = 0.65",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Increased vomiting with no-GRV monitoring (39.7% vs 27.0%).",
+      "No significant differences in mortality (day 28: 25.7% vs 25.3%; day 90: 34.4% vs 32.4%), ICU-acquired infections, duration of mechanical ventilation, or length of stay."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised web-based randomisation; stratified by centre; permuted blocks (size 4); allocation concealed until assignment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design could influence bedside behaviours (e.g., feeding interruptions, prokinetic use, sampling). However, VAP and ICU-acquired infections were adjudicated by an independent committee blinded to allocation, mitigating detection bias for key outcomes."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Randomised: 452. Modified ITT: 449 (3 withdrew initial consent). Per-protocol: 423 (excluded 7 in routine and 19 in no-monitoring group for protocol deviations). Asymmetric exclusions inherent to noninferiority design."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clear separation of delivered calories: 100% target in week 1 92.9% vs 77.2%; calorie deficit median 94 vs 191 kcal. Mechanism-consistent harm signal (vomiting)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Broadly similar: age 61.2 vs 62.4 years; SAPS II 49.5 vs 50.8; SOFA 8.0 vs 7.9; vasoactive drug use 69.8% vs 71.4%."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "VAP definition required radiographic criteria plus clinical signs and quantitative microbiology thresholds; adjudicated but remains sensitive to local sampling and imaging practices."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Pre-specified noninferiority margin (10%) and one-sided α=0.05; both modified ITT and per-protocol analyses reported; 90% CIs consistent with analysis plan."
+        }
+      ],
+      "verdict": "Internal validity appears moderate-to-strong given concealed randomisation, blinded adjudication for primary outcomes, clear separation in the exposure, tempered by open-label care and asymmetric per-protocol exclusions."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU patients receiving early gastric EN and expected prolonged ventilation; exclusions removed patients with contraindications to EN, very early death/extubation, under-representing some high GI-risk and peri-operative cohorts."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Nine French ICUs with protocolised EN delivery, continuous infusion, and semi-recumbent positioning; no subglottic secretion drainage tubes. Generalisability limited in settings with different VAP bundles, severe GI dysmotility, or where vomiting carries disproportionate risk (e.g., prone ventilation) unless mitigation strategies are in place."
+        }
+      ],
+      "verdict": "Generalisability is good for typical mechanically ventilated adults receiving early gastric EN in resourced ICUs, but is limited for populations intentionally excluded and for settings with materially different VAP prevention and feeding practices."
+    },
+    "strengths": [
+      "Pragmatic multicentre randomised design in real-world ICUs.",
+      "Clinically meaningful primary endpoint (VAP) with blinded independent adjudication.",
+      "Pre-specified noninferiority framework with both modified ITT and per-protocol analyses.",
+      "Clear process separation in delivered calories, supporting mechanistic plausibility."
+    ],
+    "limitations": [
+      "Open-label bedside care introduces potential performance bias.",
+      "Noninferiority margin (10% absolute risk) may be viewed as clinically large for a safety endpoint.",
+      "VAP diagnosis, while adjudicated, remains vulnerable to local sampling and radiographic interpretation variability.",
+      "Higher vomiting without GRV monitoring highlights potential trade-offs; rare catastrophic aspiration events may be underpowered.",
+      "French-only ICUs and key exclusions constrain generalisability to some surgical/high GI-risk populations."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed noninferiority trial with concealed randomisation and blinded adjudication, showing no increase in VAP when omitting GRV monitoring, while improving calorie delivery at the cost of more vomiting. Internal validity is moderate-to-strong; external validity good for typical early gastric EN patients.",
+      "strengths": [
+        "Concealed randomisation, blinded outcome adjudication, clear process separation",
+        "Both ITT and per-protocol analyses consistent"
+      ],
+      "weaknesses": [
+        "Open-label design may influence care processes",
+        "Noninferiority margin of 10% may be considered generous",
+        "Increased vomiting without power to assess rare catastrophic aspiration"
+      ],
+      "rating": "Moderate-High"
+    },
+    "authors_conclusion": "Routine GRV monitoring can be omitted in many ventilated ICU patients receiving early gastric EN without an observed increase in VAP, while improving calorie delivery. A no-GRV strategy requires proactive management of vomiting/regurgitation.",
+    "clinical_bottom_line": {
+      "verdict": "This trial supports abandoning routine GRV monitoring in ventilated ICU patients receiving early gastric EN to improve nutrition delivery without increasing VAP, but increased vomiting demands attention to aspiration mitigation.",
+      "applies_to": "Adults on mechanical ventilation expected to be ventilated >2 days, receiving early gastric EN via continuous infusion, in ICUs with standard VAP prevention bundles.",
+      "does_not_mean": "Does not eliminate the need for vomiting/regurgitation monitoring or proper positioning; does not address safety in patients at very high aspiration risk (e.g., severe GI dysmotility, prone ventilation).",
+      "implementation_caveats": [
+        "Implement a protocol for managing vomiting/regurgitation (stop EN, aspirate, gradual restart).",
+        "Ensure semi-recumbent positioning (30–45°).",
+        "Consider prokinetics if needed based on clinical intolerance, not GRV numbers.",
+        "Monitor for clinical signs of intolerance rather than routine GRV measurements."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Editorial framing",
+        "notes": "The accompanying editorial supported discontinuing routine GRV monitoring while emphasising aspiration prevention strategies."
+      },
+      {
+        "topic": "Correspondence on generalisability and safety",
+        "notes": "A subsequent letter questioned generalisability and highlighted the increased vomiting signal; authors replied that GRV lacks validation as an aspiration/VAP surrogate."
+      },
+      {
+        "topic": "Subsequent syntheses",
+        "notes": "Systematic reviews and meta-analyses generally confirm no clear increase in VAP with omission of GRV monitoring and improved nutrition delivery, while noting possible increases in vomiting/regurgitation and low certainty for uncommon aspiration harms."
+      },
+      {
+        "topic": "Guideline uptake",
+        "notes": "Post-2013 critical care nutrition guidelines increasingly recommend avoiding routine GRV monitoring or using higher thresholds alongside clinical intolerance assessment."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Optimal vomiting/regurgitation management protocols when omitting GRV monitoring.",
+      "Safety in patients at highest aspiration risk (prone ventilation, severe GI dysmotility).",
+      "Rare catastrophic aspiration events not powered for; long-term outcomes unclear."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=449 (modified ITT)",
+        "VAP: 16.7% vs 15.8% (risk difference 0.9%, 90% CI -4.8% to 6.7%)",
+        "100% calorie target achieved: 92.9% vs 77.2%",
+        "Vomiting: 39.7% vs 27.0%"
+      ],
+      "one_line_takeaway": "Routine GRV monitoring can be safely omitted during early gastric EN in ventilated adults, improving feeding but increasing vomiting; focus on clinical intolerance and aspiration precautions."
+    }
+  },
+  "_source_id": "NUTRIREA-1",
+  "_source_system": "Nutrition"
+}

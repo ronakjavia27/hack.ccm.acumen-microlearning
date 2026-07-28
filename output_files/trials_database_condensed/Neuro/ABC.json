@@ -1,0 +1,315 @@
+{
+  "id": "ABC",
+  "trial_name": "ABC — Awakening and Breathing Controlled (2008)",
+  "specialty": "Neuro",
+  "subtopic": "Delirium & ICU Cognitive Dysfunction",
+  "year": 2008,
+  "journal": "The Lancet",
+  "citation": "Girard TD, Kress JP, Fuchs BD, Thomason JWW, Schweickert WD, Pun BT, et al. Efficacy and safety of a paired sedation and ventilator weaning protocol for mechanically ventilated patients in intensive care (Awakening and Breathing Controlled trial): a randomised controlled trial. Lancet. 2008;371:126-34.",
+  "doi": "10.1016/S0140-6736(08)60105-1",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 336,
+  "result_category": "Positive",
+  "one_liner": "Daily paired spontaneous awakening and breathing trials increased ventilator-free days by 3.1 days and reduced 1-year mortality (HR 0.68) in mechanically ventilated ICU patients.",
+  "pico": {
+    "population": "Adults ≥18 years receiving invasive mechanical ventilation for ≥12 hours, expected to require ≥24 additional hours, on continuous IV sedation/analgesia",
+    "intervention": "Daily spontaneous awakening trial (SAT) with sedation interruption, followed immediately by spontaneous breathing trial (SBT) if SAT passed",
+    "comparison": "Usual care sedation with daily SBT protocol but no systematic SAT before SBT",
+    "outcome": "Ventilator-free days at day 28"
+  },
+  "keywords": [
+    "sedation",
+    "weaning",
+    "spontaneous awakening trial",
+    "spontaneous breathing trial",
+    "delirium",
+    "coma",
+    "mechanical ventilation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Continuous sedation during invasive ventilation can delay weaning and prolong ICU stay. Prior trials showed structured weaning protocols and daily sedation interruption individually shorten ventilation duration, but they were not integrated.",
+      "knowledge_gap": "Whether a paired protocol of daily sedation interruption (SAT) immediately followed by a spontaneous breathing trial (SBT) improves outcomes compared with usual care plus daily SBT alone.",
+      "hypothesis": "Coupling sedation interruption with ventilator liberation testing would create stronger separation in wakefulness/ventilatory readiness, leading to faster liberation without excess harm."
+    },
+    "methods": {
+      "design": "Multicentre, parallel-group, randomised controlled trial; open-label; investigator-initiated.",
+      "setting": "4 tertiary-care hospitals in Tennessee, USA; medical and surgical ICUs.",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years",
+          "Invasive mechanical ventilation for ≥12 hours",
+          "Expected to require ventilation for ≥24 additional hours",
+          "Receiving continuous IV sedation and/or analgesia"
+        ],
+        "exclusion": [
+          "Moribund/expected death within 24 hours",
+          "Ongoing myocardial ischaemia",
+          "Neuromuscular blockade use",
+          "Active seizures or escalating sedation for seizures/agitation",
+          "Increased intracranial pressure",
+          "Other protocol-specified safety exclusions"
+        ]
+      },
+      "intervention": "Daily SAT safety screen: if no exclusions, all sedative/analgesic infusions stopped. SAT failure criteria: sustained agitation (RASS ≥+2), respiratory rate >35/min, SpO2 <88% for ≥5 min, acute arrhythmia, or other safety events. If SAT passed, immediate SBT safety screen (FiO2 ≤0.50, PEEP ≤8 cm H2O, no or low-dose vasopressors, no myocardial ischaemia, able to initiate inspiratory efforts). SBT using low-level pressure support/CPAP; failure criteria included tachypnoea, hypoxaemia, distress, or haemodynamic instability. If SBT passed, clinicians encouraged to extubate when appropriate.",
+      "comparison": "Usual care sedation at clinicians' discretion (no mandated daily interruption). Both groups had a daily SBT protocol, but in the control group sedatives were not systematically stopped before SBT. Other ICU care (extubation, tracheostomy, post-extubation support) was clinician-directed.",
+      "blinding": "Unblinded (bedside clinicians and outcome assessors could not be blinded to a wake-up/breathe protocol).",
+      "sample_size_power": "Planned 334 (increased to 336) to detect a 3-day difference in ventilator-free days (assumed mean 12.9 days, SD 10.4), 80% power, two-sided α=0.05.",
+      "primary_outcome": "Ventilator-free days during the first 28 days",
+      "secondary_outcomes": [
+        "Ventilator days",
+        "Time to discharge alive from ICU",
+        "Time to discharge alive from hospital",
+        "Duration of coma",
+        "Duration of delirium",
+        "Hospital mortality",
+        "28-day mortality",
+        "1-year mortality",
+        "Self-extubation",
+        "Reintubation"
+      ],
+      "follow_up": "28 days for primary outcome; 1 year for mortality"
+    },
+    "results": {
+      "headline_bullets": [
+        "Paired SAT+SBT increased ventilator-free days by 3.1 days (95% CI 0.7–5.6) and shortened ICU and hospital time-to-discharge (P=0.01 and P=0.04) without increasing overall reintubation.",
+        "Acute brain dysfunction improved: coma 0 vs 1 day (P=0.04), delirium 2 vs 4 days (P=0.02).",
+        "1-year mortality reduced (HR 0.68, 95% CI 0.50–0.92, P=0.01), but 28-day mortality did not differ significantly (28.0% vs 35.0%, P=0.21)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Ventilator-free days (days 1–28)",
+          "group_a": "14.7 (0.9)",
+          "group_b": "11.6 (0.9)",
+          "effect_measure": "Difference",
+          "effect_value": "3.1",
+          "ci_95": "0.7 to 5.6",
+          "p_value": "0.02",
+          "note": "Primary outcome; mean (dispersion as published)"
+        },
+        {
+          "outcome": "Ventilator days",
+          "group_a": "7.4 (0.6)",
+          "group_b": "10.3 (0.6)",
+          "effect_measure": "Difference",
+          "effect_value": "-2.9",
+          "ci_95": "-4.2 to -1.6",
+          "p_value": "0.02",
+          "note": ""
+        },
+        {
+          "outcome": "Time to discharge alive from ICU (days)",
+          "group_a": "9.1 (5.1–17.8)",
+          "group_b": "12.9 (7.2–24.6)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.01",
+          "note": "Median (IQR)"
+        },
+        {
+          "outcome": "Time to discharge alive from hospital (days)",
+          "group_a": "14.9 (8.3–33.2)",
+          "group_b": "19.2 (11.0–39.5)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.04",
+          "note": "Median (IQR)"
+        },
+        {
+          "outcome": "Duration of coma (days)",
+          "group_a": "0 (0–3)",
+          "group_b": "1 (0–4)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.04",
+          "note": "Median (IQR)"
+        },
+        {
+          "outcome": "Duration of delirium (days)",
+          "group_a": "2 (0–6)",
+          "group_b": "4 (0–10)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.02",
+          "note": "Median (IQR); assessed with CAM-ICU"
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "29.3%",
+          "group_b": "41.3%",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.03",
+          "note": "Effect estimate (RR/HR) not reported"
+        },
+        {
+          "outcome": "28-day mortality",
+          "group_a": "28.0%",
+          "group_b": "35.0%",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.21",
+          "note": "Not significant"
+        },
+        {
+          "outcome": "Mortality up to 1 year",
+          "group_a": "44.3%",
+          "group_b": "58.3%",
+          "effect_measure": "HR",
+          "effect_value": "0.68",
+          "ci_95": "0.50 to 0.92",
+          "p_value": "0.01",
+          "note": "NNT to prevent one death: 7"
+        },
+        {
+          "outcome": "Self-extubation",
+          "group_a": "10.0%",
+          "group_b": "4.0%",
+          "effect_measure": "Difference",
+          "effect_value": "6.0%",
+          "ci_95": "0.6 to 11.8",
+          "p_value": "0.03",
+          "note": ""
+        },
+        {
+          "outcome": "Reintubation",
+          "group_a": "13.6%",
+          "group_b": "12.3%",
+          "effect_measure": "Difference",
+          "effect_value": "1.3%",
+          "ci_95": "-5.9 to 8.6",
+          "p_value": "0.73",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Self-extubation more common in intervention (10.0% vs 4.0%, difference 6.0%, 95% CI 0.6 to 11.8, P=0.03)",
+      "Reintubation rates similar (13.6% vs 12.3%, difference 1.3%, 95% CI -5.9 to 8.6, P=0.73)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated, stratified randomisation with permuted blocks; allocation via sequentially numbered, sealed opaque envelopes. Groups balanced (168 per arm)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded; clinicians knew allocation and could alter co-interventions. Primary outcome partly objective, but extubation timing and delirium/coma assessments susceptible to bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Substantial pre-randomisation exclusions (1,322 of 1,658 eligible). Post-randomisation: 1 withdrawal in intervention arm (167 analysed), 1–2 lost to follow-up in control. Minor deviation from pure ITT."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Strong separation: SAT in 90% of opportunities in intervention vs 0% in control; sedatives held before SBT in 90% vs 31%. Control arm had 7 protocol discontinuations."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Broadly balanced: mean age 58 vs 61 years, APACHE II 27 vs 28, similar pre-enrolment ventilation hours. Mixed medical/surgical ICU population with substantial sepsis burden."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong given robust randomisation and clear intervention–control separation, tempered by unavoidable lack of blinding, meaningful pre-randomisation exclusions, and minor post-randomisation withdrawal/protocol discontinuation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents a broad adult mixed ICU cohort requiring ongoing ventilation and continuous sedation. Key exclusions (intracranial hypertension, active myocardial ischaemia, neuromuscular blockade) limit applicability to neurocritical care and some high-risk cardiopulmonary subgroups. High exclusion/refusal rates suggest participants may be a selected subset."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires reliable staffing, training, and culture supporting daily SAT and SBT coordination. Settings with already light sedation may see attenuated benefit. Resource-limited settings may face barriers (fewer respiratory therapists, less frequent delirium assessments)."
+        }
+      ],
+      "verdict": "Generalisability is reasonable for adult mixed ICUs with capacity for multidisciplinary protocol delivery, but more limited in neurocritical care, highly unstable patients excluded by safety screens, and environments lacking staffing/structure to deliver daily paired wake-up and breathing trials."
+    },
+    "strengths": [
+      "Pragmatic, protocol-based intervention targeting a high-impact process of care.",
+      "Multicentre delivery with clear intervention–control separation in sedation practice.",
+      "Clinically meaningful outcomes, including ventilator-free days and 1-year mortality with reported hazard ratio and confidence interval.",
+      "Control arm received daily SBT protocol, strengthening the inference that benefit derives from pairing SAT to SBT rather than generic weaning protocolisation."
+    ],
+    "limitations": [
+      "Unblinded care pathway with potential performance and detection bias, particularly for delirium/coma outcomes.",
+      "Large pre-randomisation exclusions/refusals, raising concern for selection and implementation feasibility in routine practice.",
+      "Protocol deviations in control group (discontinuations) and a small post-randomisation withdrawal in the intervention group.",
+      "Increased self-extubation risk, highlighting the need for careful implementation and monitoring."
+    ],
+    "critical_appraisal": {
+      "summary": "ABC demonstrated that a paired SAT+SBT protocol improves ventilator-free days and 1-year survival, with moderate-to-strong internal validity despite lack of blinding; generalisability is reasonable but limited in certain populations.",
+      "strengths": [
+        "Robust randomisation and allocation concealment",
+        "Clear separation in sedation exposure and process-of-care delivery",
+        "Clinically important outcomes including long-term mortality"
+      ],
+      "weaknesses": [
+        "Unblinded design susceptible to co-intervention and assessment bias",
+        "High pre-randomisation exclusion rate may limit representativeness",
+        "Increased self-extubation requires safety monitoring"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Daily paired SAT+SBT increased ventilator-free days, reduced ICU and hospital stay, and improved 1-year survival, supporting an integrated liberation strategy.",
+    "clinical_bottom_line": {
+      "verdict": "This trial supports implementing a daily paired SAT+SBT protocol in mechanically ventilated ICU patients to reduce ventilation duration and improve survival, but requires careful safety monitoring for self-extubation.",
+      "applies_to": "Adult mixed ICU patients requiring ongoing ventilation and continuous sedation, excluding those with contraindications like intracranial hypertension or active myocardial ischaemia.",
+      "does_not_mean": "That daily sedation interruption alone is sufficient; the benefit comes from pairing with SBT and structured coordination.",
+      "implementation_caveats": [
+        "Requires multidisciplinary coordination (nursing-led SAT, respiratory therapy-led SBT)",
+        "Increased self-extubation risk necessitates monitoring and preventive measures",
+        "Benefit may be attenuated in ICUs already using light sedation protocols"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Lancet commentary",
+        "notes": "Framed 'wake up and breathe' as a compelling integrated concept while emphasising that safety and feasibility depend on unit culture, staffing, and careful management of agitation/self-extubation risk."
+      },
+      {
+        "topic": "Lack of blinding",
+        "notes": "Raises concern for co-intervention effects (e.g., clinician behaviour around extubation, mobilisation, sedative choice) that could influence time-to-extubation and ICU discharge, although the magnitude of sedation separation suggests the intervention itself materially changed exposure."
+      },
+      {
+        "topic": "Subsequent evidence on daily sedation interruption",
+        "notes": "Subsequent randomised evidence suggested that in ICUs already using protocolised sedation, adding a daily sedation interruption may not further reduce ventilation duration and may increase workload or adverse events, challenging the generalisability of ABC's SAT component as a universal add-on."
+      },
+      {
+        "topic": "Lighter/no-sedation strategies",
+        "notes": "Trials of lighter/no-sedation strategies reinforced the principle that minimising sedation can shorten ventilation and ICU stay but may trade off with agitation and safety events, underscoring that 'less sedation' requires structured delivery rather than simple dose reduction."
+      },
+      {
+        "topic": "Contemporary guidelines",
+        "notes": "Guidelines incorporate the liberation philosophy: emphasising light sedation, routine assessment, and structured ventilator liberation approaches, while recognising that specific elements (e.g., daily sedation interruption) should be implemented with attention to baseline sedation practice and feasibility."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Whether daily SAT adds benefit in ICUs with existing light sedation protocols",
+      "Optimal management of agitation and self-extubation risk during SAT",
+      "Long-term cognitive and functional outcomes beyond 1 year"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=336",
+        "Ventilator-free days difference 3.1 (95% CI 0.7–5.6)",
+        "1-year mortality HR 0.68 (95% CI 0.50–0.92)",
+        "Self-extubation 10% vs 4%"
+      ],
+      "one_line_takeaway": "Pairing daily sedation interruption with spontaneous breathing trials reduces ventilation duration and improves 1-year survival in mechanically ventilated ICU patients."
+    }
+  },
+  "_source_id": "ABC",
+  "_source_system": "Neuro"
+}

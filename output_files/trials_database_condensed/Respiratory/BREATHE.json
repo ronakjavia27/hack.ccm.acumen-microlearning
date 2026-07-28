@@ -1,0 +1,332 @@
+{
+  "id": "BREATHE",
+  "trial_name": "BREATHE — Early Extubation to NIV vs Invasive Weaning in Weaning Failure (2018)",
+  "specialty": "Respiratory Failure",
+  "subtopic": "Weaning & Liberation from Ventilation",
+  "year": 2018,
+  "journal": "JAMA",
+  "citation": "Perkins GD, Mistry D, Gates S, Gao F, Snelson C, Hart N, et al; for the Breathe Collaborators. Effect of Protocolized Weaning With Early Extubation to Noninvasive Ventilation vs Invasive Weaning on Time to Liberation From Mechanical Ventilation Among Patients With Respiratory Failure: The Breathe Randomized Clinical Trial. JAMA. 2018;320(18):1881-1888",
+  "doi": "10.1001/jama.2018.13763",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, pragmatic",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 364,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults ventilated >48h who failed an SBT, early extubation to NIV did not shorten time to liberation from all mechanical ventilation among survivors, but reduced invasive ventilation days and sedation exposure.",
+  "pico": {
+    "population": "Adults (>16 years) invasively ventilated via endotracheal tube for >48 hours who failed a spontaneous breathing trial (SBT)",
+    "intervention": "Protocolised early extubation to noninvasive ventilation (NIV) with stepwise weaning, after failed SBT",
+    "comparison": "Protocolised continued invasive ventilation with daily SBTs and pressure support reduction",
+    "outcome": "Primary: time from randomisation to liberation from all mechanical ventilation (survivors)"
+  },
+  "keywords": [
+    "noninvasive ventilation",
+    "weaning",
+    "mechanical ventilation",
+    "protocolized weaning",
+    "extubation",
+    "ICU"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Prolonged invasive ventilation increases morbidity/mortality. Evidence-based weaning uses daily readiness assessment, SBTs, sedation minimisation. One-third of patients need >1 SBT ('difficult weaning'), incurring high resource use and complications. NIV avoids the endotracheal tube and may reduce sedation and tube-related harms.",
+      "knowledge_gap": "Prior NIV-facilitated weaning trials were small, focused on selected (often COPD/hypercapnic) populations, used varied weaning criteria, and had risk of bias, limiting generalisability to contemporary UK ICUs.",
+      "hypothesis": "Protocolised early extubation to NIV (vs protocolised invasive weaning) would reduce time to successful liberation from all mechanical ventilation among survivors."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, open-label, pragmatic parallel-group trial",
+      "setting": "41 UK National Health Service ICUs; enrolled March 2013–October 2016; follow-up to April 2017",
+      "population": {
+        "inclusion": [
+          "Adults (>16 years) invasively ventilated via endotracheal tube for >48 hours",
+          "Screened daily, judged ready to wean, then failed an SBT (T-piece, CPAP, or pressure support 5–7 cm H2O; planned duration ≥30 min, up to 120 min in higher-risk patients)"
+        ],
+        "exclusion": [
+          "Tracheostomy present",
+          "Unplanned extubation",
+          "Immediate extubation needed (e.g., intubated only for airway protection)",
+          "Post–upper airway surgery",
+          "Receiving long-term home oxygen or home NIV",
+          "Other protocol-defined exclusions"
+        ]
+      },
+      "intervention": "Early extubation (soon after failed SBT) to NIV delivered via mask; initial settings matched pre-extubation support; protocolised stepwise reduction (inspiratory support and/or breaks) over ≥12 hours; standardised criteria for reintubation and tracheostomy.",
+      "comparison": "Continued invasive ventilation with sequential pressure support reduction and once-daily SBTs; extubation after successful SBT; same standardised criteria for reintubation and tracheostomy.",
+      "blinding": "Open-label (clinicians and participants not blinded); outcome assessors not blinded; primary outcome objective but secondary outcomes susceptible to performance/detection bias.",
+      "sample_size_power": "364 randomised; powered to detect 1-day reduction in time to liberation with 90% power at 5% significance level, assuming Weibull shape parameter 0.737 and allowing for losses.",
+      "primary_outcome": "Time from randomisation to liberation from all mechanical ventilation (invasive and noninvasive) among survivors (ITT analysis using time-to-event methods).",
+      "secondary_outcomes": [
+        "Duration of invasive ventilation",
+        "Total ventilator days",
+        "Time to extubation",
+        "Reintubation within 48 hours",
+        "Tracheostomy",
+        "Sedation exposure",
+        "Time in critical care",
+        "Antibiotic use for presumed respiratory infection",
+        "All-cause survival at 30, 90, 180 days",
+        "Health-related quality of life (EQ-5D) at 3 and 6 months",
+        "Adverse events (nasal/skin/mouth sores)"
+      ],
+      "follow_up": "In-hospital plus 6 months (survival at 30, 90, 180 days; HRQoL at 3 and 6 months)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary outcome (time to liberation from any ventilation among survivors) not significantly different: median 4.3 vs 4.5 days (adjusted HR 1.10, 95% CI 0.89–1.40, P=0.35).",
+        "Early extubation to NIV reduced invasive ventilation (median 1 vs 4 days) and sedation days (mean 4.1 vs 5.5).",
+        "Reintubation numerically higher (37% vs 29%) but not statistically significant; no significant differences in tracheostomy, survival, or total ventilator days."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: time to liberation from all ventilation (survivors)",
+          "group_a": "median 4.3 days (95% CI 2.63–5.58)",
+          "group_b": "median 4.5 days (95% CI 3.46–7.25)",
+          "effect_measure": "HR",
+          "effect_value": "1.10",
+          "ci_95": "0.89 to 1.40",
+          "p_value": "0.35 (log-rank)",
+          "note": "MCID pre-specified as 1 day"
+        },
+        {
+          "outcome": "Competing risk analysis for primary (death as competing event)",
+          "group_a": "—",
+          "group_b": "—",
+          "effect_measure": "HR",
+          "effect_value": "1.10",
+          "ci_95": "0.86 to 1.34",
+          "p_value": "not reported",
+          "note": "Similar to primary analysis"
+        },
+        {
+          "outcome": "Duration of invasive ventilation",
+          "group_a": "median 1 day",
+          "group_b": "median 4 days",
+          "effect_measure": "IRR",
+          "effect_value": "0.60",
+          "ci_95": "0.47 to 0.87",
+          "p_value": "0.004",
+          "note": ""
+        },
+        {
+          "outcome": "Total ventilator days (invasive + noninvasive)",
+          "group_a": "median 3 days",
+          "group_b": "median 4 days",
+          "effect_measure": "IRR",
+          "effect_value": "0.80",
+          "ci_95": "0.62 to 1.00",
+          "p_value": "0.04",
+          "note": ""
+        },
+        {
+          "outcome": "Time from randomisation to extubation",
+          "group_a": "median 0.5 days (IQR 0.5–1.0)",
+          "group_b": "median 3.0 days (IQR 2.0–6.0)",
+          "effect_measure": "HR",
+          "effect_value": "2.50",
+          "ci_95": "2.01 to 3.15",
+          "p_value": "<0.001",
+          "note": "Strong separation in ETT removal timing"
+        },
+        {
+          "outcome": "Reintubation",
+          "group_a": "67/181 (37.0%)",
+          "group_b": "41/143 (28.7%)",
+          "effect_measure": "absolute difference",
+          "effect_value": "8.3%",
+          "ci_95": "-1.9 to 18.6",
+          "p_value": "not reported",
+          "note": "Denominators: patients at risk post-extubation"
+        },
+        {
+          "outcome": "Tracheostomy",
+          "group_a": "43/182 (23.6%)",
+          "group_b": "55/182 (30.2%)",
+          "effect_measure": "absolute difference",
+          "effect_value": "-6.6%",
+          "ci_95": "-2.5 to 15.7",
+          "p_value": "not reported",
+          "note": "Direction favours NIV; not statistically significant"
+        },
+        {
+          "outcome": "Sedation exposure",
+          "group_a": "mean 4.1 (SD 5.0) days",
+          "group_b": "mean 5.5 (SD 5.1) days",
+          "effect_measure": "IRR",
+          "effect_value": "0.70",
+          "ci_95": "0.61 to 0.91",
+          "p_value": "0.005",
+          "note": ""
+        },
+        {
+          "outcome": "Time in critical care",
+          "group_a": "mean 10.8 (SD 8.8) days",
+          "group_b": "mean 12.2 (SD 8.4) days",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.02",
+          "note": "No CI reported"
+        },
+        {
+          "outcome": "Antibiotics for presumed respiratory infection",
+          "group_a": "110/182 (60.4%)",
+          "group_b": "128/182 (70.3%)",
+          "effect_measure": "absolute difference",
+          "effect_value": "-9.9%",
+          "ci_95": "0.2 to 19.6",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "All-cause survival at 30 days",
+          "group_a": "158/182 (86.8%)",
+          "group_b": "157/182 (86.3%)",
+          "effect_measure": "OR",
+          "effect_value": "1.10",
+          "ci_95": "0.58 to 1.96",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "All-cause survival at 180 days",
+          "group_a": "142/182 (78.0%)",
+          "group_b": "133/182 (73.1%)",
+          "effect_measure": "OR",
+          "effect_value": "1.40",
+          "ci_95": "0.85 to 2.27",
+          "p_value": "not reported",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Nasal/skin/mouth sores or irritation: 19/182 (10.4%) in NIV arm vs 14/182 (7.7%) in invasive arm; absolute difference 2.7% (95% CI -3.2 to 8.6)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with allocation concealment. Baseline characteristics broadly balanced (APACHE II mean 18.9 vs 18.8; age mean 64.3 vs 61.8 years; prior ventilation median 5.3 vs 4.7 days)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; could influence co-interventions and clinician-driven outcomes (e.g., antibiotic prescribing). Primary outcome largely objective but secondary endpoints susceptible to ascertainment bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "364 randomised; 319 evaluable for primary outcome (41 died before liberation, 2 withdrew, 2 discharged on ventilation). Sensitivity analyses (competing risk, per-protocol, multiple imputation) gave similar results."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High adherence: 175/182 (96.1%) in NIV arm and 176/182 (96.7%) in invasive arm received allocated intervention."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Broadly balanced, with some difference in diagnosis distribution (pneumonia/respiratory infection 31.3% vs 40.1%). Sensitivity analyses did not suggest materially different results across high-recruiting vs other sites."
+        }
+      ],
+      "verdict": "Internal validity moderate-to-strong: allocation concealment and protocol adherence were excellent, but the open-label design, survivor-conditioned primary endpoint, and reduced power after sample-size revision temper confidence."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Pragmatic enrolment from 41 UK NHS ICUs in adults ventilated >48h with failed SBT reflects a common 'difficult weaning' subgroup in high-resource settings. Excluded those with tracheostomy at baseline, long-term home oxygen/NIV, limiting applicability to chronic hypercapnic COPD populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires staff skilled in NIV initiation, titration, and interface management; control arm used protocolised best-practice invasive weaning. Translation may be less in ICUs with less protocolised care or lower NIV experience."
+        }
+      ],
+      "verdict": "Generalisability moderate to similar adult, high-resource ICUs using protocolised weaning; applicability limited in chronic hypercapnic COPD/home-NIV populations and units without established NIV infrastructure."
+    },
+    "strengths": [
+      "Large pragmatic multicentre randomised trial",
+      "Allocation concealment",
+      "High protocol adherence",
+      "Robust separation in invasive ventilation exposure",
+      "Clinically relevant decision point (failed SBT)",
+      "Comprehensive secondary outcomes including sedation, adverse events, survival, and HRQoL"
+    ],
+    "limitations": [
+      "Open-label design (risk of performance/detection bias for clinician-driven outcomes)",
+      "Primary outcome conditioned on survival and counts NIV as 'ventilation' (potentially obscuring benefit of earlier extubation)",
+      "Revised sample size and recruitment concentrated in a few sites",
+      "Heterogeneity of underlying causes of weaning failure",
+      "Substantial missing HRQoL data at follow-up time points"
+    ],
+    "critical_appraisal": {
+      "summary": "Well-conducted multicentre pragmatic RCT with moderate overall risk of bias due to open-label design and the survivor-conditioned primary endpoint; the trial demonstrates that early extubation to NIV does not shorten time to full liberation but clearly reduces invasive ventilation and sedation burden.",
+      "strengths": [
+        "Allocation concealment",
+        "High protocol adherence",
+        "Relevant patient population and endpoint",
+        "Multiple sensitivity analyses consistent with main findings"
+      ],
+      "weaknesses": [
+        "Open-label",
+        "Primary endpoint confounded by counting NIV as ventilation",
+        "Revised sample-size limits power",
+        "Missing HRQoL data"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Among adults invasively ventilated for >48 hours who failed an SBT, early extubation to a protocolised NIV weaning strategy did not shorten the time to liberation from all mechanical ventilation compared with a protocolised invasive weaning strategy. The NIV strategy reduced invasive ventilation duration and sedation exposure, with no significant differences in survival, tracheostomy, or reintubation.",
+    "clinical_bottom_line": {
+      "verdict": "Early extubation to NIV does not accelerate complete liberation from ventilation but effectively reduces invasive ventilation burden and sedation days, making it a reasonable strategy when the goal is to minimize endotracheal-tube exposure, provided adequate NIV infrastructure.",
+      "applies_to": "Adults in high-resource ICUs with protocolized weaning who fail an SBT after >48 hours of ventilation, excluding those with tracheostomy or chronic home NIV/O2.",
+      "does_not_mean": "It does not mean NIV weaning improves survival or shortens total ventilator days; the primary endpoint was unchanged.",
+      "implementation_caveats": [
+        "Requires experienced staff and appropriate interfaces",
+        "Reintubation rates numerically higher (37% vs 29%), though not statistically significant",
+        "Careful patient selection to avoid harm in those at high risk of extubation failure"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Comparison with best-practice control arm",
+        "notes": "The accompanying editorial highlighted that the control arm approximated best-practice invasive weaning, meaning incremental benefit of NIV may be smaller in well-protocolised ICUs than in settings with more variable usual care."
+      },
+      {
+        "topic": "Composite endpoint definition",
+        "notes": "Counting NIV time as “mechanical ventilation” can attenuate apparent benefit of earlier extubation if the key patient-relevant advantage is reduced endotracheal-tube exposure rather than faster cessation of all ventilatory support."
+      },
+      {
+        "topic": "Heterogeneity and patient selection",
+        "notes": "Systematic reviews/meta-analyses and Bayesian syntheses note variable treatment effects by underlying physiology and trial design, reinforcing need for careful patient selection and protocol details. Cochrane reviews suggest potential benefit in selected hypercapnic COPD populations, while BREATHE adds a large pragmatic dataset where the primary endpoint remained neutral."
+      },
+      {
+        "topic": "Guideline alignment",
+        "notes": "Guidelines prioritise protocolised SBT/sedation minimisation and recognise NIV post-extubation in selected contexts. BREATHE supports avoiding a blanket assumption that NIV-facilitated weaning will shorten complete liberation in unselected difficult-to-wean patients."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Cochrane Review (Burns et al.)",
+        "relation": "Framed NIV-facilitated weaning as potentially beneficial in selected groups (notably hypercapnic COPD) while emphasising limits of generalisability and role of protocolised co-interventions; BREATHE adds a large pragmatic dataset with a neutral primary endpoint in a mixed ICU population."
+      },
+      {
+        "trial": "Bayesian synthesis of NIV-facilitated weaning trials",
+        "relation": "Supports variation in treatment effect across populations and weaning protocols, reinforcing the need for careful patient selection; BREATHE data informs this heterogeneity."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal patient selection criteria (physiological phenotypes) for NIV weaning",
+      "Ideal endpoint for future trials: all ventilation vs invasive days vs patient-centred outcomes",
+      "Impact of NIV weaning in chronic hypercapnic COPD/home‑NIV populations underrepresented in BREATHE"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=364",
+        "Primary: time to liberation from any ventilation HR 1.10 (95% CI 0.89–1.40); not significant",
+        "Invasive ventilation days: median 1 vs 4 (IRR 0.60, P=0.004)",
+        "Reintubation: 37% vs 29% (absolute difference 8.3%, 95% CI -1.9 to 18.6)"
+      ],
+      "one_line_takeaway": "In difficult weaning, early extubation to NIV reduces invasive ventilator days and sedation but does not shorten time to complete liberation from ventilation—use it to minimize ETT burden, not to accelerate weaning."
+    }
+  },
+  "_source_id": "BREATHE",
+  "_source_system": "Respiratory"
+}

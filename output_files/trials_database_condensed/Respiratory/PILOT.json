@@ -1,0 +1,385 @@
+{
+  "id": "PILOT",
+  "trial_name": "PILOT — Oxygen-Saturation Targets for Critically Ill Adults Receiving Mechanical Ventilation (2022)",
+  "specialty": "Respiratory",
+  "subtopic": "Mechanical Ventilation",
+  "year": 2022,
+  "journal": "New England Journal of Medicine",
+  "citation": "Semler MW, Casey JD, Lloyd BD, Hastings PG, Hays MA, Stollings JL, et al. Oxygen-saturation targets for critically ill adults receiving mechanical ventilation. N Engl J Med. 2022;387:1759-1769.",
+  "doi": "https://doi.org/10.1056/NEJMoa2208415",
+  "registration": "",
+  "trial_type": "RCT — pragmatic, single-centre, cluster-crossover, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2541,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In mechanically ventilated ICU patients, targeting lower (88-92%), intermediate (92-96%), or higher (96-100%) SpO2 did not change ventilator-free days or mortality, suggesting any benefit of oxygen targeting within these ranges is likely modest.",
+  "pico": {
+    "population": "Adults (≥18 years) receiving invasive mechanical ventilation in the ED or medical ICU at a single academic centre",
+    "intervention": "Lower SpO2 target strategy: 88-92% (target 90%), with FiO2 titration and alarms set to range; fallback PaO2 60 mm Hg",
+    "comparison": "Intermediate target: 92-96% (target 94%); Higher target: 96-100% (target 98%); usual care otherwise",
+    "outcome": "Ventilator-free days at day 28"
+  },
+  "keywords": [
+    "oxygen saturation",
+    "mechanical ventilation",
+    "SpO2 targets",
+    "hyperoxaemia",
+    "ICU",
+    "pragmatic trial"
+  ],
+  "related_trials": [
+    "ICU-ROX",
+    "HOT-ICU",
+    "Oxygen-ICU",
+    "LOCO2",
+    "HYPERS2S"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Supplemental oxygen is near-universal in ICU care, but the dose of oxygen (FiO2/PaO2/SpO2) is rarely titrated like a drug. Hypoxaemia is an obvious threat, while hyperoxaemia is biologically plausible as harmful through oxidative injury, vasoconstriction, and absorption atelectasis. Observational ICU data have repeatedly shown associations between higher PaO2 exposure and mortality.",
+      "knowledge_gap": "Most bedside oxygen titration in ventilated patients uses pulse oximetry, yet robust comparative-effectiveness evidence for routine SpO2 target ranges in an undifferentiated mechanically ventilated ICU population was limited.",
+      "hypothesis": "A more conservative oxygenation strategy might improve outcomes by reducing hyperoxia-related harm, balanced against potential harm from increased hypoxaemic exposure."
+    },
+    "methods": {
+      "design": "Pragmatic, single-centre, cluster-crossover randomised trial. 18 two-month periods in the ED and medical ICU were randomised to one of three SpO2 target strategies, with prespecified analytic washout at the end of each period. Intervention delivery was open-label.",
+      "setting": "Emergency Department and medical ICU at Vanderbilt University Medical Center (academic centre).",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years",
+          "First receipt of invasive mechanical ventilation in the ED or medical ICU (or in the ED with planned admission to the medical ICU)"
+        ],
+        "exclusion": [
+          "Pregnancy",
+          "Incarceration"
+        ],
+        "enrolment_approach": "Pragmatic 'all-eligible' enrolment aligned to unit-period assignment (cluster-crossover), minimising bedside selection."
+      },
+      "intervention": "Lower target: SpO2 88-92% (target 90%); FiO2 titration and pulse oximeter alarms set to range. Fallback PaO2 target 60 mm Hg. Target modifiable at clinician discretion or patient/family request.",
+      "comparison": "Intermediate target: SpO2 92-96% (target 94%), fallback PaO2 70 mm Hg. Higher target: SpO2 96-100% (target 98%), fallback PaO2 110 mm Hg. Otherwise usual care for ventilation and ICU management.",
+      "blinding": "Open-label; key outcomes were largely objective and derived from the electronic health record. Manual adjudication of prespecified safety events was performed in a subset with adjudicators blinded to assignment.",
+      "sample_size_power": "Planned sample size 2250 to provide 92% power (two-sided α=0.05; β=0.08) to detect an absolute difference of 2 ventilator-free days between any two groups.",
+      "primary_outcome": "Ventilator-free days to day 28",
+      "secondary_outcomes": [
+        "In-hospital death before day 28",
+        "Hospital-free days to day 28",
+        "Receipt of renal-replacement therapy to day 28",
+        "Stage ≥II acute kidney injury to day 28"
+      ],
+      "follow_up": "28 days (or hospital discharge)"
+    },
+    "results": {
+      "headline_bullets": [
+        "No difference in ventilator-free days across SpO2 targets (overall P=0.81).",
+        "In-hospital mortality similar: 34.8% lower, 34.0% intermediate, 33.2% higher.",
+        "Numerically fewer RRT events in the higher-target group (11.6% vs 14.5% intermediate) but not statistically significant.",
+        "No subgroup heterogeneity in cardiac arrest, sepsis, or ARDS."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Ventilator-free days to day 28",
+          "group_a": "Lower: Median 20 (IQR 0-25); n=808",
+          "group_b": "Intermediate: Median 21 (IQR 0-25); n=859",
+          "effect_measure": "OR",
+          "effect_value": "0.95",
+          "ci_95": "0.79-1.13",
+          "p_value": "",
+          "note": "OR>1 favours more VFDs; overall 3-group P=0.81"
+        },
+        {
+          "outcome": "Ventilator-free days to day 28",
+          "group_a": "Lower: Median 20 (IQR 0-25); n=808",
+          "group_b": "Higher: Median 19 (IQR 0-25); n=874",
+          "effect_measure": "OR",
+          "effect_value": "0.95",
+          "ci_95": "0.78-1.14",
+          "p_value": "",
+          "note": "OR>1 favours more VFDs"
+        },
+        {
+          "outcome": "Ventilator-free days to day 28",
+          "group_a": "Higher: Median 19 (IQR 0-25); n=874",
+          "group_b": "Intermediate: Median 21 (IQR 0-25); n=859",
+          "effect_measure": "OR",
+          "effect_value": "1.00",
+          "ci_95": "0.84-1.19",
+          "p_value": "",
+          "note": "OR>1 favours more VFDs"
+        },
+        {
+          "outcome": "In-hospital death before day 28",
+          "group_a": "Lower: 281/808 (34.8%)",
+          "group_b": "Intermediate: 292/859 (34.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.12",
+          "ci_95": "0.88-1.44",
+          "p_value": "",
+          "note": "OR<1 favours survival"
+        },
+        {
+          "outcome": "In-hospital death before day 28",
+          "group_a": "Lower: 281/808 (34.8%)",
+          "group_b": "Higher: 290/874 (33.2%)",
+          "effect_measure": "OR",
+          "effect_value": "1.10",
+          "ci_95": "0.86-1.42",
+          "p_value": "",
+          "note": "OR<1 favours survival"
+        },
+        {
+          "outcome": "In-hospital death before day 28",
+          "group_a": "Higher: 290/874 (33.2%)",
+          "group_b": "Intermediate: 292/859 (34.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.02",
+          "ci_95": "0.79-1.31",
+          "p_value": "",
+          "note": "OR<1 favours survival"
+        },
+        {
+          "outcome": "Hospital-free days to day 28",
+          "group_a": "Lower: Median 18 (IQR 0-21); n=808",
+          "group_b": "Intermediate: Median 18 (IQR 0-22); n=859",
+          "effect_measure": "OR",
+          "effect_value": "0.97",
+          "ci_95": "0.80-1.16",
+          "p_value": "",
+          "note": "OR>1 favours more hospital-free days"
+        },
+        {
+          "outcome": "Hospital-free days to day 28",
+          "group_a": "Lower: Median 18 (IQR 0-21); n=808",
+          "group_b": "Higher: Median 17 (IQR 0-21); n=874",
+          "effect_measure": "OR",
+          "effect_value": "0.96",
+          "ci_95": "0.79-1.15",
+          "p_value": "",
+          "note": "OR>1 favours more hospital-free days"
+        },
+        {
+          "outcome": "Hospital-free days to day 28",
+          "group_a": "Higher: Median 17 (IQR 0-21); n=874",
+          "group_b": "Intermediate: Median 18 (IQR 0-22); n=859",
+          "effect_measure": "OR",
+          "effect_value": "1.01",
+          "ci_95": "0.85-1.22",
+          "p_value": "",
+          "note": "OR>1 favours more hospital-free days"
+        },
+        {
+          "outcome": "Receipt of renal-replacement therapy to day 28",
+          "group_a": "Lower: 112/756 (14.8%)",
+          "group_b": "Intermediate: 118/813 (14.5%)",
+          "effect_measure": "OR",
+          "effect_value": "0.99",
+          "ci_95": "0.74-1.33",
+          "p_value": "",
+          "note": "OR<1 favours fewer RRT events"
+        },
+        {
+          "outcome": "Receipt of renal-replacement therapy to day 28",
+          "group_a": "Lower: 112/756 (14.8%)",
+          "group_b": "Higher: 97/835 (11.6%)",
+          "effect_measure": "OR",
+          "effect_value": "1.28",
+          "ci_95": "0.93-1.77",
+          "p_value": "",
+          "note": "OR<1 favours fewer RRT events"
+        },
+        {
+          "outcome": "Receipt of renal-replacement therapy to day 28",
+          "group_a": "Higher: 97/835 (11.6%)",
+          "group_b": "Intermediate: 118/813 (14.5%)",
+          "effect_measure": "OR",
+          "effect_value": "1.29",
+          "ci_95": "0.96-1.75",
+          "p_value": "",
+          "note": "OR<1 favours fewer RRT events"
+        },
+        {
+          "outcome": "Stage ≥II acute kidney injury to day 28",
+          "group_a": "Lower: 230/756 (30.4%)",
+          "group_b": "Intermediate: 253/813 (31.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.95",
+          "ci_95": "0.76-1.19",
+          "p_value": "",
+          "note": "OR<1 favours fewer AKI events"
+        },
+        {
+          "outcome": "Stage ≥II acute kidney injury to day 28",
+          "group_a": "Lower: 230/756 (30.4%)",
+          "group_b": "Higher: 251/835 (30.1%)",
+          "effect_measure": "OR",
+          "effect_value": "1.04",
+          "ci_95": "0.82-1.31",
+          "p_value": "",
+          "note": "OR<1 favours fewer AKI events"
+        },
+        {
+          "outcome": "Stage ≥II acute kidney injury to day 28",
+          "group_a": "Higher: 251/835 (30.1%)",
+          "group_b": "Intermediate: 253/813 (31.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.91",
+          "ci_95": "0.73-1.13",
+          "p_value": "",
+          "note": "OR<1 favours fewer AKI events"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Renal replacement therapy and AKI rates similar across groups; no excess of other adverse events reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Cluster-crossover randomisation of 18 two-month periods to one of three SpO2 target strategies; allocation concealment to clinicians not feasible, but enrolment of all eligible mechanically ventilated adults reduced bedside selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; key outcomes largely objective and derived from EHR; manual adjudication of prespecified safety events with blinded adjudicators in a subset."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "2987 enrolled; primary analysis excluded 347 enrolled during washout and 99 with COVID-19, leaving 2541 analysed; sensitivity analyses including these patients were consistent with primary findings."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Individual-level modification of assigned target uncommon: 3.7% lower, 2.4% intermediate, 6.9% higher; modification occurred early (median day 1.5-1.6)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly comparable (median age 57-59 years; similar proportions of sepsis, cardiac arrest, acute myocardial infarction, and baseline AKI ≥stage II)."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Primary and key secondary outcomes clinically meaningful and largely objective; confidence intervals not adjusted for multiplicity across multiple pairwise comparisons."
+        },
+        {
+          "domain": "Statistical rigor",
+          "notes": "Prespecified proportional-odds modelling with time adjustment; sample size target exceeded; low intraclass correlation (0.007) supported efficiency of cluster-crossover design; interim monitoring boundary prespecified."
+        }
+      ],
+      "verdict": "Overall, internal validity is moderate-to-strong: pragmatic all-eligible enrolment and objective outcomes strengthen inference, while the open-label cluster-crossover design introduces potential performance bias and time-trend confounding that cannot be fully excluded."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad mechanically ventilated adult population in ED/medical ICU (sepsis, cardiac arrest, acute myocardial infarction) aligning with many real-world mixed medical ICUs; excluded pregnancy and incarceration."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Single academic centre; practice patterns may differ; SpO2-target strategies easily implementable via alarms, but fallback PaO2 targets may be less feasible where ABG sampling limited."
+        },
+        {
+          "domain": "Temporal applicability",
+          "notes": "Patients with COVID-19 excluded from primary analysis; extrapolation to COVID-era hypoxaemic respiratory failure should be cautious."
+        }
+      ],
+      "verdict": "Generalisability is moderate: the pragmatic approach supports translation to similar ED/medical ICU ventilated populations, but single-centre conduct and exclusion of COVID-19 constrain certainty across diverse systems and phenotypes."
+    },
+    "strengths": [
+      "Large pragmatic trial (2541 analysed) with early enrolment at initiation of ventilation and minimal bedside selection.",
+      "Cluster-crossover design tested system-level oxygen-target strategies as delivered by ICU workflows, enhancing implementation relevance.",
+      "Meaningful exposure separation achieved in FiO2 burden and time spent at SpO2 99-100%.",
+      "Patient-centred primary outcome (VFDs) and objective mortality outcomes reduce measurement subjectivity."
+    ],
+    "limitations": [
+      "Open-label design; ventilator discontinuation and other care processes could be influenced by clinicians' perceptions of assigned targets.",
+      "Single-centre conduct limits transportability and increases vulnerability to site-specific practice effects.",
+      "Modest median saturation separation (94 vs 95 vs 97%) on the oxyhaemoglobin plateau may provide insufficient biological contrast for some mechanistic hypotheses.",
+      "Primary analysis excluded washout and COVID-19 periods (prespecified), improving interpretability but departing from an all-enrolled analysis.",
+      "Prespecified safety outcomes were manually adjudicated only in a subset, with later reliance on pragmatic EHR-derived outcomes."
+    ],
+    "critical_appraisal": {
+      "summary": "PILOT is a moderate-to-strong pragmatic trial that provides robust evidence that within routinely applied SpO2 target ranges (88-100%) in mechanically ventilated ICU patients, average clinical outcomes are insensitive to the chosen target, though open-label design and single-centre setting limit generalisability.",
+      "strengths": [
+        "Large, all-eligible enrolment",
+        "Meaningful oxygen exposure separation",
+        "Patient-centred, objective outcomes",
+        "Cluster-crossover pragmatic design"
+      ],
+      "weaknesses": [
+        "Open-label with potential performance bias",
+        "Single-centre, limiting external validity",
+        "Modest SpO2 separation in physiological plateau may dilute effect",
+        "Exclusion of washout/COVID-19 patients from primary analysis"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In 2541 ventilated ED/medical ICU adults, SpO2 targets of 88–92%, 92–96%, and 96–100% produced stepwise oxygen exposure differences but no meaningful difference in ventilator-free days or mortality at day 28.",
+    "clinical_bottom_line": {
+      "verdict": "PILOT supports a pragmatic 'avoid extremes' approach: targeting lower (88-92%) SpO2 does not improve VFDs or survival, and higher (96-100%) SpO2 does not cause harm in the short term; therefore, clinicians may choose SpO2 targets within these ranges based on individual patient risk and setting.",
+      "applies_to": "Mechanically ventilated adults in ED/medical ICU settings, including those with sepsis, cardiac arrest, and ARDS (excluding COVID-19). Single-centre, academic context.",
+      "does_not_mean": "That aggressive hyperoxia is safe; the trial did not test extreme hyperoxia targets. Also, does not mean that lower SpO2 targets should be used in patients at risk of hypercapnic respiratory failure; trial excluded such specific guidance.",
+      "implementation_caveats": [
+        "SpO2 targets had modest separation on oxyhaemoglobin plateau; larger differences may be needed in some phenotypes.",
+        "Single-centre results may not fully generalise to other practice environments.",
+        "Exclusion of COVID-19 limits pandemic-era extrapolation."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Was the trial 'negative' because saturation separation was too small?",
+        "notes": "Median SpO2 differed by only 1–3 percentage points (94 vs 95 vs 97), consistent with physiologic plateau effects; this limits oxygen content contrast and may attenuate detectable outcome differences."
+      },
+      {
+        "topic": "Counterpoint—oxygen exposure separation was clinically meaningful",
+        "notes": "The higher-target strategy produced substantially more time at SpO2 99–100% (32.7% of measurements) than lower/intermediate (12.3%/14.7%), and higher FiO2 distributions, indicating that a 'liberal oxygen' phenotype was achieved without clear harm."
+      },
+      {
+        "topic": "How PILOT fits with other RCTs",
+        "notes": "Large trials of conservative vs usual oxygen strategies (ICU-ROX, HOT-ICU) were broadly neutral, whereas trials exploring more extreme physiological targets in selected syndromes suggested potential harm signals at extremes (very conservative targets in ARDS in LOCO2; deliberate hyperoxia in septic shock in HYPERS2S). PILOT adds evidence that middle-ground targets do not change short-term outcomes."
+      },
+      {
+        "topic": "Guideline alignment",
+        "notes": "Major oxygen-use guidelines generally advocate avoiding unnecessary hyperoxaemia while preventing clinically important hypoxaemia. PILOT provides pragmatic ICU-specific evidence that these 'middle-ground' targets likely do not markedly change short-term outcomes in a broad ventilated population."
+      },
+      {
+        "topic": "Interpretation debate—average effects vs personalisation",
+        "notes": "Contemporary commentary emphasised persistent equipoise and the possibility that individualised oxygen targets (rather than uniform saturation goals) may better match heterogeneous mechanisms of harm/benefit across ICU phenotypes."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ICU-ROX",
+        "relation": "A large multicentre trial of conservative vs usual oxygen in mechanically ventilated ICU patients, which showed a neutral average effect on ventilator-free days. PILOT extends these findings by testing three specific SpO2 target ranges."
+      },
+      {
+        "trial": "HOT-ICU",
+        "relation": "A large trial of lower vs higher oxygenation target in ICU patients, also neutral. PILOT's similar findings add evidence that routine oxygen targets within this range do not alter outcomes."
+      },
+      {
+        "trial": "Oxygen-ICU",
+        "relation": "A single-centre trial suggesting benefit of conservative oxygen therapy in ICU. PILOT's larger pragmatic design did not replicate such a signal, reinforcing that individual oxygen benefits may be context-dependent."
+      },
+      {
+        "trial": "LOCO2",
+        "relation": "Trial of very conservative oxygenation in ARDS raised safety concerns. PILOT's lower target (88-92%) is less extreme and did not show harm, supporting current aversion to very low PaO2 targets in ARDS."
+      },
+      {
+        "trial": "HYPERS2S",
+        "relation": "Trial of deliberate hyperoxia in septic shock suggested harm. PILOT's higher target (96-100%) did not show harm in a broader population, possibly because it was less extreme and applied earlier."
+      }
+    ],
+    "unresolved_questions": [
+      "Is there a subgroup (e.g., cardiac arrest, ARDS, septic shock) where individualised oxygen targets improve outcomes?",
+      "Would a strategy targeting much lower PaO2 (e.g., 55-60 mmHg) or much higher show benefit/harm?",
+      "Does hyperoxia cause long-term organ dysfunction not captured by 28-day endpoints?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2541 (primary analysis)",
+        "VFDs median 20 vs 21 vs 19 days (lower, intermediate, higher); overall P=0.81",
+        "In-hospital mortality 34.8% vs 34.0% vs 33.2%",
+        "Higher-target group: median FiO2 0.45, 32.7% of SpO2 readings ≥99%"
+      ],
+      "one_line_takeaway": "In mechanically ventilated ICU patients, using lower, intermediate, or higher SpO2 targets (88-100%) does not change days alive and free of the ventilator or short-term survival, so clinicians can choose targets based on individual risk without expecting large effects."
+    }
+  },
+  "_source_id": "PILOT",
+  "_source_system": "Respiratory"
+}

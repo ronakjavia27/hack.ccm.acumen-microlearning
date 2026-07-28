@@ -1,0 +1,323 @@
+{
+  "id": "TiP-Ex",
+  "trial_name": "TiP-Ex — PSV vs T-Piece SBT in High-Risk ICU Patients (2022)",
+  "specialty": "Critical Care",
+  "subtopic": "Weaning & Liberation from Ventilation",
+  "year": 2022,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Thille AW, Gacouin A, Coudroy R, et al. Spontaneous-Breathing Trials with Pressure-Support Ventilation or a T-Piece. N Engl J Med. 2022;387:1843-54.",
+  "doi": "https://doi.org/10.1056/NEJMoa2209041",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 969,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In high-risk ICU patients, a PSV-based SBT strategy did not increase ventilator-free days at day 28 compared with a T-piece strategy, despite improving initial SBT success and reducing prolonged weaning.",
+  "pico": {
+    "population": "Adult ICU patients at high risk of extubation failure (age >65 years and/or chronic cardiac/respiratory disease), invasively ventilated for >24 hours and ready for an initial SBT.",
+    "intervention": "1-hour SBT with pressure-support ventilation (PSV 8 cmH2O, PEEP 0 cmH2O).",
+    "comparison": "1-hour SBT with a T-piece (oxygen flow 4–6 L/min).",
+    "outcome": "Ventilator-free days at day 28."
+  },
+  "keywords": [
+    "spontaneous breathing trial",
+    "SBT",
+    "pressure-support ventilation",
+    "T-piece",
+    "weaning",
+    "extubation",
+    "high-risk",
+    "NIV"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "SBTs are a core readiness test before extubation, but the tested conditions vary (T-piece, low-level PSV, CPAP). T-piece SBTs remove ventilator assistance but retain ETT load; PSV SBTs add inspiratory assistance, potentially reducing work of breathing.",
+      "knowledge_gap": "Prior studies suggested PSV may increase SBT success and accelerate extubation, but concerns persisted that an easier test could permit premature extubation and increase reintubation, especially in high-risk patients.",
+      "hypothesis": "In high-risk mechanically ventilated adults deemed ready for extubation assessment, a PSV-based SBT strategy (vs a T-piece SBT strategy) would increase ventilator-free days at day 28, without worsening clinically important harms such as reintubation."
+    },
+    "methods": {
+      "design": "Multicentre, investigator-initiated, pragmatic, parallel-group, randomised controlled superiority trial; open-label with central web-based randomisation stratified by centre (block size 4).",
+      "setting": "31 adult ICUs in France.",
+      "population": {
+        "inclusion": [
+          "Intubated and invasively ventilated for >24 hours.",
+          "High-risk: Age >65 years and/or chronic cardiac disease and/or chronic respiratory disease.",
+          "Readiness for initial SBT: Respiratory rate ≤35 breaths/min; SpO2 ≥90% with FIO2 ≤40% and PEEP ≤8 cmH2O (or PaO2/FIO2 ≥150 with PEEP ≤8); adequate cough; awake (RASS -2 to +1); no continuous sedation; no vasopressors or minimal doses."
+        ],
+        "exclusion": [
+          "Do-not-reintubate decision at time of initial SBT.",
+          "Traumatic brain injury.",
+          "Pre-existing neuromuscular disease.",
+          "Already performed an initial SBT since intubation.",
+          "Other protocol exclusions (e.g., legal protections/consent constraints)."
+        ]
+      },
+      "intervention": "PSV SBT strategy: 1-hour SBT on the ventilator with PSV 8 cmH2O and PEEP 0 cmH2O (target FIO2 ≤0.40). After SBT success, extubation recommended as soon as possible after ~1 hour rest. If SBT failure, return to ventilatory support; repeat SBT daily until success.",
+      "comparison": "T-piece SBT strategy: 1-hour SBT with a T-piece, using oxygen flow 4–6 L/min (target FIO2 ≤0.40). Same extubation encouragement and repeat-testing approach as intervention.",
+      "blinding": "Unblinded (clinicians and patients). Extubation timing and post-extubation supports were clinician-driven.",
+      "sample_size_power": "900 patients required to detect an absolute increase of 2 ventilator-free days at day 28 (two-sided alpha 0.05; 80% power); planned sample size increased to 1000 to allow for exclusions.",
+      "primary_outcome": "Ventilator-free days at day 28 (death counted as 0 days).",
+      "secondary_outcomes": [
+        "Days alive without invasive or non-invasive ventilation at day 28",
+        "Successful initial SBT",
+        "Median time to extubation after successful initial SBT",
+        "Simple weaning (extubation <24 h after initial SBT)",
+        "Prolonged weaning (>7 days after initial SBT)",
+        "Extubation ≤7 days after initial SBT",
+        "Extubation after one SBT without reintubation within 72 h",
+        "Respiratory failure ≤7 days after extubation",
+        "Reintubation ≤7 days after extubation",
+        "Reintubation in ICU (any time)",
+        "Death by day 90"
+      ],
+      "follow_up": "28 days for the primary outcome; 90 days for mortality and longer-term outcomes."
+    },
+    "results": {
+      "headline_bullets": [
+        "PSV SBTs increased initial SBT success (79.1% vs 71.7%) and reduced prolonged weaning (>7 days: 2.3% vs 5.6%).",
+        "No difference in the primary outcome of ventilator-free days at day 28 (median 27 vs 27; median difference 0; 95% CI -0.5 to 1; P=0.31).",
+        "Reintubation ≤7 days was similar (14.9% vs 13.6%), and 90-day mortality was similar (16.5% vs 18.7%).",
+        "Hypercapnic coma as a reintubation indication occurred only in the PSV arm (7/78 vs 0/71; P=0.01), a signal warranting cautious interpretation."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Ventilator-free days at day 28 (primary)",
+          "group_a": "27 (24 to 27)",
+          "group_b": "27 (23 to 27)",
+          "effect_measure": "Median difference",
+          "effect_value": "0",
+          "ci_95": "-0.5 to 1",
+          "p_value": "0.31",
+          "note": "Median (IQR); death counted as 0 days"
+        },
+        {
+          "outcome": "Days alive without invasive or non-invasive ventilation at day 28",
+          "group_a": "25 (21 to 26)",
+          "group_b": "25 (20 to 26)",
+          "effect_measure": "Median difference",
+          "effect_value": "0",
+          "ci_95": "0 to 1",
+          "p_value": "Not reported",
+          "note": "Secondary outcome; median (IQR)"
+        },
+        {
+          "outcome": "Successful initial SBT",
+          "group_a": "383/484 (79.1%)",
+          "group_b": "348/485 (71.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "7.4 pp",
+          "ci_95": "2.0 to 12.8",
+          "p_value": "Not reported",
+          "note": "Initial 1-hour SBT success"
+        },
+        {
+          "outcome": "Median time to extubation after successful initial SBT",
+          "group_a": "2.8 h (2.0 to 4.2)",
+          "group_b": "2.7 h (2.0 to 3.7)",
+          "effect_measure": "Median difference",
+          "effect_value": "0.1 h",
+          "ci_95": "-0.1 to 0.3",
+          "p_value": "Not reported",
+          "note": "Among those with successful initial SBT"
+        },
+        {
+          "outcome": "Simple weaning (extubation <24 h after initial SBT)",
+          "group_a": "376/484 (77.7%)",
+          "group_b": "350/485 (72.2%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "5.5 pp",
+          "ci_95": "0.01 to 10.9",
+          "p_value": "Not reported",
+          "note": "Weaning classification"
+        },
+        {
+          "outcome": "Prolonged weaning (>7 days after initial SBT)",
+          "group_a": "11/484 (2.3%)",
+          "group_b": "27/485 (5.6%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-3.3 pp",
+          "ci_95": "-5.9 to -0.8",
+          "p_value": "Not reported",
+          "note": "Weaning classification"
+        },
+        {
+          "outcome": "Extubation ≤7 days after initial SBT",
+          "group_a": "473/484 (97.7%)",
+          "group_b": "458/485 (94.4%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "3.3 pp",
+          "ci_95": "0.8 to 5.9",
+          "p_value": "Not reported",
+          "note": "Any extubation attempt in ICU"
+        },
+        {
+          "outcome": "Extubation after one SBT without reintubation within 72 h",
+          "group_a": "318/484 (65.7%)",
+          "group_b": "302/485 (62.3%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "3.4 pp",
+          "ci_95": "-2.6 to 9.4",
+          "p_value": "Not reported",
+          "note": "Durable extubation surrogate"
+        },
+        {
+          "outcome": "Respiratory failure ≤7 days after extubation",
+          "group_a": "92/481 (19.1%)",
+          "group_b": "75/477 (15.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "3.4 pp",
+          "ci_95": "-1.4 to 8.2",
+          "p_value": "Not reported",
+          "note": "Denominator = patients with ≥1 extubation attempt"
+        },
+        {
+          "outcome": "Reintubation ≤7 days after extubation",
+          "group_a": "72/481 (14.9%)",
+          "group_b": "65/477 (13.6%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.3 pp",
+          "ci_95": "-3.1 to 5.8",
+          "p_value": "Not reported",
+          "note": "Key safety/efficacy endpoint"
+        },
+        {
+          "outcome": "Reintubation in ICU (any time)",
+          "group_a": "78/484 (16.1%)",
+          "group_b": "71/485 (14.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.52",
+          "note": "Table of adverse events and causes"
+        },
+        {
+          "outcome": "Death by day 90",
+          "group_a": "80/484 (16.5%)",
+          "group_b": "91/485 (18.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-2.2 pp",
+          "ci_95": "-7.0 to 2.6",
+          "p_value": "Not reported",
+          "note": "All-cause mortality"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Hypercapnic coma as a reason for reintubation in ICU: 7/78 (9.0%) in PSV arm vs 0/71 (0%) in T-piece arm (P=0.01). Multiple reasons per patient; denominator = reintubated in ICU."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, web-based randomisation stratified by centre with concealed allocation (block size 4). Post-randomisation eligibility validation by a blinded committee; 969/983 (98.6%) retained for the primary analysis."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label intervention; clinicians knew assignment and determined timing of extubation and adjunctive supports. Primary outcome and reintubation are largely objective, but decisions can be susceptible to expectation."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "14/983 randomised patients were excluded after randomisation (6 PSV; 8 T-piece), including deaths before SBT, withdrawals, self-extubation, transfer before initial SBT, and missing data. This is a modified intention-to-treat population and could introduce bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Crossovers were uncommon: 6/484 (1.2%) in the PSV arm received at least one T-piece SBT; 10/485 (2.1%) in the T-piece arm received at least one PSV SBT. Mean SBT settings achieved separation consistent with the protocol."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly balanced in illness severity and comorbidity burden (e.g., age 69±9 vs 68±9; SAPS II 53±17 vs 53±18; chronic cardiac disease 46.9% vs 48.2%; chronic respiratory disease 24.8% vs 27.0%). A substantial minority had COVID-19 (23.3% vs 24.5%)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate to strong: randomisation and allocation concealment were robust and crossovers were rare, with clear separation in initial SBT success; the main limitations arise from the open-label nature of the intervention, post-randomisation eligibility exclusions, and reliance on a bounded composite primary endpoint sensitive to distributional ceiling effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled a broadly defined 'high-risk' cohort (age >65 and/or chronic cardiorespiratory disease) with a median of 6 days of ventilation before initial SBT. Exclusions and non-enrolment were substantial: of 1,476 eligible, 381 were not randomised due to staff unavailability/logistics and 112 declined participation."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "31 French ICUs during the COVID-19 era; high use of prophylactic NIV/HFNC after extubation (78.3% overall among extubated patients). PSV 8 cmH2O with PEEP 0 and 1-hour duration may not match local norms. Exclusion of traumatic brain injury and neuromuscular disease limits direct extrapolation to neurocritical care."
+        }
+      ],
+      "verdict": "Generalisability is moderate: findings are highly relevant to adult ICUs caring for older patients with cardiorespiratory comorbidity, particularly where prophylactic NIV/HFNC is commonly used, but may not fully extend to resource-limited settings, neurocritical care populations, or ICUs using substantially different SBT settings/durations."
+    },
+    "strengths": [
+      "Pragmatic multicentre RCT in a clinically important, high-risk extubation population.",
+      "Clear operationalisation of SBT strategies (fixed 1-hour duration; PSV 8/PEEP 0 vs T-piece), producing measurable intervention separation.",
+      "High retention into the primary analysis (969/983 randomised) and low crossover.",
+      "Use of ventilator-free days at day 28 provides a patient-centred composite balancing earlier extubation against potential harm from reintubation and death."
+    ],
+    "limitations": [
+      "Open-label design with clinician-determined extubation and reintubation decisions, potentially introducing performance bias.",
+      "Post-randomisation eligibility exclusions create a modified intention-to-treat analysis set.",
+      "Primary outcome distribution was heavily bounded (median 27/28 days in both arms), reducing sensitivity to detect operationally important but small differences in liberation timing.",
+      "High prevalence of post-extubation prophylactic respiratory support may have reduced event rates and interacted with the SBT strategy, limiting transportability to ICUs with different extubation support practices.",
+      "Secondary outcomes were not adjusted for multiplicity; many p values were not reported, limiting inferential certainty for secondary signals such as hypercapnic coma as a reintubation reason."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic trial with moderate to strong internal validity, limited primarily by its open-label design and a primary endpoint that suffered from a ceiling effect, which may have obscured clinically meaningful differences in weaning processes.",
+      "strengths": [
+        "Robust randomisation and allocation concealment.",
+        "Low crossover and high protocol adherence.",
+        "Clinically relevant, patient-centred primary outcome."
+      ],
+      "weaknesses": [
+        "Open-label design introduces potential for performance bias.",
+        "Post-randomisation exclusions create a modified ITT analysis.",
+        "Primary outcome's ceiling effect limits sensitivity."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In high-risk patients, a PSV-based SBT strategy improved the probability of passing the initial SBT and reduced prolonged weaning, but did not translate into more ventilator-free days or lower reintubation; either strategy can be defended as clinically acceptable when embedded in a protocolised liberation pathway.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not mandate a change in practice but supports flexibility in SBT modality choice. PSV SBTs are a reasonable alternative to T-piece SBTs in high-risk patients, as they improve process metrics without worsening patient-centred outcomes.",
+      "applies_to": "High-risk adult ICU patients (age >65 and/or chronic cardiac/respiratory disease) in settings with protocolised liberation pathways and ready access to post-extubation respiratory support (NIV/HFNC).",
+      "does_not_mean": "PSV SBTs are superior to T-piece SBTs for improving ventilator-free days or survival. The choice of SBT modality should not override adherence to a structured weaning and extubation protocol.",
+      "implementation_caveats": [
+        "The PSV settings used (8 cmH2O, PEEP 0) may not be directly transferable to units using different 'low-level' PSV settings.",
+        "The high rate of prophylactic post-extubation NIV (78.3%) in this trial is a key contextual factor; results may differ in settings where this is not standard practice.",
+        "The signal for hypercapnic coma in the PSV arm warrants awareness, though it is not a confirmed causal harm."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Ceiling effects and endpoint sensitivity",
+        "notes": "The median ventilator-free days at day 28 was 27 (IQR near the upper bound) in both arms, raising concerns that a bounded composite outcome may have limited sensitivity to detect differences in extubation timing; this issue was explicitly highlighted in post-publication correspondence."
+      },
+      {
+        "topic": "Event rates, co-interventions, and generalisability",
+        "notes": "The accompanying editorial emphasised that the reintubation signal and other outcomes should be interpreted in the context of modern, protocolised care (including frequent prophylactic NIV/HFNC), which can reduce extubation failure rates and potentially attenuate the effect of the SBT strategy."
+      },
+      {
+        "topic": "Protocol assumptions vs realised distribution",
+        "notes": "The published trial protocol anticipated an absolute increase of 2 ventilator-free days at day 28 and powered the study accordingly; the observed distribution concentrated near the maximum suggests that future weaning trials may require alternative primary outcomes (e.g., time-to-successful extubation) or different analytic strategies for bounded composites."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Prior large RCT comparing PSV vs T-piece SBTs in a mixed-risk ICU population",
+        "relation": "Found higher rates of successful extubation with PSV without a clear increase in reintubation, supporting PSV as a reasonable approach in many settings; TiP-Ex suggests that in high-risk patients, the process benefits of PSV do not necessarily translate into improved ventilator-free days."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal primary endpoint for future weaning trials to avoid ceiling effects?",
+      "Does the SBT strategy interact with the type and intensity of post-extubation respiratory support?",
+      "Is the signal for hypercapnic coma with PSV SBTs a true effect, and if so, what is the mechanism?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=969",
+        "Primary outcome (VFDs at day 28): 27 vs 27 (median difference 0; P=0.31)",
+        "Initial SBT success: 79.1% (PSV) vs 71.7% (T-piece)",
+        "Reintubation ≤7 days: 14.9% vs 13.6%"
+      ],
+      "one_line_takeaway": "In high-risk ICU patients, a PSV SBT improves weaning process metrics but does not increase ventilator-free days or reduce reintubation compared to a T-piece SBT, supporting flexibility in SBT modality choice within a protocolised liberation pathway."
+    }
+  },
+  "_source_id": "TiP-Ex",
+  "_source_system": "Respiratory"
+}

@@ -1,0 +1,306 @@
+{
+  "id": "ADRENAL",
+  "trial_name": "ADRENAL — Adjunctive Glucocorticoid Therapy in Patients with Septic Shock (2018)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Adrenal Disorders",
+  "year": 2018,
+  "journal": "New England Journal of Medicine",
+  "citation": "Venkatesh B, Finfer S, Cohen J, et al. Adjunctive glucocorticoid therapy in patients with septic shock. N Engl J Med. 2018;378(9):797-808.",
+  "doi": "",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3800,
+  "result_category": "Mixed",
+  "one_liner": "Hydrocortisone 200 mg/day infusion did not reduce 90-day mortality in ventilated septic shock but accelerated shock resolution and ICU discharge.",
+  "pico": {
+    "population": "Adults (≥18 years) in ICU with septic shock receiving invasive mechanical ventilation and vasopressors for ≥4 hours.",
+    "intervention": "Hydrocortisone 200 mg/day continuous IV infusion for up to 7 days.",
+    "comparison": "Placebo infusion.",
+    "outcome": "90-day all-cause mortality (primary); shock resolution, ICU discharge, etc."
+  },
+  "keywords": [
+    "hydrocortisone",
+    "septic shock",
+    "corticosteroids",
+    "vasopressors",
+    "critical care",
+    "ADRENAL"
+  ],
+  "related_trials": [
+    "APROCCHSS",
+    "CORTICUS",
+    "Annane 2002"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Low-dose corticosteroids have long been used in septic shock to treat catecholamine-refractory vasoplegia and to address concerns about critical-illness-related corticosteroid insufficiency. Earlier randomised trials and meta-analyses suggested more rapid shock reversal with corticosteroids, but mortality effects were inconsistent and safety concerns persisted (e.g., hyperglycaemia, neuromuscular weakness, infection). Consequently, practice varied internationally, and guideline recommendations were conditional and dependent on shock refractoriness.",
+      "knowledge_gap": "A large, blinded trial was required to define whether the primary value proposition is survival benefit, faster shock resolution, or both.",
+      "hypothesis": "In adults with septic shock receiving invasive mechanical ventilation and vasopressors, does adjunctive intravenous hydrocortisone (200 mg/day by continuous infusion) reduce 90-day all-cause mortality compared with placebo?"
+    },
+    "methods": {
+      "design": "Multicentre, international, randomised, double-blind, placebo-controlled, parallel-group trial conducted in 69 medical-surgical ICUs (Australia, New Zealand, United Kingdom, Saudi Arabia, Denmark).",
+      "setting": "69 ICUs across 5 countries.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) in ICU with septic shock (suspected/proven infection, ≥2 SIRS criteria, vasopressor/inotrope-dependent hypotension despite fluids) and receiving invasive mechanical ventilation.",
+          "Required continuous vasopressor/inotrope infusion for ≥4 hours at randomisation; randomisation within 24 hours of meeting shock criteria."
+        ],
+        "exclusion": [
+          "No clinician equipoise regarding corticosteroids; systemic glucocorticoids already given or clearly indicated; etomidate during the current admission; pregnancy; prior enrolment in the trial."
+        ]
+      },
+      "intervention": "Hydrocortisone sodium succinate 200 mg/day by continuous intravenous infusion (delivered as two consecutive 12-hour infusions). Continued until death, ICU discharge, or day 7 (whichever occurred first).",
+      "comparison": "Matched placebo infusion delivered using the same schedule, preparation, and masking. All other care per treating team and local standards.",
+      "blinding": "Double-blind (patients, clinicians, investigators, and outcome assessors); identical study drug kits prepared/dispensed by pharmacy.",
+      "sample_size_power": "3800 patients were required to detect a 5 percentage-point absolute reduction in 90-day mortality (from 33% to 28%) with 90% power at a two-sided 5% significance level (allowing 1% withdrawal).",
+      "primary_outcome": "90-day all-cause mortality.",
+      "secondary_outcomes": [
+        "28-day all-cause mortality",
+        "Time to resolution of shock",
+        "Time to ICU discharge",
+        "Time to cessation of initial mechanical ventilation",
+        "Blood transfusion",
+        "New-onset bacteraemia or fungaemia",
+        "Adverse events"
+      ],
+      "follow_up": "90 days for primary outcome."
+    },
+    "results": {
+      "headline_bullets": [
+        "Hydrocortisone did not reduce 90-day mortality (OR 0.95; 95% CI 0.82 to 1.10; P=0.50), but confidence intervals are compatible with modest benefit or harm.",
+        "Hydrocortisone accelerated shock resolution (median 3 vs 4 days; HR 1.32) and ICU discharge (median 10 vs 12 days; HR 1.14), supporting a “faster recovery” rather than “survival” signal.",
+        "Adverse events attributed to the regimen were uncommon but more frequent with hydrocortisone (1.1% vs 0.3%); serious adverse events were rare."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "90-day all-cause mortality (primary)",
+          "group_a": "511/1832 (27.9%)",
+          "group_b": "526/1826 (28.8%)",
+          "effect_measure": "OR",
+          "effect_value": "0.95",
+          "ci_95": "0.82 to 1.10",
+          "p_value": "0.50",
+          "note": "Prespecified adjusted logistic regression."
+        },
+        {
+          "outcome": "28-day all-cause mortality",
+          "group_a": "410/1841 (22.3%)",
+          "group_b": "448/1840 (24.3%)",
+          "effect_measure": "OR",
+          "effect_value": "0.89",
+          "ci_95": "0.76 to 1.03",
+          "p_value": "0.13",
+          "note": "Not statistically significant."
+        },
+        {
+          "outcome": "Time to resolution of shock",
+          "group_a": "Median 3 days (IQR 2–5)",
+          "group_b": "Median 4 days (IQR 2–9)",
+          "effect_measure": "HR",
+          "effect_value": "1.32",
+          "ci_95": "1.23 to 1.41",
+          "p_value": "<0.001",
+          "note": "Faster vasopressor independence; meets Bonferroni threshold (P≤0.005)."
+        },
+        {
+          "outcome": "Time to ICU discharge",
+          "group_a": "Median 10 days (IQR 5–30)",
+          "group_b": "Median 12 days (IQR 6–42)",
+          "effect_measure": "HR",
+          "effect_value": "1.14",
+          "ci_95": "1.06 to 1.23",
+          "p_value": "<0.001",
+          "note": "Earlier ICU discharge; meets Bonferroni threshold (P≤0.005)."
+        },
+        {
+          "outcome": "Time to cessation of initial mechanical ventilation",
+          "group_a": "Median 6 days (IQR 3–18)",
+          "group_b": "Median 7 days (IQR 3–24)",
+          "effect_measure": "HR",
+          "effect_value": "1.13",
+          "ci_95": "1.05 to 1.22",
+          "p_value": "<0.001",
+          "note": "Meets Bonferroni threshold (P≤0.005)."
+        },
+        {
+          "outcome": "Blood transfusion",
+          "group_a": "683/1848 (37.0%)",
+          "group_b": "773/1855 (41.7%)",
+          "effect_measure": "OR",
+          "effect_value": "0.82",
+          "ci_95": "0.72 to 0.94",
+          "p_value": "0.004",
+          "note": "Meets Bonferroni threshold (P≤0.005)."
+        },
+        {
+          "outcome": "New-onset bacteraemia or fungaemia",
+          "group_a": "262/1853 (14.1%)",
+          "group_b": "262/1860 (14.1%)",
+          "effect_measure": "OR",
+          "effect_value": "1.00",
+          "ci_95": "0.86 to 1.16",
+          "p_value": "0.96",
+          "note": "No signal of increased bloodstream infection."
+        },
+        {
+          "outcome": "Any adverse event related to trial regimen",
+          "group_a": "21 (1.1%)",
+          "group_b": "6 (0.3%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.001",
+          "note": "Myopathy 2 vs 0; GI bleeding 3 vs 0; “other” 16 vs 5; anaphylaxis 0 vs 0."
+        },
+        {
+          "outcome": "Any serious adverse event related to trial regimen",
+          "group_a": "4 (0.2%)",
+          "group_b": "2 (0.1%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.41",
+          "note": "Myopathy 2 vs 0; ischaemic bowel 1 vs 0; serious infection 0 vs 1; bleeding/abdominal-wound dehiscence 0 vs 1 each; anaphylaxis 0 vs 0."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Any adverse event related to trial regimen: 21 (1.1%) vs 6 (0.3%), P=0.001. Myopathy 2 vs 0; GI bleeding 3 vs 0; “other” 16 vs 5; anaphylaxis 0 vs 0.",
+      "Any serious adverse event: 4 (0.2%) vs 2 (0.1%), P=0.41. Myopathy 2 vs 0; ischaemic bowel 1 vs 0; serious infection 0 vs 1; bleeding/abdominal-wound dehiscence 0 vs 1 each; anaphylaxis 0 vs 0.",
+      "No increase in new-onset bloodstream infection (14.1% vs 14.1%)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation (1:1), stratified by admission type (medical vs surgical) and trial site. Allocation concealment maintained through identical masked study-drug kits dispensed by pharmacy; double blinding reduced selection and performance bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Blinding was feasible (identical infusion preparations) and outcomes were largely objective (mortality, time to shock resolution, ICU discharge), limiting detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "3800 patients were randomised; 90-day vital status was ascertained in 3658 patients (1832 hydrocortisone vs 1826 placebo). Primary analyses relied on an “available data” modified intention-to-treat population; missingness was small and numerically balanced."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Trial drug delivery: hydrocortisone 200 mg/day vs placebo 0 mg/day (both as continuous infusion). Mean duration of study infusion: 5.1 ± 2.0 days (hydrocortisone) vs 5.6 ± 2.0 days (placebo); compliance 95.2% vs 94.9%. Non-trial systemic corticosteroids (days 1–14): 137/1853 (7.4%) vs 163/1860 (8.8%), supporting good treatment separation with limited contamination."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well balanced: APACHE II median 25 (IQR 19–31) in both groups; SOFA median 10 (IQR 7–13) in both. Haemodynamics at randomisation were similar: mean arterial pressure 66.8 ± 12.9 mmHg vs 67.0 ± 12.3 mmHg; noradrenaline dose 0.35 ± 0.50 vs 0.33 ± 0.46 μg/kg/min. Time from shock onset to randomisation: 20.9 ± 91.9 hours (hydrocortisone) vs 21.2 ± 83.4 hours (placebo), indicating variable enrolment timing with substantial dispersion."
+        }
+      ],
+      "verdict": "Overall, internal validity appears strong given concealed randomisation, robust blinding, objective outcomes, and high protocol adherence, with only modest limitations from incomplete ascertainment of 90-day vital status in a small proportion of randomised patients."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents a typical high-acuity ICU septic shock cohort: mean age ~62 years, APACHE II 25, vasopressor-dependent shock with mandatory invasive ventilation. Important exclusions (e.g., etomidate exposure, clear steroid indication, lack of equipoise) may reduce applicability to some real-world practice contexts."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The intervention is simple and scalable (200 mg/day hydrocortisone infusion) and aligns with regimens commonly used in resource-rich ICUs. Generalisability is strongest for ventilated, vasopressor-dependent septic shock; applicability is less direct for non-ventilated shock, earlier/lower-severity sepsis, or settings where hydrocortisone is routinely paired with fludrocortisone."
+        }
+      ],
+      "verdict": "External validity is moderate-to-high for mechanically ventilated adults with vasopressor-dependent septic shock managed in high-resource ICUs, but narrower for broader sepsis populations and alternative steroid strategies."
+    },
+    "strengths": [
+      "Large sample size (n=3800), multicentre and international, enhancing precision and reducing single-centre bias.",
+      "Double-blind, placebo-controlled design with clinically relevant, objective endpoints.",
+      "Pragmatic delivery within routine ICU care, improving clinical interpretability.",
+      "Prospectively published protocol and statistical analysis plan."
+    ],
+    "limitations": [
+      "Eligibility required invasive mechanical ventilation and excluded etomidate exposure, narrowing applicability.",
+      "Primary outcome ascertainment was incomplete in a minority of randomised patients due to consent/availability of follow-up data.",
+      "Hydrocortisone was tested without routine fludrocortisone; results may not generalise to combined glucocorticoid–mineralocorticoid strategies.",
+      "Multiple secondary endpoints raise multiplicity concerns for “recovery” outcomes outside prespecified adjustments."
+    ],
+    "critical_appraisal": {
+      "summary": "ADRENAL is a high-quality trial that provides robust evidence that hydrocortisone does not reduce mortality but accelerates shock reversal and ICU discharge in ventilated septic shock.",
+      "strengths": [
+        "Large, multicentre, double-blind design",
+        "High protocol adherence and treatment separation",
+        "Objective primary outcome"
+      ],
+      "weaknesses": [
+        "Incomplete primary outcome ascertainment in a small subset",
+        "Exclusion of etomidate-exposed patients limits generalizability",
+        "Hydrocortisone alone without fludrocortisone may not reflect all steroid strategies"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Hydrocortisone (200 mg/day infusion) should be viewed as an adjunct that shortens vasopressor-dependent shock and accelerates ICU discharge, rather than as a therapy that improves survival.",
+    "clinical_bottom_line": {
+      "verdict": "Hydrocortisone does not improve survival but shortens shock duration and ICU stay; it is a reasonable adjunct in patients with persistent vasopressor-dependent septic shock.",
+      "applies_to": "Mechanically ventilated adults with septic shock requiring vasopressors for ≥4 hours, managed in high-resource ICUs.",
+      "does_not_mean": "Hydrocortisone should be used in all septic shock patients; it does not replace appropriate antimicrobials and source control.",
+      "implementation_caveats": [
+        "Consider in patients with ongoing vasopressor requirement despite adequate resuscitation.",
+        "The optimal regimen (with vs without fludrocortisone) remains uncertain.",
+        "Monitor for hyperglycaemia and other metabolic effects."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Contemporary discordant trial results (ADRENAL vs APROCCHSS)",
+        "notes": "APROCCHSS (hydrocortisone plus fludrocortisone) reported lower 90-day mortality than placebo (43.0% vs 49.1%; RR 0.88; 95% CI 0.78 to 0.99), whereas ADRENAL (hydrocortisone alone) did not show a mortality reduction. Key explanatory differences include illness severity (higher baseline mortality in APROCCHSS), steroid regimen (bolus dosing and mandatory fludrocortisone vs hydrocortisone infusion alone), and eligibility criteria (e.g., ADRENAL excluded etomidate)."
+      },
+      {
+        "topic": "Mineralocorticoid supplementation (fludrocortisone) as a potential effect modifier",
+        "notes": "Correspondence emphasised mechanistic plausibility for added mineralocorticoid activity and the uncertainty about whether fludrocortisone meaningfully changes outcomes beyond hydrocortisone alone. Direct head-to-head randomised evidence comparing hydrocortisone-alone versus hydrocortisone-plus-fludrocortisone strategies remains limited, so regimen choice is partly inference-based."
+      },
+      {
+        "topic": "Longer-term outcomes",
+        "notes": "At 6 months, mortality was similar: 35.9% (hydrocortisone) vs 35.4% (placebo); OR 0.99; 95% CI 0.86 to 1.13; P=0.83."
+      },
+      {
+        "topic": "How the totality of evidence has been synthesised since 2018",
+        "notes": "A patient-level meta-analysis (including contemporary large trials) reported consistent improvements in shock reversal and ICU course, without a clear overall survival signal for low-dose hydrocortisone strategies. An updated 2024 systematic review and meta-analysis of corticosteroids in sepsis/septic shock concluded that corticosteroids likely improve shock-related outcomes and may modestly reduce mortality, with recognised metabolic adverse effects; certainty varied by endpoint and population."
+      },
+      {
+        "topic": "Guideline impact",
+        "notes": "Surviving Sepsis Campaign (2021) suggests intravenous corticosteroids for adults with septic shock and ongoing vasopressor requirement, reflecting prioritisation of faster shock resolution and shorter ICU stay over mortality benefit. A 2024 focused guideline update on corticosteroids in sepsis similarly supports a conditional recommendation, emphasising patient selection (persistent vasopressor dependence) and balancing benefits against metabolic harms."
+      },
+      {
+        "topic": "Foundational explanatory context from earlier RCTs",
+        "notes": "Earlier studies generated the central “mortality vs shock reversal” tension: a hydrocortisone–fludrocortisone strategy suggested survival benefit in septic shock in 2002 (Annane 2002), whereas CORTICUS showed faster shock reversal without mortality benefit."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "APROCCHSS",
+        "relation": "Reported mortality benefit with hydrocortisone plus fludrocortisone (90-day mortality 43.0% vs 49.1%; RR 0.88), contrasting with ADRENAL's neutral mortality result. Differences in illness severity, steroid regimen, and eligibility may explain discordance."
+      },
+      {
+        "trial": "CORTICUS",
+        "relation": "Earlier trial that showed faster shock reversal with hydrocortisone but no mortality benefit, similar to ADRENAL's secondary outcomes."
+      },
+      {
+        "trial": "Annane 2002",
+        "relation": "Suggested survival benefit with hydrocortisone plus fludrocortisone in septic shock, contributing to the ongoing debate about mineralocorticoid co-administration."
+      }
+    ],
+    "unresolved_questions": [
+      "Does adding fludrocortisone to hydrocortisone improve mortality in septic shock?",
+      "What is the optimal timing and patient selection for corticosteroids in septic shock?",
+      "Do corticosteroids improve longer-term functional outcomes beyond 6 months?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3800",
+        "90-day mortality: 27.9% vs 28.8% (OR 0.95, 95% CI 0.82-1.10)",
+        "Shock resolution: median 3 vs 4 days (HR 1.32)",
+        "ICU discharge: median 10 vs 12 days (HR 1.14)"
+      ],
+      "one_line_takeaway": "Hydrocortisone 200 mg/day infusion does not improve survival in ventilated septic shock but accelerates shock reversal and ICU discharge, supporting its use in persistent vasopressor-dependent shock."
+    }
+  },
+  "_source_id": "ADRENAL",
+  "_source_system": "Endocrine"
+}

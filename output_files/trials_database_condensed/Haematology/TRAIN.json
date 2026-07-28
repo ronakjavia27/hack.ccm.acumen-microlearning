@@ -1,0 +1,399 @@
+{
+  "id": "TRAIN",
+  "trial_name": "TRAIN — Restrictive vs Liberal Transfusion Strategy in Patients With Acute Brain Injury (2024)",
+  "specialty": "Haematology",
+  "subtopic": "Blood Product Transfusion",
+  "year": 2024,
+  "journal": "JAMA",
+  "citation": "Taccone FS, Rynkowski Bittencourt C, Møller K, et al; TRAIN Study Group. Restrictive vs Liberal Transfusion Strategy in Patients With Acute Brain Injury: The TRAIN Randomized Clinical Trial. JAMA. 2024;332(19):1623-1633",
+  "doi": "https://doi.org/10.1001/jama.2024.20424",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 850,
+  "result_category": "Positive",
+  "one_liner": "In anaemic ICU patients with acute brain injury, a liberal transfusion threshold (Hb <9 g/dL) reduced unfavourable 180-day neurological outcome compared with a restrictive threshold (Hb <7 g/dL) (62.6% vs 72.6%; aRR 0.86; P=0.002).",
+  "pico": {
+    "population": "Adults (18-80 years) with acute brain injury (TBI, SAH, ICH), GCS ≤13, Hb ≤9 g/dL, within 10 days of injury, expected ICU stay ≥72h and survival ≥24h",
+    "intervention": "Liberal transfusion strategy: transfuse RBCs if Hb <9 g/dL, target Hb ≥9 g/dL for up to 28 days or ICU discharge/death",
+    "comparison": "Restrictive transfusion strategy: transfuse RBCs if Hb <7 g/dL, target Hb ≥7 g/dL",
+    "outcome": "Unfavourable neurological outcome at 180 days (GOS-E 1-5)"
+  },
+  "keywords": [
+    "transfusion",
+    "red blood cell",
+    "acute brain injury",
+    "traumatic brain injury",
+    "subarachnoid haemorrhage",
+    "intracerebral haemorrhage",
+    "haemoglobin threshold",
+    "neurocritical care"
+  ],
+  "related_trials": [
+    "HEMOTION"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Anaemia is common in neuro-ICU; general ICU evidence supports restrictive triggers (~7-8 g/dL), but neurocritical care patients were under-represented in foundational trials, and clinicians worry about secondary cerebral ischaemia.",
+      "knowledge_gap": "Optimal transfusion thresholds for acute brain injury patients were uncertain due to lack of high-quality neuro-specific RCTs.",
+      "hypothesis": "A liberal transfusion threshold (Hb <9 g/dL) would improve 180-day neurological outcome compared with a restrictive threshold (Hb <7 g/dL)."
+    },
+    "methods": {
+      "design": "Pragmatic, international, multicentre, randomised, open-label, parallel-group superiority trial with blinded assessment of 180-day functional outcome; 1:1 allocation; stratified by centre, acute brain injury type, and GCS (3-5, 6-9, 10-13) with variable block sizes (4,6,8). Primary analysis used modified intention-to-treat (excluding post-randomisation consent withdrawals) with adjusted risk ratios.",
+      "setting": "72 ICUs across 22 countries; academic 57/72 (79.2%), non-academic 15/72 (20.8%); participants from high-income and low-/middle-income countries (low-/middle-income 229/827 [27.7%]).",
+      "population": {
+        "inclusion": [
+          "Age 18-80 years",
+          "Acute brain injury (TBI, SAH, ICH)",
+          "GCS ≤13",
+          "Hb ≤9 g/dL",
+          "Randomisation within 10 days of injury",
+          "ICU physician anticipated ICU stay ≥72 hours and survival ≥24 hours"
+        ],
+        "exclusion": [
+          "Other acute neurological diagnoses (post-anoxic coma, ischaemic stroke, status epilepticus without underlying brain injury, CNS infections)",
+          "Major pre-existing neurological disability",
+          "ICH from AVM or tumour",
+          "Inability/refusal to receive blood products",
+          "Active/uncontrolled bleeding or imminent surgery requiring transfusion",
+          "GCS 3 with bilaterally fixed dilated pupils",
+          "Brain death/imminent death",
+          "Pregnancy",
+          "Clinical requirement to correct anaemia with target Hb >9 g/dL",
+          "Limitation of life-sustaining treatment at enrolment",
+          "History of alloimmunisation limiting RBC availability"
+        ]
+      },
+      "intervention": "Liberal transfusion strategy: transfuse RBCs whenever Hb <9 g/dL, aiming to maintain Hb ≥9 g/dL. Strategy applied for up to 28 days after randomisation, or until ICU discharge/death. RBC product type and transfusion delivery followed local standards; co-interventions at clinician discretion.",
+      "comparison": "Restrictive transfusion strategy: transfuse RBCs whenever Hb <7 g/dL, aiming to maintain Hb ≥7 g/dL. Same exposure window. Permitted transfusion outside thresholds for clear clinical indications (e.g., uncontrolled bleeding) at clinician discretion.",
+      "blinding": "Treating teams not blinded; 180-day neurological outcome assessment performed by trained assessors blinded to group assignment.",
+      "sample_size_power": "794 patients required to detect 11% absolute reduction in unfavourable neurological outcome (from 50% to 39%) with 85% power at two-sided 5% significance level; ultimately randomised 850 patients. A single interim analysis after 300 patients did not lead to early stopping.",
+      "primary_outcome": "Unfavourable neurological outcome at 180 days (GOS-E 1-5)",
+      "secondary_outcomes": [
+        "GOS-E ordinal shift analysis at 180 days",
+        "All-cause mortality at 28 days",
+        "Composite death or any organ failure at 28 days",
+        "Any organ failure at 28 days",
+        "ICU length of stay",
+        "Hospital length of stay",
+        "Any RBC transfusion after randomisation",
+        "RBC units per participant",
+        "Cerebral ischaemia (serious adverse event)",
+        "Venous thromboembolism (serious adverse event)",
+        "Acute respiratory distress syndrome (serious adverse event)",
+        "Transfusion-related acute lung injury",
+        "Transfusion-associated circulatory overload"
+      ],
+      "follow_up": "180 days for primary outcome; key secondary outcomes and adverse events assessed to day 28 (or ICU/hospital discharge)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Liberal strategy reduced unfavourable 180-day neurological outcome (62.6% vs 72.6%; aRR 0.86, 95% CI 0.79-0.94, P=0.002).",
+        "Substantial protocol separation: 86.9% vs 40.2% transfused; median 2 vs 0 RBC units.",
+        "Cerebral ischaemia less frequent with liberal strategy (8.8% vs 13.5%; RR 0.65, 95% CI 0.44-0.97).",
+        "No significant subgroup interactions; consistent benefit across TBI, SAH, ICH."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Unfavourable neurological outcome at 180 days (GOS-E 1-5)",
+          "group_a": "246/393 (62.6%)",
+          "group_b": "300/413 (72.6%)",
+          "effect_measure": "aRR",
+          "effect_value": "0.86",
+          "ci_95": "0.79 to 0.94",
+          "p_value": "0.002",
+          "note": "Primary outcome; modified intention-to-treat; adjusted analysis"
+        },
+        {
+          "outcome": "GOS-E ordinal shift analysis at 180 days",
+          "group_a": "n=393",
+          "group_b": "n=413",
+          "effect_measure": "aOR",
+          "effect_value": "1.37",
+          "ci_95": "1.07 to 1.75",
+          "p_value": "0.01",
+          "note": "Higher odds of better functional outcome with liberal strategy"
+        },
+        {
+          "outcome": "All-cause mortality at 28 days",
+          "group_a": "82/397 (20.7%)",
+          "group_b": "94/418 (22.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.74 to 1.22",
+          "p_value": "",
+          "note": "No clear mortality difference"
+        },
+        {
+          "outcome": "Composite death or any organ failure at 28 days",
+          "group_a": "318/397 (80.1%)",
+          "group_b": "328/419 (78.3%)",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.97 to 1.10",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Any organ failure at 28 days",
+          "group_a": "236/397 (59.4%)",
+          "group_b": "241/423 (57.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.96 to 1.10",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "Mean 14.9",
+          "group_b": "Mean 16.1",
+          "effect_measure": "Mean difference",
+          "effect_value": "-1.19",
+          "ci_95": "-3.34 to 0.97",
+          "p_value": "",
+          "note": "Direction favours liberal strategy; CI crosses 0"
+        },
+        {
+          "outcome": "Hospital length of stay (days)",
+          "group_a": "Mean 26.4",
+          "group_b": "Mean 29.9",
+          "effect_measure": "Mean difference",
+          "effect_value": "-3.50",
+          "ci_95": "-8.62 to 1.62",
+          "p_value": "",
+          "note": "Direction favours liberal strategy; CI crosses 0"
+        },
+        {
+          "outcome": "Any RBC transfusion after randomisation",
+          "group_a": "345/397 (86.9%)",
+          "group_b": "170/423 (40.2%)",
+          "effect_measure": "N/A",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Large separation in exposure; total transfusion episodes 910 vs 373"
+        },
+        {
+          "outcome": "RBC units per participant (post-randomisation)",
+          "group_a": "Median 2 (IQR 1-3)",
+          "group_b": "Median 0 (IQR 0-1)",
+          "effect_measure": "Mean difference",
+          "effect_value": "1.0",
+          "ci_95": "0.87 to 1.12",
+          "p_value": "",
+          "note": "Protocol successfully increased transfusion intensity"
+        },
+        {
+          "outcome": "Cerebral ischaemia (serious adverse event)",
+          "group_a": "35/397 (8.8%)",
+          "group_b": "57/423 (13.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.65",
+          "ci_95": "0.44 to 0.97",
+          "p_value": "",
+          "note": "Lower frequency with liberal strategy"
+        },
+        {
+          "outcome": "Venous thromboembolism (serious adverse event)",
+          "group_a": "19/397 (4.8%)",
+          "group_b": "17/423 (4.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.19",
+          "ci_95": "0.63 to 2.25",
+          "p_value": "",
+          "note": "No clear increase with liberal strategy"
+        },
+        {
+          "outcome": "Acute respiratory distress syndrome (serious adverse event)",
+          "group_a": "29/397 (7.3%)",
+          "group_b": "36/423 (8.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.86",
+          "ci_95": "0.54 to 1.36",
+          "p_value": "",
+          "note": "No clear increase with liberal strategy"
+        },
+        {
+          "outcome": "Transfusion-related acute lung injury",
+          "group_a": "0/397 (0.0%)",
+          "group_b": "2/423 (0.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.21",
+          "ci_95": "0.01 to 4.31",
+          "p_value": "",
+          "note": "Rare events; imprecise estimate"
+        },
+        {
+          "outcome": "Transfusion-associated circulatory overload",
+          "group_a": "2/397 (0.5%)",
+          "group_b": "2/423 (0.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.02",
+          "ci_95": "0.15 to 7.53",
+          "p_value": "",
+          "note": "Rare events; no clear difference"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Traumatic brain injury",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.76 to 1.00",
+          "p_interaction": "0.98"
+        },
+        {
+          "subgroup": "Subarachnoid haemorrhage",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.72 to 1.04",
+          "p_interaction": "0.98"
+        },
+        {
+          "subgroup": "Intracerebral haemorrhage",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.85",
+          "ci_95": "0.71 to 1.01",
+          "p_interaction": "0.98"
+        }
+      ]
+    },
+    "safety": [
+      "Cerebral ischaemia (SAE): 8.8% vs 13.5% (RR 0.65, 95% CI 0.44-0.97)",
+      "Venous thromboembolism (SAE): 4.8% vs 4.0% (RR 1.19, 95% CI 0.63-2.25)",
+      "Acute respiratory distress syndrome (SAE): 7.3% vs 8.5% (RR 0.86, 95% CI 0.54-1.36)",
+      "Transfusion-related acute lung injury: 0% vs 0.5% (RR 0.21, 95% CI 0.01-4.31)",
+      "Transfusion-associated circulatory overload: 0.5% vs 0.5% (RR 1.02, 95% CI 0.15-7.53)",
+      "No clear increase in major transfusion-related complications with liberal strategy."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised computer randomisation with stratification (centre, diagnosis, GCS) and variable block sizes; allocation concealment supported."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label transfusion strategy; treating teams unblinded, permitting co-intervention bias; primary outcome assessment blinded, reducing detection bias for primary endpoint but not for clinician-diagnosed adverse events like cerebral ischaemia."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "850 randomised; 30 withdrew consent post-randomisation (11 liberal, 19 restrictive) and excluded from modified ITT; primary outcome available for 806/820 (393/397 liberal, 413/423 restrictive); 14 missing primary outcomes."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Protocol violations low and similar (~5% in each arm); substantial separation in transfusion exposure (86.9% vs 40.2% transfused)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar: median Hb 8.5 g/dL in both, median GCS 6 in both; TBI 58-61%, SAH 22-25%, ICH 17-18%."
+        }
+      ],
+      "verdict": "Overall, internal validity is moderate-to-strong given central randomisation, strong protocol separation, and blinded primary outcome assessment; main threats are open-label care (performance/ascertainment bias) and exclusion of post-randomisation consent withdrawals."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad international enrolment (72 sites, 22 countries) supports generalisability; however, eligibility required Hb ≤9 g/dL and anticipated ICU stay ≥72h, selecting anaemic, sicker subset. Excluded other neurological diagnoses (post-anoxic coma, ischaemic stroke), active bleeding, limitations of life-sustaining treatment."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings apply to TBI, SAH, ICH in ICU; extrapolation to other neuro-ICU diagnoses uncertain. Implementation feasible where blood bank support exists, but increased transfusion utilisation may challenge resource-limited settings."
+        }
+      ],
+      "verdict": "External validity is good for adult ICU patients with moderate-to-severe acute brain injury and Hb ≤9 g/dL, but limited outside this anaemic neuro-ICU population and in settings where increased blood utilisation is not feasible."
+    },
+    "strengths": [
+      "Large, international, pragmatic neuro-ICU RCT addressing high-impact decision with equipoise.",
+      "Substantial protocol separation in transfusion exposure (86.9% vs 40.2% transfused; median 2 vs 0 units).",
+      "Patient-centred primary endpoint at 180 days with blinded assessment.",
+      "Consistent direction of effect across ordinal shift and sensitivity analyses."
+    ],
+    "limitations": [
+      "Open-label design permits co-intervention bias and differential ascertainment of adverse events.",
+      "Modified ITT excluded 30 post-randomisation consent withdrawals; potential for bias if differential.",
+      "Heterogeneous brain injury syndromes limit syndrome-specific inference.",
+      "Eligibility restricted to anaemic patients with anticipated ICU stay ≥72h, limiting generalisability to less severe patients."
+    ],
+    "critical_appraisal": {
+      "summary": "TRAIN is a large, well-conducted RCT with strong protocol separation and blinded primary outcome assessment, demonstrating improved neurological outcomes with liberal transfusion in anaemic acute brain injury patients. Open-label design and post-randomisation exclusions introduce some risk of bias, but overall confidence in the primary result is moderate-to-high.",
+      "strengths": [
+        "Large international sample with broad inclusion",
+        "Strong protocol separation",
+        "Blinded primary outcome assessment",
+        "Consistent results across analyses"
+      ],
+      "weaknesses": [
+        "Open-label care may influence co-interventions and adverse event ascertainment",
+        "Modified ITT with post-randomisation exclusions",
+        "Heterogeneous population limits syndrome-specific conclusions"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In anaemic ICU patients with acute brain injury, a liberal transfusion strategy (Hb <9 g/dL) improved 180-day neurological outcome compared with a restrictive strategy (Hb <7 g/dL), with a lower rate of cerebral ischaemia and no clear increase in major transfusion-related complications.",
+    "clinical_bottom_line": {
+      "verdict": "A liberal transfusion threshold (Hb <9 g/dL) should be considered for anaemic ICU patients with acute brain injury to improve long-term neurological outcomes, challenging routine restrictive thresholds in neurocritical care.",
+      "applies_to": "Adult ICU patients with moderate-to-severe acute brain injury (TBI, SAH, ICH) and Hb ≤9 g/dL, without active bleeding or imminent surgery requiring transfusion.",
+      "does_not_mean": "Does not mean all neuro-ICU patients should receive liberal transfusions; benefit was shown in anaemic patients, and open-label design may have influenced outcomes. Also does not imply liberal transfusion reduces mortality.",
+      "implementation_caveats": [
+        "Increased blood product utilisation (86.9% vs 40.2% transfused) requires assessment of local blood availability and stewardship.",
+        "Open-label nature means co-interventions may have contributed; consider integrating with other neuro-specific RCTs like HEMOTION.",
+        "Benefit was in neurological outcome, not mortality; shared decision-making with families about goals of care is important."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Protocol evolution and power assumptions",
+        "notes": "The trial protocol was amended during the trial, with revised sample size assumptions; while prespecified safeguards were in place, optimistic effect-size assumptions in the final power calculation raise concerns about potential overestimation of benefit."
+      },
+      {
+        "topic": "Open-label bias",
+        "notes": "Unblinded transfusion strategy could influence clinician behaviour (neuro-monitoring, imaging, treatment limitation decisions), potentially contributing to between-group differences beyond the transfusion itself; blinded 180-day outcome assessment reduces but does not eliminate this threat."
+      },
+      {
+        "topic": "Outcome dichotomisation",
+        "notes": "Dichotomising GOS-E at 1-5 vs 6-8 may discard information; however, ordinal shift analysis and sensitivity analysis using GOS-E 1-4 remained supportive, strengthening robustness."
+      },
+      {
+        "topic": "Comparison with HEMOTION",
+        "notes": "In the HEMOTION trial (TBI-specific), a more liberal threshold (Hb <10 g/dL) did not significantly reduce unfavourable 6-month outcome vs restrictive (Hb <7 g/dL), highlighting residual uncertainty about effect magnitude and potential heterogeneity across injury types and thresholds."
+      },
+      {
+        "topic": "Meta-analytic context",
+        "notes": "Prior systematic reviews emphasised low certainty and heterogeneity in brain-injury transfusion literature; TRAIN provides high-quality evidence that will update meta-analyses and guidelines, but integration with other large RCTs is needed to assess net benefit and subgroup effects."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "HEMOTION",
+        "relation": "Large TBI-specific RCT comparing liberal (Hb <10 g/dL) vs restrictive (Hb <7 g/dL); did not show significant reduction in unfavourable 6-month outcome, contrasting with TRAIN's positive result and suggesting potential heterogeneity or threshold-dependent effects."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal Hb threshold for different brain injury subtypes (TBI vs SAH vs ICH) remains uncertain.",
+      "Whether a threshold of 9 g/dL is superior to 10 g/dL or 8 g/dL is unknown.",
+      "Role of liberal transfusion in non-anaemic or less severe brain injury patients is unclear.",
+      "Long-term functional outcomes beyond 180 days and cost-effectiveness need further study.",
+      "Interaction with other neuroprotective strategies and co-interventions requires exploration."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=850",
+        "Primary outcome: 62.6% vs 72.6% (aRR 0.86, 95% CI 0.79-0.94, P=0.002)",
+        "28-day mortality: 20.7% vs 22.5% (RR 0.95, 95% CI 0.74-1.22)",
+        "Cerebral ischaemia: 8.8% vs 13.5% (RR 0.65, 95% CI 0.44-0.97)"
+      ],
+      "one_line_takeaway": "In anaemic acute brain injury patients, a liberal transfusion strategy (Hb <9 g/dL) improves 180-day neurological outcome compared with restrictive (Hb <7 g/dL), challenging routine restrictive thresholds in neurocritical care."
+    }
+  },
+  "_source_id": "TRAIN",
+  "_source_system": "Haematology"
+}

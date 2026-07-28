@@ -1,0 +1,279 @@
+{
+  "id": "PROMIZING",
+  "trial_name": "PROMIZING — Proportional-Assist Ventilation for Minimizing the Duration of Mechanical Ventilation (2025)",
+  "specialty": "Mechanical Ventilation",
+  "subtopic": "Weaning & Liberation from Ventilation",
+  "year": 2025,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Bosma KJ, Burns KEA, Martin CM, et al. Proportional-assist ventilation for minimizing the duration of mechanical ventilation. N Engl J Med. 2025;393:1088-1103",
+  "doi": "10.1056/NEJMoa2505708",
+  "registration": "",
+  "trial_type": "RCT — multicenter, international, open-label, parallel-group, investigator-initiated",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 573,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In 573 invasively ventilated ICU adults, PAV+ did not reduce time to sustained liberation from IMV compared with PSV (HR 0.96, 95% CI 0.80–1.15).",
+  "pico": {
+    "population": "Adults invasively ventilated for ≥24 hours, transitioning to assisted ventilation, not yet meeting unassisted breathing criteria or recently failed a weaning assessment",
+    "intervention": "PAV+ (load-adjustable gain factors) targeting peak respiratory muscle pressure (Pmus) 5–10 cm H2O, structured weaning algorithm, daily SBT screening, T-piece SBTs",
+    "comparison": "PSV adjusted to maintain RR 12–35 breaths/min and tidal volume 5–10 mL/kg PBW, same structured weaning algorithm and SBT/workflow",
+    "outcome": "Time to successful liberation from IMV (≥7 consecutive days free of IMV), death as competing risk"
+  },
+  "keywords": [
+    "proportional assist ventilation",
+    "PAV+",
+    "weaning",
+    "liberation",
+    "mechanical ventilation",
+    "pressure support ventilation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Prolonged IMV leads to diaphragm weakness, asynchrony, delirium, and complications. PSV, the standard assisted weaning mode, can over‑assist or under‑assist. PAV+ provides proportional, effort‑based support, potentially improving synchrony and preserving respiratory muscle function.",
+      "knowledge_gap": "Prior evidence from small trials and physiological studies was insufficient to determine whether PAV+ meaningfully shortens IMV duration at scale.",
+      "hypothesis": "PAV+ would shorten time to successful liberation by better matching ventilatory assistance to patient demand, preserving respiratory muscle activity."
+    },
+    "methods": {
+      "design": "Multicenter, parallel‑group, open‑label, investigator‑initiated RCT in 23 ICUs across 7 countries; allocation stratified by site with variable block sizes; pragmatic protocolised weaning in both arms.",
+      "setting": "Adult ICUs; enrolled after ≥24 hours of invasive ventilation, when transitioning (or attempting to transition) to assisted ventilation.",
+      "population": {
+        "inclusion": [
+          "Invasively ventilated, able to trigger breaths",
+          "Requiring assisted ventilation with planned weaning attempts",
+          "Not yet meeting criteria for unassisted breathing or recently failed a weaning assessment"
+        ],
+        "exclusion": [
+          "Inability to trigger",
+          "Clinical scenarios requiring full control or incompatible with protocolised assisted ventilation",
+          "Other protocol‑specified exclusion criteria (including those discovered post‑randomisation)"
+        ]
+      },
+      "intervention": "PAV+ as primary assisted mode during weaning. Ventilator gain adjusted to target peak Pmus 5–10 cm H2O, with algorithmic responses to hypoventilation, hyperventilation, and distress. Daily weaning readiness screening; T‑piece SBT with extubation intended within 2 hours after passing.",
+      "comparison": "PSV as primary assisted mode during weaning, adjusted to maintain RR 12–35/min and Vt 5–10 mL/kg PBW, with same protocolised responses and identical SBT/extubation workflow.",
+      "blinding": "Open‑label (clinicians unblinded); trial statistician and DSMB blinded. Primary outcome (time to sustained liberation) is objective but influenced by clinician‑mediated decisions.",
+      "sample_size_power": "558 patients required for HR 1.30 (80% power, two‑sided α=0.05), corresponding to median liberation time reduction from 7.70 to 5.92 days.",
+      "primary_outcome": "Time to successful liberation from IMV, defined as ≥7 consecutive days free of IMV, with death as a competing risk.",
+      "secondary_outcomes": [
+        "Ventilator‑free days to day 28",
+        "Death by day 90",
+        "Reintubation within 7 days after extubation",
+        "Tracheostomy",
+        "Use of assist‑control ventilation at least once"
+      ],
+      "follow_up": "28 days for ventilator‑free days; 90 days for vital status."
+    },
+    "results": {
+      "headline_bullets": [
+        "PAV+ did not shorten time to successful liberation: median 7.3 vs 6.8 days, HR 0.96 (95% CI 0.80–1.15).",
+        "PAV+ patients required assist‑control ventilation at least once more often (58.9% vs 49.7%).",
+        "90‑day mortality was 29.6% vs 26.6% (RR 1.13, 95% CI 0.83–1.54), not statistically significant.",
+        "Physiologic separation was confirmed (higher patient effort and lower estimated assist on PAV+), but did not translate into clinical benefit."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite: time to successful liberation from IMV (≥7 consecutive days free)",
+          "group_a": "Median 7.3 days (IQR 3.6–13.8)",
+          "group_b": "Median 6.8 days (IQR 3.4–12.8)",
+          "effect_measure": "HR",
+          "effect_value": "0.96",
+          "ci_95": "0.80–1.15",
+          "p_value": "–",
+          "note": "Death treated as competing risk"
+        },
+        {
+          "outcome": "Ventilator‑free days to day 28",
+          "group_a": "Median 19.9 days (IQR 0.0–24.8)",
+          "group_b": "Median 20.5 days (IQR 0.1–25.2)",
+          "effect_measure": "Median difference",
+          "effect_value": "0.6 days",
+          "ci_95": "−3.0 to 2.9",
+          "p_value": "not reported",
+          "note": "Higher is better"
+        },
+        {
+          "outcome": "Death by day 90",
+          "group_a": "85/287 (29.6%)",
+          "group_b": "76/286 (26.6%)",
+          "effect_measure": "RR",
+          "effect_value": "1.13",
+          "ci_95": "0.83–1.54",
+          "p_value": "–",
+          "note": "CI includes clinically important harm/benefit"
+        },
+        {
+          "outcome": "Reintubation within 7 days after extubation",
+          "group_a": "46/207 (22.2%)",
+          "group_b": "47/202 (23.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.93",
+          "ci_95": "0.61–1.44",
+          "p_value": "–",
+          "note": "Denominator: extubated patients"
+        },
+        {
+          "outcome": "Tracheostomy",
+          "group_a": "60/287 (20.9%)",
+          "group_b": "55/286 (19.2%)",
+          "effect_measure": "RR",
+          "effect_value": "1.12",
+          "ci_95": "0.73–1.70",
+          "p_value": "–",
+          "note": "Procedural thresholds vary by site"
+        },
+        {
+          "outcome": "Assist‑control mode used at least once during study ventilation",
+          "group_a": "169/287 (58.9%)",
+          "group_b": "142/286 (49.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.2",
+          "ci_95": "1.0–1.4",
+          "p_value": "–",
+          "note": "Absolute difference 9.2 percentage points (95% CI 1.1–17.4)"
+        },
+        {
+          "outcome": "Serious adverse event",
+          "group_a": "31/287 (10.8%)",
+          "group_b": "28/286 (9.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.0%",
+          "ci_95": "−4.0 to 6.0",
+          "p_value": "0.79",
+          "note": "No signal of excess serious harm"
+        },
+        {
+          "outcome": "Non‑severe self‑extubation",
+          "group_a": "14/287 (4.9%)",
+          "group_b": "7/286 (2.4%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "2.4%",
+          "ci_95": "−0.6 to 5.5",
+          "p_value": "0.19",
+          "note": "Event numbers small, imprecise estimate"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Serious adverse events: 10.8% PAV+ vs 9.8% PSV (absolute difference 1.0%, 95% CI −4.0 to 6.0, P=0.79).",
+      "Non‑severe self‑extubation: 4.9% vs 2.4% (absolute difference 2.4%, 95% CI −0.6 to 5.5, P=0.19).",
+      "Early discontinuation of study ventilation: 27 (PAV+) vs 9 (PSV), mainly due to transfer, protocol violations, withdrawal, or discovery of exclusion criteria.",
+      "No signal of excess serious harm with PAV+."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, secure web‑based randomisation with site stratification and variable blocks; strong allocation concealment, low risk of selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open‑label design; clinicians aware of mode assignment could alter sedation, extubation timing, or rescue strategies. Primary outcome is objective but still clinician‑mediated. Statistician and DSMB were blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary outcome data available for 99.5% (570/573); day‑90 vital status for 99.8% (572/573). Three patients withdrew consent and were censored at last contact; minimal impact."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Non‑protocol modes used on only 2.5% of trial days. Pmus target (5–10 cmH2O) met on 80.3% of PAV+ days. PAV+ more often rescued to assist‑control (58.9% vs 49.7%) and had longer median assist‑control duration (0.44 vs 0.00 days), which may have reduced exposure to the intended mode."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar; median pre‑randomisation IMV duration 4.8 vs 5.0 days. Physiologic separation confirmed (Pmus 7.7 vs 7.0 cmH2O, P=0.02; WOB 5.5 vs 4.6 J/min, P=0.01; estimated assist 60.6% vs 64.0%, P=0.003)."
+        }
+      ],
+      "verdict": "Moderate‑to‑strong internal validity overall; key threats are open‑label performance bias and differential rescue/early discontinuation, which could dilute a modest true effect."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU patients in the weaning phase (median ~5 days ventilated), with medical–surgical heterogeneity, reflecting typical tertiary ICU case‑mix."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires PAV+‑capable ventilators and clinician training in effort‑based metrics; may not be feasible in resource‑limited units. Both arms received structured, protocolised weaning that may exceed usual care in some settings, potentially reducing any incremental mode effect."
+        }
+      ],
+      "verdict": "Generalisability good for well‑resourced ICUs with structured weaning; limited in settings lacking PAV+ technology/expertise or where weaning is less standardised."
+    },
+    "strengths": [
+      "Largest pragmatic randomised evaluation of PAV+ vs PSV focused on patient‑centred weaning outcomes.",
+      "International, multicentre design with high follow‑up completeness and broadly representative ICU case‑mix.",
+      "Protocolised delivery in both arms reduced confounding by variable weaning practices and ensured meaningful separation in respiratory effort targets.",
+      "Appropriate competing‑risk primary analysis for death as a non‑ignorable intercurrent event."
+    ],
+    "limitations": [
+      "Open‑label delivery risks performance bias (sedation, extubation timing, rescue strategies are clinician‑mediated).",
+      "Differential use of rescue assist‑control ventilation and higher early discontinuation of study ventilation in the PAV+ group may have reduced exposure to the intended assisted mode.",
+      "Effect estimates for some outcomes (e.g., 90‑day mortality) were imprecise; clinically meaningful benefit or harm cannot be fully excluded.",
+      "Implementation complexity (PAV+ tuning and interpretation) may affect reproducibility outside experienced centres."
+    ],
+    "critical_appraisal": {
+      "summary": "PROMIZING is a methodologically robust, pragmatic RCT with high follow‑up and an objective primary outcome; however, the open‑label design and differential rescue use introduce important threats that could have diluted a true effect.",
+      "strengths": [
+        "Multicenter, international, high follow‑up",
+        "Objective primary endpoint with appropriate competing‑risk analysis",
+        "Physiologic separation confirmed, validating the intervention"
+      ],
+      "weaknesses": [
+        "Open‑label performance bias",
+        "Higher rescue/early discontinuation in PAV+ group",
+        "Imprecise mortality and safety estimates"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "PAV+ should not be adopted solely to shorten IMV duration in broadly defined ICU weaning populations; when both arms receive structured weaning protocols, mode substitution alone does not improve time to sustained liberation.",
+    "clinical_bottom_line": {
+      "verdict": "PAV+ does not shorten time to liberation from IMV compared with an optimised PSV strategy embedded in structured weaning algorithms. Do not adopt PAV+ for the purpose of reducing ventilation duration; focus on high‑yield weaning processes (consistent readiness screening, SBTs, minimising sedatives, early mobilisation) rather than mode substitution.",
+      "applies_to": "Adults in ICU requiring assisted ventilation during weaning from prolonged mechanical ventilation.",
+      "does_not_mean": "This does not mean PAV+ is harmful or ineffective for other purposes (e.g., improving synchrony); it simply offers no advantage in shortening ventilation duration when compared with a properly executed PSV protocol.",
+      "implementation_caveats": [
+        "Requires ventilators with PAV+ capability and clinician expertise in effort‑targeted ventilation.",
+        "The study’s structured weaning algorithms were rigorous; in settings without such processes, the relative performance of PAV+ vs PSV might differ.",
+        "Rescue to assist‑control was more common with PAV+; units adopting PAV+ must expect and manage this pattern."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Prior evidence of benefit not reproduced",
+        "notes": "Smaller trials and meta‑analyses suggested PAV+ (and other proportional modes) improved weaning success; PROMIZING’s precise null result will attenuate pooled estimates and increase uncertainty about patient‑important benefit outside selected subgroups."
+      },
+      {
+        "topic": "Physiologic separation vs clinical outcome",
+        "notes": "PAV+ achieved protocolised effort targets (Pmus 7.7 vs 7.0 cmH2O), confirming separation, yet this did not translate into shorter ventilation, suggesting effort‑targeting alone is insufficient to overcome other determinants of weaning delay."
+      },
+      {
+        "topic": "Potential for differential rescue bias",
+        "notes": "Nearly 10% more PAV+ patients required assist‑control rescue; this dilution of exposure may have attenuated a true benefit and raises questions about real‑world PAV+ tolerability."
+      },
+      {
+        "topic": "Applicability of proportional modes in general",
+        "notes": "Meta‑analyses aggregating PAV and NAVA have suggested clinical benefit, but they rely on heterogeneous populations and small single‑centre trials. PROMIZING provides a contemporary benchmark, showing that feasibility and synchrony improvement do not guarantee faster liberation."
+      },
+      {
+        "topic": "Role of structured weaning processes",
+        "notes": "Both groups received high‑quality, protocolised weaning. The trial’s neutral result supports the view that optimising processes (readiness assessment, SBTs, sedation minimisation) matters more than the specific assisted mode, consistent with major weaning guidelines."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does PAV+ benefit selected subgroups, such as patients with high respiratory drive or severe patient–ventilator asynchrony?",
+      "Can effort‑targeted ventilation combined with other co‑interventions (e.g., early mobilisation, sedation minimisation) yield additive benefit?",
+      "Are there weaning phenotypes identifiable by machine learning or physiologic monitoring that would respond to PAV+?",
+      "What is the minimal required exposure to PAV+ (i.e., avoiding rescue to assist‑control) to see a clinical effect, and can protocols be designed to achieve it?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=573",
+        "Primary HR 0.96 (95% CI 0.80–1.15)",
+        "90‑day mortality 29.6% vs 26.6% (RR 1.13)",
+        "PAV+ rescue to assist‑control 58.9% vs 49.7%"
+      ],
+      "one_line_takeaway": "PAV+ does not shorten time to successful liberation compared with optimized PSV; prioritize structured weaning processes, not mode substitution."
+    }
+  },
+  "_source_id": "PROMIZING",
+  "_source_system": "Respiratory"
+}

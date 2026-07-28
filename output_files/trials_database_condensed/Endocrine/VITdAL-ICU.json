@@ -1,0 +1,347 @@
+{
+  "id": "VITdAL-ICU",
+  "trial_name": "VITdAL-ICU — High-Dose Vitamin D3 in Critically Ill Patients with Vitamin D Deficiency (2014)",
+  "specialty": "Endocrine",
+  "subtopic": "Bone & Mineral Disorders",
+  "year": 2014,
+  "journal": "JAMA",
+  "citation": "Amrein K, Schnedl C, Holl A, Riedl R, Christopher KB, Pachler C, et al. Effect of high-dose vitamin D3 on hospital length of stay in critically ill patients with vitamin D deficiency: the VITdAL-ICU randomized clinical trial. JAMA. 2014;312(15):1520-1530",
+  "doi": "10.1001/jama.2014.13204",
+  "registration": "",
+  "trial_type": "RCT — single-center, double-blind, placebo-controlled, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 492,
+  "result_category": "Mixed",
+  "one_liner": "High-dose vitamin D3 did not reduce hospital length of stay; a mortality benefit was seen only in the severe deficiency subgroup (≤12 ng/mL), requiring confirmation.",
+  "pico": {
+    "population": "Adult ICU patients with 25(OH)D ≤20 ng/mL, anticipated ICU stay ≥48 hours",
+    "intervention": "Enteral cholecalciferol 540,000 IU loading dose + 90,000 IU monthly ×5 months",
+    "comparison": "Matching placebo (same schedule)",
+    "outcome": "Primary: hospital length of stay; secondary: ICU length of stay, mortality (ICU, 28-day, hospital, 6-month), biochemical correction"
+  },
+  "keywords": [
+    "vitamin D3",
+    "cholecalciferol",
+    "critical illness",
+    "25-hydroxyvitamin D",
+    "length of stay",
+    "mortality",
+    "deficiency"
+  ],
+  "related_trials": [
+    "VIOLET"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Vitamin D deficiency is common in critically ill patients, linked observationally to higher mortality, infections, and longer stay. Confounding and reverse causality limit causal inference. Vitamin D replacement is inexpensive and biologically plausible.",
+      "knowledge_gap": "Uncertainty about optimal dose, timing, and whether correction improves clinical outcomes, particularly in severe deficiency. Prior interventional evidence was limited and heterogeneous.",
+      "hypothesis": "Rapid correction of vitamin D deficiency using high-dose cholecalciferol reduces hospital length of stay compared with placebo."
+    },
+    "methods": {
+      "design": "Randomized, double-blind, placebo-controlled, single-center, stratified, parallel-group",
+      "setting": "5 adult ICUs (medical, surgical, neurological, cardiothoracic) at Medical University of Graz, Austria; enrolment May 2010–Mar 2012",
+      "population": {
+        "inclusion": [
+          "Adult ICU patients",
+          "25(OH)D ≤20 ng/mL at inclusion",
+          "Anticipated ICU stay ≥48 hours",
+          "Enteral access and able to receive study drug"
+        ],
+        "exclusion": [
+          "Hypercalcaemia (total calcium >10.6 mg/dL or ionised Ca >5.4 mg/dL)",
+          "Nephrolithiasis",
+          "Granulomatous disease, tuberculosis, sarcoidosis",
+          "Pregnancy/lactation",
+          "Competing trial enrolment",
+          "Inability to take study medication"
+        ]
+      },
+      "intervention": "Cholecalciferol (vitamin D3) 540,000 IU enteral loading dose, then 90,000 IU monthly ×5 months; background standard vitamin D (≈200 IU/day) allowed but additional supplementation discouraged",
+      "comparison": "Matching placebo (same schedule and route)",
+      "blinding": "Double-blind (participants, clinicians, investigators, outcome assessors); pharmacy-controlled allocation",
+      "sample_size_power": "Planned n=490 to detect 2-day reduction in mean hospital length of stay (two-sided α=0.05, power 80%); analysed 475 (modified ITT)",
+      "primary_outcome": "Hospital length of stay (days)",
+      "secondary_outcomes": [
+        "ICU length of stay",
+        "ICU mortality",
+        "28-day mortality",
+        "Hospital mortality",
+        "6-month mortality",
+        "Serum 25(OH)D at day 7",
+        "Safety (hypercalcemia, falls, fractures)"
+      ],
+      "follow_up": "In-hospital outcomes; mortality assessed at ICU discharge, 28 days, hospital discharge, 6 months; biochemical follow-up at days 3, 7, 28, and 6 months; functional outcomes at 6 months"
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary endpoint neutral: median hospital LOS 19.3 vs 20.1 days (P=0.98).",
+        "ICU LOS unchanged (10.7 vs 9.6 days, P=0.38).",
+        "All-cause mortality numerically lower with vitamin D3 but not statistically significant overall (6-month HR 0.78, 95% CI 0.58–1.04, P=0.09).",
+        "In severe deficiency (≤12 ng/mL), hospital mortality was significantly reduced (28.6% vs 46.1%; HR 0.56, 95% CI 0.35–0.90, P=0.01, interaction P=0.04).",
+        "Biochemical separation was large (day 7 mean 25(OH)D 35.5 vs 14.5 ng/mL, P<0.001); 52% of vitamin D3 group reached >30 ng/mL by day 7."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Hospital length of stay (days), median (range)",
+          "group_a": "19.3 (0–693)",
+          "group_b": "20.1 (0–679)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.98",
+          "note": "Mann-Whitney U test; primary endpoint"
+        },
+        {
+          "outcome": "ICU length of stay (days), median (range)",
+          "group_a": "10.7 (0–693)",
+          "group_b": "9.6 (0–679)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.38",
+          "note": "Mann-Whitney U test"
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "54/237 (22.8%)",
+          "group_b": "63/238 (26.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.97",
+          "ci_95": "0.67–1.39",
+          "p_value": "0.86",
+          "note": ""
+        },
+        {
+          "outcome": "28-day mortality",
+          "group_a": "52/237 (21.9%)",
+          "group_b": "68/238 (28.6%)",
+          "effect_measure": "HR",
+          "effect_value": "0.76",
+          "ci_95": "0.53–1.09",
+          "p_value": "0.14",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "67/237 (28.3%)",
+          "group_b": "84/238 (35.3%)",
+          "effect_measure": "HR",
+          "effect_value": "0.81",
+          "ci_95": "0.58–1.11",
+          "p_value": "0.18",
+          "note": ""
+        },
+        {
+          "outcome": "6-month mortality",
+          "group_a": "83/237 (35.0%)",
+          "group_b": "102/238 (42.9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.78",
+          "ci_95": "0.58–1.04",
+          "p_value": "0.09",
+          "note": ""
+        },
+        {
+          "outcome": "Serum 25(OH)D at day 7 (ng/mL), mean ± SD",
+          "group_a": "35.5 ± 20.6",
+          "group_b": "14.5 ± 5.1",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "n=202 per group"
+        },
+        {
+          "outcome": "Hypercalcemia (>10.6 mg/dL) at 6 months",
+          "group_a": "4/37 (11%)",
+          "group_b": "1/43 (2%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Subset with 6-month labs"
+        },
+        {
+          "outcome": "Falls by 6 months",
+          "group_a": "33/136 (24.3%)",
+          "group_b": "27/153 (17.7%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.17",
+          "note": "Supplemental data"
+        },
+        {
+          "outcome": "Fractures by 6 months",
+          "group_a": "2/136 (1.5%)",
+          "group_b": "2/153 (1.3%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.86",
+          "note": "Supplemental data"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Severe vitamin D deficiency (25(OH)D ≤12 ng/mL) — Hospital mortality",
+          "group_a": "28.6% (n not reported)",
+          "group_b": "46.1% (n not reported)",
+          "effect_measure": "HR",
+          "effect_value": "0.56",
+          "ci_95": "0.35–0.90",
+          "p_interaction": "0.04",
+          "p_value": "0.01"
+        },
+        {
+          "subgroup": "Severe vitamin D deficiency (25(OH)D ≤12 ng/mL) — 28-day mortality",
+          "group_a": "20.4% (n not reported)",
+          "group_b": "36.3% (n not reported)",
+          "effect_measure": "HR",
+          "effect_value": "0.52",
+          "ci_95": "0.30–0.89",
+          "p_interaction": "0.04",
+          "p_value": "0.02"
+        }
+      ]
+    },
+    "safety": [
+      "Hypercalcemia (>10.6 mg/dL) at 6 months: 4/37 (11%) vitamin D3 vs 1/43 (2%) placebo (subset with labs).",
+      "Falls by 6 months: 33/136 (24.3%) vs 27/153 (17.7%), P=0.17.",
+      "Fractures by 6 months: 2/136 (1.5%) vs 2/153 (1.3%), P=0.86."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation concealment",
+          "notes": "Computer-generated sequence (block size 8), stratified by ICU type and sex; pharmacy-controlled packaging ensures concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind with matched preparations; mortality outcomes are objective; hospital LOS is objective but influenced by discharge processes."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT: 492 randomised, 480 received treatment, 475 analysed (237 vs 238). 9 vitamin D3 patients excluded vs 3 placebo; risk of bias if exclusions prognostic."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Biochemical separation confirmed (day 7 25(OH)D 35.5 vs 14.5 ng/mL); only 52% of vitamin D3 group reached >30 ng/mL, reflecting variability."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched (age, SAPS II, mechanical ventilation, norepinephrine use)."
+        },
+        {
+          "domain": "Heterogeneity & timing",
+          "notes": "Broad ICU case-mix increases heterogeneity; randomisation occurred median 2.1 days after ICU admission, potentially late for early immunomodulation."
+        },
+        {
+          "domain": "Outcome missingness",
+          "notes": "Long-term biochemical and functional data available in subsets (e.g., month 6 labs: 37 vs 43), limiting precision for safety and longer outcomes."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Primary analysis underpowered (n=475 vs planned 490); mortality analyses secondary; subgroup testing interaction P=0.04 but still hypothesis-generating."
+        }
+      ],
+      "verdict": "Moderate-to-strong internal validity: robust randomisation, allocation concealment, blinding and biochemical separation, but limited by modified ITT, incomplete long-term data and an organisational-sensitive primary endpoint."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Single-center, 100% White European adult ICU cohort with documented deficiency (≤20 ng/mL) and anticipated stay ≥48 hours; may not generalise to more diverse ethnic groups, shorter-stay ICUs, or ICUs with different discharge practices."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Enteral high-dose cholecalciferol is inexpensive and feasible, but routine ICU screening for 25(OH)D and rapid treatment pathways vary. Benefit may depend on deficiency severity and timing."
+        }
+      ],
+      "verdict": "Reasonably applicable to similar tertiary ICUs caring for vitamin D–deficient patients, but generalisability constrained by single-centre design, homogeneous ethnicity, and length-of-stay dependence on local discharge practices."
+    },
+    "strengths": [
+      "Randomised, double-blind, placebo-controlled with pharmacy allocation.",
+      "Large ICU vitamin D trial with stratification by ICU type/sex reducing imbalance.",
+      "Robust serial biochemical measurements clearly separating groups.",
+      "Objective mortality outcomes with 6-month follow-up; functional outcomes collected."
+    ],
+    "limitations": [
+      "Single-centre, 100% White cohort limits generalisability.",
+      "Primary endpoint (hospital LOS) sensitive to discharge processes and competing risk of death.",
+      "Modified ITT (475/492) risks bias; more vitamin D3 patients excluded.",
+      "Underpowered for mortality; mortality benefit confined to severe deficiency subgroup.",
+      "Long-term safety data limited to small subsets."
+    ],
+    "critical_appraisal": {
+      "summary": "Well-designed but single-centre trial showing biochemical correction without reduction in length of stay; mortality signal in severe deficiency is hypothesis-generating only.",
+      "strengths": [
+        "Robust randomisation and blinding",
+        "Clear biochemical separation",
+        "Objective mortality endpoints"
+      ],
+      "weaknesses": [
+        "Single-centre, all-White population",
+        "Modified ITT with unbalanced exclusions",
+        "Length-of-stay primary endpoint sensitive to local practice"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine high-dose cholecalciferol to shorten hospital stay in vitamin D–deficient ICU patients is not supported. The severe deficiency subgroup signal (≤12 ng/mL) is hypothesis-generating and warrants further trials targeting profound deficiency and patient-centred outcomes.",
+    "clinical_bottom_line": {
+      "verdict": "Does not change practice for most ICU patients. High-dose vitamin D3 quickly normalizes levels but does not reduce length of stay. Any mortality benefit appears limited to severe deficiency and remains unproven.",
+      "applies_to": "Adult ICU patients with 25(OH)D ≤20 ng/mL, particularly those with very low levels (≤12 ng/mL).",
+      "does_not_mean": "Vitamin D is harmful or should be withheld; correction of severe deficiency may still matter, but routine screening/treatment for LOS reduction is not justified.",
+      "implementation_caveats": [
+        "Routine screening and high-dose bolus are not supported for ICU-wide practice.",
+        "If targeted to severely deficient patients, close monitoring of calcium and falls may be needed.",
+        "Results from larger multicentre trials (e.g., VIOLET) did not confirm benefit."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Primary endpoint choice",
+        "notes": "Hospital length of stay is multifactorial and influenced by discharge processes; a neutral LOS finding does not exclude biologically meaningful effects on mortality or organ dysfunction, but makes the trial vulnerable to context-specific practice variation."
+      },
+      {
+        "topic": "Modified ITT and post-randomisation exclusions",
+        "notes": "Excluding 17/492 randomised patients (5 consent withdrawals; 12 not treated) can bias effect estimates if exclusions correlate with prognosis, particularly when mortality is an outcome."
+      },
+      {
+        "topic": "Severe deficiency subgroup",
+        "notes": "Mortality benefit was confined to 25(OH)D ≤12 ng/mL (hospital mortality interaction P=0.04); despite interaction testing, multiplicity and subgroup fragility limit certainty, and this subgroup effect is not a sufficient basis for practice change without confirmation."
+      },
+      {
+        "topic": "Subsequent large multicentre RCT (VIOLET)",
+        "notes": "In vitamin D–deficient critically ill adults randomised to a single enteral 540,000 IU vitamin D3 dose vs placebo within 12 hours of ICU admission decision, 90-day mortality was 23.5% vs 20.6% (RR 1.17; 95% CI 0.96 to 1.43; P=0.26), and the trial was stopped early for futility, challenging the generalisability of subgroup mortality benefits seen in VITdAL-ICU."
+      },
+      {
+        "topic": "Updated systematic review/meta-analysis",
+        "notes": "An updated meta-analysis of randomised trials reported reduced overall mortality with vitamin D administration (RR 0.78; 95% CI 0.62 to 0.97; P=0.03), shorter ICU length of stay (mean difference −3.13 days; 95% CI −5.36 to −0.90; P=0.006) and shorter duration of mechanical ventilation (mean difference −5.07 days; 95% CI −9.68 to −0.47; P=0.03); heterogeneity across dosing strategies, routes, baseline deficiency definitions and trial quality remains a central interpretive challenge."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "VIOLET",
+        "relation": "A subsequent larger multicentre RCT that used a single 540,000 IU vitamin D3 dose within 12 hours of ICU admission; found no benefit on 90-day mortality (RR 1.17, 95% CI 0.96–1.43), stopped early for futility, challenging the subgroup mortality signal in VITdAL-ICU."
+      }
+    ],
+    "unresolved_questions": [
+      "Does high-dose vitamin D3 improve mortality in patients with severe deficiency (<12 ng/mL) if given early?",
+      "What is the optimal dosing strategy (bolus vs daily) and timing?",
+      "Does vitamin D administration affect patient-centred outcomes beyond length of stay?",
+      "Confirming long-term safety of high-dose bolus (hypercalcemia, falls, fractures) in larger populations."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=492 (475 analysed)",
+        "Primary hospital LOS neutral: 19.3 vs 20.1 days (P=0.98)",
+        "Severe deficiency hospital mortality HR 0.56 (0.35–0.90), interaction P=0.04",
+        "6-month mortality HR 0.78 (0.58–1.04, P=0.09)"
+      ],
+      "one_line_takeaway": "High-dose vitamin D3 corrects deficiency but does not shorten stay; any mortality benefit is unconfirmed and limited to severe deficiency."
+    }
+  },
+  "_source_id": "VITdAL-ICU",
+  "_source_system": "Endocrine"
+}

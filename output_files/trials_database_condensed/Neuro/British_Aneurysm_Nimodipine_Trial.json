@@ -1,0 +1,261 @@
+{
+  "id": "British_Aneurysm_Nimodipine_Trial",
+  "trial_name": "British Aneurysm Nimodipine Trial (1989)",
+  "specialty": "Neurocritical Care",
+  "subtopic": "Subarachnoid Hemorrhage",
+  "year": 1989,
+  "journal": "BMJ",
+  "citation": "Pickard JD, Murray GD, Illingworth R, Shaw MDM, Teasdale GM, Foy PM, et al. Effect of oral nimodipine on cerebral infarction and outcome after subarachnoid haemorrhage: British aneurysm nimodipine trial. BMJ. 1989 Mar 11;298(6674):636-42.",
+  "doi": "https://doi.org/10.1136/bmj.298.6674.636",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 554,
+  "result_category": "Positive",
+  "one_liner": "Oral nimodipine 60 mg every 4 h for 21 days reduced cerebral infarction and poor functional outcome at 3 months after aneurysmal SAH.",
+  "pico": {
+    "population": "Adult patients with aneurysmal SAH admitted within 96 hours of symptom onset, confirmed by LP or CT, not comatose in the preceding week",
+    "intervention": "Oral nimodipine 60 mg every 4 hours (via mouth or NG tube) for 21 days in survivors",
+    "comparison": "Matching placebo tablets on the same schedule",
+    "outcome": "Cerebral infarction (primary) and functional outcome at ≥3 months (death, vegetative state, severe disability)"
+  },
+  "keywords": [
+    "nimodipine",
+    "calcium channel blocker",
+    "subarachnoid hemorrhage",
+    "delayed cerebral ischemia",
+    "cerebral infarction"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Delayed neurological deterioration after aneurysmal SAH was a major driver of death and severe disability, commonly associated with cerebral ischaemia and infarction. Nimodipine (a dihydropyridine calcium antagonist) was hypothesised to reduce ischaemic events via vascular and/or neuroprotective mechanisms.",
+      "knowledge_gap": "Definitive multicentre evidence with clinically meaningful endpoints was limited; oral administration offered simplicity but required confirmation of benefit and safety in routine neurosurgical practice.",
+      "hypothesis": "Early oral nimodipine, compared with placebo, reduces cerebral infarction and improves 3‑month neurological outcome after SAH."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double‑blind, placebo‑controlled trial",
+      "setting": "4 UK neurosurgical centres (London, Southampton, Liverpool, Glasgow); enrolled patients admitted within 96 h of SAH",
+      "population": {
+        "inclusion": [
+          "Patients admitted within 96 hours of onset of symptoms and signs of SAH",
+          "Diagnosis confirmed by lumbar puncture and/or computed tomography",
+          "Patient consent or (if unconscious) next‑of‑kin consent"
+        ],
+        "exclusion": [
+          "Pregnancy",
+          "Major renal/hepatic/pulmonary disease",
+          "Cardiac decompensation",
+          "Myocardial infarction within previous 6 months",
+          "Age <18 years",
+          "Coma in the week preceding the most recent SAH",
+          "Refusal of consent"
+        ]
+      },
+      "intervention": "Oral nimodipine 60 mg every 4 hours (two 30 mg tablets), for 21 days in survivors. Administration by mouth or via nasogastric tube if unable to swallow. Dose modification for hypotension permitted by protocol but not usually necessary.",
+      "comparison": "Matching placebo tablets on the same schedule (every 4 hours for 21 days in survivors) with identical appearance and packaging.",
+      "blinding": "Double‑blind (patients, clinicians, outcome assessors); identical tablets; four code breaks reported.",
+      "sample_size_power": "Minimum 540 patients required to detect a 50% reduction in cerebral infarction from 15% to 7.5% with 80% power at 5% significance; 554 randomised.",
+      "primary_outcome": "Cerebral infarction (all) confirmed radiologically and/or pathologically",
+      "secondary_outcomes": [
+        "Poor functional outcome (death, vegetative state, or severe disability) at ≥3 months on Glasgow Outcome Scale",
+        "Rebleed",
+        "Death",
+        "Severe disability",
+        "Adverse reactions"
+      ],
+      "follow_up": "At least 3 months after trial entry (Glasgow Outcome Scale), including postal/telephone follow‑up if patients moved away."
+    },
+    "results": {
+      "headline_bullets": [
+        "Cerebral infarction reduced from 33% (92/276) to 22% (61/278): relative reduction 34% (95% CI 13‑50, P=0.003)",
+        "Poor functional outcome reduced from 33% (91/276) to 20% (55/278): relative reduction 40% (95% CI 20‑55, P=0.0001)",
+        "Mortality numerically lower (43/278 vs 60/276; P≈0.06) but not robustly significant",
+        "Rebleed rate lower (9% vs 14%) but not statistically significant (P=0.077)",
+        "High early discontinuation of study drug (130 patients) likely diluted treatment effects"
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Cerebral infarction (all)",
+          "group_a": "61/278 (22%)",
+          "group_b": "92/276 (33%)",
+          "effect_measure": "Relative reduction",
+          "effect_value": "34%",
+          "ci_95": "13 to 50%",
+          "p_value": "0.003",
+          "note": "Primary outcome; confirmed radiologically/pathologically"
+        },
+        {
+          "outcome": "Poor outcome (death, vegetative state, severe disability) at ≥3 months",
+          "group_a": "55/278 (20%)",
+          "group_b": "91/276 (33%)",
+          "effect_measure": "Relative reduction",
+          "effect_value": "40%",
+          "ci_95": "20 to 55%",
+          "p_value": "0.0001",
+          "note": "Glasgow Outcome Scale dichotomised as poor vs not poor"
+        },
+        {
+          "outcome": "Rebleed",
+          "group_a": "25/278 (9%)",
+          "group_b": "38/276 (14%)",
+          "effect_measure": "Relative reduction",
+          "effect_value": "35%",
+          "ci_95": "-5 to 59%",
+          "p_value": "0.077",
+          "note": "Not statistically significant"
+        },
+        {
+          "outcome": "Death at ≥3 months",
+          "group_a": "43/278 (15.5%)",
+          "group_b": "60/276 (21.7%)",
+          "effect_measure": "Relative reduction",
+          "effect_value": "29%",
+          "ci_95": "-1 to 50%",
+          "p_value": "~0.06",
+          "note": "Observed significance level 6%"
+        },
+        {
+          "outcome": "Severe disability at ≥3 months",
+          "group_a": "11/278 (4.0%)",
+          "group_b": "29/276 (10.5%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Reduction in severe disability numerically prominent; effect size not formally reported"
+        },
+        {
+          "outcome": "Adverse reactions attributed to trial drug",
+          "group_a": "14/278 (5.0%)",
+          "group_b": "10/276 (3.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "27 reactions in 24 patients (17 nimodipine, 10 placebo)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Adverse reactions attributed to trial drug: 17 in nimodipine group (including rash, headache, hypotension) vs 10 in placebo",
+      "Early discontinuation in 130 patients (70 nimodipine, 60 placebo); common reasons: surgery, hypotension (6), cardiac complications (7), hepatic/biliary (4), GI symptoms (4)",
+      "Nimodipine well tolerated; hypotension rarely dose‑limiting despite a pharmacodynamic signal (systolic BP fell by mean 7.1 mmHg, diastolic 3.6 mmHg, pulse rose from 76 to 85 bpm)",
+      "Four blinded code breaks reported"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centre‑specific randomisation lists, balanced in blocks of four; sequentially numbered identical tablets. Adequate concealment, but small fixed blocks may present predictability risk if sequences compromised."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double‑blind with identical tablets. 3‑month outcome assessed by a doctor not involved in early management (or postal/telephone enquiry), supporting independence of outcome assessment."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "One withdrawal after 4 days of placebo; otherwise no post‑entry exclusions. Intention‑to‑treat framework reported."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Early discontinuation in 130 patients (70 nimodipine, 60 placebo), often at time of surgery or due to complications; this would dilute measured treatment effects."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar: e.g., clinical grade II: 168/278 vs 159/276; cisternal blood >2 mm on initial CT: 177/278 vs 168/276; time to operation 10.8 vs 11.3 days."
+        }
+      ],
+      "verdict": "Moderate to strong: randomisation, double‑blinding, and independent outcome assessment strengthen internal validity; the main threats are high early discontinuation and background care heterogeneity typical of pragmatic multicentre trials from that era."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults presenting within 96 h, broad clinical grades (I–V) but predominance II–III; excluded patients with major organ failure or recent MI, limiting applicability to multi‑morbid cohorts."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Aneurysm‑securing strategies and ICU care have evolved (endovascular coiling, earlier intervention, modern protocols), but delayed cerebral ischaemia remains common and the tested nimodipine regimen is still feasible in high‑resource settings."
+        }
+      ],
+      "verdict": "Good for typical adult aneurysmal SAH care in well‑resourced systems; less certain for very elderly, severely co‑morbid, or haemodynamically fragile patients, and in settings where intensive monitoring cannot support frequent dosing."
+    },
+    "strengths": [
+      "Large, multicentre, randomised, double‑blind, placebo‑controlled design with clinically meaningful endpoints",
+      "Primary outcome incorporated objective infarction ascertainment (CT / necropsy when appropriate)",
+      "3‑month functional outcome assessed independently of early clinical team, supporting credible measurement",
+      "Recruitment met/exceeded prespecified sample size target (554 vs 540 minimum)"
+    ],
+    "limitations": [
+      "Substantial early discontinuation of study drug (130 patients), reducing treatment separation and complicating dose‑response inference",
+      "Background management (including timing of aneurysm surgery and supportive strategies) was not protocolised and reflects 1980s practice, limiting comparability to contemporary pathways",
+      "Small fixed‑block randomisation may carry theoretical risk of allocation predictability if concealment breached",
+      "Mechanism of benefit cannot be confidently inferred (infarction reduction does not specify whether via vasospasm modification, neuroprotection, or other pathways)"
+    ],
+    "critical_appraisal": {
+      "summary": "This large multicentre RCT demonstrated that oral nimodipine significantly reduces cerebral infarction and poor functional outcome after SAH, with moderate to strong internal validity despite high drug discontinuation; findings remain applicable to current practice and are guideline‑recommended.",
+      "strengths": [
+        "Robust double‑blind design with independent outcome assessment",
+        "Clinically meaningful primary and secondary endpoints",
+        "ITT analysis with few losses to follow‑up",
+        "Adjusted analyses confirmed treatment effect after accounting for prognostic variables"
+      ],
+      "weaknesses": [
+        "High early discontinuation (130 patients) dilutes the perceived effect size",
+        "Care‑era differences (1980s neurosurgical and ICU practice) limit direct comparison with modern pathways",
+        "Mortality reduction not robustly significant",
+        "Small block randomisation could theoretically unblind if sequences were discovered"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Oral nimodipine 60 mg every 4 hours for 21 days, started within 96 hours of SAH, reduces cerebral infarction and poor functional outcome, supporting routine early administration in eligible patients.",
+    "clinical_bottom_line": {
+      "verdict": "Routine oral nimodipine is standard of care to reduce cerebral infarction and improve functional recovery after aneurysmal SAH.",
+      "applies_to": "Adult patients with aneurysmal SAH presenting within 96 hours, without major contraindications (e.g., recent myocardial infarction, decompensated organ failure) and able to receive enteral dosing.",
+      "does_not_mean": "Nimodipine does not eliminate all poor outcomes; mortality reduction is not statistically robust; benefit may not be solely by preventing large‑vessel vasospasm.",
+      "implementation_caveats": [
+        "Enteral dosing via NG tube if needed; monitor for hypotension (rarely dose‑limiting)",
+        "Continue for 21 days or until discharge/ambulation",
+        "Benefit demonstrated in pre‑endovascular coiling era, but modern guidelines still recommend"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Mechanism of benefit",
+        "notes": "Nimodipine improves clinical outcome, but this improvement does not map cleanly onto reductions in angiographic vasospasm, implying neuroprotective and microvascular effects beyond large‑artery spasm."
+      },
+      {
+        "topic": "Route of administration and haemodynamic trade‑offs",
+        "notes": "Enteral dosing is guideline‑preferred because IV nimodipine can cause hypotension. Network meta‑analyses show no clear superiority of one route, reinforcing pragmatic concerns about haemodynamic tolerance."
+      },
+      {
+        "topic": "Care‑era generalisability",
+        "notes": "The trial occurred in an era of later aneurysm surgery and different ICU standards, yet major modern guidelines still embed nimodipine as standard therapy, suggesting perceived biological generalisability."
+      },
+      {
+        "topic": "Rebleeding signal",
+        "notes": "Rebleeding was numerically lower (9% vs 14%) but not statistically significant, and later evidence has not positioned nimodipine as an anti‑rebleeding strategy; its role is centred on ischaemic injury and outcomes."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does nimodipine primarily work by neuroprotection or microvascular mechanisms?",
+      "Is there a benefit of intravenous over enteral nimodipine in patients with impaired gut absorption?",
+      "Does the treatment effect persist with modern early aneurysm securing and contemporary neurocritical care?",
+      "Can the ideal duration of therapy be shortened without loss of benefit?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=554",
+        "Cerebral infarction: 22% vs 33% (relative reduction 34%, NNT ≈ 9)",
+        "Poor functional outcome: 20% vs 33% (relative reduction 40%, NNT ≈ 7.7)",
+        "Mortality: 15.5% vs 21.7% (relative reduction 29%, not significant)"
+      ],
+      "one_line_takeaway": "Start oral nimodipine 60 mg every 4 hours within 96 hours of aneurysmal SAH to reduce cerebral infarction and poor functional outcome."
+    }
+  },
+  "_source_id": "British_Aneurysm_Nimodipine_Trial",
+  "_source_system": "Neuro"
+}

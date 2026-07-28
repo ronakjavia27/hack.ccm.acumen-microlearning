@@ -1,0 +1,263 @@
+{
+  "id": "Drakulovic",
+  "trial_name": "Drakulovic — Supine vs Semirecumbent Positioning and Nosocomial Pneumonia in Mechanically Ventilated Patients (1999)",
+  "specialty": "Critical Care",
+  "subtopic": "Mechanical Ventilation",
+  "year": 1999,
+  "journal": "The Lancet",
+  "citation": "Drakulovic MB, Torres A, Bauer TT, Nicolas JM, Nogué S, Ferrer M. Supine body position as a risk factor for nosocomial pneumonia in mechanically ventilated patients: a randomised trial. Lancet. 1999;354(9193):1851-1858.",
+  "doi": "https://doi.org/10.1016/S0140-6736(98)12251-1",
+  "registration": "Not applicable",
+  "trial_type": "RCT — single-center, parallel-group, unblinded, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 86,
+  "result_category": "Positive",
+  "one_liner": "In mechanically ventilated ICU patients, nursing at a 45° semirecumbent position reduced clinically suspected nosocomial pneumonia compared to a 0° supine position (8% vs 34%), with the greatest benefit in those receiving enteral nutrition.",
+  "pico": {
+    "population": "Intubated, mechanically ventilated adult ICU patients in a medical/respiratory ICU",
+    "intervention": "Semirecumbent body position targeted at 45°",
+    "comparison": "Supine body position targeted at 0°",
+    "outcome": "Incidence of clinically suspected and microbiologically confirmed nosocomial pneumonia"
+  },
+  "keywords": [
+    "head-of-bed elevation",
+    "semirecumbent",
+    "supine",
+    "ventilator-associated pneumonia",
+    "VAP prevention",
+    "enteral nutrition",
+    "aspiration"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Nosocomial pneumonia is a frequent, morbid complication of invasive mechanical ventilation, mechanistically linked to microaspiration of colonised oropharyngeal and/or gastric contents.",
+      "knowledge_gap": "Whether a simple, low-cost intervention like head-of-bed elevation could reduce the incidence of nosocomial pneumonia was unproven by a randomised trial.",
+      "hypothesis": "Nursing invasively ventilated ICU patients at 45° (semirecumbent) reduces clinically suspected and microbiologically confirmed nosocomial pneumonia compared with 0° (supine) positioning."
+    },
+    "methods": {
+      "design": "Prospective, parallel-group, randomised controlled trial; investigator-initiated; unblinded; one planned interim analysis.",
+      "setting": "6-bed respiratory ICU and 8-bed medical ICU at Hospital Clínic, University of Barcelona (Spain).",
+      "population": {
+        "inclusion": [
+          "Consecutive intubated and mechanically ventilated ICU patients",
+          "Randomised after intubation or ICU admission",
+          "Informed consent from next-of-kin"
+        ],
+        "exclusion": [
+          "Abdominal surgery within previous 7 days",
+          "Neurosurgical intervention within previous 7 days",
+          "Shock refractory to vasoactive drugs or volume therapy",
+          "Previous endotracheal intubation within previous 30 days"
+        ]
+      },
+      "intervention": "Semirecumbent position targeted at 45° (backrest elevated); staff instructed to maintain position unless medically required to change.",
+      "comparison": "Supine position targeted at 0°; otherwise identical ICU care and infection surveillance strategy.",
+      "blinding": "Unblinded (nursing position not practically blindable).",
+      "sample_size_power": "Planned sample size 182 to detect a 50% relative reduction in clinically suspected nosocomial pneumonia (assumed 40% in the supine group) with 80% power at the 5% significance level.",
+      "primary_outcome": "Clinically suspected nosocomial pneumonia.",
+      "secondary_outcomes": [
+        "Microbiologically confirmed nosocomial pneumonia",
+        "ICU mortality"
+      ],
+      "follow_up": "From randomisation until protocol termination (weaning trial, extubation, death, or >45-minute change of position), plus 72 hours thereafter."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early at interim analysis (86 of 182 planned patients) due to a significant reduction in clinically suspected pneumonia in the semirecumbent group (P=0.003).",
+        "The primary outcome occurred in 8% (3/39) of the semirecumbent group vs 34% (16/47) of the supine group.",
+        "The benefit was most pronounced in patients receiving enteral nutrition (9% vs 50% pneumonia).",
+        "No significant difference in ICU mortality was observed (18% vs 28%, P=0.289)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Clinically suspected nosocomial pneumonia",
+          "group_a": "3/39 (8%)",
+          "group_b": "16/47 (34%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "26%",
+          "ci_95": "10.0 to 42.0",
+          "p_value": "0.003",
+          "note": "Primary outcome. Relative risk reduction 76%. Analysis excluded 4/90 post-randomisation."
+        },
+        {
+          "outcome": "Microbiologically confirmed nosocomial pneumonia",
+          "group_a": "2/39 (5%)",
+          "group_b": "11/47 (23%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "18%",
+          "ci_95": "4.2 to 31.8",
+          "p_value": "0.018",
+          "note": "Relative risk reduction 78%."
+        },
+        {
+          "outcome": "Incidence rate of clinically suspected pneumonia",
+          "group_a": "10.9 / 1000 ventilator-days",
+          "group_b": "41.2 / 1000 ventilator-days",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Log-rank P=0.018 for clinically suspected pneumonia."
+        },
+        {
+          "outcome": "Incidence rate of microbiologically confirmed pneumonia",
+          "group_a": "7.3 / 1000 ventilator-days",
+          "group_b": "28.4 / 1000 ventilator-days",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Inferential statistics not reported for rate comparison."
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "7/39 (18%)",
+          "group_b": "13/47 (28%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "10%",
+          "ci_95": "-7.6 to 27.6",
+          "p_value": "0.289",
+          "note": "Kaplan–Meier survival comparison P=0.336."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Enteral nutrition + supine position (vs. enteral nutrition + semirecumbent)",
+          "group_a": "2/22 (9%)",
+          "group_b": "14/28 (50%)",
+          "effect_measure": "OR",
+          "effect_value": "10.6",
+          "ci_95": "3.3 to 34.5",
+          "p_interaction": "<0.001",
+          "note": "No-enteral strata: 0° 2/19 (10%) vs 45° 1/17 (6%)."
+        }
+      ]
+    },
+    "safety": [
+      "Trialists reported no observed adverse effects of semirecumbent positioning."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated randomisation list; allocation implemented by an independent individual. Allocation concealment beyond this is not described in detail."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded positioning creates plausible performance bias (e.g., feeding interruptions, suctioning vigilance) and detection bias because the diagnostic pathway to 'microbiologically confirmed' pneumonia was triggered by clinical suspicion."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "4/90 (4.4%) excluded from analysis: 1 early death and 3 protocol violations due to reintubation, all in the semirecumbent arm. This is effectively a modified ITT analysis of 86 patients."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Position was checked daily, but continuous measurement of achieved backrest angle was not reported. Protocol termination occurred if body position was permanently changed for >45 minutes (7/86; 8%)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly comparable but with potentially relevant imbalances favoring the semirecumbent group: lower APACHE II (21.3 vs 23.8), less fatal underlying disease (80% vs 94%), and less ranitidine use (41% vs 62%)."
+        }
+      ],
+      "verdict": "Internal validity is moderate: randomisation and concordant microbiologically confirmed outcomes support a real signal, but open-label design, early stopping, post-randomisation exclusions (all in the intervention arm), and unmeasured achieved angle introduce meaningful risk of bias and effect-size inflation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Medical/respiratory ICU patients were included, but key exclusions (recent abdominal or neurosurgery; refractory shock; recent intubation) limit applicability to trauma, neurocritical care, and early postoperative populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The intervention is low-cost and implementable, but the comparator (0° supine) is less reflective of contemporary 'usual care' where some elevation is common. Sustained 45° is often difficult to maintain in routine practice."
+        }
+      ],
+      "verdict": "External validity is moderate: the physiological rationale and direction of effect are broadly generalisable, but the magnitude of benefit is sensitive to what 'control' positioning looks like and whether 45° elevation is achievable in everyday practice."
+    },
+    "strengths": [
+      "Clinically simple, low-cost intervention with clear mechanistic plausibility (aspiration prevention).",
+      "Randomised design with prespecified interim analysis and a parallel microbiologically confirmed endpoint supporting consistency of effect direction.",
+      "Reported interaction analysis highlighting enteral nutrition as a major effect modifier (important for bedside implementation)."
+    ],
+    "limitations": [
+      "Early stopping with a small analysed sample (86/182 planned) increases risk of exaggerated effect estimates.",
+      "Unblinded intervention and partially subjective primary endpoint with sampling triggered by clinical suspicion (detection bias risk).",
+      "Post-randomisation exclusions (4/90), including 3 protocol violations all in the intervention arm, compromising strict intention-to-treat inference.",
+      "Achieved backrest angle over time not quantified; degree of exposure separation is uncertain.",
+      "Single-centre design and control arm at 0° may overstate benefit relative to modern practice where some elevation is routine."
+    ],
+    "critical_appraisal": {
+      "summary": "This is a landmark but methodologically limited trial. A large effect size is supported by a concordant objective secondary endpoint, but confidence in the precise magnitude of benefit is reduced by early stopping, unblinding, post-randomisation exclusions, and baseline imbalances.",
+      "strengths": [
+        "Randomised design with a prespecified analysis plan.",
+        "Concordant results for clinically suspected and microbiologically confirmed pneumonia."
+      ],
+      "weaknesses": [
+        "Early stopping after an interim analysis with a small sample size.",
+        "Unblinded design with a subjective primary endpoint.",
+        "Post-randomisation exclusions all from the intervention arm.",
+        "Uncertainty about the achieved angle of head-of-bed elevation."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Semirecumbent body position (45°) reduces the incidence of nosocomial pneumonia in mechanically ventilated patients compared to supine position (0°), particularly in those receiving enteral nutrition.",
+    "clinical_bottom_line": {
+      "verdict": "This trial established head-of-bed elevation as a core, evidence-based strategy for VAP prevention. Avoid sustained 0° supine positioning in invasively ventilated patients when clinically feasible.",
+      "applies_to": "Invasively ventilated medical/respiratory ICU patients, especially those receiving enteral nutrition.",
+      "does_not_mean": "A 45° angle is always achievable or necessary; the key principle is to avoid a flat supine position. The trial does not prove a mortality benefit.",
+      "implementation_caveats": [
+        "Sustained 45° is often difficult to maintain due to procedures, hemodynamic instability, and patient comfort.",
+        "The benefit is most pronounced in enterally fed patients, making this a high-priority group for strict adherence.",
+        "Modern practice often targets a more feasible ≥30° elevation."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Baseline imbalances and early stopping",
+        "notes": "An accompanying Lancet commentary highlighted that several baseline differences (e.g., severity/underlying disease and stress-ulcer prophylaxis patterns) could have biased results against the supine arm, and noted the inherent uncertainty in an early-stopped single-centre trial despite the striking effect size."
+      },
+      {
+        "topic": "Feasibility of maintaining 45°",
+        "notes": "A later randomised study incorporating backrest-angle monitoring found that target semirecumbency was difficult to achieve and did not reproduce a clear reduction in VAP, reframing the question from 'does 45° work?' to 'what angle is achievable and effective in practice?'."
+      },
+      {
+        "topic": "Implementation and adherence as a core determinant",
+        "notes": "Continuous monitoring work demonstrated that maintaining head-of-bed elevation ≥30° is not reliably achieved without systems support (visual cues/alerts), reinforcing that 'position' is a process-of-care variable rather than a one-off intervention."
+      },
+      {
+        "topic": "Competing risks (pressure injury, clinical constraints)",
+        "notes": "Observational work linked factors associated with semi-recumbent compliance and pressure ulcers during invasive mechanical ventilation, underscoring the need to integrate aspiration prevention with skin integrity and haemodynamic considerations rather than treat positioning as universally benign."
+      },
+      {
+        "topic": "Evidence grading remained cautious despite biological plausibility",
+        "notes": "An evidence-based recommendation synthesising clinical data and feasibility considerations supported head elevation (often framed as ≥30°) but judged the strength of recommendation as cautious due to limited high-quality trial evidence and delivery challenges."
+      },
+      {
+        "topic": "Synthesis of the broader trial network",
+        "notes": "A network meta-analysis of positioning strategies suggested reduced VAP with semirecumbent positioning compared with supine, but the evidence base is small and heterogeneous (definitions, achieved angles, and co-interventions), so precision of effect estimates is limited."
+      },
+      {
+        "topic": "Guideline translation",
+        "notes": "Modern prevention guidance continues to recommend head-of-bed elevation (typically 30–45°) as part of a broader prevention strategy, shifting emphasis to reliable implementation and monitoring rather than assuming continuous 45° is achievable for all patients."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "What is the optimal, achievable head-of-bed angle that balances VAP prevention with feasibility and safety?",
+      "Does head-of-bed elevation provide benefit in contemporary ICUs where a 0° supine position is rarely used as a control?",
+      "What is the independent effect of head-of-bed elevation on patient-centered outcomes like mortality and duration of ventilation in a large, multicenter trial?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=86 (stopped early)",
+        "Clinically suspected pneumonia: 8% (45°) vs 34% (0°)",
+        "Microbiologically confirmed pneumonia: 5% (45°) vs 23% (0°)",
+        "Pneumonia in enterally fed patients: 9% (45°) vs 50% (0°)"
+      ],
+      "one_line_takeaway": "Avoid nursing ventilated patients flat; elevating the head of the bed to 45° drastically cuts pneumonia risk, especially during tube feeds."
+    }
+  },
+  "_source_id": "Drakulovic",
+  "_source_system": "Respiratory"
+}

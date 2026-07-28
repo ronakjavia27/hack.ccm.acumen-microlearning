@@ -1,0 +1,309 @@
+{
+  "id": "KRESS",
+  "trial_name": "KRESS — Daily Interruption of Sedative Infusions (2000)",
+  "specialty": "Neuro",
+  "subtopic": "Neurocritical Care Monitoring",
+  "year": 2000,
+  "journal": "New England Journal of Medicine",
+  "citation": "Kress JP, Pohlman AS, O’Connor MF, Hall JB. Daily interruption of sedative infusions in critically ill patients undergoing mechanical ventilation. N Engl J Med. 2000;342(20):1471-7.",
+  "doi": "10.1056/NEJM200005183422002",
+  "registration": "",
+  "trial_type": "RCT — single-centre, open-label, modified intention-to-treat",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 128,
+  "result_category": "Positive",
+  "one_liner": "Daily interruption of sedative and opioid infusions shortened median ventilation duration by 2.4 days and ICU stay by 3.5 days in a medical ICU, without an increase in immediate safety events, establishing oversedation as a modifiable iatrogenic exposure.",
+  "pico": {
+    "population": "Adults receiving mechanical ventilation and continuous infusions of sedatives/opioids in a medical ICU; excluded pregnancy, transfer with prior sedation, and post-cardiac arrest.",
+    "intervention": "Daily interruption of midazolam or propofol and morphine infusions starting 48 hours after enrolment, stopping until patient could perform ≥3 of 4 commands, restarting at half prior rate.",
+    "comparison": "Clinician-discretion interruption only; continuous infusions of sedatives and morphine.",
+    "outcome": "Duration of mechanical ventilation (median days) and ICU length of stay (median days)."
+  },
+  "keywords": [
+    "sedation interruption",
+    "daily awakening",
+    "ventilator weaning",
+    "ICU length of stay",
+    "benzodiazepine",
+    "opioid",
+    "RCT"
+  ],
+  "related_trials": [
+    "ABC trial",
+    "SLEAP"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Continuous IV sedation with benzodiazepines and opioids was routine for ventilated ICU patients; prolonged sedation was believed to prolong ventilation, ICU/hospital stay, and impede daily neurological assessment.",
+      "knowledge_gap": "Whether a strategy of daily sedation interruption would shorten ventilation duration and ICU stay without causing harm was unknown.",
+      "hypothesis": "Daily interruption of sedative and morphine infusions would reduce ventilation duration and ICU length of stay compared with clinician-discretion interruption."
+    },
+    "methods": {
+      "design": "Randomised, controlled, single-centre, open-label trial with two-stage allocation: sedation strategy (daily interruption vs usual care) and sedative agent (midazolam vs propofol).",
+      "setting": "Medical ICU at University of Chicago.",
+      "population": {
+        "inclusion": [
+          "Adults receiving mechanical ventilation and continuous infusions of sedative drugs."
+        ],
+        "exclusion": [
+          "Pregnancy",
+          "Transfer from another institution with sedatives already administered",
+          "Admission after resuscitation from cardiac arrest"
+        ]
+      },
+      "intervention": "Daily interruption of midazolam or propofol and morphine infusions, starting 48 hours after enrolment. Infusions stopped until patient could follow instructions (≥3 of 4 actions: open eyes to voice, track examiner, squeeze hand, protrude tongue) or until agitated. If on cisatracurium, interruption deferred. After awakening, infusions restarted at half prior rates and titrated.",
+      "comparison": "Continuous infusions of sedatives (midazolam or propofol) and morphine, with interruption only at clinician discretion. Research staff recorded doses; management otherwise by ICU team.",
+      "blinding": "Unblinded (open-label). Caregivers not told specific study end points, but daily interruption was operationally apparent.",
+      "sample_size_power": "No prespecified power calculation reported.",
+      "primary_outcome": "Duration of mechanical ventilation (days) and ICU length of stay (days).",
+      "secondary_outcomes": [
+        "Hospital length of stay",
+        "Percentage of infusion-days patient classified as awake",
+        "Total midazolam and morphine doses",
+        "Diagnostic testing for mental status change",
+        "Complications (self-extubation/line removal)",
+        "In-hospital mortality",
+        "Discharge home"
+      ],
+      "follow_up": "Until hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "Daily interruption accelerated extubation (RR 1.9; 95% CI 1.3–2.7) and ICU discharge (RR 1.6; 95% CI 1.1–2.3), with median reductions of 2.4 ventilator days and 3.5 ICU days.",
+        "Wakefulness separation was large (85.5% vs 9.0% of infusion-days awake), and cumulative midazolam/morphine exposure was lower in the midazolam subgroup.",
+        "Safety events were similar (4% vs 7% device removal complications), but trial underpowered for rare harms."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Duration of mechanical ventilation (days), median (IQR)",
+          "group_a": "4.9 (2.5–8.6)",
+          "group_b": "7.3 (3.4–16.1)",
+          "effect_measure": "RR (extubation)",
+          "effect_value": "1.9",
+          "ci_95": "1.3–2.7",
+          "p_value": "<0.001",
+          "note": "Median difference −2.4 days; P=0.004"
+        },
+        {
+          "outcome": "ICU length of stay (days), median (IQR)",
+          "group_a": "6.4 (3.9–12.0)",
+          "group_b": "9.9 (4.7–17.9)",
+          "effect_measure": "RR (ICU discharge)",
+          "effect_value": "1.6",
+          "ci_95": "1.1–2.3",
+          "p_value": "0.02",
+          "note": "Median difference −3.5 days"
+        },
+        {
+          "outcome": "Hospital length of stay (days), median (IQR)",
+          "group_a": "13.3 (7.3–20.0)",
+          "group_b": "16.9 (8.5–26.6)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.19",
+          "note": "Not significant"
+        },
+        {
+          "outcome": "Days classified as awake while receiving infusions (% days), median (IQR)",
+          "group_a": "85.5 (50.0–100.0)",
+          "group_b": "9.0 (0.0–50.0)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Total midazolam dose (mg), midazolam subgroup, median (IQR)",
+          "group_a": "229.8 (59–491)",
+          "group_b": "425.5 (208–824)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.05",
+          "note": "Midazolam subgroup: n=37 vs n=29"
+        },
+        {
+          "outcome": "Total morphine dose (mg), midazolam subgroup, median (IQR)",
+          "group_a": "205 (68–393)",
+          "group_b": "481 (239–748)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.009",
+          "note": ""
+        },
+        {
+          "outcome": "Diagnostic testing for mental status change, n/N (%)",
+          "group_a": "6/68 (9%)",
+          "group_b": "16/60 (27%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.02",
+          "note": ""
+        },
+        {
+          "outcome": "Complications (device removal: self-extubation or line removal), n/N (%)",
+          "group_a": "3/68 (4%)",
+          "group_b": "4/60 (7%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.88",
+          "note": ""
+        },
+        {
+          "outcome": "In-hospital mortality, n/N (%)",
+          "group_a": "24/68 (36.0%)",
+          "group_b": "28/60 (46.7%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.25",
+          "note": ""
+        },
+        {
+          "outcome": "Discharged home, n/N (%)",
+          "group_a": "39/68 (59%)",
+          "group_b": "24/60 (40%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.06",
+          "note": "Trend favouring interruption, not significant"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Device removal complications (self-extubation or central line) occurred in 3/68 (4%) vs 4/60 (7%) (P=0.88). No other adverse events systematically assessed.",
+      "Patient distress, recall, cardiovascular stress, and withdrawal syndromes were not measured."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated assignments, concealed in sealed envelopes; two-stage allocation for strategy and drug. Appropriate."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded, with potential for practice-pattern influence on extubation/discharge. End points not disclosed to caregivers, partial mitigation."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "150 randomised, 22 excluded post-randomisation (7 intervention, 15 control) due to early extubation/death on day 1–2; analysed 68 vs 60 (modified ITT). Potential for attrition bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Large separation in awake-days (85.5% vs 9.0%). Control group had 18/60 patients with temporary infusions stopped on non-final days (0–54% of days). Separation adequate."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups similar in APACHE II (medians 20 vs 22) and admission diagnoses."
+        }
+      ],
+      "verdict": "Moderate: appropriate randomisation and concealment, but unblinded delivery and post-randomisation exclusions elevate risk of bias, especially for subjective outcomes and rare harms."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Single-centre medical ICU, adults on continuous sedative infusions. Excluded pregnancy, prior sedation, post-cardiac arrest, limiting applicability to those populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Intervention is nurse-deliverable but requires staffing. In modern ICUs with lighter sedation targets, the magnitude of benefit may be less. Generalizable to settings with continuous sedation and opportunities for sedation minimisation."
+        }
+      ],
+      "verdict": "Moderate: a single-centre study from an era of deeper sedation; effect size may be smaller in contemporary light-sedation ICUs."
+    },
+    "strengths": [
+      "Clear, pragmatic sedation strategy with objective operational definition of 'awake' (≥3/4 commands).",
+      "Clinically meaningful primary endpoints (ventilator duration, ICU stay) with adjusted time-to-event analyses and 95% CIs.",
+      "Demonstrated strong protocol separation in wakefulness and sedative/opioid exposure consistent with the intended mechanism."
+    ],
+    "limitations": [
+      "Unblinded intervention, with potential for practice-pattern influence on extubation and discharge decisions.",
+      "Post-randomisation exclusions of early deaths/extubations (modified ITT) and small sample size for safety and mortality outcomes.",
+      "Single-centre design and a sedation target (Ramsay 3–4) that may not reflect current light-sedation paradigms.",
+      "No assessment of patient-reported distress, recall, cardiovascular stress, withdrawal syndromes, or longer-term neuropsychological outcomes."
+    ],
+    "critical_appraisal": {
+      "summary": "A landmark RCT that demonstrated clinically meaningful reductions in ventilation and ICU stay with daily sedation interruption, but unblinded design, post-randomisation exclusions, and single-centre conduct limit certainty; subsequent evidence suggests daily interruption is most beneficial when light sedation is not reliably achieved by other means.",
+      "strengths": [
+        "Objective definition of awake state",
+        "Strong protocol separation and biologically plausible dose reductions",
+        "Adjusted time-to-event analyses with clinically relevant endpoints"
+      ],
+      "weaknesses": [
+        "Unblinded and subject to performance bias",
+        "Modified ITT analysis with post-randomisation exclusions",
+        "Single-centre, not powered for safety or mortality"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Daily interruption of sedative and opioid infusions accelerated ventilator liberation and ICU discharge without increasing adverse events, suggesting oversedation is a modifiable iatrogenic exposure.",
+    "clinical_bottom_line": {
+      "verdict": "Daily sedation interruption can reduce ventilation duration and ICU stay in medical ICU patients receiving continuous infusions, but the benefit is most likely when light sedation is not achieved by other means; in well-run protocolised light-sedation ICUs, routine interruption may be unnecessary.",
+      "applies_to": "Adult medical ICU patients on continuous sedative/opioid infusions, particularly where deep sedation is common.",
+      "does_not_mean": "This does not mean all patients should have daily sedation interruption regardless of baseline sedation depth; it does not measure patient distress or long-term outcomes.",
+      "implementation_caveats": [
+        "Requires nurse availability to monitor during interruption and restart infusions appropriately.",
+        "Benefit may be blunted in ICUs already targeting light sedation.",
+        "Must be paired with spontaneous breathing trials to maximise ventilator liberation (as shown in ABC trial)."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Potential harms were incompletely measured",
+        "notes": "Patient distress, recall, cardiovascular stress, and withdrawal syndromes were not evaluated, limiting harm-benefit assessment for certain subgroups (e.g., coronary disease, prolonged benzodiazepine exposure)."
+      },
+      {
+        "topic": "Attribution of benefit: 'interruption' vs 'avoidance of oversedation'",
+        "notes": "The benefit may reflect prevention of oversedation and reduced sedative accumulation; comparable outcomes might be achievable through lower-dose continuous infusions targeting lighter sedation, rather than mandated daily interruption."
+      },
+      {
+        "topic": "Attention and co-intervention concerns",
+        "notes": "Research staff monitored during interruption, raising the possibility that increased attention (rather than interruption alone) contributed to earlier weaning/extubation decisions."
+      },
+      {
+        "topic": "Later randomised evidence refined 'when' daily interruption adds value",
+        "notes": "Pairing spontaneous awakening with spontaneous breathing trials (ABC trial) improved outcomes, supporting a bundled approach. When high-quality protocolised sedation is already in place, adding routine daily sedation interruption did not improve outcomes and increased sedative use and nursing workload in at least one large RCT (SLEAP), suggesting redundancy in well-run light-sedation systems. More aggressive minimisation strategies (e.g., no-sedation) demonstrated feasibility in selected settings but raise trade-offs around comfort and workload."
+      },
+      {
+        "topic": "Syntheses and guidelines",
+        "notes": "Systematic reviews conclude that evidence for daily sedation interruption vs alternatives is mixed and context-dependent, particularly where protocolised light sedation is practised. International guidelines endorse achieving light sedation (including daily interruption or nurse-protocolised sedation), emphasising that either approach can be effective depending on local implementation."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ABC trial",
+        "relation": "Subsequent RCT that paired spontaneous awakening with spontaneous breathing trials, showing improved mortality and ventilator-free days. Supports bundling daily interruption with liberation assessment."
+      },
+      {
+        "trial": "SLEAP",
+        "relation": "Large RCT in ICUs with protocolised light sedation; adding daily interruption did not improve outcomes and increased sedative use and nursing workload, indicating redundancy when light sedation is already achieved."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal sedation strategy in ICUs with existing effective light-sedation protocols?",
+      "Does daily sedation interruption improve long-term cognitive or psychological outcomes?",
+      "Is daily interruption safe in high-risk subgroups (e.g., acute coronary disease, severe withdrawal risk)?",
+      "How does daily interruption compare to no-sedation approaches in terms of patient-centred outcomes and staff workload?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=128 analysed (modified ITT)",
+        "Ventilator days: 4.9 vs 7.3 (P=0.004)",
+        "ICU days: 6.4 vs 9.9 (P=0.02)",
+        "Awake-days: 85.5% vs 9.0%",
+        "Mortality: 36% vs 47% (P=0.25, NS)"
+      ],
+      "one_line_takeaway": "Daily awakening trials in a medical ICU cut ventilation by 2.4 days and ICU stay by 3.5 days, but modern light-sedation protocols may make routine interruption unnecessary."
+    }
+  },
+  "_source_id": "KRESS",
+  "_source_system": "Neuro"
+}

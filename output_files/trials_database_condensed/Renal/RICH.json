@@ -1,0 +1,282 @@
+{
+  "id": "RICH",
+  "trial_name": "RICH — Regional Citrate vs Systemic Heparin Anticoagulation During CKRT in AKI (2020)",
+  "specialty": "Critical Care",
+  "subtopic": "Renal Replacement Therapy",
+  "year": 2020,
+  "journal": "JAMA",
+  "citation": "Zarbock A, Küllmar M, Kindgen-Milles D, Wempe C, Gerß J, Brandenburger T, et al. Effect of Regional Citrate Anticoagulation vs Systemic Heparin Anticoagulation During Continuous Kidney Replacement Therapy on Dialysis Filter Life Span and Mortality Among Critically Ill Patients With Acute Kidney Injury: A Randomized Clinical Trial. JAMA. 2020;324(16):1629-1639.",
+  "doi": "https://doi.org/10.1001/jama.2020.18618",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, adaptive group-sequential",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 638,
+  "result_category": "Mixed",
+  "one_liner": "In critically ill patients with AKI requiring CKRT, regional citrate anticoagulation significantly prolonged filter life and reduced bleeding but did not significantly reduce 90-day mortality compared with systemic heparin, with increased metabolic complications and infection.",
+  "pico": {
+    "population": "Critically ill adults (18-90 years) with severe AKI (KDIGO stage 3) requiring CKRT in 26 German ICUs.",
+    "intervention": "Regional citrate anticoagulation during CKRT, titrated to post-filter ionised calcium 1.0-1.4 mg/dL, with systemic calcium substitution and protocolised monitoring.",
+    "comparison": "Systemic unfractionated heparin anticoagulation during CKRT, target aPTT 45-60 seconds.",
+    "outcome": "Co-primary: filter life span (hours) and 90-day all-cause mortality."
+  },
+  "keywords": [
+    "regional citrate anticoagulation",
+    "systemic heparin",
+    "continuous kidney replacement therapy",
+    "acute kidney injury",
+    "filter life span",
+    "bleeding",
+    "mortality"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "CKRT requires extracorporeal circuit anticoagulation to prevent premature filter clotting, treatment interruptions, blood loss, and reduced delivered dose. Systemic heparin is familiar but increases bleeding risk and can cause HIT. RCA provides circuit-confined anticoagulation via calcium chelation, plausibly reducing bleeding and prolonging circuit life, but adds complexity and can cause electrolyte/acid–base derangements. Prior RCTs and meta-analyses suggested improved circuit patency and less bleeding with RCA, but were underpowered/heterogeneous for patient-centred outcomes (mortality, renal recovery).",
+      "knowledge_gap": "Uncertainty about whether RCA improves patient-centred outcomes like mortality and renal recovery compared with systemic heparin.",
+      "hypothesis": "RCA would prolong filter life span and reduce 90-day all-cause mortality compared with systemic heparin."
+    },
+    "methods": {
+      "design": "Investigator-initiated, multicentre, parallel-group, open-label, randomised clinical trial with adaptive group-sequential features.",
+      "setting": "26 ICUs in Germany.",
+      "population": {
+        "inclusion": [
+          "Adults (18-90 years) with severe AKI (KDIGO stage 3) and an indication for CKRT (oliguria/anuria <200 mL/12 h, fluid overload with oedema, serum urea >150 mg/dL, potassium ≥6 mmol/L, blood pH <7.15).",
+          "Additional eligibility: severe sepsis/septic shock, vasopressor use, refractory fluid overload."
+        ],
+        "exclusion": [
+          "Contraindication to citrate or heparin.",
+          "High bleeding risk/coagulopathy or severe thrombocytopenia.",
+          "Impaired citrate handling (severe hepatic failure/shock with concern for citrate accumulation).",
+          "Other protocol-specified safety/feasibility exclusions."
+        ]
+      },
+      "intervention": "Regional citrate anticoagulation, titrated to post-filter ionised calcium 1.0-1.4 mg/dL, with systemic calcium substitution; CKRT prescription: target effluent dose 30 mL/kg/h, blood flow >100 mL/min, routine filter change at 72 hours.",
+      "comparison": "Systemic unfractionated heparin, target aPTT 45-60 seconds; same CKRT prescription standards.",
+      "blinding": "Open-label (unblinded).",
+      "sample_size_power": "Planned up to 1450 (1260 analysable) to detect ~8% absolute reduction in 90-day mortality (48% to 40%) with 80% power, two-sided α=0.05; also powered for filter life span. Stopped early at interim analysis after 638 randomised (596 analysed).",
+      "primary_outcome": "Co-primary: filter life span (hours) and 90-day all-cause mortality.",
+      "secondary_outcomes": [
+        "Total treatment downtime",
+        "Bleeding complications",
+        "New culture-proven infection",
+        "Hypophosphataemia",
+        "Severe alkalosis",
+        "Persistent kidney dysfunction at day 90",
+        "1-year mortality"
+      ],
+      "follow_up": "90 days for co-primary outcomes; extended follow-up for 1-year mortality."
+    },
+    "results": {
+      "headline_bullets": [
+        "RCA prolonged filter life (median 47 vs 26 h) and reduced downtime (120 vs 300 min).",
+        "RCA reduced bleeding (5.1% vs 16.9%) but increased infection (68.0% vs 55.4%).",
+        "No significant mortality difference (adjusted HR 0.79, 95% CI 0.63-1.004, P=0.054).",
+        "Trial stopped early, limiting mortality precision."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Filter life span (hours), median (IQR)",
+          "group_a": "47 (19-70)",
+          "group_b": "26 (12-51)",
+          "effect_measure": "Median difference (Hodges-Lehmann)",
+          "effect_value": "15",
+          "ci_95": "11 to 20",
+          "p_value": "<0.001",
+          "note": "Routine filter change at 72 h per protocol."
+        },
+        {
+          "outcome": "90-day all-cause mortality",
+          "group_a": "150/300 (51.2%)",
+          "group_b": "156/296 (53.6%)",
+          "effect_measure": "HR (adjusted)",
+          "effect_value": "0.79",
+          "ci_95": "0.63 to 1.004",
+          "p_value": "0.054",
+          "note": "Unadjusted HR 0.91 (0.72-1.13), P=0.38; trial stopped early for futility on mortality."
+        },
+        {
+          "outcome": "Total treatment downtime (minutes), median (IQR)",
+          "group_a": "120 (0-720)",
+          "group_b": "300 (0-930)",
+          "effect_measure": "Median difference",
+          "effect_value": "-120",
+          "ci_95": "-240 to 0",
+          "p_value": "0.01",
+          "note": ""
+        },
+        {
+          "outcome": "Bleeding complications, n (%)",
+          "group_a": "15 (5.1)",
+          "group_b": "50 (16.9)",
+          "effect_measure": "OR",
+          "effect_value": "0.27",
+          "ci_95": "0.15 to 0.49",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "New culture-proven infection, n (%)",
+          "group_a": "204 (68.0)",
+          "group_b": "164 (55.4)",
+          "effect_measure": "OR",
+          "effect_value": "1.71",
+          "ci_95": "1.23 to 2.39",
+          "p_value": "0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Hypophosphataemia, n (%)",
+          "group_a": "44 (15.4)",
+          "group_b": "18 (6.2)",
+          "effect_measure": "OR",
+          "effect_value": "2.74",
+          "ci_95": "1.58 to 4.74",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Severe alkalosis, n (%)",
+          "group_a": "7 (2.4)",
+          "group_b": "1 (0.3)",
+          "effect_measure": "OR",
+          "effect_value": "7.21",
+          "ci_95": "0.89 to 58.30",
+          "p_value": "0.04",
+          "note": "Imprecise estimate (rare events)."
+        },
+        {
+          "outcome": "Persistent kidney dysfunction at day 90 (survivors with data), n (%)",
+          "group_a": "27/95 (28.4)",
+          "group_b": "15/100 (15.0)",
+          "effect_measure": "OR",
+          "effect_value": "2.25",
+          "ci_95": "1.11 to 4.56",
+          "p_value": "0.02",
+          "note": "Supplementary outcome; denominators reflect survivors with creatinine follow-up."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Bleeding complications: 5.1% vs 16.9% (OR 0.27, P<0.001).",
+      "Hypophosphataemia: 15.4% vs 6.2% (OR 2.74, P<0.001).",
+      "Severe alkalosis: 2.4% vs 0.3% (OR 7.21, P=0.04).",
+      "New culture-proven infection: 68.0% vs 55.4% (OR 1.71, P=0.001)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised randomisation with minimisation; allocation concealed; groups well balanced at baseline."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; clinicians unblinded, which could influence circuit management decisions, though mortality is objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "42/638 (6.6%) excluded from primary analysis due to lack of post-randomisation consent; 19 withdrew consent for mortality follow-up. Modified ITT used."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Time to CKRT initiation similar (2.4 vs 2.5 h); protocolised CKRT prescription and filter change rules; clear separation in filter life and downtime."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well matched: age 67.5 vs 67.6, APACHE II 28.4 vs 28.5, SOFA 11.5 vs 11.5, vasopressors 92.6% vs 90.5%, invasive ventilation 80.7% vs 84.1%."
+        }
+      ],
+      "verdict": "Moderate internal validity: strong randomisation and technical separation, but open-label design, post-randomisation exclusions, and early stopping limit certainty for mortality and secondary outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High-acuity ICU patients with severe AKI (APACHE II ~28, SOFA ~11.5, >90% vasopressors) typical of CKRT populations in high-resource settings."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in German ICUs with established CKRT capability; RCA requires protocolised monitoring and staff competence, limiting applicability in resource-limited settings. Excluded patients with contraindications to citrate or heparin (e.g., severe hepatic failure/shock)."
+        }
+      ],
+      "verdict": "Good external validity for high-acuity ICU patients in centres capable of delivering RCA with close monitoring, but limited for patients with severe hepatic dysfunction or in settings without robust citrate protocols."
+    },
+    "strengths": [
+      "Multicentre ICU RCT.",
+      "Protocolised CKRT prescription in both arms.",
+      "Clinically meaningful co-primary outcomes (circuit performance and mortality).",
+      "Clear separation in technical endpoints.",
+      "Pragmatic relevance to routine ICU CKRT."
+    ],
+    "limitations": [
+      "Stopped early, reducing power for mortality and patient-centred outcomes.",
+      "Open-label design with potential influence on circuit management and secondary outcomes.",
+      "Post-randomisation exclusions due to delayed consent (6.6%).",
+      "Multiple secondary endpoints increase risk of chance findings."
+    ],
+    "critical_appraisal": {
+      "summary": "RICH is a landmark trial demonstrating that RCA improves circuit performance and reduces bleeding, but early stopping and open-label design limit confidence in mortality and secondary outcomes; the trade-off between bleeding reduction and increased infection/metabolic complications requires careful protocolised management.",
+      "strengths": [
+        "Multicentre, protocolised CKRT delivery.",
+        "Clear separation in technical endpoints.",
+        "Clinically relevant co-primary outcomes."
+      ],
+      "weaknesses": [
+        "Early termination limits mortality precision.",
+        "Open-label design may bias circuit management and secondary outcomes.",
+        "Post-randomisation exclusions (6.6%).",
+        "Multiple secondary endpoints without adjustment for multiplicity."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "RCA significantly prolongs filter life and reduces bleeding compared with systemic heparin, but does not significantly reduce 90-day mortality; the benefits must be weighed against increased metabolic complications and infection risk.",
+    "clinical_bottom_line": {
+      "verdict": "RCA should be the preferred anticoagulation strategy for CKRT in critically ill patients with AKI, provided there are no contraindications and close metabolic monitoring is in place, as it improves circuit efficacy and reduces bleeding without a proven mortality benefit.",
+      "applies_to": "Critically ill adults with severe AKI requiring CKRT in ICUs with the capability for protocolised RCA monitoring.",
+      "does_not_mean": "RCA does not improve survival or renal recovery based on this trial; the mortality benefit remains uncertain.",
+      "implementation_caveats": [
+        "Requires protocolised monitoring for ionised calcium, acid-base status, and electrolytes (especially phosphate).",
+        "Avoid in patients with severe hepatic failure or shock with risk of citrate accumulation.",
+        "Increased risk of hypophosphataemia and alkalosis necessitates proactive electrolyte replacement.",
+        "Higher rate of culture-proven infection warrants strict catheter care protocols."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping complicates mortality inference",
+        "notes": "The trial crossed an efficacy boundary for filter life span while stopping for futility on mortality, making the mortality estimate imprecise and increasing type II error risk despite the adjusted HR favouring citrate."
+      },
+      {
+        "topic": "Discordant secondary signals (infection; renal recovery)",
+        "notes": "The increase in culture-proven infection and persistent kidney dysfunction at day 90 emerged from secondary analyses in an open-label trial, and should be interpreted cautiously due to multiplicity and potential bias."
+      },
+      {
+        "topic": "Post-RICH evidence synthesis",
+        "notes": "Later systematic reviews/network meta-analyses continue to show improved circuit life and reduced bleeding with citrate, but mortality effects remain uncertain and sensitive to heterogeneity."
+      },
+      {
+        "topic": "Guideline positioning after RICH",
+        "notes": "Contemporary guidelines recommend RCA as first-line for CKRT when no contraindications exist, emphasizing protocolised monitoring for citrate accumulation and electrolyte derangements."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does RCA improve long-term mortality or renal recovery?",
+      "What is the mechanism for increased infection risk?",
+      "How to optimize electrolyte management to minimize hypophosphataemia and alkalosis?",
+      "Is RCA safe and effective in patients with hepatic dysfunction?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=596 analysed",
+        "Filter life: 47 vs 26 h (median difference 15 h)",
+        "90-day mortality: 51.2% vs 53.6% (adjusted HR 0.79, P=0.054)",
+        "Bleeding: 5.1% vs 16.9% (OR 0.27)",
+        "Infection: 68.0% vs 55.4% (OR 1.71)"
+      ],
+      "one_line_takeaway": "RCA improves filter life and reduces bleeding but does not significantly reduce mortality; use with protocolised monitoring to manage metabolic complications."
+    }
+  },
+  "_source_id": "RICH",
+  "_source_system": "Renal"
+}

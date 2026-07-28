@@ -1,0 +1,283 @@
+{
+  "id": "RENAL",
+  "trial_name": "RENAL — Intensity of Continuous Renal-Replacement Therapy in Critically Ill Patients (2009)",
+  "specialty": "Critical Care",
+  "subtopic": "Renal Replacement Therapy",
+  "year": 2009,
+  "journal": "The New England Journal of Medicine",
+  "citation": "The RENAL Replacement Therapy Study Investigators. Intensity of continuous renal-replacement therapy in critically ill patients. N Engl J Med. 2009;361(17):1627-1638.",
+  "doi": "https://doi.org/10.1056/NEJMoa0902413",
+  "registration": "",
+  "trial_type": "RCT — multicenter, parallel-group, open-label, pragmatic",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1508,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In critically ill adults with AKI requiring CRRT, higher-intensity CVVHDF (40 mL/kg/h) did not reduce 90-day mortality compared with lower-intensity treatment (25 mL/kg/h).",
+  "pico": {
+    "population": "Critically ill adults (≥18 years, weight 60–100 kg) with AKI requiring CVVHDF in 35 ICUs in Australia and New Zealand.",
+    "intervention": "Higher-intensity CVVHDF (post-dilution) prescribed at an effluent flow of 40 mL/kg/h.",
+    "comparison": "Lower-intensity CVVHDF (post-dilution) prescribed at an effluent flow of 25 mL/kg/h.",
+    "outcome": "Death from any cause by day 90."
+  },
+  "keywords": [
+    "CRRT",
+    "CVVHDF",
+    "acute kidney injury",
+    "dose intensity",
+    "effluent flow rate",
+    "mortality"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "CRRT was widely used in haemodynamically unstable ICU patients, but the optimal 'dose' (effluent flow, mL/kg/h) was uncertain. Earlier smaller trials and practice variation suggested potential benefit from higher-dose haemofiltration/haemodiafiltration.",
+      "knowledge_gap": "Estimates of benefit were imprecise, and biologically plausible harms (electrolyte losses, micronutrient removal, workload, filter use) were recognised. Delivered dose commonly differed from prescribed dose due to downtime.",
+      "hypothesis": "In critically ill adults with AKI requiring CRRT, a higher-intensity CVVHDF prescription (40 mL/kg/h) would reduce 90-day all-cause mortality compared with a lower-intensity prescription (25 mL/kg/h)."
+    },
+    "methods": {
+      "design": "Multicentre, parallel-group, randomised controlled trial; open-label treatment; investigator-initiated.",
+      "setting": "35 ICUs in Australia and New Zealand; recruitment 2005–2008.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Body weight 60–100 kg",
+          "AKI with an intention to deliver CVVHDF",
+          "Common triggers for initiating CVVHDF: oliguria, hyperkalaemia, severe metabolic acidaemia, uraemia, rising creatinine, fluid overload/organ oedema"
+        ],
+        "exclusion": [
+          "Pre-existing end-stage kidney disease requiring maintenance dialysis",
+          "Weight outside 60–100 kg",
+          "Inability to obtain consent via deferred process, or contraindications to protocolised CVVHDF"
+        ]
+      },
+      "intervention": "Higher-intensity CVVHDF (post-dilution) prescribed at an effluent flow of 40 mL/kg/h. Delivered using CVVHDF with centre-selected anticoagulation and routine ICU co-interventions.",
+      "comparison": "Lower-intensity CVVHDF (post-dilution) prescribed at an effluent flow of 25 mL/kg/h. Intermittent haemodialysis could be used after randomisation when clinically indicated.",
+      "blinding": "Not blinded (clinicians and bedside staff aware of prescribed intensity); primary outcome (mortality) was objective and centrally analysed.",
+      "sample_size_power": "1500 planned to detect an 8.5% absolute reduction in 90-day mortality (from 60.0% to 51.5%) with 90% power at a two-sided 5% significance level; two interim analyses with Haybittle–Peto boundary (P<0.001) and final alpha 0.048.",
+      "primary_outcome": "Death from any cause by day 90.",
+      "secondary_outcomes": [
+        "Death from any cause by day 28",
+        "Death in ICU",
+        "Cessation of renal-replacement therapy by day 90",
+        "Alive and receiving dialysis at day 90",
+        "ICU length of stay",
+        "Hospital length of stay",
+        "Mechanical ventilation duration",
+        "Hypophosphataemia (complication)",
+        "Serious adverse events"
+      ],
+      "follow_up": "90 days (primary endpoint); additional outcomes assessed at 28 days and at ICU/hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "90-day mortality was identical: 44.7% in both groups (OR 1.00; 95% CI 0.81 to 1.23; P=0.99).",
+        "Higher intensity achieved better biochemical control (e.g., lower urea/creatinine) but did not improve clinical endpoints (liberation from RRT, ICU/hospital LOS).",
+        "Higher intensity increased electrolyte complications, most notably hypophosphataemia (65.1% vs 54.0%; P<0.0001)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death from any cause by day 90 (primary)",
+          "group_a": "322/721 (44.7%)",
+          "group_b": "332/743 (44.7%)",
+          "effect_measure": "OR",
+          "effect_value": "1.00",
+          "ci_95": "0.81 to 1.23",
+          "p_value": "0.99",
+          "note": "No mortality difference despite substantial separation in delivered dose."
+        },
+        {
+          "outcome": "Death from any cause by day 28",
+          "group_a": "247/721 (34.3%)",
+          "group_b": "251/743 (33.8%)",
+          "effect_measure": "OR",
+          "effect_value": "1.02",
+          "ci_95": "0.80 to 1.30",
+          "p_value": "0.88",
+          "note": "Early mortality unchanged."
+        },
+        {
+          "outcome": "Death in ICU",
+          "group_a": "220/721 (30.5%)",
+          "group_b": "233/743 (31.4%)",
+          "effect_measure": "OR",
+          "effect_value": "0.96",
+          "ci_95": "0.75 to 1.23",
+          "p_value": "0.74",
+          "note": "No signal of benefit."
+        },
+        {
+          "outcome": "Cessation of renal-replacement therapy (by day 90)",
+          "group_a": "630/721 (87.4%)",
+          "group_b": "648/743 (87.2%)",
+          "effect_measure": "HR",
+          "effect_value": "1.01",
+          "ci_95": "0.93 to 1.10",
+          "p_value": "0.74",
+          "note": "Higher intensity did not accelerate liberation from RRT."
+        },
+        {
+          "outcome": "Alive and receiving dialysis at day 90",
+          "group_a": "27/399 (6.8%)",
+          "group_b": "18/411 (4.4%)",
+          "effect_measure": "OR",
+          "effect_value": "1.59",
+          "ci_95": "0.86 to 2.92",
+          "p_value": "0.14",
+          "note": "Numerically higher dialysis-dependence with higher intensity; not statistically significant."
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "12.2 ± 10.2",
+          "group_b": "12.6 ± 11.2",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.51",
+          "note": "No reduction in ICU resource use."
+        },
+        {
+          "outcome": "Hospital length of stay (days)",
+          "group_a": "35.4 ± 31.9",
+          "group_b": "35.5 ± 29.9",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.97",
+          "note": "No difference in total hospital stay."
+        },
+        {
+          "outcome": "Mechanical ventilation duration (days)",
+          "group_a": "12.1 ± 13.9",
+          "group_b": "13.0 ± 15.6",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.20",
+          "note": "No evidence of faster organ support resolution."
+        },
+        {
+          "outcome": "Hypophosphataemia (complication)",
+          "group_a": "461/708 (65.1%)",
+          "group_b": "396/733 (54.0%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.0001",
+          "note": "More frequent with higher intensity; episodes 1495 vs 1059 (P<0.0001)."
+        },
+        {
+          "outcome": "Serious adverse events judged related to study treatment",
+          "group_a": "7 patients",
+          "group_b": "5 patients",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Types included dysrhythmia, hypoxaemia/hypotension, venous air embolus, and peritoneal haemorrhage/bleeding."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Higher intensity increased hypophosphataemia (65.1% vs 54.0%; P<0.0001).",
+      "Serious adverse events judged related to study treatment occurred in 7 patients (higher intensity) vs 5 patients (lower intensity). Types included dysrhythmia, hypoxaemia/hypotension, venous air embolus, and peritoneal haemorrhage/bleeding."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with allocation concealment before assignment; 1:1 allocation across 35 ICUs."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label treatment could influence co-interventions; however, major outcomes were objective (mortality, RRT status), and co-interventions were broadly similar. Use of intermittent haemodialysis after randomisation was similar (7.6% vs 7.0%)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1508 randomised; analysed for primary outcome: 721 (higher) and 743 (lower). Post-randomisation exclusions due to deferred-consent/data withdrawal (imbalanced: 26 vs 18), introducing a small risk of attrition bias. Follow-up for vital status at 90 days was near-complete (one patient lost to follow-up)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Delivered effluent flow (mean ± SD): 33.4 ± 12.8 vs 22.0 ± 17.8 mL/kg/h, demonstrating meaningful separation. Dialysis circuit utilisation differed: filters used per day 1.06 ± 0.49 vs 0.84 ± 0.42 (P<0.001)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well balanced: age 64.7 vs 64.4 years; severe sepsis 49.9% vs 48.9%; APACHE III score 102.5 vs 102.3; serum creatinine 338 vs 330 µmol/L."
+        }
+      ],
+      "verdict": "Overall, internal validity appears strong given concealed randomisation, large sample size, objective primary outcome, and clear separation in delivered CRRT intensity; limitations include open-label delivery and modest post-randomisation data withdrawal due to deferred-consent processes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents adult ICU patients with AKI for whom clinicians chose CVVHDF, including ~50% with severe sepsis and high severity of illness (APACHE III ~102). Exclusions limit representativeness: body weight restricted to 60–100 kg; patients with established end-stage kidney disease were excluded."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings generalise best to high-resource ICUs using CVVHDF with capacity to deliver prescribed effluent rates and monitor electrolytes closely. Applicability is less certain for extremes of body size, centres routinely delivering substantially lower doses (e.g., <20 mL/kg/h delivered), or settings where CVVHDF is not standard."
+        }
+      ],
+      "verdict": "Overall generalisability is moderate: the trial is highly applicable to many modern ICUs using CVVHDF, but weight restrictions and the specific 'control' dose constrain extrapolation to all real-world CRRT practices."
+    },
+    "strengths": [
+      "Large multicentre randomised trial with planned sample size achieved (1508 randomised).",
+      "Pragmatic delivery within routine ICU care, improving ecological validity.",
+      "Clear separation in delivered dose (33.4 vs 22.0 mL/kg/h) and robust reporting of delivery metrics (filter use, delivered/achieved clearances).",
+      "Clinically meaningful primary endpoint (90-day mortality) with near-complete follow-up."
+    ],
+    "limitations": [
+      "Open-label design could influence discretionary co-interventions, although primary outcome was objective.",
+      "Post-randomisation exclusions due to deferred consent/data withdrawal (imbalanced, though numerically modest) create potential attrition bias.",
+      "Weight restriction (60–100 kg) limits generalisability, especially for obesity and underweight populations.",
+      "Intervention tested a 'higher vs already adequate' intensity comparison; it does not address whether very low doses are inferior.",
+      "Higher intensity increased hypophosphataemia and filter consumption, highlighting a harm/resource trade-off."
+    ],
+    "critical_appraisal": {
+      "summary": "RENAL is a large, well-conducted pragmatic trial with strong internal validity that convincingly demonstrates no mortality benefit from escalating CRRT intensity beyond an adequate dose, though open-label delivery and weight-based exclusions slightly limit confidence and generalisability.",
+      "strengths": [
+        "Concealed randomisation and large sample size.",
+        "Objective primary outcome with near-complete follow-up.",
+        "Clear separation in delivered dose confirming a valid test of the intervention."
+      ],
+      "weaknesses": [
+        "Open-label design introduces potential for performance bias.",
+        "Imbalanced post-randomisation exclusions from deferred consent.",
+        "Restricted weight range limits applicability to all patients."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In critically ill patients with acute kidney injury, treatment with higher-intensity continuous renal-replacement therapy did not reduce mortality at 90 days.",
+    "clinical_bottom_line": {
+      "verdict": "Escalating CVVHDF intensity from 25 to 40 mL/kg/h does not improve survival or renal recovery and increases complications. Routine 'high-intensity' prescriptions are not justified for outcome improvement.",
+      "applies_to": "Adult ICU patients with AKI requiring CVVHDF, particularly those with severe sepsis and high illness severity, in settings capable of delivering and monitoring CRRT.",
+      "does_not_mean": "That any dose of CRRT is acceptable; the trial does not address whether very low doses are inferior to an adequate standard.",
+      "implementation_caveats": [
+        "Focus on reliably delivering an adequate dose (targeting 20–25 mL/kg/h delivered) rather than escalating intensity.",
+        "Actively monitor for and mitigate electrolyte depletion, particularly hypophosphataemia, with higher clearances.",
+        "Prescribe a higher dose to compensate for expected downtime to achieve the target delivered dose."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of 'dose' vs 'delivered clearance'",
+        "notes": "Published correspondence raised concerns about generalisability and the interpretation of 'dose' versus 'delivered clearance' in routine practice, underscoring the methodological point that interruptions and filter performance can decouple prescription from true solute clearance."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "The optimal timing of CRRT initiation remains unaddressed by this trial.",
+      "Whether very low CRRT doses are inferior to an adequate standard dose is not answered."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1508",
+        "90-day mortality identical: 44.7% vs 44.7% (OR 1.00, 95% CI 0.81-1.23)",
+        "Higher intensity increased hypophosphataemia: 65.1% vs 54.0%"
+      ],
+      "one_line_takeaway": "For CRRT in AKI, more is not better: targeting a delivered dose of 20-25 mL/kg/h is adequate, and escalating intensity only adds cost and complications without improving survival."
+    }
+  },
+  "_source_id": "RENAL",
+  "_source_system": "Renal"
+}

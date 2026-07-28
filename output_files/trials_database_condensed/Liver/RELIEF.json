@@ -1,0 +1,375 @@
+{
+  "id": "RELIEF",
+  "trial_name": "RELIEF — Extracorporeal Albumin Dialysis (MARS) in Acute-on-Chronic Liver Failure (2013)",
+  "specialty": "Hepatology & Critical Care",
+  "subtopic": "Acute-on-Chronic Liver Failure",
+  "year": 2013,
+  "journal": "Hepatology",
+  "citation": "Bañares R, Nevens F, Larsen FS, Jalan R, Albillos A, Dollinger M, et al. Extracorporeal albumin dialysis with the molecular adsorbent recirculating system in acute-on-chronic liver failure: the RELIEF trial. Hepatology. 2013;57(3):1153-1162.",
+  "doi": "https://doi.org/10.1002/hep.26185",
+  "registration": "Not reported in source",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 189,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with severe ACLF, adding intermittent MARS albumin dialysis to standard medical therapy did not improve 28-day or 90-day transplant-free survival despite early biochemical improvements.",
+  "pico": {
+    "population": "Adults with cirrhosis and acute decompensation, total bilirubin >5 mg/dL, plus ≥1 of: hepatorenal syndrome, hepatic encephalopathy grade ≥II, or rapidly progressive hyperbilirubinaemia.",
+    "intervention": "MARS albumin dialysis + standard medical therapy (planned 4 consecutive daily sessions, then 3/week up to 10 sessions over 21 days).",
+    "comparison": "Standard medical therapy alone.",
+    "outcome": "28-day transplant-free survival."
+  },
+  "keywords": [
+    "MARS",
+    "albumin dialysis",
+    "acute-on-chronic liver failure",
+    "ACLF",
+    "extracorporeal liver support",
+    "transplant-free survival"
+  ],
+  "related_trials": [
+    "HELIOS",
+    "DIALIVE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "ACLF is acute decompensation of cirrhosis with organ dysfunction and high short-term mortality, often driven by infection/haemorrhage. MARS is an extracorporeal albumin dialysis platform designed to remove albumin-bound and water-soluble toxins.",
+      "knowledge_gap": "Pre-RELIEF evidence for MARS in ACLF was small, heterogeneous, and focused on surrogate outcomes rather than robust patient-centred endpoints.",
+      "hypothesis": "Adding MARS to standard medical therapy improves short-term transplant-free survival in ACLF patients with severe hyperbilirubinaemia and major organ complications."
+    },
+    "methods": {
+      "design": "Prospective, randomised, multicentre (19 European centres), open-label, parallel-group trial with stratified (MELD) permuted-block central randomisation.",
+      "setting": "19 European centres; enrolled April 2003–March 2009.",
+      "population": {
+        "inclusion": [
+          "Adults with cirrhosis and acute decompensation with an identifiable trigger",
+          "Total bilirubin >5 mg/dL",
+          "After initial stabilisation and re-evaluation (minimum 24 hours after screening; randomisation within 24–48 hours after re-evaluation)",
+          "Required ≥1 of: hepatorenal syndrome (per International Ascites Club definition), hepatic encephalopathy grade ≥II, or rapidly progressive hyperbilirubinaemia (bilirubin >20 mg/dL at randomisation with >50% increase since admission)"
+        ],
+        "exclusion": [
+          "Progressive jaundice due to natural course or extrahepatic cholestasis",
+          "Platelets <50,000/μL",
+          "INR >2.3 or disseminated intravascular coagulation",
+          "Need for renal replacement therapy at inclusion or intrinsic renal disease",
+          "Uncontrolled infection",
+          "Active bleeding at inclusion",
+          "Hepatocellular carcinoma >4 cm or portal vein thrombosis",
+          "Severe cardiopulmonary disease",
+          "Mean arterial pressure <60 mmHg despite vasopressors",
+          "Major surgery within 4 weeks",
+          "HIV infection"
+        ]
+      },
+      "intervention": "MARS + standard medical therapy. Planned dosing: 4 consecutive daily sessions (days 1–4), then 3 sessions/week until 'sustained improvement' or a maximum of 10 sessions within 21 days. Session delivery: 6–8 h/day via central double-lumen catheter; blood flow 100–250 mL/min; albumin circuit flow 150 mL/min; anticoagulation according to local policy.",
+      "comparison": "Standard medical therapy alone, with protocolised guidance for common precipitants and complications. Escalation/rescue therapies permitted as clinically indicated.",
+      "blinding": "Unblinded (no sham extracorporeal therapy). Primary outcome objective, but secondary outcomes vulnerable to detection bias.",
+      "sample_size_power": "156 patients (78 per group) required to detect a 20% absolute increase in 28-day survival (from 60% to 80%) with 80% power at 5% significance; target increased to 172 to allow ~10% dropouts.",
+      "primary_outcome": "28-day transplant-free survival",
+      "secondary_outcomes": [
+        "90-day transplant-free survival",
+        "Renal recovery at day 4 in baseline HRS",
+        "Encephalopathy improvement at day 4 in baseline HE grade II–IV",
+        "Total bilirubin change at day 4",
+        "Creatinine change at day 4",
+        "Haemoglobin change at day 4",
+        "Platelet change at day 4",
+        "Mechanical ventilation during hospitalisation",
+        "Length of hospital stay",
+        "Severe adverse events (bleeding, infection)"
+      ],
+      "follow_up": "90 days"
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in 28-day transplant-free survival (60.7% vs 58.9%; P=0.79) or 90-day survival (46.1% vs 42.2%; P=0.71).",
+        "MARS produced significant early biochemical improvements (bilirubin, creatinine) at day 4, but these did not translate into survival benefit.",
+        "Early signals for renal recovery and encephalopathy improvement were not statistically significant and not sustained.",
+        "MARS was associated with significant drops in haemoglobin and platelets, and numerically more bleeding events."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "28-day transplant-free survival (ITT)",
+          "group_a": "60.7%",
+          "group_b": "58.9%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.79",
+          "note": "ITT n=179 (MARS 90, SMT 89); 3 liver transplants per group"
+        },
+        {
+          "outcome": "28-day transplant-free survival (per-protocol)",
+          "group_a": "60.0%",
+          "group_b": "59.2%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.88",
+          "note": "Per-protocol n=156 (MARS 71, SMT 85)"
+        },
+        {
+          "outcome": "90-day transplant-free survival (ITT)",
+          "group_a": "46.1%",
+          "group_b": "42.2%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.71",
+          "note": "No survival separation on Kaplan–Meier analysis"
+        },
+        {
+          "outcome": "90-day transplant-free survival (per-protocol)",
+          "group_a": "44.7%",
+          "group_b": "43.7%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.97",
+          "note": "No survival separation on Kaplan–Meier analysis"
+        },
+        {
+          "outcome": "28-day mortality (adjusted model)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "OR",
+          "effect_value": "0.87",
+          "ci_95": "0.44 to 1.72",
+          "p_value": "0.694",
+          "note": "Adjusted for MELD >20 and spontaneous bacterial peritonitis as triggering event"
+        },
+        {
+          "outcome": "Renal recovery at day 4 in baseline HRS (per-protocol): creatinine <1.5 mg/dL",
+          "group_a": "16/34 (47.1%)",
+          "group_b": "10/38 (26.3%)",
+          "effect_measure": "OR",
+          "effect_value": "0.40",
+          "ci_95": "0.15 to 1.07",
+          "p_value": "0.07",
+          "note": "Early signal only; effect not sustained at day 21"
+        },
+        {
+          "outcome": "Encephalopathy improvement at day 4 in baseline HE grade II–IV (per-protocol): improved to grade 0–I",
+          "group_a": "15/24 (62.5%)",
+          "group_b": "13/34 (38.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.37",
+          "ci_95": "0.12 to 1.09",
+          "p_value": "0.07",
+          "note": "Early signal only; effect not sustained at day 21"
+        },
+        {
+          "outcome": "Total bilirubin (day 4 laboratory change set): baseline → day 4 (mg/dL)",
+          "group_a": "26.30 (11.66) → 17.58 (6.90)",
+          "group_b": "26.65 (11.54) → 24.15 (11.30)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.001",
+          "note": "% change: −26.4 (26.12) vs −8.92 (9.47)"
+        },
+        {
+          "outcome": "Creatinine (day 4 laboratory change set): baseline → day 4 (mg/dL)",
+          "group_a": "2.24 (2.01) → 1.43 (1.09)",
+          "group_b": "2.13 (1.97) → 1.67 (1.29)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.022",
+          "note": "% change: −20.04 (35.06) vs −6.43 (33.50)"
+        },
+        {
+          "outcome": "Haemoglobin (day 4 laboratory change set): baseline → day 4 (g/dL)",
+          "group_a": "9.88 (1.59) → 8.99 (1.16)",
+          "group_b": "10.26 (1.99) → 10.10 (1.79)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.009",
+          "note": "Consistent with extracorporeal circuit-related blood loss/haemodilution and/or bleeding risk"
+        },
+        {
+          "outcome": "Platelets (day 4 laboratory change set): baseline → day 4 (×10³/μL)",
+          "group_a": "133.17 (76.62) → 91.14 (65.05)",
+          "group_b": "122.71 (73.90) → 114.08 (73.47)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.001",
+          "note": "% change: −29.06 (29.37) vs −1.80 (40.59)"
+        },
+        {
+          "outcome": "Mechanical ventilation during hospitalisation",
+          "group_a": "22.5%",
+          "group_b": "21.2%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.838",
+          "note": "No between-group difference"
+        },
+        {
+          "outcome": "Length of hospital stay (median; range)",
+          "group_a": "24 (2–28) days",
+          "group_b": "23 (1–28) days",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "No evidence of shorter admission with MARS"
+        },
+        {
+          "outcome": "Severe adverse event: significant bleeding (any source)",
+          "group_a": "17/95 (17.89%)",
+          "group_b": "9/94 (9.57%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.145",
+          "note": "Variceal bleeding: 5/95 vs 5/94 (P=0.892)"
+        },
+        {
+          "outcome": "Severe adverse event: bacterial infection (where recorded)",
+          "group_a": "32/54 (59.3%)",
+          "group_b": "33/67 (49.3%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.273",
+          "note": "Death related to infection: 10/32 (31.3%) vs 9/44 (20.5%) (P=0.283)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Significant bleeding (any source): 17/95 (17.89%) MARS vs 9/94 (9.57%) SMT (P=0.145)",
+      "Variceal bleeding: 5/95 MARS vs 5/94 SMT (P=0.892)",
+      "Bacterial infection (where recorded): 32/54 (59.3%) MARS vs 33/67 (49.3%) SMT (P=0.273)",
+      "Death related to infection: 10/32 (31.3%) MARS vs 9/44 (20.5%) SMT (P=0.283)",
+      "Significant drop in haemoglobin by day 4 with MARS (8.99 vs 10.10 g/dL; P=0.009)",
+      "Significant drop in platelets by day 4 with MARS (91.14 vs 114.08 ×10³/μL; P<0.001)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computerised randomisation with stratification by MELD and permuted blocks; allocation via secure randomisation site. Stratification by disease severity is methodologically appropriate."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded design introduces risk of co-intervention imbalance; however, the primary endpoint (death/transplant-free survival) is objective. Secondary outcomes (encephalopathy grades, trigger identification, escalation decisions) are more vulnerable to subjective assessment and clinician behaviour."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Post-randomisation exclusions from the 'ITT' analysis set: 10/189 (5 per group) due to major inclusion-criteria violations, yielding ITT n=179. Per-protocol exclusions were asymmetric (MARS 19 vs SMT 4), including 12 patients allocated to MARS who received <3 sessions. The differential per-protocol attrition risks biased estimates if exclusions correlate with prognosis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Among per-protocol MARS patients, mean number of sessions was 6.5 (SD 3.1), with median session duration 6.8 h (range 2.4–10.5). Delivered treatment intensity corresponds to MARS exposure on ~16.5% of days in the first 21 days, reflecting intermittent rather than continuous toxin clearance."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly comparable at baseline in the ITT set: MELD 25.6 (8.2) vs 24.1 (9.6); bilirubin 27.2 (12.8) vs 26.9 (12.4) mg/dL; creatinine 2.42 (2.13) vs 2.24 (2.04) mg/dL. Some numerical differences (e.g., spontaneous bacterial peritonitis as trigger 14.4% vs 6.7%; HE grade >II 35.6% vs 43.8%), but without strong evidence of systematic imbalance."
+        }
+      ],
+      "verdict": "Internal validity appears moderate: randomisation and primary outcome objectivity support robustness, but open-label care and substantial differential per-protocol exclusions (with feasibility-related under-delivery of MARS) limit causal certainty regarding treatment intensity and subgroup responsiveness."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Predominantly European tertiary centres, with common ACLF precipitants and severe hyperbilirubinaemia; broadly representative of high-resource liver/ICU practice. Exclusions (severe coagulopathy, dialysis requirement at inclusion, uncontrolled infection/bleeding, refractory shock) limit applicability to the sickest ACLF phenotypes seen in ICU."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "MARS availability, staff expertise, and cost constrain implementation outside specialist centres; translation to resource-limited settings is limited. Low transplantation rates in the trial reduce direct inference regarding 'bridge-to-transplant' strategy settings."
+        }
+      ],
+      "verdict": "Generalisability is moderate: findings apply best to ACLF patients who are stable enough to receive intermittent extracorporeal therapy in specialist centres, and less well to more haemodynamically unstable, profoundly coagulopathic, or dialysis-dependent ICU populations."
+    },
+    "strengths": [
+      "Largest dedicated multicentre randomised evaluation of MARS in ACLF to date, across 19 European centres.",
+      "Clinically meaningful primary endpoint (28-day transplant-free survival) with 90-day follow-up.",
+      "Stratified randomisation by MELD and pre-specified subgroup analyses.",
+      "Documented biological separation (bilirubin/creatinine) demonstrating that the intervention had expected short-term physiological effects."
+    ],
+    "limitations": [
+      "Open-label design without sham therapy; risk of co-intervention and assessment bias for secondary outcomes.",
+      "Modified ITT definition (excluding post-randomisation inclusion violations) and pronounced imbalance in per-protocol exclusions (MARS 19 vs SMT 4).",
+      "Under-delivery/feasibility constraints: 12 MARS patients received <3 sessions and were excluded from per-protocol analysis.",
+      "Prolonged recruitment (2003–2009) with evolving 'standard medical therapy' could dilute or confound treatment effects over time.",
+      "Power calculation assumed a very large absolute survival benefit (20%), potentially underpowering detection of smaller but clinically relevant effects."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed but unblinded multicentre RCT with a patient-centred primary outcome, undermined by asymmetric protocol non-adherence and a power calculation assuming an unrealistically large treatment effect, resulting in moderate confidence that MARS does not improve survival in broadly-selected severe ACLF.",
+      "strengths": [
+        "Central stratified randomisation and objective primary outcome",
+        "Demonstrated clear biological effect of the intervention on surrogate markers"
+      ],
+      "weaknesses": [
+        "Open-label design with potential for co-intervention bias",
+        "Asymmetric per-protocol exclusions and under-delivery of the intervention",
+        "Underpowered for a realistic effect size"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "MARS did not improve 28-day or 90-day transplant-free survival in patients with ACLF despite early biochemical improvements.",
+    "clinical_bottom_line": {
+      "verdict": "MARS should not be expected to improve short-term transplant-free survival when applied as intermittent liver support in broadly-selected severe ACLF.",
+      "applies_to": "ACLF patients stable enough to receive intermittent extracorporeal therapy in specialist centres; less applicable to the most haemodynamically unstable or coagulopathic ICU patients.",
+      "does_not_mean": "Early biochemical improvements with extracorporeal support do not imply a mortality benefit.",
+      "implementation_caveats": [
+        "MARS is complex, costly, and resource-intensive.",
+        "Treatment delivery feasibility is a major challenge in the sickest patients."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Concordance with other large device trials",
+        "notes": "Another major multicentre extracorporeal liver support trial (Prometheus/FPSA; HELIOS) similarly failed to demonstrate an overall survival benefit in ACLF, reinforcing the broader uncertainty that extracorporeal detoxification alone alters hard outcomes in heterogeneous ACLF populations."
+      },
+      {
+        "topic": "Surrogate improvement versus patient-centred benefit",
+        "notes": "High-level contemporary commentary around albumin 'regeneration' devices emphasised the recurring pattern of biochemical improvement without definitive survival translation, arguing for better patient selection and endpoints aligned to realistic biological targets."
+      },
+      {
+        "topic": "Meta-analytic synthesis and treatment intensity",
+        "notes": "Individual patient data meta-analysis has evaluated albumin dialysis across ACLF trials with specific focus on treatment intensity, highlighting that any putative benefit may be contingent on delivered dose and patient severity, but remains uncertain given heterogeneity and feasibility constraints in the sickest patients. Network meta-analysis has underscored persistent uncertainty and imprecision in estimates for liver support systems in ACLF."
+      },
+      {
+        "topic": "Evolution of extracorporeal strategies",
+        "notes": "Newer albumin-focused devices targeting dysfunctional albumin biology and inflammatory mediators (e.g., DIALIVE) have reported improvements in clinically relevant intermediate outcomes (e.g., ACLF resolution and organ dysfunction trajectories), supporting ongoing innovation but not superseding the need for adequately powered mortality-focused trials."
+      },
+      {
+        "topic": "Guidelines and practice positioning",
+        "notes": "Recent European guidance on ACLF does not support routine use of extracorporeal liver support systems as standard therapy in ACLF, reflecting a persistent lack of consistent mortality benefit and resource implications. Contemporary American practice guidance similarly positions management around early recognition, trigger treatment, and organ support, with extracorporeal liver support generally confined to selected specialist-centre use and/or research contexts."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "HELIOS",
+        "relation": "Another major multicentre extracorporeal liver support trial (Prometheus/FPSA) that similarly failed to demonstrate an overall survival benefit in ACLF."
+      },
+      {
+        "trial": "DIALIVE",
+        "relation": "A newer albumin-focused device targeting dysfunctional albumin biology and inflammatory mediators, which has reported improvements in clinically relevant intermediate outcomes (e.g., ACLF resolution)."
+      }
+    ],
+    "unresolved_questions": [
+      "Would a higher treatment intensity or continuous delivery of MARS yield a survival benefit?",
+      "Can better patient phenotyping identify a subgroup of ACLF patients who benefit from extracorporeal support?",
+      "Do newer devices targeting albumin dysfunction and inflammation (e.g., DIALIVE) improve patient-centred outcomes?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=189 (ITT 179)",
+        "28-day transplant-free survival: 60.7% vs 58.9% (P=0.79)",
+        "90-day transplant-free survival: 46.1% vs 42.2% (P=0.71)",
+        "Day 4 bilirubin: 17.58 vs 24.15 mg/dL (P<0.001)"
+      ],
+      "one_line_takeaway": "Intermittent MARS albumin dialysis does not improve transplant-free survival in severe ACLF, despite improving short-term biochemistry, and should not be used routinely outside of trials."
+    }
+  },
+  "_source_id": "RELIEF",
+  "_source_system": "Liver"
+}

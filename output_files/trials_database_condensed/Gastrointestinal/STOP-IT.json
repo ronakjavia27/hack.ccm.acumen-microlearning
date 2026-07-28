@@ -1,0 +1,312 @@
+{
+  "id": "STOP-IT",
+  "trial_name": "STOP-IT — Short-Course Antimicrobial Therapy for Intraabdominal Infection (2015)",
+  "specialty": "Gastrointestinal",
+  "subtopic": "Gastrointestinal Infections",
+  "year": 2015,
+  "journal": "N Engl J Med",
+  "citation": "Sawyer RG, Claridge JA, Nathens AB, et al. Trial of Short-Course Antimicrobial Therapy for Intraabdominal Infection. N Engl J Med. 2015;372(21):1996-2005",
+  "doi": "https://doi.org/10.1056/NEJMe1503936",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, pragmatic, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 518,
+  "result_category": "Negative/Neutral",
+  "one_liner": "After adequate source control for complicated intra-abdominal infection, a fixed 4-day antibiotic course yields similar 30-day outcomes to longer, physiology-guided therapy, reducing antibiotic exposure by a median of 4 days.",
+  "pico": {
+    "population": "Adults with complicated intra-abdominal infection requiring hospitalisation and managed with open, laparoscopic, or percutaneous intervention, with adequate source control",
+    "intervention": "Fixed short-course antimicrobial therapy: stop antibiotics within 24 hours after assignment to the 4-day strategy (total 3–4 days)",
+    "comparison": "Physiological-resolution arm: continue antimicrobials until 2 ± 1 days after resolution of leukocytosis (WBC ≤11,000/mm3), fever (<38°C), and gastrointestinal dysfunction adequate for enteral nutrition (maximum 10 days)",
+    "outcome": "Composite of surgical-site infection, recurrent intra-abdominal infection, or death by 30 days"
+  },
+  "keywords": [
+    "intra-abdominal infection",
+    "antimicrobial stewardship",
+    "source control",
+    "short-course antibiotics",
+    "STOP-IT"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Complicated intra-abdominal infection (cIAI) is common and morbid. Historically, antimicrobials were continued until physiological recovery (resolution of fever, leukocytosis, and return of gut function), despite limited trial evidence. Guidelines before STOP-IT suggested that after adequate source control, shorter courses (4–7 days) are usually sufficient, but practice variation and prolonged exposure persisted.",
+      "knowledge_gap": "Limited randomised evidence comparing a fixed short course versus physiology-guided prolonged therapy after adequate source control.",
+      "hypothesis": "A fixed short course of antimicrobials (4 days) would yield similar 30-day clinical outcomes to a longer course guided by resolution of physiological abnormalities."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, investigator-initiated, pragmatic, open-label trial. Allocation stratified by enrolling site and appendiceal vs non-appendiceal source. Source control achieved by open, laparoscopic, or percutaneous intervention.",
+      "setting": "Hospital-based surgical/percutaneous source-control pathways (multiple centres).",
+      "population": {
+        "inclusion": [
+          "Age ≥16 years",
+          "Ability to consent",
+          "Intra-abdominal infection requiring hospitalisation and managed with open/laparoscopic/percutaneous intervention",
+          "Within 24 hours of initial intervention had WBC >11,000/mm3, temperature ≥38.0°C, or gastrointestinal dysfunction preventing normal diet intake",
+          "Adequate source control per local investigator and principal investigator"
+        ],
+        "exclusion": [
+          "Inability to obtain consent",
+          "Inadequate source control",
+          "High likelihood of death within 72 hours",
+          "Planned relaparotomy",
+          "Perforated gastric/duodenal ulcer treated within 24 hours of symptom onset",
+          "Traumatic (including iatrogenic/intra-operative) bowel injury treated within 12 hours",
+          "Non-perforated/non-gangrenous appendicitis or cholecystitis",
+          "Gangrenous appendicitis or peritonitis without confirmatory cultures or with negative cultures",
+          "Ischaemic/necrotic intestine without perforation and without positive cultures",
+          "Intra-abdominal infection with active necrotising pancreatitis (discrete pancreatic abscess/infected pseudocyst permissible)",
+          "Primary spontaneous bacterial peritonitis",
+          "Continuous ambulatory peritoneal dialysis catheter-related infection",
+          "Primary skin closure of an open incision in diffuse peritonitis (open abdomen scenarios)",
+          "Pregnancy",
+          "Concurrent infection requiring >4 days of therapy",
+          "Enrolment in another therapeutic trial"
+        ]
+      },
+      "intervention": "Antimicrobials stopped within 24 hours after assignment to the 4-day strategy (total of 3–4 full days considered protocol-adherent); antimicrobial choice per treating team.",
+      "comparison": "Antimicrobials continued until 2 ± 1 days after resolution of leukocytosis (WBC ≤11,000/mm3), fever (temperature <38°C), and gastrointestinal dysfunction adequate to allow enteral nutrition (maximum total duration 10 days).",
+      "blinding": "Unblinded (open-label).",
+      "sample_size_power": "Protocol planned 1,120 patients to detect a 10% absolute difference in the primary composite outcome with 80% power at a two-sided 5% significance level. Actual enrolment was 518. Primary analyses were intention-to-treat.",
+      "primary_outcome": "Composite of surgical-site infection, recurrent intra-abdominal infection, or death by 30 days.",
+      "secondary_outcomes": [
+        "Surgical-site infection",
+        "Recurrent intra-abdominal infection",
+        "Death by 30 days",
+        "Total duration of antimicrobial therapy",
+        "Antimicrobial-free days at 30 days",
+        "Extra-abdominal infection",
+        "Clostridioides difficile infection",
+        "Hospital-free days at 30 days",
+        "Time to diagnosis of surgical-site infection",
+        "Time to diagnosis of recurrent intra-abdominal infection"
+      ],
+      "follow_up": "30 days after the index source-control procedure."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary composite outcome: 21.8% (fixed 4-day) vs 22.3% (physiology-guided); Δ −0.5 percentage points (95% CI −7.0 to 8.0; P=0.92)",
+        "Median antimicrobial duration: 4.0 days (IQR 4–5) vs 8.0 days (IQR 5–10); Δ −4.0 days (95% CI −4.7 to −3.3; P<0.001)",
+        "Diagnosis of recurrent intra-abdominal infection occurred later in the longer-duration group (10.8 ± 0.4 vs 15.1 ± 0.5 days; P<0.001), suggesting suppression rather than prevention of failure."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite (SSI, recurrent intra-abdominal infection, or death by 30 days)",
+          "group_a": "56/257 (21.8%)",
+          "group_b": "58/260 (22.3%)",
+          "effect_measure": "Δ",
+          "effect_value": "-0.5",
+          "ci_95": "-7.0 to 8.0",
+          "p_value": "0.92",
+          "note": "Absolute difference −0.5 percentage points"
+        },
+        {
+          "outcome": "Surgical-site infection",
+          "group_a": "19/257 (7.4%)",
+          "group_b": "17/260 (6.5%)",
+          "effect_measure": "Δ",
+          "effect_value": "0.9",
+          "ci_95": "-3.8 to 5.6",
+          "p_value": "0.74",
+          "note": "Time to diagnosis: 8.8 ± 0.4 vs 15.1 ± 0.6 days; P<0.001"
+        },
+        {
+          "outcome": "Recurrent intra-abdominal infection",
+          "group_a": "40/257 (15.6%)",
+          "group_b": "45/260 (17.3%)",
+          "effect_measure": "Δ",
+          "effect_value": "-1.7",
+          "ci_95": "-8.4 to 5.0",
+          "p_value": "0.60",
+          "note": "Time to diagnosis: 10.8 ± 0.4 vs 15.1 ± 0.5 days; P<0.001"
+        },
+        {
+          "outcome": "Death by 30 days",
+          "group_a": "1/257 (0.4%)",
+          "group_b": "2/260 (0.8%)",
+          "effect_measure": "Δ",
+          "effect_value": "-0.4",
+          "ci_95": "-3.1 to 2.2",
+          "p_value": "0.56",
+          "note": "Very low mortality"
+        },
+        {
+          "outcome": "Total duration of antimicrobial therapy",
+          "group_a": "Median 4.0 days (IQR 4.0–5.0)",
+          "group_b": "Median 8.0 days (IQR 5.0–10.0)",
+          "effect_measure": "Δ",
+          "effect_value": "-4.0",
+          "ci_95": "-4.7 to -3.3",
+          "p_value": "<0.001",
+          "note": "Clear separation of exposure"
+        },
+        {
+          "outcome": "Antimicrobial-free days at 30 days",
+          "group_a": "Median 25 (IQR 21–26)",
+          "group_b": "Median 21 (IQR 18–25)",
+          "effect_measure": "Δ",
+          "effect_value": "4",
+          "ci_95": "2.9 to 4.7",
+          "p_value": "<0.001",
+          "note": "Stewardship-relevant benefit"
+        },
+        {
+          "outcome": "Extra-abdominal infection (any)",
+          "group_a": "23/257 (8.9%)",
+          "group_b": "13/260 (5.0%)",
+          "effect_measure": "Δ",
+          "effect_value": "3.9",
+          "ci_95": "-0.8 to 8.5",
+          "p_value": "0.11",
+          "note": "Numerically higher in fixed-duration arm; not significant"
+        },
+        {
+          "outcome": "Clostridioides difficile infection",
+          "group_a": "5/257 (1.9%)",
+          "group_b": "3/260 (1.2%)",
+          "effect_measure": "Δ",
+          "effect_value": "0.7",
+          "ci_95": "-1.5 to 2.9",
+          "p_value": "0.71",
+          "note": "Low event rate"
+        },
+        {
+          "outcome": "Hospital-free days at 30 days",
+          "group_a": "Median 22 (IQR 16–26)",
+          "group_b": "Median 23 (IQR 18–26)",
+          "effect_measure": "Δ",
+          "effect_value": "-1",
+          "ci_95": "-2.0 to 0.0",
+          "p_value": "0.22",
+          "note": "No signal that longer therapy shortened hospitalisation"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Surgical-site infection: 7.4% vs 6.5% (P=0.74)",
+      "Recurrent intra-abdominal infection: 15.6% vs 17.3% (P=0.60)",
+      "Extra-abdominal infection: 8.9% vs 5.0% (P=0.11)",
+      "Clostridioides difficile infection: 1.9% vs 1.2% (P=0.71)",
+      "Death: 0.4% vs 0.8% (P=0.56)",
+      "No other safety signals reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised randomisation with stratification by site and appendiceal vs non-appendiceal source supports allocation concealment and balance."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design introduces potential for differential re-imaging/sampling thresholds and clinician behaviour, particularly for softer secondary outcomes (e.g., extra-abdominal infections), though the primary composite components are relatively objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "518 randomised; 517 included in the 30-day analysis (~99.8% follow-up), with minimal post-randomisation loss, limiting attrition bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Protocol-adherent antimicrobial duration was achieved in 81.8% of the fixed-duration group and 72.7% of the physiological-resolution group, indicating meaningful but incomplete fidelity; nonadherence plausibly biases toward null differences. Protocol operationalisation delayed group assignment until day 4 after the index intervention (with prior “common” early therapy), meaning the randomised contrast chiefly tested “stop at ~day 4” vs “continue beyond day 4”; this is appropriate for the clinical decision point but selects for early survivors with adequate source control."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well balanced (e.g., APACHE II 9.9 ± 3.9 vs 10.3 ± 4.0; healthcare-associated infection 36.8% vs 36.2%; percutaneous drainage 32.6% vs 33.1%)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate: randomisation and near-complete follow-up were strong, exposure separation was large, but open-label delivery and incomplete protocol adherence, plus a smaller-than-planned sample for an equivalence question, limit inferential strength for small differences."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults with a wide range of cIAI sources treated via laparotomy, laparoscopy, or percutaneous drainage; moderate illness severity (APACHE II ~10) and low mortality. Key exclusions: patients without adequate source control, anticipated death within 72 hours, planned relaparotomy/open abdomen, primary spontaneous bacterial peritonitis, active necrotising pancreatitis."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings translate best to systems able to deliver timely, effective source control and close clinical reassessment; settings with delayed/imperfect source control, high resistance burden, or limited follow-up infrastructure may see different risk–benefit balances. Evidence is strongest for typical postoperative/percutaneous-drainage cIAI with adequate source control; less informative for profoundly immunocompromised hosts, ongoing leaks, or open abdomen strategies (excluded by protocol design)."
+        }
+      ],
+      "verdict": "Overall generalisability is good for adults with cIAI who receive adequate source control and are managed in similar multidisciplinary hospital pathways, but limited for patients with ongoing contamination, planned re-operations, or pancreatitis-related necrosis."
+    },
+    "strengths": [
+      "Pragmatic multicentre randomised design",
+      "Clinically meaningful stewardship question at the real decision point (stop vs continue beyond day 4)",
+      "Excellent follow-up completeness (~99.8%)",
+      "Substantial treatment separation (median 4 vs 8 days) with robust, patient-centred outcomes at 30 days"
+    ],
+    "limitations": [
+      "Open-label delivery",
+      "Protocol-adherence was imperfect (81.8% vs 72.7%)",
+      "Enrolment below protocol sample-size target (518 vs planned 1,120) for an equivalence framing",
+      "“Adequate source control” was investigator-judged and excludes key high-risk phenotypes (open abdomen/planned relaparotomy), potentially underestimating risks in those groups"
+    ],
+    "critical_appraisal": {
+      "summary": "STOP-IT provides moderate-quality evidence that a fixed 4-day antibiotic course is non-inferior to longer, physiology-guided therapy after adequate source control for cIAI, with reduced antibiotic exposure. Internal validity is limited by open-label design and incomplete protocol adherence, but randomisation and follow-up were robust. External validity is good for typical cIAI patients with source control, but excluded high-risk groups.",
+      "strengths": [
+        "Pragmatic multicentre randomised design",
+        "Clinically meaningful stewardship question at the real decision point (stop vs continue beyond day 4)",
+        "Excellent follow-up completeness (~99.8%)",
+        "Substantial treatment separation (median 4 vs 8 days) with robust, patient-centred outcomes at 30 days"
+      ],
+      "weaknesses": [
+        "Open-label delivery",
+        "Protocol-adherence was imperfect (81.8% vs 72.7%)",
+        "Enrolment below protocol sample-size target (518 vs planned 1,120) for an equivalence framing",
+        "“Adequate source control” was investigator-judged and excludes key high-risk phenotypes (open abdomen/planned relaparotomy), potentially underestimating risks in those groups"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "After adequate source control for cIAI, stopping antimicrobials at ~4 days produced similar 30-day infection/death outcomes to continuing until clinical resolution (21.8% vs 22.3%), while reducing antibiotic exposure by a median of 4 days (4 vs 8) and increasing antimicrobial-free days (25 vs 21).",
+    "clinical_bottom_line": {
+      "verdict": "STOP-IT supports a source-control-first, stewardship-aligned approach: after adequate source control, stop antibiotics at ~4 days rather than continuing until physiological resolution. This reduces antibiotic exposure without worsening outcomes.",
+      "applies_to": "Adults with complicated intra-abdominal infection who have undergone adequate source control (surgical or percutaneous) and are not in the excluded high-risk groups (open abdomen, planned relaparotomy, necrotising pancreatitis).",
+      "does_not_mean": "It does not mean that all patients with cIAI can stop antibiotics at 4 days regardless of source control adequacy; ongoing contamination or undrained collections require intervention, not prolonged antibiotics.",
+      "implementation_caveats": [
+        "Requires confident assessment of source control adequacy",
+        "Close clinical reassessment for recurrent infection is essential",
+        "May not apply to immunocompromised patients or those with ongoing leaks",
+        "Open-label design may influence detection of complications"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Equivalence vs “no difference”",
+        "notes": "The protocol was framed to detect a 10% absolute difference with 1,120 patients, but the published sample was 518; therefore, the trial is best interpreted as showing closely similar point estimates with confidence intervals that do not exclude modest differences, rather than establishing formal equivalence/non-inferiority."
+      },
+      {
+        "topic": "Source control as the real intervention",
+        "notes": "The accompanying editorial emphasised that cIAI outcomes are dominated by adequacy of source control and that prolonged antibiotics can distract from timely recognition of ongoing sepsis drivers (e.g., undrained collections or leaks)."
+      },
+      {
+        "topic": "Outcome ascertainment in an open-label trial",
+        "notes": "Clinician thresholds for re-imaging and culture acquisition can influence diagnosis timing; the observed later diagnosis of SSI/recurrent infection in the longer-duration group may reflect delayed detection due to ongoing antibiotic exposure."
+      },
+      {
+        "topic": "Background guideline alignment",
+        "notes": "Pre-STOP-IT guidance already suggested that short courses (often 4–7 days) are sufficient after adequate source control, and STOP-IT provided randomised evidence supporting a fixed short-course strategy in appropriately selected patients."
+      },
+      {
+        "topic": "Observational context",
+        "notes": "Large international observational data demonstrate substantial morbidity in cIAI and highlight practice variation that makes stewardship-relevant duration trials clinically consequential."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Whether the findings apply to patients with inadequate source control or high-risk phenotypes (open abdomen, necrotising pancreatitis)",
+      "Optimal duration in immunocompromised hosts",
+      "Role of biomarkers to guide stopping antibiotics",
+      "Long-term outcomes beyond 30 days"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=518",
+        "Primary composite: 21.8% vs 22.3% (Δ -0.5%, 95% CI -7.0 to 8.0)",
+        "Median antibiotic duration: 4 vs 8 days (Δ -4 days)",
+        "Antimicrobial-free days: 25 vs 21"
+      ],
+      "one_line_takeaway": "After adequate source control for cIAI, stop antibiotics at 4 days—it's as effective as longer courses and halves antibiotic exposure."
+    }
+  },
+  "_source_id": "STOP-IT",
+  "_source_system": "Gastrointestinal"
+}

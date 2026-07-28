@@ -71,6 +71,7 @@ TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
 DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 PRIMARY_GEMINI_API_KEY = os.getenv("PRIMARY_GEMINI_API_KEY")
 BACKUP_GEMINI_API_KEY = os.getenv("BACKUP_GEMINI_API_KEY")
+CONDENSATION_GEMINI_API_KEY = os.getenv("CONDENSATION_GEMINI_API_KEY")
 
 
 # =====================================================================
@@ -79,9 +80,10 @@ BACKUP_GEMINI_API_KEY = os.getenv("BACKUP_GEMINI_API_KEY")
 MODEL_TOGETHER_PRO = "deepseek-ai/DeepSeek-V4-Pro"
 MODEL_TOGETHER_FLASH = "deepseek-ai/DeepSeek-V4-Pro"
 MODEL_DEEPSEEK_DIRECT = "deepseek-v4-pro"
-MODEL_GEMINI_ARTICLES = "gemini-2.5-flash"
-MODEL_GEMINI_GUIDELINES = "gemini-2.5-pro"
-MODEL_GEMINI_BACKUP = "gemini-2.5-flash"
+MODEL_GEMINI_ARTICLES = "gemini-3.6-flash"
+MODEL_GEMINI_GUIDELINES = "gemini-3.6-flash"
+MODEL_GEMINI_BACKUP = "gemini-3.6-flash"
+MODEL_GEMINI_CONDENSATION = "gemini-3.6-flash"
 
 # =====================================================================
 # PEARL EXTRACTION MODELS - Pass 2 (separate call)
@@ -158,8 +160,10 @@ SYSTEM_TO_SPECIALTY = {
 
 # Model aliases for condense_trials.py --model flag
 CONDENSATION_MODELS = {
-    "deepseek": "deepseek-ai/DeepSeek-V4-Pro",
-    "tencent": "tencent/hy3:free",
+    "deepseek": "deepseek-ai/DeepSeek-V4-Pro",   # OpenRouter (.env OPENROUTER_MODEL)
+    "tencent": "tencent/hy3:free",                # OpenRouter (.env OPENROUTER_MODEL)
+    "together": "deepseek-ai/DeepSeek-V4-Pro",    # Together AI + DeepSeek Direct fallback
+    "gemini": "gemini-3.6-flash",                 # Gemini API (CONDENSATION_GEMINI_API_KEY)
 }
 
 PEARLS_JSON_FIELDS = [

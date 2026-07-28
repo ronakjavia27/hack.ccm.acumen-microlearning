@@ -1,0 +1,345 @@
+{
+  "id": "RESCUE-ICP",
+  "trial_name": "RESCUEicp — Trial of Decompressive Craniectomy for Traumatic Intracranial Hypertension (2016)",
+  "specialty": "Neuro",
+  "subtopic": "Raised Intracranial Pressure",
+  "year": 2016,
+  "journal": "N Engl J Med",
+  "citation": "Hutchinson PJ, Kolias AG, Timofeev IS, et al. Trial of decompressive craniectomy for traumatic intracranial hypertension. N Engl J Med. 2016;375:1119-30.",
+  "doi": "https://doi.org/10.1056/NEJMoa1605215",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 408,
+  "result_category": "Mixed",
+  "one_liner": "Decompressive craniectomy for refractory intracranial hypertension reduces mortality but increases severe disability.",
+  "pico": {
+    "population": "Patients aged 10–65 years with severe TBI, abnormal CT, ICP monitoring, and sustained ICP >25 mmHg for 1–12 hours despite tiered medical therapy (stage 1–2).",
+    "intervention": "Last-tier secondary decompressive craniectomy (large unilateral or bifrontal with dural opening), performed promptly (median time 2.2 hours).",
+    "comparison": "Continued medical management, primarily barbiturate infusion (87.2%); rescue DC permitted (37.2% crossover).",
+    "outcome": "6-month Extended Glasgow Outcome Scale (GOS-E) distribution; 12-month secondary analysis."
+  },
+  "keywords": [
+    "decompressive craniectomy",
+    "traumatic brain injury",
+    "intracranial hypertension",
+    "refractory ICP",
+    "GOS-E",
+    "tiered management",
+    "barbiturate"
+  ],
+  "related_trials": [
+    "DECRA"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Severe TBI with sustained intracranial hypertension is strongly associated with death and poor neurological outcome; decompressive craniectomy has been used as a last-tier rescue therapy, but concern persists that it may convert mortality into survival with profound disability.",
+      "knowledge_gap": "Prior randomised trials (DECRA) addressed earlier DC for less severe ICP elevation in diffuse injury; evidence was lacking for later rescue DC in truly refractory intracranial hypertension after tiered medical therapies fail.",
+      "hypothesis": "Last-tier secondary decompressive craniectomy improves the overall 6-month GOS-E distribution compared with continued medical management in patients with refractory ICP."
+    },
+    "methods": {
+      "design": "International, multicentre, parallel-group, superiority, randomised trial; open-label clinical care with central, blinded outcome adjudication.",
+      "setting": "52 centres in 20 countries; 71.1% of recruitment in the United Kingdom.",
+      "population": {
+        "inclusion": [
+          "Age 10–65 years",
+          "TBI with abnormal CT requiring ICP monitoring",
+          "Refractory ICP >25 mmHg sustained for 1–12 hours despite stage 1 and 2 interventions",
+          "Pre-randomisation CT to exclude evolving intracranial mass lesion"
+        ],
+        "exclusion": [
+          "Pregnancy",
+          "Severe pre-existing physical/mental disability",
+          "Injury deemed unsurvivable",
+          "Other protocol-specific exclusions (not fully itemised)"
+        ]
+      },
+      "intervention": "Last-tier secondary decompressive craniectomy with wide dural opening (large unilateral or bifrontal according to swelling pattern); median time from randomisation to DC 2.2 hours (IQR 1.3–5.1). Background neurocritical care followed the same tiered protocol.",
+      "comparison": "Continued medical management at stage 3, including barbiturate infusion as predominant therapy (used in 87.2%; median time 0.6 h); rescue DC permitted and occurred in 37.2%.",
+      "blinding": "Clinical teams were aware of assignment; GOS-E was adjudicated centrally by investigators masked to group allocation using questionnaires and structured telephone follow-up.",
+      "sample_size_power": "400 patients (200 per arm) needed to detect a 15% absolute increase in favourable outcome (45%→60%) with 80% power, two-sided α=0.05, allowing 15% loss to follow-up.",
+      "primary_outcome": "6-month Extended Glasgow Outcome Scale (GOS-E) distribution.",
+      "secondary_outcomes": [
+        "12-month GOS-E distribution",
+        "Mortality",
+        "ICP burden (median hours ICP >25 mmHg)",
+        "ICU length of stay",
+        "Complications and adverse events"
+      ],
+      "follow_up": "Primary at 6 months; secondary at 12 months; protocol‑specified 24‑month outcomes and health‑economic analysis not reported in the index manuscript."
+    },
+    "results": {
+      "headline_bullets": [
+        "Last‑tier DC dramatically reduced 6‑month mortality (26.9% vs 48.9%) and 12‑month mortality (30.4% vs 52.0%) but increased vegetative state (8.5% vs 2.1%) and severe disability categories.",
+        "The proportional‑odds assumption was rejected; the primary analysis was a descriptive χ² showing a significant between‑group difference in GOS‑E distribution (P<0.001).",
+        "Physiological separation was large: median hours with ICP >25 mmHg 5.0 (DC) vs 17.0 (medical), supporting biological plausibility for the survival effect.",
+        "Crossover to rescue DC in the medical arm (37.2%) likely diluted the estimated treatment effect."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "6‑month GOS‑E distribution (primary)",
+          "group_a": "DC (n=201)",
+          "group_b": "Medical (n=188)",
+          "effect_measure": "χ² (unordered, descriptive)",
+          "effect_value": "Not a single value",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Proportional‑odds assumption rejected; categories reported descriptively. See below."
+        },
+        {
+          "outcome": "Death at 6 months (GOS‑E category 'dead')",
+          "group_a": "54/201 (26.9%)",
+          "group_b": "92/188 (48.9%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-22.1 percentage points",
+          "ci_95": "-31.5 to -12.7",
+          "p_value": "",
+          "note": "Marked survival advantage with DC."
+        },
+        {
+          "outcome": "Vegetative state at 6 months",
+          "group_a": "17/201 (8.5%)",
+          "group_b": "4/188 (2.1%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+6.3 percentage points",
+          "ci_95": "2.0 to 10.7",
+          "p_value": "",
+          "note": "Shift towards survival with profound disability."
+        },
+        {
+          "outcome": "Upper severe disability at 6 months (independent at home)",
+          "group_a": "31/201 (15.4%)",
+          "group_b": "15/188 (8.0%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+7.4 percentage points",
+          "ci_95": "1.1 to 13.8",
+          "p_value": "",
+          "note": "More DC survivors living independently at home."
+        },
+        {
+          "outcome": "12‑month GOS‑E distribution",
+          "group_a": "DC (n=194)",
+          "group_b": "Medical (n=179)",
+          "effect_measure": "χ² (unordered)",
+          "effect_value": "Not a single value",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Between‑group differences persisted at 12 months."
+        },
+        {
+          "outcome": "Death at 12 months",
+          "group_a": "59/194 (30.4%)",
+          "group_b": "93/179 (52.0%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-21.5 percentage points",
+          "ci_95": "-31.3 to -11.8",
+          "p_value": "",
+          "note": "Sustained mortality benefit."
+        },
+        {
+          "outcome": "Vegetative state at 12 months",
+          "group_a": "12/194 (6.2%)",
+          "group_b": "3/179 (1.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+4.5 percentage points",
+          "ci_95": "0.6 to 8.4",
+          "p_value": "",
+          "note": "Persistent increase in vegetative state with DC."
+        },
+        {
+          "outcome": "Upper severe disability at 12 months",
+          "group_a": "26/194 (13.4%)",
+          "group_b": "7/179 (3.9%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+9.5 percentage points",
+          "ci_95": "3.9 to 15.1",
+          "p_value": "",
+          "note": "By 12 months, more DC survivors were independent at home."
+        },
+        {
+          "outcome": "Median mean ICP after randomisation (mm Hg)",
+          "group_a": "14.5 (IQR 1.7–18.0)",
+          "group_b": "17.1 (IQR 4.2–21.8)",
+          "effect_measure": "Median difference",
+          "effect_value": "-3.0",
+          "ci_95": "-4.1 to -1.8",
+          "p_value": "<0.001",
+          "note": "Physiological separation favouring DC."
+        },
+        {
+          "outcome": "Median duration ICP >25 mmHg after randomisation (hours)",
+          "group_a": "5.0 (0.0–17.0)",
+          "group_b": "17.0 (5.0–35.0)",
+          "effect_measure": "Median difference",
+          "effect_value": "-8.0",
+          "ci_95": "-12.0 to -5.0",
+          "p_value": "<0.001",
+          "note": "Large reduction in ICP burden."
+        },
+        {
+          "outcome": "Median cerebral hypoperfusion index 60 (proportion time CPP <60 mm Hg)",
+          "group_a": "6.8 (3.1–16.6)",
+          "group_b": "11.1 (4.4–24.8)",
+          "effect_measure": "Median difference",
+          "effect_value": "-2.8",
+          "ci_95": "-4.9 to -1.0",
+          "p_value": "0.002",
+          "note": "Lower time with CPP <60 mm Hg in DC group."
+        },
+        {
+          "outcome": "Median ICU LOS among survivors (days)",
+          "group_a": "15.0 (9.2–22.6)",
+          "group_b": "20.8 (13.0–32.1)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.01",
+          "note": "Among survivors, ICU stay was shorter after DC."
+        },
+        {
+          "outcome": "≥1 complication/adverse event",
+          "group_a": "33/202 (16.3%)",
+          "group_b": "18/196 (9.2%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.033",
+          "note": "Includes postoperative haematoma (5 vs 0) and surgical site infection (5 vs 1)."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Adverse events: 16.3% (DC) vs 9.2% (medical), P=0.033; key events included postoperative haematoma (5 vs 0) and surgical site infection (5 vs 1)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer‑generated, permuted blocks stratified by site; central telephone service; allocation released only at stage 3, supporting concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open‑label bedside care; central outcome adjudication by blinded investigators using mailed questionnaires and structured telephone interviews, reducing detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "408 randomised; 10 excluded (consent issues); 389 had 6‑month GOS‑E (97.7% follow‑up); 7 more losses in medical group than surgical. Modified ITT without imputation may introduce bias if missingness is non‑ignorable."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "DC performed in 92.6% of surgical group; rescue DC in 37.2% of medical group diluted effect; barbiturate infusion in 9.4% vs 87.2%; timing to assigned therapy was rapid (median 2.2 h to DC, 0.6 h to barbiturates). Strong separation of ICP burden."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar; notable imbalance in history of drug/alcohol abuse (24.8% vs 35.2%, P=0.02) and initial CT classification (P=0.04). Pre‑randomisation CT not different."
+        }
+      ],
+      "verdict": "Internal validity is moderate‑to‑strong: randomisation, allocation concealment, and blinded central outcome adjudication support causal inference, but open‑label care, substantial crossover, and exclusion of patients without outcome data introduce non‑trivial risk of bias in effect magnitude and disability distribution."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled patients reflect tertiary neurocritical care practice for severe TBI requiring ICP monitoring; includes those with mass lesions (≈20% non‑diffuse injury). Key exclusions: age >65, pregnancy, severe pre‑existing disability."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Medical arm relied heavily on barbiturate coma (87.2%) – findings may differ where barbiturates are used less. Requires timely neurosurgical capability for large DC, intensive monitoring, and sustained neurorehabilitation resources."
+        }
+      ],
+      "verdict": "Findings are highly applicable to well‑resourced neurotrauma systems managing refractory intracranial hypertension with tiered protocols, but less generalisable to older populations, settings without rapid neurosurgical access, and systems where post‑ICU rehabilitation support is limited."
+    },
+    "strengths": [
+      "Large, pragmatic, international neurosurgical RCT on a high‑stakes last‑tier question aligned with real escalation pathways",
+      "Central randomisation with site stratification and strong allocation concealment",
+      "Blinded central adjudication of the primary functional outcome (GOS‑E)",
+      "Strong physiological separation in ICP burden supporting internal validity and mechanistic plausibility"
+    ],
+    "limitations": [
+      "Open‑label bedside care introduces risk of differential withdrawal of life‑sustaining treatment and co‑intervention bias",
+      "Substantial crossover to rescue DC in the medical arm (37.2%) dilutes the intention‑to‑treat estimate",
+      "10 randomised patients excluded from analyses; missing outcome data not imputed",
+      "Long recruitment period (2004–2014) with evolving neurocritical care and rehabilitation practices",
+      "Heterogeneity in surgical approach (size, laterality) and cranioplasty timing not systematically captured",
+      "24‑month outcomes, quality of life, and economic evaluation protocol‑specified but not reported in the index manuscript"
+    ],
+    "critical_appraisal": {
+      "summary": "RESCUEicp provides robust evidence that last‑tier DC substantially reduces mortality and ICP burden, but at the cost of a predictable increase in vegetative state and severe disability; interpretation hinges on explicit value judgments about acceptable survival.",
+      "strengths": [
+        "Large, multicentre RCT with concealed allocation and blinded outcome adjudication",
+        "Clinically relevant entry criteria reflecting real‑world escalation of care",
+        "Strong physiological separation validates the intervention's biological effect"
+      ],
+      "weaknesses": [
+        "Open‑label design with potential for differential care withdrawal",
+        "High crossover (37.2%) biases toward the null",
+        "Non‑ignorable missing outcome data (10 excluded, 7 more lost in medical group)",
+        "Long enrolment period may limit contemporaneity of background care"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Last‑tier DC for refractory intracranial hypertension alters the 6‑month GOS‑E distribution, reducing death but increasing vegetative state and severe disability; the trade‑off underscores the need for explicit, preference‑sensitive shared decision‑making.",
+    "clinical_bottom_line": {
+      "verdict": "Last‑tier decompressive craniectomy should be considered in patients with severe TBI and sustained refractory ICP >25 mmHg for 1–12 hours despite tiered medical therapy, with the understanding that it provides a large mortality reduction but increases the probability of survival with severe disability.",
+      "applies_to": "Patients aged 10–65 years, with TBI, abnormal CT, ICP monitoring, and truly refractory intracranial hypertension after stage 1–2 medical therapies, managed in centres with rapid neurosurgical and rehabilitation capabilities.",
+      "does_not_mean": "DC does not guarantee good functional recovery; it does not simply 'improve' outcome, and it should never be undertaken without a thorough discussion of the explicit probabilities of vegetative state, dependency, and independence.",
+      "implementation_caveats": [
+        "Requires protocolised large craniectomy with wide dural opening; the exact technique may influence outcomes",
+        "The decision is inherently preference‑sensitive; shared decision‑making must incorporate individual/family values using the trial’s absolute risk data",
+        "Optimal timing of cranioplasty and access to sustained neurorehabilitation are critical to realising long‑term functional gains"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early vs late DC trials",
+        "notes": "DECRA (early bifrontal DC for less refractory ICP) found no functional benefit and increased severe disability; RESCUEicp’s later, more selective approach shows a consistent reduction in mortality but the same disability trade‑off. Timing and threshold likely explain the different primary outcome patterns."
+      },
+      {
+        "topic": "Outcome valuation and acceptable survival",
+        "notes": "The increase in vegetative state (8.5% vs 2.1% at 6 months) forces clinicians and families to confront what constitutes an acceptable outcome; there is no consensus on the threshold of disability that renders the survival gain unacceptable."
+      },
+      {
+        "topic": "Cranioplasty timing",
+        "notes": "Delayed or incomplete cranial reconstruction at 6‑month follow‑up could have influenced GOS‑E scoring and may mean the primary endpoint underestimates eventual recovery."
+      },
+      {
+        "topic": "Longer‑term functional trajectory",
+        "notes": "24‑month follow‑up showed persistent mortality reduction (absolute 15.5%) and more good recovery in the DC group, but also a persistent excess of vegetative state, indicating that some survivors improve over time while others remain profoundly disabled."
+      },
+      {
+        "topic": "Health‑economic considerations",
+        "notes": "A model‑based analysis using trial data reported higher costs but improved quality‑adjusted survival, concluding DC was likely cost‑effective at commonly cited thresholds; such analyses are context‑sensitive."
+      },
+      {
+        "topic": "Guideline integration",
+        "notes": "The Brain Trauma Foundation now recommends secondary DC for late refractory ICP elevation (to improve mortality and favourable outcomes) and recommends against early DC for diffuse injury and <72‑hour ICP elevation; this directly reflects lessons from DECRA and RESCUEicp."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "DECRA",
+        "relation": "Early bifrontal decompressive craniectomy in diffuse TBI with earlier, lower ICP thresholds; showed no functional benefit and increased severe disability, highlighting that patient selection and timing of DC are critical moderators of outcome."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal timing for cranioplasty after decompressive craniectomy, and how does it affect long‑term functional recovery?",
+      "How do long‑term quality of life and caregiver burden evolve in survivors with severe disability?",
+      "Does the survival/disability trade‑off hold when the medical comparator uses fewer barbiturates or alternative tier‑3 therapies?",
+      "Can we identify patient subgroups (e.g., age, CT pattern, ICP dynamics) who derive net benefit without an unacceptable increase in severe disability?",
+      "What is the minimal rehabilitation infrastructure required to translate the survival gain into meaningful independent living?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=408 randomised, 389 analysed at 6 months",
+        "6‑month mortality 26.9% (DC) vs 48.9% (medical) – absolute reduction 22.1%",
+        "Vegetative state at 6 months 8.5% vs 2.1%",
+        "Crossover to DC in medical arm 37.2%",
+        "Median time to DC 2.2 hours"
+      ],
+      "one_line_takeaway": "For refractory post‑traumatic intracranial hypertension, decompressive craniectomy reduces mortality by 22% but doubles the risk of vegetative state, making it a preference‑sensitive rescue therapy that must be preceded by explicit counselling."
+    }
+  },
+  "_source_id": "RESCUE-ICP",
+  "_source_system": "Neuro"
+}

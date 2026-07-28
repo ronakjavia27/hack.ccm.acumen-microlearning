@@ -1,0 +1,329 @@
+{
+  "id": "VAAST",
+  "trial_name": "VASST — Vasopressin versus Norepinephrine Infusion in Patients with Septic Shock (2008)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Vasopressors — Vasopressin & Norepinephrine",
+  "year": 2008,
+  "journal": "N Engl J Med",
+  "citation": "Russell JA, Walley KR, Singer J, Gordon AC, Hebert PC, Cooper DJ, et al.; VASST Investigators. Vasopressin versus norepinephrine infusion in patients with septic shock. N Engl J Med. 2008;358(9):877-887.",
+  "doi": "https://doi.org/10.1056/NEJMoa067373",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, double-dummy, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 778,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Low-dose vasopressin did not significantly reduce 28-day mortality vs norepinephrine in septic shock overall, but suggested benefit in less severe shock strata.",
+  "pico": {
+    "population": "Adult ICU patients with septic shock requiring ongoing norepinephrine ≥5 µg/min (or equivalent) for at least 6 hours",
+    "intervention": "Blinded vasopressin infusion 0.01–0.03 U/min",
+    "comparison": "Blinded norepinephrine infusion 5–15 µg/min",
+    "outcome": "All-cause mortality at 28 days"
+  },
+  "keywords": [
+    "vasopressin",
+    "norepinephrine",
+    "septic shock",
+    "vasopressors",
+    "mortality"
+  ],
+  "related_trials": [
+    "VANISH"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Septic shock is characterised by vasoplegia and impaired vascular responsiveness, commonly treated with catecholamine vasopressors (particularly norepinephrine).",
+      "knowledge_gap": "Whether low-dose vasopressin (a non-catecholamine vasopressor) would reduce all-cause mortality compared with norepinephrine when used as a blinded study vasopressor in established septic shock.",
+      "hypothesis": "Low-dose vasopressin would reduce all-cause mortality compared with norepinephrine in septic shock."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, parallel-group controlled trial (27 centres across Canada, Australia, USA).",
+      "setting": "27 ICUs across 3 countries; enrolment from 2001–2006.",
+      "population": {
+        "inclusion": [
+          "Adults with septic shock requiring ongoing norepinephrine ≥5 µg/min (or equivalent) for at least 6 hours, with a fast‑track option for higher‑dose requirements.",
+          "Enrolled within 24 hours of meeting eligibility criteria."
+        ],
+        "exclusion": [
+          "Acute coronary syndromes (including STEMI)",
+          "NYHA class III/IV heart failure",
+          "Mesenteric ischaemia",
+          "Raynaud's phenomenon",
+          "Pregnancy",
+          "Previous vasopressin infusion during current admission",
+          ">24 hours elapsed since meeting eligibility criteria"
+        ]
+      },
+      "intervention": "Blinded vasopressin infusion 0.01–0.03 U/min, delivered at a constant rate of 15 mL/h. Open‑label vasopressors (excluding vasopressin) titrated to MAP 65–75 mmHg. Weaning: open‑label vasopressors reduced first.",
+      "comparison": "Blinded norepinephrine infusion 5–15 µg/min, delivered at identical constant 15 mL/h. Open‑label vasopressors titrated similarly; open‑label vasopressin prohibited.",
+      "blinding": "Double‑blind; pharmacists prepared indistinguishable study infusions.",
+      "sample_size_power": "Planned 776 patients to detect 10% absolute mortality difference (from expected 60%) with 80% power, 5% significance; sample size increased to account for primary analysis restricted to randomised‑and‑infused cohort; prespecified interim O'Brien–Fleming analyses.",
+      "primary_outcome": "All-cause mortality at 28 days",
+      "secondary_outcomes": [
+        "All-cause mortality at 90 days",
+        "Organ dysfunction‑free days",
+        "Serious adverse events"
+      ],
+      "follow_up": "28 days (primary), 90 days (secondary)"
+    },
+    "results": {
+      "headline_bullets": [
+        "Overall 28‑day mortality: 35.4% vasopressin vs 39.3% norepinephrine (RR 0.90; 95% CI 0.75–1.08; P=0.26) in the randomised‑and‑infused cohort.",
+        "In the prespecified less severe shock stratum (5–14 µg/min norepinephrine), 90‑day mortality: 35.8% vs 46.1% (RR 0.78; 95% CI 0.61–0.99; P=0.04).",
+        "Serious adverse events similar: 10.3% vs 10.5%; digital ischaemia 2.0% vs 0.5% (P=0.11).",
+        "Vasopressin group required lower open‑label norepinephrine during the first 4 days (P<0.001)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "28‑day mortality (randomised‑and‑infused)",
+          "group_a": "140/396 (35.4%)",
+          "group_b": "150/382 (39.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.90",
+          "ci_95": "0.75–1.08",
+          "p_value": "0.26",
+          "note": "ARR 3.9% (95% CI −2.9 to 10.7); Adjusted OR 0.88 (0.62–1.26; P=0.48)"
+        },
+        {
+          "outcome": "90‑day mortality (randomised‑and‑infused)",
+          "group_a": "172/392 (43.9%)",
+          "group_b": "188/379 (49.6%)",
+          "effect_measure": "RR",
+          "effect_value": "0.88",
+          "ci_95": "0.76–1.03",
+          "p_value": "0.11",
+          "note": "ARR 5.7% (95% CI −1.3 to 12.8); Adjusted OR 0.81 (0.57–1.16; P=0.26)"
+        },
+        {
+          "outcome": "28‑day mortality (all randomised)",
+          "group_a": "144/405 (35.6%)",
+          "group_b": "154/395 (39.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.91",
+          "ci_95": "0.76–1.09",
+          "p_value": "0.33",
+          "note": "ARR 3.4% (95% CI −3.4 to 10.2); adjusted analysis not reported"
+        },
+        {
+          "outcome": "90‑day mortality (all randomised)",
+          "group_a": "179/405 (44.2%)",
+          "group_b": "195/394 (49.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.89",
+          "ci_95": "0.77–1.04",
+          "p_value": "0.15",
+          "note": "ARR 5.4% (95% CI −2.0 to 12.7); adjusted analysis not reported"
+        },
+        {
+          "outcome": "28‑day mortality (less severe shock stratum)",
+          "group_a": "52/196 (26.5%)",
+          "group_b": "65/182 (35.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.74",
+          "ci_95": "0.55–1.01",
+          "p_value": "0.05",
+          "note": "ARR 9.2% (95% CI −0.1 to 18.5)"
+        },
+        {
+          "outcome": "90‑day mortality (less severe shock stratum)",
+          "group_a": "69/193 (35.8%)",
+          "group_b": "83/180 (46.1%)",
+          "effect_measure": "RR",
+          "effect_value": "0.78",
+          "ci_95": "0.61–0.99",
+          "p_value": "0.04",
+          "note": "ARR 10.4% (95% CI 0.4 to 20.4)"
+        },
+        {
+          "outcome": "Serious adverse events (≥1)",
+          "group_a": "41/396 (10.3%)",
+          "group_b": "40/382 (10.5%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "1.00"
+        },
+        {
+          "outcome": "Digital ischaemia (serious)",
+          "group_a": "8/396 (2.0%)",
+          "group_b": "2/382 (0.5%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.11"
+        },
+        {
+          "outcome": "Hyponatraemia (serious)",
+          "group_a": "5/396 (1.3%)",
+          "group_b": "0/382 (0.0%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.06"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Severity of shock (less vs more severe) – 28‑day mortality",
+          "group_a": "26.5% vs 35.4%",
+          "group_b": "35.7% vs 39.3%",
+          "effect_measure": "Interaction P value",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.10",
+          "note": "Prespecified stratum; 28‑day mortality interaction not reported directly; interaction P value from correspondence"
+        },
+        {
+          "subgroup": "Concomitant corticosteroid use – 28‑day mortality",
+          "group_a": "35.9% (on steroids) / 33.7% (no steroids)",
+          "group_b": "44.7% (on steroids) / 21.3% (no steroids)",
+          "effect_measure": "Interaction P value",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.008",
+          "note": "Lower mortality with vasopressin in steroid users (P=0.03); higher non‑significant mortality in non‑users (P=0.06). Denominators not reported."
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events occurred in 10.3% (vasopressin) vs 10.5% (norepinephrine) (P=1.00).",
+      "Digital ischaemia (serious): 2.0% vs 0.5% (P=0.11).",
+      "Hyponatraemia (serious): 1.3% vs 0.0% (P=0.06).",
+      "Organ dysfunction‑free days were reported but did not differ significantly between groups."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central telephone randomisation, computer‑generated sequence, variable block sizes, stratified by centre and severity; allocation concealment assured."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double‑blind with indistinguishable infusions; primary outcome (mortality) is objective and resistant to ascertainment bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "802 randomised; 21 did not receive infusion; 2 withdrew consent; 1 lost to follow‑up. Primary analysis restricted to randomised‑and‑infused (n=778), deviating from pure ITT. Low overall attrition."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Mean study‑drug infusion rates similar; open‑label norepinephrine significantly lower in vasopressin group during days 1–4 (P<0.001). No crossover reported."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Broadly comparable, but small imbalances: age (61.8 vs 59.3), new coagulation dysfunction (22.0% vs 29.7%)."
+        }
+      ],
+      "verdict": "Strong internal validity due to robust allocation concealment, double blinding, and objective primary outcome; the primary analysis excluding non‑infused patients is a minor limitation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU patients with established septic shock requiring norepinephrine; excluded acute coronary syndromes, severe heart failure, mesenteric ischaemia, pregnancy. Generalisable to typical ICU septic shock but limited for those with major cardiovascular/ischemic contraindications to vasopressin."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Highly applicable to well‑resourced ICUs where norepinephrine is standard first‑line; less applicable to non‑ICU settings, paediatric populations, or settings where vasopressin contraindications are common."
+        }
+      ],
+      "verdict": "Good external validity for adult ICU septic shock requiring vasopressors, but limited in populations with contraindications to vasopressin and in low‑resource environments."
+    },
+    "strengths": [
+      "Large, multicentre, double‑blind RCT.",
+      "Prespecified, clinically relevant primary outcome.",
+      "Stratified randomisation by centre and shock severity.",
+      "Detailed reporting of organ dysfunction‑free days and serious adverse events."
+    ],
+    "limitations": [
+      "Primary analysis based on randomised‑and‑infused cohort, not full ITT.",
+      "Significant screening‑to‑enrolment attrition (details not provided).",
+      "Vasopressin dose limited to 0.03 U/min, not testing higher rescue doses.",
+      "Conducted in 2001–2006; background sepsis care may have evolved."
+    ],
+    "critical_appraisal": {
+      "summary": "A well‑conducted trial with strong internal validity; the overall neutral primary outcome and the analytic reliance on the infusible cohort limit definitive conclusions, though signals in less severe shock and corticosteroid interaction are hypothesis‑generating.",
+      "strengths": [
+        "Robust blinding and allocation concealment",
+        "Large multicentre design",
+        "Prespecified severity stratification",
+        "Objective primary outcome"
+      ],
+      "weaknesses": [
+        "Primary analysis excluded 24 non‑infused patients",
+        "Small baseline imbalances in age and coagulation dysfunction",
+        "Low fixed dose of vasopressin",
+        "Older trial with potentially outdated co‑interventions"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Low‑dose vasopressin did not significantly reduce 28‑day mortality compared with norepinephrine in the overall septic shock cohort, but the trial provides important safety data and hypothesis‑generating signals in less severe shock.",
+    "clinical_bottom_line": {
+      "verdict": "Norepinephrine remains the first‑line vasopressor; vasopressin can be considered as an adjunct (particularly in less severe shock) to reduce norepinephrine dose, with close monitoring for ischaemic complications.",
+      "applies_to": "Adult ICU patients with septic shock already on norepinephrine ≥5 µg/min, without contraindications (ACS, severe heart failure, mesenteric ischaemia).",
+      "does_not_mean": "Vasopressin is not superior to norepinephrine for improving mortality; the positive signal in less severe shock is not confirmatory.",
+      "implementation_caveats": [
+        "Dose capped at 0.03 U/min; higher doses untested for mortality benefit.",
+        "Absolute risk of digital ischaemia remains low but increased (2.0% vs 0.5%).",
+        "Interaction with corticosteroids suggests synergy; further study needed."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of subgroup findings by shock severity",
+        "notes": "The less severe shock stratum showed lower 90‑day mortality (P=0.04), but treatment‑by‑stratum interaction P=0.10, raising concerns of overinterpretation."
+      },
+      {
+        "topic": "Editorial caution",
+        "notes": "Accompanying editorial emphasised cautious interpretation of the overall neutral result and the need for timely haemodynamic support."
+      },
+      {
+        "topic": "Correspondence debate",
+        "notes": "Published letters highlighted clinical importance of the less severe shock signal, with an author reply in the same thread."
+      },
+      {
+        "topic": "Vasopressin–corticosteroid interaction hypothesis",
+        "notes": "Subsequent analysis reported significant interaction (P=0.008): lower 28‑day mortality with vasopressin in corticosteroid users (35.9% vs 44.7%, P=0.03), higher non‑significant mortality in non‑users (33.7% vs 21.3%, P=0.06)."
+      },
+      {
+        "topic": "Later evidence (VANISH trial)",
+        "notes": "The factorial VANISH trial found no clear reduction in kidney failure‑free days with early vasopressin, supporting the view that vasopressin is not a universal first‑line replacement."
+      },
+      {
+        "topic": "Evidence synthesis and meta‑analysis",
+        "notes": "Individual patient data meta‑analysis of vasopressin/terlipressin trials generally supports catecholamine‑sparing without consistent survival benefit, encouraging phenotype‑ and timing‑aware interpretation."
+      },
+      {
+        "topic": "Guideline translation",
+        "notes": "Modern guidelines continue to recommend norepinephrine first‑line and vasopressin as adjunct, reflecting VASST’s largely neutral mortality signal."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "VANISH",
+        "relation": "Factorial RCT (early vasopressin vs norepinephrine; hydrocortisone vs placebo) that found no reduction in kidney failure‑free days, reinforcing VASST’s conclusion that vasopressin does not provide universal mortality benefit."
+      },
+      {
+        "trial": "Vasopressin/terlipressin meta‑analysis",
+        "relation": "Individual patient data synthesis that contextualises VASST, showing catecholamine‑sparing effects without an overall survival advantage."
+      }
+    ],
+    "unresolved_questions": [
+      "Would earlier initiation of vasopressin (<6 h) improve outcomes?",
+      "What is the optimal vasopressin dose (>0.03 U/min) for mortality benefit?",
+      "Which patient phenotypes (based on shock severity, corticosteroid use, organ dysfunction patterns) derive the most benefit?",
+      "Does vasopressin reduce need for renal replacement therapy? (Not demonstrated in VASST, but explored in other trials.)",
+      "What are the long‑term functional outcomes beyond 90 days?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=778 (primary analysis; 802 randomised)",
+        "28‑day mortality: 35.4% vs 39.3%, RR 0.90 (95% CI 0.75–1.08, P=0.26)",
+        "90‑day mortality in less severe shock: 35.8% vs 46.1%, RR 0.78 (95% CI 0.61–0.99, P=0.04)",
+        "Serious adverse events: 10.3% vs 10.5%"
+      ],
+      "one_line_takeaway": "Vasopressin is not superior to norepinephrine for survival in septic shock overall, but may benefit less severely ill patients as a norepinephrine‑sparing adjunct."
+    }
+  },
+  "_source_id": "VAAST",
+  "_source_system": "Circulatory"
+}

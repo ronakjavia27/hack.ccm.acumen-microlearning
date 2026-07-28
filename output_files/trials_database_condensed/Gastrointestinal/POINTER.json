@@ -1,0 +1,361 @@
+{
+  "id": "POINTER",
+  "trial_name": "POINTER — Immediate vs Postponed Intervention for Infected Necrotizing Pancreatitis (2021)",
+  "specialty": "Gastrointestinal",
+  "subtopic": "Acute Pancreatitis",
+  "year": 2021,
+  "journal": "N Engl J Med",
+  "citation": "Boxhoorn L, van Dijk SM, van Grinsven J, et al. Immediate versus postponed intervention for infected necrotizing pancreatitis. N Engl J Med. 2021;385(15):1372-1381",
+  "doi": "10.1056/NEJMoa2100826",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, parallel-group superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 104,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In infected necrotizing pancreatitis, immediate catheter drainage does not reduce the 6-month complication burden compared with a postponed antibiotics-first strategy, and avoids any intervention in 39% of patients.",
+  "pico": {
+    "population": "Adults with necrotizing pancreatitis and suspected or confirmed infected necrosis within 35 days after onset, with collections amenable to catheter drainage",
+    "intervention": "Immediate catheter drainage <24h after randomisation, with antibiotics, and a step-up escalation protocol",
+    "comparison": "Postponed catheter drainage: antibiotics and supportive care, intent to postpone drainage until walled-off necrosis, with step-up escalation if needed",
+    "outcome": "6-month Comprehensive Complication Index (CCI) — a severity-weighted morbidity score"
+  },
+  "keywords": [
+    "necrotizing pancreatitis",
+    "catheter drainage",
+    "step-up approach",
+    "timing",
+    "infection"
+  ],
+  "related_trials": [
+    "PANTER (step-up vs open necrosectomy)",
+    "TENSION (endoscopic vs surgical step-up)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Infected necrotizing pancreatitis requires invasive intervention for sepsis control, but procedural trauma itself can precipitate complications. Minimally invasive step-up management (catheter drainage first, then necrosectomy if needed) reduced major complications compared with open necrosectomy.",
+      "knowledge_gap": "Optimal timing of the first drainage step when infection is suspected remains contested: early drainage for source control vs antibiotics-first to allow maturation and potentially avoid intervention.",
+      "hypothesis": "Immediate catheter drainage (<24h) would reduce the total complication burden at 6 months compared with postponed drainage."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, open-label, parallel-group superiority trial in 22 centres in the Netherlands, with central computer randomisation (concealed variable block sizes) stratified by organ failure at randomisation, disease duration (day 0–20 vs 21–35), and centre volume.",
+      "setting": "22 hospitals in the Netherlands; enrolled patients with infected necrotizing pancreatitis.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Necrotizing pancreatitis with suspected/confirmed infected necrosis within 35 days after onset",
+          "Catheter drainage technically feasible",
+          "Confirmed infection: gas in (peri)pancreatic collections on CT, or positive Gram stain/culture from fine-needle aspiration or drainage",
+          "Suspected infection (day 15–35): clinical signs of infection for ≥3 consecutive days without another focus, plus either new-onset organ failure or ≥2/3 rising inflammatory parameters (temperature >38.5°C or <35.5°C; CRP ≥150 mg/L or rising; leukocytes ≥15×10^9/L or rising)"
+        ],
+        "exclusion": [
+          "Indication for emergency laparotomy",
+          "Retroperitoneal intervention already performed",
+          "Disease duration >35 days",
+          "Chronic pancreatitis"
+        ]
+      },
+      "intervention": "Immediate catheter drainage: initiate antibiotics and perform drainage within 24 hours after randomisation; drainage approach (percutaneous image-guided or endoscopic transluminal) at treating team's discretion; additional catheters/upsizing and cross-modality rescue permitted; step-up escalation if no clinical improvement within 72 hours (new organ failure or increasing markers) to repeated/additional drainage, then minimally invasive necrosectomy (endoscopic transluminal or video-assisted retroperitoneal debridement) once collections walled-off, with open necrosectomy as last resort.",
+      "comparison": "Postponed catheter drainage: antibiotics and supportive care, intent to postpone drainage until walled-off necrosis (largely/fully encapsulated), but earlier drainage allowed if clinical deterioration/lack of improvement mandates intervention; same step-up escalation after any drainage.",
+      "blinding": "Open-label for patients and clinicians; outcomes adjudicated by independent committee blinded to allocation.",
+      "sample_size_power": "102 patients required to detect 15-point reduction in mean CCI (from 40 to 25, SD 27) with 80% power, two-sided α=5%; target 104 allowing 2% dropout.",
+      "primary_outcome": "Comprehensive Complication Index (CCI) at 6 months (severity-weighted morbidity score).",
+      "secondary_outcomes": [
+        "Mortality, organ failure, bleeding, perforation/fistula, pancreaticocutaneous fistula, Clavien-Dindo grade ≥III complications, exocrine insufficiency, number of interventions, hospital/ICU stay, costs."
+      ],
+      "follow_up": "6 months"
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary endpoint neutral: mean CCI 57 vs 58 (mean difference −1; 95% CI −12 to 10; P=0.90).",
+        "19/49 (39%) in the postponed group avoided any invasive drainage; 17/19 survived without intervention.",
+        "Immediate drainage increased procedural intensity: necrosectomy 51% vs 22% (RR 2.27; 95% CI 1.27–4.06), mean total interventions 4.4 vs 2.6 (difference 1.8; 95% CI 0.6–3.0).",
+        "Mortality 13% vs 10% (RR 1.25; 95% CI 0.42–3.68)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: 6-month Comprehensive Complication Index (mean)",
+          "group_a": "57 (50–64)",
+          "group_b": "58 (50–67)",
+          "effect_measure": "Mean difference",
+          "effect_value": "−1",
+          "ci_95": "−12 to 10",
+          "p_value": "0.90",
+          "note": ""
+        },
+        {
+          "outcome": "Death within 6 months",
+          "group_a": "7/55 (13%)",
+          "group_b": "5/49 (10%)",
+          "effect_measure": "RR",
+          "effect_value": "1.25",
+          "ci_95": "0.42 to 3.68",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "New-onset organ failure",
+          "group_a": "18/55 (33%)",
+          "group_b": "17/49 (35%)",
+          "effect_measure": "RR",
+          "effect_value": "0.94",
+          "ci_95": "0.55 to 1.63",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Bleeding",
+          "group_a": "5 (9%)",
+          "group_b": "4 (8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.11",
+          "ci_95": "0.32 to 3.91",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Perforation of visceral organ and/or enterocutaneous fistula",
+          "group_a": "5 (9%)",
+          "group_b": "4 (8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.11",
+          "ci_95": "0.32 to 3.91",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Pancreaticocutaneous fistula",
+          "group_a": "6 (11%)",
+          "group_b": "4 (8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.34",
+          "ci_95": "0.40 to 4.46",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Clavien–Dindo grade III or higher",
+          "group_a": "42/55 (76%)",
+          "group_b": "40/49 (82%)",
+          "effect_measure": "RR",
+          "effect_value": "0.94",
+          "ci_95": "0.77 to 1.14",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Exocrine insufficiency (faecal elastase <200 μg/g) — survivors",
+          "group_a": "25/52 (48%)",
+          "group_b": "14/44 (32%)",
+          "effect_measure": "RR",
+          "effect_value": "1.51",
+          "ci_95": "0.90 to 2.53",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Catheter drainage performed (any)",
+          "group_a": "55/55 (100%)",
+          "group_b": "30/49 (61%)",
+          "effect_measure": "RR",
+          "effect_value": "1.63",
+          "ci_95": "1.24 to 2.14",
+          "p_value": "not reported",
+          "note": "Strategy adherence"
+        },
+        {
+          "outcome": "Necrosectomy performed (any)",
+          "group_a": "28/55 (51%)",
+          "group_b": "11/49 (22%)",
+          "effect_measure": "RR",
+          "effect_value": "2.27",
+          "ci_95": "1.27 to 4.06",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Total number of interventions (mean)",
+          "group_a": "4.4 (3.6–5.3)",
+          "group_b": "2.6 (1.8–3.6)",
+          "effect_measure": "Mean difference",
+          "effect_value": "1.8",
+          "ci_95": "0.6 to 3.0",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Length of hospital stay (mean, days)",
+          "group_a": "59 (50–70)",
+          "group_b": "51 (40–65)",
+          "effect_measure": "Mean difference",
+          "effect_value": "8",
+          "ci_95": "−9 to 23",
+          "p_value": "not reported",
+          "note": "ICU stay 12 vs 12 days, mean diff 0 (−11 to 11)"
+        },
+        {
+          "outcome": "Total inpatient hospital costs (mean, €)",
+          "group_a": "€52,914 (43,783–67,860)",
+          "group_b": "€46,747 (35,194–64,642)",
+          "effect_measure": "Mean difference",
+          "effect_value": "€6,166",
+          "ci_95": "−12,968 to 23,361",
+          "p_value": "not reported",
+          "note": ""
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Organ failure at randomisation",
+          "group_a": "81",
+          "group_b": "87",
+          "effect_measure": "Mean difference",
+          "effect_value": "−6",
+          "ci_95": "−26 to 17",
+          "p_interaction": "not reported"
+        },
+        {
+          "subgroup": "Disease duration ≤20 days",
+          "group_a": "67",
+          "group_b": "62",
+          "effect_measure": "Mean difference",
+          "effect_value": "5",
+          "ci_95": "−12 to 20",
+          "p_interaction": "not reported"
+        }
+      ]
+    },
+    "safety": [
+      "Bleeding: 9% (immediate) vs 8% (postponed)",
+      "Perforation/enterocutaneous fistula: 9% vs 8%",
+      "Pancreaticocutaneous fistula: 11% vs 8%",
+      "No significant differences in organ failure, mortality, or major complications."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-based, concealed variable blocks, stratified by key prognostic factors."
+        },
+        {
+          "domain": "Baseline comparability",
+          "notes": "Groups broadly similar: mean age 58 vs 60, male 69% vs 63%, median APACHE II 11 vs 12, organ failure 24% vs 16%, CT severity median 7 vs 7, necrosis >30% 35% vs 33%."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label for patients/clinicians, but outcomes adjudicated by independent committee blinded to allocation. Objective endpoints less susceptible."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Immediate group: 93% received drainage within 24h; postponed group: 2% had early drainage. Time from randomisation to first drainage 1±1 vs 13±15 days (clear separation)."
+        },
+        {
+          "domain": "Intervention intensity and strategy separation",
+          "notes": "Drainage 100% vs 61%, necrosectomy 51% vs 22%, total interventions 4.4 vs 2.6 — substantial difference in procedural burden, reflecting earlier intervention before full encapsulation."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "CCI is a severity-weighted composite, sensitive to total morbidity but may incorporate management-dependent events. Wide confidence intervals for mortality limit precision."
+        }
+      ],
+      "verdict": "Moderate internal validity: robust randomisation and follow-up with clear strategy separation, but open-label care and a morbidity-weighted composite introduce potential performance-related influences, and small sample size yields imprecise estimates for key outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults with early infected necrosis, no immediate surgical indication; excluded those needing emergency laparotomy, chronic pancreatitis, or prior intervention. Baseline organ failure present in ~20%."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in high-resource Dutch network with multidisciplinary expertise in percutaneous and endoscopic drainage and minimally invasive necrosectomy. Transferability may be reduced where such expertise is limited."
+        }
+      ],
+      "verdict": "Moderate external validity: findings are highly relevant to specialist centres with step-up pathways but may not apply to patients requiring emergent surgery or settings without access to advanced minimally invasive techniques."
+    },
+    "strengths": [
+      "Pragmatic randomised comparison of two clinically realistic strategies.",
+      "Central concealed randomisation with stratification.",
+      "High protocol adherence and clear separation of treatment arms.",
+      "Blinded outcome adjudication.",
+      "Clinically meaningful resource-use outcomes."
+    ],
+    "limitations": [
+      "Open-label design with potential performance bias.",
+      "Modest sample size with wide confidence intervals for mortality.",
+      "Heterogeneity in drainage modality and escalation decisions (pragmatic).",
+      "Suspected infection criteria may misclassify sterile necrosis, potentially diluting benefit of immediate drainage.",
+      "The strategy comparison includes avoidance of drainage, not just delay, complicating attribution to timing alone."
+    ],
+    "critical_appraisal": {
+      "summary": "POINTER is a well-conducted, pragmatic RCT that provides moderate internal/external validity evidence that a postponed antibiotics-first strategy does not worsen the 6-month complication burden and can avoid invasive procedures in 39% of patients with early infected necrotizing pancreatitis.",
+      "strengths": [
+        "Central randomisation, clear separation of strategies, blinded adjudication, inclusion of resource outcomes."
+      ],
+      "weaknesses": [
+        "Open-label, small sample, potential inclusion of sterile necrosis, imprecise mortality estimates."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In patients with infected necrotizing pancreatitis, a postponed drainage strategy did not result in a lower complication burden than immediate drainage, but it safely avoided any intervention in a substantial proportion of patients.",
+    "clinical_bottom_line": {
+      "verdict": "For clinically stable patients with early infected necrotizing pancreatitis, an antibiotics-first watchful waiting strategy with postponed drainage is safe and can avoid invasive procedures in ~40% of patients, without increasing overall morbidity or mortality.",
+      "applies_to": "Adults with suspected/confirmed infected necrosis within 35 days of onset, without immediate surgical indications, managed in centres with step-up drainage/necrosectomy expertise.",
+      "does_not_mean": "That all patients can avoid drainage; many will still require intervention. It does not endorse indefinite delay if clinical deterioration occurs.",
+      "implementation_caveats": [
+        "Requires close monitoring for signs of deterioration.",
+        "Centres need access to percutaneous and endoscopic drainage modalities and timely multidisciplinary decision-making.",
+        "Suspected infection criteria may include sterile necrosis; in confirmed infection, the need for drainage may be higher but still can be safely deferred."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite endpoint and open-label influence",
+        "notes": "The CCI may be affected by management-dependent events, and open-label care could influence thresholds for escalation and complication grading."
+      },
+      {
+        "topic": "Strategy vs timing",
+        "notes": "The postponed strategy allowed 39% to avoid drainage altogether, so the comparison is between immediate drainage and a 'postpone-and-select' approach, not a pure timing delay among patients who would ultimately be drained."
+      },
+      {
+        "topic": "Infection ascertainment",
+        "notes": "Many patients enrolled on clinical suspicion (rather than proven infection), which may include sterile necrosis. This could bias the trial toward null, potentially masking a benefit of early source control in true infection."
+      },
+      {
+        "topic": "Mortality imprecision",
+        "notes": "Mortality estimates are imprecise (RR 1.25; 95% CI 0.42–3.68); the trial cannot rule out a moderate survival difference."
+      },
+      {
+        "topic": "Relation to technique trials",
+        "notes": "Prior/similar trials (PANTER, TENSION, etc.) inform the 'how' of minimally invasive step-up, while POINTER informs the 'when' to initiate drainage within that framework."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PANTER (step-up vs open necrosectomy)",
+        "relation": "Established that minimally invasive step-up reduces major complications versus open necrosectomy; POINTER builds on this paradigm by addressing the timing of the first drainage step within that step-up."
+      },
+      {
+        "trial": "TENSION (endoscopic vs surgical step-up)",
+        "relation": "Compared endoscopic transluminal step-up to surgical step-up, informing the optimal method of necrosectomy; POINTER complements these findings by addressing drainage timing."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal timing of drainage in true microbiologically confirmed infection.",
+      "Whether early drainage could benefit a subgroup with more severe systemic illness.",
+      "Role of procalcitonin or other biomarkers to guide timing.",
+      "Long-term outcomes (beyond 6 months) and quality-of-life impact."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=104",
+        "Primary CCI 57 vs 58 (mean difference −1, 95% CI −12 to 10)",
+        "39% avoided any drainage (postponed group)",
+        "Necrosectomy 51% vs 22% (RR 2.27)",
+        "Mortality 13% vs 10% (RR 1.25, 95% CI 0.42–3.68)"
+      ],
+      "one_line_takeaway": "In early infected necrotizing pancreatitis, starting with antibiotics and postponing catheter drainage is safe and spares about 40% from any invasive procedure, without worsening outcomes."
+    }
+  },
+  "_source_id": "POINTER",
+  "_source_system": "Gastrointestinal"
+}

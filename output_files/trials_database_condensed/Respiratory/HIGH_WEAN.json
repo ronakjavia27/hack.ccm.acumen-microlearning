@@ -1,0 +1,301 @@
+{
+  "id": "HIGH_WEAN",
+  "trial_name": "HIGH WEAN — Effect of Postextubation High-Flow Nasal Cannula vs Noninvasive Ventilation on Reintubation and Postextubation Respiratory Failure in High-Risk Patients (2016)",
+  "specialty": "Pulmonary & Critical Care",
+  "subtopic": "Weaning & Liberation from Ventilation",
+  "year": 2016,
+  "journal": "JAMA",
+  "citation": "Hernández G, Vaquero C, Colinas L, Cuena R, González P, Canabal A, Sanchez S, Rodriguez ML, Villasclaras A, Fernández R. Effect of postextubation high-flow nasal cannula vs noninvasive ventilation on reintubation and postextubation respiratory failure in high-risk patients: a randomized clinical trial. JAMA. 2016 Oct 18;316(15):1565-74.",
+  "doi": "10.1001/jama.2016.14194",
+  "registration": "NCT01191489",
+  "trial_type": "RCT — multicenter, open-label, noninferiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 604,
+  "result_category": "Positive",
+  "one_liner": "In high-risk ICU patients after planned extubation, HFNC was noninferior to prophylactic NIV for 72-hour reintubation and reduced postextubation respiratory failure with better tolerability.",
+  "pico": {
+    "population": "Adults mechanically ventilated >12 hours, planned extubation after successful SBT, with ≥1 high-risk feature for reintubation (age >65, APACHE II >12 at extubation, BMI >30, difficult/prolonged weaning, moderate-to-severe COPD, heart failure as indication for ventilation, >2 comorbidities, airway patency problems, inability to clear secretions, mechanical ventilation >7 days).",
+    "intervention": "HFNC started immediately after extubation; initial flow 10 L/min titrated up until discomfort; heated humidification at 37°C; FiO2 to SpO2>92%; applied for 24 hours, then conventional oxygen.",
+    "comparison": "NIV via full-face mask and BiPAP Vision ventilator, continuous for 24 hours; PEEP and pressure support adjusted to target RR 25/min and adequate gas exchange (SaO2≥92%, pH≥7.35); FiO2 to SpO2>92%; sedatives not allowed.",
+    "outcome": "Co-primary: all-cause reintubation within 72 hours and postextubation respiratory failure within 72 hours."
+  },
+  "keywords": [
+    "high-flow nasal cannula",
+    "noninvasive ventilation",
+    "extubation",
+    "reintubation",
+    "postextubation respiratory failure",
+    "weaning"
+  ],
+  "related_trials": [
+    "HIGH-WEAN (alternating NIV+HFNC vs HFNC alone)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Postextubation respiratory failure and reintubation are frequent and associated with worse outcomes. Prophylactic NIV reduces reintubation in selected high-risk patients but is limited by intolerance and adverse effects.",
+      "knowledge_gap": "Whether HFNC could replace NIV as postextubation prophylaxis in high-risk ICU patients remained uncertain.",
+      "hypothesis": "HFNC is noninferior to prophylactic NIV for preventing reintubation and postextubation respiratory failure within 72 hours in high-risk ICU patients after planned extubation."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, open-label, noninferiority trial; 3 ICUs in Spain; recruitment September 2012 to October 2014; registered (NCT01191489).",
+      "setting": "3 ICUs in Spain; adult ICU; extubation after successful spontaneous breathing trial.",
+      "population": {
+        "inclusion": [
+          "Adults mechanically ventilated >12 hours",
+          "Planned extubation after successful spontaneous breathing trial",
+          "≥1 predefined high-risk feature for reintubation: age >65 years; APACHE II >12 at extubation; BMI >30; difficult/prolonged weaning; moderate-to-severe COPD; heart failure as indication for ventilation; >2 comorbidities; airway patency problems; inability to clear secretions; mechanical ventilation >7 days"
+        ],
+        "exclusion": [
+          "Low-risk for reintubation",
+          "Do-not-reintubate order",
+          "Unscheduled extubation",
+          "No informed consent",
+          "Hypercapnia during spontaneous breathing trial"
+        ]
+      },
+      "intervention": "HFNC started immediately after extubation; initial flow 10 L/min, increased by 5 L/min increments until discomfort. Heated humidification at 37°C; FiO2 titrated to maintain SpO2>92%. Applied for 24 hours, then switched to conventional oxygen.",
+      "comparison": "NIV started immediately after extubation via full-face mask and BiPAP Vision ventilator; planned continuous delivery for 24 hours. PEEP and inspiratory pressure support adjusted to target respiratory rate 25/min and adequate gas exchange (SaO2≥92%, pH ≥7.35); FiO2 titrated for SpO2>92%. Sedatives to improve tolerance were not allowed; after 24 hours, NIV was withdrawn and oxygen given by Venturi mask.",
+      "blinding": "Unblinded (clinicians and patients aware of treatment); outcomes included objective endpoints (reintubation, mortality) but also a composite “postextubation respiratory failure” construct with clinician-dependent elements.",
+      "sample_size_power": "600 patients (300 per group) required to demonstrate noninferiority with an absolute margin of 10% (unilateral 95% CI; one-sided 5% alpha), assuming reintubation rate of 20%–25%, with 80% power and 15% allowance for attrition.",
+      "primary_outcome": "Co-primary: all-cause reintubation within 72 hours and postextubation respiratory failure within 72 hours.",
+      "secondary_outcomes": [
+        "Time to reintubation",
+        "ICU and hospital length of stay",
+        "ICU and hospital mortality (to discharge)"
+      ],
+      "follow_up": "Co-primary outcomes to 72 hours postextubation; secondary outcomes to hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "HFNC met noninferiority for 72-hour reintubation (22.8% vs 19.1%; risk difference −3.7%; one-sided 95% CI −9.1 to ∞; margin 10%).",
+        "HFNC reduced postextubation respiratory failure (26.9% vs 39.8%; risk difference 12.9%; one-sided 95% CI 6.6 to ∞).",
+        "NIV was poorly tolerated: 42.9% required discontinuation vs 0% with HFNC.",
+        "ICU and hospital mortality were similar (ICU ~3%, hospital ~8%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause reintubation within 72 h (co-primary)",
+          "group_a": "66/290 (22.8%)",
+          "group_b": "60/314 (19.1%)",
+          "effect_measure": "Risk difference (NIV − HFNC)",
+          "effect_value": "−3.7%",
+          "ci_95": "One-sided 95% CI −9.1 to ∞",
+          "p_value": "",
+          "note": "Noninferiority margin 10% met; ITT and per-protocol consistent"
+        },
+        {
+          "outcome": "Postextubation respiratory failure within 72 h (co-primary)",
+          "group_a": "78/290 (26.9%)",
+          "group_b": "125/314 (39.8%)",
+          "effect_measure": "Risk difference (NIV − HFNC)",
+          "effect_value": "12.9%",
+          "ci_95": "One-sided 95% CI 6.6 to ∞",
+          "p_value": "",
+          "note": "Lower incidence with HFNC"
+        },
+        {
+          "outcome": "Postextubation respiratory failure due to hypoxaemia",
+          "group_a": "13/290 (4.5%)",
+          "group_b": "31/314 (9.9%)",
+          "effect_measure": "Risk difference (NIV − HFNC)",
+          "effect_value": "5.4%",
+          "ci_95": "95% CI 1.6 to 9.1",
+          "p_value": "0.003",
+          "note": ""
+        },
+        {
+          "outcome": "Postextubation respiratory failure due to inability to clear secretions",
+          "group_a": "30/290 (10.3%)",
+          "group_b": "52/314 (16.6%)",
+          "effect_measure": "Risk difference (NIV − HFNC)",
+          "effect_value": "6.2%",
+          "ci_95": "95% CI 1.5 to 10.8",
+          "p_value": "0.007",
+          "note": "Clinician-dependent criterion"
+        },
+        {
+          "outcome": "ICU length of stay after randomisation (survivors), median (IQR)",
+          "group_a": "3 (2–6) days",
+          "group_b": "4 (2–6) days",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1 day",
+          "ci_95": "95% CI −0.1 to 2.1",
+          "p_value": "0.048",
+          "note": "Total ICU LOS not significantly different"
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "9/290 (3.1%)",
+          "group_b": "10/314 (3.2%)",
+          "effect_measure": "Risk difference (NIV − HFNC)",
+          "effect_value": "0.1%",
+          "ci_95": "95% CI −2.7 to 3.0",
+          "p_value": "0.93",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "23/290 (7.9%)",
+          "group_b": "25/314 (8.0%)",
+          "effect_measure": "Risk difference (NIV − HFNC)",
+          "effect_value": "0.1%",
+          "ci_95": "95% CI −4.2 to 4.4",
+          "p_value": "0.94",
+          "note": ""
+        },
+        {
+          "outcome": "Sensitivity analysis: reintubation excluding secretion-related criteria",
+          "group_a": "48/290 (16.5%)",
+          "group_b": "73/314 (23.2%)",
+          "effect_measure": "Risk difference (NIV − HFNC)",
+          "effect_value": "6.7%",
+          "ci_95": "One-sided 95% CI 1.3 to ∞",
+          "p_value": "",
+          "note": "Post-publication correction; favours HFNC"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No HFNC discontinuations due to adverse events.",
+      "NIV discontinuation in 42.9% due to adverse events: discomfort 14.0%, facial skin erythema 6.4%, abdominal distension 4.1%."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Allocation concealed via independent telephone call centre. Simple randomisation (no blocking/stratification) led to unequal group sizes (314 NIV vs 290 HFNC), increasing susceptibility to chance imbalances."
+        },
+        {
+          "domain": "Dropout/exclusions (post-randomisation)",
+          "notes": "ITT population 604/604; per-protocol 312/314 NIV and 288/290 HFNC (2 excluded per group); minimal attrition."
+        },
+        {
+          "domain": "Performance and detection bias",
+          "notes": "Open-label design; reintubation is objective but threshold-driven; postextubation respiratory failure criteria include clinician-dependent elements (secretion clearance, respiratory muscle fatigue), creating potential for differential classification."
+        },
+        {
+          "domain": "Protocol adherence and “dose” delivered",
+          "notes": "Both strategies intended for 24 hours. NIV delivery attenuated: median duration 14 hours (IQR 8–23); 42.9% discontinued due to adverse events. HFNC delivered high flows: mean gas flow at 12 hours 50 (SD 5) L/min; FiO2 at 12 hours lower with HFNC (median 35% [IQR 30–40]) vs NIV (40% [35–50]). Prohibition of sedatives for NIV tolerance may have increased discontinuation and reduced effective separation of ventilatory support exposure."
+        },
+        {
+          "domain": "Baseline characteristics and risk enrichment",
+          "notes": "High-risk profile achieved: median number of risk factors 3 (IQR 2–4) in both groups. Severity at extubation similar: APACHE II median 10 (8–12) NIV vs 11 (8–12) HFNC; PaO2/FiO2 during SBT 194 (148–261) vs 191 (149–251). Imbalances: heart failure as indication for ventilation 9.9% NIV vs 5.5% HFNC; surgical diagnosis 33.4% NIV vs 43.8% HFNC."
+        },
+        {
+          "domain": "Timing and co-interventions",
+          "notes": "Both interventions started immediately postextubation, aligning with peak risk window. Rescue NIV after onset of postextubation respiratory failure was not allowed, limiting contamination but potentially influencing escalation thresholds."
+        },
+        {
+          "domain": "Statistical rigor",
+          "notes": "Noninferiority assessed using one-sided 95% CI and prespecified absolute margin (10%). Primary outcomes reported in both ITT and per-protocol populations. Power adequate for co-primary noninferiority endpoints, not for mortality or small subgroup effects."
+        }
+      ],
+      "verdict": "Moderate to strong. Central randomisation, minimal attrition, and concordant ITT/per-protocol analyses support credibility; open-label delivery and substantial NIV discontinuation introduce meaningful risks of performance/detection bias and dose dilution for the active comparator."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU cohort from 3 Spanish centres; all patients deemed “weanable” and extubated after successful SBT. Enriched for high-risk extubations; low-risk patients (466) excluded at screening, limiting inference to broader ICU extubation population. Hypercapnia during SBT was an exclusion (59 patients), limiting applicability to chronic hypercapnic respiratory disorders."
+        },
+        {
+          "domain": "Applicability across settings",
+          "notes": "Requires HFNC infrastructure and staff familiarity; protocol used high flows (~50 L/min) with heated humidification. NIV protocol mandated continuous 24-hour application without sedative support; real-world NIV schedules and tolerance strategies vary. Findings most applicable to ICUs with similar extubation-readiness and reintubation thresholds; translation to step-down/ward environments uncertain."
+        }
+      ],
+      "verdict": "Good generalisability to non-hypercapnic, high-risk ICU extubations in centres with HFNC capability; limited generalisability to hypercapnic COPD populations or systems that deliver NIV with different dosing/tolerance practices."
+    },
+    "strengths": [
+      "Pragmatic multicentre randomised design with a clinically relevant high-risk population.",
+      "Co-primary outcomes focused on the early postextubation period (72 hours), when preventable failure is most likely.",
+      "Central allocation concealment; prespecified noninferiority margin; both ITT and per-protocol analyses for primary outcomes.",
+      "Very low loss to follow-up and clear reporting of adverse events and treatment discontinuation."
+    ],
+    "limitations": [
+      "Open-label intervention and outcomes that include clinician-dependent components (especially the postextubation respiratory failure construct).",
+      "Simple randomisation caused unequal group sizes (314 vs 290) and some baseline imbalances.",
+      "Marked NIV intolerance and dose dilution (median 14 hours; 42.9% discontinuation), with sedatives prohibited.",
+      "Intervention duration fixed at 24 hours; optimal duration may differ by risk strata.",
+      "Exclusion of hypercapnia during spontaneous breathing trial limits inference for patient groups where NIV benefit may be greatest."
+    ],
+    "critical_appraisal": {
+      "summary": "HIGH WEAN is a well-conducted noninferiority trial demonstrating that HFNC is a viable alternative to prophylactic NIV in high-risk non-hypercapnic extubations, with better tolerability and similar reintubation rates, though open-label design and high NIV discontinuation may bias the comparison.",
+      "strengths": [
+        "Pragmatic multicentre randomised design with a clinically relevant high-risk population.",
+        "Co-primary outcomes focused on the early postextubation period (72 hours), when preventable failure is most likely.",
+        "Central allocation concealment; prespecified noninferiority margin; both ITT and per-protocol analyses for primary outcomes.",
+        "Very low loss to follow-up and clear reporting of adverse events and treatment discontinuation."
+      ],
+      "weaknesses": [
+        "Open-label intervention and outcomes that include clinician-dependent components (especially the postextubation respiratory failure construct).",
+        "Simple randomisation caused unequal group sizes (314 vs 290) and some baseline imbalances.",
+        "Marked NIV intolerance and dose dilution (median 14 hours; 42.9% discontinuation), with sedatives prohibited.",
+        "Intervention duration fixed at 24 hours; optimal duration may differ by risk strata.",
+        "Exclusion of hypercapnia during spontaneous breathing trial limits inference for patient groups where NIV benefit may be greatest."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "HFNC provided comparable (noninferior) protection against early reintubation to prophylactic NIV, while reducing postextubation respiratory failure and demonstrating markedly better tolerability. Hard outcomes (ICU and hospital mortality) were similar; the principal value proposition is reducing early respiratory deterioration and improving comfort, rather than mortality benefit. Supports a risk-stratified approach: HFNC as a default prophylactic support in many high-risk but non-hypercapnic patients, with NIV reserved for patients needing explicit ventilatory unloading (e.g., hypercapnic physiology or very high-risk phenotypes).",
+    "clinical_bottom_line": {
+      "verdict": "HFNC is noninferior to prophylactic NIV for preventing reintubation and reduces postextubation respiratory failure with better tolerability; it should be the default prophylactic strategy in high-risk non-hypercapnic extubations.",
+      "applies_to": "High-risk ICU patients after planned extubation without hypercapnia during SBT, in centres with HFNC capability.",
+      "does_not_mean": "HFNC does not replace NIV in patients with hypercapnic respiratory failure or those requiring explicit ventilatory unloading; it does not reduce mortality.",
+      "implementation_caveats": [
+        "HFNC should be started immediately after extubation and continued for 24 hours.",
+        "NIV may still be considered for patients at very high risk or with hypercapnia, possibly in combination with HFNC.",
+        "Tolerance and adherence are critical; NIV discontinuation rates were high without sedation."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Assay sensitivity in a noninferiority comparison",
+        "notes": "Prophylactic NIV benefit is strongest in chronic hypercapnic respiratory disorders, while patients with hypercapnia during SBT were excluded; this complicates noninferiority interpretation if the active comparator effect is attenuated in the enrolled population."
+      },
+      {
+        "topic": "Outcome construct and clinician-dependent thresholds",
+        "notes": "Several elements used to classify “postextubation respiratory failure” (e.g., secretion clearance, reduced level of consciousness) have limited specificity for a respiratory cause and may be sensitive to clinician behaviour in an unblinded trial, potentially influencing both composite failure classification and reintubation decisions."
+      },
+      {
+        "topic": "Post-publication correction and sensitivity analysis",
+        "notes": "The investigators clarified that “inability to clear respiratory secretions” was intended as a criterion but was omitted from the printed definition of postextubation respiratory failure and later corrected; reanalysis excluding patients defined by secretion-related criteria reported reintubation in 73/314 (23.2%) NIV vs 48/290 (16.5%) HFNC (risk difference 6.7%; one-sided 95% CI 1.3 to ∞)."
+      },
+      {
+        "topic": "Subsequent synthesis and guideline integration",
+        "notes": "ERS/ATS clinical practice guidelines recommend prophylactic NIV after extubation in high-risk patients and recommend against routine NIV in low-risk patients; they also recommend against NIV as rescue therapy once postextubation respiratory failure is established. A large systematic review and network meta-analysis (36 RCTs; 6806 patients; searches through October 2021) found that, compared with conventional oxygen, both NIV (OR 0.65; 95% CI 0.52–0.82) and HFNC (OR 0.63; 95% CI 0.45–0.87) reduced reintubation, with no difference between NIV and HFNC (OR 1.04; 95% CI 0.78–1.38), and no short-term mortality benefit for either strategy. The HIGH-WEAN trial evaluated alternating NIV with HFNC vs HFNC alone after extubation in high-risk patients and reported lower reintubation with the combined strategy, supporting the concept that NIV may add benefit in higher-risk strata beyond HFNC monotherapy."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ERS/ATS clinical practice guidelines",
+        "relation": "Recommend prophylactic NIV after extubation in high-risk patients; recommend against routine NIV in low-risk patients and against NIV as rescue therapy."
+      },
+      {
+        "trial": "Network meta-analysis (36 RCTs, 6806 patients)",
+        "relation": "Found both NIV and HFNC reduce reintubation vs conventional oxygen, with no difference between NIV and HFNC, and no mortality benefit."
+      },
+      {
+        "trial": "HIGH-WEAN (alternating NIV+HFNC vs HFNC alone)",
+        "relation": "Reported lower reintubation with combined NIV+HFNC vs HFNC alone, supporting added benefit of NIV in higher-risk strata."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal duration of postextubation prophylactic support.",
+      "Role of NIV in hypercapnic patients excluded from this trial.",
+      "Whether combined NIV+HFNC is superior to HFNC alone in the highest-risk subgroups.",
+      "Impact of sedation on NIV tolerance and efficacy."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=604",
+        "Reintubation: 22.8% HFNC vs 19.1% NIV (risk diff −3.7%, noninferior)",
+        "Postextubation respiratory failure: 26.9% vs 39.8% (risk diff 12.9%)",
+        "NIV discontinuation: 42.9% vs 0%",
+        "Mortality similar (ICU ~3%, hospital ~8%)"
+      ],
+      "one_line_takeaway": "In high-risk non-hypercapnic extubations, HFNC is noninferior to NIV for reintubation and reduces postextubation respiratory failure with far better tolerance, making it the preferred first-line prophylactic strategy."
+    }
+  },
+  "_source_id": "HIGH_WEAN",
+  "_source_system": "Respiratory"
+}

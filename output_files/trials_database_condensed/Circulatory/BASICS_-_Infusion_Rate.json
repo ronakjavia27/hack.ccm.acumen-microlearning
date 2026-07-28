@@ -1,0 +1,299 @@
+{
+  "id": "BaSICS_rate",
+  "trial_name": "BaSICS — Infusion Rate: Effect of Slower vs Faster Intravenous Fluid Bolus Rates on Mortality in Critically Ill Patients",
+  "specialty": "Critical Care",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 2021,
+  "journal": "JAMA",
+  "citation": "Zampieri FG, Machado FR, Biondi RS, Freitas FGR, Veiga VC, Figueiredo RC, et al. Effect of slower vs faster intravenous fluid bolus rates on mortality in critically ill patients: the BaSICS randomized clinical trial. JAMA. 2021;326(9):830-838",
+  "doi": "10.1001/jama.2021.11444",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, factorial, open-label for rate, double-blind for fluid type",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 10520,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU patients, slowing fluid boluses from 999 mL/h to 333 mL/h did not reduce 90-day mortality (HR 1.03, 95% CI 0.96–1.11, P=0.46) and provided no kidney benefit.",
+  "pico": {
+    "population": "Critically ill ICU patients requiring crystalloid fluid challenges and having ≥1 risk factor for worse outcomes",
+    "intervention": "Slower bolus rate: 333 mL/h (500 mL over ~90 minutes) via infusion pump",
+    "comparison": "Faster bolus rate: 999 mL/h (500 mL over ~30 minutes) via infusion pump",
+    "outcome": "90-day mortality; kidney replacement therapy within 90 days; organ dysfunction (SOFA score)"
+  },
+  "keywords": [
+    "fluid bolus",
+    "infusion rate",
+    "critical care",
+    "resuscitation",
+    "pump rate",
+    "BaSICS"
+  ],
+  "related_trials": [
+    "FENICE (fluid challenge practice cohort)",
+    "ANDROMEDA-SHOCK",
+    "BaSICS (fluid-type factorial companion)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Fluid challenges are a foundational ICU intervention; previous evidence focused on type and volume of fluid, not rate. The FENICE cohort documented wide practice variation: 25th percentile infusion rate ~500 mL/h.",
+      "knowledge_gap": "No large pragmatic ICU RCT had assessed whether infusion rate influences patient-centred outcomes.",
+      "hypothesis": "Slower bolus infusion rates would reduce 90-day mortality and organ dysfunction/AKI (target HR ~0.90)."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, investigator-initiated, pragmatic 2×2 factorial trial comparing infusion rate (open-label) and fluid type (double-blind).",
+      "setting": "75 ICUs in Brazil; enrolment May 2017–March 2020; follow-up completed October 2020.",
+      "population": {
+        "inclusion": [
+          "Clinician decision to administer a crystalloid fluid challenge for volume expansion",
+          "≥1 risk factor for worse outcomes (not fully enumerated)"
+        ],
+        "exclusion": [
+          "Serum sodium <120 or >160 mmol/L",
+          "Chloride <85 or >115 mmol/L",
+          "Potassium <2.0 or >6.0 mmol/L",
+          "Anticipated death within 24 hours",
+          "Concurrent enrolment in another clinical trial"
+        ]
+      },
+      "intervention": "Slower bolus rate: 333 mL/h (typically 500 mL over ~90 minutes) via infusion pump; 500 mL of assigned crystalloid per challenge; safety allowance for faster delivery in emergencies.",
+      "comparison": "Faster bolus rate: 999 mL/h (typically 500 mL over ~30 minutes) via infusion pump; same volume and emergency discretion.",
+      "blinding": "Infusion rate unblinded (pragmatic pump setting); fluid type double-blind (identical masked study fluids). Primary outcome (mortality) objective.",
+      "sample_size_power": "Planned 11,000 patients to detect HR 0.90 for 90-day mortality (assumed 35% mortality) with 89% power at two-sided α 0.05; interim analyses at 25%, 50%, 75% recruitment and early 1,000-patient safety review.",
+      "primary_outcome": "90-day mortality",
+      "secondary_outcomes": [
+        "Acute kidney failure requiring renal replacement therapy within 90 days",
+        "In-hospital kidney replacement therapy",
+        "Day 3 SOFA total score and organ-specific components",
+        "Mechanical ventilation–free days within 28 days",
+        "ICU length of stay"
+      ],
+      "follow_up": "90 days for primary outcome; organ outcomes assessed at days 3 and 7, and up to 28 days for ventilation-free days."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in 90-day mortality: 26.6% (slower) vs 27.0% (faster); HR 1.03 (95% CI 0.96–1.11; P=0.46).",
+        "Renal replacement therapy within 90 days similar: RR 0.95 (95% CI 0.83–1.09); in-hospital KRT OR 0.92 (0.80–1.06).",
+        "Day 3 SOFA total score showed minimal difference (−0.10; 95% CI −0.21 to −0.01), with mixed organ component effects (cardiovascular and respiratory favoured slower rate; coagulation favoured faster rate).",
+        "Modest separation in day-1 fluid volume: 1162 mL (slower) vs 1252 mL (faster); absolute difference 90 mL.",
+        "No interaction between infusion rate and fluid type for mortality (P=0.98)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "90-day mortality",
+          "group_a": "1406/5276 (26.6%)",
+          "group_b": "1414/5244 (27.0%)",
+          "effect_measure": "HR",
+          "effect_value": "1.03",
+          "ci_95": "0.96–1.11",
+          "p_value": "0.46",
+          "note": "Primary end point; mixed-effects Cox model adjusted for age, baseline SOFA, admission type, site as random effect; mITT after excluding post-randomisation consent withdrawals and duplicates."
+        },
+        {
+          "outcome": "KRT within 90 days (rate per 1000 patient-days)",
+          "group_a": "414/474.84 (0.87)",
+          "group_b": "445/471.96 (0.94)",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.83–1.09",
+          "p_value": "",
+          "note": "Rate ratio; denominator is follow-up time (thousands of patient-days)"
+        },
+        {
+          "outcome": "In-hospital KRT",
+          "group_a": "397/5267 (7.5%)",
+          "group_b": "423/5238 (8.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.92",
+          "ci_95": "0.80–1.06",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Day 3 SOFA total score",
+          "group_a": "Median 4 (IQR 2–6)",
+          "group_b": "Median 4 (IQR 2–7)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−0.10",
+          "ci_95": "−0.21 to −0.01",
+          "p_value": "",
+          "note": "Model-based effect"
+        },
+        {
+          "outcome": "Day 3 cardiovascular SOFA >2",
+          "group_a": "1252/3847 (32.5%)",
+          "group_b": "1338/3788 (35.3%)",
+          "effect_measure": "OR",
+          "effect_value": "0.89",
+          "ci_95": "0.80–0.98",
+          "p_value": "",
+          "note": "Favours slower rate"
+        },
+        {
+          "outcome": "Day 3 coagulation SOFA >2",
+          "group_a": "180/3847 (4.7%)",
+          "group_b": "146/3788 (3.9%)",
+          "effect_measure": "OR",
+          "effect_value": "1.31",
+          "ci_95": "1.05–1.64",
+          "p_value": "",
+          "note": "Favours faster rate"
+        },
+        {
+          "outcome": "Ventilator-free days within 28 days",
+          "group_a": "Median 27 (IQR 18–28)",
+          "group_b": "Median 27 (IQR 17–28)",
+          "effect_measure": "Difference in means",
+          "effect_value": "0.17",
+          "ci_95": "−0.07 to 0.32",
+          "p_value": "",
+          "note": "Tertiary end point"
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "Median 3 (IQR 2–7)",
+          "group_b": "Median 3 (IQR 2–7)",
+          "effect_measure": "Mean ratio",
+          "effect_value": "0.98",
+          "ci_95": "0.93–1.03",
+          "p_value": "",
+          "note": "Tertiary end point"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation concealment",
+          "notes": "Central web-based randomisation; random permuted blocks of 12; stratified by centre and factorial assignment; robust concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Rate allocation open-label; primary outcome (mortality) objective but secondary outcomes (e.g., KRT initiation) potentially biased by group awareness."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT after excluding 532 patients (lack of consent n=486, duplicate enrolment n=46) from 11,052 randomised; primary outcome missing in 25 patients, 15 imputed; overall low missingness."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Exposure contrast defined by pump rates; emergency deviations permitted but frequency not reported. Day-1 fluid volume difference modest (90 mL), suggesting limited separation in cumulative early fluid exposure."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched: median age 61, APACHE II 17, baseline SOFA 4, sepsis ~26%, invasive ventilation ~38%, vasopressors ~13%."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong for the mortality comparison due to robust randomisation, low missingness, and objective primary outcome; weaker for clinician-mediated secondary outcomes because of open-label rate allocation and modest exposure separation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Large pragmatic cohort (Brazil) with mixed admission types (planned surgery 44%, unplanned non-sepsis 29%, sepsis 26%), moderate severity (APACHE II 17), applicable to many general ICUs."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Relevant where fluid challenges are pump-delivered; less applicable when boluses are given by pressure bag/manual push (>999 mL/h) or during early ED/pre-hospital resuscitation. Not tested in the earliest hours of septic shock outside ICU."
+        }
+      ],
+      "verdict": "Findings are highly generalisable to ICU fluid challenges delivered by pump over ~30–90 minutes, but less so for early resuscitation contexts or bolus speeds outside the tested range."
+    },
+    "strengths": [
+      "Very large sample (10,520 patients included)",
+      "Multicentre pragmatic ICU design",
+      "Clinically meaningful objective primary outcome",
+      "Rigorous mixed-effects modelling accounting for centre clustering",
+      "Factorial design allowed assessment of interaction with fluid type (P=0.98)"
+    ],
+    "limitations": [
+      "Open-label infusion-rate allocation",
+      "Post-randomisation exclusions for lack of consent and duplicate enrolment (532 of 11,052)",
+      "Modest separation in day-1 cumulative fluid volume (90 mL difference)",
+      "Emergency deviations from assigned rate permitted but frequency not reported",
+      "‘Faster’ arm limited to pump rate (999 mL/h) and may not represent common pressure-bag bolus practice",
+      "Intervention starts in ICU, not early ED resuscitation"
+    ],
+    "critical_appraisal": {
+      "summary": "BaSICS-rate is a large, well-conducted pragmatic RCT demonstrating that slowing fluid boluses from 999 to 333 mL/h does not alter mortality or kidney outcomes in a general ICU population; the open-label design and modest exposure separation weaken inference for clinician-mediated endpoints.",
+      "strengths": [
+        "Robust randomisation and concealment",
+        "Objective primary outcome with minimal missing data",
+        "Pragmatic design enhances external validity"
+      ],
+      "weaknesses": [
+        "Unblinded rate could bias secondary outcomes",
+        "Post-randomisation exclusions (though likely non-differential)",
+        "Limited biologic separation in early fluid delivery may dilute true rate effect"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Slowing fluid bolus infusion rate from 999 mL/h to 333 mL/h did not reduce 90-day mortality or improve kidney outcomes in ICU patients; bolus rate within this pump-driven range is not a major outcome modifier.",
+    "clinical_bottom_line": {
+      "verdict": "Routine slowing of fluid boluses to 333 mL/h does not change mortality or need for renal support. Emphasise bolus indication, reassessment, and avoiding unnecessary fluids over manipulating pump rate within the 30–90 minute window.",
+      "applies_to": "ICU patients receiving pump-delivered crystalloid fluid challenges of 500 mL; general medical, surgical, and sepsis patients.",
+      "does_not_mean": "Does not imply that any rate is equally safe; very rapid boluses (>999 mL/h) or very slow infusions were not tested, nor was early pre-ICU resuscitation.",
+      "implementation_caveats": [
+        "May not apply when bolus given by pressure bag or manual push.",
+        "Intervention began in ICU, not in the emergency department.",
+        "Emergency deviations allowed; clinicians should continue to use clinical judgement."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Editorial conclusion on rate and composition",
+        "notes": "Editorial concluded neither crystalloid composition nor infusion rate meaningfully affected 90-day mortality in BaSICS, and that small day-3 SOFA signal has uncertain clinical relevance given mixed component directions."
+      },
+      {
+        "topic": "Biologic under-separation",
+        "notes": "The tested contrast (333 vs 999 mL/h) reflects infusion-pump constraints and may not address the real-world scenario of pressure-bag ‘rapid bolus’, raising concern about under-separation for truly rapid infusion."
+      },
+      {
+        "topic": "Rate entangled with reassessment",
+        "notes": "Observed practice variation in FENICE highlights that ‘rate’ is entangled with clinician reassessment and subsequent fluid decisions, complicating interpretation of causal pathways."
+      },
+      {
+        "topic": "Context dependence from companion fluid type trial",
+        "notes": "BaSICS fluid-type report found no overall mortality difference but a signal of harm in traumatic brain injury, reinforcing that fluid strategy effects may be context-dependent and rate findings should not be extrapolated to all phenotypes."
+      },
+      {
+        "topic": "Continued emphasis on other resuscitation targets",
+        "notes": "Subsequent major trials (e.g., ANDROMEDA-SHOCK) focused on perfusion targets and fluid/vasopressor balance rather than bolus rate, showing no mortality benefit from peripheral perfusion–targeted resuscitation."
+      },
+      {
+        "topic": "Guideline silence on rate",
+        "notes": "Surviving Sepsis Campaign 2016 emphasises early fluids and reassessment but provides limited specific infusion rate direction, consistent with BaSICS-rate demonstrating equipoise within common pump-based rates."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "FENICE",
+        "relation": "Documented wide practice variation in fluid challenge infusion rates, providing rationale for BaSICS-rate."
+      },
+      {
+        "trial": "BaSICS (fluid type factorial companion)",
+        "relation": "The other factorial intervention in the same study; found no overall mortality difference between balanced crystalloids and saline, with a potential harm signal in traumatic brain injury."
+      },
+      {
+        "trial": "ANDROMEDA-SHOCK",
+        "relation": "Illustrates that subsequent resuscitation research has prioritised perfusion targets and fluid/vasopressor balance over bolus rate, with similarly neutral mortality findings."
+      }
+    ],
+    "unresolved_questions": [
+      "Does infusion rate matter during the earliest hours of septic shock outside ICU or when boluses are given by pressure bag (≥999 mL/h)?",
+      "Would further slowing (<333 mL/h) or faster rates (>999 mL/h) affect outcomes?",
+      "Is rate modification more impactful in subgroups with higher illness severity or specific phenotypes (e.g., right ventricular dysfunction)?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=10,520",
+        "90-day mortality: 26.6% vs 27.0% (HR 1.03, 95% CI 0.96–1.11)",
+        "KRT within 90 days: RR 0.95 (0.83–1.09)",
+        "Day-1 fluid volume difference: 90 mL"
+      ],
+      "one_line_takeaway": "In ICU patients, slowing fluid boluses from 999 to 333 mL/h didn’t change 90-day mortality or kidney outcomes; focus on whether to give a bolus, not how fast the pump runs."
+    }
+  },
+  "_source_id": "BASICS_-_Infusion_Rate",
+  "_source_system": "Circulatory"
+}

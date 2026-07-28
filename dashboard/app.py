@@ -16,6 +16,7 @@ from .modules.summaries import get_content as summaries_get_content
 from .storage import REPO_ROOT, PUSH, audit_tail, LOCKS, audit, read_json
 from . import backup as backup_mod
 from .cascade import cascade_summary_update, cascade_preview
+from .modules.accounts import list_users, get_user, update_user, delete_user, get_defaults, save_defaults, FEATURE_FLAGS, FEATURE_LABELS
 
 router = APIRouter(prefix="/console")
 
@@ -163,6 +164,55 @@ async def api_backup_restore(body: Dict[str, Any]):
 @router.get("/api/backup/verify/{name}")
 async def api_backup_verify(name: str):
     return backup_mod.verify_backup(name)
+
+
+# =========================================================================
+# ACCOUNTS (user management + feature flags)
+# =========================================================================
+@router.get("/api/accounts/defaults")
+async def api_accounts_defaults():
+    return get_defaults()
+
+
+@router.put("/api/accounts/defaults")
+async def api_accounts_defaults_update(body: Dict[str, Any]):
+    return save_defaults(body)
+
+
+@router.get("/api/accounts/features/definitions")
+async def api_accounts_feature_defs():
+    return {
+        "flags": FEATURE_FLAGS,
+        "labels": FEATURE_LABELS,
+    }
+
+
+@router.get("/api/accounts")
+async def api_accounts_list():
+    return list_users()
+
+
+@router.get("/api/accounts/{email:path}")
+async def api_accounts_get(email: str):
+    user = get_user(email)
+    if not user:
+        raise HTTPException(status_code=404, detail="User not found")
+    return user
+
+
+@router.put("/api/accounts/{email:path}")
+async def api_accounts_update(email: str, body: Dict[str, Any]):
+    result = update_user(email, body)
+    if not result:
+        raise HTTPException(status_code=404, detail="User not found")
+    return result
+
+
+@router.delete("/api/accounts/{email:path}")
+async def api_accounts_delete(email: str):
+    if not delete_user(email):
+        raise HTTPException(status_code=404, detail="User not found")
+    return {"deleted": True}
 
 
 @router.post("/api/flashcards/{item_id}/regenerate-card")

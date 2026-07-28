@@ -1,0 +1,384 @@
+{
+  "id": "IST",
+  "trial_name": "IST — International Stroke Trial (1997)",
+  "specialty": "Neuro",
+  "subtopic": "Acute Ischemic Stroke",
+  "year": 1997,
+  "journal": "The Lancet",
+  "citation": "International Stroke Trial Collaborative Group. The International Stroke Trial (IST): a randomised trial of aspirin, subcutaneous heparin, both, or neither among 19 435 patients with acute ischaemic stroke. Lancet. 1997;349:1569–81.",
+  "doi": "https://doi.org/10.1016/S0140-6736(97)04011-7",
+  "registration": "",
+  "trial_type": "RCT — multicenter, international, pragmatic, open-label, factorial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 19435,
+  "result_category": "Mixed",
+  "one_liner": "Early aspirin modestly reduces recurrent ischaemic stroke with increased bleeding; routine heparin does not improve long-term outcomes and increases intracranial haemorrhage.",
+  "pico": {
+    "population": "Hospitalised patients with suspected acute ischaemic stroke within 48 hours of onset, across 467 hospitals in 36 countries.",
+    "intervention": "Aspirin 300 mg daily and/or subcutaneous unfractionated heparin (5,000 IU twice daily or 12,500 IU twice daily) for up to 14 days.",
+    "comparison": "Avoid aspirin (no routine antiplatelet) and/or avoid heparin (no routine subcutaneous heparin).",
+    "outcome": "Primary: death within 14 days and death or dependency at 6 months. Secondary: recurrent ischaemic stroke, haemorrhagic stroke, major extracranial bleeding, pulmonary embolism, composite of death or non-fatal recurrent stroke within 14 days."
+  },
+  "keywords": [
+    "aspirin",
+    "heparin",
+    "acute ischaemic stroke",
+    "antithrombotic therapy",
+    "pragmatic trial"
+  ],
+  "related_trials": [
+    "CAST",
+    "Combined IST-CAST analysis"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Immediate antithrombotic therapy after suspected ischaemic stroke was common but practice varied widely. Aspirin was established for secondary prevention but its net benefit–harm balance in the first days after stroke was uncertain. Heparin was used for various goals but with uncertainty about intracranial haemorrhage risk.",
+      "knowledge_gap": "Existing trials were insufficiently powered to detect modest absolute effects. A very large pragmatic trial was needed.",
+      "hypothesis": "Early aspirin and/or subcutaneous heparin, started within 48 hours, would reduce death within 14 days and death or dependency at 6 months compared with avoidance, and that heparin dose would influence the benefit–harm balance."
+    },
+    "methods": {
+      "design": "Pragmatic, randomised, multicentre, international, open-label, partial factorial trial with central telephone randomisation using minimisation/stratification.",
+      "setting": "467 hospitals in 36 countries; in-patient acute stroke management.",
+      "population": {
+        "inclusion": [
+          "Clinical diagnosis of acute stroke judged likely ischaemic",
+          "Symptom onset ≤48 hours",
+          "Treating clinician uncertain whether aspirin and/or heparin should be given (uncertainty principle)"
+        ],
+        "exclusion": [
+          "Clear indication for or contraindication to aspirin or heparin (including major bleeding risk)",
+          "For heparin randomisation: patients already receiving long-term oral anticoagulants",
+          "If CT showed intracranial haemorrhage, patient not eligible for randomisation to aspirin/heparin for presumed ischaemic stroke"
+        ]
+      },
+      "intervention": "Aspirin 300 mg once daily for up to 14 days; heparin: subcutaneous unfractionated heparin 5,000 IU twice daily (low-dose) or 12,500 IU twice daily (medium-dose) for up to 14 days. Factorial allocation where uncertainty existed for both treatments.",
+      "comparison": "Avoid aspirin: no routine antiplatelet; avoid heparin: no routine subcutaneous heparin. Co-interventions not protocolised; open-label antithrombotics could be introduced if clinically indicated.",
+      "blinding": "Open-label (no placebo).",
+      "sample_size_power": "Planned enrolment ≥20,000 to minimise risk of false-negative for a moderate treatment effect (targeting ~15% proportional reduction in 14-day mortality from expected ~10% baseline); formal alpha/beta not explicitly reported.",
+      "primary_outcome": "Death within 14 days and death or dependency at 6 months.",
+      "secondary_outcomes": [
+        "Recurrent ischaemic stroke within 14 days",
+        "Haemorrhagic stroke within 14 days",
+        "Transfused or fatal extracranial haemorrhage within 14 days",
+        "Pulmonary embolism within 14 days",
+        "Death or non-fatal recurrent stroke within 14 days"
+      ],
+      "follow_up": "14 days (or discharge) for early outcomes; 6 months for functional outcome."
+    },
+    "results": {
+      "headline_bullets": [
+        "Aspirin reduced recurrent ischaemic stroke (2.8% vs 3.9%) but increased major extracranial bleeding (1.1% vs 0.6%); death or dependency at 6 months showed a small benefit only after prognostic adjustment (62.2% vs 63.5%, adjusted p=0.03).",
+        "Heparin reduced recurrent ischaemic stroke (2.9% vs 3.8%) and pulmonary embolism (0.5% vs 0.8%) but markedly increased haemorrhagic stroke (1.2% vs 0.4%) and major extracranial bleeding (1.3% vs 0.4%), with no improvement in death or dependency at 6 months (62.9% vs 62.9%).",
+        "Medium-dose heparin (12,500 IU bd) worsened early net outcomes compared with low-dose (5,000 IU bd), with higher rates of haemorrhagic stroke, major bleeding, and death or non-fatal stroke."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death within 14 days (Aspirin comparison)",
+          "group_a": "872 (9.0%)",
+          "group_b": "909 (9.4%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "-4",
+          "ci_95": "SD 4",
+          "p_value": null,
+          "note": "Aspirin 300 mg daily vs avoid aspirin"
+        },
+        {
+          "outcome": "Death within 14 days (Heparin comparison)",
+          "group_a": "876 (9.0%)",
+          "group_b": "905 (9.3%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "-3",
+          "ci_95": "SD 4",
+          "p_value": null,
+          "note": "Any heparin vs avoid heparin"
+        },
+        {
+          "outcome": "Death or dependency at 6 months (Aspirin comparison)",
+          "group_a": "5,990 (62.2%)",
+          "group_b": "6,133 (63.5%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "-14",
+          "ci_95": "SD 6",
+          "p_value": "unadjusted 0.07; adjusted 0.03",
+          "note": "Adjusted analysis used pre-specified prognostic model"
+        },
+        {
+          "outcome": "Death or dependency at 6 months (Heparin comparison)",
+          "group_a": "6,061 (62.9%)",
+          "group_b": "6,062 (62.9%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "0",
+          "ci_95": "SD 6",
+          "p_value": null,
+          "note": "No difference in longer-term net outcome"
+        },
+        {
+          "outcome": "Recurrent ischaemic stroke within 14 days (Aspirin comparison)",
+          "group_a": "275 (2.8%)",
+          "group_b": "378 (3.9%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "-11",
+          "ci_95": "SD 3",
+          "p_value": "<0.001",
+          "note": "Stroke recurrence reduction with aspirin"
+        },
+        {
+          "outcome": "Recurrent ischaemic stroke within 14 days (Heparin comparison)",
+          "group_a": "283 (2.9%)",
+          "group_b": "370 (3.8%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "-9",
+          "ci_95": "SD 3",
+          "p_value": "0.005",
+          "note": "Recurrence reduction offset by haemorrhagic complications"
+        },
+        {
+          "outcome": "Haemorrhagic stroke within 14 days (Aspirin comparison)",
+          "group_a": "87 (0.9%)",
+          "group_b": "74 (0.8%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "+1",
+          "ci_95": "SD 1",
+          "p_value": null,
+          "note": "Small intracranial bleeding signal with aspirin"
+        },
+        {
+          "outcome": "Haemorrhagic stroke within 14 days (Heparin comparison)",
+          "group_a": "120 (1.2%)",
+          "group_b": "41 (0.4%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "+8",
+          "ci_95": "SD 1",
+          "p_value": "<0.00001",
+          "note": "Marked increase in haemorrhagic stroke with heparin"
+        },
+        {
+          "outcome": "Transfused or fatal extracranial haemorrhage within 14 days (Aspirin comparison)",
+          "group_a": "109 (1.1%)",
+          "group_b": "57 (0.6%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "+5",
+          "ci_95": "SD 1",
+          "p_value": "0.0004",
+          "note": "Major extracranial bleeding increased with aspirin"
+        },
+        {
+          "outcome": "Transfused or fatal extracranial haemorrhage within 14 days (Heparin comparison)",
+          "group_a": "129 (1.3%)",
+          "group_b": "37 (0.4%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "+9",
+          "ci_95": "SD 1",
+          "p_value": "<0.00001",
+          "note": "Major extracranial bleeding increased substantially with heparin"
+        },
+        {
+          "outcome": "Pulmonary embolism within 14 days (Aspirin comparison)",
+          "group_a": "57 (0.6%)",
+          "group_b": "77 (0.8%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "-2",
+          "ci_95": "SD 1",
+          "p_value": "0.08",
+          "note": "Non-significant reduction with aspirin"
+        },
+        {
+          "outcome": "Pulmonary embolism within 14 days (Heparin comparison)",
+          "group_a": "53 (0.5%)",
+          "group_b": "81 (0.8%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "-3",
+          "ci_95": "SD 1",
+          "p_value": "0.02",
+          "note": "Heparin reduced pulmonary embolism but increased bleeding"
+        },
+        {
+          "outcome": "Death or non-fatal recurrent stroke within 14 days (Aspirin comparison)",
+          "group_a": "1,098 (11.3%)",
+          "group_b": "1,205 (12.4%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "-11",
+          "ci_95": "SD 4",
+          "p_value": "0.02",
+          "note": "Composite early vascular endpoint"
+        },
+        {
+          "outcome": "Death or non-fatal recurrent stroke within 14 days (Heparin comparison)",
+          "group_a": "1,138 (11.7%)",
+          "group_b": "1,165 (12.0%)",
+          "effect_measure": "Absolute difference per 1000",
+          "effect_value": "-3",
+          "ci_95": "SD 4",
+          "p_value": null,
+          "note": "Net early effect neutral due to offsetting haemorrhagic stroke/bleeding"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Heparin dose: medium-dose (12,500 IU bd) vs low-dose (5,000 IU bd) — Transfused or fatal extracranial haemorrhage",
+          "group_a": "2.0%",
+          "group_b": "0.6%",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+1.4%",
+          "ci_95": null,
+          "p_interaction": null,
+          "note": "No statistical test reported"
+        },
+        {
+          "subgroup": "Heparin dose: medium-dose vs low-dose — Haemorrhagic stroke",
+          "group_a": "1.8%",
+          "group_b": "0.7%",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+1.1%",
+          "ci_95": null,
+          "p_interaction": null,
+          "note": "No statistical test reported"
+        },
+        {
+          "subgroup": "Heparin dose: medium-dose vs low-dose — Death or non-fatal stroke within 14 days",
+          "group_a": "12.6%",
+          "group_b": "10.8%",
+          "effect_measure": "Absolute difference",
+          "effect_value": "+1.8%",
+          "ci_95": null,
+          "p_interaction": null,
+          "note": "No statistical test reported"
+        }
+      ]
+    },
+    "safety": [
+      "Aspirin: increased transfused or fatal extracranial haemorrhage (1.1% vs 0.6%, P=0.0004); no significant increase in haemorrhagic stroke (0.9% vs 0.8%).",
+      "Heparin: increased haemorrhagic stroke (1.2% vs 0.4%, P<0.00001) and transfused or fatal extracranial haemorrhage (1.3% vs 0.4%, P<0.00001).",
+      "Medium-dose heparin vs low-dose: higher rates of haemorrhagic stroke (1.8% vs 0.7%) and major extracranial bleeding (2.0% vs 0.6%)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central telephone randomisation with minimisation/stratification based on prognostic model; allocation concealment adequate."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; mortality objective but bleeding outcomes and co-interventions may be influenced by lack of blinding."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "No post-randomisation withdrawals; follow-up >99% for 14-day and ~99% for 6-month outcomes; ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High adherence: aspirin full-period 92% vs avoid 93% no antiplatelet; heparin full-period 89% vs avoid 94% no heparin. Mean treatment duration 11 days."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced; 61% >70 years, 23% impaired consciousness, 16% atrial fibrillation. However, CT before randomisation in only 67%, introducing diagnostic heterogeneity."
+        }
+      ],
+      "verdict": "Internal validity is moderate to strong: concealed randomisation, high adherence, and near-complete follow-up support reliability, but open-label design and variable pre-randomisation imaging may bias early haemorrhagic outcome ascertainment and introduce diagnostic misclassification."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Very broad inclusion across 36 countries and 467 hospitals; pragmatic clinical diagnosis without mandatory pre-randomisation CT mirrors real-world decision-making."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings apply to unselected acute stroke presentations within 48 hours, including later presenters. In modern systems with rapid imaging and reperfusion, core conclusions still translate: start antiplatelet after haemorrhage exclusion; avoid routine full-dose anticoagulation. Heparin dose findings relevant to VTE prophylaxis balance."
+        }
+      ],
+      "verdict": "Generalisability is high for routine hospital management of suspected acute ischaemic stroke, particularly where early definitive aetiological classification is not available; applicability to modern hyperacute reperfusion cohorts is directionally consistent but absolute effects may differ with earlier presentation and contemporary co-interventions."
+    },
+    "strengths": [
+      "Very large sample size (19,435) enabling detection of modest absolute effects",
+      "International multicentre pragmatic design supports broad generalisability",
+      "Central randomisation with minimisation/stratification and near-complete follow-up",
+      "Factorial structure enabled simultaneous evaluation of aspirin and heparin strategies and heparin dose"
+    ],
+    "limitations": [
+      "Open-label (no placebo) with potential for performance and detection bias, particularly for bleeding outcomes",
+      "CT imaging not mandatory prior to randomisation (67% before, 29% after, 4% never), increasing diagnostic heterogeneity and risk of haemorrhage misclassification at baseline",
+      "Median randomisation at 19 hours may attenuate time-dependent benefits of early antithrombotic therapy",
+      "Broad “uncertainty principle” inclusion yields clinical heterogeneity that can dilute mechanistically targeted treatment effects"
+    ],
+    "critical_appraisal": {
+      "summary": "IST is a large, pragmatic trial with high generalisability and near-complete follow-up, but open-label design and variable pre-randomisation imaging introduce potential bias in bleeding outcome ascertainment and diagnostic misclassification, limiting confidence in precise effect estimates for haemorrhagic outcomes.",
+      "strengths": [
+        "Very large sample size",
+        "International pragmatic design",
+        "Central randomisation and high follow-up",
+        "Factorial evaluation of aspirin and heparin"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Incomplete pre-randomisation CT imaging",
+        "Late median enrolment (19 hours)",
+        "Clinical heterogeneity"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Immediate aspirin (300 mg daily) after haemorrhage exclusion provides a small but clinically meaningful reduction in early recurrent ischaemic stroke, with increased major extracranial bleeding. Routine therapeutic-dose heparin does not improve death or dependency at 6 months and causes net harm due to increased intracranial and extracranial haemorrhage; medium-dose heparin worsens outcomes compared with low-dose.",
+    "clinical_bottom_line": {
+      "verdict": "Early aspirin (300 mg daily) after haemorrhage exclusion provides a small absolute reduction in recurrent ischaemic stroke with increased major bleeding; routine therapeutic-dose heparin is not recommended in unselected acute ischaemic stroke due to net harm from increased intracranial and extracranial bleeding.",
+      "applies_to": "Unselected patients with suspected acute ischaemic stroke within 48 hours of onset, particularly in settings without immediate definitive aetiological classification.",
+      "does_not_mean": "Aspirin is not a substitute for reperfusion therapies; heparin may still be indicated for specific indications (e.g., atrial fibrillation, venous thromboembolism) but timing and dose must be carefully considered.",
+      "implementation_caveats": [
+        "CT or other imaging should be performed to exclude haemorrhage before starting aspirin",
+        "Low-dose heparin (5,000 IU bd) may be considered for VTE prophylaxis, but medium-dose (12,500 IU bd) increases harm without benefit",
+        "The trial enrolled patients up to 48 hours; earlier treatment may yield greater benefit but also higher bleeding risk in the hyperacute period"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Pragmatic enrolment and CT imaging",
+        "notes": "Enrolment based on clinician uncertainty without mandatory pre-randomisation CT was both a strength (real-world relevance) and a limitation (diagnostic heterogeneity and potential baseline haemorrhage misclassification)."
+      },
+      {
+        "topic": "Interpretation of aspirin benefit",
+        "notes": "The small absolute benefit with bleeding trade-offs and emphasis on composite/adjusted outcomes prompted debate post-publication."
+      },
+      {
+        "topic": "Consistency with CAST trial",
+        "notes": "The CAST trial independently demonstrated modest absolute benefit from early aspirin, supporting a consistent direction of effect across large pragmatic trials."
+      },
+      {
+        "topic": "Combined IST-CAST analysis",
+        "notes": "A combined analysis of IST and CAST (~40,000 patients) quantified the early aspirin benefit–harm profile at scale, reinforcing that net effects are small in absolute terms but important at population level."
+      },
+      {
+        "topic": "Routine anticoagulation in acute stroke",
+        "notes": "Systematic review evidence has not supported routine anticoagulation for unselected acute ischaemic stroke because reductions in recurrent ischaemic events are offset by increased intracranial and extracranial bleeding, with no improvement in longer-term death or dependency."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "Major contemporary guidelines recommend early aspirin after haemorrhage exclusion and advise against routine urgent anticoagulation in unselected acute ischaemic stroke, reserving anticoagulation for specific indications with case-by-case timing decisions."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CAST",
+        "relation": "CAST independently confirmed modest absolute benefit from early aspirin in acute ischaemic stroke, consistent with IST."
+      },
+      {
+        "trial": "Combined IST-CAST analysis",
+        "relation": "Pooled analysis of ~40,000 patients quantified the early aspirin benefit–harm profile, reinforcing small absolute net benefit."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal timing of aspirin initiation relative to reperfusion therapies",
+      "Role of heparin in specific stroke subtypes (e.g., cardioembolic) with modern imaging",
+      "Benefit of early antiplatelet in the hyperacute window (<6 hours) with contemporary co-interventions"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=19,435",
+        "Aspirin reduced recurrent ischaemic stroke: 2.8% vs 3.9% (11 fewer per 1000)",
+        "Heparin increased haemorrhagic stroke: 1.2% vs 0.4% (8 more per 1000)",
+        "Death or dependency at 6 months: aspirin 62.2% vs 63.5% (adjusted p=0.03); heparin 62.9% vs 62.9%"
+      ],
+      "one_line_takeaway": "In acute ischaemic stroke, early aspirin provides a small net benefit, while routine therapeutic-dose heparin causes net harm due to increased intracranial bleeding."
+    }
+  },
+  "_source_id": "IST",
+  "_source_system": "Neuro"
+}

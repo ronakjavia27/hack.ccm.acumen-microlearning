@@ -1,0 +1,291 @@
+{
+  "id": "Bass",
+  "trial_name": "Rifaximin Treatment in Hepatic Encephalopathy (Bass, 2010)",
+  "specialty": "Gastroenterology & Hepatology",
+  "subtopic": "Hepatic Encephalopathy — Secondary Prophylaxis",
+  "year": 2010,
+  "journal": "New England Journal of Medicine",
+  "citation": "Bass NM, Mullen KD, Sanyal AJ, et al. Rifaximin treatment in hepatic encephalopathy. N Engl J Med. 2010;362(12):1071-1081.",
+  "doi": "10.1056/NEJMoa0907893",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 299,
+  "result_category": "Positive",
+  "one_liner": "In adults with cirrhosis and recurrent overt hepatic encephalopathy in remission, adding rifaximin to background lactulose reduced breakthrough HE (22% vs 46%) and HE-related hospitalizations over 6 months.",
+  "pico": {
+    "population": "Adults with cirrhosis, ≥2 episodes of overt HE (Conn ≥2) within 6 months, in remission (Conn 0–1) at enrolment, MELD ≤25",
+    "intervention": "Rifaximin 550 mg twice daily added to usual care (including lactulose) for up to 6 months",
+    "comparison": "Matching placebo twice daily added to usual care (including lactulose) for up to 6 months",
+    "outcome": "Time to first breakthrough overt HE (primary); HE-related hospitalization (key secondary)"
+  },
+  "keywords": [
+    "rifaximin",
+    "hepatic encephalopathy",
+    "cirrhosis",
+    "secondary prevention",
+    "lactulose",
+    "antibiotic prophylaxis"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Overt hepatic encephalopathy (HE) is a recurrent neuropsychiatric complication of cirrhosis with major impacts on hospitalization, function, and survival. After an initial episode, recurrence risk is high, and secondary prophylaxis is a routine goal. Nonabsorbable disaccharides (especially lactulose) are first-line, but tolerability and adherence vary. Systemic antibiotics (e.g., neomycin, metronidazole) reduce HE but are limited by toxicity and antimicrobial stewardship concerns. Rifaximin is a minimally absorbed, gut-selective antibiotic with limited prior placebo-controlled evidence for prevention.",
+      "knowledge_gap": "Robust, placebo-controlled evidence for preventing recurrent overt HE and reducing HE-related hospitalizations was lacking before this trial.",
+      "hypothesis": "Rifaximin 550 mg twice daily, added to usual care, reduces the risk of breakthrough overt HE compared with placebo over 6 months, with a corollary of reducing HE-related hospitalisations."
+    },
+    "methods": {
+      "design": "Randomised, double-blind, placebo-controlled, parallel-group, multicentre phase 3 trial; stratified by geographic region; outpatient setting.",
+      "setting": "70 sites in USA (n=205), Canada (n=14), and Russia (n=80); enrolled 2005–2008.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Cirrhosis",
+          "≥2 episodes of overt episodic HE (Conn score ≥2) within previous 6 months",
+          "In remission at enrolment (Conn score 0–1)",
+          "MELD score ≤25"
+        ],
+        "exclusion": [
+          "Expected liver transplantation within 1 month",
+          "Precipitating condition within 3 months (including GI haemorrhage requiring ≥2 units transfusion, portosystemic shunt)",
+          "Serum creatinine >2.0 mg/dL",
+          "Respiratory insufficiency",
+          "Haemoglobin <8 g/dL",
+          "Serum sodium <125 mmol/L",
+          "Serum potassium <2.5 mmol/L",
+          "Serum calcium >10 mg/dL",
+          "Intercurrent infection or active spontaneous bacterial peritonitis"
+        ],
+        "note": "Prior HE episodes precipitated by GI haemorrhage (requiring ≥2 units transfusion), medications, haemodialysis, or CNS injury were not counted toward the ≥2-episode inclusion criterion."
+      },
+      "intervention": "Rifaximin 550 mg orally twice daily for up to 6 months (168 days). Study drug discontinued at first breakthrough HE or for other protocol reasons. Background usual care (including lactulose) permitted.",
+      "comparison": "Matching placebo twice daily for up to 6 months, same discontinuation rules and background care.",
+      "blinding": "Double-blind (participants and investigators).",
+      "sample_size_power": "200 patients planned (100/group) for >80% power to detect a reduction in breakthrough HE from 70% (placebo) to 50% (rifaximin) with two-sided α=0.05; actual enrolment 299.",
+      "primary_outcome": "Time to first breakthrough overt HE (defined by worsening Conn score/asterixis).",
+      "secondary_outcomes": [
+        "HE-related hospitalisation (key secondary)",
+        "Adverse events",
+        "All-cause mortality",
+        "Study drug discontinuation rates"
+      ],
+      "follow_up": "6 months (day 168); assessments at days 7, 14, then every 2 weeks. Patients who withdrew early were contacted at 6 months where feasible."
+    },
+    "results": {
+      "headline_bullets": [
+        "Rifaximin reduced breakthrough overt HE over 6 months (22.1% vs 45.9%; HR 0.42, 95% CI 0.28–0.64, P<0.001).",
+        "HE-related hospitalisation was lower with rifaximin (13.6% vs 22.6%; HR 0.50, 95% CI 0.29–0.87, P=0.01).",
+        "Overall adverse event rates were similar (80.0% vs 79.9%); C. difficile infection occurred in 2 rifaximin patients vs 0 placebo.",
+        "All-cause mortality was similar (6.4% vs 6.9%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite: Breakthrough overt HE episode",
+          "group_a": "31/140 (22.1%)",
+          "group_b": "73/159 (45.9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.42",
+          "ci_95": "0.28–0.64",
+          "p_value": "<0.001",
+          "note": "NNT=4 over 6 months; study drug stopped at first breakthrough"
+        },
+        {
+          "outcome": "HE-related hospitalisation (key secondary)",
+          "group_a": "19/140 (13.6%)",
+          "group_b": "36/159 (22.6%)",
+          "effect_measure": "HR",
+          "effect_value": "0.50",
+          "ci_95": "0.29–0.87",
+          "p_value": "0.01",
+          "note": "NNT=9 over 6 months"
+        },
+        {
+          "outcome": "All-cause death during study",
+          "group_a": "9/140 (6.4%)",
+          "group_b": "11/159 (6.9%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Most deaths attributed to progression of liver disease"
+        },
+        {
+          "outcome": "Any adverse event",
+          "group_a": "112/140 (80.0%)",
+          "group_b": "127/159 (79.9%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Overall AE frequency similar between groups"
+        },
+        {
+          "outcome": "Clostridioides difficile infection",
+          "group_a": "2/140 (1.4%)",
+          "group_b": "0/159 (0.0%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Both events in patients with multiple pre-existing risk factors; study drug continued with successful treatment"
+        },
+        {
+          "outcome": "Discontinued study drug for any reason",
+          "group_a": "52/140 (37.1%)",
+          "group_b": "93/159 (58.5%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Discontinuation primarily driven by breakthrough HE (28/140 vs 69/159); discontinuation for other reasons similar (24/140 vs 24/159)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Overall consistency across subgroups",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "",
+          "notes": "Directionally consistent treatment effect across predefined subgroups (graphically presented). Within-stratum testing not significant for MELD 19–24 and those not receiving lactulose at baseline, but no formal interaction P-values reported."
+        }
+      ]
+    },
+    "safety": [
+      "Overall adverse event rates were similar between groups: 80.0% rifaximin vs 79.9% placebo.",
+      "Clostridioides difficile infection occurred in 2 patients (1.4%) receiving rifaximin and none in the placebo group; both events occurred in patients with multiple risk factors and were managed with continued rifaximin.",
+      "All-cause mortality was similar: 6.4% (9/140) rifaximin vs 6.9% (11/159) placebo; most deaths were attributed to underlying liver disease progression.",
+      "Discontinuation for adverse events was not reported separately; overall discontinuation was higher with placebo (58.5% vs 37.1%), largely driven by breakthrough HE."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "1:1 randomisation stratified by geographic region. Method of sequence generation and allocation concealment not described in manuscript."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind (participants and investigators). Primary endpoint relied on clinician-rated Conn score and asterixis, which may introduce inter-rater variability despite blinding."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Intention-to-treat primary analysis. Discontinuation differential: 37.1% rifaximin vs 58.5% placebo (mostly due to breakthrough HE). Non-breakthrough discontinuations were similar (17.1% vs 15.1%). Early withdrawals were contacted at 6 months to capture outcomes."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Mean study drug exposure: 130.3±56.5 days rifaximin vs 105.7±62.7 days placebo. Mean compliance: 84.3%±21.5% vs 84.9%±22.9%. No crossover reported; study drug stopped at first breakthrough."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly similar in liver disease severity (MELD, Child–Pugh). Imbalances noted: male sex (53.6% rifaximin vs 67.3% placebo) and folic acid use (36.4% vs 22.0%)."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong: randomised, double-blind, placebo-controlled design with clinically meaningful endpoints; limitations include missing allocation concealment details and a subjective primary endpoint across many sites."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents outpatient adults with cirrhosis and recurrent overt HE in remission, MELD ≤25. Excluded patients with recent GI haemorrhage, portosystemic shunt, active infection, or severe renal/electrolyte disturbances, limiting applicability to acutely ill or decompensated populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "High background lactulose use (>90% in both arms) mirrors common real-world secondary prophylaxis; results support add-on rifaximin, not monotherapy. Resource and cost considerations, along with antimicrobial stewardship, may affect uptake."
+        }
+      ],
+      "verdict": "Generalizability is moderate: results apply best to stable outpatients with recurrent HE on lactulose (MELD ≤25); limited applicability in acute illness, severe organ dysfunction, or ICUs."
+    },
+    "strengths": [
+      "Large, multicentre, international, double-blind, placebo-controlled design for a chronic liver complication with practice variability.",
+      "Clinically relevant primary (breakthrough HE) and secondary (HE-related hospitalisation) endpoints.",
+      "Time-to-event analysis with clear effect estimates (hazard ratios and confidence intervals).",
+      "High adherence and pragmatic background care (predominant lactulose), supporting real-world interpretation for add-on therapy."
+    ],
+    "limitations": [
+      "No lactulose-free arm and no rifaximin-vs-lactulose head-to-head comparison; does not evaluate rifaximin monotherapy.",
+      "Follow-up limited to 6 months; long-term safety, resistance patterns, and durability not assessed.",
+      "Primary endpoint relied on clinician-rated HE scales across many sites, introducing potential measurement variability despite blinding.",
+      "Excluded patients with recent bleeding/shunt, active infection, or severe renal dysfunction, reducing applicability to higher-acuity settings.",
+      "Industry sponsorship and involvement in study conduct creates a perceived conflict-of-interest risk."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, multicentre RCT providing strong evidence that add-on rifaximin reduces recurrent HE and hospitalizations, though limited by 6-month duration, no monotherapy arm, and reliance on subjective HE grading.",
+      "strengths": [
+        "Double-blind, placebo-controlled design.",
+        "Prespecified, clinically meaningful endpoints.",
+        "Intention-to-treat analysis with high follow-up."
+      ],
+      "weaknesses": [
+        "Missing allocation concealment details.",
+        "No rifaximin monotherapy comparison.",
+        "Subjective primary endpoint across many sites.",
+        "Industry funding and potential conflict of interest."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In patients with cirrhosis and recurrent overt HE in remission, rifaximin 550 mg twice daily added to lactulose significantly reduced breakthrough HE and HE-related hospitalizations over 6 months.",
+    "clinical_bottom_line": {
+      "verdict": "Changes practice by establishing rifaximin as an effective add-on therapy for secondary prevention of recurrent overt HE in stable cirrhosis patients already on lactulose.",
+      "applies_to": "Ambulatory patients with cirrhosis, recurrent HE (≥2 episodes in 6 months), in remission, MELD ≤25, without recent precipitating events.",
+      "does_not_mean": "Does not mean rifaximin should replace lactulose or be used as monotherapy; this was an add-on trial. Does not support use in acute HE episodes or in patients with severe organ dysfunction excluded from the trial.",
+      "implementation_caveats": [
+        "Drug cost and access vary by health system.",
+        "Rare risk of C. difficile infection, warranting monitoring.",
+        "Long-term safety and resistance beyond 6 months unknown.",
+        "Not studied in patients with recent GI bleed, shunt, active infection, or severe renal impairment."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Trial design and background therapy",
+        "notes": "Absence of a lactulose-free arm limits inference about rifaximin monotherapy; the authors considered lactulose withdrawal unethical in this high-risk population."
+      },
+      {
+        "topic": "Mechanistic framing and antimicrobial concerns",
+        "notes": "Editorial commentary highlighted the gut–brain axis in HE but raised practical issues: drug cost, long-term antimicrobial exposure, and generalisability beyond the enrolled phenotype."
+      },
+      {
+        "topic": "Comparator evidence base",
+        "notes": "At the time, randomized evidence for lactulose in secondary prophylaxis was limited, contributing to debate about the optimal baseline standard of care."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "Post-trial guidelines adopted rifaximin as add-on therapy for secondary prophylaxis after recurrent episodes, aligning with the add-on design and outcomes."
+      },
+      {
+        "topic": "More recent guideline synthesis",
+        "notes": "Subsequent European guidelines continue to recommend rifaximin for prevention of recurrent overt HE in appropriate patients, emphasizing precipitating factor management."
+      },
+      {
+        "topic": "Extension to other prophylaxis contexts",
+        "notes": "Later RCTs (e.g., post-TIPS prophylaxis) suggest rifaximin's effect size may be context-dependent, reinforcing that the Bass trial's findings are not universally transferable to all prophylaxis settings."
+      },
+      {
+        "topic": "Synthesis of broader evidence",
+        "notes": "Systematic reviews and meta-analyses support rifaximin (often combined with lactulose) for reducing recurrent HE, while noting heterogeneity in trial design, baseline therapy, and outcome definitions."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Long-term safety and antimicrobial resistance patterns with prolonged rifaximin use.",
+      "Efficacy of rifaximin as monotherapy (without lactulose) for secondary prophylaxis.",
+      "Role in acute HE episodes or in patients with acute precipitating factors (e.g., GI bleed, infection).",
+      "Cost-effectiveness compared to lactulose alone in various health systems.",
+      "Optimal duration of prophylaxis and criteria for discontinuation.",
+      "Applicability to patients with advanced cirrhosis (MELD >25) or those awaiting transplant."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=299",
+        "Breakthrough HE: 22% vs 46% (HR 0.42, P<0.001)",
+        "HE-related hospitalization: 13.6% vs 22.6% (HR 0.50, P=0.01)",
+        "NNT=4 to prevent one HE episode over 6 months"
+      ],
+      "one_line_takeaway": "Add-on rifaximin halves recurrent overt HE and HE-related hospitalizations over 6 months in stable cirrhosis patients on lactulose."
+    }
+  },
+  "_source_id": "Bass",
+  "_source_system": "Liver"
+}

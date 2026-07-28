@@ -1,0 +1,271 @@
+{
+  "id": "ARMA",
+  "trial_name": "ARMA — Lower vs Traditional Tidal Volumes for ARDS (2000)",
+  "specialty": "Respiratory",
+  "subtopic": "ARDS",
+  "year": 2000,
+  "journal": "N Engl J Med",
+  "citation": "Acute Respiratory Distress Syndrome Network. Ventilation with lower tidal volumes as compared with traditional tidal volumes for acute lung injury and the acute respiratory distress syndrome. N Engl J Med. 2000;342(18):1301-1308.",
+  "doi": "http://dx.doi.org/10.1056/NEJM200005043421801",
+  "registration": "",
+  "trial_type": "RCT — multicenter, parallel-group, open-label",
+  "evidence_level": "High-quality RCT (moderate-to-strong internal validity)",
+  "sample_size": 861,
+  "result_category": "Positive",
+  "one_liner": "A lower tidal volume strategy (6 mL/kg PBW) reduced mortality and increased ventilator-free days compared with a traditional tidal volume strategy (12 mL/kg PBW) in adults with ALI/ARDS.",
+  "pico": {
+    "population": "Intubated adults with acute onset, bilateral infiltrates, PaO2/FiO2 ≤300, and no clinical evidence of left atrial hypertension.",
+    "intervention": "Ventilation with initial tidal volume 6 mL/kg PBW, plateau pressure target ≤30 cm H2O.",
+    "comparison": "Ventilation with initial tidal volume 12 mL/kg PBW, plateau pressure limit ≤50 cm H2O.",
+    "outcome": "Death before discharge home with unassisted breathing, ventilator-free days."
+  },
+  "keywords": [
+    "ARDS",
+    "lung-protective ventilation",
+    "tidal volume",
+    "plateau pressure",
+    "ventilator-induced lung injury"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "By the mid-1990s, ventilator-induced lung injury (volutrauma/barotrauma and \"biotrauma\") was increasingly recognised as an iatrogenic amplifier of acute lung injury. Common practice used comparatively large tidal volumes (often 10–15 mL/kg). Small randomised trials of \"protective\" strategies produced conflicting results.",
+      "knowledge_gap": "A definitive, adequately powered multicentre trial was needed to determine whether limiting tidal volume and plateau pressure improves patient-centred outcomes in ALI/ARDS.",
+      "hypothesis": "In intubated adults with ALI/ARDS, a ventilation strategy targeting lower tidal volumes and lower plateau pressures will reduce mortality and increase ventilator-free days compared with \"traditional\" tidal volumes."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, parallel-group, investigator-initiated ARDS Network trial conducted in 10 university-affiliated centres (United States); open-label ventilation strategy with protocolised co-interventions.",
+      "setting": "ICUs in 10 university-affiliated centres in the US.",
+      "population": {
+        "inclusion": [
+          "Intubated and mechanically ventilated",
+          "Acute onset",
+          "Bilateral infiltrates consistent with pulmonary oedema",
+          "PaO2/FiO2 ≤300 (ALI) and ≤200 (ARDS)",
+          "No clinical evidence of left atrial hypertension (pulmonary-artery wedge pressure ≤18 mm Hg if measured)"
+        ],
+        "exclusion": [
+          "Age <18 years",
+          "Pregnancy",
+          "Severe chronic respiratory disease",
+          "Intracranial hypertension",
+          "Neuromuscular disease impairing spontaneous breathing",
+          "Bone marrow transplant",
+          "Burns >30% total body surface area",
+          "Weight >1 kg per cm of height",
+          "Other conditions with an estimated 6‑month mortality >50%"
+        ]
+      },
+      "intervention": "Ventilation strategy: Initial tidal volume 6 mL/kg predicted body weight (PBW), with a plateau pressure target ≤30 cm H2O; adjustments permitted per protocol (range 4–8 mL/kg PBW depending on plateau pressure and pH). Gas-exchange targets: PaO2 55–80 mm Hg or SpO2 88–95% using a protocolised FiO2/PEEP table. Increased respiratory rate to offset reduced tidal volume; permissive hypercapnia accepted within protocolised pH thresholds. Daily assessment for discontinuation of ventilation using prespecified criteria.",
+      "comparison": "Ventilation strategy: Initial tidal volume 12 mL/kg PBW with plateau pressure limit ≤50 cm H2O; protocolised adjustments permitted. Same PaO2/SpO2 goals, FiO2/PEEP table, and weaning approach as the intervention arm.",
+      "blinding": "Unblinded (ventilator settings could not be masked); primary outcomes were objective (mortality, ventilator-free days).",
+      "sample_size_power": "Power calculation / target effect size / required sample size not reported in the published manuscript. Group sequential monitoring with interim analyses using the Lan‑DeMets alpha-spending approach with O’Brien‑Fleming boundaries.",
+      "primary_outcome": "Death before discharge home with unassisted breathing.",
+      "secondary_outcomes": [
+        "Ventilator-free days (to day 28)",
+        "Days without failure of any nonpulmonary organ system (to day 28)",
+        "Breathing without assistance at day 28",
+        "Barotrauma (pneumothorax, pneumomediastinum, pneumoperitoneum, subcutaneous emphysema, or air cysts)",
+        "Death at day 180",
+        "Breathing without assistance at day 180"
+      ],
+      "follow_up": "Daily through day 28; survival and breathing status assessed to day 180."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early at the fourth interim analysis (n=861) due to significantly lower mortality in the lower tidal volume group (P=0.005, stopping boundary 0.023).",
+        "Mortality before discharge home with unassisted breathing was 31.0% vs 39.8% (8.8 percentage point reduction, P=0.007).",
+        "Protocol separation was substantial: mean tidal volumes days 1-3 were 6.2 ± 0.8 vs 11.8 ± 0.8 mL/kg PBW.",
+        "Benefit was durable to day 180, without an observed reduction in barotrauma."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death before discharge home with unassisted breathing (Primary)",
+          "group_a": "134/432 (31.0%)",
+          "group_b": "171/429 (39.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "8.8",
+          "ci_95": "2.4 to 15.3",
+          "p_value": "0.007",
+          "note": "Primary outcome"
+        },
+        {
+          "outcome": "Ventilator-free days (to day 28)",
+          "group_a": "12 ± 11",
+          "group_b": "10 ± 11",
+          "effect_measure": "Mean difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.007",
+          "note": "Days alive and breathing without assistance to day 28"
+        },
+        {
+          "outcome": "Days without failure of any nonpulmonary organ system (to day 28)",
+          "group_a": "15 ± 11",
+          "group_b": "12 ± 11",
+          "effect_measure": "Mean difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.006",
+          "note": "Nonpulmonary organ failure defined a priori (e.g., shock, renal failure)"
+        },
+        {
+          "outcome": "Breathing without assistance at day 28",
+          "group_a": "284/432 (65.7%)",
+          "group_b": "236/429 (55.0%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.009",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Barotrauma",
+          "group_a": "43/432 (10%)",
+          "group_b": "47/429 (11%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.43",
+          "note": "Pneumothorax, pneumomediastinum, pneumoperitoneum, subcutaneous emphysema, or air cysts"
+        },
+        {
+          "outcome": "Death at day 180",
+          "group_a": "150/432 (34.7%)",
+          "group_b": "182/429 (42.5%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.007",
+          "note": "Vital status known for all but 9 patients"
+        },
+        {
+          "outcome": "Breathing without assistance at day 180",
+          "group_a": "311/432 (71.9%)",
+          "group_b": "266/429 (62.0%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.003",
+          "note": "Secondary outcome"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Barotrauma rates were similar between groups (10% vs 11%, P=0.43).",
+      "The lower tidal volume strategy resulted in higher PaCO2 and slightly lower pH early in the course (e.g., day 1 PaCO2 44 ± 11 mm Hg vs 40 ± 10 mm Hg; pH 7.38 ± 0.07 vs 7.41 ± 0.07)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation via an automated telephone system; allocation concealment likely robust; factorial co-randomisation to ketoconazole/lisofylline balanced by design."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label ventilation strategy introduces risk of differential co-interventions; primary outcomes (mortality, ventilator-free days) are objective and less prone to assessment bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "861 randomised (432 vs 429); 180‑day vital status unknown for 9 patients; primary in-hospital outcomes were essentially complete. Intention-to-treat analyses."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clear, protocolised ventilator management with large, quantifiable separation in tidal volume and plateau pressure. Mean tidal volumes days 1-3 were 6.2 ± 0.8 vs 11.8 ± 0.8 mL/kg PBW (P<0.001)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well matched (e.g., age 51 ± 17 vs 52 ± 18 years; APACHE III 81 ± 28 vs 84 ± 28; PaO2/FiO2 138 ± 64 vs 134 ± 58; baseline plateau pressure 33 ± 10 vs 33 ± 11 cm H2O)."
+        }
+      ],
+      "verdict": "Internal validity appears moderate-to-strong given concealed randomisation, objective outcomes, and clear protocol separation, but is tempered by the open-label design, small between-group differences in PEEP, and early stopping."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical adult ALI/ARDS case-mix in academic ICUs (baseline PaO2/FiO2 ~135–140), but excludes several clinically important subgroups (e.g., severe chronic respiratory disease, intracranial hypertension, extreme obesity, major burns)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Feasible in most ventilated ICU environments, but requires accurate height measurement, PBW calculation, and staff familiarity with permissive hypercapnia and plateau pressure measurement. The core intervention is low-cost, but adherence may be constrained by staffing and monitoring capacity in resource-limited settings."
+        }
+      ],
+      "verdict": "Findings are highly generalisable to adult ALI/ARDS patients receiving invasive ventilation in well-resourced ICUs, but should be extrapolated cautiously to excluded groups and contexts with limited monitoring/training."
+    },
+    "strengths": [
+      "Large multicentre randomised trial with central allocation concealment within an established critical care network.",
+      "Clear, protocolised ventilator management with large, quantifiable separation in tidal volume and plateau pressure.",
+      "Clinically meaningful, objective primary outcomes with follow-up to 180 days.",
+      "Consistent directionality across mortality and ventilator/organ-failure–free outcomes."
+    ],
+    "limitations": [
+      "Unblinded intervention with potential for differential co-interventions (including small but statistically significant differences in PEEP early after randomisation).",
+      "Early stopping for benefit increases the risk of overestimating effect size and limits precision.",
+      "Control strategy (12 mL/kg PBW; plateau pressure limit ≤50) may be viewed as injurious by contemporary standards, complicating interpretation as \"optimisation\" vs \"harm avoidance\".",
+      "Power calculation and original target sample size were not reported in the manuscript, limiting transparency around planned operating characteristics."
+    ],
+    "critical_appraisal": {
+      "summary": "A landmark, well-conducted trial with objective outcomes that provides strong evidence for a mortality benefit from lung-protective ventilation, though interpretation is tempered by an unbundled control group and early stopping.",
+      "strengths": [
+        "Robust randomisation and allocation concealment.",
+        "Objective primary outcome with high completion rate.",
+        "Clear and sustained separation of the intervention of interest."
+      ],
+      "weaknesses": [
+        "Open-label design susceptible to co-intervention bias.",
+        "Early termination may overestimate the true treatment effect.",
+        "Uncertainty about the optimality of the comparator arm by modern standards."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In patients with acute lung injury and the acute respiratory distress syndrome, mechanical ventilation with a lower tidal volume than is traditionally used results in decreased mortality and increases the number of days without ventilator use.",
+    "clinical_bottom_line": {
+      "verdict": "This trial is practice-changing, establishing a lung-protective strategy (6 mL/kg PBW) as the standard of care to reduce mortality in ALI/ARDS.",
+      "applies_to": "Adult patients with acute onset ALI/ARDS in settings capable of performing PBW calculations and monitoring plateau pressures.",
+      "does_not_mean": "A tidal volume of 6 mL/kg is uniquely optimal; the benefit may be driven by a bundled strategy including plateau pressure limits, higher PEEP, and permissive hypercapnia compared to a potentially injurious control.",
+      "implementation_caveats": [
+        "Requires accurate PBW calculation based on height and sex.",
+        "Necessitates routine plateau pressure measurement.",
+        "Requires comfort with managing mild-moderate permissive hypercapnia."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Mechanistic uncertainty (bundled strategy vs isolated component)",
+        "notes": "Correspondence emphasised that the comparison was between bundled ventilation strategies (including modestly higher PEEP and more permissive hypercapnia in the lower tidal volume arm) rather than tidal volume in isolation."
+      },
+      {
+        "topic": "Optimality of control arm",
+        "notes": "The control arm (12 mL/kg PBW with plateau pressure ≤50 cm H2O) has been criticised as potentially injurious by modern standards; this reframes the observed benefit as avoidance of harm rather than proof that 6 mL/kg is uniquely optimal."
+      },
+      {
+        "topic": "Generalizability of protocol separation",
+        "notes": "The large separation in tidal volumes (6 vs 12 mL/kg) does not inform whether a more modest reduction (e.g., from 8 to 6 mL/kg) would yield the same benefit."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Various small protective ventilation trials (pre-2000)",
+        "relation": "ARMA was designed to provide a definitive answer after these smaller trials produced conflicting results."
+      }
+    ],
+    "unresolved_questions": [
+      "How much of the benefit is attributable to tidal volume reduction vs plateau pressure limitation vs higher PEEP?",
+      "What is the optimal tidal volume within a lung-protective range (e.g., 4 vs 6 vs 8 mL/kg PBW)?",
+      "How generalizable is the finding to patient subgroups excluded from the trial (e.g., severe chronic lung disease, intracranial hypertension)?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=861",
+        "Mortality: 31% vs 40% (absolute reduction 8.8%)",
+        "Number needed to treat (NNT) to prevent one death is ~11",
+        "Tidal volume targets: 6 vs 12 mL/kg PBW"
+      ],
+      "one_line_takeaway": "Using 6 mL/kg PBW tidal volume and limiting plateau pressure to ≤30 cm H2O is the cornerstone of ARDS management, reducing mortality by nearly one-tenth."
+    }
+  },
+  "_source_id": "ARMA",
+  "_source_system": "Respiratory"
+}

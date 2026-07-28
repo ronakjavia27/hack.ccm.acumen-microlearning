@@ -1,0 +1,310 @@
+{
+  "id": "VICTAS",
+  "trial_name": "VICTAS — Vitamin C, Thiamine, and Hydrocortisone in Sepsis (2021)",
+  "specialty": "Endocrine",
+  "subtopic": "Adrenal Disorders",
+  "year": 2021,
+  "journal": "JAMA",
+  "citation": "Sevransky JE, Rothman RE, Hager DN, Bernard GR, Brown SM, Buchman TG, et al. Effect of Vitamin C, Thiamine, and Hydrocortisone on Ventilator- and Vasopressor-Free Days in Patients With Sepsis: The VICTAS Randomized Clinical Trial. JAMA. 2021;325(8):742-750",
+  "doi": "https://doi.org/10.1001/jama.2020.24505",
+  "registration": "Not provided",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, adaptive, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 501,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU sepsis with respiratory/cardiovascular dysfunction, combination IV vitamin C + thiamine + hydrocortisone did not increase ventilator- and vasopressor-free days at 30 days compared with placebo (median 25 vs 26 days; P=0.85), with no supportive benefit across secondary outcomes.",
+  "pico": {
+    "population": "Adults ≥18 years with suspected infection and sepsis-induced acute respiratory and/or cardiovascular dysfunction requiring ICU admission, randomised within 24 hours of meeting organ dysfunction criteria",
+    "intervention": "IV vitamin C 1.5 g + thiamine 100 mg + hydrocortisone 50 mg every 6 hours for up to 96 hours (or until ICU discharge/death), started within 4 hours of randomisation",
+    "comparison": "Matching IV placebo every 6 hours on the same schedule and duration, with identical withholding rules (study hydrocortisone/placebo withheld if open-label corticosteroids reached ≥200 mg/day hydrocortisone-equivalent)",
+    "outcome": "Ventilator- and vasopressor-free days (VVFDs) through day 30 (primary)"
+  },
+  "keywords": [
+    "vitamin C",
+    "thiamine",
+    "hydrocortisone",
+    "metabolic resuscitation",
+    "sepsis",
+    "organ-support-free days",
+    "adaptive trial"
+  ],
+  "related_trials": [
+    "Marik et al. (2017) before-after study",
+    "CITRIS-ALI (2019)",
+    "VITAMINS (2020)",
+    "ATLAS (2021)",
+    "LOVIT (2022)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "High-dose IV vitamin C, thiamine, and hydrocortisone (‘HAT therapy’) gained attention after a retrospective before–after study reported large mortality reductions in septic shock. Vitamin C monotherapy trials in ARDS/sepsis showed biologic effects but unclear clinical benefit.",
+      "knowledge_gap": "Subsequent RCTs of combination regimens (with or without hydrocortisone) yielded neutral results, leaving equipoise regarding efficacy, optimal timing, and component-specific effects.",
+      "hypothesis": "Early IV vitamin C + thiamine + hydrocortisone would increase VVFDs through day 30 compared with placebo in adults with sepsis-induced organ dysfunction."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, placebo-controlled, adaptive sample-size trial (planned maximum N=2000) in 43 US hospitals; patients enrolled from ED or ICU.",
+      "setting": "43 hospitals in the United States; enrolled August 2018 to January 2020 (administratively terminated after 501 patients).",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Suspected infection (blood culture ordered AND antibiotics initiated)",
+          "ICU admission planned",
+          "Acute respiratory dysfunction: PaO2/FiO2 ≤300 or SpO2/FiO2 ≤315, AND requiring invasive ventilation, NIPPV, or HFNC ≥40 L/min with FiO2 ≥0.40 (persistent at randomisation)",
+          "Acute cardiovascular dysfunction: any vasopressor >1 hour to maintain MAP ≥65 mmHg despite ≥1 L crystalloid (persistent at randomisation)",
+          "Randomised within 24 hours of meeting organ dysfunction criteria"
+        ],
+        "exclusion": [
+          "Not fully enumerated in main report (refer to published protocol)"
+        ]
+      },
+      "intervention": "Vitamin C 1.5 g IV + thiamine 100 mg IV + hydrocortisone 50 mg IV q6h, started within 4 hours of randomisation, continued up to 96 hours or until ICU discharge/death. Study hydrocortisone withheld if open-label corticosteroids reached ≥200 mg/day hydrocortisone-equivalent.",
+      "comparison": "Matching placebo IV q6h on same schedule, with identical withholding rules for open-label corticosteroids.",
+      "blinding": "Double-blind (participants, clinicians, investigators, outcome assessors); investigational pharmacies prepared masked study kits.",
+      "sample_size_power": "Adaptive design maximum N=2000, targeting 1.5-day improvement in VVFDs (assuming ~25% 30-day mortality). Interim analyses at N=200/300/400 (stopping for ≥99% predictive probability of 30-day mortality benefit) and at N=500/1000/1500 (stopping for VVFD efficacy/futility). One-sided type I error controlled at 2.5%; primary VVFD hypothesis used one-sided P<0.022 after interim adjustment. Early termination due to administrative/funding reasons at N=501.",
+      "primary_outcome": "Ventilator- and vasopressor-free days (VVFDs) through day 30 (death assigned 0 VVFDs; last support status carried forward after discharge).",
+      "secondary_outcomes": [
+        "30-day all-cause mortality (gated – formal testing only if primary VVFD significant)",
+        "ICU and hospital length of stay",
+        "Delirium- and coma-free days through day 30",
+        "Kidney replacement therapy–free days through day 30",
+        "SOFA score change from baseline to day 4",
+        "Mortality at 180 days"
+      ],
+      "follow_up": "Through day 30 for primary outcome; survival follow-up to day 180 (telephone)."
+    },
+    "results": {
+      "headline_bullets": [
+        "No improvement in primary outcome: VVFDs median 25 vs 26 days, median difference –1 day (95% CI –4 to 2), P=0.85",
+        "30-day mortality similar (22% vs 24%); not formally tested due to gatekeeping",
+        "No supportive trends across any exploratory outcome (ICU/hospital LOS, delirium/coma-free days, RRT-free days, SOFA change, 180-day mortality)",
+        "Per-protocol analysis also neutral (median VVFDs 26 vs 26 days; difference 0, 95% CI –3 to 2)"
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: VVFDs through day 30, median (IQR)",
+          "group_a": "25 (0 to 29)",
+          "group_b": "26 (0 to 28)",
+          "effect_measure": "Median difference",
+          "effect_value": "-1 day",
+          "ci_95": "-4 to 2",
+          "p_value": "0.85",
+          "note": "One-sided hypothesis, interim-adjusted α; death = 0 VVFDs"
+        },
+        {
+          "outcome": "30-day all-cause mortality, No. (%)",
+          "group_a": "55/252 (22%)",
+          "group_b": "60/249 (24%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Gated – formal testing not performed because primary VVFD was not significant"
+        },
+        {
+          "outcome": "ICU discharge mortality, No. (%)",
+          "group_a": "52/252 (20.6%)",
+          "group_b": "49/249 (19.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.9%",
+          "ci_95": "-8.0 to 6.1",
+          "p_value": "0.79",
+          "note": "Exploratory outcome"
+        },
+        {
+          "outcome": "180-day mortality (observed-status analysis), No. (%)",
+          "group_a": "94/232 (40.5%)",
+          "group_b": "85/225 (37.8%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "2.7%",
+          "ci_95": "-11.3 to 5.8",
+          "p_value": "0.53",
+          "note": "Incomplete follow-up; observed-status analysis"
+        },
+        {
+          "outcome": "Time to ICU discharge, median days (IQR)",
+          "group_a": "4 (2 to 8)",
+          "group_b": "4 (2 to 8)",
+          "effect_measure": "Difference",
+          "effect_value": "0 days",
+          "ci_95": "-2 to 1",
+          "p_value": "0.82",
+          "note": "Exploratory"
+        },
+        {
+          "outcome": "Time to hospital discharge, median days (IQR)",
+          "group_a": "10 (6 to 17)",
+          "group_b": "9 (5 to 17)",
+          "effect_measure": "Difference",
+          "effect_value": "1 day",
+          "ci_95": "-3 to 2",
+          "p_value": "0.66",
+          "note": "Exploratory"
+        },
+        {
+          "outcome": "Delirium- and coma-free days through day 30, median (IQR)",
+          "group_a": "4 (2 to 5)",
+          "group_b": "4 (2 to 5)",
+          "effect_measure": "Difference",
+          "effect_value": "0 days",
+          "ci_95": "0 to 1",
+          "p_value": "0.45",
+          "note": "Exploratory; low medians reflect high delirium/coma burden even among survivors"
+        },
+        {
+          "outcome": "RRT-free days through day 30, median (IQR)",
+          "group_a": "30 (0 to 30)",
+          "group_b": "30 (0 to 30)",
+          "effect_measure": "Difference",
+          "effect_value": "0 days",
+          "ci_95": "0 to 0",
+          "p_value": "0.58",
+          "note": "Exploratory"
+        },
+        {
+          "outcome": "SOFA score change (baseline to day 4), median (IQR)",
+          "group_a": "5 (3 to 7)",
+          "group_b": "5 (2 to 7)",
+          "effect_measure": "Difference",
+          "effect_value": "0",
+          "ci_95": "-1 to 0",
+          "p_value": "0.10",
+          "note": "Exploratory; directionality as defined in the report"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "2 adverse events judged possibly related to study drug in intervention arm (haemorrhagic shock; worsening kidney function)",
+      "No serious adverse events judged related to study treatment",
+      "High-dose vitamin C can cause spuriously elevated point-of-care glucose readings with some meters; VICTAS used a validated glucose meter unaffected by high vitamin C, which is important for internal validity and patient safety"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation 1:1, stratified by site; allocation concealed via numbered study kits prepared by investigational pharmacies."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind design; primary and most secondary outcomes objective (death, organ support, discharge), reducing detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "501 randomised, all included in main ITT analyses. 180-day mortality observed in 457/501 (91%) for observed-status analysis; incomplete follow-up could introduce bias if non-random. Per-protocol populations: 212/252 (84.1%) intervention vs 205/249 (82.3%) placebo; moderate protocol deviations but similar between arms."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Study hydrocortisone/placebo was withheld if open-label corticosteroids exceeded ≥200 mg/day; open-label corticosteroid use was 33.0% (intervention) vs 32.1% (placebo), partially attenuating the separation of the hydrocortisone component. Withholding rules applied equally to both arms."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Similar severity: median SOFA 9 (IQR 6–12) in both arms; 44% in each arm had both respiratory and cardiovascular dysfunction; median time from meeting criteria to randomisation 15 vs 14 hours."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong given robust randomisation/blinding, objective endpoints, and reasonable protocol delivery; the principal threat is early administrative termination (reduced precision and altered operating characteristics) alongside partial corticosteroid ‘contamination’ from open-label use."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "ICU-level adults with suspected infection and vasopressor/advanced respiratory support, broadly reflecting moderate–severe sepsis in high-income settings."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Regimen uses globally available drugs; however, q6-hourly dosing and need for glucose meters unaffected by high-dose vitamin C may challenge resource-limited settings. Exclusion of patients not requiring ICU admission limits applicability to ward/ED-only sepsis."
+        }
+      ],
+      "verdict": "Generalisability is moderate for ICU sepsis populations requiring organ support; translation to non-ICU settings or systems without robust medication-delivery and glucose-monitoring infrastructure is more limited."
+    },
+    "strengths": [
+      "Double-blind, placebo-controlled, multicentre design across 43 hospitals",
+      "Patient-centred primary endpoint integrating survival and freedom from key organ supports (ventilation/vasopressors)",
+      "Prespecified adaptive design with multiplicity control (interim-adjusted α; gatekeeping for mortality)"
+    ],
+    "limitations": [
+      "Stopped early for administrative/funding reasons (N=501 vs planned N=2000), reducing precision and leaving residual uncertainty about smaller effects",
+      "Open-label corticosteroid use in ~1/3 of patients in both arms, potentially attenuating the hydrocortisone component separation",
+      "Missing 180-day survival status in a subset, with analyses using observed-status, risking bias if missingness is non-random"
+    ],
+    "critical_appraisal": {
+      "summary": "VICTAS is a well-designed but underpowered test of metabolic resuscitation in sepsis; early termination and partial steroid contamination weaken confidence that even a small benefit would have been detected, but the complete lack of signal across all endpoints, corroborated by external RCTs, supports a conclusion of no clinically meaningful benefit.",
+      "strengths": [
+        "Rigorous blinding and objective endpoints minimised bias",
+        "Adaptive design with prespecified stopping rules and multiplicity control",
+        "Broad multicentre enrolment enhances external validity"
+      ],
+      "weaknesses": [
+        "Early administrative termination severely reduced power (post hoc conditional probability of success only 30.7%)",
+        "Open-label corticosteroid use in ~33% of patients blurred the hydrocortisone separation",
+        "Incomplete 180-day follow-up and reliance on observed-status analysis"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "VICTAS provides no support for routine use of combined vitamin C + thiamine + hydrocortisone to increase organ-support–free days in ICU sepsis. Given workflow burden and safety considerations, off-label use should be avoided outside trials or structured protocols with appropriate monitoring.",
+    "clinical_bottom_line": {
+      "verdict": "Do not use vitamin C + thiamine + hydrocortisone to improve organ-support-free days in ICU sepsis; no benefit was seen, and potential safety issues (e.g., glucometry interference) plus q6h dosing burden argue against routine use.",
+      "applies_to": "ICU patients with sepsis and acute respiratory or cardiovascular dysfunction requiring organ support.",
+      "does_not_mean": "This does not rule out a benefit in highly selected subgroups (e.g., measured vitamin C deficiency), but such benefit remains unproven. The trial did not find harm, but absence of benefit plus safety concerns support de-implementation.",
+      "implementation_caveats": [
+        "Requires q6-hourly IV dosing for up to 96 hours",
+        "Must use glucose meters validated to avoid interference with high-dose vitamin C (some point-of-care devices give falsely elevated readings)",
+        "Study hydrocortisone was withheld when open-label corticosteroids exceeded 200 mg/day; in settings where corticosteroids are standard, this may alter the effective dose of the combination"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early administrative termination and funding transparency",
+        "notes": "A JAMA editor’s note highlighted concerns about funding decisions and DSMB membership disclosures in VICTAS, emphasising the importance of trial governance in publicly funded critical care RCTs."
+      },
+      {
+        "topic": "Safety of high-dose vitamin C with glucometry",
+        "notes": "High-dose vitamin C can cause falsely elevated point-of-care glucose readings, risking inappropriate insulin administration and hypoglycaemia; VICTAS mitigated this by using a validated device, but this remains a major implementation issue."
+      },
+      {
+        "topic": "Concordance with subsequent evidence",
+        "notes": "Multiple subsequent RCTs and meta-analyses (including LOVIT, VITAMINS, ATLAS) have uniformly shown no benefit for vitamin C–based regimens in sepsis; VICTAS’s neutral result aligns with this body of evidence."
+      },
+      {
+        "topic": "Guideline recommendations",
+        "notes": "Major sepsis guidelines recommend against routine IV vitamin C in sepsis, and a rapid practice guideline on IV vitamin C in critically ill adults similarly advises against routine use outside research."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Marik et al. (2017) before-after study",
+        "relation": "The initial retrospective report that sparked interest in HAT therapy, showing large mortality reductions; subsequent prospective RCTs (including VICTAS) did not confirm benefit."
+      },
+      {
+        "trial": "CITRIS-ALI (2019)",
+        "relation": "Vitamin C monotherapy in ARDS; suggested secondary benefits but no clear improvement in primary outcome, raising multiplicity concerns and prompting further investigation in combination trials like VICTAS."
+      },
+      {
+        "trial": "VITAMINS (2020)",
+        "relation": "Open-label RCT of vitamin C + thiamine + hydrocortisone vs hydrocortisone alone in septic shock; found no improvement in vasopressor-free days or mortality, consistent with VICTAS."
+      },
+      {
+        "trial": "ATLAS (2021)",
+        "relation": "RCT testing a similar vitamin C–based combination in sepsis; results aligned with VICTAS in showing no benefit."
+      },
+      {
+        "trial": "LOVIT (2022)",
+        "relation": "Large RCT of high-dose IV vitamin C monotherapy in ICU sepsis; showed no improvement and raised concern for potential harm on a composite organ-dysfunction endpoint, further undermining the case for vitamin C–based strategies."
+      }
+    ],
+    "unresolved_questions": [
+      "Could a subset with true vitamin C deficiency benefit from replacement?",
+      "Is there a role for earlier initiation (pre-ICU) or longer duration?",
+      "Do specific host phenotypes (e.g., hyperinflammation) derive benefit, and can they be identified at the bedside?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=501 (252 intervention, 249 placebo)",
+        "Primary VVFDs median 25 vs 26 days (difference -1 day, P=0.85)",
+        "30-day mortality 22% vs 24% (not formally tested)"
+      ],
+      "one_line_takeaway": "VICTAS definitively shows no benefit from vitamin C + thiamine + hydrocortisone in ICU sepsis and supports guideline recommendations against routine use."
+    }
+  },
+  "_source_id": "VICTAS",
+  "_source_system": "Endocrine"
+}

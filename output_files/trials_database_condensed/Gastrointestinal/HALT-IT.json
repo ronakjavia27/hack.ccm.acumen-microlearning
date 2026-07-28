@@ -1,0 +1,336 @@
+{
+  "id": "HALT-IT",
+  "trial_name": "HALT-IT — Tranexamic acid in acute gastrointestinal bleeding (2020)",
+  "specialty": "Gastrointestinal",
+  "subtopic": "Gastrointestinal Bleeding",
+  "year": 2020,
+  "journal": "Lancet",
+  "citation": "Roberts I, Shakur-Still H, Afolabi A, et al; HALT-IT Trial Collaborators. Effects of a high-dose 24-h infusion of tranexamic acid on death and thromboembolic events in patients with acute gastrointestinal bleeding (HALT-IT): an international randomised, double-blind, placebo-controlled trial. Lancet. 2020;395(10241):1927-1936.",
+  "doi": "10.1016/S0140-6736(20)30848-5",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, pragmatic, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 12009,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In acute gastrointestinal bleeding, high-dose tranexamic acid did not reduce death due to bleeding or overall mortality and increased venous thromboembolism and seizures.",
+  "pico": {
+    "population": "Adults (≥16–18 years) with clinically significant acute upper or lower gastrointestinal bleeding where the treating clinician was substantially uncertain about the need for tranexamic acid.",
+    "intervention": "IV tranexamic acid: 1 g loading dose over 10 minutes, then 3 g continuous infusion over 24 hours (total 4 g).",
+    "comparison": "Matching placebo (IV saline) via identical loading and maintenance infusion protocol.",
+    "outcome": "Death due to bleeding within 5 days (modified intention-to-treat)"
+  },
+  "keywords": [
+    "tranexamic acid",
+    "gastrointestinal bleeding",
+    "variceal bleeding",
+    "fibrinolysis",
+    "thromboembolism",
+    "seizure"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Acute severe gastrointestinal bleeding is common, requires urgent resuscitation, and has substantial mortality. Tranexamic acid reduces bleeding death in trauma and postpartum haemorrhage and decreases surgical bleeding, but prior evidence in GI bleeding came from small, biased trials with inadequate assessment of thromboembolic harms.",
+      "knowledge_gap": "No large, bias-resistant RCT had evaluated the benefit–harm balance of tranexamic acid for GI bleeding, especially in patients with cirrhosis or varices where altered haemostasis might increase thrombotic risk.",
+      "hypothesis": "In addition to usual care, tranexamic acid reduces death due to bleeding from acute gastrointestinal haemorrhage without causing an excess of thromboembolic events or seizures."
+    },
+    "methods": {
+      "design": "International, multicentre, randomised, double-blind, placebo-controlled, pragmatic superiority trial",
+      "setting": "164 hospitals across 15 countries (UK, Pakistan, Nigeria, Egypt, Malaysia, Georgia, Romania, Nepal, Sudan, Saudi Arabia, Spain, Ireland, Albania, Papua New Guinea, Australia), including emergency and inpatient settings.",
+      "population": {
+        "inclusion": [
+          "Age ≥ the country-specific adult minimum (≥16 or ≥18 years)",
+          "Clinically significant acute upper or lower GI bleeding defined by hypotension, tachycardia, signs of shock, or likely need for transfusion/urgent endoscopy/surgery",
+          "Clinician substantial uncertainty about the need for tranexamic acid"
+        ],
+        "exclusion": [
+          "Tranexamic acid administered prior to randomisation (protocol violation)",
+          "Age below country-specific minimum",
+          "Other unspecified exclusions"
+        ]
+      },
+      "intervention": "IV tranexamic acid: 1 g loading dose in 100 mL 0.9% saline over 10 minutes, followed by 3 g in 1 L isotonic solution at 125 mg/h for 24 hours (total 4 g).",
+      "comparison": "Matching IV 0.9% saline placebo using identical loading and maintenance infusion procedures and masking.",
+      "blinding": "Double-blind with identical treatment packs and labelling; clinicians, patients, and outcome assessors masked. Unmasking occurred in 28 patients (13 tranexamic acid, 15 placebo), mainly for clinical reasons.",
+      "sample_size_power": "Planned 12,000 patients provided ~85% power (two-sided α=0.05) to detect a 25% relative reduction in death due to bleeding within 5 days from 4% to 3%. Final enrolment: 12,009 randomised.",
+      "primary_outcome": "Death due to bleeding within 5 days (analysed in the modified intention-to-treat population: patients who received at least one dose and had death outcome data).",
+      "secondary_outcomes": [
+        "Death due to bleeding within 24 hours",
+        "All-cause death within 28 days (in-hospital)",
+        "Rebleeding within 5 days (in-hospital)",
+        "Rebleeding within 28 days (in-hospital)",
+        "Need for therapeutic endoscopy",
+        "Venous thromboembolic events (deep vein thrombosis or pulmonary embolism)",
+        "Seizures",
+        "Days in ICU"
+      ],
+      "follow_up": "Until death, discharge from randomising hospital, or 28 days after randomisation (whichever occurred first)."
+    },
+    "results": {
+      "headline_bullets": [
+        "No reduction in death due to bleeding within 5 days (RR 0.99; 95% CI 0.82–1.18) despite adequate power.",
+        "All-cause mortality at 28 days similar: 9.5% TXA vs 9.2% placebo (RR 1.03; 95% CI 0.92–1.16).",
+        "Significantly more venous thromboembolic events (0.8% vs 0.4%; RR 1.85; 95% CI 1.15–2.98) and seizures (0.6% vs 0.4%; RR 1.73; 95% CI 1.03–2.93).",
+        "No meaningful reductions in rebleeding or need for therapeutic endoscopy."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death due to bleeding within 5 days (primary)",
+          "group_a": "222/5956 (3.7%)",
+          "group_b": "226/5981 (3.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.99",
+          "ci_95": "0.82–1.18",
+          "p_value": "not reported",
+          "note": "Modified ITT population; no signal for benefit"
+        },
+        {
+          "outcome": "Death due to bleeding within 24 h",
+          "group_a": "124/5956 (2.1%)",
+          "group_b": "120/5981 (2.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.04",
+          "ci_95": "0.81–1.33",
+          "p_value": "not reported",
+          "note": "Early benefit not demonstrated"
+        },
+        {
+          "outcome": "All-cause death within 28 days (in-hospital)",
+          "group_a": "564/5956 (9.5%)",
+          "group_b": "548/5981 (9.2%)",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.92–1.16",
+          "p_value": "not reported",
+          "note": "No mortality benefit; point estimate favours placebo"
+        },
+        {
+          "outcome": "Rebleeding within 5 days (in-hospital)",
+          "group_a": "287/5956 (4.8%)",
+          "group_b": "315/5981 (5.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.91",
+          "ci_95": "0.78–1.07",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Rebleeding within 28 days (in-hospital)",
+          "group_a": "410/5956 (6.8%)",
+          "group_b": "448/5981 (7.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.92",
+          "ci_95": "0.81–1.05",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Therapeutic endoscopy",
+          "group_a": "2542/5952 (42.7%)",
+          "group_b": "2658/5978 (44.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.96",
+          "ci_95": "0.92–1.00",
+          "p_value": "not reported",
+          "note": "No meaningful reduction in need for haemostatic intervention"
+        },
+        {
+          "outcome": "Venous thromboembolic event (DVT or PE)",
+          "group_a": "48/5952 (0.8%)",
+          "group_b": "26/5977 (0.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.85",
+          "ci_95": "1.15–2.98",
+          "p_value": "not reported",
+          "note": "Safety signal favouring placebo"
+        },
+        {
+          "outcome": "Seizure",
+          "group_a": "38/5952 (0.6%)",
+          "group_b": "22/5977 (0.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.73",
+          "ci_95": "1.03–2.93",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Days in ICU (mean, SD)",
+          "group_a": "0.4 (1.8)",
+          "group_b": "0.4 (2.0)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.06",
+          "ci_95": "-0.13 to 0.01",
+          "p_value": "not reported",
+          "note": "No signal for ICU resource reduction"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Time to treatment ≤3 h",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "RR",
+          "effect_value": "1.10",
+          "ci_95": "0.75–1.61",
+          "p_interaction": "0.53"
+        },
+        {
+          "subgroup": "Bleeding site: lower GI",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "RR",
+          "effect_value": "1.61",
+          "ci_95": "0.59–4.40",
+          "p_interaction": "0.34"
+        },
+        {
+          "subgroup": "Suspected variceal/liver disease",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "RR",
+          "effect_value": "1.01",
+          "ci_95": "0.81–1.24",
+          "p_interaction": "0.94"
+        },
+        {
+          "subgroup": "Pre-endoscopy Rockall score",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "RR",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.32",
+          "note": "No heterogeneity across categories"
+        }
+      ]
+    },
+    "safety": [
+      "Venous thromboembolic events: 0.8% TXA vs 0.4% placebo; RR 1.85 (95% CI 1.15–2.98).",
+      "Seizures: 0.6% TXA vs 0.4% placebo; RR 1.73 (95% CI 1.03–2.93).",
+      "No other notable safety differences were reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Independent randomisation (Sealed Envelope) with sequentially numbered, identical treatment packs; allocation concealment robust with 'lowest numbered pack' selection, minimising selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind design with identical packs and labelling. Unmasking uncommon (28 patients; 13 TXA, 15 placebo) and generally for clinical reasons. Blinding reduces differential co-intervention and ascertainment bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary analysis modified intention-to-treat: excluded 52 patients who received neither dose and 3 without death outcome data. Near-complete ascertainment of mortality; missing outcome minimal (3 in TXA group)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High adherence: 99.5% received loading dose; 91.5% maintenance dose. Open-label antifibrinolytic use in 105 TXA vs 118 placebo, potentially diluting effect; sensitivity analysis consistent. 14 protocol violations reported."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: mean age 58 years, 36% female, suspected variceal bleeding 45–46%, time from onset ~21–22 h, haemodynamic parameters similar."
+        },
+        {
+          "domain": "Timing",
+          "notes": "Only 16% treated ≤3 h from bleeding onset; late treatment may attenuate any time-sensitive efficacy, though subgroup analysis did not show benefit even in ≤3 h group."
+        }
+      ],
+      "verdict": "Overall internal validity appears strong with robust concealment, masking, near-complete follow-up, high adherence, and prespecified analysis; main vulnerabilities are potential misclassification of cause-specific death and uncertainty around bleeding onset/aetiology at enrolment."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Large international cohort across high- and low/middle-income settings; 45% suspected variceal bleeding reflects mixed real-world cause. Clinician-uncertainty entry criterion may have excluded some patient groups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Results apply directly to the tested high-dose 24-h regimen. Only 16% treated ≤3 h; generalisability to very early presenters is limited. Early subgroup lacked benefit with limited precision."
+        },
+        {
+          "domain": "Resource-limited applicability",
+          "notes": "Pragmatic delivery feasible in diverse settings, but thromboembolic adjudication may be less complete where imaging is limited."
+        }
+      ],
+      "verdict": "Generalisability is high for typical in-hospital management of significant GI bleeding across diverse systems, but limited for very early presenters and for alternative TXA dosing strategies not tested."
+    },
+    "strengths": [
+      "Very large sample size (12,009 randomised) with near-complete mortality ascertainment.",
+      "International, multicentre pragmatic design across 164 hospitals in 15 countries enhances external validity.",
+      "Double-blind, placebo-controlled methods with robust operational masking and limited unmasking.",
+      "Clinically meaningful safety endpoints (venous thromboembolism and seizures) systematically captured.",
+      "Statistical analysis plan published prior to unblinding, including rationale for amended primary outcome."
+    ],
+    "limitations": [
+      "Treatment frequently given late (only 16% within 3 h of reported onset), limiting assessment of early time-sensitive benefit.",
+      "Primary outcome was cause-specific mortality (death due to bleeding), which may be misclassified despite masking and narrative review, though all-cause mortality also showed no benefit.",
+      "Pragmatic enrolment before definitive endoscopic diagnosis introduces uncertainty in aetiology and site for subgroup analyses.",
+      "Modified intention-to-treat excluded a small number of patients (no-dose/outcome missing), slightly deviating from pure ITT.",
+      "High-dose prolonged infusion may not reflect all local practices and may have contributed to seizure risk."
+    ],
+    "critical_appraisal": {
+      "summary": "HALT-IT is a high-quality RCT that definitively shows high-dose 24‑h tranexamic acid confers no mortality benefit in acute gastrointestinal bleeding and increases thromboembolic and seizure risk, with results highly consistent across prespecified subgroups.",
+      "strengths": [
+        "Excellent randomised, double-blind design with minimal bias and high adherence.",
+        "Very large pragmatic sample provides precise estimates and generalisability."
+      ],
+      "weaknesses": [
+        "Late treatment timing may mask any early benefit, though ≤3 h subgroup also failed to show advantage.",
+        "Cause-specific mortality endpoint may be misclassified, but all-cause mortality mirrors the null finding."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Tranexamic acid (4 g over 24 h) did not reduce death due to bleeding or all-cause mortality in acute gastrointestinal bleeding and increased venous thromboembolism and seizures; routine use for this indication is not supported.",
+    "clinical_bottom_line": {
+      "verdict": "Routine use of high‑dose 24‑hour tranexamic acid for acute gastrointestinal bleeding is not recommended; no benefit and clear harms.",
+      "applies_to": "Adults with clinically significant acute upper or lower GI bleeding, including suspected variceal bleeding, presenting in diverse healthcare settings.",
+      "does_not_mean": "This does not preclude tranexamic acid for other proven indications (trauma, postpartum haemorrhage); it does not test lower‑dose or shorter‑duration regimens.",
+      "implementation_caveats": [
+        "High‑dose regimen contributed to thromboembolic and seizure harms; alternative strategies not evaluated.",
+        "Most patients were treated late (>3 h); early benefit cannot be excluded but was not supported by the ≤3 h subgroup.",
+        "Not applicable to non‑GI bleeding syndromes."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Primary outcome change during the trial",
+        "notes": "The trial amended its primary outcome from all‑cause mortality to death due to bleeding within 5 days, with sample size increase. Rationale (predominance of non‑bleeding deaths and TXA’s short half‑life) was pre‑specified in the analysis plan. The accompanying editorial considered this methodologically defensible but emphasised that all‑cause mortality remains the most patient‑relevant endpoint."
+      },
+      {
+        "topic": "Timing of TXA relative to bleeding onset",
+        "notes": "Bleeding onset is hard to time in GI haemorrhage; 84% were randomised >3 h after onset, so HALT‑IT primarily tested late TXA. The ≤3 h subgroup did not show benefit, but precision was limited."
+      },
+      {
+        "topic": "Dose and harm profile",
+        "notes": "The high‑dose 24‑h infusion produced an unfavourable safety signal (VTE and seizures), strengthening the inference that net clinical benefit is unlikely for this regimen in unselected GI bleeding."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "Subsequent major endoscopy guidance recommends against TXA for nonvariceal upper GI haemorrhage in routine care, reflecting evidence including HALT‑IT."
+      },
+      {
+        "topic": "Position relative to pre‑HALT‑IT evidence",
+        "notes": "HALT‑IT effectively rules out the large mortality benefit suggested by earlier small‑trial meta‑analyses and shifts the evidentiary balance towards harm in broad GI bleeding populations."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does early (<3 h) TXA provide any benefit in GI bleeding with a different risk profile?",
+      "Would lower‑dose or shorter‑duration TXA have a more favourable risk–benefit ratio?",
+      "Does TXA have a differential effect in variceal vs non‑variceal bleeding, given the exploratory VTE excess signal in liver disease?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n = 12,009",
+        "Primary outcome (death from bleeding ≤5 days): 3.7% TXA vs 3.8% placebo (RR 0.99; 95% CI 0.82–1.18)",
+        "VTE: 0.8% vs 0.4% (RR 1.85; 95% CI 1.15–2.98)",
+        "Seizures: 0.6% vs 0.4% (RR 1.73; 95% CI 1.03–2.93)"
+      ],
+      "one_line_takeaway": "In acute GI bleeding, do not use high‑dose 24‑hour tranexamic acid — no mortality benefit and increased thromboembolic and seizure risks."
+    }
+  },
+  "_source_id": "HALT-IT",
+  "_source_system": "Gastrointestinal"
+}

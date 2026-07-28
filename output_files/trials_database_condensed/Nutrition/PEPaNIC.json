@@ -1,0 +1,337 @@
+{
+  "id": "PEPaNIC",
+  "trial_name": "PEPaNIC — Early vs Late Parenteral Nutrition in Critically Ill Children (2016)",
+  "specialty": "Pediatric Critical Care",
+  "subtopic": "Parenteral Nutrition",
+  "year": 2016,
+  "journal": "New England Journal of Medicine",
+  "citation": "Fivez T, Kerklaan D, Mesotten D, et al. Early versus late parenteral nutrition in critically ill children. N Engl J Med. 2016;374:1111-1122",
+  "doi": "https://doi.org/10.1056/NEJMoa1514762",
+  "registration": "Not reported",
+  "trial_type": "RCT — multicenter, randomised, controlled, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1440,
+  "result_category": "Positive",
+  "one_liner": "In 1440 critically ill children at nutritional risk, withholding parenteral nutrition during the first week of PICU stay reduced new infections by 7.8% absolute and accelerated ICU and hospital discharge, without a significant mortality difference.",
+  "pico": {
+    "population": "Critically ill children (0-17 years, term neonates) admitted to tertiary PICUs with expected stay >24 hours, unable to receive oral feeding, and moderate/high nutritional risk (STRONGkids ≥2).",
+    "intervention": "Late PN: withhold parenteral macronutrients during days 1-7, with IV micronutrients from day 2, enteral nutrition promoted; dextrose 5%/saline for hydration, dextrose 10% allowed for hypoglycemia (<40 mg/dL); PN initiated on day 8 if needed.",
+    "comparison": "Early PN: supplemental PN initiated within 24 hours of admission when enteral nutrition insufficient; macronutrients (glucose/amino acids day 1, lipids day 2) titrated to targets.",
+    "outcome": "Co-primary: new infection acquired during PICU stay; time to live discharge from PICU. Secondary: airway infection, bloodstream infection, hypoglycemia, duration of mechanical ventilation, AKI requiring RRT, 90-day mortality, hospital length of stay."
+  },
+  "keywords": [
+    "parenteral nutrition",
+    "pediatric intensive care",
+    "critical illness",
+    "enteral nutrition",
+    "nutrition timing",
+    "micronutrients",
+    "infection",
+    "hypoglycemia"
+  ],
+  "related_trials": [
+    "EPaNIC"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Prior to PEPaNIC, pediatric ICU nutrition practice commonly included early parenteral nutrition to prevent catabolism and energy/protein deficits, despite known risks (catheter complications, hyperglycemia, hepatic dysfunction, infection). The adult EPaNIC trial suggested improved outcomes when PN was delayed to one week.",
+      "knowledge_gap": "Pediatric patients have different physiology, smaller reserves, and distinct case-mix; equipoise persisted on whether early PN benefits or harms critically ill children.",
+      "hypothesis": "Withholding supplemental PN during the first 7 days while providing early enteral nutrition and micronutrients would reduce new infections and accelerate recovery compared with early initiation of PN."
+    },
+    "methods": {
+      "design": "Multicentre, international, randomised, controlled, parallel-group, open-label, superiority trial.",
+      "setting": "Three tertiary PICUs in Belgium (Leuven), the Netherlands (Rotterdam), and Canada (Edmonton).",
+      "population": {
+        "inclusion": [
+          "Age 0-17 years (including term neonates)",
+          "Expected PICU stay >24 hours",
+          "Inability to receive oral feeding at admission",
+          "STRONGkids score ≥2 (moderate/high nutritional risk)"
+        ],
+        "exclusion": [
+          "Not detailed in index manuscript; protocol excluded prematurity, anticipated early death, and conditions requiring specialized nutrition pathways."
+        ]
+      },
+      "intervention": "Late PN: no parenteral macronutrients during days 1-7; IV dextrose 5%/saline for fluids, dextrose 10% allowed for hypoglycemia; IV micronutrients (vitamins, minerals, trace elements) started day 2; supplemental PN initiated day 8 if enteral intake <80% targets.",
+      "comparison": "Early PN: supplemental PN started within 24h if enteral nutrition insufficient; macronutrients started day 1 (glucose/amino acids), lipids added day 2, titrated to targets; same micronutrient strategy.",
+      "blinding": "Open-label for clinicians and families; infection diagnosis adjudicated by blinded infectious disease specialists.",
+      "sample_size_power": "Planned n=1440: 80% power to detect absolute reduction in PICU infection from 20% to 15% (one-sided α=0.05); 90% power to detect a 1-day reduction in mean ICU stay (two-sided α=0.05).",
+      "primary_outcome": "Co-primary: (1) new infection acquired during PICU stay; (2) time to live discharge from PICU.",
+      "secondary_outcomes": [
+        "New airway infection",
+        "New bloodstream infection",
+        "Hypoglycemia (≤40 mg/dL) within first 7 days",
+        "Duration of mechanical ventilation",
+        "Acute kidney injury requiring renal-replacement therapy",
+        "Death within 90 days after enrolment",
+        "Total hospital length of stay"
+      ],
+      "follow_up": "Outcomes assessed during PICU and hospital stay; mortality tracked to 90 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "Late PN reduced new PICU infections: 10.7% vs 18.5%, OR 0.48 (95% CI 0.35-0.66, P<0.001).",
+        "Time to live PICU discharge was shorter with late PN: mean 6.5 vs 9.2 days, HR 1.23 (95% CI 1.11-1.37, P<0.001), mean difference 2.7 days.",
+        "Hypoglycemia within first 7 days was more common with late PN: 9.1% vs 4.8% (P=0.001).",
+        "90-day mortality did not differ significantly: 5.3% vs 6.8%, OR 0.64 (95% CI 0.39-1.05, P=0.08)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "New infection (any) during PICU stay",
+          "group_a": "77/717 (10.7%)",
+          "group_b": "134/723 (18.5%)",
+          "effect_measure": "OR",
+          "effect_value": "0.48",
+          "ci_95": "0.35-0.66",
+          "p_value": "<0.001",
+          "note": "Adjusted analysis; OR<1 favours late PN."
+        },
+        {
+          "outcome": "Time to live discharge from PICU (mean days)",
+          "group_a": "6.5 ± 0.4",
+          "group_b": "9.2 ± 0.8",
+          "effect_measure": "HR",
+          "effect_value": "1.23",
+          "ci_95": "1.11-1.37",
+          "p_value": "<0.001",
+          "note": "Adjusted; HR>1 indicates earlier discharge with late PN. Mean difference 2.7 days (95% CI 1.3-4.3)."
+        },
+        {
+          "outcome": "New airway infection",
+          "group_a": "30/717 (4.2%)",
+          "group_b": "59/723 (8.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.52",
+          "ci_95": "0.33-0.81",
+          "p_value": "0.004",
+          "note": "Adjusted analysis."
+        },
+        {
+          "outcome": "New bloodstream infection",
+          "group_a": "41/717 (5.7%)",
+          "group_b": "65/723 (9.0%)",
+          "effect_measure": "OR",
+          "effect_value": "0.57",
+          "ci_95": "0.38-0.87",
+          "p_value": "0.01",
+          "note": "Adjusted analysis."
+        },
+        {
+          "outcome": "Hypoglycemia (≤40 mg/dL) within first 7 days",
+          "group_a": "65/717 (9.1%)",
+          "group_b": "35/723 (4.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.001",
+          "note": "Absolute increase with late PN."
+        },
+        {
+          "outcome": "Duration of mechanical ventilation (mean days)",
+          "group_a": "4.4 ± 0.3",
+          "group_b": "6.4 ± 0.7",
+          "effect_measure": "HR",
+          "effect_value": "1.19",
+          "ci_95": "1.07-1.32",
+          "p_value": "0.001",
+          "note": "Adjusted; HR>1 indicates earlier weaning with late PN."
+        },
+        {
+          "outcome": "Acute kidney injury requiring RRT",
+          "group_a": "18/717 (2.5%)",
+          "group_b": "26/723 (3.6%)",
+          "effect_measure": "OR",
+          "effect_value": "0.49",
+          "ci_95": "0.24-0.96",
+          "p_value": "0.04",
+          "note": "Adjusted analysis."
+        },
+        {
+          "outcome": "Death within 90 days after enrolment",
+          "group_a": "38/717 (5.3%)",
+          "group_b": "49/723 (6.8%)",
+          "effect_measure": "OR",
+          "effect_value": "0.64",
+          "ci_95": "0.39-1.05",
+          "p_value": "0.08",
+          "note": "Adjusted analysis; not statistically significant."
+        },
+        {
+          "outcome": "Total hospital length of stay (mean days)",
+          "group_a": "18.6 ± 1.0",
+          "group_b": "22.6 ± 1.3",
+          "effect_measure": "HR",
+          "effect_value": "1.21",
+          "ci_95": "1.08-1.34",
+          "p_value": "<0.001",
+          "note": "Adjusted; HR>1 favours late PN. Mean difference 4.1 days (95% CI 1.4-6.6)."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Acutely undernourished children (from subsequent analysis)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "",
+          "note": "Secondary analysis showed late PN still reduced infections and shortened stay in this subgroup."
+        },
+        {
+          "subgroup": "Term neonates (from prespecified analysis)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "",
+          "note": "Prespecified analysis reported outcomes consistent with benefit from withholding PN early."
+        }
+      ]
+    },
+    "safety": [
+      "Hypoglycemia (≤40 mg/dL) within first 7 days occurred more frequently with late PN (9.1% vs 4.8%, P=0.001). No other specific adverse events detailed."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, computer-based randomisation with stratification (centre, age group, surgical status); allocation concealed via electronic assignment at enrolment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design. Primary infection outcome adjudicated by blinded infectious disease specialists; other endpoints objective (mortality, duration of organ support). Residual risk of bias for time-to-discharge outcomes."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "ITT analysis included all 1440 randomised; post-randomisation exclusions not reported."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Intervention was operationally 'hard' (withholding PN macronutrients for 7 days vs initiating within 24h); crossover not reported; hypoglycemia rescue with dextrose 10% described."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups clinically similar: median age 1.4 vs 1.5 years, male sex 57% vs 58%, emergency admission 53% vs 56%, median PELOD 21 in both."
+        }
+      ],
+      "verdict": "Overall internal validity appears strong given central randomisation, ITT, blinded adjudication of infections, and large sample size; open-label design is the principal limitation for time-to-discharge outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad tertiary PICU case-mix with high proportion of infants (median age ~1.4 y) and surgical/cardiac workload (~40% cardiac surgery); reflects many high-income PICUs."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most directly applicable to PICUs where early PN to meet targets is common when enteral nutrition insufficient. Caution for settings with very high prevalence of severe chronic malnutrition, preterm infants, or distinct baseline PN practices."
+        }
+      ],
+      "verdict": "Generalisability is moderate-to-high to comparable tertiary PICUs in high-resource systems, with caution for settings where baseline nutrition practices differ substantially or populations are less represented."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre international RCT (N=1440) addressing a highly actionable ICU decision.",
+      "Co-primary outcomes (infection, time to live ICU discharge) with clinically important and consistent benefits on multiple recovery endpoints.",
+      "Blinded adjudication of infection outcomes reduced detection bias for a key endpoint.",
+      "Protocolised micronutrient strategy reduced risk that findings reflect vitamin/trace element deficiency rather than macronutrient timing."
+    ],
+    "limitations": [
+      "Open-label design may influence co-interventions and discharge decisions, despite objective components and time-to-event modelling.",
+      "Macronutrient formulations and glucose management varied by centre, introducing clinical heterogeneity in 'early PN dose'.",
+      "Energy requirements were equation-based, not measured by indirect calorimetry; may affect interpretation of underfeeding vs overfeeding.",
+      "Detailed numeric separation in delivered calories/protein was shown graphically rather than tabulated."
+    ],
+    "critical_appraisal": {
+      "summary": "PEPaNIC is a high-quality RCT that convincingly demonstrates that withholding supplemental PN for 7 days in critically ill children reduces infections and accelerates recovery, though the open-label design and equation-based caloric targets introduce some uncertainty about the mechanism and exact magnitude of benefit.",
+      "strengths": [
+        "Large, well-powered, international multicenter design",
+        "Blinded adjudication of primary infection outcome",
+        "Consistent benefit across multiple secondary endpoints and sensitivity analyses",
+        "Pragmatic protocol with micronutrient support"
+      ],
+      "weaknesses": [
+        "Open-label design may bias discharge timing decisions",
+        "No direct measurement of energy expenditure; potential for overfeeding in early PN group",
+        "Graphical presentation of detailed macronutrient doses",
+        "Crossover rates not reported"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In this large multicenter trial in critically ill children, withholding parenteral nutrition for 7 days while providing micronutrients reduced new infections and shortened ICU and hospital stay, compared with early initiation of PN, without a significant difference in mortality.",
+    "clinical_bottom_line": {
+      "verdict": "For most critically ill children at nutritional risk, a strategy of early enteral nutrition with micronutrients and withholding supplemental PN for the first week is safe and improves outcomes, provided hypoglycemia is monitored and promptly treated.",
+      "applies_to": "Critically ill children (0-17 years, including term neonates) admitted to a PICU with expected stay >24 hours, unable to take oral feeds, and at moderate/high nutritional risk (STRONGkids ≥2). Generalizable to high-resource PICUs with similar case-mix and where early PN use is common.",
+      "does_not_mean": "This does not mean all PICU patients should be calorie-restricted indefinitely; enteral nutrition should be advanced as tolerated, and PN is appropriate after day 7 if targets are not met. It also does not imply that micronutrient support can be omitted.",
+      "implementation_caveats": [
+        "Require a robust early enteral feeding pathway.",
+        "Mandate frequent glucose monitoring and a protocol to correct hypoglycemia (e.g., dextrose 10%) during the first week.",
+        "Individualize in patients with severe acute or chronic malnutrition; secondary analyses suggest benefit persists but careful monitoring is warranted.",
+        "Consider center-specific baseline PN practices: in units where early PN is already rare, the effect size may differ."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "External validity and patient mix",
+        "notes": "Many children had short PICU stays, so 'withhold PN until day 8' functionally prevents PN exposure in a large subgroup and may be most impactful in settings where early PN is frequently given to short-stay patients."
+      },
+      {
+        "topic": "Energy prescription and possible overfeeding",
+        "notes": "Editorial and correspondence highlighted that equation-based caloric targets could overestimate needs; thus, the early PN arm may have been exposed to early overfeeding rather than 'physiological replacement'."
+      },
+      {
+        "topic": "Hypoglycaemia as an implementation hazard",
+        "notes": "Increased hypoglycemia with late PN; this is clinically important and protocols must specify monitoring and rescue dextrose pathways when adopting late PN strategies."
+      },
+      {
+        "topic": "Commentary on practice implications",
+        "notes": "Post-publication commentary framed PEPaNIC as supporting 'permissive underfeeding' early in pediatric critical illness, with careful selection and monitoring in vulnerable subgroups."
+      },
+      {
+        "topic": "Subgroup and extended analyses",
+        "notes": "Secondary analyses in acutely undernourished children showed late PN still reduced infections and shortened stay. Prespecified analysis in term neonates reported outcomes consistent with benefit. These support generalizability to high-risk subgroups."
+      },
+      {
+        "topic": "Long-term neurodevelopment",
+        "notes": "Two-year and four-year follow-up studies reported no neurodevelopmental harm and suggested improved long-term developmental outcomes with late PN, shifting interpretation from short-term lengths-of-stay to potentially meaningful child-centred endpoints."
+      },
+      {
+        "topic": "Economic and mechanistic extensions",
+        "notes": "A cost-effectiveness analysis supported late PN as cost-saving with improved outcomes; mechanistic analyses (including ketogenesis) strengthened plausibility that early macronutrients can be maladaptive in early critical illness."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "ESPNIC guidance states that withholding PN for up to one week can be considered; SCCM/ASPEN paediatric nutrition guidance acknowledged emerging evidence for a delayed PN approach."
+      },
+      {
+        "topic": "Evidence synthesis",
+        "notes": "Recent systematic reviews in adjacent populations continue to evaluate early vs delayed PN strategies and generally reinforce that routine early PN confers limited benefit and requires hypoglycemia surveillance."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "EPaNIC",
+        "relation": "Adult counterpart showing improved outcomes with PN delayed to one week in critically ill adults. PEPaNIC extended this finding to children."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal energy targets and protein doses during the first week when PN is withheld.",
+      "Long-term impact on growth, body composition, and organ function beyond neurodevelopment.",
+      "Role of micronutrient supplementation in mediating outcomes independent of macronutrients.",
+      "Application in resource-limited settings with higher baseline malnutrition and limited capacity for glucose monitoring."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1,440",
+        "New infection: 10.7% vs 18.5% (OR 0.48, P<0.001)",
+        "ICU stay reduced by 2.7 days (mean 6.5 vs 9.2 days)",
+        "Hypoglycemia: 9.1% vs 4.8% (P=0.001)",
+        "90-day mortality: 5.3% vs 6.8% (not significant, P=0.08)"
+      ],
+      "one_line_takeaway": "Withholding parenteral nutrition for the first week in at-risk PICU children reduces infections and speeds recovery, but requires glucose monitoring."
+    }
+  },
+  "_source_id": "PEPaNIC",
+  "_source_system": "Nutrition"
+}

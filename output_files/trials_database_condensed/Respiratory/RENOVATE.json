@@ -1,0 +1,275 @@
+{
+  "id": "RENOVATE",
+  "trial_name": "RENOVATE — High-Flow Nasal Oxygen vs Noninvasive Ventilation in Acute Respiratory Failure (2025)",
+  "specialty": "Respiratory",
+  "subtopic": "Noninvasive Respiratory Support",
+  "year": 2025,
+  "journal": "JAMA",
+  "citation": "Maia IS, Kawano-Dourado L, Tramujas L, et al; RENOVATE Investigators and the BRICNet Authors. High-flow nasal oxygen vs noninvasive ventilation in patients with acute respiratory failure: the RENOVATE randomized clinical trial. JAMA. 2025;333(10):875-889.",
+  "doi": "https://doi.org/10.1001/jama.2024.26244",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, Bayesian adaptive, open-label, non-inferiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1766,
+  "result_category": "Mixed",
+  "one_liner": "In adults with acute respiratory failure, HFNO met non-inferiority criteria vs NIV for intubation or death at 7 days in 4 of 5 syndrome groups, but not in immunocompromised hypoxaemia.",
+  "pico": {
+    "population": "Adults with acute respiratory failure requiring noninvasive respiratory support, across five prespecified clinical groups",
+    "intervention": "High-flow nasal oxygen (HFNO)",
+    "comparison": "Noninvasive ventilation (NIV) via mask interface",
+    "outcome": "Endotracheal intubation or death within 7 days"
+  },
+  "keywords": [
+    "high-flow nasal oxygen",
+    "noninvasive ventilation",
+    "acute respiratory failure",
+    "Bayesian adaptive trial",
+    "non-inferiority"
+  ],
+  "related_trials": [
+    "FLORALI"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "NIV is established therapy for selected acute respiratory failure syndromes (notably COPD exacerbation with acidosis and acute cardiogenic pulmonary oedema), but it can be poorly tolerated and is often delivered intermittently; HFNO is widely used for acute hypoxaemic respiratory failure (including COVID-19), offers humidified high-flow oxygen with a modest PEEP effect, and is generally better tolerated.",
+      "knowledge_gap": "Comparative effectiveness of HFNO vs NIV across different acute respiratory failure syndromes has been uncertain.",
+      "hypothesis": "In adults with acute respiratory failure requiring noninvasive respiratory support, HFNO is non-inferior to NIV for preventing endotracheal intubation or death within 7 days, evaluated within prespecified clinical syndrome groups."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, Bayesian adaptive, open-label, randomised clinical trial",
+      "setting": "33 hospitals in Brazil",
+      "population": {
+        "inclusion": [
+          "Adults with acute respiratory failure requiring noninvasive respiratory support, categorised into one of five clinical groups: hypoxaemic nonimmunocompromised; hypoxaemic immunocompromised; acute cardiogenic pulmonary oedema; COPD exacerbation with respiratory acidosis; hypoxaemic COVID-19."
+        ],
+        "exclusion": [
+          "Immediate indication for intubation",
+          "Do-not-intubate at enrolment",
+          "Contraindications to NIV/HFNO (e.g., inability to protect airway)"
+        ]
+      },
+      "intervention": "HFNO delivered via heated humidified high-flow system; flow and FiO2 titrated to oxygenation and work-of-breathing targets. Early delivered settings: at hour 1, typical HFNO flows were 50–60 L/min (FiO2 varied by syndrome; higher in COVID-19 and immunocompromised hypoxaemia).",
+      "comparison": "NIV via mask interface; pressure settings titrated per syndrome/physiology (including higher pressure support in COPD), with FiO2 adjusted similarly. Among patients still receiving noninvasive support on day 1, support interruption occurred in 53.3% with NIV vs 14.2% with HFNO.",
+      "blinding": "Open-label; outcomes were objective (intubation/death) but intubation is clinician-mediated; protocolised intubation criteria were used to reduce decision bias.",
+      "sample_size_power": "1800 randomised; primary analysis population: 1766 (randomised with informed consent obtained). Power calculation not reported.",
+      "primary_outcome": "Endotracheal intubation or death within 7 days",
+      "secondary_outcomes": [
+        "Discomfort score at 12 hours (0–100)",
+        "Serious adverse events"
+      ],
+      "follow_up": "Primary endpoint at 7 days; additional outcomes followed to 28 and 90 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "HFNO met prespecified non-inferiority criteria vs NIV for the day-7 composite endpoint in 4/5 syndrome groups; the immunocompromised hypoxaemia group did not meet non-inferiority.",
+        "Overall non-inferiority for the composite endpoint was not met (posterior probability 0.989, below the prespecified threshold), emphasising that inference was designed to be group-specific.",
+        "HFNO was delivered more continuously and was better tolerated: day 1 support interruption 14.2% (HFNO) vs 53.3% (NIV); discomfort at 12 hours mean 25.89 vs 32.25 (mean difference −6.73; 95% CrI −9.25 to −4.24)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary (overall): Intubation or death within 7 days",
+          "group_a": "344/883 (39.0%)",
+          "group_b": "336/883 (38.1%)",
+          "effect_measure": "OR",
+          "effect_value": "1.15",
+          "ci_95": "0.83 to 1.60",
+          "p_value": "",
+          "note": "Posterior probability of non-inferiority 0.989; did not meet prespecified overall threshold"
+        },
+        {
+          "outcome": "Primary: Nonimmunocompromised hypoxaemia",
+          "group_a": "81/249 (32.5%)",
+          "group_b": "78/236 (33.1%)",
+          "effect_measure": "OR",
+          "effect_value": "1.02",
+          "ci_95": "0.81 to 1.26",
+          "p_value": "",
+          "note": "Posterior probability of non-inferiority 0.999; non-inferiority met"
+        },
+        {
+          "outcome": "Primary: Immunocompromised hypoxaemia",
+          "group_a": "16/28 (57.1%)",
+          "group_b": "8/22 (36.4%)",
+          "effect_measure": "OR",
+          "effect_value": "1.07",
+          "ci_95": "0.81 to 1.39",
+          "p_value": "",
+          "note": "Posterior probability of non-inferiority 0.989; non-inferiority not met; group stopped for futility"
+        },
+        {
+          "outcome": "Primary: Acute cardiogenic pulmonary oedema",
+          "group_a": "14/136 (10.3%)",
+          "group_b": "29/136 (21.3%)",
+          "effect_measure": "OR",
+          "effect_value": "0.97",
+          "ci_95": "0.73 to 1.23",
+          "p_value": "",
+          "note": "Posterior probability of non-inferiority 0.997; non-inferiority met; raw event rates favoured HFNO but Bayesian estimate was near-null"
+        },
+        {
+          "outcome": "Primary: COPD exacerbation with respiratory acidosis",
+          "group_a": "10/35 (28.6%)",
+          "group_b": "11/42 (26.2%)",
+          "effect_measure": "OR",
+          "effect_value": "1.05",
+          "ci_95": "0.79 to 1.36",
+          "p_value": "",
+          "note": "Posterior probability of non-inferiority 0.992; non-inferiority met at the prespecified decision threshold"
+        },
+        {
+          "outcome": "Primary: Hypoxaemic COVID-19",
+          "group_a": "223/435 (51.3%)",
+          "group_b": "210/447 (47.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.13",
+          "ci_95": "0.94 to 1.38",
+          "p_value": "",
+          "note": "Posterior probability of non-inferiority 0.997; non-inferiority met for the composite endpoint; high event rates in both arms"
+        },
+        {
+          "outcome": "Secondary: Discomfort score at 12 hours (0–100)",
+          "group_a": "Mean 25.89 (SD 24.42)",
+          "group_b": "Mean 32.25 (SD 24.15)",
+          "effect_measure": "Mean difference",
+          "effect_value": "−6.73",
+          "ci_95": "−9.25 to −4.24",
+          "p_value": "",
+          "note": "HFNO was more comfortable"
+        },
+        {
+          "outcome": "Safety: ≥1 serious adverse event",
+          "group_a": "83/883 (9.4%)",
+          "group_b": "87/883 (9.9%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Serious adverse events were similar between groups (no model estimate reported)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Serious adverse events were similar between groups: 83/883 (9.4%) in HFNO vs 87/883 (9.9%) in NIV."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation supports allocation concealment and minimises selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design creates risk of performance bias for clinician-mediated intubation decisions; use of objective endpoints and protocolised intubation criteria mitigates but does not remove this risk."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "34/1800 randomised patients were excluded from the primary analysis population (1766 analysed), because informed consent was not obtained post randomisation; this modified intention-to-treat approach introduces potential post-randomisation exclusion bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Delivered 'dose' differed meaningfully, consistent with intended separation: day 1 support interruption among those still receiving support was 14.2% with HFNO vs 53.3% with NIV. Rescue NIV use in the HFNO arm occurred and was highest in the COPD group (22.9%); impact is likely towards dilution of between-group differences in COPD."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly comparable at baseline overall (mean age 64 years; 40% women); syndrome heterogeneity was prespecified by design."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate-to-strong, supported by central randomisation and objective outcomes, but limited by open-label care, post-randomisation consent-based exclusions (modified intention-to-treat), and model dependence (dynamic borrowing) in small syndrome strata."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults requiring noninvasive respiratory support across five common acute respiratory failure syndromes, enhancing pragmatic relevance; syndrome-specific exclusions and thresholds may vary by centre and were not fully detailed."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings are most applicable to ICUs/EDs with established capability in both HFNO and NIV and similar intubation thresholds; centres using alternative NIV interfaces (e.g., helmet) or achieving higher NIV tolerance may observe different comparative effects. COVID-19 subgroup reflects pandemic-era case mix and care pathways; applicability to current COVID-19 practice depends on local standards of care and patient characteristics."
+        }
+      ],
+      "verdict": "External validity is generally good for real-world 'first device' decisions, but syndrome-specific application should account for local expertise, interface choice, and evolving standards of care (particularly for COVID-19)."
+    },
+    "strengths": [
+      "Pragmatic multicentre randomised design",
+      "Clinically meaningful early failure endpoint",
+      "Prespecified adaptive Bayesian framework enabling group-specific inference",
+      "Detailed reporting of tolerability and delivery continuity (interruptions; discomfort)"
+    ],
+    "limitations": [
+      "Open-label design with clinician-mediated intubation decisions",
+      "Modified intention-to-treat analysis excluding 34 randomised patients without consent",
+      "Small samples in some strata (notably immunocompromised hypoxaemia and COPD) increasing uncertainty and model dependence"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed pragmatic trial supporting HFNO as a reasonable first-line option in most acute respiratory failure syndromes, but open-label bias, post-randomisation exclusions, and model dependence in small subgroups limit confidence in syndrome-specific non-inferiority claims, particularly for immunocompromised patients.",
+      "strengths": [
+        "Pragmatic multicentre randomised design",
+        "Clinically meaningful early failure endpoint",
+        "Prespecified adaptive Bayesian framework enabling group-specific inference",
+        "Detailed reporting of tolerability and delivery continuity"
+      ],
+      "weaknesses": [
+        "Open-label design with clinician-mediated intubation decisions",
+        "Modified intention-to-treat analysis excluding 34 randomised patients without consent",
+        "Small samples in some strata increasing uncertainty and model dependence"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "HFNO met prespecified non-inferiority criteria vs NIV for the day-7 composite endpoint in 4/5 groups; non-inferiority was not demonstrated in immunocompromised hypoxaemia. HFNO was better tolerated and more continuously delivered.",
+    "clinical_bottom_line": {
+      "verdict": "HFNO is a reasonable first-line noninvasive support option across several acute respiratory failure syndromes, with a clear tolerability advantage over NIV. It does not replace NIV in established indications but offers an alternative pathway.",
+      "applies_to": "Adults with acute respiratory failure requiring noninvasive support, particularly where NIV tolerance is poor, in settings with established HFNO and NIV capability.",
+      "does_not_mean": "HFNO is non-inferior to NIV in all patient subgroups; caution is warranted in immunocompromised patients with hypoxaemia.",
+      "implementation_caveats": [
+        "Subgroup inferences in smaller strata are sensitive to modelling assumptions (dynamic borrowing).",
+        "Centres using alternative NIV interfaces (e.g., helmet) or achieving higher NIV tolerance may observe different comparative effects.",
+        "NIV remains positioned as first-line therapy in conditions with robust evidence (e.g., COPD with acidosis; acute cardiogenic pulmonary oedema)."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Dynamic borrowing and subgroup interpretability",
+        "notes": "Hierarchical modelling can shrink subgroup effects towards an overall mean and makes smaller strata particularly sensitive to modelling assumptions; editorials highlighted that qualitative interpretation may change under alternative (no-borrowing) analyses, especially in small groups."
+      },
+      {
+        "topic": "Non-inferiority margin acceptability",
+        "notes": "A margin of OR 1.55 may permit clinically meaningful harm in high-event settings; acceptability differs by syndrome given differing baseline risk, established efficacy of NIV in some indications, and patient-centred trade-offs (comfort vs avoiding intubation)."
+      },
+      {
+        "topic": "Guideline and prior trial context",
+        "notes": "NIV remains positioned as first-line therapy in conditions with robust evidence (e.g., COPD with acidosis; acute cardiogenic pulmonary oedema) and oxygen strategies are typically framed as syndrome-specific; RENOVATE supports HFNO as an alternative pathway but does not, alone, displace NIV in established indications."
+      },
+      {
+        "topic": "De novo acute hypoxaemic respiratory failure",
+        "notes": "Earlier RCT evidence supports HFNO as an effective, well-tolerated strategy in acute hypoxaemic respiratory failure, aligning directionally with RENOVATE's nonimmunocompromised hypoxaemia findings."
+      },
+      {
+        "topic": "COVID-19 evidence triangulation",
+        "notes": "COVID-era RCTs comparing noninvasive strategies have shown heterogeneous results across interfaces and protocols; RENOVATE's COVID subgroup should be interpreted alongside other large COVID noninvasive strategy trials rather than in isolation."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "FLORALI",
+        "relation": "Earlier RCT evidence supporting HFNO as an effective, well-tolerated strategy in acute hypoxaemic respiratory failure, aligning directionally with RENOVATE's nonimmunocompromised hypoxaemia findings."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal noninvasive strategy in immunocompromised patients with hypoxaemic respiratory failure.",
+      "Impact of alternative NIV interfaces (e.g., helmet) on comparative effectiveness.",
+      "Generalisability of findings to centres with different intubation thresholds or NIV tolerance rates."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1766",
+        "HFNO non-inferior to NIV in 4/5 syndrome groups for day-7 intubation/death",
+        "Day 1 support interruption: 14.2% (HFNO) vs 53.3% (NIV)",
+        "Discomfort at 12 hours: mean 25.89 (HFNO) vs 32.25 (NIV), mean difference −6.73"
+      ],
+      "one_line_takeaway": "HFNO is a well-tolerated, non-inferior alternative to NIV for most acute respiratory failure syndromes, but avoid substituting it for NIV in immunocompromised patients with hypoxaemia."
+    }
+  },
+  "_source_id": "RENOVATE",
+  "_source_system": "Respiratory"
+}

@@ -1,0 +1,331 @@
+{
+  "id": "BICARICU-2",
+  "trial_name": "BICARICU-2 — Sodium bicarbonate for severe metabolic acidemia and acute kidney injury (2025)",
+  "specialty": "Critical Care Nephrology",
+  "subtopic": "Acute Kidney Injury",
+  "year": 2025,
+  "journal": "JAMA",
+  "citation": "Jung B, Jabaudon M, De Jong A, et al; BICARICU-2 Study Group. Sodium bicarbonate for severe metabolic acidemia and acute kidney injury: the BICARICU-2 randomized clinical trial. JAMA. 2025;334(22):2000-2010.",
+  "doi": "10.1001/jama.2025.20231",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 640,
+  "result_category": "Neutral (mortality) with potential kidney benefit",
+  "one_liner": "In severe metabolic acidemia with AKI stage 2-3, protocolised sodium bicarbonate did not reduce 90-day mortality (62.1% vs 61.7%) but reduced KRT use (34.7% vs 50.2%).",
+  "pico": {
+    "population": "ICU adults with AKI stage 2-3 (KDIGO) and severe metabolic acidaemia (≥2 ABGs pH ≤7.20, bicarbonate ≤20 mEq/L, PaCO2 ≤45 mm Hg, plus total SOFA>4 or lactate ≥2 mmol/L within 48h of admission).",
+    "intervention": "IV sodium bicarbonate 4.2% (0.5 mmol/mL) in 125–250 mL infusions over 30 min, repeated to achieve/maintain arterial pH ≥7.30; max 1000 mL first 24 h.",
+    "comparison": "Usual care without protocolised bicarbonate.",
+    "outcome": "90-day all-cause mortality (primary), KRT use, MAKE90, safety."
+  },
+  "keywords": [
+    "sodium bicarbonate",
+    "metabolic acidemia",
+    "acute kidney injury",
+    "kidney replacement therapy",
+    "critical care",
+    "pH management"
+  ],
+  "related_trials": [
+    "BICAR-ICU"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Severe metabolic acidaemia in critical illness is associated with haemodynamic compromise, impaired catecholamine responsiveness, arrhythmias, and high mortality. Sodium bicarbonate is widely used to buffer severe acidaemia, but it can increase CO2 generation, sodium load, fluid load, and precipitate alkalosis/hypocalcaemia; equipoise persists regarding patient selection and net clinical benefit. The earlier BICAR-ICU trial in severe metabolic acidosis was neutral overall but suggested benefit in the prespecified subgroup with acute kidney injury (AKI) stage 2–3, including less kidney replacement therapy (KRT) use. Prior non-randomised evidence (target-trial emulation) and a small double-blind pilot RCT suggested potential benefit in selected populations, but residual confounding and imprecision limited inference.",
+      "knowledge_gap": "Does protocolised sodium bicarbonate, titrated to arterial pH ≥7.30, reduce 90-day all-cause mortality in ICU patients with severe metabolic acidaemia and AKI stage 2–3 compared with usual care, and does it reduce KRT use without clinically important harm?",
+      "hypothesis": "Protocolised sodium bicarbonate reduces 90-day mortality in severe metabolic acidaemia with AKI stage 2–3 compared to usual care."
+    },
+    "methods": {
+      "design": "Investigator-initiated, multicentre (43 French ICUs), parallel-group, randomised, open-label trial with minimisation/stratification by centre, age (<65 vs ≥65), and pH stratum (<7.10 vs 7.11–7.20). Enrolment Oct 2019–Dec 2023; follow-up to Jun 2024.",
+      "setting": "43 ICUs in France",
+      "population": {
+        "inclusion": [
+          "ICU adults with AKI stage 2 or 3 (KDIGO)",
+          "≥2 arterial blood gases ≥30 min apart with pH ≤7.20 and bicarbonate ≤20 mEq/L, PaCO2 ≤45 mm Hg",
+          "Total SOFA score >4 and/or arterial lactate ≥2 mmol/L within 48 h of ICU admission"
+        ],
+        "exclusion": [
+          "Immediate indication for KRT (K >6.5 mmol/L with ECG changes and/or cardiogenic pulmonary oedema with anuria and PaO2/FiO2<200 while FiO2>50% and PEEP >5 cm H2O)",
+          "Primary respiratory acidaemia (PaCO2 >45 mm Hg)",
+          "Diabetic ketoacidosis",
+          "Acute gastrointestinal bicarbonate losses"
+        ]
+      },
+      "intervention": "IV sodium bicarbonate 4.2% (0.5 mmol/mL) in 125–250 mL infusions over 30 min, repeated to achieve and maintain arterial pH ≥7.30; max 1000 mL first 24 h, subsequent permitted up to day 28 if pH <7.30. KRT recommended if ≥2 criteria present ≥24 h after enrolment: urine output <0.3 mL/kg/h for 24 h, K >6.5, or pH <7.20 despite bicarbonate for ≥6 h.",
+      "comparison": "Usual care without protocolised bicarbonate; KRT recommended if ≥2 criteria present (same immediate indications plus pH ≤7.20 despite resuscitation).",
+      "blinding": "Open-label (unblinded).",
+      "sample_size_power": "588 patients required to detect 10% absolute reduction in 90-day mortality (80%→70%) with 80% power at two-sided α=0.05; planned enrolment 640 allowing ~8% unevaluable.",
+      "primary_outcome": "90-day all-cause mortality",
+      "secondary_outcomes": [
+        "180-day all-cause mortality",
+        "Kidney replacement therapy (any)",
+        "Time to KRT initiation",
+        "Major adverse kidney events by day 90 (MAKE90)",
+        "ICU-acquired bloodstream infection",
+        "Fluid balance at 48 h",
+        "Metabolic adverse events (pH >7.50, Na >155 mmol/L)"
+      ],
+      "follow_up": "180 days"
+    },
+    "results": {
+      "headline_bullets": [
+        "No difference in 90-day mortality: 62.1% vs 61.7% (absolute difference 0.4%; 95% CI -7.2 to 8.0).",
+        "KRT use significantly lower with bicarbonate: 34.7% vs 50.2% (absolute difference -15.5%; HR 0.59; 95% CI 0.46–0.75).",
+        "Higher 48-h net fluid balance with bicarbonate (median difference 954 mL) and modestly more metabolic alkalosis/hypernatraemia."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "90-day all-cause mortality (primary)",
+          "group_a": "195/314 (62.1%)",
+          "group_b": "193/313 (61.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.4%",
+          "ci_95": "-7.2 to 8.0",
+          "p_value": "0.91",
+          "note": "Modified ITT (n=627)"
+        },
+        {
+          "outcome": "180-day all-cause mortality",
+          "group_a": "217/314 (69.1%)",
+          "group_b": "218/313 (69.6%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-0.5%",
+          "ci_95": "-7.7 to 6.7",
+          "p_value": "",
+          "note": "Exploratory secondary outcome"
+        },
+        {
+          "outcome": "Any kidney replacement therapy",
+          "group_a": "109/314 (34.7%)",
+          "group_b": "157/313 (50.2%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-15.5%",
+          "ci_95": "-23.1 to -7.8",
+          "p_value": "<0.001",
+          "note": "HR 0.59 (95% CI 0.46–0.75)"
+        },
+        {
+          "outcome": "Time to KRT initiation (among those receiving KRT)",
+          "group_a": "31 h (12–70)",
+          "group_b": "18 h (5–37)",
+          "effect_measure": "Median difference",
+          "effect_value": "10 h",
+          "ci_95": "7 to 20",
+          "p_value": "",
+          "note": "IQRs in parentheses"
+        },
+        {
+          "outcome": "Major adverse kidney events by day 90",
+          "group_a": "188/314 (59.9%)",
+          "group_b": "215/313 (68.7%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-8.8%",
+          "ci_95": "-16.3 to -1.3",
+          "p_value": "",
+          "note": "Composite outcome, exploratory"
+        },
+        {
+          "outcome": "ICU-acquired bloodstream infection",
+          "group_a": "14/314 (4.5%)",
+          "group_b": "28/313 (8.9%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "-4.5%",
+          "ci_95": "-8.4 to -0.6",
+          "p_value": "",
+          "note": "Exploratory"
+        },
+        {
+          "outcome": "Fluid balance at 48 h (H0–H48), mL",
+          "group_a": "2805 (750–5950)",
+          "group_b": "2220 (0–4870)",
+          "effect_measure": "Median difference",
+          "effect_value": "954 mL",
+          "ci_95": "320 to 1615",
+          "p_value": "",
+          "note": "IQRs"
+        },
+        {
+          "outcome": "Blood pH >7.50 (≥1 episode)",
+          "group_a": "87/314 (28%)",
+          "group_b": "73/313 (23%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "4.4%",
+          "ci_95": "-2.4 to 11.2",
+          "p_value": "",
+          "note": "Adverse metabolic event"
+        },
+        {
+          "outcome": "Serum sodium >155 mmol/L (≥1 episode)",
+          "group_a": "15/314 (4.8%)",
+          "group_b": "7/313 (2.2%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "2.5%",
+          "ci_95": "-0.3 to 5.4",
+          "p_value": "",
+          "note": "Adverse metabolic event"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "pH <7.10",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "OR (mortality)",
+          "effect_value": "0.62",
+          "ci_95": "0.34 to 1.15",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "pH 7.11–7.20",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "OR (mortality)",
+          "effect_value": "1.23",
+          "ci_95": "0.84 to 1.81",
+          "p_interaction": ""
+        }
+      ]
+    },
+    "safety": [
+      "Higher early net fluid balance at 48 h: median difference +954 mL (95% CI 320–1615).",
+      "Metabolic alkalosis (pH >7.50): 28% vs 23%, absolute difference 4.4% (95% CI -2.4 to 11.2).",
+      "Hypernatraemia (Na >155 mmol/L): 4.8% vs 2.2%, absolute difference 2.5% (95% CI -0.3 to 5.4).",
+      "ICU-acquired bloodstream infection: lower with bicarbonate (4.5% vs 8.9%)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with minimisation for centre, age, and pH stratum; baseline characteristics well balanced."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; mortality is objective, but KRT initiation and secondary outcomes susceptible to performance bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "640 randomised, 627 in modified ITT (13 excluded for ineligibility/outlier); per-protocol analysis of exposure groups showed similar mortality findings."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Intervention group adherence 94.3%; contamination: 15% of usual-care group received bicarbonate."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Similar age, pH (7.15 vs 7.15), lactate (5.8 vs 5.9 mmol/L), and septic shock (55% vs 53%)."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Mortality objective; KRT guided by prespecified criteria but pH-dependent thresholds could bias; infections prespecified."
+        }
+      ],
+      "verdict": "Moderate. Randomisation and follow-up robust, but open-label design, contamination, and decision-sensitive secondary endpoints (especially KRT) temper causal certainty for non-mortality outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High-acuity ICU phenotype with severe metabolic acidaemia and AKI; typical for many units. But excluded hypercapnic acidaemia, DKA, toxin-related, and immediate KRT indications, narrowing scope."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Generalisable to similarly resourced ICUs with routine ABG monitoring and KRT access; used 4.2% bicarbonate, which may differ elsewhere."
+        }
+      ],
+      "verdict": "Moderate generalisability for adult ICUs managing severe metabolic acidaemia with AKI stage 2–3, but limited for hypercapnic acidaemia, ketoacidosis, or immediate KRT populations."
+    },
+    "strengths": [
+      "Large, multicentre RCT in a high-risk population",
+      "Pragmatic protocol reflecting real ICU practice",
+      "Explicit KRT decision framework",
+      "Excellent follow-up for mortality",
+      "Clinically relevant outcomes (mortality, KRT, MAKE90)"
+    ],
+    "limitations": [
+      "Open-label without placebo",
+      "15% contamination in usual-care group",
+      "KRT initiation criteria included pH, a direct treatment target, complicating causal interpretation",
+      "Post-randomisation exclusions (modified ITT)",
+      "Trial powered for larger mortality effect than observed (80% assumed vs 62% actual control mortality)",
+      "Secondary outcomes not adjusted for multiplicity"
+    ],
+    "critical_appraisal": {
+      "summary": "BICARICU-2 is a well-conducted, large multicentre RCT with robust follow-up, providing moderate-quality evidence that protocolised bicarbonate does not reduce mortality but may reduce KRT use, tempered by unblinding and contamination.",
+      "strengths": [
+        "Multicentre, pragmatic design with high internal validity for mortality endpoint",
+        "Clear KRT initiation rules",
+        "High follow-up rates"
+      ],
+      "weaknesses": [
+        "Open-label design and contamination",
+        "pH-dependent KRT triggers make kidney outcomes difficult to interpret causally"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Protocolised sodium bicarbonate targeting pH ≥7.30 did not improve 90-day mortality in severe metabolic acidaemia with AKI stage 2–3, but was associated with less KRT use and fewer major adverse kidney events, with increased early fluid balance and occasional metabolic alkalosis/hypernatraemia.",
+    "clinical_bottom_line": {
+      "verdict": "No survival benefit; may reduce KRT exposure in this phenotype. KRT reduction must be interpreted cautiously due to pH-dependent triggers.",
+      "applies_to": "Adult ICU patients with severe metabolic acidaemia (pH ≤7.20) and AKI stage 2–3, without primary respiratory acidosis or immediate KRT indication.",
+      "does_not_mean": "Bicarbonate is ineffective—it reduces KRT use, a patient-centred outcome—but does not improve survival.",
+      "implementation_caveats": [
+        "Expect increased fluid balance (~1 L) in the first 48 hours",
+        "Monitor for metabolic alkalosis and hypernatraemia",
+        "KRT reduction may reflect pH avoidance rather than true renal recovery; cautious interpretation required"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Power and effect size assumptions",
+        "notes": "Trial powered for 80%→70% mortality reduction; observed ~62% mortality reduced power for smaller, yet plausible, effects."
+      },
+      {
+        "topic": "KRT endpoints in an unblinded trial",
+        "notes": "KRT initiation criteria included pH thresholds, directly modifiable by bicarbonate, potentially confounding interpretation of kidney outcomes."
+      },
+      {
+        "topic": "Contamination",
+        "notes": "15% of usual-care patients received bicarbonate, diluting the estimated treatment effect."
+      },
+      {
+        "topic": "Generalizability of KRT findings",
+        "notes": "Similar patterns (less KRT without mortality benefit) seen in early vs delayed KRT trials, suggesting pH management may delay rather than prevent KRT."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "BICAR-ICU",
+        "relation": "Earlier multicentre trial in severe metabolic acidosis; overall neutral but prespecified AKI subgroup showed less KRT use, motivating the BICARICU-2 focus on AKI."
+      },
+      {
+        "trial": "Early vs delayed KRT trials (AKIKI, IDEAL-ICU, STARRT-AKI)",
+        "relation": "These trials consistently show that delayed KRT reduces KRT exposure without mortality benefit, contextualising the BICARICU-2 finding of less KRT without survival gain."
+      },
+      {
+        "trial": "Double-blind pilot bicarbonate RCT",
+        "relation": "A small blinded pilot trial suggested feasibility and safety of bicarbonate in similar populations, but was underpowered for clinical outcomes."
+      },
+      {
+        "trial": "Target-trial emulation study",
+        "relation": "Non-randomised evidence suggesting potential mortality benefit of bicarbonate in severe metabolic acidaemia; BICARICU-2 provides conflicting randomised evidence."
+      }
+    ],
+    "unresolved_questions": [
+      "Does bicarbonate-mediated KRT delay/avoidance translate into long-term renal recovery or dialysis dependence?",
+      "What is the optimal patient phenotype for bicarbonate (beyond KRT avoidance)?",
+      "Role of bicarbonate in other acidaemia phenotypes (hypercapnic, DKA)?",
+      "Long-term safety and cost-effectiveness in survivors."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=627 analysed",
+        "90-day mortality: 62.1% vs 61.7%",
+        "Any KRT: 34.7% vs 50.2% (ARR -15.5%)",
+        "48-h fluid balance: +954 mL median difference"
+      ],
+      "one_line_takeaway": "Bicarbonate doesn’t save lives in severe metabolic acidosis with AKI, but reduces KRT use by 15%, at the cost of extra fluid — think carefully about KRT trigger contamination."
+    }
+  },
+  "_source_id": "BICARICU-2",
+  "_source_system": "Renal"
+}

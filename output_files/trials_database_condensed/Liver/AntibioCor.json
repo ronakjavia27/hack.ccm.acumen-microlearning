@@ -1,0 +1,346 @@
+{
+  "id": "AntibioCor",
+  "trial_name": "AntibioCor — Prophylactic Amoxicillin/Clavulanate in Severe Alcohol-Related Hepatitis (2023)",
+  "specialty": "Hepatology",
+  "subtopic": "Alcohol-Associated Liver Disease",
+  "year": 2023,
+  "journal": "JAMA",
+  "citation": "Louvet A, Labreuche J, Dao T, Thévenot T, Oberti F, Bureau C, et al. Effect of prophylactic antibiotics on mortality in severe alcohol-related hepatitis: a randomized clinical trial. JAMA. 2023;329(18):1558-1566",
+  "doi": "https://doi.org/10.1001/jama.2023.4902",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, investigator-initiated trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 284,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In prednisolone-treated severe alcohol-related hepatitis, prophylactic amoxicillin/clavulanate reduced early infections but did not improve 60-day survival and increased multidrug-resistant colonisation.",
+  "pico": {
+    "population": "Hospitalised adults age 18–75 with biopsy-proven severe alcohol-related hepatitis (MELD ≥21, Maddrey discriminant function >32) initiating prednisolone, without active sepsis or untreated infection at baseline.",
+    "intervention": "Prednisolone 40 mg orally once daily + amoxicillin 1 g/clavulanate 125 mg oral suspension three times daily for 30 days.",
+    "comparison": "Prednisolone 40 mg orally once daily + matching placebo oral suspension three times daily for 30 days.",
+    "outcome": "60-day all-cause mortality (primary); secondary: 90- and 180-day mortality, infection incidence, hepatorenal syndrome, corticosteroid response, MELD score, multidrug-resistant colonisation, serious adverse events."
+  },
+  "keywords": [
+    "alcohol-related hepatitis",
+    "prophylactic antibiotics",
+    "amoxicillin-clavulanate",
+    "prednisolone",
+    "mortality",
+    "infection",
+    "multidrug-resistant bacteria"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Severe alcohol-related hepatitis has high short-term mortality; prednisolone modestly improves short-term outcomes but increases infection risk; bacterial infections are common and strongly associated with mortality.",
+      "knowledge_gap": "Whether prophylactic antibiotics added to prednisolone can reduce mortality by preventing early infections.",
+      "hypothesis": "Prophylactic amoxicillin/clavulanate would reduce 60-day all-cause mortality by preventing early infections in severe AH patients treated with prednisolone."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, placebo-controlled, investigator-initiated trial (25 centres in France and Belgium; enrolment June 2015 – May 2019).",
+      "setting": "Inpatient hepatology services at 25 centres in France and Belgium.",
+      "population": {
+        "inclusion": [
+          "Age 18–75 years",
+          "Jaundice onset <3 months",
+          "Heavy alcohol consumption (>40 g/day women, >50 g/day men)",
+          "Transjugular liver biopsy confirming alcohol-related hepatitis",
+          "Maddrey discriminant function >32",
+          "MELD score ≥21"
+        ],
+        "exclusion": [
+          "Sepsis at randomisation",
+          "Untreated infection or antibiotic cessation <7 days",
+          "Type 1 hepatorenal syndrome before treatment",
+          "Severe renal insufficiency",
+          "Uncontrolled gastrointestinal bleeding",
+          "Contraindication to prednisolone or beta-lactams"
+        ]
+      },
+      "intervention": "Prednisolone 40 mg orally once daily for 30 days. Amoxicillin 1 g + clavulanate 125 mg oral suspension three times daily for 30 days (total amoxicillin 3 g + clavulanate 375 mg per day).",
+      "comparison": "Prednisolone 40 mg orally once daily for 30 days. Matching placebo oral suspension three times daily for 30 days.",
+      "blinding": "Double-blind (participants, clinicians, investigators, outcome assessors); indistinguishable placebo; central allocation.",
+      "sample_size_power": "Planned 292 (inflated from 280) to detect absolute 14% increase in 60-day survival (73% → 87%) with 80% power at two-sided α=0.05; after excluding 8 patients without consent, 284 analysed via ITT.",
+      "primary_outcome": "All-cause mortality at 60 days.",
+      "secondary_outcomes": [
+        "All-cause mortality at 90 and 180 days",
+        "Incidence of infection at 60 days, and at 0–30 and 31–60 days (post hoc)",
+        "Incidence of hepatorenal syndrome at 60 days",
+        "Response to corticosteroids at day 7 (Lille score <0.45)",
+        "MELD score at 60 days",
+        "Multidrug-resistant bacteria colonisation",
+        "Serious adverse events"
+      ],
+      "follow_up": "180 days (scheduled assessments at days 7, 14, 21, 30, 45, 60, 90, 180)."
+    },
+    "results": {
+      "headline_bullets": [
+        "60-day mortality: 17.3% vs 21.9% (HR 0.77, 95% CI 0.45–1.31; P=0.33).",
+        "Infection at 60 days: 29.7% vs 41.5% (SHR 0.62, 95% CI 0.41–0.91; P=0.02), mainly during first 30 days (13.4% vs 28.9%).",
+        "No improvement in hepatorenal syndrome, corticosteroid response, or MELD score.",
+        "Multidrug-resistant colonisation higher in antibiotic group (31.9% vs 8.5%, P=0.004)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at 60 days (primary)",
+          "group_a": "24/142 (17.3%)",
+          "group_b": "31/142 (21.9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.77",
+          "ci_95": "0.45–1.31",
+          "p_value": "0.33",
+          "note": "Between-group difference −4.7% (95% CI −14.0 to 4.7)"
+        },
+        {
+          "outcome": "All-cause mortality at 90 days",
+          "group_a": "29/142 (21.2%)",
+          "group_b": "33/142 (23.9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.87",
+          "ci_95": "0.53–1.43",
+          "p_value": "0.58",
+          "note": "Difference −2.8% (95% CI −12.7 to 7.2)"
+        },
+        {
+          "outcome": "All-cause mortality at 180 days",
+          "group_a": "43/142 (32.6%)",
+          "group_b": "48/142 (35.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.89",
+          "ci_95": "0.57–1.39",
+          "p_value": "0.62",
+          "note": "Difference −2.9% (95% CI −14.3 to 8.4)"
+        },
+        {
+          "outcome": "Incidence of infection at 60 days",
+          "group_a": "42/142 (29.7%)",
+          "group_b": "59/142 (41.5%)",
+          "effect_measure": "SHR",
+          "effect_value": "0.62",
+          "ci_95": "0.41–0.91",
+          "p_value": "0.02",
+          "note": "Difference −11.8% (95% CI −23.0 to −0.7)"
+        },
+        {
+          "outcome": "Incidence of infection at 0–30 days (post hoc)",
+          "group_a": "19/142 (13.4%)",
+          "group_b": "41/142 (28.9%)",
+          "effect_measure": "SHR",
+          "effect_value": "0.41",
+          "ci_95": "0.24–0.70",
+          "p_value": "0.001",
+          "note": "On-treatment window; difference −15.5% (95% CI −24.9 to −6.1)"
+        },
+        {
+          "outcome": "Incidence of infection at 31–60 days (post hoc)",
+          "group_a": "23/116 (20.0%)",
+          "group_b": "18/95 (18.9%)",
+          "effect_measure": "SHR",
+          "effect_value": "1.06",
+          "ci_95": "0.57–1.96",
+          "p_value": "0.86",
+          "note": "Off-treatment window; difference 1.0% (95% CI −9.8 to 11.9)"
+        },
+        {
+          "outcome": "Hepatorenal syndrome at 60 days",
+          "group_a": "11/142 (7.7%)",
+          "group_b": "12/142 (8.5%)",
+          "effect_measure": "SHR",
+          "effect_value": "0.91",
+          "ci_95": "0.40–2.05",
+          "p_value": "0.81",
+          "note": "Difference −0.7% (95% CI −5.0 to 3.7)"
+        },
+        {
+          "outcome": "Corticosteroid response (Lille <0.45) at day 7",
+          "group_a": "80/141 (56.7%)",
+          "group_b": "76/138 (55.1%)",
+          "effect_measure": "OR",
+          "effect_value": "1.03",
+          "ci_95": "0.83–1.27",
+          "p_value": "0.78",
+          "note": "Difference 1.7% (95% CI −10.0 to 13.4)"
+        },
+        {
+          "outcome": "MELD score at 60 days",
+          "group_a": "Mean 16.9 (SD 4.8), n=100",
+          "group_b": "Mean 17.3 (SD 6.2), n=91",
+          "effect_measure": "Mean difference",
+          "effect_value": "−0.41",
+          "ci_95": "−1.98 to 1.17",
+          "p_value": "0.61",
+          "note": "Continuous outcome; not a rate difference"
+        },
+        {
+          "outcome": "Multidrug-resistant bacteria colonisation",
+          "group_a": "29/91 (31.9%)",
+          "group_b": "8/94 (8.5%)",
+          "effect_measure": "p value",
+          "effect_value": "0.004",
+          "ci_95": "",
+          "p_value": "0.004",
+          "note": "Safety surveillance; denominators reflect available swabs"
+        },
+        {
+          "outcome": "Serious adverse events",
+          "group_a": "51/141 (36.2%)",
+          "group_b": "57/143 (39.9%)",
+          "effect_measure": "p value",
+          "effect_value": "0.52",
+          "ci_95": "",
+          "p_value": "0.52",
+          "note": "As-treated safety population"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Infection treated before randomisation (hypothesis-generating)",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "HR",
+          "effect_value": "0.40",
+          "ci_95": "0.13–1.16",
+          "p_interaction": "not significant",
+          "note": "Numerically lower mortality with prophylaxis; wide CI, no formal interaction P value"
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events: similar between groups (36.2% vs 39.9%, P=0.52).",
+      "Multidrug-resistant colonisation: significantly higher in antibiotic arm (31.9% vs 8.5%, P=0.004).",
+      "No other specific adverse events reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised computer-generated randomisation stratified by centre (block size 4); allocation concealed; double-blind with matching placebo ensures low selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind, indistinguishable placebo. Mortality objective; infection diagnosis clinically mediated but blinding reduces differential ascertainment and treatment."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "8 excluded (withdrawal of consent) leaving 284 in ITT analysis; 15 did not receive allocated intervention (5.3%); follow-up near complete; sensitivity analysis excluding major protocol deviations consistent with primary result."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Completion of 30-day study drug: 71.1% vs 60.6%; 30-day prednisolone completion: 66.9% vs 69.7%; clinician-assessed good adherence: 61.8% vs 63.3%. Non-allocated intervention received by 7 vs 6 patients. Incomplete adherence likely biases toward null."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups comparable: median MELD 24.9 (IQR 22.9–27.7) vs 25.8 (23.0–28.4); mean Maddrey 69.0 (SD 23.9) vs 71.2 (24.7); median Glasgow score 8.0 (IQR 8.0–9.0) in both."
+        },
+        {
+          "domain": "Heterogeneity / centre effect",
+          "notes": "Multicentre with stratified randomisation, but centre-level differences in infection screening, antimicrobial prescribing, and escalation thresholds may still exist."
+        },
+        {
+          "domain": "Timing and dose",
+          "notes": "High-dose oral amoxicillin/clavulanate (3 g/375 mg daily) for 30 days starting after biopsy confirmation; recent antibiotic washout required, potentially excluding patients at highest early infectious risk."
+        },
+        {
+          "domain": "Statistical rigor",
+          "notes": "Planned sample size achieved; primary analysis by ITT with time-to-event methods; secondary outcomes exploratory without multiplicity correction."
+        }
+      ],
+      "verdict": "Internal validity moderate-to-strong due to rigorous randomisation, blinding, and near-complete follow-up; limited by incomplete adherence, some contamination, and exploratorily handled secondary endpoints."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Biopsy-confirmed severe AH with MELD ≥21 represents a high-risk subset; in real-world practice, biopsy is not always performed and MELD thresholds may vary."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Trial conducted in specialist hepatology centres in France/Belgium; antimicrobial resistance patterns, infection screening protocols, and ICU transfer thresholds may differ internationally. Excluded patients with sepsis or recent antibiotic use without washout, limiting applicability to critically ill patients with active infection."
+        }
+      ],
+      "verdict": "Generalisability is moderate for prednisolone-treated, high-risk AH patients in specialist centres; limited for broader ICU populations and settings with different resistance ecology."
+    },
+    "strengths": [
+      "Randomised, double-blind, placebo-controlled design with concealed allocation.",
+      "Clinically meaningful primary endpoint (60-day all-cause mortality) with 180-day follow-up.",
+      "Biologically and prognostically enriched high-risk population (MELD ≥21), ensuring high event rate and relevance.",
+      "Clear on-treatment separation in infection rates during days 0–30, strengthening mechanistic inference."
+    ],
+    "limitations": [
+      "Assumed a large survival benefit (absolute 14%); observed mortality was lower than expected, reducing power to detect smaller but clinically relevant effects.",
+      "Incomplete adherence and some contamination (non-allocated intervention) could dilute true effects.",
+      "Infection outcomes clinically adjudicated despite blinding; potential centre-level variability in diagnosis.",
+      "Secondary outcomes exploratory without multiplicity correction; interpretation should prioritise effect sizes and consistency.",
+      "Higher multidrug-resistant colonisation in antibiotic group raises important antimicrobial stewardship concerns."
+    ],
+    "critical_appraisal": {
+      "summary": "This well-conducted double-blind RCT shows that routine prophylactic antibiotics in prednisolone-treated severe AH reduce early infections but do not improve survival and increase multidrug-resistant colonisation, providing high-quality evidence against blanket prophylaxis.",
+      "strengths": [
+        "Robust randomisation, allocation concealment, and double-blinding",
+        "Clinically relevant primary outcome and extended follow-up",
+        "High event rate and mechanistic corroboration from infection reduction during treatment period"
+      ],
+      "weaknesses": [
+        "Underpowered to detect modest survival benefits due to lower-than-expected mortality",
+        "Incomplete adherence and contamination bias toward the null",
+        "Exploratory secondary outcomes with risk of chance findings",
+        "Significant antimicrobial stewardship signal with increased resistance carriage"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Routine prophylactic amoxicillin/clavulanate added to prednisolone in severe AH reduced early infections but did not improve survival, arguing against blanket prophylaxis as a mortality-modifying strategy.",
+    "clinical_bottom_line": {
+      "verdict": "Prophylactic antibiotics should not be routinely added to prednisolone in severe AH; they reduce infections but do not improve survival and increase multidrug-resistant organism carriage.",
+      "applies_to": "Hospitalised patients with biopsy-proven severe AH (MELD ≥21) receiving prednisolone in specialist settings, without active sepsis at initiation.",
+      "does_not_mean": "Does not rule out targeted antibiotic therapy in high-risk patients or those with proven infection, and does not support prolonged prophylaxis in other cirrhosis populations.",
+      "implementation_caveats": [
+        "Infection screening and early treatment of confirmed infections remain paramount.",
+        "Prolonged broad-spectrum prophylaxis (30 days) carries a clear risk of antimicrobial resistance selection.",
+        "Adherence to the full course was incomplete; shorter durations could be considered if prophylaxis is ever used selectively.",
+        "The trial does not assess other antibiotic classes or use in patients on antibiotics at baseline."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Power and clinical plausibility",
+        "notes": "The planned 14% absolute survival improvement was large; observed mortality was lower, reducing power to detect smaller benefits. A much larger trial would be needed to rule out a modest benefit."
+      },
+      {
+        "topic": "Infection reduction without survival benefit",
+        "notes": "Despite a significant reduction in early infections, there was no improvement in survival, hepatorenal syndrome, corticosteroid response, or MELD. This challenges a simple causal model where preventing infection alone is sufficient to improve outcomes in severe AH."
+      },
+      {
+        "topic": "Antibiotic choice and duration",
+        "notes": "The 30-day course of broad-spectrum amoxicillin/clavulanate selected for multidrug-resistant colonisation (31.9% vs 8.5%), raising stewardship concerns that may offset any infection reduction benefit."
+      },
+      {
+        "topic": "Hypothesis-generating subgroup",
+        "notes": "Among patients with infection treated before randomisation, mortality was numerically lower in the antibiotic group (HR 0.40; 95% CI 0.13–1.16), but the CI is very wide and interaction not significant; this should not guide practice."
+      },
+      {
+        "topic": "Meta-analytical evidence",
+        "notes": "A 2024 systematic review did not establish a clear survival benefit for prophylactic antibiotics in steroid-treated alcohol-associated hepatitis, despite reduced infection signals."
+      },
+      {
+        "topic": "Corticosteroid context",
+        "notes": "Landmark corticosteroid trials show only modest short-term benefit in severe AH and infection is a competing risk; an infection-focused co-intervention may not alter the dominant trajectory of liver failure."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Would shorter or more targeted antibiotic prophylaxis improve outcomes without increasing resistance?",
+      "Can biomarker-driven strategies identify a subgroup of severe AH patients in whom infection prevention translates into survival benefit?",
+      "Does the increased multidrug-resistant colonisation translate into long-term adverse clinical outcomes?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=284 analysed",
+        "60-day mortality: 17.3% vs 21.9% (HR 0.77, 95% CI 0.45–1.31)",
+        "Infection at 60 days: 29.7% vs 41.5% (SHR 0.62, p=0.02)",
+        "Multidrug-resistant colonisation: 31.9% vs 8.5% (p=0.004)"
+      ],
+      "one_line_takeaway": "In prednisolone-treated severe AH, prophylactic amoxicillin/clavulanate reduces infections but not mortality and increases multiresistant bacteria carriage — do not use routinely."
+    }
+  },
+  "_source_id": "AntibioCor",
+  "_source_system": "Liver"
+}

@@ -1,0 +1,300 @@
+{
+  "id": "ROSE",
+  "trial_name": "ROSE — Reevaluation of Systemic Early Neuromuscular Blockade in ARDS (2019)",
+  "specialty": "ARDS",
+  "subtopic": "Neuromuscular Blockade in ARDS",
+  "year": 2019,
+  "journal": "N Engl J Med",
+  "citation": "Moss M, Huang DT, Brower RG, Ferguson ND, Ginde AA, Gong MN, et al; National Heart, Lung, and Blood Institute PETAL Clinical Trials Network. Early neuromuscular blockade in the acute respiratory distress syndrome. N Engl J Med. 2019;380:1997-2008.",
+  "doi": "10.1056/NEJMoa1901686",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1006,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In patients with moderate-to-severe ARDS managed with contemporary lung-protective ventilation and lighter sedation targets, early continuous cisatracurium infusion with deep sedation did not reduce 90-day mortality compared with no routine paralysis (42.5% vs 42.8%; P=0.93).",
+  "pico": {
+    "population": "Adults with early moderate-to-severe ARDS (PaO2:FiO2 ≤150 with PEEP ≥8 cm H2O, bilateral infiltrates) within 48 hours of onset, receiving invasive ventilation in US ICUs.",
+    "intervention": "Cisatracurium bolus + continuous infusion for 48 hours, with mandated deep sedation (RASS deep range).",
+    "comparison": "Usual care avoiding routine neuromuscular blockade, targeting lighter sedation (RASS lighter targets) with rescue NMBA permitted.",
+    "outcome": "In-hospital death by day 90."
+  },
+  "keywords": [
+    "neuromuscular blockade",
+    "cisatracurium",
+    "ARDS",
+    "lung-protective ventilation",
+    "sedation",
+    "ROSE"
+  ],
+  "related_trials": [
+    "ACURASYS"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "NMBA can reduce patient–ventilator dyssynchrony, facilitate lung-protective ventilation, and may mitigate ventilator-induced lung injury in early, severe ARDS. Prior trials (notably ACURASYS) suggested potential mortality benefit but in a different sedation/ventilation era.",
+      "knowledge_gap": "It was unclear whether routine early continuous NMBA infusion improved survival in contemporary ARDS care with robust lung-protective ventilation and targeted lighter sedation.",
+      "hypothesis": "Early continuous cisatracurium infusion with mandated deep sedation reduces 90-day in-hospital mortality compared with usual care avoiding routine paralysis and targeting lighter sedation."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, parallel-group, open-label trial in 48 US hospitals (PETAL network), site-stratified randomisation, investigator-initiated.",
+      "setting": "48 ICUs in the United States.",
+      "population": {
+        "inclusion": [
+          "Moderate-to-severe ARDS (PaO2:FiO2 ≤150 with PEEP ≥8 cm H2O)",
+          "Bilateral infiltrates consistent with ARDS",
+          "Enrolment within 48 hours of meeting ARDS criteria",
+          "Receiving invasive mechanical ventilation"
+        ],
+        "exclusion": [
+          "Baseline neuromuscular disease",
+          "Pregnancy",
+          "Contraindications to cisatracurium or deep sedation",
+          "Conditions where deep sedation/paralysis would be unsafe or confounded"
+        ]
+      },
+      "intervention": "Cisatracurium bolus followed by continuous infusion for 48 hours, with protocolised dosing and escalation permitted; mandated deep sedation (RASS deep range); protocolised lung-protective ventilation with low tidal volume and high PEEP.",
+      "comparison": "Usual-care strategy: avoid routine continuous NMBA infusion, target lighter sedation (with structured guidance); rescue NMBA permitted for clinical indications. Same ventilation protocol.",
+      "blinding": "Open-label (no blinding of clinicians or participants).",
+      "sample_size_power": "Planned sample size 1,408 patients to detect 8% absolute reduction in 90-day mortality (35% to 27%) with 90% power at two-sided 5% significance; trial stopped at 1,006 patients after second interim futility analysis.",
+      "primary_outcome": "In-hospital death by day 90.",
+      "secondary_outcomes": [
+        "In-hospital death by day 28",
+        "Ventilator-free days through day 28",
+        "ICU-free days through day 28",
+        "Hospital-free days through day 28",
+        "Serious cardiovascular adverse events",
+        "Physical function (PFIT-s) at ICU discharge",
+        "Days alive and free of organ support",
+        "Functional and patient-reported outcomes at 6 and 12 months (supplementary reporting)"
+      ],
+      "follow_up": "In-hospital outcomes through day 90; survivorship and functional follow-up out to 12 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early for futility at second interim analysis (1,006 patients enrolled of planned 1,408).",
+        "No difference in 90-day in-hospital mortality (42.5% vs 42.8%; difference −0.3 percentage points; 95% CI −6.4 to 5.9; P=0.93).",
+        "All prespecified organ-support endpoints (ventilator-free days, ICU-free days, hospital-free days) were closely overlapping.",
+        "Safety signals favoured usual-care strategy: more serious cardiovascular adverse events (14 vs 4; P=0.02) and more early vasopressor escalation (45.9% vs 36.6%; absolute difference 9.3 percentage points)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "In-hospital death by day 90 (primary)",
+          "group_a": "213/501 (42.5%)",
+          "group_b": "216/505 (42.8%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−0.3 percentage points",
+          "ci_95": "−6.4 to 5.9",
+          "p_value": "0.93",
+          "note": "ITT analysis"
+        },
+        {
+          "outcome": "In-hospital death by day 28",
+          "group_a": "160/501 (32.0%)",
+          "group_b": "163/505 (32.3%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−0.3 percentage points",
+          "ci_95": "−6.0 to 5.5",
+          "p_value": "0.93",
+          "note": "Secondary endpoint"
+        },
+        {
+          "outcome": "Ventilator-free days through day 28",
+          "group_a": "8.8 ± 10.6",
+          "group_b": "8.8 ± 10.8",
+          "effect_measure": "Difference in means",
+          "effect_value": "−0.1 days",
+          "ci_95": "−1.4 to 1.2",
+          "p_value": "0.97",
+          "note": ""
+        },
+        {
+          "outcome": "ICU-free days through day 28",
+          "group_a": "11.7 ± 10.8",
+          "group_b": "11.4 ± 11.0",
+          "effect_measure": "Difference in means",
+          "effect_value": "0.3 days",
+          "ci_95": "−1.0 to 1.7",
+          "p_value": "0.72",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital-free days through day 28",
+          "group_a": "7.0 ± 8.7",
+          "group_b": "7.4 ± 9.0",
+          "effect_measure": "Difference in means",
+          "effect_value": "−0.4 days",
+          "ci_95": "−1.5 to 0.7",
+          "p_value": "0.41",
+          "note": ""
+        },
+        {
+          "outcome": "Serious cardiovascular adverse events (events)",
+          "group_a": "14",
+          "group_b": "4",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.02",
+          "note": "Count of events; statistical model not specified"
+        },
+        {
+          "outcome": "Early vasopressor escalation (supplementary)",
+          "group_a": "45.9%",
+          "group_b": "36.6%",
+          "effect_measure": "Absolute difference",
+          "effect_value": "9.3 percentage points",
+          "ci_95": "3.2 to 15.3",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Physical Function in ICU Test (PFIT-s) at ICU discharge",
+          "group_a": "5.5 ± 3.2",
+          "group_b": "7.3 ± 2.4",
+          "effect_measure": "Difference in means",
+          "effect_value": "-1.8",
+          "ci_95": "−2.8 to −0.8",
+          "p_value": "Not reported",
+          "note": "From supplementary reporting; among those assessed at ICU discharge"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Hispanic ethnicity",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "Interaction P",
+          "effect_value": "0.015",
+          "ci_95": "Not reported",
+          "p_interaction": "0.015",
+          "note": "Prespecified subgroup, no multiplicity adjustment; hypothesis-generating"
+        }
+      ]
+    },
+    "safety": [
+      "Serious cardiovascular adverse events were more frequent in the NMBA group (14 vs 4 events, P=0.02).",
+      "Early vasopressor escalation was more common in the NMBA group (45.9% vs 36.6%, absolute difference 9.3 percentage points, 95% CI 3.2–15.3).",
+      "No other clear safety differences reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, site-stratified randomisation; allocation concealment adequate; baseline characteristics broadly balanced though minor imbalances in shock prevalence and ARDS-to-randomisation interval."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery risks differential co-interventions (sedation depth, mobilisation, ventilator management) especially for subjective/behavioural endpoints."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "ITT analysis appropriate; minimal attrition for primary outcome; early stopping reduced sample size, increasing uncertainty."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Cisatracurium infusion started in 97.4% of intervention group; 74.5% completed 48-hour infusion; usual-care group had 17.0% receive non-cisatracurium NMBA during first 48 hours, indicating partial contamination."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Baseline characteristics mostly similar; minor imbalance in vasopressor use at baseline not detailed."
+        }
+      ],
+      "verdict": "Internal validity appears moderate: randomisation and objective primary outcome support credibility, but open-label delivery, partial crossover, bundled sedation differences, and early stopping constrain causal attribution and the ability to detect small-but-real effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled patients had moderate-to-severe ARDS early after onset and were managed in US hospitals with protocolised lung-protective/high-PEEP ventilation; this resembles many high-resource ICUs, but excludes patients outside early ARDS windows and those in settings without protocolised ventilation/sedation infrastructure."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Continuous cisatracurium infusion with mandated deep sedation is feasible in most ICUs, but practice patterns vary. The usual-care comparator explicitly targeted lighter sedation and tolerated rescue NMBA; applicability is strongest where light-sedation strategies are achievable and where alternative ARDS adjuncts (proning, ECMO) are available."
+        }
+      ],
+      "verdict": "External validity is good for contemporary, high-resource ICUs managing early moderate-to-severe ARDS with protocolised ventilation and sedation, but may be limited in settings where sedation/mobilisation practices or rescue adjunct availability differ substantially."
+    },
+    "strengths": [
+      "Large, multicentre RCT in a contemporary ARDS care context (protocolised low tidal volume + high PEEP).",
+      "Clinically meaningful primary endpoint (90-day in-hospital mortality) with objective ascertainment.",
+      "Rich supplementary reporting, including sedation separation metrics, co-interventions, haemodynamic effects, and longer-term outcomes."
+    ],
+    "limitations": [
+      "Open-label design with a bundled intervention (NMBA + mandated deep sedation) versus a bundled comparator (avoid routine NMBA + lighter sedation), limiting isolation of the “pure” NMBA effect.",
+      "Stopped early for futility, reducing power to detect modest effects and amplifying uncertainty around secondary endpoints.",
+      "Partial crossover NMBA exposure in the control arm (17.0% received non-cisatracurium NMBA during first 48 hours), potentially diluting treatment separation.",
+      "Functional/rehabilitation outcomes sensitive to unblinded practice patterns and incomplete in the sickest patients (death/early discharge)."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed, multicentre randomised trial that failed to demonstrate a benefit of routine early NMBA infusion in moderate-to-severe ARDS managed with contemporary ventilation and lighter-sedation usual care, with signals of harm. The open-label nature and early stopping temper confidence but do not overturn the conclusion.",
+      "strengths": [
+        "Large sample size",
+        "Objective primary endpoint",
+        "Robust protocolised ventilation/sedation co-interventions",
+        "Comprehensive supplementary reporting"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Bundled intervention vs comparator prevents isolation of NMBA effect",
+        "Early futility stop reduces power",
+        "Control-arm NMBA crossover potentially diluting effect"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine early continuous cisatracurium infusion with deep sedation did not improve survival in moderate-to-severe ARDS under contemporary ventilation and lighter-sedation usual care, and was associated with more cardiovascular events; routine NMBA should be reserved for selective rescue indications.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support routine early continuous NMBA infusion in ARDS; NMBA should be used selectively for severe dyssynchrony or refractory hypoxaemia.",
+      "applies_to": "Patients with early moderate-to-severe ARDS receiving invasive ventilation in ICUs with protocolised lung-protective/high-PEEP ventilation and capability for lighter sedation.",
+      "does_not_mean": "NMBA are never useful in ARDS; they may still have a role in rescue situations.",
+      "implementation_caveats": [
+        "Avoid routine deep sedation for NMBA; if NMBA used, limit duration and monitor for haemodynamic instability.",
+        "Ensure co-interventions (lung-protective ventilation, prone positioning) are optimised before resorting to NMBA."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "“NMBA effect” vs “sedation strategy effect”",
+        "notes": "ROSE intentionally contrasted deep-sedation paralysis against a light-sedation, no-routine-paralysis strategy, strengthening pragmatic relevance but limiting mechanistic attribution; some critics argue the observed harm may be due to deep sedation rather than NMBA itself."
+      },
+      {
+        "topic": "Stopping for futility",
+        "notes": "The protocolised monitoring plan did not include a formal futility boundary, yet the DSMB stopped for futility at the second interim analysis; this decision reduces the likelihood of detecting smaller but clinically important benefits (or delayed harms) and remains methodologically debated."
+      },
+      {
+        "topic": "Subgroup signal — Hispanic ethnicity",
+        "notes": "A prespecified subgroup analysis showed a statistical interaction by Hispanic ethnicity (P=0.015) without multiplicity control, considered hypothesis-generating only."
+      },
+      {
+        "topic": "Meta-analytic synthesis after ROSE",
+        "notes": "Post-ROSE meta-analyses incorporating ROSE and earlier trials consistently show little-to-no mortality benefit with routine early continuous NMBA infusion, with some suggesting reduced barotrauma but uncertain net clinical benefit."
+      },
+      {
+        "topic": "Guideline evolution",
+        "notes": "Contemporary guidelines and rapid practice recommendations published after ROSE generally move away from routine early continuous NMBA infusion in ARDS, favouring selective use (often intermittent boluses) in patients with severe dyssynchrony or refractory hypoxaemia while prioritising lung-protective ventilation and prone positioning."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ACURASYS",
+        "relation": "Earlier trial suggesting possible mortality benefit with early continuous NMBA in severe ARDS using a different sedation strategy; ROSE re-evaluated this in a modern context with lighter-sedation usual care."
+      }
+    ],
+    "unresolved_questions": [
+      "Could there be a subgroup (e.g., most severe hypoxaemia, high driving pressure) that might benefit from early NMBA when lighter sedation is maintained?",
+      "Does intermittent bolus NMBA provide benefit without the haemodynamic downsides observed with continuous infusion?",
+      "What is the role of NMBA in the era of ultra-protective ventilation strategies (ECCO2R, APRV)?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1,006",
+        "Primary 90-day mortality: 42.5% vs 42.8% (risk difference −0.3 pp, P=0.93)",
+        "Ventilator-free days at 28 days: 8.8 ± 10.6 vs 8.8 ± 10.8",
+        "Serious cardiovascular adverse events: 14 vs 4 (P=0.02)"
+      ],
+      "one_line_takeaway": "Routine early continuous cisatracurium infusion with deep sedation does not improve survival in moderate-to-severe ARDS under contemporary lung-protective ventilation and should be reserved for selective rescue, not used as default therapy."
+    }
+  },
+  "_source_id": "ROSE",
+  "_source_system": "Respiratory"
+}

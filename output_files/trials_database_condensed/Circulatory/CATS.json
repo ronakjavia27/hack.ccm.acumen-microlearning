@@ -1,0 +1,280 @@
+{
+  "id": "CATS",
+  "trial_name": "CATS — Norepinephrine plus dobutamine versus epinephrine alone in septic shock (2007)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Vasopressors & Inotropes",
+  "year": 2007,
+  "journal": "The Lancet",
+  "citation": "Annane D, Vignon P, Renault A, Bollaert P-E, Charpentier C, Martin C, et al; CATS Study Group. Norepinephrine plus dobutamine versus epinephrine alone for management of septic shock: a randomised trial. Lancet. 2007;370(9588):676-684.",
+  "doi": "https://doi.org/10.1016/S0140-6736(07)61344-0",
+  "registration": "Not provided",
+  "trial_type": "RCT — multicentre, double-blind, double-dummy, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 330,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In 330 adults with early septic shock, 28-day mortality was 40% with epinephrine vs 34% with norepinephrine + dobutamine (RR 0.86, 95% CI 0.65–1.14; P=0.31), with no significant survival difference at 90 days.",
+  "pico": {
+    "population": "Adults with early catecholamine-requiring septic shock (<24 h meeting criteria, hypotension after fluid bolus, ≥2 organ dysfunction signs)",
+    "intervention": "Epinephrine alone (single-agent strategy) starting at 0.2 μg/kg/min, titrated to MAP ≥70 mmHg, with blinded placebo dobutamine",
+    "comparison": "Norepinephrine + dobutamine (norepinephrine starting 0.2 μg/kg/min + dobutamine 5 μg/kg/min, titrated per protocol; dobutamine increased for low cardiac index/hypoperfusion)",
+    "outcome": "28-day all-cause mortality"
+  },
+  "keywords": [
+    "epinephrine",
+    "norepinephrine",
+    "dobutamine",
+    "septic shock",
+    "vasopressor",
+    "inotrope",
+    "catecholamine strategy"
+  ],
+  "related_trials": [
+    "SOAP II",
+    "CENSER"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Optimal catecholamine strategy (single agent vs combinations) in septic shock was uncertain, despite widespread use of norepinephrine-first and concerns about epinephrine's arrhythmogenic and metabolic effects.",
+      "knowledge_gap": "No direct head-to-head comparison of epinephrine alone vs norepinephrine with dobutamine ‘as needed’ in septic shock using a blinded, pragmatic design.",
+      "hypothesis": "Norepinephrine + dobutamine would be superior or safer by avoiding epinephrine-associated metabolic/chronotropic adverse effects while achieving comparable haemodynamic targets."
+    },
+    "methods": {
+      "design": "Prospective, multicentre, randomised, double-blind, parallel-group trial; blinding with placebo dobutamine and identical syringes; allocation stratified by centre in blocks of six.",
+      "setting": "19 adult ICUs in France.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Septic shock criteria within <24 h: suspected/identified infection + SIRS, hypotension requiring catecholamines after fluid resuscitation (MAP <70 mmHg or SBP <90 mmHg, received ≥1000 mL fluid or PCWP 12–18 mmHg, and requiring dopamine >15 μg/kg/min or any epinephrine/norepinephrine)",
+          "≥2 signs of hypoperfusion/organ dysfunction: PaO2/FiO2 <280 mmHg (if ventilated), urine output <0.5 mL/kg/h or <30 mL/h for ≥1 h, arterial lactate >2 mmol/L, platelet count <100×10^9/L"
+        ],
+        "exclusion": [
+          "Pregnancy",
+          "Obstructive cardiomyopathy",
+          "Acute myocardial ischaemia",
+          "Pulmonary embolism",
+          "Advanced-stage cancer/malignant haematopathy/AIDS where escalation was to be withheld/withdrawn",
+          "Prolonged severe neutropenia (<0.5×10^9/L for >1 week)",
+          "Participation in another clinical trial"
+        ]
+      },
+      "intervention": "Epinephrine started at 0.2 μg/kg/min plus blinded placebo dobutamine; epinephrine increased by 0.2 μg/kg/min increments to target MAP ≥70 mmHg; placebo ‘inotrope’ adjustments mirrored dobutamine protocol",
+      "comparison": "Norepinephrine started at 0.2 μg/kg/min plus dobutamine 5 μg/kg/min; norepinephrine increased by 0.2 μg/kg/min increments for MAP; dobutamine increased by 5 μg/kg/min increments when protocol criteria met (low cardiac index/hypoperfusion); crossover allowed for rescue failure",
+      "blinding": "Double-blind, double-dummy: study drugs prepared as identical syringes by pharmacy; blinding maintained by protocolised titration in both arms",
+      "sample_size_power": "Planned 340 patients to detect a 20% absolute reduction in mortality (60% to 40%) with 95% power, two-sided α=0.05",
+      "primary_outcome": "28-day all-cause mortality",
+      "secondary_outcomes": [
+        "90-day all-cause mortality",
+        "Time to haemodynamic success (MAP ≥70 mmHg ≥12 consecutive hours)",
+        "Time to vasopressor withdrawal (first interruption ≥24 h)",
+        "Pressor-free days to day 28",
+        "Total fluid infused until catecholamine withdrawal",
+        "Serious adverse events (e.g., ventricular arrhythmias)"
+      ],
+      "follow_up": "28 days for primary endpoint, also assessed to day 90"
+    },
+    "results": {
+      "headline_bullets": [
+        "28-day mortality was 40% (epinephrine) vs 34% (norepinephrine + dobutamine); RR 0.86 (95% CI 0.65–1.14), P=0.31.",
+        "90-day mortality was non‑significantly different: 52% vs 50% (P=0.73).",
+        "Norepinephrine + dobutamine yielded more pressor‑free days (median 22 vs 20, P=0.05) but no survival benefit.",
+        "Epinephrine was associated with higher lactate, lower arterial pH (days 1–4), higher heart rate, but serious adverse event counts were broadly similar."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "28-day all-cause mortality (primary)",
+          "group_a": "64/161 (40%)",
+          "group_b": "58/169 (34%)",
+          "effect_measure": "RR",
+          "effect_value": "0.86",
+          "ci_95": "0.65–1.14",
+          "p_value": "0.31",
+          "note": "RR for norepinephrine + dobutamine vs epinephrine"
+        },
+        {
+          "outcome": "90-day all-cause mortality",
+          "group_a": "84/161 (52%)",
+          "group_b": "85/169 (50%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.73",
+          "note": "Unadjusted comparison"
+        },
+        {
+          "outcome": "Adjusted 28-day mortality (age-adjusted logistic regression)",
+          "group_a": "64/161 (40%)",
+          "group_b": "58/169 (34%)",
+          "effect_measure": "OR",
+          "effect_value": "0.82",
+          "ci_95": "0.48–1.42",
+          "p_value": "0.48",
+          "note": ""
+        },
+        {
+          "outcome": "Time to haemodynamic success",
+          "group_a": "Median NR",
+          "group_b": "Median NR",
+          "effect_measure": "Log-rank χ²",
+          "effect_value": "0.18",
+          "ci_95": "",
+          "p_value": "0.67",
+          "note": "Success defined as MAP ≥70 mmHg for ≥12 consecutive hours"
+        },
+        {
+          "outcome": "Time to vasopressor withdrawal",
+          "group_a": "Median NR",
+          "group_b": "Median NR",
+          "effect_measure": "Log-rank χ²",
+          "effect_value": "2.83",
+          "ci_95": "",
+          "p_value": "0.09",
+          "note": "Withdrawal = first interruption of study drugs ≥24 h"
+        },
+        {
+          "outcome": "Pressor-free days until day 28",
+          "group_a": "20 (0–24)",
+          "group_b": "22 (6–25)",
+          "effect_measure": "Median (IQR)",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.05",
+          "note": ""
+        },
+        {
+          "outcome": "Total fluid infused until catecholamine withdrawal",
+          "group_a": "7.2 (2.2–12.3) L",
+          "group_b": "8.5 (2.3–15.2) L",
+          "effect_measure": "Median (IQR)",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.09",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Ventricular arrhythmias during catecholamine infusion (serious adverse event): 12/161 (7%) in epinephrine arm vs 8/169 (5%) in norepinephrine + dobutamine arm; no between‑group p value provided.",
+      "No other serious adverse events reported in detail; overall SAE counts were broadly similar.",
+      "Metabolic differences: epinephrine group had higher lactate early and lower arterial pH days 1–4; a published correction clarified the arterial pH statement and figure."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation by independent statistician; stratified by centre, blocks of six; allocation concealed via pharmacy‑prepared identical syringes."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double‑blind with placebo dobutamine and protocolised titration minimises differential co‑interventions."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Very low attrition: 1 participant withdrew consent on day 3; primary and 90‑day outcomes otherwise complete. Intention‑to‑treat analysis used."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High delivery fidelity (156/161 received epinephrine; 166/169 received norepinephrine). Crossover was permitted for failure, preserving safety but may dilute exposure separation (frequency not reported)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar in SAPS II and SOFA; epinephrine group slightly older (median 66 vs 63 years), a potential modest prognostic imbalance."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Mortality objective; haemodynamic endpoints prespecified with clear operational definitions, though more protocol‑dependent."
+        },
+        {
+          "domain": "Statistical rigor",
+          "notes": "ITT with confidence intervals and adjusted models. Planned sample size (340) not fully reached (330), reducing power for the prespecified 20% absolute reduction."
+        }
+      ],
+      "verdict": "Moderate‑to‑strong internal validity: robust randomisation, allocation concealment, blinding, and minimal attrition; however, the pragmatic ‘strategy’ comparator (selective dobutamine, permitted switching) and slightly underpowered design temper causal certainty for modest treatment effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults with early septic shock in French ICUs; exclusions removed several high‑risk subgroups (acute myocardial ischaemia, advanced life‑limiting illness, severe prolonged neutropenia)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to ICUs with capacity for protocolised haemodynamic monitoring and titration; generalisability may be lower where dobutamine is used differently, lactate‑guided resuscitation is central, or epinephrine is reserved for refractory shock."
+        },
+        {
+          "domain": "Era considerations",
+          "notes": "Conducted under pre‑Sepsis‑3 definitions and earlier bundles; absolute event rates and background care may differ from contemporary practice, though catecholamine pharmacology is stable."
+        }
+      ],
+      "verdict": "Moderate generalisability: addresses a common ICU problem pragmatically, but was conducted in one country with exclusions and a pre‑Sepsis‑3 era, limiting direct application to modern, broader sepsis populations."
+    },
+    "strengths": [
+      "Double‑blind, multicentre randomised design in a high‑acuity ICU population.",
+      "Pragmatic comparison of clinically plausible catecholamine strategies, not an artificial fixed‑dose pharmacology experiment.",
+      "Protocolised titration and clear operational definitions for haemodynamic endpoints.",
+      "Very low attrition with complete ascertainment of mortality endpoints."
+    ],
+    "limitations": [
+      "Power calculation targeted a very large absolute mortality reduction (20%); achieved sample size and observed effects imply limited ability to exclude smaller but clinically important differences.",
+      "Comparator is a mixed ‘strategy’ (norepinephrine plus selective dobutamine); allowed crossover for failure reduces exposure separation and mechanistic attribution.",
+      "Metabolic outcomes (lactate, pH trajectories) directionally reported but not fully tabulated with exact values; one correction was issued for the arterial pH statement/figure.",
+      "Conducted in one country and care era; external validity to different systems and modern bundles is incomplete."
+    ],
+    "critical_appraisal": {
+      "summary": "A well‑conducted double‑blind RCT comparing two catecholamine strategies in early septic shock found no mortality difference; norepinephrine + dobutamine provided slightly more pressor‑free days but the trial lacked power to detect smaller survival differences.",
+      "strengths": [
+        "Multicentre, double‑blind, double‑dummy design",
+        "Pragmatic protocol with clear operational endpoints",
+        "Very low loss to follow‑up",
+        "Intention‑to‑treat analysis with adjusted estimates"
+      ],
+      "weaknesses": [
+        "Underpowered for modest mortality differences",
+        "Strategy‑level comparator with variable dobutamine exposure and permitted crossover",
+        "Metabolic data not fully tabulated",
+        "Older care era; may not fully generalise to contemporary practice"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Epinephrine alone did not worsen survival compared with norepinephrine + dobutamine strategy; epinephrine’s early metabolic/chronotropic effects underscore the need to interpret lactate trends cautiously during epinephrine therapy.",
+    "clinical_bottom_line": {
+      "verdict": "Epinephrine alone is a viable alternative in septic shock when a single catecholamine is desired, but norepinephrine + dobutamine may offer more pressor‑free days and avoids metabolic confounding; practice has since settled on norepinephrine as first‑line.",
+      "applies_to": "Adults with early septic shock requiring catecholamines, similar to the trial’s inclusion criteria (excluding acute myocardial ischaemia, life‑limiting illness).",
+      "does_not_mean": "The trial does not prove equivalence for mortality; small but clinically relevant survival differences cannot be excluded.",
+      "implementation_caveats": [
+        "Lactate trends during epinephrine therapy should not be used as sole resuscitation targets.",
+        "Epinephrine may cause higher heart rate and metabolic acidosis, potentially requiring closer monitoring.",
+        "Dobutamine addition in the norepinephrine arm was protocol‑driven and may not reflect all practice settings."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Editorial critique on power and metabolic footprint",
+        "notes": "Editorial emphasised that the trial compares complex strategies and may be underpowered for modest mortality differences; the metabolic footprint of epinephrine is clinically important when lactate is used as a therapeutic target."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "SOAP II",
+        "relation": "Compared dopamine vs norepinephrine in broad shock populations; found more arrhythmic events with dopamine, reinforcing norepinephrine as preferred first‑line vasopressor."
+      },
+      {
+        "trial": "CENSER",
+        "relation": "Evaluated early norepinephrine administration in resuscitation bundles for septic shock, supporting earlier vasopressor use."
+      }
+    ],
+    "unresolved_questions": [
+      "The trial does not exclude smaller but clinically important survival differences; optimal inotrope trigger and dobutamine titration thresholds in septic shock remain uncertain."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n = 330",
+        "28‑day mortality: 40% epinephrine vs 34% norepinephrine + dobutamine (RR 0.86, 95% CI 0.65–1.14, P=0.31)",
+        "Pressor‑free days: 22 (norepinephrine + dobutamine) vs 20 (epinephrine), P=0.05"
+      ],
+      "one_line_takeaway": "In early septic shock, epinephrine alone does not increase mortality versus a norepinephrine + dobutamine strategy, but its metabolic effects (higher lactate, lower pH) warrant cautious interpretation of lactate trends, and practice has since moved toward norepinephrine as first‑line."
+    }
+  },
+  "_source_id": "CATS",
+  "_source_system": "Circulatory"
+}

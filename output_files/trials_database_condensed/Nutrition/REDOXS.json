@@ -1,0 +1,304 @@
+{
+  "id": "REDOXS",
+  "trial_name": "REDOXS — A Randomized Trial of Glutamine and Antioxidants in Critically Ill Patients (2013)",
+  "specialty": "Critical Care Medicine",
+  "subtopic": "Specialized Nutrition",
+  "year": 2013,
+  "journal": "New England Journal of Medicine",
+  "citation": "Heyland DK, Muscedere J, Wischmeyer PE, Cook D, Jones G, Albert M, et al. A randomized trial of glutamine and antioxidants in critically ill patients. N Engl J Med. 2013;368(16):1489-1497",
+  "doi": "https://doi.org/10.1056/NEJMoa1212722",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, double-dummy, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1223,
+  "result_category": "Negative/Neutral (glutamine harm, antioxidants no benefit)",
+  "one_liner": "Early high-dose combined-route glutamine in ventilated adults with multi-organ failure increased longer-term mortality; antioxidant supplementation did not reduce mortality.",
+  "pico": {
+    "population": "Adults admitted to ICU, mechanically ventilated, with ≥2 acute organ failures (respiratory, hypoperfusion, renal, thrombocytopenia); ICU stay <24 hours.",
+    "intervention": "Factorial allocation: glutamine (parenteral 0.35 g/kg/day, max 40 g/day + enteral 30 g/day) and/or antioxidants (parenteral selenium 500 µg/day, max 700 µg/day + enteral antioxidant cocktail including selenium 300 µg/day, max 400 µg/day).",
+    "comparison": "Matching placebos (parenteral saline, enteral placebo); usual ICU care and standard nutrition provided to all.",
+    "outcome": "Primary: 28-day all-cause mortality. Secondary: in-hospital mortality, 6-month mortality, organ dysfunction, safety."
+  },
+  "keywords": [
+    "glutamine",
+    "antioxidants",
+    "selenium",
+    "pharmaconutrition",
+    "critical illness",
+    "multi-organ failure",
+    "REDOXS"
+  ],
+  "related_trials": [
+    "MetaPlus",
+    "SIGNET",
+    "Selenium trial (sodium selenite)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Glutamine and antioxidant 'pharmaconutrition' were widely used in ICU practice based on mechanistic plausibility and small-trial signals. Existing evidence was heterogeneous, with uncertain net benefit versus harm in contemporary ICU cohorts.",
+      "knowledge_gap": "Uncertainty persisted in early, severe multi-organ failure, where metabolism and organ-specific toxicity might differ from elective surgical or stable ICU populations.",
+      "hypothesis": "Each intervention (glutamine; antioxidants) would independently reduce 28-day mortality, with no clinically important interaction."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, international, double-blind, placebo-controlled 2×2 factorial trial.",
+      "setting": "40 ICUs in Canada, the United States, and Europe; enrolment dates not specified in source.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Mechanically ventilated",
+          "ICU length of stay <24 hours",
+          "≥2 acute organ failures related to current illness: respiratory (PaO₂/FiO₂ ≤300), hypoperfusion (vasopressor support, MAP <60 mmHg, or lactate ≥2.5 mmol/L after adequate fluid), renal dysfunction (serum creatinine ≥171 µmol/L or urine output <500 mL/24 h), thrombocytopenia (platelets ≤50×10⁹/L)"
+        ],
+        "exclusion": [
+          "ICU stay ≥24 hours before screening",
+          "Burns >40% TBSA",
+          "Severe traumatic brain injury",
+          "Grand mal seizures or status epilepticus requiring anticonvulsants",
+          "Organ transplantation",
+          "Child–Pugh class C liver disease",
+          "Metastatic cancer",
+          "DNR/comfort measures only",
+          "Current haemodialysis",
+          "Creatinine clearance <10 mL/min without haemodialysis",
+          "Pregnancy",
+          "Body weight <50 kg or >200 kg"
+        ]
+      },
+      "intervention": "Glutamine strategy: parenteral glutamine 0.35 g/kg/day (max 40 g/day) infused continuously over 20–24 hours, plus enteral glutamine 30 g/day. Antioxidant strategy: parenteral selenium 500 µg/day (max 700 µg/day) infused over 20–24 hours, plus enteral antioxidant cocktail containing selenium 300 µg/day (max 400 µg/day) and additional antioxidant micronutrients.",
+      "comparison": "Matching blinded placebos for parenteral (saline) and enteral components. All groups received usual ICU care including standard nutrition; study supplements were additional, not a replacement.",
+      "blinding": "Double‑blind; matched placebo preparations for both enteral and parenteral study agents.",
+      "sample_size_power": "1,200 patients required to detect a 25% relative reduction in 28‑day mortality (30.0% to 22.5%) with 80% power at a two‑sided 5% significance level for each main effect (factorial).",
+      "primary_outcome": "28‑day all‑cause mortality.",
+      "secondary_outcomes": [
+        "In‑hospital mortality",
+        "6‑month all‑cause mortality",
+        "ICU and hospital length of stay",
+        "Organ dysfunction parameters",
+        "Safety (high urea, etc.)"
+      ],
+      "follow_up": "28 days (primary), hospital discharge, 6 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "Glutamine: 28‑day mortality 32.4% vs 27.3% (adjusted OR 1.28, 95% CI 1.00–1.64, P=0.05; not significant at prespecified final alpha P<0.044).",
+        "Glutamine: in‑hospital mortality 37.2% vs 31.0% (OR 1.46, 95% CI 1.07–2.00, P=0.02) and 6‑month mortality 43.7% vs 37.2% (HR 1.18, 95% CI 1.02–1.36, P=0.02), indicating harm.",
+        "Antioxidants: no significant effect on mortality at any time point (28‑day OR 1.09, in‑hospital OR 1.15, 6‑month HR 1.01; all P>0.2).",
+        "Glutamine prolonged time to alive discontinuation of mechanical ventilation (11.0 vs 8.7 days, P=0.03), ICU stay (17.1 vs 13.1 days, P=0.03) and hospital stay (51.0 vs 40.1 days, P=0.04).",
+        "Biochemical toxicity with glutamine: high urea (>50 mmol/L) in 13.4% vs 4.0% (P<0.001)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "28‑day mortality (glutamine)",
+          "group_a": "198/611 (32.4%)",
+          "group_b": "166/607 (27.3%)",
+          "effect_measure": "OR (adjusted)",
+          "effect_value": "1.28",
+          "ci_95": "1.00–1.64",
+          "p_value": "0.05",
+          "note": "Not significant at prespecified final alpha (P<0.044)"
+        },
+        {
+          "outcome": "28‑day mortality (antioxidants)",
+          "group_a": "197/617 (31.9%)",
+          "group_b": "167/601 (27.8%)",
+          "effect_measure": "OR (adjusted)",
+          "effect_value": "1.09",
+          "ci_95": "0.86–1.40",
+          "p_value": "0.48",
+          "note": ""
+        },
+        {
+          "outcome": "In‑hospital mortality (glutamine)",
+          "group_a": "227/611 (37.2%)",
+          "group_b": "188/607 (31.0%)",
+          "effect_measure": "OR (adjusted)",
+          "effect_value": "1.46",
+          "ci_95": "1.07–2.00",
+          "p_value": "0.02",
+          "note": "Harm signal beyond day 28"
+        },
+        {
+          "outcome": "In‑hospital mortality (antioxidants)",
+          "group_a": "217/617 (35.2%)",
+          "group_b": "198/601 (32.9%)",
+          "effect_measure": "OR (adjusted)",
+          "effect_value": "1.15",
+          "ci_95": "0.92–1.44",
+          "p_value": "0.24",
+          "note": ""
+        },
+        {
+          "outcome": "6‑month mortality (glutamine)",
+          "group_a": "267/611 (43.7%)",
+          "group_b": "226/607 (37.2%)",
+          "effect_measure": "HR (adjusted)",
+          "effect_value": "1.18",
+          "ci_95": "1.02–1.36",
+          "p_value": "0.02",
+          "note": "Sustained harm"
+        },
+        {
+          "outcome": "6‑month mortality (antioxidants)",
+          "group_a": "250/617 (40.5%)",
+          "group_b": "243/601 (40.4%)",
+          "effect_measure": "HR (adjusted)",
+          "effect_value": "1.01",
+          "ci_95": "0.87–1.16",
+          "p_value": "0.81",
+          "note": ""
+        },
+        {
+          "outcome": "High urea (>50 mmol/L) (glutamine)",
+          "group_a": "13.4%",
+          "group_b": "4.0%",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "<0.001",
+          "note": "Safety signal"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Glutamine: high urea (>50 mmol/L) occurred in 13.4% vs 4.0% (P<0.001).",
+      "Glutamine: prolonged time to alive discontinuation of mechanical ventilation (11.0 vs 8.7 days, P=0.03).",
+      "Glutamine: prolonged ICU stay (17.1 vs 13.1 days, P=0.03).",
+      "Glutamine: prolonged hospital stay (51.0 vs 40.1 days, P=0.04)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, concealed randomisation; stratified by centre; double‑blind matched placebo design limits selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double‑blind for both interventions; mortality outcomes objective; blinding reduces differential co‑intervention and assessment bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1,223 randomised, 5 excluded from primary analysis because 28‑day vital status could not be ascertained (0.4% missing); ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Enteral study nutrients delivered at ~69.1–72.4% of prescribed across groups; parenteral at ~88.3–89.8%. Glutamine assignment markedly increased nitrogen delivery (20.4 vs 6.9 g; P<0.001), confirming strong exposure separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly balanced; mean APACHE II ~26.5; high prevalence of hypoperfusion and respiratory failure by inclusion; enrolled cohort sufficiently severe to plausibly show harm."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Prespecified primary (28‑day) and secondary (in‑hospital, 6‑month) mortality endpoints; interim monitoring with final alpha adjusted to P<0.044; ITT analysis."
+        }
+      ],
+      "verdict": "Strong internal validity for the tested strategy; robust concealment/blinding and objective endpoints, clear dose‑response separation. Interpretive complexity limited to factorial structure and clinical meaning of ‘early high‑dose’ supplementation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled high‑acuity ventilated patients with acute multi‑organ failure within ~18 h of ICU admission — representative of severe ICU patients. Not generalisable to lower‑risk or stable ICU cohorts."
+        },
+        {
+          "domain": "Important exclusions",
+          "notes": "Excluded burns >40% TBSA, severe TBI, Child‑Pugh C liver disease, chronic haemodialysis, metastatic cancer, etc. Cannot be directly applied to those populations."
+        },
+        {
+          "domain": "Intervention dose/route",
+          "notes": "Tested combined enteral+parenteral high‑dose strategy; applicability to lower‑dose parenteral‑only glutamine or alternative antioxidant regimens is uncertain."
+        },
+        {
+          "domain": "Setting",
+          "notes": "Multinational high‑resource ICUs; less directly transferable to settings with different nutrition delivery infrastructure or resource constraints."
+        }
+      ],
+      "verdict": "Moderate external validity: generalises best to early, severe, ventilated multi‑organ failure in well‑resourced ICUs; less applicable to stable patients, different dosing strategies, or low‑resource settings."
+    },
+    "strengths": [
+      "Large, multicentre, international double‑blind RCT.",
+      "Factorial design provides efficient evidence on two common pharmaconutrition strategies.",
+      "Patient‑centred endpoints including 6‑month mortality.",
+      "Robust allocation concealment and blinding; strong exposure separation (nitrogen delivery)."
+    ],
+    "limitations": [
+      "Tested a specific high‑dose combined‑route strategy; results may not extrapolate to other glutamine/antioxidant regimens.",
+      "Five patients (0.4%) missing 28‑day vital status – small but non‑zero.",
+      "Factorial interpretation assumes no interaction; trial not powered for interaction, but none detected.",
+      "Post hoc analyses (e.g., renal dysfunction) are hypothesis‑generating only."
+    ],
+    "critical_appraisal": {
+      "summary": "REDOXS is a well‑conducted pivotal trial that shifted practice by demonstrating harm from early high‑dose glutamine and lack of mortality benefit from antioxidants in severe multi‑organ failure.",
+      "strengths": [
+        "Large sample size",
+        "Double‑blind, factorial design",
+        "Objective mortality endpoints",
+        "Clear exposure separation"
+      ],
+      "weaknesses": [
+        "Post hoc subgroup findings",
+        "Inability to isolate component responsible for harm",
+        "Slight missing primary endpoint data"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Early high‑dose glutamine (enteral + parenteral) should be avoided in mechanically ventilated patients with acute multi‑organ failure; the antioxidant strategy did not reduce mortality.",
+    "clinical_bottom_line": {
+      "verdict": "Do not use early high‑dose combined‑route glutamine in severe multi‑organ failure; antioxidants are not mortality‑modifying in this context.",
+      "applies_to": "Mechanically ventilated adults with ≥2 acute organ failures within 24 hours of ICU admission, excluding burns >40% TBSA, severe TBI, liver failure, or dialysis‑dependent renal failure.",
+      "does_not_mean": "Does not imply that lower‑dose parenteral glutamine or antioxidant therapy in chronic conditions is harmful; also does not negate potential benefit of targeted antioxidant strategies in specific populations.",
+      "implementation_caveats": [
+        "Avoid routine glutamine supplementation in severe multi‑organ failure.",
+        "Monitor for urea elevation if glutamine is used.",
+        "Do not use high‑dose antioxidant cocktails for the purpose of mortality reduction."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Subgroup analysis by renal dysfunction",
+        "notes": "Post hoc analysis found greatest harm in patients with baseline renal dysfunction; no subgroup showed mortality reduction with glutamine."
+      },
+      {
+        "topic": "Prior signal from small trials",
+        "notes": "Earlier meta‑analyses and small trials had suggested benefit; REDOXS and MetaPlus reversed this narrative, emphasising that mechanistic plausibility is insufficient."
+      },
+      {
+        "topic": "Glutamine dose and route",
+        "notes": "The combined enteral+parenteral high dose may be the key determinant of harm, challenging extrapolation from lower‑dose parenteral‑only studies."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "MetaPlus",
+        "relation": "Immune‑modulating enteral formula including glutamine; also showed increased 6‑month mortality, reinforcing harm signal."
+      },
+      {
+        "trial": "SIGNET",
+        "relation": "Factorial trial of glutamine and selenium; no mortality benefit, consistent with antioxidant neutral result."
+      },
+      {
+        "trial": "Selenium trial (sodium selenite)",
+        "relation": "Large RCT of selenium in severe sepsis/septic shock; no mortality benefit attributable to selenium, adding to evidence against routine selenium."
+      }
+    ],
+    "unresolved_questions": [
+      "Is lower‑dose parenteral glutamine (e.g., as part of PN) beneficial or neutral in less severely ill patients?",
+      "Can glutamine be safely administered after the acute phase of critical illness?",
+      "Does antioxidant supplementation benefit specific subtypes (e.g., selenium‑deficient patients)?",
+      "What mechanism underlies the mortality harm from high‑dose glutamine — direct toxicity, urea load, or interference with metabolic adaptation?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n = 1,223 randomised",
+        "Glutamine 28‑day mortality: 32.4% vs 27.3% (OR 1.28, P=0.05, not meeting P<0.044)",
+        "Glutamine 6‑month mortality: 43.7% vs 37.2% (HR 1.18, P=0.02)",
+        "Antioxidants: no mortality reduction (all P>0.2)",
+        "Glutamine high urea: 13.4% vs 4.0% (P<0.001)"
+      ],
+      "one_line_takeaway": "Avoid early high‑dose glutamine in severe multi‑organ failure; antioxidants do not reduce mortality."
+    }
+  },
+  "_source_id": "REDOXS",
+  "_source_system": "Nutrition"
+}

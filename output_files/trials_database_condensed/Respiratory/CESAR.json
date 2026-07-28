@@ -1,0 +1,335 @@
+{
+  "id": "CESAR",
+  "trial_name": "CESAR — Referral for ECMO vs Conventional Management in Severe Adult Respiratory Failure (2009)",
+  "specialty": "Respiratory",
+  "subtopic": "ECMO",
+  "year": 2009,
+  "journal": "The Lancet",
+  "citation": "Peek GJ, Mugford M, Tiruvoipati R, et al; CESAR trial collaboration. Efficacy and economic assessment of conventional ventilatory support versus extracorporeal membrane oxygenation for severe adult respiratory failure (CESAR): a multicentre randomised controlled trial. Lancet. 2009;374(9698):1351-1363.",
+  "doi": "10.1016/S0140-6736(09)61069-2",
+  "registration": "",
+  "trial_type": "RCT — multicentre, pragmatic, unblinded",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 180,
+  "result_category": "Positive",
+  "one_liner": "Referral to a specialist ECMO centre for severe respiratory failure improved survival without severe disability at 6 months (37% vs 53%), although mortality alone was not significant and only 76% actually received ECMO.",
+  "pico": {
+    "population": "Adults 18–65 years with severe but potentially reversible respiratory failure (Murray score ≥3.0 or uncompensated hypercapnia with pH<7.20), excluding those with >7 days of high-pressure/FiO2 ventilation or contraindications to anticoagulation",
+    "intervention": "Randomised referral/transfer to a single specialist ECMO centre with protocolised optimisation (lung-protective ventilation, diuresis, nutrition) and VV ECMO if persistent hypoxaemia/acidosis/haemodynamic instability",
+    "comparison": "Continued conventional management in the referring centre (low-volume low-pressure ventilation recommended but not enforced; no crossover to ECMO permitted)",
+    "outcome": "Death or severe disability (bed-bound and unable to wash/dress alone) at 6 months"
+  },
+  "keywords": [
+    "ECMO",
+    "venovenous",
+    "respiratory failure",
+    "ARDS",
+    "lung-protective ventilation",
+    "retrieval",
+    "cost-effectiveness"
+  ],
+  "related_trials": [
+    "EOLIA",
+    "UK H1N1 ECMO referral (Noah et al.)",
+    "CESAR meta-analyses"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Severe adult respiratory failure (including ARDS) carried high mortality despite best conventional ventilation; ventilator-induced lung injury recognised as iatrogenic. Modern ECMO offered gas exchange and lung rest, but earlier adult ECMO trials used outdated technology and different care standards. Neonatal ECMO had been successfully evaluated in a pragmatic referral-trial model in the UK.",
+      "knowledge_gap": "No RCT had evaluated a pragmatic ECMO referral strategy in adults using contemporary critical care and ECMO technology, nor assessed cost-effectiveness within a national health system.",
+      "hypothesis": "Referral and transfer to a specialist ECMO centre, with protocolised management and ECMO when indicated, would improve survival without severe disability at 6 months compared with continued conventional management, while being economically justifiable."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, randomised controlled trial; single designated ECMO centre (Glenfield Hospital, Leicester) with many referring ICUs across the UK.",
+      "setting": "UK NHS; multiple referring critical care units and one ECMO centre; enrolment July 2001–August 2006.",
+      "population": {
+        "inclusion": [
+          "Age 18–65 years",
+          "Severe but potentially reversible respiratory failure: Murray lung injury score ≥3.0 OR uncompensated hypercapnia with arterial pH <7.20 despite optimal conventional treatment",
+          "Consideration for inclusion at Murray score ≥2.5 if deterioration expected (acceleration criterion)"
+        ],
+        "exclusion": [
+          "High-pressure (PIP >30 cmH2O) or high FiO2 (>0.8) ventilation for >7 days (168 h)",
+          "Signs of intracranial bleeding",
+          "Other contraindication to limited heparinisation",
+          "Contraindication to continuation of active treatment"
+        ]
+      },
+      "intervention": "Referral/transfer to ECMO centre. Protocolised optimisation (lung-protective ventilation, diuresis, nutrition) for first 12 h; ECMO started if persistent hypoxaemia (FiO2 >0.9 to maintain SaO2 >90%) or acidosis (pH <7.20) or haemodynamic instability prevented optimisation. ECMO: predominantly venovenous, percutaneous cannulation, ‘lung rest’ settings (PIP 20–25 cmH2O, PEEP 10–15 cmH2O, rate 10/min, FiO2 0.3). Median ECMO duration 9.0 days (IQR 6.0–16.0). Transport by dedicated ECMO retrieval team (air or ground), not on ECMO.",
+      "comparison": "Conventional management at the original centre, with a recommended (not enforced) low-volume low-pressure ventilation strategy (tidal volume 4–8 mL/kg, plateau pressure <30 cmH2O). Transfer to other non-ECMO centres allowed. Crossover to ECMO prohibited.",
+      "blinding": "Unblinded treatment allocation; follow-up assessors blinded to group assignment.",
+      "sample_size_power": "Planned n=240 to detect a reduction in the primary composite from 73% to 55% (absolute 18%) with 80% power at two-sided α=0.05. Revised to n=180 after observed control event rate of 67% at n=63, recalculated to detect an approximate one-third reduction.",
+      "primary_outcome": "Death or severe disability at 6 months",
+      "secondary_outcomes": [
+        "All-cause death ≤6 months or before discharge",
+        "Severe disability at 6 months",
+        "Critical care length of stay",
+        "Hospital length of stay",
+        "Health-related quality of life (EQ‑5D)",
+        "Healthcare costs (NHS perspective, 2005 prices)",
+        "Modelled lifetime cost per QALY"
+      ],
+      "follow_up": "6 months after randomisation (or earlier discharge if after 6 months); lifetime cost-utility modelled"
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary composite (death/severe disability) favoured ECMO referral: 37% vs 53% (RR 0.69, 95% CI 0.05–0.97, P=0.03); severe disability was rare (0 vs 1) and disability status unknown for 3 conventional-group survivors.",
+        "Mortality alone was not significant: 37% vs 50% (RR 0.73, 95% CI 0.52–1.03, P=0.07).",
+        "Only 76% (68/90) of the referral arm received ECMO; 24% improved on protocolised conventional care or died before/during transfer.",
+        "Referral was associated with longer ICU stay (median 24 vs 13 days, P<0.0001) and higher 6‑month costs (mean difference £40,544).",
+        "Modelled lifetime cost per QALY gained was £19,252 (95% CI £7,622–59,200)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite (death or severe disability at 6 months)",
+          "group_a": "33/90 (37%)",
+          "group_b": "46/87 (53%)",
+          "effect_measure": "RR",
+          "effect_value": "0.69",
+          "ci_95": "0.05 to 0.97",
+          "p_value": "0.03",
+          "note": "Primary outcome known for 177/180; sensitivity: if all 3 unknown were severely disabled, RR 0.67 (0.47–0.97), P=0.03; if none, RR 0.72 (0.51–1.01), P=0.051."
+        },
+        {
+          "outcome": "Death ≤6 months or before discharge",
+          "group_a": "33/90 (37%)",
+          "group_b": "45/90 (50%)",
+          "effect_measure": "RR",
+          "effect_value": "0.73",
+          "ci_95": "0.52 to 1.03",
+          "p_value": "0.07",
+          "note": "Median time from randomisation to death: 15 (IQR 3–41) days ECMO vs 5 (2–14) days conventional."
+        },
+        {
+          "outcome": "Severe disability at 6 months (among known status)",
+          "group_a": "0",
+          "group_b": "1",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "One patient in conventional group severely disabled; defined as confined to bed and unable to wash/dress."
+        },
+        {
+          "outcome": "Critical care length of stay (days, median IQR)",
+          "group_a": "24.0 (13.0–40.5)",
+          "group_b": "13.0 (11.0–16.0)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "P<0.0001"
+        },
+        {
+          "outcome": "Hospital length of stay (days, median IQR)",
+          "group_a": "35.0 (15.6–74.0)",
+          "group_b": "17.0 (4.8–45.3)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Low-volume low-pressure ventilation at any time after randomisation",
+          "group_a": "84/90 (93%)",
+          "group_b": "63/90 (70%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.0001",
+          "note": "Mean duration on strategy: 23.9 (SD 20.4) vs 15.0 (21.1) days, P<0.0001"
+        },
+        {
+          "outcome": "Serious adverse events",
+          "group_a": "2 fatal events",
+          "group_b": "Not reported",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Ambulance oxygen supply failure during transfer and vessel perforation during cannulation. An additional death during transfer (pulmonary haemorrhage) was not classified as a serious adverse event."
+        },
+        {
+          "outcome": "6‑month mean healthcare cost per patient (2005 £, NHS perspective)",
+          "group_a": "£73,979",
+          "group_b": "£33,435",
+          "effect_measure": "Difference",
+          "effect_value": "£40,544",
+          "ci_95": "£24,799 to £56,288",
+          "p_value": "",
+          "note": "Complete-case costing for 90 vs 87 patients."
+        },
+        {
+          "outcome": "Cost per additional survivor without severe disability at 6 months (base‑case ICER)",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "ICER",
+          "effect_value": "£250,162",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Reported in trial economic analysis table."
+        },
+        {
+          "outcome": "Modelled lifetime cost per QALY gained",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "ICER",
+          "effect_value": "£19,252",
+          "ci_95": "£7,622 to £59,200",
+          "p_value": "",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Two fatal serious adverse events in the ECMO‑referral group: ambulance oxygen supply failure during transfer (n=1) and vessel perforation during cannulation (n=1).",
+      "One additional death during transfer (pulmonary haemorrhage) was not classified as a serious adverse event in the trial report.",
+      "No other major safety signals reported; transport risk was embedded in the intervention strategy."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central telephone minimisation with random element; minimisation factors included age, ventilation hours, diagnosis, organ failure, and centre type. Allocation concealed."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Clinicians unblinded; only 6‑month outcome assessors were blinded. Differential uptake of lung‑protective ventilation (93% vs 70%) and adjuncts (steroids 84% vs 64%, MARS 17% vs 0%) introduces a risk of co‑intervention bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "Primary outcome known for 177/180; 3 conventional‑group survivors had unknown disability status (sensitivity analyses provided). Detailed QoL assessments missing in many patients (52 vs 32 completed), reducing precision for secondary QoL/economic endpoints. ITT analysis was maintained for primary outcome."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "No crossover to ECMO permitted. In ECMO‑referral arm, 76% (68/90) received ECMO; 24% did not due to clinical improvement (16) or death before/during transfer (5). Three deaths before transfer and two during transfer illustrate real‑world retrieval risk."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar: mean age ~40 years, Murray score 3.5 vs 3.4, median organ failures 2 vs 2, median IPPV hours before entry 35 vs 37. Some missing APACHE II data (37% vs 32%)."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Primary endpoint met significance (P=0.03). Sample size revised mid‑trial (from 240 to 180) under independent data monitoring committee review based on observed control event rate—methodologically defensible but reduces power for mortality alone (P=0.07) and secondary outcomes."
+        },
+        {
+          "domain": "Outcome definition and assessment",
+          "notes": "Severe disability defined using EQ‑5D (confined to bed, unable to wash/dress). Blinded assessors used for classification, supporting objectivity. However, missingness for disability and QoL data is a concern."
+        }
+      ],
+      "verdict": "Moderate—allocation concealment and ITT support credibility, but unblinded management, differential co‑interventions, missing disability data, and the pragmatic ‘referral strategy’ design limit attribution of benefit specifically to ECMO rather than to centre‑based care processes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Included only adults 18–65 years with severe but potentially reversible respiratory failure and <7 days of high‑pressure/FiO2 ventilation. Findings may not apply to older patients, those with major comorbidities, prolonged prior ventilation, or contraindications to anticoagulation."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The strategy relied on a single high‑volume specialist ECMO centre with a dedicated retrieval team; generalisability depends on existence of regionalised ECMO networks capable of safe inter‑hospital transfer. Conventional management was not protocolised, which reflects real‑world heterogeneity but complicates extrapolation to units with consistently high adherence to lung‑protective ventilation and standardised ARDS algorithms."
+        }
+      ],
+      "verdict": "Findings generalise best to high‑resource systems able to deliver timely referral and safe retrieval to experienced ECMO centres for carefully selected, potentially reversible severe respiratory failure; extrapolation beyond these constraints (older age, longer prior ventilation, limited retrieval capacity) is uncertain."
+    },
+    "strengths": [
+      "Pragmatic multicentre randomised evaluation of a complex service‑level intervention, incorporating real transport risks and system constraints.",
+      "Central telephone minimisation with random element; intention‑to‑treat analysis.",
+      "Primary outcome was patient‑centred (death or severe disability) with blinded follow‑up assessors.",
+      "Embedded economic evaluation (within‑trial costing and modelled lifetime cost‑utility) to support policy relevance."
+    ],
+    "limitations": [
+      "Tested a ‘referral to ECMO centre’ strategy, not ECMO per se; only 76% of the intervention arm received ECMO, and a single centre delivered the core ECMO care, confounding centre expertise with ECMO effect.",
+      "Unblinded management with significant differences in ventilation practice uptake (93% vs 70%) and adjunct therapies (steroids, MARS), introducing performance bias and confounding by co‑intervention.",
+      "Primary outcome statistical significance hinged on a composite whose disability component was rare (0 vs 1) and missing for 3 conventional‑group survivors; mortality alone not significant (P=0.07).",
+      "Substantial missingness for 6‑month quality‑of‑life assessment (52 vs 32), affecting precision of secondary QoL and economic endpoints."
+    ],
+    "critical_appraisal": {
+      "summary": "CESAR provided pragmatic evidence that referral to an ECMO centre improves survival without severe disability, but the risk of confounding by centre effect, co‑interventions, and missing data limits confidence in attributing benefit solely to ECMO.",
+      "strengths": [
+        "Pragmatic design testing a real‑world referral pathway",
+        "Central randomisation with ITT analysis",
+        "Blinded outcome assessment for disability"
+      ],
+      "weaknesses": [
+        "Single‑centre ECMO with differential co‑interventions",
+        "Low adherence to lung‑protective ventilation in the control group",
+        "Missing disability data and underpowered for mortality"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Referral to a specialist ECMO centre for severe respiratory failure increases survival without severe disability at 6 months (63% vs 47%) and may be cost‑effective in the long term.",
+    "clinical_bottom_line": {
+      "verdict": "This trial supports establishing regionalised ECMO retrieval networks for selected severe respiratory failure patients; the benefit likely derives from the combination of specialist centre care, protocolised lung‑protective ventilation, and ECMO, rather than ECMO alone.",
+      "applies_to": "Adults 18–65 years with severe, potentially reversible respiratory failure (Murray score ≥3 or pH <7.20) and <7 days of high‑pressure/FiO2 ventilation, in systems with experienced ECMO centres and safe retrieval infrastructure.",
+      "does_not_mean": "Does not prove that ECMO independently improves mortality; much of the effect may be attributable to the ECMO centre’s expert management and higher rates of lung‑protective ventilation.",
+      "implementation_caveats": [
+        "Requires a coordinated retrieval service; transport deaths occurred (2 deaths in the trial).",
+        "Short‑term costs are substantially higher; economic acceptability depends on survivors’ long‑term quality of life.",
+        "Findings cannot be extrapolated to patients >65 years or with prolonged prior high‑intensity ventilation."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "What was randomised: referral vs actual ECMO",
+        "notes": "The trial compared referral to a single ECMO centre, not ECMO vs no ECMO. 24% of the referral arm did not receive ECMO, so improved outcomes could reflect specialist‑centre processes and protocolised care as much as ECMO itself."
+      },
+      {
+        "topic": "Comparator care quality and separation",
+        "notes": "Conventional management was not protocolised, and uptake of a ‘low‑volume low‑pressure’ strategy was lower (70% vs 93%), raising concern that part of the effect might be attributable to differential lung‑protective ventilation."
+      },
+      {
+        "topic": "Primary outcome interpretability",
+        "notes": "Severe disability was rare (0 vs 1), making the composite predominantly a mortality signal. Disability status was unknown for 3 conventional‑group survivors, and the published confidence interval for the primary RR (0.05–0.97) may be typographically unusual; sensitivity analyses marginally altered P‑values."
+      },
+      {
+        "topic": "Short‑term mortality signal",
+        "notes": "Mortality ≤6 months favoured referral (37% vs 50%) but did not reach statistical significance (P=0.07), highlighting limited power for a standalone mortality endpoint and the importance of subsequent trials."
+      },
+      {
+        "topic": "Subsequent RCT: EOLIA (2018)",
+        "notes": "EOLIA tested early VV ECMO for severe ARDS with protocolised conventional management and allowed crossover to ECMO (28% cross‑over). ITT 60‑day mortality was 35% vs 46% (RR 0.76, P=0.09), not significant; crossover complicates interpretation."
+      },
+      {
+        "topic": "Evidence syntheses",
+        "notes": "Individual patient data meta‑analyses incorporating CESAR and EOLIA generally support a survival benefit for VV ECMO in severe ARDS in experienced centres, though residual uncertainty remains due to few RCTs and design heterogeneity."
+      },
+      {
+        "topic": "Observational signals in pandemics",
+        "notes": "During the 2009 H1N1 pandemic, UK observational data associated referral to an ECMO centre with lower mortality, supporting a ‘centre strategy’ effect consistent with CESAR’s design."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "Modern ARDS and ECMO guidelines incorporate CESAR and later evidence, recommending consideration of VV ECMO as rescue therapy for severe ARDS in experienced centres, with attention to patient selection and transport logistics."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "EOLIA (2018)",
+        "relation": "Subsequent RCT of early VV ECMO vs conventional ventilation for severe ARDS; ITT mortality not significant (35% vs 46%, P=0.09) but high crossover (28% of control received ECMO). Meta‑analyses combining CESAR and EOLIA support a survival benefit."
+      },
+      {
+        "trial": "UK H1N1 ECMO referral (Noah et al., 2011)",
+        "relation": "Observational study during 2009 H1N1 pandemic showing lower mortality for patients referred to an ECMO centre, consistent with the centre‑strategy benefit seen in CESAR."
+      }
+    ],
+    "unresolved_questions": [
+      "Does ECMO independently improve mortality, or is the benefit primarily from specialist centre care and protocolised ventilation?",
+      "What is the optimal timing and selection criteria (e.g., Murray score, pH, duration of pre‑existing ventilation) for ECMO referral in ARDS?",
+      "How do long‑term functional outcomes and cost‑effectiveness vary with age, comorbidities, and ECMO centre volume?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=180",
+        "Primary composite 37% vs 53% (RR 0.69, P=0.03)",
+        "Only 76% received ECMO",
+        "Modelled cost per QALY £19,252 (95% CI £7,622–59,200)"
+      ],
+      "one_line_takeaway": "For selected severe respiratory failure, referral to a specialist ECMO centre improves survival without severe disability, likely due to combined centre expertise and ECMO rather than ECMO alone."
+    }
+  },
+  "_source_id": "CESAR",
+  "_source_system": "Respiratory"
+}

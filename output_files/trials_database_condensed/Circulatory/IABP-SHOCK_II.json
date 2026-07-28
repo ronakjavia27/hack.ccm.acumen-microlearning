@@ -1,0 +1,402 @@
+{
+  "id": "IABP-SHOCK_II",
+  "trial_name": "IABP-SHOCK II — Intraaortic Balloon Support for Myocardial Infarction with Cardiogenic Shock (2012)",
+  "specialty": "Cardiogenic Shock",
+  "subtopic": "Mechanical Circulatory Support",
+  "year": 2012,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Thiele H, Zeymer U, Neumann FJ, Ferenc M, Olbrich HG, Hausleiter J, et al. Intraaortic balloon support for myocardial infarction with cardiogenic shock. N Engl J Med. 2012;367(14):1287-1296.",
+  "doi": "https://doi.org/10.1056/NEJMoa1208410",
+  "registration": "NCT00491036",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 600,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Routine IABP does not reduce 30-day mortality in AMI-related cardiogenic shock treated with early revascularisation.",
+  "pico": {
+    "population": "Adults with STEMI or NSTEMI complicated by cardiogenic shock and planned early revascularisation (predominantly PCI)",
+    "intervention": "IABP inserted via femoral access before or immediately after revascularisation, continued until haemodynamic stabilisation (median 3 days)",
+    "comparison": "No planned IABP (standard care including early revascularisation, vasoactive support, ventilation; rescue IABP permitted)",
+    "outcome": "All-cause mortality at 30 days"
+  },
+  "keywords": [
+    "IABP",
+    "intra-aortic balloon pump",
+    "cardiogenic shock",
+    "myocardial infarction",
+    "mechanical circulatory support",
+    "PCI"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Cardiogenic shock complicating AMI carries persistently high early mortality despite contemporary revascularisation and intensive care.",
+      "knowledge_gap": "IABP was widely used as adjunctive support in AMI-related shock, but outcome benefit was uncertain and vascular/bleeding risks existed.",
+      "hypothesis": "Routine IABP support reduces 30-day all-cause mortality compared with no planned IABP in patients with AMI complicated by cardiogenic shock undergoing early revascularisation."
+    },
+    "methods": {
+      "design": "Prospective, multicentre, randomised, open-label, parallel-group controlled trial; 1:1 central internet-based randomisation stratified by centre; 37 centres in Germany; enrolment June 2009 to March 2012.",
+      "setting": "37 centres in Germany, high-resource ICUs with rapid PCI access.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with STEMI or non-STEMI complicated by cardiogenic shock",
+          "Intention to pursue early revascularisation (predominantly PCI)",
+          "Cardiogenic shock defined as: systolic BP <90 mmHg for ≥30 min or catecholamine therapy to maintain systolic BP ≥90 mmHg, plus pulmonary congestion, plus signs of impaired organ perfusion (altered mental status, cold/clammy skin, oliguria <30 mL/h, or serum lactate >2.0 mmol/L)"
+        ],
+        "exclusion": [
+          "Shock duration >12 hours",
+          "Prolonged resuscitation (>30 minutes)",
+          "No intrinsic heart action",
+          "Mechanical causes of shock (e.g., acute severe mitral regurgitation, ventricular septal rupture)",
+          "Severe peripheral artery disease precluding IABP",
+          "Severe cerebral deficit",
+          "Age >90 years",
+          "Comorbidity with life expectancy <6 months",
+          "Shock of non-cardiac cause"
+        ]
+      },
+      "intervention": "IABP inserted via femoral access before or immediately after revascularisation, providing counterpulsation support (typically 1:1 ECG triggering) until sustained haemodynamic stabilisation; weaning by stepwise reduction of trigger ratio. Delivered IABP support duration: median 3.0 days (IQR 2.0–4.0; range 1–16 days) among those treated with IABP.",
+      "comparison": "No planned IABP (standard care including early revascularisation, vasoactive support, ventilation and other organ support as required); IABP permitted as rescue (e.g., for mechanical complications or clinical deterioration).",
+      "blinding": "Open-label to treating teams and participants; primary endpoint (mortality) objective; clinical endpoint adjudication committee blinded to treatment assignment.",
+      "sample_size_power": "Planned sample size 600 (300/group); powered (80%) to detect a 12 percentage-point absolute increase in 30-day survival (assumed 56% control vs 68% IABP) with overall type I error 0.05 and final analysis significance threshold 0.044.",
+      "primary_outcome": "All-cause mortality at 30 days",
+      "secondary_outcomes": [
+        "Reinfarction in hospital",
+        "Stroke in hospital",
+        "Life-threatening or severe bleeding (GUSTO) in hospital",
+        "Peripheral ischaemic complications requiring intervention",
+        "Sepsis in hospital",
+        "Time to haemodynamic stabilisation",
+        "Duration of catecholamine therapy",
+        "Duration of intensive care treatment",
+        "Mechanical ventilation requirement",
+        "Left ventricular assist device implantation",
+        "Renal replacement therapy"
+      ],
+      "follow_up": "30 days for primary endpoint; longer-term follow-up reported in later publications (12 months, 6 years)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Routine IABP did not reduce 30-day mortality vs control (39.7% vs 41.3%; RR 0.96; 95% CI 0.79–1.17; P=0.69).",
+        "Key process-of-care measures (time to stabilisation, catecholamine duration, ICU stay, ventilation) were similar between groups despite substantial IABP exposure.",
+        "Major safety outcomes (stroke, severe bleeding, limb ischaemia) were not significantly different.",
+        "Subgroup analyses were broadly consistent; nominal interactions for prior MI and hypertension were likely chance findings."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at 30 days (primary, ITT)",
+          "group_a": "119/300 (39.7%)",
+          "group_b": "123/298 (41.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.96",
+          "ci_95": "0.79–1.17",
+          "p_value": "0.69",
+          "note": "Primary analysis sample 598 (1 consent withdrawal, 1 lost to follow-up)"
+        },
+        {
+          "outcome": "All-cause mortality at 30 days (per-protocol)",
+          "group_a": "94/251 (37.5%)",
+          "group_b": "109/263 (41.4%)",
+          "effect_measure": "RR",
+          "effect_value": "0.91",
+          "ci_95": "0.74–1.11",
+          "p_value": "0.35",
+          "note": "Supportive analysis excluding crossovers/protocol deviations"
+        },
+        {
+          "outcome": "Reinfarction in hospital",
+          "group_a": "9/300 (3.0%)",
+          "group_b": "4/298 (1.3%)",
+          "effect_measure": "RR",
+          "effect_value": "2.24",
+          "ci_95": "0.70–7.18",
+          "p_value": "0.16",
+          "note": "Safety endpoint"
+        },
+        {
+          "outcome": "Stroke in hospital",
+          "group_a": "2/300 (0.7%)",
+          "group_b": "5/298 (1.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.40",
+          "ci_95": "0.08–2.03",
+          "p_value": "0.28",
+          "note": "Safety endpoint"
+        },
+        {
+          "outcome": "Life-threatening or severe bleeding in hospital (GUSTO)",
+          "group_a": "10/300 (3.3%)",
+          "group_b": "13/298 (4.4%)",
+          "effect_measure": "RR",
+          "effect_value": "0.76",
+          "ci_95": "0.34–1.72",
+          "p_value": "0.51",
+          "note": "Safety endpoint"
+        },
+        {
+          "outcome": "Peripheral ischaemic complications requiring intervention",
+          "group_a": "13/300 (4.3%)",
+          "group_b": "10/298 (3.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.29",
+          "ci_95": "0.58–2.90",
+          "p_value": "0.53",
+          "note": "Safety endpoint"
+        },
+        {
+          "outcome": "Sepsis in hospital",
+          "group_a": "47/300 (15.7%)",
+          "group_b": "61/298 (20.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.77",
+          "ci_95": "0.54–1.08",
+          "p_value": "0.15",
+          "note": "Safety/complication endpoint"
+        },
+        {
+          "outcome": "Time to haemodynamic stabilisation (days; median [IQR])",
+          "group_a": "3.0 (1.0–5.0)",
+          "group_b": "3.0 (1.0–6.0)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.50",
+          "note": "Process-of-care endpoint"
+        },
+        {
+          "outcome": "Duration of catecholamine therapy (days; median [IQR])",
+          "group_a": "3.0 (2.0–5.0)",
+          "group_b": "3.0 (2.0–5.0)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.81",
+          "note": "Process-of-care endpoint"
+        },
+        {
+          "outcome": "Duration of intensive care treatment (days; median [IQR])",
+          "group_a": "6.0 (3.0–12.0)",
+          "group_b": "6.0 (3.0–13.0)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.34",
+          "note": "Process-of-care endpoint"
+        },
+        {
+          "outcome": "Mechanical ventilation required",
+          "group_a": "254/299 (85.0%)",
+          "group_b": "244/299 (81.6%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.26",
+          "note": "Process-of-care endpoint; denominators reflect available data"
+        },
+        {
+          "outcome": "Left ventricular assist device implantation",
+          "group_a": "10/300 (3.3%)",
+          "group_b": "23/299 (7.7%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.02",
+          "note": "Rescue mechanical support use differed between groups"
+        },
+        {
+          "outcome": "Renal replacement therapy",
+          "group_a": "62/301 (20.6%)",
+          "group_b": "47/299 (15.7%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.12",
+          "note": "Organ support endpoint"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Prior myocardial infarction",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "1.44",
+          "ci_95": "0.93–2.21",
+          "p_interaction": "0.04",
+          "note": "Nominal interaction; IABP possibly harmful in this subgroup"
+        },
+        {
+          "subgroup": "No prior myocardial infarction",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.86",
+          "ci_95": "0.69–1.07",
+          "p_interaction": "0.04",
+          "note": "Reference subgroup for interaction"
+        },
+        {
+          "subgroup": "Hypertension",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "1.06",
+          "ci_95": "0.84–1.34",
+          "p_interaction": "0.05",
+          "note": "Nominal interaction"
+        },
+        {
+          "subgroup": "No hypertension",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.67",
+          "ci_95": "0.45–1.01",
+          "p_interaction": "0.05",
+          "note": "Reference subgroup for interaction"
+        }
+      ]
+    },
+    "safety": [
+      "Reinfarction: 3.0% IABP vs 1.3% control (RR 2.24, 95% CI 0.70–7.18, P=0.16)",
+      "Stroke: 0.7% vs 1.7% (RR 0.40, 95% CI 0.08–2.03, P=0.28)",
+      "Life-threatening/severe bleeding (GUSTO): 3.3% vs 4.4% (RR 0.76, 95% CI 0.34–1.72, P=0.51)",
+      "Peripheral ischaemic complications requiring intervention: 4.3% vs 3.4% (RR 1.29, 95% CI 0.58–2.90, P=0.53)",
+      "Sepsis: 15.7% vs 20.5% (RR 0.77, 95% CI 0.54–1.08, P=0.15)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central internet-based randomisation (1:1), stratified by centre; baseline characteristics closely balanced (age median 70 vs 69 years; LVEF median 35% vs 35%)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; potential for differential co-interventions, but primary endpoint (mortality) is objective and endpoint adjudication committee was blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary analysis included 598/600 (99.7%) due to one withdrawal of consent and one lost to follow-up; minimal attrition. Per-protocol analysis consistent with ITT."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "IABP received by 95.7% of IABP group; 4.3% did not receive IABP. Crossover to IABP in 10.0% of controls. Delivered IABP duration median 3.0 days (IQR 2.0–4.0)."
+        },
+        {
+          "domain": "Co-interventions & rescue therapy",
+          "notes": "Revascularisation rates high (PCI 95.8%, CABG 3.7%). LVAD implantation more frequent in control group (7.7% vs 3.3%, P=0.02), potentially diluting treatment effect."
+        },
+        {
+          "domain": "Heterogeneity",
+          "notes": "Multicentre (37 centres) increases generalisability; treatment effects directionally similar across most subgroups."
+        },
+        {
+          "domain": "Timing & dose",
+          "notes": "IABP inserted before or immediately after PCI; median support 3 days. Mortality similar whether insertion before vs after revascularisation."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Prespecified sequential monitoring with conservative final alpha (0.044); near-complete primary endpoint dataset; supportive analyses did not change inference."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate-to-strong: robust randomisation and follow-up with an objective primary endpoint, but open-label design, clinically driven crossovers (10% of controls), and differential rescue mechanical support introduce plausible dilution and co-intervention effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad AMI-related cardiogenic shock population (STEMI and NSTEMI), typical age (~70 years), high pre-randomisation resuscitation rates (~43%). Exclusions (shock >12 h, prolonged resuscitation, mechanical complications, severe PVD, age >90) limit applicability to very late presenters, profound anoxic injury, or mechanical causes."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Highly applicable to high-resource systems with rapid PCI and intensive care. Extrapolation to settings without timely revascularisation or to contemporary practice dominated by more potent MCS (microaxial pumps, VA-ECMO) should be cautious."
+        },
+        {
+          "domain": "Intervention scope",
+          "notes": "Findings apply to conventional IABP counterpulsation as routinely delivered in a modern PCI-era shock pathway; they do not directly address other mechanical support devices or non-AMI shock phenotypes."
+        }
+      ],
+      "verdict": "External validity is good for AMI-related cardiogenic shock managed with early PCI in advanced centres, but is limited for non-AMI shock, mechanical complications, late shock, prolonged arrest, and settings without timely revascularisation or access to escalation therapies."
+    },
+    "strengths": [
+      "Large, contemporary randomised trial in a high-mortality population",
+      "Multicentre design with central randomisation",
+      "Objective primary endpoint with near-complete follow-up",
+      "High revascularisation rates reflecting modern care",
+      "Prespecified sequential monitoring and supportive analyses"
+    ],
+    "limitations": [
+      "Open-label design with clinically mandated crossovers and protocol deviations",
+      "Potential dilution by differential rescue mechanical support (higher LVAD use in controls)",
+      "Powered for a relatively large absolute mortality difference (smaller benefits/harm cannot be excluded)",
+      "Results pertain to IABP (modest haemodynamic augmentation) rather than more potent mechanical support strategies"
+    ],
+    "critical_appraisal": {
+      "summary": "IABP-SHOCK II is a well-conducted RCT with robust randomisation and near-complete follow-up, but open-label design and differential rescue therapy may dilute effect; overall moderate internal validity and good external validity for PCI-era AMI shock.",
+      "strengths": [
+        "Large, multicentre, contemporary trial",
+        "Central randomisation, objective primary endpoint, near-complete follow-up",
+        "High revascularisation rates reflecting modern care"
+      ],
+      "weaknesses": [
+        "Open-label design with crossovers",
+        "Differential rescue LVAD use may dilute effect",
+        "Powered for large effect; smaller benefits not excluded"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine IABP does not improve 30-day survival or process-of-care measures in AMI-related cardiogenic shock treated with early revascularisation, and should not be used routinely.",
+    "clinical_bottom_line": {
+      "verdict": "Routine IABP should not be used in AMI-related cardiogenic shock; it does not reduce mortality.",
+      "applies_to": "Patients with AMI-related cardiogenic shock undergoing early revascularisation (PCI) in high-resource settings.",
+      "does_not_mean": "IABP is harmful; it may still have a role in mechanical complications or as a bridge to more advanced support.",
+      "implementation_caveats": [
+        "Reserve IABP for selected indications (e.g., mechanical complications, bridging) rather than routine use.",
+        "Consider more potent mechanical support strategies in refractory shock."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Mechanism–outcome mismatch",
+        "notes": "IABP provides modest haemodynamic augmentation; in AMI shock treated with early PCI and vasoactive support, this degree of support may be insufficient to alter mortality despite physiological plausibility."
+      },
+      {
+        "topic": "Crossover and rescue therapy as diluters",
+        "notes": "Control crossover to IABP (10%) and higher LVAD use in controls (7.7% vs 3.3%) could dilute a true treatment effect; however, per-protocol and adjusted analyses remained neutral, supporting a genuinely small/absent mortality benefit."
+      },
+      {
+        "topic": "Subgroup signals and multiplicity",
+        "notes": "Nominal subgroup interactions (e.g., prior MI and hypertension) did not provide a coherent, practice-changing phenotype and are compatible with chance findings given multiple comparisons."
+      },
+      {
+        "topic": "Longer-term follow-up",
+        "notes": "Subsequent publications at 12 months and at 6 years reported no survival advantage with routine IABP, reinforcing the early neutral result."
+      },
+      {
+        "topic": "Synthesis of evidence",
+        "notes": "Systematic reviews and meta-analyses incorporating IABP-SHOCK II show no mortality reduction for IABP in AMI-related cardiogenic shock in the contemporary era, aligning with the trial’s conclusions."
+      },
+      {
+        "topic": "Guideline impact",
+        "notes": "Major society guidance has moved away from routine IABP use in AMI-related cardiogenic shock, reflecting the evidence base consolidated by IABP-SHOCK II and subsequent syntheses/statements."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is there a subgroup of AMI shock patients who benefit from IABP (e.g., based on timing, haemodynamic profile, or revascularisation completeness)?",
+      "What is the role of more potent mechanical circulatory support (microaxial pumps, VA-ECMO) in AMI shock, and how should they be selected?",
+      "Does timing of IABP insertion (before vs after PCI) influence outcomes in specific scenarios?",
+      "Can better risk stratification identify patients who might benefit from IABP as a bridge to recovery or advanced support?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=600",
+        "Primary outcome: 39.7% vs 41.3% (RR 0.96, 95% CI 0.79–1.17, P=0.69)",
+        "30-day mortality no difference"
+      ],
+      "one_line_takeaway": "Routine IABP does not reduce 30-day mortality in AMI-related cardiogenic shock treated with early revascularisation."
+    }
+  },
+  "_source_id": "IABP-SHOCK_II",
+  "_source_system": "Circulatory"
+}

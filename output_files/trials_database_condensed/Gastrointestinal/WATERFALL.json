@@ -1,0 +1,291 @@
+{
+  "id": "WATERFALL",
+  "trial_name": "WATERFALL — Aggressive or Moderate Fluid Resuscitation in Acute Pancreatitis (2022)",
+  "specialty": "Gastroenterology",
+  "subtopic": "Acute Pancreatitis",
+  "year": 2022,
+  "journal": "New England Journal of Medicine",
+  "citation": "de-Madaria E, Buxbaum JL, Maisonneuve P, et al. Aggressive or moderate fluid resuscitation in acute pancreatitis. N Engl J Med. 2022;387(11):989-1000.",
+  "doi": "https://doi.org/10.1056/NEJMoa2202884",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 249,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Aggressive fluid resuscitation did not reduce severity of acute pancreatitis but increased fluid overload, supporting a moderate, reassessment-driven strategy.",
+  "pico": {
+    "population": "Adults ≥18 years with acute pancreatitis diagnosed within 8 hours, symptom onset within 24 hours, no baseline organ failure or high-risk comorbidities (decompensated heart failure, chronic renal failure).",
+    "intervention": "Aggressive lactated Ringer's: 20 mL/kg bolus over 2 hours, then 3 mL/kg/h infusion, with protocolised reassessment at 3, 12, 24, 48, 72 hours and adjustment/cessation per clinical targets.",
+    "comparison": "Moderate lactated Ringer's: 10 mL/kg bolus only if hypovolaemic, then 1.5 mL/kg/h infusion, with identical reassessment and adjustment rules.",
+    "outcome": "Primary: moderately severe or severe acute pancreatitis (composite severity endpoint during index admission). Key safety: fluid overload."
+  },
+  "keywords": [
+    "acute pancreatitis",
+    "fluid resuscitation",
+    "lactated Ringer's",
+    "aggressive hydration",
+    "fluid overload"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Early IV crystalloid is standard supportive care for acute pancreatitis to mitigate hypovolaemia. Guidelines historically recommended early aggressive hydration based on physiology and observational data.",
+      "knowledge_gap": "Evidence for aggressive hydration was weak, and there was concern about iatrogenic fluid overload causing respiratory compromise.",
+      "hypothesis": "Early aggressive, weight-based lactated Ringer's resuscitation would reduce moderately severe or severe pancreatitis compared with a moderate, reassessment-guided strategy, without increasing harm."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, open-label, parallel-group, investigator-initiated superiority trial; ED-based enrolment across 18 centres in four countries (India, Italy, Mexico, Spain); enrolment May 2020 to September 2021.",
+      "setting": "Emergency departments (early disease window).",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Acute pancreatitis diagnosed using standard criteria",
+          "Symptom onset within 24 hours",
+          "Diagnosis within 8 hours prior to randomisation",
+          "Written informed consent"
+        ],
+        "exclusion": [
+          "Pancreatitis severity already declaring itself (baseline organ failure)",
+          "Decompensated heart failure",
+          "Chronic renal failure",
+          "Other conditions at high risk of fluid complications or requiring alternative resuscitation strategies"
+        ]
+      },
+      "intervention": "Aggressive lactated Ringer's: 20 mL/kg bolus over 2 hours followed by 3 mL/kg/hour infusion. Reassessment checkpoints (3, 12, 24, 48, 72 hours): infusion adjusted per protocolised clinical targets (including signs of hypovolaemia/overload) and stopped/reduced as oral intake resumed. Fluid overload management: mandated reduction/cessation of infusion, with diuretics and supportive therapies at clinician discretion when overload criteria met.",
+      "comparison": "Moderate lactated Ringer's: 10 mL/kg bolus over 2 hours only if baseline hypovolaemia present; otherwise no initial bolus. Maintenance 1.5 mL/kg/hour with the same scheduled reassessment and protocolised adjustment/cessation rules as the intervention arm. Rescue/co-interventions: additional therapies (imaging, nutrition, antibiotics, procedures) per treating teams; protocol focused on fluid strategy rather than downstream management algorithms.",
+      "blinding": "Open-label (fluid rates/boluses not feasibly blinded); raises risk of performance bias for discretionary outcomes, but primary and many key components were clinically anchored and protocol-defined.",
+      "sample_size_power": "A total sample size of 744 patients was planned to detect a 10% absolute difference in the primary outcome (35% vs 25%) with 80% power at a two-sided 5% significance level, incorporating O'Brien–Fleming interim monitoring and an allowance for attrition, with a modified intention-to-treat primary analysis.",
+      "primary_outcome": "Moderately severe or severe acute pancreatitis (composite severity endpoint during index admission)",
+      "secondary_outcomes": [
+        "Fluid overload (safety)",
+        "ICU admission",
+        "Any organ failure",
+        "Persistent organ failure (>48 h)",
+        "Death",
+        "Composite of death, persistent organ failure, or infected necrotising pancreatitis",
+        "Duration of hospital stay"
+      ],
+      "follow_up": "Protocolised clinical reassessments through 72 hours; primary and major secondary outcomes assessed during the index hospitalisation."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early after first interim analysis (n=249) due to excess fluid overload without benefit.",
+        "Primary outcome not improved: moderately severe/severe pancreatitis 22.1% vs 17.3% (adjusted RR 1.30, 95% CI 0.78–2.18, p=0.32).",
+        "Fluid overload significantly increased: 20.5% vs 6.3% (adjusted RR 2.85, 95% CI 1.36–5.94, p=0.004).",
+        "Median fluid volume 0–12h: 3.7 L vs 2.0 L; 0–72h: 8.3 L vs 6.6 L.",
+        "Early termination limits precision for efficacy and low-frequency endpoints."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Moderately severe or severe acute pancreatitis (primary)",
+          "group_a": "27/122 (22.1%)",
+          "group_b": "22/127 (17.3%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.30",
+          "ci_95": "0.78 to 2.18",
+          "p_value": "0.32",
+          "note": "Composite severity endpoint during index admission"
+        },
+        {
+          "outcome": "Fluid overload (safety)",
+          "group_a": "25/122 (20.5%)",
+          "group_b": "8/127 (6.3%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "2.85",
+          "ci_95": "1.36 to 5.94",
+          "p_value": "0.004",
+          "note": "Protocol-defined syndrome (symptoms/signs/imaging/haemodynamic evidence)"
+        },
+        {
+          "outcome": "ICU admission",
+          "group_a": "8/122 (6.6%)",
+          "group_b": "2/127 (1.6%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "2.71",
+          "ci_95": "0.64 to 11.51",
+          "p_value": "0.17",
+          "note": "Low event counts; wide CI"
+        },
+        {
+          "outcome": "Any organ failure",
+          "group_a": "9/122 (7.4%)",
+          "group_b": "5/127 (3.9%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.23",
+          "ci_95": "0.47 to 3.23",
+          "p_value": "0.67",
+          "note": "Organ failure by modified Marshall criteria"
+        },
+        {
+          "outcome": "Persistent organ failure (>48 h)",
+          "group_a": "8/122 (6.6%)",
+          "group_b": "2/127 (1.6%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "2.69",
+          "ci_95": "0.56 to 12.88",
+          "p_value": "0.22",
+          "note": "Severity-defining component; wide CI"
+        },
+        {
+          "outcome": "Death",
+          "group_a": "4/122 (3.3%)",
+          "group_b": "1/127 (0.8%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "3.05",
+          "ci_95": "0.32 to 28.76",
+          "p_value": "0.33",
+          "note": "Underpowered; no multiplicity adjustment"
+        },
+        {
+          "outcome": "Death, persistent organ failure, or infected necrotising pancreatitis",
+          "group_a": "9/122 (7.4%)",
+          "group_b": "4/127 (3.1%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.60",
+          "ci_95": "0.50 to 5.10",
+          "p_value": "0.43",
+          "note": "Clinically 'hard' composite"
+        },
+        {
+          "outcome": "Median duration of hospital stay (IQR)",
+          "group_a": "6 (4–8) days",
+          "group_b": "5 (3–7) days",
+          "effect_measure": "Ratio of medians",
+          "effect_value": "1.31",
+          "ci_95": "0.98 to 1.75",
+          "p_value": "Not reported",
+          "note": "Longer stay consistent with higher overload/respiratory complications"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Fluid overload occurred in 20.5% vs 6.3% (adjusted RR 2.85, p=0.004).",
+      "Diuretic use and oxygen supplementation were more frequent in the aggressive arm."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with stratification (centre; baseline SIRS; baseline hypovolaemia) and concealed allocation via electronic system; reduces selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design may influence discretionary care (e.g., discharge decisions), but core outcomes (organ failure, death, ICU admission) are relatively objective and protocol-defined."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "All 249 randomised included in reported comparison; missing outcome data minimal for primary and most clinical endpoints."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Protocol mandated scheduled reassessment at 3, 12, 24, 48, 72 hours with prespecified rate adjustments; fluid overload triggered reduction/cessation and diuretic use, likely attenuating ongoing exposure in aggressive arm after harm emerged. Clear early fluid separation: 0–12h median 3.7 L vs 2.0 L; 0–72h 8.3 L vs 6.6 L."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Generally balanced in age (54.7 vs 56.4 years) and BMI (26.8 vs 26.3 kg/m²); modest sex imbalance (men 44.3% vs 53.5%); aetiology similar (biliary 54.1% vs 54.3%; alcoholic 23.0% vs 21.3%)."
+        }
+      ],
+      "verdict": "Moderate. Allocation methods and protocolisation were strong, and the harm signal is internally credible; however, open-label care and early termination materially limit the precision of efficacy and many secondary outcome estimates."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Patients enrolled early in the ED, largely with mild disease at baseline (no baseline organ failure), reflecting a common clinical entry point, but excluding many high-risk patients (cardiac/renal comorbidity; established organ failure) who often complicate real-world fluid decisions. Aetiology predominantly biliary and alcohol-related; applicability to hypertriglyceridaemia, post-ERCP, or complex iatrogenic cases less certain."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted across four countries with heterogeneous ward/ICU thresholds; biological harm mechanism (volume-related pulmonary congestion) should generalise. Findings most directly inform early ED/ward management of uncomplicated acute pancreatitis; extrapolation to patients in shock, with evolving organ failure, or requiring ICU-level resuscitation should be cautious and individualized."
+        }
+      ],
+      "verdict": "Moderate. Results are highly relevant to early ED-presenting acute pancreatitis without established organ failure, but are less generalisable to older, multimorbid patients and those with early severe physiology where aggressive resuscitation may be unavoidable."
+    },
+    "strengths": [
+      "Pragmatic ED enrolment in the early window",
+      "Clear weight-based dosing regimens",
+      "Protocolised reassessment at multiple timepoints",
+      "Clinically meaningful safety endpoint (fluid overload)",
+      "Multicentre multinational design",
+      "Prespecified interim monitoring with DSMB oversight"
+    ],
+    "limitations": [
+      "Stopped early (underpowered for efficacy)",
+      "Open-label (risk of performance bias for discretionary outcomes)",
+      "Composite primary outcome may complicate mechanistic interpretation",
+      "Exclusions limit generalisability to high-risk cardiopulmonary/renal populations"
+    ],
+    "critical_appraisal": {
+      "summary": "WATERFALL is a well-designed, pragmatic RCT that provides moderate-quality evidence against routine aggressive fluid resuscitation in early acute pancreatitis. The harm signal (fluid overload) is robust, but early termination and open-label design limit confidence in efficacy estimates.",
+      "strengths": [
+        "Pragmatic ED enrolment in the early window",
+        "Clear weight-based dosing regimens",
+        "Protocolised reassessment",
+        "Clinically meaningful safety endpoint",
+        "Multicentre multinational design",
+        "Prespecified interim monitoring"
+      ],
+      "weaknesses": [
+        "Stopped early (underpowered for efficacy)",
+        "Open-label (risk of performance bias for discretionary outcomes)",
+        "Composite primary outcome may complicate mechanistic interpretation",
+        "Exclusions limit generalisability to high-risk cardiopulmonary/renal populations"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Aggressive LR strategy did not reduce moderately severe/severe pancreatitis but substantially increased fluid overload, shifting the risk–benefit balance against routine aggressive hydration. A default approach of moderate maintenance (~1.5 mL/kg/h) with boluses reserved for demonstrable hypovolaemia is better aligned with safety.",
+    "clinical_bottom_line": {
+      "verdict": "Do not use routine aggressive fluid resuscitation in early acute pancreatitis; use moderate maintenance with bolus only for hypovolaemia, and reassess frequently.",
+      "applies_to": "Adults with acute pancreatitis presenting to the ED within 24 hours of symptom onset, without baseline organ failure or significant cardiopulmonary/renal comorbidities.",
+      "does_not_mean": "This does not mean that all fluid should be withheld; patients with hypovolaemia still require boluses, and those with shock or organ failure may need individualized resuscitation.",
+      "implementation_caveats": [
+        "Frequent reassessment (at 3, 12, 24, 48, 72 hours) is essential to adjust fluid rates and detect overload early.",
+        "Lactated Ringer's is the preferred crystalloid.",
+        "Avoid automatic high-rate infusions; de-escalate as oral intake resumes."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping and inference",
+        "notes": "The DSMB-driven halt strengthens confidence in the safety signal but makes efficacy estimates imprecise; the absence of benefit cannot be interpreted as definitive equivalence."
+      },
+      {
+        "topic": "Composite primary outcome interpretability",
+        "notes": "The primary endpoint aggregates different severity constructs (local complications, systemic complications, organ failure, comorbidity exacerbation), which can dilute mechanistic specificity even when clinically meaningful."
+      },
+      {
+        "topic": "Open-label downstream decisions",
+        "notes": "Discretionary endpoints (hospital length of stay) could be influenced by clinician awareness of assignment; however, imaging use was similar and objective outcomes (fluid overload criteria, organ failure, death) anchor the main message."
+      },
+      {
+        "topic": "Editorial perspective",
+        "notes": "Contemporary commentary emphasised that WATERFALL provides high-quality evidence against routine aggressive hydration and highlighted the practical message: bolus for hypovolaemia only, and reassess frequently to avoid pulmonary congestion."
+      },
+      {
+        "topic": "Meta-analytic synthesis",
+        "notes": "Post-WATERFALL meta-analyses focusing on RCT evidence generally report no improvement in clinically important outcomes with aggressive strategies but increased fluid overload/respiratory complications, reinforcing the trial's harm signal."
+      },
+      {
+        "topic": "Guideline evolution",
+        "notes": "Newer guidance increasingly favours more conservative, goal-directed fluid with lactated Ringer's and explicit avoidance of indiscriminate 'aggressive' resuscitation, reflecting incorporation of WATERFALL's safety findings into recommendations."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Optimal fluid strategy in patients with baseline organ failure or shock remains uncertain.",
+      "Long-term outcomes beyond index hospitalization not assessed.",
+      "Role of balanced crystalloids other than LR not studied."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=249 (stopped early)",
+        "Primary outcome: 22.1% vs 17.3% (adjusted RR 1.30, 95% CI 0.78–2.18)",
+        "Fluid overload: 20.5% vs 6.3% (adjusted RR 2.85, p=0.004)",
+        "Median fluid 0–12h: 3.7 L vs 2.0 L"
+      ],
+      "one_line_takeaway": "In early acute pancreatitis, aggressive fluid resuscitation increases fluid overload without improving severity; use moderate maintenance and bolus only for hypovolaemia."
+    }
+  },
+  "_source_id": "WATERFALL",
+  "_source_system": "Gastrointestinal"
+}

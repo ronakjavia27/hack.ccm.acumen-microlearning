@@ -1,0 +1,315 @@
+{
+  "id": "FACTT",
+  "trial_name": "FACTT — Pulmonary-Artery vs Central Venous Catheter in Acute Lung Injury (2006)",
+  "specialty": "Critical Care",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 2006,
+  "journal": "New England Journal of Medicine",
+  "citation": "National Heart, Lung, and Blood Institute Acute Respiratory Distress Syndrome (ARDS) Clinical Trials Network. Pulmonary-artery versus central venous catheter to guide treatment of acute lung injury. N Engl J Med. 2006;354(21):2213-2224",
+  "doi": "https://doi.org/10.1056/NEJMoa061895",
+  "registration": "",
+  "trial_type": "RCT — multicenter, factorial, open-label, protocol-driven",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1001,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In early acute lung injury, pulmonary-artery catheter-guided protocolised management did not improve survival or ventilator-free days compared with central venous catheter-guided management, and was associated with more complications, particularly arrhythmias.",
+  "pico": {
+    "population": "Mechanically ventilated adults with acute lung injury (PaO2/FiO2 ≤300, bilateral infiltrates, no left atrial hypertension) enrolled within 48 hours of meeting criteria.",
+    "intervention": "Pulmonary-artery catheter insertion with protocolised haemodynamic management using PAC-derived measures (PAOP, cardiac index) to guide fluids, diuretics, vasopressors, inotropes.",
+    "comparison": "Central venous catheter insertion with protocolised haemodynamic management using CVP-based targets.",
+    "outcome": "Death before hospital discharge home within 60 days (primary); ventilator-free days, ICU-free days, catheter-related complications."
+  },
+  "keywords": [
+    "pulmonary-artery catheter",
+    "central venous catheter",
+    "acute lung injury",
+    "ARDS",
+    "haemodynamic monitoring",
+    "protocolised management"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Pulmonary-artery catheterisation was widely used to estimate filling pressures, cardiac output, and mixed venous oxygenation to guide haemodynamic decisions, but prior evidence did not establish patient-centred benefit across heterogeneous ICU populations.",
+      "knowledge_gap": "In acute lung injury, fluid and vasopressor decisions are frequent and high-stakes; it was unclear whether PAC-derived information improves outcomes compared with CVC-based monitoring when management is protocolised.",
+      "hypothesis": "PAC-guided protocolised management would reduce death before hospital discharge home within 60 days compared with CVC-guided protocolised management."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, factorial trial (PAC vs CVC, and liberal vs conservative fluid strategy), open-label, protocol-driven.",
+      "setting": "Adult ICUs in ARDS Network participating hospitals (US and Canada).",
+      "population": {
+        "inclusion": [
+          "Intubated positive-pressure ventilation",
+          "ALI criteria: bilateral infiltrates, PaO2/FiO2 ≤300, no clinical evidence of left atrial hypertension",
+          "Enrolled within 48 hours of meeting ALI criteria"
+        ],
+        "exclusion": [
+          "ALI for >48 hours",
+          "Pre-existing PAC after onset of ALI",
+          "Inability to obtain consent",
+          "Chronic conditions expected to confound survival or weaning (severe chronic cardiopulmonary, renal, neurological, hepatic, or neuromuscular disease)"
+        ]
+      },
+      "intervention": "Pulmonary-artery catheter insertion (targeted within 4 hours of randomisation). Protocolised haemodynamic management using PAC-derived measures (PAOP, cardiac index) to drive fluid/diuretic/vasopressor/inotrope instructions. Concurrent randomisation to liberal or conservative fluid strategy.",
+      "comparison": "Central venous catheter insertion (targeted within 4 hours). Protocolised management using CVP-based targets with same clinical protocol framework. Concurrent randomisation to same fluid strategy.",
+      "blinding": "Unblinded (catheter type inherently difficult to blind); primary and key secondary outcomes were objective.",
+      "sample_size_power": "Planned sample size ~1000 to detect a 10 percentage point reduction in primary endpoint with 90% power at 5% two-sided significance.",
+      "primary_outcome": "Death before hospital discharge home within 60 days.",
+      "secondary_outcomes": [
+        "Ventilator-free days through day 28",
+        "ICU-free days through day 28",
+        "Catheter-related complications (mechanical, arrhythmic, infectious, thrombotic)",
+        "Catheter-related infections (positive blood cultures)",
+        "Packed red-cell transfusion",
+        "Kidney replacement therapy"
+      ],
+      "follow_up": "Primary endpoint through 60 days; morbidity outcomes through day 28; in-hospital safety outcomes."
+    },
+    "results": {
+      "headline_bullets": [
+        "No difference in 60-day mortality: 27.4% PAC vs 26.3% CVC (absolute difference 1.1%, 95% CI −4.4 to 6.6; P=0.69)",
+        "Ventilator-free days and ICU-free days were similar (13.2 vs 13.5, P=0.58; 12.0 vs 12.5, P=0.40)",
+        "Catheter-related complications were higher with PAC (19% vs 9%, P<0.001), driven by arrhythmias requiring treatment (12% vs 0.2%, P<0.001)",
+        "No interaction between catheter type and fluid strategy for primary endpoint (P=0.39)"
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death before hospital discharge home within 60 days",
+          "group_a": "141/513 (27.4%)",
+          "group_b": "128/488 (26.3%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.1",
+          "ci_95": "−4.4 to 6.6",
+          "p_value": "0.69",
+          "note": "Primary endpoint"
+        },
+        {
+          "outcome": "Ventilator-free days through day 28",
+          "group_a": "13.2 ± 0.5",
+          "group_b": "13.5 ± 0.5",
+          "effect_measure": "Mean difference",
+          "effect_value": "−0.3",
+          "ci_95": "−1.3 to 0.7",
+          "p_value": "0.58",
+          "note": "Higher is better"
+        },
+        {
+          "outcome": "ICU-free days through day 28",
+          "group_a": "12.0 ± 0.5",
+          "group_b": "12.5 ± 0.5",
+          "effect_measure": "Mean difference",
+          "effect_value": "−0.5",
+          "ci_95": "−1.5 to 0.6",
+          "p_value": "0.40",
+          "note": "Higher is better"
+        },
+        {
+          "outcome": "Any catheter-related complication",
+          "group_a": "100/513 (19%)",
+          "group_b": "41/488 (9%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Composite of mechanical, arrhythmic, infectious, thrombotic"
+        },
+        {
+          "outcome": "Catheter-related arrhythmia requiring treatment",
+          "group_a": "60/513 (12%)",
+          "group_b": "1/488 (0.2%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Dominant driver of excess complications with PAC"
+        },
+        {
+          "outcome": "Pneumothorax",
+          "group_a": "3/513 (0.6%)",
+          "group_b": "10/488 (2.0%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.047",
+          "note": "Mechanical complication; higher absolute count in CVC arm"
+        },
+        {
+          "outcome": "Packed red-cell transfusion during study period",
+          "group_a": "38%",
+          "group_b": "30%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.008",
+          "note": "Potential signal of differential procedural/bleeding practice or illness trajectory"
+        },
+        {
+          "outcome": "Positive blood cultures during catheter period",
+          "group_a": "14.2%",
+          "group_b": "9.4%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.02",
+          "note": "Higher rate in PAC group"
+        },
+        {
+          "outcome": "Kidney replacement therapy",
+          "group_a": "14%",
+          "group_b": "11%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.15",
+          "note": "No statistically significant difference"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Shock at baseline",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "",
+          "note": "No differential benefit reported; effect estimates not provided in manuscript"
+        },
+        {
+          "subgroup": "Fluid strategy (liberal vs conservative)",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Interaction P",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.39",
+          "note": "No interaction between catheter type and fluid strategy for primary endpoint"
+        }
+      ]
+    },
+    "safety": [
+      "Any catheter-related complication: PAC 19% vs CVC 9% (P<0.001)",
+      "Arrhythmia requiring treatment: PAC 12% vs CVC 0.2% (P<0.001)",
+      "Pneumothorax: PAC 0.6% vs CVC 2.0% (P=0.047)",
+      "Packed red-cell transfusion: PAC 38% vs CVC 30% (P=0.008)",
+      "Positive blood cultures during catheter period: PAC 14.2% vs CVC 9.4% (P=0.02)",
+      "Kidney replacement therapy: PAC 14% vs CVC 11% (P=0.15)",
+      "Complication rates per catheter: 0.08 ± 0.01 vs 0.06 ± 0.01 (P=0.35)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, protocolised randomisation with stratification by hospital and fluid strategy; allocation concealment not detailed beyond central assignment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded intervention; primary and key secondary endpoints were objective, reducing detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1001 randomised; loss to follow-up for primary endpoint not reported; ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High protocol adherence (91 ± 1% PAC vs 88 ± 1% CVC; P=0.12); low crossover (4 PAC→CVC, 5 CVC→PAC)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups similar on age, APACHE III, PaO2/FiO2, shock prevalence."
+        },
+        {
+          "domain": "Separation of variable of interest",
+          "notes": "Crossover rare; management instructions differed modestly; dobutamine use higher in PAC (7% vs 2%, P<0.001) without outcome benefit."
+        }
+      ],
+      "verdict": "Overall, internal validity appears strong given central randomisation, very low crossover, high protocol adherence, and objective endpoints; main limitation is unavoidable lack of blinding with potential co-intervention effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents ventilated adults with early ALI in high-resource ICUs, enrolled within 48 hours; exclusions (prolonged ALI, pre-existing PAC, severe chronic diseases) narrow applicability."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings most applicable to ICUs with protocolised management and experienced staff; generalisation to resource-limited settings constrained; may not extend to niche populations (e.g., right ventricular failure) where PAC information is uniquely actionable."
+        }
+      ],
+      "verdict": "External validity is moderate: reflects early ALI/ARDS care in experienced, protocol-capable centres, but broader applicability limited by selective exclusions and protocolised nature of intervention."
+    },
+    "strengths": [
+      "Large, multicentre randomised evaluation (n=1001) with clinically meaningful primary endpoint.",
+      "Early enrolment (≤48 hours after ALI criteria met) and prespecified insertion window (≤4 hours) increased biological plausibility for benefit.",
+      "High protocol fidelity and low crossover (4 vs 5 patients) improve separation of monitoring strategy.",
+      "Factorial platform enabled explicit assessment for interaction with fluid strategy (interaction P=0.39)."
+    ],
+    "limitations": [
+      "Unblinded intervention introduces potential performance bias and co-intervention variability.",
+      "Protocolised management may attenuate incremental value of PAC-derived information compared with clinician-directed PAC use; trial estimates effect under protocol constraints.",
+      "Primary endpoint (death before discharge home by day 60) can be influenced by discharge practices, though balanced by randomisation.",
+      "Trial not designed to fully quantify extremely rare catastrophic PAC complications; however, clinically important arrhythmias were substantially more common with PAC (12% vs 0.2%)."
+    ],
+    "critical_appraisal": {
+      "summary": "FACTT is a well-conducted, large RCT demonstrating no benefit of PAC-guided protocolised management over CVC-guided management in early ALI, with higher complication rates; the findings support avoiding routine PAC use in this population.",
+      "strengths": [
+        "Large sample size, multicentre",
+        "Early enrolment and protocolised insertion",
+        "High protocol adherence and low crossover",
+        "Factorial design allowed interaction testing"
+      ],
+      "weaknesses": [
+        "Unblinded, potential for co-intervention",
+        "Protocolised management may not reflect real-world PAC use",
+        "Primary endpoint influenced by discharge practices",
+        "Limited power for rare complications"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Routine PAC use in ALI did not improve patient-centred outcomes when compared with CVC-based targets within a protocolised management framework. The absence of benefit, coupled with higher complication rates, supports a default strategy of using less invasive monitoring unless a patient-specific indication exists.",
+    "clinical_bottom_line": {
+      "verdict": "In early acute lung injury, pulmonary-artery catheters should not be used routinely; central venous catheter-based monitoring is sufficient for protocolised haemodynamic management.",
+      "applies_to": "Mechanically ventilated adults with early ALI/ARDS in ICUs capable of protocolised fluid and vasopressor management.",
+      "does_not_mean": "PACs are never useful; they may still have a role in selected patients with complex haemodynamic instability where specific PAC-derived data could alter management, but this trial does not support routine use.",
+      "implementation_caveats": [
+        "Protocolised management was used; results may differ with clinician-directed PAC use",
+        "Complication rates may vary by operator experience and setting",
+        "The trial did not evaluate advanced haemodynamic monitoring devices (e.g., echocardiography, pulse contour analysis)"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of what the trial truly tests",
+        "notes": "Evaluates PAC-guided targets embedded in a rigid protocol versus CVP-guided targets, not discretionary clinician-directed PAC decision-making."
+      },
+      {
+        "topic": "Clinical significance of harm signal",
+        "notes": "Arrhythmias requiring treatment occurred in 12% with PAC vs 0.2% with CVC (P<0.001), shifting risk–benefit against routine PAC placement even in expert centres."
+      },
+      {
+        "topic": "Alignment with subsequent practice trends",
+        "notes": "Critical care has moved toward less invasive haemodynamic assessment (bedside echocardiography) and selective use of advanced monitoring, consistent with these data."
+      },
+      {
+        "topic": "Broader evidence base",
+        "notes": "Other randomised evaluations and systematic syntheses have not established routine outcome benefit for PACs across ICU populations comparable to ALI/ARDS."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Whether PACs provide benefit in specific subgroups (e.g., right ventricular failure, severe shock) where haemodynamic data might uniquely guide therapy.",
+      "Optimal haemodynamic monitoring strategy in ARDS with concomitant shock."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1001",
+        "60-day mortality: 27.4% PAC vs 26.3% CVC (P=0.69)",
+        "Arrhythmia requiring treatment: 12% vs 0.2% (P<0.001)",
+        "Ventilator-free days: 13.2 vs 13.5 (P=0.58)"
+      ],
+      "one_line_takeaway": "In early ALI, PAC-guided protocolised management does not improve outcomes over CVC-guided management and causes more arrhythmias; avoid routine PAC use."
+    }
+  },
+  "_source_id": "FACTT",
+  "_source_system": "Circulatory"
+}

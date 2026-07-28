@@ -1,0 +1,297 @@
+{
+  "id": "DanGer_Shock",
+  "trial_name": "DanGer Shock",
+  "specialty": "Critical Care",
+  "subtopic": "Cardiogenic Shock",
+  "year": 2024,
+  "journal": "New England Journal of Medicine",
+  "citation": "Møller JE, Engstrøm T, Jensen LO, Eiskjær H, Mangner N, Polzin A, et al. Microaxial Flow Pump or Standard Care in Infarct-Related Cardiogenic Shock. N Engl J Med. 2024;390:1382-1393",
+  "doi": "10.1056/NEJMoa2312572",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 360,
+  "result_category": "Positive",
+  "one_liner": "Routine Impella CP reduced 180-day mortality (45.8% vs 58.5%) but increased severe bleeding (20.1% vs 3.4%) and renal-replacement therapy (41.9% vs 26.7%) in selected infarct-related cardiogenic shock.",
+  "pico": {
+    "population": "Adults with ST-segment elevation myocardial infarction and cardiogenic shock (systolic BP <100 mmHg or vasopressor/inotrope, arterial lactate ≥2.5 mmol/L, LVEF <45%)",
+    "intervention": "Routine microaxial flow pump (Impella CP) placement plus standard care",
+    "comparison": "Standard care alone (guideline-concordant shock care, with rescue MCS at discretion)",
+    "outcome": "All-cause mortality at 180 days"
+  },
+  "keywords": [
+    "Impella CP",
+    "cardiogenic shock",
+    "mechanical circulatory support",
+    "STEMI",
+    "microaxial flow pump",
+    "RCT"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Infarct-related cardiogenic shock remains a high-mortality syndrome despite rapid reperfusion and modern intensive care. Temporary mechanical circulatory support devices are widely used but prior evidence was dominated by observational studies and small trials, with concerns about bleeding and vascular complications.",
+      "knowledge_gap": "Equipoise persisted regarding whether routine early left ventricular unloading/support improves survival or simply shifts morbidity.",
+      "hypothesis": "Routine microaxial flow pump support plus standard care reduces all-cause mortality at 180 days compared with standard care alone."
+    },
+    "methods": {
+      "design": "International, multicentre, randomised, open-label, parallel-group trial with 1:1 allocation, stratified by site, intention-to-treat analysis.",
+      "setting": "High-volume tertiary centres in Denmark and Germany with 24/7 invasive cardiology and critical care.",
+      "population": {
+        "inclusion": [
+          "ST-segment elevation myocardial infarction",
+          "Cardiogenic shock defined by systolic BP <100 mmHg (or vasopressor/inotrope) and arterial lactate ≥2.5 mmol/L and LVEF <45%"
+        ],
+        "exclusion": [
+          "Coma after out-of-hospital cardiac arrest",
+          "Overt right ventricular failure",
+          "Mechanical complications of MI",
+          "Severe peripheral vascular disease precluding large-bore access",
+          "Other conditions limiting feasibility/safety of device placement"
+        ]
+      },
+      "intervention": "Routine Impella CP placement after randomisation (typically before PCI completion), run at highest performance level, goal support ≥48 hours, managed in specialised cardiac ICU with protocolised weaning.",
+      "comparison": "Standard care: guideline-concordant shock care, revascularisation, vasopressors/inotropes, ventilation, and escalation to other MCS (IABP, VA-ECMO) at clinician discretion.",
+      "blinding": "Open-label (device strategy not amenable to blinding); primary outcome (all-cause death) objective.",
+      "sample_size_power": "Planned to detect 18% absolute mortality reduction (60% to 42%) with 80% power, two-sided α=0.05; target 360 patients (162 per group) to accommodate dropouts; one interim analysis after 180 patients with stopping boundary P≤0.001.",
+      "primary_outcome": "All-cause mortality at 180 days.",
+      "secondary_outcomes": [
+        "All-cause mortality at 30 days",
+        "Composite of major adverse clinical events",
+        "Days alive and out of hospital at 180 days",
+        "Composite safety endpoint (severe bleeding, limb ischaemia, haemolysis, device failure, worsening aortic regurgitation)",
+        "Severe bleeding (BARC 3 or 5)",
+        "Renal-replacement therapy",
+        "Limb ischaemia requiring surgery",
+        "Haemolysis"
+      ],
+      "follow_up": "180 days (primary), with in-hospital and 30-day outcomes reported."
+    },
+    "results": {
+      "headline_bullets": [
+        "Mortality was lower with Impella CP at 180 days (45.8% vs 58.5%; HR 0.74; 95% CI 0.55–0.99; P=0.04).",
+        "Device strategy increased major harms: severe bleeding (20.1% vs 3.4%) and renal-replacement therapy (41.9% vs 26.7%).",
+        "Protocol separation was substantial: Impella CP placed in 95.0% vs 1.7% crossover."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause death (primary, 180 days)",
+          "group_a": "82/179 (45.8%)",
+          "group_b": "103/176 (58.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.74",
+          "ci_95": "0.55 to 0.99",
+          "p_value": "0.04",
+          "note": "Time-to-event analysis"
+        },
+        {
+          "outcome": "All-cause death (30 days)",
+          "group_a": "69/179 (38.5%)",
+          "group_b": "91/176 (51.7%)",
+          "effect_measure": "HR",
+          "effect_value": "0.73",
+          "ci_95": "0.52 to 1.02",
+          "p_value": "",
+          "note": "Secondary outcome; not statistically definitive"
+        },
+        {
+          "outcome": "Composite secondary efficacy endpoint",
+          "group_a": "105/179 (58.7%)",
+          "group_b": "122/176 (69.3%)",
+          "effect_measure": "HR",
+          "effect_value": "0.72",
+          "ci_95": "0.55 to 0.93",
+          "p_value": "",
+          "note": "Composite of major adverse clinical events (trial-defined)"
+        },
+        {
+          "outcome": "Days alive and out of hospital (180 days)",
+          "group_a": "106.6 ± 59.2",
+          "group_b": "89.2 ± 70.9",
+          "effect_measure": "Mean difference",
+          "effect_value": "17.4 days",
+          "ci_95": "4.2 to 30.6",
+          "p_value": "",
+          "note": "Higher 'home time' with Impella strategy"
+        },
+        {
+          "outcome": "Composite safety endpoint",
+          "group_a": "43/179 (24.0%)",
+          "group_b": "11/176 (6.2%)",
+          "effect_measure": "RR",
+          "effect_value": "4.74",
+          "ci_95": "2.36 to 9.55",
+          "p_value": "",
+          "note": "Severe bleeding, limb ischaemia, haemolysis, device failure, or worsening aortic regurgitation"
+        },
+        {
+          "outcome": "Severe bleeding",
+          "group_a": "36/179 (20.1%)",
+          "group_b": "6/176 (3.4%)",
+          "effect_measure": "RR",
+          "effect_value": "6.11",
+          "ci_95": "2.64 to 14.13",
+          "p_value": "",
+          "note": "Defined as BARC 3 or 5 bleeding"
+        },
+        {
+          "outcome": "Renal-replacement therapy",
+          "group_a": "75/179 (41.9%)",
+          "group_b": "47/176 (26.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.98",
+          "ci_95": "1.27 to 3.09",
+          "p_value": "",
+          "note": "Clinically important excess organ support requirement"
+        },
+        {
+          "outcome": "Limb ischaemia requiring surgery",
+          "group_a": "10/179 (5.6%)",
+          "group_b": "2/176 (1.1%)",
+          "effect_measure": "RR",
+          "effect_value": "5.64",
+          "ci_95": "1.23 to 25.81",
+          "p_value": "",
+          "note": "Large-bore access complication signal"
+        },
+        {
+          "outcome": "Haemolysis",
+          "group_a": "14/179 (7.8%)",
+          "group_b": "1/176 (0.6%)",
+          "effect_measure": "RR",
+          "effect_value": "13.79",
+          "ci_95": "1.81 to 104.92",
+          "p_value": "",
+          "note": "Low absolute numbers; wide confidence interval"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Severe bleeding (BARC 3 or 5): 20.1% vs 3.4%",
+      "Renal-replacement therapy: 41.9% vs 26.7%",
+      "Limb ischaemia requiring surgery: 5.6% vs 1.1%",
+      "Haemolysis: 7.8% vs 0.6%",
+      "Composite safety endpoint: 24.0% vs 6.2%"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "1:1 randomisation stratified by site; central randomisation; independent DSMC."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; primary outcome (all-cause death) objective, reducing detection bias; co-intervention differences possible."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "360 randomised, 5 excluded post-randomisation due to consent issues (1 Impella, 4 control), leaving 179 vs 176 analysed; ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Impella CP placed in 95.0% of intervention group; 5.0% did not receive device; crossover in control group 1.7% received Impella CP, plus 4 received as unloading during VA-ECMO."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Age 67 vs 68 years; lactate 3.3 vs 3.4 mmol/L; SBP 80 vs 80 mm Hg; LVEF 29% vs 30%."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong given robust randomisation, minimal crossover, and an objective primary outcome; limitations include open-label co-intervention potential and small post-randomisation exclusions related to consent."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Highly selected population; among 1211 screened, 851 excluded, with coma after OHCA a common exclusion (435 patients)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires immediate access to large-bore arterial cannulation, catheter lab workflows, and capability to manage bleeding/vascular complications and renal failure; applies to STEMI-related shock with predominant LV failure, not to comatose post-arrest or RV failure."
+        }
+      ],
+      "verdict": "Generalisability is moderate-to-limited: results most applicable to carefully selected infarct-related cardiogenic shock patients in experienced, high-resource centres with established shock pathways."
+    },
+    "strengths": [
+      "Large pragmatic randomised trial in a high-mortality condition",
+      "Clinically meaningful follow-up (180 days)",
+      "Objective primary endpoint",
+      "Strong protocol separation (95.0% vs 1.7% microaxial pump placement)",
+      "Comprehensive safety reporting"
+    ],
+    "limitations": [
+      "Open-label design with potential co-intervention imbalance",
+      "Substantial exclusions during screening (notably coma after OHCA)",
+      "Post-randomisation exclusions due to consent issues",
+      "High rate of major device-related complications",
+      "Recruitment over many years with evolving practice patterns"
+    ],
+    "critical_appraisal": {
+      "summary": "DanGer Shock is a well-conducted RCT demonstrating a mortality benefit with Impella CP in selected STEMI-related cardiogenic shock, but the benefit is accompanied by a substantial increase in major complications, limiting net clinical benefit to settings with expert shock teams and careful patient selection.",
+      "strengths": [
+        "Robust randomisation and minimal crossover",
+        "Objective primary endpoint",
+        "Comprehensive safety reporting"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Highly selected population excluding comatose post-arrest patients",
+        "High rate of device-related complications"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine Impella CP support in selected infarct-related cardiogenic shock was associated with improved survival at 180 days, but with a substantial increase in major harms, shifting practice from 'device enthusiasm' to 'device plus selection plus systems'.",
+    "clinical_bottom_line": {
+      "verdict": "This trial changes practice by providing evidence that Impella CP can improve survival in carefully selected patients, but mandates rigorous patient selection, procedural expertise, and integrated shock systems to mitigate harm.",
+      "applies_to": "Patients with STEMI-related cardiogenic shock without coma after OHCA, treated in high-volume centres with shock teams.",
+      "does_not_mean": "Does not mean Impella CP should be used routinely in all cardiogenic shock; benefit-risk profile is unfavourable in less selected populations or centres without expertise.",
+      "implementation_caveats": [
+        "Requires immediate access to large-bore access and catheter lab",
+        "High risk of severe bleeding and renal failure necessitates careful monitoring and management",
+        "Exclude comatose post-arrest patients",
+        "Benefit likely depends on early placement and protocolised support duration"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Benefit–harm tension",
+        "notes": "Mortality reduction (HR 0.74) but composite safety endpoint RR 4.74, severe bleeding 20.1% vs 3.4%, raising questions about net clinical benefit in broader populations."
+      },
+      {
+        "topic": "Selection and generalisability",
+        "notes": "Exclusion of comatose post-OHCA patients (435 of 851 excluded) limits applicability; benefit may be concentrated in those without hypoxic brain injury."
+      },
+      {
+        "topic": "Timing of support relative to PCI",
+        "notes": "Substantial proportion randomised after revascularisation; unclear if benefit reflects post-PCI support rather than pre-PCI unloading; subgroup analysis showed no interaction."
+      },
+      {
+        "topic": "Comparative MCS evidence",
+        "notes": "Early VA-ECMO in infarct-related shock has not shown survival advantage and increases complications, reinforcing that modality and selection matter."
+      },
+      {
+        "topic": "Meta-analytic synthesis",
+        "notes": "Recent meta-analysis including DanGer Shock reported mortality reduction signals for microaxial pumps alongside increased bleeding/vascular complications."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Optimal patient selection criteria to maximise benefit and minimise harm",
+      "Long-term functional outcomes beyond 180 days",
+      "Cost-effectiveness of routine Impella CP strategy",
+      "Effect in non-STEMI shock and mixed shock aetiologies",
+      "Impact of timing of device placement relative to PCI"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=360 (355 analysed)",
+        "180-day mortality: 45.8% vs 58.5% (HR 0.74, 95% CI 0.55–0.99, P=0.04)",
+        "Severe bleeding: 20.1% vs 3.4%",
+        "Renal-replacement therapy: 41.9% vs 26.7%"
+      ],
+      "one_line_takeaway": "In selected STEMI-related cardiogenic shock, routine Impella CP reduced 180-day mortality but doubled severe bleeding and increased renal-replacement therapy, making patient selection and shock-team expertise essential."
+    }
+  },
+  "_source_id": "DanGer_Shock",
+  "_source_system": "Circulatory"
+}

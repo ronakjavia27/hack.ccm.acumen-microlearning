@@ -1,0 +1,438 @@
+{
+  "id": "CHECKLIST-ICU",
+  "trial_name": "CHECKLIST-ICU — Effect of a Quality Improvement Intervention With Daily Round Checklists, Goal Setting, and Clinician Prompting on Mortality of Critically Ill Patients (2016)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Quality & Safety",
+  "year": 2016,
+  "journal": "JAMA",
+  "citation": "Cavalcanti AB, Bozza FA, Machado FR, et al; Writing Group for the CHECKLIST-ICU Investigators and the Brazilian Research in Intensive Care Network (BRICNet). Effect of a quality improvement intervention with daily round checklists, goal setting, and clinician prompting on mortality of critically ill patients: a randomized clinical trial. JAMA. 2016;315(14):1480-1490.",
+  "doi": "https://doi.org/10.1001/jama.2016.3463",
+  "registration": null,
+  "trial_type": "RCT — cluster-randomized, multicenter, parallel-group, pragmatic",
+  "evidence_level": "High-quality cluster RCT",
+  "sample_size": 6761,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In 118 Brazilian ICUs, a multifaceted checklist + daily goals + clinician prompting intervention did not reduce in-hospital mortality (32.9% vs 34.8%; adjusted OR 1.02, 95% CI 0.82–1.26), but improved some care processes and safety culture.",
+  "pico": {
+    "population": "Adult patients (≥18 years) with ICU stay >48 hours in 118 Brazilian ICUs capable of multidisciplinary rounds.",
+    "intervention": "Daily multidisciplinary rounds with a nurse-read checklist covering 11 care processes (VTE prevention, VAP prevention, device removal, nutrition, sedation, extubation readiness, sepsis/ARDS detection, antibiotic optimisation, low tidal volume), explicit daily goals recorded on a standardised form, and afternoon nurse-led clinician prompting to resolve pending items; supported by initiation visit, audit and feedback, SMS reminders, and targeted contact for low adherence.",
+    "comparison": "Routine care (multidisciplinary rounds if locally practised) with no structured checklist, goals form, or prompting.",
+    "outcome": "In-hospital mortality truncated at 60 days (primary); ICU mortality, central line–associated bloodstream infection, ventilator-associated pneumonia, urinary tract infection, ventilator-free days at 28 days, ICU/hospital length of stay, process-of-care adherence, safety culture (SAQ)."
+  },
+  "keywords": [
+    "checklist",
+    "daily goals",
+    "clinician prompting",
+    "quality improvement",
+    "cluster randomized trial",
+    "ICU processes",
+    "safety culture"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "ICU care requires consistent delivery of evidence-based processes under time pressure and high cognitive load; omission errors and failure to communicate daily goals are common and may be amplified by hierarchical team dynamics. Prior ICU checklist studies were mostly before–after designs with risk of bias and uncertain effects on mortality.",
+      "knowledge_gap": "Does a multifaceted checklist-based QI programme reduce mortality in heterogeneous, real-world ICUs?",
+      "hypothesis": "The intervention would reduce in-hospital mortality via improved adherence to targeted care processes and improved safety culture/teamwork."
+    },
+    "methods": {
+      "design": "Two-phase (baseline observational then cluster-randomized), multicenter, pragmatic, investigator-initiated, parallel-group cluster trial; randomisation stratified by baseline ICU mortality.",
+      "setting": "118 adult ICUs in Brazil (all regions; public and private hospitals); enrolled consecutively eligible patients over ≤6 months per phase.",
+      "population": {
+        "inclusion": [
+          "Adult patients (≥18 years) with ICU stay >48 hours"
+        ],
+        "exclusion": [
+          "Moribund patients with high probability of death anticipated between 48 and 72 hours",
+          "Exclusive palliative care",
+          "Suspected or confirmed brain death"
+        ]
+      },
+      "intervention": "Core: Weekday multidisciplinary rounds where a nurse read a checklist targeting 11 care processes; explicit daily goals recorded and read aloud. Afternoon nurse reviewed goals and contacted on-call physician about pending items. Implementation: investigator meeting, initiation visit with steering-committee intensivist, monthly audit & feedback, website/resources, videos, active SMS reminders 1–3 times/week, targeted contact with directors if adherence low. Applied for all eligible patients throughout ICU stay (goal Monday–Friday).",
+      "comparison": "Routine care, including local multidisciplinary visits, with no pre-intervention training, no structured checklist/goals form, and no clinician prompting. Control ICUs agreed to receive the intervention after study completion.",
+      "blinding": "Caregivers not blinded (behavioural intervention); research coordinators and statistician not blinded to group assignment. VAP and CLABSI adjudicated by a blinded committee.",
+      "sample_size_power": "102 ICUs (~5100 patients) required to detect a 6% absolute reduction in in-hospital mortality (from 30% to 24%) with 90% power at 5% significance, assuming cluster coefficient of variation K=0.25. Final enrolment: 118 ICUs, 6761 patients.",
+      "primary_outcome": "In-hospital mortality truncated at 60 days",
+      "secondary_outcomes": [
+        "ICU mortality",
+        "Central line–associated bloodstream infection (per 1000 catheter-days)",
+        "Ventilator-associated pneumonia (per 1000 ventilator-days)",
+        "Urinary tract infection associated with urinary catheter (per 1000 catheter-days)",
+        "Ventilator-free days at 28 days",
+        "ICU length of stay",
+        "Hospital length of stay",
+        "Adherence to care processes (low tidal volume ventilation, sedation depth, device utilisation, VTE prophylaxis, diet, head-of-bed elevation)",
+        "Safety culture and teamwork climate (Safety Attitudes Questionnaire)"
+      ],
+      "follow_up": "In-hospital mortality up to 60 days; secondary clinical outcomes within hospital stay; process outcomes measured repeatedly from ICU day 2 to 17."
+    },
+    "results": {
+      "headline_bullets": [
+        "No reduction in in-hospital mortality (32.9% vs 34.8%; adjusted OR 1.02, 95% CI 0.82–1.26, P=0.88).",
+        "Improved process adherence on several targets: urinary catheter use (62.8% vs 74.8% of patient-days; adjusted RR 0.86, P<0.001), low tidal volume ventilation (67.5% vs 58.9%; adjusted RR 1.14, P=0.01), central venous catheter use (adjusted RR 0.90, P=0.02).",
+        "Modest improvements in teamwork climate (positive SAQ 53.8% vs 45.8%; OR 1.30, P=0.01) and safety climate (36.5% vs 31.9%; OR 1.27, P=0.03).",
+        "No significant differences in infection rates, ventilator-free days, or length of stay."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "In-hospital mortality ≤60 days (primary)",
+          "group_a": "1096/3327 (32.9%)",
+          "group_b": "1196/3434 (34.8%)",
+          "effect_measure": "OR",
+          "effect_value": "1.02",
+          "ci_95": "0.82–1.26",
+          "p_value": "0.88",
+          "note": "Adjusted for clustering, baseline ICU SMR, and patient SAPS 3."
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "874/3324 (26.3%)",
+          "group_b": "871/3434 (25.4%)",
+          "effect_measure": "OR",
+          "effect_value": "1.17",
+          "ci_95": "0.93–1.47",
+          "p_value": "0.19",
+          "note": "Adjusted; ICC=0.13."
+        },
+        {
+          "outcome": "Central line–associated bloodstream infection (per 1000 catheter-days)",
+          "group_a": "143/17,286 (8.3/1000)",
+          "group_b": "153/18,475 (8.3/1000)",
+          "effect_measure": "Rate ratio",
+          "effect_value": "1.03",
+          "ci_95": "0.73–1.45",
+          "p_value": "0.88",
+          "note": "Adjudicated by blinded committee."
+        },
+        {
+          "outcome": "Ventilator-associated pneumonia (per 1000 MV-days)",
+          "group_a": "64/11,823 (5.4/1000)",
+          "group_b": "65/13,569 (4.8/1000)",
+          "effect_measure": "Rate ratio",
+          "effect_value": "1.04",
+          "ci_95": "0.68–1.58",
+          "p_value": "0.87",
+          "note": "Adjudicated by blinded committee."
+        },
+        {
+          "outcome": "Urinary tract infection (per 1000 UC-days)",
+          "group_a": "158/14,975 (10.6/1000)",
+          "group_b": "151/18,954 (8.0/1000)",
+          "effect_measure": "Rate ratio",
+          "effect_value": "1.28",
+          "ci_95": "0.91–1.81",
+          "p_value": "0.16",
+          "note": "No blinded adjudication."
+        },
+        {
+          "outcome": "Ventilator-free days at 28 days",
+          "group_a": "Mean 13.0 (95% CI 12.8–13.2)",
+          "group_b": "Mean 13.4 (95% CI 13.2–13.6)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.40",
+          "ci_95": "-1.26 to 0.46",
+          "p_value": "0.36",
+          "note": "Prespecified secondary outcome."
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "Mean 10.2 (95% CI 9.8–10.6)",
+          "group_b": "Mean 10.4 (95% CI 10.1–10.7)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.24",
+          "ci_95": "-0.67 to 0.19",
+          "p_value": "0.28",
+          "note": "Cluster-adjusted."
+        },
+        {
+          "outcome": "Hospital length of stay (days)",
+          "group_a": "Mean 18.7 (95% CI 18.2–19.2)",
+          "group_b": "Mean 20.0 (95% CI 19.4–20.6)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.32",
+          "ci_95": "-0.95 to 0.31",
+          "p_value": "0.31",
+          "note": "Cluster-adjusted."
+        },
+        {
+          "outcome": "Low tidal volume (≤8 mL/kg PBW; ventilated patient-days)",
+          "group_a": "3012/4459 (67.5%)",
+          "group_b": "3031/5149 (58.9%)",
+          "effect_measure": "RR",
+          "effect_value": "1.14",
+          "ci_95": "1.03–1.26",
+          "p_value": "0.01",
+          "note": "Process adherence; model-based adjusted RR."
+        },
+        {
+          "outcome": "Moderate/mild sedation or alert & calm (RASS –3 to 0; ventilated patient-days)",
+          "group_a": "1805/4462 (40.5%)",
+          "group_b": "1800/5149 (35.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.19",
+          "ci_95": "1.00–1.42",
+          "p_value": "0.05",
+          "note": "Borderline significance."
+        },
+        {
+          "outcome": "Central venous catheter use (patient-days)",
+          "group_a": "17,286/23,861 (72.4%)",
+          "group_b": "18,475/25,329 (72.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.90",
+          "ci_95": "0.83–0.98",
+          "p_value": "0.02",
+          "note": "Model-based adjusted RR."
+        },
+        {
+          "outcome": "Indwelling urinary catheter use (patient-days)",
+          "group_a": "14,975/23,861 (62.8%)",
+          "group_b": "18,954/25,329 (74.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.86",
+          "ci_95": "0.80–0.93",
+          "p_value": "<0.001",
+          "note": "Largest process effect; remained significant after Sidak correction (α=0.002)."
+        },
+        {
+          "outcome": "Head-of-bed elevation ≥30° (eligible patient-days)",
+          "group_a": "7129/7460 (95.6%)",
+          "group_b": "7071/7882 (89.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.05",
+          "ci_95": "0.99–1.11",
+          "p_value": "0.14",
+          "note": "High baseline adherence."
+        },
+        {
+          "outcome": "Adequate VTE prophylaxis (eligible patient-days)",
+          "group_a": "6963/9306 (74.8%)",
+          "group_b": "7339/9781 (75.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.05",
+          "ci_95": "0.91–1.22",
+          "p_value": "0.50",
+          "note": null
+        },
+        {
+          "outcome": "Diet administration (eligible patient-days)",
+          "group_a": "7374/9306 (79.2%)",
+          "group_b": "7468/9781 (76.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.89–1.20",
+          "p_value": "0.65",
+          "note": null
+        },
+        {
+          "outcome": "Teamwork climate (SAQ positive responses)",
+          "group_a": "1683/3130 (53.8%)",
+          "group_b": "1471/3212 (45.8%)",
+          "effect_measure": "OR",
+          "effect_value": "1.30",
+          "ci_95": "1.08–1.57",
+          "p_value": "0.01",
+          "note": "Improved teamwork."
+        },
+        {
+          "outcome": "Safety climate (SAQ positive responses)",
+          "group_a": "1142/3128 (36.5%)",
+          "group_b": "1024/3214 (31.9%)",
+          "effect_measure": "OR",
+          "effect_value": "1.27",
+          "ci_95": "1.02–1.57",
+          "p_value": "0.03",
+          "note": "Modest improvement; other SAQ domains not significantly different."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Prespecified clinical subgroups (baseline ICU mortality, hospital regime, admission type, SOFA, sepsis, MV)",
+          "group_a": "Not specified individually",
+          "group_b": "Not specified individually",
+          "effect_measure": "Interaction P",
+          "effect_value": "All non-significant",
+          "ci_95": "N/A",
+          "p_interaction": "N/S",
+          "note": "No evidence of effect modification across any prespecified clinical subgroup."
+        },
+        {
+          "subgroup": "Baseline safety climate below median",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "OR",
+          "effect_value": "0.75",
+          "ci_95": "0.53–1.04",
+          "p_interaction": "<0.01",
+          "note": "Exploratory; direction suggests potential benefit in low-safety-climate ICUs."
+        },
+        {
+          "subgroup": "Baseline safety climate above median",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "OR",
+          "effect_value": "1.38",
+          "ci_95": "0.99–1.92",
+          "p_interaction": "<0.01",
+          "note": "Exploratory."
+        },
+        {
+          "subgroup": "Baseline perception of management below median",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "OR",
+          "effect_value": "0.73",
+          "ci_95": "0.53–1.02",
+          "p_interaction": "<0.01",
+          "note": "Exploratory."
+        },
+        {
+          "subgroup": "Baseline perception of management above median",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "OR",
+          "effect_value": "1.43",
+          "ci_95": "1.02–1.99",
+          "p_interaction": "<0.01",
+          "note": "Exploratory; possible detrimental signal in high-management-perception ICUs."
+        }
+      ]
+    },
+    "safety": [
+      "No intervention-related harms or adverse events were specifically reported beyond the prespecified clinical outcomes and infections. The intervention was a behavioral QI bundle; no direct patient harm is expected."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Cluster randomisation with concealed sequence generation: statistician received only ICU codes, not identities, before assigning allocation. Permuted blocks of 4, stratified by median baseline mortality. ICUs randomised only after meeting data completeness criteria (≥30 patients, SAQ response >75% staff), reducing post-randomisation attrition."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Clinicians unblinded (behavioural intervention); possible performance effects and differential co-interventions. Research staff not blinded for adherence data collection. Primary outcome (mortality) is objective; VAP and CLABSI adjudicated by blinded committee."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Vital status missing for only 3 patients, handled with multiple imputation; ITT principles maintained. No evidence of post-randomisation cluster dropout; all 118 ICUs completed follow-up."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High implementation fidelity: multidisciplinary rounds occurred on 92.8 vs 61.5 days/100 patient-weekdays (intervention vs control). Checklist use 90.6 days/100, and prompting 89.1 days/100 in intervention. Process separation confirmed by outcome data (e.g., urinary catheter use significantly lower)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Cluster-level imbalances typical of pragmatic trials (e.g., academic status, bed numbers). Patient-level: mean SAPS 3 at admission was lower in intervention (51.2 ± 17.9 vs 54.2 ± 17.5), a difference that would bias toward benefit, yet no mortality reduction seen."
+        },
+        {
+          "domain": "Heterogeneity and clustering",
+          "notes": "Large number of clusters (59 per arm) strengthens robustness; analyses accounted for ICU clustering with mixed-effects models. ICC for ICU mortality was 0.13."
+        },
+        {
+          "domain": "Timing and dose",
+          "notes": "Intervention primarily on weekdays; potential limited dose if weekend drift is important. Duration capped at ≤6 months per ICU, limiting time for organisational change to affect hard outcomes."
+        },
+        {
+          "domain": "Outcome assessment and multiplicity",
+          "notes": "Primary endpoint objective; multiple secondary outcomes tested. Authors reported Sidak correction; only urinary catheter use remained significant."
+        }
+      ],
+      "verdict": "Moderate to strong internal validity: concealed allocation, high fidelity, objective primary endpoint; main threats are lack of clinician blinding and incomplete screening denominator data."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "ICUs from all Brazilian regions, both public and private, but required baseline data-collection capability and willingness for structured QI. Excluded ICUs already using checklists or not performing multidisciplinary rounds, limiting generalisability to settings without rounding infrastructure or with mature checklist systems."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Eligibility restricted to ICU stay >48h; findings apply to patients with prolonged ICU exposure but not to early trajectories. Intervention is low-tech and scalable but requires nursing empowerment, reliable rounds, and leadership engagement. Effects may be context-dependent (baseline adherence, safety culture)."
+        }
+      ],
+      "verdict": "Generalisability is moderate to adult ICUs capable of structured multidisciplinary rounds; less certain in units with already high baseline adherence or different organisational constraints."
+    },
+    "strengths": [
+      "Large pragmatic cluster-randomized design minimise contamination across 118 heterogeneous ICUs.",
+      "Prespecified protocol and statistical analysis plan with mixed-effects models properly accounting for clustering.",
+      "High implementation fidelity with direct measurement of both process adherence and safety culture (SAQ).",
+      "Blinded adjudication for VAP and CLABSI reduce outcome detection bias."
+    ],
+    "limitations": [
+      "Unblinded clinicians and adherence data collectors may inflate performance effects, especially for process outcomes.",
+      "Eligibility based on ICU stay >48h and exclusion of patients expected to die between 48–72h creates a selected cohort; screening logs for all admissions not reported.",
+      "Intervention duration limited to ≤6 months per ICU, potentially too short for mortality impact.",
+      "Multiple secondary outcomes; few persisted after multiplicity correction."
+    ],
+    "critical_appraisal": {
+      "summary": "CHECKLIST-ICU is a well-conducted, high-fidelity cluster RCT that provides strong evidence that a multifaceted checklist intervention does not reduce mortality in heterogeneous Brazilian ICUs, despite improving some care processes and safety culture.",
+      "strengths": [
+        "Large sample and number of clusters",
+        "Prespecified analytic plan aligned with design",
+        "Objective primary outcome",
+        "High implementation fidelity"
+      ],
+      "weaknesses": [
+        "Lack of blinding",
+        "Selective patient sampling (post-48h enrolment)",
+        "Short intervention duration",
+        "Multiple testing of secondary endpoints"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "The intervention did not reduce in-hospital mortality but improved several care processes and perceptions of teamwork and safety climate. Checklists and daily goal setting with prompting are best viewed as tools to enhance care reliability and team function, not as standalone mortality-reduction strategies.",
+    "clinical_bottom_line": {
+      "verdict": "Adopt daily rounding checklists with explicit goal setting and nurse-led prompting to improve ICU processes and team culture, but do not expect a mortality reduction from this strategy alone.",
+      "applies_to": "Adult ICU patients with prolonged stay in settings capable of structured multidisciplinary rounds; effects most evident for urinary catheter removal and lung-protective ventilation where baseline adherence is imperfect.",
+      "does_not_mean": "Checklists are ineffective; they improve reliability and safety climate but have a ceiling on hard clinical outcomes when the preventable fraction of mortality is small or the intervention dose/duration is limited.",
+      "implementation_caveats": [
+        "Weekday-only delivery may dilute effectiveness",
+        "Duration ≥6 months likely needed for deeper cultural change",
+        "May be less effective in ICUs with already high adherence or poor organisational readiness"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Selection and eligibility defined after 48 hours",
+        "notes": "Enrolling only patients surviving to >48h (and excluding those expected to die between 48–72h) complicates interpretation; authors provided clarifications on design intent and bias control."
+      },
+      {
+        "topic": "Mortality as an insensitive endpoint for behavioral QI",
+        "notes": "The intervention improved processes and safety culture but not mortality, suggesting mortality may be too distant or confounded to reflect checklist benefits unless baseline non-adherence is extreme or the intervention is more continuous."
+      },
+      {
+        "topic": "Multiplicity and interpretation of secondary outcomes",
+        "notes": "Nominal significance for several secondary endpoints did not consistently survive Sidak correction; the clearest signal remains urinary catheter use."
+      },
+      {
+        "topic": "Hypothesis-generating heterogeneity by baseline culture",
+        "notes": "Exploratory analyses suggest possible benefit in low-safety-climate ICUs vs harm signals in high-management-perception ICUs, but these are hypothesis-generating only."
+      },
+      {
+        "topic": "Alignment with infection-prevention implementation strategies",
+        "notes": "Contemporary HAI prevention guidance emphasises daily assessment of device necessity and structured team processes—areas directly targeted by CHECKLIST-ICU—even though mortality was unchanged."
+      },
+      {
+        "topic": "Subsequent systematic syntheses",
+        "notes": "Systematic reviews of ward-round/checklist interventions generally show improvements in process and communication outcomes with low-to-moderate certainty, while effects on mortality and length of stay remain inconsistent across heterogeneous designs and settings."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Would a longer intervention duration (>6 months) with continuous (7-day) coverage yield mortality benefit?",
+      "Which specific components (checklist, goal setting, prompting) are most effective, and are they additive?",
+      "Can baseline organisational culture predict which ICUs benefit most?",
+      "What is the optimal strategy to sustain improvements after the intervention period ends?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "118 ICUs, 6761 patients",
+        "In-hospital mortality 32.9% vs 34.8% (OR 1.02) – no benefit",
+        "Urinary catheter use 62.8% vs 74.8% (RR 0.86) – largest process gain",
+        "Teamwork climate improved (OR 1.30)"
+      ],
+      "one_line_takeaway": "A well-implemented daily rounding checklist with explicit goals and clinician prompting improved ICU process reliability and team culture but did not reduce mortality in Brazilian ICUs."
+    }
+  },
+  "_source_id": "CHECKLIST-ICU",
+  "_source_system": "Miscellaneous"
+}

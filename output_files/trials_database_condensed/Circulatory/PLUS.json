@@ -1,0 +1,378 @@
+{
+  "id": "Hayes",
+  "trial_name": "Hayes — Supranormal Oxygen Delivery in Critical Illness (1994)",
+  "specialty": "Circulatory",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 1994,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Hayes MA, Timmins AC, Yau EHS, Palazzo M, Hinds CJ, Watson D. Elevation of systemic oxygen delivery in the treatment of critically ill patients. N Engl J Med. 1994;330(24):1717-1722.",
+  "doi": "10.1056/NEJM199406163302404",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, two-centre",
+  "evidence_level": "Moderate",
+  "sample_size": 100,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In high-risk ICU patients, dobutamine-driven supranormal oxygen delivery targets increased CI and DO2 but not VO2, and was associated with higher mortality (ICU 50% vs 30%, P=0.04).",
+  "pico": {
+    "population": "High-risk critically ill adults (sepsis, ARDS, major surgery) with failure to achieve supranormal targets (CI >4.5 L/min/m², DO2 >600 mL/min/m², VO2 >170 mL/min/m²) after fluid resuscitation.",
+    "intervention": "Supranormal-target dobutamine strategy: dobutamine 5–200 mcg/kg/min titrated to achieve CI >4.5, DO2 >600, VO2 >170 simultaneously, plus dopamine 2 mcg/kg/min, volume optimisation to plateau of LVSWI vs PAOP, norepinephrine to maintain MAP 80 mmHg.",
+    "comparison": "Standard care: dobutamine only if CI <2.8 L/min/m²; otherwise identical haemodynamic support (dopamine, fluids, norepinephrine).",
+    "outcome": "ICU mortality, in-hospital mortality."
+  },
+  "keywords": [
+    "supranormal oxygen delivery",
+    "dobutamine",
+    "hemodynamic optimization",
+    "critical care",
+    "pulmonary artery catheter",
+    "goal-directed therapy"
+  ],
+  "related_trials": [
+    "Gattinoni et al. 1995 (NEJM goal-directed hemodynamic therapy)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "The ‘supranormal oxygen delivery’ concept arose from observational and interventional perioperative work suggesting that survivors of major stress states achieve higher CI and DO2 than non-survivors, and that protocolised targeting of these values (often using pulmonary artery catheters and inotropes) could reduce complications and mortality in selected high‑risk surgical cohorts.",
+      "knowledge_gap": "Whether this strategy applies to heterogeneous high-risk ICU patients with established organ failure.",
+      "hypothesis": "In a heterogeneous, high‑risk ICU population (including sepsis syndrome/shock, ARDS, and high‑risk surgical/medical admissions) who fail to reach predefined supranormal targets with volume expansion alone, does dobutamine‑driven augmentation of CI/DO2/VO2 improve clinical outcomes versus standard haemodynamic support?"
+    },
+    "methods": {
+      "design": "Prospective, randomised, controlled, two-centre ICU trial (open-label).",
+      "setting": "ICUs at two hospitals; consecutive high-risk admissions screened over two years.",
+      "population": {
+        "inclusion": [
+          "High-risk surgical patients (criteria from Shoemaker et al.)",
+          "Non-surgical patients with life-threatening cardiorespiratory illness (acute respiratory failure or septic shock)",
+          "After initial fluid resuscitation, failure to reach all three targets (CI >4.5 L/min/m², DO2 >600 mL/min/m², VO2 >170 mL/min/m²)"
+        ],
+        "exclusion": [
+          "Age <16 years",
+          "Pregnancy",
+          "Neurosurgery",
+          "Pre-existing cardiac disease",
+          "Haematologic cancer"
+        ]
+      },
+      "intervention": "Supranormal-target dobutamine strategy: dobutamine 5–200 mcg/kg/min titrated to achieve CI >4.5 L/min/m², DO2 >600 mL/min/m², and VO2 >170 mL/min/m² simultaneously. All patients received dopamine 2 mcg/kg/min, volume optimisation to plateau of left ventricular stroke-work index vs PAOP, and norepinephrine (0.05–20 mcg/kg/min) if needed to maintain MAP 80 mmHg. Safety limits: hold for sinus tachycardia >130 bpm, tachyarrhythmia, or ECG ischaemia.",
+      "comparison": "Standard support: dobutamine only if CI <2.8 L/min/m². Otherwise identical platform (dopamine, fluids, norepinephrine).",
+      "blinding": "Unblinded (open-label).",
+      "sample_size_power": "Planned 130 per group (80% power to detect 15% absolute mortality reduction from 33% to 18%); trial stopped early after 100 patients randomised (50 per group) due to interim analysis showing harm.",
+      "primary_outcome": "ICU mortality and in-hospital mortality.",
+      "secondary_outcomes": [
+        "Days in ICU",
+        "Mechanical ventilation days",
+        "Hospital days",
+        "Cause of death",
+        "Norepinephrine dose",
+        "Dobutamine dose",
+        "Lactate concentration",
+        "Physiological variables (CI, DO2, VO2, O2 extraction ratio, MAP) incremental AUC",
+        "Dose-limiting complications"
+      ],
+      "follow_up": "Hospital discharge (or death)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Stopped early after interim analysis; ICU mortality 50% vs 30% (P=0.04), hospital mortality 54% vs 34% (P=0.04).",
+        "Dobutamine increased CI (P<0.001) and DO2 (P=0.0012) but not VO2 (P=0.12) or lactate (P=0.2 at 48h).",
+        "35/50 treatment patients failed to achieve all three targets simultaneously; 24/50 had dose-limiting complications (tachycardia, ischaemia, hypertension, arrhythmias).",
+        "Nine patients who achieved targets with volume alone (not randomised) all survived."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "ICU mortality",
+          "group_a": "25/50 (50%)",
+          "group_b": "15/50 (30%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+20%",
+          "ci_95": "1.2 to 38.8",
+          "p_value": "0.04",
+          "note": "Excess deaths largely attributed to multiple organ failure"
+        },
+        {
+          "outcome": "In-hospital mortality",
+          "group_a": "27/50 (54%)",
+          "group_b": "17/50 (34%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+20%",
+          "ci_95": "0.9 to 39.1",
+          "p_value": "0.04",
+          "note": "Median predicted risk of death (APACHE II-based): 34% in both groups"
+        },
+        {
+          "outcome": "Days in ICU, median (range)",
+          "group_a": "10 (1–48)",
+          "group_b": "10 (1–64)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Mechanical ventilation days, median (range)",
+          "group_a": "8 (0–41)",
+          "group_b": "8 (0–54)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "46 vs 44 patients ventilated"
+        },
+        {
+          "outcome": "Days in hospital, median (range)",
+          "group_a": "19 (1–187)",
+          "group_b": "23.5 (1–244)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Death from multiple organ failure",
+          "group_a": "17/50",
+          "group_b": "9/50",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Other causes: intractable hypotension 4 vs 4; cardiac event 4 vs 2"
+        },
+        {
+          "outcome": "Norepinephrine maximal dose, median (range), mcg/kg/min",
+          "group_a": "1.2 (0.02–16.6)",
+          "group_b": "0.23 (0.05–10)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.029",
+          "note": "31/50 vs 34/50 received norepinephrine"
+        },
+        {
+          "outcome": "Dobutamine maximal dose, median (range), mcg/kg/min",
+          "group_a": "25 (2.5–200)",
+          "group_b": "10 (2.5–200)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "50/50 vs 21/50 received dobutamine; 17/50 treatment patients received ≥50 mcg/kg/min"
+        },
+        {
+          "outcome": "Lactate (mmol/L) at 48h, median (25th–75th)",
+          "group_a": "1.7 (1.23–2.5)",
+          "group_b": "1.5 (1.1–2.1)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.2",
+          "note": "Baseline lactate similar (2.2 vs 2.1, P=0.69); both groups decreased over 48h"
+        },
+        {
+          "outcome": "Cardiac index (CI) incremental AUC over 48h",
+          "group_a": "Higher",
+          "group_b": "Lower",
+          "effect_measure": "P value",
+          "effect_value": "<0.001",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Treatment group CI AUC significantly higher"
+        },
+        {
+          "outcome": "Oxygen delivery (DO2) incremental AUC",
+          "group_a": "Higher",
+          "group_b": "Lower",
+          "effect_measure": "P value",
+          "effect_value": "0.0012",
+          "ci_95": "",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Oxygen consumption (VO2) incremental AUC",
+          "group_a": "Similar",
+          "group_b": "Similar",
+          "effect_measure": "P value",
+          "effect_value": "0.12",
+          "ci_95": "",
+          "p_value": "",
+          "note": "No significant difference"
+        },
+        {
+          "outcome": "Oxygen extraction ratio AUC",
+          "group_a": "Lower",
+          "group_b": "Higher",
+          "effect_measure": "P value",
+          "effect_value": "0.045",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Treatment group had lower O2 extraction"
+        },
+        {
+          "outcome": "MAP AUC",
+          "group_a": "Not different",
+          "group_b": "Not different",
+          "effect_measure": "P value",
+          "effect_value": "0.42",
+          "ci_95": "",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Lactate AUC",
+          "group_a": "Not different",
+          "group_b": "Not different",
+          "effect_measure": "P value",
+          "effect_value": "0.34",
+          "ci_95": "",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Dose-limiting complications",
+          "group_a": "24/50",
+          "group_b": "Not reported",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Tachycardia >130 bpm (12), ECG ischaemia (8), hypertension (5), tachyarrhythmias (2)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Tachycardia >130 bpm: 12 patients in treatment group",
+      "ECG evidence of myocardial ischaemia: 8 patients",
+      "Hypertension: 5 patients",
+      "Tachyarrhythmias: 2 patients",
+      "No other adverse events reported; control group complications not detailed.",
+      "Higher norepinephrine maximal dose in treatment group (median 1.2 vs 0.23 mcg/kg/min, P=0.029)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Randomisation used a table of random numbers after fluid resuscitation; allocation concealment not described."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label administration of inotropes/vasopressors; primary outcomes (mortality) are objective, but attribution of cause of death is interpretive."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "All 100 randomised patients included in outcome reporting; no post-randomisation exclusions."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "In treatment group, 35/50 did not achieve all three targets simultaneously despite dobutamine; dose increments limited by complications in 24/50. Control group: 21/50 received dobutamine (up to 200 mcg/kg/min) if CI <2.8, potentially diluting between-group differences."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups similar for age (median 63.5 vs 62), APACHE II (median 18 vs 18), APACHE III (median 58 vs 63), and organ-failure score (median 1 vs 1)."
+        }
+      ],
+      "verdict": "Moderate: randomisation and complete follow-up for hard endpoints support internal validity, but open-label delivery, feasibility limits (failure to reach targets in 35/50), and early stopping reduce confidence in the stability of the effect estimate."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High-risk, heterogeneous ICU cohort (sepsis, ARDS, major surgery); exclusion of patients with pre-existing cardiac disease and haematologic cancer may limit applicability to contemporary ICUs with higher cardiac comorbidity."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Management relied on pulmonary artery catheterisation, fixed dopamine infusion, haemoglobin target >10 g/dL, and explicit CI/DO2/VO2 targets—elements that differ from many modern protocols."
+        }
+      ],
+      "verdict": "Generalisability is context-limited (two-centre, PA catheter–based era), but the central message—systemic DO2 augmentation may not translate into improved tissue utilisation and may cause harm in established critical illness—remains conceptually relevant."
+    },
+    "strengths": [
+      "Prospective randomised controlled design in a heterogeneous ICU population directly testing a prevalent physiological strategy.",
+      "Explicit haemodynamic targets and dosing ranges (dobutamine 5–200 mcg/kg/min; norepinephrine 0.05–20 mcg/kg/min) with prespecified safety limits.",
+      "Objective primary outcomes (ICU and hospital mortality) with complete reporting for all randomised patients.",
+      "Dense physiological sampling and prespecified 48-hour incremental AUC summaries to quantify exposure and separation."
+    ],
+    "limitations": [
+      "Stopped early with only 50 patients per arm (vs planned 130 per arm), limiting precision and increasing susceptibility to random high-magnitude effects.",
+      "Unblinded intervention delivery; co-interventions and bedside decision-making could be influenced by allocation.",
+      "Feasibility constraints: 35/50 treatment patients could not achieve all three targets simultaneously; dose-limiting tachycardia/ischaemia common.",
+      "Era- and technology-specific care (routine pulmonary artery catheterisation, fixed dopamine infusion, haemoglobin target >10 g/dL) may not map cleanly to contemporary practice."
+    ],
+    "critical_appraisal": {
+      "summary": "While this trial raised important safety concerns about supranormal DO2 targets, its early termination, small sample, and open-label design limit confidence in the magnitude of harm; however, the physiological disconnect (improved DO2 without improved VO2) and higher mortality provide a strong cautionary signal.",
+      "strengths": [
+        "Prospective, randomised design",
+        "Detailed physiological measurements",
+        "Clear mortality endpoint"
+      ],
+      "weaknesses": [
+        "Early stopping",
+        "Small sample size",
+        "Unblinded",
+        "Limited target attainment in treatment group"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In high-risk ICU patients, protocolised dobutamine to achieve supranormal oxygen transport targets increased DO2 without improving VO2 or lactate, and was associated with higher mortality; the findings challenge the routine use of fixed systemic DO2 goals in established critical illness.",
+    "clinical_bottom_line": {
+      "verdict": "Does not support routine use of supranormal DO2 targets in general ICU patients; inotrope use should be selective for cardiac dysfunction with hypoperfusion.",
+      "applies_to": "High-risk critically ill adults with established organ failure, not perioperative pre-emptive optimisation.",
+      "does_not_mean": "Does not necessarily implicate dobutamine in all settings; perioperative goal-directed therapy in selected surgical patients may have different risk-benefit.",
+      "implementation_caveats": [
+        "Avoid routine dobutamine escalation to fixed supranormal targets in ICU.",
+        "Catecholamine-related complications (tachycardia, ischaemia) may limit benefit.",
+        "Monitoring and goals may need to be individualised."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Discordant perioperative vs ICU results",
+        "notes": "Single-centre perioperative goal-directed haemodynamic trials often showed reduced complications/mortality, whereas multicentre ICU cohorts showed no benefit or harm, raising questions about timing (pre-emptive vs established organ failure) and protocol fidelity."
+      },
+      {
+        "topic": "Subsequent NEJM trial (Gattinoni 1995)",
+        "notes": "A multicentre RCT of goal-oriented haemodynamic therapy in critically ill patients similarly failed to show outcome benefit, reinforcing the concern that late systemic DO2 augmentation may not improve clinical outcomes."
+      },
+      {
+        "topic": "Meta-analyses and heterogeneity",
+        "notes": "A broad meta-analysis of haemodynamic optimisation trials found an overall mortality reduction when combining studies, driven primarily by perioperative/trauma contexts; effects were not uniform across sepsis/organ-failure populations."
+      },
+      {
+        "topic": "Modern guideline shift",
+        "notes": "Current sepsis/shock guidelines emphasise individualised haemodynamic targets, dynamic fluid responsiveness, serial perfusion assessment, and selective inotrope use—rather than fixed supranormal systemic oxygen transport goals."
+      },
+      {
+        "topic": "Perioperative consensus caution",
+        "notes": "Contemporary perioperative consensus has become more cautious about routine goal-directed haemodynamic therapy and fixed inotrope infusions, narrowing indications to selected settings."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Gattinoni et al. 1995 (NEJM)",
+        "relation": "Multicentre RCT of goal-oriented hemodynamic therapy in critically ill patients, also failed to show benefit, supporting the Hayes findings."
+      },
+      {
+        "trial": "Shoemaker et al. (perioperative supranormal trials)",
+        "relation": "Earlier perioperative studies that inspired the concept; showed benefit in high-risk surgical patients, but results not replicated in heterogeneous ICU populations."
+      }
+    ],
+    "unresolved_questions": [
+      "Can supranormal DO2 targets benefit specific subgroups (e.g., trauma, perioperative) with different timing?",
+      "What is the role of microcirculatory/perfusion endpoints as opposed to systemic DO2?",
+      "Is there a safe and effective protocol for inotrope escalation in ICU patients with persistent hypoperfusion?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=100 (50 per arm)",
+        "ICU mortality 50% vs 30% (P=0.04)",
+        "Hospital mortality 54% vs 34% (P=0.04)",
+        "35/50 treatment patients failed to achieve all three targets simultaneously"
+      ],
+      "one_line_takeaway": "In established ICU critical illness, dobutamine-driven supranormal DO2 targets did not improve VO2 or lactate and were associated with increased mortality, challenging the routine pursuit of fixed systemic oxygen transport goals."
+    }
+  },
+  "_source_id": "PLUS",
+  "_source_system": "Circulatory"
+}

@@ -1,0 +1,332 @@
+{
+  "id": "Dutch_Dexamethasone_Meningitis_Trial",
+  "trial_name": "Dutch Dexamethasone Meningitis Trial (2002)",
+  "specialty": "Neurocritical Care",
+  "subtopic": "CNS Infections",
+  "year": 2002,
+  "journal": "New England Journal of Medicine",
+  "citation": "de Gans J, van de Beek D. Dexamethasone in adults with bacterial meningitis. N Engl J Med. 2002 Nov 14;347(20):1549-1556.",
+  "doi": "https://doi.org/10.1056/NEJMoa021334",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, investigator-initiated",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 301,
+  "result_category": "Positive",
+  "one_liner": "In adults with suspected bacterial meningitis, early adjunctive dexamethasone (10 mg IV q6h for 4 days) reduced 8-week mortality and unfavorable functional outcome, with the greatest benefit in pneumococcal meningitis.",
+  "pico": {
+    "population": "Adults >17 years with suspected acute bacterial meningitis and cloudy CSF, bacteria on Gram stain, or CSF leukocyte count >1000/mm3",
+    "intervention": "Dexamethasone sodium phosphate 10 mg IV every 6 hours for 4 days, started 15-20 minutes before or with the first antibiotic dose",
+    "comparison": "Matching placebo IV every 6 hours for 4 days",
+    "outcome": "Unfavorable functional outcome (Glasgow Outcome Scale 1-4) at 8 weeks"
+  },
+  "keywords": [
+    "bacterial meningitis",
+    "dexamethasone",
+    "corticosteroids",
+    "pneumococcal meningitis",
+    "adjunctive therapy"
+  ],
+  "related_trials": [
+    "Vietnam Dexamethasone Meningitis Trial",
+    "Sub-Saharan Africa Dexamethasone Meningitis Trial"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Adult community-acquired bacterial meningitis carries substantial risks of death and long-term neurological disability despite appropriate antimicrobial therapy. Inflammation triggered by bacterial components and antibiotic-mediated lysis contributes to blood–brain barrier breakdown, cerebral oedema, vasculopathy, and neuronal injury. Pre-2002 evidence for adjunctive corticosteroids was stronger in paediatric disease (particularly Haemophilus influenzae type b) than in adults, and adult data were limited and inconsistent.",
+      "knowledge_gap": "There was a need for a rigorously conducted, adequately powered, double-blind adult trial using early corticosteroid administration around the first antibiotic dose.",
+      "hypothesis": "In adults with suspected acute bacterial meningitis, does adjunctive dexamethasone started before (or with) initial antibiotic therapy improve functional outcome and survival compared with placebo?"
+    },
+    "methods": {
+      "design": "Randomised, double-blind, placebo-controlled, multicentre, investigator-initiated trial conducted across 52 hospitals in five European countries (Netherlands, Belgium, Germany, Denmark, Austria), June 1993 to December 2001.",
+      "setting": "52 hospitals in the Netherlands, Belgium, Germany, Denmark, and Austria",
+      "population": {
+        "inclusion": [
+          "Adults >17 years with suspected meningitis and at least one CSF criterion: cloudy CSF; bacteria on Gram stain; or CSF leucocyte count >1000/mm3"
+        ],
+        "exclusion": [
+          "Hypersensitivity to β-lactams or corticosteroids",
+          "Pregnancy",
+          "CSF shunt",
+          "Antibiotic therapy within the preceding 48 hours",
+          "Suspected tuberculosis or fungal infection",
+          "Recent head trauma/neurosurgery",
+          "Peptic ulcer disease",
+          "Participation in another trial"
+        ]
+      },
+      "intervention": "Dexamethasone sodium phosphate 10 mg intravenously every 6 hours for 4 days. Timing: initially 15–20 minutes before the first antibiotic dose; after interim analysis, permitted to be given with the first antibiotic dose.",
+      "comparison": "Matching placebo administered intravenously every 6 hours for 4 days, with the same timing rules. Antimicrobial therapy was provided to all patients; initial protocol specified IV amoxicillin 2 g every 4 hours for 7–10 days with modifications based on Gram stain and local practice, and the protocol was later amended to allow use of each hospital’s usual empiric regimen.",
+      "blinding": "Double-blind (patients, treating teams, and outcome assessors); emergency unblinding via sealed envelopes occurred twice; allocation code was broken after the final patient completed follow-up.",
+      "sample_size_power": "A total of 300 patients (150 per group) were required to detect an absolute reduction in unfavourable outcome from 40% to 25% with 80% power at a two-sided α=0.05.",
+      "primary_outcome": "Unfavourable functional outcome (Glasgow Outcome Scale 1–4) at 8 weeks",
+      "secondary_outcomes": [
+        "Death at 8 weeks",
+        "Focal neurological abnormalities at 8 weeks",
+        "Hearing loss at 8 weeks",
+        "In-hospital clinical course (seizures, cardiorespiratory failure)"
+      ],
+      "follow_up": "8 weeks"
+    },
+    "results": {
+      "headline_bullets": [
+        "Dexamethasone reduced the primary outcome of unfavorable functional outcome at 8 weeks (15% vs 25%; RR 0.59, 95% CI 0.37–0.94, P=0.03).",
+        "8-week mortality was significantly lower with dexamethasone (7% vs 15%; RR 0.48, 95% CI 0.24–0.96, P=0.04).",
+        "The benefit was most pronounced in the subgroup with pneumococcal meningitis (unfavorable outcome 26% vs 52%; death 14% vs 34%).",
+        "Major adverse events, including hyperglycemia and gastrointestinal bleeding, were not statistically increased."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Unfavourable outcome at 8 weeks (GOS 1-4)",
+          "group_a": "23/157 (15%)",
+          "group_b": "36/144 (25%)",
+          "effect_measure": "RR",
+          "effect_value": "0.59",
+          "ci_95": "0.37–0.94",
+          "p_value": "0.03",
+          "note": "Primary outcome"
+        },
+        {
+          "outcome": "Death at 8 weeks (GOS 1)",
+          "group_a": "11/157 (7%)",
+          "group_b": "21/144 (15%)",
+          "effect_measure": "RR",
+          "effect_value": "0.48",
+          "ci_95": "0.24–0.96",
+          "p_value": "0.04",
+          "note": ""
+        },
+        {
+          "outcome": "Focal neurological abnormalities at 8 weeks (survivors assessed)",
+          "group_a": "18/143 (13%)",
+          "group_b": "24/119 (20%)",
+          "effect_measure": "RR",
+          "effect_value": "0.62",
+          "ci_95": "0.36–1.09",
+          "p_value": "0.13",
+          "note": "Assessed in survivors attending follow-up neurological examination"
+        },
+        {
+          "outcome": "Hearing loss at 8 weeks (survivors assessed)",
+          "group_a": "13/143 (9%)",
+          "group_b": "14/119 (12%)",
+          "effect_measure": "RR",
+          "effect_value": "0.77",
+          "ci_95": "0.38–1.58",
+          "p_value": "0.54",
+          "note": "Assessed in survivors attending follow-up neurological examination"
+        },
+        {
+          "outcome": "Seizures during admission",
+          "group_a": "8/157 (5%)",
+          "group_b": "17/144 (12%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.04",
+          "note": "In-hospital clinical course outcome"
+        },
+        {
+          "outcome": "Cardiorespiratory failure during admission",
+          "group_a": "16/157 (10%)",
+          "group_b": "29/144 (20%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.02",
+          "note": "In-hospital clinical course outcome"
+        },
+        {
+          "outcome": "Hyperglycaemia (>144 mg/dL)",
+          "group_a": "50/157 (32%)",
+          "group_b": "37/144 (26%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.24",
+          "note": "Adverse event monitoring"
+        },
+        {
+          "outcome": "Gastrointestinal bleeding",
+          "group_a": "2/157 (1%)",
+          "group_b": "5/144 (3%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.27",
+          "note": "Adverse event monitoring"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Pneumococcal meningitis (S. pneumoniae) - Unfavourable outcome",
+          "group_a": "15/58 (26%)",
+          "group_b": "26/50 (52%)",
+          "effect_measure": "RR",
+          "effect_value": "0.50",
+          "ci_95": "0.30–0.83",
+          "p_interaction": "0.006"
+        },
+        {
+          "subgroup": "Pneumococcal meningitis (S. pneumoniae) - Death",
+          "group_a": "8/58 (14%)",
+          "group_b": "17/50 (34%)",
+          "effect_measure": "RR",
+          "effect_value": "0.41",
+          "ci_95": "0.19–0.86",
+          "p_interaction": "0.02"
+        },
+        {
+          "subgroup": "Coma (Glasgow Coma Scale <8) - Unfavourable outcome",
+          "group_a": "5/25 (20%)",
+          "group_b": "14/26 (54%)",
+          "effect_measure": "RR",
+          "effect_value": "0.37",
+          "ci_95": "0.15–0.93",
+          "p_interaction": "0.04"
+        },
+        {
+          "subgroup": "Moderate impairment (GCS 8–13) - Unfavourable outcome",
+          "group_a": "15/22 (68%)",
+          "group_b": "15/26 (58%)",
+          "effect_measure": "RR",
+          "effect_value": "1.18",
+          "ci_95": "0.75–1.86",
+          "p_interaction": "0.57"
+        }
+      ]
+    },
+    "safety": [
+      "Hyperglycaemia (>144 mg/dL): 50/157 (32%) vs 37/144 (26%), P=0.24",
+      "Gastrointestinal bleeding: 2/157 (1%) vs 5/144 (3%), P=0.27"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Randomisation used a computer-generated list (blocks of six), stratified by centre; allocation was implemented by hospital pharmacists preparing indistinguishable study medication. Emergency unblinding procedures were prespecified (sealed envelopes) and used twice."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blinding of participants and clinicians was designed to minimise differential co-interventions and outcome assessment bias. Primary outcome (Glasgow Outcome Scale at 8 weeks) is a validated global functional measure but includes clinically adjudicated categories."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "All 301 randomised patients received study medication initially. Study medication discontinued early in 11/157 vs 11/144. Loss to follow-up for the 8-week outcome was 3 vs 4; imputed using last observation carried forward. Neurological follow-up examination among survivors was 262/269 (97%). Primary analysis was intention-to-treat."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Planned regimen: 10 mg IV every 6 hours for 4 days; early discontinuation occurred equally (11 vs 11). Open-label corticosteroid 'rescue' for deterioration was more frequent in placebo (6) than dexamethasone (2), plausibly biasing estimated benefit towards the null."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly balanced: mean age 45±17 vs 44±18 years; coma (GCS <8) 25/157 (16%) vs 23/144 (16%). Notable imbalance: seizures before admission occurred in 15/157 (10%) vs 7/144 (5%). Median GCS on admission was 14 in both groups."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong, supported by concealed randomisation, double-blinding, high follow-up completeness, and intention-to-treat analysis; key threats include protocol amendments over a long recruitment period, small imbalances (e.g., baseline seizures), and use of last observation carried forward for a small amount of missing 8-week outcome data."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Participants were adults with suspected bacterial meningitis undergoing lumbar puncture in European hospitals; severity included a meaningful comatose subgroup (16% in each arm). Exclusion of patients who had received antibiotics in the previous 48 hours limits applicability to settings with high rates of pre-hospital antibiotic exposure."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Empiric antibiotic strategies and pathogen resistance patterns have evolved since 1993–2001; the pneumococcal isolates available for susceptibility testing in this trial were reported as penicillin susceptible. Transferability may be reduced in regions with higher prevalence of penicillin/cephalosporin non-susceptible pneumococci or where empiric regimens rely heavily on vancomycin. Patients with suspected tuberculosis or fungal meningitis were excluded; findings should not be extrapolated to these groups. Findings may be less applicable in settings with delayed presentation, high HIV prevalence, and different pathogen spectra."
+        }
+      ],
+      "verdict": "Generalisability is moderate for adults with suspected acute bacterial meningitis presenting early to high-resource hospital settings, but is more limited in populations with frequent pre-treatment, high antimicrobial resistance, high HIV prevalence, or materially different empiric antibiotic pathways."
+    },
+    "strengths": [
+      "Randomised, double-blind, placebo-controlled design with concealment procedures and limited unblinding.",
+      "Clinically meaningful primary endpoint (8-week functional outcome) with high follow-up completeness.",
+      "Early, protocolised corticosteroid dosing aligned to mechanistic rationale (around first antibiotics).",
+      "Multicentre, international conduct across 52 hospitals, enhancing within-Europe generalisability."
+    ],
+    "limitations": [
+      "Long recruitment period (1993–2001) with protocol amendments (including antibiotic strategy and timing of study drug relative to antibiotics), complicating interpretation in modern practice settings.",
+      "Exclusion of patients with antibiotics in the previous 48 hours may select for a subgroup with earlier presentation and different risk profile.",
+      "Subgroup analyses (pathogen- and severity-based) were underpowered for many strata, and some showed heterogeneity in direction/magnitude of effect.",
+      "Primary outcome and several secondary outcomes rely on clinical categorisation; a small amount of missing primary outcome data was imputed."
+    ],
+    "critical_appraisal": {
+      "summary": "This is a high-quality RCT with a moderate risk of bias due to protocol amendments and a long recruitment period, but its findings of a significant mortality and morbidity benefit from early dexamethasone in bacterial meningitis, particularly pneumococcal, are robust and have shaped global practice.",
+      "strengths": [
+        "Concealed, computer-generated randomisation and double-blinding.",
+        "High follow-up rate (97%) for the primary outcome.",
+        "Intention-to-treat analysis."
+      ],
+      "weaknesses": [
+        "Protocol amendments during the 8-year recruitment period.",
+        "Imbalance in baseline seizures.",
+        "Use of last observation carried forward for missing data.",
+        "Limited generalisability to modern, high-resistance settings."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Adjunctive dexamethasone (10 mg IV every 6 hours for 4 days) given before/with antibiotics improved overall 8-week functional outcomes and reduced mortality in this adult cohort. Greatest benefit was observed in pneumococcal meningitis, supporting pathogen- and setting-aware application rather than indiscriminate use.",
+    "clinical_bottom_line": {
+      "verdict": "Early adjunctive dexamethasone should be administered with the first dose of antibiotics in adults with suspected bacterial meningitis, particularly in high-income settings, as it reduces mortality and unfavorable functional outcome.",
+      "applies_to": "Adults with suspected community-acquired bacterial meningitis in high-resource settings, especially those with pneumococcal disease or coma.",
+      "does_not_mean": "Dexamethasone is not a substitute for antibiotics and should not delay their administration. Benefit is not proven in all settings or for all pathogens.",
+      "implementation_caveats": [
+        "Administer before or with the first dose of antibiotics; do not delay antibiotics.",
+        "Consider discontinuing if an alternative diagnosis (e.g., viral, tuberculous, or fungal meningitis) is confirmed.",
+        "Benefit is less clear in settings with high rates of penicillin-resistant pneumococci or where vancomycin is a critical part of the empiric regimen, due to concerns about reduced CSF penetration."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Antibiotic resistance and antimicrobial penetration",
+        "notes": "Concern was raised that dexamethasone may reduce CSF penetration of vancomycin (and potentially other agents), which could be clinically relevant in penicillin-resistant pneumococcal meningitis and might limit generalisability beyond low-resistance settings."
+      },
+      {
+        "topic": "Context-dependence across settings",
+        "notes": "Large adult RCTs published after the Dutch trial produced divergent results—Vietnam showed no overall benefit but suggested benefit in microbiologically proven bacterial meningitis, whereas an adult trial in sub-Saharan Africa (high HIV prevalence) showed no mortality benefit and raised concern for harm—highlighting effect modification by pathogen mix, host factors, and health-system context."
+      },
+      {
+        "topic": "Timing, selection, and mechanism of benefit",
+        "notes": "Correspondence queried whether written consent and pre-lumbar puncture CT imaging could delay antibiotics and whether the observed mortality difference reflected systemic (shock/MODS) rather than neurological mechanisms; the authors noted that exact delays were not recorded and reported that systemic complications accounted for 4/11 vs 9/21 deaths (dexamethasone vs placebo) in interim data reviewed by the monitoring committee."
+      },
+      {
+        "topic": "Long-term outcomes and safety signals",
+        "notes": "A long-term follow-up study of adult bacterial meningitis survivors reported persistent neurological and cognitive sequelae but did not identify an excess of long-term cognitive impairment attributable to dexamethasone, informing longer-horizon safety considerations beyond the 8-week endpoint."
+      },
+      {
+        "topic": "Evidence synthesis",
+        "notes": "Systematic reviews conclude that adjunctive corticosteroids reduce hearing loss and neurological sequelae overall, with mortality benefits most apparent in high-income settings and pneumococcal meningitis; an individual patient data meta-analysis emphasised heterogeneity and did not demonstrate a uniform mortality/disability benefit across patient types."
+      },
+      {
+        "topic": "Guideline integration",
+        "notes": "Major international guidelines incorporated early adjunctive dexamethasone into adult bacterial meningitis care pathways, typically emphasising administration before/with first antibiotics and linking continuation to likely/confirmed pneumococcal meningitis and local epidemiology."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Vietnam Dexamethasone Meningitis Trial",
+        "relation": "A large adult RCT in Vietnam that showed no overall benefit from dexamethasone but suggested a possible benefit in the subgroup with microbiologically proven bacterial meningitis, contrasting with the clear benefit seen in this European trial."
+      },
+      {
+        "trial": "Sub-Saharan Africa Dexamethasone Meningitis Trial",
+        "relation": "An adult trial in a high-HIV-prevalence setting in sub-Saharan Africa that showed no mortality benefit from dexamethasone and raised concern for potential harm, highlighting the context-dependence of the intervention."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal duration of adjunctive dexamethasone therapy?",
+      "What is the efficacy and safety of dexamethasone in settings with high rates of penicillin/cephalosporin-resistant pneumococci?",
+      "Does dexamethasone provide benefit in patients who have already received antibiotics prior to presentation?",
+      "What is the role of adjunctive steroids in meningitis caused by pathogens other than S. pneumoniae?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=301",
+        "Primary outcome (unfavorable GOS at 8 weeks): 15% vs 25% (RR 0.59)",
+        "8-week mortality: 7% vs 15% (RR 0.48)",
+        "Pneumococcal subgroup mortality: 14% vs 34% (RR 0.41)"
+      ],
+      "one_line_takeaway": "Give dexamethasone 10 mg IV q6h with the first dose of antibiotics to adults with suspected bacterial meningitis to reduce death and disability, especially if pneumococcal is likely."
+    }
+  },
+  "_source_id": "Dutch_Dexamethasone_Meningitis_Trial",
+  "_source_system": "Neuro"
+}

@@ -1,0 +1,292 @@
+{
+  "id": "REST",
+  "trial_name": "REST — Ultraprotective Ventilation with VV-ECCO2R vs Standard Care in Acute Hypoxemic Respiratory Failure (2021)",
+  "specialty": "Critical Care",
+  "subtopic": "Mechanical Ventilation",
+  "year": 2021,
+  "journal": "JAMA",
+  "citation": "McNamee JJ, Gillies MA, Barrett NA, et al; REST Investigators. Effect of Lower Tidal Volume Ventilation Facilitated by Extracorporeal Carbon Dioxide Removal vs Standard Care Ventilation on 90-Day Mortality in Patients With Acute Hypoxemic Respiratory Failure: The REST Randomized Clinical Trial. JAMA. 2021;326(11):1013-1023.",
+  "doi": "https://doi.org/10.1001/jama.2021.13374",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, open-label, parallel-group, superiority",
+  "evidence_level": "High-quality RCT (stopped early)",
+  "sample_size": 412,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In acute hypoxemic respiratory failure, VV-ECCO2R-facilitated ultraprotective ventilation did not reduce 90-day mortality compared to standard lung-protective ventilation and was associated with significantly more serious adverse events.",
+  "pico": {
+    "population": "Adults with acute hypoxemic respiratory failure (PaO2/FiO2 ≤150 mmHg) on invasive mechanical ventilation",
+    "intervention": "VV-ECCO2R (Hemolung) plus protocolised ultraprotective ventilation (target tidal volume ~3 mL/kg PBW, plateau pressure ≤25 cmH2O)",
+    "comparison": "Standard lung-protective ventilation without VV-ECCO2R (target tidal volume ~6 mL/kg PBW)",
+    "outcome": "90-day all-cause mortality"
+  },
+  "keywords": [
+    "VV-ECCO2R",
+    "ultraprotective ventilation",
+    "acute hypoxemic respiratory failure",
+    "ARDS",
+    "tidal volume",
+    "extracorporeal carbon dioxide removal"
+  ],
+  "related_trials": [
+    "Xtravent"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Lung-protective ventilation (lower tidal volumes) improves outcomes in acute respiratory failure, but lung injury may persist when mechanical stress (plateau/driving pressure, mechanical power) remains high.",
+      "knowledge_gap": "Pre-REST evidence for VV-ECCO2R in ARDS/AHRF was dominated by feasibility studies and small trials, with persistent uncertainty regarding net benefit vs harm at patient-centred outcomes.",
+      "hypothesis": "Lowering tidal volume during invasive mechanical ventilation using VV-ECCO2R (to facilitate ultraprotective ventilation) reduces 90-day mortality compared with standard lung-protective ventilation."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, open-label, randomised, parallel-group clinical trial; 51 adult ICUs (United Kingdom); 1:1 allocation; stratified by site.",
+      "setting": "51 adult ICUs in the United Kingdom.",
+      "population": {
+        "inclusion": [
+          "Age ≥16 years",
+          "Acute and potentially reversible cause of acute respiratory failure",
+          "Invasive ventilation with PEEP ≥5 cmH2O",
+          "Within 48 hours of onset of qualifying hypoxaemia defined by PaO2/FiO2 ≤20 kPa (≤150 mmHg) on 2 arterial blood gases separated by ≥6 hours",
+          "Randomisation occurred 8–24 hours after the second qualifying blood gas"
+        ],
+        "exclusion": [
+          "Invasive ventilation ≥7 days prior to randomisation",
+          "Ability to maintain tidal volume ≤3 mL/kg predicted body weight with pH ≥7.2 without VV-ECCO2R",
+          "Receipt of (or decision to commence) ECMO within 24 hours",
+          "Use of HFOV or APRV",
+          "Untreated pulmonary embolism/pleural effusion/pneumothorax as primary cause",
+          "Acute respiratory failure fully explained by left ventricular failure or fluid overload",
+          "Contraindication to limited systemic anticoagulation with heparin",
+          "Inability to obtain central venous access (IJ/femoral) or IVC filter (if femoral access)",
+          "Treatment withdrawal imminent within 24 hours",
+          "Not expected to survive 90 days due to premorbid illness",
+          "DNAR order in place",
+          "Severe chronic respiratory disease requiring domiciliary ventilation (except sleep-disordered breathing)",
+          "Severe chronic liver disease (Child-Pugh score >11)",
+          "Platelet count <40,000/mm3 prior to catheter insertion",
+          "Prior REST enrolment",
+          "Prisoners"
+        ]
+      },
+      "intervention": "VV-ECCO2R (Hemolung Respiratory Assist System) plus a protocolised ultraprotective ventilatory strategy. Ventilation targets: Tidal volume target ~3 mL/kg predicted body weight; plateau pressure target ≤25 cmH2O. Duration: maximum 7 days.",
+      "comparison": "Standard-care ventilation without VV-ECCO2R (lung-protective ventilation; typical tidal volume target ~6 mL/kg predicted body weight, with standard plateau pressure constraints).",
+      "blinding": "Unblinded (device-based intervention).",
+      "sample_size_power": "Planned sample size 1120 to detect a 9% absolute reduction in 90-day mortality (from 41% to 32%) with 90% power at the 5% significance level (two-sided). Trial stopped early after 412 participants randomised.",
+      "primary_outcome": "All-cause mortality at 90 days.",
+      "secondary_outcomes": [
+        "Ventilator-free days at day 28",
+        "All-cause mortality at day 28",
+        "Progression to ECMO by day 7",
+        "Serious adverse events"
+      ],
+      "follow_up": "Primary endpoint at 90 days; key secondary outcomes to day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early for futility/feasibility after 412 patients randomised.",
+        "No significant difference in 90-day mortality: 41.5% vs 39.5% (RR 1.05, 95% CI 0.83–1.33).",
+        "VV-ECCO2R group had significantly fewer ventilator-free days (mean difference −2.1 days) and a marked excess of serious adverse events (30.7% vs 8.6%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality (day 90)",
+          "group_a": "83/200 (41.5%)",
+          "group_b": "81/205 (39.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.05",
+          "ci_95": "0.83 to 1.33",
+          "p_value": "0.68",
+          "note": "Primary outcome"
+        },
+        {
+          "outcome": "Ventilator-free days (day 28)",
+          "group_a": "Mean 7.1 (SD 9.2)",
+          "group_b": "Mean 9.2 (SD 9.2)",
+          "effect_measure": "Mean Difference",
+          "effect_value": "−2.1 days",
+          "ci_95": "−3.8 to −0.3",
+          "p_value": "0.02",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "All-cause mortality (day 28)",
+          "group_a": "76/200 (38.0%)",
+          "group_b": "74/207 (35.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.06",
+          "ci_95": "0.82 to 1.37",
+          "p_value": "0.64",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Progression to ECMO by day 7",
+          "group_a": "12/202 (5.9%)",
+          "group_b": "6/210 (2.9%)",
+          "effect_measure": "RR",
+          "effect_value": "2.08",
+          "ci_95": "0.80 to 5.43",
+          "p_value": "0.13",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Serious adverse events (any)",
+          "group_a": "62/202 (30.7%)",
+          "group_b": "18/210 (8.6%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Marked excess with VV-ECCO2R"
+        },
+        {
+          "outcome": "Intracranial haemorrhage (any adverse event)",
+          "group_a": "10/202 (5.0%)",
+          "group_b": "2/210 (1.0%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Safety signal"
+        },
+        {
+          "outcome": "Bleeding at other site (excluding intracranial haemorrhage; any adverse event)",
+          "group_a": "17/202 (8.4%)",
+          "group_b": "3/210 (1.4%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Safety signal"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Prespecified subgroups (e.g., ARDS status, baseline PaO2/FiO2, plateau pressure, driving pressure, APACHE II)",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "Not significant",
+          "note": "Interaction tests were not significant and confidence intervals were wide."
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events were more common in the VV-ECCO2R group (30.7% vs 8.6%).",
+      "Intracranial haemorrhage occurred in 5.0% of the VV-ECCO2R group vs 1.0% in the standard care group.",
+      "Non-intracranial bleeding occurred in 8.4% of the VV-ECCO2R group vs 1.4% in the standard care group."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with stratification by site. Baseline balance was good across key prognostic factors (e.g., median PaO2/FiO2 118.1 vs 115.5 mmHg; APACHE II 19 vs 20)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded delivery is unavoidable for VV-ECCO2R. Mortality is objective, but ventilator-free days and weaning-related endpoints are vulnerable to differences in sedation, ventilator mode, and clinician behaviour."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary analysis included 405/412 randomised (200 vs 205), indicating low missingness for the primary endpoint."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "186/202 (92.1%) allocated to VV-ECCO2R received it. 1 patient in the control group received non-protocol VV-ECCO2R for 2 days (minimal crossover)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Good balance across key prognostic factors."
+        }
+      ],
+      "verdict": "Moderate. Randomisation and baseline balance support a credible estimate for mortality, but early stopping and unblinded care with systematic differences in sedation/ventilation mode limit interpretability of weaning-related secondary outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults with moderate-to-severe acute hypoxaemic respiratory failure treated in general UK ICUs; baseline severity (median PaO2/FiO2 ~116–118 mmHg; APACHE II ~19–20; SOFA ~10) is typical of patients considered for escalated ventilatory strategies."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "VV-ECCO2R requires specialised equipment, cannulation skills, and anticoagulation management; transferability is limited to centres with established extracorporeal capability. In resource-limited settings, the risk–resource trade-off is likely even less favourable."
+        }
+      ],
+      "verdict": "Moderate. The clinical phenotype is common, but the intervention is highly specialised and the observed harm burden makes routine extrapolation beyond controlled settings and experienced centres difficult to justify."
+    },
+    "strengths": [
+      "Pragmatic, multicentre design across 51 ICUs enhances real-world relevance.",
+      "Objective primary endpoint (90-day all-cause mortality) with low missingness reduces susceptibility to ascertainment bias.",
+      "Demonstrated physiologic separation in ventilation variables (lower tidal volume, plateau and driving pressure) verifies that the biological “lever” was at least partially pulled.",
+      "Detailed reporting of ventilation parameters and adverse events enables granular assessment of efficacy–harm trade-offs."
+    ],
+    "limitations": [
+      "Stopped early for futility/feasibility: substantial loss of statistical power for the prespecified mortality effect; mortality CI remains wide.",
+      "Open-label management and systematic differences in controlled ventilation/neuromuscular blockade likely confound ventilator-free days.",
+      "Ultraprotective “dose” may have been insufficient: delivered tidal volumes were ~4–4.5 mL/kg PBW rather than the ~3 mL/kg PBW target, and VV-ECCO2R duration averaged 4 days.",
+      "Safety signal: substantial bleeding and device-related harms materially constrain benefit–risk acceptability."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted but early-stopped trial showing no mortality benefit and significant harm from VV-ECCO2R-facilitated ultraprotective ventilation, with moderate internal and external validity.",
+      "strengths": [
+        "Pragmatic multicentre design",
+        "Objective primary endpoint with low missingness",
+        "Clear physiologic separation of the intervention"
+      ],
+      "weaknesses": [
+        "Early termination leading to imprecision",
+        "Unblinded design confounding secondary outcomes",
+        "Inability to achieve the target ultraprotective tidal volume"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In a broad UK ICU population with acute hypoxaemic respiratory failure, VV-ECCO2R-facilitated ultraprotective ventilation did not reduce 90-day mortality and increased serious adverse events; routine use cannot be justified on these data.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support the routine use of VV-ECCO2R to facilitate ultraprotective ventilation in acute hypoxemic respiratory failure. The intervention did not improve survival and caused significant harm.",
+      "applies_to": "Adults with moderate-to-severe acute hypoxemic respiratory failure (PaO2/FiO2 ≤150 mmHg) on invasive mechanical ventilation.",
+      "does_not_mean": "That all extracorporeal support strategies are harmful. This trial specifically tested low-flow VV-ECCO2R for ultraprotective ventilation, not full ECMO for refractory hypoxemia.",
+      "implementation_caveats": [
+        "The significant increase in serious adverse events, particularly intracranial haemorrhage, is a major deterrent to use.",
+        "The reduction in ventilator-free days may be a direct consequence of the deeper sedation required to deliver the intervention."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping and imprecision",
+        "notes": "The prespecified mortality effect size was ambitious; stopping at 412 randomised patients left wide uncertainty around clinically meaningful benefit or harm."
+      },
+      {
+        "topic": "Interpretation of ventilator-free days",
+        "notes": "The VV-ECCO2R group received more controlled ventilation and neuromuscular blockade early, creating a credible pathway for delayed weaning/extubation that is not necessarily reflective of worse lung recovery."
+      },
+      {
+        "topic": "Safety as the dominant signal",
+        "notes": "Serious adverse events were common in VV-ECCO2R (30.7% vs 8.6%), including intracranial haemorrhage (5.0% vs 1.0%), raising the bar for any future efficacy signal."
+      },
+      {
+        "topic": "Consistency with earlier evidence",
+        "notes": "Earlier randomised work (e.g., Xtravent) established feasibility but not patient-centred benefit; REST provides the clearest signal that feasibility does not translate into mortality benefit and that harms are non-trivial."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Xtravent",
+        "relation": "Earlier randomised work establishing feasibility of ECCO2R-facilitated ultraprotective ventilation but not patient-centred benefit."
+      }
+    ],
+    "unresolved_questions": [
+      "Is there a specific subgroup (e.g., very high VILI risk, severe hypercapnia) that might benefit from VV-ECCO2R?",
+      "Can safer devices or anticoagulation strategies mitigate the bleeding risk to make the risk-benefit profile more favourable?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=412 (stopped early)",
+        "90-day mortality: 41.5% vs 39.5% (RR 1.05, 95% CI 0.83–1.33)",
+        "Serious adverse events: 30.7% vs 8.6%",
+        "Intracranial haemorrhage: 5.0% vs 1.0%"
+      ],
+      "one_line_takeaway": "VV-ECCO2R for ultraprotective ventilation in AHRF does not improve survival and causes significant bleeding; do not use outside of trials."
+    }
+  },
+  "_source_id": "REST",
+  "_source_system": "Respiratory"
+}

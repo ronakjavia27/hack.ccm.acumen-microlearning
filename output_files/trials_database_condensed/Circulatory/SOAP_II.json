@@ -1,0 +1,305 @@
+{
+  "id": "SOAP_II",
+  "trial_name": "SOAP II — Comparison of Dopamine and Norepinephrine in the Treatment of Shock (2010)",
+  "specialty": "Shock",
+  "subtopic": "Cardiogenic Shock",
+  "year": 2010,
+  "journal": "New England Journal of Medicine",
+  "citation": "De Backer D, Biston P, Devriendt J, et al. Comparison of dopamine and norepinephrine in the treatment of shock. N Engl J Med. 2010;362(9):779-789.",
+  "doi": "http://dx.doi.org/10.1056/NEJMoa0907118",
+  "registration": "not specified in source",
+  "trial_type": "RCT — multicenter, double-blind, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1679,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU shock, dopamine did not improve 28-day mortality vs. norepinephrine but caused more arrhythmias, making norepinephrine the safer first-line vasopressor.",
+  "pico": {
+    "population": "Adults in ICU with shock (MAP <70 mmHg or SBP <100 mmHg after fluids, plus hypoperfusion signs)",
+    "intervention": "Dopamine infusion (weight-based, max 20 mcg/kg/min) with open‑label norepinephrine rescue",
+    "comparison": "Norepinephrine infusion (weight-based, max 0.19 mcg/kg/min) with open‑label norepinephrine rescue",
+    "outcome": "28‑day all‑cause mortality (primary); arrhythmias, ICU/hospital/6‑month/12‑month mortality, days without vasopressors"
+  },
+  "keywords": [
+    "dopamine",
+    "norepinephrine",
+    "shock",
+    "vasopressor",
+    "SOAP II",
+    "RCT",
+    "arrhythmia"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Dopamine and norepinephrine were both widely used as first‑line vasopressors for shock, but with different pharmacology; observational data suggested potential harm with dopamine.",
+      "knowledge_gap": "Prior comparative randomised evidence was limited, and equipoise remained over whether dopamine reduced mortality without excess adverse events.",
+      "hypothesis": "Dopamine would reduce 28‑day mortality compared with norepinephrine in ICU shock patients without excess adverse events."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double‑blind trial with prespecified sequential (triangular‑test) monitoring design; enrolment Dec 2003 to Oct 2007.",
+      "setting": "8 ICUs in Belgium, Austria, Spain.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Shock defined as MAP <70 mmHg or SBP <100 mmHg despite adequate fluid resuscitation (≥1000 mL crystalloids or ≥500 mL colloids, or CVP >12 mmHg/PAOP >14 mmHg)",
+          "Signs of tissue hypoperfusion: altered mental state, mottled skin, urine output <0.5 mL/kg/h for 1 h, or lactate >2 mmol/L"
+        ],
+        "exclusion": [
+          "Vasopressor therapy for >4 h in current shock episode",
+          "Serious arrhythmia (rapid atrial fibrillation >160/min, ventricular tachycardia)",
+          "Brain death",
+          "Age <18 years"
+        ]
+      },
+      "intervention": "Dopamine infusion (weight‑based), increased by 2 mcg/kg/min up to 20 mcg/kg/min; open‑label norepinephrine permitted if target BP not reached; rescue vasopressors (epinephrine, vasopressin) and inotropes allowed.",
+      "comparison": "Norepinephrine (noradrenaline) infusion (weight‑based), increased by 0.02 mcg/kg/min up to 0.19 mcg/kg/min; same open‑label norepinephrine and rescue rules as dopamine arm (open‑label dopamine not permitted).",
+      "blinding": "Double‑blind: allocation by sealed opaque envelopes; study drug prepared by unblinded person not involved in care; clinicians, investigators, personnel remained blinded.",
+      "sample_size_power": "765 per group planned to detect 15% relative reduction in 28‑day mortality (43% vs 36%) with 80% power at two‑sided α=0.05; stopped after 1679 randomised when sequential boundary indicated ‘no difference’.",
+      "primary_outcome": "28‑day all‑cause mortality",
+      "secondary_outcomes": [
+        "ICU mortality",
+        "Hospital mortality",
+        "Mortality at 6 and 12 months",
+        "Arrhythmias (any, atrial fibrillation)",
+        "Days without need for open‑label vasopressors",
+        "Days without need for trial drug",
+        "Study‑drug discontinuation due to severe arrhythmia"
+      ],
+      "follow_up": "Primary endpoint at 28 days; secondary mortality follow‑up at ICU discharge, hospital discharge, 6 and 12 months (6‑month data available for 1443/1679, 12‑month for 1036/1679)."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in 28‑day mortality: 52.5% dopamine vs 48.5% norepinephrine (OR 1.17, 95% CI 0.97–1.42, p=0.10).",
+        "Arrhythmias were more frequent with dopamine: 24.1% vs 12.4% (p<0.001), predominantly atrial fibrillation (20.5% vs 11.0%).",
+        "More study‑drug discontinuation due to severe arrhythmia with dopamine (6.1% vs 1.6%, p<0.001), increasing rescue‑therapy crossover.",
+        "A cardiogenic shock subgroup signal (log‑rank p=0.03) was not supported by a significant interaction test (p=0.87)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite (28‑day death)",
+          "group_a": "450/858 (52.5%)",
+          "group_b": "398/821 (48.5%)",
+          "effect_measure": "OR",
+          "effect_value": "1.17",
+          "ci_95": "0.97–1.42",
+          "p_value": "0.10",
+          "note": "Absolute difference +4.0% (dopamine higher)"
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "431/858 (50.2%)",
+          "group_b": "377/821 (45.9%)",
+          "effect_measure": "OR",
+          "effect_value": "1.19",
+          "ci_95": "0.98–1.44",
+          "p_value": "0.07",
+          "note": "Secondary endpoint"
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "503/858 (59.4%)",
+          "group_b": "460/821 (56.6%)",
+          "effect_measure": "OR",
+          "effect_value": "1.12",
+          "ci_95": "0.92–1.37",
+          "p_value": "0.24",
+          "note": "Secondary endpoint"
+        },
+        {
+          "outcome": "6‑month mortality",
+          "group_a": "548/858 (63.8%)",
+          "group_b": "516/821 (62.9%)",
+          "effect_measure": "OR",
+          "effect_value": "1.06",
+          "ci_95": "0.86–1.31",
+          "p_value": "0.71",
+          "note": "Follow‑up incomplete: data for 1443/1679"
+        },
+        {
+          "outcome": "12‑month mortality",
+          "group_a": "566/858 (65.9%)",
+          "group_b": "517/821 (63.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.15",
+          "ci_95": "0.91–1.46",
+          "p_value": "0.34",
+          "note": "Follow‑up incomplete: data for 1036/1679"
+        },
+        {
+          "outcome": "Any arrhythmia",
+          "group_a": "207/858 (24.1%)",
+          "group_b": "102/821 (12.4%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Driven by atrial fibrillation (20.5% vs 11.0%)"
+        },
+        {
+          "outcome": "Study drug discontinued due to severe arrhythmia",
+          "group_a": "52/858 (6.1%)",
+          "group_b": "13/821 (1.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Major protocol contamination source"
+        },
+        {
+          "outcome": "Days without need for open‑label vasopressors (mean ± SD)",
+          "group_a": "12.6 ± 12.5",
+          "group_b": "14.2 ± 12.3",
+          "effect_measure": "mean difference",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.007",
+          "note": "Consistent with more rescue therapy in dopamine group"
+        },
+        {
+          "outcome": "Days without need for trial drug (mean ± SD)",
+          "group_a": "11.0 ± 12.1",
+          "group_b": "12.5 ± 12.1",
+          "effect_measure": "mean difference",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.01",
+          "note": "Consistent with higher drug discontinuation"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Cardiogenic shock",
+          "group_a": "135 (dopamine)",
+          "group_b": "145 (norepinephrine)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.87",
+          "note": "Log‑rank P=0.03 for higher mortality with dopamine; interaction test NS."
+        }
+      ]
+    },
+    "safety": [
+      "Atrial fibrillation: 20.5% of dopamine vs 11.0% of norepinephrine (driving overall arrhythmia difference).",
+      "Any arrhythmia: 24.1% vs 12.4% (P<0.001).",
+      "Study‑drug discontinuation due to severe arrhythmia: 6.1% vs 1.6% (P<0.001).",
+      "No other major adverse events reported beyond the rhythm toxicity."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer‑generated sequence, permuted blocks, stratified by ICU; sealed opaque envelopes; drug prepared by unblinded person – low risk."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double‑blind maintained; mortality objective. Clinician‑defined BP targets introduced pragmatic variability but did not affect primary outcome ascertainment."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "28‑day mortality complete for all 1679 patients. 6‑ and 12‑month mortality incomplete (1443/1679 and 1036/1679 available) – some attrition risk for later endpoints."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Open‑label norepinephrine rescue more common in dopamine arm (26% vs 20%, P<0.001); severe arrhythmia led to more discontinuation in dopamine arm (52 vs 13 patients). Both attenuated treatment separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched: median APACHE II 20 vs 20, SOFA 9 vs 9; shock aetiology distribution similar (septic 63.2% vs 61.1%). Some pretreatment differences: open‑label norepinephrine before enrolment 18.3% vs 13.0%, dobutamine 14.8% vs 19.4%."
+        }
+      ],
+      "verdict": "Strong for primary mortality given blinded design, objective endpoint, and complete 28‑day follow‑up; diluted by rescue therapy and early stopping per sequential design."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad ICU shock population (septic 63.2% vs 61.1%, cardiogenic 15.7% vs 17.7%, hypovolaemic 14.7% vs 14.4%, other 6.4% vs 6.8%) with few exclusions (serious arrhythmias, prolonged prior vasopressors). Real‑world relevance high."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in European ICUs 2003–2007; co‑interventions (e.g., activated protein C in a minority) have changed, but catecholamine physiology and arrhythmia risk remain directly applicable. Generalises best to ICU shock requiring catecholamines with clinician‑titrated BP targets."
+        }
+      ],
+      "verdict": "Moderate‑to‑strong for ICU shock care: broad, pragmatic inclusion, though evolving sepsis bundles and the European ICU era slightly constrain direct transportability to all modern settings."
+    },
+    "strengths": [
+      "Large, multicentre, double‑blind RCT",
+      "Objective primary endpoint (all‑cause mortality)",
+      "Prespecified sequential monitoring with predefined stopping rules",
+      "Broad shock aetiologies enhance generalisability",
+      "Detailed adverse‑event capture (arrhythmias) with clear between‑group separation"
+    ],
+    "limitations": [
+      "Pragmatic clinician‑driven BP targets and permitted rescue norepinephrine reduced contrast between strategies",
+      "Heterogeneity of shock types limits disease‑specific treatment effect estimates",
+      "Cardiogenic shock subgroup signal not supported by interaction test",
+      "Incomplete long‑term follow‑up (especially at 12 months)",
+      "Dose‑range equipotency between maximally‑dosed dopamine and norepinephrine uncertain"
+    ],
+    "critical_appraisal": {
+      "summary": "A well‑designed, blinded RCT with complete primary outcome follow‑up that demonstrates no mortality benefit for dopamine over norepinephrine but a clear and clinically relevant excess of arrhythmias, supporting norepinephrine as the safer first‑line vasopressor.",
+      "strengths": [
+        "Double‑blind design with objective endpoint",
+        "Large sample and prespecified sequential monitoring",
+        "Inclusion of diverse shock aetiologies",
+        "Detailed, unbiased capture of arrhythmic harms"
+      ],
+      "weaknesses": [
+        "Contamination by open‑label rescue norepinephrine",
+        "Incomplete long‑term follow‑up",
+        "Potential for residual confounding in cardiogenic shock subgroup"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Dopamine did not reduce 28‑day mortality compared with norepinephrine and was associated with significantly higher rates of arrhythmias, supporting norepinephrine as the preferred first‑line vasopressor in ICU shock.",
+    "clinical_bottom_line": {
+      "verdict": "Does not change the primary mortality strategy but confirms that norepinephrine is safer than dopamine as the default first‑line vasopressor in ICU shock, driven by arrhythmia risk.",
+      "applies_to": "ICU patients with shock requiring vasopressors, especially those at risk for tachyarrhythmias; limited application if dopamine is needed for chronotropy or norepinephrine is unavailable.",
+      "does_not_mean": "That dopamine is ineffective or harmful in all shock subgroups; the mortality difference was not statistically significant, and the cardiogenic shock signal is hypothesis‑generating only.",
+      "implementation_caveats": [
+        "Use norepinephrine as first‑line; reserve dopamine for selected patients with low arrhythmia risk and a need for chronotropy, or when norepinephrine is unavailable.",
+        "Monitor closely for atrial fibrillation and consider rhythm‑control strategy if dopamine must be used."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Pre‑randomisation catecholamine use and fluid resuscitation",
+        "notes": "Editorial critique highlighted that many patients had already received open‑label vasopressors and that adequacy of fluid resuscitation could be questioned, potentially affecting generalisability."
+      },
+      {
+        "topic": "Rescue norepinephrine contamination",
+        "notes": "More frequent open‑label norepinephrine use in dopamine arm (26% vs 20%) may blur comparison; sensitivity analysis excluding those patients still showed no mortality difference (P=0.45)."
+      },
+      {
+        "topic": "Cardiogenic shock subgroup interpretation",
+        "notes": "Higher mortality with dopamine (P=0.03) but non‑significant interaction (P=0.87) and possible unmeasured confounding (mechanical support, revascularisation details) limit causal inference."
+      },
+      {
+        "topic": "Meta‑analytic synthesis",
+        "notes": "Subsequent meta‑analysis of RCTs in septic shock reported higher mortality and substantially increased arrhythmias with dopamine vs. norepinephrine, consistent with SOAP II safety findings."
+      },
+      {
+        "topic": "Guideline impact",
+        "notes": "Modern sepsis guidelines recommend norepinephrine first‑line, largely based on SOAP II; cardiogenic shock guidelines similarly prefer norepinephrine over dopamine."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is dopamine truly harmful in cardiogenic shock or merely a marker of unmeasured severity?",
+      "What is the optimal vasopressor titration strategy to minimize arrhythmias while maintaining perfusion?",
+      "How do newer vasopressors (vasopressin, angiotensin II) compare in arrhythmia risk in similar populations?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1679",
+        "28‑day mortality 52.5% vs 48.5% (OR 1.17, p=0.10)",
+        "Arrhythmias 24.1% vs 12.4% (p<0.001)",
+        "Discontinuation for severe arrhythmia 6.1% vs 1.6% (p<0.001)"
+      ],
+      "one_line_takeaway": "Norepinephrine is preferred over dopamine for ICU shock: similar survival but much less arrhythmia."
+    }
+  },
+  "_source_id": "SOAP_II",
+  "_source_system": "Circulatory"
+}

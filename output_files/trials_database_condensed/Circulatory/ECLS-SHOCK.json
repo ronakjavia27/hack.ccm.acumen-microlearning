@@ -1,0 +1,298 @@
+{
+  "id": "ECLS-SHOCK",
+  "trial_name": "ECLS-SHOCK — Routine Early VA-ECMO vs Standard Care in Infarct-Related Cardiogenic Shock (2023)",
+  "specialty": "Cardiogenic Shock",
+  "subtopic": "Mechanical Circulatory Support",
+  "year": 2023,
+  "journal": "New England Journal of Medicine",
+  "citation": "Thiele H, Zeymer U, Akin I, et al. Extracorporeal Life Support in Infarct-Related Cardiogenic Shock. N Engl J Med. 2023;389:1286-97.",
+  "doi": "https://doi.org/10.1056/NEJMoa2307227",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 417,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Routine early VA-ECMO did not reduce 30-day mortality in severe infarct-related cardiogenic shock and significantly increased major bleeding and limb complications.",
+  "pico": {
+    "population": "Adults with acute MI complicated by cardiogenic shock (SBP <90 mmHg for >30 min or on catecholamines, signs of organ hypoperfusion, arterial lactate >3 mmol/L) and planned revascularization",
+    "intervention": "Routine early femoro-femoral VA-ECMO initiated around the time of revascularization plus standard care",
+    "comparison": "Standard care without routine ECLS (rescue ECLS permitted for clinical deterioration)",
+    "outcome": "All-cause mortality at 30 days"
+  },
+  "keywords": [
+    "VA-ECMO",
+    "ECLS",
+    "cardiogenic shock",
+    "myocardial infarction",
+    "mechanical circulatory support",
+    "revascularization"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Infarct-related cardiogenic shock carries very high short-term mortality despite urgent revascularisation, vasopressors/inotropes, and contemporary ICU care. Physiologically, VA-ECMO can provide immediate circulatory support but increases afterload and exposes patients to major bleeding and limb/ischaemic complications. Before ECLS-SHOCK, evidence for routine ECLS in infarct-related shock was largely observational and vulnerable to confounding.",
+      "knowledge_gap": "Guidelines and scientific statements had highlighted the need for adequately powered randomised trials of mechanical circulatory support strategies in cardiogenic shock.",
+      "hypothesis": "Early ECLS would improve survival by limiting systemic hypoperfusion and end-organ injury in severe infarct-related shock."
+    },
+    "methods": {
+      "design": "Prospective, multicentre, investigator-initiated, randomised, open-label strategy trial conducted in catheterisation laboratories and ICUs at experienced centres within a cardiogenic shock network.",
+      "setting": "Patients with acute myocardial infarction complicated by cardiogenic shock identified after coronary angiography; revascularisation planned (PCI or CABG).",
+      "population": {
+        "inclusion": [
+          "AMI (STEMI or NSTEMI) with planned revascularisation",
+          "Systolic blood pressure <90 mmHg for >30 minutes or catecholamines required to maintain systolic pressure >90 mmHg",
+          "Signs of impaired organ perfusion (altered mental status or cold/clammy skin and extremities or oliguria <30 mL/h)",
+          "Arterial lactate >3 mmol/L",
+          "Informed consent (stepwise process)"
+        ],
+        "exclusion": [
+          "Cardiopulmonary resuscitation >45 minutes",
+          "Mechanical cause of cardiogenic shock",
+          "Onset of shock >12 hours",
+          "Severe peripheral artery disease precluding cannulation",
+          "Age <18 or >80 years (age threshold amended during the trial)",
+          "Shock of another cause (e.g., sepsis, hypovolaemia)",
+          "Life expectancy <6 months from severe comorbidity",
+          "Pregnancy",
+          "Participation in another trial"
+        ]
+      },
+      "intervention": "Routine early femoro-femoral ECLS (VA-ECMO) in addition to revascularisation and optimal medical care. ECLS insertion recommended before PCI provided no procedure delay >20 minutes; otherwise insertion could occur during/after revascularisation. Anticoagulation with IV unfractionated heparin bolus, target ACT >200 seconds. Antegrade distal limb perfusion was commonly used. Protocolised daily weaning assessment with stepwise reduction of flows using haemodynamic and metabolic criteria.",
+      "comparison": "No routine ECLS; culprit lesion identification and revascularisation performed using standard technique. Cross-over to ECLS was discouraged; escalation to other devices (e.g., IABP, Impella, TandemHeart) permitted for clinical deterioration using pre-specified haemodynamic/metabolic criteria.",
+      "blinding": "Unblinded (open-label) due to the nature of ECLS; primary outcome (death) is objective.",
+      "sample_size_power": "394 patients required to detect a reduction in 30-day mortality from 49% to 35% with 80% power at a two-sided final alpha of 0.048 (group-sequential design with one interim analysis); allowing for 6% drop-out, planned enrolment was 420.",
+      "primary_outcome": "Death from any cause at 30 days",
+      "secondary_outcomes": [
+        "Time until haemodynamic stabilisation",
+        "Acute renal failure warranting renal-replacement therapy",
+        "Recurrent myocardial infarction at 30 days",
+        "Rehospitalisation for congestive heart failure at 30 days",
+        "Poor neurological outcome at 30 days (CPC 3–4 among survivors)",
+        "Moderate or severe bleeding (BARC 3–5)",
+        "Peripheral ischaemic vascular complications requiring surgical/interventional therapy",
+        "Stroke or systemic embolisation"
+      ],
+      "follow_up": "30 days for the primary endpoint; mid-term follow-up planned at 6 and 12 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "30-day mortality was similar between groups (47.8% ECLS vs 49.0% control; RR 0.98; P=0.81).",
+        "Routine early ECLS significantly increased moderate/severe bleeding (23.4% vs 9.6%; RR 2.44) and limb ischaemic complications requiring intervention (11.0% vs 3.8%; RR 2.86).",
+        "Resource utilisation was higher in the ECLS group (median ventilation 7 vs 5 days; ICU stay 10 vs 8 days)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death from any cause at 30 days (primary)",
+          "group_a": "100/209 (47.8%)",
+          "group_b": "102/208 (49.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.98",
+          "ci_95": "0.80 to 1.19",
+          "p_value": "0.81",
+          "note": "No survival benefit; CI includes clinically meaningful benefit and harm."
+        },
+        {
+          "outcome": "Time until haemodynamic stabilisation (days)",
+          "group_a": "Median 3.1 (IQR 2.2–6.7)",
+          "group_b": "Median 3.1 (IQR 2.4–5.5)",
+          "effect_measure": "Hodges–Lehmann",
+          "effect_value": "0.27",
+          "ci_95": "−0.41 to 1.14",
+          "p_value": "Not reported",
+          "note": "Key secondary outcome; no signal of earlier stabilisation."
+        },
+        {
+          "outcome": "Acute renal failure warranting renal-replacement therapy",
+          "group_a": "17/209 (8.1%)",
+          "group_b": "29/208 (13.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.58",
+          "ci_95": "0.33 to 1.03",
+          "p_value": "Not reported",
+          "note": "Trend towards fewer RRT events; CI crosses 1."
+        },
+        {
+          "outcome": "Recurrent myocardial infarction at 30 days",
+          "group_a": "10/209 (4.8%)",
+          "group_b": "7/208 (3.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.42",
+          "ci_95": "0.55 to 3.66",
+          "p_value": "Not reported",
+          "note": "Wide CI (imprecision)."
+        },
+        {
+          "outcome": "Rehospitalisation for congestive heart failure at 30 days",
+          "group_a": "3/209 (1.4%)",
+          "group_b": "7/208 (3.4%)",
+          "effect_measure": "RR",
+          "effect_value": "0.43",
+          "ci_95": "0.11 to 1.62",
+          "p_value": "Not reported",
+          "note": "Few events."
+        },
+        {
+          "outcome": "Poor neurological outcome at 30 days (CPC 3–4 among survivors)",
+          "group_a": "27/109 (24.8%)",
+          "group_b": "24/106 (22.6%)",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.88 to 1.19",
+          "p_value": "Not reported",
+          "note": "Defined post hoc; CPC 5 excluded from denominator; interpret cautiously."
+        },
+        {
+          "outcome": "Moderate or severe bleeding (BARC 3–5) (safety)",
+          "group_a": "49/209 (23.4%)",
+          "group_b": "20/208 (9.6%)",
+          "effect_measure": "RR",
+          "effect_value": "2.44",
+          "ci_95": "1.50 to 3.95",
+          "p_value": "Not reported",
+          "note": "Clinically important harm signal."
+        },
+        {
+          "outcome": "Peripheral ischaemic vascular complications requiring surgical/interventional therapy (safety)",
+          "group_a": "23/209 (11.0%)",
+          "group_b": "8/208 (3.8%)",
+          "effect_measure": "RR",
+          "effect_value": "2.86",
+          "ci_95": "1.31 to 6.25",
+          "p_value": "Not reported",
+          "note": "Major limb complications increased with ECLS."
+        },
+        {
+          "outcome": "Stroke or systemic embolisation (safety)",
+          "group_a": "8/209 (3.8%)",
+          "group_b": "6/208 (2.9%)",
+          "effect_measure": "RR",
+          "effect_value": "1.33",
+          "ci_95": "0.47 to 3.76",
+          "p_value": "Not reported",
+          "note": "Numerically higher; imprecise estimate."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Moderate or severe bleeding (BARC 3–5): 23.4% ECLS vs 9.6% control (RR 2.44, 95% CI 1.50 to 3.95)",
+      "Peripheral ischaemic vascular complications requiring intervention: 11.0% ECLS vs 3.8% control (RR 2.86, 95% CI 1.31 to 6.25)",
+      "Stroke or systemic embolisation: 3.8% ECLS vs 2.9% control (RR 1.33, 95% CI 0.47 to 3.76)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computerised, block-wise randomisation per site via an internet-based system; randomisation occurred immediately after diagnostic coronary angiography."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery creates risk of differential co-interventions and thresholds for organ support; the primary endpoint (death) is objective and less vulnerable to ascertainment bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "420 patients enrolled; 3 excluded from ITT analyses because informed consent could not be obtained (2 ECLS, 1 control), leaving 209 vs 208 analysed."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "ECLS initiated during index angiography in 192/209 (91.9%) in the ECLS group; not initiated in 17/209 (8.1%). Rescue ECLS in control group: 26/208 (12.5%)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups closely matched on key severity markers (median age 62 vs 63 years; 81% male; median lactate 6.8 vs 6.9 mmol/L; resuscitation before randomisation 77.5% vs 77.9%)."
+        }
+      ],
+      "verdict": "Overall, internal validity is moderate: randomisation and objective primary outcome support causal inference, but open-label care, meaningful non-adherence/crossover (8.1% and 12.5%), and heterogeneity in ECLS adjunct strategies (notably low LV unloading) plausibly attenuated detectable treatment effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled cohort reflects a very high-acuity phenotype (arterial lactate >3 mmol/L by design; ~78% resuscitated before randomisation; median lactate ~6.8–6.9 mmol/L), which may differ from 'earlier' shock populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings apply most directly to infarct-related shock managed with early revascularisation and femoro-femoral VA-ECMO delivered in tertiary systems; extrapolation to non-AMI shock, prehospital ECLS, or mandated LV unloading ('ECMELLA' pathways) should be cautious. Patients with prolonged resuscitation (>45 minutes), late shock onset (>12 hours), or vascular disease precluding cannulation were excluded."
+        }
+      ],
+      "verdict": "Generalisability is moderate: results are most relevant to high-acuity infarct-related shock in specialised centres; transferability to earlier shock, lower-resource systems, and alternative VA-ECMO management paradigms (particularly routine unloading) is limited."
+    },
+    "strengths": [
+      "Large, pragmatic randomised trial in a high-mortality condition",
+      "Objective primary endpoint",
+      "Prespecified interim monitoring and alpha control",
+      "Delivered within an experienced shock network",
+      "Rich reporting of clinically important harms (bleeding and limb ischaemia)"
+    ],
+    "limitations": [
+      "Open-label design",
+      "Incomplete intervention separation (8.1% non-initiation in ECLS arm; 12.5% rescue ECLS in control arm)",
+      "Heterogeneity in ECLS adjunct strategies with low LV unloading utilisation (5.8%)",
+      "Several secondary outcomes influenced by clinician behaviour and competing risks",
+      "Neurological outcome definition was post hoc"
+    ],
+    "critical_appraisal": {
+      "summary": "ECLS-SHOCK is a well-conducted, practice-changing RCT that robustly demonstrates no 30-day survival benefit from routine early VA-ECMO in severe infarct-related cardiogenic shock, with a clear signal of increased major bleeding and limb complications; incomplete intervention separation and low LV unloading rates are important caveats.",
+      "strengths": [
+        "Adequately powered with a prespecified group-sequential design",
+        "Objective primary endpoint (all-cause mortality)",
+        "Multicentre, pragmatic design within an experienced shock network",
+        "Comprehensive safety reporting confirming clinically significant harm"
+      ],
+      "weaknesses": [
+        "Open-label design introduces potential for performance bias",
+        "12.5% rescue ECLS in the control arm may dilute the treatment effect",
+        "Very low rate of active LV unloading (5.8%) limits applicability to contemporary combined-device strategies",
+        "Post hoc definition of neurological outcome"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In patients with acute myocardial infarction complicated by cardiogenic shock, routine early venoarterial extracorporeal life support did not reduce 30-day mortality compared with standard care and was associated with more bleeding and vascular complications.",
+    "clinical_bottom_line": {
+      "verdict": "Routine early VA-ECMO should not be used for all patients with infarct-related cardiogenic shock. The default strategy should be standard care without routine ECLS, reserving ECLS for highly selected patients with refractory shock.",
+      "applies_to": "Patients with severe infarct-related cardiogenic shock (lactate >3 mmol/L) undergoing early revascularisation in experienced tertiary centres.",
+      "does_not_mean": "ECLS has no role in cardiogenic shock. It means routine, unselected early deployment is not beneficial and causes harm. Selective use in refractory shock or as a bridge to decision/recovery may still be appropriate.",
+      "implementation_caveats": [
+        "LV unloading was used in only 5.8% of ECLS patients; outcomes with routine unloading strategies remain untested in an RCT.",
+        "High-acuity cohort (median lactate ~6.8 mmol/L, ~78% post-arrest); benefit in less severe shock cannot be excluded.",
+        "Rescue ECLS in the control arm (12.5%) reflects real-world ethical practice and may bias results toward the null."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Physiology vs protocol reality (LV unloading)",
+        "notes": "The trial evaluated routine VA-ECMO without mandated unloading; active LV unloading during ECLS occurred in only 5.8% of the ECLS group, limiting applicability to contemporary 'ECMO + unloading' strategies."
+      },
+      {
+        "topic": "Phenotype enrichment and the 'too sick / too late' problem",
+        "notes": "High lactate (median ~6.8–6.9 mmol/L) and high prevalence of cardiac arrest before randomisation (~78%) may indicate a population where neurological injury and established multiorgan failure dominate mortality, potentially limiting the modifiable fraction of risk."
+      },
+      {
+        "topic": "Treatment separation and rescue ethics",
+        "notes": "Non-initiation of assigned ECLS (8.1%) and rescue ECLS in the control arm (12.5%) plausibly attenuate a mortality signal; however, these features reflect pragmatic care delivery and ethically necessary rescue in deteriorating shock."
+      },
+      {
+        "topic": "Secondary neurological outcome definition",
+        "notes": "'Poor neurological outcome' was defined post hoc as CPC 3–4 among survivors; this design choice affects interpretability, especially in a cohort with frequent pre-randomisation arrest."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does routine LV unloading during VA-ECMO improve outcomes in infarct-related shock?",
+      "Can a phenotype of 'modifiable' shock be identified early enough to benefit from ECLS?",
+      "What is the role of ECLS in non-AMI cardiogenic shock?",
+      "Does prehospital or very early (pre-PCI) ECLS initiation change outcomes?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=417",
+        "30-day mortality: 47.8% ECLS vs 49.0% control (RR 0.98, P=0.81)",
+        "Major bleeding: 23.4% vs 9.6% (RR 2.44)",
+        "Limb ischaemia: 11.0% vs 3.8% (RR 2.86)"
+      ],
+      "one_line_takeaway": "Routine early VA-ECMO in severe infarct-related cardiogenic shock does not improve survival and causes significant harm; use it selectively, not routinely."
+    }
+  },
+  "_source_id": "ECLS-SHOCK",
+  "_source_system": "Circulatory"
+}

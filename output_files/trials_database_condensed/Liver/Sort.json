@@ -1,0 +1,300 @@
+{
+  "id": "SORT",
+  "trial_name": "SORT — Albumin in Spontaneous Bacterial Peritonitis (1999)",
+  "specialty": "Hepatology",
+  "subtopic": "Cirrhosis",
+  "year": 1999,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Sort P, Navasa M, Arroyo V, et al. Effect of intravenous albumin on renal impairment and mortality in patients with cirrhosis and spontaneous bacterial peritonitis. N Engl J Med. 1999;341(6):403-9.",
+  "doi": "https://doi.org/10.1056/NEJM199908053410603",
+  "registration": "N/A",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 126,
+  "result_category": "Positive",
+  "one_liner": "In patients with cirrhosis and SBP, adding albumin to antibiotics reduced renal impairment (33% to 10%) and in-hospital mortality (29% to 10%) without affecting infection resolution.",
+  "pico": {
+    "population": "Hospitalised adults with cirrhosis and ascites diagnosed with SBP (ascitic PMN >250/mm³), age 18-80, excluding shock, GI bleeding, severe encephalopathy, creatinine >3 mg/dL, CVP <4 mm Hg if dehydration suspected.",
+    "intervention": "Intravenous cefotaxime (dose-adjusted to creatinine) plus albumin 20%: 1.5 g/kg within 6 h, then 1 g/kg on day 3 (day‑3 labs before albumin).",
+    "comparison": "Intravenous cefotaxime alone (same dose adjustment).",
+    "outcome": "Primary: renal impairment during hospitalisation (nonreversible >50% rise in BUN/creatinine with thresholds BUN >30 mg/dL or creatinine >1.5 mg/dL if no baseline renal failure). Secondary: in‑hospital mortality, 3‑month mortality, resolution of infection, hospital stay."
+  },
+  "keywords": [
+    "spontaneous bacterial peritonitis",
+    "albumin",
+    "cirrhosis",
+    "renal impairment",
+    "cefotaxime",
+    "plasma expansion",
+    "effective arterial blood volume"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "SBP is a frequent, high‑mortality complication of decompensated cirrhosis with ascites. Even with effective antibiotics, ~1/3 develop renal impairment — the strongest short‑term prognostic marker. Albumin was known to be effective as a plasma expander in other cirrhosis contexts (e.g., post‑paracentesis circulatory dysfunction).",
+      "knowledge_gap": "The role of adjunctive albumin to prevent renal impairment and improve survival in SBP was uncertain.",
+      "hypothesis": "In adults with cirrhosis and SBP, early intravenous albumin added to standard antibiotic therapy would reduce renal impairment and mortality compared to antibiotics alone."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, parallel‑group, open‑label controlled trial; 7 university hospitals in Spain; enrolment Nov 1995–Sep 1997; central review committee verified analyses.",
+      "setting": "7 university hospitals in Spain, hospitalised patients with cirrhosis and ascites diagnosed with SBP.",
+      "population": {
+        "inclusion": [
+          "Ascitic‑fluid polymorphonuclear count >250/mm³ (bedside inoculation into blood‑culture bottles)",
+          "Age 18–80 years"
+        ],
+        "exclusion": [
+          "Antibiotics within 1 week pre‑diagnosis (except prophylactic norfloxacin)",
+          "Evidence of secondary peritonitis",
+          "Other infections",
+          "Shock",
+          "Gastrointestinal bleeding",
+          "Ileus",
+          "Grade 3–4 encephalopathy",
+          "Cardiac failure",
+          "Findings suggestive of organic nephropathy (proteinuria/haematuria/abnormal renal ultrasound)",
+          "HIV",
+          "Advanced neoplasia affecting short‑term prognosis",
+          "Serum creatinine >3 mg/dL",
+          "If dehydration suspected, central venous pressure <4 mm Hg"
+        ]
+      },
+      "intervention": "Intravenous cefotaxime (dose‑adjusted to creatinine) plus albumin 20%: 1.5 g/kg within 6 h after enrolment, then 1 g/kg on day 3 (day‑3 labs drawn before albumin). SBP resolution defined as disappearance of infection signs and ascitic PMN ≤250/mm³.",
+      "comparison": "Intravenous cefotaxime alone (same dose adjustment). Antibiotic modification permitted in non‑responders. Diuretics and therapeutic paracentesis prohibited until infection resolution; partial paracentesis (3 L) occurred pre‑resolution in 7 patients (3 control, 4 albumin). After infection resolution, prophylactic norfloxacin 400 mg/day continued; tense ascites treated with total paracentesis plus albumin (6–8 g/L removed) irrespective of original allocation.",
+      "blinding": "Unblinded (open‑label). Randomisation performed using sealed envelopes; investigators unaware of assignment at the point of randomisation.",
+      "sample_size_power": "Power calculation: assuming renal impairment in ~30% with cefotaxime, 50 patients/group required to detect a 25% between‑group difference in renal impairment during hospitalisation with two‑sided α=0.05, β=0.20 (80% power). Final analysis intention‑to‑treat.",
+      "primary_outcome": "Renal impairment during hospitalisation: nonreversible deterioration with >50% rise in BUN/creatinine, meeting thresholds (BUN >30 mg/dL or creatinine >1.5 mg/dL if no baseline renal failure; >50% rise if baseline renal failure).",
+      "secondary_outcomes": [
+        "In‑hospital mortality",
+        "3‑month mortality",
+        "Resolution of SBP infection (disappearance of infection signs and ascitic PMN ≤250/mm³)",
+        "Hospital stay",
+        "Adverse effects"
+      ],
+      "follow_up": "In‑hospital follow‑up; post‑discharge weekly for 1 month then monthly to 90 days from enrolment."
+    },
+    "results": {
+      "headline_bullets": [
+        "Albumin reduced renal impairment from 33% to 10% (ARR 23%, NNT ≈4) and in‑hospital mortality from 29% to 10% (ARR 19%, NNT ≈5).",
+        "Infection resolution was similar (94% vs 98%, P=0.36).",
+        "Renal impairment was tightly linked to death: 78% in‑hospital mortality with renal impairment vs 3% without (P<0.001).",
+        "Between‑group separation in BUN and creatinine was evident from day 3, without differences in MAP."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Renal impairment during hospitalisation",
+          "group_a": "21/63 (33%)",
+          "group_b": "6/63 (10%)",
+          "effect_measure": "OR",
+          "effect_value": "4.6",
+          "ci_95": "1.3–16.1",
+          "p_value": "0.02 (multivariable); univariate P=0.002",
+          "note": "Nonreversible >50% rise in BUN/creatinine meeting thresholds."
+        },
+        {
+          "outcome": "In‑hospital mortality",
+          "group_a": "18/63 (29%)",
+          "group_b": "6/63 (10%)",
+          "effect_measure": "OR",
+          "effect_value": "4.5",
+          "ci_95": "1.0–20.9",
+          "p_value": "0.05 (multivariable); univariate P=0.01",
+          "note": "Commonest cause: combined liver + renal failure (13 control vs 5 albumin)."
+        },
+        {
+          "outcome": "3‑month mortality",
+          "group_a": "26/63 (41%)",
+          "group_b": "14/63 (22%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.03",
+          "note": "7 patients lost to follow‑up (4 control, 3 albumin); denominator‑based calculation assumes non‑informative missingness."
+        },
+        {
+          "outcome": "Resolution of infection",
+          "group_a": "59/63 (94%)",
+          "group_b": "62/63 (98%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.36",
+          "note": "Initial cefotaxime success 84% vs 90%; remaining resolved after antibiotic modification."
+        },
+        {
+          "outcome": "Hospital stay (days)",
+          "group_a": "13 ± 1",
+          "group_b": "14 ± 1",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.48",
+          "note": "Mean ± SE."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Baseline bilirubin ≥4 mg/dL",
+          "group_a": "14/29 (48%)",
+          "group_b": "3/25 (12%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "Not reported",
+          "note": "High‑risk subgroup; absolute risk reduction 36%."
+        },
+        {
+          "subgroup": "Bilirubin <4 mg/dL and creatinine ≥1 mg/dL",
+          "group_a": "6/19 (32%)",
+          "group_b": "3/21 (14%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "Not reported",
+          "note": "Intermediate risk."
+        },
+        {
+          "subgroup": "Bilirubin <4 mg/dL and creatinine <1 mg/dL",
+          "group_a": "7%",
+          "group_b": "0%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "Not reported",
+          "note": "Low risk; absolute numbers not provided — percentages only."
+        }
+      ]
+    },
+    "safety": [
+      "No adverse effects attributed to albumin infusion were reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Randomisation list generated by SAS, sealed envelopes at each hospital; investigators unaware of assignments at the point of randomisation; open‑label thereafter (risk of performance bias)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded design could influence co‑interventions (e.g., timing of paracentesis, escalation of supportive care), but key endpoints were objective (renal biochemistry and mortality)."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "ITT stated; 2 patients in albumin arm did not meet inclusion criteria and were withdrawn from protocolised albumin but included in final analysis (n=126). 7 patients lost to 90‑day follow‑up (4 vs 3); 90‑day mortality calculated as known deaths / total randomised, assuming non‑informative missingness."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "After infection resolution, both groups could receive albumin with total paracentesis (6–8 g/L removed) — a pre‑specified post‑SBP pathway that would tend to reduce between‑group separation rather than inflate it."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "No significant differences; renal failure at enrolment 44% (control) vs 40% (albumin); Child–Pugh 10±0.2 both groups."
+        },
+        {
+          "domain": "Outcome definition",
+          "notes": "Renal impairment required nonreversible deterioration with >50% rise in BUN/creatinine meeting thresholds; differs from contemporary AKI staging systems."
+        },
+        {
+          "domain": "Separation of variables",
+          "notes": "BUN significantly lower in albumin group days 3–9 (e.g., day 6: 36±3 vs 22±3 mg/dL, P=0.003); creatinine lower days 6–9; sodium higher (e.g., day 3: 130±1 vs 134±1 mmol/L, P=0.001); MAP not different."
+        },
+        {
+          "domain": "Statistical rigor",
+          "notes": "Multivariable logistic regression used to identify independent predictors; adjusted ORs reported for renal impairment and in‑hospital mortality."
+        }
+      ],
+      "verdict": "Moderate‑to‑strong internal validity: randomisation and objective endpoints support causal inference; clear physiological separation; limitations from open‑label design, modest sample size, pre‑randomisation exclusions, and era‑specific renal outcome definition."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Hospitalised cirrhosis with SBP in Spanish university centres; high baseline severity (Child–Pugh ~10, renal failure ~40%); excluded shock, GI bleeding, severe encephalopathy, creatinine >3 mg/dL, and hypovolaemia (CVP <4 mm Hg)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Cefotaxime‑based therapy was standard at the time; modern antimicrobial choices may differ. Albumin dosing is feasible, but cost and availability may limit adoption in low‑resource settings. Findings most directly apply to haemodynamically stable SBP without major acute competing insults; less generalisable to ICU‑level septic shock SBP or multifactorial AKI."
+        }
+      ],
+      "verdict": "Good generalisability for classical inpatient SBP without shock or advanced renal disease; extrapolation to modern nosocomial SBP with multidrug resistance and severely unstable presentations requires clinical judgement."
+    },
+    "strengths": [
+      "Clinically decisive endpoints (renal impairment and mortality).",
+      "Pragmatic, weight‑based dosing regimen.",
+      "Multicentre recruitment.",
+      "Intention‑to‑treat analysis.",
+      "Mechanistic alignment (renin activity and renal outcomes).",
+      "Clear between‑group separation in renal physiology and outcomes."
+    ],
+    "limitations": [
+      "Unblinded design.",
+      "Moderate sample size with wide confidence intervals for adjusted effects.",
+      "Restrictive exclusions selecting a haemodynamically stable phenotype.",
+      "Era‑specific renal impairment definition (not aligned with modern AKI staging).",
+      "Incomplete 90‑day mortality ascertainment for 7 patients with denominator‑based calculation."
+    ],
+    "critical_appraisal": {
+      "summary": "This trial demonstrates a large, clinically meaningful reduction in renal impairment and mortality with adjunctive albumin in SBP, likely by preventing circulatory dysfunction and renal vasoconstriction. The effect is consistent and supported by objective endpoints and mechanistic data, but the open‑label design and small sample introduce some uncertainty.",
+      "strengths": [
+        "Objective endpoints and clear physiological separation.",
+        "ITT analysis.",
+        "Consistent effect across renal and mortality outcomes."
+      ],
+      "weaknesses": [
+        "Open‑label design.",
+        "Modest sample size.",
+        "Restrictive exclusions.",
+        "Era‑specific renal outcome definition."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Albumin plus antibiotics significantly reduces renal impairment and mortality in patients with cirrhosis and SBP. The benefit is mediated by prevention of circulatory dysfunction and renal failure, independent of infection resolution. Albumin should be considered a standard adjunct to antibiotics in SBP.",
+    "clinical_bottom_line": {
+      "verdict": "This trial changed practice: albumin 1.5 g/kg day 1 and 1 g/kg day 3 should be given to patients with cirrhosis and SBP, especially those at high risk of renal impairment.",
+      "applies_to": "Hospitalised adults with cirrhosis and SBP, without shock, GI bleeding, severe encephalopathy, or creatinine >3 mg/dL.",
+      "does_not_mean": "Albumin does not replace antibiotics; it does not improve infection resolution but prevents renal failure and death.",
+      "implementation_caveats": [
+        "Cost and resource availability may limit use in low‑resource settings.",
+        "Identify high‑risk patients using baseline bilirubin and creatinine to target therapy.",
+        "Do not delay antibiotics; albumin is adjunctive."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Risk targeting vs universal use",
+        "notes": "Editorial highlighted that the most plausible strategy is to prioritise albumin for higher‑risk SBP presentations given the clear risk stratification by baseline biochemistry and the cost/dose burden."
+      },
+      {
+        "topic": "Cost‑effectiveness and low‑risk overtreatment",
+        "notes": "Correspondence argued low‑risk subsets (low bilirubin, preserved renal function) have very low renal impairment rates, raising the possibility of overtreatment if albumin is applied indiscriminately."
+      },
+      {
+        "topic": "Open‑label design",
+        "notes": "The lack of blinding was an inherent vulnerability; however, the magnitude of effect on objective endpoints and mechanistic consistency reduce pure performance‑bias explanations."
+      },
+      {
+        "topic": "Subsequent evidence landscape",
+        "notes": "Later syntheses and practice guidelines in hepatology broadly incorporated the concept that albumin plus antibiotics reduces SBP‑associated renal dysfunction and mortality, and commonly recommend the same weight‑based dosing schedule."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Optimal albumin dosing in low‑risk SBP.",
+      "Cost‑effectiveness in resource‑limited settings.",
+      "Generalizability to nosocomial SBP with multidrug‑resistant organisms.",
+      "Long‑term outcomes beyond 90 days."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=126",
+        "Renal impairment: 33% vs 10% (OR 4.6, 95% CI 1.3–16.1)",
+        "In‑hospital mortality: 29% vs 10% (OR 4.5, 95% CI 1.0–20.9)",
+        "3‑month mortality: 41% vs 22% (P=0.03)",
+        "Infection resolution: 94% vs 98% (P=0.36)"
+      ],
+      "one_line_takeaway": "In patients with cirrhosis and SBP, albumin 1.5 g/kg then 1 g/kg reduces renal impairment and death by >60% and should be standard care."
+    }
+  },
+  "_source_id": "Sort",
+  "_source_system": "Liver"
+}

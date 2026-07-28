@@ -1,0 +1,358 @@
+{
+  "id": "PReVENT",
+  "trial_name": "PReVENT — Low vs Intermediate Tidal Volume in ICU Patients Without ARDS (2018)",
+  "specialty": "Critical Care",
+  "subtopic": "Mechanical Ventilation",
+  "year": 2018,
+  "journal": "JAMA",
+  "citation": "Simonis FD, Serpa Neto A, Binnekade JM, Braber A, Bruin KCM, Determann RM, et al; Writing Group for the PReVENT Investigators. Effect of a low vs intermediate tidal volume strategy on ventilator-free days in intensive care unit patients without ARDS: a randomized clinical trial. JAMA. 2018;320(18):1872-1880",
+  "doi": "10.1001/jama.2018.14280",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 961,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU patients without ARDS, a low tidal volume strategy (4–6 mL/kg) did not improve ventilator-free days or mortality compared with an intermediate, pressure-limited strategy (8–10 mL/kg), and significantly increased hypercapnic harm.",
+  "pico": {
+    "population": "Adults receiving invasive ventilation without ARDS, expected to require ventilation >24 hours",
+    "intervention": "Low tidal volume strategy targeting 4–6 mL/kg predicted body weight",
+    "comparison": "Intermediate tidal volume strategy targeting 8–10 mL/kg predicted body weight (with pressure limit)",
+    "outcome": "Ventilator-free days at day 28"
+  },
+  "keywords": [
+    "low tidal volume ventilation",
+    "non-ARDS",
+    "ventilator-free days",
+    "mechanical ventilation",
+    "lung protective ventilation",
+    "PReVENT"
+  ],
+  "related_trials": [
+    "RELAx"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Low tidal volume ventilation improves outcomes in ARDS, and ventilator-induced lung injury is biologically plausible even in non-ARDS lungs. Observational studies and meta-analyses suggested low tidal volumes might benefit non-ARDS patients, but evidence was heterogeneous and confounded.",
+      "knowledge_gap": "Whether a low tidal volume strategy improves patient-centred outcomes in ICU patients without ARDS compared with a pressure-limited, intermediate tidal volume strategy.",
+      "hypothesis": "Low tidal volume strategy would increase ventilator-free days at day 28 compared with an intermediate strategy."
+    },
+    "methods": {
+      "design": "Investigator-initiated, multicentre, parallel-group, open-label, randomised controlled trial in 6 ICUs in the Netherlands.",
+      "setting": "6 ICUs in the Netherlands; randomisation required within 1 hour of start of invasive ventilation in the ICU.",
+      "population": {
+        "inclusion": [
+          "Adults receiving invasive ventilation",
+          "No ARDS at initiation",
+          "Expected ventilation duration >24 hours"
+        ],
+        "exclusion": [
+          "ARDS",
+          "Age <18 years",
+          "Pregnancy",
+          "Invasive ventilation >12 hours before ICU admission",
+          "History of pulmonary disease (severe COPD, pulmonary fibrosis)",
+          "Uncontrolled intracranial pressure",
+          "New pulmonary thromboembolism",
+          "Previous enrolment in trial"
+        ]
+      },
+      "intervention": "Low tidal volume strategy targeting 4–6 mL/kg predicted body weight. Volume-controlled ventilation started at 6 mL/kg, decreased by 1 mL/kg per hour to minimum 4 mL/kg. Pressure support: lowest support achieving target (minimum 5 cm H2O); tidal volume >8 mL/kg accepted if minimal support. Adjustments permitted for dyspnoea; additional sedation or muscle relaxants not allowed.",
+      "comparison": "Intermediate tidal volume strategy targeting 8–10 mL/kg predicted body weight (initially 10 mL/kg). If plateau pressure exceeded 25 cm H2O, tidal volume reduced to maintain plateau ≤25 cm H2O. Pressure support adjusted to target tidal volume with max airway pressure <25 cm H2O. Other ventilator settings (PEEP, FiO2) and weaning per local practice with protocolised daily assessment.",
+      "blinding": "Open-label; ventilator settings not concealable. Outcomes collected without blinding, but weaning/extubation criteria were protocolised.",
+      "sample_size_power": "Planned 952 patients (476/group) to detect a 1-day difference in ventilator-free days (SD 5) with 80% power at 5% significance, allowing 20% dropout. 961 were randomised.",
+      "primary_outcome": "Ventilator-free days at day 28",
+      "secondary_outcomes": [
+        "Duration of ventilation among survivors to day 28",
+        "ICU length of stay among survivors",
+        "Hospital length of stay among survivors",
+        "Mortality at day 28 and day 90",
+        "Development of ARDS and pneumonia",
+        "Severe respiratory acidosis (pH <7.25)",
+        "Rescue therapy for hypercapnia or severe respiratory acidosis",
+        "Delirium"
+      ],
+      "follow_up": "Through day 90 for mortality; ICU and hospital discharge for length of stay."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary outcome neutral: identical mean ventilator-free days at day 28 (21.0 vs 21.0; mean difference −0.27, 95% CI −1.74 to 1.19; P=0.71).",
+        "Low tidal volume group had significantly more severe respiratory acidosis (17.8% vs 10.3%; RR 1.54; P=0.001) and more rescue therapy for hypercapnia/acidosis.",
+        "No significant difference in mortality at day 28 (12.8% vs 11.5%; HR 1.12; P=0.30) or day 90 (19.6% vs 17.1%; HR 1.08; P=0.45).",
+        "Pre-specified subgroup: among patients intubated in ICU, low tidal volume associated with fewer ventilator-free days (mean difference −2.50, 95% CI −4.63 to −0.36; interaction P=0.01)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Ventilator-free days at day 28, mean (SD)",
+          "group_a": "21.0 (9.3) [n=475]",
+          "group_b": "21.0 (9.0) [n=480]",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.27",
+          "ci_95": "-1.74 to 1.19",
+          "p_value": "0.71",
+          "note": "Primary outcome"
+        },
+        {
+          "outcome": "Duration of ventilation among survivors to day 28, median (IQR) [days]",
+          "group_a": "3.3 (2.0–4.9) [n=414]",
+          "group_b": "3.3 (2.0–4.9) [n=425]",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.05",
+          "ci_95": "-0.77 to 0.67",
+          "p_value": "0.90"
+        },
+        {
+          "outcome": "ICU length of stay among survivors, median (IQR) [days]",
+          "group_a": "5.2 (3.5–8.9) [n=415]",
+          "group_b": "5.0 (3.6–9.2) [n=423]",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.01",
+          "ci_95": "-0.89 to 0.86",
+          "p_value": "0.97"
+        },
+        {
+          "outcome": "Hospital length of stay among survivors, median (IQR) [days]",
+          "group_a": "16.5 (10.9–27.0) [n=415]",
+          "group_b": "16.0 (11.0–25.4) [n=423]",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.31",
+          "ci_95": "-1.90 to 2.52",
+          "p_value": "0.78"
+        },
+        {
+          "outcome": "Mortality at day 28",
+          "group_a": "61/475 (12.8%)",
+          "group_b": "55/480 (11.5%)",
+          "effect_measure": "HR",
+          "effect_value": "1.12",
+          "ci_95": "0.90 to 1.40",
+          "p_value": "0.30",
+          "note": "Time-to-event analysis"
+        },
+        {
+          "outcome": "Mortality at day 90",
+          "group_a": "93/475 (19.6%)",
+          "group_b": "82/480 (17.1%)",
+          "effect_measure": "HR",
+          "effect_value": "1.08",
+          "ci_95": "0.90 to 1.29",
+          "p_value": "0.45",
+          "note": "Time-to-event analysis"
+        },
+        {
+          "outcome": "ARDS (pulmonary complication)",
+          "group_a": "18/475 (3.8%)",
+          "group_b": "24/480 (5.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.86",
+          "ci_95": "0.59 to 1.24",
+          "p_value": "0.38"
+        },
+        {
+          "outcome": "Pneumonia (pulmonary complication)",
+          "group_a": "25/475 (5.3%)",
+          "group_b": "25/480 (5.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.78 to 1.15",
+          "p_value": "0.72"
+        },
+        {
+          "outcome": "Severe respiratory acidosis (pH <7.25)",
+          "group_a": "82/460 (17.8%)",
+          "group_b": "48/466 (10.3%)",
+          "effect_measure": "RR",
+          "effect_value": "1.54",
+          "ci_95": "1.20 to 1.98",
+          "p_value": "0.001"
+        },
+        {
+          "outcome": "Rescue therapy for hypercapnia",
+          "group_a": "9/475 (1.9%)",
+          "group_b": "1/480 (0.2%)",
+          "effect_measure": "RR",
+          "effect_value": "7.70",
+          "ci_95": "1.01 to 58.67",
+          "p_value": "0.02"
+        },
+        {
+          "outcome": "Rescue therapy for severe respiratory acidosis",
+          "group_a": "23/475 (4.8%)",
+          "group_b": "7/480 (1.5%)",
+          "effect_measure": "RR",
+          "effect_value": "2.89",
+          "ci_95": "1.37 to 6.09",
+          "p_value": "0.02"
+        },
+        {
+          "outcome": "Delirium",
+          "group_a": "206/475 (43.4%)",
+          "group_b": "176/480 (36.6%)",
+          "effect_measure": "RR",
+          "effect_value": "1.15",
+          "ci_95": "0.99 to 1.34",
+          "p_value": "0.06",
+          "note": "Borderline, not statistically significant"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Intubation in ICU",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "Mean difference in ventilator-free days",
+          "effect_value": "-2.50",
+          "ci_95": "-4.63 to -0.36",
+          "p_value": "0.02",
+          "p_interaction": "0.01"
+        },
+        {
+          "subgroup": "Intubation outside ICU",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "Mean difference in ventilator-free days",
+          "effect_value": "1.45",
+          "ci_95": "-0.52 to 3.43",
+          "p_value": "0.15",
+          "p_interaction": "0.01"
+        }
+      ]
+    },
+    "safety": [
+      "Low tidal volume group experienced significantly more severe respiratory acidosis (pH <7.25): 17.8% vs 10.3%, RR 1.54 (95% CI 1.20–1.98, P=0.001).",
+      "Rescue therapy for hypercapnia was more frequent in low tidal volume arm (1.9% vs 0.2%, RR 7.70, P=0.02).",
+      "Rescue therapy for severe respiratory acidosis also more frequent (4.8% vs 1.5%, RR 2.89, P=0.02).",
+      "No significant difference in ARDS, pneumonia, or delirium (delirium: 43.4% vs 36.6%, RR 1.15, P=0.06)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Web-based randomisation with variable block sizes (2–6), stratified by centre and location of intubation. Allocation concealment adequate."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; ventilator settings visible. Primary endpoint (ventilator-free days) influenced by clinician decisions. Weaning/extubation criteria were protocolised, and mortality outcomes objective, reducing but not eliminating risk."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "961 randomised, primary outcome data available for 955 (475 vs 480). Attrition minimal (2 vs 4 lost); ITT analysis used."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clear separation in tidal volume early, narrowing by day 3 as patients transitioned to assisted modes. Additional sedation/muscle relaxants to achieve protocol not permitted."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups comparable: SAPS II median 52 vs 51, PaO2/FiO2 197 vs 198, baseline tidal volume 7.0 vs 7.3 mL/kg PBW. Most intubated outside ICU (72.1% vs 70.3%)."
+        },
+        {
+          "domain": "Separation of the variable of interest",
+          "notes": "Achieved: median delivered tidal volume after titration 5.9 (5.2–6.7) vs 9.1 (7.9–10.0) mL/kg PBW; day 1, day 2, day 3 showed separation, P<0.001 for overall. Driving pressure also lower (12 vs 13 cm H2O, mean difference −1.23, P<0.001)."
+        },
+        {
+          "domain": "Outcome assessment & statistical rigor",
+          "notes": "Power calculation met; no interim analyses; multiple secondary endpoints without adjustment. Subgroup analysis pre-specified but vulnerable to multiplicity."
+        }
+      ],
+      "verdict": "Moderate-to-strong: robust randomisation, minimal attrition, clear early separation; main threats are open-label design for a process-mediated endpoint and narrowing separation over time in a short-ventilation-duration population."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Conducted in 6 Dutch ICUs; predominantly older adults with mixed indications (high proportion coma/cardiac arrest). Excluded patients with chronic pulmonary disease, prolonged pre-ICU ventilation >12 h, uncontrolled intracranial hypertension – limits applicability to these groups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to high-resource ICUs with frequent ventilator reassessment and early transition to assisted modes. Comparator was pressure-limited, not traditional high tidal volumes (12 mL/kg). May not apply to settings where usual care involves higher tidal volumes without pressure limits."
+        }
+      ],
+      "verdict": "Moderate: findings generalise well to similar adult ICU populations without ARDS in comparable systems, but applicability is limited in patients with chronic lung disease, prolonged pre-ICU ventilation, or where usual care differs substantially from the intermediate pressure-limited comparator."
+    },
+    "strengths": [
+      "Large, pragmatic multicentre RCT in a common ICU population.",
+      "Early enrolment (median <1 hour from initiation of ventilation) enhances causal attribution.",
+      "Clear early physiologic separation (tidal volume, plateau pressure, driving pressure) between groups.",
+      "Clinically relevant primary endpoint (ventilator-free days) with near-complete follow-up.",
+      "Protocolised weaning/extubation criteria to minimise performance bias."
+    ],
+    "limitations": [
+      "Open-label intervention with a process-dependent primary endpoint susceptible to bias.",
+      "Comparator was an intermediate, pressure-limited strategy, not traditional high tidal volumes; contrast may be insufficient.",
+      "Treatment separation narrowed by day 3 (median 7.3 vs 9.1 mL/kg PBW), potentially diluting sustained low-tidal-volume effect.",
+      "Many eligible patients not enrolled for logistical reasons, introducing selection effects.",
+      "Secondary outcomes and subgroup analyses not adjusted for multiplicity; borderline signals require caution."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic trial showing no benefit of low tidal volume ventilation over an intermediate, pressure-limited strategy in patients without ARDS, with evidence of harm from hypercapnic acidosis. Methodological strengths include early randomisation and minimal attrition; main limitation is open-label design and limited sustained separation.",
+      "strengths": [
+        "Robust randomisation with stratification",
+        "Minimal loss to follow-up",
+        "Clear early tidal volume separation achieved",
+        "Protocolised weaning to limit performance bias",
+        "Clinically meaningful primary endpoint"
+      ],
+      "weaknesses": [
+        "Open-label design for a process-dependent primary endpoint",
+        "Comparator already pressure-limited, narrowing contrast",
+        "Treatment separation declined by day 3",
+        "Many eligible patients not enrolled",
+        "Secondary analyses unadjusted for multiplicity"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "For ICU patients without ARDS, targeting very low tidal volumes (4–6 mL/kg predicted body weight) did not improve ventilator-free days or mortality versus an intermediate, pressure-limited approach, but increased severe respiratory acidosis and use of rescue therapies.",
+    "clinical_bottom_line": {
+      "verdict": "Routinely targeting very low tidal volumes (4–6 mL/kg PBW) in non-ARDS ICU patients adds harm (hypercapnia, acidosis) without improving ventilator-free days or mortality compared with a pressure-limited strategy targeting 8–10 mL/kg PBW. This trial supports avoiding aggressive tidal volume reduction if it causes respiratory acidosis.",
+      "applies_to": "ICU patients without ARDS receiving invasive ventilation, particularly those with relatively short expected ventilation duration and without chronic lung disease.",
+      "does_not_mean": "Low tidal volumes are harmful in ARDS or that any reduction below 8 mL/kg is always harmful; rather, routine ultra-low targets (<6 mL/kg) in non-ARDS patients may cause unnecessary hypercapnic harm when the comparator is already pressure-limited.",
+      "implementation_caveats": [
+        "If targeting lower tidal volumes, monitor for respiratory acidosis and be prepared to adjust to avoid pH <7.25.",
+        "The trial excluded patients with pre-existing pulmonary disease and those ventilated >12 hours before ICU admission; generalisability limited in those groups.",
+        "The comparator was pressure-limited, not traditional high tidal volumes; in settings where usual care is higher, the risk–benefit may differ."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Pre-trial meta-analyses suggested benefit of lower tidal volumes in non-ARDS, challenged by neutral PReVENT result",
+        "notes": "Observational data and meta-analyses had supported low tidal volumes for non-ARDS. PReVENT’s neutral findings contradict that, highlighting the limitations of non-randomised evidence and the importance of empirical RCTs."
+      },
+      {
+        "topic": "Tension between physiological separation (lower driving pressures) and clinical outcomes",
+        "notes": "Despite significant reductions in plateau and driving pressures, no improvement in patient-centred outcomes was observed, raising questions about surrogate endpoints and the translation of physiological benefit to clinical benefit."
+      },
+      {
+        "topic": "Comparison with RELAx trial on PEEP strategies in non-ARDS",
+        "notes": "RELAx similarly found no improvement in ventilator-free days with lower vs higher PEEP in non-ARDS patients, reinforcing that extrapolating ‘more protective’ ventilator settings to non-ARDS populations requires empirical confirmation and may introduce harms."
+      },
+      {
+        "topic": "Guidelines continue to recommend lung-protective tidal volumes (≤8 mL/kg) but caution against ultra-low volumes (4–6 mL/kg) due to PReVENT",
+        "notes": "Contemporary international guidance often recommends tidal volumes ≤8 mL/kg PBW as default for all ventilated patients, but PReVENT supports avoiding routine escalation to very low tidal volumes in non-ARDS patients when they produce hypercapnic harm without clear benefit."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "RELAx",
+        "relation": "A related RCT in ICU patients without ARDS comparing lower vs higher PEEP strategies. Also found no improvement in ventilator-free days, reinforcing that more protective ventilator settings do not necessarily improve outcomes in this population and that competing harms must be considered."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal tidal volume target in patients with moderate hypoxemia but not meeting ARDS criteria?",
+      "Is there a benefit of driving pressure-guided ventilation in non-ARDS?",
+      "Would sustained low tidal volumes show benefit in patients with longer ventilation duration or higher baseline risk of lung injury?",
+      "What is the impact of early versus late initiation of low tidal volume?",
+      "Are there subgroups (e.g., sepsis, trauma) where low tidal volume may be beneficial despite overall neutral results?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=961",
+        "Ventilator-free days identical: 21.0 vs 21.0 (mean diff −0.27, 95% CI −1.74 to 1.19)",
+        "Severe respiratory acidosis: 17.8% vs 10.3% (RR 1.54, P=0.001)",
+        "No mortality difference: 28d 12.8% vs 11.5% (HR 1.12)"
+      ],
+      "one_line_takeaway": "In ICU patients without ARDS, low tidal volume (4–6 mL/kg PBW) ventilation does not improve outcomes and causes more hypercapnic harm compared with a pressure-limited intermediate strategy (8–10 mL/kg PBW)."
+    }
+  },
+  "_source_id": "PReVENT",
+  "_source_system": "Respiratory"
+}

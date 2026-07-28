@@ -1,0 +1,314 @@
+{
+  "id": "MetaPlus",
+  "trial_name": "MetaPlus — Immune-Modulating vs Standard High-Protein Enteral Nutrition in ICU (2014)",
+  "specialty": "Critical Care",
+  "subtopic": "Specialized Nutrition",
+  "year": 2014,
+  "journal": "JAMA",
+  "citation": "van Zanten ARH, Sztark F, Kaisers UX, et al. High-protein enteral nutrition enriched with immune-modulating nutrients vs standard high-protein enteral nutrition and nosocomial infections in the ICU: a randomized clinical trial. JAMA. 2014;312(5):514-524",
+  "doi": "https://doi.org/10.1001/jama.2014.7698",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 301,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In mechanically ventilated ICU adults, an immune-modulating high-protein enteral formula did not reduce ICU-acquired infections compared to a standard high-protein formula, and a late mortality signal emerged in medical patients.",
+  "pico": {
+    "population": "Mechanically ventilated ICU adults expected to need enteral tube feeding for ≥72 hours",
+    "intervention": "Immune-modulating high-protein enteral nutrition (IMHP): enriched with glutamine, omega-3 fatty acids, and antioxidant micronutrients",
+    "comparison": "Standard high-protein enteral nutrition (HP): iso-caloric, without immune-modulating enrichment",
+    "outcome": "Incidence of new ICU-acquired infection"
+  },
+  "keywords": [
+    "enteral nutrition",
+    "immunonutrition",
+    "pharmaconutrition",
+    "glutamine",
+    "omega-3 fatty acids",
+    "antioxidants",
+    "nosocomial infection",
+    "mechanical ventilation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Nosocomial infections are common during prolonged mechanical ventilation and are associated with longer ICU stays, higher costs, and worse outcomes. Immune-modulating enteral formulas (combining glutamine, omega-3 fatty acids, and antioxidants) were used in some ICUs based on heterogeneous earlier trial signals suggesting fewer infections.",
+      "knowledge_gap": "Substantial uncertainty about generalisability of earlier signals (often surgical cohorts) to mixed ICU populations and concern that combining multiple pharmaconutrients could produce unexpected harms.",
+      "hypothesis": "Immune-modulating high-protein enteral nutrition would reduce new infections acquired in ICU."
+    },
+    "methods": {
+      "design": "Randomised, double-blind, multicentre, international (14 ICUs across The Netherlands, Germany, France, and Belgium), parallel-group trial (February 2010 to April 2012) in mixed medical/surgical/trauma intensive care settings.",
+      "setting": "14 ICUs across The Netherlands, Germany, France, and Belgium; enrolment required early enteral nutrition, with study product started within the first 48 hours of ICU admission.",
+      "population": {
+        "inclusion": [
+          "ICU patients expected to be mechanically ventilated for at least 72 hours",
+          "Expected to require enteral tube feeding for at least 72 hours"
+        ],
+        "exclusion": [
+          "Severe organ failure at start of nutritional support (SOFA >12 within 24 hours)",
+          "Contraindication to enteral nutrition (e.g., severe/refractory shock requiring escalating vasopressors, bowel obstruction/ischaemia/infarction)",
+          "Pregnancy",
+          "Morbid obesity (BMI >40)",
+          "Planned or current selective digestive decontamination/selective oral decontamination",
+          "Need for specialised enteral formula (e.g., hepatic/renal/diabetes formula)",
+          "Recent enteral/parenteral supplementation with omega-3 fatty acids, selenium, vitamin E, or glutamine"
+        ]
+      },
+      "intervention": "Immune-modulating high-protein enteral nutrition (IMHP): Iso-caloric high-protein tube feed enriched with glutamine, omega-3 fatty acids, and antioxidant micronutrients. Composition (per 1500 mL): 1920 kcal; 112.5 g protein (20% as alanyl-glutamine dipeptide); total glutamine 30 g; EPA + DHA 7.5 g; vitamin C 690 mg; vitamin E 266 mg; selenium 285 μg; zinc 30 mg; carbohydrate 141 g; fat 96 g; fibre 22.5 g. Delivery: Enteral tube feeding per unit routine with guidance to progress early enteral nutrition to a maximum of 25 kcal/kg/day (cap 2500 kcal/day); study product continued during ICU stay up to a maximum of 28 days.",
+      "comparison": "Standard high-protein enteral nutrition (HP): Iso-caloric high-protein tube feed without immune-modulating enrichment. Composition (per 1500 mL): 1920 kcal; 112.5 g protein; total glutamine 9 g; EPA + DHA 0 g; vitamin C 195 mg; vitamin E 23 mg; selenium 113 μg; zinc 23 mg; carbohydrate 231 g; fat 55.5 g; fibre 22.5 g. Co-interventions: Supplemental parenteral nutrition permitted; limited complementary feeding allowed (with restrictions on additional glutamine/omega-3/selenium/vitamin E exposure).",
+      "blinding": "Double-blind; study products packaged identically and labelled with allocation codes known only to the manufacturer; clinicians, patients, investigators, and outcome assessors were blinded.",
+      "sample_size_power": "A total of 300 patients were required to detect a 12.5% absolute reduction in new infections (from 25% to 12.5%) with 80% power at the 5% significance level.",
+      "primary_outcome": "New ICU-acquired infection (confirmed + probable infections during ICU stay)",
+      "secondary_outcomes": [
+        "ICU mortality",
+        "Hospital mortality",
+        "28-day mortality",
+        "6-month mortality",
+        "Days alive and free of mechanical ventilation (to day 28)",
+        "ICU length of stay",
+        "Time to first blood glucose ≤113.5 mg/dL",
+        "Serious adverse events"
+      ],
+      "follow_up": "Infections assessed during ICU stay; additional outcomes included ICU/hospital endpoints and survival follow-up to 6 months after randomisation."
+    },
+    "results": {
+      "headline_bullets": [
+        "No difference in the primary outcome of new ICU-acquired infection (53% vs 52%; P=.96).",
+        "No early mortality benefit; 6-month mortality was numerically higher in the IMHP group (35% vs 29%; P=.21).",
+        "A prespecified subgroup analysis showed significantly higher 6-month mortality in medical patients receiving IMHP (54% vs 35%; P=.04).",
+        "An adjusted Cox regression model suggested an increased hazard for 6-month mortality with IMHP (HR 1.57; 95% CI 1.03 to 2.39; P=.04)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "New ICU-acquired infection (primary outcome)",
+          "group_a": "80/152 (53%)",
+          "group_b": "77/149 (52%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.96",
+          "note": "Confirmed + probable infections during ICU stay"
+        },
+        {
+          "outcome": "Pneumonia",
+          "group_a": "34/152 (22%)",
+          "group_b": "29/149 (19%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.52",
+          "note": "Most common infection type"
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "24/152 (16%)",
+          "group_b": "23/149 (15%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.88",
+          "note": "All-cause"
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "34/152 (22%)",
+          "group_b": "29/149 (19%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.58",
+          "note": "All-cause"
+        },
+        {
+          "outcome": "28-day mortality",
+          "group_a": "26/152 (17%)",
+          "group_b": "24/149 (16%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.86",
+          "note": "All-cause"
+        },
+        {
+          "outcome": "6-month mortality",
+          "group_a": "53/152 (35%)",
+          "group_b": "43/149 (29%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.21",
+          "note": "Follow-up incomplete for 2 patients in each group (transfer)"
+        },
+        {
+          "outcome": "Days alive and free of mechanical ventilation (to day 28)",
+          "group_a": "10 [0 to 22]",
+          "group_b": "12 [0 to 24]",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.27",
+          "note": "Median [IQR]"
+        },
+        {
+          "outcome": "ICU length of stay",
+          "group_a": "16 [10 to 24]",
+          "group_b": "18 [11 to 27]",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.28",
+          "note": "Median [IQR]"
+        },
+        {
+          "outcome": "Time to first blood glucose ≤113.5 mg/dL",
+          "group_a": "24.2 hours",
+          "group_b": "35.1 hours",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.02",
+          "note": "Mean time; consistent with lower carbohydrate load in IMHP"
+        },
+        {
+          "outcome": "Patients with ≥1 serious adverse event",
+          "group_a": "39/152 (25.7%)",
+          "group_b": "38/149 (25.5%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.975",
+          "note": "91 SAEs in total (43 IMHP; 48 HP)"
+        },
+        {
+          "outcome": "6-month mortality (adjusted Cox regression)",
+          "group_a": "Not applicable",
+          "group_b": "Not applicable",
+          "effect_measure": "HR",
+          "effect_value": "1.57",
+          "ci_95": "1.03 to 2.39",
+          "p_value": "0.04",
+          "note": "Adjusted for age, APACHE II, patient type, sepsis, admission type, baseline glutamine, baseline selenium; 2 patients excluded (missing APACHE II)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Medical patients (6-month mortality)",
+          "group_a": "34/63 (54%)",
+          "group_b": "21/60 (35%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "0.04",
+          "note": "Prespecified patient-type stratum"
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events were similar between groups (25.7% vs 25.5%; P=.975).",
+      "A late mortality signal emerged in medical patients (6-month mortality 54% vs 35%; P=.04).",
+      "An adjusted Cox regression model suggested an increased hazard for 6-month mortality with IMHP (HR 1.57; 95% CI 1.03 to 2.39; P=.04)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-generated allocation, stratified by site and patient type with fixed block size of 4; allocation concealment maintained via manufacturer-held codes and identical packaging."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blinding reduces differential co-intervention and ascertainment bias; all-cause mortality objective; infection ascertainment used prespecified definitions but still depends on clinical sampling and diagnostic thresholds."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "301 patients randomised (152 IMHP; 149 HP); all received the allocated product; 6-month vital status was not obtained for 2 patients in each group (transfer), but primary outcome ascertainment occurred during ICU stay. Primary analysis was intention-to-treat."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Study product started early (median 31 [21–41] vs 30 [22–39] hours after ICU admission) and continued for a median 12 [7–19] vs 13 [8–19] days. Delivered nutrition (median per ICU day): volume 899 (544–1352) mL (IMHP) vs 1027 (674–1500) mL (HP); energy 1151 (696–1730) vs 1315 (863–1919) kcal/day; protein 67 (41–101) vs 77 (50–112) g/day."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were comparable in measured severity and phenotype (e.g., APACHE II 20 [16–26] vs 19 [16–25]; SOFA 8 [6–10] vs 8 [6–10]; medical 41% vs 40%; antibiotic use at baseline 73% vs 75%)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong given robust allocation concealment, double-blinding, minimal loss to follow-up, and biochemical evidence of intervention separation; confidence is tempered by modest between-group differences in delivered energy/protein and the inherent subjectivity of infection diagnosis compared with mortality."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults in mixed European ICUs with anticipated prolonged ventilation and enteral nutrition needs; baseline severity was moderate (SOFA ~8) and very severe organ failure was excluded (SOFA >12). Key exclusions: severe/refractory shock, morbid obesity (BMI >40), planned/selective digestive decontamination, requirement for disease-specific enteral formulas."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings translate best to similar high-resource ICUs with early enteral feeding capability and access to high-protein formulas; they may be less applicable where feeding is initiated later, where SDD is routine, or where the excluded phenotypes (severe organ failure, burns, bariatric populations) are common. Both study feeds were commercially manufacturable, protocol-light, and implemented within routine ICU feeding workflows."
+        }
+      ],
+      "verdict": "Generalisability is moderate: results apply to a broad, but not universal, ventilated ICU population, with meaningful limitations for the sickest patients (SOFA >12), for settings using SDD, and for specific subgroups not represented (major burns/complex gut failure)."
+    },
+    "strengths": [
+      "Double-blind, randomised, international multicentre design with allocation concealment.",
+      "Appropriate active comparator (iso-caloric, high-protein control) limiting confounding by general nutrition adequacy.",
+      "Clinically meaningful primary endpoint (ICU-acquired infection) and objective mortality follow-up to 6 months.",
+      "Demonstrated biological separation in target nutrients (glutamine, selenium, vitamins, omega-3 ratios), supporting adequate exposure."
+    ],
+    "limitations": [
+      "Power calculation assumed a large absolute reduction in infections (12.5%); the trial cannot exclude smaller but clinically relevant effects.",
+      "Infection outcomes, while protocol-defined, are less objective than mortality and depend on clinical investigation thresholds.",
+      "Between-group differences in delivered volume/energy/protein (HP group received higher medians per ICU day) may dilute or confound attribution to pharmaconutrients.",
+      "Combined intervention (glutamine + omega-3 + antioxidants) prevents identification of which component(s) drive benefit or harm signals.",
+      "Industry provided study products and reimbursed participating sites; sponsor involvement in manuscript drafting was reported, increasing the importance of transparency and independent replication."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted RCT with moderate-to-strong internal validity that found no benefit of immune-modulating enteral nutrition on infections and raised a credible, though not definitively proven, late harm signal in medical patients, limiting its external validity to general ICU populations.",
+      "strengths": [
+        "Robust double-blind, multicenter design with biochemical confirmation of intervention separation."
+      ],
+      "weaknesses": [
+        "Underpowered for mortality, between-group differences in nutrition delivery, and a combined intervention that precludes component-specific conclusions."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine use of immune-modulating high-protein formulas in unselected mechanically ventilated ICU patients is not supported: infection rates were unchanged and no early mortality benefit was observed. A late harm signal shifts the burden of proof toward safety in medical ICU populations.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support the routine use of immune-modulating high-protein enteral formulas in a general ICU population and raises a safety concern for medical patients.",
+      "applies_to": "Mechanically ventilated, non-morbidly obese ICU adults without severe shock or need for disease-specific formulas, in settings not using SDD.",
+      "does_not_mean": "That all pharmaconutrients are harmful; the signal is specific to this multi-nutrient bundle in a mixed medical ICU population.",
+      "implementation_caveats": [
+        "Avoid routine use of this specific immune-modulating formula, especially in medical ICU patients.",
+        "The harm signal was a secondary finding and requires confirmation in dedicated trials."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of late mortality signal",
+        "notes": "An accompanying editorial emphasized the potential for harm. Correspondence highlighted the trial was not powered for mortality, urging caution. A post hoc safety analysis reported an adjusted HR of 2.52 (95% CI 1.36 to 4.78; P=0.004) for 6-month mortality in medical patients and found an association between early rise in plasma (EPA+DHA)/LCF ratio and 6-month mortality (HR 1.18; 95% CI 1.02 to 1.35; P=0.021)."
+      },
+      {
+        "topic": "Role of enteral glutamine",
+        "notes": "A systematic review/meta-analysis of enteral glutamine supplementation in critically ill patients (including MetaPlus) found no significant effect on mortality (RR 1.01; 95% CI 0.86 to 1.19), infectious complications (RR 0.88; 95% CI 0.75 to 1.03), ICU length of stay (mean difference 0.28 days; 95% CI −1.21 to 1.78), or ventilator days (mean difference 0.22 days; 95% CI −0.48 to 0.92)."
+      },
+      {
+        "topic": "Guideline alignment",
+        "notes": "The most recent ESPEN practical ICU nutrition guideline recommends that additional enteral glutamine should not be administered in ICU patients except in those with burns or trauma (strong consensus)."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is the late mortality signal in medical patients a true effect of the immune-modulating bundle, and if so, which component is responsible?",
+      "Would a phenotype-specific approach (e.g., targeting patients with confirmed deficiencies) yield benefit without harm?",
+      "Can the harm signal be replicated in a trial adequately powered for mortality?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=301",
+        "Primary outcome (new ICU infection): 53% vs 52% (P=.96)",
+        "6-month mortality in medical subgroup: 54% vs 35% (P=.04)",
+        "Adjusted HR for 6-month mortality: 1.57 (95% CI 1.03 to 2.39)"
+      ],
+      "one_line_takeaway": "Immune-modulating enteral nutrition does not reduce infections and may increase late mortality in medical ICU patients; avoid routine use."
+    }
+  },
+  "_source_id": "MetaPlus",
+  "_source_system": "Nutrition"
+}

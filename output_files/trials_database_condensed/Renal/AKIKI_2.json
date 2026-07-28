@@ -1,0 +1,316 @@
+{
+  "id": "AKIKI",
+  "trial_name": "AKIKI — Initiation Strategies for Renal-Replacement Therapy in the ICU (2016)",
+  "specialty": "Renal",
+  "subtopic": "Renal Replacement Therapy",
+  "year": 2016,
+  "journal": "New England Journal of Medicine",
+  "citation": "Gaudry S, Hajage D, Schortgen F, Martin-Lefevre L, Pons B, Boulet E, et al. Initiation Strategies for Renal-Replacement Therapy in the Intensive Care Unit. N Engl J Med. 2016;375(2):122-133.",
+  "doi": "https://doi.org/10.1056/NEJMoa1603017",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 620,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In severe ICU AKI without urgent indications, a delayed, trigger-based RRT strategy resulted in similar 60-day mortality compared to immediate initiation, while avoiding RRT in 49% of patients.",
+  "pico": {
+    "population": "Critically ill adults with KDIGO stage 3 AKI, receiving invasive mechanical ventilation and/or continuous IV catecholamines, without urgent indications for RRT.",
+    "intervention": "Early (immediate) RRT initiated as soon as possible after randomisation (target within 6 h).",
+    "comparison": "Delayed (trigger-based) RRT, initiated only if pre-specified criteria occurred (hyperkalaemia, acidosis, pulmonary oedema, urea >40 mmol/L, or oliguria/anuria >72 h).",
+    "outcome": "All-cause mortality at day 60."
+  },
+  "keywords": [
+    "renal replacement therapy",
+    "acute kidney injury",
+    "timing",
+    "delayed initiation",
+    "watchful waiting"
+  ],
+  "related_trials": [
+    "ELAIN",
+    "IDEAL-ICU",
+    "STARRT-AKI",
+    "AKIKI2"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "RRT is a high-frequency, high-stakes ICU intervention for severe AKI, but optimal initiation timing in the absence of immediate life-threatening complications was uncertain. Earlier initiation might prevent metabolic/volume complications but exposes patients to catheter-related harms, haemodynamic instability, and resource use. Prior evidence was dominated by heterogeneous observational studies and small RCTs.",
+      "knowledge_gap": "Whether a delayed, trigger-based strategy could reduce RRT exposure without increasing mortality compared with immediate initiation.",
+      "hypothesis": "A delayed strategy would reduce exposure to RRT without excess harm (implicit secondary hypothesis)."
+    },
+    "methods": {
+      "design": "Prospective, multicentre, parallel-group, open-label, investigator-initiated RCT in 31 ICUs (France); central web-based randomisation stratified by centre; group-sequential design with planned interim analyses.",
+      "setting": "31 ICUs, France; enrolled September 2013 to January 2016.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with AKI compatible with acute tubular necrosis (ischaemic/toxic context) and KDIGO stage 3 (creatinine >354 μmol/L or ≥3× baseline; anuria >12 h; or oliguria <0.3 mL/kg/h or <500 mL/day for >24 h)",
+          "Plus invasive mechanical ventilation and/or continuous IV catecholamines"
+        ],
+        "exclusion": [
+          "Severe chronic kidney disease (creatinine clearance <30 mL/min)",
+          "Kidney transplant",
+          "Obstructive/vascular AKI, tumour lysis, thrombotic microangiopathy, acute glomerulopathy, dialysable intoxication",
+          "Child–Pugh C cirrhosis",
+          "Extracorporeal circulation",
+          "Moribund state or decision to withhold/withdraw active treatment",
+          "Pre-randomisation urgent RRT indications: oliguria/anuria >3 days; serum potassium >6 mmol/L (or >5.5 mmol/L despite medical therapy); serum urea >40 mmol/L; metabolic acidosis with pH <7.15; acute pulmonary oedema with severe hypoxaemia despite diuretics"
+        ]
+      },
+      "intervention": "Early strategy: RRT initiated as soon as possible after randomisation (trial target: within 6 h of documentation of KDIGO stage 3). Modality: continuous or intermittent RRT chosen by treating team according to local practice and haemodynamic status.",
+      "comparison": "Delayed (trigger-based) strategy: No RRT at randomisation; initiate RRT only if at least one pre-specified criterion occurred: (1) serum potassium >6 mmol/L or >5.5 mmol/L despite medical treatment; (2) metabolic acidosis with pH <7.15; (3) acute pulmonary oedema due to fluid overload with severe hypoxaemia; (4) serum urea >40 mmol/L; or (5) oliguria/anuria persisted for >72 h after randomisation. Co-interventions: medical management of hyperkalaemia/acidosis and diuretics permitted; RRT started promptly once criteria were met.",
+      "blinding": "Open-label (unblinded).",
+      "sample_size_power": "546 patients required to detect a 15 percentage-point absolute reduction in 60-day mortality (from 55% to 40%) with early initiation (two-sided α=0.05; 90% power). Group-sequential design inflated target to 560; with planned 10% loss to follow-up, total planned enrolment was 620.",
+      "primary_outcome": "All-cause mortality at day 60.",
+      "secondary_outcomes": [
+        "Mortality at day 28",
+        "Receipt of RRT",
+        "RRT-free days to day 28",
+        "Renal recovery at day 28 in survivors (RRT discontinued ≥7 days)",
+        "Dialysis dependence at day 60 in survivors",
+        "Catheter-related bloodstream infection",
+        "Hypophosphataemia",
+        "Haemorrhage requiring transfusion"
+      ],
+      "follow_up": "60 days for primary endpoint; secondary outcomes reported to day 28 and day 60."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in 60-day mortality: 48.5% early vs 49.7% delayed (HR 1.03, 95% CI 0.82–1.29, P=0.79).",
+        "Delayed strategy avoided RRT in 49% of patients (51% received RRT vs 98% early).",
+        "Early strategy increased catheter-related bloodstream infections (10% vs 5%) and hypophosphataemia (22% vs 15%).",
+        "Median time to RRT: 2 h early vs 57 h delayed."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: All-cause mortality at day 60",
+          "group_a": "150/309 (48.5%)",
+          "group_b": "153/308 (49.7%)",
+          "effect_measure": "HR",
+          "effect_value": "1.03",
+          "ci_95": "0.82–1.29",
+          "p_value": "0.79",
+          "note": "Denominators reflect available vital status (early 309/311; delayed 308/308 at day 60)."
+        },
+        {
+          "outcome": "Mortality at day 60 (adjusted analysis)",
+          "group_a": "—",
+          "group_b": "—",
+          "effect_measure": "HR",
+          "effect_value": "1.02",
+          "ci_95": "0.80–1.28",
+          "p_value": "0.84",
+          "note": "Adjusted for prespecified covariates."
+        },
+        {
+          "outcome": "Mortality at day 28",
+          "group_a": "128/308 (41.6%)",
+          "group_b": "133/306 (43.5%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Denominators reflect available vital status (early 308/311; delayed 306/308 at day 28)."
+        },
+        {
+          "outcome": "Received any RRT",
+          "group_a": "305/311 (98%)",
+          "group_b": "157/308 (51%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.001",
+          "note": "Delayed strategy avoided RRT in 151/308 (49%)."
+        },
+        {
+          "outcome": "RRT-free days to day 28 (median, IQR)",
+          "group_a": "17 (2–26)",
+          "group_b": "19 (5–29)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.001",
+          "note": "Includes patients who never received RRT."
+        },
+        {
+          "outcome": "Renal recovery at day 28 in survivors (RRT discontinued ≥7 days)",
+          "group_a": "82/181 (45.3%)",
+          "group_b": "82/165 (49.7%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.35",
+          "note": "Assessed among survivors to day 28."
+        },
+        {
+          "outcome": "Dialysis dependence at day 60 in survivors",
+          "group_a": "5/237 (2.1%)",
+          "group_b": "11/231 (4.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.12",
+          "note": "Among survivors to day 60."
+        },
+        {
+          "outcome": "Catheter-related bloodstream infection",
+          "group_a": "30/311 (10%)",
+          "group_b": "15/308 (5%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.03",
+          "note": "Higher in early strategy; plausibly exposure-mediated."
+        },
+        {
+          "outcome": "Hypophosphataemia",
+          "group_a": "68/311 (22%)",
+          "group_b": "47/308 (15%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.03",
+          "note": "Consistent with greater RRT exposure in early strategy."
+        },
+        {
+          "outcome": "Haemorrhage requiring transfusion",
+          "group_a": "28/311 (9%)",
+          "group_b": "37/308 (12%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.21",
+          "note": "Bleeding events were frequent in both groups."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Catheter-related bloodstream infection: 10% early vs 5% delayed (P=0.03).",
+      "Hypophosphataemia: 22% early vs 15% delayed (P=0.03).",
+      "Haemorrhage requiring transfusion: 9% early vs 12% delayed (P=0.21)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation with stratification by centre and variable block sizes; allocation concealed until assignment. Eligibility confirmation and randomisation occurred shortly after meeting KDIGO stage 3 criteria (target within 5 h), limiting immortal time bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design makes performance bias plausible (e.g., diuretic and medical rescue therapies) but primary outcome was objective (mortality). Trigger-based criteria reduced clinician discretion over 'when' to start RRT in the delayed arm, improving protocol fidelity despite lack of blinding."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Randomised: 620 patients; 1 withdrew permission to use data. Denominators for mortality indicate minimal missing vital status (day 28: 308/311 early and 306/308 delayed; day 60: 309/311 early and 308/308 delayed)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Early strategy: 6/311 (1.9%) did not receive RRT (3 ineligible inclusions who survived; 2 died before RRT could be started; 1 assignment misread). Delayed strategy: 5/308 (1.6%) received RRT without meeting criteria (misinterpretation of assignment/criteria). These deviations were uncommon, supporting preserved randomised contrast."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well matched in severity (e.g., SOFA score at randomisation 11±3 vs 11±3; SAPS III 73±12 vs 74±12) and organ support (mechanical ventilation ~86–87%; vasopressors ~85–86%). High prevalence of sepsis (~80%) and multi-organ failure supports biological plausibility for benefit if early RRT truly modified outcomes."
+        }
+      ],
+      "verdict": "Moderate to strong: robust randomisation and follow-up with excellent separation in RRT exposure, but open-label conduct and pragmatic co-interventions introduce some performance-bias risk (mitigated by objective mortality and protocolised delayed triggers)."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents a common ICU phenotype: severe AKI with multi-organ failure (high rates of sepsis, mechanical ventilation, vasopressors). However, applicability is limited to patients who have reached KDIGO stage 3 and are sick enough to require organ support; it does not address earlier AKI (KDIGO 1–2) or ward/non-ICU settings. Exclusions (e.g., creatinine clearance <30 mL/min, kidney transplant, Child–Pugh C cirrhosis, dialysable intoxication) narrow generalisability to those subgroups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The delayed strategy requires close biochemical/clinical monitoring and the capability to initiate RRT rapidly when triggers occur; centres with constrained access to RRT may not replicate the safety profile. Modality mix (intermittent vs continuous) and catheter-related complication rates may differ in other healthcare systems, influencing net benefit/harm."
+        }
+      ],
+      "verdict": "Moderate: applies well to adult, high-acuity ICU patients with KDIGO stage 3 AKI and ready access to RRT, but less clearly to earlier AKI, advanced CKD, or resource-limited environments."
+    },
+    "strengths": [
+      "Large, multicentre pragmatic randomised trial with high follow-up completeness.",
+      "Clinically meaningful primary endpoint (60-day mortality) and clear protocolised triggers for delayed RRT.",
+      "Marked separation in RRT exposure (98% vs 51%) supports a valid test of the clinical strategy."
+    ],
+    "limitations": [
+      "Open-label conduct with potential co-intervention and behavioural effects (e.g., diuretics and medical rescue therapies differed).",
+      "RRT modality and prescription were not standardised, increasing heterogeneity in delivered treatment.",
+      "Powered for a large mortality effect (15% absolute); smaller but clinically relevant differences cannot be excluded.",
+      "Restricted inclusion (KDIGO stage 3 plus organ support) limits inference for earlier AKI or less severely ill populations."
+    ],
+    "critical_appraisal": {
+      "summary": "AKIKI is a well-conducted, pragmatic RCT with high internal validity for its target population; the lack of mortality benefit with early RRT, combined with increased harms, supports a delayed, trigger-based strategy. However, the open-label design and power for only large effects limit confidence in excluding smaller benefits or harms.",
+      "strengths": [
+        "Robust randomisation and high follow-up",
+        "Objective primary outcome (mortality)",
+        "Clear protocolised triggers for delayed arm"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Non-standardised RRT modality",
+        "Powered only for large mortality difference",
+        "Restricted to severe AKI with organ support"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "For severe ICU AKI (KDIGO stage 3) without urgent indications, 'watchful waiting' with explicit triggers can avoid RRT in ~49% of patients without increasing 60-day mortality. Early routine initiation increases exposure-related harms and resource use, without demonstrated survival benefit. Practically, AKIKI supports an 'on-demand' model: start promptly when clear biochemical/clinical triggers arise, rather than initiating solely because AKI has reached stage 3.",
+    "clinical_bottom_line": {
+      "verdict": "This trial supports a delayed, trigger-based RRT strategy in severe ICU AKI without urgent indications, avoiding unnecessary RRT in half of patients without worsening survival.",
+      "applies_to": "Adult ICU patients with KDIGO stage 3 AKI requiring mechanical ventilation and/or vasopressors, without immediate life-threatening indications for RRT.",
+      "does_not_mean": "That RRT can be delayed indefinitely; the trial used specific triggers and excluded patients with urgent indications. Excessive delay may be harmful (as suggested by AKIKI2).",
+      "implementation_caveats": [
+        "Requires close monitoring and ability to initiate RRT promptly when triggers occur.",
+        "The triggers used (K+ >6, pH <7.15, etc.) should be adopted as safety thresholds.",
+        "Not applicable to patients with urgent indications (severe hyperkalaemia, pulmonary oedema, etc.) at baseline."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Comparison with ELAIN trial",
+        "notes": "AKIKI's negative result contrasted with ELAIN's positive finding, likely due to different enrolment severity (KDIGO stage 3 vs 2) and trigger definitions, highlighting that 'early' vs 'delayed' is not a uniform construct. The NEJM editorial and correspondence emphasised that timing strategies are inseparable from patient selection and competing risks."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ELAIN",
+        "relation": "Single-centre RCT in KDIGO stage 2 AKI; found mortality benefit with early RRT, but its 'early' arm used triggers similar to AKIKI's delayed arm, complicating direct comparisons."
+      },
+      {
+        "trial": "IDEAL-ICU",
+        "relation": "RCT in septic shock with severe AKI; stopped early for futility, no mortality benefit to early initiation, reinforcing AKIKI's findings in a sepsis-enriched population."
+      },
+      {
+        "trial": "STARRT-AKI",
+        "relation": "Large international RCT; no reduction in 90-day mortality with accelerated initiation, increased RRT exposure and adverse events, providing convergent evidence for an on-demand strategy."
+      },
+      {
+        "trial": "AKIKI2",
+        "relation": "Tested a more-delayed vs delayed strategy; suggested potential harm with excessive delay, supporting a balanced 'wait, but not too long' paradigm."
+      },
+      {
+        "trial": "Individual patient data meta-analysis",
+        "relation": "Found no survival benefit to early initiation across RCTs, with increased RRT exposure in early strategies."
+      },
+      {
+        "trial": "Cochrane review",
+        "relation": "Reached similar conclusions regarding mortality and underscored the trade-off between earlier biochemical control and higher exposure to RRT-related harms."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal trigger threshold for RRT initiation in specific subgroups (e.g., septic shock, post-cardiac surgery)?",
+      "Does a more-delayed strategy (beyond AKIKI's triggers) cause harm, as suggested by AKIKI2?",
+      "What is the long-term renal recovery and quality of life impact of delayed vs early RRT?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=620",
+        "60-day mortality: 48.5% early vs 49.7% delayed (HR 1.03, 95% CI 0.82–1.29)",
+        "RRT avoided in 49% of delayed group",
+        "Catheter infection: 10% vs 5%"
+      ],
+      "one_line_takeaway": "In severe ICU AKI without urgent indications, a delayed, trigger-based RRT strategy avoids unnecessary dialysis in half of patients without increasing mortality, supporting an on-demand approach."
+    }
+  },
+  "_source_id": "AKIKI_2",
+  "_source_system": "Renal"
+}

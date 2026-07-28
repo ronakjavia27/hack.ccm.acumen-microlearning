@@ -1,0 +1,318 @@
+{
+  "id": "BICAR-ICU",
+  "trial_name": "BICAR-ICU — Sodium Bicarbonate for Severe Metabolic Acidaemia in the ICU (2018)",
+  "specialty": "Critical Care",
+  "subtopic": "Acid–Base Disorders",
+  "year": 2018,
+  "journal": "The Lancet",
+  "citation": "Jaber S, Paugam C, Futier E, Lefrant JY, Lasocki S, Lescot T, et al. Sodium bicarbonate therapy for patients with severe metabolic acidaemia in the intensive care unit (BICAR-ICU): a multicentre, open-label, randomised controlled, phase 3 trial. Lancet. 2018;392(10141):31-40.",
+  "doi": "https://doi.org/10.1016/S0140-6736(18)31080-8",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, phase 3, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 400,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU patients with severe metabolic acidaemia, protocolized IV sodium bicarbonate did not reduce the composite of 28-day mortality or day-7 organ failure overall, but was associated with less RRT use, particularly in the AKI subgroup.",
+  "pico": {
+    "population": "Adult ICU patients with severe metabolic acidaemia (pH ≤7.20, PaCO2 ≤45 mm Hg, HCO3 ≤20 mmol/L, and SOFA ≥4 or lactate ≥2 mmol/L)",
+    "intervention": "IV sodium bicarbonate 4.2%, 125–250 mL over 30 min, repeated to target arterial pH >7.30 (max 1000 mL in first 24 h)",
+    "comparison": "No sodium bicarbonate (usual care)",
+    "outcome": "Primary composite: death by day 28 and/or ≥1 organ failure at day 7"
+  },
+  "keywords": [
+    "sodium bicarbonate",
+    "metabolic acidaemia",
+    "acute kidney injury",
+    "renal replacement therapy",
+    "pH",
+    "lactic acidosis"
+  ],
+  "related_trials": [
+    "BICARICU-2"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Severe metabolic acidaemia in critical illness is associated with impaired cardiac contractility, vasoplegia, arrhythmias, hyperkalaemia, reduced catecholamine responsiveness, and high mortality. Intravenous sodium bicarbonate is widely used to raise arterial pH and temporise complications, but robust randomised evidence was limited.",
+      "knowledge_gap": "Whether protocolised IV sodium bicarbonate improves patient-centred outcomes in modern ICU cohorts with severe metabolic acidaemia was unknown.",
+      "hypothesis": "In critically ill adults with severe metabolic acidaemia (pH ≤7.20), IV sodium bicarbonate titrated to a pH target (>7.30) reduces death by day 28 and/or persistent organ failure at day 7 compared with no sodium bicarbonate, with a potentially greater effect in patients with moderate-to-severe AKI (AKIN stage 2–3)."
+    },
+    "methods": {
+      "design": "Multicentre, open-label, randomised controlled, investigator-initiated, phase 3 trial with 1:1 allocation and stratification/minimisation by centre, age ≥65 years, sepsis status, and AKIN stage 2–3.",
+      "setting": "26 ICUs in France; enrolled within 48 hours of ICU admission.",
+      "population": {
+        "inclusion": [
+          "Arterial pH ≤7.20",
+          "PaCO2 ≤45 mm Hg",
+          "Serum bicarbonate ≤20 mmol/L",
+          "SOFA score ≥4 or arterial lactate ≥2 mmol/L"
+        ],
+        "exclusion": [
+          "Respiratory acidosis",
+          "Large bicarbonate losses (digestive/urinary, ≥1500 mL/24 h)",
+          "Stage IV chronic kidney disease (eGFR <30 mL/min/1.73 m2)",
+          "Ketoacidosis",
+          "Sodium bicarbonate infusion or RRT in the preceding 24 hours"
+        ]
+      },
+      "intervention": "IV sodium bicarbonate 4.2% solution. Delivered as 125–250 mL over 30 minutes, repeated as needed to target arterial pH >7.30. Maximum permitted dose 1000 mL within the first 24 hours after enrolment.",
+      "comparison": "No sodium bicarbonate infusion protocol (usual care).",
+      "blinding": "Unblinded (open-label).",
+      "sample_size_power": "376 patients required to detect a 15% absolute difference in the primary composite outcome with 80% power at α=0.03; target enrolment was 400 to accommodate losses.",
+      "primary_outcome": "Composite of death by day 28 and/or ≥1 organ failure at day 7.",
+      "secondary_outcomes": [
+        "28-day mortality",
+        "Organ failure at day 7 (among survivors)",
+        "RRT by day 28",
+        "Time from enrolment to RRT initiation",
+        "RRT-free days during ICU stay"
+      ],
+      "follow_up": "Day 7 (organ failure) and day 28 (mortality)."
+    },
+    "results": {
+      "headline_bullets": [
+        "389 patients analysed after consent withdrawal (control n=194; bicarbonate n=195).",
+        "Primary composite outcome was not significantly different overall (66% vs 71%; P=0.24).",
+        "Bicarbonate significantly reduced RRT use overall (35% vs 52%; P=0.0009) and delayed its initiation.",
+        "In the pre-specified AKIN 2–3 stratum, bicarbonate was associated with lower 28-day mortality (46% vs 63%; P=0.03) and less RRT use (51% vs 73%; P=0.009)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite: death by day 28 and/or ≥1 organ failure at day 7",
+          "group_a": "128/195 (66%)",
+          "group_b": "138/194 (71%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−5.5%",
+          "ci_95": "−15.2 to 4.2",
+          "p_value": "0.24",
+          "note": ""
+        },
+        {
+          "outcome": "28-day mortality (overall)",
+          "group_a": "87/195 (45%)",
+          "group_b": "102/194 (53%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−9.5%",
+          "ci_95": "−20.5 to 1.5",
+          "p_value": "0.07",
+          "note": ""
+        },
+        {
+          "outcome": "Organ failure at day 7 (among survivors)",
+          "group_a": "100/161 (62%)",
+          "group_b": "114/174 (66%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−4.7%",
+          "ci_95": "−15.7 to 6.3",
+          "p_value": "0.39",
+          "note": "Day 7 assessment performed in patients alive at day 7."
+        },
+        {
+          "outcome": "RRT by day 28 (overall)",
+          "group_a": "68/195 (35%)",
+          "group_b": "100/194 (52%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−16.7%",
+          "ci_95": "−26.4 to −7.0",
+          "p_value": "0.0009",
+          "note": ""
+        },
+        {
+          "outcome": "Time from enrolment to RRT initiation (hours; among those receiving RRT)",
+          "group_a": "19.0 (0.0–72.0)",
+          "group_b": "7.0 (0.0–22.0)",
+          "effect_measure": "Difference",
+          "effect_value": "8.8 h",
+          "ci_95": "3.9 to 15.6",
+          "p_value": "<0.0001",
+          "note": "Medians (IQR)."
+        },
+        {
+          "outcome": "RRT-free days during ICU stay (days)",
+          "group_a": "25 (16–27)",
+          "group_b": "19 (9–22)",
+          "effect_measure": "Difference",
+          "effect_value": "6 days",
+          "ci_95": "2.0 to 8.0",
+          "p_value": "0.0009",
+          "note": "Medians (IQR)."
+        },
+        {
+          "outcome": "Hypernatraemia (serum sodium >145 mmol/L)",
+          "group_a": "96/195 (49%)",
+          "group_b": "57/194 (29%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "19.9%",
+          "ci_95": "10.4 to 29.4",
+          "p_value": "0.0001",
+          "note": ""
+        },
+        {
+          "outcome": "Alkalosis (at least one arterial pH >7.45)",
+          "group_a": "31/195 (16%)",
+          "group_b": "17/194 (9%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "7.1%",
+          "ci_95": "0.6 to 13.6",
+          "p_value": "0.0324",
+          "note": ""
+        },
+        {
+          "outcome": "Hypocalcaemia (ionised calcium <0.9 mmol/L)",
+          "group_a": "48/195 (24%)",
+          "group_b": "29/194 (15%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "9.7%",
+          "ci_95": "1.8 to 17.5",
+          "p_value": "0.0167",
+          "note": ""
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "AKIN stage 2–3 — 28-day mortality",
+          "group_a": "42/92 (46%)",
+          "group_b": "57/90 (63%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−16.6%",
+          "ci_95": "−32.2 to −1.0",
+          "p_interaction": "0.03"
+        },
+        {
+          "subgroup": "AKIN stage 2–3 — RRT by day 28",
+          "group_a": "47/92 (51%)",
+          "group_b": "66/90 (73%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−22.2%",
+          "ci_95": "−38.8 to −5.6",
+          "p_interaction": "0.009"
+        },
+        {
+          "subgroup": "AKIN stage 2–3 — organ failure at day 7 (among survivors)",
+          "group_a": "32/60 (53%)",
+          "group_b": "47/55 (85%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−32.3%",
+          "ci_95": "−49.1 to −15.4",
+          "p_interaction": "0.0003"
+        }
+      ]
+    },
+    "safety": [
+      "Hypernatraemia (serum sodium >145 mmol/L): 49% vs 29% (P=0.0001).",
+      "Alkalosis (at least one arterial pH >7.45): 16% vs 9% (P=0.0324).",
+      "Hypocalcaemia (ionised calcium <0.9 mmol/L): 24% vs 15% (P=0.0167)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central allocation with minimisation/stratification (centre, age ≥65, sepsis, AKIN 2–3) supports balance and reduces selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design increases risk of differential co-interventions and outcome ascertainment for clinician-mediated endpoints (especially RRT initiation)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "11/400 (2.8%) withdrew consent after randomisation (7 control; 4 bicarbonate), leaving 389 analysed; attrition was small but not zero. Intention-to-treat analysis was used."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Cross-over occurred: 47/194 (24%) controls received bicarbonate; 1/195 (1%) in the bicarbonate arm did not receive it. Violations of inclusion/exclusion criteria occurred (control 22/194 [11%]; bicarbonate 15/195 [8%])."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well balanced. Median age 66 vs 65 years; sepsis 61% vs 61%; AKIN 2–3 47% vs 46%; SOFA 10.0 vs 10.0; arterial pH 7.15 vs 7.15; invasive mechanical ventilation 82% vs 83%; vasopressors 82% vs 80%."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate; randomisation and baseline balance were strong, but open-label conduct with substantial control-group cross-over and the clinician-mediated nature of RRT outcomes meaningfully increase risk of bias and dilute treatment separation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled patients were severely unwell (high vasopressor and ventilation use; SOFA around 10) with frequent sepsis, aligning with many real-world ICU acidaemia presentations. Findings do not directly apply to diabetic ketoacidosis, predominant respiratory acidosis, large bicarbonate loss states, or advanced chronic kidney disease (eGFR <30 mL/min/1.73 m2)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in French ICUs with defined RRT recommendation rules and ready access to blood gas/electrolyte monitoring. Practice patterns, thresholds, and resource constraints may differ internationally. Intervention requires frequent reassessment and capacity to manage hypernatraemia/alkalosis/hypocalcaemia."
+        }
+      ],
+      "verdict": "External validity is moderate; applicability is strongest to well-resourced ICUs managing severe metabolic acidaemia (especially with AKI), but generalisability is limited by key exclusions and by RRT practice variability across systems."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre ICU randomised trial addressing a common, high-mortality physiological derangement.",
+      "Pre-specified stratification for AKI severity (AKIN 2–3) with clinically coherent mechanistic rationale (potential to avert/delay RRT).",
+      "Clearly specified bicarbonate concentration, dosing approach, pH target, and dose cap, enabling protocol reproducibility.",
+      "Clinically relevant secondary endpoints including RRT utilisation, timing, and dialysis dependence at ICU discharge."
+    ],
+    "limitations": [
+      "Open-label design with potential performance bias, especially for clinician-mediated endpoints (eg, RRT initiation).",
+      "Substantial control-group contamination (24% received bicarbonate), likely attenuating between-group differences.",
+      "Primary composite endpoint integrates outcomes with different causal proximity to bicarbonate (mortality vs day-7 organ failure), and day-7 organ failure was assessed only in survivors.",
+      "Subgroup signals (AKIN 2–3) occurred in a trial with a neutral primary outcome, increasing the need for cautious interpretation and replication.",
+      "Metabolic adverse events (hypernatraemia, alkalosis, hypocalcaemia) were more frequent with bicarbonate, constraining indiscriminate use."
+    ],
+    "critical_appraisal": {
+      "summary": "BICAR-ICU is a landmark, pragmatic RCT with strong internal validity for its primary outcome, but the open-label design and high crossover rate introduce bias for clinician-mediated secondary endpoints like RRT initiation; the overall neutral result and hypothesis-generating AKI subgroup signal require cautious interpretation.",
+      "strengths": [
+        "Robust randomisation and baseline balance.",
+        "Pragmatic, reproducible protocol with a clear biochemical target.",
+        "Pre-specified, mechanistically plausible subgroup analysis."
+      ],
+      "weaknesses": [
+        "Open-label design with high risk of performance bias for RRT outcomes.",
+        "24% crossover in the control arm dilutes the treatment effect.",
+        "Composite primary endpoint and survivor-only day-7 organ failure assessment complicate interpretation."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In patients with severe metabolic acidaemia, sodium bicarbonate did not improve the primary composite outcome. However, it was associated with reduced RRT use and a survival benefit in the pre-specified subgroup with AKI.",
+    "clinical_bottom_line": {
+      "verdict": "Routine bicarbonate infusion for all ICU patients with severe metabolic acidaemia is not supported. Bicarbonate may be considered as a temporising or RRT-sparing strategy, particularly in patients with moderate-to-severe AKI.",
+      "applies_to": "Severely ill ICU patients with metabolic acidaemia (pH ≤7.20), especially those with AKIN stage 2–3 AKI, in settings with close monitoring capabilities.",
+      "does_not_mean": "Bicarbonate improves survival in all-comers with metabolic acidaemia or that it is a substitute for treating the underlying cause of acidaemia.",
+      "implementation_caveats": [
+        "Requires frequent arterial blood gas and electrolyte monitoring.",
+        "Risk of hypernatraemia, alkalosis, and hypocalcaemia necessitates careful dose titration and avoidance of overcorrection.",
+        "The decision to use bicarbonate should not delay definitive source control or other supportive therapies."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite endpoint construction",
+        "notes": "The composite of death by day 28 and/or day-7 organ failure, with the latter assessed only in survivors, complicates interpretation. A Lancet commentary noted bicarbonate corrects a physiological variable and may not alter the underlying illness trajectory."
+      },
+      {
+        "topic": "Open-label design and RRT outcomes",
+        "notes": "The open-label design and 24% control-group cross-over raise concern for treatment dilution and clinician-behaviour effects, particularly for RRT outcomes, as acidaemia and potassium are part of typical RRT triggers and are directly modified by bicarbonate."
+      },
+      {
+        "topic": "Post-hoc guideline and meta-analysis context",
+        "notes": "Guidelines published after BICAR-ICU incorporated a conditional role for bicarbonate in severe metabolic acidaemia with AKI, while avoiding endorsement for all causes. Meta-analyses found uncertain effects on mortality but supported a plausible reduction in RRT utilisation."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "BICARICU-2",
+        "relation": "A subsequent large, AKI-focused RCT that found no difference in day-90 mortality (62.1% vs 61.7%) but confirmed lower kidney replacement therapy use (35% vs 50%), supporting an RRT-sparing effect but tempering claims of a consistent mortality benefit."
+      }
+    ],
+    "unresolved_questions": [
+      "Does the RRT-sparing effect of bicarbonate translate to long-term renal recovery or dialysis independence?",
+      "Can the AKI subgroup benefit be replicated in a dedicated, blinded RCT?",
+      "What is the optimal pH threshold and target for bicarbonate therapy?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=389 analysed",
+        "Primary composite: 66% vs 71% (P=0.24, neutral)",
+        "Overall RRT: 35% vs 52% (P=0.0009)",
+        "AKI subgroup mortality: 46% vs 63% (P=0.03)"
+      ],
+      "one_line_takeaway": "Bicarbonate for severe metabolic acidaemia does not improve a composite of death or organ failure but reduces the need for RRT, especially in patients with AKI, at the cost of more hypernatraemia, alkalosis, and hypocalcaemia."
+    }
+  },
+  "_source_id": "BICAR-ICU",
+  "_source_system": "Renal"
+}

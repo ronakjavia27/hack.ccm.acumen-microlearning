@@ -1,0 +1,366 @@
+{
+  "id": "CLOVERS",
+  "trial_name": "CLOVERS — Early Restrictive or Liberal Fluid Management for Sepsis-Induced Hypotension (2023)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Fluid Resuscitation & Vasopressor Use",
+  "year": 2023,
+  "journal": "N Engl J Med",
+  "citation": "Shapiro NI, Douglas IS, Brower RG, Brown SM, Exline MC, Ginde AA, et al. Early restrictive or liberal fluid management for sepsis-induced hypotension. N Engl J Med. 2023;388:499-510.",
+  "doi": "10.1056/NEJMoa2212663",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, pragmatic, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1563,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with sepsis-induced hypotension after 1–3 L crystalloid, an early restrictive fluid/vasopressor-prioritised strategy did not reduce 90-day mortality compared with a liberal fluid strategy (13.9% vs 14.9%, risk difference −0.9 pp, 95% CI −4.4 to 2.6).",
+  "pico": {
+    "population": "Adults (≥18 years) with suspected/confirmed infection and sepsis-induced hypotension after receiving 1–3 L crystalloid, SBP <100 mmHg or MAP <65 mmHg or already on vasopressors.",
+    "intervention": "Restrictive fluid strategy: prioritise early norepinephrine to target MAP ≥65 mmHg, minimal additional crystalloid during 24-hour protocol; fluid boluses only as rescue for severe hypotension or hypoperfusion non-responsive to vasopressors; peripheral vasopressor allowed.",
+    "comparison": "Liberal fluid strategy: prioritise additional isotonic crystalloid boluses (initial 2 L over 24 h, later amended to optional second litre) before vasopressors; vasopressors reserved for persistent hypotension or fluid overload concerns.",
+    "outcome": "Death before discharge home by day 90 (primary); all-cause mortality, ventilator-free days, RRT-free days, vasopressor-free days, ICU-free days, hospital-free days, initiation of mechanical ventilation/RRT, ARDS, serious adverse events."
+  },
+  "keywords": [
+    "sepsis",
+    "fluid resuscitation",
+    "vasopressor",
+    "restrictive",
+    "liberal",
+    "CLOVERS"
+  ],
+  "related_trials": [
+    "CLASSIC"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Adult sepsis guidance has historically promoted early intravenous crystalloids (commonly 30 mL/kg within first hours), despite low/very low-certainty evidence and concerns about fluid accumulation and organ oedema.",
+      "knowledge_gap": "Clinicians face an early “after 1–3 L” decision: continue fluids to augment preload vs initiate vasopressors. Adjacent trials (CLASSIC, FRESH, ANDROMEDA-SHOCK) left the early hypotension decision unresolved.",
+      "hypothesis": "An early restrictive fluid strategy (prioritising earlier vasopressors and less crystalloid) would improve 90-day outcomes vs liberal strategy."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, open-label, pragmatic superiority trial with protocolised 24-hour treatment guidance, stratified by site.",
+      "setting": "60 US centres (predominantly emergency department; randomisation within 4 hours, median 61 min).",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years with suspected/confirmed infection and sepsis-induced hypotension",
+          "Received 1–3 L intravenous isotonic crystalloid pre-randomisation",
+          "SBP <100 mmHg or MAP <65 mmHg after initial fluids, or already receiving vasopressors"
+        ],
+        "exclusion": [
+          ">3 L crystalloid before randomisation",
+          "Clinician-determined need for immediate alternative management",
+          "Overt pulmonary oedema / severe volume overload precluding protocolised fluid restriction"
+        ]
+      },
+      "intervention": "Restrictive: early norepinephrine (MAP ≥65 mmHg), minimal additional crystalloid (median 500 mL in first 6 h); fluid boluses only for prespecified rescue indications; peripheral vasopressor initiation allowed.",
+      "comparison": "Liberal: prioritised additional crystalloid boluses (initial 2 L, later amended optional second litre); vasopressors reserved for persistent hypotension or fluid overload.",
+      "blinding": "Open-label",
+      "sample_size_power": "Planned n=2320 to detect 4.5% absolute reduction in 90-day mortality (15% to 10.5%) at 90% power, α 0.05; stopped early at 1563 for futility.",
+      "primary_outcome": "Death before discharge home by day 90",
+      "secondary_outcomes": [
+        "All-cause mortality by day 90",
+        "Ventilator-free days to day 28",
+        "Renal-replacement-therapy–free days to day 28",
+        "Vasopressor-free days to day 28",
+        "ICU-free days to day 28",
+        "Hospital-free days to day 28",
+        "Initiation of mechanical ventilation by day 28",
+        "Initiation of renal-replacement therapy by day 28",
+        "ARDS within 7 days",
+        "Serious adverse events"
+      ],
+      "follow_up": "Primary endpoint through day 90; organ-support–free days assessed at day 28; complications to day 7."
+    },
+    "results": {
+      "headline_bullets": [
+        "Stopped early for futility at 1563 patients; no difference in primary outcome (13.9% restrictive vs 14.9% liberal, risk diff −0.9 pp, 95% CI −4.4 to 2.6, p=0.61).",
+        "All secondary mortality and organ-support endpoints neutral; all-location 90-day mortality 22.4% vs 21.9% (diff 0.5 pp, CI −3.6 to 4.7).",
+        "Restrictive strategy reduced 24-hour fluid by ~2.1 L (median 3300 vs 5400 mL) but increased vasopressor use (59% vs 37%), earlier initiation, and central/peripheral line insertion."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death before discharge home by day 90 (primary)",
+          "group_a": "109/782 (13.9%)",
+          "group_b": "116/781 (14.9%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-0.9 pp",
+          "ci_95": "-4.4 to 2.6",
+          "p_value": "0.61",
+          "note": ""
+        },
+        {
+          "outcome": "Death from any cause at any location by day 90",
+          "group_a": "175/782 (22.4%)",
+          "group_b": "171/781 (21.9%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.5 pp",
+          "ci_95": "-3.6 to 4.7",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Ventilator-free days to day 28",
+          "group_a": "24.5 (95% CI 24.0–25.0)",
+          "group_b": "24.7 (95% CI 24.3–25.2)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.2 days",
+          "ci_95": "-0.9 to 0.5",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Renal-replacement-therapy–free days to day 28",
+          "group_a": "26.6 (95% CI 26.2–27.0)",
+          "group_b": "26.8 (95% CI 26.4–27.2)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.2 days",
+          "ci_95": "-0.7 to 0.3",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Vasopressor-free days to day 28",
+          "group_a": "23.5 (95% CI 22.9–24.1)",
+          "group_b": "24.2 (95% CI 23.7–24.8)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.7 days",
+          "ci_95": "-1.5 to 0.1",
+          "p_value": "",
+          "note": "Numerically fewer vasopressor-free days in restrictive arm (expected direction)"
+        },
+        {
+          "outcome": "ICU-free days to day 28",
+          "group_a": "21.4 (95% CI 20.7–22.0)",
+          "group_b": "22.1 (95% CI 21.5–22.8)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.7 days",
+          "ci_95": "-1.6 to 0.2",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital-free days to day 28",
+          "group_a": "19.1 (95% CI 18.3–19.8)",
+          "group_b": "20.0 (95% CI 19.3–20.8)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.9 days",
+          "ci_95": "-1.9 to 0.1",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Initiation of mechanical ventilation by day 28",
+          "group_a": "85/782 (10.9%)",
+          "group_b": "68/781 (8.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "2.2 pp",
+          "ci_95": "-0.7 to 5.1",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Initiation of renal-replacement therapy by day 28",
+          "group_a": "30/782 (3.8%)",
+          "group_b": "25/781 (3.2%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.6 pp",
+          "ci_95": "-1.2 to 2.4",
+          "p_value": "",
+          "note": "Low event rate"
+        },
+        {
+          "outcome": "ARDS within 7 days",
+          "group_a": "11/782 (1.4%)",
+          "group_b": "9/781 (1.2%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.3 pp",
+          "ci_95": "-0.8 to 1.3",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Serious adverse events (number of events)",
+          "group_a": "21",
+          "group_b": "19",
+          "effect_measure": "Difference in events",
+          "effect_value": "2",
+          "ci_95": "-10 to 14",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Total crystalloid from pre-enrolment through 24 h (median, IQR)",
+          "group_a": "3300 mL (IQR 2550–4350)",
+          "group_b": "5400 mL (IQR 4400–6575)",
+          "effect_measure": "Difference of medians",
+          "effect_value": "-2134 mL",
+          "ci_95": "-2318 to -1949",
+          "p_value": "",
+          "note": "Crystalloid in first 6 h: median 500 mL (IQR 0–1000) vs 2300 mL (IQR 1600–3000)"
+        },
+        {
+          "outcome": "Vasopressor use (any)",
+          "group_a": "59%",
+          "group_b": "37%",
+          "effect_measure": "Absolute difference",
+          "effect_value": "22 pp",
+          "ci_95": "NR",
+          "p_value": "",
+          "note": "Median time to vasopressor: 2.4 vs 3.9 h (diff −1.4 h, CI −1.8 to −1.1); mean duration: 14.4 vs 10.2 h (diff 4.2 h, CI 2.5 to 5.9)"
+        },
+        {
+          "outcome": "Central venous catheter insertion (randomisation to 72 h)",
+          "group_a": "42.7%",
+          "group_b": "33.6%",
+          "effect_measure": "Risk difference",
+          "effect_value": "9.1 pp",
+          "ci_95": "4.4 to 13.8",
+          "p_value": "",
+          "note": "Peripheral vasopressor use: 36.9% vs 27.4% (diff 9.5 pp, CI 5.0 to 14.0)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Fluid overload/pulmonary oedema: 0 events (restrictive) vs 3 events (liberal).",
+      "Serious adverse events: 21 vs 19 events (difference 2, 95% CI −10 to 14)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised randomisation stratified by institution; allocation concealment feasible; unblinded by design."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery could influence co-interventions and discharge decisions; primary endpoint mortality-based, objective, but secondary endpoints (ICU/hospital days) susceptible."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1563 randomised, primary endpoint status largely complete; censoring rare (0.6% vs 0.5%). Intention-to-treat analysis maintained."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Protocol guidance used in 97.3% restrictive vs 96.0% liberal; substantial treatment separation achieved (fluids, vasopressor timing). Rescue actions permitted, some bidirectional contamination expected but limited."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced: mean age ~62 years, median pre-randomisation crystalloid 2050 mL both arms, mean lactate 2.9 mmol/L both arms. Early stopping did not introduce imbalance."
+        }
+      ],
+      "verdict": "Overall internal validity moderate-to-strong: randomisation and protocol fidelity robust with clear treatment separation, primary endpoint objective; open-label performance bias on secondary endpoints and reduced precision from early stopping are principal threats."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled a broad emergency-care sepsis-induced hypotension population after initial crystalloid (median 2050 mL) with moderate severity (mean lactate 2.9 mmol/L); excluded patients who had already received >3 L crystalloid or had overt fluid overload."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "60 US centres with vasopressor and monitoring capabilities; generalisability lower in low-resource settings where peripheral vasopressor initiation may be less feasible or monitoring insufficient."
+        }
+      ],
+      "verdict": "Highly generalisable to high-income emergency and early critical care settings managing sepsis-induced hypotension after initial crystalloid, but less applicable to extreme shock phenotypes, late resuscitation after very large fluid volumes, and resource-limited contexts."
+    },
+    "strengths": [
+      "Large, pragmatic multicentre design",
+      "Early randomisation within clinically relevant decision window",
+      "Substantial treatment separation (fluid volume, vasopressor timing)",
+      "High protocol adherence (>95%)",
+      "Patient-important 90-day endpoint with complementary all-location mortality",
+      "Detailed supplementary reporting on protocol epochs and vascular access consequences"
+    ],
+    "limitations": [
+      "Open-label strategy trial (risk of performance effects on ICU/hospital utilisation outcomes)",
+      "Early stopping for futility reduced precision for modest effect sizes",
+      "Intervention bundled multiple linked decisions (fluid volume, vasopressor timing, line strategy), limiting mechanistic attribution",
+      "Liberal arm protocol amendment mid-trial reflects real-world practice but complicates a “single fixed-dose” interpretation"
+    ],
+    "critical_appraisal": {
+      "summary": "CLOVERS is a well-conducted, pragmatic strategy trial with robust treatment separation and a neutral outcome; internal validity is moderate (open-label, early stopping) but external validity is high; the tight confidence intervals exclude large benefit for either strategy, supporting individualised resuscitation.",
+      "strengths": [
+        "Multicentre, pragmatic design",
+        "Clear treatment separation",
+        "High adherence",
+        "Objective primary endpoint"
+      ],
+      "weaknesses": [
+        "Open-label",
+        "Early stopping reduces precision",
+        "Bundled intervention",
+        "Protocol amendment"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "An early vasopressor-prioritised, fluid-restrictive approach after the first 1–3 L is a defensible alternative to continued liberal fluids in sepsis-induced hypotension, as neither strategy improved 90-day mortality; choice should be individualised to phenotype (fluid responsiveness, cardiac/renal reserve, pulmonary oedema risk, and perfusion markers).",
+    "clinical_bottom_line": {
+      "verdict": "CLOVERS does not mandate a single resuscitation strategy; it demonstrates that both an early vasopressor/restrictive fluid approach and a liberal fluid approach yield similar 90-day outcomes, allowing clinicians to tailor based on patient physiology.",
+      "applies_to": "Adults with sepsis-induced hypotension who have received 1–3 L crystalloid and remain hypotensive, in high-income emergency/critical care settings.",
+      "does_not_mean": "This does not justify withholding initial crystalloid in sepsis or adopting a blanket restrictive approach for all patients. It also does not prove that early vasopressors are superior.",
+      "implementation_caveats": [
+        "Restrictive strategy increases vasopressor exposure and invasive line use, potentially shifting resource burden.",
+        "Peripheral vasopressor initiation requires monitoring protocols and training.",
+        "Fluid responsiveness assessment may help guide individual decisions."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Endpoint framing (“death before discharge home”)",
+        "notes": "Primary endpoint embeds discharge destination; near-identical all-location 90-day mortality confirms no mortality signal, mitigating concern about artefact."
+      },
+      {
+        "topic": "Early stopping for futility",
+        "notes": "Stopping early improved efficiency but reduced precision; the primary outcome CI (−4.4 to 2.6 pp) leaves residual uncertainty about modest benefit/harm."
+      },
+      {
+        "topic": "Liberal arm amendment",
+        "notes": "Amendment from mandatory 2 L to optional second litre did not alter mortality effect (epoch interaction p=0.855), supporting stability of neutral conclusion."
+      },
+      {
+        "topic": "Relationship to CLASSIC",
+        "notes": "CLASSIC (ICU-phase restrictive vs liberal in septic shock) also showed neutral mortality, reinforcing that restrictive fluid is not automatically superior across phases."
+      },
+      {
+        "topic": "Guideline evolution",
+        "notes": "Contemporary guidance increasingly emphasises individualised fluid resuscitation, dynamic assessment, and early vasopressors when appropriate; recent ESICM recommendations separate fluid choice from volume decisions."
+      },
+      {
+        "topic": "Meta-analytic context",
+        "notes": "Systematic reviews show no consistent large mortality advantage of higher vs lower resuscitation volumes; vasopressor timing may be modifiable but confounded."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CLASSIC",
+        "relation": "ICU-phase restrictive vs liberal fluid in septic shock; also neutral mortality, supporting lack of superiority of restrictive approach."
+      },
+      {
+        "trial": "FRESH",
+        "relation": "Physiology-guided resuscitation using dynamic assessments; analogous approach but different decision trigger."
+      },
+      {
+        "trial": "ANDROMEDA-SHOCK",
+        "relation": "Targeted perfusion pressure vs lactate clearance; also influenced vasopressor use patterns."
+      }
+    ],
+    "unresolved_questions": [
+      "Are there subgroups (e.g., truly fluid-responsive patients, those with renal insufficiency) that benefit from one strategy over the other?",
+      "What is the optimal method to identify fluid responsiveness early?",
+      "How to safely implement peripheral vasopressors in various settings?",
+      "Does very early vasopressor initiation (≤1 L crystalloid) improve outcomes?",
+      "What is the role of balanced crystalloids vs saline in this context?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1563 (stopped early)",
+        "Primary outcome: 13.9% vs 14.9% (risk diff −0.9 pp, 95% CI −4.4 to 2.6)",
+        "All-location 90-day mortality: 22.4% vs 21.9%",
+        "24-hour crystalloid difference: −2134 mL (median 3300 vs 5400 mL)",
+        "Vasopressor use: 59% vs 37%"
+      ],
+      "one_line_takeaway": "In sepsis-induced hypotension after 1–3 L crystalloid, neither earlier vasopressors (restrictive) nor additional fluids (liberal) is superior for 90-day mortality, supporting individualised resuscitation."
+    }
+  },
+  "_source_id": "CLOVERS",
+  "_source_system": "Circulatory"
+}

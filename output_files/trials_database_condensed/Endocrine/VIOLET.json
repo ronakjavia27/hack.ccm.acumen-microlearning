@@ -1,0 +1,320 @@
+{
+  "id": "VIOLET",
+  "trial_name": "VIOLET — Early High-Dose Vitamin D3 for Critically Ill, Vitamin D–Deficient Patients (2019)",
+  "specialty": "Endocrinology / Critical Care",
+  "subtopic": "Bone & Mineral Disorders",
+  "year": 2019,
+  "journal": "New England Journal of Medicine",
+  "citation": "National Heart, Lung, and Blood Institute PETAL Clinical Trials Network; Ginde AA, Brower RG, Caterino JM, Finck L, Banner-Goodspeed VM, Grissom CK, et al. Early high-dose vitamin D3 for critically ill, vitamin D-deficient patients. N Engl J Med. 2019 Dec 26;381(26):2529-2540.",
+  "doi": "https://doi.org/10.1056/NEJMoa1911124",
+  "registration": "NCT03452839",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, superiority",
+  "evidence_level": "High-quality RCT (early stopping for futility reduces precision)",
+  "sample_size": 1360,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Single enteral 540,000 IU vitamin D3 bolus given early to vitamin D-deficient ICU patients did not reduce 90-day mortality compared with placebo (23.5% vs 20.6%, P=0.26).",
+  "pico": {
+    "population": "Adults with an ICU admission decision and point-of-care 25-hydroxyvitamin D <20 ng/mL, within 12 hours of ICU decision, with a qualifying acute condition (e.g., pneumonia, sepsis, shock, mechanical ventilation for acute respiratory failure).",
+    "intervention": "Single enteral dose of cholecalciferol 540,000 IU (liquid), administered orally or via nasogastric/orogastric tube within 2 hours of randomization; clinicians asked to avoid additional vitamin D testing or supplementation for 1 month.",
+    "comparison": "Matched placebo, same volume and route, administered within the same time window.",
+    "outcome": "All-cause mortality at 90 days (primary); also 28-day mortality, in-hospital mortality, patient-centred recovery endpoint, ventilator-free days, safety (hypercalcaemia, kidney stones)."
+  },
+  "keywords": [
+    "vitamin D",
+    "cholecalciferol",
+    "critical illness",
+    "mortality",
+    "RCT",
+    "futility"
+  ],
+  "related_trials": [
+    "VITdAL-ICU",
+    "VITDALIZE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Vitamin D deficiency is common in critically ill adults; observational studies link low 25-hydroxyvitamin D to infection, lung injury, organ dysfunction, and mortality. Prior RCT, VITdAL-ICU, did not shorten hospital length of stay overall but suggested possible benefit in severe deficiency subgroup.",
+      "knowledge_gap": "Whether a single high-dose enteral vitamin D3 bolus given very early in critical illness improves survival or recovery in vitamin D-deficient patients.",
+      "hypothesis": "Early high-dose vitamin D3 reduces 90-day all-cause mortality in vitamin D-deficient ICU patients."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, double-blind, placebo-controlled trial within the NHLBI PETAL Clinical Trials Network (United States).",
+      "setting": "Multicentre, PETAL network sites in the United States; enrolment from emergency department, hospital ward, operating theatre, or transfer hospitals.",
+      "population": {
+        "inclusion": [
+          "Adults with an ICU admission decision",
+          "At least one qualifying acute condition (pneumonia, sepsis, shock, mechanical ventilation for acute respiratory failure, aspiration, smoke inhalation, pancreatitis, lung contusion)",
+          "Point-of-care 25-hydroxyvitamin D concentration <20 ng/mL"
+        ],
+        "exclusion": [
+          "Inability to take enteral medication",
+          "Inability to obtain timely consent/surrogate",
+          "Hypercalcaemia",
+          "History of kidney stones",
+          "Withholding/withdrawal of life-sustaining treatment",
+          "Expected survival <48 hours",
+          ">72 hours since hospital presentation",
+          "Other protocol-defined exclusions"
+        ]
+      },
+      "intervention": "Single enteral dose of cholecalciferol 540,000 IU (liquid), given orally or via nasogastric/orogastric tube within 2 hours of randomisation. No mandated co-interventions; clinicians were asked to avoid additional vitamin D testing or supplementation for 1 month.",
+      "comparison": "Matched placebo, single enteral dose, identical administration window and route.",
+      "blinding": "Double-blind (participants, clinicians, investigators, outcome assessors); central electronic allocation with concealment.",
+      "sample_size_power": "Planned enrolment of 3000 to detect a 5% absolute mortality reduction (20% to 15%) with 87% power at two-sided α=0.05, with 3 interim analyses and a Bayesian futility rule. Early termination for futility after 1360 randomised.",
+      "primary_outcome": "All-cause mortality at 90 days in the prespecified confirmed-deficiency population.",
+      "secondary_outcomes": [
+        "All-cause mortality at 28 days",
+        "In-hospital mortality to day 90",
+        "Alive and at home under previous level of care at day 90 (patient-centred recovery)",
+        "Ventilator-free days to day 28",
+        "25-hydroxyvitamin D concentration at day 3",
+        "Safety: hypercalcaemia, kidney stones"
+      ],
+      "follow_up": "90 days after randomisation; additional assessments at 28 days and day 7 for selected physiological endpoints."
+    },
+    "results": {
+      "headline_bullets": [
+        "Early bolus vitamin D3 did not reduce 90-day mortality (23.5% vs 20.6%; P=0.26) despite strong biochemical separation (day-3 25-hydroxyvitamin D 46.9 vs 11.4 ng/mL).",
+        "Key secondary outcomes showed no improvement; point estimates often numerically favoured placebo (e.g., 28-day mortality 17.3% vs 13.1%; risk difference 4.3%, 95% CI -0.1 to 8.6).",
+        "Clinically important harms were not apparent: hypercalcaemia 2.7% vs 2.1% (P=0.51), kidney stones 0.0% vs 0.6% (P=0.25)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death from any cause to day 90 (primary, confirmed deficiency)",
+          "group_a": "125/531 (23.5%)",
+          "group_b": "109/528 (20.6%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": "0.26",
+          "note": "Primary endpoint; denominators exclude those lost to follow-up for day-90 status."
+        },
+        {
+          "outcome": "Death from any cause to day 28 (confirmed deficiency)",
+          "group_a": "92/531 (17.3%)",
+          "group_b": "69/528 (13.1%)",
+          "effect_measure": "RD",
+          "effect_value": "4.3",
+          "ci_95": "-0.1 to 8.6",
+          "p_value": null,
+          "note": "Absolute risk difference (percentage points)."
+        },
+        {
+          "outcome": "Death in hospital to day 90 (confirmed deficiency)",
+          "group_a": "92/538 (17.1%)",
+          "group_b": "72/539 (13.4%)",
+          "effect_measure": "RD",
+          "effect_value": "3.7",
+          "ci_95": "-0.5 to 8.0",
+          "p_value": null,
+          "note": null
+        },
+        {
+          "outcome": "Alive and at home under previous level of care at day 90 (confirmed deficiency)",
+          "group_a": "348/528 (65.9%)",
+          "group_b": "345/526 (65.6%)",
+          "effect_measure": "RD",
+          "effect_value": "0.3",
+          "ci_95": "-5.4 to 6.0",
+          "p_value": null,
+          "note": "Patient-centred recovery composite."
+        },
+        {
+          "outcome": "Ventilator-free days to day 28 (confirmed deficiency)",
+          "group_a": "21.3 ± 11.3 (n=523)",
+          "group_b": "22.1 ± 10.5 (n=534)",
+          "effect_measure": "MD",
+          "effect_value": "-0.8",
+          "ci_95": "-2.1 to 0.5",
+          "p_value": null,
+          "note": "Higher is better; no signal of benefit."
+        },
+        {
+          "outcome": "25-hydroxyvitamin D at day 3 (ng/mL) (confirmed deficiency subset)",
+          "group_a": "46.9 ± 23.2 (n=145)",
+          "group_b": "11.4 ± 5.6 (n=133)",
+          "effect_measure": "MD",
+          "effect_value": "35.5",
+          "ci_95": "31.5 to 39.6",
+          "p_value": null,
+          "note": "Strong biochemical separation confirming delivery/absorption."
+        },
+        {
+          "outcome": "Hypercalcaemia to day 14 (confirmed deficiency)",
+          "group_a": "14/513 (2.7%)",
+          "group_b": "11/523 (2.1%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": "0.51",
+          "note": "Safety endpoint."
+        },
+        {
+          "outcome": "Kidney stones to day 90 (confirmed deficiency)",
+          "group_a": "0/507 (0.0%)",
+          "group_b": "3/507 (0.6%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": "0.25",
+          "note": "Rare events; limited precision."
+        },
+        {
+          "outcome": "Death from any cause to day 90 (screened-deficient population, point-of-care positive)",
+          "group_a": "159/682 (23.3%)",
+          "group_b": "137/656 (20.9%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": "0.28",
+          "note": "Prespecified broader analysis, consistent with primary."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Hypercalcaemia to day 14: 2.7% (vitamin D3) vs 2.1% (placebo), P=0.51.",
+      "Kidney stones to day 90: 0.0% vs 0.6%, P=0.25.",
+      "No other major safety signals were detected."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation concealment",
+          "notes": "Central electronic randomisation with permuted blocks stratified by site; double-blind design ensures concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind; primary outcome (all-cause mortality) is objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "2 randomised participants excluded (inadequate consent, withdrawal); day-90 vital status missing for 7 vs 12 in primary analysis (low, balanced). Primary analysis on confirmed-deficiency subset is not pure ITT."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Study drug administered in 532/538 (98.9%) vs 532/540 (98.5%); wrong-drug rare (1 vs 3)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced; mean age ~55 years, SOFA ~5.5, baseline 25-hydroxyvitamin D ~11 ng/mL."
+        },
+        {
+          "domain": "Statistical rigor & interim monitoring",
+          "notes": "Prespecified Bayesian futility thresholds; early stopping reduces precision and ability to exclude small effects."
+        },
+        {
+          "domain": "Separation of variable",
+          "notes": "Day-3 25-hydroxyvitamin D 46.9 vs 11.4 ng/mL (MD 35.5) confirms strong biochemical effect."
+        }
+      ],
+      "verdict": "Moderate. Randomisation, blinding, objective primary outcome, and strong biochemical separation support causal inference, but early stopping for futility reduced power/precision and the prespecified confirmed-deficiency primary analysis population departs from a pure ‘all randomised’ ITT framework."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad inclusion of common ICU syndromes (pneumonia, sepsis, shock, ARF); required rapid consent/surrogate and enteral access. Excluded patients unable to take enteral medications, with hypercalcaemia, kidney stone history, or imminent death."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to high-resource ICUs able to perform rapid point-of-care screening and early enteral bolus. Generalisability limited for severe malnutrition, delayed ICU access, or different vitamin D status distributions."
+        }
+      ],
+      "verdict": "Generalisability is reasonable for early ICU admissions in similar high-resource hospitals, but extrapolation to patients without enteral access, with contraindications to high-dose vitamin D, or with extreme deficiency/longer-duration critical illness is limited."
+    },
+    "strengths": [
+      "Pragmatic ‘screen early, treat early’ design aligned with real-world implementation.",
+      "Double-blind randomised methodology with objective primary outcome.",
+      "Strong physiological separation in measured 25-hydroxyvitamin D concentrations by day 3.",
+      "Low loss to follow-up for vital status to day 90."
+    ],
+    "limitations": [
+      "Stopped early for futility, reducing power and narrowing inference to larger effect sizes.",
+      "Primary analysis population required confirmation of deficiency by reference assay after randomisation (departs from strict ITT).",
+      "Single bolus strategy does not test sustained supplementation during recovery.",
+      "Outcome table reporting emphasised P value for the primary endpoint without an accompanying effect estimate/CI in the main table."
+    ],
+    "critical_appraisal": {
+      "summary": "Despite a strong biochemical effect, a single early high-dose vitamin D3 bolus produced no clinical benefit in a well-conducted RCT; early stopping for futility limits precision but the trial provides robust evidence against a large mortality reduction.",
+      "strengths": [
+        "Randomized, double-blind, placebo-controlled with concealed allocation.",
+        "Objective primary endpoint and low loss to follow-up.",
+        "Effective delivery confirmed by large increase in 25-hydroxyvitamin D."
+      ],
+      "weaknesses": [
+        "Early termination reduces power; unable to exclude small effect sizes.",
+        "Primary analysis on confirmed-deficiency subset, not all-randomised ITT.",
+        "Single bolus design may not reflect benefits of sustained repletion."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine early high-dose (540,000 IU) bolus vitamin D3 for critically ill patients selected by point-of-care low 25-hydroxyvitamin D is not supported.",
+    "clinical_bottom_line": {
+      "verdict": "Do not routinely administer high-dose bolus vitamin D3 to vitamin D-deficient ICU patients; no survival or recovery benefit was found.",
+      "applies_to": "Adults with early critical illness and vitamin D deficiency (<20 ng/mL) who can take enteral medications.",
+      "does_not_mean": "This does not imply that nutritional vitamin D repletion or sustained supplementation in severe, prolonged deficiency has no role.",
+      "implementation_caveats": [
+        "Single bolus strategy tested; sustained or repeated dosing may have different effects.",
+        "Excluded patients unable to take enteral drugs or with hypercalcaemia/kidney stone history.",
+        "No evidence of harm, but also no evidence of benefit—de-implementation of indiscriminate testing and acute bolus supplementation is supported."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Illness severity and phenotype heterogeneity",
+        "notes": "Patients may have been too heterogeneous; benefit might be restricted to severe deficiency or specific inflammatory phenotypes."
+      },
+      {
+        "topic": "Biomarker validity",
+        "notes": "Total 25-hydroxyvitamin D behaves as a negative acute-phase reactant, complicating eligibility targeting and mechanistic interpretation."
+      },
+      {
+        "topic": "Bolus vs sustained dosing",
+        "notes": "The single bolus rapidly corrected measured 25-hydroxyvitamin D but may not replicate potential benefits of sustained repletion; ongoing trials (VITDALIZE) address this."
+      },
+      {
+        "topic": "Relation to prior RCTs",
+        "notes": "VITdAL-ICU did not show overall benefit but had a possible signal in severe deficiency, motivating VIOLET."
+      },
+      {
+        "topic": "Meta-analyses",
+        "notes": "Post-VIOLET meta-analyses have not demonstrated consistent mortality benefit from vitamin D supplementation in critical illness."
+      },
+      {
+        "topic": "Ongoing definitive testing",
+        "notes": "The VITDALIZE programme is evaluating high-dose vitamin D3 in critically ill adults with severe deficiency."
+      },
+      {
+        "topic": "Guideline positioning",
+        "notes": "Paediatric Surviving Sepsis guidelines suggest against acute repletion in sepsis/septic shock; ESPEN emphasises cautious, targeted vitamin D use during nutritional support."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "VITdAL-ICU",
+        "relation": "Earlier RCT that did not shorten hospital LOS overall but suggested possible mortality benefit in severe deficiency, motivating this larger definitive trial."
+      },
+      {
+        "trial": "VITDALIZE",
+        "relation": "Ongoing phase III RCT (high-dose vitamin D3 in severe deficiency) that addresses targeting and regimen questions left open by VIOLET’s single-bolus design."
+      }
+    ],
+    "unresolved_questions": [
+      "Does a sustained repletion strategy improve outcomes in patients with severe vitamin D deficiency?",
+      "Are there specific subphenotypes (e.g., ARDS, sepsis, severe deficiency) that could benefit from high-dose vitamin D?",
+      "What is the biological relevance of total 25-hydroxyvitamin D during acute inflammation, and should alternative biomarkers guide therapy?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1360 randomized; primary analysis in 1078 with confirmed deficiency",
+        "90-day mortality: 23.5% (vitamin D3) vs 20.6% (placebo), P=0.26",
+        "28-day mortality: 17.3% vs 13.1%, risk difference 4.3% (95% CI -0.1 to 8.6)",
+        "Day-3 25-hydroxyvitamin D: 46.9 vs 11.4 ng/mL (mean difference 35.5)"
+      ],
+      "one_line_takeaway": "Early high-dose vitamin D3 bolus does not improve survival or recovery in vitamin D-deficient ICU patients; avoid routine screening and bolus supplementation in acute critical illness."
+    }
+  },
+  "_source_id": "VIOLET",
+  "_source_system": "Endocrine"
+}

@@ -1,0 +1,276 @@
+{
+  "id": "STICH",
+  "trial_name": "STICH — Early Surgery vs Initial Conservative Treatment in Spontaneous Supratentorial Intracerebral Haemorrhage (2005)",
+  "specialty": "Neurocritical Care",
+  "subtopic": "Intracerebral Hemorrhage",
+  "year": 2005,
+  "journal": "The Lancet",
+  "citation": "Mendelow AD, Gregson BA, Fernandes HM, Murray GD, Teasdale GM, Hope DT, Karimi A, Shaw MDM, Barer DH, for the STICH investigators. Early surgery versus initial conservative treatment in patients with spontaneous supratentorial intracerebral haematomas in the International Surgical Trial in Intracerebral Haemorrhage (STICH): a randomised trial. Lancet. 2005;365(9457):387-97.",
+  "doi": "https://doi.org/10.1016/S0140-6736(05)17826-X",
+  "registration": "Not provided in source",
+  "trial_type": "RCT — multicenter, international, pragmatic, parallel-group, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1033,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In patients with spontaneous supratentorial ICH where neurosurgeons were uncertain about management, early surgery within 24 hours did not improve 6-month functional outcome or survival compared with initial conservative treatment.",
+  "pico": {
+    "population": "Patients with CT-confirmed spontaneous supratentorial ICH within 72 hours, GCS ≥5, surgeon uncertain about best management",
+    "intervention": "Early surgery policy: haematoma evacuation within 24 hours of randomisation plus best medical management",
+    "comparison": "Initial conservative policy: best medical management without immediate surgery; rescue surgery allowed if deterioration",
+    "outcome": "Favourable outcome at 6 months (prognosis-based Glasgow Outcome Scale)"
+  },
+  "keywords": [
+    "intracerebral haemorrhage",
+    "craniotomy",
+    "haematoma evacuation",
+    "neurosurgery",
+    "conservative management"
+  ],
+  "related_trials": [
+    "STICH II"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Spontaneous ICH carries high early mortality and substantial long-term disability, with limited disease-modifying therapies. Open haematoma evacuation was widely practised but clinically contentious, with prior randomised evidence small, heterogeneous, and inconclusive.",
+      "knowledge_gap": "Uncertainty about which anatomical/clinical subgroups might benefit from early surgery, and whether a policy of early evacuation improves functional outcome compared with initial conservative care.",
+      "hypothesis": "Early evacuation would reduce death and disability at 6 months compared with initial conservative management."
+    },
+    "methods": {
+      "design": "International, multicentre, randomised, pragmatic, parallel-group trial; open-label treatment with structured 6-month outcome collection.",
+      "setting": "83 neurosurgical units in 27 countries.",
+      "population": {
+        "inclusion": [
+          "Spontaneous supratentorial intracerebral haematoma confirmed by CT",
+          "Randomisation within 72 hours of ictus",
+          "Clinical uncertainty principle (surgeon uncertain whether early surgery or conservative care is preferable)",
+          "Operational recommendations: minimum haematoma diameter 2 cm; Glasgow Coma Score (GCS) ≥5"
+        ],
+        "exclusion": [
+          "Probable aneurysm/arteriovenous malformation",
+          "Haemorrhage secondary to tumour or trauma",
+          "Cerebellar haemorrhage or extension into the brainstem",
+          "Severe pre-existing physical/mental disability or severe comorbidity expected to interfere with assessment",
+          "Inability to undertake surgery within 24 hours of randomisation"
+        ]
+      },
+      "intervention": "Early surgery policy: evacuation of the intracerebral haematoma within 24 hours of randomisation, plus best medical management. Operative technique at surgeon discretion (craniotomy predominant; burr hole, endoscopy, stereotaxy permitted).",
+      "comparison": "Initial conservative policy: best medical management without immediate surgery. Rescue surgery permitted if subsequently judged necessary (e.g., neurological deterioration).",
+      "blinding": "Open-label; 6-month outcomes collected via postal questionnaire, reducing clinician-assessor influence but not patient/carer expectation effects.",
+      "sample_size_power": "1000 patients to detect a 10% absolute improvement in favourable outcome (40% to 50%) with 80% power and alpha 0.05; inflated by 25% to allow for protocol violations.",
+      "primary_outcome": "Favourable outcome at 6 months (prognosis-based Glasgow Outcome Scale using a sliding dichotomy).",
+      "secondary_outcomes": [
+        "Mortality at 6 months",
+        "Favourable modified Rankin Scale at 6 months",
+        "Favourable Barthel Index at 6 months"
+      ],
+      "follow_up": "6 months"
+    },
+    "results": {
+      "headline_bullets": [
+        "Across the whole randomised population, early surgery did not improve 6-month functional outcome or survival compared with an initial conservative policy.",
+        "Treatment separation was substantial but imperfect: 94% of early surgery group underwent evacuation, while 26% of conservative group later underwent surgery after deterioration (biasing towards null).",
+        "A prespecified anatomical subgroup (haematoma ≤1 cm from cortical surface) showed a signal consistent with benefit of early surgery, whereas deeper haemorrhages did not."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: favourable outcome at 6 months (prognosis-based Glasgow Outcome Scale)",
+          "group_a": "122/468 (26%)",
+          "group_b": "118/496 (24%)",
+          "effect_measure": "OR",
+          "effect_value": "0.89",
+          "ci_95": "0.66 to 1.19",
+          "p_value": "0.414",
+          "note": "Absolute benefit 2.3% (−3.2 to 7.7)"
+        },
+        {
+          "outcome": "Mortality at 6 months",
+          "group_a": "170/468 (36%)",
+          "group_b": "184/496 (37%)",
+          "effect_measure": "OR",
+          "effect_value": "0.95",
+          "ci_95": "0.73 to 1.23",
+          "p_value": "0.707",
+          "note": "Absolute benefit 0.7% (−5.0 to 6.4)"
+        },
+        {
+          "outcome": "Secondary: favourable modified Rankin Scale at 6 months",
+          "group_a": "152/468 (33%)",
+          "group_b": "137/496 (28%)",
+          "effect_measure": "OR",
+          "effect_value": "0.82",
+          "ci_95": "0.62 to 1.09",
+          "p_value": "0.116",
+          "note": "Absolute benefit 4.7% (−1.1 to 10.5)"
+        },
+        {
+          "outcome": "Secondary: favourable Barthel Index at 6 months",
+          "group_a": "124/468 (27%)",
+          "group_b": "110/496 (23%)",
+          "effect_measure": "OR",
+          "effect_value": "0.84",
+          "ci_95": "0.63 to 1.12",
+          "p_value": "0.144",
+          "note": "Absolute benefit 4.1% (−1.5 to 9.7)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Haematoma ≤1 cm from cortical surface",
+          "group_a": "158/196 (81%)",
+          "group_b": "208/265 (79%)",
+          "effect_measure": "RR",
+          "effect_value": "0.83",
+          "ci_95": "0.73 to 0.96",
+          "p_interaction": "0.02",
+          "note": "Unfavourable outcome (prognosis-based); absolute benefit 8% (0 to 15)"
+        },
+        {
+          "subgroup": "Haematoma >1 cm from cortical surface",
+          "group_a": "247/300 (82%)",
+          "group_b": "238/323 (74%)",
+          "effect_measure": "RR",
+          "effect_value": "1.04",
+          "ci_95": "0.92 to 1.18",
+          "p_interaction": "0.59",
+          "note": "Unfavourable outcome; absolute benefit −2% (−10 to 6)"
+        },
+        {
+          "subgroup": "Comatose at presentation (GCS 3–8)",
+          "group_a": "340/450 (76%)",
+          "group_b": "322/434 (74%)",
+          "effect_measure": "RR",
+          "effect_value": "1.08",
+          "ci_95": "0.99 to 1.18",
+          "p_interaction": "0.08",
+          "note": "Unfavourable outcome; trend towards worse outcome with early surgery; absolute benefit −6% (−14 to 2)"
+        }
+      ]
+    },
+    "safety": [],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central 24-hour telephone randomisation with minimisation; allocation concealment strong."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label treatment; 6-month outcomes collected via postal questionnaires, reducing clinician-assessor influence but not patient/carer expectation effects."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "51 lost to follow-up, 17 alive but status unknown; primary outcome analysis included 93% early-surgery and 94% conservative; missing data ~7% overall."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Early-surgery delivery high (94% underwent surgery; 6% had surgery >24h; 5% did not undergo surgery). Crossover: 26% of conservative group underwent delayed surgery, often after deterioration, biasing towards null."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups comparable: median age 61 vs 62, haematoma volume 30 mL vs 30 mL, time ictus-to-randomisation 22h vs 21h, GCS 9-12: 45% vs 44%."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Primary endpoint used prognosis-based dichotomy (sliding dichotomy) on extended Glasgow Outcome Scale; secondary outcomes mRS and Barthel Index."
+        },
+        {
+          "domain": "Statistical rigor",
+          "notes": "Prespecified power target achieved (1033 randomised); ITT analysis with prespecified subgroup interaction testing."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate: randomisation and prespecified analyses were robust, but open-label delivery, treatment crossover (26% in conservative group receiving surgery), and heterogeneity in surgical technique/timing plausibly diluted any true subgroup-specific effect."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad international recruitment (83 centres, 27 countries) supports generalisability to neurosurgical-unit patients with supratentorial ICH where genuine equipoise exists. Key exclusions: secondary haemorrhage, cerebellar/brainstem, severe pre-morbid disability, inability to surgery within 24h."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Clinical uncertainty principle enriches for borderline cases, reducing applicability to patients with clear surgical indications or futility. Findings apply best where rapid transfer to neurosurgery is feasible. Predominantly open craniotomy-era evidence may not translate to modern minimally invasive strategies."
+        }
+      ],
+      "verdict": "External validity is moderate: highly relevant to selected supratentorial ICH patients managed in neurosurgical units with equipoise, but less applicable to patients with definitive surgical indications/contraindications, delayed presentation/transfer, or modern minimally invasive pathways."
+    },
+    "strengths": [
+      "Largest randomised evaluation at the time of early surgery versus initial conservative care for supratentorial ICH.",
+      "International, multicentre pragmatic design capturing real-world neurosurgical practice variability.",
+      "Central randomisation with minimisation and intention-to-treat analysis.",
+      "Use of a prognosis-based (sliding dichotomy) primary endpoint intended to improve sensitivity across severity strata."
+    ],
+    "limitations": [
+      "Open-label intervention with non-standardised co-interventions and surgical technique.",
+      "Substantial crossover (26% of conservative group underwent delayed surgery), likely biasing effects towards the null.",
+      "Median ictus-to-surgery timing (~30 h) may have been too late for some mechanistic hypotheses of early tissue salvage.",
+      "Primary endpoint complexity (prognosis-based dichotomy) reduces bedside interpretability and invites sensitivity to modelling choices.",
+      "Exclusion of cerebellar haemorrhage and secondary causes limits direct applicability to several high-stakes surgical scenarios."
+    ],
+    "critical_appraisal": {
+      "summary": "STICH was a well-conducted pragmatic trial that failed to show overall benefit of early open surgery for supratentorial ICH, but identified a potential benefit in superficial haemorrhage. Internal validity is limited by open-label design, crossover, and heterogeneity; external validity is moderate due to equipoise-based selection.",
+      "strengths": [
+        "Large sample size, international multicentre design, robust randomisation, ITT analysis."
+      ],
+      "weaknesses": [
+        "Open-label, high crossover, non-standardised surgical technique, late median surgery time, complex primary endpoint."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "STICH does not support routine early open evacuation for all supratentorial ICH; patient selection (especially superficial lobar haemorrhage) is critical, and the trial reframes neurosurgical referral as a selection-and-timing problem.",
+    "clinical_bottom_line": {
+      "verdict": "Early open surgery does not improve overall outcome in unselected supratentorial ICH, but may benefit patients with superficial lobar haemorrhage (≤1 cm from cortex).",
+      "applies_to": "Patients with spontaneous supratentorial ICH where neurosurgeons are uncertain about the need for surgery, particularly those with superficial haemorrhage and no clear contraindications.",
+      "does_not_mean": "That surgery is never indicated; it does not apply to patients with clear surgical indications (e.g., life-threatening mass effect) or cerebellar haemorrhage.",
+      "implementation_caveats": [
+        "Surgical technique and timing were not standardised; modern minimally invasive approaches may yield different results.",
+        "The trial's median time to surgery (~30h from ictus) may be too late for maximal benefit; earlier intervention might be more effective.",
+        "Crossover was high, so the observed effect may underestimate benefit in those who truly need early surgery."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of a neutral overall result",
+        "notes": "Editorial highlighted superficial-haematoma signal and argued deep haemorrhage might require less invasive strategies."
+      },
+      {
+        "topic": "Prognosis-based (sliding dichotomy) endpoint",
+        "notes": "Methodologically purposeful but less intuitive; dependence on prognostic model may affect interpretability."
+      },
+      {
+        "topic": "Equipoise-driven enrolment and selection effects",
+        "notes": "Clinical uncertainty principle improves ethics but limits applicability to clear surgical cases; major international variation in practice documented."
+      },
+      {
+        "topic": "Follow-up trial refining the target population",
+        "notes": "STICH II focused on superficial lobar ICH and again found no statistically significant overall benefit, though designed to reduce dilution from deep haemorrhage."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "Contemporary guidelines discourage routine supratentorial evacuation but support surgery in selected scenarios (life-threatening mass effect, deterioration) and strongly endorse urgent surgery for cerebellar haemorrhage (excluded from STICH)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "STICH II",
+        "relation": "Follow-up trial focusing on superficial lobar ICH (≤1 cm from cortex) to test the subgroup signal from STICH; also found no significant overall benefit of early surgery, but further refined patient selection."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal timing of surgery (ultra-early vs early)?",
+      "Do minimally invasive surgical techniques improve outcomes compared to open craniotomy?",
+      "Which specific superficial haemorrhage patients benefit most (volume, GCS, age)?",
+      "How to manage deep haemorrhage effectively?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1033",
+        "Primary favourable outcome 26% vs 24% (OR 0.89, 95% CI 0.66-1.19)",
+        "Superficial haemorrhage subgroup RR 0.83 for unfavourable outcome (95% CI 0.73-0.96)",
+        "26% crossover from conservative to surgery"
+      ],
+      "one_line_takeaway": "Routine early open surgery does not improve overall outcome in supratentorial ICH, but superficial lobar haemorrhage may benefit; patient selection is key."
+    }
+  },
+  "_source_id": "STICH",
+  "_source_system": "Neuro"
+}

@@ -1,0 +1,348 @@
+{
+  "id": "REVISE",
+  "trial_name": "REVISE — Stress Ulcer Prophylaxis during Invasive Mechanical Ventilation (2024)",
+  "specialty": "Gastrointestinal",
+  "subtopic": "Gastrointestinal Bleeding",
+  "year": 2024,
+  "journal": "N Engl J Med",
+  "citation": "Cook D, Deane A, Lauzier F, Zytaruk N, Guyatt G, Saunders L, et al; REVISE Investigators. Stress ulcer prophylaxis during invasive mechanical ventilation. N Engl J Med. 2024 Jul 4;391(1):9-20.",
+  "doi": "https://doi.org/10.1056/NEJMoa2404245",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, parallel-group, pragmatic",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 4821,
+  "result_category": "Positive",
+  "one_liner": "Pantoprazole reduced clinically important upper GI bleeding (1.0% vs 3.5%, HR 0.30) without increasing 90-day mortality (29.1% vs 30.9%, HR 0.94) in ventilated ICU adults.",
+  "pico": {
+    "population": "Adults (≥18 years) receiving invasive mechanical ventilation in ICU, expected to remain ventilated beyond the calendar day after randomisation, without strong indication for acid suppression or high bleeding risk antithrombotic regimens.",
+    "intervention": "Pantoprazole 40 mg IV once daily while invasively ventilated.",
+    "comparison": "Matching placebo IV once daily.",
+    "outcome": "Primary efficacy: clinically important upper GI bleeding; primary safety: 90-day all-cause mortality."
+  },
+  "keywords": [
+    "stress ulcer prophylaxis",
+    "pantoprazole",
+    "PPI",
+    "mechanical ventilation",
+    "gastrointestinal bleeding",
+    "ICU"
+  ],
+  "related_trials": [
+    "SUP-ICU",
+    "PEPTIC"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Stress-related mucosal disease can cause upper GI bleeding in critical illness; incidence has fallen with modern ICU practices. Acid suppression reduces bleeding but may increase infections. Prior RCTs showed pantoprazole reduced bleeding but mortality and infectious harms uncertain.",
+      "knowledge_gap": "Whether pantoprazole reduces clinically important bleeding and affects mortality in contemporary ventilated ICU patients.",
+      "hypothesis": "Pantoprazole would reduce clinically important upper GI bleeding without increasing 90-day mortality."
+    },
+    "methods": {
+      "design": "International, multicentre, randomised, double-blind, placebo-controlled, parallel-group pragmatic trial in 68 ICUs across 8 countries.",
+      "setting": "68 ICUs, 8 countries; enrollment dates not reported.",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years receiving invasive mechanical ventilation, expected to remain ventilated beyond the calendar day after randomisation."
+        ],
+        "exclusion": [
+          "Invasive mechanical ventilation >72 hours during admission",
+          "Active GI bleeding or high-risk bleeding indication requiring acid suppression",
+          "Receipt in ICU of >1 daily dose equivalent of PPI or H2RA",
+          "Dual antiplatelet therapy",
+          "Combined antiplatelet plus therapeutic anticoagulation",
+          "Contraindication to pantoprazole",
+          "Palliative care/anticipated withdrawal of life-sustaining therapy",
+          "Pregnancy",
+          "Prior enrolment/prohibited co-enrolment",
+          "Patient/proxy/physician refusal"
+        ]
+      },
+      "intervention": "Pantoprazole 40 mg IV once daily, started soon after randomisation, continued while invasively ventilated in ICU.",
+      "comparison": "Matching placebo IV once daily, same administration and stopping rules.",
+      "blinding": "Double-blind (participants, clinicians, research staff, adjudicators, analysts).",
+      "sample_size_power": "Planned 4,800 to detect 1.5 percentage point absolute reduction in clinically important bleeding (3.0% to 1.5%) with 85% power at two-sided 5% significance.",
+      "primary_outcome": "Primary efficacy: clinically important upper GI bleeding; primary safety: 90-day all-cause mortality.",
+      "secondary_outcomes": [
+        "Patient-important upper GI bleeding",
+        "Ventilator-associated pneumonia in ICU",
+        "Clostridioides difficile infection in hospital",
+        "Initiation of renal replacement therapy in ICU",
+        "Total units of red blood cells transfused in ICU",
+        "Peak serum creatinine in ICU",
+        "Duration of invasive mechanical ventilation",
+        "Duration of ICU stay",
+        "Duration of hospital stay"
+      ],
+      "follow_up": "90 days for mortality; in-ICU for bleeding and several secondary endpoints."
+    },
+    "results": {
+      "headline_bullets": [
+        "Pantoprazole reduced clinically important upper GI bleeding from 3.5% to 1.0% (HR 0.30, 95% CI 0.19–0.47, P<0.001).",
+        "90-day mortality was similar: 29.1% vs 30.9% (HR 0.94, 95% CI 0.85–1.04, P=0.25).",
+        "Patient-important bleeding also reduced (1.5% vs 4.2%, HR 0.36).",
+        "No significant differences in ventilator-associated pneumonia, RRT initiation, or other secondary outcomes; C. difficile numerically higher but inconclusive."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Clinically important upper GI bleeding (primary efficacy)",
+          "group_a": "25/2385 (1.0%)",
+          "group_b": "84/2377 (3.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.30",
+          "ci_95": "0.19 to 0.47",
+          "p_value": "<0.001",
+          "note": "Absolute difference 2.5 percentage points (95% CI 1.6 to 3.3)"
+        },
+        {
+          "outcome": "90-day all-cause mortality (primary safety)",
+          "group_a": "696/2390 (29.1%)",
+          "group_b": "734/2379 (30.9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.94",
+          "ci_95": "0.85 to 1.04",
+          "p_value": "0.25",
+          "note": "Adjusted for baseline APACHE II score"
+        },
+        {
+          "outcome": "Patient-important upper GI bleeding (secondary)",
+          "group_a": "36/2385 (1.5%)",
+          "group_b": "100/2377 (4.2%)",
+          "effect_measure": "HR",
+          "effect_value": "0.36",
+          "ci_95": "0.25 to 0.53",
+          "p_value": "<0.001",
+          "note": "Multiplicity-adjusted p value"
+        },
+        {
+          "outcome": "Ventilator-associated pneumonia in ICU (secondary)",
+          "group_a": "556/2385 (23.3%)",
+          "group_b": "567/2377 (23.8%)",
+          "effect_measure": "HR",
+          "effect_value": "1.00",
+          "ci_95": "0.89 to 1.12",
+          "p_value": "0.93",
+          "note": "Defined by CPIS ≥6"
+        },
+        {
+          "outcome": "C. difficile infection in hospital (secondary)",
+          "group_a": "28/2385 (1.2%)",
+          "group_b": "16/2377 (0.7%)",
+          "effect_measure": "HR",
+          "effect_value": "1.78",
+          "ci_95": "0.96 to 3.29",
+          "p_value": "0.50",
+          "note": "Multiplicity-adjusted p value; low event counts"
+        },
+        {
+          "outcome": "Initiation of RRT in ICU (secondary)",
+          "group_a": "146/2385 (6.1%)",
+          "group_b": "142/2377 (6.0%)",
+          "effect_measure": "HR",
+          "effect_value": "1.04",
+          "ci_95": "0.83 to 1.31",
+          "p_value": "0.98",
+          "note": "Multiplicity-adjusted p value"
+        },
+        {
+          "outcome": "Total RBC units transfused in ICU (tertiary)",
+          "group_a": "4850 total (2.3/100 patient-days)",
+          "group_b": "5521 total (2.6/100 patient-days)",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.74 to 1.02",
+          "p_value": "0.51",
+          "note": "Negative binomial model; multiplicity-adjusted p value"
+        },
+        {
+          "outcome": "Peak serum creatinine in ICU, mg/dL (tertiary)",
+          "group_a": "1.8 (IQR 1.0–3.4)",
+          "group_b": "1.8 (IQR 1.0–3.4)",
+          "effect_measure": "Difference",
+          "effect_value": "0.03",
+          "ci_95": "−0.08 to 0.15",
+          "p_value": "0.91",
+          "note": "Multiplicity-adjusted p value"
+        },
+        {
+          "outcome": "Duration of invasive mechanical ventilation, days (tertiary)",
+          "group_a": "6.0 (IQR 3.0–11.0)",
+          "group_b": "6.0 (IQR 3.0–11.0)",
+          "effect_measure": "Difference",
+          "effect_value": "0.0",
+          "ci_95": "−0.5 to 0.6",
+          "p_value": "0.73",
+          "note": "Multiplicity-adjusted p value"
+        },
+        {
+          "outcome": "Duration of ICU stay, days (tertiary)",
+          "group_a": "10.0 (IQR 6.0–17.0)",
+          "group_b": "10.0 (IQR 6.0–17.0)",
+          "effect_measure": "Difference",
+          "effect_value": "0.1",
+          "ci_95": "−0.3 to 0.5",
+          "p_value": "0.48",
+          "note": "Multiplicity-adjusted p value"
+        },
+        {
+          "outcome": "Duration of hospital stay, days (tertiary)",
+          "group_a": "20.0 (IQR 12.0–36.0)",
+          "group_b": "20.0 (IQR 12.0–37.0)",
+          "effect_measure": "Difference",
+          "effect_value": "0.2",
+          "ci_95": "−0.2 to 0.7",
+          "p_value": "0.47",
+          "note": "Multiplicity-adjusted p value"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "APACHE II <25",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "HR",
+          "effect_value": "0.85",
+          "ci_95": "0.74 to 0.98",
+          "p_interaction": "0.27"
+        },
+        {
+          "subgroup": "APACHE II ≥25",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "HR",
+          "effect_value": "1.04",
+          "ci_95": "0.89 to 1.20",
+          "p_interaction": "0.27"
+        }
+      ]
+    },
+    "safety": [
+      "Ventilator-associated pneumonia: 23.3% vs 23.8% (HR 1.00, 95% CI 0.89–1.12).",
+      "C. difficile infection: 1.2% vs 0.7% (HR 1.78, 95% CI 0.96–3.29).",
+      "Initiation of RRT: 6.1% vs 6.0% (HR 1.04, 95% CI 0.83–1.31).",
+      "No significant differences in other safety outcomes; open-label acid suppression use was low (4.4% vs 5.4% PPI, 0.8% vs 1.3% H2RA)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based 1:1 randomisation with allocation concealment, stratified by centre and pre-hospital acid suppression; variable block sizes."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind, masking extended to all parties; no unblinding requests."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "79 (1.6%) excluded post-randomisation (consent withdrawal/ineligible); 98.9% vital status at 90 days."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Study drug started within 24h in >92%; median 86.7% vs 84.6% of ventilator days; open-label PPI use 4.4% vs 5.4%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: mean age ~58, APACHE II 21.7, similar pre-hospital acid suppression, anticoagulation, enteral nutrition."
+        }
+      ],
+      "verdict": "Strong internal validity: robust randomisation, blinding, adherence, and follow-up; minor post-randomisation exclusions and limited precision for rare harms."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad adult ventilated ICU population across 8 countries, moderate-to-high acuity (mean APACHE II ~22), common diagnoses."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Applies to ventilated ICU adults without strong acid suppression indication or dual antiplatelet/therapeutic anticoagulation; less applicable where IV PPI supply or infection diagnostics limited; absolute benefit varies with baseline bleeding risk."
+        }
+      ],
+      "verdict": "High generalisability for contemporary ventilated ICU practice in similar health systems; limited for populations with mandated acid suppression or markedly different bleeding risk."
+    },
+    "strengths": [
+      "Large, international, double-blind, placebo-controlled design with pragmatic delivery.",
+      "Dual primary endpoints addressing efficacy and safety.",
+      "Clinically and patient-centred bleeding outcomes with concordant benefit.",
+      "High follow-up and prespecified multiplicity handling."
+    ],
+    "limitations": [
+      "Post-randomisation exclusions led to modified ITT analysis.",
+      "Rare harms (C. difficile) had low event counts and wide confidence intervals.",
+      "VAP definition used CPIS score, less objective than microbiology-confirmed.",
+      "Findings less applicable to patients with strong acid-suppression indications or higher bleeding-risk antithrombotic regimens."
+    ],
+    "critical_appraisal": {
+      "summary": "REVISE provides high-certainty evidence that pantoprazole reduces clinically important GI bleeding without increasing mortality in ventilated ICU adults, with strong internal validity; uncertainty remains for rare infectious harms.",
+      "strengths": [
+        "Robust blinding and allocation concealment",
+        "High protocol adherence and low crossover",
+        "Clinically meaningful bleeding definitions",
+        "Prespecified dual primary endpoints and multiplicity adjustment"
+      ],
+      "weaknesses": [
+        "Modified ITT due to post-randomisation exclusions",
+        "Imprecise estimates for rare harms like C. difficile",
+        "VAP definition may misclassify"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Among invasively mechanically ventilated ICU adults, pantoprazole reduced clinically important upper gastrointestinal bleeding compared with placebo, with no significant difference in 90-day mortality.",
+    "clinical_bottom_line": {
+      "verdict": "Pantoprazole should be used for stress ulcer prophylaxis in ventilated ICU adults without contraindications, as it reduces clinically important bleeding without increasing mortality; however, the absolute benefit is modest and risk of rare harms remains uncertain, so prophylaxis should be stopped when ventilation ceases and bleeding risk resolves.",
+      "applies_to": "Adult ICU patients receiving invasive mechanical ventilation, without strong indication for acid suppression or high bleeding risk antithrombotic regimens.",
+      "does_not_mean": "Pantoprazole does not reduce mortality or duration of ventilation; it is not a substitute for early enteral nutrition or other bleeding prevention measures.",
+      "implementation_caveats": [
+        "Initiate early after intubation.",
+        "Discontinue when extubated and bleeding risk factors resolve.",
+        "Avoid in patients with dual antiplatelet therapy or combined antiplatelet plus therapeutic anticoagulation (excluded from trial).",
+        "Monitor for C. difficile, though absolute risk increase is small and uncertain."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite endpoint and dual primary design",
+        "notes": "REVISE used dual primary endpoints (efficacy and safety) to address both benefit and harm, strengthening interpretability."
+      },
+      {
+        "topic": "Risk stratification vs universal prophylaxis",
+        "notes": "Guidelines and editorial emphasize targeting prophylaxis to higher-risk patients and stopping when risk abates, rather than routine universal use."
+      },
+      {
+        "topic": "Uncertainty about rare harms",
+        "notes": "C. difficile and other infections remain imprecisely estimated; net benefit may be smaller in low-risk populations."
+      },
+      {
+        "topic": "Comparison with H2RAs",
+        "notes": "Prior PEPTIC trial did not show clear mortality difference between PPIs and H2RAs; REVISE does not directly compare classes but supports PPI efficacy vs placebo."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "SUP-ICU",
+        "relation": "Earlier placebo-controlled trial of pantoprazole in ICU patients, showed reduced GI bleeding but uncertain mortality effect; REVISE confirms and extends with larger sample and dual primary endpoints."
+      },
+      {
+        "trial": "PEPTIC",
+        "relation": "Large cluster crossover trial comparing PPIs vs H2RAs in ICU, found no mortality difference; REVISE provides placebo-controlled evidence for PPI efficacy."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal duration of prophylaxis and criteria for discontinuation.",
+      "Net benefit in patients with very low baseline bleeding risk.",
+      "Comparative effectiveness of PPIs vs H2RAs for mortality and rare harms.",
+      "Long-term outcomes beyond 90 days.",
+      "Effect in patients with dual antiplatelet or combined antithrombotic therapy."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=4,821",
+        "Clinically important GI bleeding: 1.0% vs 3.5% (HR 0.30)",
+        "90-day mortality: 29.1% vs 30.9% (HR 0.94)",
+        "Patient-important bleeding: 1.5% vs 4.2% (HR 0.36)"
+      ],
+      "one_line_takeaway": "In ventilated ICU adults, pantoprazole reduces clinically important GI bleeding without increasing mortality, supporting targeted prophylaxis with prompt discontinuation when risk resolves."
+    }
+  },
+  "_source_id": "REVISE",
+  "_source_system": "Gastrointestinal"
+}

@@ -1,0 +1,368 @@
+{
+  "id": "ART",
+  "trial_name": "ART — Effect of Lung Recruitment and Titrated PEEP vs Low PEEP on Mortality in ARDS (2017)",
+  "specialty": "Respiratory",
+  "subtopic": "ARDS",
+  "year": 2017,
+  "journal": "JAMA",
+  "citation": "Cavalcanti AB, Suzumura ÉA, Laranjeira LN, et al; Writing Group for the Alveolar Recruitment for Acute Respiratory Distress Syndrome Trial (ART) Investigators. Effect of lung recruitment and titrated positive end-expiratory pressure (PEEP) vs low PEEP on mortality in patients with acute respiratory distress syndrome: a randomized clinical trial. JAMA. 2017;318(14):1335-1345",
+  "doi": "https://doi.org/10.1001/jama.2017.14171",
+  "registration": "",
+  "trial_type": "RCT — multicenter, international, open-label, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1010,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In early moderate-to-severe ARDS, a strategy of recruitment manoeuvre plus compliance-titrated PEEP increased 28-day mortality compared with a low-PEEP strategy (55.3% vs 49.3%; HR 1.20).",
+  "pico": {
+    "population": "Adults with moderate-to-severe ARDS within 72 hours of onset, after standardized ventilation confirmation (PaO2:FiO2 ≤200 mm Hg)",
+    "intervention": "Maximum recruitment manoeuvre (pressure-controlled, PEEP up to 45 cmH2O) followed by decremental PEEP titration to best respiratory-system compliance, then set PEEP at best compliance +2 cmH2O, with reassessment",
+    "comparison": "Low-PEEP strategy using ARDSNet PEEP–FiO2 table, no recruitment manoeuvres",
+    "outcome": "28-day mortality (primary)"
+  },
+  "keywords": [
+    "ARDS",
+    "recruitment manoeuvre",
+    "PEEP titration",
+    "open lung",
+    "lung-protective ventilation",
+    "barotrauma",
+    "compliance-guided PEEP"
+  ],
+  "related_trials": [
+    "PHARLAP"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "In ARDS, collapsed lung units promote atelectrauma; higher PEEP and recruitment can improve oxygenation but risk haemodynamic compromise and overdistension. Prior trials of higher vs lower PEEP and open lung approaches had mixed results.",
+      "knowledge_gap": "Uncertainty about patient selection and optimal PEEP titration method; physiology-based strategies proposed individualising PEEP after recruitment using respiratory-system compliance.",
+      "hypothesis": "Lung recruitment with compliance-guided higher PEEP would reduce mortality by reducing ventilator-induced lung injury (via improved mechanics and reduced driving pressure)."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, investigator-initiated, international, open-label, parallel-group trial in 120 ICUs across 9 countries.",
+      "setting": "120 ICUs, 9 countries; enrolled patients with ARDS within 72 hours of onset.",
+      "population": {
+        "inclusion": [
+          "Berlin-definition ARDS; after 3 hours of standardised ventilation (VT 6 mL/kg PBW, RR ≤35/min, FiO2 1.0, PEEP 10 cmH2O) and a further 30 min at FiO2 1.0 and PEEP 10 cmH2O, required PaO2:FiO2 ≤200 mm Hg."
+        ],
+        "exclusion": [
+          "More than 72 hours since ARDS onset; contraindications to recruitment/higher airway pressures (e.g., untreated pneumothorax, bronchopleural fistula); severe haemodynamic instability; intracranial hypertension; severe chronic lung disease; other protocol-defined exclusions."
+        ]
+      },
+      "intervention": "Core strategy: maximum recruitment manoeuvre (pressure-controlled, ΔP 15 cmH2O; PEEP 25 for 1 min, 35 for 1 min, 45 for 2 min; target max airway pressure 60 cmH2O) followed by decremental PEEP titration (volume-control VT 5 mL/kg; PEEP from 23 cmH2O down to 11 in steps of 3 cmH2O, each step 4 min, selecting best compliance). Then set PEEP at best compliance +2 cmH2O, with a second recruitment at PEEP 45 for 2 min. After 556th patient, protocol modified: recruitment pressures reduced (PEEP 25, 30, 35 for 1,1,2 min; max airway pressure 50 cmH2O; titration step duration 3 min; final recruitment at PEEP 35 for 2 min). Co-interventions: lung-protective ventilation targets in both groups; rescue therapies permitted.",
+      "comparison": "Low-PEEP strategy using ARDSNet PEEP–FiO2 table; no recruitment manoeuvres; rescue therapies permitted.",
+      "blinding": "Open-label; primary outcome (mortality) objective.",
+      "sample_size_power": "Event-driven: planned to continue until 520 deaths by 28 days to provide 90% power to detect HR 0.75 with type I error 5%; final α=0.042 due to interim monitoring.",
+      "primary_outcome": "28-day mortality",
+      "secondary_outcomes": [
+        "6-month mortality",
+        "ICU mortality",
+        "hospital mortality",
+        "ventilator-free days at 28 days",
+        "barotrauma within 7 days",
+        "pneumothorax requiring drainage within 7 days",
+        "death within 7 days",
+        "commencement/increase vasopressors or hypotension within 1 hour",
+        "ICU length of stay"
+      ],
+      "follow_up": "Mortality to 28 days (primary) and 6 months; in-hospital and ICU outcomes within index admission."
+    },
+    "results": {
+      "headline_bullets": [
+        "28-day mortality higher with recruitment + titrated PEEP (55.3% vs 49.3%; HR 1.20, 95% CI 1.01–1.42, P=0.041).",
+        "6-month mortality also higher (65.3% vs 59.5%; HR 1.18, 95% CI 1.01–1.38).",
+        "Early harm signal: death ≤7 days 31.9% vs 25.5% (RD 6.4%, P=0.001); barotrauma ≤7 days 5.6% vs 1.6% (P<0.001).",
+        "No subgroup showed benefit; harm direction consistent across prespecified strata."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death ≤28 days (primary)",
+          "group_a": "277/501 (55.3%)",
+          "group_b": "251/509 (49.3%)",
+          "effect_measure": "HR",
+          "effect_value": "1.20",
+          "ci_95": "1.01 to 1.42",
+          "p_value": "0.041",
+          "note": "Final α=0.042"
+        },
+        {
+          "outcome": "Death ≤6 months",
+          "group_a": "327/501 (65.3%)",
+          "group_b": "303/509 (59.5%)",
+          "effect_measure": "HR",
+          "effect_value": "1.18",
+          "ci_95": "1.01 to 1.38",
+          "p_value": "0.04",
+          "note": ""
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "272/501 (54.3%)",
+          "group_b": "251/509 (49.3%)",
+          "effect_measure": "RD",
+          "effect_value": "4.8%",
+          "ci_95": "1.0 to 8.7",
+          "p_value": "0.03",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "295/501 (58.9%)",
+          "group_b": "277/509 (54.4%)",
+          "effect_measure": "RD",
+          "effect_value": "4.5%",
+          "ci_95": "0.6 to 8.4",
+          "p_value": "0.04",
+          "note": ""
+        },
+        {
+          "outcome": "Ventilator-free days ≤28 days",
+          "group_a": "Mean 5.3 (SD 8.4)",
+          "group_b": "Mean 6.4 (SD 9.5)",
+          "effect_measure": "MD",
+          "effect_value": "−1.1 days",
+          "ci_95": "−2.2 to 0.1",
+          "p_value": "0.07",
+          "note": ""
+        },
+        {
+          "outcome": "Barotrauma ≤7 days",
+          "group_a": "28/501 (5.6%)",
+          "group_b": "8/509 (1.6%)",
+          "effect_measure": "RD",
+          "effect_value": "4.0%",
+          "ci_95": "2.1 to 5.9",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Pneumothorax requiring drainage ≤7 days",
+          "group_a": "16/501 (3.2%)",
+          "group_b": "6/509 (1.2%)",
+          "effect_measure": "RD",
+          "effect_value": "2.0%",
+          "ci_95": "0.4 to 3.7",
+          "p_value": "0.03",
+          "note": ""
+        },
+        {
+          "outcome": "Death ≤7 days",
+          "group_a": "160/501 (31.9%)",
+          "group_b": "130/509 (25.5%)",
+          "effect_measure": "RD",
+          "effect_value": "6.4%",
+          "ci_95": "2.7 to 10.1",
+          "p_value": "0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Commencement/increase vasopressors or hypotension ≤1 hour",
+          "group_a": "174/501 (34.8%)",
+          "group_b": "144/509 (28.3%)",
+          "effect_measure": "RD",
+          "effect_value": "6.5%",
+          "ci_95": "1.0 to 12.0",
+          "p_value": "0.02",
+          "note": ""
+        },
+        {
+          "outcome": "ICU length of stay",
+          "group_a": "Mean 18.2 (SD 18.2)",
+          "group_b": "Mean 19.2 (SD 20.1)",
+          "effect_measure": "MD",
+          "effect_value": "−1.0 days",
+          "ci_95": "−3.4 to 1.4",
+          "p_value": "0.42",
+          "note": ""
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "PaO2:FiO2 >100 mm Hg",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "HR",
+          "effect_value": "1.30",
+          "ci_95": "1.00 to 1.69",
+          "p_interaction": "0.33"
+        },
+        {
+          "subgroup": "Pulmonary ARDS",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "HR",
+          "effect_value": "1.32",
+          "ci_95": "1.03 to 1.69",
+          "p_interaction": "0.15"
+        }
+      ]
+    },
+    "safety": [
+      "Barotrauma ≤7 days: 5.6% vs 1.6% (RD 4.0%, 95% CI 2.1–5.9, P<0.001)",
+      "Pneumothorax requiring drainage ≤7 days: 3.2% vs 1.2% (RD 2.0%, 95% CI 0.4–3.7, P=0.03)",
+      "Haemodynamic instability (vasopressor initiation/increase or hypotension ≤1 hour): 34.8% vs 28.3% (RD 6.5%, 95% CI 1.0–12.0, P=0.02)",
+      "Early death ≤7 days: 31.9% vs 25.5% (RD 6.4%, 95% CI 2.7–10.1, P=0.001)",
+      "Rescue therapies within 7 days similar (15.6% vs 17.5%); prone positioning 15.2% vs 16.1%."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation with permuted blocks (size 4), stratified by ICU, age, and PaO2:FiO2 (≤100 vs >100); allocation concealment credible."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label ventilation strategies; primary outcome (mortality) objective and centrally defined; co-interventions tracked."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1013 randomised; 3 withdrew consent, excluded from analyses; primary analysis sample 1010 (501 vs 509)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "480/501 (95.8%) received recruitment manoeuvre; 21/501 (4.2%) did not; protocol modification after 556th patient reduced manoeuvre intensity."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced (age 51.4 vs 50.8 years; SAPS 3 63.5 vs 62.7; baseline PaO2:FiO2 119.5 vs 117.2 mm Hg; shock 63.5% vs 61.7%)."
+        },
+        {
+          "domain": "Separation of ventilator strategy",
+          "notes": "Clear early separation: at 1 hour, PEEP 16.4 vs 13.0 cmH2O, driving pressure 11.5 vs 13.0 cmH2O, plateau pressure 27.9 vs 25.9 cmH2O; Day 1: PEEP 16.2 vs 12.0, driving pressure 11.7 vs 13.5; Day 3: PEEP 14.2 vs 10.5, driving pressure 12.1 vs 13.5."
+        },
+        {
+          "domain": "Co-interventions",
+          "notes": "Rescue therapies within 7 days similar (15.6% vs 17.5%); prone positioning 15.2% vs 16.1%."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Mortality outcomes clear; safety outcomes included prespecified barotrauma definitions and clinically relevant pneumothorax requiring drainage."
+        },
+        {
+          "domain": "Statistical rigor",
+          "notes": "Prespecified interim monitoring and adjusted primary alpha; primary time-to-event analysis with Cox model; secondary outcomes interpreted as exploratory."
+        }
+      ],
+      "verdict": "Internal validity moderate-to-strong: robust randomisation, clear separation of ventilator strategy, objective primary endpoint, though open-label delivery and mid-trial protocol modification introduce complexity."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults with moderate-to-severe ARDS early in syndrome, enrolled across diverse international ICUs; pneumonia most common risk factor, high septic shock prevalence."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Applies to early moderate-to-severe ARDS in ICUs capable of protocolised recruitment and haemodynamic monitoring; limited for very unstable patients or resource-constrained settings."
+        },
+        {
+          "domain": "Important exclusions",
+          "notes": "Patients with contraindications to high airway pressures, severe haemodynamic instability, or other protocol-defined safety exclusions may limit application to the most unstable phenotypes."
+        },
+        {
+          "domain": "Resource considerations",
+          "notes": "Protocolised recruitment and decremental titration require experienced staff and close haemodynamic monitoring; feasibility may be limited in resource-constrained settings."
+        }
+      ],
+      "verdict": "External validity good for early moderate-to-severe ARDS in well-resourced ICUs; generalisability limited for unstable patients or settings without intensive monitoring."
+    },
+    "strengths": [
+      "Large, international, multicentre ARDS ventilation trial with patient-centred primary outcome.",
+      "Early ARDS enrolment with standardised eligibility confirmation to reduce misclassification.",
+      "Protocolised and clearly separated ventilator strategies with objective primary endpoint.",
+      "Preplanned interim monitoring and time-to-event primary analysis."
+    ],
+    "limitations": [
+      "Open-label intervention with potential for performance bias (mitigated for mortality but relevant for process outcomes).",
+      "Mid-trial protocol modification after safety concerns, potentially introducing treatment heterogeneity over time.",
+      "Complex intervention bundle (recruitment + titration + repeated manoeuvres) limits attribution of harm/benefit to individual components.",
+      "Control strategy PEEP levels may be higher than 'low PEEP' in some historic comparators, affecting interpretation of the counterfactual."
+    ],
+    "critical_appraisal": {
+      "summary": "ART is a large, well-conducted trial that demonstrated harm from aggressive recruitment manoeuvres plus compliance-titrated PEEP in early moderate-to-severe ARDS, with increased mortality and safety signals; internal validity is moderate-to-strong, and external validity is good for similar ICU settings.",
+      "strengths": [
+        "Large sample size, multicentre, international",
+        "Objective primary outcome",
+        "Clear separation of ventilator strategies",
+        "Preplanned interim monitoring"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Mid-trial protocol modification",
+        "Complex intervention bundle limits mechanistic attribution",
+        "Control PEEP may not represent lowest PEEP"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Routine use of aggressive recruitment manoeuvres combined with compliance-guided PEEP titration in early moderate-to-severe ARDS increased mortality and should not be adopted as standard care.",
+    "clinical_bottom_line": {
+      "verdict": "Do not use routine aggressive recruitment manoeuvres with compliance-titrated PEEP in early moderate-to-severe ARDS; this strategy increases mortality.",
+      "applies_to": "Adults with early moderate-to-severe ARDS (PaO2:FiO2 ≤200 mm Hg) within 72 hours of onset, managed in ICUs.",
+      "does_not_mean": "Higher PEEP without recruitment manoeuvres is harmful; the trial tested a specific recruitment + titration strategy, not higher PEEP alone.",
+      "implementation_caveats": [
+        "If recruitment manoeuvres are used, they should be brief, low-pressure, and with careful haemodynamic monitoring.",
+        "Prioritise proven ARDS interventions (e.g., prone positioning, lung-protective ventilation) over recruitment manoeuvres.",
+        "Consider higher PEEP without recruitment in moderate-to-severe ARDS per current guidelines."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Benefit–harm balance",
+        "notes": "Editorial emphasised that intensity of recruitment/PEEP and early haemodynamic/barotrauma signals provide plausible mechanisms for increased mortality, tempering enthusiasm for open lung strategies."
+      },
+      {
+        "topic": "PEEP titration target (compliance as surrogate)",
+        "notes": "Correspondence argued that selecting PEEP by best compliance may not reliably identify safe PEEP, potentially permitting overdistension despite improved compliance metrics."
+      },
+      {
+        "topic": "Intervention delivery and protocol complexity",
+        "notes": "Correspondence highlighted implementation complexity and questioned whether manoeuvre timing/intensity contributed to harm in real-world delivery."
+      },
+      {
+        "topic": "Hyperoxia and stretch interaction",
+        "notes": "Correspondence noted that eligibility confirmation and manoeuvre phases used FiO2 1.0, raising concern that hyperoxia could amplify ventilator-induced lung injury during high-stress manoeuvres."
+      },
+      {
+        "topic": "Trialists’ reply",
+        "notes": "Investigators responded addressing protocol design, feasibility/training, and alternative mechanistic explanations (including breath stacking and lung-protective features of control strategy)."
+      },
+      {
+        "topic": "Outcome set and reporting governance",
+        "notes": "Published statistical analysis plan clarified outcome handling, underscoring importance of prospectively specified analysis frameworks."
+      },
+      {
+        "topic": "Subsequent trials",
+        "notes": "PHARLAP halted enrolment after ART and reported no improvement in ventilator-free days or mortality, with increased cardiovascular adverse events, aligning with safety-limited benefit–harm profile."
+      },
+      {
+        "topic": "Evidence synthesis after ART",
+        "notes": "Bayesian network meta-analysis suggested higher PEEP without recruitment had highest probability of mortality benefit, while higher PEEP with prolonged recruitment had high probability of harm, concordant with ART."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "ESICM guidelines recommend against prolonged high-pressure recruitment manoeuvres and against routine brief recruitment manoeuvres; ATS guideline update suggests higher PEEP without recruitment and recommends against prolonged recruitment manoeuvres (strong recommendation)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PHARLAP",
+        "relation": "Phase II maximal recruitment open lung strategy halted after ART; reported no improvement in ventilator-free days or mortality, with increased cardiovascular adverse events, supporting safety concerns."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal method for PEEP titration in ARDS remains uncertain.",
+      "Role of brief, low-pressure recruitment manoeuvres in specific subgroups (e.g., severe hypoxaemia) not addressed.",
+      "Whether higher PEEP without recruitment improves outcomes in moderate-to-severe ARDS is still debated, though guidelines conditionally recommend it."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1010",
+        "28-day mortality: 55.3% vs 49.3% (HR 1.20, 95% CI 1.01–1.42)",
+        "Barotrauma ≤7 days: 5.6% vs 1.6%",
+        "Early death ≤7 days: 31.9% vs 25.5%"
+      ],
+      "one_line_takeaway": "Avoid aggressive recruitment manoeuvres with compliance-titrated PEEP in ARDS; use higher PEEP without recruitment if needed, per guidelines."
+    }
+  },
+  "_source_id": "ART",
+  "_source_system": "Respiratory"
+}

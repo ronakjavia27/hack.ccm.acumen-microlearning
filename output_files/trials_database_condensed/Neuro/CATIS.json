@@ -1,0 +1,315 @@
+{
+  "id": "CATIS",
+  "trial_name": "CATIS — Immediate Blood Pressure Reduction in Acute Ischemic Stroke (2014)",
+  "specialty": "Acute Ischemic Stroke",
+  "subtopic": "Blood Pressure Management in Acute Ischemic Stroke",
+  "year": 2014,
+  "journal": "JAMA",
+  "citation": "He J, Zhang Y, Xu T, et al; CATIS Investigators. Effects of Immediate Blood Pressure Reduction on Death and Major Disability in Patients With Acute Ischemic Stroke: The CATIS Randomized Clinical Trial. JAMA. 2014;311(5):479-489.",
+  "doi": "https://doi.org/10.1001/jama.2013.282543",
+  "registration": "Not reported",
+  "trial_type": "RCT — multicenter, single-blind, blinded end-point",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 4071,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In non-thrombolysed acute ischaemic stroke with SBP 140–<220 mm Hg, immediate BP reduction did not improve death or major disability at 14 days or 3 months.",
+  "pico": {
+    "population": "Adults ≥22 years with acute ischaemic stroke confirmed by CT/MRI, randomisation within 48 hours, systolic BP 140 to <220 mm Hg",
+    "intervention": "Immediate discontinuation of pre-stroke antihypertensives, then protocolised antihypertensive treatment targeting SBP reduction 10%–25% in first 24 hours, then <140/<90 mm Hg within 7 days and maintained",
+    "comparison": "Temporary discontinuation of all pre-stroke antihypertensives during hospitalisation, with no antihypertensive treatment unless clinically required outside trial",
+    "outcome": "Death or major disability (modified Rankin Scale 3–6) at 14 days or hospital discharge, whichever came first; also at 3 months"
+  },
+  "keywords": [
+    "acute ischemic stroke",
+    "blood pressure reduction",
+    "antihypertensive therapy",
+    "functional outcome",
+    "modified Rankin Scale"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Elevated BP is common in the first hours–days after acute ischaemic stroke and is observationally associated with both favourable and unfavourable outcomes depending on timing, stroke subtype, and reperfusion status. Prior small trials of early BP modulation were inconclusive.",
+      "knowledge_gap": "Whether early BP reduction improves outcomes compared with temporarily withholding antihypertensives in acute ischaemic stroke.",
+      "hypothesis": "Immediate protocolised antihypertensive treatment would reduce death or major disability compared with temporary discontinuation."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, single-blind, blinded end-point trial",
+      "setting": "26 hospitals in China",
+      "population": {
+        "inclusion": [
+          "Age ≥22 years",
+          "Acute ischaemic stroke confirmed by CT/MRI",
+          "Randomisation within 48 hours of symptom onset",
+          "Systolic BP 140 to <220 mm Hg"
+        ],
+        "exclusion": [
+          "Systolic BP ≥220 mm Hg or diastolic BP ≥120 mm Hg",
+          "Receipt of intravenous thrombolysis",
+          "Major comorbid cardiovascular instability (e.g., acute myocardial infarction/unstable angina, heart failure)",
+          "Deep coma",
+          "Other conditions judged to mandate urgent BP treatment"
+        ]
+      },
+      "intervention": "Discontinuation of pre-stroke antihypertensives then immediate protocolised antihypertensive treatment. Targets: reduce SBP by 10%–25% within first 24 hours; achieve SBP/DBP <140/<90 mm Hg within 7 days and maintain during hospitalisation. Stepwise, centre-protocol using commonly available agents.",
+      "comparison": "Temporary discontinuation of all pre-stroke antihypertensives during hospitalisation, with no antihypertensive treatment unless clinically required outside trial framework.",
+      "blinding": "Treating clinicians unblinded; patients and outcome assessors blinded; outcomes adjudicated by blinded end-point committee.",
+      "sample_size_power": "4000 planned to detect 5% absolute reduction (from 35% to 30%) with 90% power at 5% two-sided significance, allowing ~8% non-adherence/loss.",
+      "primary_outcome": "Death or major disability (mRS 3–6) at 14 days or hospital discharge, whichever came first.",
+      "secondary_outcomes": [
+        "mRS shift (ordinal analysis) at 14 days/discharge",
+        "Death or major disability at 3 months",
+        "Death at 14 days and 3 months",
+        "Recurrent stroke at 3 months",
+        "Systolic blood pressure at various time points"
+      ],
+      "follow_up": "14 days or hospital discharge (whichever came first) and 3 months post-randomisation."
+    },
+    "results": {
+      "headline_bullets": [
+        "Protocolised BP reduction achieved sustained SBP separation of ~8–9 mm Hg in-hospital.",
+        "No difference in primary outcome: 33.6% vs 33.6% (OR 1.00, 95% CI 0.88–1.14, P=.98).",
+        "Neutral at 3 months: 25.2% vs 25.3% (OR 0.99, 95% CI 0.86–1.15, P=.93).",
+        "Subgroup by time to randomisation suggested possible benefit when treatment started ≥24 h after onset (OR 0.73, 95% CI 0.55–0.97, P=.03)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Systolic BP at 24 h, mean (SD), mm Hg",
+          "group_a": "144.7 (15.0)",
+          "group_b": "152.9 (15.9)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-8.1",
+          "ci_95": "-9.1 to -7.2",
+          "p_value": "<.001",
+          "note": "Early physiological separation"
+        },
+        {
+          "outcome": "Systolic BP at day 7, mean (SD), mm Hg",
+          "group_a": "137.3 (11.8)",
+          "group_b": "146.5 (13.6)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-9.3",
+          "ci_95": "-10.1 to -8.4",
+          "p_value": "<.001",
+          "note": "Targeting <140/90 by day 7"
+        },
+        {
+          "outcome": "Systolic BP at day 14, mean (SD), mm Hg",
+          "group_a": "135.2 (10.4)",
+          "group_b": "143.7 (14.0)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-8.6",
+          "ci_95": "-9.7 to -7.4",
+          "p_value": "<.001",
+          "note": "Sustained in-hospital BP separation"
+        },
+        {
+          "outcome": "Primary: death or major disability (mRS 3–6) at 14 days/discharge",
+          "group_a": "683/2038 (33.6%)",
+          "group_b": "681/2033 (33.6%)",
+          "effect_measure": "OR",
+          "effect_value": "1.00",
+          "ci_95": "0.88 to 1.14",
+          "p_value": "0.98",
+          "note": "Primary endpoint neutral"
+        },
+        {
+          "outcome": "mRS shift (odds of 1-unit higher mRS) at 14 days/discharge",
+          "group_a": "—",
+          "group_b": "—",
+          "effect_measure": "OR",
+          "effect_value": "0.98",
+          "ci_95": "0.88 to 1.09",
+          "p_value": "0.70",
+          "note": "Ordinal analysis neutral"
+        },
+        {
+          "outcome": "Death at 14 days/discharge",
+          "group_a": "25/2038 (1.2%)",
+          "group_b": "25/2033 (1.2%)",
+          "effect_measure": "OR",
+          "effect_value": "1.00",
+          "ci_95": "0.57 to 1.74",
+          "p_value": "0.99",
+          "note": "Low early mortality"
+        },
+        {
+          "outcome": "Systolic BP reduction from baseline at 24h, mean (SD), mm Hg",
+          "group_a": "-21.8 (17.7)",
+          "group_b": "-12.7 (16.3)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-9.1",
+          "ci_95": "-10.2 to -8.1",
+          "p_value": "<.001",
+          "note": "Dose achieved"
+        },
+        {
+          "outcome": "Systolic BP at 3 months, mean (SD), mm Hg",
+          "group_a": "139.3 (11.7)",
+          "group_b": "142.2 (2.5)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-2.9",
+          "ci_95": "-3.7 to -2.2",
+          "p_value": null,
+          "note": "Between-group separation narrowed"
+        },
+        {
+          "outcome": "Antihypertensive medication use at 3 months",
+          "group_a": "1680/1988 (84.5%)",
+          "group_b": "1499/1987 (75.4%)",
+          "effect_measure": "OR",
+          "effect_value": "1.78",
+          "ci_95": "1.52 to 2.09",
+          "p_value": null,
+          "note": "More patients on BP therapy at follow-up in intervention arm"
+        },
+        {
+          "outcome": "Death or major disability (mRS 3–6) at 3 months",
+          "group_a": "500/1988 (25.2%)",
+          "group_b": "502/1987 (25.3%)",
+          "effect_measure": "OR",
+          "effect_value": "0.99",
+          "ci_95": "0.86 to 1.15",
+          "p_value": "0.93",
+          "note": "Sustained neutrality"
+        },
+        {
+          "outcome": "Death at 3 months",
+          "group_a": "68/1988 (3.4%)",
+          "group_b": "54/1987 (2.7%)",
+          "effect_measure": "OR",
+          "effect_value": "1.27",
+          "ci_95": "0.88 to 1.82",
+          "p_value": "0.20",
+          "note": "No statistically significant difference"
+        },
+        {
+          "outcome": "Recurrent stroke at 3 months",
+          "group_a": "28/1988 (1.4%)",
+          "group_b": "43/1987 (2.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.65",
+          "ci_95": "0.40 to 1.04",
+          "p_value": "0.07",
+          "note": "Numerical reduction; not statistically significant"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Time from onset to randomisation ≥24 h",
+          "group_a": "108/597 (18.1%)",
+          "group_b": "139/600 (23.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.73",
+          "ci_95": "0.55 to 0.97",
+          "p_interaction": "0.03"
+        }
+      ]
+    },
+    "safety": [],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation, stratified by hospital and pre-stroke antihypertensive use; allocation concealed; baseline characteristics well balanced."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Treating clinicians unblinded; outcome assessors and patients blinded; blinded endpoint adjudication reduces detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "3-month follow-up data available for 1988 intervention and 1987 control (50 and 46 missing, respectively). Missing data relatively low. Primary analysis was ITT."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Intervention achieved sustained BP separation; control contamination: 2.3% of control participants did not discontinue home antihypertensives."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: entry SBP 166.7±17.3 vs 165.6±16.5 mm Hg; NIHSS median 4.0 (IQR 2.0–7.0) vs 4.0 (3.0–8.0); age 62.0 vs 62.2 years; 64.4% vs 65.3% men."
+        }
+      ],
+      "verdict": "Moderate-to-strong internal validity: central randomisation, balanced baseline, blinded endpoint, sustained BP separation, but unblinded treatment delivery and minor control contamination could influence co-interventions."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents hospital-treated, predominantly mild-to-moderate acute ischaemic stroke with elevated BP (SBP 140–<220) in a Chinese multicentre setting. Excludes thrombolysis, extreme hypertension, major cardiovascular instability, deep coma."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to non-reperfused acute ischaemic stroke; less applicable to thrombolysis/thrombectomy pathways. Background care (e.g., anticoagulant/heparin use) may differ from other health systems."
+        }
+      ],
+      "verdict": "Moderate generalisability: informs early BP lowering vs withholding in non-thrombolysed acute ischaemic stroke with SBP 140–<220; extrapolation to reperfusion-treated, hyperacute, or very severe cohorts should be cautious."
+    },
+    "strengths": [
+      "Large pragmatic multicentre RCT (n=4071) with clinically important endpoints and high follow-up completeness",
+      "Clear and sustained BP separation between groups (~8–9 mm Hg in-hospital SBP differences)",
+      "Blinded outcome assessment and adjudication for functional endpoints",
+      "Explicit comparison of an 'active BP-lowering strategy' versus 'temporary discontinuation' of antihypertensive drugs, addressing a common real-world decision"
+    ],
+    "limitations": [
+      "Exclusion of thrombolysis limits relevance to modern reperfusion-heavy pathways",
+      "Mean onset-to-randomisation time ~15 hours means the trial does not answer hyperacute (prehospital/first hours) BP-lowering questions",
+      "Open-label treatment delivery may influence co-interventions despite blinded endpoints",
+      "Stroke severity was generally mild-to-moderate (NIHSS median 4), which may reduce ability to detect effects in severe stroke phenotypes"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, moderate-to-strong internal validity trial that showed no benefit of early BP reduction in non-reperfused mild-to-moderate acute ischaemic stroke, despite sustained BP separation. The neutral result and exclusion of thrombolysis limit generalisability to reperfusion settings, but the findings support de-escalating routine early antihypertensive intensification in similar patients.",
+      "strengths": [
+        "Large sample size, robust BP separation, blinded endpoint adjudication, pragmatic design"
+      ],
+      "weaknesses": [
+        "Unblinded clinicians, exclusion of thrombolysis, mild stroke severity, limited generalisability to hyperacute windows"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "CATIS demonstrated that, in non-thrombolysed acute ischaemic stroke within 48 hours and SBP 140–<220 mm Hg, immediate protocolised BP reduction achieves robust physiological separation but does not improve death or functional outcome at either early (14 days/discharge) or standard (3 months) timepoints. The trial’s main value is in de-escalating routine early antihypertensive intensification in this population while sharpening questions about timing and context.",
+    "clinical_bottom_line": {
+      "verdict": "Does not change practice for non-reperfused acute ischaemic stroke: routine early BP reduction to <140/90 does not improve outcomes; temporary withholding of home antihypertensives is safe.",
+      "applies_to": "Hospital-treated, non-thrombolysed acute ischaemic stroke patients with SBP 140–<220 mm Hg.",
+      "does_not_mean": "That BP lowering is harmful or that severe hypertension should not be treated; the trial excluded severe hypertension and thrombolysis.",
+      "implementation_caveats": [
+        "Not applicable to patients receiving thrombolysis or thrombectomy",
+        "Timing matters: potential benefit if treatment started ≥24 hours after onset (hypothesis-generating)",
+        "Stroke severity was mild-to-moderate; effects in severe stroke unknown"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Collateral perfusion concerns",
+        "notes": "Early BP reduction may compromise penumbral perfusion; CATIS evaluated a mean 15-hour window, not hyperacute."
+      },
+      {
+        "topic": "Consistency with systematic reviews",
+        "notes": "Systematic reviews of BP-lowering trials in early ischaemic stroke also show no clear functional outcome improvement, supporting CATIS neutrality."
+      },
+      {
+        "topic": "Guideline alignment",
+        "notes": "Post-CATIS guidelines recommend against routine BP lowering in acute ischaemic stroke except severe hypertension or thrombolysis/thrombectomy settings, consistent with CATIS findings."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does hyperacute BP lowering (first hours) improve outcomes in acute ischaemic stroke?",
+      "What is the optimal BP management in severe stroke (NIHSS >15)?",
+      "Does BP management differ in patients receiving thrombolysis or thrombectomy?",
+      "Is the time-dependent effect (≥24 hours) real and replicable?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=4071",
+        "Primary outcome 14d: 33.6% vs 33.6% (OR 1.00)",
+        "3-month death/disability: 25.2% vs 25.3% (OR 0.99)",
+        "SBP difference at 24h: 144.7 vs 152.9 mm Hg (mean difference -8.1)",
+        "Time-to-randomisation subgroup ≥24h: OR 0.73 (95% CI 0.55–0.97)"
+      ],
+      "one_line_takeaway": "In non-thrombolysed acute ischaemic stroke with SBP 140–<220 mm Hg, early BP reduction does not improve functional outcomes; temporary withholding of antihypertensives is safe."
+    }
+  },
+  "_source_id": "CATIS",
+  "_source_system": "Neuro"
+}

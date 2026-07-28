@@ -1,0 +1,276 @@
+{
+  "id": "Keays",
+  "trial_name": "Keays — Intravenous Acetylcysteine in Paracetamol-induced Fulminant Hepatic Failure (1991)",
+  "specialty": "Acute Liver Failure",
+  "subtopic": "N-Acetylcysteine — Late Administration",
+  "year": 1991,
+  "journal": "BMJ",
+  "citation": "Keays R, Harrison PM, Wendon JA, Forbes A, Gove C, Alexander GJM, Williams R. Intravenous acetylcysteine in paracetamol induced fulminant hepatic failure: a prospective controlled trial. BMJ. 1991;303:1026-9.",
+  "doi": "",
+  "registration": "Not applicable",
+  "trial_type": "RCT — single-centre, prospective, controlled, open-label",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 50,
+  "result_category": "Positive",
+  "one_liner": "In established paracetamol-induced fulminant hepatic failure, late IV acetylcysteine improved survival (48% vs 20%) and reduced major complications, despite no measurable hepatic synthetic improvement.",
+  "pico": {
+    "population": "50 consecutive patients aged 16–60 with fulminant hepatic failure after paracetamol overdose, not previously treated with acetylcysteine, admitted to a specialist liver failure unit.",
+    "intervention": "IV acetylcysteine: 150 mg/kg load over 15 min, then 50 mg/kg over 4 h, then 100 mg/kg over 16 h, then maintenance 150 mg/kg/24 h until recovery from encephalopathy or death.",
+    "comparison": "Equivalent volume of 5% dextrose (placebo) plus the same conventional intensive liver care (invasive monitoring, inotropes, RRT, mannitol).",
+    "outcome": "Survival to end of trial (censor at 21 days)."
+  },
+  "keywords": [
+    "acetylcysteine",
+    "paracetamol overdose",
+    "fulminant hepatic failure",
+    "late administration",
+    "rescue therapy",
+    "haemodynamics",
+    "cerebral oedema"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "N-acetylcysteine (NAC) was established as highly effective when given early after paracetamol overdose via glutathione repletion, but late initiation (>~15 hours) was widely viewed as ineffective for preventing severe liver injury.",
+      "knowledge_gap": "Retrospective data from the same centre suggested improved outcomes when NAC was started late (10–36 hours) despite no improvement in routine liver function tests, creating uncertainty about benefit in established fulminant hepatic failure.",
+      "hypothesis": "Late intravenous NAC in patients with established paracetamol-induced fulminant hepatic failure would improve survival and reduce major complications compared to placebo."
+    },
+    "methods": {
+      "design": "Prospective, parallel-group, open-label, randomised controlled trial.",
+      "setting": "Single specialist liver failure unit (Institute of Liver Studies, King’s College Hospital, London). All patients received conventional intensive liver care including pulmonary artery catheter, arterial line, colloid for filling pressures, dopamine for oliguria, RRT, intubation/ventilation for coma, mannitol for cerebral oedema, and inotropes for refractory hypotension.",
+      "population": {
+        "inclusion": [
+          "Consecutive patients aged 16–60 with fulminant hepatic failure after paracetamol overdose",
+          "No prior acetylcysteine administration"
+        ],
+        "exclusion": [
+          "Age outside 16–60 years",
+          "Prior acetylcysteine therapy"
+        ]
+      },
+      "intervention": "IV acetylcysteine: 150 mg/kg in 200 mL 5% dextrose over 15 min, then 50 mg/kg in 500 mL 5% dextrose over 4 h, then 100 mg/kg in 1 L 5% dextrose over 16 h. Maintenance infusion 150 mg/kg/24 h in 1 L 5% dextrose continued until recovery from encephalopathy or death.",
+      "comparison": "Equivalent volume of 5% dextrose without acetylcysteine, plus same conventional intensive liver care.",
+      "blinding": "Unblinded; NAC has a distinctive pungent aroma that prevents blinding.",
+      "sample_size_power": "Planned 25 per group to detect a 40% absolute survival difference with 90% power at α=0.05.",
+      "primary_outcome": "Survival (censored at 21 days).",
+      "secondary_outcomes": [
+        "Cerebral oedema (clinical signs)",
+        "Hypotension requiring inotropic support",
+        "Renal replacement therapy requirement",
+        "Prothrombin time trajectory (days 1–4)",
+        "Encephalopathy grade trajectory (days 1–4)"
+      ],
+      "follow_up": "Up to 21 days; no further deaths occurred after day 16."
+    },
+    "results": {
+      "headline_bullets": [
+        "Survival: 12/25 (48%) NAC vs 5/25 (20%) placebo; p=0.037, ARD 28% (95% CI 3–53%).",
+        "Cerebral oedema: 40% vs 68% (p=0.047); inotrope requirement: 48% vs 80% (p=0.018).",
+        "Prothrombin time and encephalopathy grade did not differ between groups through day 4.",
+        "No hypersensitivity reactions to acetylcysteine were observed."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival (primary)",
+          "group_a": "12/25 (48%)",
+          "group_b": "5/25 (20%)",
+          "effect_measure": "ARD",
+          "effect_value": "28%",
+          "ci_95": "3% to 53%",
+          "p_value": "0.037",
+          "note": "2 NAC-arm patients underwent liver transplantation and were analysed as non-survivors (assumed death)."
+        },
+        {
+          "outcome": "Cerebral oedema (clinical signs)",
+          "group_a": "10/25 (40%)",
+          "group_b": "17/25 (68%)",
+          "effect_measure": "ARD",
+          "effect_value": "−28%",
+          "ci_95": "2% to 54%",
+          "p_value": "0.047",
+          "note": "Diagnosed by systemic hypertension + dilated pupils; treated with mannitol, hyperventilation, thiopentone."
+        },
+        {
+          "outcome": "Hypotension requiring inotropes",
+          "group_a": "12/25 (48%)",
+          "group_b": "20/25 (80%)",
+          "effect_measure": "ARD",
+          "effect_value": "−32%",
+          "ci_95": "7% to 57%",
+          "p_value": "0.018",
+          "note": "Adrenaline or noradrenaline used for mean arterial pressure support."
+        },
+        {
+          "outcome": "Renal replacement therapy (any)",
+          "group_a": "10/25 (40%)",
+          "group_b": "15/25 (60%)",
+          "effect_measure": "ARD",
+          "effect_value": "−20%",
+          "ci_95": "7% higher to 47% lower",
+          "p_value": "NS",
+          "note": "By intermittent haemodialysis or continuous arteriovenous haemofiltration."
+        },
+        {
+          "outcome": "Time to death (non-survivors)",
+          "group_a": "Not reported separately",
+          "group_b": "Not reported separately",
+          "effect_measure": "Log-rank",
+          "effect_value": "χ²=2.4",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": "Time to death similar between groups."
+        },
+        {
+          "outcome": "Prothrombin time at day 4 (s, median, range)",
+          "group_a": "28 (16–125)",
+          "group_b": "46 (20–340)",
+          "effect_measure": "None",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": "No significant difference on any day 1–4."
+        },
+        {
+          "outcome": "Encephalopathy grade at day 4 (median, range)",
+          "group_a": "2 (0–4)",
+          "group_b": "2 (0–4)",
+          "effect_measure": "None",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": "No significant difference on any day 1–4."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No hypersensitivity reactions to acetylcysteine reported.",
+      "No other adverse events attributed to NAC infusion."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Allocation by opening one of 50 identical sealed envelopes on admission; no details on sequential numbering or opaque safeguards."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched: age (33 vs 34 years), sex (M/F 12/13 vs 9/16), time from overdose to presentation (28 vs 32 h), admission to liver unit (53 vs 56 h), proportion with poor prognostic criteria (17/25 vs 18/25), day-4 prothrombin time rise criterion (13 vs 13)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label by necessity; co-interventions protocolised, but unblinded care could influence thresholds for inotrope initiation and complication assessment."
+        },
+        {
+          "domain": "Detection bias",
+          "notes": "Survival is objective; cerebral oedema defined only by clinical signs (hypertension, dilated pupils) without ICP monitoring or imaging, introducing potential ascertainment bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Treatment separation clear; NAC dosing followed standard early-overdose regimen then continued at 150 mg/kg/24 h until recovery/death; controls received dextrose. No crossover reported."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "All 50 patients accounted for; 2 NAC-arm patients underwent liver transplantation and were analysed as deaths (conservative assumption, not observed outcome). Follow-up essentially complete to 21 days."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "A priori power calculation targeted a very large 40% survival difference; small sample yields wide confidence intervals; multiple secondary outcomes without multiplicity adjustment."
+        }
+      ],
+      "verdict": "Moderate: randomisation and baseline balance support causal inference for survival, but open-label design, clinically adjudicated secondary outcomes, small sample size, and analytic handling of transplantation limit certainty and precision."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Consecutive patients aged 16–60 with established fulminant hepatic failure, not previously NAC-treated; applicable to late presenters and settings where early NAC is not universal."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Tertiary liver failure unit with invasive haemodynamic monitoring and transplant capability; outcomes may differ in non-specialist centres. Modern practice routinely gives early NAC, so this trial’s niche is late presenters with established liver failure."
+        }
+      ],
+      "verdict": "Moderate: findings generalisable to late-presenting paracetamol toxicity with established fulminant hepatic failure in advanced-care settings; generalisability to early-treated overdoses is limited."
+    },
+    "strengths": [
+      "Prospective, randomised, controlled design in a highly selected high-mortality phenotype.",
+      "Pragmatic intervention using a readily available drug with a clear infusion strategy continued until recovery/death.",
+      "Consecutive enrolment minimises selection bias.",
+      "Primary endpoint (survival) is clinically meaningful and objective."
+    ],
+    "limitations": [
+      "Small, single-centre trial (n=50).",
+      "Unblinded intervention, with potential for performance and detection bias in secondary outcomes.",
+      "Cerebral oedema diagnosed clinically, not by ICP monitoring or imaging.",
+      "Limited detail on allocation concealment.",
+      "Multiple secondary outcomes with borderline p-values; no adjustment for multiplicity.",
+      "Two NAC-arm patients underwent transplantation and were analysed as deaths, which is conservative but not an observed counterfactual."
+    ],
+    "critical_appraisal": {
+      "summary": "A small but well-conducted (for its era) open-label RCT showing a large absolute survival benefit of late NAC in paracetamol-induced fulminant hepatic failure; confidence in the effect size is limited by the small sample size, open-label design, and clinically adjudicated secondary endpoints.",
+      "strengths": [
+        "Randomised, with good baseline balance and objective primary endpoint.",
+        "Clinically meaningful outcome in a high-risk population.",
+        "Pragmatic, replicable dosing protocol."
+      ],
+      "weaknesses": [
+        "Single-centre, small sample, unblinded.",
+        "Secondary outcomes susceptible to ascertainment bias.",
+        "Transplantation events handled by assumption."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Intravenous acetylcysteine improves survival and reduces major complications in patients with established paracetamol-induced fulminant hepatic failure, despite no measurable improvement in conventional liver function indices.",
+    "clinical_bottom_line": {
+      "verdict": "Late IV NAC should be continued (or initiated) in patients with paracetamol-induced fulminant hepatic failure, as it likely improves survival and reduces life-threatening complications; its role extends beyond the traditional early antidote window.",
+      "applies_to": "Late-presenting paracetamol overdose patients with established encephalopathy and coagulopathy, especially in ICUs with advanced organ support capability.",
+      "does_not_mean": "That NAC accelerates hepatic synthetic recovery — the benefit appears extra-hepatic (haemodynamic, microcirculatory).",
+      "implementation_caveats": [
+        "Dose and duration beyond the standard 20-hour regimen are extrapolated from this trial (maintenance 150 mg/kg/day).",
+        "NAC hypersensitivity may be less frequent in critically ill patients but should be monitored.",
+        "The trial’s small size and open-label nature means the magnitude of benefit may be overestimated."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Strength of evidence for late NAC in paracetamol ALF",
+        "notes": "The Keays trial remains small, single-centre, and unblinded; replication in paracetamol-induced ALF is limited because early NAC has become near-universal."
+      },
+      {
+        "topic": "Guideline alignment",
+        "notes": "Modern hepatology guidelines and position papers generally endorse NAC in paracetamol-associated acute liver failure (including late presenters), consistent with the trial’s premise."
+      },
+      {
+        "topic": "Evidence in non-paracetamol ALF",
+        "notes": "Randomised evidence in non-paracetamol acute liver failure supports NAC as a late adjunct (improved transplant-free survival in early coma grades), suggesting broader biological plausibility."
+      },
+      {
+        "topic": "Systematic review limitations",
+        "notes": "Systematic reviews highlight heterogeneity in populations, timing, and outcomes; high-grade randomised evidence in established fulminant hepatic failure remains sparse."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "NAC in non-paracetamol ALF (multi-centre RCT, no specific acronym given)",
+        "relation": "Demonstrated improved transplant-free survival with NAC in early coma grades, supporting the concept that NAC’s benefit may extend beyond antidotal glutathione repletion."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal dose and duration of NAC in fulminant hepatic failure?",
+      "Does late NAC benefit all severities of encephalopathy equally?",
+      "Can the haemodynamic benefit be replicated in non-paracetamol aetiologies?",
+      "Is the survival benefit truly as large as 28% absolute, given the wide confidence interval and unblinded design?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=50 (25 per group), single-centre",
+        "Survival 48% vs 20%, ARD 28% (95% CI 3–53%)",
+        "Cerebral oedema 40% vs 68%, inotropes 48% vs 80%"
+      ],
+      "one_line_takeaway": "In established paracetamol-induced fulminant hepatic failure, late IV acetylcysteine likely improves survival and haemodynamics without accelerating hepatic recovery — it is not just an early antidote."
+    }
+  },
+  "_source_id": "Keays",
+  "_source_system": "Liver"
+}

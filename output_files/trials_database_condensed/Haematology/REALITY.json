@@ -1,0 +1,330 @@
+{
+  "id": "REALITY",
+  "trial_name": "REALITY — Restrictive vs Liberal Transfusion Strategy in AMI and Anemia (2021)",
+  "specialty": "Haematology",
+  "subtopic": "Blood Product Transfusion",
+  "year": 2021,
+  "journal": "JAMA",
+  "citation": "Ducrocq G, Gonzalez-Juanatey JR, Puymirat E, Lemesle G, Cachanado M, Durand-Zaleski I, et al; REALITY Investigators. Effect of a Restrictive vs Liberal Blood Transfusion Strategy on Major Cardiovascular Events Among Patients With Acute Myocardial Infarction and Anemia: The REALITY Randomized Clinical Trial. JAMA. 2021;325(6):552-560.",
+  "doi": "https://doi.org/10.1001/jama.2021.0135",
+  "registration": "",
+  "trial_type": "Multicentre, open-label, randomised, non-inferiority trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 668,
+  "result_category": "Neutral",
+  "one_liner": "In stable AMI patients with anaemia, a restrictive transfusion strategy (trigger ≤8 g/dL) was non-inferior to a liberal strategy (trigger ≤10 g/dL) for 30‑day MACE, while markedly reducing transfusion use.",
+  "pico": {
+    "population": "Adults admitted with acute myocardial infarction (STEMI or NSTEMI) and haemoglobin between 7 and 10 g/dL, excluding cardiogenic shock.",
+    "intervention": "Restrictive red‑cell transfusion strategy: transfuse 1 unit packed red cells when haemoglobin ≤8 g/dL; target haemoglobin 8–10 g/dL. Leucoreduced product, single unit at a time with reassessment.",
+    "comparison": "Liberal strategy: transfuse 1 unit packed red cells when haemoglobin ≤10 g/dL; target haemoglobin ≥11 g/dL. Leucoreduced product, single unit at a time with reassessment.",
+    "outcome": "Primary outcome: 30‑day major adverse cardiovascular events (MACE – all‑cause death, recurrent MI, stroke, emergency revascularisation)."
+  },
+  "keywords": [
+    "transfusion",
+    "myocardial infarction",
+    "anaemia",
+    "restrictive",
+    "liberal",
+    "RBC transfusion"
+  ],
+  "related_trials": [
+    "MINT"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Anaemia is common in AMI and associated with higher short‑ and long‑term adverse outcomes. Transfusion could improve oxygen delivery during ischaemia, but has plausible harms (volume overload, inflammatory and prothrombotic effects, transfusion‑related lung injury) and confounding by indication limits inference from observational data.",
+      "knowledge_gap": "Prior randomised evidence in AMI/active coronary disease was limited to small trials with imprecise estimates and uncertainty about the optimal haemoglobin trigger.",
+      "hypothesis": "In patients with AMI and anaemia (haemoglobin 7–10 g/dL), a restrictive red‑cell transfusion strategy is non‑inferior to a liberal strategy for 30‑day MACE."
+    },
+    "methods": {
+      "design": "Multicentre, open‑label, randomised, non‑inferiority trial at 35 hospitals in France and Spain; central web‑based randomisation, stratified by centre, variable block sizes (2–6).",
+      "setting": "35 hospitals (France and Spain); acute cardiac care/ward; ICU admission occurred in a minority (secondary outcome). Enrolment June 2016–? (dates not fully specified); follow‑up completed by 2020.",
+      "population": {
+        "inclusion": [
+          "Adults admitted with AMI (STEMI or NSTEMI) and haemoglobin between 7 and 10 g/dL at any time during hospitalisation."
+        ],
+        "exclusion": [
+          "Cardiogenic shock (systolic blood pressure <90 mm Hg with signs of low cardiac output or requiring inotropes)",
+          "MI related to PCI or CABG",
+          "Transfusion within 30 days",
+          "Known haematological disease",
+          "Major or life‑threatening bleeding at randomisation"
+        ]
+      },
+      "intervention": "Restrictive strategy: 1 unit packed red cells when Hb ≤8 g/dL; target after transfusion: stop when Hb ≥8 g/dL and ≤10 g/dL. Leucoreduced packed red cells, 1 unit at a time, haemoglobin reassessed after each unit.",
+      "comparison": "Liberal strategy: 1 unit packed red cells when Hb ≤10 g/dL; target after transfusion: stop when Hb ≥11 g/dL. Same product unit‑by‑unit protocol.",
+      "blinding": "Open‑label to clinicians and patients; all components of primary end point and acute heart failure adjudicated by a blinded critical events committee.",
+      "sample_size_power": "300 per group required for non‑inferiority (1‑sided 97.5% CI, margin RR 1.25, 80% power); increased to 630 to allow 5% major protocol violations; 668 randomised.",
+      "primary_outcome": "30‑day MACE (all‑cause death, recurrent MI, stroke, emergency revascularisation).",
+      "secondary_outcomes": [
+        "All‑cause death at 30 days",
+        "Recurrent MI at 30 days",
+        "Stroke at 30 days",
+        "Emergency revascularisation at 30 days",
+        "Acute heart failure at 30 days",
+        "ICU admission at 30 days",
+        "Acute lung injury/ARDS at 30 days",
+        "Acute kidney failure at 30 days",
+        "Any red‑cell transfusion during hospitalisation",
+        "Total units transfused"
+      ],
+      "follow_up": "30 days for primary endpoint; longer‑term follow‑up (1‑year MACE) reported separately."
+    },
+    "results": {
+      "headline_bullets": [
+        "Restrictive transfusion substantially reduced exposure (35.7% vs 99.7%) and total RBC units (342 vs 758), while meeting non‑inferiority for 30‑day MACE.",
+        "Primary MACE (as‑randomised): 11.1% restrictive vs 14.2% liberal (RR 0.78, 1‑sided 97.5% CI 0.00 to 1.17, non‑inferiority margin RR 1.25).",
+        "Discharge haemoglobin: 9.7 ± 1.0 vs 11.1 ± 1.4 g/dL (difference –1.4; 95% CI –1.6 to –1.2).",
+        "Safety outcomes were generally similar, but acute lung injury/ARDS was more frequent in the liberal group (0.3% vs 2.2%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary MACE (as‑randomised, 30 days)",
+          "group_a": "38/342 (11.1%)",
+          "group_b": "46/324 (14.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.78",
+          "ci_95": "1‑sided 97.5% CI 0.00 to 1.17",
+          "p_value": "0.21 (log‑rank, non‑inferiority)",
+          "note": "Risk difference –3.1% (95% CI –8.4 to 2.3); Non‑inferiority margin RR 1.25"
+        },
+        {
+          "outcome": "Primary MACE (as‑treated, 30 days)",
+          "group_a": "36/327 (11.0%)",
+          "group_b": "45/322 (14.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.79",
+          "ci_95": "1‑sided 97.5% CI 0.00 to 1.19",
+          "p_value": "0.24 (log‑rank)",
+          "note": "Risk difference –3.0% (95% CI –8.4 to 2.4)"
+        },
+        {
+          "outcome": "All‑cause death (30 days)",
+          "group_a": "19/342 (5.6%)",
+          "group_b": "25/324 (7.7%)",
+          "effect_measure": "Not reported",
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "No formal statistical testing for components"
+        },
+        {
+          "outcome": "Recurrent MI (30 days)",
+          "group_a": "7/342 (2.1%)",
+          "group_b": "10/324 (3.1%)",
+          "effect_measure": "Not reported",
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "No formal statistical testing"
+        },
+        {
+          "outcome": "Stroke (30 days)",
+          "group_a": "2/342 (0.6%)",
+          "group_b": "2/324 (0.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "No formal statistical testing"
+        },
+        {
+          "outcome": "Emergency revascularisation (30 days)",
+          "group_a": "5/342 (1.5%)",
+          "group_b": "6/324 (1.9%)",
+          "effect_measure": "Not reported",
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "No formal statistical testing"
+        },
+        {
+          "outcome": "Any red‑cell transfusion during hospitalisation",
+          "group_a": "122/342 (35.7%)",
+          "group_b": "323/324 (99.7%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "Total units transfused: 342 vs 758"
+        },
+        {
+          "outcome": "Haemoglobin at discharge (g/dL)",
+          "group_a": "9.7 ± 1.0",
+          "group_b": "11.1 ± 1.4",
+          "effect_measure": "Mean difference",
+          "effect_value": "–1.4",
+          "ci_95": "95% CI –1.6 to –1.2",
+          "p_value": null,
+          "note": null
+        },
+        {
+          "outcome": "Acute lung injury/ARDS (30 days)",
+          "group_a": "1/342 (0.3%)",
+          "group_b": "7/324 (2.2%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "Descriptive safety; not adjusted for multiplicity"
+        },
+        {
+          "outcome": "Acute kidney failure (30 days)",
+          "group_a": "33/342 (9.7%)",
+          "group_b": "23/324 (7.1%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "Descriptive safety; not adjusted for multiplicity"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Baseline heart failure",
+          "group_a": "Not reported (restrictive)",
+          "group_b": "Not reported (liberal)",
+          "effect_measure": "All‑cause mortality (30 days)",
+          "effect_value": "More deaths due to heart failure in liberal group (4 vs 11)",
+          "ci_95": null,
+          "p_interaction": "0.009 (P for interaction)"
+        }
+      ]
+    },
+    "safety": [
+      "Acute lung injury/ARDS: restrictive 1/342 (0.3%) vs liberal 7/324 (2.2%)",
+      "Acute kidney failure: restrictive 33/342 (9.7%) vs liberal 23/324 (7.1%)",
+      "Other adverse events not systematically tested for difference; these are descriptive only."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised web‑based randomisation; stratified by centre; variable block sizes (2–6). Allocation concealment likely adequate at enrolment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open‑label design introduces potential for performance bias; primary end point components and acute heart failure adjudicated by a blinded critical events committee, reducing detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "668 randomised; 2 excluded (lost consent, withdrawal); 666 analysed as‑randomised with complete 30‑day follow‑up for primary endpoint. As‑treated analysis also performed and required for non‑inferiority."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High adherence: restrictive 35.7% transfused vs liberal 99.7%. Some protocol deviations: 13/342 restrictive transfused when Hb >8 g/dL; 1/324 liberal did not receive transfusion."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly comparable; minor imbalance in active bleeding at admission (10.5% vs 15.1%)."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Non‑inferiority required concordant as‑randomised and as‑treated analyses; prespecified superiority testing if non‑inferiority met but not supported by data (log‑rank P=0.21). Prespecified random‑effects sensitivity analysis yielded same point estimate."
+        }
+      ],
+      "verdict": "Moderate to strong internal validity: robust randomisation and follow‑up, clear biological separation, but open‑label delivery and a per‑protocol co‑primary framework introduce potential bias typical of transfusion‑threshold trials."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Older AMI population (median age 77), predominantly NSTEMI, ~65% with creatinine clearance <60 mL/min; excludes cardiogenic shock, major bleeding, post‑procedural MI, recent transfusion, known haematological disease."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Pragmatic triggers (8 vs 10 g/dL) in high‑income European centres; leucoreduced RBCs; liberal arm highly protocolised (99.7% transfused) may differ from contemporary practice."
+        }
+      ],
+      "verdict": "Moderate generalisability to haemodynamically stable AMI patients with Hb 7–10 g/dL in high‑income settings; limited for shock, massive bleeding, or resource‑limited contexts."
+    },
+    "strengths": [
+      "Pragmatic inclusion of STEMI/NSTEMI with clinically relevant anaemia",
+      "Multicentre randomised design",
+      "Near‑complete follow‑up (666/668 analysed)",
+      "Clear protocol separation (transfusion exposure and achieved haemoglobin)",
+      "Blinded adjudication of primary end point components"
+    ],
+    "limitations": [
+      "Open‑label design",
+      "Non‑inferiority margin choice (RR 1.25) and one‑sided CI framework",
+      "Variable timing of enrolment during hospitalisation",
+      "Limited power for rare harms and for superiority",
+      "No screening log reported – selection processes cannot be fully evaluated",
+      "Geographically limited to two European countries"
+    ],
+    "critical_appraisal": {
+      "summary": "REALITY is a well‑conducted non‑inferiority trial with clear biological separation; the restrictive strategy appears safe within the trial’s framework, but open‑label design and the non‑inferiority margin warrant caution, especially in light of longer‑term follow‑up and larger subsequent trial data (MINT).",
+      "strengths": [
+        "High internal validity through central randomisation, near‑complete follow‑up, and blinded endpoint adjudication",
+        "Clear separation of the intervention confirmed by transfusion rates and discharge haemoglobin"
+      ],
+      "weaknesses": [
+        "Open‑label design introduces potential for differential co‑intervention",
+        "Non‑inferiority framework allows a potentially clinically important increase in events",
+        "Single geography and underpowered for safety/superiority"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In stable AMI patients with haemoglobin 7–10 g/dL, a restrictive transfusion strategy (trigger ≤8 g/dL) was non‑inferior to a liberal strategy (trigger ≤10 g/dL) for 30‑day MACE, while substantially reducing transfusion exposure.",
+    "clinical_bottom_line": {
+      "verdict": "In stable AMI patients with anaemia, a restrictive transfusion strategy reduces transfusion without significantly increasing 30‑day MACE in a non‑inferiority framework, but uncertainty about longer‑term outcomes and high‑risk subgroups persists. Individualise for ongoing ischaemia or heart failure.",
+      "applies_to": "Haemodynamically stable AMI patients (STEMI/NSTEMI) with Hb 7–10 g/dL, without cardiogenic shock or major bleeding.",
+      "does_not_mean": "This trial does not prove restrictive transfusion is superior or equally safe in all AMI patients; it only shows non‑inferiority within a pre‑specified margin, and later trials (MINT) suggest potential harm.",
+      "implementation_caveats": [
+        "Consider individual risk factors (ongoing ischaemia, heart failure, haemodynamic instability) when choosing threshold",
+        "Be aware that REALITY’s 1‑year follow‑up and MINT trial suggest possible late harm with restrictive strategy",
+        "Current AABB guidelines (conditional, low certainty) recommend a liberal approach in AMI, so practice may not change uniformly"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Non‑inferiority margin",
+        "notes": "The selected margin (RR 1.25) permits a potentially clinically important increase in events even if non‑inferiority is declared; this generated editorial discussion."
+      },
+      {
+        "topic": "Durability beyond 30 days",
+        "notes": "REALITY’s prespecified longer‑term report found numerically more 1‑year MACE with restrictive strategy (111 vs 92; HR 1.16, 95% CI 0.88–1.53), raising concern about late hazards."
+      },
+      {
+        "topic": "Comparison with MINT",
+        "notes": "The larger MINT trial (n=3504) found a non‑significant trend toward increased death/MI with restrictive transfusion (RR 1.15, 95% CI 0.99–1.34; P=0.07), directly contrasting with REALITY’s non‑inferiority and suggesting possible harm not detected in the smaller trial."
+      },
+      {
+        "topic": "Heart failure as effect modifier",
+        "notes": "A prespecified subgroup analysis suggested higher all‑cause mortality with the liberal strategy in patients with baseline heart failure (Pinteraction=0.009), driven by more heart‑failure deaths (4 vs 11), but numbers are small and the finding is hypothesis‑generating."
+      },
+      {
+        "topic": "Guideline discordance",
+        "notes": "AABB international guidelines (2023) recommend a liberal strategy (maintain Hb ~10 g/dL) in AMI (conditional, low certainty), contrasting with REALITY’s non‑inferiority result and contributing to ongoing equipoise."
+      },
+      {
+        "topic": "Meta‑analysis",
+        "notes": "A patient‑level meta‑analysis of transfusion‑strategy trials in MI has been published, highlighting the need for synthesis across heterogeneous trial designs."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "MINT",
+        "relation": "Larger RCT (n=3504) in AMI comparing restrictive vs liberal transfusion; showed a trend toward increased death/MI at 30 days with restrictive (RR 1.15, 95% CI 0.99–1.34; P=0.07). Its findings challenge REALITY’s non‑inferiority conclusion and suggest potential harm not detected in the smaller trial."
+      }
+    ],
+    "unresolved_questions": [
+      "Is a restrictive transfusion strategy safe in AMI patients with ongoing ischaemia or heart failure?",
+      "What is the optimal haemoglobin trigger when considering longer‑term outcomes?",
+      "How to reconcile REALITY’s 30‑day non‑inferiority with MINT’s trend toward harm and current guideline recommendations?",
+      "Do different transfusion triggers modify risk in patients with active bleeding or renal impairment?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=668 (666 analysed)",
+        "30‑day MACE: 11.1% restrictive vs 14.2% liberal (RR 0.78, non‑inferior)",
+        "Transfusion rate: 35.7% vs 99.7%",
+        "Discharge Hb: 9.7 vs 11.1 g/dL"
+      ],
+      "one_line_takeaway": "In stable AMI with anaemia, restrictive transfusion saves blood and is non‑inferior for 30‑day MACE, but uncertainty remains from larger trials and guidelines."
+    }
+  },
+  "_source_id": "REALITY",
+  "_source_system": "Haematology"
+}

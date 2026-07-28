@@ -1,0 +1,301 @@
+{
+  "id": "Renal_Dose_Dopamine",
+  "trial_name": "Low-Dose Dopamine in Early Renal Dysfunction (ANZICS CTG, 2000)",
+  "specialty": "Critical Care",
+  "subtopic": "Acute Kidney Injury",
+  "year": 2000,
+  "journal": "Lancet",
+  "citation": "Bellomo R, Chapman M, Finfer S, Hickling K, Myburgh J; Australian and New Zealand Intensive Care Society Clinical Trials Group. Low-dose dopamine in patients with early renal dysfunction: a placebo-controlled randomised trial. Lancet. 2000;356:2139-2143.",
+  "doi": "10.1016/s0140-6736(00)03495-4",
+  "registration": "",
+  "trial_type": "RCT — multicentre, double-blind, placebo-controlled",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 328,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU patients with SIRS and early renal dysfunction, low-dose dopamine (2 µg/kg/min) did not reduce peak serum creatinine, need for renal replacement therapy, or mortality compared with placebo.",
+  "pico": {
+    "population": "Adults in ICU with ≥2 SIRS criteria and early renal dysfunction (oliguria or rising creatinine)",
+    "intervention": "Continuous IV dopamine 2 µg/kg/min",
+    "comparison": "Placebo infusion",
+    "outcome": "Peak serum creatinine during infusion (primary); renal replacement therapy, mortality, etc."
+  },
+  "keywords": [
+    "low-dose dopamine",
+    "renal-dose dopamine",
+    "acute kidney injury",
+    "SIRS",
+    "critical care",
+    "RCT"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Renal-dose dopamine (1–3 µg/kg/min) was widely used in critical care to increase renal blood flow, augment urine output, and prevent progression from early renal dysfunction to acute renal failure.",
+      "knowledge_gap": "No definitive blinded RCT had tested whether low-dose dopamine improved clinically important renal outcomes in the target population.",
+      "hypothesis": "Low-dose dopamine would reduce biochemical worsening of renal function and improve renal outcomes and mortality."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, placebo-controlled trial in 23 ICUs in Australia and New Zealand.",
+      "setting": "23 ICUs in Australia and New Zealand; enrolled March 1996 to April 1999.",
+      "population": {
+        "inclusion": [
+          "Adults with ≥2 SIRS criteria in prior 24 h",
+          "Early renal dysfunction: urine output <0.5 mL/kg/h for ≥4 h, or serum creatinine >150 µmol/L with no premorbid renal dysfunction, or rise in creatinine >80 µmol/L in <24 h without CK >5000 IU/L and without myoglobinaemia"
+        ],
+        "exclusion": [
+          "Age <18 years",
+          "Acute renal failure in prior 3 months",
+          "Previous renal transplant",
+          "Dopamine use at any dose during current ICU stay",
+          "Baseline creatinine >300 µmol/L",
+          "Inability to administer trial drug for ≥8 h",
+          "Unsuitability for renal replacement therapy"
+        ]
+      },
+      "intervention": "Continuous IV dopamine 2 µg/kg/min via central venous catheter, prepared off-ward, replaced every 24 h.",
+      "comparison": "Identical placebo infusion with same procedures.",
+      "blinding": "Double-blind; allocation concealed; study drug indistinguishable.",
+      "sample_size_power": "Planned 115 per group for 20% reduction in peak creatinine; increased to >300 after interim analyses; final 328 randomised, 324 analysed.",
+      "primary_outcome": "Peak serum creatinine during infusion.",
+      "secondary_outcomes": [
+        "Increase in serum creatinine from baseline",
+        "Renal replacement therapy",
+        "Creatinine >300 µmol/L",
+        "Hospital mortality",
+        "Duration of mechanical ventilation",
+        "ICU length of stay",
+        "Hospital length of stay",
+        "Cardiac arrhythmias",
+        "Time to renal recovery"
+      ],
+      "follow_up": "To ICU discharge and hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "Peak creatinine nearly identical: 245 vs 249 µmol/L (P=0.93)",
+        "No reduction in RRT: 35 vs 40 patients (P=0.55)",
+        "Mortality unchanged: 69/161 vs 66/163 (P=0.66)",
+        "No difference in renal recovery or other secondary outcomes"
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Peak serum creatinine during infusion (µmol/L)",
+          "group_a": "245 (144)",
+          "group_b": "249 (147)",
+          "effect_measure": "Mean difference",
+          "effect_value": "4",
+          "ci_95": "-28 to 36",
+          "p_value": "0.93",
+          "note": "Primary endpoint"
+        },
+        {
+          "outcome": "Increase in serum creatinine from baseline (µmol/L)",
+          "group_a": "62 (107)",
+          "group_b": "66 (108)",
+          "effect_measure": "Mean difference",
+          "effect_value": "4",
+          "ci_95": "-21 to 29",
+          "p_value": "0.82"
+        },
+        {
+          "outcome": "Renal replacement therapy",
+          "group_a": "35/161 (21.7%)",
+          "group_b": "40/163 (24.5%)",
+          "effect_measure": "Risk difference (patients)",
+          "effect_value": "-5",
+          "ci_95": "-10 to 20",
+          "p_value": "0.55"
+        },
+        {
+          "outcome": "Creatinine >300 µmol/L",
+          "group_a": "56/161 (34.8%)",
+          "group_b": "56/163 (34.4%)",
+          "effect_measure": "Risk difference (patients)",
+          "effect_value": "0",
+          "ci_95": "-16 to 16",
+          "p_value": "0.92"
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "69/161 (42.9%)",
+          "group_b": "66/163 (40.5%)",
+          "effect_measure": "Risk difference (patients)",
+          "effect_value": "3",
+          "ci_95": "",
+          "p_value": "0.66",
+          "note": "No CI reported"
+        },
+        {
+          "outcome": "Duration of mechanical ventilation (days)",
+          "group_a": "10 (13)",
+          "group_b": "11 (14)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-1",
+          "ci_95": "",
+          "p_value": "0.63",
+          "note": "No CI reported"
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "13 (14)",
+          "group_b": "14 (15)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-1",
+          "ci_95": "",
+          "p_value": "0.67"
+        },
+        {
+          "outcome": "Hospital length of stay (days)",
+          "group_a": "29 (27)",
+          "group_b": "33 (30)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-4",
+          "ci_95": "",
+          "p_value": "0.29"
+        },
+        {
+          "outcome": "Cardiac arrhythmias",
+          "group_a": "53/161 (32.9%)",
+          "group_b": "54/163 (33.1%)",
+          "effect_measure": "Risk difference (patients)",
+          "effect_value": "-1",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Study drug stopped for suspected arrhythmia in 7 vs 7 patients"
+        },
+        {
+          "outcome": "Time to renal recovery after stopping infusion",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "Log-rank",
+          "effect_value": "P=0.88",
+          "ci_95": "",
+          "p_value": "0.88",
+          "note": "Kaplan–Meier curves overlapped"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Cardiac arrhythmias: 53 vs 54 patients; study drug stopped for suspected arrhythmia in 7 vs 7 patients.",
+      "No other safety concerns reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation concealment",
+          "notes": "Allocation sequence held by independent pharmacist/nurse; drug preparation off-ward with identical infusions; concealment robust."
+        },
+        {
+          "domain": "Blinding & detection bias",
+          "notes": "Double-blind; primary and secondary outcomes were objective laboratory values and hard clinical endpoints, reducing detection bias."
+        },
+        {
+          "domain": "Attrition & analysis population",
+          "notes": "4 patients excluded post-randomisation (2 per group), yielding 161 vs 163 analysed; symmetric attrition reduces but does not eliminate risk of bias."
+        },
+        {
+          "domain": "Protocol adherence & crossover",
+          "notes": "Mean infusion duration similar (113 vs 125 h, P=0.45); study drug discontinuation for arrhythmia identical (7 vs 7); dopamine use during ICU stay was an exclusion criterion, minimising crossover."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched: APACHE II 18 vs 18, shock 93 vs 102, ventilation 138 vs 141, baseline creatinine 183 vs 182 µmol/L."
+        },
+        {
+          "domain": "Statistical power & precision",
+          "notes": "Powered for surrogate primary endpoint; confidence intervals for renal markers narrow and centred near zero, supporting no clinically relevant effect; underpowered for mortality and modest RRT differences."
+        }
+      ],
+      "verdict": "Strong for primary biochemical endpoint; moderate for clinical endpoints due to limited power."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High-acuity ICU patients with SIRS and early renal dysfunction (many ventilated, in shock) reflect the population where renal-dose dopamine was used. Excluded advanced AKI (creatinine >300 µmol/L), recent ARF, transplant, and patients unsuitable for RRT."
+        },
+        {
+          "domain": "Applicability & setting",
+          "notes": "23 ICUs in Australia and New Zealand; generalisable to similar high-resource ICUs with RRT access. Less applicable to resource-limited settings or contemporary vasopressor practices."
+        }
+      ],
+      "verdict": "Broadly generalisable to adult ICU patients with SIRS and early renal dysfunction in high-resource settings, less applicable to advanced AKI or transplant populations."
+    },
+    "strengths": [
+      "Pragmatic multicentre ICU design",
+      "Double-blind placebo control",
+      "High-risk population with high event rates",
+      "Objective primary endpoint with narrow confidence limits",
+      "Clinically important renal endpoints captured"
+    ],
+    "limitations": [
+      "Primary endpoint was a surrogate marker",
+      "Limited power for mortality and modest RRT differences",
+      "Modified intention-to-treat analysis (post-randomisation exclusions)",
+      "Background co-interventions not protocolised"
+    ],
+    "critical_appraisal": {
+      "summary": "Well-conducted RCT with strong internal validity for biochemical endpoint, but limited power for clinical outcomes; no signal of benefit, supporting abandonment of renal-dose dopamine.",
+      "strengths": [
+        "Robust blinding and allocation concealment",
+        "Objective primary endpoint",
+        "Clinically relevant secondary outcomes"
+      ],
+      "weaknesses": [
+        "Surrogate primary endpoint",
+        "Underpowered for mortality",
+        "Modified ITT analysis"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Low-dose dopamine did not reduce peak creatinine, progression to severe creatinine thresholds, or need for RRT. Supports abandoning routine renal-dose dopamine as a renoprotective strategy.",
+    "clinical_bottom_line": {
+      "verdict": "Does not change practice because it confirms lack of benefit; reinforces existing recommendations against use.",
+      "applies_to": "ICU patients with SIRS and early renal dysfunction (oliguria or rising creatinine) who are candidates for RRT.",
+      "does_not_mean": "Does not mean dopamine is harmful in all contexts, but no renal benefit was found.",
+      "implementation_caveats": [
+        "Not applicable to advanced AKI (creatinine >300 µmol/L) or transplant patients",
+        "Contemporary vasopressor practices may differ, but the negative result is consistent across settings"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Editorial commentary",
+        "notes": "The accompanying Lancet editorial emphasised that the physiological narrative persisted despite accumulating negative data, and highlighted plausible off-target harms (endocrine, immune, regional perfusion)."
+      },
+      {
+        "topic": "Meta-analysis confirmation",
+        "notes": "A later meta-analysis concluded that low-dose dopamine may increase urine output but does not prevent renal dysfunction, RRT, or death."
+      },
+      {
+        "topic": "KDIGO guidance",
+        "notes": "KDIGO recommends against low-dose dopamine for prevention or treatment of AKI."
+      },
+      {
+        "topic": "Surviving Sepsis Campaign",
+        "notes": "SSC prioritises norepinephrine and de-emphasises dopamine; renal-dose dopamine not supported as renoprotective adjunct."
+      },
+      {
+        "topic": "Other populations",
+        "notes": "Subsequent trials in acute heart failure with renal dysfunction also failed to show renal benefit, suggesting the negative signal is not confined to ICU SIRS cohorts."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Whether dopamine-induced diuresis ever translates to renal protection in specific subgroups remains unresolved",
+      "Potential off-target harms of low-dose dopamine need further study"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=328",
+        "Peak creatinine 245 vs 249 µmol/L (P=0.93)",
+        "RRT 35 vs 40 patients (P=0.55)",
+        "Mortality 69/161 vs 66/163 (P=0.66)"
+      ],
+      "one_line_takeaway": "Low-dose dopamine does not improve renal function or outcomes in ICU patients with early renal dysfunction; it should not be used for renal protection."
+    }
+  },
+  "_source_id": "Renal_Dose_Dopamine",
+  "_source_system": "Renal"
+}

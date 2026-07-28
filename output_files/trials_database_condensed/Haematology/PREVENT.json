@@ -1,0 +1,306 @@
+{
+  "id": "PREVENT",
+  "trial_name": "PREVENT — Adjunctive Intermittent Pneumatic Compression for Venous Thromboprophylaxis (2019)",
+  "specialty": "Haematology",
+  "subtopic": "Thrombosis",
+  "year": 2019,
+  "journal": "N Engl J Med",
+  "citation": "Arabi YM, Al-Hameed F, Burns KEA, et al. Adjunctive intermittent pneumatic compression for venous thromboprophylaxis. N Engl J Med. 2019;380(14):1305-1315",
+  "doi": "10.1056/NEJMoa1816150",
+  "registration": "",
+  "trial_type": "RCT — multicenter, international, pragmatic, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2003,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In heparin-eligible ICU patients, adjunct IPC did not reduce incident proximal DVT compared with pharmacologic prophylaxis alone.",
+  "pico": {
+    "population": "Critically ill adults receiving pharmacologic thromboprophylaxis with unfractionated or low-molecular-weight heparin, expected ICU stay ≥72 hours, enrolled within 48 hours of ICU admission.",
+    "intervention": "Intermittent pneumatic compression applied to both lower limbs for at least 18 hours/day in addition to pharmacologic prophylaxis.",
+    "comparison": "Pharmacologic thromboprophylaxis alone (IPC permitted only during interruptions of pharmacologic prophylaxis).",
+    "outcome": "Incident proximal lower-limb deep-vein thrombosis (ultrasound-detected after trial day 3)."
+  },
+  "keywords": [
+    "intermittent pneumatic compression",
+    "venous thromboembolism",
+    "thromboprophylaxis",
+    "critical care",
+    "mechanical prophylaxis"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Critically ill patients are at substantial risk of VTE due to immobility, systemic inflammation, invasive devices, and frequent comorbidity. Pharmacologic thromboprophylaxis reduces VTE but does not eliminate risk. Intermittent pneumatic compression is widely used when pharmacologic prophylaxis is contraindicated; however, the incremental benefit when added to heparin-based prophylaxis was uncertain.",
+      "knowledge_gap": "Whether routine addition of IPC to pharmacologic prophylaxis reduces incident proximal DVT in ICU patients was unknown.",
+      "hypothesis": "Adjunctive IPC would reduce incident proximal lower-limb DVT compared with pharmacologic prophylaxis alone."
+    },
+    "methods": {
+      "design": "Pragmatic, investigator-initiated, international, multicentre, open-label, parallel-group RCT with blinded ultrasound interpretation.",
+      "setting": "Medical-surgical-trauma ICUs across Saudi Arabia, Canada, Australia, and India.",
+      "population": {
+        "inclusion": [
+          "Adult per local definition (≥14/16/18 years)",
+          "weight ≥45 kg",
+          "expected ICU stay ≥72 hours",
+          "eligible for pharmacologic thromboprophylaxis with unfractionated or low-molecular-weight heparin",
+          "enrolment within 48 hours of ICU admission"
+        ],
+        "exclusion": [
+          ">24 hours of IPC in current ICU admission",
+          "ICU stay >48 hours",
+          "pharmacologic prophylaxis other than unfractionated/low-molecular-weight heparin",
+          "inability/contraindication to apply IPC or obtain adequate lower-limb ultrasound (e.g., extensive dressings, burns, active infection)",
+          "acute lower-limb ischaemia/severe peripheral arterial disease/compartment syndrome",
+          "major lower-limb fracture or limb amputation preventing bilateral IPC",
+          "therapeutic-dose heparin",
+          "pregnancy",
+          "limitation of life support or life expectancy ≤7 days",
+          "inferior vena cava filter",
+          "allergy to sleeve material"
+        ]
+      },
+      "intervention": "IPC applied to both lower limbs for at least 18 hours/day, in addition to pharmacologic prophylaxis with unfractionated or low-molecular-weight heparin. IPC devices were centre-selected; sleeves routinely removed for skin inspection/care. Continued until ICU discharge, death, attainment of full mobility, trial day 28, or discontinuation for clinical reasons.",
+      "comparison": "Pharmacologic thromboprophylaxis alone. IPC could be used in the control group during interruptions of pharmacologic prophylaxis (pragmatic usual care).",
+      "blinding": "Open-label for clinicians/patients (device-based intervention); radiologists interpreting ultrasound images were unaware of trial-group assignment.",
+      "sample_size_power": "Planned sample size ~2000 to detect a 3% absolute risk reduction in incident proximal DVT (from 7% to 4%) with 80% power at a two-sided 5% significance level.",
+      "primary_outcome": "Incident proximal lower-limb DVT (ultrasound-detected after trial day 3).",
+      "secondary_outcomes": [
+        "Incident proximal or distal lower-limb DVT",
+        "Pulmonary embolism",
+        "Composite of lower-limb DVT, pulmonary embolism, or death from any cause at 28 days",
+        "28-day mortality",
+        "90-day mortality",
+        "Safety: stage I lower-limb skin injury, limb ischaemia affecting toes, serious IPC-related adverse events"
+      ],
+      "follow_up": "Twice-weekly lower-limb ultrasound surveillance from after trial day 3 until ICU discharge, death, full mobility, or day 28; clinical outcomes (including mortality) assessed to day 28 and day 90."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary endpoint neutral: incident proximal DVT 3.9% (IPC) vs 4.2% (control); RR 0.93 (95% CI 0.60–1.44; P=0.74).",
+        "No benefit for pulmonary embolism (0.8% vs 1.0%) or mortality at 28 days (14.6% vs 16.5%) or 90 days (26.1% vs 26.7%).",
+        "IPC delivered with high adherence (median 22 hours/day) and substantial exposure separation (0 in controls), strengthening null finding.",
+        "Safety events similar: skin injury 2.5% vs 2.2%, limb ischaemia 0.5% vs 1.0%; no serious IPC-related adverse events."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: incident proximal lower-limb DVT (ultrasound-detected; after trial day 3)",
+          "group_a": "37/957 (3.9%)",
+          "group_b": "41/985 (4.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.93",
+          "ci_95": "0.60 to 1.44",
+          "p_value": "0.74",
+          "note": "Denominators reflect patients evaluable for primary outcome (excluding prevalent DVT and missing ultrasound)."
+        },
+        {
+          "outcome": "Incident proximal or distal lower-limb DVT",
+          "group_a": "49/957 (5.1%)",
+          "group_b": "55/985 (5.6%)",
+          "effect_measure": "RR",
+          "effect_value": "0.92",
+          "ci_95": "0.63 to 1.33",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Pulmonary embolism",
+          "group_a": "8/991 (0.8%)",
+          "group_b": "10/1012 (1.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.82",
+          "ci_95": "0.32 to 2.06",
+          "p_value": "Not reported",
+          "note": "Clinically detected and investigated (not routine screening)."
+        },
+        {
+          "outcome": "Composite: lower-limb DVT, pulmonary embolism, or death from any cause at 28 days",
+          "group_a": "231/990 (23.3%)",
+          "group_b": "243/1011 (24.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.97",
+          "ci_95": "0.83 to 1.14",
+          "p_value": "Not reported",
+          "note": "Denominators reflect available 28-day follow-up; two patients lost to follow-up."
+        },
+        {
+          "outcome": "Death from any cause at 28 days",
+          "group_a": "145/990 (14.6%)",
+          "group_b": "167/1011 (16.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.89",
+          "ci_95": "0.72 to 1.09",
+          "p_value": "Not reported",
+          "note": "Two patients discharged before day 28 were lost to follow-up."
+        },
+        {
+          "outcome": "Death from any cause at 90 days",
+          "group_a": "258/990 (26.1%)",
+          "group_b": "270/1011 (26.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.98",
+          "ci_95": "0.84 to 1.13",
+          "p_value": "Not reported",
+          "note": "Two patients discharged before day 28 were lost to follow-up."
+        },
+        {
+          "outcome": "Safety: stage I lower-limb skin injury (non-blanchable erythema)",
+          "group_a": "25/991 (2.5%)",
+          "group_b": "22/1012 (2.2%)",
+          "effect_measure": "RR",
+          "effect_value": "1.16",
+          "ci_95": "0.66 to 2.04",
+          "p_value": "Not reported",
+          "note": "Staged using National Pressure Ulcer Advisory Panel classification."
+        },
+        {
+          "outcome": "Safety: limb ischaemia affecting toes",
+          "group_a": "5/991 (0.5%)",
+          "group_b": "10/1012 (1.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.51",
+          "ci_95": "0.18 to 1.49",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Safety: serious adverse events attributed to IPC (stage III/IV ulcer or IPC-related ischaemia)",
+          "group_a": "0/991 (0.0%)",
+          "group_b": "0/1012 (0.0%)",
+          "effect_measure": "Not estimable",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "No serious IPC-related adverse events reported."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Heart failure (post hoc)",
+          "group_a": "11/125 (8.8%)",
+          "group_b": "6/132 (4.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.94",
+          "ci_95": "0.74 to 5.08",
+          "p_interaction": "Not reported",
+          "note": "Post hoc analysis; ventilation-free days median 21 vs 25 days."
+        }
+      ]
+    },
+    "safety": [
+      "Stage I lower-limb skin injury: 2.5% vs 2.2% (RR 1.16, 95% CI 0.66–2.04)",
+      "Limb ischaemia affecting toes: 0.5% vs 1.0% (RR 0.51, 95% CI 0.18–1.49)",
+      "Serious IPC-related adverse events: 0% in both groups"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with stratification by site and planned heparin type; allocation concealment maintained until assignment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery but ultrasound images interpreted by radiologists unaware of allocation, reducing detection bias for primary outcome."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT excluding patients who withdrew consent or were found ineligible after randomisation; primary outcome evaluable denominators 957/991 vs 985/1012 due to prevalent DVT and missing ultrasound."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High adherence: median IPC 22.0 (IQR 18.0–23.2) hours/day in intervention vs 0 (IQR 0–0) in controls; total IPC duration 144 (IQR 72–260) hours; daily compliance ≥18 hours on 83.2% of intervention days. Crossover: 103/1012 (10.2%) control patients received IPC at any time during pharmacologic interruptions, but group median remained 0 hours/day."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly balanced (age ~57 years; APACHE II ~20; ~54–55% mechanically ventilated at enrolment)."
+        }
+      ],
+      "verdict": "Strong overall: concealed randomisation, high adherence with substantial exposure separation, minimal missingness for key endpoints, and blinded radiology interpretation support a robust primary inference; open-label delivery and permitted IPC in controls are minor limitations."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical mixed medical-surgical-trauma ICU patients eligible for heparin and expected ICU stay ≥72 hours."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings apply to heparin-eligible ICU patients in resourced settings; not directly applicable when pharmacologic prophylaxis is contraindicated or in settings where high-intensity IPC adherence is not feasible."
+        }
+      ],
+      "verdict": "Moderate-to-strong external validity for heparin-eligible ICU populations; limited for patients requiring mechanical prophylaxis alone."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre international RCT addressing a common ICU practice question with high resource implications.",
+      "Systematic DVT surveillance (twice-weekly ultrasound) and blinded radiology interpretation for the primary endpoint.",
+      "Substantial exposure separation (high IPC dose in intervention arm; minimal group-level exposure in controls).",
+      "Protocol and statistical analysis plan published a priori, supporting analytic transparency."
+    ],
+    "limitations": [
+      "Open-label delivery; ultrasound operators and bedside teams necessarily aware of allocation.",
+      "Primary endpoint was largely ultrasound-detected thrombosis (a surrogate for symptomatic VTE), and event rates were lower than anticipated, reducing statistical power for modest effects.",
+      "Permitted IPC use in controls during heparin interruptions introduces pragmatic contamination (potential dilution), although typical exposure remained low.",
+      "Does not answer whether IPC alone is effective when anticoagulant prophylaxis is contraindicated."
+    ],
+    "critical_appraisal": {
+      "summary": "Well-conducted pragmatic trial with high adherence and blinded outcome assessment that provides strong evidence against a clinically meaningful benefit of routine adjunct IPC in heparin-eligible ICU patients; lower-than-expected DVT rate limits power for small effects, but the confidence interval for the primary outcome excludes a large benefit.",
+      "strengths": [
+        "Concealed randomisation with stratification",
+        "Blinded ultrasound interpretation",
+        "High adherence and large exposure separation",
+        "Prespecified statistical analysis plan"
+      ],
+      "weaknesses": [
+        "Open-label delivery",
+        "Surrogate primary endpoint with low event rate",
+        "Pragmatic contamination via IPC in controls"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In critically ill adults receiving pharmacologic thromboprophylaxis, adjunctive intermittent pneumatic compression did not result in a significantly lower incidence of proximal lower-limb deep-vein thrombosis than pharmacologic thromboprophylaxis alone. The findings do not support routine dual-modality prophylaxis.",
+    "clinical_bottom_line": {
+      "verdict": "Adding IPC to heparin does not reduce DVT, PE, or mortality; routine dual-modality prophylaxis is not warranted in heparin-eligible ICU patients.",
+      "applies_to": "Heparin-eligible ICU patients (excluding those with contraindications to pharmacologic prophylaxis, and those with limb conditions precluding IPC).",
+      "does_not_mean": "Findings apply to adjunct IPC, not to IPC as sole prophylaxis when anticoagulants are contraindicated.",
+      "implementation_caveats": [
+        "Consider IPC selectively during interruptions of pharmacologic prophylaxis or when bleeding risk precludes anticoagulants."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Neutral primary endpoint with lower-than-anticipated event rate",
+        "notes": "The neutral result may reflect limited power for modest effects in a lower-risk population; confidence interval spans both clinically meaningful benefit and harm."
+      },
+      {
+        "topic": "Surrogate vs patient-centred outcomes",
+        "notes": "Primary endpoint was ultrasound-detected DVT, not symptomatic VTE or mortality; debate remains about what reduction would justify routine adjunct IPC."
+      },
+      {
+        "topic": "Open-label pragmatism and control-group IPC during heparin interruptions",
+        "notes": "Permitted IPC in controls may dilute between-group differences, though median exposure remained 0 hours/day."
+      },
+      {
+        "topic": "Post hoc heart failure subgroup",
+        "notes": "IPC associated with numerically higher DVT (RR 1.94; 95% CI 0.74–5.08) and no improvement in ventilation-free days."
+      },
+      {
+        "topic": "Guidelines",
+        "notes": "Surviving Sepsis Campaign 2021 and other contemporary guidance trend away from routine adjunct mechanical prophylaxis when pharmacologic prophylaxis is feasible."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does IPC alone reduce VTE in patients with contraindications to pharmacologic prophylaxis?",
+      "Is there a subgroup (e.g., very high risk) that benefits from adjunct IPC?",
+      "What is the effect of IPC on symptomatic VTE rather than ultrasound-detected events?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2003",
+        "Primary proximal DVT: 3.9% vs 4.2% (RR 0.93, 95% CI 0.60–1.44)",
+        "90-day mortality: 26.1% vs 26.7% (RR 0.98)"
+      ],
+      "one_line_takeaway": "Adding IPC to heparin thromboprophylaxis in the ICU does not reduce DVT or mortality; reserve IPC for when anticoagulants are contraindicated."
+    }
+  },
+  "_source_id": "PREVENT",
+  "_source_system": "Haematology"
+}

@@ -1,0 +1,298 @@
+{
+  "id": "PROSEVA",
+  "trial_name": "PROSEVA — Prone Positioning in Severe ARDS (2013)",
+  "specialty": "Respiratory",
+  "subtopic": "ARDS",
+  "year": 2013,
+  "journal": "N Engl J Med",
+  "citation": "Guérin C, Reignier J, Richard JC et al. Prone positioning in severe acute respiratory distress syndrome. N Engl J Med 2013;368(23):2159–2168.",
+  "doi": "10.1056/NEJMoa1214103",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 466,
+  "result_category": "Positive",
+  "one_liner": "In severe ARDS, early prolonged prone positioning reduced 28-day mortality from 32.8% to 16.0% (HR 0.39).",
+  "pico": {
+    "population": "Adults with severe ARDS (PaO2/FiO2 <150 mmHg, FiO2 ≥0.60, PEEP ≥5 cm H2O) within 36 hours of invasive ventilation",
+    "intervention": "Early prolonged prone positioning sessions ≥16 hours/day, with lung-protective ventilation",
+    "comparison": "Supine (semi-recumbent) positioning with identical lung-protective ventilation",
+    "outcome": "28-day all-cause mortality"
+  },
+  "keywords": [
+    "prone positioning",
+    "ARDS",
+    "severe ARDS",
+    "mechanical ventilation",
+    "lung-protective ventilation",
+    "mortality",
+    "randomized controlled trial"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Prone positioning improves oxygenation in ARDS by redistributing transpulmonary pressures and ventilation–perfusion, reducing ventral overdistension and dorsal atelectrauma. Earlier RCTs in acute hypoxaemic respiratory failure/ARDS improved oxygenation but did not consistently show a mortality benefit; many enrolled patients with less severe hypoxaemia and/or used shorter daily prone sessions, often before low tidal volume ventilation became standard.",
+      "knowledge_gap": "It remained uncertain whether applying prone positioning early, for prolonged sessions, in a clearly defined severe ARDS population receiving lung-protective ventilation could deliver a survival benefit.",
+      "hypothesis": "Early initiation of prolonged prone positioning sessions (≥16 consecutive hours/day) reduces 28-day mortality compared with supine positioning under a lung-protective ventilation strategy."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, investigator-initiated, open-label, parallel-group trial with central computer-generated allocation stratified by ICU (27 ICUs: 26 in France, 1 in Spain).",
+      "setting": "27 ICUs (26 France, 1 Spain); enrollment period not specified.",
+      "population": {
+        "inclusion": [
+          "Adults with ARDS (acute onset, bilateral infiltrates, PaO2/FiO2 ≤300 mmHg, no left atrial hypertension), intubated and invasively ventilated for <36 hours",
+          "Severe ARDS confirmed after 12–24 hour stabilisation: PaO2/FiO2 <150 mmHg, FiO2 ≥0.60, PEEP ≥5 cm H2O, tidal volume ~6 mL/kg predicted body weight"
+        ],
+        "exclusion": [
+          "Age <18 years or pregnancy",
+          "Contraindication to prone positioning (e.g., unstable spine, raised ICP, recent tracheal surgery, massive haemoptysis)",
+          "Chronic respiratory failure requiring long-term oxygen or home NIV",
+          "ECMO at screening",
+          "Anticipated end-of-life decision"
+        ]
+      },
+      "intervention": "Prone positioning started as soon as possible after randomisation (mean 55 ± 55 minutes) and delivered in sessions of ≥16 consecutive hours (mean 17 ± 3 hours), repeated daily until pre-specified stopping criteria or day 28. Lung-protective ventilation in volume-controlled mode: tidal volume 6 mL/kg predicted body weight; plateau pressure ≤30 cm H2O; PEEP/FiO2 table; permissive hypercapnia (target pH 7.20–7.45). Deep sedation targeted early; neuromuscular blockade strongly recommended during the first 48 hours and during prone sessions.",
+      "comparison": "Supine (semi-recumbent) positioning with identical protocolised lung-protective ventilation and supportive care. Crossover to prone positioning prohibited except as protocolised rescue for life-threatening hypoxaemia after optimisation and rescue measures (FiO2 1.0, maximal PEEP per table, inhaled nitric oxide 10 ppm, almitrine 4 µg/kg/min, recruitment manoeuvres).",
+      "blinding": "Unblinded (positioning not feasibly blindable); mortality objective, but co-interventions and liberation-from-ventilation decisions could be influenced by lack of blinding.",
+      "sample_size_power": "456 patients required to detect a 15% absolute reduction in 28-day mortality (from 60% to 45%) with 90% power at a one-sided 5% significance level; interim analysis planned after 50% enrolment with two one-sided analyses at the 2.5% level.",
+      "primary_outcome": "All-cause mortality at day 28",
+      "secondary_outcomes": [
+        "All-cause mortality at day 90",
+        "Successful extubation by day 90 (no reintubation or NIV within 48 hours)",
+        "Ventilator-free days at day 28 and day 90",
+        "Pneumothorax",
+        "Cardiac arrest"
+      ],
+      "follow_up": "90 days"
+    },
+    "results": {
+      "headline_bullets": [
+        "28-day mortality: 16.0% vs 32.8% (HR 0.39, 95% CI 0.25–0.63, P<0.001)",
+        "90-day mortality: 23.6% vs 41.0% (HR 0.44, 95% CI 0.29–0.67, P<0.001)",
+        "Successful extubation by day 90: 80.5% vs 65.0% (HR 0.45, P<0.001)",
+        "Ventilator-free days significantly higher in prone group (14 vs 10 at day 28, P<0.001)",
+        "Cardiac arrest less frequent in prone group (6.8% vs 13.5%, P=0.02); pneumothorax similar"
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality (day 28)",
+          "group_a": "38/237 (16.0%)",
+          "group_b": "75/229 (32.8%)",
+          "effect_measure": "HR",
+          "effect_value": "0.39",
+          "ci_95": "0.25–0.63",
+          "p_value": "<0.001",
+          "note": "Primary endpoint; adjusted HR 0.42 (0.26–0.66)"
+        },
+        {
+          "outcome": "All-cause mortality (day 90)",
+          "group_a": "56/237 (23.6%)",
+          "group_b": "94/229 (41.0%)",
+          "effect_measure": "HR",
+          "effect_value": "0.44",
+          "ci_95": "0.29–0.67",
+          "p_value": "<0.001",
+          "note": "Adjusted HR 0.48 (0.32–0.72)"
+        },
+        {
+          "outcome": "Successful extubation (day 90)",
+          "group_a": "186/231 (80.5%)",
+          "group_b": "145/223 (65.0%)",
+          "effect_measure": "HR",
+          "effect_value": "0.45",
+          "ci_95": "0.29–0.70",
+          "p_value": "<0.001",
+          "note": "Defined as extubation without reintubation or NIV within 48 h"
+        },
+        {
+          "outcome": "Ventilator-free days (day 28)",
+          "group_a": "14 ± 9",
+          "group_b": "10 ± 10",
+          "effect_measure": "MD",
+          "effect_value": "not reported",
+          "ci_95": "not reported",
+          "p_value": "<0.001",
+          "note": "Mean ± SD; higher is better"
+        },
+        {
+          "outcome": "Ventilator-free days (day 90)",
+          "group_a": "57 ± 34",
+          "group_b": "43 ± 38",
+          "effect_measure": "MD",
+          "effect_value": "not reported",
+          "ci_95": "not reported",
+          "p_value": "<0.001",
+          "note": "Mean ± SD; higher is better"
+        },
+        {
+          "outcome": "Pneumothorax (to day 90)",
+          "group_a": "15/237 (6.3%)",
+          "group_b": "13/229 (5.7%)",
+          "effect_measure": "OR",
+          "effect_value": "0.89",
+          "ci_95": "0.39–2.02",
+          "p_value": "0.85",
+          "note": ""
+        },
+        {
+          "outcome": "Cardiac arrest (adverse event)",
+          "group_a": "16/237 (6.8%)",
+          "group_b": "31/229 (13.5%)",
+          "effect_measure": "OR",
+          "effect_value": "not reported",
+          "ci_95": "not reported",
+          "p_value": "0.02",
+          "note": "No CI reported for between-group comparison"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Pneumothorax: 6.3% prone vs 5.7% supine (OR 0.89, 95% CI 0.39–2.02, P=0.85)",
+      "Cardiac arrest: 6.8% prone vs 13.5% supine (P=0.02)",
+      "No other major safety concerns reported"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-generated allocation stratified by ICU; web-based system supports allocation concealment."
+        },
+        {
+          "domain": "Drop out or exclusions",
+          "notes": "474 randomised, 8 excluded post-randomisation for eligibility/procedural reasons, leaving 466 analysed (modified ITT). 90-day vital status reported for the analysed cohort."
+        },
+        {
+          "domain": "Performance/detection bias",
+          "notes": "Unblinded positioning could influence co-interventions and extubation decisions; primary endpoint (mortality) is objective and less vulnerable to ascertainment bias."
+        },
+        {
+          "domain": "Protocol adherence and separation",
+          "notes": "First prone session 55 ± 55 min after randomisation; mean 4 ± 4 sessions per patient; mean session duration 17 ± 3 h; prone positioning comprised 73% of total ICU hours in the prone group."
+        },
+        {
+          "domain": "Crossover",
+          "notes": "17/229 (7.4%) in supine group crossed to prone for refractory hypoxaemia per protocolised rescue; this direction biases estimates toward the null."
+        },
+        {
+          "domain": "Baseline comparability",
+          "notes": "Severe ARDS severity well matched: PaO2/FiO2 100 ± 20 vs 100 ± 30; FiO2 0.74 ± 0.18 vs 0.74 ± 0.17; PEEP 10 ± 3 vs 10 ± 3 cm H2O; tidal volume 6.1 ± 0.6 vs 6.1 ± 0.6 mL/kg PBW. SAPS II 45 ± 15 vs 47 ± 17; SOFA 9.6 ± 3.2 vs 10.4 ± 3.4."
+        },
+        {
+          "domain": "Timing and dose",
+          "notes": "Randomisation after 12–24 h stabilisation and within 36 h of mechanical ventilation; time from intubation to randomisation 33 ± 24 h vs 31 ± 26 h. Sessions were long-duration (≥16 h; mean 17 h) and repeated."
+        },
+        {
+          "domain": "Adjunctive therapy use",
+          "notes": "High use of vasopressors (72.6% vs 83.0%) and neuromuscular blockers (91.0% vs 82.3%) at inclusion. Low use of inhaled nitric oxide (11.0% vs 14.4%), almitrine (3.8% vs 2.6%), ECMO (1.7% vs 2.2%)."
+        },
+        {
+          "domain": "Outcome assessment and statistical rigour",
+          "notes": "Mortality endpoints analysed with Kaplan–Meier/log-rank and Cox regression stratified by centre; target sample size achieved (466 analysed vs 456 required). Large and consistent effect estimates."
+        }
+      ],
+      "verdict": "Overall, internal validity appears strong, supported by centralised stratified randomisation, objective primary outcome assessment, and excellent separation in prone “dose”; limitations include open-label care and small post-randomisation exclusions consistent with a modified intention-to-treat population."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Selected severe ARDS subset (466 analysed from 3,449 ARDS cases screened), with exclusions removing patients with common proning barriers (e.g., major contraindications, chronic respiratory failure)."
+        },
+        {
+          "domain": "Setting and expertise",
+          "notes": "Conducted in 27 ICUs (predominantly France) where all participating units reported routine prone positioning use for >5 years; may not reflect implementation conditions in less experienced ICUs."
+        },
+        {
+          "domain": "Applicability",
+          "notes": "Most applicable to invasively ventilated adults with severe ARDS receiving contemporary lung-protective ventilation, where a trained team can reliably deliver prolonged prone sessions and manage associated sedation, neuromuscular blockade, and line/airway risks."
+        },
+        {
+          "domain": "Resource-limited settings",
+          "notes": "Intervention is equipment-light but staff- and process-intensive; generalisability depends on staffing, training, and ability to maintain safety during turns and prolonged sessions."
+        }
+      ],
+      "verdict": "Generalisability is moderate: PROSEVA provides high-confidence evidence for early prolonged proning in severe ARDS, but translation to milder ARDS, units without established proning expertise, or settings with limited staffing remains less certain."
+    },
+    "strengths": [
+      "Clear severe ARDS phenotype with protocolised stabilisation before randomisation",
+      "Early initiation and high “dose” of prone positioning with excellent protocol adherence (mean 17-hour sessions; repeated daily)",
+      "Contemporary lung-protective ventilation in both groups, supporting isolation of the positioning effect",
+      "Objective primary endpoint with consistent mortality benefit at day 28 and day 90"
+    ],
+    "limitations": [
+      "Open-label design introduces potential performance bias for co-interventions and weaning decisions",
+      "Modified intention-to-treat analysis (8 post-randomisation exclusions)",
+      "Highly experienced centres and selected population may limit real-world reproducibility without robust training and implementation programmes",
+      "Rescue crossover to prone in the control arm (7.4%) and co-intervention imbalances (e.g., neuromuscular blockade, vasopressors) complicate causal attribution in pragmatic deployment"
+    ],
+    "critical_appraisal": {
+      "summary": "PROSEVA is a well-conducted, multicentre RCT with a large, consistent mortality benefit in severe ARDS. The open-label design and experienced centres require cautious generalisation, but the internal validity is strong.",
+      "strengths": [
+        "Central stratified randomisation and objective primary endpoint minimise bias",
+        "Excellent protocol adherence with high-dose, early prone positioning",
+        "Use of contemporary lung-protective ventilation isolates the effect of positioning"
+      ],
+      "weaknesses": [
+        "Open-label design may affect co-interventions and extubation decisions",
+        "Eight post-randomisation exclusions require modified ITT analysis",
+        "Conducted in highly experienced ICUs, limiting generalisability to less prepared settings"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In severe ARDS (PaO2/FiO2 <150 mmHg with high FiO2 and PEEP) managed with lung-protective ventilation, early prolonged prone positioning reduced 28-day mortality compared with supine management, with benefit persisting to day 90 and higher rates of successful extubation.",
+    "clinical_bottom_line": {
+      "verdict": "This trial changes practice: early, prolonged prone positioning should be standard for eligible patients with severe ARDS.",
+      "applies_to": "Adult patients with severe ARDS (PaO2/FiO2 <150 mmHg, FiO2 ≥0.60, PEEP ≥5 cm H2O) within 36 hours of intubation, managed with lung-protective ventilation, in ICUs with experienced teams.",
+      "does_not_mean": "Proning is not a substitute for lung-protective ventilation; it is an adjunct. It is not indicated for mild ARDS or as a late rescue-only measure.",
+      "implementation_caveats": [
+        "Requires trained staff and safety protocols for turning and managing lines/airway",
+        "Deep sedation and neuromuscular blockade may be needed, especially early",
+        "Sessions should be ≥16 hours daily",
+        "Early initiation (<36h of ventilation) is key",
+        "May not be feasible in all ICUs without prior expertise"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Generalisability to less experienced ICUs",
+        "notes": "Editorial highlighted that PROSEVA was conducted in ICUs with substantial prior experience, raising implementation concerns about achieving similar outcomes in less experienced units."
+      },
+      {
+        "topic": "Magnitude of benefit",
+        "notes": "The mortality effect size (HR 0.39) was larger than earlier proning trials, contextualised by differences in patient selection (more severe ARDS), earlier initiation, and longer daily prone exposure."
+      },
+      {
+        "topic": "Physiology and practicalities",
+        "notes": "Published correspondence raised issues including interpretation of PaCO2 changes and logistics of CPR in the prone position, underscoring the need for safety protocols and team training."
+      },
+      {
+        "topic": "Subsequent evidence synthesis",
+        "notes": "Post-PROSEVA meta-analysis in the low tidal volume era confirmed reduced mortality with prone positioning, with benefit concentrated in more severe ARDS and with longer prone sessions."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "International clinical practice guidelines after PROSEVA recommend prone positioning as a core therapy for moderate-to-severe/severe ARDS when deliverable safely by trained teams."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Effectiveness of prone positioning in ICUs without established expertise",
+      "Optimal duration and timing to stop prone sessions",
+      "Role of concurrent neuromuscular blockade in achieving benefit",
+      "Effect in milder ARDS (PaO2/FiO2 150–200)",
+      "Feasibility and safety of prone positioning during ECMO"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=466",
+        "28-day mortality: 16% vs 33% (HR 0.39)",
+        "90-day mortality: 24% vs 41% (HR 0.44)",
+        "Mean prone session 17 h, 4 sessions, 73% of ICU time"
+      ],
+      "one_line_takeaway": "In severe ARDS, early prolonged prone positioning cuts mortality by half and should be implemented early with trained teams."
+    }
+  },
+  "_source_id": "PROSEVA",
+  "_source_system": "Respiratory"
+}

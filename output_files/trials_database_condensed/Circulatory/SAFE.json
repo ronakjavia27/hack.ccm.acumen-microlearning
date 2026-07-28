@@ -1,0 +1,344 @@
+{
+  "id": "SAFE",
+  "trial_name": "SAFE — Albumin vs Saline for Fluid Resuscitation in ICU (2004)",
+  "specialty": "Critical Care Medicine",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 2004,
+  "journal": "New England Journal of Medicine",
+  "citation": "SAFE Study Investigators. A Comparison of Albumin and Saline for Fluid Resuscitation in the Intensive Care Unit. N Engl J Med. 2004;350:2247–2256",
+  "doi": "10.1056/NEJMoa040232",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 7000,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In a broad adult ICU population, 4% albumin vs 0.9% saline for resuscitation resulted in no difference in 28-day mortality (20.9% vs 21.1%; RR 0.99; 95% CI 0.91–1.09).",
+  "pico": {
+    "population": "Adult ICU patients requiring intravascular volume resuscitation; mean APACHE II ~19; excluded post-cardiac surgery, liver transplant, burns",
+    "intervention": "4% human albumin (Albumex) for all ICU resuscitation up to day 28",
+    "comparison": "0.9% saline for all ICU resuscitation",
+    "outcome": "28-day all-cause mortality"
+  },
+  "keywords": [
+    "albumin",
+    "saline",
+    "fluid resuscitation",
+    "colloid",
+    "crystalloid",
+    "ICU"
+  ],
+  "related_trials": [
+    "ALBIOS",
+    "CRISTAL"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Intravenous fluid resuscitation is near-universal in ICU; small treatment effects could translate to large population impact. Physiological arguments for colloids (oncotic pressure, less volume) competed with concerns about endothelial leak. A 1998 systematic review reported higher mortality with albumin, creating uncertainty.",
+      "knowledge_gap": "Existing evidence was dominated by small, heterogeneous studies and meta-analyses; a large, blinded RCT was needed to resolve the 'albumin safety' question in contemporary ICU care.",
+      "hypothesis": "Clinically meaningful differences in mortality were possible, but direction was uncertain given conflicting prior evidence."
+    },
+    "methods": {
+      "design": "Randomised, double-blind, parallel-group trial.",
+      "setting": "16 ICUs in Australia and New Zealand; fluid use only during ICU stay, not pre-ICU.",
+      "population": {
+        "inclusion": [
+          "Adults admitted to ICU where treating clinician determined intravascular volume resuscitation was required"
+        ],
+        "exclusion": [
+          "ICU admission after cardiac surgery, liver transplantation, or burns",
+          "Previous adverse reaction to albumin"
+        ]
+      },
+      "intervention": "4% human albumin solution (Albumex, CSL) used for all episodes of fluid resuscitation in ICU until ICU discharge/death or day 28. Dose/rate at clinician discretion. Masked 500 mL bottles and administration sets.",
+      "comparison": "0.9% saline (normal saline) used for all episodes of fluid resuscitation in ICU until ICU discharge/death or day 28. Maintenance fluids, nutrition, and blood products permitted at clinician discretion in both groups.",
+      "blinding": "Double-blind (participants, clinicians, trial staff, outcome assessors). Masking cartons, identical bottles, and dedicated administration sets; blinding effectiveness formally assessed before trial.",
+      "sample_size_power": "7000 patients planned to detect a 3% absolute difference in 28-day mortality (from ~15% to ~12%) with 90% power at two-sided α=0.05.",
+      "primary_outcome": "28-day all-cause mortality",
+      "secondary_outcomes": [
+        "Alive in ICU at day 28",
+        "Alive in hospital at day 28",
+        "ICU length of stay",
+        "Hospital length of stay",
+        "Duration of mechanical ventilation",
+        "Duration of renal-replacement therapy",
+        "New organ failure (SOFA-based, 0–5 organs)"
+      ],
+      "follow_up": "28 days after randomisation; daily ICU data for first 7 days, then every 3rd day to day 28 or ICU discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "28-day mortality was identical: 20.9% albumin vs 21.1% saline (RR 0.99; 95% CI 0.91–1.09; P=0.87).",
+        "No benefit in secondary outcomes: organ failure, length of stay, ventilation, or RRT days.",
+        "Predefined subgroups: non-significant trend toward benefit in severe sepsis (RR 0.87; P=0.09) but signal of harm in trauma (RR 1.36; P=0.06), driven entirely by traumatic brain injury (RR 1.62; P=0.009)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "28-day all-cause mortality (primary)",
+          "group_a": "726/3473 (20.9%)",
+          "group_b": "729/3460 (21.1%)",
+          "effect_measure": "RR",
+          "effect_value": "0.99",
+          "ci_95": "0.91–1.09",
+          "p_value": "0.87",
+          "note": "Vital status known for 6933 patients (67 missing). Survival curves similar (log-rank P=0.96)."
+        },
+        {
+          "outcome": "Alive in ICU at day 28",
+          "group_a": "111/3473 (3.2%)",
+          "group_b": "87/3460 (2.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.27",
+          "ci_95": "0.96–1.68",
+          "p_value": "0.09",
+          "note": ""
+        },
+        {
+          "outcome": "Alive in hospital at day 28",
+          "group_a": "793/3473 (22.8%)",
+          "group_b": "848/3460 (24.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.93",
+          "ci_95": "0.86–1.01",
+          "p_value": "0.10",
+          "note": ""
+        },
+        {
+          "outcome": "ICU length of stay (days), mean ± SD",
+          "group_a": "6.5 ± 6.6",
+          "group_b": "6.2 ± 6.2",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.24",
+          "ci_95": "−0.06 to 0.54",
+          "p_value": "0.44",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital length of stay (days), mean ± SD",
+          "group_a": "15.3 ± 9.6",
+          "group_b": "15.6 ± 9.6",
+          "effect_measure": "Mean difference",
+          "effect_value": "−0.24",
+          "ci_95": "−0.70 to 0.21",
+          "p_value": "0.30",
+          "note": ""
+        },
+        {
+          "outcome": "Duration of mechanical ventilation (days), mean ± SD",
+          "group_a": "4.5 ± 6.1",
+          "group_b": "4.3 ± 5.7",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.19",
+          "ci_95": "−0.08 to 0.47",
+          "p_value": "0.74",
+          "note": ""
+        },
+        {
+          "outcome": "Duration of renal-replacement therapy (days), mean ± SD",
+          "group_a": "0.48 ± 2.28",
+          "group_b": "0.39 ± 2.0",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.09",
+          "ci_95": "0.0 to 0.19",
+          "p_value": "0.41",
+          "note": ""
+        },
+        {
+          "outcome": "New organ failure (SOFA, 0–5 organs distribution)",
+          "group_a": "0: 1397 (52.7%), 1: 795 (30.0%), 2: 369 (13.9%), 3: 68 (2.6%), 4: 18 (0.7%), 5: 2 (0.1%)",
+          "group_b": "0: 1424 (53.3%), 1: 796 (29.8%), 2: 361 (13.5%), 3: 75 (2.8%), 4: 17 (0.6%), 5: 0",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.85",
+          "note": "Full distribution; data available for 2649 (albumin) and 2673 (saline). No significant difference."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Trauma (predefined)",
+          "group_a": "81/596 (13.6%)",
+          "group_b": "59/590 (10.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.36",
+          "ci_95": "0.99–1.86",
+          "p_interaction": "0.04"
+        },
+        {
+          "subgroup": "Severe sepsis (predefined)",
+          "group_a": "185/603 (30.7%)",
+          "group_b": "217/615 (35.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.74–1.02",
+          "p_interaction": "0.06"
+        },
+        {
+          "subgroup": "ARDS (predefined)",
+          "group_a": "24/61 (39.3%)",
+          "group_b": "28/66 (42.4%)",
+          "effect_measure": "RR",
+          "effect_value": "0.93",
+          "ci_95": "0.61–1.41",
+          "p_interaction": "0.74"
+        },
+        {
+          "subgroup": "Trauma with brain injury (post-hoc)",
+          "group_a": "59/241 (24.5%)",
+          "group_b": "38/251 (15.1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.62",
+          "ci_95": "1.12–2.34",
+          "p_interaction": "N/A – post-hoc comparison",
+          "note": "Excess 21 deaths in albumin group; P=0.009 for this analysis."
+        },
+        {
+          "subgroup": "Trauma without brain injury (post-hoc)",
+          "group_a": "22 (6.2%)",
+          "group_b": "21 (6.2%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.56–1.79",
+          "p_interaction": "N/A",
+          "note": "Denominators not explicitly reported; P=1.00."
+        }
+      ]
+    },
+    "safety": [
+      "No significant difference in new organ failure (SOFA-based) between groups (P=0.85).",
+      "Post-hoc analysis in traumatic brain injury: higher 28-day mortality with albumin (RR 1.62, P=0.009), an important safety signal.",
+      "No other safety concerns identified; adverse events not formally reported beyond organ failure distribution."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based minimisation stratified by ICU and trauma status; concealed using identical masked bottles/sets."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind; objective primary outcome (mortality) limits bias; secondary outcomes relatively objective and stratified by site."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Vital status missing for 67/7000 (1.0%): 26 albumin vs 41 saline; 56 due to withdrawn consent. Study fluid not given to 197 (2.8%), balanced between groups."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Resuscitation with non-study fluid: 309 albumin (8.8%) vs 375 saline (10.7%); clinician preference in 68 vs 103. Physiologic separation achieved: lower study fluid volumes (day 1: 1184 vs 1565 mL, P<0.001), lower net positive balance (day 1: 1544 vs 1991 mL, P<0.001), higher serum albumin (day 2: 30.8 vs 24.5 g/L, P<0.001)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups balanced for age, APACHE II (18.7 vs 19.0), mechanical ventilation (63.8% vs 64.8%), and baseline albumin (27.4 vs 27.7 g/L). Small imbalance in baseline CVP (9.0 vs 8.6 mm Hg, P=0.03) with unclear relevance."
+        }
+      ],
+      "verdict": "Internal validity is strong for the primary outcome due to concealed central randomisation, effective blinding, objective endpoint, and minimal missing outcome data; interpretability is more limited for subgroup signals due to multiplicity and lower power."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad adult ICU case-mix in closed multidisciplinary ICUs; APACHE II ~19 suggesting moderate-to-severe illness. Included trauma (~17%), severe sepsis (~18%), small ARDS (~2%). Excluded burns, post-cardiac surgery, post-liver transplant, paediatrics."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings generalise best to adult ICU resuscitation in comparable high-income settings. Only 4% albumin tested; results do not directly apply to 20–25% albumin or balanced crystalloids. Fluids outside ICU were not controlled, limiting translation to ED/pre-hospital or perioperative pathways."
+        }
+      ],
+      "verdict": "External validity is high for adult ICU resuscitation in similar settings, but limited for excluded populations (burns, cardiac surgery/transplant, paediatrics) and for other albumin concentrations or crystalloid formulations."
+    },
+    "strengths": [
+      "Large sample size (n=7000) with precise estimation of average treatment effect.",
+      "Double-blind design with robust masking and objective primary outcome.",
+      "Pragmatic protocol embedded in routine ICU practice, enhancing applicability.",
+      "Clear separation in physiological markers (serum albumin, CVP) and administered volume/net balance, supporting mechanistic plausibility."
+    ],
+    "limitations": [
+      "Not powered to detect modest but clinically relevant subgroup effects; multiple comparisons increase false-positive risk.",
+      "Only 4% albumin tested; hyperoncotic albumin or albumin-targeting strategies not addressed.",
+      "Resuscitation fluids outside ICU not controlled.",
+      "No formal cost-effectiveness evaluation.",
+      "Follow-up limited to 28 days; longer-term functional outcomes (especially for brain injury) not assessed."
+    ],
+    "critical_appraisal": {
+      "summary": "High-quality pragmatic RCT with robust methodology and precise estimate of no mortality difference between 4% albumin and saline; subgroup signals (sepsis benefit, traumatic brain injury harm) are hypothesis-generating due to multiplicity and lack of power.",
+      "strengths": [
+        "Large, blinded, concealed allocation; objective primary outcome; pragmatic design."
+      ],
+      "weaknesses": [
+        "Subgroup analyses underpowered and at risk of false positives; limited to 4% albumin; no long-term functional outcomes; no cost analysis."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In a heterogeneous adult ICU population, 4% albumin and 0.9% saline produced clinically equivalent 28-day mortality (RR 0.99; 95% CI 0.91 to 1.09). This supports crystalloids as an acceptable default resuscitation fluid when albumin is being considered primarily for volume expansion.",
+    "clinical_bottom_line": {
+      "verdict": "Albumin is not superior to saline for fluid resuscitation in general ICU patients; crystalloids remain first-line. Albumin should be avoided in traumatic brain injury.",
+      "applies_to": "Adult ICU patients requiring volume resuscitation, excluding burns, post-cardiac surgery, and liver transplant recipients.",
+      "does_not_mean": "This does not mean albumin is harmful in all contexts; it may still be considered in septic shock after large crystalloid volumes, though the sepsis signal was not confirmed in dedicated trials.",
+      "implementation_caveats": [
+        "Use 4% albumin, not hyperoncotic concentrations.",
+        "Avoid albumin in traumatic brain injury, even in the presence of hemodynamic instability.",
+        "Consider cost and availability; no proven superiority over crystalloids for most patients."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Pre-trial albumin safety controversy",
+        "notes": "A 1998 systematic review reported higher mortality with albumin, motivating the need for a definitive blinded RCT. SAFE directly addressed this uncertainty."
+      },
+      {
+        "topic": "Case-mix masking subgroup effects",
+        "notes": "Critics argued that a heterogeneous population could obscure subgroup benefits (e.g., sepsis) or harms; the trial powered only for overall mortality, not subgroup-specific effects."
+      },
+      {
+        "topic": "Baseline haemodynamic status",
+        "notes": "Some correspondence noted that CVP ~9 mm Hg might indicate less severe volume depletion than implied by 'resuscitation,' potentially reducing detectable benefit; authors countered that contemporary practice resuscitates early."
+      },
+      {
+        "topic": "Sepsis subgroup trend",
+        "notes": "The 13% relative risk reduction in severe sepsis (RR 0.87, P=0.09) was controversial; subsequent ALBIOS trial found no overall mortality benefit with albumin in sepsis, tempering enthusiasm."
+      },
+      {
+        "topic": "Traumatic brain injury harm signal",
+        "notes": "Post-hoc signal of increased mortality with albumin in TBI (RR 1.62, P=0.009) led to focused analyses and practice change. Later observational and trial data reinforced avoidance of albumin in TBI."
+      },
+      {
+        "topic": "Albumin concentration and comparator crystalloid",
+        "notes": "SAFE used 4% albumin vs 0.9% saline; questions remain about hyperoncotic albumin (20–25%) or balanced crystalloids as comparators, which have different acid-base and chloride load profiles."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "Guidelines (e.g., Surviving Sepsis Campaign, Brain Trauma Foundation) now recommend crystalloids as first-line resuscitation and reserve albumin for selected contexts, while advising against albumin in traumatic brain injury."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ALBIOS",
+        "relation": "Randomised trial of albumin replacement in severe sepsis/septic shock; found no overall mortality benefit, counterbalancing SAFE’s sepsis subgroup trend."
+      },
+      {
+        "trial": "CRISTAL",
+        "relation": "Colloids vs crystalloids in ICU; did not show 28-day mortality benefit but suggested potential longer-term differences, reinforcing that fluid class effects are time- and outcome-dependent."
+      },
+      {
+        "trial": "SAFE-TBI post-hoc analysis",
+        "relation": "Subsequent detailed analysis of the SAFE traumatic brain injury cohort confirmed higher mortality with albumin, shifting practice away from albumin in this population."
+      }
+    ],
+    "unresolved_questions": [
+      "Does 4% albumin confer a mortality benefit in severe sepsis when targeted to specific hemodynamic or biomarker-guided protocols?",
+      "What are the long-term functional outcomes and quality of life after albumin vs saline resuscitation, particularly in neurologically injured patients?",
+      "Would hyperoncotic (20–25%) albumin or albumin combined with balanced crystalloids yield different results?",
+      "What is the cost-effectiveness of albumin in ICU settings, especially given its higher acquisition cost without proven survival benefit?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=7000 randomised; 28-day mortality: albumin 20.9% vs saline 21.1%",
+        "Primary outcome RR 0.99; 95% CI 0.91–1.09; P=0.87",
+        "Traumatic brain injury subanalysis: RR 1.62; P=0.009 (excess 21 deaths)"
+      ],
+      "one_line_takeaway": "Albumin is not better than saline for most ICU fluid resuscitation, but it may harm patients with traumatic brain injury."
+    }
+  },
+  "_source_id": "SAFE",
+  "_source_system": "Circulatory"
+}

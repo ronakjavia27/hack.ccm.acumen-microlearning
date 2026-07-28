@@ -1,0 +1,359 @@
+{
+  "id": "GASTROSAM",
+  "trial_name": "GASTROSAM — Intravenous Rehydration for Severe Acute Malnutrition with Gastroenteritis (2025)",
+  "specialty": "Paediatric Critical Care",
+  "subtopic": "Gastrointestinal Infections",
+  "year": 2025,
+  "journal": "New England Journal of Medicine",
+  "citation": "Maitland K, Ouattara SM, Sainna H, et al. Intravenous Rehydration for Severe Acute Malnutrition with Gastroenteritis. N Engl J Med. 2025;393(13):1257-1268",
+  "doi": "https://doi.org/10.1056/NEJMoa2505752",
+  "registration": "",
+  "trial_type": "Multicentre, open-label, randomised, factorial, superiority trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 272,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In children with severe acute malnutrition and severe dehydration, IV rehydration with Ringer's lactate did not reduce mortality compared to cautious oral/nasogastric strategy, did not cause fluid overload, but increased hypokalaemia, requiring careful monitoring.",
+  "pico": {
+    "population": "Children aged 6 months to 12 years with severe acute malnutrition, acute gastroenteritis, and WHO-defined severe dehydration in sub-Saharan African hospitals.",
+    "intervention": "Intravenous rehydration with Ringer's lactate 100 ml/kg (rapid or slow); factorial assignment to ReSoMal vs standard WHO ORS.",
+    "comparison": "Cautious oral/nasogastric rehydration strategy (5 ml/kg every 30 min for 2h, then 5-10 ml/kg hourly alternating with F-75).",
+    "outcome": "Death by 96 hours (primary); secondary included 28-day mortality, fluid overload events, and electrolyte abnormalities."
+  },
+  "keywords": [
+    "intravenous rehydration",
+    "oral rehydration",
+    "severe acute malnutrition",
+    "Ringers lactate",
+    "gastroenteritis",
+    "paediatric",
+    "fluid management"
+  ],
+  "related_trials": [
+    "FEAST"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Children with SAM and acute gastroenteritis often have severe dehydration and electrolyte derangements; international guidance favoured cautious oral/nasogastric strategies due to fear of fluid overload.",
+      "knowledge_gap": "No RCT had directly compared standard-volume IV rehydration to cautious oral/nasogastric strategy for severe dehydration in SAM; undertreatment of hypovolaemia might contribute to high mortality.",
+      "hypothesis": "IV rehydration with Ringer's lactate 100 ml/kg would reduce 96-hour mortality without increasing fluid overload."
+    },
+    "methods": {
+      "design": "Multicentre, open-label, randomised, factorial, superiority trial (2:1:1 allocation: oral strategy vs rapid IV vs slow IV).",
+      "setting": "6 hospitals in Kenya, Uganda, Niger, Nigeria.",
+      "population": {
+        "inclusion": [
+          "Age 6 months to 12 years",
+          "Severe acute malnutrition (weight-for-height z-score < -3, MUAC < 11.5 cm, and/or bilateral pedal oedema)",
+          "Acute gastroenteritis (≥3 loose stools per day)",
+          "Severe dehydration per WHO criteria (≥2 signs: lethargy/unconsciousness, sunken eyes, inability to drink/drinking poorly, skin pinch returning very slowly)"
+        ],
+        "exclusion": [
+          "Known congenital or rheumatic heart disease",
+          "Diarrhoea duration >14 days"
+        ]
+      },
+      "intervention": "IV rehydration with Ringer's lactate 100 ml/kg, either rapid (over 3h if <12 months, 6h if ≥12 months) or slow (over 8h); factorial assignment to ReSoMal vs standard WHO ORS. Shock management: rapid arm permitted bolus 20 ml/kg; slow arm no bolus.",
+      "comparison": "Cautious oral/nasogastric rehydration: ORS 5 ml/kg every 30 min for 2h, then 5-10 ml/kg hourly for 4-10h, alternating with F-75; shock allowed bolus 15 ml/kg; factorial to ReSoMal vs standard ORS.",
+      "blinding": "Open-label for clinicians; laboratory analyses performed with blinding to treatment assignment.",
+      "sample_size_power": "272 children required to detect 30% relative reduction in 96-hour mortality (assumed 58% vs 41%) with 80% power at 5% significance.",
+      "primary_outcome": "Death by 96 hours",
+      "secondary_outcomes": [
+        "Death by 28 days",
+        "Suspected pulmonary oedema",
+        "Signs consistent with heart failure",
+        "Serious adverse events",
+        "Deterioration in level of consciousness or seizures (suspected cerebral oedema)",
+        "Severe hyponatraemia at 8 and 24 hours",
+        "Severe hypokalaemia at 8 and 24 hours",
+        "Change in serum sodium and potassium from baseline"
+      ],
+      "follow_up": "Intensive clinical monitoring for first 8 hours; biochemical sampling at randomisation, 8 hours, and 24 hours; mortality assessed at 96 hours and 28 days, plus day-7 follow-up."
+    },
+    "results": {
+      "headline_bullets": [
+        "96-hour mortality was similar between IV 7% and oral 8% (RR 1.02; 95% CI 0.41-2.52; P=0.69).",
+        "No cases of pulmonary oedema or heart failure occurred in any group (0/272), challenging the main safety concern.",
+        "IV rehydration corrected hyponatraemia faster but increased early severe hypokalaemia (45% vs 31% at 8h), demanding potassium management."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death by 96 hours",
+          "group_a": "9/134 (7%)",
+          "group_b": "11/138 (8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.02",
+          "ci_95": "0.41 to 2.52",
+          "p_value": "0.69",
+          "note": "Rapid: 5/67 (7%); Slow: 4/67 (6%); site-adjusted Mantel-Haenszel RR."
+        },
+        {
+          "outcome": "Death by 28 days",
+          "group_a": "14/134 (10%)",
+          "group_b": "17/138 (12%)",
+          "effect_measure": "HR",
+          "effect_value": "0.85",
+          "ci_95": "0.41 to 1.78",
+          "p_value": "Not reported",
+          "note": "Rapid: 8/67 (12%); Slow: 6/67 (9%)."
+        },
+        {
+          "outcome": "Suspected pulmonary oedema",
+          "group_a": "0/134 (0%)",
+          "group_b": "0/138 (0%)",
+          "effect_measure": "Not estimable",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Prespecified safety outcome."
+        },
+        {
+          "outcome": "Signs consistent with heart failure",
+          "group_a": "0/134 (0%)",
+          "group_b": "0/138 (0%)",
+          "effect_measure": "Not estimable",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Prespecified safety outcome."
+        },
+        {
+          "outcome": "Serious adverse event",
+          "group_a": "24/134 (18%)",
+          "group_b": "32/138 (23%)",
+          "effect_measure": "OR",
+          "effect_value": "0.73",
+          "ci_95": "0.40 to 1.32",
+          "p_value": "Not reported",
+          "note": "Rapid: 14/67 (21%); Slow: 10/67 (15%)."
+        },
+        {
+          "outcome": "Deterioration in consciousness or seizures (suspected cerebral oedema)",
+          "group_a": "6/134 (4%)",
+          "group_b": "10/138 (7%)",
+          "effect_measure": "OR",
+          "effect_value": "0.54",
+          "ci_95": "0.24 to 1.23",
+          "p_value": "Not reported",
+          "note": "Clinically suspected; no neuroimaging confirmation."
+        },
+        {
+          "outcome": "Severe hyponatraemia at 8 hours",
+          "group_a": "20/128 (16%)",
+          "group_b": "58/129 (45%)",
+          "effect_measure": "OR",
+          "effect_value": "0.23",
+          "ci_95": "0.13 to 0.41",
+          "p_value": "Not reported",
+          "note": "Baseline severe hyponatraemia was common."
+        },
+        {
+          "outcome": "Severe hypokalaemia at 8 hours",
+          "group_a": "57/127 (45%)",
+          "group_b": "40/128 (31%)",
+          "effect_measure": "OR",
+          "effect_value": "1.79",
+          "ci_95": "1.07 to 3.01",
+          "p_value": "Not reported",
+          "note": "Higher risk with IV rehydration."
+        },
+        {
+          "outcome": "Severe hyponatraemia at 24 hours",
+          "group_a": "21/127 (17%)",
+          "group_b": "35/129 (27%)",
+          "effect_measure": "OR",
+          "effect_value": "0.53",
+          "ci_95": "0.29 to 0.98",
+          "p_value": "Not reported",
+          "note": "Sodium correction faster in IV arms."
+        },
+        {
+          "outcome": "Severe hypokalaemia at 24 hours",
+          "group_a": "36/125 (29%)",
+          "group_b": "26/128 (20%)",
+          "effect_measure": "OR",
+          "effect_value": "1.59",
+          "ci_95": "0.89 to 2.83",
+          "p_value": "Not reported",
+          "note": "Persistent potassium vulnerability in IV arms."
+        },
+        {
+          "outcome": "Change in serum sodium from baseline to 8 hours (mmol/L)",
+          "group_a": "7.5 ± 5.0",
+          "group_b": "1.9 ± 6.0",
+          "effect_measure": "Mean difference",
+          "effect_value": "5.7",
+          "ci_95": "4.5 to 7.0",
+          "p_value": "Not reported",
+          "note": "Rapid: 7.6 ± 4.9; Slow: 7.5 ± 5.2."
+        },
+        {
+          "outcome": "Change in serum potassium from baseline to 8 hours (mmol/L)",
+          "group_a": "-0.1 ± 0.9",
+          "group_b": "0.2 ± 0.8",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.3",
+          "ci_95": "-0.5 to -0.2",
+          "p_value": "Not reported",
+          "note": "Rapid: -0.2 ± 0.9; Slow: -0.1 ± 0.8."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No pulmonary oedema or heart failure reported in any of the 272 participants.",
+      "Serious adverse events numerically lower in IV arms (18% vs 23%; OR 0.73, 95% CI 0.40-1.32).",
+      "Suspected cerebral oedema or seizures: 4% IV vs 7% oral (OR 0.54, 95% CI 0.24-1.23).",
+      "Severe hyponatraemia at 8h reduced with IV (16% vs 45%; OR 0.23, 95% CI 0.13-0.41).",
+      "Severe hypokalaemia at 8h increased with IV (45% vs 31%; OR 1.79, 95% CI 1.07-3.01).",
+      "At 24h, severe hyponatraemia remained lower with IV (17% vs 27%; OR 0.53, 95% CI 0.29-0.98); severe hypokalaemia remained higher (29% vs 20%; OR 1.59, 95% CI 0.89-2.83)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation and allocation",
+          "notes": "Sealed opaque envelopes with block sequences and site stratification (2:1:1); good allocation concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label for clinicians; primary outcome (mortality) is objective; lab analyses were blinded, reducing detection bias for biochemical endpoints."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Minimal loss to follow-up: 271/272 at 96h, 270/272 at 28 days; intention-to-treat analysis performed."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "IV fluid receipt within 24h: oral arm 22% vs IV arms 99%; this rescue IV use likely attenuates between-group contrast for efficacy."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups comparable (median age ~13-14 mo, weight ~6.0 kg, kwashiorkor ~48-51%). High prevalence of baseline severe hyponatraemia (45-53%) and hypokalaemia (40-49%)."
+        },
+        {
+          "domain": "Heterogeneity",
+          "notes": "Multicentre (4 countries, 6 sites); analyses adjusted for site, but site-level variation in care may still exist."
+        },
+        {
+          "domain": "Timing and dose",
+          "notes": "IV dosing prespecified at 100 ml/kg; bolus policies differed by arm (oral 15 ml/kg for shock, rapid IV 20 ml/kg, slow IV no bolus), potentially affecting early rescue in the sickest."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Mortality is objective; adverse events relied on clinical judgement without routine imaging, susceptible to ascertainment bias."
+        },
+        {
+          "domain": "Statistical rigor",
+          "notes": "ITT with site-adjusted models; wide confidence intervals for mortality reflect limited precision."
+        }
+      ],
+      "verdict": "Moderate: strong randomisation, minimal attrition, and objective primary outcome, but open-label and rescue IV use dilute efficacy contrasts."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical of complicated SAM admissions in sub-Saharan Africa; excluded congenital heart disease and diarrhoea >14 days, limiting generalisability to those subgroups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Trial conducted in research-capable hospitals with close monitoring and biochemistry; generalisability to facilities without reliable lab monitoring and potassium supplementation may be limited."
+        }
+      ],
+      "verdict": "Findings likely applicable to similar low-resource inpatient settings with capacity for electrolyte monitoring and management; implementation in less-equipped settings requires explicit potassium protocols."
+    },
+    "strengths": [
+      "Directly addresses a long-standing, practice-defining safety concern with a pragmatic RCT in high-burden settings.",
+      "Clinically meaningful primary endpoint (96-hour mortality) with very low loss to follow-up.",
+      "Frequent monitoring and blinded lab endpoints enabled detailed safety phenotyping (fluid overload and electrolyte trajectories).",
+      "Included two IV delivery rates (rapid vs slow) supporting internal comparison of infusion speed."
+    ],
+    "limitations": [
+      "Open-label design and protocol-driven rescue IV use in the oral arm reduce treatment separation and may dilute between-group efficacy differences.",
+      "Safety outcomes relied on clinical recognition; subtle pulmonary or cardiac overload could be under-recognised.",
+      "Reliance on laboratory monitoring and potassium supplementation infrastructure that is not universally available in all low-resource settings.",
+      "Multicentre variation in supportive care may influence outcomes."
+    ],
+    "critical_appraisal": {
+      "summary": "GASTROSAM provides moderate-quality evidence that IV rehydration with Ringer's lactate does not reduce short-term mortality in SAM with severe dehydration but is safe with respect to fluid overload; the trade-off is a higher risk of hypokalaemia, highlighting the need for bundled electrolyte monitoring and supplementation.",
+      "strengths": [
+        "Well-designed multicentre RCT with strong randomisation and minimal attrition.",
+        "Objective primary outcome (mortality) reduces bias.",
+        "Blinded laboratory assessment of electrolytes.",
+        "Pragmatic inclusion of two IV rates within the intervention arm."
+      ],
+      "weaknesses": [
+        "Open-label nature increases risk of co-intervention and ascertainment bias for subjective safety endpoints.",
+        "Substantial crossover (22%) to IV in the oral arm attenuates the efficacy contrast.",
+        "Adverse events diagnosed clinically without imaging.",
+        "Wide confidence intervals limit precision for mortality differences."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In children with SAM and WHO-defined severe dehydration, IV rehydration with Ringer's lactate did not reduce mortality, was not associated with fluid overload, but increased early severe hypokalaemia; therefore, careful potassium management is essential.",
+    "clinical_bottom_line": {
+      "verdict": "IV rehydration can be considered as an option in SAM with severe dehydration when oral/nasogastric strategy is not feasible or insufficient, provided electrolyte monitoring and supplementation are in place.",
+      "applies_to": "Hospitalized children aged 6 months to 12 years with SAM, acute gastroenteritis, and WHO severe dehydration, in settings with capacity for laboratory monitoring and potassium replacement.",
+      "does_not_mean": "That IV rehydration is superior or mandatory; oral/nasogastric rehydration remains a safe and effective strategy, and the choice depends on local context and resources.",
+      "implementation_caveats": [
+        "Close monitoring of potassium is essential; routine potassium supplementation should be considered when using Ringer's lactate.",
+        "Protocols for electrolyte monitoring and correction must be in place before adopting routine IV rehydration in this population.",
+        "Cautious oral/nasogastric rehydration remains appropriate where monitoring is limited."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Data versus dogma",
+        "notes": "Editorial highlighted that GASTROSAM provides direct evidence against the assumption that IV rehydration inevitably precipitates fluid overload, while emphasising the need for system readiness (monitoring and electrolyte management)."
+      },
+      {
+        "topic": "Electrolyte safety debate (potassium risk with balanced crystalloids)",
+        "notes": "Correspondence raised concern that potassium-free balanced solutions (Ringer's lactate) may worsen hypokalaemia in a population with profound baseline deficits, arguing that fluid selection and/or potassium supplementation strategy should be explicit."
+      },
+      {
+        "topic": "Generalisability and 'trial care' versus routine ward care",
+        "notes": "Correspondence emphasised that improved outcomes and safety may depend on broader care-system strengthening (staffing, monitoring, access to electrolytes) and queried whether results can be replicated where these elements are inconsistent."
+      },
+      {
+        "topic": "Preexisting equipoise",
+        "notes": "Pre-trial systematic review evidence was limited, creating uncertainty about efficacy and safety, which justified randomisation."
+      },
+      {
+        "topic": "Positioning relative to earlier African paediatric fluid trials",
+        "notes": "FEAST and earlier phase II rehydration trials informed safety monitoring but did not address SAM-specific safety concerns; GASTROSAM provides SAM-specific data."
+      },
+      {
+        "topic": "Unreported factorial component",
+        "notes": "The primary report described factorial assignment to ReSoMal vs standard WHO ORS, but comparative outcomes for this component were not reported."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "FEAST",
+        "relation": "A landmark African paediatric fluid trial that showed harm from fluid boluses in children with shock without severe malnutrition; relevant mechanistically but differs in population (no SAM) and intervention (bolus vs rehydration)."
+      },
+      {
+        "trial": "Phase II rehydration trial (non-SAM)",
+        "relation": "Informed feasibility and safety monitoring frameworks for fluid delivery rate and physiologic response, but did not resolve SAM-specific safety concerns."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal fluid type and potassium supplementation strategy for IV rehydration in SAM.",
+      "Effectiveness and safety of IV rehydration in settings without laboratory monitoring.",
+      "Long-term neurodevelopmental and growth outcomes.",
+      "Results of the ReSoMal vs standard ORS factorial component (not yet reported).",
+      "Impact of IV rehydration speed (rapid vs slow) on clinical outcomes beyond electrolyte effects."
+    ]
+  },
+  "quick_recall": {
+    "numbers_to_remember": [
+      "n=272",
+      "100 ml/kg Ringer's lactate IV",
+      "96h mortality: 7% IV vs 8% oral (RR 1.02, 95% CI 0.41-2.52)",
+      "Severe hypokalaemia at 8h: 45% IV vs 31% oral",
+      "No pulmonary oedema or heart failure in any arm (0/272)"
+    ],
+    "one_line_takeaway": "In SAM with severe dehydration, IV rehydration didn't reduce mortality but appears safe regarding fluid overload; however, it increases hypokalaemia, making potassium monitoring and supplementation mandatory."
+  },
+  "_source_id": "GASTROSAM",
+  "_source_system": "Gastrointestinal"
+}

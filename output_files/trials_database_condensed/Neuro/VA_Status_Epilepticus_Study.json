@@ -1,0 +1,336 @@
+{
+  "id": "NINDS",
+  "trial_name": "NINDS rt-PA Stroke Study",
+  "specialty": "Neurocritical Care",
+  "subtopic": "Acute Ischemic Stroke",
+  "year": 1995,
+  "journal": "N Engl J Med",
+  "citation": "National Institute of Neurological Disorders and Stroke rt-PA Stroke Study Group. Tissue plasminogen activator for acute ischemic stroke. N Engl J Med. 1995;333(24):1581-1587.",
+  "doi": "https://doi.org/10.1056/NEJM199512143332401",
+  "registration": "",
+  "trial_type": "RCT — multicentre, double-blind, placebo-controlled, two-part",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 624,
+  "result_category": "Positive",
+  "one_liner": "IV alteplase within 3 hours of ischemic stroke onset improved 3-month functional outcomes (global OR 1.7, 95% CI 1.2–2.6) with increased symptomatic ICH (6.4% vs 0.6%) and no significant mortality difference.",
+  "pico": {
+    "population": "Adults with acute ischaemic stroke, measurable deficit on NIHSS, CT without intracranial haemorrhage, treatable within 3 hours of onset.",
+    "intervention": "IV alteplase (rt-PA) 0.9 mg/kg (max 90 mg), 10% bolus then infusion over 60 min; no antithrombotic agents for 24 h.",
+    "comparison": "Matching placebo with identical administration and co-intervention constraints.",
+    "outcome": "Part 2 primary: global test across four disability measures at 3 months (Barthel Index, mRS, GOS, NIHSS). Part 1 primary: early NIHSS improvement. Key secondaries: individual functional outcomes, symptomatic ICH, mortality."
+  },
+  "keywords": [
+    "alteplase",
+    "thrombolysis",
+    "acute ischemic stroke",
+    "NIHSS",
+    "fibrinolysis"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Acute ischaemic stroke was a leading cause of death and disability with limited acute therapies. IV thrombolysis carried biological plausibility but feared intracranial haemorrhage trade-off.",
+      "knowledge_gap": "No definitive trial had shown that IV alteplase within 3 hours improves functional outcomes.",
+      "hypothesis": "IV alteplase within 3 hours improves early neurologic recovery and 3-month functional outcomes versus placebo, with acceptable safety."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, double-blind, placebo-controlled trial; stratified by centre and time to treatment (0–90 vs 91–180 min); two sequential parts with different primary endpoints.",
+      "setting": "Hospital-based acute stroke care with emergent CT, laboratory testing, and specialist evaluation.",
+      "population": {
+        "inclusion": [
+          "Acute ischaemic stroke with clearly defined time of onset",
+          "Measurable neurologic deficit on NIH Stroke Scale",
+          "Baseline CT without intracranial haemorrhage",
+          "Treatment start within 3 hours (0–180 min)"
+        ],
+        "exclusion": [
+          "Stroke or serious head trauma in prior 3 months",
+          "Major surgery within 14 days",
+          "History of intracranial haemorrhage",
+          "Rapidly improving or minor symptoms",
+          "Symptoms suggestive of subarachnoid haemorrhage",
+          "GI or urinary tract haemorrhage within 21 days",
+          "Arterial puncture at noncompressible site within 7 days",
+          "Seizure at onset",
+          "Systolic BP >185 mmHg or diastolic BP >110 mmHg despite treatment",
+          "Anticoagulant use or heparin within 48 h with elevated aPTT",
+          "Prothrombin time >15 sec",
+          "Platelets <100,000/mm3",
+          "Glucose <50 mg/dL or >400 mg/dL"
+        ]
+      },
+      "intervention": "IV alteplase (rt-PA) 0.9 mg/kg (max 90 mg), 10% bolus then infusion over 60 min; no antithrombotic agents for 24 h; BP maintained within prespecified limits.",
+      "comparison": "Matching placebo with identical administration and co-intervention constraints (no antithrombotics for 24 h, same BP targets).",
+      "blinding": "Double-blind; patients, clinicians, and outcome assessors blinded; CT scans interpreted centrally by a radiologist blinded to clinical data.",
+      "sample_size_power": "Part 2 planned 320 patients (160 per group) to detect a 20 percentage point difference with 95% power; total enrolled 624 across both parts.",
+      "primary_outcome": "Part 2: global test statistic across four 3-month disability measures (Barthel Index ≥95, mRS 0–1, GOS 1, NIHSS 0–1). Part 1: NIHSS improvement ≥4 or complete resolution at 24 hours.",
+      "secondary_outcomes": [
+        "Individual components at 3 months (Barthel, mRS, GOS, NIHSS)",
+        "Early neurologic improvement at 24 hours",
+        "Symptomatic intracranial haemorrhage within 36 hours",
+        "All-cause mortality at 90 days",
+        "Minor external bleeding",
+        "New ischaemic stroke"
+      ],
+      "follow_up": "3 months for functional outcomes; safety imaging at 24 h and 7–10 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "Alteplase improved 3-month disability outcomes across multiple scales (e.g., mRS 0–1 39% vs 26% in Part 2).",
+        "Symptomatic intracranial haemorrhage within 36 h was higher with alteplase (6.4% vs 0.6%; p<0.001).",
+        "Mortality at 90 days was not significantly different (17% vs 21%; p=0.30).",
+        "Benefit observed in both early (0–90 min) and later (91–180 min) treatment strata (global OR 1.9 each)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary global statistic at 3 months (Part 2)",
+          "group_a": "N=168",
+          "group_b": "N=165",
+          "effect_measure": "OR",
+          "effect_value": "1.7",
+          "ci_95": "1.2–2.6",
+          "p_value": "0.008",
+          "note": "Global test across Barthel, mRS, GOS, NIHSS. Gatekeeping for individual components."
+        },
+        {
+          "outcome": "Barthel Index ≥95 at 3 months (Part 2)",
+          "group_a": "84/168 (50%)",
+          "group_b": "63/165 (38%)",
+          "effect_measure": "RR",
+          "effect_value": "1.3",
+          "ci_95": "1.0–1.7",
+          "p_value": "0.026",
+          "note": ""
+        },
+        {
+          "outcome": "Modified Rankin Scale 0–1 at 3 months (Part 2)",
+          "group_a": "65/168 (39%)",
+          "group_b": "43/165 (26%)",
+          "effect_measure": "RR",
+          "effect_value": "1.5",
+          "ci_95": "1.1–2.0",
+          "p_value": "0.019",
+          "note": ""
+        },
+        {
+          "outcome": "Glasgow Outcome Scale 1 at 3 months (Part 2)",
+          "group_a": "74/168 (44%)",
+          "group_b": "53/165 (32%)",
+          "effect_measure": "RR",
+          "effect_value": "1.4",
+          "ci_95": "1.0–1.8",
+          "p_value": "0.025",
+          "note": ""
+        },
+        {
+          "outcome": "NIHSS 0–1 at 3 months (Part 2)",
+          "group_a": "52/168 (31%)",
+          "group_b": "33/165 (20%)",
+          "effect_measure": "RR",
+          "effect_value": "1.5",
+          "ci_95": "1.0–2.2",
+          "p_value": "0.033",
+          "note": ""
+        },
+        {
+          "outcome": "Early neurologic improvement at 24 h (0–90 min stratum, combined)",
+          "group_a": "87/157 (55%)",
+          "group_b": "61/145 (42%)",
+          "effect_measure": "RR",
+          "effect_value": "1.3",
+          "ci_95": "1.0–1.7",
+          "p_value": "0.02",
+          "note": "Combined Parts 1 and 2"
+        },
+        {
+          "outcome": "Symptomatic intracranial haemorrhage within 36 h (overall)",
+          "group_a": "6.4%",
+          "group_b": "0.6%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Part 1: 6% vs 0%; Part 2: 7% vs 1%"
+        },
+        {
+          "outcome": "All-cause mortality at 90 days",
+          "group_a": "54/312 (17%)",
+          "group_b": "64/312 (21%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.30",
+          "note": ""
+        },
+        {
+          "outcome": "Minor external bleeding within 10 days",
+          "group_a": "23%",
+          "group_b": "3%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "New ischaemic stroke during follow-up",
+          "group_a": "Part 1: 8%, Part 2: 4%",
+          "group_b": "Part 1: 7%, Part 2: 4%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": "Rates similar between groups"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Onset-to-treatment 0–90 min (global statistic)",
+          "group_a": "N=157",
+          "group_b": "N=145",
+          "effect_measure": "OR",
+          "effect_value": "1.9",
+          "ci_95": "1.2–2.9",
+          "p_interaction": "",
+          "p_value": "0.005"
+        },
+        {
+          "subgroup": "Onset-to-treatment 91–180 min (global statistic)",
+          "group_a": "N=155",
+          "group_b": "N=167",
+          "effect_measure": "OR",
+          "effect_value": "1.9",
+          "ci_95": "1.3–2.9",
+          "p_interaction": "",
+          "p_value": "0.002"
+        }
+      ]
+    },
+    "safety": [
+      "Symptomatic intracranial haemorrhage within 36 h: 6.4% vs 0.6% (p<0.001). Part 1 6% vs 0%; Part 2 7% vs 1%.",
+      "Minor external bleeding within 10 days: 23% vs 3%.",
+      "New ischaemic stroke: Part 1 8% vs 7%; Part 2 4% vs 4% (similar).",
+      "All-cause mortality at 90 days: 17% vs 21% (p=0.30)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Permuted-block randomisation (varying block sizes) stratified by centre and time-to-treatment (0–90 vs 91–180 min). Allocation concealment method not detailed, but blinding and identical placebo reduced selection risks."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind; certified examiners not involved in initial treatment assessed outcomes; CT scans interpreted centrally by a blinded radiologist."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Minimal missing data: Part 1 only 1 patient missing 3-month data; Part 2 7 of 1332 primary outcome measures missing, with prespecified handling (worst-score assignment). ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Dose delivery high: Part 1 full dose in 90% vs 92%; Part 2 93% vs 93%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Stroke severity similar (median NIHSS 14 vs 14 in Part 1; 14 vs 15 in Part 2). Notable imbalances: weight in Part 1 (76±15 vs 80±18 kg), age in Part 2 (69±12 vs 66±13 years); covariate adjustment performed when variables differed at P<0.05."
+        }
+      ],
+      "verdict": "Overall internal validity strong due to double-blinding, stratified randomisation, high protocol adherence, and minimal missing outcomes, though modest baseline imbalances and two-part design warrant attention."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled typical moderate-severity ischaemic strokes (median NIHSS 14–15), but restricted to patients treatable within 3h and excluded minor/rapidly improving strokes, recent bleeding risks, and severe hypertension."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Results apply best to health systems capable of rapid prehospital recognition, urgent CT, stroke expertise, and strict BP/coagulation management. Less generalisable where onset-to-needle >3h or infrastructure limited."
+        }
+      ],
+      "verdict": "External validity moderate: highly applicable to early-presenter patients in stroke-capable systems, but limited for later-presenting or excluded populations."
+    },
+    "strengths": [
+      "Rigorous randomised double-blind design",
+      "Multicentre enrolment",
+      "Explicit time-to-treatment stratification",
+      "Standardised alteplase dosing",
+      "Central blinded CT interpretation",
+      "Clinically meaningful 3-month disability outcomes using multiple validated instruments",
+      "Minimal missing outcome data"
+    ],
+    "limitations": [
+      "Two-part design with different primary endpoints",
+      "Modest sample size by modern standards",
+      "Strict eligibility limits generalisability",
+      "Early treatment window restricts applicability to rapid systems",
+      "Increased symptomatic ICH risk demands careful translation into practice"
+    ],
+    "critical_appraisal": {
+      "summary": "The NINDS trial provides high-quality evidence that alteplase within 3 hours improves disability outcomes, with acceptable but clearly increased ICH risk, and drove system-level transformation of acute stroke care.",
+      "strengths": [
+        "Rigorous randomised double-blind design",
+        "Multicentre enrolment",
+        "Explicit time-to-treatment stratification",
+        "Standardised alteplase dosing",
+        "Central blinded CT interpretation",
+        "Clinically meaningful 3-month disability outcomes using multiple validated instruments",
+        "Minimal missing outcome data"
+      ],
+      "weaknesses": [
+        "Two-part design with different primary endpoints",
+        "Modest sample size by modern standards",
+        "Strict eligibility limits generalisability",
+        "Early treatment window restricts applicability to rapid systems",
+        "Increased symptomatic ICH risk demands careful translation into practice"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "IV alteplase within 3 hours of acute ischaemic stroke onset improves 3-month functional outcomes, with increased symptomatic intracranial haemorrhage but no significant mortality difference.",
+    "clinical_bottom_line": {
+      "verdict": "This trial changed practice by establishing a time-dependent benefit of alteplase and creating the modern emergency stroke pathway.",
+      "applies_to": "Patients meeting trial inclusion/exclusion criteria, treated within 3 hours in a stroke-capable centre.",
+      "does_not_mean": "It does not imply safety beyond 3 hours without advanced imaging selection, nor that thrombolysis replaces endovascular therapy for large vessel occlusion.",
+      "implementation_caveats": [
+        "Strict BP control and 24h avoidance of antithrombotics required",
+        "Informed consent and monitoring for ICH",
+        "Optimise door-to-needle times to maximise benefit"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Editorial framing",
+        "notes": "Accompanying editorial emphasized that thrombolysis crossed a clinical threshold but required system-level readiness and careful patient selection."
+      },
+      {
+        "topic": "Baseline imbalances debate",
+        "notes": "Some questioned whether chance baseline imbalances inflated benefit; a formal reanalysis confirmed the primary result was robust to imbalance."
+      },
+      {
+        "topic": "Time-to-treatment effect",
+        "notes": "Subsequent pooled and individual-patient meta-analyses reinforced a strong time-dependent benefit, contextualising the 3-hour window as high-yield."
+      },
+      {
+        "topic": "Implementation challenges",
+        "notes": "Real-world studies showed thrombolysis can be delivered with acceptable haemorrhage rates, but frequent protocol deviations highlighted need for governance, audit, and time targets."
+      },
+      {
+        "topic": "Guideline adoption",
+        "notes": "Contemporary guidelines now recommend IV alteplase within 3 hours, with extended windows for selected patients."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=624",
+        "Global OR 1.7 (95% CI 1.2–2.6)",
+        "Symptomatic ICH 6.4% vs 0.6% (p<0.001)",
+        "mRS 0–1 39% vs 26% (p=0.019)"
+      ],
+      "one_line_takeaway": "IV alteplase within 3 hours of ischemic stroke improves 3-month disability outcomes with an acceptable ICH risk increase, no mortality penalty."
+    }
+  },
+  "_source_id": "VA_Status_Epilepticus_Study",
+  "_source_system": "Neuro"
+}

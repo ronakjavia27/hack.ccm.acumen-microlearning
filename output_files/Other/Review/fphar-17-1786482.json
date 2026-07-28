@@ -1,0 +1,97 @@
+{
+  "id": "pharmacokinetics-of-polymyxin-drugs-in-special-populations-2026",
+  "doc_type": "article",
+  "article_subtype": "Review",
+  "title": "Pharmacokinetics of polymyxin drugs in special populations",
+  "authors": "Aochao Xu et al.",
+  "journal": "Frontiers in Pharmacology",
+  "year": 2026,
+  "doi": "10.3389/fphar.2026.1786482",
+  "specialty": [
+    "pharmacology",
+    "pulmonology",
+    "multi_system"
+  ],
+  "tags": [
+    "polymyxin b",
+    "colistin methanesulfonate",
+    "colistin sulfate",
+    "pharmacokinetics",
+    "population pharmacokinetics",
+    "therapeutic drug monitoring",
+    "critical care"
+  ],
+  "one_line_summary": "Systematic review of 72 studies evaluating the pharmacokinetic profiles of polymyxin B, colistin methanesulfonate, and colistin sulfate across special populations, emphasizing the need for model-informed precision dosing and therapeutic drug monitoring.",
+  "key_pearls": [
+    "- **Polymyxin B** (PMB) undergoes predominantly *non-renal elimination*, rendering *creatinine clearance* (**CrCL**) an inconsistent covariate for dose adjustments, whereas **colistin methanesulfonate** (CMS) is cleared renally and requires strict **CrCL**-based dose titration.",
+    "- In patients receiving *continuous renal replacement therapy* (CRRT), both **CMS** and **PMB** clearances are **significantly** altered, whereas *extracorporeal membrane oxygenation* (ECMO) circuits exhibit minimal drug adsorption and do not require empirical dose adjustments.",
+    "- Serum *cystatin C* (**CysC**) outperforms **CrCL** as a primary covariate influencing **colistin sulfate** (CS) clearance in **critically** ill patients undergoing *continuous veno-venous hemodiafiltration* (CVVHDF).",
+    "- In morbidly obese patients, **PMB** dosing should be calculated using *adjusted body weight* (ABW) with a capped daily dose of **250 mg** to achieve an **AUC_0-24h** target of **50–100 mg·h/L** for pathogens with *MIC* **<= 0.5 mg/L**.",
+    "- Substantial inter-individual pharmacokinetic variability across special populations highlights the necessity of combining *model-informed precision dosing* (MIPD) with *therapeutic drug monitoring* (TDM) to balance clinical efficacy and **nephrotoxicity**."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": "Special patient populations including critically ill adults, patients with acute or chronic renal impairment, patients on CRRT or ECMO, elderly patients, pediatric cohorts, morbidly obese individuals, patients with cystic fibrosis, burn victims, and lung transplant recipients.",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Baseline Pharmacokinetics of Polymyxin Agents",
+      "content": "- Analyzed pharmacokinetic data from **72** articles (**36** PMB, **30** CMS, and **6** CS) published between **2005** and **2025**.\n- **Polymyxin B** (PMB) demonstrates non-renal elimination with a clearance (*CL*) of **1.82–1.96 L/h**, volume of distribution (*Vd*) of **14.28–15.33 L**, and an elimination half-life (*t1/2*) of approximately **5.5 h** in healthy adults.\n- **Colistin methanesulfonate** (CMS) acts as an inactive prodrug cleared renally, converting in vivo to active **colistin**; multiple-dose regimens show substantial accumulation, increasing steady-state **Cmax** to **4.38 mg/L** compared to **2.55 mg/L** single-dose exposure.\n- **Colistin sulfate** (CS) exhibits non-renal dominant clearance (**3.24–3.26 L/h**), *Vd* of **16.82–17.32 L**, *t1/2* of **3.65–4.53 h**, and negligible 24-hour urinary recovery (**0.9% +/- 0.7%**).",
+      "section_pearls": [
+        "PMB is cleared primarily via non-renal mechanisms, whereas CMS is predominantly cleared via glomerular filtration.",
+        "Colistin active form accumulates significantly under repeated CMS dosing."
+      ]
+    },
+    {
+      "order": 2,
+      "heading": "Critical Illness and Sepsis Impact",
+      "content": "- **Critical** illness induces systemic inflammatory response syndrome (*SIRS*) and capillary leak, leading to expanded *Vd* and **significant** inter-individual exposure variability.\n- Sepsis-induced hypoalbuminemia decreases **PMB** plasma protein binding, raising the unbound drug fraction (*f_u*) and elevating the risk of **nephrotoxicity**.\n- **Significant** PopPK covariates identified in **critically** ill cohorts include total body weight (**TBW**), serum albumin (**ALB**), daily fluid intake (**DFI**), and baseline **CrCL**.\n- Sepsis-related *hyperdynamic state* or *augmented renal clearance* (**ARC**) markedly increases renal **CMS** clearance, reducing conversion to active **colistin** and risking therapeutic failure.",
+      "section_pearls": [
+        "Hypoalbuminemia increases free PMB fraction, augmenting toxicity risk.",
+        "Augmented renal clearance in critically ill septic patients leads to subtherapeutic colistin exposure."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Renal Dysfunction and Renal Replacement Therapy",
+      "content": "- **CMS** clearance correlates directly with **CrCL**; impaired renal function extends **CMS** half-life, allowing greater fractional systemic conversion to active **colistin**.\n- **PMB** clearance is largely independent of renal function in most models, although **8** of **21** PopPK studies identified **CrCL** or *glomerular filtration rate* (**GFR**) as statistically **significant** covariates.\n- During *continuous veno-venous hemodiafiltration* (CVVHDF) and *continuous veno-venous hemodialysis* (CVVHD), supplemental dosing of **CMS** and **PMB** is required to replace continuous filter clearance.\n- *Cystatin C* (**CysC**) was identified as a **superior** covariate over **CrCL** for predicting **colistin sulfate** (CS) clearance during CRRT.",
+      "section_pearls": [
+        "CMS requires dose reduction in renal impairment, whereas PMB dose adjustment for renal function remains controversial.",
+        "Cystatin C provides better predictive performance than CrCL for CS dosing in CRRT."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Pharmacokinetics in Unique Subpopulations",
+      "content": "- **Elderly Patients (>= 65 years)**: Exhibit prolonged **PMB** elimination half-life (**11.01–13.35 h**); fixed maintenance doses of **75–100 mg q12h** cause excessive exposure, warranting lower maintenance regimens.\n- **Pediatrics**: Neonates and infants display immature renal function and larger total body water volume; weight-based scaling and **CrCL** or **Scr** are **essential** covariates for **PMB** and **CMS**.\n- **Morbid Obesity**: **PMB** distribution increases with body weight; dosing regimens based on *adjusted body weight* (**ABW**) capped at **250 mg/day** successfully hit *AUC/MIC* targets without excessive toxicity.\n- **Extracorporeal Membrane Oxygenation (ECMO)**: Circuit drug sequestration for **PMB** and **CMS** is minimal; primary clearance remains governed by underlying **CrCL**, making routine ECMO-specific dose adjustments unnecessary.\n- **Burn Victims**: Increased total body surface area (**TBSA**) burn extent promotes fluid shifts and altered renal blood flow, reducing **colistin** clearance and requiring close *TDM* monitoring.",
+      "section_pearls": [
+        "Elderly patients display prolonged PMB half-life, requiring cautious maintenance dosing.",
+        "ECMO circuits do not cause substantial polymyxin adsorption; standard renal-based dosing applies."
+      ]
+    }
+  ],
+  "strengths_limitations": "- **Strengths**: Comprehensive synthesis of 20 years of published pharmacokinetic data covering three distinct polymyxin formulations across ten specialized patient populations.\n- **Limitations**: Included studies were predominantly single-center with small sample sizes; high heterogeneity in sampling strategies and non-compartmental vs. compartmental modeling techniques hindered direct cross-study statistical comparisons; lack of external model validation across most published PopPK models.",
+  "drugs_doses": [
+    {
+      "drug": "polymyxin B",
+      "dose": "Loading dose 2.0–2.5 mg/kg (100–200 mg), Maintenance dose 1.25–1.5 mg/kg q12h (50–100 mg q12h) IV; in obesity capped at 250 mg/day based on ABW",
+      "indication": "Severe multidrug-resistant Gram-negative infections (e.g., carbapenem-resistant Enterobacterales, Pseudomonas aeruginosa, Acinetobacter baumannii)",
+      "adverse_effects": "Nephrotoxicity (acute kidney injury), dose-limiting acute neurotoxicity/anaphylactoid reactions"
+    },
+    {
+      "drug": "colistin methanesulfonate",
+      "dose": "Loading dose 9 MIU (270–300 mg CBA), Maintenance dose 2–3 MIU q8h–q12h (80–150 mg CBA q8h–q12h) IV adjusted for CrCL",
+      "indication": "Targeted treatment of multidrug-resistant Gram-negative infections in critical illness, renal failure, and cystic fibrosis",
+      "adverse_effects": "Nephrotoxicity, neurotoxicity (paresthesias, ataxia), high inter-patient variable active drug conversion"
+    },
+    {
+      "drug": "colistin sulfate",
+      "dose": "0.5–2.0 MIU q12h or q8h IV infusion",
+      "indication": "Last-resort therapy for carbapenem-resistant Gram-negative bacterial infections",
+      "adverse_effects": "Nephrotoxicity, hepatotoxicity (monitored via ALT), requirement for close renal clearance monitoring"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-07-03",
+  "subtopic": "Other"
+}

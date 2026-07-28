@@ -1,0 +1,410 @@
+{
+  "id": "SuDDICU",
+  "trial_name": "SuDDICU — Selective Decontamination of the Digestive Tract During Ventilation in the ICU (2025)",
+  "specialty": "Gastrointestinal",
+  "subtopic": "Gastrointestinal Infections",
+  "year": 2025,
+  "journal": "New England Journal of Medicine",
+  "citation": "SuDDICU Investigators for the Australia and New Zealand Intensive Care Society Clinical Trials Group and the Canadian Critical Care Trials Group. Selective decontamination of the digestive tract during ventilation in the ICU. N Engl J Med. 2025;epublished October 29th",
+  "doi": "https://doi.org/10.1056/NEJMoa2506398",
+  "registration": "",
+  "trial_type": "RCT — cluster-randomised, cross-over, pragmatic",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 9289,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In a large pragmatic cluster cross-over trial of SDD during mechanical ventilation, there was no significant reduction in 90-day hospital mortality (27.0% vs 28.2%; OR 0.95) but reductions in bloodstream infection and patient-level resistant organism cultures; however, ecological non-inferiority for unit-level resistance was not demonstrated.",
+  "pico": {
+    "population": "Adults (≥16 years) receiving invasive mechanical ventilation expected to remain ventilated ≥48 hours in 26 ICUs in Australia and Canada",
+    "intervention": "SDD: topical oropharyngeal paste + gastric suspension (colistin, tobramycin, nystatin) plus a 4-day systemic third-generation cephalosporin",
+    "comparison": "Standard care: no topical SDD and no mandated prophylactic antibiotic",
+    "outcome": "In-hospital mortality within 90 days (primary); also bloodstream infection, antibiotic-resistant organism cultures, ecological safety outcomes"
+  },
+  "keywords": [
+    "SDD",
+    "selective decontamination of the digestive tract",
+    "mechanical ventilation",
+    "ICU",
+    "antibiotic resistance",
+    "cluster cross-over",
+    "stewardship"
+  ],
+  "related_trials": [
+    "SuDDICU Australia (JAMA 2022)",
+    "Bayesian meta-analysis of SDD trials"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "SDD combines topical nonabsorbable antimicrobials applied to the oropharynx and gastrointestinal tract with a short systemic antibiotic course to suppress potentially pathogenic flora and prevent ICU-acquired infection. Earlier trials (mostly in low-resistance ICUs) suggested reductions in ventilator-associated pneumonia and bloodstream infection, with meta-analytic signals for reduced mortality. International uptake has been limited by uncertainty about generalisability and ecological concerns about antimicrobial resistance.",
+      "knowledge_gap": "Whether SDD reduces mortality in contemporary high-income ICU practice and whether it is ecologically safe (non-inferior) with respect to unit-level antibiotic-resistant organisms, bloodstream infection, and C. difficile.",
+      "hypothesis": "SDD (vs standard care) reduces in-hospital mortality within 90 days, and implementing SDD is non-inferior for ICU-level incidence of antibiotic-resistant organisms, bloodstream infection, and C. difficile infection."
+    },
+    "methods": {
+      "design": "Pragmatic, international, multicentre, cluster-randomised, cross-over trial with two 12-month intervention periods separated by a 3-month inter-period gap. Unblinded bedside care.",
+      "setting": "26 adult ICUs in Australia and Canada; UK sites suspended recruitment and were not included.",
+      "population": {
+        "inclusion": [
+          "Adults (≥16 years) receiving invasive mechanical ventilation, expected to remain ventilated ≥48 hours"
+        ],
+        "exclusion": [
+          "Expected death within 12 hours",
+          "Previous enrolment",
+          "Known allergy/intolerance to study drugs",
+          "Pregnancy",
+          "Other protocol-specified contraindications"
+        ]
+      },
+      "intervention": "SDD: topical oropharyngeal paste + gastric suspension containing colistin, tobramycin, and nystatin administered at regular intervals while intubated. A 4-day systemic third-generation cephalosporin course initiated at SDD start (country-specific alternatives for allergy). Stopped at extubation, ICU discharge, or protocol-defined criteria.",
+      "comparison": "Standard care: no topical SDD paste/suspension and no mandated prophylactic systemic antibiotic. All other care (including local infection prevention and clinician-directed antimicrobials) per usual practice.",
+      "blinding": "Unblinded (pragmatic, objective primary outcome, but microbiological endpoints susceptible to detection bias).",
+      "sample_size_power": "Originally planned 6,000 to detect a 4.2% absolute mortality reduction (29.0% to 24.8%) with 80% power at 5% significance level. Target later increased to 10,000 then 15,000 due to higher intracluster correlation and recruitment disruptions. Actual enrolled: 9,289.",
+      "primary_outcome": "In-hospital death within 90 days (patient-level)",
+      "secondary_outcomes": [
+        "ICU death",
+        "Ventilator-free days",
+        "ICU-free days",
+        "Hospital-free days",
+        "New bloodstream infection",
+        "Patient-level new antibiotic-resistant organism culture",
+        "New C. difficile infection",
+        "Antibiotic use (defined daily doses days 1-28)",
+        "Unit-level ecological outcomes: incidence of antibiotic-resistant organism-positive cultures, bloodstream infection, and C. difficile during pre-trial, intervention, inter-period, and post-trial surveillance epochs"
+      ],
+      "follow_up": "In-hospital mortality up to 90 days; clinical secondary outcomes during hospitalization; antibiotic use days 1-28; ecological outcomes across surveillance epochs."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in 90-day hospital mortality: 27.0% SDD vs 28.2% standard care (OR 0.95, 95% CI 0.86–1.05).",
+        "Lower patient-level bloodstream infection (3.6% vs 5.7%) and new antibiotic-resistant organism cultures (16.8% vs 26.8%).",
+        "Higher total antibiotic exposure in SDD periods (mean DDD 2.0 vs 1.6).",
+        "Ecological non-inferiority for unit-level antibiotic-resistant organism incidence not demonstrated (upper CI exceeded +2% margin)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "In-hospital death within 90 days (primary, unadjusted)",
+          "group_a": "1137/4215 (27.0%)",
+          "group_b": "1426/5065 (28.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.95",
+          "ci_95": "0.86 to 1.05",
+          "p_value": "0.27",
+          "note": "Cluster cross-over model"
+        },
+        {
+          "outcome": "In-hospital death within 90 days (adjusted)",
+          "group_a": "1137/4215 (27.0%)",
+          "group_b": "1426/5065 (28.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.93",
+          "ci_95": "0.84 to 1.04",
+          "p_value": "0.19",
+          "note": "Adjusted for prespecified prognostic covariates"
+        },
+        {
+          "outcome": "Death in ICU",
+          "group_a": "704/4201 (16.8%)",
+          "group_b": "954/5048 (18.9%)",
+          "effect_measure": "Difference in %",
+          "effect_value": "-2.2",
+          "ci_95": "-4.8 to 0.4",
+          "p_value": "",
+          "note": "Multiplicity-adjusted secondary outcome"
+        },
+        {
+          "outcome": "Ventilator-free days",
+          "group_a": "62.9 ± 35.7",
+          "group_b": "60.4 ± 36.6",
+          "effect_measure": "Mean difference",
+          "effect_value": "2.4",
+          "ci_95": "-0.3 to 5.2",
+          "p_value": "",
+          "note": "Higher is better"
+        },
+        {
+          "outcome": "ICU-free days",
+          "group_a": "67.1 ± 31.2",
+          "group_b": "63.8 ± 32.4",
+          "effect_measure": "Mean difference",
+          "effect_value": "3.1",
+          "ci_95": "0.5 to 5.8",
+          "p_value": "",
+          "note": "Higher is better"
+        },
+        {
+          "outcome": "Hospital-free days",
+          "group_a": "41.7 ± 25.4",
+          "group_b": "39.6 ± 25.2",
+          "effect_measure": "Mean difference",
+          "effect_value": "2.0",
+          "ci_95": "-0.2 to 4.2",
+          "p_value": "",
+          "note": "Higher is better"
+        },
+        {
+          "outcome": "New bloodstream infection",
+          "group_a": "150/4215 (3.6%)",
+          "group_b": "288/5066 (5.7%)",
+          "effect_measure": "Difference in %",
+          "effect_value": "-2.1",
+          "ci_95": "-3.2 to -0.9",
+          "p_value": "",
+          "note": "Secondary clinical outcome"
+        },
+        {
+          "outcome": "New antibiotic-resistant organism cultured (patient-level)",
+          "group_a": "709/4216 (16.8%)",
+          "group_b": "1358/5066 (26.8%)",
+          "effect_measure": "Difference in %",
+          "effect_value": "-9.6",
+          "ci_95": "-12.3 to -6.9",
+          "p_value": "",
+          "note": "Microbiology outcome"
+        },
+        {
+          "outcome": "New Clostridioides difficile infection",
+          "group_a": "53/4215 (1.3%)",
+          "group_b": "75/5066 (1.5%)",
+          "effect_measure": "Difference in %",
+          "effect_value": "-0.3",
+          "ci_95": "-0.8 to 0.3",
+          "p_value": "",
+          "note": "Low event rate"
+        },
+        {
+          "outcome": "Antibiotic use (defined daily doses, days 1–28)",
+          "group_a": "2.0 ± 2.0",
+          "group_b": "1.6 ± 1.9",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.3",
+          "ci_95": "0.2 to 0.4",
+          "p_value": "",
+          "note": "Higher = increased exposure"
+        },
+        {
+          "outcome": "Received systemic antibiotic with SDD-compliant spectrum",
+          "group_a": "3550/4215 (84.2%)",
+          "group_b": "2976/5066 (58.8%)",
+          "effect_measure": "Difference in %",
+          "effect_value": "25.2",
+          "ci_95": "22.5 to 27.9",
+          "p_value": "",
+          "note": "Demonstrates intervention separation"
+        },
+        {
+          "outcome": "Ecological: new culture positive for antibiotic-resistant organism (comparison 1)",
+          "group_a": "Change -3.80%",
+          "group_b": "Change -1.75%",
+          "effect_measure": "Difference in %",
+          "effect_value": "-2.05",
+          "ci_95": "-7.42 to 3.31",
+          "p_value": "",
+          "note": "Non-inferiority margin +2%: not demonstrated (upper CI 3.31 > 2)"
+        },
+        {
+          "outcome": "Ecological: new culture positive for antibiotic-resistant organism (comparison 2)",
+          "group_a": "Change 0.69%",
+          "group_b": "Change 1.02%",
+          "effect_measure": "Difference in %",
+          "effect_value": "-0.33",
+          "ci_95": "-5.48 to 4.82",
+          "p_value": "",
+          "note": "Non-inferiority margin +2%: not demonstrated (upper CI 4.82 > 2)"
+        },
+        {
+          "outcome": "Ecological: bloodstream infection incidence (comparison 1)",
+          "group_a": "Change -0.58%",
+          "group_b": "Change 0.48%",
+          "effect_measure": "Difference in %",
+          "effect_value": "-1.06",
+          "ci_95": "-2.27 to 0.14",
+          "p_value": "",
+          "note": "Non-inferiority margin +2%: demonstrated (upper CI 0.14 < 2)"
+        },
+        {
+          "outcome": "Ecological: bloodstream infection incidence (comparison 2)",
+          "group_a": "Change -0.16%",
+          "group_b": "Change 0.11%",
+          "effect_measure": "Difference in %",
+          "effect_value": "-0.27",
+          "ci_95": "-1.47 to 0.93",
+          "p_value": "",
+          "note": "Non-inferiority margin +2%: demonstrated (upper CI 0.93 < 2)"
+        },
+        {
+          "outcome": "Ecological: Clostridioides difficile incidence (comparison 1)",
+          "group_a": "Change 0.23%",
+          "group_b": "Change 0.52%",
+          "effect_measure": "Difference in %",
+          "effect_value": "-0.29",
+          "ci_95": "-0.94 to 0.36",
+          "p_value": "",
+          "note": "Non-inferiority margin +2%: demonstrated (upper CI 0.36 < 2)"
+        },
+        {
+          "outcome": "Ecological: Clostridioides difficile incidence (comparison 2)",
+          "group_a": "Change -0.41%",
+          "group_b": "Change -0.04%",
+          "effect_measure": "Difference in %",
+          "effect_value": "-0.37",
+          "ci_95": "-0.89 to 0.15",
+          "p_value": "",
+          "note": "Non-inferiority margin +2%: demonstrated (upper CI 0.15 < 2)"
+        },
+        {
+          "outcome": "Adverse drug reactions (any)",
+          "group_a": "12/4233 (0.3%)",
+          "group_b": "0/5066 (0.0%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "No serious or unexpected adverse drug reactions"
+        },
+        {
+          "outcome": "Serious adverse events (any)",
+          "group_a": "47/4233 (1.1%)",
+          "group_b": "60/5066 (1.2%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Categories included C. difficile, blocked gastric tube"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Adverse drug reactions: 12/4233 (0.3%) in SDD period, none in standard-care period; no serious unexpected adverse reactions.",
+      "Serious adverse events: 47/4233 (1.1%) vs 60/5066 (1.2%).",
+      "Protocol deviations: delayed initiation (no oral paste/gastric suspension within 6 hours) in 16.8%; missed systemic antibiotic for at least one full day in 14.7%; clinician refusal 2.9%."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "26 ICUs randomised to intervention sequence (cluster cross-over); patient-level allocation concealment not applicable because assignment determined by period-level ICU. Reduces between-unit confounding."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label bedside implementation. Primary outcome objective (death), but culture-dependent outcomes and antibiotic prescribing could be influenced by knowledge of period assignment."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary outcome missingness <0.2% (4215/4223 vs 5065/5066). Consent withdrawal minimal. However, large proportion of screened patients 'not enrolled for other/unknown reasons': 2,294/4,144 (55.4%) in SDD periods and 2,423/4,175 (58.0%) in standard-care periods; these numbers differ by period, raising risk of differential selection."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "16.8% of SDD patients did not start topical agents within 6 hours; 14.7% missed a full day of systemic antibiotic. Clinician refusal reported for 2.9%. Separation confirmed: 84.2% vs 58.8% received SDD-compliant systemic antibiotic. Imperfect adherence may dilute effect estimates."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Median APACHE III score 68 (IQR 49-89) in SDD vs 73 (IQR 53-95) in standard care; median time from ICU admission to enrolment 14.3 vs 6.2 hours. Adjusted analysis did not materially change results."
+        }
+      ],
+      "verdict": "Internal validity appears moderate: randomised cluster cross-over design and near-complete primary outcome ascertainment support credible mortality inference, but open-label implementation, substantial 'not enrolled/unknown' screening attrition, and imperfect protocol adherence introduce risks of selection and detection bias for non-mortality endpoints."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad adult ventilated ICU population in high-income systems (Australia and Canada) with pragmatic inclusion and few absolute exclusions. Most applicable to mixed medical-surgical ICUs with similar baseline resistance ecology."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Implementation requires reliable access to compounded topical agents and ongoing microbiology surveillance. Baseline resistance was likely lower than many global ICUs. Unit-level non-inferiority for resistant organisms not demonstrated, so extrapolation to higher-resistance settings is uncertain. Observed implementation delays and missed doses suggest real-world adoption may yield variable exposure."
+        }
+      ],
+      "verdict": "External validity is moderate: findings generalise well to comparable Australasian/Canadian mixed ICUs, but translation to settings with higher antimicrobial resistance prevalence, different stewardship constraints, or limited surveillance capacity is uncertain."
+    },
+    "strengths": [
+      "Large, pragmatic, multinational cluster cross-over design with 9,289 enrolled patients.",
+      "Hard primary endpoint (in-hospital death within 90 days) with minimal missingness.",
+      "Integrated ecological surveillance framework explicitly addressing resistance and infection externalities.",
+      "Prespecified statistical modelling accounting for clustering/period effects and multiplicity-adjusted secondary outcomes."
+    ],
+    "limitations": [
+      "Open-label bedside implementation introduces potential performance and detection bias for culture-dependent outcomes.",
+      "Substantial screening attrition labelled as 'not enrolled for other/unknown reasons,' with risk of selection bias and period-dependent enrolment differences.",
+      "Protocol adherence was imperfect (e.g., delayed initiation and missed doses), potentially diluting effect estimates and complicating interpretation of ‘true’ biological efficacy.",
+      "Achieved sample size was below the ultimately planned target, limiting power to detect small absolute mortality differences.",
+      "Ecological non-inferiority for antibiotic-resistant organism incidence was not demonstrated, leaving residual uncertainty about population-level safety despite favourable point estimates."
+    ],
+    "critical_appraisal": {
+      "summary": "This large, well-conducted cluster crossover trial found no significant mortality benefit with SDD (OR 0.95) and could not confirm ecological non-inferiority for resistance, indicating uncertain net clinical benefit, particularly in settings with higher baseline resistance.",
+      "strengths": [
+        "Randomised cluster cross-over design",
+        "Near-complete primary outcome ascertainment",
+        "Integration of unit-level ecological safety endpoints",
+        "Multiplicity adjustment for secondary outcomes"
+      ],
+      "weaknesses": [
+        "Open-label design biases culture-dependent results",
+        "Screening attrition and period-dependent enrolment differences",
+        "Imperfect protocol adherence",
+        "Underpowered for small mortality effects",
+        "Non-inferiority margin not met for ecological resistance"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine SDD implementation in Australian and Canadian ICUs did not significantly reduce hospital mortality but reduced bloodstream infections and resistant organism cultures; the increased antibiotic exposure and inability to confirm ecological non-inferiority for resistance leave the stewardship trade-off unresolved.",
+    "clinical_bottom_line": {
+      "verdict": "SDD does not conclusively reduce mortality, and ecological non-inferiority for unit-level resistance was not demonstrated. Routine use should be cautious and tailored to local resistance ecology, surveillance infrastructure, and tolerance for uncertainty.",
+      "applies_to": "Adults requiring invasive mechanical ventilation for ≥48 hours in ICUs with low baseline antimicrobial resistance and robust surveillance capability.",
+      "does_not_mean": "It does not mean SDD is harmful; patient-level bloodstream infections and resistant organism cultures were lower. However, the net population-level balance between benefit and ecological harm remains unclear.",
+      "implementation_caveats": [
+        "Requires reliable supply of compounded topical agents.",
+        "Needs ongoing microbiology surveillance to monitor resistance.",
+        "Acceptance of increased total antibiotic exposure.",
+        "Protocol adherence in routine practice may be lower than in trial, further diluting any benefit."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Mortality uncertainty vs meta-analytic belief",
+        "notes": "The trial’s confidence interval includes both clinically meaningful benefit and no benefit, which contrasts with a Bayesian meta-analysis that assigned a high probability of mortality benefit when pooling contemporary trials."
+      },
+      {
+        "topic": "Resistance externalities not settled by patient-level cultures",
+        "notes": "Patient-level resistant organisms were lower with SDD, but unit-level non-inferiority was not demonstrated, consistent with prior reviews showing heterogeneous resistance outcomes."
+      },
+      {
+        "topic": "Selection and ascertainment bias in microbiology endpoints",
+        "notes": "Differential non-enrolment for ‘other/unknown’ reasons and open-label culture practices could bias culture-dependent endpoints, complicating causal interpretation."
+      },
+      {
+        "topic": "Consistency with SuDDICU Australia (JAMA 2022)",
+        "notes": "Both large pragmatic trials show overlapping mortality point estimates, making very large mortality effects less plausible in contemporary high-income practice."
+      },
+      {
+        "topic": "Ecological safety proving methodology",
+        "notes": "The difficulty of proving ecological safety (low incidence, long latency, spillovers) remains a central SDD debate and is not fully resolved by short-horizon non-inferiority testing."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "SuDDICU Australia (JAMA 2022)",
+        "relation": "Prior large pragmatic cluster cross-over trial that also found no statistically significant reduction in hospital mortality, maintaining equipoise for a mortality effect."
+      },
+      {
+        "trial": "Bayesian meta-analysis of SDD trials",
+        "relation": "Integrated contemporary trials and estimated a high posterior probability of mortality benefit, but sensitivity to heterogeneity and modelling assumptions highlights ongoing uncertainty."
+      }
+    ],
+    "unresolved_questions": [
+      "Which patient subgroups (e.g., by severity, reason for ventilation, baseline resistance risk) might derive net benefit?",
+      "What are the long-term unit-level resistance consequences under sustained SDD implementation over years?",
+      "Is the short (4-day) systemic component optimal, or would a longer or no systemic antibiotic be better?",
+      "How do these findings translate to ICUs with high baseline antimicrobial resistance or limited surveillance capacity?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n = 9,289",
+        "90‑day hospital mortality: 27.0% vs 28.2% (OR 0.95, 95% CI 0.86–1.05)",
+        "Bloodstream infection: 3.6% vs 5.7% (difference −2.1%)",
+        "Patient‑level resistant organism culture: 16.8% vs 26.8% (difference −9.6%)"
+      ],
+      "one_line_takeaway": "SDD did not significantly reduce mortality but lowered infections; however, ecological safety for unit‑level resistance remains unproven, making the risk‑benefit calculus highly context‑dependent."
+    }
+  },
+  "_source_id": "SuDDICU",
+  "_source_system": "Gastrointestinal"
+}

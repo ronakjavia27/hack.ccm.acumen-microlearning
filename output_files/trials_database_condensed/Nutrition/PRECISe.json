@@ -1,0 +1,284 @@
+{
+  "id": "PRECISe",
+  "trial_name": "PRECISe — High vs Standard Protein on Functional Recovery in ICU Patients (2024)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Protein Therapy",
+  "year": 2024,
+  "journal": "The Lancet",
+  "citation": "Bels JLM, Thiessen S, van Gassel RJJ, Beishuizen A, De Bie Dekker A, Fraipont V, et al. Effect of high versus standard protein provision on functional recovery in people with critical illness (PRECISe): an investigator-initiated, double-blinded, multicentre, parallel-group, randomised controlled trial in Belgium and the Netherlands. Lancet. 2024 Aug 17;404:659-669.",
+  "doi": "https://doi.org/10.1016/S0140-6736(24)01304-7",
+  "registration": "NCT03452839",
+  "trial_type": "RCT — multicenter, double-blind, parallel-group, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 935,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In invasively ventilated ICU patients, targeting 2.0 g/kg/day of protein via isocaloric enteral feeds worsened health-related quality of life over 6 months compared to 1.3 g/kg/day, without a mortality benefit.",
+  "pico": {
+    "population": "Adult ICU patients receiving invasive mechanical ventilation within 24 h, expected to need ventilation ≥3 days, with enteral nutrition initiated within 48 h",
+    "intervention": "Isocaloric high-protein enteral feed targeting 2.0 g/kg/day",
+    "comparison": "Isocaloric standard-protein enteral feed targeting 1.3 g/kg/day",
+    "outcome": "EQ-5D-5L health utility score over 180 days"
+  },
+  "keywords": [
+    "protein therapy",
+    "enteral nutrition",
+    "critical illness",
+    "HRQoL",
+    "functional recovery",
+    "isocaloric"
+  ],
+  "related_trials": [
+    "EFFORT Protein"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Critical illness causes early catabolism and rapid loss of lean body mass, leading to ICU-acquired weakness and long-term disability. Protein dosing is a modifiable therapy, but recommended targets vary (ESPEN ~1.3 g/kg/day; ASPEN 1.2–2.0 g/kg/day) and certainty is limited.",
+      "knowledge_gap": "Prior trials of higher protein delivery were heterogeneous in timing, achieved dose separation, and often confounded by increased calorie delivery. A large pragmatic RCT (EFFORT Protein) did not show benefit on time-to-discharge alive. Meta-analyses highlight ongoing uncertainty and raise concerns about harm in subgroups like AKI.",
+      "hypothesis": "Higher protein delivery (2.0 g/kg/day) would improve functional recovery (HRQoL) over 6 months without increasing clinically important harms, tested by isolating protein dose from calories using isocaloric feeds."
+    },
+    "methods": {
+      "design": "Investigator-initiated, multicentre, parallel-group, randomised (1:1), double-blinded controlled trial.",
+      "setting": "Adult ICUs in Belgium and the Netherlands.",
+      "population": {
+        "inclusion": [
+          "Adult ICU patients receiving invasive mechanical ventilation within 24 h of ICU admission.",
+          "Expected duration of invasive mechanical ventilation ≥3 days.",
+          "Enteral nutrition initiated within 48 h of ICU admission."
+        ],
+        "exclusion": [
+          "Contraindication to enteral nutrition.",
+          "Moribund or decision to withhold life-sustaining treatment.",
+          "Body-mass index <18 kg/m².",
+          "Transferred from a non-participating ICU after >24 h.",
+          "Kidney failure with a 'no-dialysis' code.",
+          "Hepatic encephalopathy (West Haven grade 3–4)."
+        ]
+      },
+      "intervention": "Isocaloric high-protein enteral feed (1.3 kcal/mL; 0.10 g protein/mL; Nutrison Protein Intense). Energy target 25 kcal/kg/day based on admission actual bodyweight (BMI >27 adjusted to weight equivalent to BMI 27). Feeds started at 25% of target and increased by 25% per day to reach 100% by day 4. Protein exposure intended to approximate 2.0 g/kg/day. Study feeds continued until ICU discharge, cessation of enteral nutrition, or day 90. Supplemental parenteral nutrition permitted from day 8 at clinician discretion.",
+      "comparison": "Isocaloric standard-protein enteral feed (1.3 kcal/mL; 0.06 g protein/mL; Nutrison Protein Plus). Identical energy targets, ramp-up strategy, duration rules, and allowance for supplemental parenteral nutrition from day 8.",
+      "blinding": "Double-blinded (participants/proxies, clinicians, investigators, outcome assessors, and analysts). Feeds were labelled and indistinguishable in caloric density. Group assignment revealed after database lock and analysis.",
+      "sample_size_power": "Initial N=824 to detect a standardised effect size of 0.2 in EQ-5D-5L health utility score (~0.06 absolute difference assuming SD 0.3) with 80% power at two-sided α=0.05, allowing 5% loss to follow-up. Increased to 935 after interim sample size re-estimation due to higher-than-anticipated mortality and SD inflation.",
+      "primary_outcome": "EQ-5D-5L health utility score (HUS) over 180 days, with death assigned HUS=0.",
+      "secondary_outcomes": [
+        "All-cause mortality to 180 days",
+        "Time-to-discharge alive to 180 days",
+        "Gastrointestinal intolerance or symptoms",
+        "6-minute walking distance (% predicted)",
+        "Other functional, psychological, and safety endpoints"
+      ],
+      "follow_up": "180 days (questionnaires and functional assessments at 30, 90, and 180 days)."
+    },
+    "results": {
+      "headline_bullets": [
+        "High protein resulted in a statistically significant worse primary outcome: mean difference in EQ-5D-5L HUS -0.05 (95% CI -0.10 to -0.01), P=0.031.",
+        "No significant difference in 180-day mortality: HR 1.14 (95% CI 0.92 to 1.40), P=0.22.",
+        "High protein was associated with increased gastrointestinal intolerance: 9% vs 6%, OR 1.76 (95% CI 1.06 to 2.92).",
+        "A signal towards longer time-to-discharge alive was noted: HR 0.91 (95% CI 0.80 to 1.04), P=0.17; post-hoc generalised Wilcoxon test P=0.043."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: EQ-5D-5L HUS over 180 days (death=0)",
+          "group_a": "Day 30: 0.29; Day 90: 0.34; Day 180: 0.36",
+          "group_b": "Day 30: 0.33; Day 90: 0.38; Day 180: 0.39",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.05",
+          "ci_95": "-0.10 to -0.01",
+          "p_value": "0.031",
+          "note": "Analysed n=419 (high) vs 430 (standard) with ≥1 follow-up measure."
+        },
+        {
+          "outcome": "All-cause mortality to 180 days",
+          "group_a": "42% (SE 0.02)",
+          "group_b": "38% (SE 0.02)",
+          "effect_measure": "HR",
+          "effect_value": "1.14",
+          "ci_95": "0.92 to 1.40",
+          "p_value": "0.22"
+        },
+        {
+          "outcome": "Time-to-discharge alive to 180 days",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "0.91",
+          "ci_95": "0.80 to 1.04",
+          "p_value": "0.17",
+          "note": "Post-hoc generalised Wilcoxon test P=0.043."
+        },
+        {
+          "outcome": "Gastrointestinal intolerance or symptoms",
+          "group_a": "43/469 (9%)",
+          "group_b": "26/465 (6%)",
+          "effect_measure": "OR",
+          "effect_value": "1.76",
+          "ci_95": "1.06 to 2.92",
+          "p_value": "0.030",
+          "note": "Symptoms included vomiting, ischaemia, diarrhoea, abdominal distension, gastric paresis, or bleeding."
+        },
+        {
+          "outcome": "6-minute walking distance (% predicted) at 180 days",
+          "group_a": "81.8% (SD 23.4)",
+          "group_b": "72.6% (SD 24.9)",
+          "effect_measure": "Mean difference",
+          "effect_value": "5.55",
+          "ci_95": "0.04 to 11.07",
+          "p_value": "0.048",
+          "note": "Secondary outcome; n=201 (high) vs 221 (standard). No multiplicity adjustment."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Females (primary outcome)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.10",
+          "ci_95": "-0.17 to -0.03",
+          "p_interaction": "0.0072",
+          "note": "Exploratory subgroup."
+        },
+        {
+          "subgroup": "Medical admissions (primary outcome)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "Mean difference",
+          "effect_value": "-0.07",
+          "ci_95": "-0.13 to -0.02",
+          "p_interaction": "0.0095",
+          "note": "Exploratory subgroup."
+        },
+        {
+          "subgroup": "Medical admissions (mortality)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "1.34",
+          "ci_95": "1.04 to 1.71",
+          "p_interaction": "0.021",
+          "note": "Exploratory subgroup; interaction P=0.038."
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse event pneumatosis intestinalis: 1/470 (<1%) in high protein vs 0/465 (<1%) in standard protein.",
+      "Other adverse event rates (infection, VAP, AKI) were similar between groups.",
+      "Median protein intake was 1.87 g/kg/day (IQR 0.96–2.00) in high protein vs 1.19 g/kg/day (IQR 0.63–1.26) in standard protein, achieving clear separation.",
+      "Median study-nutrition duration was 10 days (IQR 5–21) in high protein vs 9 days (IQR 4–19) in standard protein."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Web-based randomisation (1:1), stratified by centre, variable blocks (8 and 12). Allocation concealed by identical caloric density feeds and blinded labelling."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blinded, reducing co-intervention and ascertainment bias for subjective outcomes. Higher GI intolerance in the intervention arm could unblind and drive downstream management differences."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "ITT analysis. Primary outcome missingness: 10.9% (51/470) high protein vs 7.5% (35/465) standard protein. Follow-up-dependent outcomes available in smaller subsets."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Study nutrition received by 98.1% (high) vs 99.6% (standard). Clear protein dose separation achieved (1.87 vs 1.19 g/kg/day). Protocol deviations in 48 vs 36 patients."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar in demographics and severity (median age 62–63 years; median APACHE II 21–22; median SOFA 9–10). Modest imbalances: more females and surgical admissions in high-protein arm."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong: concealed randomisation, rigorous blinding, and clear protein separation, but tempered by differential loss to follow-up for HRQoL and multiplicity/availability limitations of secondary functional outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Participants are typical of higher-acuity ICU practice. Exclusions (underweight, severe hepatic encephalopathy, enteral contraindications, 'no-dialysis' kidney failure) limit applicability to these subgroups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Implementable where enteral formula composition can be adjusted independently of calories; replicability depends on local formularies and dietetic infrastructure. Findings translate best to high-resource ICUs with protocolised feeding."
+        }
+      ],
+      "verdict": "Generalisability is moderate for adult, mechanically ventilated ICU populations managed in high-resource settings, but limited for excluded nutritional extremes and specific hepatic/renal contraindication groups."
+    },
+    "strengths": [
+      "Large, investigator-initiated multicentre RCT with concealed allocation and double blinding.",
+      "Isocaloric feed design provides unusually strong isolation of protein dose from energy delivery.",
+      "Patient-centred primary outcome with 6-month follow-up, alongside multiple functional and psychological secondary outcomes.",
+      "Protocol published before trial completion, supporting transparency in outcome selection and analysis planning."
+    ],
+    "limitations": [
+      "Non-trivial differential missingness for the primary HRQoL endpoint (lost to follow-up 51 vs 35), with potential for informative attrition.",
+      "Achieved protein in the high-protein arm (median 1.87 g/kg/day) remained below the nominal target of 2.0 g/kg/day; standard-protein delivery was below 1.3 g/kg/day (median 1.19 g/kg/day).",
+      "Secondary outcomes were measured in subsets and multiple comparisons were not multiplicity-adjusted, increasing risk of chance findings.",
+      "Exploratory subgroup effects (sex, admission type) risk false discovery and require prospective confirmation."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed RCT providing strong isolated evidence against early high-protein feeding, though the primary outcome's clinical significance is debatable, differential loss to follow-up is a concern, and secondary findings are not multiplicity-adjusted.",
+      "strengths": [
+        "Isocaloric double-blind design isolating protein dose, large sample size, patient-centred primary outcome, pre-published protocol."
+      ],
+      "weaknesses": [
+        "Differential missingness for the primary HRQoL outcome, borderline clinical significance, multiplicity issues in secondary endpoints, unconfirmed exploratory subgroup signals."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "High-dose protein in the ICU does not improve functional recovery and may worsen it, suggesting a need to reconsider aggressive early protein targets.",
+    "clinical_bottom_line": {
+      "verdict": "Routine escalation to very high early protein targets (~2.0 g/kg/day) in mechanically ventilated ICU patients is not supported and may worsen patient-centred recovery.",
+      "applies_to": "Invasively ventilated adult ICU patients expected to require prolonged ventilation, receiving early enteral nutrition in high-resource settings.",
+      "does_not_mean": "This does not mean protein is harmful overall; it means a 'more is better' approach in the early acute phase should be avoided.",
+      "implementation_caveats": [
+        "Prioritise achieving adequate (rather than maximal) protein delivery.",
+        "Monitor for gastrointestinal intolerance.",
+        "Individualise dosing by phase of illness and tolerance."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Clinical significance vs statistical significance",
+        "notes": "The observed HRQoL difference (-0.05) approached the prespecified clinically important difference (~0.06) but remains modest in absolute terms."
+      },
+      {
+        "topic": "Missing data and estimand choice",
+        "notes": "Assigning death HUS=0 creates a composite survivorship estimand sensitive to differential mortality/missingness. Differential loss to follow-up (51 vs 35) heightens concern for informative missingness."
+      },
+      {
+        "topic": "Secondary outcome discordance and multiplicity",
+        "notes": "A positive secondary functional signal (6-min walk) contrasted with worse primary HRQoL; without multiplicity adjustment, isolated borderline positives should be interpreted cautiously."
+      },
+      {
+        "topic": "Positioning within the broader evidence base",
+        "notes": "Aligns with EFFORT Protein, which did not show benefit of higher protein on recovery. Updated meta-analysis with trial sequential analysis reports no consistent improvement and highlights uncertainty with potential subgroup harms."
+      },
+      {
+        "topic": "Editorial perspective",
+        "notes": "A Lancet editorial interprets PRECISe as evidence against 'more is better' early protein provision, underscoring the need to consider phase of illness, sex/gender biology, and renal vulnerability."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "EFFORT Protein",
+        "relation": "Large pragmatic registry-based RCT that did not demonstrate benefit of higher protein dosing on time-to-discharge alive, aligning with PRECISe in failing to show improved recovery."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal timing of protein delivery (acute vs recovery phase).",
+      "Impact of patient selection, including sex and admission phenotype, on outcomes.",
+      "Mechanistic endpoints connecting protein exposure to functional recovery."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=935 (high 470, standard 465)",
+        "Primary outcome (EQ-5D-5L HUS): mean difference -0.05 (P=0.031)",
+        "180-day mortality: 42% vs 38% (HR 1.14), P=0.22",
+        "GI intolerance: 9% vs 6% (OR 1.76, P=0.030)"
+      ],
+      "one_line_takeaway": "In early critical illness, aiming for 2.0 g/kg/day of protein via isocaloric feeds worsened quality of life and showed no mortality benefit—don't push protein in the acute phase."
+    }
+  },
+  "_source_id": "PRECISe",
+  "_source_system": "Nutrition"
+}

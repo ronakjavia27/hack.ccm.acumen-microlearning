@@ -1,0 +1,343 @@
+{
+  "id": "PANTER",
+  "trial_name": "PANTER — Step-up Approach vs Open Necrosectomy in Necrotizing Pancreatitis (2010)",
+  "specialty": "Gastrointestinal",
+  "subtopic": "Acute Pancreatitis",
+  "year": 2010,
+  "journal": "New England Journal of Medicine",
+  "citation": "van Santvoort HC, Besselink MG, Bakker OJ, Hofker HS, Boermeester MA, Dejong CH, et al. A step-up approach or open necrosectomy for necrotizing pancreatitis. N Engl J Med. 2010;362(16):1491-1502",
+  "doi": "10.1056/NEJMoa0908821",
+  "registration": "",
+  "trial_type": "RCT — multicenter, unblinded, parallel-group, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 88,
+  "result_category": "Positive",
+  "one_liner": "The step-up approach reduced major complications or death from 69% to 40% (RR 0.57, p=0.006) in infected necrotizing pancreatitis, driven by fewer new organ failures, with no mortality difference.",
+  "pico": {
+    "population": "Adult patients with (suspected) infected necrotizing pancreatitis requiring invasive intervention, median 30 days from symptom onset, APACHE II ~15, in tertiary care ICUs.",
+    "intervention": "Step-up strategy: initial percutaneous catheter drainage (preferably retroperitoneal) or endoscopic drainage, reassessed at 72h; escalation to additional drainage then minimally invasive necrosectomy (VARD) only if persistent sepsis/deterioration.",
+    "comparison": "Primary open necrosectomy via laparotomy with standardised technique and continuous post-operative lavage.",
+    "outcome": "Composite of major complications (new-onset multiple-organ failure or systemic complications, perforation/fistula, bleeding requiring intervention) or death, during admission and up to 3 months after discharge."
+  },
+  "keywords": [
+    "pancreatitis",
+    "necrotizing pancreatitis",
+    "step-up approach",
+    "percutaneous drainage",
+    "minimally invasive surgery",
+    "necrosectomy",
+    "VARD"
+  ],
+  "related_trials": [
+    "TENSION",
+    "POINTER",
+    "Bakker et al. (2012)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Infected pancreatic necrosis was traditionally managed with open necrosectomy, which carries high morbidity including new organ failure, fistulas, bleeding, and prolonged ICU stays.",
+      "knowledge_gap": "Limited comparative evidence existed for minimally invasive step-up strategies versus primary open necrosectomy.",
+      "hypothesis": "That a protocolised step-up strategy (drain first, minimally invasive necrosectomy only if needed) reduces major complications and/or death compared with primary open necrosectomy."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, parallel-group trial. Unblinded intervention delivery with blinded endpoint adjudication.",
+      "setting": "Tertiary centres with interventional radiology and pancreatic surgery expertise.",
+      "population": {
+        "inclusion": [
+          "Adults with acute pancreatitis and pancreatic/peripancreatic necrosis",
+          "Confirmed or suspected infected necrosis (positive culture, gas on CT, or persistent sepsis with clinical deterioration)",
+          "Decision that invasive intervention was indicated",
+          "Necrotic collection considered drainable"
+        ],
+        "exclusion": [
+          "Prior laparotomy for the current pancreatitis episode",
+          "Pancreatitis from abdominal surgery",
+          "Acute intra-abdominal complications requiring urgent laparotomy (visceral perforation, active bleeding, abdominal compartment syndrome)",
+          "Other contraindications to protocolised pathways"
+        ]
+      },
+      "intervention": "Initial percutaneous catheter drainage (preferably retroperitoneal) or endoscopic drainage (14Fr median, upsized if needed), reassessed at 72h; if inadequate improvement, additional drainage; if persistent deterioration, VARD necrosectomy. Post-necrosectomy lavage ≥10 L/24h.",
+      "comparison": "Primary open necrosectomy via laparotomy with standardised technique, continuous post-operative lavage ≥10 L/24h; additional laparotomies permitted for persistent sepsis.",
+      "blinding": "Treating teams and patients unblinded; an adjudication committee assessed endpoints blinded to treatment allocation; CT images reviewed blinded.",
+      "sample_size_power": "Power calculation assumed reduction in primary composite from 45% to 16% (absolute 29%), 80% power, two-sided alpha 0.05; required n=88.",
+      "primary_outcome": "Composite of major complications (new-onset multiple-organ failure, systemic complications, perforation/fistula, bleeding requiring intervention) or death, during admission and up to 3 months after discharge.",
+      "secondary_outcomes": [
+        "Individual components of primary composite",
+        "New ICU admission after first intervention",
+        "Days in ICU and hospital",
+        "Total costs",
+        "Late morbidity (incisional hernia, new-onset diabetes, pancreatic enzyme use)",
+        "Mortality",
+        "Total number of interventions"
+      ],
+      "follow_up": "6 months after discharge"
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary composite (major complications or death) 40% step-up vs 69% open (RR 0.57, 95% CI 0.38–0.87; p=0.006)",
+        "New-onset multiple-organ failure/systemic complications 12% vs 42% (RR 0.28, 95% CI 0.11–0.67; p=0.001)",
+        "Mortality similar: 19% vs 16% (RR 1.20, 95% CI 0.44–3.27; p=0.70)",
+        "Step-up avoided necrosectomy in 40% of patients and reduced incisional hernia (7% vs 24%), new-onset diabetes (16% vs 38%), and pancreatic enzyme use (7% vs 33%), with lower costs (€90,086 vs €122,268)"
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite: major complications or death",
+          "group_a": "17/43 (40%)",
+          "group_b": "31/45 (69%)",
+          "effect_measure": "RR",
+          "effect_value": "0.57",
+          "ci_95": "0.38–0.87",
+          "p_value": "0.006",
+          "note": "Composite: new-onset MOF, systemic complications, perforation/fistula, bleeding requiring intervention, or death"
+        },
+        {
+          "outcome": "New-onset multiple-organ failure or systemic complications",
+          "group_a": "5/43 (12%)",
+          "group_b": "19/45 (42%)",
+          "effect_measure": "RR",
+          "effect_value": "0.28",
+          "ci_95": "0.11–0.67",
+          "p_value": "0.001",
+          "note": "Dominant driver of primary composite reduction"
+        },
+        {
+          "outcome": "Intra-abdominal bleeding requiring intervention",
+          "group_a": "7/43 (16%)",
+          "group_b": "10/45 (22%)",
+          "effect_measure": "RR",
+          "effect_value": "0.73",
+          "ci_95": "0.30–1.78",
+          "p_value": "0.48",
+          "note": ""
+        },
+        {
+          "outcome": "Enterocutaneous fistula or perforation requiring intervention",
+          "group_a": "6/43 (14%)",
+          "group_b": "10/45 (22%)",
+          "effect_measure": "RR",
+          "effect_value": "0.63",
+          "ci_95": "0.25–1.57",
+          "p_value": "0.32",
+          "note": ""
+        },
+        {
+          "outcome": "Death",
+          "group_a": "8/43 (19%)",
+          "group_b": "7/45 (16%)",
+          "effect_measure": "RR",
+          "effect_value": "1.20",
+          "ci_95": "0.44–3.27",
+          "p_value": "0.70",
+          "note": "Underpowered for mortality"
+        },
+        {
+          "outcome": "Pancreatic fistula",
+          "group_a": "12/43 (28%)",
+          "group_b": "17/45 (38%)",
+          "effect_measure": "RR",
+          "effect_value": "0.74",
+          "ci_95": "0.41–1.33",
+          "p_value": "0.33",
+          "note": ""
+        },
+        {
+          "outcome": "Incisional hernia",
+          "group_a": "3/43 (7%)",
+          "group_b": "11/45 (24%)",
+          "effect_measure": "RR",
+          "effect_value": "0.29",
+          "ci_95": "0.09–0.92",
+          "p_value": "0.03",
+          "note": "Late morbidity reduced"
+        },
+        {
+          "outcome": "New-onset diabetes",
+          "group_a": "7/43 (16%)",
+          "group_b": "17/45 (38%)",
+          "effect_measure": "RR",
+          "effect_value": "0.43",
+          "ci_95": "0.20–0.94",
+          "p_value": "0.02",
+          "note": "Endocrine insufficiency signal"
+        },
+        {
+          "outcome": "Use of pancreatic enzymes",
+          "group_a": "3/43 (7%)",
+          "group_b": "15/45 (33%)",
+          "effect_measure": "RR",
+          "effect_value": "0.21",
+          "ci_95": "0.07–0.67",
+          "p_value": "0.002",
+          "note": "Exocrine insufficiency surrogate"
+        },
+        {
+          "outcome": "New ICU admission after first intervention",
+          "group_a": "7/43 (16%)",
+          "group_b": "18/45 (40%)",
+          "effect_measure": "RR",
+          "effect_value": "0.41",
+          "ci_95": "0.19–0.88",
+          "p_value": "0.01",
+          "note": "Post-intervention deterioration lower"
+        },
+        {
+          "outcome": "Total costs (mean, €)",
+          "group_a": "90,086",
+          "group_b": "122,268",
+          "effect_measure": "Δ",
+          "effect_value": "−32,182",
+          "ci_95": "−64,452 to −6,728",
+          "p_value": "0.02",
+          "note": "Societal costing in 2008 Euros"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "New-onset multiple-organ failure or systemic complications: 12% vs 42%",
+      "Intra-abdominal bleeding requiring intervention: 16% vs 22%",
+      "Enterocutaneous fistula or perforation: 14% vs 22%",
+      "Incisional hernia: 7% vs 24%",
+      "New-onset diabetes: 16% vs 38%",
+      "Pancreatic enzyme use: 7% vs 33%",
+      "No unexpected adverse events; overall complication burden lower in step-up group"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised, stratified by centre and retroperitoneal access feasibility; baseline characteristics well balanced (APACHE II 14.6 vs 15.0, MOF 35% vs 29%)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded procedural care, but endpoints adjudicated blinded and CT reviewed blinded, mitigating bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "All 88 patients analysed by ITT; no loss to follow-up for primary endpoint."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Adherence high; step-up arm: 40/43 had retroperitoneal drainage, 2 endoscopic, 1 transabdominal; 17/43 (40%) avoided necrosectomy; open arm: 44/45 had laparotomy; crossovers minimal (2 step-up patients had laparotomy, 1 open had VARD)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well matched for severity, comorbidity, and duration of symptoms."
+        }
+      ],
+      "verdict": "Internal validity is strong to moderate: allocation and blinded adjudication support credibility, but unblinded care and complex co-interventions pose a residual risk of performance bias, largely buffered by objective outcomes and adjudication."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Severely ill patients with infected necrosis managed in tertiary centres; reflects typical cohort requiring intervention, but excludes those needing urgent laparotomy."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires interventional radiology and surgical expertise for VARD/laparotomy; outcomes may differ in centres without established minimally invasive pathways or in earlier disease phases."
+        }
+      ],
+      "verdict": "Generalisability is moderate: findings apply best to multidisciplinary tertiary pancreatitis services; extrapolation to early intervention or low-resource settings is limited."
+    },
+    "strengths": [
+      "Pragmatic multicentre design",
+      "Clinically salient composite endpoint",
+      "Prespecified escalation algorithm",
+      "Blinded adjudication of outcomes and blinded CT review",
+      "Robust reporting of procedural intensity and downstream morbidity",
+      "Incorporation of societal cost analysis over 6 months"
+    ],
+    "limitations": [
+      "Small sample size with limited power for mortality",
+      "Unblinded intervention delivery",
+      "Primary endpoint is composite with components of differing clinical weight",
+      "Specialised centre expertise and late randomisation (median 30 days) may limit applicability to earlier or less-selected disease trajectories"
+    ],
+    "critical_appraisal": {
+      "summary": "PANTER is a well-conducted, practice-changing RCT that established the step-up paradigm. The large reduction in major complications, especially new organ failure, is clinically important and supported by consistent secondary outcomes. Limitations include small sample size, unblinded delivery, and composite endpoint heterogeneity, but the overall evidence level is high.",
+      "strengths": [
+        "Rigorous randomisation and blinded adjudication",
+        "Pragmatic design reflecting real-world practice",
+        "Comprehensive outcome reporting including late morbidity and costs"
+      ],
+      "weaknesses": [
+        "Underpowered for mortality",
+        "Non-blinded procedural delivery",
+        "Composite endpoint components may differ in importance"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "The step-up approach for infected necrotizing pancreatitis significantly reduces major complications and late morbidity compared with open necrosectomy, with no difference in mortality. A protocolised escalation strategy—drain first, debride only if necessary—should be the preferred management in patients suitable for percutaneous drainage.",
+    "clinical_bottom_line": {
+      "verdict": "PANTER changed practice by demonstrating that a step-up strategy—drain first, debride only if necessary—reduces major complications (especially new organ failure) and late sequelae without increasing mortality, in patients with infected necrotizing pancreatitis requiring intervention.",
+      "applies_to": "Patients with (suspected) infected necrotizing pancreatitis in tertiary care settings, particularly those with mature walled-off necrosis (median ~30 days from onset), and without urgent indication for laparotomy.",
+      "does_not_mean": "It does not mean that mortality is lower with step-up; nor does it imply that earlier open surgery is always harmful. The timing of randomisation was late, and the trial excluded those requiring immediate surgery.",
+      "implementation_caveats": [
+        "Requires experienced interventional radiology for percutaneous drainage",
+        "Need surgical capability for VARD/laparotomy if escalation required",
+        "Multidisciplinary pancreatitis team essential",
+        "Efficacy may differ in earlier disease phases or resource-limited settings"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite endpoint interpretation",
+        "notes": "The benefit was driven mainly by new-onset organ failure/systemic complications, raising debate about the clinical importance of individual components and potential for care-pathway ascertainment bias."
+      },
+      {
+        "topic": "Technique and setting dependence",
+        "notes": "An editorial emphasised that procedural expertise and multidisciplinary pathways are critical; broad adoption should be coupled to appropriate infrastructure, not just a procedure swap."
+      },
+      {
+        "topic": "Endoscopic vs surgical step-up",
+        "notes": "Subsequent trials (e.g., TENSION) compared endoscopic transluminal step-up with surgical step-up, showing endoscopic step-up as a viable alternative with potentially different fistula/hernia profiles."
+      },
+      {
+        "topic": "Timing of intervention",
+        "notes": "The POINTER trial demonstrated that immediate drainage does not improve outcomes and increases procedures, reinforcing PANTER’s principle of delayed escalation."
+      },
+      {
+        "topic": "Direct necrosectomy modalities",
+        "notes": "Earlier RCTs (e.g., Bakker et al.) compared endoscopic vs surgical necrosectomy, informing the evolution of minimally invasive debridement techniques but focusing on different technical questions than the staged step-up concept."
+      },
+      {
+        "topic": "Evidence synthesis heterogeneity",
+        "notes": "Meta-analyses support fewer external fistulas with endoscopic approaches but highlight heterogeneity in necrosis maturity, timing, and endpoint definitions."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TENSION Trial (van Brunschot et al. 2021)",
+        "relation": "Compared endoscopic step-up versus surgical step-up in infected necrotizing pancreatitis, building on PANTER’s step-up framework; showed endoscopic step-up reduced pancreatic fistulas and hospital stay without difference in mortality, supporting an alternative less invasive approach."
+      },
+      {
+        "trial": "POINTER Trial (Boxhoorn et al. 2021)",
+        "relation": "Randomised immediate versus postponed catheter drainage for infected necrosis; found that immediate drainage did not improve outcomes and increased procedures, supporting PANTER’s delayed escalation philosophy."
+      },
+      {
+        "trial": "Bakker et al. (2012) Endoscopic vs Surgical Necrosectomy",
+        "relation": "Pilot RCT comparing endoscopic transgastric necrosectomy with surgical necrosectomy, demonstrating feasibility of endoscopic direct necrosectomy and informing the subsequent step-up strategy evolution."
+      }
+    ],
+    "unresolved_questions": [
+      "Which specific component(s) of the step-up bundle (timing, drainage technique, access route, VARD) most significantly affect outcomes?",
+      "Optimal timing of initial drainage in infected necrosis (addressed by POINTER but may vary with necrosis maturity).",
+      "Long-term pancreatic function and quality of life beyond 6 months.",
+      "Applicability to patients with very early, rapidly progressive infection requiring earlier intervention.",
+      "Comparison with endoscopic-only step-up pathways (addressed by TENSION)."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=88",
+        "Primary composite: 40% step-up vs 69% open (RR 0.57, p=0.006)",
+        "New organ failure: 12% vs 42%",
+        "Mortality: 19% vs 16% (NS)",
+        "Costs reduced by ~€32 000"
+      ],
+      "one_line_takeaway": "For infected necrotizing pancreatitis, a step-up approach (percutaneous drainage then necrosectomy only if necessary) cuts major complications in half compared with open surgery, without affecting mortality, and should be standard practice."
+    }
+  },
+  "_source_id": "PANTER",
+  "_source_system": "Gastrointestinal"
+}

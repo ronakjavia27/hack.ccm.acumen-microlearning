@@ -1,0 +1,332 @@
+{
+  "id": "NASCIS_III",
+  "trial_name": "NASCIS III — 48-h vs 24-h Methylprednisolone in Acute SCI (1997)",
+  "specialty": "Spine & Spinal Cord Emergencies",
+  "subtopic": "Corticosteroids — Methylprednisolone Dosing & Duration",
+  "year": 1997,
+  "journal": "JAMA",
+  "citation": "Bracken MB, Shepard MJ, Holford TR, et al. Administration of Methylprednisolone for 24 or 48 Hours or Tirilazad Mesylate for 48 Hours in the Treatment of Acute Spinal Cord Injury: Results of the Third National Acute Spinal Cord Injury Randomized Controlled Trial. JAMA. 1997;277(20):1597–1604.",
+  "doi": "https://doi.org/10.1001/jama.1997.03540440031029",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 499,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In acute spinal cord injury, extending methylprednisolone from 24 to 48 hours did not significantly improve neurological recovery overall (P=0.07 at 6 months) but showed a signal in the 3-8 hour post-injury window, at the cost of increased severe pneumonia.",
+  "pico": {
+    "population": "Age ≥14, acute traumatic SCI with neurological deficit, clinical diagnosis within 8 h, randomised within 6 h. Excluded gunshot wounds, body weight >109 kg, pregnancy, illegal immigrants/indicted criminals, significant comorbidities, language barriers.",
+    "intervention": "Common pre-randomisation MPSS bolus 30 mg/kg IV, then 48‑h MPSS protocol: continuous infusion 5.4 mg/kg/h for 47 h.",
+    "comparison": "24‑h MPSS protocol: continuous infusion 5.4 mg/kg/h for 23 h. A third arm (48‑h tirilazad 2.5 mg/kg IV q6h) was also tested.",
+    "outcome": "Primary: change in expanded motor score at 6 months (and 6 weeks). Secondary: Functional Independence Measure (FIM) scores, mortality, adverse events."
+  },
+  "keywords": [
+    "methylprednisolone",
+    "spinal cord injury",
+    "NASCIS",
+    "tirilazad",
+    "neuroprotection",
+    "subgroup analysis"
+  ],
+  "related_trials": [
+    "NASCIS II"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Secondary injury cascades after traumatic SCI include lipid peroxidation, inflammatory amplification, and microvascular dysfunction. NASCIS II popularised a 24‑h high‑dose MPSS regimen when initiated within 8 h, but the evidence rested heavily on subgroup analyses. Tirilazad, a non‑glucocorticoid free‑radical scavenger, was developed to target lipid peroxidation with potentially fewer adverse effects.",
+      "knowledge_gap": "The optimal duration of high‑dose MPSS after the initial bolus remained uncertain, and whether a non‑steroidal alternative could provide equal or greater benefit was untested.",
+      "hypothesis": "In patients with acute traumatic SCI treated within 8 h, (a) extending MPSS infusion to 48 h, or (b) substituting tirilazad for the MPSS maintenance phase, would improve neurological and functional recovery versus the 24‑h MPSS regimen."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double‑blind, controlled, three‑arm trial.",
+      "setting": "16 North American SCI centres; enrolment required rapid transfer and protocol initiation within 8 h.",
+      "population": {
+        "inclusion": [
+          "Age ≥14",
+          "Acute traumatic SCI with neurological deficit",
+          "Clinical diagnosis within 8 h; randomised within 6 h to allow protocol start within 8 h"
+        ],
+        "exclusion": [
+          "Gunshot wounds",
+          "Body weight >109 kg",
+          "Pregnancy",
+          "‘Illegal immigrants’ or indicted criminals",
+          "Comorbid illness likely to influence neurological assessment/outcomes",
+          "Inability to consent/participate in follow‑up (including language barriers, chronic steroid use)"
+        ]
+      },
+      "intervention": "48‑h MPSS: MPSS 30 mg/kg IV bolus, then continuous infusion 5.4 mg/kg/h for 47 h. (Bolus given pre‑randomisation to all, with additional bolus if initial dose <20 mg/kg.)",
+      "comparison": "24‑h MPSS: same bolus, then continuous infusion 5.4 mg/kg/h for 23 h, with matched placebos for non‑assigned agents. Third arm: tirilazad 2.5 mg/kg IV q6h for 48 h.",
+      "blinding": "Double‑blind; MPSS and tirilazad (or matching placebos) were administered in separate masked preparations; randomisation codes were stored centrally and not broken during the trial.",
+      "sample_size_power": "Powered to detect ≥5‑point difference in mean motor change score (α=0.05, β=0.20, 80% power), requiring 150 per group. Planned N=485; 499 randomised.",
+      "primary_outcome": "Change in expanded motor score at 6 months (and 6 weeks).",
+      "secondary_outcomes": [
+        "FIM total score and categorical improvement (≥1 functional category)",
+        "Mortality",
+        "Adverse events (e.g., severe pneumonia, severe sepsis)"
+      ],
+      "follow_up": "Neurological and functional assessments at 6 weeks (42‑49 days) and 6 months (180‑210 days); survival to 6 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "Across all patients treated within 8 h, 48‑h MPSS did not achieve statistical significance for motor recovery vs 24‑h MPSS (P=0.09 at 6 weeks; P=0.07 at 6 months).",
+        "The principal ‘positive’ finding emerged from the 3‑8 h post‑injury subgroup (motor change at 6 months: 17.6 vs 11.2; P=0.01), but the overall effect was not significant.",
+        "48‑h MPSS more than doubled the rate of severe pneumonia (5.8% vs 2.6%, P=0.02), with a numerical increase in severe sepsis."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Change in motor score at 6 weeks (modified ITT, treated within 8 h)",
+          "group_a": "11.8 (48‑h MPSS)",
+          "group_b": "9.0 (24‑h MPSS)",
+          "effect_measure": "ANCOVA (not reported)",
+          "effect_value": "Not reported",
+          "ci_95": "-",
+          "p_value": "0.09",
+          "note": "Adjusted for baseline motor score"
+        },
+        {
+          "outcome": "Change in motor score at 6 months (modified ITT, treated within 8 h)",
+          "group_a": "16.8 (48‑h MPSS)",
+          "group_b": "13.4 (24‑h MPSS)",
+          "effect_measure": "ANCOVA (not reported)",
+          "effect_value": "Not reported",
+          "ci_95": "-",
+          "p_value": "0.07",
+          "note": "Primary endpoint, not statistically significant"
+        },
+        {
+          "outcome": "Change in motor score at 6 weeks (3‑8 h subgroup, modified ITT)",
+          "group_a": "12.5 (48‑h MPSS)",
+          "group_b": "7.6 (24‑h MPSS)",
+          "effect_measure": "ANCOVA (not reported)",
+          "effect_value": "Not reported",
+          "ci_95": "-",
+          "p_value": "0.04",
+          "note": "Subgroup defined by time to bolus"
+        },
+        {
+          "outcome": "Change in motor score at 6 months (3‑8 h subgroup, modified ITT)",
+          "group_a": "17.6 (48‑h MPSS)",
+          "group_b": "11.2 (24‑h MPSS)",
+          "effect_measure": "ANCOVA (not reported)",
+          "effect_value": "Not reported",
+          "ci_95": "-",
+          "p_value": "0.01",
+          "note": "Key driver of the trial’s clinical message"
+        },
+        {
+          "outcome": "Total FIM score at 6 months (treated within 8 h, modified ITT)",
+          "group_a": "103.3 (48‑h MPSS)",
+          "group_b": "99.1 (24‑h MPSS)",
+          "effect_measure": "ANCOVA (not reported)",
+          "effect_value": "Not reported",
+          "ci_95": "-",
+          "p_value": "0.08",
+          "note": "Functional significance uncertain"
+        },
+        {
+          "outcome": "Improvement by ≥1 FIM functional category at 6 months (treated within 8 h, modified ITT)",
+          "group_a": "67.2% (48‑h MPSS)",
+          "group_b": "53.0% (24‑h MPSS)",
+          "effect_measure": "RR",
+          "effect_value": "1.28",
+          "ci_95": "1.05 to 1.57",
+          "p_value": "0.02",
+          "note": "Binary categorisation of functional change"
+        },
+        {
+          "outcome": "Severe pneumonia (treated within 8 h)",
+          "group_a": "5.8% (48‑h MPSS)",
+          "group_b": "2.6% (24‑h MPSS)",
+          "effect_measure": "Not reported",
+          "effect_value": "-",
+          "ci_95": "-",
+          "p_value": "0.02",
+          "note": "Infections numerically highest with 48‑h MPSS"
+        },
+        {
+          "outcome": "Severe sepsis (treated within 8 h)",
+          "group_a": "2.6% (48‑h MPSS)",
+          "group_b": "0.6% (24‑h MPSS)",
+          "effect_measure": "Not reported",
+          "effect_value": "-",
+          "ci_95": "-",
+          "p_value": "0.07",
+          "note": "Trial not powered for harms"
+        },
+        {
+          "outcome": "Change in motor score at 6 months (tirilazad vs 24‑h MPSS, treated within 8 h, modified ITT)",
+          "group_a": "13.2 (48‑h tirilazad)",
+          "group_b": "13.4 (24‑h MPSS)",
+          "effect_measure": "ANCOVA (not reported)",
+          "effect_value": "Not reported",
+          "ci_95": "-",
+          "p_value": "0.58",
+          "note": "Comparable motor recovery"
+        },
+        {
+          "outcome": "Improvement by ≥1 FIM functional category at 6 months (tirilazad vs 24‑h MPSS, treated within 8 h, modified ITT)",
+          "group_a": "58.5% (48‑h tirilazad)",
+          "group_b": "53.0% (24‑h MPSS)",
+          "effect_measure": "RR",
+          "effect_value": "1.10",
+          "ci_95": "0.90 to 1.35",
+          "p_value": "0.35",
+          "note": "No evidence of functional superiority"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Time to treatment 3–8 h (post‑hoc)",
+          "group_a": "17.6 (48‑h MPSS motor change)",
+          "group_b": "11.2 (24‑h MPSS motor change)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "-",
+          "p_interaction": "Not reported"
+        }
+      ]
+    },
+    "safety": [
+      "Severe pneumonia: 5.8% vs 2.6% (48‑h MPSS vs 24‑h MPSS), P=0.02",
+      "Severe sepsis: 2.6% vs 0.6%, P=0.07",
+      "No other specific safety outcomes reported in the source."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central pharmacy prepared masked trial kits; blocked randomisation (blocks of 9) within centre, supporting allocation concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double‑blind with matched infusions and placebos, substantially reducing performance bias; operator‑dependent neurological exams still susceptible to measurement error."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "Modified ITT excluded patients not treated within 8 h; key analyses also presented for a per‑protocol ‘compilers’ cohort, introducing potential post‑randomisation selection bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High reported dose adherence (>97% of assigned MPSS in both arms; 94.3% in tirilazad arm). Early discontinuation (2‑3 per group) and administration errors (7‑14 per group) were minimal."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Notable imbalances: lower baseline motor score in the tirilazad group (26.5 vs 33.9 vs 30.5) and lower diastolic BP (71.6 vs 76.0 vs 76.8 mm Hg), complicating interpretation despite adjustment."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate: randomisation and blinding were strong, follow‑up was relatively complete, and dosing separation was substantial; however, modified ITT exclusions, baseline imbalances, and subgroup‑driven inference meaningfully limit confidence in the causal interpretation of the ‘positive’ signal."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Predominantly young, male, blunt‑trauma SCI patients in high‑resource centres; penetrating injuries (gunshot) excluded and early consent/transfer required."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings most applicable to closed traumatic SCI managed in systems capable of protocol initiation within 8 h; generalisability limited for delayed presentation, penetrating injury, very high body weight, or settings with limited ICU/trauma resources."
+        }
+      ],
+      "verdict": "External validity is moderate for hyperacute, closed traumatic SCI in high‑income trauma systems, but limited for patients outside the early treatment window or with excluded injury mechanisms and comorbidity profiles."
+    },
+    "strengths": [
+      "Large multicentre, double‑blind randomised design with central drug preparation and strong masking procedures.",
+      "Prospectively defined dosing regimens with high reported adherence among those treated within the protocol window.",
+      "High follow‑up completeness among survivors, with structured neurological and functional assessments at clinically relevant time points."
+    ],
+    "limitations": [
+      "Common pre‑randomisation MPSS bolus to all groups limited the ability to assess ‘steroids vs no steroids’ and may have attenuated between‑group differences.",
+      "Primary conclusions driven by time‑to‑treatment subgroup analyses, with a cutpoint that may have been data‑influenced and without robust control for multiplicity.",
+      "Modified ITT exclusions (patients not treated within 8 h) and use of per‑protocol ‘compilers’ analyses risk bias.",
+      "Baseline imbalances (notably lower baseline motor score in the tirilazad group) complicate interpretation despite adjustment.",
+      "Adverse event detection was reported, but the trial was not powered for harms; nevertheless, infection signals were clinically important."
+    ],
+    "critical_appraisal": {
+      "summary": "NASCIS III is a well‑blinded, multicentre RCT that falls short of providing robust evidence for 48‑h MPSS: the overall primary analysis was not significant, the ‘positive’ signal rested on an underpowered, post‑hoc subgroup, and harms were clearly increased. The trial’s internal validity is moderate and its external validity limited to a narrow early‑window SCI population.",
+      "strengths": [
+        "Double‑blind, multicentre design with centralised masking",
+        "Near‑complete follow‑up in survivors",
+        "Prespecified dosing and outcome assessments"
+      ],
+      "weaknesses": [
+        "Subgroup‑driven inference without correction for multiplicity",
+        "Modified ITT and per‑protocol analyses introduce selection bias",
+        "Baseline imbalances and uncertain clinical meaning of small motor score differences",
+        "Clear harm signal (severe pneumonia) not integrated into the primary conclusion"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "NASCIS III did not provide compelling overall evidence that extending MPSS to 48 hours improves neurological recovery compared with 24 hours when all patients treated within 8 hours are analysed. The trial’s perceived ‘practice‑changing’ message emerged from subgroup comparisons and must be interpreted with caution. Given the observed infection signal, routine prolonged high‑dose MPSS should not be considered evidence‑based standard care in acute SCI.",
+    "clinical_bottom_line": {
+      "verdict": "Does not support routine use of 48‑h MPSS over 24‑h MPSS in acute SCI; the subgroup signal in the 3‑8 h window is of uncertain validity and is outweighed by increased severe infections. No recommendation for routine MPSS is justified.",
+      "applies_to": "Closed traumatic SCI patients treated within 8 h in high‑resource systems; not applicable to penetrating injury, delayed presentation, or patients with excluded comorbidities.",
+      "does_not_mean": "The trial does not establish that 48‑h MPSS is beneficial or standard of care; the observed functional improvements in subgroup analyses are of uncertain clinical significance and were not replicated in overall analyses.",
+      "implementation_caveats": [
+        "48‑h MPSS significantly increases severe pneumonia risk",
+        "The ‘positive’ subgroup finding may be a chance product of multiplicity and post‑hoc cutpoint selection",
+        "Subsequent evidence‑based guidelines recommend against routine MPSS in acute SCI"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Subgroup‑driven inference (time‑to‑treatment)",
+        "notes": "The overall modified ITT analyses did not show significant superiority, yet the paper’s clinical conclusion relied heavily on improved outcomes in the 3‑8 h subgroup. This effectively constructed a clinical rule (≤3 h: 24 h; 3‑8 h: 48 h) from within‑trial subgroup contrasts rather than from the overall randomised comparison."
+      },
+      {
+        "topic": "Data‑informed subgroup boundary and absence of a robust interaction framework",
+        "notes": "The 3‑h split was justified as the modal time to bolus. Critiques argue that privileging a boundary derived from the observed timing distribution, combined with multiple subgroup contrasts, inflates false‑positive risk and should not drive practice recommendations without clear evidence of a treatment‑by‑time interaction."
+      },
+      {
+        "topic": "Multiplicity across arms, outcomes, and timepoints",
+        "notes": "The trial compared three protocols, evaluated outcomes at 6 weeks and 6 months, and highlighted subgroup contrasts. Critical appraisal argues that this multiplicity makes isolated P values near 0.05 statistically fragile and increases the probability of chance findings being interpreted as clinically actionable evidence."
+      },
+      {
+        "topic": "Post‑randomisation exclusions and ‘compilers’ analyses",
+        "notes": "Key efficacy analyses were presented for a ‘treated within 8 h’ modified ITT cohort and, separately, a per‑protocol ‘compilers’ cohort. Stronger P values in the compilers analysis were criticised as vulnerable to bias from post‑randomisation selection and non‑adherence, particularly when overall effects were borderline."
+      },
+      {
+        "topic": "Clinical meaningfulness vs statistical signal",
+        "notes": "Published critiques argue that motor score differences of the observed magnitude (even when statistically significant in the 3‑8 h subgroup) have uncertain translation into patient‑valued function. Categorised functional outcomes (e.g., ‘improved by ≥1 functional category’) may magnify small differences in continuous endpoints."
+      },
+      {
+        "topic": "Benefit–harm imbalance and the ‘standard of care’ claim",
+        "notes": "NASCIS III demonstrated higher severe pneumonia (and numerically higher severe sepsis) with 48‑h MPSS. Subsequent critiques state that MPSS cannot be considered a standard of care, and 48‑h therapy should not be recommended, given weak overall efficacy signals and credible mechanisms for clinically important harm."
+      },
+      {
+        "topic": "Adoption, medicolegal drivers, and deimplementation",
+        "notes": "MPSS became embedded in practice and medicolegal discourse despite contested efficacy. Surveys documented widespread prescribing even when clinicians did not believe benefit was established, often citing medicolegal justification. This highlights how subgroup‑driven interpretations can be implemented and then only slowly reversed."
+      },
+      {
+        "topic": "Guideline reversal and modern positioning",
+        "notes": "Evidence‑based neurosurgical guidelines later recommended against MPSS for acute SCI, consolidating a shift away from ‘standard of care’ framing and supporting deimplementation of routine high‑dose steroid protocols (including prolonged courses)."
+      },
+      {
+        "topic": "Subsequent evidence synthesis and persistent heterogeneity",
+        "notes": "Later systematic review work underpinning guideline efforts concluded that any neurological benefit of MPSS (particularly the NASCIS II 24‑h regimen initiated within 8 h) is at most small and must be weighed against complications and patient preferences, explaining ongoing international variation rather than uniform re‑adoption."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "NASCIS II",
+        "relation": "Established the 24‑h MPSS regimen within 8 h of injury; NASCIS III directly tested prolonging that regimen to 48 h and substituting tirilazad."
+      }
+    ],
+    "unresolved_questions": [
+      "Is there a true time‑dependent benefit of MPSS, and if so, what is the optimal dosing window and duration?",
+      "Does any small neurological signal with MPSS translate into meaningful functional gains for patients?",
+      "Can alternative agents like tirilazad offer neuroprotection with less harm?",
+      "Why did subsequent meta‑analyses and guidelines reverse the steroid recommendation, and how should individualised risk–benefit be assessed in modern practice?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=499",
+        "Primary motor change at 6 months: 16.8 vs 13.4 (48‑h MPSS vs 24‑h MPSS), P=0.07",
+        "Severe pneumonia: 5.8% vs 2.6% (P=0.02)",
+        "3‑8 h subgroup motor change: 17.6 vs 11.2 (P=0.01)"
+      ],
+      "one_line_takeaway": "48‑hour methylprednisolone did not show overall benefit and increased severe pneumonia; any potential signal in the 3‑8 hour window does not justify routine use."
+    }
+  },
+  "_source_id": "NASCIS_III",
+  "_source_system": "Neuro"
+}

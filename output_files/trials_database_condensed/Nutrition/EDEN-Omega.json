@@ -1,0 +1,275 @@
+{
+  "id": "OMEGA",
+  "trial_name": "OMEGA — Enteral Omega-3 Fatty Acid, γ-Linolenic Acid, and Antioxidant Supplementation in Acute Lung Injury (2011)",
+  "specialty": "ARDS / Acute Respiratory Failure",
+  "subtopic": "Enteral Nutrition",
+  "year": 2011,
+  "journal": "JAMA",
+  "citation": "Rice TW, Wheeler AP, Thompson BT, deBoisblanc BP, Steingrub J, Rock P, et al; National Heart, Lung, and Blood Institute Acute Respiratory Distress Syndrome Network of Investigators. Enteral omega-3 fatty acid, γ-linolenic acid, and antioxidant supplementation in acute lung injury. JAMA. 2011;306(14):1574-1581",
+  "doi": "https://doi.org/10.1001/jama.2011.1435",
+  "registration": "NCT03452839",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, factorial with EDEN feeding trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 272,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In early acute lung injury (ALI)/ARDS, twice-daily bolus enteral supplementation with omega-3 fatty acids, γ-linolenic acid (GLA), and antioxidants resulted in fewer ventilator-free days and a mortality signal favoring control, leading to early trial termination for futility.",
+  "pico": {
+    "population": "Mechanically ventilated adults with early ALI (within 48 hours of meeting criteria) receiving enteral nutrition",
+    "intervention": "Twice-daily enteral bolus (120 mL each, total 240 mL/day) containing EPA 6.84 g, DHA 3.40 g, GLA 5.92 g, plus antioxidants (vitamin C 1000 mg, vitamin E 440 IU, beta-carotene 4.8 mg, zinc 24.2 mg, selenium 85.2 µg, L-carnitine 180 mg, taurine 350 mg), delivered alongside standard non–omega-3 enteral feeding",
+    "comparison": "Twice-daily isocaloric/isovolaemic control bolus (474 kcal, 22 g fat, 51.8 g carbohydrate, 20 g protein, no EPA/DHA/GLA, lower micronutrient doses), identical in appearance and smell",
+    "outcome": "Ventilator-free days (VFDs) from day 1 to day 28"
+  },
+  "keywords": [
+    "omega-3 fatty acids",
+    "γ-linolenic acid",
+    "antioxidants",
+    "acute lung injury",
+    "ARDS",
+    "enteral nutrition",
+    "ventilator-free days",
+    "pharmaconutrition"
+  ],
+  "related_trials": [
+    "EDEN (factorial trophic vs full-calorie feeding)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "ALI/ARDS is characterized by neutrophilic lung inflammation, permeability oedema, and prothrombotic signalling. Omega-3 fatty acids (EPA/DHA) may shift eicosanoid mediators toward less inflammatory profiles; GLA and antioxidants have anti-inflammatory/antioxidant effects. Prior small RCTs of enteral formula enriched with these nutrients reported improved oxygenation and other outcomes, but were limited by small samples and as-treated analyses. Observational data suggested low n-3 levels in ALI.",
+      "knowledge_gap": "No large, blinded, intention-to-treat RCT had confirmed the efficacy and safety of such supplementation in ALI/ARDS.",
+      "hypothesis": "Enteral bolus supplementation with EPA/DHA, GLA, and antioxidants would increase ventilator-free days to day 28 compared with an isocaloric control supplement."
+    },
+    "methods": {
+      "design": "Randomised, double-blind, placebo-controlled, multicentre trial within the NHLBI ARDS Network, conducted in factorial design with the EDEN feeding trial (trophic vs full-calorie); enrolled 2 Jan 2008 to 21 Feb 2009, stopped early at first interim analysis for futility after 272 participants.",
+      "setting": "44 ARDSNet hospitals in ICUs",
+      "population": {
+        "inclusion": [
+          "Within 48 hours of meeting ALI criteria",
+          "PaO2/FiO2 < 300 (altitude-adjusted if >1000 m)",
+          "Bilateral infiltrates consistent with pulmonary oedema",
+          "Positive-pressure ventilation via endotracheal tube",
+          "No clinical evidence of left-sided cardiac failure",
+          "Clinical intent to provide enteral nutrition"
+        ],
+        "exclusion": [
+          "Severe chronic lung disease (n=500 screened excluded for this reason)",
+          "Inability to obtain consent (n=417)",
+          "Likely fatal underlying disease (n=306)",
+          "Recent intracranial haemorrhage (n=250)",
+          "Severe liver disease (n=194)",
+          "Moribund (n=167)",
+          "Refractory shock (n=113)",
+          "Coagulopathy (n=108)",
+          "Time window exceeded (ALI >48 h or intubated >72 h; n=445)"
+        ]
+      },
+      "intervention": "Twice-daily enteral bolus of 120 mL (total 240 mL/day) providing EPA 6.84 g, DHA 3.40 g, GLA 5.92 g, vitamin C 1000 mg, vitamin E 440 IU, beta-carotene 4.8 mg, zinc 24.2 mg, selenium 85.2 µg, L-carnitine 180 mg, taurine 350 mg. Started within 6 h of randomisation, continued until the earliest of 21 days, 48 h of unassisted breathing, or extubation. Background non-omega-3 enteral feeding via a protocolised algorithm.",
+      "comparison": "Twice-daily isocaloric/isovolaemic control bolus (240 mL/day: 474 kcal, fat 22 g, carbohydrate 51.8 g, protein 20 g, EPA/DHA/GLA 0 g, vitamin C 76 mg, vitamin E 12 IU, zinc 5.6 mg, selenium 18 µg, L-carnitine 38 mg, taurine 138 mg). Identical appearance, smell, and background feeding protocol.",
+      "blinding": "Double-blind; participants, clinicians, investigators, outcome assessors masked. Randomisation by central web-based system stratified by hospital and baseline shock.",
+      "sample_size_power": "Planned 1000 patients; 90.7% power to detect 2.25-day increase in VFDs (assumed mean 14, SD 10.5) with two-sided alpha 0.05, beta 0.093, using group sequential design with asymmetric efficacy/futility boundaries. Stopped at first interim analysis for futility after 272 randomised (143 intervention, 129 control).",
+      "primary_outcome": "Ventilator-free days (VFDs) from day 1 to day 28",
+      "secondary_outcomes": [
+        "ICU-free days to day 28",
+        "Days without nonpulmonary organ failure (circulatory, coagulation, hepatic, renal) to day 28",
+        "60-day hospital mortality (unadjusted and adjusted)",
+        "Plasma EPA levels (pharmacodynamic assessment in first 60 patients)"
+      ],
+      "follow_up": "To day 60 or hospital discharge; primary endpoint assessed to day 28. Complete follow-up on all 272 participants."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early for futility after 272 patients; primary analysis intent-to-treat.",
+        "Ventilator-free days significantly fewer with intervention: 14.0 vs 17.2 days (difference −3.2, 95% CI −5.8 to −0.7, P=0.02).",
+        "Mortality direction favored control: 60-day unadjusted mortality 26.6% vs 16.3% (difference 10.3%, 95% CI 0.7 to 19.9, P=0.054).",
+        "Diarrhoea more frequent with intervention: 29% vs 21% (P=0.001).",
+        "Pharmacodynamic separation confirmed: plasma EPA rose from ~0.5% to ~3.5% in the intervention group by day 3, unchanged in control."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Ventilator-free days (day 1–28) — primary",
+          "group_a": "14.0 (SD 11.1)",
+          "group_b": "17.2 (SD 10.2)",
+          "effect_measure": "Difference",
+          "effect_value": "-3.2",
+          "ci_95": "-5.8 to -0.7",
+          "p_value": "0.02",
+          "note": "Negative value indicates fewer VFDs with intervention. Trial stopped for futility."
+        },
+        {
+          "outcome": "ICU-free days (day 1–28)",
+          "group_a": "14.0 (SD 10.5)",
+          "group_b": "16.7 (SD 9.5)",
+          "effect_measure": "Difference",
+          "effect_value": "-2.7",
+          "ci_95": "-5.1 to -0.3",
+          "p_value": "0.04",
+          "note": ""
+        },
+        {
+          "outcome": "Days without nonpulmonary organ failure (day 1–28)",
+          "group_a": "12.3 (SD 11.1)",
+          "group_b": "15.5 (SD 11.4)",
+          "effect_measure": "Difference",
+          "effect_value": "-3.2",
+          "ci_95": "-5.9 to -0.5",
+          "p_value": "0.02",
+          "note": ""
+        },
+        {
+          "outcome": "60-day hospital mortality (unadjusted)",
+          "group_a": "26.6% (95% CI 19.3–33.8)",
+          "group_b": "16.3% (95% CI 9.9–22.7)",
+          "effect_measure": "Difference",
+          "effect_value": "10.3%",
+          "ci_95": "0.7 to 19.9",
+          "p_value": "0.054",
+          "note": "Early stopping limits precision; not adjusted for multiplicity."
+        },
+        {
+          "outcome": "60-day hospital mortality (adjusted for baseline covariates)",
+          "group_a": "25.1% (95% CI 9.2–41.0)",
+          "group_b": "17.6% (95% CI 3.3–31.9)",
+          "effect_measure": "Difference",
+          "effect_value": "7.5%",
+          "ci_95": "-3.1 to 18.1",
+          "p_value": "0.11",
+          "note": "Pre-specified adjusted model."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "EDEN feeding allocation (trophic vs full-calorie)",
+          "group_a": "Not reported separately",
+          "group_b": "Not reported separately",
+          "effect_measure": "Interaction P",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.47",
+          "note": "No evidence of interaction with feeding strategy on primary outcome."
+        }
+      ]
+    },
+    "safety": [
+      "Diarrhoea during ventilation: 29% (intervention) vs 21% (control), P=0.001.",
+      "No other specific adverse events reported; trial stopped early."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation with stratification by hospital and baseline shock; concealed allocation."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind; intervention and control boluses identical in appearance and smell. Outcomes largely objective (VFDs, ICU-free days, mortality)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Complete follow-up to day 60/hospital discharge for all 272 participants; only 1/143 intervention patients received no n-3 doses. ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Mean receipt of 85% of planned bolus doses in both groups; background ventilation and fluid protocols standardised; bolus given even when continuous feeds interrupted."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly similar (APACHE III, aetiology), but small imbalances: minute ventilation 11.4 vs 10.6 L/min (P=0.04); trend toward higher pre-study fluid intake 5085 vs 4387 mL (P=0.09) – may have favoured control."
+        }
+      ],
+      "verdict": "Moderate to strong: strong randomisation, blinding, objective outcomes, and complete follow-up support validity, but early termination, non-inert control macronutrient composition, and baseline imbalances reduce confidence in precise effect estimates."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical early ALI/ARDS population from 44 hospitals; common aetiologies: pneumonia (52%), sepsis (23%). Excluded many with severe chronic lung disease, delayed presentation, or severe comorbidities – may not represent frailer or late-presenting patients."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings apply to twice-daily bolus supplementation dissociated from background feeds in protocolised, well-resourced ICUs. Extrapolation to continuous immunomodulatory enteral formulas or parenteral lipid emulsions is uncertain."
+        }
+      ],
+      "verdict": "Moderate: results are broadly applicable to early, mechanically ventilated ALI/ARDS patients receiving enteral nutrition in well-resourced ICUs, but may not fully generalise to different formulations, continuous delivery, or late-phase ARDS."
+    },
+    "strengths": [
+      "Randomised, double-blind, multicentre design with concealed allocation and excellent follow-up.",
+      "Protocolised co-interventions (ventilation, haemodynamics/fluid, glucose targets) reduced confounding.",
+      "Demonstrated pharmacodynamic separation (plasma EPA increased ~8-fold), confirming exposure.",
+      "Novel bolus strategy allowed intention-to-treat assessment despite feeding interruptions."
+    ],
+    "limitations": [
+      "Stopped early for futility after 272/1000 participants, reducing precision and stability of estimates (especially mortality).",
+      "Intervention and control boluses were isocaloric but not macronutrient-matched; control provided more protein (20 g/day vs 3.8 g) and carbohydrate, complicating attribution to omega-3/GLA/antioxidants vs nutritional composition.",
+      "Bolus delivery of high-fat supplement may increase diarrhoea (29% vs 21%) and may not reflect continuous immunomodulatory formulas used in earlier trials.",
+      "P values were not adjusted for multiple comparisons or early stopping."
+    ],
+    "critical_appraisal": {
+      "summary": "Despite strong internal validity, early termination and the macronutrient mismatch between intervention and control boluses reduce confidence that the observed harm is solely attributable to omega-3/GLA/antioxidants; the signal of worse outcomes nevertheless refutes benefit from this specific bolus strategy in early ALI.",
+      "strengths": [
+        "Double-blind RCT with complete follow-up and protocolised care.",
+        "Biochemical confirmation of exposure."
+      ],
+      "weaknesses": [
+        "Early stopping for futility renders effect estimates unstable.",
+        "Control group received substantially more protein and carbohydrate, creating a nutritional confound.",
+        "Bolus delivery caused GI intolerance and may not be comparable to continuous infusion."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Twice-daily bolus enteral omega-3 fatty acid, GLA, and antioxidant supplementation did not improve clinical outcomes in early ALI and was associated with fewer ventilator-free days, potentially indicating harm; routine use is not recommended.",
+    "clinical_bottom_line": {
+      "verdict": "Do not routinely use this specific bolus omega-3/GLA/antioxidant supplement in early ALI/ARDS; it may cause harm (fewer VFDs, possible mortality increase).",
+      "applies_to": "Mechanically ventilated adults within 48 hours of ALI onset receiving enteral nutrition in well-resourced ICUs.",
+      "does_not_mean": "These findings do not necessarily apply to continuous enteral immunomodulatory formulas, parenteral omega-3 lipids, or different patient populations (e.g., late-phase ARDS).",
+      "implementation_caveats": [
+        "Bolus delivery of high-fat supplements may increase diarrhoea and could reduce tolerance.",
+        "The macronutrient profile difference between the omega-3 and control boluses (protein, carbohydrate) is a major confound; separating the effect of omega-3s from overall nutrition is difficult.",
+        "Prior small trials using continuous formulas suggested benefit, highlighting that delivery strategy and comparator choice matter."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early termination for futility",
+        "notes": "Stopping at 27% of planned enrolment reduces precision; the nominally significant morbidity endpoints and mortality trend must be interpreted with caution given multiple endpoints and early stopping (editorial emphasised this)."
+      },
+      {
+        "topic": "Discordance with earlier trials",
+        "notes": "Earlier small RCTs of continuous immunomodulatory enteral formulas reported improved oxygenation and outcomes. Discrepancies may stem from bolus vs continuous delivery, dissociated feeding design, macronutrient differences, and patient selection."
+      },
+      {
+        "topic": "Macronutrient confound",
+        "notes": "The control bolus provided ~16 g/day more protein and substantially more carbohydrate; these differences could independently affect outcomes, making it unclear whether harm is due to omega-3s or to relative protein/energy delivery."
+      },
+      {
+        "topic": "Heterogeneity of meta-analyses",
+        "notes": "Subsequent systematic reviews and meta-analyses have reported mixed findings; some suggest improved oxygenation or shorter ventilation with omega-3 formulas, but mortality effects are inconsistent and influenced by trial selection and small-study effects."
+      },
+      {
+        "topic": "Guideline synthesis",
+        "notes": "Guidelines cite OMEGA as a key negative multicentre trial and do not recommend routine enteral omega-3/GLA/antioxidant-enriched formulas or supplements in ARDS outside trials."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "EDEN (Trophic vs Full-Calorie Feeding in ALI)",
+        "relation": "Conducted in factorial design with OMEGA; tested the effect of initial trophic vs full-calorie enteral feeding. No interaction between feeding allocation and omega-3 supplementation on VFDs (interaction P=0.47), indicating the OMEGA findings were independent of feeding strategy."
+      }
+    ],
+    "unresolved_questions": [
+      "Would continuous infusion of omega-3 fatty acids (vs bolus) produce different outcomes?",
+      "Is there a subgroup (e.g., more severe hypoxaemia, sepsis) that might benefit from such supplementation?",
+      "What contribution did the large protein and carbohydrate differences between groups make to the outcome?",
+      "Can the harm signal be replicated or refuted in a fully macronutrient-matched trial?",
+      "What is the role of omega-3 fatty acids in parenteral nutrition for ARDS?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "VFDs: 14.0 vs 17.2 days (difference −3.2, P=0.02)",
+        "60-day mortality (unadjusted): 26.6% vs 16.3% (P=0.054, early stop)",
+        "Diarrhoea: 29% vs 21% (P=0.001)"
+      ],
+      "one_line_takeaway": "In early ALI/ARDS, twice-daily bolus omega-3/GLA/antioxidant supplementation worsened ventilator-free days and trended toward increased mortality; it should not be used routinely."
+    }
+  },
+  "_source_id": "EDEN-Omega",
+  "_source_system": "Nutrition"
+}

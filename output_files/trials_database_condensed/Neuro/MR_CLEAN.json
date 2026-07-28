@@ -1,0 +1,412 @@
+{
+  "id": "MR_CLEAN",
+  "trial_name": "MR CLEAN — A Randomized Trial of Intraarterial Treatment for Acute Ischemic Stroke",
+  "specialty": "Neuro",
+  "subtopic": "Acute Ischemic Stroke",
+  "year": 2015,
+  "journal": "New England Journal of Medicine",
+  "citation": "Berkhemer OA, Fransen PSS, Beumer D, et al; MR CLEAN Investigators. A randomized trial of intraarterial treatment for acute ischemic stroke. N Engl J Med. 2015;372:11-20.",
+  "doi": "https://doi.org/10.1056/NEJMoa1411587",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, PROBE, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 500,
+  "result_category": "Positive",
+  "one_liner": "Intraarterial treatment (predominantly mechanical thrombectomy) within 6 hours of anterior-circulation LVO stroke improved 90-day disability outcomes and functional independence compared with usual care alone.",
+  "pico": {
+    "population": "Adults with acute ischemic stroke due to proximal anterior-circulation occlusion (ICA, M1, M2, A1–A2) confirmed by CTA/MRA/angiography, within 6 hours of symptom onset",
+    "intervention": "Intraarterial treatment (arterial catheterisation with mechanical thrombectomy, intra-arterial thrombolytic therapy, or both) added to usual care",
+    "comparison": "Usual care alone (including IV alteplase when eligible)",
+    "outcome": "90-day modified Rankin Scale (mRS) ordinal shift analysis"
+  },
+  "keywords": [
+    "endovascular thrombectomy",
+    "intraarterial treatment",
+    "acute ischemic stroke",
+    "large vessel occlusion",
+    "modified Rankin Scale",
+    "proximal anterior circulation"
+  ],
+  "related_trials": [
+    "ESCAPE",
+    "DAWN",
+    "DEFUSE 3",
+    "HERMES"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Proximal anterior-circulation large-vessel occlusion (LVO) causes a large proportion of disabling strokes and has poor natural history without early reperfusion. Intravenous alteplase achieves low early recanalisation rates in proximal LVO. Earlier endovascular strategies and several pre-2015 RCTs were limited by delayed workflows, variable imaging confirmation of occlusion, and limited use of modern stent-retrievers. By the early 2010s, stent-retrievers and better imaging/workflow created biological plausibility for benefit.",
+      "knowledge_gap": "Definitive pragmatic RCT evidence for intraarterial treatment in routine care settings was lacking.",
+      "hypothesis": "In adults with acute ischaemic stroke due to proximal anterior-circulation occlusion treatable within 6 hours, intraarterial treatment added to usual care would shift the full modified Rankin Scale (mRS) distribution towards less disability at 90 days."
+    },
+    "methods": {
+      "design": "Randomised, multicentre (16 centres), investigator-initiated, pragmatic superiority trial; open-label treatment with blinded endpoint assessment (PROBE design).",
+      "setting": "Acute stroke care in the Netherlands; enrolment required vessel imaging confirmation of proximal anterior-circulation occlusion.",
+      "population": {
+        "inclusion": [
+          "Age ≥18",
+          "NIHSS ≥2",
+          "Non-contrast CT excluding intracranial haemorrhage",
+          "Proximal anterior-circulation occlusion (ICA terminus/M1/M2/A1–A2) on CTA/MRA/angiography",
+          "Eligibility for intraarterial treatment within 6 hours of symptom onset"
+        ],
+        "exclusion": [
+          "Standard contraindications to IV thrombolysis (when considered), including persistent blood pressure >185/110 mmHg despite treatment",
+          "Blood glucose <2.7 or >22.2 mmol/L",
+          "Other protocol-defined exclusions (e.g., clinical/imaging features precluding endovascular therapy)"
+        ]
+      },
+      "intervention": "Intraarterial treatment (arterial catheterisation with mechanical thrombectomy, intra-arterial thrombolytic therapy, or both) in addition to usual care. Initiation within 6 hours of symptom onset. Among those receiving intervention, retrievable stents used in 81.5%, additional intra-arterial thrombolytics in 10.3%, acute carotid artery stenting in 12.9%, general anaesthesia in 37.8%.",
+      "comparison": "Usual care alone, including IV alteplase when eligible and other standard acute stroke management; no protocolised endovascular rescue outside trial allocation.",
+      "blinding": "Open-label delivery of endovascular therapy; functional outcomes (including primary outcome mRS at 90 days) assessed by personnel blinded to treatment assignment.",
+      "sample_size_power": "500 patients to provide 82% power (β=0.18) at α=0.05 to detect a 10% absolute increase in the cumulative proportion of patients with mRS 0–3 at 90 days, assuming 10% cross-over.",
+      "primary_outcome": "Modified Rankin Scale (mRS) at 90 days, analysed by ordinal logistic regression (shift analysis).",
+      "secondary_outcomes": [
+        "NIHSS at 24 hours",
+        "NIHSS at 5–7 days or discharge",
+        "Follow-up CTA occlusion status",
+        "Infarct volume at 5–7 days",
+        "Symptomatic intracranial haemorrhage",
+        "Any intracranial haemorrhage",
+        "New ischaemic stroke in different vascular territory",
+        "Death within 30 days"
+      ],
+      "follow_up": "90 days for primary disability outcome."
+    },
+    "results": {
+      "headline_bullets": [
+        "Disability improved across the full mRS distribution (adjusted common OR 1.67, 95% CI 1.21–2.30).",
+        "Functional independence (mRS 0–2) increased from 19.1% to 32.6% (adjusted OR 2.16, 95% CI 1.39–3.38).",
+        "Mechanistic endpoints showed strong recanalization (75.4% vs 32.9% no occlusion on follow-up CTA) and smaller infarct volumes.",
+        "Procedural harms included higher rates of any intracranial haemorrhage (29.2% vs 18.4%) and new-territory strokes (5.6% vs 0.4%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: mRS at 90 days (shift analysis)",
+          "group_a": "Median 4",
+          "group_b": "Median 5",
+          "effect_measure": "Common OR",
+          "effect_value": "1.67",
+          "ci_95": "1.21–2.30",
+          "p_value": "",
+          "note": "Ordinal logistic regression; common OR >1 favours intervention"
+        },
+        {
+          "outcome": "Functional independence (mRS 0–2) at 90 days",
+          "group_a": "76/233 (32.6%)",
+          "group_b": "51/267 (19.1%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "2.16",
+          "ci_95": "1.39–3.38",
+          "p_value": "",
+          "note": "Absolute difference 13.5 percentage points (95% CI 5.9 to 21.2)"
+        },
+        {
+          "outcome": "mRS 0–3 at 90 days",
+          "group_a": "119/233 (51.1%)",
+          "group_b": "95/267 (35.6%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "2.03",
+          "ci_95": "1.36–3.03",
+          "p_value": "",
+          "note": "Absolute difference 15.5 percentage points (95% CI 5.9 to 25.1)"
+        },
+        {
+          "outcome": "Barthel Index 19–20 at 90 days",
+          "group_a": "99/215 (46.0%)",
+          "group_b": "73/245 (29.8%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "2.11",
+          "ci_95": "1.42–3.14",
+          "p_value": "",
+          "note": "Non-complete data for this endpoint"
+        },
+        {
+          "outcome": "NIHSS at 24 hours",
+          "group_a": "Median 13",
+          "group_b": "Median 16",
+          "effect_measure": "Adjusted β",
+          "effect_value": "2.3",
+          "ci_95": "1.0–3.5",
+          "p_value": "",
+          "note": "β represents lower NIHSS (better) in the intervention group"
+        },
+        {
+          "outcome": "NIHSS at 5–7 days or discharge",
+          "group_a": "Median 8",
+          "group_b": "Median 14",
+          "effect_measure": "Adjusted β",
+          "effect_value": "2.9",
+          "ci_95": "1.5–4.3",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "No intracranial occlusion on follow-up CTA",
+          "group_a": "141/187 (75.4%)",
+          "group_b": "68/207 (32.9%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "6.88",
+          "ci_95": "4.44–10.66",
+          "p_value": "",
+          "note": "Imaging endpoint with incomplete ascertainment"
+        },
+        {
+          "outcome": "Infarct volume at 5–7 days (mL)",
+          "group_a": "Median 49",
+          "group_b": "Median 79",
+          "effect_measure": "Adjusted β",
+          "effect_value": "19",
+          "ci_95": "3–34",
+          "p_value": "",
+          "note": "Smaller infarct volume in intervention group; incomplete data"
+        },
+        {
+          "outcome": "Symptomatic intracranial haemorrhage",
+          "group_a": "18/233 (7.7%)",
+          "group_b": "17/267 (6.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.21",
+          "ci_95": "0.60–2.43",
+          "p_value": "0.58",
+          "note": "No statistically significant excess"
+        },
+        {
+          "outcome": "Any intracranial haemorrhage",
+          "group_a": "68/233 (29.2%)",
+          "group_b": "49/267 (18.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.59",
+          "ci_95": "1.08–2.35",
+          "p_value": "0.02",
+          "note": "Imaging-based; clinical relevance varies by type/location"
+        },
+        {
+          "outcome": "New ischaemic stroke in different vascular territory",
+          "group_a": "13/233 (5.6%)",
+          "group_b": "1/267 (0.4%)",
+          "effect_measure": "RR",
+          "effect_value": "14.91",
+          "ci_95": "1.97–112.68",
+          "p_value": "<0.001",
+          "note": "Important procedural harm signal; imprecise CI"
+        },
+        {
+          "outcome": "Death within 30 days",
+          "group_a": "44/233 (18.9%)",
+          "group_b": "49/267 (18.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.71–1.49",
+          "p_value": "0.88",
+          "note": "No significant mortality difference at 7, 30, or 90 days"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Age ≥80",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Common OR",
+          "effect_value": "3.24",
+          "ci_95": "1.22–8.62",
+          "p_interaction": "not reported",
+          "note": "Compared with age <80 (OR 1.60, 1.13–2.28)"
+        },
+        {
+          "subgroup": "Age <80",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Common OR",
+          "effect_value": "1.60",
+          "ci_95": "1.13–2.28",
+          "p_interaction": "not reported",
+          "note": ""
+        },
+        {
+          "subgroup": "NIHSS ≥20",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Common OR",
+          "effect_value": "1.85",
+          "ci_95": "1.06–3.21",
+          "p_interaction": "not reported",
+          "note": "Point estimate suggests retained benefit in severe stroke"
+        },
+        {
+          "subgroup": "ICA terminus occlusion present",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Common OR",
+          "effect_value": "2.43",
+          "ci_95": "1.24–4.77",
+          "p_interaction": "not reported",
+          "note": "Compared with absent (OR 1.61, 1.11–2.33)"
+        },
+        {
+          "subgroup": "ICA terminus occlusion absent",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Common OR",
+          "effect_value": "1.61",
+          "ci_95": "1.11–2.33",
+          "p_interaction": "not reported",
+          "note": ""
+        },
+        {
+          "subgroup": "Onset-to-randomisation ≥120 minutes",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Common OR",
+          "effect_value": "1.69",
+          "ci_95": "1.21–2.38",
+          "p_interaction": "not reported",
+          "note": "Early <120 minutes underpowered (OR 1.57, 0.51–4.85)"
+        }
+      ]
+    },
+    "safety": [
+      "Symptomatic intracranial haemorrhage: 7.7% vs 6.4% (RR 1.21, P=0.58)",
+      "Any intracranial haemorrhage: 29.2% vs 18.4% (RR 1.59, P=0.02)",
+      "New ischaemic stroke in different vascular territory: 5.6% vs 0.4% (RR 14.91, P<0.001)",
+      "Death within 30 days: 18.9% vs 18.4% (RR 1.03, P=0.88); no significant difference at 7, 30, or 90 days"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation; stratified for centre, baseline NIHSS, planned IV alteplase use, and planned endovascular modality. Group sizes imbalanced (233 vs 267) but baseline characteristics broadly similar; key imbalances favoured control group."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label treatment; co-interventions and post-procedure care could differ. Primary outcome assessment blinded, reducing detection bias for mRS; many secondary outcomes were objective but had incomplete ascertainment."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "502 randomised, 2 withdrew consent immediately excluded, 500 analysed. Minor deviation from strict ITT, numerically trivial. Primary endpoint ascertainment at 90 days effectively complete."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Intraarterial treatment initiated in 84.1% of intervention arm; 15.9% did not receive it (no occlusion at angiography, clinical improvement, access failure, etc.). Crossover low (3.6%). Device/technique heterogeneity (81.5% retrievable stents, 10.3% IA thrombolytics, 12.9% carotid stenting)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Age, NIHSS, onset-to-randomisation comparable. High alteplase exposure in both arms (87.1% vs 90.6%). Occlusion distribution typical of proximal LVO. Some imbalances (left-hemisphere strokes, alteplase use) favoured control."
+        }
+      ],
+      "verdict": "Overall, internal validity is strong to moderate: randomisation and blinded endpoint assessment support causal inference, and objective mechanistic endpoints demonstrate separation; key limitations are open-label care, incomplete delivery of intraarterial therapy in 15.9% of the intervention arm, and incomplete imaging ascertainment for some secondary outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad pragmatic enrolment (age 23–96, median NIHSS 17–18) and high alteplase uptake reflect routine early-window LVO care in a mature stroke system with vascular imaging for triage."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most generalisable to anterior-circulation proximal LVO within 6 hours in well-resourced systems with rapid imaging, transfer, and 24/7 endovascular capability. Less applicable to posterior circulation, distal occlusions, very late/unknown onset, and settings without such access. Technique and workflow have evolved since MR CLEAN, so absolute outcomes may differ."
+        }
+      ],
+      "verdict": "Generalisability is good for early-window anterior LVO in well-resourced stroke systems, but limited in settings lacking rapid vascular imaging/endovascular access or in patient groups outside the trial’s anatomic and temporal eligibility."
+    },
+    "strengths": [
+      "First large pragmatic multicentre RCT demonstrating clear functional benefit of an intraarterial strategy for confirmed proximal anterior-circulation occlusion.",
+      "Clinically meaningful primary endpoint (mRS shift) with blinded assessment; high follow-up completeness for primary outcome.",
+      "Mechanistic coherence: marked improvement in vessel patency on follow-up CTA and reduced infarct volume.",
+      "High background rate of alteplase use supports “add-on” interpretation (thrombectomy on top of modern medical therapy)."
+    ],
+    "limitations": [
+      "Open-label treatment introduces potential performance bias in supportive care and rehabilitation intensity (mitigated by blinded mRS assessment).",
+      "Incomplete protocol delivery: 15.9% of the intervention arm did not receive intraarterial therapy; reperfusion rate (mTICI 2b/3) was 58.7%—lower than in later-generation practice.",
+      "Device/technique and anaesthesia heterogeneity complicate attribution to any single procedural approach and may increase between-centre variability.",
+      "Important procedural harm signal: more new-territory infarcts (5.6% vs 0.4%) and higher “any intracranial haemorrhage” (29.2% vs 18.4%)."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed, pragmatic trial with clear, consistent benefit across multiple outcomes, despite some limitations in blinding and incomplete treatment delivery. External validity is high for early-window LVO in similar settings.",
+      "strengths": [
+        "Randomised, stratified, with blinded primary endpoint assessment",
+        "Strong mechanistic separation on imaging and clinical scales",
+        "High external validity for the target population"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Incomplete delivery of intervention in ~16%",
+        "Moderate reperfusion rates by current standards",
+        "Procedural harms (new-territory strokes, any ICH)"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "MR CLEAN establishes intraarterial treatment (predominantly mechanical thrombectomy) as an effective strategy to improve disability outcomes in early-window anterior-circulation LVO when added to best medical therapy.",
+    "clinical_bottom_line": {
+      "verdict": "Intraarterial treatment (mechanical thrombectomy) should be offered to eligible patients with acute anterior-circulation LVO within 6 hours of symptom onset, as it improves functional outcomes.",
+      "applies_to": "Adults with proximal anterior-circulation occlusion (ICA, M1, M2, A1–A2) confirmed by vascular imaging, within 6 hours, and with no contraindications.",
+      "does_not_mean": "It does not mean that all patients benefit equally; the benefit is substantial but requires rapid systems of care and expertise. It does not eliminate the need for IV alteplase in eligible patients.",
+      "implementation_caveats": [
+        "Rapid imaging and transfer systems are essential",
+        "Centres must have 24/7 neurointerventional capability",
+        "Procedural expertise is needed to minimise new-territory strokes"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Why MR CLEAN succeeded when earlier endovascular RCTs were neutral",
+        "notes": "Key differentiator: mandatory vessel imaging confirmation of proximal occlusion before randomisation, aligning the intervention with the biological target population. Contemporary devices and techniques were used frequently (retrievable stents 81.5%), despite overall reperfusion rates being modest compared with later trials."
+      },
+      {
+        "topic": "Editorial perspective",
+        "notes": "The accompanying editorial emphasised that benefit depends on rapid workflow and experienced centres, and framed MR CLEAN as the beginning of a new era requiring disciplined systems of care."
+      },
+      {
+        "topic": "Procedural risk trade-offs",
+        "notes": "New-territory infarction occurred more often with intraarterial treatment (5.6% vs 0.4%; RR 14.91), underscoring that net benefit requires procedural expertise and attention to embolic protection/technique. Symptomatic intracranial haemorrhage was similar (7.7% vs 6.4%), supporting acceptable haemorrhagic risk in an alteplase-rich population."
+      },
+      {
+        "topic": "Rapid confirmatory RCTs and end of equipoise",
+        "notes": "Multiple 2015 trials in similar populations (e.g., ESCAPE) corroborated improved functional outcomes with thrombectomy, accelerating guideline adoption. Patient-level meta-analysis (HERMES) confirmed consistent benefit across a broad range of ages and severity."
+      },
+      {
+        "topic": "Extension beyond the 6-hour window",
+        "notes": "Later trials using advanced imaging selection expanded thrombectomy benefit into later time windows (DAWN, DEFUSE 3), reshaping triage and transfer paradigms for late-presenting LVO."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "Major stroke guidelines incorporated thrombectomy for eligible anterior-circulation LVO and emphasised speed and imaging-based selection (AHA/ASA 2018 guideline and 2019 update)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ESCAPE",
+        "relation": "Another 2015 trial that confirmed functional benefit of thrombectomy for anterior-circulation LVO, reinforcing MR CLEAN's findings."
+      },
+      {
+        "trial": "DAWN",
+        "relation": "Later trial expanding thrombectomy benefit into later time windows (6–24 hours) using advanced imaging selection."
+      },
+      {
+        "trial": "DEFUSE 3",
+        "relation": "Trial showing benefit of thrombectomy in 6–16 hour window with perfusion imaging selection."
+      },
+      {
+        "trial": "HERMES",
+        "relation": "Patient-level meta-analysis of multiple thrombectomy trials (including MR CLEAN) confirming consistent benefit across a broad range of ages and severity."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal anaesthetic strategy during thrombectomy (general anaesthesia vs conscious sedation)",
+      "Effect of faster door-to-reperfusion times on outcomes",
+      "Benefit in posterior circulation or distal occlusions",
+      "Long-term functional and quality-of-life outcomes beyond 90 days"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=500",
+        "Primary mRS shift adjusted common OR 1.67 (95% CI 1.21–2.30)",
+        "Functional independence (mRS 0–2) 32.6% vs 19.1% (adj OR 2.16)",
+        "CTA recanalization 75.4% vs 32.9% (adj OR 6.88)"
+      ],
+      "one_line_takeaway": "For early-window anterior-circulation LVO, intraarterial thrombectomy improves 90-day functional outcomes and should be standard of care."
+    }
+  },
+  "_source_id": "MR_CLEAN",
+  "_source_system": "Neuro"
+}

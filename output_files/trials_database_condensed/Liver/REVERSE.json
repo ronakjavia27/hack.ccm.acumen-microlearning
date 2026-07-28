@@ -1,0 +1,373 @@
+{
+  "id": "REVERSE",
+  "trial_name": "REVERSE — Terlipressin Plus Albumin for Hepatorenal Syndrome Type 1 (2016)",
+  "specialty": "Hepatology",
+  "subtopic": "Cirrhosis",
+  "year": 2016,
+  "journal": "Gastroenterology",
+  "citation": "Boyer TD, Sanyal AJ, Wong F, Frederick RT, Lake JR, O'Leary JG, et al. Terlipressin plus albumin is more effective than albumin alone in improving renal function in patients with cirrhosis and hepatorenal syndrome type 1. Gastroenterology. 2016;150(7):1579-1589",
+  "doi": "https://doi.org/10.1053/j.gastro.2016.02.026",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, phase 3",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 196,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Terlipressin improved renal physiology but did not significantly increase confirmed HRS reversal or survival, and increased treatment-related harms.",
+  "pico": {
+    "population": "Adults with cirrhosis, ascites, and HRS-1 (SCr ≥2.5 mg/dL) not improving after diuretic withdrawal and albumin",
+    "intervention": "Terlipressin IV bolus 1 mg q6h (escalated to 2 mg q6h if SCr decrease <30% by day 4) plus albumin 20-40 g/day",
+    "comparison": "Placebo IV bolus q6h plus albumin 20-40 g/day",
+    "outcome": "Confirmed HRS reversal (two SCr ≤1.5 mg/dL ≥40 hours apart on treatment, no RRT/transplant)"
+  },
+  "keywords": [
+    "terlipressin",
+    "hepatorenal syndrome",
+    "HRS-1",
+    "cirrhosis",
+    "vasoconstrictor",
+    "albumin",
+    "renal function"
+  ],
+  "related_trials": [
+    "CONFIRM"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "HRS-1 represents rapidly progressive functional renal failure in advanced cirrhosis and ascites, with very high short-term mortality and frequent need for transplantation. Pathophysiology: splanchnic vasodilatation, effective arterial hypovolaemia, renal vasoconstriction. Terlipressin was widely used outside North America; prior RCTs and meta-analyses suggested improved renal function and HRS reversal, but evidence base heterogeneous.",
+      "knowledge_gap": "Regulatory approval in US/Canada lacking; need for large, rigorously blinded trial using stringent confirmed reversal endpoint.",
+      "hypothesis": "Terlipressin would increase confirmed HRS reversal beyond albumin alone without unacceptable harms."
+    },
+    "methods": {
+      "design": "Randomised, multicentre (50 US, 2 Canadian centres), double-blind, placebo-controlled, phase 3 trial; October 2010 to February 2013.",
+      "setting": "52 sites in North America.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with cirrhosis and ascites",
+          "HRS-1 by 2007 ICA criteria: doubling of SCr to ≥2.5 mg/dL within 2 weeks, no sustained improvement (<20% decrease in SCr) despite diuretic withdrawal and albumin"
+        ],
+        "exclusion": [
+          "SCr >7 mg/dL",
+          "MAP <70 mmHg with hypoperfusion",
+          "Sepsis",
+          "Untreated infection",
+          "Recent (<48 h) use of vasoactive agents (octreotide, midodrine, vasopressin, dopamine, other vasoconstrictors)",
+          "Intrinsic renal disease/structural kidney injury"
+        ]
+      },
+      "intervention": "Terlipressin 1 mg IV bolus over 2 min q6h (4 mg/day); escalated to 2 mg IV q6h if SCr decreased by <30% by day 4. Albumin co-therapy recommended 20-40 g/day. Continued until confirmed reversal, treatment failure, liver transplantation, RRT, or up to 14 days.",
+      "comparison": "Placebo matching IV bolus q6h; albumin co-therapy same recommendation. RRT and transplantation permitted.",
+      "blinding": "Double-blind (participants, clinicians, assessors); matching placebo dosing schedule; objective creatinine-based primary endpoint.",
+      "sample_size_power": "Power calculation: absolute increase in confirmed HRS reversal from 34% (placebo) to 48% (terlipressin) with 80% power at two-sided α=0.05, requiring 180 patients; enrolment continued until ≥30 confirmed reversal events accrued, resulting in 196 randomised.",
+      "primary_outcome": "Confirmed HRS reversal (CHRSR): two SCr values ≤1.5 mg/dL ≥40 hours apart while on treatment (within 24 hours of last dose) and no intervening RRT or liver transplant.",
+      "secondary_outcomes": [
+        "HRS reversal (≥1 SCr ≤1.5 mg/dL)",
+        "Change in SCr from baseline to end of treatment",
+        "Estimated creatinine clearance at end of treatment (Cockcroft-Gault)",
+        "Change in MAP from baseline to end of treatment",
+        "90-day survival",
+        "90-day transplant-free survival",
+        "Treatment withdrawal owing to adverse events",
+        "Treatment-related serious adverse events",
+        "Ischaemic adverse events leading to discontinuation"
+      ],
+      "follow_up": "Up to 90 days post-randomisation (including 30-, 60-, and 90-day follow-up)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary endpoint (confirmed HRS reversal) not met: 19.6% vs 13.1% (P=0.22).",
+        "Terlipressin improved renal physiology: SCr change -1.1 vs -0.6 mg/dL (P<0.001), creatinine clearance 23.0 vs 14.4 mL/min (P<0.0001), MAP +5.3 vs -0.5 mmHg (P<0.01).",
+        "No survival benefit: 90-day survival 57.7% vs 53.7% (P=0.61).",
+        "Higher treatment-related harms: serious AEs 15.1% vs 2.1%, discontinuation due to AEs 20.4% vs 6.3%, ischaemic events leading to discontinuation 7.5% vs 1.1%."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Confirmed HRS reversal (CHRSR)",
+          "group_a": "19/97 (19.6%)",
+          "group_b": "13/99 (13.1%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.22",
+          "note": "Primary endpoint; required 2 SCr ≤1.5 mg/dL ≥40 hours apart on treatment, no RRT/transplant."
+        },
+        {
+          "outcome": "HRS reversal (≥1 SCr ≤1.5 mg/dL)",
+          "group_a": "23/97 (23.7%)",
+          "group_b": "15/99 (15.2%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.13",
+          "note": "Less stringent than CHRSR."
+        },
+        {
+          "outcome": "Change in SCr from baseline to end of treatment",
+          "group_a": "-1.1 mg/dL",
+          "group_b": "-0.6 mg/dL",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Renal function improved more with terlipressin."
+        },
+        {
+          "outcome": "Estimated creatinine clearance at end of treatment (Cockcroft-Gault)",
+          "group_a": "LS mean (SEM) 23.0 (1.49) mL/min",
+          "group_b": "LS mean (SEM) 14.4 (1.36) mL/min",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.0001",
+          "note": "Supports physiological effect on renal perfusion/function."
+        },
+        {
+          "outcome": "Change in MAP from baseline to end of treatment",
+          "group_a": "+5.3 mmHg",
+          "group_b": "-0.5 mmHg",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.01",
+          "note": "Haemodynamic response aligned with vasoconstrictor mechanism."
+        },
+        {
+          "outcome": "90-day survival (Kaplan-Meier probability)",
+          "group_a": "0.577",
+          "group_b": "0.537",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.61 (log-rank)",
+          "note": "No evidence of survival benefit."
+        },
+        {
+          "outcome": "90-day transplant-free survival (Kaplan-Meier probability)",
+          "group_a": "0.308",
+          "group_b": "0.248",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.56 (log-rank)",
+          "note": "Median transplant-free survival: 23.8 vs 20.7 days."
+        },
+        {
+          "outcome": "Treatment withdrawal owing to adverse events (safety population)",
+          "group_a": "19/93 (20.4%)",
+          "group_b": "6/95 (6.3%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Higher discontinuation burden with terlipressin."
+        },
+        {
+          "outcome": "Treatment-related serious adverse events (safety population)",
+          "group_a": "14/93 (15.1%)",
+          "group_b": "2/95 (2.1%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Safety signal relevant to ICU monitoring/selection."
+        },
+        {
+          "outcome": "Ischaemic adverse events leading to discontinuation (safety population)",
+          "group_a": "7/93 (7.5%)",
+          "group_b": "1/95 (1.1%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "None were fatal; all resolved after discontinuation per trial report."
+        },
+        {
+          "outcome": "Treatment-related adverse events (any)",
+          "group_a": "66.7%",
+          "group_b": "40.0%",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "From summary; not in primary table."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Recent large-volume paracentesis",
+          "group_a": "32.4%",
+          "group_b": "8.3%",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.04",
+          "note": "Hypothesis-generating; not adjusted for multiplicity."
+        }
+      ]
+    },
+    "safety": [
+      "Treatment-related AEs: 66.7% vs 40.0%",
+      "Treatment withdrawal owing to AEs: 20.4% vs 6.3%",
+      "Treatment-related serious AEs: 15.1% vs 2.1%",
+      "Ischaemic AEs leading to discontinuation: 7.5% vs 1.1%"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation and allocation",
+          "notes": "Central randomisation with stratification (qualifying SCr <3.6 vs ≥3.6 mg/dL; alcoholic hepatitis yes/no); concealment supported by identical placebo dosing schedule."
+        },
+        {
+          "domain": "Drop out/exclusions",
+          "notes": "196 randomised; 4/97 (terlipressin) and 4/99 (placebo) did not receive study drug; loss to follow-up at 90 days was minimal (0 vs 1), with withdrawal of consent 1 vs 1."
+        },
+        {
+          "domain": "Performance/detection bias",
+          "notes": "Double-blind design; primary endpoint based on objective laboratory values; however, clinician-driven outcomes (RRT initiation, timing of transplant) can still introduce variability."
+        },
+        {
+          "domain": "Protocol adherence",
+          "notes": "Mean duration of study drug 5.6 ± 3.9 days (terlipressin) vs 6.2 ± 4.1 days (placebo); dose escalation to 2 mg q6h occurred in 23/93 (24.7%) vs 23/95 (24.2%); dose interruptions 17.2% vs 21.1%."
+        },
+        {
+          "domain": "Baseline characteristics",
+          "notes": "Broadly balanced for illness severity (MELD 33.5 ± 5.8 vs 32.6 ± 5.4; baseline SCr 3.6 ± 0.9 vs 3.7 ± 1.0 mg/dL; CLIF-SOFA 11.3 ± 2.2 vs 11.3 ± 2.0; MAP 76.2 ± 11.5 vs 75.3 ± 11.4 mmHg); notable imbalance in sex (female 46.4% vs 32.3%; P=0.04)."
+        },
+        {
+          "domain": "Heterogeneity",
+          "notes": "Multicentre design across 52 sites with mixed cirrhosis aetiologies increases clinical heterogeneity; stratification addressed two key prognostic variables but cannot fully mitigate site-level differences in supportive care and thresholds for RRT."
+        },
+        {
+          "domain": "Timing",
+          "notes": "Eligibility required failure to improve after diuretic withdrawal/albumin and meeting HRS-1 criteria (SCr ≥2.5 mg/dL), which likely selected for later-stage renal dysfunction where reversibility is reduced."
+        },
+        {
+          "domain": "Dose",
+          "notes": "Bolus terlipressin regimen (4–8 mg/day) aligns with common clinical use at the time; continuous infusion strategies (used in later practice) were not evaluated."
+        },
+        {
+          "domain": "Separation of the variable of interest",
+          "notes": "Haemodynamic separation was evident (MAP change +5.3 vs −0.5 mmHg; P<0.01); albumin exposure was not fully standardised and differed numerically (concomitant albumin use 87.6% vs 86.9%; mean total albumin 185.9 g vs 246.2 g; mean duration 3.9 vs 5.1 days)."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "CHRSR was stringent (two qualifying creatinine values ≥40 hours apart) and clinically defensible, but reduced the observed event rate versus assumptions used in the power calculation."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Primary analysis was intention-to-treat; the observed CHRSR rate was substantially lower than assumed, increasing the risk of a false-negative result for the primary endpoint despite achieving the pre-specified minimum event count."
+        }
+      ],
+      "verdict": "Moderate to strong internal validity for measuring the physiological effect of terlipressin (blinding, objective endpoints, good follow-up), but the trial’s ability to detect a clinically meaningful effect on confirmed reversal was limited by much lower-than-expected event rates and non-standardised albumin exposure."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "The enrolled cohort reflects very advanced cirrhosis with severe renal dysfunction (baseline SCr ~3.6–3.7 mg/dL; MELD ~33), managed at largely transplant-capable North American centres."
+        },
+        {
+          "domain": "Important exclusions",
+          "notes": "Patients with MAP <70 mmHg with hypoperfusion, sepsis/untreated infection, recent vasoactive exposure, or suspected intrinsic renal disease were excluded, limiting applicability to common ICU phenotypes (shock, sepsis-associated AKI, mixed aetiology renal injury)."
+        },
+        {
+          "domain": "Generalisability to contemporary HRS definitions",
+          "notes": "HRS-1 criteria used a high creatinine threshold (≥2.5 mg/dL); contemporary practice increasingly targets earlier HRS-AKI, where responsiveness and harm profile may differ."
+        },
+        {
+          "domain": "Co-interventions",
+          "notes": "Albumin dosing was recommended rather than tightly protocolised; real-world systems with different albumin availability or prescribing culture may observe different net effects."
+        }
+      ],
+      "verdict": "Generalisability is moderate for stable, carefully selected patients with advanced HRS managed in transplant-centre systems, but limited for broader ICU populations (sepsis, shock, mixed AKI) and for earlier-stage HRS-AKI."
+    },
+    "strengths": [
+      "Randomised, double-blind, placebo-controlled design across 52 North American sites.",
+      "Stringent, objective primary endpoint intended to reflect durable renal recovery (confirmed reversal).",
+      "Excellent follow-up completion through 90 days with minimal loss to follow-up.",
+      "Protocolised dose escalation and discontinuation criteria reduced clinician-driven treatment variation."
+    ],
+    "limitations": [
+      "Primary endpoint not met; observed event rates were far lower than assumed in the power calculation, increasing risk of type II error.",
+      "Albumin use was recommended but not standardised; total albumin exposure was numerically higher in the placebo group (246.2 g vs 185.9 g), potentially diluting treatment separation.",
+      "Old HRS-1 definition (SCr ≥2.5 mg/dL) preferentially enrolled late-stage disease, where reversibility may be less likely.",
+      "Terlipressin increased treatment-related adverse events and discontinuations, including ischaemic events (7.5% vs 1.1% leading to discontinuation)."
+    ],
+    "critical_appraisal": {
+      "summary": "REVERSE provides high-quality evidence that terlipressin produces consistent haemodynamic and renal function improvements but did not demonstrate a statistically significant increase in confirmed HRS reversal or any survival advantage, with a notable safety signal.",
+      "strengths": [
+        "Randomised, double-blind, placebo-controlled design across 52 North American sites.",
+        "Stringent, objective primary endpoint intended to reflect durable renal recovery (confirmed reversal).",
+        "Excellent follow-up completion through 90 days with minimal loss to follow-up.",
+        "Protocolised dose escalation and discontinuation criteria reduced clinician-driven treatment variation."
+      ],
+      "weaknesses": [
+        "Primary endpoint not met; observed event rates were far lower than assumed in the power calculation, increasing risk of type II error.",
+        "Albumin use was recommended but not standardised; total albumin exposure was numerically higher in the placebo group (246.2 g vs 185.9 g), potentially diluting treatment separation.",
+        "Old HRS-1 definition (SCr ≥2.5 mg/dL) preferentially enrolled late-stage disease, where reversibility may be less likely.",
+        "Terlipressin increased treatment-related adverse events and discontinuations, including ischaemic events (7.5% vs 1.1% leading to discontinuation)."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "REVERSE provides high-quality evidence that terlipressin produces consistent haemodynamic and renal function improvements (MAP +5.3 vs −0.5 mmHg; SCr change −1.1 vs −0.6 mg/dL), but did not demonstrate a statistically significant increase in confirmed HRS reversal or any survival advantage. The safety signal (higher treatment-related serious adverse events and discontinuations) reinforces that terlipressin should be delivered with ICU-level monitoring and careful selection, rather than as a “low-risk” ward intervention.",
+    "clinical_bottom_line": {
+      "verdict": "Terlipressin improves renal physiology in HRS-1 but does not significantly increase confirmed HRS reversal or survival, and increases treatment-related harms; its use requires careful patient selection and ICU-level monitoring.",
+      "applies_to": "Stable patients with advanced HRS-1 (SCr ≥2.5 mg/dL) in transplant-centre settings, without shock, sepsis, or recent vasoactive use.",
+      "does_not_mean": "Terlipressin is ineffective; it has clear physiological effects but the trial was underpowered for the stringent primary endpoint and may have been biased by albumin imbalance.",
+      "implementation_caveats": [
+        "Requires ICU monitoring for ischaemic complications",
+        "Albumin co-administration should be standardised",
+        "Not studied in earlier HRS-AKI or continuous infusion regimens",
+        "Avoid in patients with MAP <70 mmHg, sepsis, or untreated infection"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Endpoint choice and power assumptions",
+        "notes": "The stringent “confirmed reversal” endpoint reduced transient-response misclassification but substantially lowered observed event rates versus design assumptions, raising the likelihood of a false-negative primary result."
+      },
+      {
+        "topic": "Co-intervention imbalance",
+        "notes": "Total albumin exposure and duration were higher in the placebo group (246.2 g over 5.1 days vs 185.9 g over 3.9 days), complicating interpretation of an add-on vasoconstrictor effect and potentially biasing towards the null."
+      },
+      {
+        "topic": "Safety–efficacy trade-off",
+        "notes": "Treatment-related adverse events (66.7% vs 40.0%) and treatment withdrawal owing to adverse events (20.4% vs 6.3%) were higher with terlipressin; ischaemic events leading to discontinuation occurred in 7.5% vs 1.1%."
+      },
+      {
+        "topic": "Effect modification signals (hypothesis-generating)",
+        "notes": "CHRSR appeared higher with terlipressin among those with recent large-volume paracentesis (32.4% vs 8.3%; P=0.04), while subgroup estimates were otherwise imprecise; these findings were not adjusted for multiplicity and should not be over-interpreted."
+      },
+      {
+        "topic": "Subsequent RCT evidence",
+        "notes": "The later CONFIRM trial evaluated terlipressin plus albumin in a similar disease space and is central to modern evidence synthesis and guideline recommendations."
+      },
+      {
+        "topic": "Guideline evolution",
+        "notes": "Post-REVERSE guidance and consensus statements incorporate terlipressin within broader AKI/HRS frameworks (including earlier recognition and structured escalation), with increasing emphasis on patient selection and monitoring for complications."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CONFIRM",
+        "relation": "CONFIRM was a subsequent phase 3 trial evaluating terlipressin plus albumin for HRS-1, which demonstrated a significant increase in HRS reversal but also higher respiratory failure; it is central to modern evidence synthesis."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal terlipressin dosing (bolus vs continuous infusion) and timing (early HRS-AKI vs late HRS-1) remain uncertain.",
+      "The role of standardised albumin co-administration to maximise benefit and minimise harm needs further study.",
+      "Long-term outcomes beyond 90 days, including transplant-free survival and need for RRT, require evaluation in larger trials."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=196",
+        "Confirmed HRS reversal: 19.6% vs 13.1% (P=0.22)",
+        "SCr change: -1.1 vs -0.6 mg/dL (P<0.001)",
+        "90-day survival: 57.7% vs 53.7% (P=0.61)",
+        "Ischaemic AEs leading to discontinuation: 7.5% vs 1.1%"
+      ],
+      "one_line_takeaway": "Terlipressin improves renal physiology in HRS-1 but does not significantly increase confirmed reversal or survival, and requires careful patient selection due to increased ischaemic risks."
+    }
+  },
+  "_source_id": "REVERSE",
+  "_source_system": "Liver"
+}

@@ -1,0 +1,305 @@
+{
+  "id": "PROTECT",
+  "trial_name": "PROTECT — Dalteparin vs Unfractionated Heparin in Critically Ill Patients (2011)",
+  "specialty": "Critical Care Medicine",
+  "subtopic": "Thrombosis",
+  "year": 2011,
+  "journal": "The New England Journal of Medicine",
+  "citation": "PROTECT Investigators for the Canadian Critical Care Trials Group and the Australian and New Zealand Intensive Care Society Clinical Trials Group. Dalteparin versus unfractionated heparin in critically ill patients. N Engl J Med. 2011;364(14):1305-14.",
+  "doi": "10.1056/NEJMoa1014475",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, double-dummy, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3746,
+  "result_category": "Mixed",
+  "one_liner": "Dalteparin did not reduce proximal DVT vs UFH but reduced PE (1.2% vs 2.1%) without increasing bleeding.",
+  "pico": {
+    "population": "Critically ill adults expected to stay in ICU ≥3 days, without major trauma, neurosurgery, orthopaedic surgery, therapeutic anticoagulation need, or contraindication to heparin.",
+    "intervention": "Dalteparin 5000 IU subcutaneously once daily plus a daily placebo injection to maintain twice-daily schedule.",
+    "comparison": "Unfractionated heparin 5000 IU subcutaneously twice daily.",
+    "outcome": "Primary: incident proximal lower-limb DVT (time-to-event, detected by twice‑weekly compression ultrasonography). Key secondary: pulmonary embolism, bleeding, HIT, mortality."
+  },
+  "keywords": [
+    "dalteparin",
+    "unfractionated heparin",
+    "thromboprophylaxis",
+    "ICU",
+    "pulmonary embolism",
+    "HIT"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Critically ill adults have high baseline VTE risk due to immobility, inflammation, invasive devices, and organ failure. UFH and LMWH were both used for thromboprophylaxis, but comparative evidence in ICU populations was limited to small trials and indirect evidence.",
+      "knowledge_gap": "Unclear if LMWH provides superior protection against clinically important events (particularly PE) without increasing bleeding, or whether it alters HIT risk.",
+      "hypothesis": "Once-daily dalteparin, compared with twice-daily UFH, would reduce incident proximal lower-limb DVT. Secondary hypotheses included reduced PE and HIT without excess bleeding."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, investigator-initiated, international, double-blind, double-dummy, parallel-group trial.",
+      "setting": "67 ICUs in Canada, United States, United Kingdom, Australia, Brazil, Saudi Arabia.",
+      "population": {
+        "inclusion": [
+          "Adults admitted to ICU expected to remain in ICU for at least 3 days."
+        ],
+        "exclusion": [
+          "Major trauma",
+          "Neurosurgery",
+          "Orthopaedic surgery",
+          "Need for therapeutic anticoagulation",
+          "Receipt of heparin in ICU for ≥3 days",
+          "Contraindication to heparin or blood products",
+          "Pregnancy",
+          "Limitations of life support",
+          "Enrolment in a related trial"
+        ]
+      },
+      "intervention": "Dalteparin 5000 IU subcutaneously once daily, plus a daily placebo injection to maintain indistinguishable twice-daily administration. Study drug continued for duration of ICU stay, with protocol allowances for withholding during bleeding/thrombocytopenia and use of mechanical prophylaxis.",
+      "comparison": "Unfractionated heparin 5000 IU subcutaneously twice daily. Co-interventions (aspirin, clopidogrel, warfarin, low-dose heparin for line patency, pneumatic compression) permitted and recorded.",
+      "blinding": "Double-blind with a research pharmacist preparing identically appearing syringes; investigators, bedside clinicians, patients, outcome assessors, and adjudicators were blinded to allocation.",
+      "sample_size_power": "A total of 3618 patients required to detect a 30% relative reduction in incident proximal DVT (from 8.0% to 5.6%) with 80% power at 5% significance. Enrolment completed at 3764 randomised (3746 ITT).",
+      "primary_outcome": "Incident proximal lower-limb deep-vein thrombosis, time-to-event, detected by protocolised twice‑weekly compression ultrasonography.",
+      "secondary_outcomes": [
+        "Any DVT",
+        "Pulmonary embolism (definite or probable)",
+        "Any VTE",
+        "Major bleeding",
+        "Any bleeding",
+        "Heparin-induced thrombocytopenia",
+        "ICU death",
+        "Hospital death"
+      ],
+      "follow_up": "Screening ultrasonography within 2 days of ICU admission and twice weekly while in ICU; clinical events assessed until death or discharge, with data censored at death or discharge (or at 100 days if still hospitalised)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Enrolment completed at 3764 randomised (3746 ITT); trial not stopped early.",
+        "Dalteparin did not reduce the primary endpoint of incident proximal DVT (5.1% vs 5.8%).",
+        "Dalteparin reduced adjudicated definite/probable PE (1.2% vs 2.1%), without increasing major bleeding (5.5% vs 5.6%).",
+        "Directionally favourable signals for any VTE and mortality did not meet conventional statistical significance."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Incident proximal DVT (primary)",
+          "group_a": "96/1873 (5.1%)",
+          "group_b": "109/1873 (5.8%)",
+          "effect_measure": "HR",
+          "effect_value": "0.92",
+          "ci_95": "0.68–1.23",
+          "p_value": "0.57",
+          "note": "Time-to-event; detected by scheduled compression ultrasound"
+        },
+        {
+          "outcome": "Any DVT",
+          "group_a": "146/1873 (7.8%)",
+          "group_b": "148/1873 (7.9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.98",
+          "ci_95": "0.78–1.25",
+          "p_value": "0.82",
+          "note": "Includes distal + proximal DVT"
+        },
+        {
+          "outcome": "Pulmonary embolism (definite or probable)",
+          "group_a": "23/1873 (1.2%)",
+          "group_b": "39/1873 (2.1%)",
+          "effect_measure": "HR",
+          "effect_value": "0.53",
+          "ci_95": "0.30–0.92",
+          "p_value": "0.02",
+          "note": "Clinically suspected and adjudicated"
+        },
+        {
+          "outcome": "Any VTE (DVT or PE)",
+          "group_a": "154/1873 (8.2%)",
+          "group_b": "186/1873 (9.9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.83",
+          "ci_95": "0.68–1.03",
+          "p_value": "0.10",
+          "note": "Directionally favoured dalteparin"
+        },
+        {
+          "outcome": "Major bleeding",
+          "group_a": "103/1873 (5.5%)",
+          "group_b": "105/1873 (5.6%)",
+          "effect_measure": "HR",
+          "effect_value": "1.00",
+          "ci_95": "0.75–1.34",
+          "p_value": "0.96",
+          "note": "Critical-site bleeding, transfusion ≥2 units RBC, or surgical intervention"
+        },
+        {
+          "outcome": "Any bleeding",
+          "group_a": "440/1873 (23.5%)",
+          "group_b": "459/1873 (24.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.95",
+          "ci_95": "0.84–1.09",
+          "p_value": "0.36",
+          "note": "Broad bleeding outcome"
+        },
+        {
+          "outcome": "Heparin-induced thrombocytopenia",
+          "group_a": "5/1873 (0.3%)",
+          "group_b": "12/1873 (0.6%)",
+          "effect_measure": "HR",
+          "effect_value": "0.47",
+          "ci_95": "0.16–1.37",
+          "p_value": "0.16",
+          "note": "Rare outcome; confirmed with serotonin-release assay"
+        },
+        {
+          "outcome": "Death in ICU",
+          "group_a": "253/1873 (13.5%)",
+          "group_b": "284/1873 (15.2%)",
+          "effect_measure": "HR",
+          "effect_value": "0.87",
+          "ci_95": "0.74–1.02",
+          "p_value": "0.09",
+          "note": ""
+        },
+        {
+          "outcome": "Death in hospital",
+          "group_a": "406/1873 (21.7%)",
+          "group_b": "445/1873 (23.8%)",
+          "effect_measure": "HR",
+          "effect_value": "0.90",
+          "ci_95": "0.78–1.03",
+          "p_value": "0.12",
+          "note": "Censored at 100 days if still hospitalised"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Medical vs surgical admissions (primary endpoint)",
+          "group_a": "Medical: HR 0.89 (95% CI 0.64–1.25)",
+          "group_b": "Surgical: HR 1.02 (95% CI 0.60–1.71)",
+          "effect_measure": "Interaction P",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.41",
+          "note": "No effect modification; all prespecified subgroup interaction P >0.05"
+        }
+      ]
+    },
+    "safety": [
+      "Major bleeding: 5.5% vs 5.6% (HR 1.00, 95% CI 0.75–1.34) — no difference.",
+      "Any bleeding: 23.5% vs 24.5% (HR 0.95, 95% CI 0.84–1.09).",
+      "HIT: 0.3% vs 0.6% (HR 0.47, 95% CI 0.16–1.37; per‑protocol: 3/1566 [0.2%] vs 12/1561 [0.8%]; HR 0.27, 95% CI 0.08–0.98, P=0.046)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with allocation concealment; stratified by centre and type of ICU admission (medical vs surgical). Double-dummy preparation by research pharmacy supported concealment at bedside."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind with identical syringes, twice-daily injections in both groups, and blinded adjudication of clinical events. Primary endpoint relied on scheduled imaging (less vulnerable to clinician suspicion bias) but vulnerable to missing imaging."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Randomised 3764, ITT 3746 after withdrawals of consent. Per-protocol analysis excluded prevalent VTE treated, ≤1 ultrasound, or only 1 day of study drug (substantial exclusions for ultrasound-based endpoints). ITT analysis was primary."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Doses missed on 3.3% of study days; nonstudy anticoagulant used on 1.0% of days. Median exposure 7 days (IQR 4–12) in both groups. Key concomitant drug/device exposures similar."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced: age 61.1±16.5 vs 61.7±16.1; APACHE II 21.4±7.8 vs 21.7±7.8; mechanical ventilation 89.3% vs 91.1%; vasopressors 43.2% vs 46.8%; medical admissions 75.2% vs 75.9%."
+        }
+      ],
+      "verdict": "Internal validity is strong with robust blinding and allocation concealment, though surrogate primary endpoint and incomplete ultrasound surveillance in a minority are limitations."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad, mixed ICU population dominated by medical admissions, with high illness severity (APACHE II ~21) and very high mechanical ventilation rates (~90%). Key exclusions (major trauma, neurosurgery, orthopaedic surgery, therapeutic anticoagulation needs, pregnancy) limit applicability to several high‑risk ICU subgroups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Clinical outcomes (PE, bleeding, mortality) are broadly transportable across systems; scheduled ultrasonography surveillance is less representative of routine care. Implementation in lower‑resource settings may differ, particularly where LMWH cost or monitoring constraints exist. Renal dysfunction considerations remain practice‑defining; subgroup results did not show interaction by dialysis status, but dalteparin pharmacokinetics and institutional LMWH policies vary."
+        }
+      ],
+      "verdict": "Generalisability is moderate: highly informative for adult mixed medical–surgical ICUs using UFH twice daily as standard prophylaxis, but extrapolation to trauma/neurosurgical populations and to settings without routine imaging surveillance should be cautious."
+    },
+    "strengths": [
+      "Large sample size (n=3764) with adequate power for the prespecified primary endpoint.",
+      "International, multicentre ICU trial with rigorous double-blind, double-dummy design.",
+      "Systematic, protocolised ultrasonography enabling robust ascertainment of proximal DVT and separation from clinically triggered imaging.",
+      "Clinically relevant secondary outcomes (PE, bleeding, mortality) with adjudication processes."
+    ],
+    "limitations": [
+      "Primary endpoint is an imaging‑detected surrogate (proximal DVT), which may not align perfectly with outcomes that drive ICU harm (PE, death).",
+      "PE outcome incorporated an adjudication schema; statistically significant reduction was demonstrated for definite or probable PE, but PE remains a relatively infrequent event and was a secondary endpoint.",
+      "Comparator was UFH 5000 IU twice daily; results may not generalise to practices using more frequent UFH dosing.",
+      "Exclusion of several high‑risk ICU subgroups (major trauma, neurosurgical, orthopaedic) limits applicability to those populations."
+    ],
+    "critical_appraisal": {
+      "summary": "PROTECT is a rigorous, large, international double‑blind RCT. While the primary surrogate endpoint was neutral, the clinically important secondary reduction in pulmonary embolism without bleeding excess is compelling.",
+      "strengths": [
+        "Robust blinding and allocation concealment",
+        "Large sample size with adequate power",
+        "Systematic, protocolised outcome ascertainment",
+        "Clinically relevant adjudicated secondary outcomes"
+      ],
+      "weaknesses": [
+        "Primary endpoint is a surrogate (proximal DVT) not a patient‑important outcome",
+        "Incomplete ultrasound surveillance in a minority, leading to per‑protocol exclusions",
+        "Multiplicity concerns for the positive secondary outcome (PE)"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "For mixed ICU populations receiving UFH twice daily, dalteparin did not improve proximal DVT prevention but reduced adjudicated definite/probable PE (1.2% vs 2.1%) without bleeding penalty. This creates a credible clinical outcome argument for LMWH use when bleeding risk is acceptable and renal function policies allow.",
+    "clinical_bottom_line": {
+      "verdict": "Dalteparin is a reasonable alternative to UFH for ICU thromboprophylaxis, especially to reduce PE, without increasing bleeding.",
+      "applies_to": "Adult medical‑surgical ICU patients expected to stay ≥3 days, except those with major trauma, neurosurgery, orthopaedic surgery, or need for therapeutic anticoagulation.",
+      "does_not_mean": "Routine LMWH use does not necessarily reduce proximal DVT (surrogate) but does reduce clinically relevant PE.",
+      "implementation_caveats": [
+        "Consider renal function when using dalteparin; pharmacokinetics in renal failure vary.",
+        "Once‑daily administration may reduce nursing burden compared with twice‑daily UFH.",
+        "The trial used UFH twice daily; results may not apply if UFH three times daily is standard.",
+        "Scheduled screening for DVT is not required for benefit."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Primary endpoint choice (screen‑detected proximal DVT vs clinical outcomes)",
+        "notes": "Correspondence highlighted that asymptomatic, screen‑detected DVT can be a contested surrogate for patient‑important outcomes, and that interpretation should focus on PE, bleeding, and mortality. The authors’ reply emphasised that most PEs were clinically suspected and associated with worse outcomes, supporting PE as a meaningful endpoint."
+      },
+      {
+        "topic": "Multiplicity and interpretive hierarchy",
+        "notes": "The trial’s primary endpoint was neutral; the PE reduction (HR 0.53, 95% CI 0.30–0.92, P=0.02) is a secondary outcome and should be interpreted within the prespecified analytic framework and multiplicity context."
+      },
+      {
+        "topic": "HIT signal and analytical sensitivity",
+        "notes": "In the main ITT analysis, HIT was numerically lower with dalteparin (0.3% vs 0.6%) but not statistically significant (P=0.16). Per‑protocol analysis suggested a larger relative difference (0.2% vs 0.8%; HR 0.27, 95% CI 0.08–0.98, P=0.046), but this rests on a reduced analysis population and a small number of events."
+      },
+      {
+        "topic": "Subgroup credibility and consistency",
+        "notes": "Prespecified subgroup analyses for the primary endpoint did not show effect modification (all interaction P values >0.05), limiting arguments for targeted LMWH use based solely on the trial’s subgroup signals."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is the reduction in pulmonary embolism consistent across other LMWHs and dosing regimens?",
+      "What is the impact of LMWH in patients with significant renal dysfunction?",
+      "Do long‑term outcomes and HIT risk differ in broader populations?",
+      "How applicable are these findings to trauma/neurosurgical patients?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3746 ITT (3764 randomised)",
+        "Primary proximal DVT: 5.1% vs 5.8% (HR 0.92, P=0.57)",
+        "PE: 1.2% vs 2.1% (HR 0.53, 95% CI 0.30–0.92, P=0.02)",
+        "Major bleeding: 5.5% vs 5.6% (no difference)",
+        "ICU mortality: 13.5% vs 15.2% (P=0.09)"
+      ],
+      "one_line_takeaway": "LMWH may be preferred over UFH for ICU thromboprophylaxis to reduce PE, with no bleeding penalty."
+    }
+  },
+  "_source_id": "PROTECT",
+  "_source_system": "Haematology"
+}

@@ -3,11 +3,13 @@
 condense_trials.py - Condense raw scraped trial JSON into the hack.CCM schema.
 
 Usage:
-  python condense_trials.py                            # batch all (tencent default)
-  python condense_trials.py --model deepseek            # use DeepSeek V4 Pro via Together
+  python condense_trials.py                            # batch all (deepseek via OpenRouter default)
+  python condense_trials.py --model tencent             # OpenRouter with .env OPENROUTER_MODEL
+  python condense_trials.py --model gemini              # Gemini API (gemini-3.6-flash + thinking)
+  python condense_trials.py --model together            # Together AI + DeepSeek Direct fallback
   python condense_trials.py --single Neuro/KRESS.json   # one trial
   python condense_trials.py --max 20                    # cap at 20 trials
-  python condense_trials.py --model tencent --single Neuro/KRESS.json
+  python condense_trials.py --model deepseek --single Neuro/KRESS.json
 """
 
 import argparse
@@ -107,6 +109,53 @@ def call_openrouter(system_prompt, user_content, temperature=0.1, max_tokens=163
                 print(f"    [X] OpenRouter failed: {e}")
                 break
     raise last_error or RuntimeError("OpenRouter exhausted")
+
+
+def call_gemini(system_prompt, user_content, temperature=0.1, max_tokens=16384):
+    from acumen_core.config import CONDENSATION_GEMINI_API_KEY, MODEL_GEMINI_CONDENSATION
+    if not CONDENSATION_GEMINI_API_KEY:
+        raise RuntimeError("Gemini not available (set CONDENSATION_GEMINI_API_KEY in .env)")
+    from google import genai
+    from google.genai import types
+    client = genai.Client(api_key=CONDENSATION_GEMINI_API_KEY)
+    config = types.GenerateContentConfig(
+        system_instruction=system_prompt,
+        temperature=temperature,
+        thinking_config=types.ThinkingConfig(),
+        response_mime_type="application/json",
+    )
+    last_error = None
+    for attempt in range(MAX_RETRIES):
+        try:
+            response = client.models.generate_content(
+                model=MODEL_GEMINI_CONDENSATION,
+                contents=[user_content],
+                config=config,
+            )
+            raw = response.text
+            if not raw or not raw.strip():
+                raise ValueError("Empty response")
+            raw = raw.strip()
+            raw = re.sub(r'^```(?:json)?\s*\n?', '', raw)
+            raw = re.sub(r'\n?\s*```$', '', raw)
+            return json.loads(raw)
+        except json.JSONDecodeError as e:
+            last_error = e
+            print(f"    [X] JSON parse error: {e}")
+            break
+        except Exception as e:
+            last_error = e
+            msg = str(e).lower()
+            if attempt < MAX_RETRIES - 1 and any(
+                kw in msg for kw in ("timeout", "rate limit", "429", "503", "502", "500", "empty")
+            ):
+                wait = RETRY_DELAY * (attempt + 1)
+                print(f"    [!] {e} — retrying in {wait}s")
+                time.sleep(wait)
+            else:
+                print(f"    [X] Gemini failed: {e}")
+                break
+    raise last_error or RuntimeError("Gemini exhausted")
 
 
 def call_deepseek_together(system_prompt, user_content, temperature=0.1, max_tokens=16384):
@@ -219,10 +268,10 @@ def process_trial(source_path, source_rel, model_flag):
 
     print(f"  Condensing ({model_flag})...", end=" ", flush=True)
     try:
-        if model_flag == "tencent":
-            result = call_openrouter(system_prompt, user_content)
-        else:
+        if model_flag == "together":
             result = call_deepseek_together(system_prompt, user_content)
+        else:
+            result = call_openrouter(system_prompt, user_content)
 
         # Ensure required top-level keys
         result["_source_id"] = raw.get("id")
@@ -247,8 +296,8 @@ def process_trial(source_path, source_rel, model_flag):
 
 def main():
     parser = argparse.ArgumentParser(description="Condense raw trial JSON into hack.CCM schema")
-    parser.add_argument("--model", choices=list(CONDENSATION_MODELS.keys()), default="tencent",
-                        help="LLM model to use (default: tencent)")
+    parser.add_argument("--model", choices=list(CONDENSATION_MODELS.keys()), default="deepseek",
+                        help="LLM model (default: deepseek via OpenRouter; also: tencent, gemini, together)")
     parser.add_argument("--single", type=str, default=None,
                         help="Process a single trial, e.g. Neuro/KRESS.json")
     parser.add_argument("--max", type=int, default=0,

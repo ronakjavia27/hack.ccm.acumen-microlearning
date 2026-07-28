@@ -1,0 +1,322 @@
+{
+  "id": "Van_Den_Berghe_-_Medical",
+  "trial_name": "Van den Berghe et al. — Intensive Insulin Therapy in the Medical ICU (Leuven 2, 2006)",
+  "specialty": "Endocrine",
+  "subtopic": "Diabetic Emergencies",
+  "year": 2006,
+  "journal": "N Engl J Med",
+  "citation": "Van den Berghe G, Wilmer A, Hermans G, Meersseman W, Wouters PJ, Milants I, et al. Intensive insulin therapy in the medical ICU. N Engl J Med. 2006;354(5):449-461.",
+  "doi": "https://doi.org/10.1056/NEJMoa052521",
+  "registration": "",
+  "trial_type": "RCT — single-centre, unblinded (insulin delivery), superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1200,
+  "result_category": "Mixed",
+  "one_liner": "Single-centre RCT: intensive insulin therapy (target 80–110 mg/dL) did not reduce in-hospital mortality overall vs conventional therapy (37.3% vs 40.0%, HR 0.94, 95% CI 0.84–1.06, p=0.31), with a signal of benefit in patients staying ≥3 days but substantially increased severe hypoglycemia (18.7% vs 2.8%).",
+  "pico": {
+    "population": "Adult medical ICU patients assumed to require ≥3 days of intensive care; single centre, Belgium.",
+    "intervention": "Continuous IV insulin (Actrapid HM 50 IU in 50 mL NaCl) started when blood glucose >110 mg/dL; target 80–110 mg/dL (4.4–6.1 mmol/L); max 50 IU/h; nurse‑adjusted using 1–4‑hourly glucose checks.",
+    "comparison": "Continuous IV insulin started only when blood glucose >215 mg/dL; target 180–200 mg/dL (10–11 mmol/L); infusion tapered/stopped when <180 mg/dL.",
+    "outcome": "Primary: in-hospital mortality. Secondary: ICU mortality, 28/90‑day mortality, severe hypoglycemia (≤40 mg/dL), time to weaning, ICU/hospital discharge, new kidney injury."
+  },
+  "keywords": [
+    "insulin",
+    "intensive insulin therapy",
+    "tight glucose control",
+    "medical ICU",
+    "hypoglycemia",
+    "critical illness",
+    "glucose management",
+    "stress hyperglycemia"
+  ],
+  "related_trials": [
+    "VISEP",
+    "NICE-SUGAR",
+    "Leuven surgical ICU trial"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Stress hyperglycaemia is common in critical illness and may mediate immune dysfunction, infection risk, catabolism, and organ injury. The Leuven surgical ICU trial reported reduced morbidity and mortality with intensive insulin therapy targeting 80–110 mg/dL.",
+      "knowledge_gap": "Whether the surgical‑ICU findings generalised to medical ICU populations (different case‑mix, baseline risks, feeding patterns, competing causes of death) was uncertain. Safety of tight targets, especially severe hypoglycaemia, was a major concern.",
+      "hypothesis": "Intensive insulin therapy to achieve strict normoglycaemia (80–110 mg/dL) would reduce in‑hospital mortality and major morbidity compared with conventional insulin therapy (target 180–200 mg/dL) in adult medical ICU patients expected to require at least 3 days of intensive care."
+    },
+    "methods": {
+      "design": "Prospective, randomised, controlled, single‑centre, double‑dummy not possible; nurse‑driven insulin infusion protocol; allocation stratified by diagnostic category with permuted blocks of 10; unblinded intervention delivery, blinded outcome adjudication for bacteremia and ICU cause of death.",
+      "setting": "Medical ICU, Leuven, Belgium; enrolment from 14 March 2002 onward.",
+      "population": {
+        "inclusion": [
+          "Adult patients admitted to the medical ICU who were assumed on admission to require at least a third day of intensive care."
+        ],
+        "exclusion": [
+          "Expected ICU stay <3 days (already eating)",
+          "Do‑not‑resuscitate orders on admission",
+          "Postoperative patients",
+          "Participation in another study",
+          "Other ineligibility",
+          "Lack of consent"
+        ]
+      },
+      "intervention": "Continuous IV insulin (Actrapid HM 50 IU in 50 mL 0.9% NaCl) started when blood glucose >110 mg/dL; target 80–110 mg/dL; maximum infusion rate 50 IU/h. Nurse‑adjusted titration guidelines adapted from prior surgical‑ICU protocol; whole‑blood glucose measured 1–4 hourly (arterial preferred, capillary if no arterial line, point‑of‑care when needed). At ICU discharge, conventional approach used (maintenance ≤200 mg/dL).",
+      "comparison": "Continuous IV insulin started only when blood glucose >215 mg/dL; target 180–200 mg/dL; infusion tapered and stopped when glucose <180 mg/dL. Co‑interventions: standard ICU care including nutritional management aiming for 22–30 kcal/kg/day with balanced macronutrients; enteral feeding attempted as early as possible once haemodynamically stable.",
+      "blinding": "Unblinded at bedside because insulin titration required glucose values. Bacteremia interpretation and ICU cause‑of‑death determination performed by blinded assessors; ward physicians after ICU discharge were unaware of allocation and did not have access to glucose test results.",
+      "sample_size_power": "1200 patients required to detect a 7% absolute reduction in risk of death in the subgroup staying in ICU ≥3 days, with two‑sided alpha <0.05 and 80% power.",
+      "primary_outcome": "All‑cause in‑hospital mortality",
+      "secondary_outcomes": [
+        "ICU mortality",
+        "28‑day mortality",
+        "90‑day mortality",
+        "Severe hypoglycemia (≤40 mg/dL)",
+        "Time to weaning from mechanical ventilation",
+        "Time to discharge from ICU",
+        "Time to discharge from hospital",
+        "New kidney injury during ICU (creatinine ≥2× admission or peak >2.5 mg/dL)"
+      ],
+      "follow_up": "In‑hospital outcomes through discharge; 90‑day mortality also assessed."
+    },
+    "results": {
+      "headline_bullets": [
+        "Overall in‑hospital mortality not significantly different (37.3% vs 40.0%, HR 0.94; 95% CI 0.84–1.06; P=0.31).",
+        "Predefined ICU ≥3‑day subgroup: lower mortality with intensive therapy (43.0% vs 52.5%; HR 0.84; 95% CI 0.73–0.97; P=0.02).",
+        "Severe hypoglycemia markedly higher with intensive therapy (18.7% vs 2.8%; P<0.001).",
+        "Morbidity signals favoured intensive therapy (faster weaning, discharge, less kidney injury in ≥3‑day patients)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "In‑hospital mortality (primary, ITT)",
+          "group_a": "222/595 (37.3%)",
+          "group_b": "242/605 (40.0%)",
+          "effect_measure": "HR",
+          "effect_value": "0.94",
+          "ci_95": "0.84 to 1.06",
+          "p_value": "0.31 (corrected; uncorrected P=0.33)",
+          "note": ""
+        },
+        {
+          "outcome": "In‑hospital mortality (ICU stay ≥3 days, predefined subgroup)",
+          "group_a": "166/386 (43.0%)",
+          "group_b": "200/381 (52.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.84",
+          "ci_95": "0.73 to 0.97",
+          "p_value": "0.02 (corrected; uncorrected P=0.009)",
+          "note": "Subgroup defined by post‑randomisation length of stay"
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "144/595 (24.2%)",
+          "group_b": "162/605 (26.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "",
+          "p_value": "0.31",
+          "note": ""
+        },
+        {
+          "outcome": "28‑day mortality",
+          "group_a": "178/595 (29.9%)",
+          "group_b": "182/605 (30.0%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "",
+          "p_value": "0.95",
+          "note": ""
+        },
+        {
+          "outcome": "90‑day mortality",
+          "group_a": "214/595 (35.9%)",
+          "group_b": "228/605 (37.7%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "",
+          "p_value": "0.53",
+          "note": ""
+        },
+        {
+          "outcome": "Severe hypoglycemia (≤40 mg/dL)",
+          "group_a": "111/595 (18.7%)",
+          "group_b": "17/605 (2.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Most patients had only one episode; no haemodynamic deterioration or convulsions in temporal association"
+        },
+        {
+          "outcome": "Time to weaning from mechanical ventilation (all patients)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "1.15",
+          "ci_95": "1.01 to 1.32",
+          "p_value": "0.04",
+          "note": "Accelerated weaning in intensive arm (time‑to‑event analysis)"
+        },
+        {
+          "outcome": "Time to discharge from ICU (ICU ≥3 days)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "1.34",
+          "ci_95": "1.12 to 1.61",
+          "p_value": "0.001",
+          "note": "Faster ICU discharge in intensive arm among long‑stayers"
+        },
+        {
+          "outcome": "Time to discharge from hospital (ICU ≥3 days)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "1.58",
+          "ci_95": "1.28 to 1.95",
+          "p_value": "<0.001",
+          "note": "Faster hospital discharge in intensive arm among long‑stayers"
+        },
+        {
+          "outcome": "New kidney injury during ICU (ICU ≥3 days)",
+          "group_a": "205/386 (53.1%)",
+          "group_b": "231/381 (60.7%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "",
+          "p_value": "0.03",
+          "note": "Defined as creatinine ≥2× admission or peak >2.5 mg/dL"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Baseline TISS‑28 >33",
+          "group_a": "26.6% (intensive)",
+          "group_b": "20.6% (conventional)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "P=0.02 for baseline imbalance",
+          "note": "Not an interaction test; a measured baseline characteristic"
+        }
+      ]
+    },
+    "safety": [
+      "Severe hypoglycemia (≤40 mg/dL): 18.7% in intensive vs 2.8% conventional (P<0.001). Most patients had only one episode; no clinical events (haemodynamic deterioration, convulsions) were temporally associated with hypoglycemia.",
+      "No other adverse event categories systematically reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Sealed envelopes, stratified by diagnostic category, permuted blocks of 10. Envelope method theoretically susceptible to subversion, but no direct evidence of compromise."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded at bedside; primary outcome (mortality) objective. Bacteremia and ICU cause of death adjudicated by blinded assessors; ward physicians blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "ITT analysis for primary outcome. Post hoc exploratory analysis censoring early withdrawal of care (n=65) was not primary."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Strong treatment separation: mean morning glucose 111 vs 153 mg/dL; 98.2% vs 69.8% received insulin. High hypoglycemia in intensive arm reflects protocol execution."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups similar in age, sex, APACHE II, diabetes prevalence. One imbalance: TISS‑28 >33 higher in intensive group (26.6% vs 20.6%, P=0.02)."
+        }
+      ],
+      "verdict": "Moderate: robust randomisation and separation, objective primary outcome, partial blinded adjudication; limited by unblinded delivery, single‑centre, multiplicity, and interpretability of post‑randomisation subgroup."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Eligibility required expected ICU stay ≥3 days; 36% actually stayed <3 days. Exclusion of DNR, postoperative patients, and early eaters reduces applicability to mixed medical ICUs where ceilings‑of‑care vary."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Single‑centre, high‑resource academic ICU with stable nurse‑driven protocols. Nutritional practices and glucose measurement technology differ from many contemporary ICUs."
+        }
+      ],
+      "verdict": "Limited‑to‑moderate: question broadly relevant but findings may not transport to settings with different staffing, nutrition, or monitoring infrastructure."
+    },
+    "strengths": [
+      "Large, prospective RCT (n=1200) with prespecified hypotheses.",
+      "Clear glycemic separation and insulin dosing difference.",
+      "Clinically meaningful secondary endpoints (renal injury, weaning, discharge) with time‑to‑event analyses.",
+      "High‑frequency, protocol‑driven glucose monitoring."
+    ],
+    "limitations": [
+      "Single‑centre design limits generalisability.",
+      "Unblinded intervention introduces potential performance bias for non‑mortality outcomes.",
+      "High severe hypoglycemia (18.7%) complicates benefit–harm interpretation.",
+      "Multiple secondary outcomes without multiplicity adjustment.",
+      "Subgroup by ICU length of stay is post‑randomisation and difficult to interpret causally."
+    ],
+    "critical_appraisal": {
+      "summary": "Leuven 2 is a well‑conducted but single‑centre trial with a neutral overall primary mortality outcome, a signal of benefit in longer‑stay patients, and a substantial safety concern from hypoglycemia, reducing confidence in routine tight glucose control.",
+      "strengths": [
+        "Large sample size",
+        "Prespecified hypotheses and analysis plan",
+        "Clear glycemic separation",
+        "Blinded mortality adjudication for key secondary outcomes"
+      ],
+      "weaknesses": [
+        "Single‑centre",
+        "Unblinded delivery",
+        "High hypoglycemia rate",
+        "Post‑hoc subgroup interpretation",
+        "No multiplicity adjustment"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In the whole medical ICU cohort, intensive insulin therapy did not reduce in‑hospital mortality, but in the predefined subgroup of patients staying ≥3 days, it was associated with lower mortality and morbidity. The authors called for multicentre confirmation and highlighted the risk of severe hypoglycemia.",
+    "clinical_bottom_line": {
+      "verdict": "Does not support routine use of strict normoglycemia (80–110 mg/dL) in medical ICU patients; contributed to the shift toward moderate glucose targets after subsequent larger trials showed harm or no benefit.",
+      "applies_to": "Medical ICU patients with heterogeneous diagnoses, particularly those with longer predicted ICU stay and without early DNR orders.",
+      "does_not_mean": "Tight control is safe or beneficial for all medical ICU patients; morbidity signals in longer‑stayers require confirmation in multicentre trials.",
+      "implementation_caveats": [
+        "Requires high‑frequency monitoring and strict protocol adherence to limit hypoglycemia.",
+        "Benefit–harm balance may depend on centre‑specific nutrition practices and staffing.",
+        "Later large trials (NICE‑SUGAR) found increased mortality with tight control; this target is not recommended in current guidelines."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Mortality benefit not replicated in multicentre RCTs",
+        "notes": "VISEP (severe sepsis) stopped early for excess hypoglycemia without mortality benefit; NICE‑SUGAR showed increased 90‑day mortality with tight control, reversing the Leuven hypothesis."
+      },
+      {
+        "topic": "Subgroup by ICU length of stay",
+        "notes": "Interpretation confounded by post‑randomisation selection: patients who stay longer are both more likely to benefit and to have received the intervention longer, complicating causal inference."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Leuven surgical ICU trial (Van den Berghe 2001)",
+        "relation": "Predecessor study showing mortality and morbidity benefit in surgical ICU, motivating this trial in medical ICU."
+      },
+      {
+        "trial": "VISEP",
+        "relation": "RCT in severe sepsis stopped early for excessive hypoglycemia with no mortality benefit; highlighted safety concern."
+      },
+      {
+        "trial": "NICE‑SUGAR",
+        "relation": "Large multicentre RCT showing increased 90‑day mortality with tight glucose control; pivotal reversal of the Leuven hypothesis."
+      }
+    ],
+    "unresolved_questions": [
+      "Would a less aggressive target (e.g., 110–140 mg/dL) retain benefit in longer‑stay patients while lowering hypoglycemia?",
+      "How do nutritional strategies (enteral vs parenteral) modulate glucose variability and outcomes independently of insulin?",
+      "Can real‑time continuous glucose monitoring reduce hypoglycemia and improve risk‑benefit of tight control?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1200",
+        "Overall in‑hospital mortality: 37.3% vs 40.0% (HR 0.94, 95% CI 0.84–1.06, p=0.31)",
+        "Subgroup ICU ≥3 days: mortality 43.0% vs 52.5% (HR 0.84, p=0.02)",
+        "Severe hypoglycemia: 18.7% vs 2.8%"
+      ],
+      "one_line_takeaway": "In medical ICU patients, intensive insulin therapy did not reduce overall mortality, offered possible benefit only in longer‑stayers, and caused marked hypoglycemia; subsequent large trials showed harm, shifting guidelines to moderate glucose targets."
+    }
+  },
+  "_source_id": "Van_Den_Berghe_-_Medical",
+  "_source_system": "Endocrine"
+}

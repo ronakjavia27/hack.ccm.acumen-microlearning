@@ -1,0 +1,304 @@
+{
+  "id": "Eurotherm3235",
+  "trial_name": "Eurotherm3235 — Hypothermia for Intracranial Hypertension after TBI (2015)",
+  "specialty": "Neurocritical Care",
+  "subtopic": "Raised Intracranial Pressure",
+  "year": 2015,
+  "journal": "New England Journal of Medicine",
+  "citation": "Andrews PJD, Sinclair HL, Rodriguez A, Harris BA, Battison CG, Rhodes JKJ, Murray GD, for the Eurotherm3235 Trial Collaborators. Hypothermia for intracranial hypertension after traumatic brain injury. N Engl J Med. 2015;373:2403-2412.",
+  "doi": "https://doi.org/10.1056/NEJMoa1507581",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, open-label, parallel-group, superiority",
+  "evidence_level": "High-quality RCT (early stopped)",
+  "sample_size": 387,
+  "result_category": "Negative (harm)",
+  "one_liner": "In adults with severe TBI and intracranial hypertension, therapeutic hypothermia (32–35°C) as a stage 2 strategy worsened 6‑month functional outcome and increased mortality despite lower body temperature.",
+  "pico": {
+    "population": "Adults with severe TBI, invasive ICP monitoring, sustained ICP >20 mm Hg despite stage 1 measures",
+    "intervention": "Therapeutic hypothermia strategy (32–35°C) as preferred stage 2 ICP management",
+    "comparison": "Standard care without therapeutic hypothermia (stage 2 measures as needed)",
+    "outcome": "6‑month extended Glasgow Outcome Scale (GOS‑E) score (shift analysis); key secondary: mortality, adverse events"
+  },
+  "keywords": [
+    "therapeutic hypothermia",
+    "traumatic brain injury",
+    "intracranial pressure",
+    "neuroprotection"
+  ],
+  "related_trials": [
+    "POLAR"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Elevated ICP after severe TBI worsens outcomes. Standard care follows a staged escalation (supportive measures, osmotherapy, then barbiturates/decompressive craniectomy). Hypothermia reduces cerebral metabolism and can lower ICP, with some meta‑analytic signals of benefit.",
+      "knowledge_gap": "Whether a strategy of early therapeutic hypothermia as a stage 2 ICP‑lowering therapy improves patient‑centred outcomes versus normothermia‑based care was uncertain.",
+      "hypothesis": "Therapeutic hypothermia (32–35°C) used as early stage 2 therapy would reduce 6‑month unfavourable neurological outcome compared with standard care without hypothermia."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, parallel‑group, randomised (1:1) trial; open‑label management, blinded outcome assessment.",
+      "setting": "47 centres in 18 countries; ICUs with invasive ICP monitoring.",
+      "population": {
+        "inclusion": [
+          "Adults with severe TBI and invasive ICP monitoring",
+          "Abnormal cranial CT",
+          "Sustained ICP >20 mm Hg for ≥5 minutes despite stage 1 therapy (sedation, ventilation, physiological optimisation)",
+          "Enrolment up to 10 days after injury (protocol expanded; majority >12 hours)"
+        ],
+        "exclusion": [
+          "Barbiturate infusion before randomisation",
+          "Already receiving therapeutic hypothermia",
+          "Normal CT",
+          "Temperature <34°C on admission",
+          "Pregnancy",
+          ">10 days from injury",
+          "Unlikely to survive 24 hours"
+        ]
+      },
+      "intervention": "Therapeutic hypothermia strategy titrated to 32–35°C, aiming for ICP ≤20 mm Hg. Induction with refrigerated 0.9% saline bolus 20–30 mL/kg; maintenance by local cooling method (surface/endovascular), with shivering management. Minimum 48 hours; rewarming at 0.25°C/h once ICP controlled. Additional non‑temperature stage 2 measures added if ICP remained high; stage 3 therapies (barbiturates, decompressive craniectomy) if stage 2 failed.",
+      "comparison": "Standard care strategy: no therapeutic hypothermia; stage 2 and 3 therapies used per local practice to control ICP. Temperature management aimed to avoid fever, but not protocolised to a specific normothermia target.",
+      "blinding": "Open‑label for clinicians; primary outcome assessor at 6 months was blinded to allocation.",
+      "sample_size_power": "Target 600 patients to detect 9% absolute reduction in unfavourable outcome (60% to 51%) with 80% power and two‑sided α=0.05; planned primary analysis ordinal logistic regression.",
+      "primary_outcome": "6‑month extended Glasgow Outcome Scale (GOS‑E) score (ordered categories: dead, vegetative/lower severe, upper severe, lower moderate, upper moderate, good recovery).",
+      "secondary_outcomes": [
+        "Dichotomised unfavourable outcome (GOS‑E 1‑4)",
+        "All‑cause mortality at 6 months",
+        "Requirement for stage 3 ICP therapies",
+        "Mean core temperature and ICP over days 1‑7",
+        "Serious adverse events"
+      ],
+      "follow_up": "6 months for primary outcome; in‑hospital/early adverse events captured."
+    },
+    "results": {
+      "headline_bullets": [
+        "Despite substantial cooling (mean temp difference −2.14°C), hypothermia did not significantly reduce mean ICP over 7 days (−0.48 mm Hg) and was associated with worse 6‑month functional outcome.",
+        "Hypothermia reduced escalation to stage 3 therapies (43.8% vs 54.0%) but increased 6‑month mortality (34.9% vs 26.6%; HR 1.45).",
+        "The trial was stopped early for harm at 387 of the planned 600 patients."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: GOS‑E ordinal shift at 6 months",
+          "group_a": "Hypothermia (n=191 valid): Dead 67 (35.1%), Vegetative/lower severe 4 (2.1%), Upper severe 55 (28.8%), Lower moderate 16 (8.4%), Upper moderate 22 (11.5%), Good recovery 27 (14.1%)",
+          "group_b": "Standard (n=189 valid): Dead 49 (25.9%), Vegetative/lower severe 7 (3.7%), Upper severe 43 (22.8%), Lower moderate 19 (10.1%), Upper moderate 29 (15.3%), Good recovery 42 (22.2%)",
+          "effect_measure": "Adj common OR",
+          "effect_value": "1.53",
+          "ci_95": "1.02–2.30",
+          "p_value": "0.04",
+          "note": "OR >1 indicates worse outcome; trial stopped early."
+        },
+        {
+          "outcome": "Unfavourable outcome (GOS‑E 1–4) at 6 months",
+          "group_a": "142/191 (74.3%)",
+          "group_b": "120/189 (63.5%)",
+          "effect_measure": "Adj OR",
+          "effect_value": "1.69",
+          "ci_95": "1.06–2.70",
+          "p_value": "0.03",
+          "note": ""
+        },
+        {
+          "outcome": "Death by 6 months",
+          "group_a": "68/195 (34.9%)",
+          "group_b": "51/192 (26.6%)",
+          "effect_measure": "HR",
+          "effect_value": "1.45",
+          "ci_95": "1.01–2.10",
+          "p_value": "0.047",
+          "note": ""
+        },
+        {
+          "outcome": "Mean core temperature (days 1–7), °C",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "Adj mean difference",
+          "effect_value": "-2.14",
+          "ci_95": "-2.34 to -1.94",
+          "p_value": "<0.001",
+          "note": "Confirms robust temperature separation."
+        },
+        {
+          "outcome": "Mean ICP (days 1–7), mm Hg",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "Adj mean difference",
+          "effect_value": "-0.48",
+          "ci_95": "-2.04 to 1.08",
+          "p_value": "0.55",
+          "note": "No meaningful ICP reduction despite cooling."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Prespecified subgroup analyses",
+          "group_a": "none identified",
+          "group_b": "none identified",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "",
+          "note": "No consistent subgroup in which hypothermia improved outcomes was identified."
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events: 33 events in hypothermia group vs 10 events in standard care group (haemorrhage, cardiovascular instability, skin/thermal injury)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web‑based allocation with minimisation by centre, age, GCS motor, time from injury, pupil response; allocation concealed."
+        },
+        {
+          "domain": "Attrition / missing data",
+          "notes": "7/387 missing primary outcome (4 hypothermia, 3 control), balanced and small."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open‑label temperature management introduces potential performance bias; primary outcome assessor blinded."
+        },
+        {
+          "domain": "Protocol adherence",
+          "notes": "Temperature target adherence (days 1–4) was 64.8% hypothermia vs 68.8% control; moderate."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups comparable on age, sex, ICP at randomisation."
+        },
+        {
+          "domain": "Heterogeneity / centre effects",
+          "notes": "47 centres, pragmatic delivery; minimisation by centre reduces but cannot eliminate centre‑level variation."
+        },
+        {
+          "domain": "Timing of intervention",
+          "notes": "Mean time to randomisation ~48 h; only 16% within 12 h – tested hypothermia for established hypertension, not ultra‑early prophylaxis."
+        },
+        {
+          "domain": "Dose and separation",
+          "notes": "Large temperature separation (Δ −2.14°C) but minimal ICP difference (Δ −0.48 mm Hg); mechanistic concerns."
+        },
+        {
+          "domain": "Co‑interventions",
+          "notes": "Control group received more barbiturates (41 vs 20 patients); hypothermia group required fewer stage 3 escalations – confounding by co‑intervention possible."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "GOS‑E is validated; blinded assessor."
+        },
+        {
+          "domain": "Statistical rigor / early stopping",
+          "notes": "Prespecified ordinal primary analysis; powered for 600 but stopped at 387 for harm, increasing imprecision and risk of effect exaggeration."
+        }
+      ],
+      "verdict": "Moderate internal validity: strong allocation and blinded outcome, but open‑label design, early stopping, and co‑intervention differences limit causal certainty about mechanism, though the harm signal on patient‑centred outcomes is compelling."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled typical severe TBI patients requiring ICP monitoring and escalation – reflects neuro‑ICU practice in high‑resource settings."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to centres with invasive monitoring and hypothermia capability; less generalisable to settings without advanced neurocritical care."
+        },
+        {
+          "domain": "Clinical strategy scope",
+          "notes": "Tested early stage 2 strategy; results should not be extrapolated to late rescue therapy or prehospital cooling."
+        }
+      ],
+      "verdict": "Moderate external validity: directly relevant to modern neuro‑ICUs managing intracranial hypertension, but not to settings without invasive monitoring or to late‑stage salvage hypothermia."
+    },
+    "strengths": [
+      "Pragmatic international multicenter design",
+      "Clinically relevant population with established intracranial hypertension",
+      "Robust patient‑centred primary outcome with blinded assessment",
+      "Meaningful temperature separation achieved",
+      "Prespecified subgroup analyses",
+      "Independent monitoring committee oversight with predefined safety stopping rules"
+    ],
+    "limitations": [
+      "Open‑label intervention with potential for differential co‑interventions",
+      "Hypothermia delivery technique varied across sites",
+      "Incomplete granular reporting of non‑temperature stage 2 therapies",
+      "Modest sample size with early termination for harm",
+      "Inclusion window allowed enrolment far beyond ultra‑early injury phase, limiting applicability to early neuroprotection",
+      "Minimal ICP reduction despite substantial cooling"
+    ],
+    "critical_appraisal": {
+      "summary": "Eurotherm3235 provides strong evidence that a strategy of early therapeutic hypothermia for intracranial hypertension worsens functional outcome and increases death, despite a convincing biological rationale. Internal validity is moderate due to open‑label design and early stopping, but the harm signal is robust. External validity is high for high‑resource ICUs.",
+      "strengths": [
+        "Pragmatic design reflecting real‑world neuro‑ICU practice",
+        "Patient‑centred primary outcome with blinded assessment",
+        "Clear harm signal consistent across outcomes"
+      ],
+      "weaknesses": [
+        "Open‑label treatment may have influenced co‑interventions",
+        "Early termination limits precision and subgroup analyses",
+        "Timing of recruitment limits generalisability to ultra‑early hypothermia"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "As a strategy for early stage 2 management of intracranial hypertension after severe TBI, therapeutic hypothermia to 32–35°C was associated with worse long‑term neurological outcome and higher mortality. Routine use for this indication is difficult to justify outside research settings. The findings underscore that ICP‑lowering surrogates may be insufficient when an intervention carries systemic harms.",
+    "clinical_bottom_line": {
+      "verdict": "Therapeutic hypothermia as a stage 2 ICP‑lowering strategy should not be used routinely in severe TBI; it worsened functional outcome and increased mortality.",
+      "applies_to": "Severe TBI patients with invasive ICP monitoring and sustained intracranial hypertension despite stage 1 measures, treated in high‑resource ICUs.",
+      "does_not_mean": "Does not necessarily apply to ultra‑early prophylactic hypothermia (see POLAR) or to late salvage therapy for refractory intracranial hypertension, though these indications have not shown benefit in large trials.",
+      "implementation_caveats": [
+        "Strict fever avoidance and targeted normothermia are preferred; any use of hypothermia outside trials should be highly selected and cautious.",
+        "Potential systemic harms (haemodynamic instability, bleeding, electrolyte disturbances, rewarming risks) must be weighed against any uncertain benefit."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Strategy vs add‑on interpretation",
+        "notes": "The protocol framed hypothermia as a preferred step in a care pathway; the trial compared clinical pathways rather than a simple adjunct, and the control group received more barbiturates, complicating attribution of harm solely to hypothermia."
+      },
+      {
+        "topic": "Early stopping and sample size",
+        "notes": "Planned n=600 not reached; early termination for harm risks exaggerating effect sizes and imprecision in secondary/mechanistic outcomes."
+      },
+      {
+        "topic": "Position in hypothermia evidence base",
+        "notes": "Earlier RCTs of prophylactic hypothermia in adults and children were largely neutral or harmful; Eurotherm aligns with this trajectory."
+      },
+      {
+        "topic": "Subsequent trial evidence (POLAR)",
+        "notes": "The POLAR trial of early prophylactic hypothermia also did not improve neurological outcomes, reinforcing the lack of benefit of cooling below normothermia in unselected severe TBI."
+      },
+      {
+        "topic": "Ongoing interest in selected indications",
+        "notes": "Trials of longer‑duration mild hypothermia for refractory hypertension continue, but evidence remains mixed and cautious."
+      },
+      {
+        "topic": "Meta‑analytic synthesis",
+        "notes": "Meta‑analyses post‑Eurotherm show heterogeneity; no consistent benefit of hypothermia on patient‑centred outcomes, and conclusions depend on trial quality."
+      },
+      {
+        "topic": "Guideline impact",
+        "notes": "Guidelines now emphasize fever avoidance and targeted normothermia; routine therapeutic hypothermia is not endorsed, and any use beyond normothermia is considered evidence‑limited."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "POLAR",
+        "relation": "Large trial of early prophylactic hypothermia in severe TBI also found no improvement in neurological outcomes, reinforcing Eurotherm’s conclusion that cooling below normothermia does not benefit unselected severe TBI patients."
+      }
+    ],
+    "unresolved_questions": [
+      "Whether longer‑duration or deeper hypothermia in highly selected patients with refractory intracranial hypertension might have a role.",
+      "Optimal temperature management strategy (e.g., targets, rewarming protocols) remains to be defined."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=387 (planned 600, stopped early)",
+        "Adj common OR for worse outcome: 1.53 (95% CI 1.02–2.30), P=0.04",
+        "6‑month mortality HR 1.45 (95% CI 1.01–2.10), P=0.047",
+        "Mean ICP reduction only 0.48 mm Hg despite cooling",
+        "Hypothermia reduced stage 3 therapies (43.8% vs 54.0%) but not outcomes"
+      ],
+      "one_line_takeaway": "Therapeutic hypothermia as an early strategy for intracranial hypertension worsens functional outcome and increases death; maintain normothermia and avoid cooling."
+    }
+  },
+  "_source_id": "Eurotherm3235",
+  "_source_system": "Neuro"
+}

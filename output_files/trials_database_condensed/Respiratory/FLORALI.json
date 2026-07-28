@@ -1,0 +1,265 @@
+{
+  "id": "FLORALI",
+  "trial_name": "FLORALI — High-Flow Oxygen through Nasal Cannula in Acute Hypoxemic Respiratory Failure (2015)",
+  "specialty": "Critical Care Medicine",
+  "subtopic": "Noninvasive Respiratory Support",
+  "year": 2015,
+  "journal": "New England Journal of Medicine",
+  "citation": "Frat JP, Thille AW, Mercat A, et al. High-Flow Oxygen through Nasal Cannula in Acute Hypoxemic Respiratory Failure. N Engl J Med. 2015;372:2185-96",
+  "doi": "https://doi.org/10.1056/NEJMoa1503326",
+  "registration": "Not reported",
+  "trial_type": "RCT — multicenter, open-label, three-group parallel, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 310,
+  "result_category": "Mixed",
+  "one_liner": "In de novo non-hypercapnic acute hypoxemic respiratory failure, HFNC did not significantly reduce intubation rates compared to standard oxygen or NIV, but was associated with improved 90-day survival.",
+  "pico": {
+    "population": "ICU adults with de novo non-hypercapnic acute hypoxemic respiratory failure (PaO2/FiO2 ≤300 mm Hg, RR >25, PaCO2 ≤45 mm Hg)",
+    "intervention": "High-flow nasal oxygen (HFNC) at 50 L/min",
+    "comparison": "Standard oxygen via nonrebreather mask or noninvasive ventilation (NIV) with HFNC between sessions",
+    "outcome": "Endotracheal intubation by day 28"
+  },
+  "keywords": [
+    "HFNC",
+    "high-flow nasal oxygen",
+    "NIV",
+    "acute hypoxemic respiratory failure",
+    "intubation",
+    "oxygen therapy"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "NIV has clear benefit in hypercapnic COPD and cardiogenic pulmonary edema, but benefit and safety in de novo hypoxemic AHRF/ARDS remained uncertain, particularly regarding high tidal volumes and delayed intubation. HFNC was an emerging technique delivering heated, humidified high flows with stable FiO2, modest positive airway pressure, and improved comfort.",
+      "knowledge_gap": "Robust randomised evidence for clinically important outcomes comparing HFNC to standard oxygen and NIV in ICU AHRF was limited.",
+      "hypothesis": "In adults with non-hypercapnic de novo AHRF, HFNC (or NIV) reduces the need for endotracheal intubation compared with standard oxygen therapy."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, controlled, open-label, three-group parallel trial.",
+      "setting": "23 ICUs in France and Belgium.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with de novo AHRF",
+          "Respiratory rate >25 breaths/min",
+          "PaO2/FiO2 ≤300 mm Hg while breathing oxygen at ≥10 L/min for ≥15 minutes",
+          "PaCO2 ≤45 mm Hg",
+          "Absence of chronic respiratory failure"
+        ],
+        "exclusion": [
+          "PaCO2 >45 mm Hg",
+          "Asthma or chronic respiratory failure",
+          "Cardiogenic pulmonary edema",
+          "Severe neutropenia",
+          "Hemodynamic instability requiring vasopressors",
+          "Glasgow Coma Scale ≤12",
+          "Contraindication to NIV",
+          "Immediate need for intubation",
+          "Do-not-intubate order"
+        ]
+      },
+      "intervention": "HFNC: heated, humidified high-flow oxygen via large-bore binasal prongs (Optiflow); flow 50 L/min; FiO2 1.0 at initiation then adjusted to maintain SpO2 ≥92%; applied continuously for at least 2 calendar days.",
+      "comparison": "Standard oxygen: nonrebreather face mask; flow ≥10 L/min; FiO2 adjusted to maintain SpO2 ≥92%. NIV: face mask connected to ICU ventilator; pressure support to target expired tidal volume 7–10 mL/kg predicted body weight; PEEP 2–10 cm H2O; FiO2 and PEEP adjusted to maintain SpO2 ≥92%; minimum 8 hours/day for at least 2 calendar days; between NIV sessions, patients received HFNC.",
+      "blinding": "Open-label. Prespecified intubation criteria were used to mitigate discretionary bias.",
+      "sample_size_power": "Assumed 60% intubation rate in standard oxygen group; 300 patients provided 80% power (two-sided alpha 0.05) to detect a 20 percentage point absolute difference in intubation by day 28 between standard oxygen and either HFNC or NIV.",
+      "primary_outcome": "Endotracheal intubation by day 28",
+      "secondary_outcomes": [
+        "Ventilator-free days (days 1–28)",
+        "Death in ICU",
+        "Death at day 90"
+      ],
+      "follow_up": "Primary outcome to day 28; mortality to day 90."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary endpoint (intubation by day 28) was neutral overall: 38% HFNC vs 47% standard vs 50% NIV (P=0.18).",
+        "Despite a neutral primary endpoint, HFNC was associated with lower 90-day mortality compared to standard oxygen and NIV.",
+        "In the subgroup with more severe hypoxemia (PaO2/FiO2 ≤200 mm Hg), intubation was lower with HFNC: 35% vs 53% vs 58% (P=0.009)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Endotracheal intubation by day 28",
+          "group_a": "38% (n=106)",
+          "group_b": "Standard O2: 47% (n=94); NIV: 50% (n=110)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.18",
+          "note": "Three-group overall comparison. Trial was stopped early for planned reasons after reaching sample size."
+        },
+        {
+          "outcome": "Endotracheal intubation by day 28 (PaO2/FiO2 ≤200 subgroup)",
+          "group_a": "35%",
+          "group_b": "Standard O2: 53%; NIV: 58%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.009",
+          "note": "Subgroup analysis reported in main manuscript."
+        },
+        {
+          "outcome": "Ventilator-free days (days 1–28), median (IQR)",
+          "group_a": "24 (18–26)",
+          "group_b": "Standard O2: 22 (10–25); NIV: 19 (0–25)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.02",
+          "note": "Overall three-group comparison."
+        },
+        {
+          "outcome": "Death in ICU",
+          "group_a": "11%",
+          "group_b": "Standard O2: 19%; NIV: 25%",
+          "effect_measure": "HR (HFNC as reference)",
+          "effect_value": "Standard O2: 1.86; NIV: 2.44",
+          "ci_95": "Standard O2: 0.90–3.85; NIV: 1.21–4.93",
+          "p_value": "Standard O2: 0.09; NIV: 0.01",
+          "note": "Hazard ratios reported with HFNC as the reference group."
+        },
+        {
+          "outcome": "Death at day 90",
+          "group_a": "12%",
+          "group_b": "Standard O2: 23%; NIV: 28%",
+          "effect_measure": "HR (HFNC as reference)",
+          "effect_value": "Standard O2: 2.01; NIV: 2.50",
+          "ci_95": "Standard O2: 1.01–3.99; NIV: 1.31–4.78",
+          "p_value": "Standard O2: 0.046; NIV: 0.006",
+          "note": "Mortality differences observed despite non-significant primary endpoint."
+        },
+        {
+          "outcome": "Time from randomisation to intubation, median (IQR)",
+          "group_a": "2 (1–5)",
+          "group_b": "Standard O2: 1 (1–4); NIV: 1 (1–4)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.10",
+          "note": "Overall three-group comparison."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "PaO2/FiO2 ≤200 mm Hg",
+          "group_a": "35%",
+          "group_b": "Standard O2: 53%; NIV: 58%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "0.009"
+        }
+      ]
+    },
+    "safety": [
+      "No other safety-specific adverse events reported in the source beyond mortality and intubation outcomes."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised, web-based randomisation; permuted blocks of six; stratified by centre and history of cardiac insufficiency. Strong."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design increases susceptibility to performance bias for the clinician-driven primary outcome (intubation)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "313 randomised; 3 withdrew consent and were excluded; 310 analysed. Low attrition."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "NIV rescue was used in 26/94 (28%) standard oxygen and 14/106 (13%) HFNC patients. The NIV arm received HFNC between NIV sessions by design. This reduces 'purity' of comparisons."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Baseline characteristics, including PaO2/FiO2, SAPS II, and respiratory rate, were comparable across groups."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate-to-strong: randomisation and baseline balance were strong, and prespecified intubation criteria likely reduced discretionary bias, but the open-label design and protocolised co-interventions complicate causal attribution for the primary endpoint and may dilute between-group separation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Applies most directly to ICU adults with de novo, non-hypercapnic AHRF with high oxygen requirements (≥10 L/min) and PaO2/FiO2 ≤300 mm Hg. Excludes hypercapnic failure, cardiogenic edema, and severe hemodynamic instability."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in 23 ICUs in France and Belgium. Applicability is strongest for similar high-resource ICUs. The specific NIV strategy (face mask, PEEP 5 cm H2O, expired tidal volume 9.2 mL/kg) may differ from contemporary practice using helmet NIV or higher PEEP."
+        }
+      ],
+      "verdict": "External validity is moderate: findings are broadly applicable to ICU de novo non-hypercapnic AHRF populations, but generalisability is limited in hypercapnic disease and cardiogenic oedema, and comparative inferences about 'optimal NIV' depend on local practices."
+    },
+    "strengths": [
+      "Multicentre ICU trial",
+      "Randomised allocation with centralised concealment",
+      "Clinically meaningful primary endpoint with objective prespecified intubation criteria",
+      "Follow-up to day 90",
+      "Clear protocolisation of HFNC settings and initial oxygenation targets"
+    ],
+    "limitations": [
+      "Open-label design with a clinician-driven primary outcome",
+      "Primary endpoint not statistically significant while mortality signals emerged in secondary analyses",
+      "Three-arm design with protocolised co-interventions (HFNC between NIV sessions; NIV rescue) reduces between-group separation",
+      "NIV 'dose' and delivered ventilatory pattern (expired tidal volume 9.2 mL/kg predicted; PEEP 5 cm H2O) may not represent all contemporary NIV approaches"
+    ],
+    "critical_appraisal": {
+      "summary": "A landmark, well-conducted RCT comparing front-line oxygenation strategies with a moderate risk of bias due to its open-label design, finding a neutral primary intubation outcome but generating hypothesis-generating mortality signals favoring HFNC, particularly in severe hypoxemia.",
+      "strengths": [
+        "Multicentre design with central randomisation and prespecified intubation criteria"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Protocolised co-interventions (HFNC/NIV crossover) diluting the purity of comparison"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "HFNC is a reasonable first-line strategy for ICU adults with de novo non-hypercapnic AHRF, offering comparable intubation rates overall and favorable signals in ventilator-free days and 90-day survival compared with standard oxygen and face-mask NIV.",
+    "clinical_bottom_line": {
+      "verdict": "HFNC should be considered the default initial strategy for de novo AHRF in the ICU for patients matching this trial's inclusion criteria, as it was associated with a mortality benefit over standard oxygen and face-mask NIV.",
+      "applies_to": "ICU patients with de novo, non-hypercapnic acute hypoxemic respiratory failure, especially those with PaO2/FiO2 ≤200 mm Hg.",
+      "does_not_mean": "NIV is harmful in all cases of hypoxemic respiratory failure; the results apply to a specific face-mask NIV strategy and population, and do not rule out a role for careful NIV in other settings or with different interfaces.",
+      "implementation_caveats": [
+        "The mortality benefit was a secondary outcome and should be interpreted cautiously.",
+        "Careful monitoring for signs of failure and need for intubation is critical to avoid harm from delayed intubation."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Primary endpoint neutrality vs secondary mortality signal",
+        "notes": "Intubation by day 28 was not significantly different (P=0.18), yet 90-day mortality differed. Interpreting secondary mortality as causal is complicated by multiplicity and the trial being powered for a large intubation difference, not mortality."
+      },
+      {
+        "topic": "Open-label intubation decisions",
+        "notes": "Even with prespecified criteria, clinicians could influence the threshold for intubation based on subjective interpretation, introducing bias."
+      },
+      {
+        "topic": "NIV strategy and biological risk",
+        "notes": "Delivered NIV had expired tidal volumes of 9.2 mL/kg predicted body weight (IQR 7.7–10.9) and PEEP 5 cm H2O (IQR 5–5), raising concern that NIV may have permitted injurious lung stress/strain in some patients."
+      },
+      {
+        "topic": "Contamination by design",
+        "notes": "HFNC use between NIV sessions and as rescue therapy in standard oxygen and HFNC arms blurs the strict separation of strategies."
+      },
+      {
+        "topic": "Subgroup interpretation",
+        "notes": "The intubation benefit in the PaO2/FiO2 ≤200 mm Hg subgroup (P=0.009) is a secondary analysis and must be interpreted cautiously, although it aligns with physiological reasoning."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "What is the comparative effectiveness of HFNC versus modern, optimised NIV (e.g., helmet interface, higher PEEP)?",
+      "Does early HFNC use translate to a mortality benefit in larger, mortality-powered trials?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=310",
+        "Intubation by day 28: 38% HFNC vs 47% standard vs 50% NIV (P=0.18)",
+        "90-day mortality: 12% HFNC vs 23% standard vs 28% NIV"
+      ],
+      "one_line_takeaway": "In acute hypoxemic respiratory failure, high-flow nasal oxygen is the best initial strategy for avoiding intubation in the sickest patients and was linked to a survival benefit."
+    }
+  },
+  "_source_id": "FLORALI",
+  "_source_system": "Respiratory"
+}

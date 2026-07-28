@@ -1,0 +1,284 @@
+{
+  "id": "PEPTIC",
+  "trial_name": "PEPTIC — PPI vs H2RB Stress Ulcer Prophylaxis in Mechanically Ventilated ICU Patients (2020)",
+  "specialty": "Gastrointestinal",
+  "subtopic": "Gastrointestinal Bleeding",
+  "year": 2020,
+  "journal": "JAMA",
+  "citation": "The PEPTIC Investigators. Effect of stress ulcer prophylaxis with proton pump inhibitors vs histamine-2 receptor blockers on in-hospital mortality among ICU patients receiving invasive mechanical ventilation: the PEPTIC randomized clinical trial. JAMA. 2020;323(7):616-626.",
+  "doi": "https://doi.org/10.1001/jama.2019.22190",
+  "registration": "",
+  "trial_type": "RCT — multicenter, cluster-randomized, cluster crossover, open-label, pragmatic",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 26828,
+  "result_category": "Mixed",
+  "one_liner": "In mechanically ventilated ICU patients, a default PPI strategy reduced clinically important upper GI bleeding (1.3% vs 1.8%; RR 0.73) but showed no significant mortality difference (18.3% vs 17.5%; RR 1.05, P=0.054), with substantial treatment crossover complicating causal attribution.",
+  "pico": {
+    "population": "Adults admitted to 50 ICUs in 5 countries who received invasive mechanical ventilation during the index ICU stay",
+    "intervention": "ICU-level default proton pump inhibitor (PPI) stress ulcer prophylaxis strategy, at clinician discretion",
+    "comparison": "ICU-level default histamine-2 receptor blocker (H2RB) stress ulcer prophylaxis strategy, at clinician discretion",
+    "outcome": "In-hospital all-cause mortality up to 90 days (primary); clinically important upper GI bleeding, C. difficile infection, and ventilation duration (secondary)"
+  },
+  "keywords": [
+    "stress ulcer prophylaxis",
+    "proton pump inhibitor",
+    "histamine-2 receptor blocker",
+    "upper gastrointestinal bleeding",
+    "mechanical ventilation",
+    "cluster randomization",
+    "crossover trial"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Stress-related mucosal disease and overt upper GI bleeding are recognised complications in mechanically ventilated ICU patients. H2RBs have long been used; PPIs became common due to more potent acid suppression and lower bleeding risk in earlier evidence, though concerns about infections (pneumonia, C. difficile) grew. Prior to PEPTIC, large-scale modern RCTs comparing PPIs vs H2RBs were limited, and whether any bleeding differences translated into patient-centred outcomes (especially mortality) was uncertain.",
+      "knowledge_gap": "Whether a default PPI strategy versus H2RB strategy alters in-hospital mortality and balances bleeding reduction against infectious complications in real-world ICU practice.",
+      "hypothesis": "A default PPI strategy would change in-hospital mortality up to 90 days compared with a default H2RB strategy, and would affect clinically important upper GI bleeding and C. difficile infection."
+    },
+    "methods": {
+      "design": "Pragmatic, international, multicentre, cluster-randomised, cluster crossover, open-label, registry-embedded RCT with two treatment periods per ICU (no washout).",
+      "setting": "50 adult ICUs in Australia, New Zealand, Canada, England, Ireland; enrolled August 2016 – January 2019.",
+      "population": {
+        "inclusion": [
+          "Adults admitted to a participating ICU who received invasive mechanical ventilation during the index ICU admission."
+        ],
+        "exclusion": [
+          "Previously admitted to ICU during the same hospitalisation.",
+          "Admitted to ICU with upper gastrointestinal bleeding (registry-coded).",
+          "ICU stay >48 h before first invasive mechanical ventilation.",
+          ">24 h between ICU admission and first invasive mechanical ventilation.",
+          "Jurisdictional exclusions for registry linkage in some regions.",
+          "Age <16 years (Australia/New Zealand) or <18 years (Canada)."
+        ]
+      },
+      "intervention": "Default PPI strategy: PPIs were the default stress ulcer prophylaxis drug class (agent/route per local formulary), used at clinician discretion. Continued until death, ICU discharge, development of clinically important upper GI bleeding, or clinician decision to stop. Rescue PPI permitted for GI bleeding irrespective of randomisation.",
+      "comparison": "Default H2RB strategy: H2RBs were the default stress ulcer prophylaxis drug class (agent/route per local formulary), used at clinician discretion. No mandated prophylaxis; strategy targeted the default class when prophylaxis was provided.",
+      "blinding": "Unblinded (cluster-level default strategy); primary outcome (mortality) registry-derived and objective; secondary outcomes susceptible to performance/ascertainment bias.",
+      "sample_size_power": "80% power (two-sided α=0.05) to detect a 2.4% absolute in-hospital mortality reduction (15.0% → 12.6%; RRR 16%), assuming mean cluster-period size 310, coefficient of variation 0.50, within-cluster within-period correlation 0.035, autocorrelation 0.71. Actual analysed: 13,415 vs 13,356 for primary outcome.",
+      "primary_outcome": "In-hospital all-cause mortality up to 90 days from index ICU admission.",
+      "secondary_outcomes": [
+        "Clinically important upper GI bleeding (requiring haemodynamic/laboratory/transfusion consequences).",
+        "C. difficile infection (based on local testing and trial-specific ascertainment).",
+        "ICU discharge alive (competing risk analysis).",
+        "Hospital discharge alive (competing risk analysis).",
+        "Removal from invasive mechanical ventilation alive (tertiary; in subset).",
+        "Ventilator-associated conditions (tertiary; Canadian ICUs only)."
+      ],
+      "follow_up": "90 days in-hospital."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary outcome: in-hospital mortality at 90 days was 18.3% vs 17.5% (RR 1.05, 95% CI 1.00–1.10, P=0.054), absolute difference 0.93% (–0.01 to 1.88).",
+        "Clinically important upper GI bleeding was significantly reduced: 1.3% vs 1.8% (RR 0.73, 95% CI 0.57–0.92, P=0.009), absolute reduction –0.51%.",
+        "C. difficile infection was uncommon (0.30% vs 0.43%; RR 0.74, 95% CI 0.51–1.09) and not statistically different.",
+        "Substantial crossover: 20.1% of patients in H2RB periods received PPI, diluting separation between strategies."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "In-hospital all-cause mortality by 90 days (primary)",
+          "group_a": "2459/13,415 (18.3%)",
+          "group_b": "2333/13,356 (17.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.05",
+          "ci_95": "1.00 to 1.10",
+          "p_value": "0.054",
+          "note": "Absolute risk difference 0.93 percentage points (95% CI –0.01 to 1.88)."
+        },
+        {
+          "outcome": "Clinically important upper GI bleeding (secondary)",
+          "group_a": "172/13,436 (1.3%)",
+          "group_b": "239/13,392 (1.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.73",
+          "ci_95": "0.57 to 0.92",
+          "p_value": "0.009",
+          "note": "Absolute risk difference –0.51 percentage points (95% CI –0.90 to –0.12)."
+        },
+        {
+          "outcome": "C. difficile infection (secondary)",
+          "group_a": "40/13,436 (0.30%)",
+          "group_b": "57/13,392 (0.43%)",
+          "effect_measure": "RR",
+          "effect_value": "0.74",
+          "ci_95": "0.51 to 1.09",
+          "p_value": "0.13",
+          "note": "Low event rates; ascertainment heterogeneous; interpretation limited."
+        },
+        {
+          "outcome": "Days until discharged alive from ICU (competing risk)",
+          "group_a": "Median 3.6 (IQR 1.6–10.4)",
+          "group_b": "Median 3.3 (IQR 1.5–10.0)",
+          "effect_measure": "ROM",
+          "effect_value": "1.00",
+          "ci_95": "0.97 to 1.03",
+          "p_value": "0.85",
+          "note": "Ratio of cumulative incidence functions."
+        },
+        {
+          "outcome": "Days until discharged alive from hospital (competing risk)",
+          "group_a": "Median 12.2 (IQR 6.0–40.0)",
+          "group_b": "Median 12.0 (IQR 6.0–39.3)",
+          "effect_measure": "ROM",
+          "effect_value": "1.01",
+          "ci_95": "0.98 to 1.03",
+          "p_value": "0.66",
+          "note": "Competing risk: mortality."
+        },
+        {
+          "outcome": "Hours until removed alive from mechanical ventilation (tertiary subset)",
+          "group_a": "Median 48.0 (IQR 12.1–271); n=6047",
+          "group_b": "Median 48.0 (IQR 14.3–265); n=5438",
+          "effect_measure": "ROM",
+          "effect_value": "0.98",
+          "ci_95": "0.92 to 1.04",
+          "p_value": "0.43",
+          "note": "Restricted to those with available ventilation duration data."
+        },
+        {
+          "outcome": "Ventilator-associated conditions (tertiary; Canadian subset)",
+          "group_a": "143/2217 (6.5%)",
+          "group_b": "124/2148 (5.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.18",
+          "ci_95": "0.87 to 1.59",
+          "p_value": "0.28",
+          "note": "Canadian ICUs only."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "C. difficile infection: 0.30% vs 0.43% (RR 0.74, 95% CI 0.51–1.09).",
+      "Ventilator-associated conditions (Canadian subset): 6.5% vs 5.8% (RR 1.18, 95% CI 0.87–1.59).",
+      "No statistically significant increase in infectious complications; absolute event rates very low, ascertainment heterogeneous."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "ICU-level cluster randomisation in batches with crossover; appropriate for pragmatic design, but no patient-level allocation concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded default-strategy delivery; primary outcome (mortality) is objective and registry-derived, but secondary outcomes (bleeding, infection) susceptible to detection and ascertainment bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "ITT analysis; 0.6% (154/26,982) opted out; primary outcome missing for only 57 participants; minimal attrition."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Substantial non-adherence: PPI receipt estimated 82.5% in PPI periods vs 20.1% in H2RB periods; H2RB receipt 4.1% vs 63.6%. This materially dilutes treatment separation and biases toward null."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Broadly balanced: mean APACHE II 18.7 in both groups; high proportion elective surgery (32.9%) lowers baseline bleeding risk."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Prespecified analysis plan; cluster-crossover GEE with robust SEs, adjustment for batch/order; secondary outcomes considered exploratory; adequate power for primary outcome."
+        }
+      ],
+      "verdict": "Moderate internal validity: the cluster crossover and registry mortality support robust primary outcome ascertainment, but substantial treatment crossover/non-adherence and heterogeneous ascertainment of key secondary outcomes meaningfully limit causal attribution and dilute separation between strategies."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Very large multinational cohort (n=26,828) with minimal exclusions beyond prior ICU admission and baseline GI bleeding; reflects routine ICU ventilation populations in high-income settings."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Default-strategy design mirrors real-world implementation (order sets, clinician discretion). However, median ICU stay was only ~3 days, which may under-represent prolonged, highest-risk bleeding phenotypes. Since ranitidine withdrawal in many settings, H2RB comparator now typically famotidine. Infection ascertainment (C. difficile) depends on local practice."
+        }
+      ],
+      "verdict": "External validity is strong for mechanically ventilated ICU populations in high-income, registry-participating systems, but extrapolation to prolonged ventilation/high-bleeding-risk cohorts and to settings with different infection testing and formulary constraints should be cautious."
+    },
+    "strengths": [
+      "Extremely large sample size (n=26,828) and multinational participation.",
+      "Pragmatic cluster-crossover design that mirrors real-world default prophylaxis strategies.",
+      "Registry-embedded objective mortality ascertainment.",
+      "Prespecified analytic plan with appropriate methods for cluster-crossover inference.",
+      "Clinically important bleeding definition anchored to haemodynamic/clinical consequences."
+    ],
+    "limitations": [
+      "Unblinded strategy implementation with substantial crossover/non-adherence.",
+      "Incomplete and heterogeneous capture of actual drug exposure in some regions.",
+      "Secondary outcomes vulnerable to ascertainment and practice variation (especially C. difficile testing).",
+      "Co-interventions influencing bleeding/infection risk not comprehensively characterised.",
+      "Secondary end points exploratory with multiplicity concerns."
+    ],
+    "critical_appraisal": {
+      "summary": "A large, pragmatic trial demonstrating a small reduction in clinically important GI bleeding with a default PPI strategy but no significant mortality difference; interpretability is heavily constrained by high crossover and non-adherence, limiting causal attribution.",
+      "strengths": [
+        "Registry-embedded objective mortality outcome.",
+        "Large scale and multinational real-world design.",
+        "Appropriate statistical methods for cluster crossover."
+      ],
+      "weaknesses": [
+        "Unblinded delivery and substantial crossover (20.1% PPI use in H2RB periods) dilute treatment contrast.",
+        "Secondary outcome ascertainment heterogeneous and susceptible to bias.",
+        "Short median ICU stay reduces external applicability to highest bleeding risk groups."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Default PPI strategies modestly reduced clinically important upper GI bleeding without clear evidence of increased C. difficile in this dataset; mortality results were non-significant but numerically higher with PPI, making a small harm vs null effect difficult to exclude.",
+    "clinical_bottom_line": {
+      "verdict": "The trial does not mandate a universal switch to PPI; it supports a risk-targeted approach to stress ulcer prophylaxis with discontinuation when risk resolves. The bleeding benefit is modest (~0.5% absolute reduction) and the mortality signal is uncertain.",
+      "applies_to": "Mechanically ventilated ICU patients with relatively short ICU stay in high-income, registry-linked settings.",
+      "does_not_mean": "PPI prophylaxis is clearly superior in all outcomes; the trial does not establish that mortality is neutral with certainty, and substantial crossover means the real-world bleeding reduction may be even smaller than observed.",
+      "implementation_caveats": [
+        "High rates of non-adherence mean that changing an ICU’s default alone may not achieve the desired class shift.",
+        "Individual patient bleeding risk should guide prescription.",
+        "Prophylaxis should be discontinued when mechanical ventilation is no longer required or bleeding risk has resolved.",
+        "Famotidine (current H2RB) may have a different safety profile than ranitidine, which was used during the trial."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretability under high crossover",
+        "notes": "The pragmatic default-strategy design trades internal separation for real-world relevance; substantial PPI use during H2RB periods (20.1%) likely attenuated both bleeding benefit and any true mortality or infection signal, complicating ‘class superiority’ conclusions."
+      },
+      {
+        "topic": "Borderline primary outcome and inferential framing",
+        "notes": "Mortality narrowly missed prespecified significance (P=0.054) with a point estimate favouring H2RBs. This drives debate on whether to act on the statistically significant bleeding reduction versus a possible mortality harm that is imprecise."
+      },
+      {
+        "topic": "Composite endpoint revision",
+        "notes": "The original registered primary endpoint was a composite (clinically important bleeding, C. difficile, prolonged ventilation); it was changed to mortality primacy before completion of recruitment. Though transparent, endpoint changes influence interpretive priors."
+      },
+      {
+        "topic": "Subgroup signals (hypothesis-generating)",
+        "notes": "Prespecified subgroups (postoperative cardiac surgery, elective vs emergency surgery, geographic region) suggested variable effects, but interaction tests were not compelling and multiplicity limits inference; these remain exploratory."
+      },
+      {
+        "topic": "Subsequent syntheses and guidelines",
+        "notes": "Later systematic reviews and network meta-analyses incorporating PEPTIC generally support that PPIs reduce clinically important GI bleeding compared with H2RBs, while effects on mortality and infections remain uncertain. Recent critical care pharmacy/ICU society guidance integrates PEPTIC within a broader evidence base and emphasises targeted prophylaxis and early discontinuation."
+      },
+      {
+        "topic": "Newer placebo-controlled evidence context",
+        "notes": "Contemporary placebo-controlled stress ulcer prophylaxis trials in invasive mechanical ventilation have further reduced certainty that routine acid suppression improves patient-centred outcomes beyond bleeding prevention, reinforcing a risk-targeted approach."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does a PPI strategy improve or worsen mortality in longer-stay, high-bleeding-risk populations?",
+      "What is the optimal duration of stress ulcer prophylaxis when bleeding risk is dynamic?",
+      "How do risk-stratification tools perform in identifying patients who benefit most from prophylaxis?",
+      "Does a direct PPI vs no-prophylaxis comparison yield different clinical outcomes in modern ICUs?",
+      "Is famotidine-based H2RB strategy equivalent to ranitidine-based in terms of efficacy and safety?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=26,828 patients, 50 ICUs",
+        "Mortality: 18.3% vs 17.5% (RR 1.05, 95% CI 1.00–1.10, P=0.054)",
+        "Clinically important UGIB: 1.3% vs 1.8% (RR 0.73, P=0.009)",
+        "C. difficile: 0.30% vs 0.43% (RR 0.74, P=0.13)",
+        "Crossover: 20.1% of H2RB-period patients received PPI"
+      ],
+      "one_line_takeaway": "PPI default reduces GI bleeding by ~0.5% but has an uncertain mortality signal; real-world impact is blunted by clinical non-adherence."
+    }
+  },
+  "_source_id": "PEPTIC",
+  "_source_system": "Gastrointestinal"
+}

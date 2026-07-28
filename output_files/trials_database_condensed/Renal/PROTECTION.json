@@ -1,0 +1,307 @@
+{
+  "id": "PROTECTION",
+  "trial_name": "PROTECTION — Perioperative IV Amino Acids for Kidney Protection in Cardiac Surgery (2024)",
+  "specialty": "Cardiac Surgery & Critical Care",
+  "subtopic": "Acute Kidney Injury",
+  "year": 2024,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Landoni G, Monaco F, Ti LK, Baiardo Redaelli M, Bradic N, Comis M, et al. A randomized trial of intravenous amino acids for kidney protection. N Engl J Med. 2024;391:687-698.",
+  "doi": "https://doi.org/10.1056/NEJMoa2403769",
+  "registration": "",
+  "trial_type": "RCT — multinational, multicentre, double-blind, placebo-controlled, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3511,
+  "result_category": "Positive",
+  "one_liner": "In adults undergoing elective on-pump cardiac surgery, a perioperative amino acid infusion reduced the incidence of AKI (26.9% vs 31.7%; RR 0.85) and stage 3 AKI (1.6% vs 3.0%; RR 0.56) compared to placebo, without affecting mortality or need for kidney-replacement therapy.",
+  "pico": {
+    "population": "Adults (≥18 years) scheduled for elective cardiac surgery requiring cardiopulmonary bypass, with an expected ICU stay of ≥1 night and a baseline creatinine available preoperatively.",
+    "intervention": "Blinded continuous IV infusion of a balanced amino acid mixture (Isopuramin 10%) at 2 g/kg ideal body weight/day (max 100 g/day), started at operating-room admission and continued for up to 72 hours, until ICU discharge, initiation of KRT, or death.",
+    "comparison": "Blinded continuous IV infusion of placebo (Ringer’s solution) at the same rate and with the same stopping rules.",
+    "outcome": "In-hospital AKI (KDIGO creatinine criteria, stage ≥1) within 7 days after surgery."
+  },
+  "keywords": [
+    "amino acids",
+    "cardiac surgery",
+    "cardiopulmonary bypass",
+    "AKI",
+    "renal functional reserve",
+    "KDIGO"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Cardiac surgery–associated acute kidney injury (AKI) is common and associated with increased morbidity, mortality, and subsequent chronic kidney disease.",
+      "knowledge_gap": "Beyond supportive measures, proven preventive pharmacotherapy has been lacking.",
+      "hypothesis": "Perioperative continuous intravenous infusion of a balanced amino acid mixture, intended to recruit renal functional reserve and increase renal perfusion, would reduce postoperative AKI compared with placebo."
+    },
+    "methods": {
+      "design": "Investigator-initiated, multinational, multicentre (22 centres, 3 countries), randomised, double-blind, placebo-controlled, parallel-group trial.",
+      "setting": "Perioperative operating room and ICU setting in Italy, Singapore, and Croatia.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) scheduled for elective cardiac surgery requiring cardiopulmonary bypass",
+          "Expected ICU stay ≥1 night",
+          "Baseline creatinine available preoperatively"
+        ],
+        "exclusion": [
+          "Planned or current kidney-replacement therapy",
+          "Advanced chronic kidney disease (eGFR <30 mL/min/1.73 m2)"
+        ]
+      },
+      "intervention": "Blinded continuous infusion of balanced amino acid mixture (Isopuramin 10%) at 2 g/kg ideal body weight/day (maximum 100 g/day), started at operating-room admission. Continued until 72 hours after initiation, ICU discharge, initiation of kidney-replacement therapy, or death (whichever occurred first). If enteral/parenteral nutrition started within 72 hours, infusion rate adjusted to target total amino acid intake of 2 g/kg/day.",
+      "comparison": "Blinded continuous infusion of placebo (Ringer’s solution) at the same rate and using the same stopping rules and adjustment approach.",
+      "blinding": "Double-blind: patients, clinicians, investigators, data collectors, and outcome assessors blinded; statisticians and authors blinded during analysis; pharmacists/trial nurses aware but not involved in data collection/analysis.",
+      "sample_size_power": "Planned n=3500 (1750/group) to detect a 20% relative risk reduction in AKI (assumed 25% in placebo) with 90% power at two-sided α=0.05, accounting for three interim analyses using O’Brien–Fleming boundaries.",
+      "primary_outcome": "In-hospital AKI (KDIGO creatinine criteria, stage ≥1) within 7 days after surgery.",
+      "secondary_outcomes": [
+        "Stage 3 AKI",
+        "Kidney-replacement therapy during hospital stay",
+        "Duration of kidney-replacement therapy",
+        "ICU length of stay",
+        "Hospital length of stay",
+        "30-day mortality",
+        "90-day mortality",
+        "180-day mortality",
+        "Quality of life at 180 days",
+        "Adverse drug reactions",
+        "Surgical revision for bleeding",
+        "Sepsis"
+      ],
+      "follow_up": "Primary outcome assessed within 7 days; mortality at ICU/hospital discharge and at 30, 90, and 180 days; quality of life at 180 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "AKI occurred in 26.9% with amino acids vs 31.7% with placebo (RR 0.85; 95% CI 0.77 to 0.94; P=0.002).",
+        "Severe AKI (stage 3) was lower with amino acids: 1.6% vs 3.0% (RR 0.56; 95% CI 0.35 to 0.87).",
+        "Patient-centred secondary outcomes (kidney-replacement therapy, length of stay, mortality) were similar between groups."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "In-hospital AKI (KDIGO creatinine criteria), within 7 days",
+          "group_a": "474/1759 (26.9%)",
+          "group_b": "555/1752 (31.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.85",
+          "ci_95": "0.77 to 0.94",
+          "p_value": "0.002",
+          "note": "Primary outcome; 2 missing in amino acid group."
+        },
+        {
+          "outcome": "Stage 3 AKI",
+          "group_a": "29/1759 (1.6%)",
+          "group_b": "52/1752 (3.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.56",
+          "ci_95": "0.35 to 0.87",
+          "p_value": "",
+          "note": "Stage 1 predominated overall (430 vs 492)."
+        },
+        {
+          "outcome": "Kidney-replacement therapy during hospital stay",
+          "group_a": "24/1759 (1.4%)",
+          "group_b": "33/1752 (1.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.73",
+          "ci_95": "0.43 to 1.22",
+          "p_value": "",
+          "note": "Event rates low; no clear between-group difference."
+        },
+        {
+          "outcome": "Duration of kidney-replacement therapy (hours)",
+          "group_a": "Median 64 (IQR 17–100)",
+          "group_b": "Median 64 (IQR 21–81)",
+          "effect_measure": "Mean difference",
+          "effect_value": "9.79 hours",
+          "ci_95": "−62.13 to 81.70",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "ICU length of stay (hours)",
+          "group_a": "Median 30 (IQR 21–66)",
+          "group_b": "Median 34 (IQR 21–68)",
+          "effect_measure": "Mean difference",
+          "effect_value": "1.39 hours",
+          "ci_95": "−4.78 to 7.57",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital length of stay (nights)",
+          "group_a": "Median 7 (IQR 5–9)",
+          "group_b": "Median 7 (IQR 6–9)",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.28 nights",
+          "ci_95": "−0.36 to 0.92",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "30-day mortality",
+          "group_a": "50/1759 (2.8%)",
+          "group_b": "49/1752 (2.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.02",
+          "ci_95": "0.69 to 1.50",
+          "p_value": "",
+          "note": "No mortality signal despite AKI reduction."
+        },
+        {
+          "outcome": "Any adverse drug reactions",
+          "group_a": "0",
+          "group_b": "0",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "No ADRs reported in either group."
+        },
+        {
+          "outcome": "Surgical revision for bleeding",
+          "group_a": "70/1759 (4.0%)",
+          "group_b": "62/1752 (3.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.13",
+          "ci_95": "0.81 to 1.58",
+          "p_value": "0.48",
+          "note": "Prespecified safety outcome."
+        },
+        {
+          "outcome": "Sepsis",
+          "group_a": "75/1759 (4.3%)",
+          "group_b": "76/1752 (4.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.98",
+          "ci_95": "0.72 to 1.34",
+          "p_value": "0.91",
+          "note": "Prespecified safety outcome."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No adverse drug reactions were reported in either group.",
+      "Surgical revision for bleeding: 4.0% vs 3.5% (RR 1.13; 95% CI 0.81 to 1.58; P=0.48).",
+      "Sepsis: 4.3% vs 4.3% (RR 0.98; 95% CI 0.72 to 1.34; P=0.91)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, web-based randomisation with computer-generated permuted blocks, stratified by site; concealment maintained by central service."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind across clinicians/patients/outcome assessors; small numbers of unblinding by mistake (2 vs 2) reported."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "One placebo-group patient withdrew consent before infusion initiation; otherwise near-complete follow-up for in-hospital outcomes. Primary ITT with prespecified imputation approaches and supportive per-protocol/as-treated analyses showing consistent direction of effect."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Major deviations were uncommon: study infusion never started (16 [0.9%] vs 17 [1.0%]); premature and permanent discontinuation of infusion (48 [2.7%] vs 56 [3.2%]). Crossover was rare (3 [0.2%] vs 1 [0.1%])."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were closely matched (e.g., median age 66 vs 67 years; female 30.1% vs 30.1%; median preoperative creatinine 0.96 vs 0.94 mg/dL; hemofiltration during CPB 9.9% vs 9.2%)."
+        }
+      ],
+      "verdict": "Strong. Allocation concealment and blinding were robust, event ascertainment was objective, deviations/crossover were infrequent, and the intervention exposure was well matched except for amino acid content."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult elective cardiac surgery with cardiopulmonary bypass in high-income settings; predominantly White (98%+), with 30% women; centres largely Italian with small numbers in Singapore and Croatia."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Intervention is pragmatic (standard infusion product, bedside titration rules) and could be implemented where perioperative ICU infusion protocols exist; transferability to lower-resource settings is less certain given case-mix, baseline risk, and care pathways. Key exclusions: advanced CKD (eGFR <30) and patients already receiving/planned for KRT; results may not generalise to emergent cardiac surgery or off-pump pathways."
+        }
+      ],
+      "verdict": "Findings are highly applicable to elective on-pump cardiac surgery populations in high-income systems, but extrapolation to advanced CKD, emergency surgery, and settings with markedly different perioperative care infrastructure should be cautious."
+    },
+    "strengths": [
+      "Large, multicentre, double-blind randomised design",
+      "Objective primary outcome",
+      "Prespecified interim analyses and sensitivity analyses",
+      "Low crossover",
+      "Consistent effect across supportive analyses"
+    ],
+    "limitations": [
+      "AKI defined primarily by creatinine (limited urine-output data capture post catheter removal)",
+      "No tubular injury biomarkers",
+      "Management bundle adherence (e.g., avoidance of hypotension/nephrotoxins) not reported",
+      "Limited ethnic and geographic diversity",
+      "Advanced CKD excluded"
+    ],
+    "critical_appraisal": {
+      "summary": "A large, well-conducted RCT demonstrating a reduction in creatinine-defined AKI with a pragmatic amino acid infusion, but the absence of effects on patient-centred outcomes and lack of injury biomarkers limit the clinical significance of the finding.",
+      "strengths": [
+        "Robust double-blind, multicentre design with low protocol deviations and crossover",
+        "Objective, prespecified primary outcome with consistent results in sensitivity analyses"
+      ],
+      "weaknesses": [
+        "Reliance on creatinine-based AKI definition without urine output or biomarker confirmation",
+        "No demonstrated benefit on kidney-replacement therapy, length of stay, or mortality"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Perioperative amino acid infusion reduced creatinine-defined AKI and stage 3 AKI after elective cardiac surgery, without detectable safety trade-offs, but did not change kidney-replacement therapy, length of stay, or mortality.",
+    "clinical_bottom_line": {
+      "verdict": "For centres seeking a pragmatic AKI-reduction strategy in elective on-pump cardiac surgery, amino acid infusion is a plausible option; whether it improves patient-centred outcomes or long-term kidney health remains uncertain.",
+      "applies_to": "Adults undergoing elective on-pump cardiac surgery in high-income settings, excluding those with advanced CKD (eGFR <30).",
+      "does_not_mean": "This does not prove the intervention prevents tubular injury or improves hard clinical outcomes like mortality or need for dialysis.",
+      "implementation_caveats": [
+        "The reduction in AKI did not translate to reduced KRT, LOS, or mortality.",
+        "The mechanism may be functional (increased filtration) rather than structural protection.",
+        "Long-term kidney outcomes are unknown."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Functional AKI vs tubular protection",
+        "notes": "Absence of kidney injury biomarkers (e.g., NGAL, KIM-1) limits inference on whether the observed reduction in creatinine-defined AKI reflects true tubular protection or predominantly functional changes in filtration."
+      },
+      {
+        "topic": "Baseline creatinine ascertainment and AKI definition",
+        "notes": "Concerns were raised that using preoperative creatinine values drawn from records (potentially up to 365 days before admission) could affect AKI classification; authors stated baseline creatinine was obtained in the week before surgery in all patients."
+      },
+      {
+        "topic": "Placebo choice and chloride exposure",
+        "notes": "Criticism that the control fluid could differentially affect renal perfusion via chloride load was countered by authors noting low chloride concentration and low infusion rate, arguing physiological implausibility of chloride-driven effects."
+      },
+      {
+        "topic": "Generalisation to advanced CKD / albuminuria",
+        "notes": "Exclusion of eGFR <30 mL/min/1.73 m2 and lack of proteinuria/albuminuria stratification were raised as limitations for broader kidney-risk phenotyping; authors argued concealed randomisation makes major baseline imbalances in such factors unlikely."
+      },
+      {
+        "topic": "Subsequent evidence synthesis",
+        "notes": "A 2024 perioperative meta-analysis (including cardiac surgery trials) reported reduced AKI with IV amino acids overall and suggested reduced hospital length of stay, supporting a class effect on perioperative AKI risk, while still leaving uncertainty about long-term kidney outcomes and patient-centred endpoints."
+      },
+      {
+        "topic": "Protocol transparency",
+        "notes": "The trial’s methodological manuscript and prespecified analytical approach were published before completion, supporting interpretability and reducing analytic flexibility concerns."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does the reduction in creatinine-defined AKI translate to improved long-term kidney function or reduced progression to CKD?",
+      "Would the benefit be replicated in a more diverse population, including those with advanced CKD or undergoing emergency surgery?",
+      "Is the mechanism functional (renal functional reserve recruitment) or structural (tubular protection)?",
+      "Can the addition of injury biomarkers clarify the clinical significance of the AKI reduction?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3511",
+        "AKI: 26.9% vs 31.7% (RR 0.85, P=0.002)",
+        "Stage 3 AKI: 1.6% vs 3.0% (RR 0.56)",
+        "30-day mortality: 2.8% vs 2.8% (no difference)"
+      ],
+      "one_line_takeaway": "Perioperative amino acid infusion reduces creatinine-defined AKI after elective cardiac surgery, but with no proven benefit on dialysis or survival, its role is as a pragmatic, low-risk AKI-reduction strategy, not a practice-changing mandate."
+    }
+  },
+  "_source_id": "PROTECTION",
+  "_source_system": "Renal"
+}

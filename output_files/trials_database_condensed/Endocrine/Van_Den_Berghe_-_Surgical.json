@@ -1,0 +1,311 @@
+{
+  "id": "Leuven_1",
+  "trial_name": "Leuven 1 — Intensive Insulin Therapy vs Conventional Glucose Control in Surgical ICU (2001)",
+  "specialty": "Endocrine",
+  "subtopic": "Diabetic Emergencies",
+  "year": 2001,
+  "journal": "N Engl J Med",
+  "citation": "Van den Berghe G, Wouters P, Weekers F, Verwaest C, Bruyninckx F, Schetz M, et al. Intensive insulin therapy in critically ill patients. N Engl J Med. 2001;345(19):1359-67",
+  "doi": "https://doi.org/10.1056/NEJMoa011300",
+  "registration": "",
+  "trial_type": "RCT — single-centre, open-label, parallel-group, superiority",
+  "evidence_level": "Moderate",
+  "sample_size": 1548,
+  "result_category": "Positive",
+  "one_liner": "In a single-centre surgical ICU, intensive insulin therapy targeting 80–110 mg/dL reduced ICU mortality (4.6% vs 8.0%) and major morbidities, but subsequent multicentre trials did not reproduce the benefit and practice shifted to moderate glycaemic targets.",
+  "pico": {
+    "population": "Adult mechanically ventilated patients admitted to a surgical ICU (February 2000–January 2001)",
+    "intervention": "Continuous IV insulin infusion started if glucose >110 mg/dL, titrated to maintain 80–110 mg/dL (maximum 50 IU/h)",
+    "comparison": "Continuous IV insulin infusion started only if glucose >215 mg/dL, titrated to maintain 180–200 mg/dL",
+    "outcome": "Primary: ICU mortality (death during ICU stay); secondary: in‑hospital mortality, bloodstream infections, renal replacement therapy, prolonged ventilation (>14 days), critical‑illness polyneuropathy, hypoglycaemia"
+  },
+  "keywords": [
+    "intensive insulin therapy",
+    "glycaemic control",
+    "surgical ICU",
+    "stress hyperglycaemia",
+    "sepsis",
+    "polyneuropathy"
+  ],
+  "related_trials": [
+    "Leuven 2",
+    "NICE-SUGAR",
+    "VISEP",
+    "GLUCONTROL"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Stress hyperglycaemia and insulin resistance are common in critical illness, even in non‑diabetic patients. Observational data link hyperglycaemia to infections, organ failure, neuromuscular complications, and death.",
+      "knowledge_gap": "No controlled trial evidence existed in ICU patients. Surgical ICUs deliver high early glucose/caloric loads (often parenterally), potentially amplifying hyperglycaemia.",
+      "hypothesis": "Normalising blood glucose with intensive insulin therapy would reduce severe infections, polyneuropathy, organ failure, and death."
+    },
+    "methods": {
+      "design": "Prospective, randomised, controlled, single‑centre, open‑label, parallel‑group superiority trial.",
+      "setting": "Surgical ICU, Leuven, Belgium; February 2, 2000 – January 18, 2001.",
+      "population": {
+        "inclusion": [
+          "All adults receiving mechanical ventilation admitted to the ICU during enrolment",
+          "Written informed consent from closest family member"
+        ],
+        "exclusion": [
+          "Participating in other trials (n=5)",
+          "Moribund or do‑not‑resuscitate orders (n=9)"
+        ]
+      },
+      "intervention": "Continuous IV insulin infusion started if glucose >110 mg/dL, titrated to 80–110 mg/dL (4.4–6.1 mmol/L); max 50 IU/h. Whole‑blood arterial glucose checked every 1–4 h, nurse‑driven protocol with study physician oversight. Standardised nutrition: IV glucose 200–300 g/24 h day 1, then scheduled parenteral/enteral feeding (20–30 non‑protein kcal/kg/day, 0.13–0.26 g N/kg/day, 20–40% lipids).",
+      "comparison": "Continuous IV insulin only if glucose >215 mg/dL, titrated to 180–200 mg/dL (10.0–11.1 mmol/L). Same glucose monitoring framework and identical standardised nutrition.",
+      "blinding": "Unblinded (insulin titration requires frequent glucose results). Insulin team separate from clinical decisions; key outcome analyses blinded.",
+      "sample_size_power": "Planned enrolment 2500 to detect 5% absolute mortality difference in >5‑day stay patients; stopped early after 1548 at fourth interim analysis due to superiority of intensive arm. Power not explicitly reported.",
+      "primary_outcome": "Death during ICU stay",
+      "secondary_outcomes": [
+        "In‑hospital mortality",
+        "Bloodstream infection (culture‑confirmed septicemia)",
+        "Renal replacement therapy (dialysis/haemofiltration)",
+        "Duration of mechanical ventilation (>14 days)",
+        "Critical‑illness polyneuropathy (EMG in surviving screened subgroup)",
+        "ICU length of stay",
+        "Cumulative ICU resource use (TISS‑28)",
+        "Hypoglycaemia (glucose ≤40 mg/dL)"
+      ],
+      "follow_up": "Through ICU stay and hospital stay (survivors considered alive at discharge). Survival curves extended to ~250 days for in‑hospital mortality."
+    },
+    "results": {
+      "headline_bullets": [
+        "ICU mortality: 4.6% vs 8.0% (adjusted risk reduction 32%, 95% CI 2–55, P<0.04 after sequential adjustment).",
+        "In‑hospital mortality: 7.2% vs 10.9% (unadjusted P=0.01); mortality benefit concentrated in patients staying >5 ICU days: 10.6% vs 20.2% (P=0.005).",
+        "Major morbidity reductions: bloodstream infection 4.2% vs 7.8% (relative reduction 46%, P=0.003), renal replacement therapy 4.8% vs 8.3% (41% reduction, P=0.007), prolonged ventilation >14 days 7.5% vs 11.9% (P=0.003), polyneuropathy in screened survivors 28.7% vs 51.4% (P<0.001).",
+        "Hypoglycaemia ≤40 mg/dL: 39 (5.1%) vs 6 (0.8%) patients; two symptomatic events, no haemodynamic compromise.",
+        "Among ICU stay >5 days: median ICU LOS 12 vs 15 days (P=0.003), cumulative TISS‑28 431 vs 563 (P<0.001), and polyneuropathy screening differential (20.5% vs 26.3% screened)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death during ICU (primary)",
+          "group_a": "35/765 (4.6%)",
+          "group_b": "63/783 (8.0%)",
+          "effect_measure": "RR (adjusted)",
+          "effect_value": 0.68,
+          "ci_95": "0.45–0.98",
+          "p_value": "<0.04 (sequentially adjusted)",
+          "note": "Apparent RR 0.58; Lan‑DeMets sequential adjustment applied."
+        },
+        {
+          "outcome": "In‑hospital death",
+          "group_a": "55/765 (7.2%)",
+          "group_b": "85/783 (10.9%)",
+          "effect_measure": "RR",
+          "effect_value": 0.66,
+          "ci_95": "not reported",
+          "p_value": "0.01 (nominal)",
+          "note": "Unadjusted; sequential correction not applied to non‑primary endpoints."
+        },
+        {
+          "outcome": "Death during ICU, ICU stay >5 days",
+          "group_a": "22/208 (10.6%)",
+          "group_b": "49/243 (20.2%)",
+          "effect_measure": "RR",
+          "effect_value": 0.52,
+          "ci_95": "not reported",
+          "p_value": "0.005",
+          "note": "Early ICU deaths (≤5 days) similar: 13/557 vs 14/540."
+        },
+        {
+          "outcome": "Bloodstream infection (septicemia)",
+          "group_a": "33/765 (4.2%)",
+          "group_b": "61/783 (7.8%)",
+          "effect_measure": "RR (relative reduction 46%)",
+          "effect_value": 0.54,
+          "ci_95": "0.33–0.75",
+          "p_value": "0.003",
+          "note": "46% relative reduction (95% CI 25–67); unadjusted P."
+        },
+        {
+          "outcome": "Renal replacement therapy",
+          "group_a": "37/765 (4.8%)",
+          "group_b": "65/783 (8.3%)",
+          "effect_measure": "RR (relative reduction 41%)",
+          "effect_value": 0.59,
+          "ci_95": "not reported",
+          "p_value": "0.007",
+          "note": "Peak creatinine and urea nitrogen lower in intensive arm (medians reported)."
+        },
+        {
+          "outcome": "Prolonged mechanical ventilation (>14 days)",
+          "group_a": "57/765 (7.5%)",
+          "group_b": "93/783 (11.9%)",
+          "effect_measure": "RR",
+          "effect_value": 0.63,
+          "ci_95": "not reported",
+          "p_value": "0.003",
+          "note": "Median ventilation days in >5‑day stay: 10 vs 12 (P=0.006)."
+        },
+        {
+          "outcome": "Critical‑illness polyneuropathy (EMG evidence, screened survivors)",
+          "group_a": "56/195 (28.7%)",
+          "group_b": "106/206 (51.4%)",
+          "effect_measure": "RR",
+          "effect_value": 0.56,
+          "ci_95": "not reported",
+          "p_value": "<0.001",
+          "note": "Screening rates: 20.5% intensive vs 26.3% conventional (fewer screened because ICU stays were shorter)."
+        },
+        {
+          "outcome": "Hypoglycaemia (glucose ≤40 mg/dL)",
+          "group_a": "39/765",
+          "group_b": "6/783",
+          "effect_measure": "counts only",
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "Two symptomatic events in intensive group (sweating, agitation); no haemodynamic deterioration or convulsions."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Cardiac vs non‑cardiac surgery",
+          "group_a": "not reported",
+          "group_b": "not reported",
+          "effect_measure": "consistency statement",
+          "effect_value": "not applicable",
+          "ci_95": "not applicable",
+          "p_interaction": "not reported",
+          "note": "Benefit reported as consistent across cardiac and non‑cardiac surgery subgroups; no formal interaction P‑value provided."
+        }
+      ]
+    },
+    "safety": [
+      "Hypoglycaemia (≤40 mg/dL): 39 patients (intensive) vs 6 patients (conventional).",
+      "Two symptomatic events (sweating, agitation) in intensive group; no haemodynamic deterioration or convulsions.",
+      "No other serious adverse events reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Sealed envelopes, permuted blocks of 20, stratified by diagnostic category, balanced for sex/diabetes. Only 14 pre‑randomisation exclusions (very limited selection filtering)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded (frequent glucose measurement). Insulin titration separated from clinical decisions via a nurse‑led protocol and study physician, with blinded analysis of key outcomes."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "ITT for mortality outcomes; no post‑randomisation exclusions reported. Some morbidity endpoints (e.g., EMG screening) conditionally assessed on survival/duration."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High insulin delivery in intensive arm (98.7% received insulin) vs 39.2% in conventional; median daily insulin dose 71 vs 33 IU/day; 100% vs 67% of ICU stay receiving insulin."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups similar in demographics, diabetes prevalence (13%), and admission hyperglycaemia. APACHE II may be artificially lowered for post‑resuscitation/sedated patients."
+        }
+      ],
+      "verdict": "Moderate: randomisation, objective mortality, and ITT analysis support causal inference, but single‑centre, unblinded design and early stopping limit confidence in effect size and multiplicity of secondary endpoints."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Predominantly surgical (64% cardiac surgery), mechanically ventilated adults. Admission hyperglycaemia common but marked hyperglycaemia (>200 mg/dL) in only 12%."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Protocol required 1–4 hourly arterial glucose measurements, nurse‑driven titration, and early high IV glucose nutrition (200–300 g/24 h). Not easily replicated in medical ICUs or resource‑limited settings."
+        }
+      ],
+      "verdict": "Limited generalisability to non‑surgical ICU populations and settings without similar monitoring infrastructure and nutritional protocols."
+    },
+    "strengths": [
+      "Large randomised trial for its era in ICU metabolic management.",
+      "Marked separation of glycaemic exposure: morning glucose 103±19 vs 153±33 mg/dL; insulin use 98.7% vs 39.2%.",
+      "Clinically meaningful endpoints: ICU and in‑hospital mortality, sepsis, RRT, ventilation, and electrophysiologically‑defined polyneuropathy.",
+      "Pre‑specified interim monitoring with Lan‑DeMets sequential adjustment for the primary endpoint."
+    ],
+    "limitations": [
+      "Single‑centre design in a predominantly post‑operative surgical ICU.",
+      "Unblinded delivery (inherent to frequent glucose monitoring).",
+      "Early stopping after fourth interim analysis may inflate effect size estimates.",
+      "Nominal (unadjusted) P‑values for morbidity endpoints; multiple secondary outcomes without correction.",
+      "Polyneuropathy screening subset with differential screening proportions (20.5% vs 26.3%).",
+      "Substantial increase in hypoglycaemia (39 vs 6 patients), a critical safety concern."
+    ],
+    "critical_appraisal": {
+      "summary": "An early, well‑separated comparison with striking morbidity and mortality signals, but irreproducible in subsequent multicentre trials; high risk of bias from unblinding and early stopping limits confidence in the magnitude of effect.",
+      "strengths": [
+        "Rigorous randomisation with minimal pre‑enrolment exclusions",
+        "True ITT analysis for mortality",
+        "Large observed biochemical separation between arms"
+      ],
+      "weaknesses": [
+        "Single‑centre, open‑label",
+        "Stopped early with sequential adjustment only on primary outcome",
+        "Multiplicity of morbidity endpoints without adjustment",
+        "Hypoglycaemia imbalance confounds net clinical benefit"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Intensive insulin therapy to maintain blood glucose at or below 110 mg/dL reduces ICU and in‑hospital mortality and morbidity among critically ill surgical patients.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not change modern practice; subsequent multicentre evidence (notably NICE‑SUGAR) found increased mortality and hypoglycaemia with tight targets. Current guidelines recommend initiating insulin when glucose exceeds 180 mg/dL and targeting 140–180 mg/dL while avoiding strict normoglycaemia.",
+      "applies_to": "Historical interest only; the benefits observed in this well‑resourced surgical cohort were not replicated in broader ICU populations.",
+      "does_not_mean": "All ICU patients should be managed with tight (80–110 mg/dL) glucose targets.",
+      "implementation_caveats": [
+        "Tight glycaemic targets substantially increase hypoglycaemia risk and require intensive monitoring and dedicated nursing protocols.",
+        "The nutritional regimen (early high IV glucose load) differs from modern ICU feeding strategies, which may influence outcomes."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping and effect size inflation",
+        "notes": "The trial was terminated at 12 months after the fourth interim analysis, a design that can overestimate treatment effects. The adjusted risk reduction (32%) is smaller than the apparent observed reduction (42%)."
+      },
+      {
+        "topic": "Reproducibility across ICU populations",
+        "notes": "A subsequent Leuven trial in a medical ICU (Leuven 2) did not show uniform mortality benefit. NICE‑SUGAR subsequently demonstrated worse survival with tight control in a mixed medical‑surgical population."
+      },
+      {
+        "topic": "Safety trade‑off (hypoglycaemia)",
+        "notes": "Hypoglycaemia (≤40 mg/dL) was 5.1% vs 0.8%; two symptomatic episodes. VISEP and GLUCONTROL in sepsis/mixed ICUs reinforced the hazard of hypoglycaemia without survival advantage."
+      },
+      {
+        "topic": "Meta‑analytic and guideline convergence",
+        "notes": "Pooled analyses of ICU glycaemic trials found no consistent mortality benefit with tight targets and increased hypoglycaemia. Contemporary guidelines (e.g., SCCM, ADA) recommend initiating insulin at glucose ≥180 mg/dL and targeting a moderate range (140–180 mg/dL)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Leuven 2 (medical ICU)",
+        "relation": "Same investigators; did not reproduce the same uniform mortality benefit in a medical ICU population."
+      },
+      {
+        "trial": "NICE‑SUGAR",
+        "relation": "Large multicentre RCT (n=6104) comparing tight (81–108 mg/dL) vs conventional (≤180 mg/dL) control; found increased mortality (27.5% vs 24.9%) and severe hypoglycaemia with tight control—directly contradicting Leuven 1."
+      },
+      {
+        "trial": "VISEP",
+        "relation": "Multicentre RCT in severe sepsis; no mortality benefit and high rates of hypoglycaemia led to early discontinuation of tight control arm."
+      },
+      {
+        "trial": "GLUCONTROL",
+        "relation": "Multicentre RCT in mixed ICU; did not demonstrate a clear mortality benefit and highlighted feasibility/safety concerns."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal glucose target in various ICU subpopulations (surgical vs medical vs sepsis).",
+      "Interaction between nutritional strategy (especially parenteral glycaemic load) and glycaemic targets.",
+      "Whether a subset of patients (e.g., cardiac surgery) still benefits from tighter control."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1548",
+        "ICU mortality: 4.6% vs 8.0% (adjusted RR 0.68, P<0.04)",
+        "Major morbidity: sepsis 4.2% vs 7.8% (46% reduction), dialysis 4.8% vs 8.3% (41% reduction)",
+        "Polyneuropathy in screened survivors: 28.7% vs 51.4%",
+        "Hypoglycaemia (≤40 mg/dL): 39 vs 6 patients"
+      ],
+      "one_line_takeaway": "Leuven 1 showed that intensive insulin therapy to 80–110 mg/dL reduced ICU death in a surgical cohort, but subsequent multicentre trials failed to replicate the benefit and tight glucose targets are no longer recommended for general ICU care."
+    }
+  },
+  "_source_id": "Van_Den_Berghe_-_Surgical",
+  "_source_system": "Endocrine"
+}

@@ -1,0 +1,301 @@
+{
+  "id": "BASICS_-_Fluids",
+  "trial_name": "BaSICS — Balanced Solution vs 0.9% Saline in Critically Ill Patients (2021)",
+  "specialty": "Critical Care",
+  "subtopic": "Fluid Resuscitation",
+  "year": 2021,
+  "journal": "JAMA",
+  "citation": "Zampieri FG, Machado FR, Biondi RS, Freitas FGR, Veiga VC, Figueiredo RC, et al. Effect of Intravenous Fluid Treatment With a Balanced Solution vs 0.9% Saline Solution on Mortality in Critically Ill Patients: The BaSICS Randomized Clinical Trial. JAMA. 2021;326(9):818-829",
+  "doi": "https://doi.org/10.1001/jama.2021.11684",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, 2x2 factorial, pragmatic",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 10520,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In a broad ICU population, Plasma-Lyte 148 did not reduce 90-day mortality compared with 0.9% saline (HR 0.97; 95% CI 0.90–1.05).",
+  "pico": {
+    "population": "Adults admitted to ICU with expected stay >24h, requiring IV fluids and at risk of AKI",
+    "intervention": "Balanced multielectrolyte solution (Plasma-Lyte 148) for fluid challenges, maintenance, and drug infusions >100 mL",
+    "comparison": "0.9% saline",
+    "outcome": "90-day mortality"
+  },
+  "keywords": [
+    "balanced crystalloid",
+    "saline",
+    "Plasma-Lyte",
+    "fluid resuscitation",
+    "acute kidney injury",
+    "traumatic brain injury"
+  ],
+  "related_trials": [
+    "SMART",
+    "SALT-ED",
+    "PLUS",
+    "BEST-Living"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "0.9% saline is a high-chloride, non-buffered crystalloid; mechanistic and observational work linked chloride-liberal strategies to hyperchloraemic acidosis and potential kidney hypoperfusion/injury. Balanced crystalloids (e.g., Plasma-Lyte, lactated Ringer’s) more closely approximate plasma electrolyte composition and include buffer anions.",
+      "knowledge_gap": "Pragmatic cluster-crossover trials suggested balanced crystalloids reduce composite kidney endpoints and may reduce mortality in some subgroups, but design features left residual uncertainty regarding true mortality effects in general ICU populations.",
+      "hypothesis": "In critically ill adult ICU patients requiring IV fluids and at risk of acute kidney injury, a balanced multielectrolyte solution (Plasma-Lyte 148) compared with 0.9% saline improves 90-day survival."
+    },
+    "methods": {
+      "design": "Investigator-initiated, pragmatic, multicentre, double-blind (fluid type), 2×2 factorial, randomised clinical trial conducted in 75 ICUs in Brazil.",
+      "setting": "75 ICUs in Brazil",
+      "population": {
+        "inclusion": [
+          "Adults admitted to the ICU with expected ICU stay >24 hours, for whom the treating clinician considered both trial fluids appropriate.",
+          "Required IV fluid therapy in ICU (fluid challenges, maintenance fluids, and/or drug infusions >100 mL).",
+          "≥1 AKI risk factor (age >65 years; hypotension/MAP <65 mmHg or SBP <90 mmHg or vasopressor use; sepsis; mechanical ventilation including high-flow nasal cannula expected ≥12 hours; oliguria <0.5 mL/kg/h for >6 hours or serum creatinine >1.2 mg/dL; liver cirrhosis or acute liver failure)."
+        ],
+        "exclusion": [
+          "Need for kidney replacement therapy (or expected within 6 hours).",
+          "Serum sodium ≤120 or ≥160 mmol/L.",
+          "Death considered imminent within 24 hours, suspected/confirmed brain death, or palliative care only.",
+          "Previously enrolled."
+        ]
+      },
+      "intervention": "Plasma-Lyte 148 supplied in indistinguishable 500 mL bags, used as the preferred crystalloid for fluid challenges, maintenance fluids, and drug infusions >100 mL throughout ICU stay (up to 90 days after enrolment).",
+      "comparison": "0.9% saline supplied in indistinguishable coded 500 mL bags and used with the same indications/duration as the intervention group.",
+      "blinding": "Fluid type was blinded to clinicians, patients, and outcome assessors via coded, indistinguishable bags; the infusion-rate co-intervention was not feasibly blinded, but was randomised in a factorial design.",
+      "sample_size_power": "A total sample size of 11,000 was planned to detect a hazard ratio of 0.90 for 90-day mortality (assuming 35% baseline mortality) with 89% power at a 5% two-sided significance level.",
+      "primary_outcome": "90-day mortality",
+      "secondary_outcomes": [
+        "Kidney replacement therapy during hospital stay",
+        "AKI (KDIGO stage ≥2) at day 3",
+        "Total SOFA score at day 7",
+        "Neurological SOFA >2 at day 7",
+        "Days not requiring mechanical ventilation within 28 days",
+        "ICU mortality",
+        "Hospital length of stay"
+      ],
+      "follow_up": "90 days after enrolment"
+    },
+    "results": {
+      "headline_bullets": [
+        "Balanced solution did not improve 90-day survival compared with saline (HR 0.97; 95% CI 0.90 to 1.05).",
+        "Kidney outcomes (RRT/AKI) were similar between groups.",
+        "A significant interaction suggested higher mortality with balanced solution in traumatic brain injury (31.3% vs 21.1%; HR 1.48; 95% CI 1.03 to 2.12).",
+        "Exposure separation was incomplete: ~68% received pre-enrolment fluids and ~52% received non-trial crystalloids on day 1."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "90-day mortality (primary)",
+          "group_a": "1381/5230 (26.4%)",
+          "group_b": "1439/5290 (27.2%)",
+          "effect_measure": "Adjusted HR",
+          "effect_value": "0.97",
+          "ci_95": "0.90 to 1.05",
+          "p_value": "0.47",
+          "note": "Modified intention-to-treat population"
+        },
+        {
+          "outcome": "Kidney replacement therapy during hospital stay",
+          "group_a": "393/5218 (7.5%)",
+          "group_b": "427/5287 (8.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.93",
+          "ci_95": "0.81 to 1.06",
+          "p_value": "Not reported",
+          "note": "Prespecified secondary outcome; no multiplicity adjustment"
+        },
+        {
+          "outcome": "AKI (KDIGO stage ≥2) at day 3",
+          "group_a": "850/3128 (27.2%)",
+          "group_b": "859/3094 (27.8%)",
+          "effect_measure": "OR",
+          "effect_value": "0.99",
+          "ci_95": "0.88 to 1.11",
+          "p_value": "Not reported",
+          "note": "Assessed among those with creatinine/urine output data at day 3"
+        },
+        {
+          "outcome": "Total SOFA score at day 7",
+          "group_a": "Median 4 (IQR 2 to 7); n=1531",
+          "group_b": "Median 4 (IQR 2 to 7); n=1594",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.27",
+          "ci_95": "0.08 to 0.45",
+          "p_value": "Not reported",
+          "note": "Day-7 SOFA available in a minority due to discharge/death before day 7"
+        },
+        {
+          "outcome": "Neurological SOFA >2 at day 7",
+          "group_a": "492/1531 (32.1%)",
+          "group_b": "415/1594 (26.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.40",
+          "ci_95": "1.18 to 1.66",
+          "p_value": "Not reported",
+          "note": "Interpret cautiously given multiplicity"
+        },
+        {
+          "outcome": "Days not requiring mechanical ventilation within 28 days",
+          "group_a": "Median 27 (IQR 13 to 28)",
+          "group_b": "Median 27 (IQR 10 to 28)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.14 days",
+          "ci_95": "−0.35 to 0.64",
+          "p_value": "Not reported",
+          "note": "Prespecified secondary outcome"
+        },
+        {
+          "outcome": "ICU mortality",
+          "group_a": "906/5218 (17.4%)",
+          "group_b": "922/5287 (17.4%)",
+          "effect_measure": "OR",
+          "effect_value": "1.01",
+          "ci_95": "0.91 to 1.12",
+          "p_value": "Not reported",
+          "note": "Tertiary outcome"
+        },
+        {
+          "outcome": "Hospital length of stay",
+          "group_a": "Median 8 days (IQR 5 to 18)",
+          "group_b": "Median 9 days (IQR 5 to 18)",
+          "effect_measure": "MR",
+          "effect_value": "0.98",
+          "ci_95": "0.93 to 1.03",
+          "p_value": "Not reported",
+          "note": "Tertiary outcome; MR = mean ratio"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Traumatic brain injury (90-day mortality)",
+          "group_a": "77/246 (31.3%)",
+          "group_b": "50/237 (21.1%)",
+          "effect_measure": "HR",
+          "effect_value": "1.48",
+          "ci_95": "1.03 to 2.12",
+          "p_interaction": "0.02"
+        }
+      ]
+    },
+    "safety": [
+      "No unexpected treatment-related severe adverse events were reported in either group."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation using permuted blocks (size 12), stratified by centre within a 2×2 factorial design. Allocation concealment for fluid type was supported by indistinguishable coded fluid bags."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Fluid type was blinded to treating clinicians and outcome assessors; primary outcome (mortality) is objective and resistant to ascertainment bias. The infusion-rate co-intervention could not be practically blinded; however, factorial randomisation balances this influence across fluid-type groups."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "11,052 randomised; 10,520 included in the modified intention-to-treat analysis (5230 balanced vs 5290 saline). 532/11,052 (4.8%) were excluded after randomisation because trial fluid was not administered (predominantly lack of consent; some duplicate randomisation). Lost to 90-day follow-up: 15 balanced vs 10 saline; primary outcome data were imputed for a small number with missing death status. Modified ITT and post-randomisation exclusions could bias estimates if exclusions were prognostically imbalanced, although reasons were similar in nature across groups."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Study fluid exposure (day 1): 5200/5218 (99.7%) balanced vs 5276/5287 (99.8%) saline; median study fluid volume day 1 was 1500 mL (IQR 500 to 2500) vs 1500 mL (IQR 500 to 2000). Non-trial crystalloids (day 1): 2688/5218 (51.5%) balanced vs 2794/5287 (52.8%) saline; median 500 mL (IQR 250 to 1000) in both groups. Pre-enrolment fluids (within 24 hours): 3537/5230 (67.6%) balanced vs 3608/5290 (68.2%) saline; median total 1000 mL (IQR 500 to 2000) in both groups; >1000 mL in 44.6% vs 46.0%. Serum chloride differed between groups over time (P<0.001), indicating some biochemical separation, but absolute values were not tabulated in the main results. Substantial pre-randomisation and concurrent non-trial crystalloid exposure plausibly diluted any chloride-mediated treatment effect."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well balanced at baseline: mean age 60.9 vs 61.2 years; women 44.4% vs 44.1%; sepsis 18.5% vs 19.2%; traumatic brain injury 4.7% vs 4.5%. Severity of illness was moderate (APACHE II median 12 in both; total SOFA median 4 in both), with a large elective surgical cohort (planned admission 47.8% vs 49.0%). Time from ICU admission to randomisation was early (median 0 days [IQR 0 to 1] in both groups), yet many had already received fluids before enrolment."
+        }
+      ],
+      "verdict": "Overall, internal validity for the primary mortality comparison appears moderate-to-strong given robust randomisation, effective blinding for fluid type, and objective primary outcome; key threats include modified intention-to-treat exclusions after randomisation and incomplete exposure separation due to pre-enrolment and non-trial crystalloid use."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents a broad mixed ICU population at risk of AKI, but with a high proportion of planned surgical admissions and overall moderate illness severity. Patients needing imminent kidney replacement therapy, those with extreme sodium derangements, and those expected to die within 24 hours were excluded; effects may differ in more extreme phenotypes (e.g., profound septic shock with high-volume resuscitation). Conducted in 75 Brazilian ICUs; applicability depends on similarity of ICU case-mix, fluid practices, and resource availability."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Directly applicable to settings where Plasma-Lyte 148 and 0.9% saline are available and routinely used for ICU maintenance/resuscitation and larger-volume drug infusions. Generalisation to other “balanced” solutions (e.g., lactated Ringer’s) is plausible but not directly tested here. Neurocritical care: the traumatic brain injury interaction suggests findings should not be extrapolated uncritically to intracranial pathology populations."
+        }
+      ],
+      "verdict": "Overall generalisability is good for mixed medical–surgical ICU patients receiving modest-to-moderate crystalloid volumes, but is more limited for neurocritical care (traumatic brain injury) and for scenarios involving very large-volume resuscitation or materially different baseline fluid practices."
+    },
+    "strengths": [
+      "Large, multicentre ICU trial (10,520 analysed) with patient-level randomisation and pragmatic implementation.",
+      "Effective blinding for fluid type, reducing performance and detection bias for the key comparison.",
+      "Patient-centred primary endpoint (90-day mortality) with high completeness of follow-up.",
+      "Factorial design efficiently tested two clinically important questions and enabled interaction testing."
+    ],
+    "limitations": [
+      "Modified intention-to-treat with 4.8% excluded after randomisation (mostly consent not obtained), which may introduce selection bias.",
+      "Incomplete separation of exposure due to common pre-enrolment fluids and frequent non-trial crystalloids during ICU stay.",
+      "Overall illness severity and crystalloid exposure were modest; if benefits accrue mainly in high-volume resuscitation phenotypes, the trial may underestimate them.",
+      "Multiple secondary outcomes without multiplicity adjustment and substantial missingness for day-7 SOFA measures due to discharge/death.",
+      "Signal of harm in traumatic brain injury subgroup requires careful interpretation and may not be fully mechanistically resolved within the trial dataset."
+    ],
+    "critical_appraisal": {
+      "summary": "A large, well-blinded RCT with an objective primary outcome, providing moderate-to-strong internal validity for the primary mortality comparison, though diluted by incomplete exposure separation and a modified ITT analysis.",
+      "strengths": [
+        "Patient-level randomisation with effective blinding for fluid type.",
+        "Objective, patient-centred primary endpoint with near-complete follow-up."
+      ],
+      "weaknesses": [
+        "4.8% post-randomisation exclusion in the modified ITT analysis.",
+        "Incomplete separation of exposure due to pre-enrolment and non-trial fluid use.",
+        "Modest illness severity and fluid volumes may limit detection of a benefit in higher-risk subgroups."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In a broad ICU population where clinicians deemed either fluid acceptable, Plasma-Lyte 148 did not reduce 90-day mortality or kidney endpoints compared with 0.9% saline.",
+    "clinical_bottom_line": {
+      "verdict": "In a broad ICU population, Plasma-Lyte 148 does not improve survival or kidney outcomes compared to saline, making either fluid a reasonable choice for most patients.",
+      "applies_to": "Mixed medical-surgical ICU patients at risk of AKI receiving modest-to-moderate crystalloid volumes.",
+      "does_not_mean": "Balanced solutions are harmful in general; the neutral result excludes a large average mortality benefit but does not rule out small, context-dependent effects.",
+      "implementation_caveats": [
+        "Avoid routine use of Plasma-Lyte–type balanced crystalloids in traumatic brain injury pending further data.",
+        "Generalisation to other balanced solutions (e.g., lactated Ringer’s) is plausible but not directly tested.",
+        "The trial may underestimate benefit in patients requiring very large-volume resuscitation."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Neutral result despite strong physiologic rationale",
+        "notes": "Contemporary commentary emphasised that modest crystalloid exposure and substantial pre-enrolment fluid administration could attenuate any biologic advantage of balanced solutions, and that BaSICS should primarily be interpreted as excluding a large average mortality benefit in this population."
+      },
+      {
+        "topic": "Modified intention-to-treat and selection",
+        "notes": "Published correspondence highlighted that post-randomisation exclusions (largely due to deferred consent not obtained) can threaten strict intention-to-treat inference, and raised questions about generalisability given enrolment required clinician judgement that both fluids were appropriate; the authors’ reply contextualised these issues and defended the trial’s pragmatic design choices."
+      },
+      {
+        "topic": "Traumatic brain injury (TBI) signal",
+        "notes": "The statistically significant interaction (worse mortality with balanced solution in TBI) is clinically salient because balanced solutions differ in chloride, buffer, and tonicity characteristics; the signal reinforces cautious fluid selection in intracranial pathology rather than assuming class-wide safety."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "SMART",
+        "relation": "Pragmatic cluster-crossover trial suggesting balanced crystalloids reduce composite kidney endpoints and may reduce mortality in some subgroups, providing the background for BaSICS."
+      },
+      {
+        "trial": "SALT-ED",
+        "relation": "Trial of balanced crystalloids vs saline in noncritically ill adults, complementing the ICU evidence base."
+      },
+      {
+        "trial": "PLUS",
+        "relation": "Patient-level ICU RCT similarly finding no difference in 90-day mortality between a balanced multielectrolyte solution and saline, supporting that any average mortality effect is likely small."
+      },
+      {
+        "trial": "BEST-Living",
+        "relation": "Individual patient data meta-analysis reporting no overall mortality difference, while suggesting possible benefit in sepsis and possible harm in traumatic brain injury, aligning with a phenotype- and context-dependent interpretation of balanced crystalloids."
+      }
+    ],
+    "unresolved_questions": [
+      "Is there a mortality benefit with balanced crystalloids in patients requiring very large-volume resuscitation?",
+      "What is the mechanism of potential harm with balanced solutions in traumatic brain injury?",
+      "Are the results generalisable to other balanced solutions like lactated Ringer's?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=10,520",
+        "90-day mortality: 26.4% vs 27.2% (HR 0.97, 95% CI 0.90–1.05)",
+        "TBI subgroup mortality: 31.3% vs 21.1% (HR 1.48, 95% CI 1.03–2.12)"
+      ],
+      "one_line_takeaway": "For most ICU patients, Plasma-Lyte and saline are equivalent for survival, but avoid balanced solutions in traumatic brain injury."
+    }
+  },
+  "_source_id": "BASICS_-_Fluids",
+  "_source_system": "Circulatory"
+}

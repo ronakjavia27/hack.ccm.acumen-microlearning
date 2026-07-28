@@ -1,0 +1,296 @@
+{
+  "id": "FAST",
+  "trial_name": "FAST — Screening Frequency and Spontaneous Breathing Trial Techniques (2024)",
+  "specialty": "Mechanical Ventilation",
+  "subtopic": "Weaning & Liberation from Ventilation",
+  "year": 2024,
+  "journal": "JAMA",
+  "citation": "Burns KEA, Wong J, Rizvi L, Lafreniere-Roula M, Thorpe KE, Devlin JW, et al. Screening Frequency and Spontaneous Breathing Trial Techniques: A Randomized Clinical Trial. JAMA. 2024;332(21):1808-1821",
+  "doi": "https://doi.org/10.1001/jama.2024.20631",
+  "registration": "",
+  "trial_type": "Multicentre, pragmatic, open-label, 2×2 factorial RCT",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 797,
+  "result_category": "Mixed",
+  "one_liner": "In adults receiving invasive mechanical ventilation, protocolised more-frequent-than-once-daily screening did not accelerate liberation; when combined with pressure-supported SBTs it unexpectedly prolonged time to successful extubation (HR 0.70).",
+  "pico": {
+    "population": "Adults (≥18 years US, ≥16 years Canada) receiving invasive mechanical ventilation >24 h with FiO₂ ≤0.70 and PEEP ≤12 cm H₂O, able to trigger breaths",
+    "intervention": "More frequent screening (≥twice daily) and/or pressure-supported SBT with PEEP (PS >0 to ≤8 cm H₂O, PEEP >0 to ≤5 cm H₂O, duration 30–120 minutes)",
+    "comparison": "Once-daily screening and/or T-piece SBT (unsupported breathing)",
+    "outcome": "Time to successful extubation (sustained unsupported breathing for ≥48 hours)"
+  },
+  "keywords": [
+    "mechanical ventilation",
+    "weaning",
+    "spontaneous breathing trial",
+    "screening frequency",
+    "pressure support",
+    "T-piece",
+    "extubation",
+    "ICU liberation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Liberation from mechanical ventilation can occupy a large proportion of ventilator time and delays increase ventilator-associated complications and resource use. Routine practice includes readiness screening followed by spontaneous breathing trials (SBTs). Two widely used SBT approaches differ in loading: low-level pressure-supported SBTs (often with PEEP) vs unsupported T-piece trials. Clinical trials before FAST yielded mixed signals; practice variation persisted. Guideline panels permit several SBT approaches and prioritise protocolised liberation, but left uncertainty about whether increased screening frequency accelerates successful extubation.",
+      "knowledge_gap": "Uncertainty whether protocolised more frequent screening (vs once-daily) and/or pressure-supported SBT with PEEP (vs T-piece) shortens time to successful extubation, and whether the two interventions interact.",
+      "hypothesis": "More frequent screening and/or pressure-supported SBT with PEEP would reduce time to successful extubation. The factorial design assumed no mechanistic reason for interaction between screening frequency and SBT technique."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, open-label, 2×2 factorial RCT with central randomisation stratified by centre using variable block sizes. Enrolment was weekday daytime only to align with protocolised screening workflows.",
+      "setting": "23 ICUs in North America (US and Canada)",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years US; ≥16 years Canada)",
+          "Invasive mechanical ventilation >24 hours",
+          "Able to trigger breaths",
+          "FiO₂ ≤0.70 and PEEP ≤12 cm H₂O"
+        ],
+        "exclusion": [
+          "Mechanical ventilation ≥2 weeks",
+          "Tracheostomy",
+          "Profound neurological impairment (GCS ≤6)",
+          "Prior SBT at equivalent settings"
+        ]
+      },
+      "intervention": "Screening frequency: at least twice daily (06:00–08:00 and 13:00–15:00), with additional screening at clinician discretion; missed screens completed within 6 h. SBT technique: pressure-supported SBT with PEEP — PS >0 to ≤8 cm H₂O, PEEP >0 to ≤5 cm H₂O, duration 30–120 minutes.",
+      "comparison": "Screening frequency: once-daily (06:00–08:00). SBT technique: T-piece unsupported breathing; during COVID-19 positivity, T-piece could be performed while connected to a ventilator circuit without inspiratory support (protocol amendment).",
+      "blinding": "Open-label; clinicians and bedside staff unblinded, extubation decisions clinician-driven within protocolised structure.",
+      "sample_size_power": "760 patients required to detect a 1-day median reduction in time to successful extubation (from 5.0 to 4.0 days) with 80% power at 5% two-sided significance, assuming no interaction.",
+      "primary_outcome": "Time to successful extubation (sustained unsupported breathing for ≥48 h).",
+      "secondary_outcomes": [
+        "Time to first successful SBT",
+        "Duration of ventilation in ICU",
+        "ICU length of stay",
+        "ICU mortality",
+        "Reintubation in ICU",
+        "Ventilator-associated pneumonia in ICU",
+        "6-month functional outcomes (EuroQol-5D, Functional Independence Measure) in consenting survivors"
+      ],
+      "follow_up": "In-hospital through day 60; 90-day mortality; 6-month patient-centred outcomes in alive, consenting patients."
+    },
+    "results": {
+      "headline_bullets": [
+        "Main effects non-significant: screening frequency HR 0.88 (95% CI 0.76–1.03, P=0.12); SBT technique HR 1.06 (95% CI 0.91–1.23, P=0.45).",
+        "Significant interaction for primary endpoint (P=0.009) required pairwise contrasts.",
+        "More frequent screening + pressure‑supported SBT prolonged time to successful extubation versus once‑daily + pressure‑supported (median 3.9 vs 2.0 days; HR 0.70, 95% CI 0.50–0.96, P=0.02).",
+        "No significant differences in mortality or major complications; adverse events related to screening or SBT were uncommon."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Time to successful extubation — main effect (screening frequency, pooled)",
+          "group_a": "More frequent screening (n=395)",
+          "group_b": "Once-daily screening (n=402)",
+          "effect_measure": "HR",
+          "effect_value": "0.88",
+          "ci_95": "0.76 to 1.03",
+          "p_value": "0.12",
+          "note": "Interaction P=0.009; medians per factorial cell shown below."
+        },
+        {
+          "outcome": "Time to successful extubation — main effect (SBT technique, pooled)",
+          "group_a": "Pressure-supported SBT (n=393)",
+          "group_b": "T-piece SBT (n=404)",
+          "effect_measure": "HR",
+          "effect_value": "1.06",
+          "ci_95": "0.91 to 1.23",
+          "p_value": "0.45"
+        },
+        {
+          "outcome": "Time to successful extubation — pairwise (more frequent + PS vs once-daily + PS)",
+          "group_a": "More frequent + PS: median 3.9 d (95% CI 2.9–4.7), n=195",
+          "group_b": "Once-daily + PS: median 2.0 d (95% CI 1.7–2.7), n=198",
+          "effect_measure": "HR",
+          "effect_value": "0.70",
+          "ci_95": "0.50 to 0.96",
+          "p_value": "0.02",
+          "note": "HR <1 indicates longer time (slower extubation) with more frequent screening in this subgroup."
+        },
+        {
+          "outcome": "Time to successful extubation — pairwise (once-daily + PS vs once-daily + T-piece)",
+          "group_a": "Once-daily + PS: median 2.0 d (95% CI 1.7–2.7), n=198",
+          "group_b": "Once-daily + T-piece: median 3.1 d (95% CI 2.7–4.8), n=204",
+          "effect_measure": "HR",
+          "effect_value": "1.30",
+          "ci_95": "0.98 to 1.70",
+          "p_value": "0.08",
+          "note": "HR >1 favours more rapid extubation in the PS arm."
+        },
+        {
+          "outcome": "Time to first successful SBT — pairwise (once-daily + PS vs once-daily + T-piece)",
+          "group_a": "Once-daily + PS: median 0.8 d (95% CI 0.7–1.0), n=198",
+          "group_b": "Once-daily + T-piece: median 1.1 d (95% CI 0.9–1.9), n=204",
+          "effect_measure": "HR",
+          "effect_value": "1.4",
+          "ci_95": "1.1 to 1.8",
+          "p_value": "0.007",
+          "note": "Interaction P=0.04 for time to first successful SBT."
+        },
+        {
+          "outcome": "Duration of ventilation (ICU hours) — pairwise (more frequent + PS vs once-daily + PS)",
+          "group_a": "More frequent + PS: median 82.2 h (IQR 23.4–164.1), n=195",
+          "group_b": "Once-daily + PS: median 46.7 h (IQR 18.7–95.7), n=198",
+          "effect_measure": "IRR",
+          "effect_value": "1.5",
+          "ci_95": "1.5 to 1.6",
+          "p_value": "<0.001",
+          "note": "Interaction P=0.006 for ventilation duration."
+        },
+        {
+          "outcome": "ICU length of stay (days) — pairwise (more frequent + PS vs once-daily + PS)",
+          "group_a": "More frequent + PS: median 6.2 d (IQR 3.4–12.4), n=195",
+          "group_b": "Once-daily + PS: median 5.0 d (IQR 2.7–8.2), n=198",
+          "effect_measure": "IRR",
+          "effect_value": "1.2",
+          "ci_95": "1.1 to 1.3",
+          "p_value": "<0.001",
+          "note": "Interaction P<0.001 for ICU LOS."
+        },
+        {
+          "outcome": "ICU mortality — pairwise (more frequent + PS vs once-daily + PS)",
+          "group_a": "34/195 (17.4%)",
+          "group_b": "31/198 (15.7%)",
+          "effect_measure": "OR",
+          "effect_value": "1.1",
+          "ci_95": "0.6 to 2.3",
+          "p_value": "0.96",
+          "note": "Interaction P=0.50."
+        },
+        {
+          "outcome": "Reintubation in ICU — pairwise (once-daily + PS vs once-daily + T-piece)",
+          "group_a": "16/198 (8.1%)",
+          "group_b": "23/204 (11.3%)",
+          "effect_measure": "OR",
+          "effect_value": "0.7",
+          "ci_95": "0.3 to 1.7",
+          "p_value": "0.70",
+          "note": "Interaction P=0.50."
+        },
+        {
+          "outcome": "Ventilator-associated pneumonia in ICU — pairwise (once-daily + PS vs once-daily + T-piece)",
+          "group_a": "24/198 (14.0%)",
+          "group_b": "32/204 (18.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.7",
+          "ci_95": "0.3 to 1.6",
+          "p_value": "0.72",
+          "note": "Interaction P=0.49."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Adverse events related to screening/RSBI: 2/198 (1.0%), 2/204 (1.0%), 4/195 (2.0%), 3/200 (1.5%) across the four factorial groups.",
+      "Adverse events related to SBT conduct: 0/198 (0%), 5/204 (2.5%), 3/195 (1.5%), 1/200 (0.5%)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation stratified by centre, variable block sizes; allocation concealment robust. Factorial design assumed no interaction, which was later violated, reducing efficiency."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; clinicians unblinded, extubation decisions clinician-driven — plausible pathway for behaviour-mediated effects and interaction."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT: 837 randomised, 797 analysed. 28 patients excluded after randomisation, 12 withdrawn due to lack of data permission; debated as potential bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Substantial separation in screening dose: mean screenings per patient-day 3.9 and 4.8 in once-daily arms vs 7.9 and 7.6 in more frequent arms; SBTs per patient-day 1.9 and 2.1 vs 3.3 and 2.6. Major screening violations 4.6–6.6%, major SBT violations 3.8–10.2% across groups."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced: mean age 61–64 years; ~59% male; median SOFA 5–6; predominant indication acute respiratory failure (~55–62%)."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong: randomisation and protocol separation are solid, but lack of blinding, clinician-driven extubation, and post-randomisation exclusions/withdrawals introduce plausible bias — especially relevant given the unexpected interaction."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad adult medical/surgical ICU case-mix with moderate severity; applicable to typical invasively ventilated adults beyond the first 24 h. Exclusions (profound neurological impairment, tracheostomy, prolonged ventilation >2 weeks) limit inference for neurocritical care and chronic weaning populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "North American staffing models (respiratory therapist availability) may influence feasibility and effect of more frequent screening. Variable PS/PEEP ranges and SBT duration increase pragmatic relevance but reduce mechanistic precision. Few COVID-19 patients, so subgroup certainty is limited."
+        }
+      ],
+      "verdict": "Generalisability is moderate for adult medical/surgical ICUs with comparable staffing and weaning infrastructure; limited for neurocritical care, prolonged weaning cohorts, and settings where screening frequency is constrained by workforce."
+    },
+    "strengths": [
+      "Large, multicentre, pragmatic factorial design addressing two common, protocolisable weaning strategies.",
+      "Clinically meaningful primary outcome (sustained unsupported breathing ≥48 h) rather than surrogate SBT pass.",
+      "Prospectively published protocol and statistical analysis plan (including COVID‑era update)."
+    ],
+    "limitations": [
+      "Open‑label implementation with clinician‑driven extubation decisions (risk of behaviour‑mediated effects).",
+      "Modified intention‑to‑treat with post‑randomisation exclusions/withdrawals (28 excluded, 12 withdrawn; debated).",
+      "Within‑arm variability in PS/PEEP and SBT duration (PS 0–8 cm H₂O, PEEP 0–5 cm H₂O; 30–120 min).",
+      "6‑month outcomes available only in consenting survivors, increasing attrition bias risk for long‑term endpoints."
+    ],
+    "critical_appraisal": {
+      "summary": "FAST is a well-designed factorial trial that yielded a surprising interaction: more frequent screening combined with pressure-supported SBTs paradoxically prolonged time to extubation, challenging the common assumption that more screening is better. The open-label design and modified ITT raise concerns, but the finding is consistent with clinician-behaviour interactions and warrants replication.",
+      "strengths": [
+        "Prospectively registered and powered factorial design",
+        "Pragmatic, multicentre conduct enhancing external validity",
+        "Clinically important primary endpoint"
+      ],
+      "weaknesses": [
+        "Lack of blinding and clinician-driven extubation introduce potential bias",
+        "Post-randomisation exclusions and withdrawals",
+        "Unexpected interaction not supported by prior mechanistic reasoning"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Protocolised ‘more frequent’ screening should not be assumed to accelerate liberation, particularly in systems using pressure-supported SBTs with PEEP; in FAST, this combination prolonged time to successful extubation and increased ventilation hours/ICU stay. Once-daily screening remains a defensible default when combined with structured SBTs.",
+    "clinical_bottom_line": {
+      "verdict": "Do not adopt protocolised more-frequent-than-once-daily screening as a standalone quality metric; if using pressure-supported SBTs with PEEP, increased screening may paradoxically delay extubation. Once-daily screening with structured SBTs is a safe default pending replication.",
+      "applies_to": "Adult medical/surgical ICU patients without prolonged ventilation or tracheostomy, in settings with similar staffing models.",
+      "does_not_mean": "That more frequent screening is inherently harmful in all contexts; the interaction was observed with pressure-supported SBTs only, and T‑piece outcomes were similar regardless of frequency.",
+      "implementation_caveats": [
+        "Monitor SBT technique and clinician decision thresholds if increasing screening frequency.",
+        "Replicate the finding before changing protocolised weaning bundles."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Unexpected interaction (primary endpoint P=0.009)",
+        "notes": "Not mechanistically anticipated; editorial commentary emphasised the interaction may reflect complex clinician behaviour and workflow effects, not a biological effect. Structured credibility assessment (ICEMAN) underscores that unexpected interactions require replication and plausible mechanism before practice change."
+      },
+      {
+        "topic": "Post-randomisation exclusions and modified ITT",
+        "notes": "28 patients excluded after randomisation, 12 withdrawn due to lack of permission to use data. Published correspondence challenged the risk of bias; authors defended the modified ITT analytic set."
+      },
+      {
+        "topic": "SBT-technique evidence base after FAST",
+        "notes": "Systematic reviews/meta-analyses post-FAST suggest pressure-supported SBTs may increase extubation success without higher reintubation, but effect sizes are modest and context‑dependent. Network meta-analyses rank several techniques but highlight uncertainty from heterogeneity and indirectness."
+      },
+      {
+        "topic": "Guideline evolution after FAST",
+        "notes": "Recent practice guidance continues to endorse protocolised liberation and permits multiple SBT techniques, emphasising careful selection, monitoring, and avoidance of unnecessary prolongation of ventilation."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is the interaction real or an artefact of unblinded, behaviour-mediated effects?",
+      "Would replication confirm harm or simply null effect of more frequent screening with pressure‑supported SBTs?",
+      "How do different staffing models and rigidly standardised SBT protocols modify the interaction?",
+      "Are long‑term functional outcomes different (data limited by attrition)?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=797 analysed",
+        "Primary: screening HR 0.88 (0.76–1.03), SBT HR 1.06 (0.91–1.23), interaction P=0.009",
+        "More frequent + PS: time to extubation HR 0.70 (median 3.9 vs 2.0 d)",
+        "No mortality difference, adverse events rare"
+      ],
+      "one_line_takeaway": "Protocolised more-frequent-than-once-daily screening with pressure-supported SBTs may paradoxically delay extubation; once-daily screening remains the safer default."
+    }
+  },
+  "_source_id": "FAST",
+  "_source_system": "Respiratory"
+}

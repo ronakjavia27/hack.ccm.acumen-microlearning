@@ -1,0 +1,304 @@
+{
+  "id": "RE-ENERGIZE",
+  "trial_name": "RE-ENERGIZE — Enteral Glutamine for Severe Burns (2022)",
+  "specialty": "Burns",
+  "subtopic": "Specialized Nutrition",
+  "year": 2022,
+  "journal": "New England Journal of Medicine",
+  "citation": "Heyland DK, Wibbenmeyer L, Pollack JA, et al. A randomized trial of enteral glutamine for treatment of burn injuries. N Engl J Med. 2022;387(11):1001-10.",
+  "doi": "https://doi.org/10.1056/NEJMoa220336",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1200,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with severe burns, enteral glutamine (0.5 g/kg/day) did not reduce time to discharge alive, mortality, or Gram-negative bacteraemia compared to placebo.",
+  "pico": {
+    "population": "Adults (≥18 years) with deep second-degree and/or third-degree burns requiring grafting, enrolled within 72 hours of admission.",
+    "intervention": "Enteral L-glutamine powder 0.5 g/kg/day (obesity-adjusted weight if BMI ≥35), started early and continued until 7 days after last grafting, discharge, or 3 months.",
+    "comparison": "Matching placebo (maltodextrin) administered enterally on the same schedule.",
+    "outcome": "Time to discharge alive from hospital (up to 90 days), with death as a competing risk."
+  },
+  "keywords": [
+    "glutamine",
+    "burns",
+    "enteral nutrition",
+    "immunonutrition",
+    "infection",
+    "mortality"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Major thermal injury causes profound inflammation, hypermetabolism, and catabolism with high risks of infection, organ dysfunction, and death. Glutamine is a key nitrogen carrier and precursor for nucleotides and glutathione, biologically plausible as a 'conditionally essential' amino acid during severe stress for gut barrier, immune cell function, and redox balance. Early, small burn trials suggested glutamine could reduce infectious morbidity and possibly mortality.",
+      "knowledge_gap": "Subsequent large trials in broader critically ill populations raised concern for harm, creating genuine uncertainty about benefit–risk in burns. Practice variation persisted internationally, requiring a definitive, adequately powered, blinded trial in contemporary burn care.",
+      "hypothesis": "Early enteral L-glutamine (0.5 g/kg/day) compared with placebo reduces time to live hospital discharge (up to 90 days) in adults with severe burn injury, with secondary hypotheses of improved survival and reduced acquired Gram-negative bacteraemia."
+    },
+    "methods": {
+      "design": "Randomised, parallel-group, placebo-controlled, double-blind, investigator-initiated international trial.",
+      "setting": "54 burn centres in 14 countries; enrolled March 2011 to June 2020. Specialised burn acute care units (including ICU-level care) with established enteral feeding pathways.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with deep second-degree and/or third-degree burns expected to require grafting, enrolled within 72 hours after hospital admission.",
+          "TBSA thresholds by age: 18–39 years (TBSA ≥20% or TBSA ≥15% with inhalation injury); 40–59 years (TBSA ≥15%); ≥60 years (TBSA ≥10%)."
+        ],
+        "exclusion": [
+          "Baseline renal dysfunction (pre-specified creatinine/urine-output thresholds).",
+          "Injuries from high-voltage electrical contact.",
+          "Moribund patients not expected to survive 72 hours.",
+          "Liver cirrhosis.",
+          "Contraindication to enteral nutrition.",
+          "Pregnancy/lactation.",
+          "Extreme BMI.",
+          "Prior glutamine exposure before randomisation."
+        ]
+      },
+      "intervention": "L-glutamine powder administered enterally at 0.5 g/kg/day (obesity-adjusted body weight when BMI ≥35). Delivered via nasogastric/enteral tube (or orally if appropriate), started soon after randomisation and continued until 7 days after the last skin grafting procedure, discharge from the acute care unit, or 3 months after hospital admission (whichever occurred first).",
+      "comparison": "Matching placebo (maltodextrin) administered enterally on the same schedule and in the same manner.",
+      "blinding": "Double-blind (participants, clinicians, investigators, and outcome assessors), with pharmacy-controlled allocation and indistinguishable study products.",
+      "sample_size_power": "A sample size of 1,200 patients was planned to provide 80% power (two-sided α=0.05) to detect a clinically important difference in time to discharge alive, based on simulation assumptions including a 20% relative reduction in 90-day mortality and a 20% relative increase in the daily discharge rate among 90-day survivors.",
+      "primary_outcome": "Time to discharge alive from hospital (up to 90 days), with death as a competing risk.",
+      "secondary_outcomes": [
+        "Mortality at 6 months.",
+        "In-hospital mortality.",
+        "Acquired Gram-negative bacteraemia (within 90 days).",
+        "Days in hospital (excluding withdrawals; truncated at 90 days).",
+        "Time to live discharge from acute care unit (up to 90 days).",
+        "Time to live extubation (baseline mechanically ventilated subgroup).",
+        "SF-36 Physical Component Scale at 6 months.",
+        "Activities of daily living (Katz) at 6 months."
+      ],
+      "follow_up": "Primary endpoint: up to 90 days. Mortality and patient-centred outcomes assessed to 6 months after randomisation."
+    },
+    "results": {
+      "headline_bullets": [
+        "Enteral glutamine did not shorten time to discharge alive (median 40 vs 38 days; subdistribution HR 0.91; 95% CI 0.80 to 1.04; P=0.17).",
+        "Mortality and the hypothesised infection endpoint (acquired Gram-negative bacteraemia) were not improved, with effect estimates close to null.",
+        "Serious adverse events were not increased (26 vs 37 patients with any SAE; P=0.20), although biochemical safety monitoring showed higher urea in the glutamine arm."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Time to discharge alive from hospital (up to 90 days; competing risk of death)",
+          "group_a": "40 days (IQR 24–87)",
+          "group_b": "38 days (IQR 22–75)",
+          "effect_measure": "Subdistribution HR",
+          "effect_value": "0.91",
+          "ci_95": "0.80 to 1.04",
+          "p_value": "0.17",
+          "note": "Primary outcome; values <1 favour placebo (slower discharge with glutamine)"
+        },
+        {
+          "outcome": "Mortality at 6 months",
+          "group_a": "17.2%",
+          "group_b": "16.2%",
+          "effect_measure": "HR",
+          "effect_value": "1.06",
+          "ci_95": "0.80 to 1.41",
+          "p_value": "Not reported",
+          "note": "Time-to-event analysis over 6 months"
+        },
+        {
+          "outcome": "In-hospital mortality",
+          "group_a": "91/596 (15.3%)",
+          "group_b": "84/604 (13.9%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "0.96",
+          "ci_95": "0.79 to 1.16",
+          "p_value": "Not reported",
+          "note": "Adjusted model per trial report"
+        },
+        {
+          "outcome": "Acquired Gram-negative bacteraemia (within 90 days)",
+          "group_a": "113/596 (19.0%)",
+          "group_b": "109/604 (18.0%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "0.97",
+          "ci_95": "0.80 to 1.16",
+          "p_value": "Not reported",
+          "note": "Pre-specified tertiary endpoint linked to gut-barrier hypothesis"
+        },
+        {
+          "outcome": "Days in hospital (excluding withdrawals; truncated at 90 days)",
+          "group_a": "32 (IQR 20–53)",
+          "group_b": "30 (IQR 18–53)",
+          "effect_measure": "Adjusted mean diff",
+          "effect_value": "0.92 days",
+          "ci_95": "−1.57 to 3.41",
+          "p_value": "Not reported",
+          "note": "Length-of-stay summary reported with unadjusted and adjusted mean differences"
+        },
+        {
+          "outcome": "Time to live discharge from acute care unit (up to 90 days)",
+          "group_a": "36 days (IQR 21–81.5)",
+          "group_b": "35 days (IQR 19–67)",
+          "effect_measure": "Adjusted HR",
+          "effect_value": "0.91",
+          "ci_95": "0.79 to 1.03",
+          "p_value": "Not reported",
+          "note": "Values <1 favour placebo"
+        },
+        {
+          "outcome": "Time to live extubation (baseline mechanically ventilated subgroup)",
+          "group_a": "17 days (IQR 7–29)",
+          "group_b": "15 days (IQR 6–28)",
+          "effect_measure": "Adjusted HR",
+          "effect_value": "0.91",
+          "ci_95": "0.77 to 1.08",
+          "p_value": "Not reported",
+          "note": "Analysed among those ventilated at baseline; values <1 favour placebo"
+        },
+        {
+          "outcome": "SF-36 Physical Component Scale at 6 months (survivors assessed)",
+          "group_a": "42.3 ± 11.2 (n=274)",
+          "group_b": "42.4 ± 11.9 (n=290)",
+          "effect_measure": "Mean diff",
+          "effect_value": "0.10",
+          "ci_95": "−1.71 to 1.91",
+          "p_value": "Not reported",
+          "note": "No clinically important between-group difference"
+        },
+        {
+          "outcome": "Activities of daily living (Katz) at 6 months (survivors assessed)",
+          "group_a": "5.3 ± 1.5 (n=293)",
+          "group_b": "5.3 ± 1.5 (n=301)",
+          "effect_measure": "Mean diff",
+          "effect_value": "−0.01",
+          "ci_95": "−0.24 to 0.23",
+          "p_value": "Not reported",
+          "note": "Scores range 0–6; higher scores indicate greater independence"
+        },
+        {
+          "outcome": "Patients with any serious adverse event (SAE)",
+          "group_a": "26/596 (4.4%)",
+          "group_b": "37/604 (6.1%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.20",
+          "note": "Fisher’s exact test; SAEs largely deemed not/unlikely related; one acute kidney injury possibly related in glutamine arm"
+        },
+        {
+          "outcome": "Average urea levels (mmol/L; median [Q1–Q3])",
+          "group_a": "8.7 [5.9–15.6]",
+          "group_b": "6.8 [4.8–12.2]",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Higher urea consistent with increased nitrogen load"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Serious adverse events were not increased (26 vs 37 patients with any SAE; P=0.20).",
+      "SAEs largely deemed not/unlikely related to study product.",
+      "One acute kidney injury possibly related in the glutamine arm.",
+      "Average urea levels were higher in the glutamine arm (median 8.7 vs 6.8 mmol/L), consistent with increased nitrogen load."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with allocation concealment; study product preparation by pharmacy enabled robust blinding. Balance achieved across key baseline variables (e.g., age 49.2 ± 17.1 vs 48.7 ± 17.6 years; TBSA 33.1 ± 17.2% vs 31.9 ± 17.1%; mechanical ventilation 40.6% vs 39.6%)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double blinding limited differential co-interventions and differential outcome assessment. Primary outcome (time to live discharge) is operational and routinely recorded, reducing subjective measurement bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1,209 patients consented and randomised; 9 withdrew consent early and did not receive study product; 1,200 received study product and were included in the modified intention-to-treat analyses (596 vs 604). Primary endpoint ascertainment was high: known discharge time or death in 587/596 (98.5%) vs 597/604 (98.8%). Six-month patient-centred follow-up was incomplete (e.g., SF-36 available in 274 vs 290; ADL/IADL assessed in 293 vs 301), introducing potential attrition bias for long-term functional outcomes."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Early initiation: time from randomisation to first dose 5.9 ± 19.6 hours (glutamine) vs 5.1 ± 9.5 hours (placebo). Exposure intensity: proportion of prescribed doses received 91.3 ± 13.6% vs 91.0 ± 13.5%. Duration: 27.0 ± 22.4 days vs 25.6 ± 22.7 days."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were clinically comparable at baseline (sex ~73% male; APACHE II 14.0 ± 7.0 vs 13.8 ± 6.8; inhalation injury 33.4% vs 34.3%). Severity profile suggests a cohort at meaningful risk of complications and death (mean TBSA ~32–33%; ~40% ventilated at baseline)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears strong, supported by robust blinding, central randomisation, high adherence, near-complete ascertainment of the primary endpoint, and appropriate competing-risk modelling; the main internal threat is incomplete follow-up for 6-month patient-reported outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults with substantial burn severity (mean TBSA ~32–33%) treated in specialised burn centres, including a high proportion requiring mechanical ventilation (~40%). Large, international recruitment (14 countries) supports broad representativeness for high-resource and mixed-resource burn systems. Important exclusions (e.g., baseline renal dysfunction, high-voltage electrical injuries, moribund patients, liver cirrhosis, extremes of BMI) limit applicability to these subgroups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings apply to adult burn patients in centres where early enteral nutrition is feasible and where glutamine would be delivered enterally at 0.5 g/kg/day. Generalisation to paediatric burns, to patients with established renal failure/dialysis at baseline, or to parenteral glutamine strategies is limited. Long recruitment period (2011–2020) spans evolving burn practices, but multicentre participation enhances applicability to contemporary real-world care variation."
+        }
+      ],
+      "verdict": "External validity is moderate-to-strong for adult severe thermal burns managed in specialised burn centres with early enteral feeding, but is limited for patients excluded by design (notably baseline renal dysfunction) and for settings without reliable enteral nutrition delivery."
+    },
+    "strengths": [
+      "Largest double-blind, placebo-controlled RCT evaluating glutamine supplementation in adult burn patients (n=1,200).",
+      "International, multicentre design (54 sites; 14 countries) improves generalisability and reduces single-centre bias.",
+      "Pragmatic administration strategy with early initiation, long duration, and high adherence (~91% of prescribed doses received).",
+      "Patient-centred primary endpoint incorporating survival and hospital recovery trajectory, analysed with appropriate competing-risk methods.",
+      "Extended follow-up to 6 months with health-related quality of life and functional measures among survivors."
+    ],
+    "limitations": [
+      "Incomplete 6-month follow-up for patient-reported and functional outcomes (SF-36 available in ~46–48% of dosed participants), which may bias long-term comparisons.",
+      "Primary endpoint depends on discharge processes that vary by system and centre; competing-risk methods address death as a competing event but cannot eliminate practice-variation effects.",
+      "Baseline glutamine status (e.g., plasma glutamine concentration) was not used to select/enrich participants, so targeted benefit in a deficient subgroup could not be directly evaluated.",
+      "Exclusion of baseline renal dysfunction improves safety but reduces applicability to an important high-risk subgroup."
+    ],
+    "critical_appraisal": {
+      "summary": "A large, well-conducted, international RCT with high internal validity that definitively rules out a large clinical benefit of routine enteral glutamine in unselected adults with severe burns, though incomplete long-term follow-up and exclusion of renal dysfunction patients are minor limitations.",
+      "strengths": [
+        "Robust blinding and central randomisation.",
+        "High protocol adherence and near-complete primary outcome ascertainment.",
+        "Appropriate competing-risk analysis for the primary endpoint."
+      ],
+      "weaknesses": [
+        "Incomplete 6-month follow-up for patient-reported outcomes.",
+        "Exclusion of patients with baseline renal dysfunction limits generalisability to that subgroup."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Routine enteral glutamine supplementation (0.5 g/kg/day) in adult severe burns did not improve time to discharge alive, survival, or key infection outcomes, and should not be adopted as standard care on efficacy grounds.",
+    "clinical_bottom_line": {
+      "verdict": "Routine enteral glutamine supplementation should not be used in unselected adults with severe burns, as it does not improve time to discharge alive, mortality, or infection.",
+      "applies_to": "Adult patients with severe thermal burns managed in specialised burn centres with early enteral feeding capability.",
+      "does_not_mean": "Glutamine is harmful in burns; the trial showed no significant safety signal aside from higher urea levels, but it simply provides no clinical benefit.",
+      "implementation_caveats": [
+        "Nutrition priorities should remain early enteral feeding, adequate protein/energy delivery, and multidisciplinary burn rehabilitation.",
+        "Findings do not apply to patients with baseline renal dysfunction, paediatric burns, or parenteral glutamine strategies."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Contradiction with earlier, smaller burn trials",
+        "notes": "Earlier burn RCT evidence suggested clinically important reductions in infection and mortality with enteral glutamine; RE-ENERGIZE, as the largest and most rigorous burn trial, substantially down-weights the plausibility of large benefit in unselected patients."
+      },
+      {
+        "topic": "Safety concerns from general ICU trials",
+        "notes": "Safety concerns about glutamine in heterogeneous ICU populations (particularly at high doses and in patients with baseline renal dysfunction) informed burn-trial safety design and interpretation, including renal-dysfunction exclusions and biochemical monitoring."
+      },
+      {
+        "topic": "Impact on meta-analyses and guidelines",
+        "notes": "Updated burn-specific systematic reviews/meta-analyses incorporating RE-ENERGIZE report diminished or uncertain mortality benefit and highlight persistent heterogeneity and small-study effects in the pre-RE-ENERGIZE literature. Guideline trajectory shifted away from routine glutamine supplementation in critical illness; pre-trial burn recommendations that considered glutamine now sit in tension with post-trial evidence."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Could a subgroup with documented glutamine deficiency at baseline derive benefit?",
+      "Is there a role for glutamine in burn patients with baseline renal dysfunction, who were excluded from this trial?",
+      "Does the route of administration (enteral vs. parenteral) matter for any potential benefit?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1,200",
+        "Primary outcome (time to discharge alive): subdistribution HR 0.91 (95% CI 0.80–1.04), P=0.17",
+        "6-month mortality: 17.2% vs 16.2% (HR 1.06, 95% CI 0.80–1.41)"
+      ],
+      "one_line_takeaway": "In severe burns, don't use routine enteral glutamine; it doesn't improve survival, infection, or time to discharge, so focus on early enteral feeding and adequate protein/energy delivery instead."
+    }
+  },
+  "_source_id": "RE-ENERGIZE",
+  "_source_system": "Nutrition"
+}

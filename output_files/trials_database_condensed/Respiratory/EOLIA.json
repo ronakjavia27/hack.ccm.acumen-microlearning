@@ -1,0 +1,333 @@
+{
+  "id": "EOLIA",
+  "trial_name": "EOLIA — Early VV-ECMO vs Conventional Ventilation in Severe ARDS (2018)",
+  "specialty": "Critical Care",
+  "subtopic": "ECMO",
+  "year": 2018,
+  "journal": "New England Journal of Medicine",
+  "citation": "Combes A, Hajage D, Capellier G, et al. Extracorporeal Membrane Oxygenation for Severe Acute Respiratory Distress Syndrome. N Engl J Med. 2018;378(21):1965-1975.",
+  "doi": "https://doi.org/10.1056/NEJMoa1800385",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, international, superiority",
+  "evidence_level": "High-quality RCT (stopped early for futility)",
+  "sample_size": 249,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In very severe ARDS, early VV-ECMO did not significantly reduce 60-day mortality compared to conventional ventilation with rescue ECMO (35% vs 46%; RR 0.76; P=0.09), but high crossover and early stopping complicate interpretation.",
+  "pico": {
+    "population": "Adults with very severe ARDS (PaO2/FiO2 < 50 mmHg for >3h, <80 mmHg for >6h, or pH <7.25 with PaCO2 ≥60 mmHg for >6h) despite lung-protective ventilation.",
+    "intervention": "Early VV-ECMO (goal initiation within 2h) with ultra-protective ventilation (VT 3-4 mL/kg PBW, Pplat ≤24 cmH2O).",
+    "comparison": "Conventional lung-protective ventilation (Pplat 28-30 cmH2O) with protocolized escalation (prone positioning, NMBA) and rescue ECMO for refractory hypoxemia.",
+    "outcome": "60-day all-cause mortality."
+  },
+  "keywords": [
+    "ECMO",
+    "VV-ECMO",
+    "ARDS",
+    "severe respiratory failure",
+    "rescue therapy"
+  ],
+  "related_trials": [
+    "CESAR"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "VV-ECMO was increasingly used as rescue support for refractory hypoxaemia/hypercapnia in ARDS, but contemporary randomised evidence was limited and confounded by centre effects, co-interventions, and evolving ventilatory standards.",
+      "knowledge_gap": "Equipoise persisted about whether “early” ECMO (before multi-organ injury accrues) improves survival compared with an optimised conventional strategy that includes prone positioning, neuromuscular blockade, higher PEEP, and rescue options.",
+      "hypothesis": "In adults with very severe ARDS, early initiation of VV-ECMO reduces 60-day mortality compared with conventional lung-protective ventilation with standardised escalation and the option of rescue ECMO."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, open-label, controlled, international trial with central randomisation (stratified by centre and by duration of mechanical ventilation before randomisation < 3 days vs ≥ 3 days) and a sequential (two-sided triangular) monitoring design.",
+      "setting": "Not specified in source.",
+      "population": {
+        "inclusion": [
+          "Adult ICU patients with ARDS and very severe respiratory failure despite low tidal-volume ventilation (target 6 mL/kg PBW) and PEEP ≥ 10 cmH2O, meeting at least one of: PaO2/FiO2 < 50 mmHg for > 3 h; PaO2/FiO2 < 80 mmHg for > 6 h; or pH < 7.25 with PaCO2 ≥ 60 mmHg for > 6 h despite RR increased to 35/min (maintaining Pplat ≤ 32 cmH2O)."
+        ],
+        "exclusion": [
+          "≥ 7 days of mechanical ventilation before randomisation",
+          "Age < 18",
+          "Pregnancy",
+          "BMI > 45 kg/m2",
+          "Irreversible comorbidity/expected death",
+          "Contraindication to anticoagulation/ECMO",
+          "Decision to limit life-sustaining treatment"
+        ]
+      },
+      "intervention": "Early VV-ECMO (goal initiation within 2 h after randomisation) using percutaneous cannulation; anticoagulation with unfractionated heparin targeting aPTT 40–55 s (or anti-Xa 0.2–0.3 IU/mL). Post-cannulation “ultra-protective” ventilation targets: VT 3–4 mL/kg PBW; PEEP ≥ 10 cmH2O; Pplat ≤ 24 cmH2O; FiO2 0.30–0.60; RR 10–30/min.",
+      "comparison": "Conventional lung-protective ventilation, including higher-PEEP strategy (target Pplat 28–30 cmH2O) with strong encouragement to use neuromuscular blockade and prone positioning. Rescue therapies permitted (including inhaled nitric oxide/prostacyclin and recruitment manoeuvres); rescue ECMO allowed for refractory hypoxaemia (SaO2 < 80% for > 6 h despite recruitment manoeuvres, inhaled nitric oxide/prostacyclin, and prone positioning when feasible) and in the absence of irreversible multi-organ failure.",
+      "blinding": "Open-label; primary outcome (all-cause mortality) objective, but decisions around escalation and crossover were clinically mediated (with protocolised rescue criteria).",
+      "sample_size_power": "Assumed 60-day mortality 60% (control) vs 40% (ECMO) (absolute reduction 20%); α=0.05; power 80%; maximum sample size 331; interim analyses planned every 60 patients.",
+      "primary_outcome": "All-cause mortality at day 60.",
+      "secondary_outcomes": [
+        "Treatment failure by day 60 (death in ECMO group; death or crossover to ECMO in control)",
+        "All-cause mortality at day 90",
+        "Median days free from mechanical ventilation (inclusion to day 60)",
+        "Median days free from renal failure (inclusion to day 60)"
+      ],
+      "follow_up": "Primary endpoint at 60 days; additional follow-up through day 90 for mortality and selected secondary outcomes."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early for futility at 249 patients (331 planned).",
+        "60-day mortality was 35% (ECMO) vs 46% (control), RR 0.76 (95% CI 0.55–1.04, P=0.09).",
+        "28% of the control group crossed over to rescue ECMO.",
+        "ECMO increased transfusion-requiring bleeding (46% vs 28%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at day 60 (primary)",
+          "group_a": "44/124 (35%)",
+          "group_b": "57/125 (46%)",
+          "effect_measure": "RR",
+          "effect_value": "0.76",
+          "ci_95": "0.55 to 1.04",
+          "p_value": "0.09",
+          "note": "Frequentist primary endpoint did not cross prespecified significance boundary."
+        },
+        {
+          "outcome": "Treatment failure by day 60",
+          "group_a": "44/124 (35%)",
+          "group_b": "72/125 (58%)",
+          "effect_measure": "RR",
+          "effect_value": "0.62",
+          "ci_95": "0.47 to 0.82",
+          "p_value": "<0.001",
+          "note": "Key secondary endpoint; structurally penalises rescue ECMO crossover in control."
+        },
+        {
+          "outcome": "All-cause mortality at day 90",
+          "group_a": "50/124 (40%)",
+          "group_b": "59/125 (47%)",
+          "effect_measure": "Difference",
+          "effect_value": "−7%",
+          "ci_95": "−19 to 5",
+          "p_value": "Not reported",
+          "note": "Between-group difference not statistically tested in the reported table."
+        },
+        {
+          "outcome": "Median days free from mechanical ventilation (inclusion to day 60)",
+          "group_a": "23 (0 to 40)",
+          "group_b": "3 (0 to 36)",
+          "effect_measure": "Median difference",
+          "effect_value": "20 days",
+          "ci_95": "−5 to 32",
+          "p_value": "Not reported",
+          "note": "Composite of survival and time off invasive ventilation; highly influenced by early deaths."
+        },
+        {
+          "outcome": "Median days free from renal failure (inclusion to day 60)",
+          "group_a": "46 (0 to 56)",
+          "group_b": "21 (0 to 53)",
+          "effect_measure": "Median difference",
+          "effect_value": "25 days",
+          "ci_95": "6 to 53",
+          "p_value": "Not reported",
+          "note": "Supports a signal toward reduced multi-organ failure burden."
+        },
+        {
+          "outcome": "Prone positioning (any use)",
+          "group_a": "82/124 (66%)",
+          "group_b": "112/125 (90%)",
+          "effect_measure": "Difference",
+          "effect_value": "−24%",
+          "ci_95": "−35 to −14",
+          "p_value": "Not reported",
+          "note": "Co-intervention use was greater in control (as intended by protocolised escalation)."
+        },
+        {
+          "outcome": "Bleeding leading to transfusion (safety)",
+          "group_a": "57/124 (46%)",
+          "group_b": "35/125 (28%)",
+          "effect_measure": "Difference",
+          "effect_value": "18%",
+          "ci_95": "6 to 30",
+          "p_value": "Not reported",
+          "note": "Clinically important harm signal consistent with ECMO anticoagulation and cannulation risks."
+        },
+        {
+          "outcome": "Severe thrombocytopenia (safety)",
+          "group_a": "34/124 (27%)",
+          "group_b": "20/125 (16%)",
+          "effect_measure": "Difference",
+          "effect_value": "12%",
+          "ci_95": "1 to 22",
+          "p_value": "Not reported",
+          "note": "Potentially reflects circuit-related platelet consumption and/or anticoagulation effects."
+        },
+        {
+          "outcome": "Ischaemic stroke (safety)",
+          "group_a": "0/124 (0%)",
+          "group_b": "6/125 (5%)",
+          "effect_measure": "Difference",
+          "effect_value": "−5%",
+          "ci_95": "−10 to −2",
+          "p_value": "Not reported",
+          "note": "Direction unexpected; small numbers; interpret cautiously."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "PaO2/FiO2 ≥ 66 mmHg",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.56",
+          "ci_95": "0.34 to 0.91",
+          "p_interaction": "0.173"
+        },
+        {
+          "subgroup": "PaO2/FiO2 < 66 mmHg",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "1.04",
+          "ci_95": "0.68 to 1.58",
+          "p_interaction": "0.173"
+        },
+        {
+          "subgroup": "SOFA < 11",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.55",
+          "ci_95": "0.31 to 0.99",
+          "p_interaction": "0.105"
+        },
+        {
+          "subgroup": "SOFA ≥ 11",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.67 to 1.35",
+          "p_interaction": "0.105"
+        }
+      ]
+    },
+    "safety": [
+      "Bleeding leading to transfusion: 57/124 (46%) ECMO vs 35/125 (28%) control (difference 18%; 95% CI 6 to 30).",
+      "Severe thrombocytopenia: 34/124 (27%) ECMO vs 20/125 (16%) control (difference 12%; 95% CI 1 to 22).",
+      "Ischaemic stroke: 0/124 (0%) ECMO vs 6/125 (5%) control (difference −5%; 95% CI −10 to −2)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation stratified by centre and pre-randomisation duration of mechanical ventilation (< 3 days vs ≥ 3 days), supporting allocation concealment and balance."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; primary outcome objective. However, decisions to cross over to rescue ECMO (and timing) were clinically mediated, even with protocol criteria."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary analysis by intention-to-treat. 121/124 (97.6%) assigned to ECMO received ECMO; control “contamination” occurred via rescue crossover in 35/125 (28%)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Control received more prone positioning (90% vs 66%; difference −24%; 95% CI −35 to −14) and more inhaled vasodilators (62% vs 46%; difference −16%; 95% CI −29 to −3), which could reduce apparent incremental benefit of ECMO."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were similar at enrolment (e.g., age 51.9 ± 12.5 vs 54.4 ± 13.4 years; SOFA 10.8 ± 3.4 vs 10.6 ± 3.3; PaO2/FiO2 73 ± 30 vs 72 ± 24 mmHg)."
+        }
+      ],
+      "verdict": "Moderate: randomisation and objective primary outcome support internal validity, but early stopping and substantial rescue ECMO crossover plausibly diluted mortality differences and complicate interpretation of effect size."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "The cohort represents a highly selected, very severe ARDS population (PaO2/FiO2 ~72 mmHg) meeting strict physiological thresholds; patients ventilated ≥ 7 days, those with BMI > 45, pregnancy, and those with major contraindications were excluded. Of 1015 eligible patients, 249 were randomised, implying substantial screening/selection."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Implementation requires mature ECMO programmes (and, in this trial, a mobile ECMO retrieval model for non-ECMO centres), limiting immediate generalisability to low-volume or resource-limited settings. Most applicable to high-income ICUs that can deliver contemporary lung-protective ventilation, prone positioning, and timely VV-ECMO with complication management."
+        }
+      ],
+      "verdict": "Good for patients with very severe ARDS in experienced ECMO networks; limited for broader ARDS populations and health systems without rapid VV-ECMO capability."
+    },
+    "strengths": [
+      "Enrolled a clearly defined, very severe ARDS population.",
+      "Pragmatic network design including non-ECMO centres with retrieval.",
+      "Protocolised conventional management with explicit rescue ECMO criteria.",
+      "Objective primary endpoint.",
+      "High adherence to allocated ECMO strategy (97.6% received ECMO)."
+    ],
+    "limitations": [
+      "Open-label.",
+      "Early stopping for futility with reduced sample size versus plan (249 vs 331 maximum).",
+      "Substantial rescue ECMO crossover (28%).",
+      "Large attrition from eligibility to randomisation (249/1015), potentially limiting representativeness.",
+      "Composite “treatment failure” endpoint embeds crossover in the control definition."
+    ],
+    "critical_appraisal": {
+      "summary": "EOLIA is a well-conducted but inconclusive trial due to early stopping and high crossover; the point estimate suggests potential benefit, but the confidence interval crosses 1.0, and the open-label design introduces potential for bias in co-intervention use.",
+      "strengths": [
+        "Central randomization with stratification",
+        "Objective primary outcome",
+        "High protocol adherence in the intervention arm"
+      ],
+      "weaknesses": [
+        "Stopped early for futility, reducing power",
+        "High rate of rescue ECMO in the control group dilutes the treatment effect",
+        "Open-label design may influence co-intervention delivery"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "EOLIA did not demonstrate a statistically significant reduction in 60-day mortality on the prespecified frequentist analysis, but the point estimate and secondary outcomes are compatible with clinically meaningful benefit in a subset of patients with very severe ARDS.",
+    "clinical_bottom_line": {
+      "verdict": "EOLIA supports VV-ECMO as part of a structured escalation pathway (optimised conventional care plus rescue ECMO capability) for very severe ARDS, rather than as a mandatory early intervention for all.",
+      "applies_to": "Patients with very severe ARDS (meeting EOLIA criteria) in experienced ECMO centres.",
+      "does_not_mean": "ECMO is proven to reduce mortality in all severe ARDS; the primary endpoint was not statistically significant.",
+      "implementation_caveats": [
+        "Requires a mature ECMO program with rapid cannulation capability.",
+        "Careful patient selection is critical, balancing potential benefit against a 46% risk of transfusion-requiring bleeding.",
+        "Optimal conventional care (including prone positioning) must be maximized before considering ECMO."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping and “negative” framing",
+        "notes": "Stopping for futility at 249 patients widened uncertainty, and the confidence interval remains consistent with meaningful mortality reduction; interpretation depends on philosophy of evidence thresholds and the weight given to rescue crossover."
+      },
+      {
+        "topic": "Crossover as dilution vs ethical necessity",
+        "notes": "Rescue ECMO was frequent (28%) and associated with high mortality (57%), raising debates about whether earlier ECMO could be superior to delayed salvage in carefully selected patients."
+      },
+      {
+        "topic": "Bayesian re-interpretation",
+        "notes": "A post hoc Bayesian analysis estimated a high posterior probability of mortality benefit across a range of priors, reframing EOLIA as “uncertain but likely beneficial” rather than “no effect”."
+      },
+      {
+        "topic": "Meta-analytic synthesis",
+        "notes": "An individual patient data meta-analysis of CESAR and EOLIA reported lower 90-day mortality with ECMO (RR 0.75; 95% CI 0.60 to 0.94) and highlighted the extent of rescue ECMO in controls (17% overall; 35 in EOLIA)."
+      },
+      {
+        "topic": "Guidelines reflect conditional endorsement",
+        "notes": "Contemporary international guidelines recommend considering VV-ECMO in selected patients with severe ARDS at experienced centres, typically as escalation after evidence-based conventional strategies (including prone positioning)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CESAR",
+        "relation": "An individual patient data meta-analysis of CESAR and EOLIA reported lower 90-day mortality with ECMO (RR 0.75; 95% CI 0.60 to 0.94)."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal timing for ECMO initiation in severe ARDS?",
+      "Can a subgroup of patients who benefit most from early ECMO be reliably identified at the bedside?",
+      "How can the significant bleeding risk associated with ECMO be mitigated?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=249",
+        "60-day mortality: 35% vs 46% (RR 0.76, P=0.09)",
+        "Rescue ECMO in control group: 28%",
+        "Transfusion-requiring bleeding: 46% vs 28%"
+      ],
+      "one_line_takeaway": "For very severe ARDS, early VV-ECMO is a reasonable rescue strategy in experienced centers after optimizing conventional care, but it does not confer a proven mortality benefit and carries significant bleeding risk."
+    }
+  },
+  "_source_id": "EOLIA",
+  "_source_system": "Respiratory"
+}

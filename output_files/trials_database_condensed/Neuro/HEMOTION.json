@@ -1,0 +1,314 @@
+{
+  "id": "HEMOTION",
+  "trial_name": "HEMOTION — Transfusion Strategies in Traumatic Brain Injury (2024)",
+  "specialty": "Neurocritical Care",
+  "subtopic": "Neurocritical Care Monitoring",
+  "year": 2024,
+  "journal": "New England Journal of Medicine",
+  "citation": "Turgeon AF, Lauzier F, Simard JF, et al. Transfusion Strategies in Traumatic Brain Injury. N Engl J Med. 2024;391:723-735.",
+  "doi": "https://doi.org/10.1056/NEJMoa2404360",
+  "registration": "",
+  "trial_type": "Pragmatic, multicentre, randomised, controlled, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 742,
+  "result_category": "Neutral (restrictive not superior)",
+  "one_liner": "In adults with moderate–severe blunt TBI and anaemia, a restrictive transfusion trigger of 7 g/dL did not improve 6‑month neurological outcome compared with a liberal 10 g/dL trigger; point estimate favoured liberal and CIs do not exclude clinically important harm.",
+  "pico": {
+    "population": "Adults with moderate or severe blunt TBI admitted to ICU and anaemia (Hb ≤10 g/dL) during early post‑injury ICU course",
+    "intervention": "Restrictive strategy: transfuse red cells if Hb ≤7 g/dL (while in ICU)",
+    "comparison": "Liberal strategy: transfuse red cells if Hb ≤10 g/dL (while in ICU)",
+    "outcome": "Unfavourable neurological outcome at 6 months (Glasgow Outcome Scale Extended, sliding dichotomy)"
+  },
+  "keywords": [
+    "traumatic brain injury",
+    "transfusion threshold",
+    "red blood cell transfusion",
+    "restrictive transfusion",
+    "liberal transfusion",
+    "haemoglobin trigger",
+    "neurocritical care",
+    "anaemia"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Anaemia is common after moderate–severe TBI and may worsen secondary brain injury. Red‑cell transfusion can increase oxygen‑carrying capacity but carries immunomodulatory and other risks. Observational data and small/heterogeneous trials left the optimal Hb trigger uncertain.",
+      "knowledge_gap": "No large, rigorous RCT had clarified whether a restrictive transfusion strategy improves neurological outcome in anaemic TBI patients, a daily ICU decision.",
+      "hypothesis": "In ICU patients with moderate–severe blunt TBI and anaemia, a restrictive strategy (trigger 7 g/dL) would result in better 6‑month neurological outcome than a liberal strategy (trigger 10 g/dL)."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, randomised, controlled, parallel‑group trial (34 centres in Canada, UK, France, Brazil); ICU setting; open‑label transfusion strategy with blinded outcome assessment.",
+      "setting": "34 centres in 4 countries (Canada, UK, France, Brazil), ICU",
+      "population": {
+        "inclusion": [
+          "Adults with moderate or severe blunt TBI",
+          "Admitted to ICU",
+          "Anaemia with haemoglobin ≤10 g/dL (100 g/L) during early post‑injury ICU course (timing window per protocol)"
+        ],
+        "exclusion": [
+          "Conditions where protocolised thresholds were inappropriate or infeasible (e.g., ongoing life‑threatening bleeding, transfusion refusal, per protocol)"
+        ]
+      },
+      "intervention": "Restrictive strategy: transfuse red cells if haemoglobin ≤7 g/dL (≤70 g/L); reassess Hb before additional units. Applied while in ICU or until protocol end‑point.",
+      "comparison": "Liberal strategy: transfuse red cells if haemoglobin ≤10 g/dL (≤100 g/L); reassess Hb before additional units. Rescue transfusion for active bleeding/clinical necessity permitted.",
+      "blinding": "Treating teams unblinded; 6‑month outcome assessment was blinded; objective mortality outcomes reduce detection bias.",
+      "sample_size_power": "Planned assuming ~40% unfavourable outcome and 10% absolute reduction, 80% power at two‑sided α=0.05; prespecified ordinal ‘sliding dichotomy’ GOSE analysis to increase efficiency.",
+      "primary_outcome": "Unfavourable neurological outcome at 6 months (Glasgow Outcome Scale Extended, sliding dichotomy)",
+      "secondary_outcomes": [
+        "Mortality at 6 months",
+        "ICU mortality",
+        "Functional Independence Measure total score at 6 months",
+        "EQ‑5D‑5L utility index at 6 months",
+        "Moderate‑to‑severe depressive symptoms (PHQ‑9 ≥10) at 6 months",
+        "Acute respiratory distress syndrome (ARDS)",
+        "Transfusion reactions"
+      ],
+      "follow_up": "6 months"
+    },
+    "results": {
+      "headline_bullets": [
+        "Restrictive trigger did not improve 6‑month neurological outcome; point estimate favoured liberal (adjusted absolute difference +5.4 percentage points; 95% CI −2.9 to 13.7).",
+        "Exposure separation was large: 38.4% vs 98.9% transfused, median Hb 8.8 vs 10.8 g/dL, median RBC units per patient 0 vs 3.",
+        "Mortality similar through 6 months (HR 1.01; 95% CI 0.76 to 1.35).",
+        "Some patient‑centred secondary outcomes numerically favoured liberal transfusion, while ARDS was numerically higher with liberal."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: Unfavourable neurological outcome at 6 months (GOSE sliding dichotomy)",
+          "group_a": "263/358 (73.5%)",
+          "group_b": "249/364 (68.4%)",
+          "effect_measure": "Adjusted absolute difference (restrictive − liberal)",
+          "effect_value": "+5.4 percentage points",
+          "ci_95": "−2.9 to 13.7",
+          "p_value": "Not reported",
+          "note": "Denominators reflect available 6‑month GOSE (missing 5 vs 9)."
+        },
+        {
+          "outcome": "Median haemoglobin during ICU stay, g/dL",
+          "group_a": "8.8",
+          "group_b": "10.8",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": "Achieved biological separation ≈2.0 g/dL."
+        },
+        {
+          "outcome": "Any red‑cell transfusion",
+          "group_a": "141/367 (38.4%)",
+          "group_b": "365/369 (98.9%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Red‑cell units transfused, median (IQR)",
+          "group_a": "0 (0–1)",
+          "group_b": "3 (2–5)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": "Totals: 307 units restrictive, 1516 liberal."
+        },
+        {
+          "outcome": "Mortality in ICU",
+          "group_a": "56/367 (15.3%)",
+          "group_b": "63/369 (17.1%)",
+          "effect_measure": "HR",
+          "effect_value": "1.13",
+          "ci_95": "0.82 to 1.68",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Mortality at 6 months",
+          "group_a": "96/367 (26.3%)",
+          "group_b": "99/369 (26.8%)",
+          "effect_measure": "HR",
+          "effect_value": "1.01",
+          "ci_95": "0.76 to 1.35",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Functional Independence Measure total, median (IQR)",
+          "group_a": "115 (76–124)",
+          "group_b": "119 (95–125)",
+          "effect_measure": "Adjusted difference in medians (liberal − restrictive)",
+          "effect_value": "4.34",
+          "ci_95": "−8.45 to 22.80",
+          "p_value": "Not reported",
+          "note": "Higher scores better"
+        },
+        {
+          "outcome": "EQ‑5D‑5L utility index, median (IQR)",
+          "group_a": "0.64 (0.16–0.81)",
+          "group_b": "0.74 (0.43–0.85)",
+          "effect_measure": "Adjusted difference in medians (liberal − restrictive)",
+          "effect_value": "0.06",
+          "ci_95": "0.01 to 0.10",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Moderate‑to‑severe depressive symptoms (PHQ‑9 ≥10)",
+          "group_a": "95/222 (42.8%)",
+          "group_b": "82/227 (36.1%)",
+          "effect_measure": "RR",
+          "effect_value": "0.85",
+          "ci_95": "0.63 to 1.17",
+          "p_value": "Not reported",
+          "note": "Available in subset"
+        },
+        {
+          "outcome": "ARDS",
+          "group_a": "3/367 (0.8%)",
+          "group_b": "12/369 (3.3%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Transfusion reactions (among transfused)",
+          "group_a": "1/141 (0.7%)",
+          "group_b": "6/365 (1.6%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "Not reported",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "ARDS: restrictive 0.8% vs liberal 3.3%",
+      "Transfusion reactions (among transfused): restrictive 0.7% vs liberal 1.6%",
+      "No other major safety signals reported"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with allocation concealment; large pragmatic multicentre design reduces centre‑level idiosyncrasy."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Treating clinicians unblinded (inevitable for transfusion triggers), but 6‑month outcome assessment blinded; mortality outcomes are objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "Primary outcome available in 358/367 (restrictive) vs 364/369 (liberal) — low missingness (5 vs 9). Intention‑to‑treat analysis used."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Patient‑level protocol violation low (3.8% liberal, 1.9% restrictive). Event‑level deviations: 11.4% liberal transfused above threshold, 2.7% restrictive; withholding below threshold 3.0% liberal vs 5.7% restrictive."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly comparable; randomisation should balance confounders."
+        }
+      ],
+      "verdict": "Overall internal validity appears strong: concealed randomisation, high follow‑up, and large exposure separation support a credible estimate; main limitations are unavoidable open‑label delivery and modest protocol deviations."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "6184 ICU TBI patients screened, 742 randomised; enrolled patients represent a subset with moderate–severe blunt TBI complicated by anaemia and expected survival sufficient to merit transfusion strategy decisions."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Multi‑country enrolment supports broad applicability in high‑resource ICUs; intervention requires routine Hb monitoring and blood availability. Liberal threshold may have greater resource implications in blood‑limited settings. Not applicable to patients with uncontrolled bleeding or where protocolised thresholds are infeasible."
+        }
+      ],
+      "verdict": "Generalisability is moderate‑to‑high for adult ICU patients with moderate–severe blunt TBI and anaemia in comparable settings, but limited for active haemorrhage, penetrating TBI, or resource‑restricted environments."
+    },
+    "strengths": [
+      "Large pragmatic multicentre RCT with international enrolment",
+      "Clinically meaningful 6‑month neurological endpoint",
+      "Substantial achieved separation in haemoglobin (2 g/dL) and transfusion exposure (38% vs 99%)",
+      "High completeness of primary outcome (missing ~2%)",
+      "Prespecified efficient ordinal (sliding dichotomy) analysis to increase power"
+    ],
+    "limitations": [
+      "Open‑label design (unavoidable for transfusion triggers)",
+      "Event‑level protocol deviations occurred",
+      "Secondary patient‑centred outcomes vulnerable to multiplicity",
+      "Applies to stable, anaemic moderate–severe blunt TBI patients; not directly generalisable to active major bleeding or other neurocritical populations"
+    ],
+    "critical_appraisal": {
+      "summary": "HEMOTION is a well‑designed, pragmatic RCT that achieved large separation in transfusion exposure and high outcome ascertainment, but the primary result was not statistically significant and CIs do not exclude clinically meaningful harm from restrictive transfusion.",
+      "strengths": [
+        "Pragmatic multicentre design",
+        "Clinically relevant long‑term endpoint",
+        "Robust achieved separation in both Hb and transfusion exposure",
+        "High follow‑up rate"
+      ],
+      "weaknesses": [
+        "Unavoidable open‑label delivery may bias some outcomes",
+        "Event‑level protocol deviations",
+        "Unpowered for definitive secondary outcome comparisons",
+        "Confidence intervals for primary outcome remain wide and do not exclude harm from restrictive strategy"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In patients with moderate–severe TBI and anaemia, a restrictive transfusion threshold of 7 g/dL is not superior to a liberal threshold of 10 g/dL and may be harmful; transfusion decisions should balance uncertain neurological benefit against increased transfusion exposure and resource use.",
+    "clinical_bottom_line": {
+      "verdict": "Does not support routine use of a restrictive 7 g/dL transfusion trigger in ICU patients with moderate–severe blunt TBI and anaemia; a liberal 10 g/dL trigger may be a safer default pending further data.",
+      "applies_to": "Adult ICU patients with moderate–severe blunt TBI, anaemia (Hb ≤10 g/dL), and without active major bleeding or contraindications to transfusion.",
+      "does_not_mean": "The trial does not prove that liberal transfusion is beneficial (primary outcome not statistically different); it also does not address transfusion guided by brain tissue oxygenation monitoring.",
+      "implementation_caveats": [
+        "Resource implications: liberal strategy will use substantially more blood products.",
+        "Risk of transfusion‑related complications (e.g., ARDS) is higher, though absolute numbers were low.",
+        "Not applicable to penetrating TBI or active bleeding.",
+        "Consider individual patient haemodynamics and cerebral oxygenation monitoring if available."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of the primary effect estimate",
+        "notes": "CI (−2.9 to +13.7 percentage points) compatible with both no difference and clinically important harm from restrictive transfusion; ‘absence of evidence of benefit’ should not be over‑interpreted as ‘evidence of equivalence’."
+      },
+      {
+        "topic": "Multiplicity and secondary outcomes",
+        "notes": "Some patient‑centred secondary outcomes favoured liberal strategy (e.g., EQ‑5D‑5L utility), but these were not corrected for multiplicity and are hypothesis‑generating only."
+      },
+      {
+        "topic": "Protocol and analytic choices",
+        "notes": "Prespecified sliding‑dichotomy approach improves power but may feel less transparent to clinicians; published protocol details the analytic assumptions."
+      },
+      {
+        "topic": "Position within the broader acute brain injury evidence base",
+        "notes": "Earlier neurocritical transfusion trials (e.g., combined erythropoietin/transfusion‑threshold strategies) did not establish an optimal trigger; recent meta‑analyses show heterogeneity and imprecision when focusing on neurological outcomes."
+      },
+      {
+        "topic": "Post‑HEMOTION synthesis",
+        "notes": "Updated systematic reviews incorporating HEMOTION have not identified a consistent neurological advantage for restrictive transfusion across acute brain injury syndromes, but TBI‑specific certainty remains limited."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "What is the optimal haemoglobin threshold for TBI patients who could benefit from more nuanced triggers (e.g., guided by brain tissue oxygenation)?",
+      "Does the effect differ in penetrating TBI or polytrauma?",
+      "What are the long‑term cognitive and functional outcomes beyond 6 months?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=742",
+        "Primary unfavourable outcome 73.5% vs 68.4%, adjusted difference +5.4% (−2.9 to 13.7)",
+        "Transfusion rates: 38.4% restrictive vs 98.9% liberal",
+        "Median ICU Hb: 8.8 vs 10.8 g/dL",
+        "6‑month mortality identical: 26.3% vs 26.8% (HR 1.01)"
+      ],
+      "one_line_takeaway": "In moderate–severe TBI with anaemia, a restrictive transfusion trigger of 7 g/dL is not beneficial and may be harmful; a liberal 10 g/dL trigger is a reasonable default."
+    }
+  },
+  "_source_id": "HEMOTION",
+  "_source_system": "Neuro"
+}

@@ -1,0 +1,356 @@
+{
+  "id": "SONIA",
+  "trial_name": "SONIA — Adjunctive Glucocorticoids for Community-Acquired Pneumonia (2025)",
+  "specialty": "Respiratory",
+  "subtopic": "Pneumonia",
+  "year": 2025,
+  "journal": "New England Journal of Medicine",
+  "citation": "Lucinde RK, Gathuri H, Mwaniki P, et al. A Pragmatic Trial of Glucocorticoids for Community-Acquired Pneumonia. N Engl J Med. 2025;393(22):2187-2197",
+  "doi": "10.1056/NEJMoa2507100",
+  "registration": "",
+  "trial_type": "Pragmatic, open-label, multicentre RCT",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2180,
+  "result_category": "Positive",
+  "one_liner": "In adults with clinical CAP in Kenyan public hospitals, adjunctive low-dose glucocorticoids reduced 30-day mortality (HR 0.84, 95% CI 0.73–0.97).",
+  "pico": {
+    "population": "Adults ≥18 years admitted within 48 hours with clinician-diagnosed CAP in Kenyan public hospitals",
+    "intervention": "Standard care plus adjunctive low-dose systemic glucocorticoids (prednisolone-equivalent 50 mg once daily) for up to 10 days",
+    "comparison": "Standard care alone",
+    "outcome": "30-day all-cause mortality"
+  },
+  "keywords": [
+    "glucocorticoids",
+    "community-acquired pneumonia",
+    "mortality",
+    "low-resource setting",
+    "pragmatic trial"
+  ],
+  "related_trials": [
+    "CAPE COD",
+    "REMAP-CAP",
+    "2024 non-viral CAP meta-analysis"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "CAP is a major cause of morbidity and mortality, with disproportionately high case-fatality in sub-Saharan Africa despite a younger patient population. Glucocorticoids are biologically plausible adjuncts in CAP, targeting harmful host inflammatory responses that contribute to respiratory failure and shock. Prior RCTs and meta-analyses (largely high-income, often ICU-enriched) suggested possible reductions in mortality and clinical deterioration, but effect estimates varied by severity, steroid class/dose, and concomitant care. In many African settings, ward-based care predominates and ICU access is constrained, creating uncertainty about the applicability of ICU-centric steroid evidence to routine inpatient care.",
+      "knowledge_gap": "Applicability of ICU-centric steroid evidence to routine inpatient CAP care in LMIC settings.",
+      "hypothesis": "Adjunctive glucocorticoids would reduce time-to-death risk over 30 days compared with standard care."
+    },
+    "methods": {
+      "design": "Pragmatic, open-label, individually randomised, multicentre, parallel-group trial across 18 public hospitals in Kenya.",
+      "setting": "General wards (HDU/ICU eligible but uncommon); enrolled Jun 2018–Aug 2022.",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years",
+          "Clinician diagnosis of CAP (≥2 symptoms/signs for <14 days: cough, fever, dyspnoea, haemoptysis, chest pain, or crackles)",
+          "Written consent or deferred consent where too unwell"
+        ],
+        "exclusion": [
+          "Hospital-acquired pneumonia (>48h without symptoms at admission)",
+          "Clinician-determined requirement for glucocorticoids",
+          "Known/suspected condition requiring glucocorticoids (COPD, asthma, adrenal insufficiency, PCP)",
+          "Pregnancy/breastfeeding",
+          "Contraindication to glucocorticoids",
+          "Confirmed COVID-19 or strong clinical suspicion prompting steroid use"
+        ]
+      },
+      "intervention": "Standard care plus adjunctive low-dose systemic glucocorticoids for up to 10 days (prednisolone-equivalent 50 mg once daily). Formulations: betamethasone 5 mg, dexamethasone 6 mg, hydrocortisone 160 mg, methylprednisolone 30 mg, prednisolone 50 mg, prednisone 50 mg (choice by randomisation and availability). Route: oral (including NG) preferred; IV if oral unavailable. Median time to first dose: 1 day; median in-hospital duration: 4 days.",
+      "comparison": "Standard care: clinician-directed antibiotics (e.g., beta-lactam + macrolide) and supportive care. Open-label glucocorticoids permitted if later clinically indicated (recorded as withdrawals).",
+      "blinding": "Open-label, no placebo.",
+      "sample_size_power": "Planned 2180 participants to detect 5% absolute reduction in 30-day mortality (20% to 15%) with 85% power at two-sided α=0.05, allowing ~5% loss; primary analysis intention-to-treat.",
+      "primary_outcome": "30-day all-cause mortality (time-to-event).",
+      "secondary_outcomes": [
+        "All-cause death at day 7, 14, 21",
+        "In-hospital death",
+        "Out-of-hospital death",
+        "ICU transfer",
+        "Duration of hospital stay",
+        "Adverse events",
+        "Serious adverse events",
+        "Hyperglycaemia events"
+      ],
+      "follow_up": "30 days post-randomisation (phone follow-up at day 14 and day 30)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Adjunctive glucocorticoids reduced 30-day all-cause mortality compared with standard care (22.6% vs 26.0%; HR 0.84, 95% CI 0.73–0.97; P=0.02).",
+        "Mortality reduction appeared early (by day 7) and persisted through day 30; sensitivity analyses were consistent.",
+        "ICU transfer rates were very low (<0.3% in both arms), reflecting a ward-based, resource-limited context.",
+        "Adverse events were broadly similar; hyperglycaemia events were more frequent with glucocorticoids (35 vs 3 events)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "30-day all-cause mortality (primary)",
+          "group_a": "246/1089 (22.6%)",
+          "group_b": "284/1091 (26.0%)",
+          "effect_measure": "HR",
+          "effect_value": "0.84",
+          "ci_95": "0.73–0.97",
+          "p_value": "0.02",
+          "note": "Cox model stratified by site"
+        },
+        {
+          "outcome": "All-cause death by day 7",
+          "group_a": "156/1089 (14.3%)",
+          "group_b": "179/1091 (16.4%)",
+          "effect_measure": "HR",
+          "effect_value": "0.86",
+          "ci_95": "0.73–1.00",
+          "p_value": "Not reported",
+          "note": "Secondary time-to-event"
+        },
+        {
+          "outcome": "All-cause death by day 14",
+          "group_a": "203/1089 (18.6%)",
+          "group_b": "224/1091 (20.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.87",
+          "ci_95": "0.74–1.01",
+          "p_value": "Not reported",
+          "note": "Secondary time-to-event"
+        },
+        {
+          "outcome": "All-cause death by day 21",
+          "group_a": "231/1089 (21.2%)",
+          "group_b": "262/1091 (24.0%)",
+          "effect_measure": "HR",
+          "effect_value": "0.84",
+          "ci_95": "0.73–0.98",
+          "p_value": "Not reported",
+          "note": "Secondary time-to-event"
+        },
+        {
+          "outcome": "In-hospital death (≤30 days)",
+          "group_a": "196/1089 (18.0%)",
+          "group_b": "223/1091 (20.4%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Count/proportion only"
+        },
+        {
+          "outcome": "Out-of-hospital death (≤30 days)",
+          "group_a": "50/1089 (4.6%)",
+          "group_b": "61/1091 (5.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Count/proportion only"
+        },
+        {
+          "outcome": "ICU transfer",
+          "group_a": "2/1089 (0.2%)",
+          "group_b": "3/1091 (0.3%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Reflects very low ICU access/transfer in this setting"
+        },
+        {
+          "outcome": "Duration of hospital stay",
+          "group_a": "Median 5 days (IQR 2–10)",
+          "group_b": "Median 5 days (IQR 2–9)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Secondary descriptive outcome"
+        },
+        {
+          "outcome": "≥1 adverse event (patients)",
+          "group_a": "184/1089 (16.9%)",
+          "group_b": "154/1091 (14.1%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "62/211 events (29.4%) in glucocorticoid arm judged related"
+        },
+        {
+          "outcome": "Serious adverse event (patients)",
+          "group_a": "44/1089 (4.0%)",
+          "group_b": "48/1091 (4.4%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "5 patients (0.5%) had events judged related to glucocorticoids"
+        },
+        {
+          "outcome": "Hyperglycaemia (events)",
+          "group_a": "35 events",
+          "group_b": "3 events",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Reported as adverse-event counts, not unique patients"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Sex",
+          "group_a": "Women (HR 0.70, 95% CI 0.55–0.89)",
+          "group_b": "Men (HR 0.94, 95% CI 0.79–1.12)",
+          "effect_measure": "HR",
+          "effect_value": "0.70 vs 0.94",
+          "ci_95": "0.55–0.89 vs 0.79–1.12",
+          "p_interaction": "0.10",
+          "note": "No statistically significant interaction"
+        },
+        {
+          "subgroup": "Oxygen saturation",
+          "group_a": "<90% (HR 0.92, 95% CI 0.75–1.14)",
+          "group_b": "≥90% (HR 0.80, 95% CI 0.65–0.97)",
+          "effect_measure": "HR",
+          "effect_value": "0.92 vs 0.80",
+          "ci_95": "0.75–1.14 vs 0.65–0.97",
+          "p_interaction": "0.37",
+          "note": "No statistically significant interaction"
+        }
+      ]
+    },
+    "safety": [
+      "≥1 adverse event: 16.9% (glucocorticoid) vs 14.1% (control)",
+      "Serious adverse events: 4.0% vs 4.4%",
+      "Hyperglycaemia events: 35 vs 3 (event counts, not unique patients)",
+      "Adverse events judged related to glucocorticoids: 29.4% of events in intervention arm",
+      "Serious adverse events judged related to glucocorticoids: 5 patients (0.5%)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Site-specific computer-generated block randomisation; allocation concealment via tablet-based system with opaque envelopes as backup."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design may introduce performance bias and differential withdrawal; primary outcome (mortality) is objective, partially mitigating detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "8.9% withdrawn by day 30 (8.1% vs 9.7%); missingness not MCAR (Little’s test P<0.001) but non-differential by arm; sensitivity analyses concordant."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "97.6% of intervention arm received glucocorticoids; 3.0% of control arm received non-trial glucocorticoids; moderate contamination but high adherence overall."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced on demographics, severity, and comorbidities."
+        }
+      ],
+      "verdict": "Moderate internal validity: open-label design and withdrawals introduce bias, but objective outcome and concordant sensitivity analyses support the primary mortality finding."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults with clinically defined CAP in Kenyan public hospitals, including prevalent HIV, resembling real-world LMIC general ward settings."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "High for LMIC ward-based CAP with limited ICU access; limited applicability to high-resource ICU severe CAP."
+        }
+      ],
+      "verdict": "High for LMIC ward-based CAP care similar to the Kenyan trial sites; limited for high-resource ICU contexts."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre trial in a high-mortality, understudied setting",
+      "Objective, patient-centred primary outcome (30-day all-cause mortality) with time-to-event analysis",
+      "High delivery of allocated intervention (97.6%) and high antibiotic use in both arms",
+      "Prespecified sensitivity analyses and model checks (including proportional hazards testing)"
+    ],
+    "limitations": [
+      "Open-label design with potential performance bias and withdrawal-related bias (including non-trial steroid initiation)",
+      "Clinical (not microbiologic) CAP definition and limited radiography increase diagnostic heterogeneity",
+      "Heterogeneous glucocorticoid formulations and mid-trial formulation changes complicate attribution to a single agent",
+      "Planned 10-day exposure frequently truncated in-hospital (median 4 days); post-discharge adherence unverified"
+    ],
+    "critical_appraisal": {
+      "summary": "SONIA provides moderate-quality evidence that adjunctive glucocorticoids reduce 30-day mortality in clinically diagnosed CAP in a LMIC ward setting, but open-label design and exposure heterogeneity limit certainty.",
+      "strengths": [
+        "Objective mortality endpoint",
+        "Large, pragmatic, multicentre design",
+        "High intervention adherence"
+      ],
+      "weaknesses": [
+        "Open-label",
+        "Diagnostic heterogeneity",
+        "Variable exposure duration"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In Kenyan inpatients with clinical CAP, adjunctive low-dose glucocorticoids were associated with lower 30-day mortality than standard care alone (HR 0.84; 95% CI 0.73 to 0.97).",
+    "clinical_bottom_line": {
+      "verdict": "This landmark trial supports use of adjunctive low-dose glucocorticoids in hospitalised adults with CAP in LMIC settings where ICU access is limited.",
+      "applies_to": "Adults admitted with clinical CAP to general wards in resource-limited settings, particularly in sub-Saharan Africa.",
+      "does_not_mean": "The findings do not necessarily apply to severe ICU-managed CAP in high-income countries, or to patients with alternative steroid-responsive conditions (e.g., TB, PCP).",
+      "implementation_caveats": [
+        "Requires capacity for glucose monitoring due to increased hyperglycaemia risk",
+        "Must differentiate CAP from steroid-sensitive or contraindicated diagnoses (e.g., TB, heart failure)",
+        "Oral, once-daily dosing is scalable but short in-hospital exposure may limit effect"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Diagnostic heterogeneity",
+        "notes": "Clinical CAP definition without routine microbiologic/radiographic confirmation may include syndromes where steroids could help, harm, or be neutral, complicating generalization."
+      },
+      {
+        "topic": "Multi-formulation exposure",
+        "notes": "Protocol used multiple equivalent-dose glucocorticoids; hydrocortisone and prednisone were removed during trial due to pill burden, reducing precision for formulation-level inference."
+      },
+      {
+        "topic": "Contrast with ICU severe CAP trials",
+        "notes": "CAPE COD found mortality reduction with hydrocortisone in severe ICU CAP, supporting benefit in high-resource severe-CAP; SONIA extends the signal to ward-based LMIC. REMAP-CAP found futility for hydrocortisone in severe CAP corticosteroid domain, highlighting persistent uncertainty about which CAP phenotypes benefit."
+      },
+      {
+        "topic": "Meta-analytic implications",
+        "notes": "A 2024 non-viral CAP meta-analysis supports overall mortality reduction with corticosteroids but emphasises heterogeneity; SONIA will materially influence future pooled estimates because of its size and LMIC setting."
+      },
+      {
+        "topic": "Guidelines flux",
+        "notes": "2024 SCCM focused update recommends corticosteroids for severe CAP, while others restrict to critical care; SONIA’s LMIC ward data may shift recommendations. Formal updates incorporating SONIA not yet identified."
+      },
+      {
+        "topic": "Harms and monitoring",
+        "notes": "Hyperglycaemia more frequent with glucocorticoids (35 vs 3 events); serious adverse events similar overall; implementation should include pragmatic glucose monitoring."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CAPE COD",
+        "relation": "ICU severe CAP trial showing mortality benefit with hydrocortisone; SONIA extends the signal to ward-based LMIC CAP."
+      },
+      {
+        "trial": "REMAP-CAP (corticosteroid domain for severe CAP)",
+        "relation": "Found futility for hydrocortisone in severe CAP, suggesting uncertain benefit and highlighting context dependence; SONIA’s positive result in a different setting adds complexity."
+      },
+      {
+        "trial": "2024 non-viral CAP meta-analysis",
+        "relation": "Pooled analysis supporting overall mortality reduction; SONIA will likely strengthen this signal."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal steroid agent and duration in CAP?",
+      "Can diagnostic algorithms reliably exclude TB/PCP in settings with limited resources to avoid harm?",
+      "Is the benefit consistent in severe CAP with high-resource ICU care?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2180",
+        "30-day mortality: 22.6% vs 26.0% (HR 0.84, 95% CI 0.73–0.97)",
+        "Hyperglycaemia events: 35 vs 3",
+        "ICU transfer: 0.2% vs 0.3%"
+      ],
+      "one_line_takeaway": "In ward-based CAP in resource-limited settings, a short course of low-dose glucocorticoids reduced 30-day mortality with a number needed to treat of about 30."
+    }
+  },
+  "_source_id": "SONIA",
+  "_source_system": "Respiratory"
+}

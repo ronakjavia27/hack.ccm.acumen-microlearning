@@ -1,0 +1,352 @@
+{
+  "id": "CHEST",
+  "trial_name": "CHEST — Hydroxyethyl Starch or Saline for Fluid Resuscitation in Intensive Care (2012)",
+  "specialty": "Critical Care",
+  "subtopic": "Fluid Resuscitation",
+  "year": 2012,
+  "journal": "N Engl J Med",
+  "citation": "Myburgh JA, Finfer S, Bellomo R, Billot L, Cass A, Gattas D, et al; CHEST Investigators; the Australian and New Zealand Intensive Care Society Clinical Trials Group. Hydroxyethyl Starch or Saline for Fluid Resuscitation in Intensive Care. N Engl J Med. 2012;367(20):1901–1911",
+  "doi": "https://doi.org/10.1056/NEJMoa1209759",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 7000,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In 7000 ICU patients requiring fluid resuscitation, 6% HES 130/0.4 did not reduce 90-day mortality and increased need for renal-replacement therapy compared with saline.",
+  "pico": {
+    "population": "Adult ICU patients requiring fluid resuscitation",
+    "intervention": "6% hydroxyethyl starch 130/0.4 in saline",
+    "comparison": "0.9% saline",
+    "outcome": "90-day all-cause mortality (primary), renal-replacement therapy, AKI, organ failure"
+  },
+  "keywords": [
+    "hydroxyethyl starch",
+    "HES 130/0.4",
+    "saline",
+    "fluid resuscitation",
+    "critical care",
+    "ICU",
+    "renal replacement therapy",
+    "AKI"
+  ],
+  "related_trials": [
+    "6S"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Intravenous fluid resuscitation is a core therapy in critical illness, yet the optimal resuscitation fluid (crystalloid vs colloid) remained uncertain. Hydroxyethyl starch (HES) solutions were widely used to achieve haemodynamic targets with less volume than crystalloids, but concerns persisted regarding renal toxicity, coagulopathy, tissue storage, and pruritus. Earlier generations of starches and sepsis-focused trials raised safety signals (acute kidney injury and mortality), while 'tetrastarch' formulations (e.g., HES 130/0.4) were promoted as safer despite limited large-scale, blinded ICU outcome data. Practice variation and high population exposure meant that even small differences in patient-centred outcomes would have major clinical and health-system implications.",
+      "knowledge_gap": "No large, blinded, pragmatic RCT had compared HES 130/0.4 to a standard crystalloid for resuscitation in a broad ICU population with patient-centred outcomes.",
+      "hypothesis": "That 6% HES 130/0.4 would be non-inferior or superior to 0.9% saline for 90-day all-cause mortality, with at least non-inferior renal safety."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, parallel-group, investigator-initiated pragmatic trial.",
+      "setting": "32 adult medical-surgical ICUs in Australia and New Zealand; enrolment Dec 2009 to Jan 2012.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "ICU admission",
+          "Clinician judged fluid resuscitation was required",
+          "Both study fluids were considered appropriate",
+          "At least one prespecified indicator of hypovolaemia or impaired perfusion (e.g., tachycardia >90 bpm, systolic BP <100 mm Hg or MAP <75 mm Hg, low filling pressures where measured, dynamic indices consistent with fluid responsiveness, prolonged capillary refill, low urine output)"
+        ],
+        "exclusion": [
+          "Traumatic intracranial haemorrhage",
+          "Receipt of renal-replacement therapy or imminent requirement",
+          "Severe renal dysfunction (creatinine ≥350 μmol/L with oliguria)",
+          "Severe hypernatraemia or hyperchloraemia",
+          "Pregnancy/breastfeeding or inability to exclude pregnancy",
+          "ICU admission after cardiac surgery",
+          "Burns or liver transplantation",
+          "Expected death/imminent death or limitations of treatment",
+          "Substantial HES exposure prior to randomisation",
+          "Prior enrolment in the trial",
+          "Transfer from another ICU where resuscitation fluids had already been administered"
+        ]
+      },
+      "intervention": "6% hydroxyethyl starch 130/0.4 in saline (indistinguishable 500‑mL bags). Used for all fluid resuscitation episodes while in ICU (until discharge, death, or day 90). Daily cap of 50 mL/kg; if exceeded, open‑label 0.9% saline was used. Bolus size and rate were clinician‑directed (pragmatic delivery).",
+      "comparison": "0.9% sodium chloride (indistinguishable 500‑mL bags). Used for all ICU resuscitation episodes with no protocol‑imposed daily volume cap. Other fluids (maintenance, nutrition, blood products) were permitted as clinically indicated.",
+      "blinding": "Double‑blind: patients, clinicians, investigators, and outcome assessors. Study fluids were packaged and labelled indistinguishably; allocation via central web‑based system with minimisation.",
+      "sample_size_power": "Planned 7000 patients to detect an absolute difference of 3.5 percentage points in 90‑day mortality (baseline estimate 26%) with 90% power at 5% significance, allowing for 5% loss to follow‑up.",
+      "primary_outcome": "All‑cause mortality at 90 days.",
+      "secondary_outcomes": [
+        "Death within 28 days",
+        "Renal‑replacement therapy within 90 days",
+        "Acute kidney injury by RIFLE criteria (R, I, F)",
+        "New organ failure (cardiovascular, hepatic) defined by SOFA",
+        "Duration of ICU stay",
+        "Treatment‑related adverse events"
+      ],
+      "follow_up": "90 days after randomisation."
+    },
+    "results": {
+      "headline_bullets": [
+        "No difference in 90‑day mortality: 18.0% HES vs 17.0% saline (RR 1.06, 95% CI 0.96–1.18, P=0.26).",
+        "More patients required renal‑replacement therapy with HES: 7.0% vs 5.8% (RR 1.21, 95% CI 1.00–1.45, P=0.04).",
+        "RIFLE‑R and RIFLE‑I AKI were less frequent with HES (54.0% vs 57.3%, P=0.007; 34.6% vs 38.0%, P=0.005), but RIFLE‑F was similar (10.4% vs 9.2%, P=0.12).",
+        "New cardiovascular failure was reduced (36.5% vs 39.9%, P=0.03), new hepatic failure increased (1.9% vs 1.2%, P=0.03)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death at 90 days (primary)",
+          "group_a": "597/3315 (18.0%)",
+          "group_b": "566/3336 (17.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.06",
+          "ci_95": "0.96–1.18",
+          "p_value": "0.26",
+          "note": "Primary outcome data available in 94.7% vs 95.3% of randomised patients."
+        },
+        {
+          "outcome": "Death within 28 days",
+          "group_a": "416/3315 (12.5%)",
+          "group_b": "393/3336 (11.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.06",
+          "ci_95": "0.92–1.22",
+          "p_value": "0.44"
+        },
+        {
+          "outcome": "Renal‑replacement therapy (during 90 days)",
+          "group_a": "235/3352 (7.0%)",
+          "group_b": "196/3375 (5.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.21",
+          "ci_95": "1.00–1.45",
+          "p_value": "0.04",
+          "note": "Denominators reflect patients who received any study fluid."
+        },
+        {
+          "outcome": "Acute kidney injury (RIFLE‑R)",
+          "group_a": "1788/3309 (54.0%)",
+          "group_b": "1912/3335 (57.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.94",
+          "ci_95": "0.90–0.98",
+          "p_value": "0.007",
+          "note": "Composite definition (serum creatinine + urine output)."
+        },
+        {
+          "outcome": "Acute kidney injury (RIFLE‑I)",
+          "group_a": "1130/3265 (34.6%)",
+          "group_b": "1253/3300 (38.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.91",
+          "ci_95": "0.85–0.97",
+          "p_value": "0.005",
+          "note": "Composite definition (serum creatinine + urine output)."
+        },
+        {
+          "outcome": "Acute kidney injury (RIFLE‑F)",
+          "group_a": "336/3243 (10.4%)",
+          "group_b": "301/3263 (9.2%)",
+          "effect_measure": "RR",
+          "effect_value": "1.12",
+          "ci_95": "0.97–1.30",
+          "p_value": "0.12"
+        },
+        {
+          "outcome": "New cardiovascular failure",
+          "group_a": "663/1815 (36.5%)",
+          "group_b": "722/1808 (39.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.91",
+          "ci_95": "0.84–0.99",
+          "p_value": "0.03",
+          "note": "Defined by SOFA in patients without baseline failure."
+        },
+        {
+          "outcome": "New hepatic failure",
+          "group_a": "55/2830 (1.9%)",
+          "group_b": "36/2887 (1.2%)",
+          "effect_measure": "RR",
+          "effect_value": "1.56",
+          "ci_95": "1.03–2.36",
+          "p_value": "0.03",
+          "note": "Absolute event rates were low."
+        },
+        {
+          "outcome": "Duration of ICU stay (days)",
+          "group_a": "7.3 ± 0.2",
+          "group_b": "6.9 ± 0.2",
+          "effect_measure": "Mean diff",
+          "effect_value": "0.4",
+          "ci_95": "-0.0 – 0.9",
+          "p_value": "0.07",
+          "note": "Values are mean ± SE."
+        },
+        {
+          "outcome": "Any treatment‑related adverse event",
+          "group_a": "180/3871 (4.6%)",
+          "group_b": "95/2879 (3.3%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.006",
+          "note": "Safety cohort denominators differ from ITT; P value reported."
+        },
+        {
+          "outcome": "Serious treatment‑related adverse event",
+          "group_a": "2/3871 (0.1%)",
+          "group_b": "2/2879 (0.1%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.77",
+          "note": "Safety cohort denominators."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Sepsis at randomisation",
+          "group_a": "25.4%",
+          "group_b": "23.7%",
+          "effect_measure": "RR",
+          "effect_value": "1.07",
+          "ci_95": "0.92–1.25",
+          "p_interaction": "—"
+        },
+        {
+          "subgroup": "Traumatic brain injury",
+          "group_a": "3.7%",
+          "group_b": "10.0%",
+          "effect_measure": "RR",
+          "effect_value": "0.37",
+          "ci_95": "0.04–3.35",
+          "p_interaction": "—"
+        }
+      ]
+    },
+    "safety": [
+      "Any treatment‑related adverse event was more frequent with HES (4.6% vs 3.3%, P=0.006).",
+      "Serious treatment‑related adverse events were rare and similar (0.1% in both groups, P=0.77).",
+      "Renal‑replacement therapy was needed in more HES‑treated patients (7.0% vs 5.8%, P=0.04).",
+      "No difference in 90‑day mortality; no survival benefit with HES."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised, encrypted, web‑based minimisation algorithm stratified by site and trauma diagnosis. Indistinguishable fluid packaging ensured allocation concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double‑blind (patients, clinicians, investigators, assessors). Primary outcome (all‑cause mortality) is objective. RRT initiation is clinician‑mediated but occurred under blinding across multiple centres."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "Withdrawal of consent 3.9% (HES) vs 3.2% (saline). Primary outcome ascertainment 94.7% vs 95.3%. Loss to follow‑up 0.1% per group."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Protocol violations ~9.5% in both arms, mostly incorrect fluid administration. Daily study fluid volumes lower with HES; CVP higher (11.3 ± 4.8 vs 10.4 ± 4.4 mm Hg), confirming treatment separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced for demographics and severity (APACHE II median 17 in both). Minor baseline imbalances in CVP and lactate, unlikely to alter conclusions."
+        }
+      ],
+      "verdict": "Overall internal validity is strong: robust randomisation and blinding, high follow‑up, measurable treatment separation, and consistent results across adjusted analyses. Renal endpoint interpretation is complex because of composite definitions and clinician‑mediated RRT initiation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad mixed medical‑surgical ICU cohort, moderate severity (APACHE II 17), ~29% sepsis, ~42% surgical. Applicable to many adult ICUs in high‑resource settings."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Control was 0.9% saline, not a balanced crystalloid; extrapolation to balanced solutions requires caution. Excluded patients with severe renal dysfunction, burns, post‑cardiac surgery, and traumatic intracranial haemorrhage. Performed in high‑resource research‑active ICUs."
+        }
+      ],
+      "verdict": "Generalisability is moderate‑to‑high for mixed medical‑surgical ICU populations in high‑resource settings, but is limited for excluded subgroups and when balanced crystalloids are the standard comparator."
+    },
+    "strengths": [
+      "Large, adequately powered multicentre RCT (n=7000) with a heterogeneous ICU population.",
+      "Double‑blind design with indistinguishable study fluids and central randomisation, minimising performance and detection bias.",
+      "Patient‑centred primary outcome (90‑day mortality) with very high follow‑up completeness.",
+      "Pragmatic delivery reflecting real‑world resuscitation practice, enhancing clinical relevance.",
+      "Renal function assessed with both therapy‑based (RRT) and structured AKI staging (RIFLE)."
+    ],
+    "limitations": [
+      "Comparator was 0.9% saline, not a balanced crystalloid, limiting direct comparison to contemporary low‑chloride strategies.",
+      "Clinician‑directed resuscitation (bolus size, rate) caused variable exposure that may attenuate detectable treatment effects.",
+      "Daily HES cap (50 mL/kg) and moderate mean daily volumes likely limited very‑high‑dose starch exposure; extreme‑dose toxicity may be under‑captured.",
+      "RIFLE composite AKI endpoints are confounded by fluid‑induced haemodynamic changes and urine‑output dilution, making interpretation difficult.",
+      "Safety reporting required a later correction of adverse‑event denominators and footnotes, though primary results were unaffected."
+    ],
+    "critical_appraisal": {
+      "summary": "CHEST is a large, well‑conducted trial with strong internal validity; the saline comparator and pragmatic design limit direct generalisability to balanced crystalloid settings. The increase in RRT use with HES, despite discordant RIFLE findings, provides a clear renal safety signal. Together with concordant evidence (6S, meta‑analyses), CHEST establishes that HES 130/0.4 does not improve survival and should be avoided for resuscitation in ICU.",
+      "strengths": [
+        "Large sample, multicentre, blinded, pragmatic design",
+        "Patient‑centred primary outcome with near‑complete follow‑up",
+        "Both therapy‑based (RRT) and structured AKI assessments"
+      ],
+      "weaknesses": [
+        "Saline comparator limits inference about balanced crystalloids",
+        "RIFLE composite endpoints confounded by fluid‑induced changes",
+        "Moderate starch doses may under‑represent extreme‑dose toxicity"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "HES 130/0.4 did not improve survival and was associated with higher use of renal‑replacement therapy and more treatment‑related adverse events. Any potential fluid‑sparing or haemodynamic advantages did not translate into patient‑centred benefit and were accompanied by kidney safety concerns.",
+    "clinical_bottom_line": {
+      "verdict": "Do not use 6% HES 130/0.4 for fluid resuscitation in adult ICU patients; it provides no mortality benefit and increases the need for renal‑replacement therapy.",
+      "applies_to": "Adult ICU patients who require fluid resuscitation and have no contraindications to crystalloid, in settings similar to the trial.",
+      "does_not_mean": "The lower RIFLE‑R/I rates do not mean HES is renoprotective; the increase in RRT is the more clinically important signal. Findings should not be interpreted as favouring saline over balanced crystalloids.",
+      "implementation_caveats": [
+        "Comparator was saline; do not use results to favour one crystalloid over another.",
+        "HES was a tetrastarch; however, results align with other starch trials and meta‑analyses.",
+        "Excluded patients with severe renal impairment or post‑cardiac surgery; safety in those groups is not directly assessed.",
+        "High‑resource ICU context; RRT thresholds may differ in other settings."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Renal endpoint discordance",
+        "notes": "Lower RIFLE‑R/I but higher RRT with HES, sparking debate about the validity of composite AKI definitions. Authors highlighted creatinine‑based signals and the borderline RRT confidence interval."
+      },
+      {
+        "topic": "Safety reporting correction",
+        "notes": "A formal correction adjusted adverse‑event denominators and footnotes; no impact on primary outcome conclusions."
+      },
+      {
+        "topic": "Reanalysis and transparency",
+        "notes": "A subsequent correspondence reanalysis reinforced the absence of mortality benefit and re‑examined renal safety signals."
+      },
+      {
+        "topic": "Long‑term outcomes",
+        "notes": "Planned economic and quality‑of‑life follow‑up showed higher costs with HES without improvement in longer‑term outcomes."
+      },
+      {
+        "topic": "Concordant evidence",
+        "notes": "The contemporaneous 6S sepsis trial and subsequent meta‑analyses confirmed a signal of harm (mortality and RRT) with starches in critical illness."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "International guidelines incorporated CHEST and related evidence to recommend against HES for resuscitation in sepsis and critical illness, favouring crystalloids."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "6S",
+        "relation": "Contemporaneous large sepsis RCT (6% HES 130/0.4 vs Ringer’s acetate) that also showed higher mortality and RRT with starch, reinforcing CHEST’s safety signal."
+      }
+    ],
+    "unresolved_questions": [
+      "Mechanism of renal injury from HES in critical illness.",
+      "Effect of HES in specific subgroups not well represented (e.g., pure haemorrhagic shock without TBI).",
+      "Comparative safety of HES vs balanced crystalloids (rather than saline)."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=7000",
+        "90‑day mortality: 18.0% vs 17.0% (RR 1.06, 95% CI 0.96–1.18)",
+        "RRT: 7.0% vs 5.8% (RR 1.21, 95% CI 1.00–1.45)",
+        "No survival benefit, increased RRT with HES"
+      ],
+      "one_line_takeaway": "HES 130/0.4 does not improve survival and increases need for renal‑replacement therapy in ICU patients; avoid for resuscitation."
+    }
+  },
+  "_source_id": "CHEST",
+  "_source_system": "Circulatory"
+}

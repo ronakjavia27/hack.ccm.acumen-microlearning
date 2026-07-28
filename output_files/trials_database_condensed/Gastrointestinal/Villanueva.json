@@ -1,0 +1,296 @@
+{
+  "id": "Villanueva",
+  "trial_name": "Villanueva — Restrictive vs Liberal Transfusion in Acute Upper GI Bleeding (2013)",
+  "specialty": "Gastroenterology & Hepatology",
+  "subtopic": "Gastrointestinal Bleeding",
+  "year": 2013,
+  "journal": "New England Journal of Medicine",
+  "citation": "Villanueva C, Colomo A, Bosch A, Concepción M, Hernandez-Gea V, Aracil C, Graupera I, Poca M, Alvarez-Urturi C, Gordillo J, Guarner-Argente C, Santaló M, Muñiz E, Guarner C. Transfusion strategies for acute upper gastrointestinal bleeding. N Engl J Med. 2013;368(1):11-21.",
+  "doi": "https://doi.org/10.1056/NEJMoa1211801",
+  "registration": "",
+  "trial_type": "RCT — single-centre, pragmatic, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 889,
+  "result_category": "Positive",
+  "one_liner": "In severe acute UGIB, a restrictive transfusion strategy (Hb <7 g/dL) reduced 45-day mortality and rebleeding compared to a liberal strategy (Hb <9 g/dL).",
+  "pico": {
+    "population": "Adults with severe acute upper gastrointestinal bleeding (haematemesis, melaena, or both) managed with urgent endoscopy.",
+    "intervention": "Restrictive red-cell transfusion strategy: transfuse when Hb <7 g/dL, target 7–9 g/dL.",
+    "comparison": "Liberal red-cell transfusion strategy: transfuse when Hb <9 g/dL, target 9–11 g/dL.",
+    "outcome": "Primary: Death from any cause within 45 days. Key secondary: Further bleeding, adverse events, transfusion requirements."
+  },
+  "keywords": [
+    "upper gastrointestinal bleeding",
+    "transfusion",
+    "restrictive strategy",
+    "cirrhosis",
+    "portal hypertension"
+  ],
+  "related_trials": [
+    "TRIGGER"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Red-cell transfusion is common in acute UGIB, but optimal haemoglobin thresholds were uncertain. Extrapolation from critical care 'restrictive' trials was limited because acute GI bleeding populations were excluded.",
+      "knowledge_gap": "There were mechanistic concerns that transfusion might worsen portal pressure and rebleeding in portal-hypertensive haemorrhage, and no dedicated RCT existed.",
+      "hypothesis": "In severe acute UGIB, a restrictive red-cell transfusion strategy (threshold 7 g/dL; target 7–9 g/dL) improves outcomes compared with a liberal strategy (threshold 9 g/dL; target 9–11 g/dL)."
+    },
+    "methods": {
+      "design": "Randomised, single-centre, pragmatic, open-label trial with concealed allocation, stratified by presence/absence of cirrhosis. Intention-to-treat analysis.",
+      "setting": "Hospital de la Santa Creu i Sant Pau, Barcelona; enrolled June 2003–December 2009.",
+      "population": {
+        "inclusion": [
+          "Adults (>18 years) with haematemesis (or bloody nasogastric aspirate), melaena, or both, confirmed by staff.",
+          "Urgent gastroscopy within 6 hours."
+        ],
+        "exclusion": [
+          "Exsanguinating haemorrhage requiring immediate transfusion.",
+          "Recent acute coronary syndrome/stroke/TIA/peripheral ischaemia.",
+          "Recent transfusion.",
+          "Recent trauma/surgery.",
+          "Lower GI bleeding.",
+          "Low-risk presentation (clinical Rockall score 0 with Hb ≥12 g/dL)."
+        ]
+      },
+      "intervention": "Restrictive transfusion strategy: transfuse packed red cells when Hb <7 g/dL; post-transfusion target 7–9 g/dL; 1 unit at a time with reassessment.",
+      "comparison": "Liberal transfusion strategy: transfuse when Hb <9 g/dL; post-transfusion target 9–11 g/dL; 1 unit at a time with reassessment. Both arms permitted 'off-protocol' transfusion for anaemia symptoms/signs, massive bleeding, or surgery.",
+      "blinding": "Open-label (strategy-based transfusion; blinding not feasible). Primary endpoint objective (all-cause mortality).",
+      "sample_size_power": "430 patients/group (860 total) required to detect ≥5% absolute mortality difference (assumed 10% mortality in liberal arm) with two-sided α=0.05 and β=0.20 (80% power).",
+      "primary_outcome": "Death from any cause within 45 days.",
+      "secondary_outcomes": [
+        "Further bleeding",
+        "Adverse events (any)",
+        "Transfusion reactions",
+        "Transfusion-associated circulatory overload (TACO)",
+        "Cardiac complications (ACS, pulmonary oedema, arrhythmias)",
+        "Length of hospital stay",
+        "Blood utilisation (RBC units per patient)"
+      ],
+      "follow_up": "45 days (primary endpoint); survival presented to 6 weeks."
+    },
+    "results": {
+      "headline_bullets": [
+        "921 randomised; 32 withdrawn after randomisation; ITT analysis of 444 (restrictive) vs 445 (liberal).",
+        "Restrictive strategy significantly reduced 45-day mortality (5% vs 9%; HR 0.55; P=0.02).",
+        "Further bleeding was lower with restrictive strategy (10% vs 16%; HR 0.62; P=0.01).",
+        "Blood exposure was markedly reduced: mean 1.5 vs 3.7 units; 51% vs 14% received no transfusion."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death from any cause within 45 days",
+          "group_a": "23/444 (5%)",
+          "group_b": "41/445 (9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.55",
+          "ci_95": "0.33–0.92",
+          "p_value": "0.02",
+          "note": "Primary outcome; time-to-event analysis"
+        },
+        {
+          "outcome": "Further bleeding (overall)",
+          "group_a": "45/444 (10%)",
+          "group_b": "71/445 (16%)",
+          "effect_measure": "HR",
+          "effect_value": "0.62",
+          "ci_95": "0.43–0.91",
+          "p_value": "0.01",
+          "note": "Definition required haemodynamic instability or Hb drop ≥2 g/dL within 6 hours"
+        },
+        {
+          "outcome": "Adverse events (any)",
+          "group_a": "179/444 (40%)",
+          "group_b": "214/445 (48%)",
+          "effect_measure": "HR",
+          "effect_value": "0.73",
+          "ci_95": "0.56–0.95",
+          "p_value": "0.02",
+          "note": "Overall complications lower with restrictive strategy"
+        },
+        {
+          "outcome": "Transfusion reactions",
+          "group_a": "14/444 (3%)",
+          "group_b": "38/445 (9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.35",
+          "ci_95": "0.19–0.65",
+          "p_value": "0.001",
+          "note": "Included TACO and allergic reactions"
+        },
+        {
+          "outcome": "Transfusion-associated circulatory overload (TACO)",
+          "group_a": "2/444 (<1%)",
+          "group_b": "16/445 (4%)",
+          "effect_measure": "HR",
+          "effect_value": "0.06",
+          "ci_95": "0.01–0.45",
+          "p_value": "0.001",
+          "note": "Major driver of cardiopulmonary harm signal"
+        },
+        {
+          "outcome": "Cardiac complications (ACS, pulmonary oedema, arrhythmias)",
+          "group_a": "49/444 (11%)",
+          "group_b": "70/445 (16%)",
+          "effect_measure": "HR",
+          "effect_value": "0.64",
+          "ci_95": "0.43–0.97",
+          "p_value": "0.04",
+          "note": "Myocardial infarction: 0 vs 8 (2%) (supplement)"
+        },
+        {
+          "outcome": "Length of hospital stay (days, mean ± SD)",
+          "group_a": "9.6 ± 8.7",
+          "group_b": "11.5 ± 12.8",
+          "effect_measure": "Difference",
+          "effect_value": "−1.9 days",
+          "ci_95": "",
+          "p_value": "0.01",
+          "note": ""
+        },
+        {
+          "outcome": "Blood utilisation (RBC units per patient, mean ± SD)",
+          "group_a": "1.5 ± 2.3",
+          "group_b": "3.7 ± 3.8",
+          "effect_measure": "Difference",
+          "effect_value": "−2.2 units",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "No transfusion: 225/444 (51%) vs 61/445 (14%)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Cirrhosis Child–Pugh A/B",
+          "group_a": "5/113 (4%)",
+          "group_b": "13/109 (12%)",
+          "effect_measure": "HR",
+          "effect_value": "0.30",
+          "ci_95": "0.11–0.85",
+          "p_interaction": "0.02"
+        },
+        {
+          "subgroup": "Cirrhosis Child–Pugh C",
+          "group_a": "10/26 (38%)",
+          "group_b": "12/29 (41%)",
+          "effect_measure": "HR",
+          "effect_value": "1.04",
+          "ci_95": "0.45–2.37",
+          "p_interaction": "0.91"
+        }
+      ]
+    },
+    "safety": [
+      "Fewer adverse events overall with restrictive strategy (40% vs 48%).",
+      "Significantly fewer transfusion reactions (3% vs 9%) and TACO (<1% vs 4%).",
+      "Fewer cardiac complications (11% vs 16%), including 0 vs 8 myocardial infarctions."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated random numbers; sealed, consecutively numbered, opaque envelopes; stratified by cirrhosis; blocks of four."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label strategy could influence co-interventions and thresholds for declaring 'further bleeding' or complications; mitigated by standardised definitions and objective primary endpoint (all-cause mortality)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "921 randomised; 32 withdrawn after randomisation; analysed 444 vs 445 by intention-to-treat."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Major protocol violation occurred more often with restrictive strategy (39/444 [9%] vs 15/445 [3%]; P<0.001); nonetheless, deviations were <10% in each group and analyses were intention-to-treat."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were similar at baseline (e.g., mean complete Rockall 5.3 ± 2.0 vs 5.4 ± 1.7; shock at admission 28% vs 31% in supplement); population enriched for higher-risk bleeding (low-risk Rockall 0 with Hb ≥12 excluded)."
+        }
+      ],
+      "verdict": "Overall internal validity appears moderate-to-strong: allocation concealment and objective primary endpoint support causal inference, with the main limitation being open-label delivery and higher (though still <10%) protocol deviations in the restrictive arm."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults with 'severe' UGIB (median-to-high Rockall; 31% cirrhosis; 49% peptic ulcer; 21% oesophageal varices) managed in a specialist bleeding unit with rapid access to endoscopy and (for variceal bleeding) portal pressure measurements in a subset."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Benefits likely depend on timely endoscopic and pharmacological haemostasis (e.g., urgent endoscopy, vasoactive agents, PPI) and availability of rescue interventions; applicability may be attenuated where such pathways are delayed or unavailable. Key exclusions: exsanguinating bleeding requiring immediate transfusion; recent acute coronary syndrome/stroke/TIA/peripheral ischaemia; low-risk presentations; and prior recent transfusion."
+        }
+      ],
+      "verdict": "Findings are highly generalisable to hospitalised, non-exsanguinating UGIB managed with modern haemostatic pathways; generalisability is limited for massive haemorrhage and patients with very recent major ischaemic events."
+    },
+    "strengths": [
+      "Large randomised dataset for UGIB.",
+      "Concealed allocation with stratification for cirrhosis.",
+      "Clinically meaningful separation in haemoglobin and transfusion exposure.",
+      "Objective primary endpoint.",
+      "Prespecified subgroup analyses.",
+      "Mechanistic portal-pressure substudy consistent with clinical outcomes."
+    ],
+    "limitations": [
+      "Single-centre and open-label.",
+      "Post-randomisation withdrawals (32) and more protocol violations in restrictive arm (9% vs 3%).",
+      "Exclusions limit applicability to exsanguinating bleeding and very recent high-risk cardiovascular events.",
+      "Some secondary outcomes could be influenced by care decisions in an unblinded trial."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, practice-changing RCT with a strong internal validity for its primary outcome, though open-label design and single-centre setting are minor limitations.",
+      "strengths": [
+        "Concealed allocation and objective primary endpoint (all-cause mortality) minimise bias.",
+        "Large effect size with consistent benefits across multiple outcomes and a mechanistic substudy."
+      ],
+      "weaknesses": [
+        "Open-label design could influence secondary outcome assessment.",
+        "Single-centre execution may limit generalisability of the exact protocol."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "A restrictive transfusion strategy improved 45-day survival and reduced further bleeding and adverse events compared with a liberal strategy in patients with severe acute upper gastrointestinal bleeding.",
+    "clinical_bottom_line": {
+      "verdict": "This trial is practice-changing, establishing a restrictive transfusion threshold (Hb <7 g/dL) as the standard of care for most patients with severe acute UGIB.",
+      "applies_to": "Hospitalised, non-exsanguinating UGIB patients managed with rapid endoscopy and contemporary haemostatic care, particularly those with cirrhosis Child–Pugh A/B.",
+      "does_not_mean": "A restrictive strategy is safe for patients with exsanguinating haemorrhage or very recent major ischaemic events, who were excluded from the trial.",
+      "implementation_caveats": [
+        "Guidelines recommend a more liberal threshold (e.g., Hb <8 g/dL) for patients with known cardiovascular disease.",
+        "Benefit was not demonstrated in patients with advanced cirrhosis (Child–Pugh C)."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Unblinded design vs objective endpoint",
+        "notes": "Concerns that open-label management could influence rebleeding/rescue decisions and complication ascertainment were raised in published correspondence, although mortality (primary outcome) is less susceptible to bias."
+      },
+      {
+        "topic": "Cardiovascular disease uncertainty",
+        "notes": "Exclusion of very recent acute coronary syndrome/stroke/TIA and limited data in high-risk ischaemic subgroups meant the 'one-size-fits-all' Hb <7 threshold remained debated, driving guideline nuance (e.g., higher thresholds in known cardiovascular disease)."
+      },
+      {
+        "topic": "Subgroup interpretation (cancer/cirrhosis severity)",
+        "notes": "Benefit was clear in Child–Pugh A/B cirrhosis but not in Child–Pugh C (HR 1.04; wide CI), raising questions about competing risks and whether transfusion strategy meaningfully alters outcomes in advanced liver failure."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TRIGGER",
+        "relation": "A subsequent cluster-randomised feasibility trial that demonstrated implementing hospital-level transfusion policies in UGIB is feasible but highlighted practice variability and the need for adequately powered effectiveness trials."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal transfusion threshold for patients with acute UGIB and concurrent acute coronary syndrome or other high-risk cardiovascular conditions.",
+      "Whether a restrictive strategy is beneficial or harmful in patients with Child–Pugh C cirrhosis."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=889",
+        "45-day mortality: 5% vs 9% (HR 0.55)",
+        "Further bleeding: 10% vs 16% (HR 0.62)",
+        "51% in restrictive arm received no transfusion"
+      ],
+      "one_line_takeaway": "For severe acute UGIB, transfuse at Hb <7 g/dL (target 7–9) to improve survival and reduce rebleeding, reserving a more liberal trigger for patients with massive haemorrhage or recent major cardiac events."
+    }
+  },
+  "_source_id": "Villanueva",
+  "_source_system": "Gastrointestinal"
+}

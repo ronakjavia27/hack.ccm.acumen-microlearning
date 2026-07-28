@@ -1,0 +1,264 @@
+{
+  "id": "NONSEDA",
+  "trial_name": "NONSEDA — Nonsedation vs Light Sedation in Mechanically Ventilated ICU Patients (2020)",
+  "specialty": "Neurocritical Care",
+  "subtopic": "Delirium & ICU Cognitive Dysfunction",
+  "year": 2020,
+  "journal": "New England Journal of Medicine",
+  "citation": "Olsen HT, Nedergaard HK, Strøm T, Oxlund J, Wian KA, Ytrebø LM, et al. Nonsedation or light sedation in critically ill, mechanically ventilated patients. N Engl J Med. 2020;382(12):1103-1111.",
+  "doi": "https://doi.org/10.1056/NEJMoa1906759",
+  "registration": "",
+  "trial_type": "RCT — multicenter, investigator-initiated, pragmatic, parallel-group, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 700,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In mechanically ventilated ICU patients, a non-sedation strategy did not reduce 90-day mortality compared to light sedation and increased device-related adverse events.",
+  "pico": {
+    "population": "Adults receiving invasive mechanical ventilation, screened within 24 hours of intubation, expected ventilation >24 hours",
+    "intervention": "Non-sedation strategy: no continuous sedative infusions, analgesia-first, rescue sedation as needed",
+    "comparison": "Light sedation strategy: protocolised sedation with daily wake-up trial, titrated to RASS -2 to -3",
+    "outcome": "All-cause mortality at 90 days"
+  },
+  "keywords": [
+    "sedation",
+    "mechanical ventilation",
+    "delirium",
+    "analgesia-first",
+    "daily wake-up trial"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Deep or prolonged sedation is linked to delayed liberation, delirium, and longer ICU stays. Sedation minimisation strategies like daily interruption and bundled spontaneous awakening/breathing trials have been tested. A prior single-centre trial of a 'no sedation' protocol suggested potential resource outcome improvements but raised feasibility and safety questions.",
+      "knowledge_gap": "Whether a maximal de-escalation to 'no sedation' improves mortality and patient-centred outcomes compared to protocolised light sedation in modern ICUs was uncertain.",
+      "hypothesis": "A protocol of non-sedation would reduce 90-day all-cause mortality compared with protocolised light sedation including a daily wake-up trial."
+    },
+    "methods": {
+      "design": "Multicentre, investigator-initiated, pragmatic, parallel-group RCT with stratified randomisation (centre, age category, shock at admission).",
+      "setting": "8 ICUs in Denmark, Norway, and Sweden.",
+      "population": {
+        "inclusion": [
+          "Adults receiving invasive mechanical ventilation",
+          "Screened within 24 hours of intubation",
+          "Expected mechanical ventilation >24 hours"
+        ],
+        "exclusion": [
+          "Conditions mandating continuous sedation or neurological control (e.g., therapeutic hypothermia, status epilepticus, elevated intracranial pressure/need for controlled ventilation)",
+          "Severe hypoxaemia (PaO2/FiO2 ≤ 9 kPa in the published protocol)"
+        ]
+      },
+      "intervention": "Non-sedation strategy: No continuous sedative infusions; analgesia-first (typically opioid boluses/infusion per protocol) with environmental/comfort measures; sedation permitted as rescue (e.g., severe agitation threatening safety or ventilation synchrony). Target state: Awake or lightly sedated when feasible.",
+      "comparison": "Light sedation strategy: Protocolised sedation with daily wake-up trial; sedative choice per protocol (propofol initially, midazolam as needed), titrated to a light sedation target (RASS approximately -2 to -3) and interrupted daily when clinically appropriate.",
+      "blinding": "No blinding of treating clinicians or patients (behavioural intervention); mortality was objective and captured from registries/records.",
+      "sample_size_power": "Planned n≈700 to detect a 25% relative risk reduction in mortality with 80% power (β=0.20) at a two-sided 5% significance level (α=0.05).",
+      "primary_outcome": "All-cause mortality at 90 days",
+      "secondary_outcomes": [
+        "All-cause mortality at 28 days",
+        "Days without mechanical ventilation within 28 days",
+        "Days in ICU within 28 days",
+        "Days free from coma or delirium within 28 days",
+        "Major thromboembolic event (0-28 days)",
+        "Accidental self-extubation requiring re-intubation within 24 hours",
+        "Accidental removal of other equipment (e.g., lines/tubes)"
+      ],
+      "follow_up": "Primary outcome at 90 days; key secondary outcomes assessed over 28 days and selected safety events during ICU stay."
+    },
+    "results": {
+      "headline_bullets": [
+        "Non-sedation did not improve 90-day mortality (42.4% vs 37.0%; risk difference +5.4 percentage points; P=0.65).",
+        "Protocol separation was incomplete: mean RASS ranged from -1.3 to -0.8 (non-sedation) vs -2.3 to -1.8 (light sedation) over days 1-7.",
+        "Device-related harms were more frequent with non-sedation (e.g., re-intubation after self-extubation within 24 hours: 8.9% vs 4.0%; P=0.01)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality (90 days) (primary)",
+          "group_a": "148/349 (42.4%)",
+          "group_b": "130/351 (37.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+5.4 percentage points",
+          "ci_95": "-2.2 to 12.2",
+          "p_value": "0.65",
+          "note": "Modified ITT analysis"
+        },
+        {
+          "outcome": "All-cause mortality (28 days) (exploratory)",
+          "group_a": "113/349 (32.4%)",
+          "group_b": "99/351 (28.2%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+4.2 percentage points",
+          "ci_95": "-2.6 to 11.0",
+          "p_value": "",
+          "note": "Exploratory secondary analysis"
+        },
+        {
+          "outcome": "Days without mechanical ventilation within 28 days (median, IQR)",
+          "group_a": "20 (0-26)",
+          "group_b": "19 (0-25)",
+          "effect_measure": "Median difference",
+          "effect_value": "+1 day",
+          "ci_95": "-3 to 3",
+          "p_value": "",
+          "note": "No multiplicity adjustment"
+        },
+        {
+          "outcome": "Days in ICU within 28 days (median, IQR)",
+          "group_a": "13 (0-23)",
+          "group_b": "14 (0-23)",
+          "effect_measure": "Median difference",
+          "effect_value": "-1 day",
+          "ci_95": "-7 to 4",
+          "p_value": "",
+          "note": "ICU-free days not improved"
+        },
+        {
+          "outcome": "Days free from coma or delirium within 28 days (median, IQR)",
+          "group_a": "27 (21-28)",
+          "group_b": "26 (22-28)",
+          "effect_measure": "Median difference",
+          "effect_value": "+1 day",
+          "ci_95": "0 to 2",
+          "p_value": "",
+          "note": "Composite of coma and delirium assessments"
+        },
+        {
+          "outcome": "Major thromboembolic event (0-28 days)",
+          "group_a": "1/349 (0.3%)",
+          "group_b": "10/351 (2.8%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-2.5 percentage points",
+          "ci_95": "-4.8 to -0.7",
+          "p_value": "",
+          "note": "Secondary outcome; interpret cautiously given multiple comparisons"
+        },
+        {
+          "outcome": "Accidental self-extubation requiring re-intubation within 24 hours",
+          "group_a": "31/349 (8.9%)",
+          "group_b": "14/351 (4.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+4.9 percentage points",
+          "ci_95": "1.3 to 8.7",
+          "p_value": "0.01",
+          "note": "Safety outcome from trial supplementary appendix"
+        },
+        {
+          "outcome": "Accidental removal of other equipment (e.g., lines/tubes)",
+          "group_a": "53/349 (15.2%)",
+          "group_b": "32/351 (9.1%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+6.1 percentage points",
+          "ci_95": "1.3 to 11.0",
+          "p_value": "0.01",
+          "note": "Safety outcome from trial supplementary appendix"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Accidental self-extubation requiring re-intubation within 24 hours: 8.9% non-sedation vs 4.0% light sedation (P=0.01)",
+      "Accidental removal of other equipment: 15.2% non-sedation vs 9.1% light sedation (P=0.01)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised, concealed allocation with stratification by centre, age category, and shock at admission."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label care; primary endpoint (all-cause mortality) is objective and less susceptible to ascertainment bias; several secondary outcomes (e.g., delirium assessments, adverse events) are more vulnerable to measurement and care-process differences."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "710 randomised; 10 excluded from the modified ITT (5 per group); primary outcome ascertainment was otherwise complete via records/registries."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clinical separation was measurable but imperfect; rescue sedation occurred in a substantial minority of the non-sedation arm (sedation within 24 hours: 27% non-sedation; any time during ICU stay: 38.4% non-sedation)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly comparable; small differences included APACHE II score (median 26 non-sedation vs 25 light sedation) and age (median 72 vs 70 years)."
+        }
+      ],
+      "verdict": "Internal validity is moderate: randomisation and follow-up for mortality were robust, but the necessarily unblinded design, incomplete separation (rescue sedation), and multiple secondary endpoints without multiplicity control complicate causal inference beyond the primary mortality outcome."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Mechanically ventilated adults in well-resourced Scandinavian ICUs (older median age ~70-72); patients with several conditions mandating deep sedation or neurological control were excluded."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Feasibility of non-sedation may depend on staffing and culture; participating ICUs reported high nurse:patient ratios and established protocols. Generalisability to ICUs with lower staffing, different delirium management practices, or different sedation norms may be limited."
+        }
+      ],
+      "verdict": "Generalisability is moderate for similar high-resource ICUs practising protocolised light sedation; translation to lower-resource or differently staffed settings is more uncertain."
+    },
+    "strengths": [
+      "Large, pragmatic multicentre design",
+      "Early randomisation",
+      "Objective primary endpoint at 90 days",
+      "Clear protocol distinction",
+      "Detailed safety reporting"
+    ],
+    "limitations": [
+      "Unblinded behavioural intervention",
+      "Incomplete separation due to rescue sedation",
+      "Primary effect estimate compatible with benefit or harm",
+      "Multiple secondary outcomes increase false-positive risk",
+      "Resource-intensive setting may limit transferability"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted pragmatic trial with a robust primary endpoint, but the open-label design, incomplete protocol separation, and wide confidence intervals limit definitive conclusions about the non-inferiority or safety of a non-sedation strategy.",
+      "strengths": [
+        "Multicentre, pragmatic design enhances real-world applicability",
+        "Objective primary outcome (90-day mortality) minimises detection bias"
+      ],
+      "weaknesses": [
+        "Unblinded design introduces potential for performance and detection bias in secondary outcomes",
+        "Frequent rescue sedation in the intervention arm dilutes the treatment contrast"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Compared with protocolised light sedation, routine non-sedation did not improve mortality and was associated with more device-related adverse events.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support a routine non-sedation strategy for all mechanically ventilated patients and reinforces the current standard of an analgesia-first, light sedation approach.",
+      "applies_to": "Mechanically ventilated adults in well-resourced ICUs already using protocolised light sedation, excluding those with conditions mandating deep sedation.",
+      "does_not_mean": "That all sedation is harmful or should be avoided; the trial supports light, targeted sedation over no sedation.",
+      "implementation_caveats": [
+        "Implementing a non-sedation strategy requires adequate staffing and established protocols for rescue sedation and managing device-related events.",
+        "The safety signal of increased self-extubation requires careful monitoring and preventative measures if sedation is minimised."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Power and detectable effect size",
+        "notes": "The trial was designed to detect a large mortality effect; the observed CI still allows for smaller benefit or harm, meaning 'no difference' should be read as 'no evidence of a large benefit' rather than proof of equivalence."
+      },
+      {
+        "topic": "Exposure separation and pragmatic rescue sedation",
+        "notes": "Rescue sedation was common in the non-sedation group, reflecting real-world feasibility constraints and potentially diluting treatment contrast."
+      },
+      {
+        "topic": "Safety trade-offs",
+        "notes": "Increased unplanned device-related events with non-sedation underscores the importance of staffing, mobilisation policies, delirium prevention, and rescue pathways when sedation is minimised."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Whether a non-sedation strategy could benefit specific subgroups not excluded from the trial.",
+      "The long-term functional and cognitive outcomes of survivors managed with different sedation strategies."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=700",
+        "90-day mortality: 42.4% vs 37.0% (risk difference +5.4%, P=0.65)",
+        "Self-extubation requiring re-intubation: 8.9% vs 4.0% (P=0.01)"
+      ],
+      "one_line_takeaway": "For most mechanically ventilated ICU patients, a strategy of analgesia-first light sedation is safer and as effective as a non-sedation strategy, which increases device-related harms."
+    }
+  },
+  "_source_id": "NONSEDA",
+  "_source_system": "Neuro"
+}

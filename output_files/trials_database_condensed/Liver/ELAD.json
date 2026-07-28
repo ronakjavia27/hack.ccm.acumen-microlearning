@@ -1,0 +1,316 @@
+{
+  "id": "ELAD",
+  "trial_name": "ELAD — Extracorporeal Cellular Therapy in Severe Alcoholic Hepatitis (2018)",
+  "specialty": "Alcohol-Associated Liver Disease",
+  "subtopic": "Alcohol-Associated Liver Disease",
+  "year": 2018,
+  "journal": "Liver Transplantation",
+  "citation": "Thompson J, Jones N, Al-Khafaji A, Malik S, Reich D, Munoz S, et al. Extracorporeal cellular therapy (ELAD) in severe alcoholic hepatitis: a multinational, prospective, controlled, randomised trial. Liver Transpl. 2018;24(3):380-393",
+  "doi": "10.1002/lt.25026",
+  "registration": "NCT01471028",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 203,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In severe alcoholic hepatitis, ELAD did not improve overall survival compared with standard of care (HR 1.03, 95% CI 0.69–1.53, P=0.90).",
+  "pico": {
+    "population": "Hospitalised adults with severe alcoholic hepatitis (bilirubin ≥8 mg/dL, Maddrey’s DF ≥32, MELD 18–35)",
+    "intervention": "Continuous ELAD therapy for up to 120 hours (3–5 days) plus standard of care",
+    "comparison": "Standard of care alone (guideline-based management, no sham device)",
+    "outcome": "Overall survival (time-to-event, minimum 91-day follow-up)"
+  },
+  "keywords": [
+    "ELAD",
+    "extracorporeal liver support",
+    "bioartificial liver",
+    "severe alcoholic hepatitis",
+    "C3A cells",
+    "MELD",
+    "Lille score"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Severe alcoholic hepatitis has high short-term mortality despite supportive care. Pharmacotherapy (corticosteroids, pentoxifylline) has limited, inconsistent survival benefit and contraindications. Early liver transplantation can improve outcomes in selected non-responders but is limited by eligibility and organ availability.",
+      "knowledge_gap": "Whether bioartificial liver support with ELAD can improve survival in sAH beyond standard care.",
+      "hypothesis": "Adding 3–5 days of continuous ELAD therapy to guideline-based standard of care improves overall survival compared with standard of care alone."
+    },
+    "methods": {
+      "design": "Multinational, prospective, multicentre (40 sites), randomised (1:1), open-label, stratified (Stratum A vs B), parallel-group, controlled superiority trial.",
+      "setting": "40 sites in the United States, United Kingdom, and Australia; hospitalised patients managed in specialist inpatient services.",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years",
+          "Clinical sAH with jaundice (bilirubin ≥8 mg/dL) and coagulopathy (Maddrey’s DF ≥32)",
+          "MELD 18–35",
+          "Informed consent obtained",
+          "Stratum A: biopsy-proven sAH or ≥2 of hepatomegaly, AST>ALT, leukocytosis, ascites; Stratum B: sAH with underlying chronic liver disease not due to alcohol"
+        ],
+        "exclusion": [
+          "End-stage cirrhosis features (liver size <10 cm, liver volume <750 cc, or portal vein thrombosis)",
+          "MELD >35",
+          "Platelets <40,000/mm³",
+          "Uncontrolled bleeding",
+          "Infection clinically unresponsive to antibiotics",
+          "Haemodynamic instability",
+          "Chronic dialysis",
+          "Bilirubin reduction ≥20% in prior 72 hours",
+          "Significant concomitant disease with life expectancy <3 months"
+        ]
+      },
+      "intervention": "ELAD + standard of care: blood drawn via dual-lumen catheter, ultrafiltrate separated and circulated through 4 hollow-fibre cartridges containing ~440 g C3A cells, then filtered (0.2 µm) and returned. Continuous therapy for up to 120 hours (3–5 days); could stop after 72 hours if rapid response. Anticoagulation per site protocols for continuous haemofiltration, no citrate.",
+      "comparison": "Standard of care alone: AASLD/EASL guideline-based management for complications of liver disease; concomitant sAH medications (corticosteroids, pentoxifylline, N-acetylcysteine, antibiotics) permitted. No sham device.",
+      "blinding": "Open-label; primary endpoint (mortality) is objective, but non-fatal outcomes susceptible to bias. Follow-up health assessments by independent physician/nurse practitioner.",
+      "sample_size_power": "200 subjects (100 per group) to detect a 20% absolute increase in 91-day survival (from 40% to 60%) with ≥95% power at 5% significance level using log-rank test.",
+      "primary_outcome": "Overall survival (time-to-event, minimum 91-day follow-up)",
+      "secondary_outcomes": [
+        "Survival proportion at day 28",
+        "Survival proportion at day 91",
+        "Biomarker response (bilirubin reduction, Lille score)",
+        "Adverse events"
+      ],
+      "follow_up": "Minimum 91 days after randomisation of last subject; scheduled assessments daily for week 1, then days 7, 14, 21, 28, 63, 91; extension protocol collected survival up to 5 years."
+    },
+    "results": {
+      "headline_bullets": [
+        "ELAD did not improve overall survival: HR 1.03 (95% CI 0.69–1.53, P=0.90).",
+        "Day-91 survival: 59.4% ELAD vs 61.7% SOC.",
+        "Biochemical response was greater with ELAD (bilirubin reduction >20% by day 7: 59% vs 23%; Lille responders 74.7% vs 47%), but this did not translate to survival benefit.",
+        "Prespecified subgroup trends suggested possible benefit in younger/lower-MELD patients and harm in older/higher-MELD patients."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Overall survival (primary, ITT)",
+          "group_a": "47.9% death rate (ELAD)",
+          "group_b": "47.7% death rate (SOC)",
+          "effect_measure": "HR",
+          "effect_value": "1.03",
+          "ci_95": "0.69–1.53",
+          "p_value": "0.90",
+          "note": "Kaplan–Meier/log-rank; minimum 91-day follow-up"
+        },
+        {
+          "outcome": "Survival at day 28",
+          "group_a": "76.0%",
+          "group_b": "80.4%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Secondary endpoint; between-group comparison not reported"
+        },
+        {
+          "outcome": "Survival at day 91",
+          "group_a": "59.4%",
+          "group_b": "61.7%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Secondary endpoint; between-group comparison not reported"
+        },
+        {
+          "outcome": "Bilirubin reduction >20% by day 7 (safety population)",
+          "group_a": "59% (56/95)",
+          "group_b": "23% (25/108)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Biochemical response signal"
+        },
+        {
+          "outcome": "Lille response at day 7 (Lille <0.45)",
+          "group_a": "74.7%",
+          "group_b": "47.0%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.01",
+          "note": "Higher early response did not translate to survival benefit"
+        },
+        {
+          "outcome": "Alkaline phosphatase change over 7 days",
+          "group_a": "188±110 to 152±81 U/L",
+          "group_b": "173±83 to 178±100 U/L",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Biochemical separation signal"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Baseline MELD <28 (mortality at database lock)",
+          "group_a": "29.4%",
+          "group_b": "43.5%",
+          "effect_measure": "HR",
+          "effect_value": "0.58",
+          "ci_95": "Not reported",
+          "p_interaction": "0.08",
+          "note": "n=120; trend towards lower mortality with ELAD"
+        },
+        {
+          "subgroup": "Baseline MELD ≥28 (mortality at database lock)",
+          "group_a": "68.9%",
+          "group_b": "55.3%",
+          "effect_measure": "HR",
+          "effect_value": "1.50",
+          "ci_95": "Not reported",
+          "p_interaction": "0.15",
+          "note": "n=83; directionally worse with ELAD"
+        },
+        {
+          "subgroup": "Age <46.9 years (mortality at database lock)",
+          "group_a": "32.6%",
+          "group_b": "44.8%",
+          "effect_measure": "HR",
+          "effect_value": "0.63",
+          "ci_95": "Not reported",
+          "p_interaction": "0.17",
+          "note": "n=101; trend towards lower mortality with ELAD"
+        },
+        {
+          "subgroup": "Age ≥46.9 years (mortality at database lock)",
+          "group_a": "60.4%",
+          "group_b": "51.0%",
+          "effect_measure": "HR",
+          "effect_value": "1.35",
+          "ci_95": "Not reported",
+          "p_interaction": "0.26",
+          "note": "n=102; directionally worse with ELAD"
+        },
+        {
+          "subgroup": "Post-hoc combined: MELD <28 and age <46.9 years (day-91 survival)",
+          "group_a": "100%",
+          "group_b": "73%",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "0.006",
+          "note": "Not prespecified; hypothesis-generating"
+        }
+      ]
+    },
+    "safety": [
+      "TESAEs (as-treated): 76.8% ELAD vs 69.4% SOC.",
+      "Two deaths judged related to ELAD: DIC precipitation (baseline MELD >28) and catheter insertion complication.",
+      "TEAEs of interest (ELAD vs SOC): anaemia 44% vs 16%, thrombocytopenia 35% vs 11%, coagulopathy 31% vs 12%, hypotension 31% vs 17%.",
+      "Nonserious adverse events increased with ELAD, predominantly haematological and haemodynamic."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Block randomisation (block size 4) with 1:1 allocation; stratified schedules for Stratum A and B; allocation concealment via computerised eCRF and sponsor hotline code assignment. Uneven group sizes (96 vs 107) due to incomplete blocks."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design without sham extracorporeal support increases risk of differential co-interventions and reporting of non-fatal outcomes. Primary endpoint (mortality) is objective and less susceptible to adjudication bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "At 91 days: 1 lost to follow-up in each arm; 2 withdrew consent in control arm; outcome known in 95 ELAD vs 104 control. Extension follow-up: outcome known in 94 ELAD vs 102 control; 1 ELAD and 3 control lost; 1 ELAD and 2 control withdrew consent. ITT used for efficacy."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Only 45/96 (46.9%) completed 120 hours of ELAD; 37 completed 72–120 hours; 12 received <72 hours; 2 did not initiate. Discontinuations often due to adverse events (n=18) or investigator judgement of instability (n=9). One control subject inadvertently received ELAD (as-treated: 95 ELAD, 108 control)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Mean MELD 27.3; mean bilirubin 25.1 mg/dL; vasopressors in 38 subjects evenly distributed. Ventilator support: 8 ELAD vs 3 control; acute dialysis: 2 ELAD vs 0 control. Control arm had higher proportion aged <35 years. Time between last alcohol intake, hospitalisation, and randomisation comparable."
+        },
+        {
+          "domain": "Co-interventions",
+          "notes": "Prednisone standard dose: 34.4% ELAD vs 42.1% control; systemic antibiotics: 60.4% vs 54.2%; pentoxifylline: 34.4% vs 31.8%."
+        }
+      ],
+      "verdict": "Moderate internal validity: randomisation with allocation concealment and objective mortality endpoint are strengths, but open-label design and substantial truncation/non-initiation of ELAD exposure limit separation and complicate causal attribution."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Participants reflect hospitalised sAH with very high bilirubin (mean 25.1 mg/dL) and MELD 18–35 (mean 27.3) across multiple countries. Exclusions (MELD >35, chronic dialysis, severe thrombocytopenia, haemodynamic instability, uncontrolled infection, end-stage cirrhosis, rapidly improving bilirubin) limit generalisability. Inability to provide informed consent was a common screening failure (39/171 exclusions), potentially selecting against more encephalopathic or unstable ICU patients."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "ELAD requires specialised equipment, trained staff, continuous extracorporeal circuit management, and reliable vascular access, limiting feasibility to high-resource settings. Does not provide toxin removal or renal support, limiting applicability in multi-organ failure. Enrolled some high-acuity features (vasopressors, ventilation, dialysis) but many ICU extremes excluded."
+        }
+      ],
+      "verdict": "Limited-to-moderate generalisability: most applicable to hospitalised sAH patients meeting trial’s physiological and imaging constraints in specialised centres; less applicable to sickest ICU cohorts with profound coagulopathy, uncontrolled infection, or established renal failure."
+    },
+    "strengths": [
+      "Large contemporary multicentre, multinational RCT of a complex device intervention in sAH.",
+      "Objective primary endpoint (mortality) with minimum 91-day follow-up and pre-planned extension for longer-term survival.",
+      "Detailed reporting of treatment exposure, discontinuation reasons, and safety signals specific to extracorporeal therapies.",
+      "Demonstrated mechanistic/biological separation (bilirubin reduction, Lille response, IL1Ra signal) enabling refined hypothesis generation."
+    ],
+    "limitations": [
+      "Open-label design without sham procedure introduces risk of differential management and subjective outcome reporting.",
+      "Substantial non-completion of intended 120-hour ELAD dose (only 45/96 completed), with discontinuations often related to adverse events/instability.",
+      "Selection constraints (consent capacity, exclusion of rapidly improving bilirubin and end-stage cirrhosis) may limit applicability to broader ICU sAH population.",
+      "Safety profile includes increased haematological and haemodynamic adverse events and two deaths judged related to ELAD."
+    ],
+    "critical_appraisal": {
+      "summary": "ELAD is a well-conducted but open-label RCT that failed to show survival benefit despite clear biochemical signals; incomplete treatment exposure and procedure-related harms undermine confidence in any potential benefit, and the trial highlights the importance of patient selection for extracorporeal liver support.",
+      "strengths": [
+        "Objective mortality endpoint",
+        "Multicentre international design",
+        "Detailed safety and exposure reporting"
+      ],
+      "weaknesses": [
+        "Open-label without sham",
+        "High rate of treatment non-completion",
+        "Limited generalisability to sickest ICU patients"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "ELAD did not improve survival in an unselected sAH population meeting trial criteria, and its adverse event profile was non-trivial; routine clinical use is not supported by this trial.",
+    "clinical_bottom_line": {
+      "verdict": "ELAD does not change practice; it should not be used outside clinical trials.",
+      "applies_to": "Hospitalised patients with severe alcoholic hepatitis meeting trial inclusion criteria (MELD 18–35, no end-stage cirrhosis, no uncontrolled infection or haemodynamic instability).",
+      "does_not_mean": "That extracorporeal liver support is futile in all patients; subgroup signals suggest possible benefit in younger, lower-MELD patients, but this is hypothesis-generating only.",
+      "implementation_caveats": [
+        "ELAD is not commercially available; this trial informs future device development.",
+        "Clinicians should focus on optimal supportive care, complication management, and selective corticosteroid use per guidelines."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Neutral primary endpoint despite biochemical signals",
+        "notes": "Contemporaneous editorial critique emphasised that improved early surrogate signals (bilirubin dynamics; Lille response) did not translate into improved 91-day survival, limiting the clinical case for ELAD as implemented."
+      },
+      {
+        "topic": "Subgroup signal versus multiplicity and mechanistic plausibility",
+        "notes": "The editorial highlighted opposing directional trends across prespecified median-split subgroups (suggested benefit in younger/lower MELD; worse outcomes in older/higher MELD), raising the possibility that extracorporeal therapy harms can offset benefit as physiological reserve decreases."
+      },
+      {
+        "topic": "Broader extracorporeal liver support evidence base",
+        "notes": "A systematic review/meta-analysis of artificial and bioartificial liver support systems in acute liver failure populations reported heterogeneous trials with uncertain survival benefit, reinforcing that extracorporeal liver support remains investigational and highly context-dependent."
+      },
+      {
+        "topic": "Guideline position after ELAD",
+        "notes": "Modern guidance for alcohol-associated liver disease prioritises optimal supportive care, complication management, infection evaluation, and selective corticosteroid use; it does not recommend bioartificial liver support devices outside clinical trials."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Could a longer duration of ELAD or different patient selection (younger, lower MELD) yield survival benefit?",
+      "What is the optimal balance between biochemical efficacy and procedure-related harm in extracorporeal liver support?",
+      "Can biomarkers identify patients who might benefit from bioartificial liver support?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=203",
+        "Primary outcome HR 1.03 (95% CI 0.69–1.53, P=0.90)",
+        "Day-91 survival: 59.4% ELAD vs 61.7% SOC",
+        "Only 45/96 completed full 120-hour ELAD course"
+      ],
+      "one_line_takeaway": "ELAD did not improve survival in severe alcoholic hepatitis and should not be used outside trials; biochemical improvements did not translate to patient benefit."
+    }
+  },
+  "_source_id": "ELAD",
+  "_source_system": "Liver"
+}

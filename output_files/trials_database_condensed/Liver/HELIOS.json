@@ -1,0 +1,391 @@
+{
+  "id": "HELIOS",
+  "trial_name": "HELIOS — Prometheus FPSA vs Standard Medical Therapy in Acute-on-Chronic Liver Failure (2012)",
+  "specialty": "Hepatology",
+  "subtopic": "Acute-on-Chronic Liver Failure",
+  "year": 2012,
+  "journal": "Gastroenterology",
+  "citation": "Kribben A, Gerken G, Haag S, Herget-Rosenthal S, Treichel U, Betz C, et al; HELIOS Study Group. Effects of fractionated plasma separation and adsorption on survival in patients with acute-on-chronic liver failure. Gastroenterology. 2012;142(4):782-789.",
+  "doi": "10.1053/j.gastro.2011.12.056",
+  "registration": "ISRCTN50777531",
+  "trial_type": "RCT — multicenter, open-label, parallel-group, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 145,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with severe acute-on-chronic liver failure, Prometheus FPSA added to standard medical therapy did not improve 28-day or 90-day survival compared with standard medical therapy alone, and the trial was stopped early for futility.",
+  "pico": {
+    "population": "Adults aged 18–70 with severe acute deterioration of chronic liver disease, Child-Pugh ≥10 and bilirubin ≥5 mg/dL sustained over 72 hours.",
+    "intervention": "Prometheus fractionated plasma separation and adsorption (FPSA) added to standard medical therapy, scheduled 8–11 sessions over 3 weeks.",
+    "comparison": "Standard medical therapy alone (protocolised, guideline-based).",
+    "outcome": "Survival at 28 days (primary) and 90 days (secondary)."
+  },
+  "keywords": [
+    "Prometheus",
+    "FPSA",
+    "acute-on-chronic liver failure",
+    "ACLF",
+    "extracorporeal liver support",
+    "albumin dialysis",
+    "detoxification"
+  ],
+  "related_trials": [
+    "RELIEF",
+    "CANONIC"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Acute deterioration in chronic liver disease (AOCLF/ACLF) is associated with high short-term mortality, often due to infection, bleeding, hepatic encephalopathy, and multi-organ failure. Protein-bound toxins accumulate and are poorly cleared by conventional renal replacement. Artificial liver support systems (albumin dialysis/plasma separation-based adsorption) showed biochemical improvements in early studies but lacked hard outcome evidence.",
+      "knowledge_gap": "Whether Prometheus FPSA, which removes albumin-bound and water-soluble toxins, improves survival in AOCLF.",
+      "hypothesis": "Adding Prometheus FPSA to standard medical therapy improves 28- and 90-day survival compared with standard medical therapy alone."
+    },
+    "methods": {
+      "design": "Prospective, randomised, controlled, parallel-group, multicentre, open-label trial with centralised fax randomisation (1:1) stratified by centre and hepatorenal syndrome; hierarchical primary endpoints; interim analysis with futility stopping rule.",
+      "setting": "10 university hospitals across 7 European countries, June 2005–January 2008.",
+      "population": {
+        "inclusion": [
+          "Age 18–70 years",
+          "Severe deterioration of chronic liver disease",
+          "Child-Pugh score ≥10 sustained over 72 hours",
+          "Serum bilirubin ≥5 mg/dL sustained over 72 hours",
+          "Written informed consent"
+        ],
+        "exclusion": [
+          "Pregnancy/lactation",
+          "HIV infection",
+          "Intracranial bleeding/cerebrovascular infarction or haemorrhage",
+          "Acute respiratory distress syndrome",
+          "Circulatory shock with vasopressor therapy ≥0.5 µg/kg/min",
+          "Persistent bleeding requiring ≥4 units packed red blood cells in 24 hours pre-enrolment",
+          "Chronic renal failure stage V (GFR ≤15 mL/min or dialysis ≥3 months)",
+          "Acute necrotising pancreatitis",
+          "Hepatocellular carcinoma beyond Milan criteria or extrahepatic malignancy",
+          "INR ≥3.0 or platelet count <30,000/µL",
+          "Extrahepatic cholestasis",
+          "Major hepatobiliary surgery within 6 months (except laparoscopic cholecystectomy)",
+          "Transplant recipients except those with liver transplant ≥2 years prior",
+          "Other liver support/plasma exchange within 7 days",
+          "Participation in another clinical trial or prior participation in this study"
+        ],
+        "note": "Clinical phenotype at baseline: hepatic encephalopathy any grade 78% vs 82%; acute renal failure 55% vs 56% (Type 1 HRS 35% vs 26%, Type 2 HRS 16% vs 19%)."
+      },
+      "intervention": "Prometheus FPSA system added to standard medical therapy. Schedule: 5 treatments in week 1, 3 treatments in week 2 (8 total), with 3 additional treatments in week 3 if after 8 treatments bilirubin remained ≥5 mg/dL and Child-Pugh score had not decreased by ≥2 points to <10. Session target: ≥4 hours per treatment. Blood sampling in FPSA arm drawn ≥2 days after last FPSA session.",
+      "comparison": "Standard medical therapy alone, using a standardised manual aligned to contemporary guideline-based care for complications of cirrhosis (variceal bleeding: terlipressin/somatostatin + band ligation; ascites: sodium restriction + large-volume paracentesis + albumin; hepatorenal syndrome: vasoconstrictors + albumin then RRT if indicated; encephalopathy: lactulose/lactitol + enemas; SBP: third-generation cephalosporins). Adherence confirmed by independent blinded reviewer.",
+      "blinding": "Open-label; primary outcome (mortality) objective; SMT adherence assessment blinded.",
+      "sample_size_power": "Planned 204 patients (102 per arm) to detect a 20% absolute increase in 90-day survival (from 50% to 70%) with 80% power at one-sided 2.5% significance level, accounting for one interim analysis. Trial stopped early for futility after 145 randomised (interim analysis after 90 patients).",
+      "primary_outcome": "Survival at 28 days (hierarchical: day 28 first, then day 90).",
+      "secondary_outcomes": [
+        "Survival at 90 days",
+        "Overall survival (time to death)",
+        "Per-protocol survival",
+        "Survival with transplant censored",
+        "Subgroup analyses (MELD >30, Type 1 HRS)",
+        "Biochemical changes (bilirubin, creatinine, sodium)",
+        "Safety (bleeding, infections, renal replacement therapy)"
+      ],
+      "follow_up": "90 days (or until death), irrespective of ICU/hospital discharge or liver transplantation."
+    },
+    "results": {
+      "headline_bullets": [
+        "Despite marked biochemical separation (bilirubin change −8 ± 11 vs 0 ± 9 mg/dL; P=0.0001), there was no statistically significant improvement in survival at day 28 (66% vs 63%; P=0.70) or day 90 (47% vs 38%; P=0.35).",
+        "The observed absolute survival difference at day 90 (~9%) was far smaller than the prespecified 20% target; early stopping for futility left the trial underpowered for modest but clinically important effects.",
+        "Prespecified subgroup signals (MELD >30; Type 1 HRS) were numerically large but require cautious interpretation given multiplicity and limited sample size."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival probability at Day 28 (ITT, primary)",
+          "group_a": "66%",
+          "group_b": "63%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.70",
+          "note": "Kaplan-Meier point estimate; first in hierarchical sequence."
+        },
+        {
+          "outcome": "Survival probability at Day 90 (ITT, second primary)",
+          "group_a": "47%",
+          "group_b": "38%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.35",
+          "note": "Absolute difference ~9%."
+        },
+        {
+          "outcome": "Overall survival (median time to death)",
+          "group_a": "79 days",
+          "group_b": "59 days",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.3872 (log-rank)",
+          "note": "Time-to-event comparison."
+        },
+        {
+          "outcome": "Per-protocol survival probability at Day 28",
+          "group_a": "71%",
+          "group_b": "67%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "PP analysis: FPSA n=55, SMT n=54."
+        },
+        {
+          "outcome": "Per-protocol survival probability at Day 90",
+          "group_a": "41%",
+          "group_b": "39%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "PP analysis."
+        },
+        {
+          "outcome": "Survival probability with transplant censored at Day 28",
+          "group_a": "64%",
+          "group_b": "64%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Secondary analysis."
+        },
+        {
+          "outcome": "Survival probability with transplant censored at Day 90",
+          "group_a": "46%",
+          "group_b": "38%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Secondary analysis."
+        },
+        {
+          "outcome": "Serum bilirubin change from baseline to Day 28",
+          "group_a": "−8 ± 11 mg/dL",
+          "group_b": "0 ± 9 mg/dL",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.0001",
+          "note": "Biochemical detoxification separation achieved."
+        },
+        {
+          "outcome": "Serum creatinine change from baseline to Day 28",
+          "group_a": "−0.2 ± 1.7 mg/dL",
+          "group_b": "−0.1 ± 1.7 mg/dL",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.60",
+          "note": "Limited separation."
+        },
+        {
+          "outcome": "Serum sodium change from baseline to Day 28",
+          "group_a": "−2.5 ± 6.5 mEq/L",
+          "group_b": "0.7 ± 6.7 mEq/L",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.08",
+          "note": "Limited separation."
+        },
+        {
+          "outcome": "Renal replacement therapy (any time during study)",
+          "group_a": "21/77 (27%)",
+          "group_b": "18/68 (27%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "1.0",
+          "note": "New-onset acute renal failure 21% vs 24% (P=0.93)."
+        },
+        {
+          "outcome": "Bleeding from any source (≥1 event)",
+          "group_a": "33/77 (43%)",
+          "group_b": "33/68 (49%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.79",
+          "note": "No excess bleeding signal."
+        },
+        {
+          "outcome": "Bacterial infections (≥1 event)",
+          "group_a": "48/77 (62%)",
+          "group_b": "37/68 (54%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.63",
+          "note": "High infection burden in both groups."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "MELD >30 (n=48, 24 per arm)",
+          "group_a": "48%",
+          "group_b": "9%",
+          "effect_measure": "Adjusted HR",
+          "effect_value": "0.47",
+          "ci_95": "0.22–0.99",
+          "p_interaction": "Not reported",
+          "note": "Day-90 survival; log-rank P=0.0241; day-28 survival 57% vs 42%."
+        },
+        {
+          "subgroup": "Type 1 HRS (n=45)",
+          "group_a": "42%",
+          "group_b": "6%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "Not reported",
+          "note": "Day-90 survival; univariate log-rank P=0.04; adjusted P=0.33; day-28 survival 62% vs 39%."
+        }
+      ]
+    },
+    "safety": [
+      "Bleeding from any source: 43% vs 49% (P=0.79).",
+      "Bacterial infections: 62% vs 54% (P=0.63).",
+      "Renal replacement therapy: 27% vs 27% (P=1.0); new-onset acute renal failure 21% vs 24% (P=0.93).",
+      "47 FPSA treatments (8%) ended prematurely, most commonly due to circuit clotting (39 cases).",
+      "No significant difference in adverse events; infections and multi-organ failure were common causes of death."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised fax randomisation (1:1) stratified by centre and hepatorenal syndrome; allocation concealment supported."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; primary outcome mortality is objective; SMT adherence independently verified by blinded reviewer."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "ITT analysis primary; unknown outcome: FPSA 7/77 vs SMT 2/68 (withdrawal of consent 2 vs 1, loss to follow-up 5 vs 1). Per-protocol excluded 22 FPSA and 14 SMT patients, including short study duration and protocol violations."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "585 FPSA sessions delivered to 72 patients (mean 8.1 sessions); 47 treatments (8%) ended prematurely, mostly circuit clotting. 52.8% received maximum 11 sessions. SMT adherence confirmed by blinded expert."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced for severity (Child-Pugh 12 vs 12, MELD 28 vs 27, SOFA 10 vs 10). Potential imbalance in alcoholic aetiology (48% vs 65%, P=0.07)."
+        },
+        {
+          "domain": "Other",
+          "notes": "Early termination for futility after interim analysis (145/204 enrolled) limits power and precision. Heterogeneous population may dilute effect. Median time from precipitating event to randomisation: 10 vs 13 days (P=0.56); from admission: 7 vs 9 days (P=0.08)."
+        }
+      ],
+      "verdict": "Moderate. Randomisation and objective primary outcome support credibility, and the intervention achieved biochemical separation; however, open-label delivery, early termination for futility, post-randomisation exclusions in per-protocol analyses, and outcome missingness (unknown outcome 7 vs 2) reduce confidence in detecting modest but clinically meaningful survival effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Hospitalised, high-severity decompensated cirrhosis patients in tertiary European university hospitals; high prevalence of encephalopathy (~80%) and renal failure (~55%) approximates ICU-relevant cirrhosis phenotype."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings translate best to specialist centres with Prometheus technology; generalisability to resource-limited settings low. Excluded patients with shock requiring high-dose vasopressors, ARDS, severe coagulopathy, active major bleeding, advanced malignancy — common in real-world ACLF/ICU practice, limiting applicability to the sickest cohort."
+        },
+        {
+          "domain": "Other",
+          "notes": "Median delays from precipitating event and admission to enrolment reflect tertiary referral pathways; may not generalise to earlier intervention models."
+        }
+      ],
+      "verdict": "Moderate. The cohort resembles many tertiary ICU cirrhosis admissions but excludes haemodynamically and respiratory unstable patients; findings most applicable to selected AOCLF/ACLF patients stable enough for extracorporeal therapy in high-resource centres."
+    },
+    "strengths": [
+      "Largest randomised therapeutic trial of Prometheus FPSA in AOCLF at the time, multicentre.",
+      "Central stratified randomisation and objective primary endpoint limit biases.",
+      "SMT protocolised and adherence independently verified by blinded reviewer.",
+      "Clear intervention separation at mechanistic level (bilirubin reduction)."
+    ],
+    "limitations": [
+      "Stopped early for futility with 145/204 planned enrolment, limiting power and precision for modest survival benefits.",
+      "Open-label design creates risk of performance bias and co-intervention imbalance.",
+      "Heterogeneous entry criteria may include end-stage decompensation less amenable to bridge therapy.",
+      "High burden of complications with no separation in organ support endpoints (RRT identical at 27%).",
+      "Industry support (Fresenius Medical Care) and an author employed by the manufacturer introduce potential perception of conflict."
+    ],
+    "critical_appraisal": {
+      "summary": "HELIOS is a moderately valid RCT that demonstrated biochemical detoxification with Prometheus FPSA but failed to show survival benefit in an unselected AOCLF cohort, likely due to early termination, open-label design, and heterogeneous population. Subgroup signals in severe phenotypes are hypothesis-generating.",
+      "strengths": [
+        "Multicentre, central randomisation, objective endpoint, protocolised comparator, biochemical separation."
+      ],
+      "weaknesses": [
+        "Early termination, open-label, missing outcome data, potential baseline imbalance, industry involvement."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Detoxification ≠ survival: Bilirubin fell substantially with FPSA yet survival was not improved, indicating that biochemical clearance alone was insufficient to change hard outcomes in an unselected AOCLF cohort. Signals in severe subgroups are hypothesis-generating. HELIOS supports FPSA feasibility and relative safety in selected patients but does not support routine use for survival benefit; use, if considered, is best framed as bridge/adjunct in highly selected patients and within protocols that target reversible phenotypes and earlier delivery.",
+    "clinical_bottom_line": {
+      "verdict": "HELIOS does not support routine use of Prometheus FPSA for survival benefit in unselected AOCLF/ACLF. It may be considered as a bridge/adjunct in highly selected patients with severe reversible phenotypes (e.g., MELD >30, Type 1 HRS) within research protocols.",
+      "applies_to": "Selected patients with acute-on-chronic liver failure, stable enough for extracorporeal therapy, in centres with Prometheus capability.",
+      "does_not_mean": "That extracorporeal detoxification is ineffective in all ACLF; the trial was underpowered and subgroup signals exist.",
+      "implementation_caveats": [
+        "Resource-intensive; requires specialised staff and equipment.",
+        "Early termination limits confidence in negative result; modest benefit cannot be excluded.",
+        "Subgroup findings require confirmation in dedicated trials.",
+        "Timing of initiation may be critical; median delay 10–13 days from precipitating event."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Syndrome definition and enrolment heterogeneity",
+        "notes": "Inclusion criteria risked enrolling end-stage decompensated cirrhosis rather than reversible ACLF, reducing likelihood of benefit; subsequent CANONIC study formalised ACLF definitions."
+      },
+      {
+        "topic": "Timing of intervention",
+        "notes": "Delay from precipitating event to initiation (median 10–13 days) may explain lack of survival effect."
+      },
+      {
+        "topic": "Device completeness and pathobiology",
+        "notes": "Prometheus and MARS are detoxification systems without capacity to remove/replace dysfunctional albumin, and have limited cytokine clearance; mismatch with ACLF biology (infection-driven inflammation and organ failure) may explain failure to translate biochemical improvement into survival benefit."
+      },
+      {
+        "topic": "Concordant RCT evidence",
+        "notes": "The multicentre RELIEF trial evaluating MARS in similar AOCLF population also failed to show overall survival benefit, reinforcing HELIOS’s neutral result."
+      },
+      {
+        "topic": "Evidence synthesis",
+        "notes": "A recent systematic review/meta-analysis including MARS, Prometheus and related liver dialysis approaches summarises persistent heterogeneity in trial populations and endpoints, with biochemical improvements not reliably translating into consistent mortality reductions."
+      },
+      {
+        "topic": "Guideline integration",
+        "notes": "Contemporary European guidance on ACLF incorporates the extracorporeal liver support trial literature within its broader framework emphasising organ support, infection management, and transplant pathways."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "RELIEF",
+        "relation": "Multicentre RCT of MARS (another extracorporeal albumin dialysis system) in AOCLF, also failed to show overall survival benefit, consistent with HELIOS."
+      },
+      {
+        "trial": "CANONIC",
+        "relation": "Prospective European cohort study that formalised ACLF definitions, highlighting organ failure and inflammation as central features; contextualises HELIOS’s heterogeneous enrolment."
+      }
+    ],
+    "unresolved_questions": [
+      "Does earlier initiation of FPSA (within days of precipitating event) improve outcomes?",
+      "Is there a true survival benefit in the sickest subgroup (MELD >30, Type 1 HRS) that warrants a dedicated trial?",
+      "Can combination of detoxification with cytokine removal or albumin replacement improve efficacy?",
+      "What is the role of extracorporeal liver support in the modern ACLF definition era?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=145 (planned 204, stopped early for futility)",
+        "Day 28 survival: 66% vs 63% (P=0.70)",
+        "Day 90 survival: 47% vs 38% (P=0.35)",
+        "Bilirubin change: −8 vs 0 mg/dL (P=0.0001)",
+        "MELD >30 subgroup: 48% vs 9% (adjusted HR 0.47, 95% CI 0.22–0.99)"
+      ],
+      "one_line_takeaway": "Prometheus FPSA safely achieves biochemical detoxification but does not improve survival in unselected acute-on-chronic liver failure; potential benefit in severe subgroups remains unproven."
+    }
+  },
+  "_source_id": "HELIOS",
+  "_source_system": "Liver"
+}

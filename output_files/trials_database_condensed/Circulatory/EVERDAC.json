@@ -1,0 +1,338 @@
+{
+  "id": "EVERDAC",
+  "trial_name": "EVERDAC — Deferring Arterial Catheterization in Critically Ill Patients with Shock (2025)",
+  "specialty": "Circulatory",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 2025,
+  "journal": "N Engl J Med",
+  "citation": "Muller G, Contou D, Ehrmann S, Martin M, Andreu P, Kamel T, et al.; EVERDAC Trial Group. Deferring arterial catheterization in shock. N Engl J Med. 2025;393:1875-1888.",
+  "doi": "10.1056/NEJMoa2502136",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, pragmatic, non-inferiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1010,
+  "result_category": "Positive",
+  "one_liner": "In ICU patients with vasopressor-treated shock, a noninvasive-first monitoring strategy with rescue arterial catheterization was non-inferior to routine early arterial catheterization for 28-day mortality, while reducing catheter-related complications.",
+  "pico": {
+    "population": "Adults admitted to ICU with shock requiring vasopressors (norepinephrine or epinephrine) and at least one sign of hypoperfusion, expected vasopressor duration ≥6 hours.",
+    "intervention": "Noninvasive strategy: oscillometric brachial cuff NIBP monitoring, with removal of existing arterial catheters within 1 hour, and rescue arterial catheterization only if prespecified safety criteria met; arterial punctures discouraged, venous sampling alternatives encouraged.",
+    "comparison": "Invasive strategy: routine early insertion of an arterial catheter (radial or femoral) for continuous invasive ABP monitoring, attempted within 4 hours of randomization.",
+    "outcome": "All-cause mortality at 28 days (non-inferiority margin 5 percentage points)."
+  },
+  "keywords": [
+    "arterial catheter",
+    "non-invasive blood pressure",
+    "shock",
+    "vasopressors",
+    "de-implementation",
+    "hemodynamic monitoring",
+    "ICU"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Invasive arterial catheters are widely used in ICU shock for continuous ABP monitoring and blood sampling, but potential harms include bleeding, thrombosis, infection, and procedural burden. Oscillometric NIBP may be less reliable in low-perfusion states, but clinical consequences of measurement error vs invasive harms were uncertain.",
+      "knowledge_gap": "Robust randomized evidence on patient-centred outcomes (especially mortality) comparing routine invasive ABP monitoring to a noninvasive strategy was lacking.",
+      "hypothesis": "A noninvasive-first strategy with rescue arterial catheterization would be non-inferior to routine early arterial catheterization for 28-day mortality in vasopressor-treated shock."
+    },
+    "methods": {
+      "design": "Multicentre, open-label, pragmatic, randomized, parallel-group, non-inferiority trial; investigator-initiated; 22 ICUs in France; 1:1 allocation; stratified by centre, invasive mechanical ventilation status, and vasopressor dose category (<0.18 vs ≥0.18 μg/kg/min norepinephrine tartrate or epinephrine).",
+      "setting": "22 ICUs in France.",
+      "population": {
+        "inclusion": [
+          "Vasopressor infusion (norepinephrine tartrate or epinephrine) with at least one sign of hypoperfusion (e.g., lactate ≥2 mmol/L, poor skin perfusion, oliguria, altered mental status); expected vasopressor duration ≥6 hours; eligibility regardless of existing arterial catheter."
+        ],
+        "exclusion": [
+          "Adults under legal guardianship; immediate/mandatory need for invasive ABP monitoring (e.g., ECMO); very high vasopressor dose (>2.5 μg/kg/min norepinephrine tartrate or epinephrine); inability to obtain NIBP measurements; situations where protocolized strategy could not be delivered safely."
+        ]
+      },
+      "intervention": "Noninvasive strategy: oscillometric brachial cuff NIBP monitoring; removal of existing arterial catheter within 1 hour; rescue arterial catheterization allowed if predefined safety triggers (e.g., very high vasopressor dose, high-risk procedures, unreliable NIBP); arterial punctures discouraged, venous sampling alternatives encouraged; if arterial catheter inserted for high-risk surgery, removal after return to ICU unless ongoing criteria met.",
+      "comparison": "Invasive strategy: routine early insertion of arterial catheter (radial or femoral) for continuous invasive ABP monitoring; attempted within 4 hours of randomization (median achieved 1 hour); removal when no longer useful.",
+      "blinding": "Open-label (clinicians and patients not blinded); primary outcome (mortality) objective.",
+      "sample_size_power": "Planned 1010 patients to test non-inferiority with 5 percentage-point absolute margin, assuming 28-day mortality ~22.5–25%, 80% power, α=0.05.",
+      "primary_outcome": "All-cause mortality at day 28.",
+      "secondary_outcomes": [
+        "All-cause mortality at day 90",
+        "Vasopressor therapy by day 28",
+        "Duration of vasopressor therapy",
+        "Mechanical ventilation-free days by day 28",
+        "Renal replacement therapy by day 28",
+        "ICU length of stay",
+        "Arterial catheterization at any time",
+        "Arterial catheter-related bloodstream infections",
+        "Attempts at arterial puncture",
+        "Haematoma/haemorrhage related to arterial catheter insertion",
+        "≥1 day with pain/discomfort related to monitoring device"
+      ],
+      "follow_up": "Primary endpoint at day 28; follow-up extended to day 90."
+    },
+    "results": {
+      "headline_bullets": [
+        "Noninvasive strategy was non-inferior for 28-day mortality (34.3% vs 36.9%; adjusted risk difference −3.2 percentage points; 95% CI −8.9 to 2.5; non-inferiority P=0.006).",
+        "Arterial catheter exposure was markedly reduced (14.7% vs 98.2%), with later insertion when needed (median 22 h vs 1 h).",
+        "Fewer insertion-related haematoma/haemorrhage (1.0% vs 8.2%) and lower catheter-related bloodstream infection rate (0.6 vs 2.7 per 1000 ICU-days), but more arterial puncture attempts (742 vs 269 per 1000 ICU-days) and more device-related discomfort (13.1% vs 9.0%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at day 28 (primary)",
+          "group_a": "173/504 (34.3%)",
+          "group_b": "185/502 (36.9%)",
+          "effect_measure": "Adjusted risk difference",
+          "effect_value": "−3.2",
+          "ci_95": "−8.9 to 2.5",
+          "p_value": "0.006 (non-inferiority); 0.20 (superiority)",
+          "note": "Non-inferiority met (margin 5 percentage points)."
+        },
+        {
+          "outcome": "All-cause mortality at day 90",
+          "group_a": "215/504 (42.7%)",
+          "group_b": "221/502 (44.0%)",
+          "effect_measure": "Adjusted risk difference",
+          "effect_value": "−1.7",
+          "ci_95": "−7.0 to 3.5",
+          "p_value": "",
+          "note": "Time-to-event HR 1.0 (95% CI 0.8–1.2)."
+        },
+        {
+          "outcome": "Vasopressor therapy by day 28",
+          "group_a": "469/504 (93.1%)",
+          "group_b": "487/502 (97.0%)",
+          "effect_measure": "Difference",
+          "effect_value": "−4.0",
+          "ci_95": "−6.6 to −1.3",
+          "p_value": "",
+          "note": "Lower proportion receiving vasopressors in noninvasive group."
+        },
+        {
+          "outcome": "Duration of vasopressor therapy (days)",
+          "group_a": "Median 2.0 (IQR 1.0–5.0)",
+          "group_b": "Median 3.0 (IQR 1.0–5.0)",
+          "effect_measure": "Median difference (Hodges-Lehmann)",
+          "effect_value": "−1.0",
+          "ci_95": "−1.0 to 0.0",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Mechanical ventilation-free days by day 28",
+          "group_a": "Median 20.0 (IQR 0.0–25.0)",
+          "group_b": "Median 19.0 (IQR 0.0–25.0)",
+          "effect_measure": "Median difference",
+          "effect_value": "1.0",
+          "ci_95": "−10.0 to 2.0",
+          "p_value": "",
+          "note": "Wide CI; no clear difference."
+        },
+        {
+          "outcome": "Renal replacement therapy by day 28",
+          "group_a": "105/504 (20.8%)",
+          "group_b": "105/502 (20.9%)",
+          "effect_measure": "Difference",
+          "effect_value": "−0.1",
+          "ci_95": "−5.1 to 5.0",
+          "p_value": "",
+          "note": "No signal of renal harm."
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "Median 6.0 (IQR 3.0–12.0)",
+          "group_b": "Median 6.5 (IQR 3.0–13.0)",
+          "effect_measure": "Median difference",
+          "effect_value": "−1.0",
+          "ci_95": "−2.0 to 1.0",
+          "p_value": "",
+          "note": "Similar ICU utilisation."
+        },
+        {
+          "outcome": "Arterial catheterisation at any time",
+          "group_a": "74/504 (14.7%)",
+          "group_b": "493/502 (98.2%)",
+          "effect_measure": "Difference",
+          "effect_value": "−83.5",
+          "ci_95": "−88.2 to −78.8",
+          "p_value": "<0.001",
+          "note": "Median time to insertion: 22 h (IQR 6–141) vs 1 h (IQR 0–2)."
+        },
+        {
+          "outcome": "Arterial catheter-related bloodstream infections (per 1000 ICU-days)",
+          "group_a": "0.6",
+          "group_b": "2.7",
+          "effect_measure": "Incidence ratio",
+          "effect_value": "0.18",
+          "ci_95": "0.06 to 0.54",
+          "p_value": "",
+          "note": "Event rates low; absolute counts not reported."
+        },
+        {
+          "outcome": "Attempts at arterial puncture (per 1000 ICU-days)",
+          "group_a": "742",
+          "group_b": "269",
+          "effect_measure": "Incidence ratio",
+          "effect_value": "2.76",
+          "ci_95": "2.41 to 3.16",
+          "p_value": "",
+          "note": "Noninvasive strategy increased puncture attempts."
+        },
+        {
+          "outcome": "Haematoma/haemorrhage related to arterial catheter insertion",
+          "group_a": "5/504 (1.0%)",
+          "group_b": "41/502 (8.2%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Insertion-related harm substantially lower with noninvasive strategy."
+        },
+        {
+          "outcome": "≥1 day with pain/discomfort related to monitoring device",
+          "group_a": "66/504 (13.1%)",
+          "group_b": "45/502 (9.0%)",
+          "effect_measure": "Difference",
+          "effect_value": "4.1",
+          "ci_95": "0.3 to 8.0",
+          "p_value": "0.05",
+          "note": "Subjective outcome; potentially influenced by open-label design."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Very high vasopressor dose at randomization (>1.0 μg/kg/min norepinephrine tartrate or epinephrine)",
+          "group_a": "54.0%",
+          "group_b": "41.0%",
+          "effect_measure": "Adjusted risk difference",
+          "effect_value": "13.0",
+          "ci_95": "−3.0 to 29.0",
+          "p_interaction": "0.11",
+          "note": "Post hoc; numerical increase in mortality with noninvasive strategy, but CI includes zero."
+        }
+      ]
+    },
+    "safety": [
+      "Haematoma/haemorrhage related to arterial catheter insertion: 1.0% vs 8.2% (P<0.001).",
+      "Arterial catheter-related bloodstream infections: 0.6 vs 2.7 per 1000 ICU-days (incidence ratio 0.18, 95% CI 0.06–0.54).",
+      "≥1 day with pain/discomfort related to monitoring device: 13.1% vs 9.0% (difference 4.1 pp, 95% CI 0.3–8.0, P=0.05).",
+      "No significant differences in renal replacement therapy, mechanical ventilation-free days, or ICU length of stay."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with allocation concealment; stratified by centre, invasive mechanical ventilation status, and vasopressor dose category."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design could influence thresholds for interventions, testing frequency, and clinician perceptions; primary outcome (mortality) is objective and less prone to detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1010 randomised; 1006 included in ITT analysis (4 excluded due to legal guardianship/withdrawal of consent). Per-protocol sets defined (492/504 and 490/504)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Invasive strategy achieved arterial catheterisation in 98.2% (95.4% within 4 hours); noninvasive strategy limited to 14.7% with rescue catheterisation. Crossover: 14.7% in noninvasive group received arterial catheter; some deviations in invasive group."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups closely matched: mean age 66.3 vs 66.3; SAPS II 56 vs 56; SOFA 11 vs 11; MAP 63.6 vs 63.8 mmHg; norepinephrine dose 0.44 vs 0.41 μg/kg/min; septic shock 70.6% vs 68.9%."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate to strong given robust randomisation, objective primary outcome, and large separation in intervention exposure; limitations relate to open-label conduct, discretionary exclusions prior to randomisation, and strategy-based crossover intrinsic to the pragmatic intervention."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical ICU shock population in high-income setting (mean age 66; majority septic shock; high illness severity). Excluded patients with very high vasopressor requirements (>2.5 μg/kg/min) and mandatory immediate invasive monitoring (e.g., ECMO), limiting applicability to most profound shock phenotypes."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to ICUs able to implement close oscillometric NIBP monitoring and protocolised rescue thresholds; performance may differ where cuff reliability is poor or arterial blood gas sampling is deeply embedded. Generalisable to comparable European/UK/Irish ICU systems; external validity may be reduced in resource-limited settings."
+        }
+      ],
+      "verdict": "Generalisability is good for adults with moderate vasopressor-dependent shock in high-resource ICUs, but limited for extracorporeal support populations, perioperative contexts requiring mandatory invasive monitoring, and patients with profound catecholamine requirements."
+    },
+    "strengths": [
+      "Large pragmatic multicentre randomised trial addressing a ubiquitous ICU intervention.",
+      "Clinically meaningful primary endpoint (28-day all-cause mortality) with objective ascertainment.",
+      "Appropriate non-inferiority framework with both intention-to-treat and per-protocol analyses.",
+      "Marked protocol separation in arterial catheter exposure (14.7% vs 98.2%) with detailed measurement of downstream testing behaviours.",
+      "Captured patient-centred harms (pain/discomfort) alongside procedural complications and infection outcomes."
+    ],
+    "limitations": [
+      "Open-label design introduces potential performance bias (testing frequency, transfusion/lab triggers, clinician thresholds for rescue insertion).",
+      "Non-inferiority margin (5 percentage points) may be considered large relative to observed mortality (~35%), affecting clinical tolerance for uncertainty.",
+      "Intervention is a strategy with rescue criteria rather than absolute avoidance; outcomes depend on timely recognition of monitoring failure and prompt arterial catheterisation when needed.",
+      "Most profound shock phenotypes were excluded or under-represented (e.g., very high vasopressor doses, extracorporeal support), limiting conclusions for these groups.",
+      "Local catheter infection was inconsistently recorded and non-catheter bloodstream infections were not captured, constraining full infection attribution."
+    ],
+    "critical_appraisal": {
+      "summary": "EVERDAC is a well-conducted pragmatic non-inferiority trial demonstrating that a noninvasive-first monitoring strategy with rescue arterial catheterization does not increase 28-day mortality in vasopressor-treated shock, while reducing catheter-related complications. Internal validity is moderate to strong, with some limitations from open-label design and strategy crossover. External validity is good for typical ICU shock patients in high-resource settings but limited for the most severe shock phenotypes.",
+      "strengths": [
+        "Large sample size with robust randomization",
+        "Objective primary outcome",
+        "High protocol adherence and marked separation in exposure",
+        "Comprehensive capture of both benefits and trade-offs"
+      ],
+      "weaknesses": [
+        "Open-label design may bias subjective outcomes and clinician behaviour",
+        "Non-inferiority margin may be considered wide",
+        "Exclusion of very high vasopressor doses and ECMO limits generalizability to sickest patients",
+        "Incomplete infection data collection"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "A noninvasive-first strategy with prespecified rescue arterial catheterisation can be implemented in ICU shock without increasing 28-day mortality, while materially reducing arterial catheter use and some catheter-related harms.",
+    "clinical_bottom_line": {
+      "verdict": "For most ICU patients with vasopressor-treated shock, routine early arterial catheterization is not necessary to preserve survival when a structured noninvasive-first strategy with rescue criteria is used. This supports selective, patient-tailored arterial line use.",
+      "applies_to": "Adults with moderate vasopressor-dependent shock (norepinephrine ≤2.5 μg/kg/min) in high-resource ICUs, excluding those requiring ECMO or mandatory invasive monitoring.",
+      "does_not_mean": "That arterial catheters are never needed; rescue insertion remains essential for patients meeting safety criteria, and the strategy does not apply to profound shock or perioperative contexts.",
+      "implementation_caveats": [
+        "Requires reliable oscillometric NIBP monitoring and protocolized rescue triggers",
+        "May increase arterial puncture attempts and monitoring-related discomfort",
+        "Clinicians must be vigilant for monitoring failure and timely rescue insertion",
+        "Not validated in very high vasopressor doses or ECMO"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Non-inferiority margin",
+        "notes": "A 5 percentage-point margin may be viewed as clinically permissive given baseline mortality ~35%, meaning small harms could be masked while still meeting non-inferiority."
+      },
+      {
+        "topic": "Strategy versus device effect",
+        "notes": "The intervention is a monitoring strategy (defer with rescue) rather than a pure comparison of invasive versus noninvasive measurement accuracy; efficacy and safety rely on trigger thresholds, clinician vigilance, and workflow."
+      },
+      {
+        "topic": "Profound shock uncertainty",
+        "notes": "In a post hoc subgroup with very high vasopressor dose (>1.0 μg/kg/min), mortality was numerically higher in the noninvasive strategy group (54.0% vs 41.0%; adjusted risk difference 13.0 pp; 95% CI −3.0 to 29.0; P=0.11), leaving residual uncertainty in the sickest patients."
+      },
+      {
+        "topic": "Downstream burden shift",
+        "notes": "Avoiding arterial catheters reduced invasive line days but increased arterial puncture attempts; whether this 'burden shift' is acceptable may depend on local staffing, ultrasound availability, and pain management practices."
+      },
+      {
+        "topic": "Interpretation of discomfort outcomes",
+        "notes": "Reported device-related discomfort may reflect repeated cuff cycling and puncture attempts; mitigation strategies (e.g., optimised cuff protocols and ultrasound-guided selective arterial access) may influence real-world acceptability."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is the non-inferiority margin of 5 percentage points clinically acceptable given the high baseline mortality?",
+      "What is the safety and efficacy of the noninvasive strategy in patients with very high vasopressor requirements (>1.0 μg/kg/min) or on ECMO?",
+      "How can the increased arterial puncture attempts and discomfort be mitigated in practice?",
+      "What are the long-term outcomes beyond 90 days, and cost-effectiveness?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1010",
+        "28-day mortality: 34.3% vs 36.9% (adjusted risk difference −3.2 pp, non-inferiority P=0.006)",
+        "Arterial catheter use: 14.7% vs 98.2%",
+        "Haematoma/haemorrhage: 1.0% vs 8.2%",
+        "Catheter-related BSI: 0.6 vs 2.7 per 1000 ICU-days"
+      ],
+      "one_line_takeaway": "In vasopressor-treated shock, a noninvasive-first monitoring strategy with rescue arterial catheterization is non-inferior to routine early arterial catheterization for 28-day mortality, enabling selective arterial line use and reducing catheter-related complications."
+    }
+  },
+  "_source_id": "EVERDAC",
+  "_source_system": "Circulatory"
+}

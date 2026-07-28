@@ -1,0 +1,288 @@
+{
+  "id": "OSCAR",
+  "trial_name": "OSCAR — High-Frequency Oscillation for Acute Respiratory Distress Syndrome (2013)",
+  "specialty": "Respiratory",
+  "subtopic": "ARDS",
+  "year": 2013,
+  "journal": "New England Journal of Medicine",
+  "citation": "Young D, Lamb SE, Shah S, et al. High-frequency oscillation for acute respiratory distress syndrome. N Engl J Med. 2013;368(9):806-813.",
+  "doi": "https://doi.org/10.1056/NEJMoa1215716",
+  "registration": "",
+  "trial_type": "Pragmatic, multicentre, parallel-group, randomised controlled trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 795,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In 795 adults with ARDS, early HFOV did not reduce 30-day mortality compared to conventional ventilation (41.7% vs 41.1%), and increased neuromuscular blockade use.",
+  "pico": {
+    "population": "Mechanically ventilated adults with ARDS; PaO2/FiO2 ≤200 mmHg on PEEP ≥5 cm H2O; acute onset with bilateral infiltrates and no left atrial hypertension",
+    "intervention": "Early high-frequency oscillatory ventilation (HFOV) using a dedicated oscillator, with structured training and protocol",
+    "comparison": "Conventional ventilation (usual care, encouraged pressure‑control, tidal volume 6–8 mL/kg ideal body weight, plateau pressure ≤30 cm H2O, ARDSNet lower PEEP/FiO2 table)",
+    "outcome": "30‑day all‑cause mortality"
+  },
+  "keywords": [
+    "HFOV",
+    "ARDS",
+    "mechanical ventilation",
+    "oscillatory ventilation",
+    "mortality",
+    "pragmatic trial"
+  ],
+  "related_trials": [
+    "OSCILLATE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "ARDS carries high short‑term mortality. High‑frequency oscillatory ventilation (HFOV) delivers very small oscillatory tidal volumes at high frequency with sustained mean airway pressure, aiming to minimise volutrauma/atelectrauma while maintaining recruitment.",
+      "knowledge_gap": "Before OSCAR, adult HFOV evidence comprised small heterogeneous trials and physiology‑driven protocols; oxygenation often improved, but effects on patient‑centred outcomes and safety in routine practice remained uncertain.",
+      "hypothesis": "In invasively ventilated adults with ARDS, does early HFOV reduce 30‑day all‑cause mortality compared with conventional ventilation?"
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, parallel‑group, randomised controlled trial",
+      "setting": "29 adult ICUs across England, Wales, and Northern Ireland",
+      "population": {
+        "inclusion": [
+          "Mechanically ventilated adults with ARDS",
+          "PaO2/FiO2 ≤200 mmHg while receiving PEEP ≥5 cm H2O",
+          "Acute onset with bilateral pulmonary infiltrates and no evidence of left atrial hypertension"
+        ],
+        "exclusion": [
+          "Age <16 years",
+          "Weight <35 kg",
+          "Ventilation ≥7 days before randomisation",
+          "Other interventional trial",
+          "Airway narrowing/air‑trapping conditions",
+          "Recent lung surgery (contraindicating HFOV)"
+        ]
+      },
+      "intervention": "HFOV initiated as soon as possible after randomisation (median 6.1 h) using a Novalung/Metran R100 oscillator. Initial settings: FiO2 1.0, bias flow 20 L/min, cycle volume 100 mL, frequency 10 Hz, mean airway pressure 5 cm H2O above enrolment plateau pressure. Targets: SaO2 88–92% (if pH >7.25) or PaO2 60–75 mmHg; pH 7.25–7.35 with permissive hypercapnia. Weaning: reduce FiO2 first, then mean airway pressure; switch to pressure‑controlled conventional ventilation when mean airway pressure ≤24 cm H2O and FiO2 ≤0.40 with PaO2 ≥60 mmHg for ≥12 h. Implementation support: 2306 staff trained across 198 sessions, 24/7 telephone support; protocol modified early after hypercapnia‑related SAEs (endotracheal tube cuff leak allowed, used in 30 patients).",
+      "comparison": "Conventional ventilation: usual care at each site. Sites encouraged to use pressure‑controlled ventilation, tidal volume 6–8 mL/kg ideal body weight, plateau pressure ≤30 cm H2O, and an ARDSNet lower PEEP/FiO2 table. Co‑interventions/rescue permitted at clinicians’ discretion; crossover to HFOV was not prohibited.",
+      "blinding": "Open‑label (ventilator strategy not blindable); primary outcome (mortality) is objective.",
+      "sample_size_power": "Original target 1006 patients (503/group) to detect a 9% absolute mortality reduction (45% to 36%) with 80% power at 5% significance. Revised to 802 patients (401/group) to detect a 10% absolute reduction after interim assessment of recruitment and control mortality.",
+      "primary_outcome": "30‑day all‑cause mortality",
+      "secondary_outcomes": [
+        "ICU mortality at first ICU discharge",
+        "Hospital mortality at first hospital discharge",
+        "Ventilator‑free days to day 30",
+        "Duration of mechanical ventilation",
+        "ICU length of stay",
+        "Neuromuscular‑blocking agent use (days)"
+      ],
+      "follow_up": "Primary endpoint at 30 days; ICU and hospital outcomes to discharge; longer‑term follow‑up planned but not reported in the index publication."
+    },
+    "results": {
+      "headline_bullets": [
+        "30‑day mortality was virtually identical: 41.7% (HFOV) vs 41.1% (conventional), absolute risk difference 0.6% (95% CI −6.1 to 7.5; P = 0.85).",
+        "HFOV improved oxygenation (day 1 PaO2/FiO2 192 vs 154 mmHg) but increased hypercapnia (PaCO2 55 vs 50 mmHg) and acidosis (pH 7.30 vs 7.35).",
+        "No differences in ICU mortality, hospital mortality, ventilator‑free days, duration of ventilation, or ICU length of stay.",
+        "HFOV group received more neuromuscular‑blocking agent days (2.5 vs 2.0, P = 0.02)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "30‑day all‑cause mortality (primary)",
+          "group_a": "166/398 (41.7%)",
+          "group_b": "163/397 (41.1%)",
+          "effect_measure": "Absolute risk difference",
+          "effect_value": "0.6%",
+          "ci_95": "−6.1 to 7.5",
+          "p_value": "0.85",
+          "note": "Adjusted OR for survival (conventional vs HFOV) 1.03 (95% CI 0.75–1.40; P = 0.87)"
+        },
+        {
+          "outcome": "ICU mortality at first ICU discharge",
+          "group_a": "42.1%",
+          "group_b": "44.1%",
+          "effect_measure": "Absolute risk difference",
+          "effect_value": "−2.0%",
+          "ci_95": "−4.8 to 8.8",
+          "p_value": "0.57",
+          "note": ""
+        },
+        {
+          "outcome": "Hospital mortality at first hospital discharge",
+          "group_a": "48.4%",
+          "group_b": "50.1%",
+          "effect_measure": "Absolute risk difference",
+          "effect_value": "−1.7%",
+          "ci_95": "−5.3 to 8.8",
+          "p_value": "0.62",
+          "note": ""
+        },
+        {
+          "outcome": "Ventilator‑free days (to day 30)",
+          "group_a": "17.1 ± 8.6",
+          "group_b": "17.6 ± 8.8",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.42",
+          "note": ""
+        },
+        {
+          "outcome": "Duration of mechanical ventilation (days)",
+          "group_a": "14.9 ± 13.3",
+          "group_b": "14.1 ± 13.4",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.41",
+          "note": ""
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "17.6 ± 16.6",
+          "group_b": "16.1 ± 15.2",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.18",
+          "note": ""
+        },
+        {
+          "outcome": "Neuromuscular‑blocking agent use (days)",
+          "group_a": "2.5 ± 3.5",
+          "group_b": "2.0 ± 3.4",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.02",
+          "note": "Greater exposure in HFOV group"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Two serious adverse events related to HFOV: hypercapnia requiring alkalinisation (resolved) and one PEA arrest where hypercapnia was a contributing factor among three identified factors. Protocol modified and additional training implemented."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central 24/7 telephone randomisation; 1:1 minimisation stratified by centre, age, and baseline PaO2/FiO2 category. Allocation concealment likely robust up to assignment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open‑label design introduces potential performance bias for co‑interventions (sedation, rescue therapies), but mortality is objective and less susceptible to detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "Primary endpoint vital status at 30 days reported for all randomised participants (no loss to follow‑up). Non‑adherence: 10/398 (2.5%) allocated to HFOV did not receive HFOV (3 died before initiation, 4 ventilator malfunction, 1 recovered, 2 clinician non‑compliance)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Time to HFOV initiation: median 6.1 h. HFOV exposure: median 3 days (IQR 2–5). Control contamination: 10/397 (2.5%) allocated to conventional ventilation received HFOV at some point."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups closely matched for age, APACHE II, PaO2/FiO2, and duration of ventilation before randomisation."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate to strong for the primary mortality endpoint given central randomisation, near‑complete outcome ascertainment, and clear between‑group physiological separation, but is tempered by the open‑label design, pragmatic (less standardised) conventional ventilation, and limited crossover/non‑adherence."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled patients had typical ICU ARDS severity (APACHE II ~20, mean PaO2/FiO2 ~114 mmHg), recruited across a wide range of UK ICUs. Exclusions were safety‑/feasibility‑driven, supporting broad applicability to adult ventilated ARDS populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings generalise well to high‑income ICUs where conventional ventilation is clinician‑directed and HFOV would require a training programme. Less certain for centres using highly protocolised low tidal volume/high PEEP conventional ventilation or with extensive HFOV expertise. Resource‑limited settings may not reproduce the training/support infrastructure."
+        }
+      ],
+      "verdict": "External validity is good for broadly similar adult ICU ARDS populations in high‑income settings, particularly where “usual care” ventilation is pragmatic, but less certain for contexts with highly protocolised conventional ventilation or specialised, high‑expertise HFOV programmes."
+    },
+    "strengths": [
+      "Large, multicentre pragmatic randomised trial with objective primary endpoint and complete short‑term follow‑up.",
+      "Early enrolment and prompt initiation of assigned strategy (median 6.1 h), targeting the window where ventilator strategy might plausibly modify injury trajectory.",
+      "Explicit HFOV protocol with substantial implementation support (training and 24/7 troubleshooting)."
+    ],
+    "limitations": [
+      "Open‑label design with potential co‑intervention differences (sedation, paralysis, rescue therapies).",
+      "Conventional ventilation was encouraged but not standardised; delivered tidal volumes were commonly around 8 mL/kg ideal body weight early, limiting inference versus strictly protocolised lung‑protective ventilation.",
+      "Small but present non‑adherence (HFOV not initiated in 2.5%) and crossover from conventional ventilation to HFOV (2.5%).",
+      "HFOV protocol required transition to conventional ventilation for weaning, reducing sustained exposure to the experimental strategy later in illness."
+    ],
+    "critical_appraisal": {
+      "summary": "The trial has moderate internal validity: central randomisation and complete follow‑up support the primary mortality finding, but the open‑label design and pragmatic control introduce potential bias. External validity is good for similar intensive care settings.",
+      "strengths": [
+        "Large, pragmatic, multicentre design with objective primary outcome",
+        "Early enrolment and prompt intervention",
+        "Extensive training and support for HFOV delivery"
+      ],
+      "weaknesses": [
+        "Open‑label design",
+        "Non‑standardised conventional ventilation with tidal volumes often >8 mL/kg",
+        "Limited non‑adherence and crossover",
+        "Weaning protocol diluted late HFOV exposure"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In a pragmatic UK ICU setting, early HFOV did not reduce mortality or shorten ventilation/ICU stay compared with conventional ventilation, despite improving oxygenation. Routine HFOV use to improve patient‑centred outcomes in adult ARDS is not supported by OSCAR’s results.",
+    "clinical_bottom_line": {
+      "verdict": "Routine HFOV should not be used in adult ARDS; it does not improve survival and increases neuromuscular blockade exposure.",
+      "applies_to": "Adult ARDS patients managed in high‑income ICUs with pragmatic conventional ventilation.",
+      "does_not_mean": "That HFOV worsens outcomes; it simply provides no benefit over usual care, and any oxygenation improvement does not translate to better patient‑centred outcomes.",
+      "implementation_caveats": [
+        "HFOV remains resource‑intensive and requires specialised training; de‑implementation may be appropriate in centres still using it."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Discordant contemporaneous trial evidence (OSCAR vs OSCILLATE)",
+        "notes": "OSCILLATE, published in the same NEJM issue, stopped early for harm with higher mortality in the HFOV strategy compared with a protocolised conventional ventilation strategy. The editorial highlighted the mismatch between physiological plausibility (improved oxygenation) and patient‑centred outcomes, and emphasised potential haemodynamic cost and sedation/paralysis requirements."
+      },
+      {
+        "topic": "Comparator quality and pragmatic design",
+        "notes": "Correspondence noted that OSCAR’s conventional ventilation arm achieved tidal volumes just above 8 mL/kg (ideal body weight), whereas OSCILLATE’s comparator was more tightly protocolised to contemporary lung‑protective targets; this could influence apparent treatment effects. Commentary emphasised that “HFOV versus conventional ventilation” is not a single intervention comparison: outcomes depend on the HFOV strategy and on how optimised conventional ventilation is in the control arm."
+      },
+      {
+        "topic": "Haemodynamic and right‑ventricular concerns",
+        "notes": "Physiological studies demonstrate that higher mean airway pressures during HFOV can impair right‑ventricular function and haemodynamics, providing a mechanistic pathway by which “open lung” HFOV strategies could worsen outcomes in some patients."
+      },
+      {
+        "topic": "Evidence syntheses after OSCAR/OSCILLATE",
+        "notes": "Cochrane review concluded HFOV does not reduce mortality compared with conventional ventilation and may increase harm; results were influenced by strategy heterogeneity and evolving conventional care. Later meta‑analysis similarly found no mortality benefit and highlighted concerns regarding higher mean airway pressure strategies and adverse haemodynamic consequences."
+      },
+      {
+        "topic": "Subgroup hypothesis – severity of hypoxaemia",
+        "notes": "An individual patient‑data meta‑analysis evaluated effect modification by baseline hypoxaemia severity, sustaining interest in whether any narrowly defined subgroup might benefit, but without establishing HFOV as routine therapy."
+      },
+      {
+        "topic": "Guideline impact (current practice)",
+        "notes": "Updated ATS clinical practice guideline recommends against routine HFOV in moderate or severe ARDS (strong recommendation, high certainty of evidence)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "OSCILLATE",
+        "relation": "Contemporaneous RCT published in the same NEJM issue; stopped early for harm with higher mortality in the HFOV group compared with a protocolised conventional ventilation strategy, directly contrasting with OSCAR’s neutral finding."
+      },
+      {
+        "trial": "Cochrane review",
+        "relation": "Subsequent synthesis concluded that HFOV does not reduce mortality and may increase harm; highlighted the impact of strategy heterogeneity and evolving conventional care."
+      },
+      {
+        "trial": "Later meta‑analysis",
+        "relation": "Confirmed no mortality benefit and raised concerns about higher mean airway pressure strategies and adverse haemodynamic consequences."
+      },
+      {
+        "trial": "ATS clinical practice guideline",
+        "relation": "Strong recommendation against routine HFOV in moderate or severe ARDS, relying on OSCAR and other evidence."
+      }
+    ],
+    "unresolved_questions": [
+      "Whether any narrowly defined subgroup (e.g., by ARDS severity) might benefit from HFOV.",
+      "Optimal HFOV strategy (mean airway pressure, frequency, weaning) that could potentially improve outcomes without harm."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n = 795",
+        "30‑day mortality: 41.7% vs 41.1% (risk difference 0.6%, 95% CI −6.1 to 7.5)",
+        "HFOV improved oxygenation (day 1 PaO2/FiO2 192 vs 154 mmHg) but increased PaCO2 (55 vs 50 mmHg) and neuromuscular blocker days (2.5 vs 2.0)"
+      ],
+      "one_line_takeaway": "Early HFOV does not improve survival in adult ARDS and should not be used routinely."
+    }
+  },
+  "_source_id": "OSCAR",
+  "_source_system": "Respiratory"
+}

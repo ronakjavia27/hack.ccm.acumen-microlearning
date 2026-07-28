@@ -100,6 +100,14 @@ tbody tr:hover{background:var(--bg-panel);cursor:pointer}
 tbody td{padding:10px;font-size:12.8px;vertical-align:top}
 td.id-col{font-family:var(--mono);color:var(--text-faint);font-size:11.5px}
 td.check-col,th.check-col{width:30px}
+.feat-badge{display:inline-flex;padding:2px 8px;border-radius:10px;font-size:10px;cursor:pointer;font-family:var(--mono);text-transform:uppercase;letter-spacing:.02em;border:1px solid var(--border)}
+.feat-on{background:#0f2620;color:var(--phosphor)}
+.feat-off{background:var(--bg-card);color:var(--text-faint)}
+.admin-toggle{display:inline-flex;padding:3px 10px;border-radius:10px;font-size:10.5px;cursor:pointer;font-family:var(--mono);text-transform:uppercase;letter-spacing:.03em;border:1px solid var(--border);transition:all .15s}
+.admin-on{background:#2a1a0a;color:var(--amber);border-color:var(--amber)}
+.admin-off{background:var(--bg-card);color:var(--text-faint)}
+.admin-off:hover{background:#1f1b14;color:var(--ink)}
+.row-admin td{background:rgba(232,183,120,0.04)}
 .row-title{color:var(--text-primary);font-weight:500}
 .row-sub{color:var(--text-faint);font-size:11.5px;margin-top:2px}
 .row-modified{color:var(--amber);font-size:10.5px;font-family:var(--mono);margin-left:6px}
@@ -201,6 +209,8 @@ td.check-col,th.check-col{width:30px}
   <div class="nav-item" onclick="switchSection('backups')"><span>Backups</span></div>
   <div class="nav-item" onclick="switchSection('audit')"><span>Audit log</span></div>
   <div class="nav-item" onclick="switchSection('maintenance')"><span>Maintenance</span></div>
+  <div class="nav-section-label">Auth</div>
+  <div class="nav-item" onclick="switchSection('accounts')"><span>Accounts</span><span class="nav-count" id="countAccounts">0</span></div>
 </nav>
 <main>
 <!-- OVERVIEW -->
@@ -354,6 +364,45 @@ td.check-col,th.check-col{width:30px}
     <div id="failedResult" style="margin-top:8px"></div>
   </div>
 </section>
+<!-- ACCOUNTS -->
+<section class="section" id="section-accounts">
+  <div class="section-head"><div><div class="section-title">Accounts</div><div class="section-sub">User management &amp; feature flag control</div></div></div>
+
+  <div class="panel" id="accountsDefaultsPanel">
+    <h3>Global Access Defaults</h3>
+    <p style="color:var(--text-muted);margin:0 0 12px">These apply to all users. Per-user overrides can extend access.</p>
+    <div id="accountsDefaultsGrid" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px"></div>
+    <button class="btn btn-sm" id="accountsSaveDefaults">Save defaults</button>
+    <span id="accountsDefaultsStatus" style="margin-left:10px;color:var(--phosphor);font-size:12px"></span>
+  </div>
+
+  <div class="section-toolbar">
+    <div class="search-box flex-1">
+      <span>⌕</span>
+      <input id="accountsSearch" placeholder="Search by email or name…" oninput="renderAccounts()">
+    </div>
+    <span id="accountsCount" style="font-size:12px;color:var(--text-muted)"></span>
+  </div>
+
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>Name</th>
+          <th>Workplace / Study</th>
+          <th>City</th>
+          <th>Joined</th>
+          <th>Admin</th>
+          <th>Features</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="accountsTableBody"></tbody>
+    </table>
+    <div class="empty" id="accountsEmpty">No users found.</div>
+  </div>
+</section>
 </main>
 </div>
 <div id="backdrop"></div>
@@ -399,7 +448,7 @@ const state = {
   section: 'overview',
   edits: {},  // key `${kind}:${id}` -> partial field overrides already sent to backend (for showing "modified" badge)
   dirtyPaths: {}, // key `${kind}:${id}` -> array of git paths to push
-  cache: { summaries: [], pearls: [], theory: [], flashcards: [] },
+  cache: { summaries: [], pearls: [], theory: [], flashcards: [], accounts: [], accountsDefaults: {} },
   subtopics: {},
   selected: { summaries: new Set(), pearls: new Set() },
   drawer: { open: false, kind: null, id: null },
@@ -439,7 +488,7 @@ async function api(method, path, body, timeoutMs=15000){
   const opts = { method, headers: {'Content-Type':'application/json'}, signal: ac.signal };
   if (body !== undefined) opts.body = JSON.stringify(body);
   try {
-    const r = await fetch(API_BASE + encodeURI(path), opts);
+    const r = await fetch(API_BASE + path, opts);
     if (!r.ok) {
       const text = await r.text();
       throw new Error(`${r.status} ${text.slice(0,200)}`);
@@ -456,13 +505,16 @@ const apiDelete = (p) => api('DELETE', p);
 
 async function loadData(){
   try {
-    const [summaries, pearls, theory, flashcards, subtopics] = await Promise.all([
+    const [summaries, pearls, theory, flashcards, subtopics, accounts, defaults] = await Promise.all([
       apiGet('/summaries'), apiGet('/pearls'), apiGet('/theory'), apiGet('/flashcards'), apiGet('/subtopics'),
+      apiGet('/accounts'), apiGet('/accounts/defaults'),
     ]);
     state.cache.summaries = summaries;
     state.cache.pearls = pearls;
     state.cache.theory = theory;
     state.cache.flashcards = flashcards;
+    state.cache.accounts = accounts;
+    state.cache.accountsDefaults = defaults;
     state.subtopics = subtopics;
   } catch (e) {
     toast('Load failed: ' + e.message, true);
@@ -477,6 +529,7 @@ async function reloadSection(){
     else if (state.section === 'pearls') state.cache.pearls = await apiGet('/pearls');
     else if (state.section === 'theory') state.cache.theory = await apiGet('/theory');
     else if (state.section === 'flashcards') state.cache.flashcards = await apiGet('/flashcards');
+    else if (state.section === 'accounts') { const [a,d] = await Promise.all([apiGet('/accounts'), apiGet('/accounts/defaults')]); state.cache.accounts = a; state.cache.accountsDefaults = d; }
   } catch (e) {
     toast('Reload failed: ' + e.message, true);
     console.error('reloadSection error:', e);
@@ -586,12 +639,14 @@ function renderOverview(){
     {label:'Theory docs', val:t.length, cls:''},
     {label:'Flashcard decks', val:f.length, cls:''},
     {label:'Unsaved edits', val:dirtyCount(), cls:dirtyCount()?'amber':''},
+    {label:'Accounts', val:state.cache.accounts.length, cls:''},
   ];
   $('overviewStats').innerHTML = cards.map(c=>`<div class="stat-card"><div class="stat-num ${c.cls}">${c.val}</div><div class="stat-label">${c.label}</div></div>`).join('');
   $('countSummaries').textContent = s.length;
   $('countPearls').textContent = p.length;
   $('countTheory').textContent = t.length;
   $('countFlashcards').textContent = f.length;
+  $('countAccounts').textContent = state.cache.accounts.length;
 }
 
 // ---- summaries ----
@@ -1328,6 +1383,100 @@ async function findFailed(){
     : '<p style="color:var(--phosphor)">All summaries healthy.</p>';
 }
 
+// ---- accounts ----
+function renderAccounts(){
+  const accounts = state.cache.accounts || [];
+  const defaults = state.cache.accountsDefaults || {};
+  const q = ($('accountsSearch')||{}).value||'';
+  const filtered = q ? accounts.filter(u => (u.email||'').toLowerCase().includes(q) || (u.first_name||'').toLowerCase().includes(q) || (u.last_name||'').toLowerCase().includes(q) || (u.workplace||'').toLowerCase().includes(q)) : accounts;
+  $('accountsCount').textContent = filtered.length + ' of ' + accounts.length;
+  $('accountsEmpty').style.display = filtered.length?'none':'block';
+
+  // Defaults toggles
+  const grid = $('accountsDefaultsGrid');
+  const defKeys = Object.keys(defaults).filter(k => k !== 'id');
+  if (defKeys.length && !grid.dataset.built) {
+    grid.dataset.built = '1';
+    grid.innerHTML = defKeys.map(k => `<label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;background:var(--bg-card);padding:4px 10px;border-radius:6px;border:1px solid var(--border)"><input type="checkbox" data-def="${k}" ${defaults[k]?'checked':''}> ${k.replace(/_/g,' ')}</label>`).join('');
+  }
+
+  // Table
+  const tbody = $('accountsTableBody'); tbody.innerHTML = '';
+  filtered.forEach(u => {
+    const tr = document.createElement('tr');
+    if (u.is_admin) tr.classList.add('row-admin');
+    const feats = u.features || {};
+    const joined = u.created_at ? new Date(u.created_at).toLocaleDateString() : '—';
+    const isAdmin = !!u.is_admin;
+    const email = u.email;
+    const featHtml = defKeys.map(k => {
+      const enabled = feats[k] === true || (feats[k] === undefined && defaults[k]);
+      return `<span class="feat-badge ${enabled?'feat-on':'feat-off'}" data-flag="${k}" data-email="${esc(email)}">${k.replace(/_/g,' ')}</span>`;
+    }).join(' ');
+    tr.innerHTML = `<td><strong>${esc(email)}</strong></td>
+      <td>${esc(u.first_name||'')} ${esc(u.last_name||'')}</td>
+      <td>${esc(u.workplace||'—')}</td>
+      <td>${esc(u.city||'—')}</td>
+      <td class="row-sub">${joined}</td>
+      <td><span class="admin-toggle ${isAdmin?'admin-on':'admin-off'}" data-email="${esc(email)}">${isAdmin?'⚡ Admin':'Set admin'}</span></td>
+      <td style="display:flex;flex-wrap:wrap;gap:4px">${featHtml}</td>
+      <td><button class="btn btn-sm btn-danger" data-email="${esc(email)}">Delete</button></td>`;
+    tbody.appendChild(tr);
+  });
+}
+
+// Event delegation for Accounts table clicks
+const accountsTbody = $('accountsTableBody');
+if (accountsTbody) accountsTbody.addEventListener('click', async function(ev){
+  const target = ev.target;
+  if (target.classList.contains('admin-toggle')) {
+    const email = target.dataset.email;
+    const user = (state.cache.accounts||[]).find(u => u.email === email);
+    if (!user) return;
+    const newVal = !user.is_admin;
+    try {
+      await apiPut('/accounts/'+encodeURIComponent(email), { is_admin: newVal });
+      user.is_admin = newVal;
+      toast(newVal ? 'Admin granted to ' + email : 'Admin removed from ' + email);
+    } catch (e) { toast('Error: ' + e.message, true); }
+    renderAccounts();
+  } else if (target.classList.contains('feat-badge')) {
+    const email = target.dataset.email;
+    const flag = target.dataset.flag;
+    const user = (state.cache.accounts||[]).find(u => u.email === email);
+    if (!user) return;
+    const features = user.features || {};
+    features[flag] = !(features[flag] === true);
+    user.features = features;
+    try {
+      await apiPut('/accounts/'+encodeURIComponent(email), { features });
+      toast('Updated ' + flag + ' for ' + email);
+    } catch (e) { toast('Error: ' + e.message, true); }
+    renderAccounts();
+  } else if (target.tagName === 'BUTTON' && target.classList.contains('btn-danger') && target.dataset.email) {
+    const email = target.dataset.email;
+    if (!confirm('Delete user ' + email + '?')) return;
+    try {
+      await apiDelete('/accounts/'+encodeURIComponent(email));
+      state.cache.accounts = (state.cache.accounts||[]).filter(u => u.email !== email);
+      toast('Deleted ' + email);
+    } catch (e) { toast('Error: ' + e.message, true); }
+    renderAccounts();
+  }
+});
+
+document.addEventListener('click', async function(ev){
+  if (ev.target.id === 'accountsSaveDefaults') {
+    const toggles = document.querySelectorAll('[data-def]');
+    const updated = {};
+    toggles.forEach(cb => { updated[cb.dataset.def] = cb.checked; });
+    await apiPut('/accounts/defaults', updated);
+    state.cache.accountsDefaults = updated;
+    $('accountsDefaultsStatus').textContent = 'Saved at ' + new Date().toLocaleTimeString();
+    toast('Defaults saved');
+  }
+});
+
 // ---- render ----
 function render(){
   renderOverview();
@@ -1337,6 +1486,7 @@ function render(){
   renderPearls();
   renderTheory();
   renderFlashcards();
+  renderAccounts();
   updateBulk('summaries');
   updateBulk('pearls');
 }

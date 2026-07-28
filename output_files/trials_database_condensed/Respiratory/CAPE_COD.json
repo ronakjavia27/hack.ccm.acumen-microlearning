@@ -1,0 +1,353 @@
+{
+  "id": "CAPE_COD",
+  "trial_name": "CAPE COD — Hydrocortisone in Severe Community-Acquired Pneumonia (2023)",
+  "specialty": "Respiratory / Critical Care",
+  "subtopic": "Pneumonia",
+  "year": 2023,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Dequin P-F, Meziani F, Quenot J-P, et al. Hydrocortisone in severe community-acquired pneumonia. N Engl J Med. 2023;388(21):1931-1941.",
+  "doi": "10.1056/NEJMoa2215145",
+  "registration": "NCT02517489",
+  "trial_type": "Multicentre, randomised, double-blind, placebo-controlled superiority trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 800,
+  "result_category": "Positive",
+  "one_liner": "In ICU patients with severe CAP, early hydrocortisone reduced 28-day mortality from 11.9% to 6.2% (absolute reduction 5.6%) and reduced progression to intubation and vasopressors.",
+  "pico": {
+    "population": "Adults ≥18 years with severe CAP requiring ICU/intermediate care, within 24 h of first severity criterion, without septic shock or influenza at inclusion",
+    "intervention": "Hydrocortisone 200 mg/day IV continuous for 4 days, then protocolised taper based on day-4 response (max 14 days); stopped at ICU discharge",
+    "comparison": "Placebo IV continuous with identical schedule and taper",
+    "outcome": "All-cause mortality at day 28 (primary)"
+  },
+  "keywords": [
+    "hydrocortisone",
+    "corticosteroids",
+    "community-acquired pneumonia",
+    "severe CAP",
+    "ICU",
+    "mortality"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Severe CAP causes intense pulmonary/systemic inflammation and high mortality (~30% in mechanically ventilated patients). Earlier steroid trials showed improved clinical stability and shorter stay but inconsistent mortality benefit.",
+      "knowledge_gap": "Whether early, protocolised hydrocortisone improves survival in ICU-treated severe CAP was unknown.",
+      "hypothesis": "Early intravenous hydrocortisone would reduce 28-day all-cause mortality compared with placebo."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, placebo-controlled superiority trial",
+      "setting": "31 ICUs/intermediate care units in France, enrolled Oct 2015 – Mar 2020",
+      "population": {
+        "inclusion": [
+          "Adult (≥18 years) with community-acquired pneumonia requiring ICU/intermediate care",
+          "At least one antibiotic dose given since hospital admission",
+          "Able to start study infusion within 24 hours after first severity criterion",
+          "Severe CAP defined by ≥1 of: PSI >130; OR invasive/non-invasive mechanical ventilation with PEEP ≥5 cm H2O; OR high-flow oxygen with FiO2 ≥0.50 and PaO2:FiO2 <300; OR oxygen via partial rebreathing mask meeting protocol PaO2 thresholds approximating PaO2:FiO2 <300"
+        ],
+        "exclusion": [
+          "Septic shock at inclusion",
+          "Influenza infection at inclusion",
+          "Chronic/required systemic corticosteroids for another indication",
+          "Important immunosuppression",
+          "Pregnancy/breastfeeding",
+          "Limitations of life-sustaining treatment (e.g., decision to withhold intubation)"
+        ]
+      },
+      "intervention": "Hydrocortisone 200 mg/day continuous IV for first 4 days. Adaptive taper: if clinical improvement at day 4, taper to 100 mg/day (days 5–6), then 50 mg/day (days 7–8), then stop; if not improved, continue 200 mg/day (days 1–7), then taper to 100 mg/day (days 8–11), then 50 mg/day (days 12–14), then stop. Study drug discontinued at ICU discharge.",
+      "comparison": "Matching placebo continuous IV with identical schedule and taper algorithm.",
+      "blinding": "Double-blind (participants, treating clinicians, investigators); placebo infusion design maintained masking despite adaptive taper.",
+      "sample_size_power": "Planned sample size 1,200 to detect a 7% absolute reduction in 28-day mortality (from 27% to 20%) with 80% power at two-sided α=0.05; group sequential design with interim analyses. Enrolment halted early after 800 randomised following DSMB recommendation (interim p=0.0055 did not meet prespecified stopping boundary).",
+      "primary_outcome": "All-cause mortality at day 28",
+      "secondary_outcomes": [
+        "Endotracheal intubation by day 28 (in those not on mechanical ventilation at baseline)",
+        "Endotracheal intubation by day 28 (in those not on endotracheal intubation at baseline)",
+        "Initiation of vasopressors by day 28 (in those not on vasopressors at baseline)",
+        "Discharge alive from ICU by day 28",
+        "Discharge alive from hospital by day 28",
+        "Hospital-acquired infection by day 28",
+        "Gastrointestinal bleeding by day 28",
+        "Insulin exposure (median daily dose among insulin-treated patients, days 1–7)",
+        "Serious adverse events",
+        "All-cause mortality at day 90",
+        "Ventilator- and vasopressor-free days (median similar, confounded by mortality difference)"
+      ],
+      "follow_up": "Primary endpoint at day 28; key follow-up to day 90 (mortality, health-related quality of life)"
+    },
+    "results": {
+      "headline_bullets": [
+        "28-day mortality: 6.2% (hydrocortisone) vs 11.9% (placebo); HR 0.51 (95% CI 0.29–0.88), P=0.006; absolute reduction 5.6 percentage points.",
+        "Reduced need for endotracheal intubation (HR 0.59–0.69) and vasopressor initiation (HR 0.59) in those not already on those supports.",
+        "Higher rates of ICU and hospital discharge alive by day 28; non-significant trends for less infection and bleeding.",
+        "Insulin requirements were higher with hydrocortisone (median 35.5 vs 20.5 IU/day). Ventilator- and vasopressor-free days did not differ, likely due to mortality differences."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at day 28 (primary)",
+          "group_a": "25/400 (6.2%)",
+          "group_b": "47/395 (11.9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.51",
+          "ci_95": "0.29–0.88",
+          "p_value": "0.006",
+          "note": "Absolute difference −5.6% (95% CI −9.6 to −1.7)"
+        },
+        {
+          "outcome": "All-cause mortality at day 90",
+          "group_a": "36/388 (9.3%)",
+          "group_b": "57/389 (14.7%)",
+          "effect_measure": "Difference",
+          "effect_value": "-5.4%",
+          "ci_95": "-9.9% to -0.8%",
+          "p_value": "Not reported",
+          "note": "Vital status missing for some patients at day 90"
+        },
+        {
+          "outcome": "Endotracheal intubation by day 28 (no mechanical ventilation at baseline)",
+          "group_a": "40/222 (18.0%)",
+          "group_b": "65/220 (29.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.59",
+          "ci_95": "0.40–0.86",
+          "p_value": "Not reported",
+          "note": "Competing-risk analysis"
+        },
+        {
+          "outcome": "Endotracheal intubation by day 28 (no endotracheal intubation at baseline)",
+          "group_a": "60/308 (19.5%)",
+          "group_b": "86/310 (27.7%)",
+          "effect_measure": "HR",
+          "effect_value": "0.69",
+          "ci_95": "0.50–0.94",
+          "p_value": "Not reported",
+          "note": "Competing-risk analysis"
+        },
+        {
+          "outcome": "Initiation of vasopressors by day 28 (no vasopressors at baseline)",
+          "group_a": "55/359 (15.3%)",
+          "group_b": "86/344 (25.0%)",
+          "effect_measure": "HR",
+          "effect_value": "0.59",
+          "ci_95": "0.43–0.82",
+          "p_value": "Not reported",
+          "note": "Competing-risk analysis"
+        },
+        {
+          "outcome": "Discharge alive from ICU by day 28",
+          "group_a": "365/400 (91.2%)",
+          "group_b": "326/395 (82.5%)",
+          "effect_measure": "HR",
+          "effect_value": "1.48",
+          "ci_95": "1.18–1.85",
+          "p_value": "Not reported",
+          "note": "Time-to-discharge alive"
+        },
+        {
+          "outcome": "Discharge alive from hospital by day 28",
+          "group_a": "295/400 (73.8%)",
+          "group_b": "261/395 (66.1%)",
+          "effect_measure": "HR",
+          "effect_value": "1.23",
+          "ci_95": "1.05–1.45",
+          "p_value": "Not reported",
+          "note": "Time-to-discharge alive"
+        },
+        {
+          "outcome": "Hospital-acquired infection by day 28",
+          "group_a": "39/400 (9.8%)",
+          "group_b": "44/395 (11.1%)",
+          "effect_measure": "HR",
+          "effect_value": "0.87",
+          "ci_95": "0.57–1.34",
+          "p_value": "0.54",
+          "note": "Cumulative incidence censored at day 28"
+        },
+        {
+          "outcome": "Gastrointestinal bleeding by day 28",
+          "group_a": "9/400 (2.2%)",
+          "group_b": "13/395 (3.3%)",
+          "effect_measure": "HR",
+          "effect_value": "0.68",
+          "ci_95": "0.29–1.59",
+          "p_value": "0.38",
+          "note": "Cumulative incidence censored at day 28"
+        },
+        {
+          "outcome": "Insulin exposure (median daily dose among insulin-treated patients, days 1–7)",
+          "group_a": "35.5 IU/day",
+          "group_b": "20.5 IU/day",
+          "effect_measure": "Median difference",
+          "effect_value": "8.7",
+          "ci_95": "4.0–13.8",
+          "p_value": "<0.001",
+          "note": "Reflects steroid-related hyperglycaemia burden"
+        },
+        {
+          "outcome": "Patients with ≥1 serious adverse event",
+          "group_a": "63/400 (16.0%)",
+          "group_b": "88/395 (22.0%)",
+          "effect_measure": "Not reported",
+          "effect_value": null,
+          "ci_95": "—",
+          "p_value": null,
+          "note": "Numerically fewer with hydrocortisone"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Mechanical ventilation present at baseline",
+          "group_a": "19/178",
+          "group_b": "25/175",
+          "effect_measure": "Difference",
+          "effect_value": "-3.6%",
+          "ci_95": "-9.6% to 2.3%",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "Mechanical ventilation absent at baseline",
+          "group_a": "6/222",
+          "group_b": "22/220",
+          "effect_measure": "Difference",
+          "effect_value": "-7.3%",
+          "ci_95": "-12.6% to -2.0%",
+          "p_interaction": "Not reported"
+        }
+      ]
+    },
+    "safety": [
+      "Hospital-acquired infection: no significant difference (HR 0.87, 95% CI 0.57–1.34)",
+      "GI bleeding: no significant difference (HR 0.68, 95% CI 0.29–1.59)",
+      "Insulin requirements higher with hydrocortisone (median 35.5 vs 20.5 IU/day among insulin-treated patients, P<0.001)",
+      "Serious adverse events occurred less frequently with hydrocortisone (16.0% vs 22.0%)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised randomisation with stratification by centre and mechanical ventilation; allocation concealed."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind design maintained with identical placebo infusion schedule; objective primary outcome and key secondary endpoints reduce detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT analysis (795/800); 5 withdrew consent. Day-90 mortality denominators 388 vs 389 indicate some missingness, but attrition low."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Median time to infusion 15.3 vs 14.6 h; median treatment duration 5 vs 6 days. Premature stopping similar (79.5% vs 75.4%), mostly due to ICU discharge alive. Open-label corticosteroid use: 5.3% vs 7.7% (protocol deviation)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: age 63 vs 63, SAPS II 37 vs 36, SOFA 6 vs 6, PSI 121 vs 121; mechanical ventilation 44.5% vs 44.3%. Vasopressor use at inclusion slightly lower in hydrocortisone (10.3% vs 12.9%)."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Mortality robust; intubation/vasopressor endpoints clinically anchored but can reflect thresholds; hospital-acquired infection and GI bleeding not centrally adjudicated."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Group sequential design with interim analyses; trial stopped early after second interim (p=0.0055) without meeting prespecified boundary, inflating risk of overestimation. Secondary endpoints not adjusted for multiplicity."
+        }
+      ],
+      "verdict": "Moderate-to-strong: randomisation, blinding, and low contamination support causal inference for objective endpoints, but early stopping and incomplete 90-day follow-up introduce uncertainty."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "ICU-treated severe CAP in France, including both ventilated and high-flow O2 patients. Excluded septic shock, influenza, and important immunosuppression, limiting applicability to those common phenotypes. Early initiation within 24 h of severity may be difficult where ICU access is delayed."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Hydrocortisone infusion regimen feasable in most ICUs but requires reliable IV delivery and glucose monitoring. Best generalizability for early ICU severe CAP without shock or viral pneumonia. Uncertain for viral CAP, septic shock at presentation, or significantly immunosuppressed."
+        }
+      ],
+      "verdict": "Moderate: strongest for severe CAP patients admitted early to ICU without septic shock; limited for shock-at-presentation, viral pneumonia, or substantial immunosuppression."
+    },
+    "strengths": [
+      "Double-blind, multicentre RCT across 31 centres",
+      "Early initiation strategy targets inflammatory cascade before organ failure escalation",
+      "Clinically important, mostly objective outcomes (mortality, intubation, vasopressor initiation, discharge alive)",
+      "Protocolised dosing and taper algorithm enhances reproducibility and reduces ad hoc steroid exposure"
+    ],
+    "limitations": [
+      "Early stopping after interim review (p=0.0055) may overestimate effect magnitude",
+      "Placebo group mortality (11.9%) substantially lower than planned 27%, reducing power and raising questions about baseline risk selection",
+      "Exclusion of septic shock and influenza at inclusion narrows applicability to many real-world severe CAP patients",
+      "Infection and bleeding outcomes not centrally adjudicated, possibly missing subtle safety signals",
+      "Open-label corticosteroid use higher in placebo (7.7% vs 5.3%), potentially biasing toward benefit"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted RCT showing significant mortality reduction with early hydrocortisone, but early stopping and phenotype exclusions warrant cautious interpretation.",
+      "strengths": [
+        "Double-blind design protects against bias",
+        "Objective primary outcome",
+        "Protocolised intervention supports translation"
+      ],
+      "weaknesses": [
+        "Early stopping with p=0.0055 inflates risk of overestimation",
+        "Limited generalisability due to exclusion of septic shock and influenza",
+        "Lower-than-expected control event rate may reflect selection of lower-risk patients"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In ICU patients with severe CAP and no septic shock or influenza, early hydrocortisone reduced 28-day mortality and progression to mechanical ventilation and vasopressor use, with an acceptable short-term safety profile.",
+    "clinical_bottom_line": {
+      "verdict": "In selected severe CAP patients admitted to ICU, early hydrocortisone (200 mg/day with protocolised taper) reduces mortality and organ failure progression.",
+      "applies_to": "Adults with severe CAP requiring ICU-level respiratory support (invasive/non-invasive ventilation or high-flow O2) within 24 h of a severity criterion, without septic shock or influenza at inclusion.",
+      "does_not_mean": "Not all severe CAP patients benefit; those with concurrent septic shock or influenza were excluded, so caution in these subgroups. Also, benefit does not extend to significantly immunosuppressed patients.",
+      "implementation_caveats": [
+        "Requires early recognition of severe CAP and prompt initiation (within 24 h of severity criterion)",
+        "Monitor for hyperglycaemia and increased insulin requirements (median +8.7 IU/day)",
+        "Avoid in confirmed/suspected influenza, active septic shock, or significant immunosuppression",
+        "Use protocolised taper based on clinical response; discontinue at ICU discharge"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping and effect magnitude",
+        "notes": "Trial stopped early after second interim analysis with p=0.0055, which did not meet prespecified stopping boundary. Placebo mortality lower than expected; effect may be overestimated."
+      },
+      {
+        "topic": "Exclusion of septic shock and influenza",
+        "notes": "Critics argue that excluding common CAP phenotypes limits applicability. Prohibition of open-label steroids could have amplified between-group differences if shock developed after randomisation."
+      },
+      {
+        "topic": "COPD/asthma overlap",
+        "notes": "Post hoc analysis: mortality 5.9% vs 12.5% (difference -6.6%, 95% CI -14.3 to 1.1) in patients with COPD/asthma, and 6.4% vs 11.7% (difference -5.3%, CI reported) without, suggesting consistent direction of benefit."
+      },
+      {
+        "topic": "Comparison with other severe CAP steroid trials",
+        "notes": "A trial of low-dose methylprednisolone in severe CAP (Intensive Care Med 2022;48:1009–1023) showed no mortality benefit, highlighting heterogeneity due to steroid type, dose, and patient selection."
+      },
+      {
+        "topic": "Guideline integration",
+        "notes": "ERS/ESICM/ESCMID/ALAT guidelines and 2024 SCCM focused update now recommend corticosteroid use in severe CAP; CAPE COD provides strong support but requires attention to phenotype (shock, viral pneumonia)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Low-dose methylprednisolone RCT in severe CAP (Intensive Care Med 2022;48:1009–1023, no acronym)",
+        "relation": "Showed no mortality benefit in severe CAP, contrasting with CAPE COD; differences in agent, dosing, and patient selection likely explain discordance."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal corticosteroid regimen (agent, dose, infusion vs bolus, duration, taper criteria) remains undefined.",
+      "Role in severe CAP complicated by septic shock or viral pneumonia (e.g., influenza) needs further study.",
+      "Long-term functional outcomes and survival beyond 90 days are not assessed.",
+      "Generalizability to low-resource settings and delayed ICU admission is unknown."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=800 (795 analysed)",
+        "28-day mortality: 6.2% vs 11.9%; HR 0.51 (95% CI 0.29–0.88); P=0.006",
+        "90-day mortality: 9.3% vs 14.7% (difference -5.4%, 95% CI -9.9 to -0.8)",
+        "Intubation reduced: HR 0.59 (95% CI 0.40–0.86); vasopressor initiation: HR 0.59 (95% CI 0.43–0.82)"
+      ],
+      "one_line_takeaway": "Early, protocolised hydrocortisone reduces mortality and prevents organ failure progression in severe CAP without septic shock – practice-changing for appropriately selected patients."
+    }
+  },
+  "_source_id": "CAPE_COD",
+  "_source_system": "Respiratory"
+}

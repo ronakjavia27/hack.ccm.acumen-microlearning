@@ -1,0 +1,324 @@
+{
+  "id": "acg-guidelines-management-of-acute-pancreatitis-2024",
+  "doc_type": "guideline",
+  "title": "American College of Gastroenterology Guidelines: Management of Acute Pancreatitis",
+  "issuing_bodies": [
+    "ACG"
+  ],
+  "year": 2024,
+  "doi": "10.14309/ajg.0000000000002645",
+  "specialty": [
+    "gastroenterology"
+  ],
+  "tags": [
+    "acute pancreatitis",
+    "management",
+    "guidelines",
+    "fluid resuscitation",
+    "nutrition",
+    "antibiotics",
+    "ERCP",
+    "necrosis"
+  ],
+  "one_line_summary": "This ACG guideline provides evidence-based recommendations for the diagnosis, etiology, severity assessment, initial management, nutrition, antibiotics, and interventions in acute pancreatitis.",
+  "key_pearls": [
+    "Early routine CT is not **recommended** for severity assessment; reserve for unclear diagnosis or failure to improve after **48–72 hours**.",
+    "In idiopathic AP, consider **cholecystectomy** after a second episode to reduce recurrence (NNT 5).",
+    "Use **lactated Ringer's solution** over normal saline for intravenous fluid resuscitation.",
+    "Early oral feeding (within **24–48 hours**) with a **low-fat solid diet** is safe in mild AP and shortens hospital stay.",
+    "Prophylactic antibiotics are **not recommended** in severe AP; use only for documented infected necrosis.",
+    "Administer **rectal indomethacin 100 mg** before ERCP to prevent post-ERCP pancreatitis in high-risk patients.",
+    "Delay invasive interventions for pancreatic necrosis for **at least 4 weeks** to allow wall maturation and reduce **mortality**."
+  ],
+  "consensus_method": "GRADE",
+  "search_period": "1966–2022",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Diagnosis",
+      "narrative": "- Diagnosis requires 2 of 3 criteria: **abdominal pain** consistent with AP, serum **amylase and/or lipase >3 times upper limit of normal**, and/or characteristic imaging findings.\n- Serum lipase is preferred over amylase due to higher specificity and longer elevation; amylase may be normal in alcohol-induced or hypertriglyceridemic AP.\n- Amylase can be falsely elevated in macroamylasemia, renal failure, salivary disease, and other abdominal conditions.\n- Lipase elevations >3–5× ULN may be needed in diabetics; no other pancreatic enzyme assays offer better diagnostic value.\n- Once diagnosis is established, serial amylase/lipase monitoring is unnecessary—no correlation with severity, **prognosis**, or refeeding decisions.\n- Contrast-enhanced CT has >90% sensitivity/specificity but should not be used routinely; reserve for patients who fail to improve after **48–72 hours** or when diagnosis is unclear.\n- MRI is comparable to CT and preferred in contrast allergy or renal insufficiency; can detect necrosis on non-gadolinium T2-weighted images and better assess CBD stones and duct disruption.",
+      "recommendations": [
+        {
+          "rec_id": "KC1",
+          "statement": "We suggest that early/at admission routine CT not be performed for the purpose of determining severity in AP and should be reserved for patients in whom the diagnosis is unclear or who fail to improve clinically within the first **48–72 hours** after hospital admission and intravenous hydration.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Etiology of AP",
+      "narrative": "- Most common causes: **gallstones (40–70%)** and **alcohol (25–35%)**.\n- Transabdominal ultrasound should be performed in all patients to evaluate for cholelithiasis; repeat US after 1 week if initial is inconclusive increases accuracy.\n- Alcohol-induced AP requires >5 years of moderate/heavy consumption (>**50 g**/day); only ~5% of heavy drinkers develop AP, suggesting genetic/tobacco cofactors.\n- Other etiologies: medications (e.g., 6-mercaptopurine, azathioprine, didanosine), hypertriglyceridemia (TG >**1,000 mg/dL**), hypercalcemia, infections, and pancreatic tumors.\n- In patients >40 years with idiopathic AP, consider pancreatic tumor; ~1% of AP is due to cancer.\n- Idiopathic AP (IAP) is diagnosed after negative initial labs (lipids, calcium) and imaging (US, MRCP). EUS identifies etiology in ~30% after first attack; MRCP is complementary.\n- Recurrent AP occurs in 20–29%, more in males, smokers, alcohol-related; untreated biliary etiology is a common cause.\n- Cholecystectomy reduces recurrence in IAP: meta-analysis shows 11% vs 39% recurrence; NNT to prevent one attack = 5.\n- Anatomic anomalies (pancreas divisum, SOD) are controversial causes; endoscopic therapy carries risk and should be done in specialized centers. EPISOD trial ruled out sphincterotomy for SOD type 2/3.\n- Genetic testing may be useful in familial cases; recurrent IAP should be evaluated at centers of excellence.",
+      "recommendations": [
+        {
+          "rec_id": "R1",
+          "statement": "We suggest transabdominal ultrasound in patients with AP to evaluate for biliary pancreatitis and a repeat US if the initial examination is inconclusive.",
+          "strength": "conditional",
+          "evidence_grade": "very low quality of evidence"
+        },
+        {
+          "rec_id": "R2",
+          "statement": "In patients with idiopathic AP (IAP), we suggest additional diagnostic evaluation with repeat abdominal ultrasound, MRI, and/or endoscopic ultrasound (EUS).",
+          "strength": "conditional",
+          "evidence_grade": "very low quality of evidence"
+        },
+        {
+          "rec_id": "KC2",
+          "statement": "In the absence of gallstones and/or **significant** history of alcohol use, serum triglyceride should be obtained and considered the etiology, preferably if greater than **1,000 mg/dL**.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC3",
+          "statement": "In patients older than 40 years in whom an etiology is not established, a pancreatic tumor should be considered as a possible cause of AP.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC4",
+          "statement": "Following a second episode of AP with no identifiable cause, in patients fit for surgery, we suggest performing a cholecystectomy to reduce the risk of recurrent episodes of AP.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Initial Assessment and Risk Stratification",
+      "narrative": "- Severe AP defined by persistent organ failure (>48 hours) and/or death; organ failure: shock (SBP <90 mm Hg), pulmonary insufficiency (PaO2 <60 mm Hg), renal failure (creatinine >**2 mg**/dL after rehydration), GI bleeding >**500 mL**/24h, or modified Marshall score ≥2.\n- Moderately severe AP: transient organ failure (<48 hours) and/or local complications (fluid collections, necrosis).\n- Pancreatic necrosis: nonviable parenchyma >3 cm or >30% of pancreas; includes peripancreatic (45%), combined (45%), pure pancreatic (5%).\n- Most AP is mild and self-limiting; 20% develop moderately severe/severe disease requiring prolonged hospitalization.\n- Predicting severity: scoring systems (Ranson, APACHE, BISAP) and imaging are inaccurate in first 24–48 hours; they predict mild disease well (only 3% progress) but only ~50% of predicted severe cases actually become severe.\n- Elevated **HCT ≥44%**, **BUN ≥20 mg/dL** (or rising), **CRP ≥150 mg/dL**, **creatinine ≥2 mg/dL** are associated with severe disease.\n- SIRS at admission has high sensitivity (85%) for organ failure and **mortality** (100%) but low specificity (41%).\n- Goal-directed fluid therapy using HCT, BUN, creatinine has not consistently reduced persistent organ failure, infected necrosis, or **mortality** in RCTs.\n- Risk factors for severe disease: age >55, obesity (BMI >30), altered mental status, comorbidities, SIRS, elevated/rising BUN and HCT, pleural effusions, pulmonary infiltrates, extensive extrapancreatic collections.\n- Patients with organ failure or SIRS should be admitted to a monitored bed or ICU; early aggressive hydration and support are crucial.",
+      "recommendations": [
+        {
+          "rec_id": "KC5",
+          "statement": "Hemodynamic status and risk assessment should be performed to stratify patients into higher-risk and lower-risk categories to assist consideration of admission to a nonmonitored bed or monitored bed setting, including the intensive care setting.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC6",
+          "statement": "Patients with organ failure and/or the SIRS should preferably be admitted to a monitored bed setting.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC7",
+          "statement": "Scoring systems and imaging alone are not accurate in determining which patients with AP will develop moderately severe or severe AP.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC8",
+          "statement": "In patients with mild disease, clinicians should remain vigilant for the development of severe disease and organ failure during the initial **48 hours** from admission.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC9",
+          "statement": "Risk factors for the development of severe disease include elevated **BUN**, **HCT**, the presence of obesity, comorbidities, and the presence of SIRS.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Initial Management",
+      "narrative": "- AP causes systemic endothelial injury and third-space fluid losses leading to hypovolemia and pancreatic hypoperfusion; early IV hydration aims to restore microcirculation and prevent necrosis.\n- Moderately aggressive hydration (initial rate **1.5 mL/kg/hr**, bolus **10 mL/kg** if hypovolemic) is **recommended**; aggressive hydration beyond 48 hours or in severe disease may be harmful.\n- Lactated Ringer's solution is preferred over normal saline: less acidosis, provides calcium to bind non-esterified fatty acids, reduces SIRS, and may shorten hospitalization.\n- In RCTs, lactated Ringer's reduced SIRS (Wu 2011), ICU admission, and length of stay (Lee 2021) compared to saline.\n- Monitoring: reassess fluid volumes every **6 hours** for the first 24–48 hours; goal to decrease BUN and HCT (hemodilution). Rising BUN within 24 hours is associated with increased morbidity/**mortality**.\n- Early aggressive hydration is most effective within the first **24 hours**; after severe disease develops, aggressive hydration may be harmful (de-Madaria 2022).\n- Caution in elderly, cardiac/renal patients: monitor for volume overload, pulmonary edema, abdominal compartment syndrome.\n- Central venous pressure may be less accurate than intrathoracic blood volume index for volume status in ICU.",
+      "recommendations": [
+        {
+          "rec_id": "R3",
+          "statement": "We suggest moderately aggressive fluid resuscitation for patients with AP. Additional boluses will be needed if there is evidence of hypovolemia.",
+          "strength": "conditional",
+          "evidence_grade": "low quality of evidence"
+        },
+        {
+          "rec_id": "R4",
+          "statement": "We suggest using lactated Ringer solution over normal saline for intravenous resuscitation in AP.",
+          "strength": "conditional",
+          "evidence_grade": "low quality of evidence"
+        },
+        {
+          "rec_id": "KC10",
+          "statement": "While we suggest all patients with AP receive moderately aggressive intravenous hydration of isotonic crystalloid, caution is needed if a cardiovascular and/or renal comorbidity exists. Patients should be monitored for volume overload.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC11",
+          "statement": "Fluid resuscitation in patients with AP is likely more important early in the course of the disease (within the first **24 hours**).",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC12",
+          "statement": "Fluid volumes need to be reassessed at frequent intervals within **6 hours** of presentation and for the next **24–48 hours** with a goal to decrease the BUN.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "ERCP in AP",
+      "narrative": "- Gallstone pancreatitis pathophysiology: stone obstructs pancreatic duct; most stones pass spontaneously, so routine ERCP is not beneficial.\n- In predicted severe AP (APACHE >8, Imrie >3, CRP >**150 mg**/dL), early ERCP (within 24 hours) did not reduce complications or **mortality** in a multicenter trial (Schepers 2020), but reduced readmission for recurrent AP/cholangitis.\n- Urgent ERCP is indicated only for **cholangitis** or **progressive cholestasis** (rising bilirubin >3–**5 mg**/dL) in severe/moderately severe AP.\n- In absence of cholangitis/jaundice, if CBD stone suspected, use **MRCP or EUS** to screen; avoid diagnostic ERCP.",
+      "recommendations": [
+        {
+          "rec_id": "R5",
+          "statement": "We suggest medical therapy over early (within the first **72 hours**) ERCP in acute biliary pancreatitis without cholangitis.",
+          "strength": "conditional",
+          "evidence_grade": "low quality of evidence"
+        },
+        {
+          "rec_id": "KC13",
+          "statement": "In patients with AP complicated by cholangitis, early ERCP within the first **24 hours** has been shown to decrease morbidity and **mortality**.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC14",
+          "statement": "In the absence of cholangitis and/or jaundice, if a common bile duct stone is suspected, MRCP or EUS should be used to screen for the presence of CBD stones before the use of ERCP, and diagnostic ERCP should be avoided.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Preventing Post-ERCP Pancreatitis",
+      "narrative": "- PEP incidence 1–30%; risk factors: normal caliber CBD, normal bilirubin (OR 3.4) vs jaundiced with dilated CBD (OR 0.2).\n- Preventive interventions: guidewire cannulation (reduces PEP vs contrast), pancreatic duct stents in high-risk patients, rectal indomethacin, and periprocedural IV hydration with lactated Ringer's.\n- Rectal indomethacin **100 mg** before or immediately after ERCP reduces PEP in high-risk patients (Elmunzer 2012); number needed to treat may justify use in all patients.\n- Pancreatic duct stent placement is effective but technically challenging (failure rate 4–10%); failed attempt increases severe PEP risk.\n- Combination of rectal indomethacin + pancreatic stent is **superior** to indomethacin alone in high-risk patients (NIH-sponsored multicenter trial, 2024).\n- Periprocedural lactated Ringer's (**3 mL**/kg/hr during ERCP, **20 mL**/kg bolus post-procedure, then 8-hr infusion) reduces PEP in average- and high-risk patients.\n- Despite evidence, only one-third of patients receive prophylactic indomethacin in practice.",
+      "recommendations": [
+        {
+          "rec_id": "R6",
+          "statement": "We recommend rectal indomethacin to prevent PEP in individuals considered to be at high risk of post-ERCP pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "moderate quality of evidence"
+        },
+        {
+          "rec_id": "R7",
+          "statement": "We suggest placement of a pancreatic duct stent in patients at high risk for PEP who are receiving rectal indomethacin.",
+          "strength": "conditional",
+          "evidence_grade": "low quality of evidence"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "The Role of Antibiotics in AP",
+      "narrative": "- Infectious complications: cholangitis, UTI, infected pseudocysts/fluid collections, infected pancreatic necrosis (**mortality** ~30%).\n- SIRS mimics sepsis; antibiotics should be started if infection suspected but discontinued if cultures negative and no source identified.\n- Prophylactic antibiotics in severe AP: 11 RCTs and 10 meta-analyses; earlier studies suggested benefit, but 3 placebo-controlled double-blind RCTs and recent meta-analyses show no reduction in **mortality**, infected necrosis, or extrapancreatic infections.\n- Infected necrosis: antibiotics alone can resolve infection in select patients, avoiding surgery. Delay necrosectomy with antibiotics for **30 days** reduces **mortality**.\n- CT-guided FNA is safe and accurate for diagnosing infected necrosis but may not change management; start antibiotics empirically if infection suspected, discontinue if cultures negative.\n- Antibiotics that penetrate necrosis: carbapenems, quinolones, cephalosporins, metronidazole.\n- Routine antifungal agents are not needed.",
+      "recommendations": [
+        {
+          "rec_id": "R8",
+          "statement": "We suggest against prophylactic antibiotics in patients with severe AP.",
+          "strength": "conditional",
+          "evidence_grade": "very low quality of evidence"
+        },
+        {
+          "rec_id": "R9",
+          "statement": "We suggest against fine-needle aspiration (FNA) in patients with suspected infected pancreatic necrosis.",
+          "strength": "conditional",
+          "evidence_grade": "very low quality of evidence"
+        },
+        {
+          "rec_id": "KC15",
+          "statement": "While antibiotics should not be used in patients with sterile necrosis, antibiotics are an important part of treatment in infected necrosis along with debridement/necrosectomy.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC16",
+          "statement": "In patients with infected necrosis, antibiotics known to penetrate pancreatic necrosis should be used largely to delay surgical, endoscopic, and radiologic drainage beyond **4 weeks**. Some patients may avoid drainage altogether because the infection may completely resolve with antibiotics.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC17",
+          "statement": "Routine administration of antifungal agents along with prophylactic or therapeutic antibiotics is not needed.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Nutrition in AP",
+      "narrative": "- Traditional NPO approach to rest the pancreas has been replaced by early oral feeding to maintain gut mucosal integrity and prevent bacterial translocation.\n- Mild AP: early oral feeding (within **24–48 hours**) as tolerated, without waiting for pain/enzyme normalization, reduces hospital stay and costs.\n- Initial diet can be **low-fat solid** rather than stepwise clear liquids; hunger-based feeding is safe.\n- Systematic reviews and meta-analyses confirm safety of early oral feeding in mild and moderately severe AP without increasing necrosis, organ failure, or local complications.\n- Moderately severe/severe AP: enteral nutrition reduces infectious complications, organ failure, and **mortality** compared to parenteral nutrition (meta-analysis of 8 RCTs, 381 patients).\n- Nasogastric route is preferred over nasojejunal due to comparable safety/efficacy and ease of placement; continuous infusion preferred.\n- Early (within 24 hours) enteral tube feeding did not reduce infection or **mortality** vs on-demand feeding in predicted severe AP (Bakker 2014).\n- Parenteral nutrition should be avoided unless enteral route is impossible or insufficient.",
+      "recommendations": [
+        {
+          "rec_id": "R10",
+          "statement": "In patients with mild AP, we suggest early oral feeding (within **24–48 hours**) as tolerated by the patient compared with the traditional NPO approach.",
+          "strength": "conditional",
+          "evidence_grade": "low quality of evidence"
+        },
+        {
+          "rec_id": "R11",
+          "statement": "In patients with mild AP, we suggest initial oral feeding with low-fat solid diet rather than a stepwise liquid to solid approach.",
+          "strength": "conditional",
+          "evidence_grade": "low quality of evidence"
+        },
+        {
+          "rec_id": "KC18",
+          "statement": "Enteral nutrition in patients with moderately severe or severe AP seems to prevent infectious complications.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC19",
+          "statement": "Parenteral nutrition should be avoided, unless the enteral route is not possible, not tolerated, or not meeting the caloric needs.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC20",
+          "statement": "Using a nasogastric rather than nasojejunal route for delivery of enteral feeding is preferred because of comparable safety and efficacy.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "The Role of Surgery in AP",
+      "narrative": "- Mild gallstone pancreatitis: same-admission cholecystectomy reduces recurrent biliary events (18% vs 0%) and is cost-effective; delayed cholecystectomy in necrotizing pancreatitis.\n- In patients unfit for surgery, biliary sphincterotomy reduces recurrent biliary AP.\n- Infected necrosis: historically required urgent open necrosectomy, but now initial management with antibiotics and delayed intervention (≥4 weeks) reduces **mortality**.\n- Minimally invasive approaches (laparoscopic, radiologic catheter drainage, endoscopic) are preferred over open surgery; step-up approach (percutaneous drainage followed by video-assisted retroperitoneal debridement) lowers morbidity and costs.\n- Endoscopic necrosectomy appears **superior** to surgical necrosectomy in a recent RCT.\n- Many patients with sterile necrosis and select infected necrosis improve without intervention; management is individualized and referral to centers of expertise is crucial.",
+      "recommendations": [
+        {
+          "rec_id": "KC21",
+          "statement": "Patients with mild acute biliary pancreatitis should undergo cholecystectomy early, preferably before discharge.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC22",
+          "statement": "Minimally invasive methods are preferred to open surgery for debridement and necrosectomy in stable patients with symptomatic pancreatic necrosis.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        },
+        {
+          "rec_id": "KC23",
+          "statement": "We suggest delaying any intervention (surgical, radiological, and/or endoscopic) in stable patients with pancreatic necrosis, preferably **4 weeks**, to allow for the wall of collection to mature.",
+          "strength": "expert_opinion",
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: Systematic review using GRADE methodology, comprehensive PICO questions, multidisciplinary expert panel.\n- Limitations: Many recommendations based on low or very low quality evidence; lack of high-quality RCTs for several interventions; heterogeneity in study designs and outcomes.",
+  "drugs_doses": [
+    {
+      "drug": "Indomethacin",
+      "dose": "100 mg rectal suppository once, before or immediately after ERCP",
+      "indication": "Prevention of post-ERCP pancreatitis in high-risk patients",
+      "adverse_effects": "Not specified; typical NSAID risks (gastrointestinal, renal, bleeding)"
+    },
+    {
+      "drug": "Carbapenems, quinolones, cephalosporins, metronidazole",
+      "dose": "Not specified; choose agents with pancreatic necrosis penetration",
+      "indication": "Infected pancreatic necrosis",
+      "adverse_effects": "Not specified; monitor for drug-specific toxicities"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2025-04-04",
+  "article_subtype": "Guideline",
+  "subtopic": "Gastroenterology"
+}

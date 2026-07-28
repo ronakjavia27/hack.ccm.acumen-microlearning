@@ -1,0 +1,308 @@
+{
+  "id": "FACTT_-_Fluid",
+  "trial_name": "FACTT — Conservative vs Liberal Fluid Management in Acute Lung Injury (2006)",
+  "specialty": "Critical Care",
+  "subtopic": "ARDS",
+  "year": 2006,
+  "journal": "New England Journal of Medicine",
+  "citation": "National Heart, Lung, and Blood Institute Acute Respiratory Distress Syndrome (ARDS) Clinical Trials Network. Comparison of two fluid-management strategies in acute lung injury. N Engl J Med. 2006;354(24):2564-2575.",
+  "doi": "https://doi.org/10.1056/NEJMoa062200",
+  "registration": "",
+  "trial_type": "RCT — multicenter, factorial, open-label, protocolised",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1000,
+  "result_category": "Mixed",
+  "one_liner": "In established ALI/ARDS, a conservative fluid strategy did not reduce 60-day mortality but improved ventilator-free and ICU-free days compared to a liberal strategy.",
+  "pico": {
+    "population": "Mechanically ventilated ICU patients with ALI/ARDS (PaO2:FiO2 ≤300, bilateral infiltrates, no left atrial hypertension) within 48 hours of meeting criteria.",
+    "intervention": "Conservative fluid-management strategy targeting lower filling pressures (CVP <4 mm Hg or PAOP <8 mm Hg) via a 7-day protocolised algorithm.",
+    "comparison": "Liberal fluid-management strategy targeting higher filling pressures (CVP 10–14 mm Hg or PAOP 14–18 mm Hg) via the same 7-day protocolised algorithm.",
+    "outcome": "Primary: death before discharge home by day 60. Key secondary: ventilator-free days and ICU-free days to day 28."
+  },
+  "keywords": [
+    "ARDS",
+    "ALI",
+    "fluid management",
+    "conservative fluid strategy",
+    "liberal fluid strategy",
+    "deresuscitation",
+    "diuresis",
+    "pulmonary edema"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "ALI/ARDS is characterised by increased alveolar-capillary permeability; hydrostatic pressure and total fluid balance can modulate oedema burden and gas exchange. Clinical practice historically oscillated between haemodynamic support (liberal fluids) and lung protection (fluid restriction/diuresis).",
+      "knowledge_gap": "A large, protocolised randomised trial was lacking to determine if a conservative fluid strategy could improve outcomes without causing shock or renal injury.",
+      "hypothesis": "In adults with ALI, a conservative fluid-management strategy reduces death before discharge home by day 60 and improves clinical recovery (ventilator-free days) compared with a liberal strategy."
+    },
+    "methods": {
+      "design": "Randomised, multicentre (20 North American centres), investigator-initiated NIH/ARDSNet trial; factorial design with simultaneous randomisation to haemodynamic catheter (pulmonary-artery vs central venous) and to fluid-management strategy; open-label protocolised intervention.",
+      "setting": "Mechanically ventilated ICU patients with ALI/ARDS managed within ARDSNet protocols. Enrolled June 2000 to October 2005.",
+      "population": {
+        "inclusion": [
+          "Bilateral infiltrates consistent with pulmonary oedema",
+          "PaO2:FiO2 ≤300",
+          "No evidence of left atrial hypertension (or, if measured, pulmonary capillary wedge pressure ≤18 mm Hg)",
+          "Acute onset",
+          "Randomisation within 48 hours after ALI criteria first met",
+          "Catheter inserted within 4 hours of randomisation",
+          "First fluid-management protocol instruction within 2 hours after catheter placement"
+        ],
+        "exclusion": [
+          "Pre-existing pulmonary-artery catheter",
+          "Severe chronic lung disease",
+          "Severe chronic liver disease (Child–Pugh 10–15)",
+          "Chronic dialysis dependence",
+          "Severe chronic heart failure",
+          "Anticipated death within 6 months",
+          "Inability/unwillingness to pursue full aggressive care"
+        ]
+      },
+      "intervention": "Conservative fluid-management strategy (7-day protocol): target lower intravascular filling pressures (CVP <4 mm Hg if central venous catheter; PAOP <8 mm Hg if pulmonary-artery catheter). Protocol-directed 4-hourly reassessments using a decision support algorithm incorporating intravascular pressure, evidence of shock, and evidence of ineffective circulation. Typical actions when haemodynamically suitable: fluid restriction and diuresis (e.g., furosemide).",
+      "comparison": "Liberal fluid-management strategy (7-day protocol): target higher intravascular filling pressures (CVP 10–14 mm Hg if central venous catheter; PAOP 14–18 mm Hg if pulmonary-artery catheter). Same structured 4-hourly reassessment framework, with protocol actions favouring fluid administration and reduced diuresis.",
+      "blinding": "Unblinded. Primary endpoint (death before discharge home by day 60) is objective. Secondary endpoints (ventilator-/ICU-free days) are partially care-process dependent but were assessed within an ARDSNet protocol environment.",
+      "sample_size_power": "Planned 1000 patients to provide 90% power (two-sided α=0.05) to detect a 10 percentage-point absolute reduction in the primary endpoint (from 31% to 21%).",
+      "primary_outcome": "Death before discharge home by day 60.",
+      "secondary_outcomes": [
+        "Ventilator-free days (days 1–28)",
+        "ICU-free days (days 1–28)",
+        "Dialysis to day 60",
+        "Electrolyte imbalance events"
+      ],
+      "follow_up": "Outcomes assessed through day 60 for mortality/discharge home status and dialysis; ventilator-free/ICU-free days assessed to day 28; protocol intervention applied for 7 days after randomisation."
+    },
+    "results": {
+      "headline_bullets": [
+        "60-day mortality was similar between groups (25.5% conservative vs 28.4% liberal; P=0.30).",
+        "Conservative strategy improved ventilator-free days (14.6 vs 12.1; P<0.001) and ICU-free days (13.4 vs 11.2; P<0.001).",
+        "A large separation in cumulative fluid balance was achieved at day 7 (−136 mL vs +6992 mL; P<0.001).",
+        "Dialysis use was not significantly increased (10% vs 14%; P=0.06), but electrolyte imbalances were more common (42% vs 19%; P=0.001)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death by day 60",
+          "group_a": "25.5% (conservative)",
+          "group_b": "28.4% (liberal)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−2.9%",
+          "ci_95": "−2.6 to 8.4 percentage points (liberal–conservative)",
+          "p_value": "0.30",
+          "note": "Primary endpoint"
+        },
+        {
+          "outcome": "Ventilator-free days (days 1–28)",
+          "group_a": "14.6 ± 0.5 (conservative)",
+          "group_b": "12.1 ± 0.5 (liberal)",
+          "effect_measure": "Mean difference",
+          "effect_value": "2.5",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Mean ± SE"
+        },
+        {
+          "outcome": "ICU-free days (days 1–28)",
+          "group_a": "13.4 ± 0.4 (conservative)",
+          "group_b": "11.2 ± 0.4 (liberal)",
+          "effect_measure": "Mean difference",
+          "effect_value": "2.2",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Mean ± SE"
+        },
+        {
+          "outcome": "Cumulative fluid balance at day 7 (mL)",
+          "group_a": "−136 ± 491 (conservative)",
+          "group_b": "6992 ± 502 (liberal)",
+          "effect_measure": "Mean difference",
+          "effect_value": "−7128",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "Mean ± SE"
+        },
+        {
+          "outcome": "Dialysis to day 60",
+          "group_a": "10% (conservative)",
+          "group_b": "14% (liberal)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−4%",
+          "ci_95": "",
+          "p_value": "0.06",
+          "note": ""
+        },
+        {
+          "outcome": "Days with dialysis to day 60 (among dialysed)",
+          "group_a": "11.0 ± 1.7 (conservative)",
+          "group_b": "10.9 ± 1.4 (liberal)",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.1",
+          "ci_95": "",
+          "p_value": "0.96",
+          "note": "Mean ± SE"
+        },
+        {
+          "outcome": "Electrolyte imbalance events",
+          "group_a": "42% (conservative)",
+          "group_b": "19% (liberal)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "23%",
+          "ci_95": "",
+          "p_value": "0.001",
+          "note": "Defined as any of: potassium ≤3.0 mmol/L (26% vs 22%), sodium ≥150 mmol/L (25% vs 18%), bicarbonate >40 mmol/L (6% vs 2%)"
+        },
+        {
+          "outcome": "Serious adverse events",
+          "group_a": "3% (conservative)",
+          "group_b": "1% (liberal)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "2%",
+          "ci_95": "",
+          "p_value": "0.21",
+          "note": ""
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Catheter intervention interaction",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "Not significant",
+          "note": "No significant interaction between the catheter intervention and fluid strategy."
+        },
+        {
+          "subgroup": "Baseline shock status interaction",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "Not significant",
+          "note": "No significant interaction between baseline shock status and fluid strategy with respect to primary/major secondary outcomes."
+        }
+      ]
+    },
+    "safety": [
+      "Electrolyte imbalance events were more frequent with conservative management (42% vs 19%; P=0.001).",
+      "Serious adverse events were uncommon in both groups (3% vs 1%; P=0.21)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised computer-generated randomisation with permuted blocks; factorial design; allocation concealment supported by automated assignment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery; primary outcome objective; secondary outcomes (ventilator-/ICU-free days) potentially influenced by care processes, mitigated by protocolised ARDSNet management environment."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1001 randomised; 1 patient in the liberal group withdrew consent before receiving the intervention and was excluded from analysis; analysed cohorts were 503 (conservative) and 497 (liberal); mortality follow-up to day 60 was otherwise complete."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Large between-group separation achieved in fluid balance: cumulative day-7 balance −136 ± 491 mL (conservative) vs 6992 ± 502 mL (liberal). Higher furosemide dosing in conservative group on each study day (e.g., day 1: 148.94 ± 8.52 mg/24h vs 74.27 ± 7.48 mg/24h)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well balanced across major prognostic factors (e.g., APACHE III score 93.1 ± 1.4 vs 95.2 ± 1.4; shock criteria at baseline 33% vs 36%; PaO2:FiO2 179.8 ± 4.1 vs 176.7 ± 4.2). Prerandomisation fluid balance was already positive (e.g., 2655 ± 156 mL vs 2875 ± 166 mL)."
+        }
+      ],
+      "verdict": "Strong overall: randomisation and follow-up were robust, protocol separation in fluid balance was large and sustained, and the primary outcome was objective, although open-label delivery could influence process-dependent secondary endpoints."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adults with ALI in academic/tertiary ICUs within a North American clinical trials network; exclusion criteria removed patients with advanced chronic organ disease and those not committed to full support."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "The intervention relied on frequent reassessment and haemodynamic targets (CVP or PAOP), which may not reflect contemporary practice where pulmonary-artery catheters are uncommon and dynamic assessments are favoured. Findings most directly apply after initial stabilisation/resuscitation in established ALI/ARDS, rather than the earliest shock-resuscitation phase. Protocolised strategies are feasible in well-resourced ICUs; implementation in resource-limited settings may be constrained."
+        }
+      ],
+      "verdict": "Moderately strong for protocol-capable ICUs managing established ALI/ARDS, but less directly transferable to settings without structured haemodynamic monitoring workflows or to the earliest resuscitation phase of shock."
+    },
+    "strengths": [
+      "Large multicentre randomised trial",
+      "Protocolised and clearly differentiated fluid strategies",
+      "Clinically meaningful secondary outcomes (ventilator-free and ICU-free days)",
+      "High completeness of follow-up",
+      "Factorial design permitted assessment of catheter–strategy interaction"
+    ],
+    "limitations": [
+      "Open-label intervention",
+      "Reliance on filling-pressure targets (CVP/PAOP) and intensive protocol infrastructure",
+      "Prerandomisation fluid exposure substantial (positive balance at baseline)",
+      "Mortality endpoint potentially insensitive to smaller effect sizes",
+      "Interpretation of renal function complicated by haemoconcentration during conservative management"
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, large RCT with robust protocol separation showing that a conservative fluid strategy in established ALI/ARDS improves respiratory recovery without a mortality benefit, though open-label design and reliance on pressure-based targets limit generalisability to modern, less invasive monitoring settings.",
+      "strengths": [
+        "Large sample size with high follow-up completeness",
+        "Significant and sustained separation in the intervention (fluid balance)",
+        "Objective primary outcome"
+      ],
+      "weaknesses": [
+        "Open-label design may bias process-of-care secondary outcomes",
+        "Use of CVP/PAOP targets is less common in contemporary practice",
+        "Mortality benefit may have been missed due to power assumptions"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "A conservative strategy of fluid management in patients with acute lung injury improved lung function and shortened the duration of mechanical ventilation and intensive care without increasing nonpulmonary organ failures.",
+    "clinical_bottom_line": {
+      "verdict": "In established ALI/ARDS, after initial haemodynamic stabilisation, a conservative fluid strategy should be used to increase ventilator-free days, though it does not reduce mortality.",
+      "applies_to": "Patients with established ALI/ARDS in protocol-capable ICUs, after the initial shock-resuscitation phase.",
+      "does_not_mean": "Fluid restriction should be applied during the active resuscitation phase of shock.",
+      "implementation_caveats": [
+        "Requires careful monitoring for electrolyte and acid-base disturbances.",
+        "Interpret serum creatinine changes in the context of haemoconcentration from diuresis.",
+        "The original protocol used CVP/PAOP targets; a simplified conservative protocol may be more feasible."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Phase-of-illness framing",
+        "notes": "The trial tested a protocol applied after ALI was established (often following substantial prerandomisation fluids), and contemporaneous commentary emphasised the distinction between early resuscitation and later conservative/deresuscitative phases rather than a single 'always restrictive' rule."
+      },
+      {
+        "topic": "Renal signal and creatinine interpretation",
+        "notes": "Conservative strategy produced haemoconcentration (higher creatinine/BUN over time), raising debate about whether 'renal safety' is best judged by dialysis alone versus creatinine-based AKI definitions that are sensitive to fluid balance; a later analysis demonstrated that adjusting creatinine for fluid accumulation materially alters AKI classification and its relationship with outcomes in ALI cohorts."
+      },
+      {
+        "topic": "Implementability outside trials",
+        "notes": "The original FACTT algorithm required frequent reassessment and catheter-derived targets; a simplified conservative protocol has been evaluated to improve feasibility while maintaining a conservative approach in ARDS care pathways."
+      },
+      {
+        "topic": "Effect size and power",
+        "notes": "FACTT was powered for a 10% absolute mortality reduction (31% to 21%); the observed mortality difference between strategies was smaller, so absence of statistical significance does not exclude more modest mortality effects."
+      },
+      {
+        "topic": "Modern synthesis and guidance",
+        "notes": "Subsequent reviews and guidance documents commonly incorporate FACTT by supporting conservative fluid management after haemodynamic stabilisation in ARDS, while emphasising careful monitoring for electrolyte/acid–base derangements and renal effects (where definitions may be fluid-sensitive)."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "What is the optimal timing to transition from a liberal/resuscitative to a conservative/deresuscitative fluid strategy?",
+      "Can a simplified, non-catheter-based conservative fluid protocol achieve similar outcomes?",
+      "What is the true effect of conservative fluid management on renal function when using fluid-adjusted creatinine definitions?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1000",
+        "Day-7 fluid balance: −136 mL vs +6992 mL",
+        "Ventilator-free days: 14.6 vs 12.1 (P<0.001)",
+        "60-day mortality: 25.5% vs 28.4% (P=0.30)"
+      ],
+      "one_line_takeaway": "After initial shock resuscitation in ARDS, switch to a conservative fluid strategy to get patients off the ventilator faster, but don't expect a mortality benefit."
+    }
+  },
+  "_source_id": "FACTT_-_Fluid",
+  "_source_system": "Respiratory"
+}

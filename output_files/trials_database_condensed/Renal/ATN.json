@@ -1,0 +1,318 @@
+{
+  "id": "ATN",
+  "trial_name": "ATN — Intensity of Renal Support in Critically Ill Patients with Acute Kidney Injury (2008)",
+  "specialty": "Acute Kidney Injury",
+  "subtopic": "Renal Replacement Therapy",
+  "year": 2008,
+  "journal": "New England Journal of Medicine",
+  "citation": "Palevsky PM, Zhang JH, O'Connor TZ, et al; VA/NIH Acute Renal Failure Trial Network. Intensity of renal support in critically ill patients with acute kidney injury. N Engl J Med. 2008;359(1):7-20.",
+  "doi": "https://doi.org/10.1056/NEJMoa0802639",
+  "registration": "",
+  "trial_type": "RCT — multicenter, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1124,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In ICU patients with AKI requiring RRT, an intensive renal support strategy did not reduce 60-day mortality compared with a less-intensive strategy (53.6% vs 51.5%; OR 1.09; 95% CI 0.86-1.40; P=0.47) and was associated with more electrolyte disorders and intradialytic hypotension.",
+  "pico": {
+    "population": "Critically ill adults in ICU with AKI requiring RRT and at least one non-renal organ failure (or sepsis).",
+    "intervention": "Intensive renal replacement strategy: modality chosen by cardiovascular SOFA; intermittent HD/SLED 6 sessions/week with target Kt/V similar to control but lower predialysis BUN; CVVHDF prescribed effluent 35 ml/kg/hour.",
+    "comparison": "Less-intensive strategy: same modality rule; intermittent HD/SLED 3 sessions/week; CVVHDF prescribed effluent 20 ml/kg/hour.",
+    "outcome": "60-day all-cause mortality (primary)."
+  },
+  "keywords": [
+    "acute kidney injury",
+    "renal replacement therapy",
+    "continuous venovenous hemodiafiltration",
+    "intermittent hemodialysis",
+    "dialysis dose",
+    "intensive",
+    "critical care"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "RRT for ICU AKI had major practice variation in dose, despite high mortality and resource use. Single-centre trials had reported improved outcomes with higher-intensity strategies, but these were small, heterogeneous, and potentially biased.",
+      "knowledge_gap": "Uncertainty whether increasing solute and fluid removal intensity modifies survival or kidney recovery versus simply increases treatment-related complications.",
+      "hypothesis": "In critically ill adults with AKI requiring RRT and ≥1 non-renal organ failure (or sepsis), an intensive renal support strategy reduces 60-day all-cause mortality versus a less-intensive strategy. Secondary hypotheses addressed kidney recovery, RRT exposure, and non-renal organ failure."
+    },
+    "methods": {
+      "design": "Multicentre, parallel-group, randomised, open-label superiority trial.",
+      "setting": "27 VA and university-affiliated ICUs in the United States. Enrolled November 2003–July 2007.",
+      "population": {
+        "inclusion": [
+          "Adult ICU patient",
+          "AKI with need for RRT",
+          "At least one non-renal organ failure: cardiovascular failure (SOFA CV 2–4), respiratory failure (mechanical ventilation), or sepsis",
+          "A RRT indication: refractory fluid overload with pulmonary oedema, hyperkalaemia >6.5 mmol/L (or >6.0 with ECG changes), severe acidaemia (pH <7.2), and/or severe azotaemia (BUN >100 mg/dL)"
+        ],
+        "exclusion": [
+          "Chronic kidney disease (baseline creatinine >2.0 mg/dL)",
+          "Kidney transplant",
+          "Obstructive uropathy",
+          "Rapidly progressive glomerulonephritis",
+          "Advanced heart failure (NYHA IV)",
+          "Advanced liver disease",
+          "Moribund/expected survival <28 days",
+          "DNR status",
+          "Active participation in another intervention trial"
+        ]
+      },
+      "intervention": "Intensive strategy: Modality selected by haemodynamic status using cardiovascular SOFA score. Intermittent HD/SLED when CV SOFA 0–2, delivered 6 sessions/week, target urea clearance per session similar to control (Kt/V ~1.2–1.3), aiming for lower predialysis BUN. CVVHDF when CV SOFA 3–4, prescribed effluent 35 ml/kg/hour (dialysate + replacement, excluding net ultrafiltration).",
+      "comparison": "Less-intensive strategy: Same modality rule. Intermittent HD/SLED 3 sessions/week. CVVHDF prescribed effluent 20 ml/kg/hour.",
+      "blinding": "Unblinded (open-label) pragmatic delivery; primary outcome (all-cause mortality) is objective.",
+      "sample_size_power": "Planned sample size 1164 to detect a 10% absolute reduction in 60-day mortality (from 55% to 45%) with 90% power at α=0.05, allowing for 10% loss. Enrolled 1124 participants; power slightly reduced for small effect sizes.",
+      "primary_outcome": "Death from any cause by day 60.",
+      "secondary_outcomes": [
+        "In-hospital death",
+        "Complete recovery of kidney function by day 28",
+        "RRT-free days through day 28",
+        "Hospital-free days through day 60",
+        "ICU-free days through day 60",
+        "Discharged to home and off dialysis by day 60",
+        "Adverse events: hypophosphataemia, hypokalaemia, hypotension requiring intervention during intermittent dialysis"
+      ],
+      "follow_up": "Mortality to day 60; kidney recovery to day 28; organ failure-free days to day 14; RRT exposure to day 28; discharge status to day 60."
+    },
+    "results": {
+      "headline_bullets": [
+        "At 60 days, all-cause mortality was similar: 53.6% in the intensive strategy vs 51.5% in the less-intensive strategy (OR 1.09; 95% CI 0.86–1.40; P=0.47).",
+        "No significant differences were observed in secondary outcomes including kidney recovery, RRT-free days, ICU-free days, or hospital-free days; point estimates often numerically favoured the less-intensive arm.",
+        "Intensive strategy was associated with more hypophosphataemia (17.6% vs 10.9%), hypokalaemia (24.1% vs 17.8%), and intradialytic hypotension requiring intervention (37.7% vs 30.0%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death from any cause by day 60 (primary)",
+          "group_a": "302/563 (53.6%)",
+          "group_b": "289/561 (51.5%)",
+          "effect_measure": "OR",
+          "effect_value": "1.09",
+          "ci_95": "0.86–1.40",
+          "p_value": "0.47",
+          "note": "ITT analysis stratified by site and CV SOFA group."
+        },
+        {
+          "outcome": "In-hospital death",
+          "group_a": "277/563 (49.2%)",
+          "group_b": "265/561 (47.2%)",
+          "effect_measure": "OR",
+          "effect_value": "1.08",
+          "ci_95": "0.84–1.38",
+          "p_value": "0.60",
+          "note": ""
+        },
+        {
+          "outcome": "Complete recovery of kidney function by day 28",
+          "group_a": "85/553 (15.4%)",
+          "group_b": "102/555 (18.4%)",
+          "effect_measure": "OR",
+          "effect_value": "0.81",
+          "ci_95": "0.59–1.13",
+          "p_value": "0.24",
+          "note": "Denominators exclude missing baseline creatinine. Recovery defined as creatinine ≤0.5 mg/dL above baseline."
+        },
+        {
+          "outcome": "RRT-free days through day 28 (mean ± SE)",
+          "group_a": "6.0 ± 0.4",
+          "group_b": "7.0 ± 0.4",
+          "effect_measure": "Mean difference",
+          "effect_value": "−0.9",
+          "ci_95": "−1.9 to 0.1",
+          "p_value": "0.07",
+          "note": "Deaths counted as 0 days."
+        },
+        {
+          "outcome": "Hospital-free days through day 60 (mean ± SE)",
+          "group_a": "11.0 ± 0.7",
+          "group_b": "13.0 ± 0.7",
+          "effect_measure": "Mean difference",
+          "effect_value": "−1.9",
+          "ci_95": "−3.9 to 0.0",
+          "p_value": "0.053",
+          "note": ""
+        },
+        {
+          "outcome": "ICU-free days through day 60 (mean ± SE)",
+          "group_a": "18.7 ± 0.9",
+          "group_b": "20.1 ± 0.9",
+          "effect_measure": "Mean difference",
+          "effect_value": "−1.5",
+          "ci_95": "−4.0 to 1.0",
+          "p_value": "0.25",
+          "note": ""
+        },
+        {
+          "outcome": "Discharged to home and off dialysis by day 60",
+          "group_a": "35/563 (6.2%)",
+          "group_b": "46/561 (8.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.74",
+          "ci_95": "0.46–1.17",
+          "p_value": "0.19",
+          "note": "Low absolute rates in this very sick cohort."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Cardiovascular SOFA 0–2",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "OR",
+          "effect_value": "1.33",
+          "ci_95": "0.93–1.91",
+          "p_interaction": "0.15",
+          "note": "Interaction P for CV SOFA = 0.15"
+        },
+        {
+          "subgroup": "Cardiovascular SOFA 3–4",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "OR",
+          "effect_value": "0.93",
+          "ci_95": "0.66–1.29",
+          "p_interaction": "",
+          "note": ""
+        },
+        {
+          "subgroup": "Oliguria present",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "OR",
+          "effect_value": "1.04",
+          "ci_95": "0.79–1.37",
+          "p_interaction": "0.45",
+          "note": "Interaction P for oliguria = 0.45"
+        },
+        {
+          "subgroup": "Oliguria absent",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "OR",
+          "effect_value": "1.31",
+          "ci_95": "0.77–2.21",
+          "p_interaction": "",
+          "note": ""
+        }
+      ],
+      "safety": [
+        "Hypophosphataemia: 99/563 (17.6%) intensive vs 61/561 (10.9%) less-intensive; OR 1.75 (95% CI 1.23–2.49); P=0.002.",
+        "Hypokalaemia: 136/563 (24.1%) vs 100/561 (17.8%); OR 1.46 (95% CI 1.08–1.98); P=0.01.",
+        "Hypotension requiring intervention during intermittent dialysis: 178/472 (37.7%) vs 140/467 (30.0%); OR 1.41 (95% CI 1.08–1.82); P=0.01."
+      ]
+    },
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central interactive randomisation; stratified by site and cardiovascular SOFA category (0–2 vs 3–4), and by oliguria within intermittent-modality strata. Allocation concealment robust."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery; potential for co-intervention and withdrawal biases. Mortality is objective reducing detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Vital status not ascertained for 5 participants (2 intensive; 3 less-intensive), analysed as alive. Study therapy withdrawn in 3.2% intensive vs 2.0% less-intensive. Kidney recovery analyses had missing baseline creatinine in a minority."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Intermittent therapies: missed treatments 1.9% vs 1.1%; extra treatments 0.5% vs 1.5%. Delivered dose: intermittent Kt/V per session ~1.2–1.3; frequency separation 5.4 vs 3.0 treatments/week; continuous effluent delivery 89% vs 95% of prescribed. High adherence."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced. Mean APACHE II 26.4, SOFA 14.5; 80.6% ventilated, 63% sepsis, 78% oliguric. ~64.5% received up to 24h of RRT pre-randomisation."
+        }
+      ],
+      "verdict": "Internal validity appears strong for the primary endpoint, supported by central randomisation, objective mortality assessment, high protocol adherence, and clear dose separation; key threats are open-label delivery and prior RRT exposure which may attenuate an early intensity effect."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents a very high-acuity ICU AKI population (VA/university centres) with high organ failure burden. Excluded patients with baseline creatinine >2.0 mg/dL, transplant recipients, and select primary renal diagnoses; results may not apply to these groups."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Modality-switching by haemodynamics is pragmatic and widely adopted. Translation to settings with limited resources or frequent downtime may be limited if delivered dose falls substantially below protocol targets (CVVHDF 20 ml/kg/h, IHD 3/week)."
+        }
+      ],
+      "verdict": "Findings are highly applicable to severely ill ICU patients with established RRT indications in well-resourced systems, but less generalisable to earlier-stage AKI, patients with advanced chronic kidney disease, and resource-limited environments."
+    },
+    "strengths": [
+      "Large, multicentre randomised trial in a population at high risk of death and dialysis dependence.",
+      "Protocolised, haemodynamic rule-based modality allocation with the same algorithm in both arms.",
+      "Clear achieved separation in biochemical and delivered-dose metrics (BUN, effluent rate, treatment frequency).",
+      "Objective primary endpoint; systematic capture of clinically relevant complications."
+    ],
+    "limitations": [
+      "Open-label design; potential for co-intervention and withdrawal biases, particularly for non-mortality outcomes.",
+      "Many patients received RRT before randomisation (64.5%), so the trial does not directly address early high-intensity initiation.",
+      "Enrolment below planned sample size (1124 vs 1164) reduces power for small treatment effects.",
+      "Integrated strategy across modalities answers a pragmatic clinical question but complicates mechanistic inference about modality-specific dosing effects."
+    ],
+    "critical_appraisal": {
+      "summary": "ATN is a well-conducted, large RCT that convincingly demonstrates no additive benefit of escalating RRT intensity beyond a conventional adequate dose in critically ill patients with established AKI requiring RRT. Harms increased with intensity. The open-label design and prior RRT exposure are minor concerns, but the objective primary outcome and clear dose separation strengthen confidence.",
+      "strengths": [
+        "Large sample size, multicentre",
+        "Objective mortality endpoint",
+        "Protocolised strategy with haemodynamic-based modality choice",
+        "Clear dose separation and high adherence",
+        "Systematic safety reporting"
+      ],
+      "weaknesses": [
+        "Open-label design may bias co-interventions and non-mortality outcomes",
+        "64.5% received ≤24h RRT pre-randomisation, potentially attenuating an early intensity benefit",
+        "Slightly underpowered relative to planned sample size",
+        "Pragmatic mixing of modalities limits inference about specific modality dosing"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In severe ICU AKI requiring RRT, an intensive renal support strategy did not reduce 60-day mortality or improve renal recovery and was associated with more electrolyte disorders and intradialytic hypotension. The findings do not support routine dose escalation beyond an adequate baseline level.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support routine escalation of RRT dose intensity in ICU patients with AKI requiring RRT; a less-intensive strategy (CVVHDF 20 ml/kg/hour or intermittent HD 3/week) is adequate and safer.",
+      "applies_to": "Critically ill adults with AKI and at least one non-renal organ failure (or sepsis) requiring RRT in well-resourced settings.",
+      "does_not_mean": "That lower-than-adequate dialysis (e.g., <20 ml/kg/hr effluent, prolonged intervals) is safe, nor does it address timing of initiation.",
+      "implementation_caveats": [
+        "Ensure delivered dose meets the less-intensive targets; avoid undetected downtime in CRRT.",
+        "Monitor for electrolyte disorders and hypotension, especially if higher intensity is chosen for other reasons.",
+        "Not applicable to patients with advanced chronic kidney disease, transplant recipients, or those requiring dialysis for non-renal indications."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Interpretation of ‘negative’ dosing trials",
+        "notes": "Critics note that once an adequate dose is delivered, increasing intensity may not overcome mortality from multi-organ failure. Others caution against therapeutic nihilism, stressing the importance of ensuring adequate delivered dose and differentiating dose from timing questions."
+      },
+      {
+        "topic": "Was the control arm already ‘high’?",
+        "notes": "The less-intensive strategy used CVVHDF 20 ml/kg/hour and intermittent Kt/V ~1.2–1.3, consistent with modern adequate dosing. A floor effect may exist where only very low doses would show benefit, which ATN does not test."
+      },
+      {
+        "topic": "Modality-mixing and pragmatic switching",
+        "notes": "ATN’s haemodynamic algorithm makes the causal contrast a ‘strategy’ rather than a pure dose-per-modality experiment, limiting mechanistic inference about the independent effect of CRRT dose."
+      },
+      {
+        "topic": "Subsequent CRRT evidence",
+        "notes": "Large multicentre trials of high-intensity CRRT similarly found no mortality benefit, reinforcing ATN’s conclusion that routine dose escalation does not improve patient-centred outcomes."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does earlier initiation of RRT (before development of severe organ failures) alter the benefit of higher intensity?",
+      "Would a very low delivered dose (<15 ml/kg/h CRRT, or prolonged IHD intervals) show harm compared to standard 20 ml/kg/h?",
+      "Are there subgroups (e.g., highly catabolic patients, septic shock) that may benefit from higher solute clearance?",
+      "What is the optimal method to monitor and minimise CRRT downtime to ensure adequate delivered dose?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "N = 1124",
+        "60-day mortality: 53.6% vs 51.5% (OR 1.09, 95% CI 0.86–1.40)",
+        "CVVHDF dose targets: intensive 35 ml/kg/h, less-intensive 20 ml/kg/h",
+        "Intermittent HD frequency: 6 vs 3 sessions/week",
+        "Hypophosphataemia 17.6% vs 10.9%, hypokalaemia 24.1% vs 17.8%"
+      ],
+      "one_line_takeaway": "In ICU patients with AKI requiring RRT, increasing dialysis intensity beyond a standard adequate dose does not improve survival or kidney recovery and increases harmful electrolyte and hemodynamic complications."
+    }
+  },
+  "_source_id": "ATN",
+  "_source_system": "Renal"
+}

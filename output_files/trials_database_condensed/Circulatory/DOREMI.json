@@ -1,0 +1,341 @@
+{
+  "id": "DOREMI",
+  "trial_name": "DOREMI — Milrinone vs Dobutamine in Cardiogenic Shock (2021)",
+  "specialty": "Cardiogenic Shock",
+  "subtopic": "Cardiogenic Shock",
+  "year": 2021,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Mathew R, Di Santo P, Jung RG, Marbach JA, Hutson J, Simard T, et al. Milrinone as compared with dobutamine in the treatment of cardiogenic shock. N Engl J Med. 2021;385(6):516-525.",
+  "doi": "https://doi.org/10.1056/NEJMoa2026845",
+  "registration": null,
+  "trial_type": "RCT — single-center, double-blind, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 192,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with cardiogenic shock, milrinone did not significantly reduce a composite of in-hospital death and major complications compared with dobutamine (49% vs 54%, RR 0.90, 95% CI 0.69-1.19), supporting ongoing equipoise.",
+  "pico": {
+    "population": "Adults (≥18 years) with cardiogenic shock (SCAI stages B-E) requiring IV inotropic support in a CICU.",
+    "intervention": "Blinded milrinone infusion, titrated via a five-stage scale (0.125 to >0.5 mcg/kg/min).",
+    "comparison": "Blinded dobutamine infusion, titrated via a matching five-stage scale (2.5 to >10 mcg/kg/min).",
+    "outcome": "In-hospital composite of all-cause death, resuscitated cardiac arrest, initiation of MCS, nonfatal MI, TIA/stroke, or initiation of RRT."
+  },
+  "keywords": [
+    "milrinone",
+    "dobutamine",
+    "inotrope",
+    "cardiogenic shock",
+    "SCAI shock stages"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Cardiogenic shock carries high short-term mortality and frequent multiorgan failure despite contemporary reperfusion and MCS. IV inotropes augment cardiac output but risk tachyarrhythmias and hypotension. Before DOREMI, evidence comparing milrinone and dobutamine in cardiogenic shock was limited to small studies and extrapolation from non-shock states.",
+      "knowledge_gap": "Substantial practice variation and equipoise existed regarding inotrope choice due to a lack of direct comparative evidence in cardiogenic shock.",
+      "hypothesis": "Milrinone’s pharmacological profile (beta-independent inotropy and vasodilation) could translate into improved patient-centred outcomes versus dobutamine."
+    },
+    "methods": {
+      "design": "Randomised, double-blind, single-centre, investigator-initiated trial in a cardiac intensive care unit (CICU) in Ottawa, Canada.",
+      "setting": "Single cardiac intensive care unit (CICU), Ottawa, Canada.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with cardiogenic shock requiring intravenous inotropic support (SCAI stages B–E).",
+          "Operational triggers included: SBP <90 mmHg with end-organ dysfunction; congestion despite vasodilators/diuretics; ACS with shock and cardiac index <1.8 L/min/m2 and LVEDP >18 mmHg; need to augment CO despite vasopressors; developing shock requiring inotrope therapy."
+        ],
+        "exclusion": [
+          "Out-of-hospital cardiac arrest",
+          "Pregnancy",
+          "Milrinone or dobutamine initiated prior to randomisation",
+          "Concurrent participation in another interventional trial",
+          "Inability to obtain written informed consent",
+          "Treating clinician determined patient was not eligible"
+        ]
+      },
+      "intervention": "Blinded milrinone infusion, titrated using a five-stage dosing scale (stage 1: 0.125 mcg/kg/min; 2: 0.250; 3: 0.375; 4: 0.500; 5: >0.500). No bolus dosing.",
+      "comparison": "Blinded dobutamine infusion, titrated using a matching five-stage dosing scale (stage 1: 2.5 mcg/kg/min; 2: 5; 3: 7.5; 4: 10; 5: >10).",
+      "blinding": "Double-blind for participants, clinicians, investigators, and research staff. The bedside nurse preparing the infusion was unblinded, with pump concealment strategies used.",
+      "sample_size_power": "192 patients (96 per group) planned to detect a 20% absolute reduction in the primary composite outcome (from 55% to 35%) with 80% power at a two-sided 5% significance level.",
+      "primary_outcome": "In-hospital composite of all-cause death, resuscitated cardiac arrest, initiation of mechanical circulatory support (MCS), nonfatal myocardial infarction, transient ischaemic attack or stroke, or initiation of renal replacement therapy (RRT).",
+      "secondary_outcomes": [
+        "Individual components of the primary composite outcome",
+        "CICU length of stay",
+        "Total time receiving inotropes",
+        "Acute kidney injury",
+        "Normalisation of lactate level",
+        "Arrhythmia leading to medical team intervention"
+      ],
+      "follow_up": "In-hospital (index admission); selected physiologic measures collected up to 120 hours."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary composite outcome occurred in 49% (milrinone) vs 54% (dobutamine); RR 0.90 (95% CI 0.69-1.19), P=0.47.",
+        "In-hospital mortality was 37% vs 43%, respectively; RR 0.85 (95% CI 0.60-1.21), a non-significant difference.",
+        "Safety outcomes like RRT initiation (22% vs 17%) and arrhythmia (50% vs 46%) were not statistically different but had wide confidence intervals."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite outcome (in-hospital)",
+          "group_a": "47/96 (49%)",
+          "group_b": "52/96 (54%)",
+          "effect_measure": "RR",
+          "effect_value": "0.90",
+          "ci_95": "0.69 to 1.19",
+          "p_value": "0.47",
+          "note": "Time-to-event analysis: HR 0.91, 95% CI 0.61-1.34. Composite components: death, cardiac arrest, MCS, MI, TIA/stroke, RRT initiation."
+        },
+        {
+          "outcome": "In-hospital death (any cause)",
+          "group_a": "35/96 (37%)",
+          "group_b": "41/96 (43%)",
+          "effect_measure": "RR",
+          "effect_value": "0.85",
+          "ci_95": "0.60 to 1.21",
+          "p_value": null,
+          "note": "Direction favoured milrinone but CI wide."
+        },
+        {
+          "outcome": "Resuscitated cardiac arrest",
+          "group_a": "7/96 (7%)",
+          "group_b": "9/96 (9%)",
+          "effect_measure": "HR",
+          "effect_value": "0.78",
+          "ci_95": "0.29 to 2.07",
+          "p_value": null,
+          "note": "Fine–Gray competing-risk approach."
+        },
+        {
+          "outcome": "Cardiac transplant or MCS",
+          "group_a": "11/96 (11%)",
+          "group_b": "14/96 (15%)",
+          "effect_measure": "HR",
+          "effect_value": "0.78",
+          "ci_95": "0.36 to 1.71",
+          "p_value": null,
+          "note": "No participant underwent cardiac transplantation in the trial."
+        },
+        {
+          "outcome": "Nonfatal myocardial infarction",
+          "group_a": "1/96 (1%)",
+          "group_b": "0/96 (0%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "Single event. Not estimable."
+        },
+        {
+          "outcome": "Transient ischaemic attack or stroke",
+          "group_a": "1/96 (1%)",
+          "group_b": "2/96 (2%)",
+          "effect_measure": "HR",
+          "effect_value": "0.50",
+          "ci_95": "0.05 to 5.50",
+          "p_value": null,
+          "note": "Neurologist-diagnosed events."
+        },
+        {
+          "outcome": "Initiation of renal replacement therapy",
+          "group_a": "21/96 (22%)",
+          "group_b": "16/96 (17%)",
+          "effect_measure": "HR",
+          "effect_value": "1.39",
+          "ci_95": "0.73 to 2.67",
+          "p_value": null,
+          "note": "Excluding participants receiving RRT at baseline."
+        },
+        {
+          "outcome": "CICU length of stay, median (IQR), days",
+          "group_a": "4.5 (2.0–7.0)",
+          "group_b": "5.5 (3.0–10.0)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "Skewed distribution typical in shock cohorts."
+        },
+        {
+          "outcome": "CICU length of stay ≥7 days",
+          "group_a": "31/96 (32%)",
+          "group_b": "42/96 (44%)",
+          "effect_measure": "RR",
+          "effect_value": "0.74",
+          "ci_95": "0.51 to 1.07",
+          "p_value": null,
+          "note": "Secondary endpoint; not adjusted for multiple comparisons."
+        },
+        {
+          "outcome": "Total time receiving inotropes, median (IQR), hours",
+          "group_a": "36 (18–79)",
+          "group_b": "39 (19–64)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "Similar exposure durations suggest limited separation between groups."
+        },
+        {
+          "outcome": "Acute kidney injury",
+          "group_a": "86/96 (92%)",
+          "group_b": "85/96 (90%)",
+          "effect_measure": "RR",
+          "effect_value": "1.02",
+          "ci_95": "0.94 to 1.12",
+          "p_value": null,
+          "note": "High incidence reflects shock severity and broad definitions."
+        },
+        {
+          "outcome": "Normalisation of lactate level up to 120h (excl. normal at baseline)",
+          "group_a": "33/71 (46%)",
+          "group_b": "36/64 (56%)",
+          "effect_measure": "RR",
+          "effect_value": "0.80",
+          "ci_95": "0.56 to 1.15",
+          "p_value": null,
+          "note": "A post-hoc secondary analysis explored this further."
+        },
+        {
+          "outcome": "Arrhythmia leading to medical team intervention",
+          "group_a": "48/96 (50%)",
+          "group_b": "44/96 (46%)",
+          "effect_measure": "RR",
+          "effect_value": "1.19",
+          "ci_95": "0.85 to 1.57",
+          "p_value": null,
+          "note": "Supplementary safety data showed a similar event rate (RR 1.09, 0.81-1.47)."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Severe LV dysfunction",
+          "group_a": null,
+          "group_b": null,
+          "effect_measure": "RR",
+          "effect_value": "1.07",
+          "ci_95": "0.74 to 1.55",
+          "p_interaction": null,
+          "notes": "Ref: mild/moderate LV dysfunction RR 0.70 (0.46-1.08)."
+        },
+        {
+          "subgroup": "Concomitant vasopressor use at initiation",
+          "group_a": null,
+          "group_b": null,
+          "effect_measure": "RR for primary outcome",
+          "effect_value": "0.98",
+          "ci_95": "0.74 to 1.30",
+          "p_interaction": "not reported",
+          "notes": "Ref: no vasopressor use RR 1.06 (0.61-1.83). Overall, no evidence of heterogeneity was found."
+        }
+      ]
+    },
+    "safety": [
+      "AKI occurred in 92% (milrinone) vs 90% (dobutamine), reflecting severe illness burden in this shock population.",
+      "Arrhythmia requiring intervention was similar between groups (50% vs 46%).",
+      "Initiation of RRT was numerically higher with milrinone (22% vs 17%), but the difference was not statistically significant (HR 1.39, 95% CI 0.73-2.67).",
+      "Broadly similar safety profiles and no statistically significant differences in major adverse events were observed."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Effective 1:1 randomisation with stratification (affected ventricle). Allocation concealment was robust via blinded infusion preparation, though the preparing nurse was unblinded."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blinding was feasible for most bedside decisions, reducing differential co-interventions. However, the clinician-triggered components of the primary outcome (MCS, RRT) are vulnerable to influence by local practice thresholds, even under blinding."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "No major issue reported for in-hospital outcomes; outcomes were measured on all patients during the index admission. ITT analysis was used. Pre-randomisation screening attrition was notable: 319 screened, 192 randomised."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Inotrope exposure duration was similar between groups (36 vs 39 hours, median). Physiologic trajectories at 24 hours (e.g., MAP, lactate, VIS) were broadly comparable."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Broadly comparable, though some imbalances were noted directionally: prior MI was higher in the milrinone group (41% vs 30%), while baseline vasopressor use was lower (39% vs 50%). This could cause residual confounding in a small trial."
+        }
+      ],
+      "verdict": "Moderate-to-strong, supported by randomisation, blinding, complete in-hospital outcome ascertainment, and ITT analysis; main threats are imprecision from a small sample size and reliance on clinician-triggered components within the composite endpoint."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Reflected a tertiary CICU cohort with predominately reduced LVEF (median 25%) and ischaemic aetiology (65-69%). SCAI shock stages C/D predominated; stage E was uncommon."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to well-resourced cardiac ICUs. Exclusion of out-of-hospital cardiac arrest and patients already receiving inotropes before transfer limits applicability to post-arrest and refractory/transferred shock populations. A single-centre design may not be generalisable to mixed medical ICUs or other systems."
+        }
+      ],
+      "verdict": "Generalisability is moderate; the cohort is recognisable for tertiary CICU shock, but the single-centre design and key exclusions limit broader transferability."
+    },
+    "strengths": [
+      "Blinded, randomised head-to-head comparison of the two most common inotropes in cardiogenic shock.",
+      "Clinically meaningful, patient-centred primary composite outcome focused on in-hospital events.",
+      "Pragmatic titration framework mirrors real-world clinician behaviour.",
+      "High event rate enhances the efficiency of event capture for the achieved sample size."
+    ],
+    "limitations": [
+      "Single-centre design with a modest sample size; confidence intervals remain compatible with both clinically relevant benefit and harm from milrinone.",
+      "Composite endpoint includes clinician-triggered interventions (MCS, RRT) that may be influenced by local practice thresholds.",
+      "Limited invasive haemodynamic monitoring (pulmonary artery catheter present in only 23 participants at randomisation), constraining mechanistic inference.",
+      "Some baseline imbalances (e.g., prior MI and PCI) could contribute to residual confounding.",
+      "Mean time from CICU admission to randomisation varied (23.4 vs 17.9 hours), suggesting late enrolment for some."
+    ],
+    "critical_appraisal": {
+      "summary": "DOREMI is a well-conducted, blinded pilot/phase II RCT providing the first robust head-to-head data in cardiogenic shock, but it was underpowered for small-to-moderate effect sizes; while it showed no statistically significant difference for a composite outcome, wide confidence intervals fail to exclude either benefit or harm, supporting ongoing equipoise rather than inferiority.",
+      "strengths": [
+        "Blinded double-dummy design reduces performance bias",
+        "Pragmatic inclusion criteria and titration protocol enhance real-world relevance"
+      ],
+      "weaknesses": [
+        "Small sample size and single-centre design limit precision and generalisability",
+        "Reliance on clinician-triggered outcomes (MCS, RRT) may dilute treatment effect"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In this single-centre trial, milrinone was not superior to dobutamine for a composite of death and major in-hospital complications in patients with cardiogenic shock. Inotrope choice remains individualised based on patient factors.",
+    "clinical_bottom_line": {
+      "verdict": "DOREMI does not change practice to favour one inotrope over the other. It supports individualised agent selection based on patient physiology (e.g., tachyarrhythmia risk, RV dysfunction, chronic beta-blocker use, renal function).",
+      "applies_to": "Adult patients with primarily SCAI stage C/D cardiogenic shock from a predominant ischaemic aetiology in a cardiac ICU setting.",
+      "does_not_mean": "Milrinone is inferior or unsafe. It does not mean a switch to dobutamine is required for all patients. The trial was not powered to detect small but clinically relevant differences.",
+      "implementation_caveats": [
+        "Does not inform management of post-cardiac-arrest shock or patients already on an inotrope before arrival.",
+        "Findings are from a single centre with local MCS/RRT practice patterns; clinician-triggered endpoint thresholds may differ elsewhere."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Dosing strategy and generalisability",
+        "notes": "Concerns were raised post-publication about the pharmacokinetics of milrinone in renal dysfunction and the lack of bolus dosing, which may not reflect all practice patterns. The heterogeneous shock population also prompted discussion about applicability."
+      },
+      {
+        "topic": "Interpretation of imprecise results",
+        "notes": "An accompanying editorial emphasised the wide confidence intervals for the primary outcome, highlighting the challenge of detecting a modest inotrope-class effect against dominant shock mortality drivers."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Updated systematic reviews and meta-analyses",
+        "relation": "Meta-analyses incorporating DOREMI reported no clear mortality advantage of milrinone over dobutamine, with low/very low certainty of evidence driven by the small number of randomised comparisons and imprecision."
+      }
+    ],
+    "unresolved_questions": [
+      "Is one inotrope superior in specific, mechanism-informed subgroups like isolated right ventricular shock (n=16 in this trial) or in patients with chronic beta-blocker exposure?",
+      "Would a larger, multicentre trial powered for smaller effect sizes (e.g., 5-10% absolute risk reduction) show a clinically relevant difference in mortality or organ support-free days?",
+      "What is the impact of inotrope selection in patients with post-cardiac-arrest shock, a group excluded from this trial?",
+      "Does adding a bolus to the milrinone regimen impact efficacy or safety outcomes?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=192",
+        "Primary composite: 49% (milrinone) vs 54% (dobutamine), RR 0.90 (95% CI 0.69-1.19), P=0.47",
+        "In-hospital death: 37% vs 43%, RR 0.85 (95% CI 0.60-1.21)"
+      ],
+      "one_line_takeaway": "Milrinone is not superior to dobutamine for death or major complications in cardiogenic shock, so inotrope choice should be individualised to a patient's physiology rather than based on a default agent preference."
+    }
+  },
+  "_source_id": "DOREMI",
+  "_source_system": "Circulatory"
+}

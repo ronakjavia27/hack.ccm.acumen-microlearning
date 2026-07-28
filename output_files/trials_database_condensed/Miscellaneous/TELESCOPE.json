@@ -1,0 +1,303 @@
+{
+  "id": "TELESCOPE",
+  "trial_name": "TELESCOPE — Effect of Tele-ICU on Clinical Outcomes of Critically Ill Patients (2024)",
+  "specialty": "Tele-ICU",
+  "subtopic": "Digital Health",
+  "year": 2024,
+  "journal": "JAMA",
+  "citation": "Pereira AJ, Noritomi DT, dos Santos MC, et al; TELESCOPE Trial Investigators. Effect of Tele-ICU on Clinical Outcomes of Critically Ill Patients: The TELESCOPE Randomized Clinical Trial. JAMA. 2024;332(21):1798-1807",
+  "doi": "https://doi.org/10.1001/jama.2024.20651",
+  "registration": "",
+  "trial_type": "RCT — multicenter, cluster-randomized, pragmatic, parallel-group",
+  "evidence_level": "High-quality cluster RCT",
+  "sample_size": 15230,
+  "result_category": "Negative/Neutral",
+  "one_liner": "A pragmatic cluster-randomized trial of weekday tele-ICU rounds in Brazilian public ICUs did not reduce ICU length of stay or hospital mortality.",
+  "pico": {
+    "population": "Adult general ICUs in Brazilian public hospitals without structured daily intensivist-led multidisciplinary rounds or regular audit/feedback; patients ≥18 years",
+    "intervention": "Daily (Mon–Fri) tele-ICU multidisciplinary rounds with remote intensivist, ICU nurse, RT; monthly audit/feedback meetings; dissemination of 19 clinical protocols and e-learning",
+    "comparison": "Usual bedside care without tele-ICU rounds, audit/feedback, or protocol package",
+    "outcome": "Primary: ICU length of stay (first ICU admission). Secondary: hospital mortality, CLABSI, VAE, ventilator-free days, feeding, sedation, oxygenation, ICU-level SMR/SRU"
+  },
+  "keywords": [
+    "tele-ICU",
+    "cluster-randomized trial",
+    "ICU length of stay",
+    "mortality",
+    "implementation fidelity",
+    "Brazil",
+    "public hospitals",
+    "telemedicine"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Tele-ICU is promoted to extend intensivist expertise to ICUs with limited on-site specialists, but prior evidence is mostly observational and heterogeneous, with models ranging from continuous monitoring to advisory rounds.",
+      "knowledge_gap": "The causal effect of a tele-ICU program based on daily multidisciplinary rounds, audit/feedback, and protocol dissemination on patient outcomes in resource-constrained public ICUs is unknown.",
+      "hypothesis": "The intervention would reduce ICU length of stay by improving care processes and facilitating earlier ICU discharge."
+    },
+    "methods": {
+      "design": "Pragmatic, multicenter, parallel-group, cluster-randomised clinical trial (ICU as unit of randomisation) with 30 ICUs, batched randomisation (5 blocks), 2-month baseline, 1-month transition, 13-month intervention period.",
+      "setting": "30 adult general (mixed medical–surgical) ICUs in public hospitals across all Brazilian regions; on-site physicians and nurses; ≥8 ICU beds.",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years admitted to participating ICUs during the trial periods."
+        ],
+        "exclusion": [
+          "<18 years",
+          "legal custody",
+          "admissions during the waiting/transition period between randomisation and evaluation start."
+        ]
+      },
+      "intervention": "Daily (Mon–Fri) tele-ICU multidisciplinary rounds led by remote board-certified intensivist with ICU nurse and RT, using a structured daily care plan, conducted with the local ICU team via a mobile rack with PC, microphone, and 4K 360° camera. Monthly virtual meetings to discuss ICU performance indicators with local leadership. Dissemination of 19 evidence-based clinical protocols and e-learning materials (text/video).",
+      "comparison": "Usual bedside ICU care without tele-rounds, audit/feedback, or protocol e-learning package. COVID-19 protocols and training videos shared with both groups after pandemic onset to mitigate bias.",
+      "blinding": "Unblinded (cluster-level service delivery); objective outcomes reduce detection bias risk.",
+      "sample_size_power": "15,000 patients to detect a 1.5-day absolute reduction in ICU LOS (baseline mean 8 days, SD 10) with 80% power, 2-sided α 0.05, ICC 0.018, variable cluster sizes.",
+      "primary_outcome": "ICU length of stay (days) for first ICU admission.",
+      "secondary_outcomes": [
+        "Hospital mortality",
+        "Incidence of central line-associated bloodstream infection (CLABSI) per 1,000 CVC-days",
+        "Incidence of ventilator-associated events (VAE) per 1,000 ventilator-days",
+        "28-day ventilator-free days",
+        "Receiving enteral or parenteral feeding per 100 patient-days",
+        "Light sedation or alert/calm per 100 ventilator-days",
+        "Normoxaemia (SpO2 92–96%) per 100 patient-days",
+        "ICU-level standardised mortality ratio (SMR)",
+        "ICU-level standardised resource use (SRU)"
+      ],
+      "follow_up": "From ICU admission until ICU discharge or death; truncated at 90 days in hospital from ICU admission."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary outcome (ICU LOS) not reduced: 8.1 vs 7.1 days, adjusted % change +8.2% (95% CI −5.4% to 23.8%; p=0.24).",
+        "Hospital mortality similar: 41.6% vs 40.2% (OR 0.93; 95% CI 0.78–1.12).",
+        "Moderate implementation fidelity: tele-visits on 68% of eligible patient-days, 74% recommendation acceptance, 62% monthly meetings completed."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: ICU length of stay (days), first ICU admission",
+          "group_a": "Mean 8.1 (SD 10.0), median 4.6 (IQR 2.0–10.1)",
+          "group_b": "Mean 7.1 (SD 9.0), median 3.8 (IQR 1.8–8.7)",
+          "effect_measure": "adjusted % change",
+          "effect_value": "8.2%",
+          "ci_95": "−5.4% to 23.8%",
+          "p_value": "0.24",
+          "note": "Adjusted median difference 0 days (95% CI −2 to 3)"
+        },
+        {
+          "outcome": "Hospital mortality",
+          "group_a": "3106/7471 (41.6%)",
+          "group_b": "3119/7759 (40.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.93",
+          "ci_95": "0.78 to 1.12",
+          "p_value": "not reported",
+          "note": "Adjusted absolute difference −1.2% (95% CI −4.2% to 1.9%)"
+        },
+        {
+          "outcome": "Incidence of CLABSI per 1,000 CVC-days",
+          "group_a": "59/50,527 (1.2)",
+          "group_b": "29/44,562 (0.7)",
+          "effect_measure": "IRR",
+          "effect_value": "1.15",
+          "ci_95": "0.43 to 3.07",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Incidence of ventilator-associated events per 1,000 ventilator-days",
+          "group_a": "656/40,231 (16.3)",
+          "group_b": "596/34,856 (17.1)",
+          "effect_measure": "IRR",
+          "effect_value": "1.02",
+          "ci_95": "0.82 to 1.27",
+          "p_value": "not reported",
+          "note": "Adjusted absolute difference 2.5 (95% CI −28.2 to 33.3)"
+        },
+        {
+          "outcome": "28-day ventilator-free days",
+          "group_a": "Mean 8.2 (SD 11.0)",
+          "group_b": "Mean 9.2 (SD 11.0)",
+          "effect_measure": "IRR",
+          "effect_value": "1.00",
+          "ci_95": "0.95 to 1.05",
+          "p_value": "not reported",
+          "note": "Adjusted absolute difference 0.0 (95% CI −0.4 to 0.4)"
+        },
+        {
+          "outcome": "Enteral/parenteral feeding (per 100 patient-days)",
+          "group_a": "59,757/67,367 (88.7%)",
+          "group_b": "55,317/62,386 (88.7%)",
+          "effect_measure": "IRR",
+          "effect_value": "0.99",
+          "ci_95": "0.92 to 1.06",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Light sedation/alert/calm (per 100 ventilator-days)",
+          "group_a": "14,531/40,231 (36.1%)",
+          "group_b": "12,114/34,856 (34.8%)",
+          "effect_measure": "IRR",
+          "effect_value": "1.10",
+          "ci_95": "0.92 to 1.32",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Normoxaemia (SpO2 92–96%) per 100 patient-days",
+          "group_a": "35,587/67,367 (52.8%)",
+          "group_b": "23,168/62,386 (37.1%)",
+          "effect_measure": "IRR",
+          "effect_value": "1.10",
+          "ci_95": "0.75 to 1.61",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "ICU-level standardised mortality ratio (SMR)",
+          "group_a": "Mean 1.06 (SD 0.3)",
+          "group_b": "Mean 1.07 (SD 0.2)",
+          "effect_measure": "adjusted difference",
+          "effect_value": "−0.03",
+          "ci_95": "−0.15 to 0.08",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "ICU-level standardised resource use (SRU)",
+          "group_a": "Mean 2.04 (SD 1.1)",
+          "group_b": "Mean 1.78 (SD 0.9)",
+          "effect_measure": "adjusted difference",
+          "effect_value": "−0.03",
+          "ci_95": "−0.38 to 0.31",
+          "p_value": "not reported",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "CLABSI: 1.2 vs 0.7 per 1000 CVC-days (IRR 1.15; 95% CI 0.43–3.07).",
+      "Ventilator-associated events: 16.3 vs 17.1 per 1000 vent-days (IRR 1.02; 95% CI 0.82–1.27)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Cluster randomisation with batched blocks, restricted algorithm to minimise baseline imbalance. Allocation concealment not feasible at cluster level."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded service-delivery intervention. Objective outcomes (LOS, mortality) reduce detection bias, but co-intervention risk remains."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "No cluster dropouts. Primary analysis ITT on first ICU admission; readmissions excluded. Patients during waiting/transition period excluded by design."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Tele-visits on 68% of eligible patient-days (median 72%), 151,723 recommendations with 74% acceptance, monthly meetings completed 62%. COVID-19 protocols shared with both arms, reducing separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly comparable in age, SAPS3, SOFA; some difference in mechanical ventilation at admission (48.7% vs 42.2%). Analyses adjusted for prognostic covariates."
+        }
+      ],
+      "verdict": "Moderate: strong pragmatic design, large sample, objective outcomes, and pre-published protocol support causal inference. Unblinded delivery, variable fidelity, and pandemic-era co-interventions plausibly limited detectable effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult general ICUs in Brazilian public hospitals without structured intensivist-led rounds; matches resource-constrained, public-sector ICUs but not high-intensity academic ICUs."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Evaluated an advisory rounds-based tele-ICU model with weekday coverage. Findings apply to similar programmes, not to continuous monitoring or direct-authority tele-ICU models. Sensitivity to discharge pathways and bed availability may limit generalisability."
+        }
+      ],
+      "verdict": "Good generalisability to under-resourced public ICUs considering advisory rounds-based tele-ICU; limited for high-intensity ICUs or continuous monitoring models."
+    },
+    "strengths": [
+      "Large, pragmatic cluster-randomised evaluation at scale (30 ICUs; 15,230 patients).",
+      "Clinically and policy-relevant setting (public Brazilian ICUs).",
+      "Objective primary and key secondary outcomes.",
+      "Detailed implementation metrics (tele-round coverage, recommendation volume/acceptance).",
+      "Published protocol and statistical analysis plan supporting transparency."
+    ],
+    "limitations": [
+      "Unblinded service-delivery intervention introduces risk of performance bias and co-intervention.",
+      "Heterogeneous context across ICUs and substantial COVID-19 pandemic overlap (73.5% of patients enrolled post-pandemic onset), with shared protocols potentially diluting between-group differences.",
+      "Moderate intervention intensity: tele-visits on only 68% of eligible patient-days; monthly meetings completed 62%.",
+      "Primary outcome (ICU LOS) is system-sensitive and may be less responsive to clinical decision support in strained public systems.",
+      "Some secondary outcomes reported without p-values; interpretation relies on confidence intervals."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-designed cluster RCT with objective endpoints, but negative results may partly reflect modest implementation fidelity and pandemic-era contamination, limiting confidence in concluding that tele-ICU rounds have no benefit.",
+      "strengths": [
+        "Large pragmatic design",
+        "Objective outcomes",
+        "Pre-published protocol",
+        "Detailed process data"
+      ],
+      "weaknesses": [
+        "Unblinded",
+        "Variable adherence",
+        "COVID-19 co-intervention",
+        "Primary outcome influenced by system factors"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In this pragmatic public-ICU setting, a weekday tele-rounds-based tele-ICU programme did not shorten ICU length of stay or reduce hospital mortality, arguing against assuming that tele-rounds alone, even with frequent recommendations, necessarily improve outcomes.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support routine implementation of weekday tele-ICU rounds with audit/feedback for improving patient outcomes in similar public ICUs.",
+      "applies_to": "Public general ICUs lacking structured intensivist-led rounds, especially in resource-limited settings.",
+      "does_not_mean": "That tele-ICU is uniformly ineffective; this specific advisory model with moderate fidelity failed to improve outcomes.",
+      "implementation_caveats": [
+        "Tele-ICU effectiveness likely depends on model (advisory vs. continuous monitoring), fidelity, and local system constraints.",
+        "Higher-intensity models (e.g., continuous monitoring with decision authority) may yield different results."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Tele-ICU model heterogeneity",
+        "notes": "Tele-ICU encompasses diverse models (advisory rounds, continuous monitoring, decision authority); prior evidence is inconsistent. The negative TELESCOPE result may not apply to other models."
+      },
+      {
+        "topic": "Outcome selection (ICU LOS) insensitivity",
+        "notes": "ICU LOS is objective but shaped by organisational factors (step-down capacity, bed strain); improved clinical processes may not translate into shorter LOS, potentially biasing toward null."
+      },
+      {
+        "topic": "Implementation fidelity",
+        "notes": "Moderate tele-round coverage (68% of eligible days) and incomplete monthly meetings (62%) raise the possibility that the tested 'real-world dose' was insufficient to move outcomes, despite 151,723 recommendations (74% accepted)."
+      },
+      {
+        "topic": "Need for rigorous evaluation of complex technology",
+        "notes": "Editorial commentary emphasised that tele-ICU requires careful attention to context and implementation; TELESCOPE exemplifies a rigorous yet negative pragmatic trial."
+      },
+      {
+        "topic": "Evidence base limitations",
+        "notes": "Meta-analyses suggesting tele-ICU benefit are limited by heterogeneity and predominantly non-randomised studies; TELESCOPE adds large randomised evidence of no clear benefit for advisory rounds-based models."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Would a more intensive tele-ICU model (continuous monitoring, decision authority) improve patient-centred outcomes?",
+      "What is the optimal implementation strategy to achieve higher fidelity in similar settings?",
+      "How did the COVID-19 pandemic context influence these results, and would effects differ in a non-pandemic era?",
+      "Would outcomes improve with a more robust discharge facilitation component or with higher-acuity ICUs?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=15,230 patients from 30 ICUs",
+        "ICU LOS: 8.1 vs 7.1 days, adjusted % change +8.2% (95% CI −5.4% to 23.8%), p=0.24",
+        "Hospital mortality: 41.6% vs 40.2%, OR 0.93 (95% CI 0.78–1.12)",
+        "Tele-visits on 68% of eligible patient-days; 151,723 recommendations with 74% acceptance"
+      ],
+      "one_line_takeaway": "Weekday tele-ICU rounds in Brazilian public ICUs did not shorten ICU stay or reduce mortality, highlighting that tele-ICU benefit is not guaranteed without high fidelity and consideration of local system constraints."
+    }
+  },
+  "_source_id": "TELESCOPE",
+  "_source_system": "Miscellaneous"
+}

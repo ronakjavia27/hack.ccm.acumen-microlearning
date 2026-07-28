@@ -1,0 +1,314 @@
+{
+  "id": "ISAT",
+  "trial_name": "ISAT — International Subarachnoid Aneurysm Trial (2002)",
+  "specialty": "Neuro",
+  "subtopic": "Subarachnoid Hemorrhage",
+  "year": 2002,
+  "journal": "The Lancet",
+  "citation": "International Subarachnoid Aneurysm Trial (ISAT) Collaborative Group. International Subarachnoid Aneurysm Trial (ISAT) of neurosurgical clipping versus endovascular coiling in 2143 patients with ruptured intracranial aneurysms: a randomised trial. Lancet. 2002;360:1267-1274.",
+  "doi": "https://doi.org/10.1016/S0140-6736(02)11314-6",
+  "registration": "",
+  "trial_type": "RCT — multicenter, pragmatic, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2143,
+  "result_category": "Positive",
+  "one_liner": "In patients with ruptured intracranial aneurysms suitable for either treatment, endovascular coiling reduced 1-year death or dependency (mRS 3-6) from 30.6% to 23.7% (RR 0.77, 95% CI 0.66-0.91, P=0.0019), an absolute reduction of 6.9%.",
+  "pico": {
+    "population": "Patients with ruptured intracranial aneurysms suitable for either endovascular coiling or neurosurgical clipping, predominantly good-grade (WFNS 1-2, 88%), small anterior circulation aneurysms (≤10 mm, 92-93%)",
+    "intervention": "Endovascular coiling policy with detachable platinum coils",
+    "comparison": "Neurosurgical clipping policy",
+    "outcome": "Death or dependency (mRS 3-6) at 1 year"
+  },
+  "keywords": [
+    "subarachnoid hemorrhage",
+    "endovascular coiling",
+    "neurosurgical clipping",
+    "aneurysm",
+    "randomized trial"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Aneurysmal subarachnoid haemorrhage (aSAH) causes high early mortality and substantial long-term disability among survivors. Microsurgical clipping had been the established definitive treatment to prevent rebleeding, but it carries operative morbidity. Endovascular detachable coil embolisation emerged as a less invasive alternative, with rapidly increasing uptake, but comparative effectiveness and safety versus clipping were uncertain. Observational series were confounded by anatomical selection, clinical grade, centre expertise, and outcome ascertainment method.",
+      "knowledge_gap": "Whether a policy of endovascular coiling reduces death or dependency compared with neurosurgical clipping in patients with ruptured aneurysms suitable for both techniques.",
+      "hypothesis": "Endovascular coiling would reduce 1-year death/dependency by 25% relative (from 24% to 19%)."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, randomised clinical trial in 43 major neurosurgical centres internationally; central 24-hour telephone randomisation using minimisation for age, sex, WFNS grade, CT blood burden, aneurysm size/location; open-label treatment delivery; outcomes collected by validated postal questionnaire.",
+      "setting": "43 major neurosurgical centres (typically serving 1-3 million population per centre) in multiple countries.",
+      "population": {
+        "inclusion": [
+          "Definite SAH (CT or lumbar puncture) within 28 days",
+          "Intracranial aneurysm identified as responsible",
+          "Clinical state justifying treatment by either approach",
+          "Aneurysm anatomy judged by both neurosurgeon and interventional neuroradiologist to be suitable for either technique",
+          "Uncertainty regarding best treatment",
+          "Informed consent (or relative assent when permitted)"
+        ],
+        "exclusion": [
+          "SAH >28 days before randomisation",
+          "Patient unsuitable for one or both treatments",
+          "Refused consent",
+          "Concurrent enrolment in another randomised trial of SAH treatment"
+        ]
+      },
+      "intervention": "Endovascular treatment with detachable platinum coils (coil embolisation) of the target aneurysm. Operators required minimum experience of 30 aneurysm treatment procedures. Follow-up angiography required unless clinically contraindicated.",
+      "comparison": "Craniotomy and microneurosurgical clipping of the target aneurysm neck (wrapping permitted when clipping not achieved). Accredited neurosurgeons with aneurysm surgery experience. Angiography requested but not mandatory.",
+      "blinding": "Unblinded (procedural nature precluded masking); primary outcome obtained via validated postal questionnaire (patient or proxy) with standardised mapping to the modified Rankin Scale; rebleeding events adjudicated after review of clinical forms and imaging.",
+      "sample_size_power": "Planned sample size 2500 to detect a 25% relative reduction in 1-year death/dependency (from 24% to 19%) with 90% power at two-sided significance level 0.01; trial stopped early after interim analysis at 2143 patients.",
+      "primary_outcome": "Death or dependency (modified Rankin Scale 3-6) at 1 year.",
+      "secondary_outcomes": [
+        "Death or dependency at 2 months",
+        "Case fatality at 1 year",
+        "Target aneurysm rebleeding (pre-procedural, post-procedural up to 30 days, 30 days to 1 year, after 1 year)",
+        "Further procedure on target aneurysm within 1 year",
+        "Time from randomisation to first procedure"
+      ],
+      "follow_up": "Outcomes at 2 months and 1 year (index publication), with annual follow-up planned for at least 5 years."
+    },
+    "results": {
+      "headline_bullets": [
+        "At 1 year, endovascular coiling reduced death/dependency from 30.6% to 23.7% (RR 0.77, 95% CI 0.66-0.91, P=0.0019), absolute reduction 6.9% (95% CI 2.5-11.3).",
+        "Mortality at 1 year was similar (8.1% vs 10.1%), so benefit was driven by reduced disability among survivors.",
+        "Coiling had higher early post-procedural rebleeding (20 vs 6 up to 30 days) and more retreatment within 1 year (121 vs 33).",
+        "Trial stopped early after interim analysis; 2143 patients randomised."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary outcome: death or dependency (mRS 3-6) at 1 year",
+          "group_a": "190/801 (23.7%)",
+          "group_b": "243/793 (30.6%)",
+          "effect_measure": "RR",
+          "effect_value": "0.774",
+          "ci_95": "0.658 to 0.911",
+          "p_value": "0.0019",
+          "note": "Analysed in patients expected to have 1-year data (randomised before 1 Feb 2001); data available for 1594/1624 (98.2%)."
+        },
+        {
+          "outcome": "Absolute risk reduction in death/dependency at 1 year",
+          "group_a": "6.9%",
+          "group_b": "—",
+          "effect_measure": "ARR",
+          "effect_value": "6.9%",
+          "ci_95": "2.5 to 11.3",
+          "p_value": "",
+          "note": "Relative risk reduction 22.6% (95% CI 8.9 to 34.2)."
+        },
+        {
+          "outcome": "Death or dependency (mRS 3-6) at 2 months",
+          "group_a": "244/959 (25.4%)",
+          "group_b": "345/947 (36.4%)",
+          "effect_measure": "RR",
+          "effect_value": "0.698",
+          "ci_95": "0.609 to 0.801",
+          "p_value": "<0.0001",
+          "note": "Analysed in patients expected to have 2-month data (randomised before 1 Dec 2001); data available for 1906/1918 (99.4%)."
+        },
+        {
+          "outcome": "Case fatality at 1 year",
+          "group_a": "65/801 (8.1%)",
+          "group_b": "80/793 (10.1%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "Endovascular 95% CI 6.3 to 10.2; Neurosurgery 95% CI 8.1 to 12.4",
+          "p_value": "",
+          "note": "Mortality difference not statistically significant."
+        },
+        {
+          "outcome": "Target aneurysm rebleeding after randomisation but before first procedure",
+          "group_a": "14 (7 deaths)",
+          "group_b": "23 (16 deaths)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Counts; numbers in parentheses are deaths."
+        },
+        {
+          "outcome": "Target aneurysm rebleeding after procedure up to 30 days",
+          "group_a": "20 (10 deaths)",
+          "group_b": "6 (3 deaths)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Includes failures/incomplete occlusion and rebleeding after thrombolysis for procedural complications."
+        },
+        {
+          "outcome": "Target aneurysm rebleeding 30 days to 1 year",
+          "group_a": "6 (5 deaths)",
+          "group_b": "4 (2 deaths)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Counts; numbers in parentheses are deaths."
+        },
+        {
+          "outcome": "Target aneurysm rebleeding after 1 year (events accrued at time of report)",
+          "group_a": "2 (0 deaths)",
+          "group_b": "0",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Reported as 2 per 1276 patient-years vs 0 per 1081 patient-years."
+        },
+        {
+          "outcome": "Further procedure on the target aneurysm during first year",
+          "group_a": "121 patients",
+          "group_b": "33 patients",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Includes additional endovascular and/or neurosurgical procedures; clinical outcome incorporated into 1-year endpoint."
+        },
+        {
+          "outcome": "Time from randomisation to first procedure",
+          "group_a": "Mean 1.1 days (IQR 0-1)",
+          "group_b": "Mean 1.7 days (IQR 0-2)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.0001",
+          "note": "Difference reported as statistically significant."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Target aneurysm rebleeding after procedure up to 30 days: 20 (10 deaths) in coiling vs 6 (3 deaths) in clipping.",
+      "Target aneurysm rebleeding 30 days to 1 year: 6 (5 deaths) vs 4 (2 deaths).",
+      "Further procedure on target aneurysm within 1 year: 121 vs 33.",
+      "Case fatality at 1 year: 8.1% vs 10.1% (not statistically significant).",
+      "No other major safety concerns reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central 24-hour telephone randomisation with minimisation for key prognostic factors; allocation concealment supported."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded; primary outcome obtained via postal questionnaire, reducing assessor variability but not eliminating expectation or reporting effects."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Outcome data completeness high: 2 months 99.4%, 1 year 98.2%; missing data balanced (12 vs 18)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "95.3% received allocated treatment as first procedure; crossovers: coiling→surgery 9, surgery→coiling 38."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups closely matched: median age 52, WFNS 1-2 88%, anterior circulation 97%, aneurysm ≤10 mm 92-93%."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate-to-strong due to robust central randomisation, excellent follow-up, and clear outcome definitions, but tempered by open-label delivery, early stopping, and susceptibility of patient-reported functional outcomes to expectation and measurement effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Of 9559 SAH patients assessed, 2143 (22.4%) randomised; cohort predominantly good-grade (WFNS 1-2: 88%), small aneurysms (≤10 mm: 92-93%), anterior circulation (97%). Under-represented: posterior circulation (2.7%), MCA (14.1%), poor-grade (WFNS 4-5: ~4-5%)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Most applicable to high-volume centres with emergent endovascular and neurosurgical expertise; less applicable where coiling capacity limited or for aneurysms unsuitable for coiling (wide neck, complex bifurcation). Evolving technology may alter contemporary risk-benefit."
+        }
+      ],
+      "verdict": "Generalisability is high for patients resembling the ISAT cohort (good-grade aSAH with small anterior circulation aneurysms suitable for either modality in high-volume centres), but limited for posterior circulation aneurysms, complex middle cerebral aneurysms, and poor-grade presentations."
+    },
+    "strengths": [
+      "Large, pragmatic randomised trial",
+      "Central randomisation with prognostic-factor minimisation",
+      "Clinically meaningful functional endpoint",
+      "Near-complete follow-up in analysed cohorts",
+      "Detailed capture and adjudication of rebleeding",
+      "Multicentre design across high-volume specialist units"
+    ],
+    "limitations": [
+      "Markedly selected population (only ~22% of assessed SAH patients randomised)",
+      "Open-label intervention",
+      "Early stopping at interim analysis",
+      "Time-truncated primary analysis (restricted to patients expected to have 1-year follow-up at time of reporting)",
+      "Evolving endovascular technology and peri-procedural practice during recruitment",
+      "Key secondary outcomes (e.g., neuropsychological and health-economic analyses) not fully reported in the index publication"
+    ],
+    "critical_appraisal": {
+      "summary": "ISAT provides high-quality evidence that endovascular coiling improves 1-year functional outcome in selected patients with ruptured aneurysms, but the open-label design, early stopping, and highly selected population limit generalisability and may overestimate benefit.",
+      "strengths": [
+        "Robust randomisation and high follow-up",
+        "Clinically relevant primary outcome",
+        "Multicentre pragmatic design"
+      ],
+      "weaknesses": [
+        "Open-label with patient-reported outcome",
+        "Early termination",
+        "Highly selected cohort (22% of screened)",
+        "Evolving technology during trial"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "For ruptured aneurysms suitable for either treatment, an endovascular-first policy improved 1-year disability-free survival (death/dependency 23.7% vs 30.6%).",
+    "clinical_bottom_line": {
+      "verdict": "In patients with ruptured intracranial aneurysms suitable for both endovascular coiling and neurosurgical clipping, an endovascular-first policy reduces 1-year death or dependency by an absolute 6.9% (NNT ~14), with similar mortality but higher early rebleeding and retreatment rates.",
+      "applies_to": "Good-grade (WFNS 1-2) patients with small (≤10 mm) anterior circulation aneurysms in centres with 24/7 endovascular and neurosurgical expertise.",
+      "does_not_mean": "Endovascular coiling is superior for all ruptured aneurysms; clipping remains essential for aneurysms unsuitable for coiling (e.g., wide-neck, complex MCA bifurcation) and in settings where endovascular expertise is limited.",
+      "implementation_caveats": [
+        "Requires multidisciplinary neurovascular team assessment",
+        "Post-coiling surveillance imaging and prompt retreatment for incomplete occlusion",
+        "Sustained microsurgical capability for anatomically unsuitable lesions",
+        "Long-term durability data beyond 1 year needed"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Selection and generalisability",
+        "notes": "The randomised cohort represented a highly selected subgroup of aSAH; results should be applied primarily to good-grade patients with small anterior circulation aneurysms suitable for either approach, and not extrapolated to all ruptured aneurysms."
+      },
+      {
+        "topic": "Outcome measurement and clinical meaning",
+        "notes": "Between-group differences were concentrated around adjacent mRS strata (notably mRS2 vs mRS3) without a mortality difference, raising concerns about the discriminatory precision of postal questionnaires for moderate disability and the absence of broader functional and cognitive measures."
+      },
+      {
+        "topic": "Durability, retreatment, and late haemorrhage",
+        "notes": "The trial demonstrated substantially higher retreatment after coiling and early post-procedural rebleeding events; longer follow-up publications subsequently addressed whether early functional benefit persists and how late rebleeding risks compare over years to decades."
+      },
+      {
+        "topic": "Interpretive debate",
+        "notes": "Discussion continued regarding whether ISAT should be considered 'settling' the coiling-versus-clipping debate versus defining a narrower evidence-based indication."
+      },
+      {
+        "topic": "Subsequent syntheses",
+        "notes": "Systematic reviews and meta-analyses (including Cochrane) broadly support a functional outcome advantage for endovascular coiling in eligible ruptured aneurysms, while emphasising retreatment/durability considerations and uncertainty for subgroups under-represented in ISAT."
+      },
+      {
+        "topic": "Guidelines",
+        "notes": "Contemporary guideline recommendations generally support endovascular treatment when aneurysm anatomy is suitable, with neurosurgical clipping remaining essential for aneurysms less amenable to coiling and within multidisciplinary decision-making frameworks."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Long-term durability of coiling vs clipping beyond 1 year",
+      "Optimal management of wide-neck and complex aneurysms",
+      "Outcomes in poor-grade SAH and posterior circulation aneurysms",
+      "Impact of evolving endovascular technology (e.g., flow diverters, intrasaccular devices) on comparative effectiveness",
+      "Neuropsychological and quality-of-life outcomes"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2143",
+        "1-year death/dependency: 23.7% coiling vs 30.6% clipping (ARR 6.9%, NNT ~14)",
+        "Mortality at 1 year: 8.1% vs 10.1% (NS)",
+        "Early rebleeding (≤30 days): 20 vs 6; retreatment within 1 year: 121 vs 33"
+      ],
+      "one_line_takeaway": "For good-grade aSAH with small anterior circulation aneurysms suitable for both treatments, endovascular coiling improves 1-year functional outcome but requires surveillance for rebleeding and retreatment."
+    }
+  },
+  "_source_id": "ISAT",
+  "_source_system": "Neuro"
+}

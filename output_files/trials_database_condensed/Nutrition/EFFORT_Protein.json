@@ -1,0 +1,315 @@
+{
+  "id": "EFFORT_Protein",
+  "trial_name": "EFFORT Protein — Higher vs Usual Protein Dosing in High-Risk ICU Patients (2023)",
+  "specialty": "Nutrition",
+  "subtopic": "Protein Therapy",
+  "year": 2023,
+  "journal": "The Lancet",
+  "citation": "Heyland DK, Patel J, Compher C, Rice TW, Bear DE, Lee ZY, et al. The effect of higher protein dosing in critically ill patients with high nutritional risk (EFFORT Protein): an international, multicentre, pragmatic, registry-based randomised trial. Lancet. 2023;401:568-76.",
+  "doi": "10.1016/S0140-6736(22)02469-2",
+  "registration": "",
+  "trial_type": "RCT — multicentre, pragmatic, registry-based, single-blind, parallel-group",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 1329,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In nutritionally high-risk ventilated ICU patients, a strategy of very high protein prescription (≥2.2 g/kg/day, achieved ~1.6 g/kg/day) did not improve time-to-discharge-alive or 60-day mortality compared with usual protein dosing, and showed an exploratory signal of harm in acute kidney injury.",
+  "pico": {
+    "population": "Mechanically ventilated adult ICU patients at high nutritional risk (≥1 of: BMI ≥25 or ≥35 kg/m², frailty, sarcopenia, malnutrition, or expected prolonged ventilation), enrolled within 96 h of ICU admission.",
+    "intervention": "High protein prescription target ≥2.2 g/kg/day (using pre-ICU dry weight; ideal body weight if BMI >30), delivered via any combination of enteral, parenteral, or supplements, encouraged to achieve ≥80% of prescribed protein, continued up to 28 days or ICU discharge/death/oral intake.",
+    "comparison": "Usual protein prescription target <1.2 g/kg/day, with similar energy and co-interventions.",
+    "outcome": "Primary: time-to-discharge-alive from hospital up to 60 days. Secondary: 60-day mortality, ICU length of stay, duration of mechanical ventilation, metabolic tolerance (urea)."
+  },
+  "keywords": [
+    "protein dosing",
+    "critical illness",
+    "nutrition",
+    "EFFORT Protein",
+    "acute kidney injury",
+    "mechanical ventilation",
+    "high nutritional risk"
+  ],
+  "related_trials": [
+    "PRECISe"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Critical illness causes rapid muscle loss and negative nitrogen balance. Protein dosing guidelines varied widely (1.2–2.0 g/kg/day) due to limited and heterogeneous RCT evidence. Mechanistic equipoise existed: higher protein might reduce catabolism but could increase nitrogenous waste and harm in acute kidney injury.",
+      "knowledge_gap": "Whether prescribing higher protein (≥2.2 g/kg/day) versus usual dosing (<1.2 g/kg/day) improves patient-centred outcomes in high-risk ventilated ICU patients was unknown.",
+      "hypothesis": "Higher protein dosing would improve survival and/or accelerate recovery (shorter time-to-discharge-alive from hospital)."
+    },
+    "methods": {
+      "design": "International, multicentre, pragmatic, registry-based, single-blind (patient), parallel-group RCT. Protocol published before trial completion.",
+      "setting": "85 adult ICUs across 15 countries.",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years",
+          "Enrolled within 96 h of ICU admission",
+          "Expected to remain invasively mechanically ventilated ≥48 h from screening",
+          "≥1 high nutritional risk feature: BMI ≥25 kg/m², BMI ≥35 kg/m², Clinical Frailty Scale ≥5, SARC-F ≥4, malnourished by local assessment, or projected duration of mechanical ventilation >4 days"
+        ],
+        "exclusion": [
+          "Invasively mechanically ventilated >96 h before screening",
+          "Expected death or withdrawal of life-sustaining treatments within 7 days",
+          "Pregnancy",
+          "Absence of clinician equipoise regarding protein dose",
+          "Requirement for parenteral nutrition only when site lacked products to meet the high-protein target"
+        ]
+      },
+      "intervention": "Protein prescription target ≥2.2 g/kg/day. Dosing weight: pre-ICU actual 'dry' weight; if BMI >30 kg/m², ideal body weight based on BMI 25 kg/m². Delivery: any combination of enteral nutrition, parenteral nutrition, intravenous amino acids, and/or enteral protein supplements; clinicians encouraged to achieve ≥80% of prescribed protein. Duration: continued up to 28 days post-randomisation, ICU discharge, death, or full oral intake; if readmitted within 28 days, study strategy resumed.",
+      "comparison": "Protein prescription target <1.2 g/kg/day. Energy targets and other ICU care not protocolised beyond encouragement to avoid overfeeding; route and supportive care at clinician discretion.",
+      "blinding": "Single-blind (patients not informed of allocation); clinicians unblinded.",
+      "sample_size_power": "Planned 4000 patients to detect a 4% absolute reduction in 60-day mortality (30% to 26%) with 80% power at two-sided 5% significance. Due to COVID-19 feasibility constraints, recruitment was curtailed to ~1200 and the primary outcome was switched to time-to-discharge-alive while allocation remained blinded.",
+      "primary_outcome": "Time-to-discharge-alive from hospital up to 60 days after ICU admission (competing-risk Fine–Gray model with death as competing event).",
+      "secondary_outcomes": [
+        "60-day mortality",
+        "ICU length of stay",
+        "Duration of mechanical ventilation",
+        "Metabolic tolerance (highest urea, urea ≥30 mmol/L)",
+        "Protein and energy delivery (prescribed vs achieved)"
+      ],
+      "follow_up": "Primary outcome assessed up to 60 days; nutrition intervention delivered up to 28 days or until ICU discharge/death/full oral intake."
+    },
+    "results": {
+      "headline_bullets": [
+        "Higher protein prescription (2.2 vs 1.1 g/kg/day) led to achieved intakes of 1.6 vs 0.9 g/kg/day, with similar energy delivery.",
+        "No improvement in time-to-discharge-alive (46.1% vs 50.2%; sHR 0.91, 95% CI 0.77–1.07, P=0.27).",
+        "60-day mortality was not reduced (34.6% vs 32.1%; RR 1.08, 95% CI 0.92–1.26).",
+        "Higher protein increased urea and showed an exploratory harm signal in acute kidney injury (interaction P=0.001 for discharge-alive; P=0.02 for mortality)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Time-to-discharge-alive from hospital (60-day cumulative incidence)",
+          "group_a": "46.1%",
+          "group_b": "50.2%",
+          "effect_measure": "sHR",
+          "effect_value": "0.91",
+          "ci_95": "0.77–1.07",
+          "p_value": "0.27",
+          "note": "Fine–Gray competing-risk model; death as competing event. Cumulative incidence 46.1% (95% CI 42.0–50.1) vs 50.2% (46.0–54.3). n per group not reported."
+        },
+        {
+          "outcome": "60-day mortality",
+          "group_a": "222/642 (34.6%)",
+          "group_b": "208/648 (32.1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.08",
+          "ci_95": "0.92–1.26",
+          "p_value": "Not reported",
+          "note": "Secondary outcome; denominators differ due to withdrawal/loss to follow-up."
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "10.0 (5.6–18.2)",
+          "group_b": "9.4 (5.1–19.2)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "Not reported",
+          "note": "Median (Q1–Q3); no between-group comparison reported."
+        },
+        {
+          "outcome": "Duration of mechanical ventilation (days)",
+          "group_a": "6.1 (3.0–13.8)",
+          "group_b": "6.1 (2.8–12.8)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "Not reported",
+          "note": "Median (Q1–Q3); no between-group comparison reported."
+        },
+        {
+          "outcome": "Highest urea (mmol/L)",
+          "group_a": "14.0 ± 8.5",
+          "group_b": "11.9 ± 7.2",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "<0.0001",
+          "note": "Mean ± SD; within-patient averages."
+        },
+        {
+          "outcome": "Urea ≥30 mmol/L",
+          "group_a": "43/645 (6.7%)",
+          "group_b": "20/656 (3.0%)",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.002",
+          "note": "Crude proportions."
+        },
+        {
+          "outcome": "Protein delivered (g/kg/day)",
+          "group_a": "1.6 ± 0.5",
+          "group_b": "0.9 ± 0.3",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "Not reported",
+          "note": "Mean ± SD; prescribed 2.2 ± 0.1 vs 1.1 ± 0.2 g/kg/day. Median (IQR) 1.7 (1.3–2.0) vs 1.0 (0.8–1.1)."
+        },
+        {
+          "outcome": "Energy delivered (kcal/kg/day)",
+          "group_a": "14.7 ± 5.5",
+          "group_b": "13.2 ± 4.3",
+          "effect_measure": "—",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "Not reported",
+          "note": "Mean ± SD."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Acute kidney injury at randomisation (time-to-discharge-alive)",
+          "group_a": "—",
+          "group_b": "—",
+          "effect_measure": "sHR",
+          "effect_value": "0.5",
+          "ci_95": "0.4–0.8",
+          "p_interaction": "0.001"
+        },
+        {
+          "subgroup": "Acute kidney injury at randomisation (60-day mortality)",
+          "group_a": "—",
+          "group_b": "—",
+          "effect_measure": "RR",
+          "effect_value": "1.4",
+          "ci_95": "1.1–1.8",
+          "p_interaction": "0.02"
+        }
+      ]
+    },
+    "safety": [
+      "Higher protein dosing increased azotaemia: highest urea 14.0 ± 8.5 vs 11.9 ± 7.2 mmol/L (P<0.0001).",
+      "Urea ≥30 mmol/L occurred in 6.7% vs 3.0% (P=0.002).",
+      "Exploratory subgroup analysis suggested possible harm in patients with acute kidney injury (time-to-discharge-alive sHR 0.5, 95% CI 0.4–0.8; 60-day mortality RR 1.4, 95% CI 1.1–1.8).",
+      "No other significant differences in adverse events reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation with permuted blocks (2, 4, 8) and stratification by site; allocation concealed until assignment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Single-blind (patients); clinicians unblinded. Knowledge of allocation could influence nutrition delivery and discharge decisions, though key outcomes were objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT: 1329 randomised, 28 excluded post-randomisation (14 per arm) for not receiving intervention, consent withdrawal, or unusable data. Primary analysis included 1297 (4 missing hospital outcomes). 60-day mortality denominators 642 and 648 due to further withdrawals/loss to follow-up."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Protein prescribed: 2.2 ± 0.1 vs 1.1 ± 0.2 g/kg/day; delivered: 1.6 ± 0.5 vs 0.9 ± 0.3 g/kg/day. Protein adequacy (delivered/prescribed): 72.6% vs 75.4%; ≥80% achieved in 45.0% vs 47.1%. Energy delivery similar (14.7 ± 5.5 vs 13.2 ± 4.3 kcal/kg/day). Route of nutrition similar (enteral-only 92.6% vs 91.3%)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly comparable: APACHE II 21 (16–27) vs 21 (15–26); SOFA 9 (6–11) vs 9 (6–11); vasopressors 39% vs 41%; baseline AKI 25% vs 23%. Time from ICU admission to randomisation: 38.5 ± 26.4 vs 39.8 ± 27.3 h; time to EN start: 16.0 ± 18.2 vs 16.1 ± 18.1 h."
+        }
+      ],
+      "verdict": "Moderate — randomisation and balanced baseline risk support internal validity, but open-label delivery, post-randomisation exclusions, incomplete achievement of the high-dose target, and early outcome switching/curtailed recruitment constrain confidence (particularly for subgroup inferences)."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled mechanically ventilated adults at high nutritional risk across diverse countries and ICU types, increasing generalisability to similar ventilated ICU cohorts. Excluded those without clinician equipoise or expected to die/withdraw life-sustaining treatment within 7 days, limiting applicability to the most imminently dying."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings most applicable to ICUs with established dietetic input and access to high-protein enteral feeds, modular protein, and/or parenteral amino acids. Applicability to non-ventilated, lower-risk, or prolonged critical illness beyond 28 days is uncertain."
+        }
+      ],
+      "verdict": "Generalisability is good for mechanically ventilated, nutritionally high-risk ICU patients in resource-equipped ICUs internationally, but is more limited for low-risk ICU populations, settings without advanced nutrition delivery options, and patients with imminent end-of-life trajectories."
+    },
+    "strengths": [
+      "Large, international, pragmatic, registry-based randomised trial across 85 ICUs.",
+      "Enrichment for high nutritional risk patients most likely to be protein-responsive.",
+      "Meaningful achieved separation in protein delivery (1.6 ± 0.5 vs 0.9 ± 0.3 g/kg/day) with broadly similar energy delivery.",
+      "Appropriate competing-risk methods for the discharge-alive endpoint."
+    ],
+    "limitations": [
+      "Recruitment curtailed with a mid-trial primary outcome switch, reducing power for mortality and complicating interpretation.",
+      "Open-label delivery with potential performance bias and discharge-practice influence.",
+      "Modified intention-to-treat analysis with post-randomisation exclusions and small amounts of missing follow-up data.",
+      "High-dose target (≥2.2 g/kg/day) was not achieved on average (mean delivered 1.6 g/kg/day), increasing risk of a 'dose dilution' bias towards null for benefit (and possibly for harm).",
+      "No pre-specified functional recovery endpoints (e.g., strength, muscle mass, long-term quality of life), despite mechanistic rationale focused on muscle preservation."
+    ],
+    "critical_appraisal": {
+      "summary": "EFFORT Protein is a large pragmatic RCT with moderate internal validity due to open-label design, incomplete target achievement, and early termination with outcome switching. External validity is good for high-risk ventilated patients in well-resourced ICUs. The neutral result for the primary outcome and potential harm signal in AKI suggest that routine use of very high early protein is not supported.",
+      "strengths": [
+        "Large sample size and international multicentre design enhance generalisability.",
+        "Enrichment for high-risk patients increases clinical relevance.",
+        "Meaningful separation in protein delivery despite pragmatic design.",
+        "Appropriate statistical methods for competing risks."
+      ],
+      "weaknesses": [
+        "Open-label design may introduce performance bias, especially for discharge timing.",
+        "Early termination and primary outcome switch reduce power and interpretability for mortality.",
+        "High-dose target not achieved, leading to potential dilution of effect.",
+        "Post-randomisation exclusions and missing data, though small, could introduce bias.",
+        "Lack of functional recovery endpoints limits mechanistic insight."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In high nutritional risk ventilated ICU patients, prescribing very high protein (≥2.2 g/kg/day, achieved ~1.6 g/kg/day) did not improve time-to-discharge-alive or 60-day mortality compared with usual dosing. Higher protein increased azotaemia and showed an exploratory harm signal in acute kidney injury, supporting a cautious, individualised approach rather than routine escalation. Achieving sustained high protein delivery was challenging even in trial settings.",
+    "clinical_bottom_line": {
+      "verdict": "Routine use of very high early protein dosing (≥2.2 g/kg/day) in nutritionally high-risk ventilated ICU patients is not supported; a moderate, progressive, and individualised approach is preferred, with caution in acute kidney injury.",
+      "applies_to": "Mechanically ventilated adult ICU patients with high nutritional risk, in settings with access to high-protein nutrition products.",
+      "does_not_mean": "Protein is harmful in all patients; the trial does not rule out benefit in specific subgroups or with later, more moderate dosing. The harm signal in AKI is exploratory and requires confirmation.",
+      "implementation_caveats": [
+        "Achieving ≥2.2 g/kg/day is difficult in practice; focus on delivering moderate protein (e.g., 1.2–1.5 g/kg/day) early, with gradual escalation.",
+        "Monitor urea and renal function; consider limiting protein in patients with acute kidney injury or rising urea.",
+        "Individualise protein dosing based on nutritional risk, organ function, and phase of illness.",
+        "Energy delivery should be optimised but not excessive; avoid overfeeding."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping and outcome switching",
+        "notes": "Stopping early (planned n=4000; randomised n=1329) and switching the primary endpoint to time-to-discharge-alive increases susceptibility to outcome switching concerns and limits precision for mortality effects. Time-to-discharge-alive is clinically relevant but partially health-system-dependent (bed capacity, step-down availability, discharge practices)."
+      },
+      {
+        "topic": "Dose dilution and overlap between groups",
+        "notes": "The achieved difference (1.6 vs 0.9 g/kg/day) was meaningful but below the prescribed high-dose target (≥2.2 g/kg/day), with overlap at the tails (control maximum 1.9 g/kg/day; intervention minimum 0.1 g/kg/day), which can attenuate true effects."
+      },
+      {
+        "topic": "Renal phenotype signal (acute kidney injury)",
+        "notes": "Exploratory subgroup analyses suggested possible harm in acute kidney injury (time-to-discharge-alive sHR 0.5; 95% CI 0.4–0.8; interaction P=0.001; 60-day mortality RR 1.4; 95% CI 1.1–1.8; interaction P=0.02). A subsequent post hoc analysis further examined kidney injury and suggested differential effects according to renal replacement therapy exposure. Increased urea and urea ≥30 mmol/L provide biological coherence for renal solute burden as a potential mediator or marker of intolerance."
+      },
+      {
+        "topic": "Editorial and correspondence critique",
+        "notes": "Contemporary commentary emphasised that EFFORT Protein challenges the assumption that 'more protein is always better' early in critical illness and highlighted the need for stage-based and individualised protein strategies (including caution in organ failure phenotypes). Correspondence reinforced uncertainty regarding optimal timing and patient selection."
+      },
+      {
+        "topic": "Subsequent trials, syntheses, and guidelines",
+        "notes": "PRECISe trial reported no functional recovery advantage and signalled worse health-related quality of life and longer time-to-discharge-alive with higher protein provision; it did not reproduce the EFFORT Protein harm signal in acute kidney injury or high SOFA subgroups. An updated meta-analysis reported no overall short-term mortality benefit (RR 0.99; 95% CI 0.90–1.08) and a signal of increased mortality with higher protein among patients with acute kidney injury (RR 1.42; 95% CI 1.11–1.82), alongside higher urea (mean difference 2.31 mmol/L; 95% CI 1.85–2.77). Recent expert recommendations propose lower protein (0.2–0.9 g/kg/day) during the first ICU week rather than 'standard' 1.0–1.3 g/kg/day, with escalation back to 1.0–1.3 g/kg/day by the end of week 1."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PRECISe",
+        "relation": "A protocolised, blinded RCT in mechanically ventilated ICU patients that reported no functional recovery advantage and signalled worse health-related quality of life and longer time-to-discharge-alive with higher protein provision; did not reproduce the EFFORT Protein harm signal in acute kidney injury or high SOFA subgroups."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal protein dose and timing in different phases of critical illness and in subgroups (e.g., AKI, frailty, obesity).",
+      "Whether functional recovery or long-term quality of life is affected by protein dosing.",
+      "The role of protein dosing in patients without high nutritional risk.",
+      "How to individualise protein prescription based on dynamic metabolic tolerance (e.g., urea kinetics)."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1329 randomised, 1301 analysed",
+        "Primary outcome: time-to-discharge-alive 46.1% vs 50.2% (sHR 0.91, 95% CI 0.77–1.07, P=0.27)",
+        "60-day mortality: 34.6% vs 32.1% (RR 1.08, 95% CI 0.92–1.26)",
+        "Achieved protein: 1.6 vs 0.9 g/kg/day",
+        "AKI subgroup: mortality RR 1.4 (95% CI 1.1–1.8, interaction P=0.02)"
+      ],
+      "one_line_takeaway": "In high-risk ventilated ICU patients, very high early protein did not improve outcomes and may harm those with acute kidney injury; use moderate, progressive, individualised dosing."
+    }
+  },
+  "_source_id": "EFFORT_Protein",
+  "_source_system": "Nutrition"
+}

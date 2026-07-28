@@ -1,0 +1,323 @@
+{
+  "id": "CLIP-II",
+  "trial_name": "CLIP-II — Cryopreserved vs Liquid-Stored Platelets for Surgical Bleeding (2025)",
+  "specialty": "Haematology",
+  "subtopic": "Blood Product Transfusion",
+  "year": 2025,
+  "journal": "JAMA",
+  "citation": "Reade MC, Marks DC, Howe BD, Bailey MJ, Bannon PG, Eastwood GM, et al; CLIP-II Investigators. Cryopreserved vs liquid-stored platelets for the treatment of surgical bleeding: the CLIP-II randomized noninferiority clinical trial. JAMA. Published online December 8, 2025.",
+  "doi": "https://doi.org/10.1001/jama.2025.23355",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, parallel-group, noninferiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 202,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In high-risk cardiac surgery patients requiring platelet transfusion, cryopreserved platelets did not meet noninferiority for 24-hour bleeding and were associated with increased bleeding and transfusion exposure.",
+  "pico": {
+    "population": "Adult high-risk cardiac surgery patients (ACSePT score ≥1 or clinician judgement) who required platelet transfusion intraoperatively or within 24 hours of ICU admission.",
+    "intervention": "DMSO cryopreserved group O apheresis platelets (up to 3 units) with open-label rescue platelets allowed.",
+    "comparison": "Standard liquid-stored platelets (buffy coat–derived pooled or apheresis, ABO-matched, up to 3 units) with rescue allowed.",
+    "outcome": "24-hour ICU chest drain bleeding (noninferiority margin 20% increase)."
+  },
+  "keywords": [
+    "cryopreserved platelets",
+    "liquid-stored platelets",
+    "platelet transfusion",
+    "cardiac surgery",
+    "bleeding",
+    "blood product",
+    "transfusion medicine"
+  ],
+  "related_trials": [
+    "CLIP-I"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Liquid-stored platelets require room-temperature storage and have short shelf-life (5–7 days), causing supply fragility, wastage, and 'platelet deserts'. DMSO cryopreservation at –80°C extends storage to years, but alters platelet phenotype (activation/procoagulant changes) and may affect haemostatic efficacy and thrombosis risk.",
+      "knowledge_gap": "Modern, blinded comparative effectiveness data for cryopreserved platelets in major bleeding and cardiac surgery were lacking.",
+      "hypothesis": "Cryopreserved platelets are noninferior to liquid-stored platelets for haemostatic effectiveness in high-risk cardiac surgery."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, parallel-group, noninferiority trial at 11 Australian tertiary hospitals (August 2021 to April 2024).",
+      "setting": "11 Australian tertiary hospitals; postoperative ICU care.",
+      "population": {
+        "inclusion": [
+          "Adults at high risk of platelet transfusion (ACSePT score ≥1 or clinician judgement) undergoing cardiac surgery, not previously transfused platelets in current admission."
+        ],
+        "exclusion": [
+          "Females aged 18–55 years with RhD-negative or unknown status; history of DVT or PE; coagulopathic conditions; other protocol-defined exclusions."
+        ]
+      },
+      "intervention": "DMSO cryopreserved group O apheresis platelets (up to 3 units), initiated intraoperatively or within 24h after ICU admission when platelet transfusion indicated.",
+      "comparison": "Standard liquid-stored platelets (buffy coat–derived pooled or apheresis, ABO-matched, up to 3 units).",
+      "blinding": "Double-blind (patients and clinicians). Allocation concealed; blood bank and designated unblinded staff knew allocation.",
+      "sample_size_power": "202 transfused patients (101/group) for 90% power with a one-sided 95% CI, noninferiority margin 20% increase (188 mL).",
+      "primary_outcome": "24-hour ICU chest drain blood loss (geometric mean, ratio of geometric means).",
+      "secondary_outcomes": [
+        "Total postsurgical chest drain bleeding",
+        "BARC type 4 bleeding composite",
+        "RBC transfusion in first 24h",
+        "FFP transfusion at any time",
+        "Cryoprecipitate transfusion at any time",
+        "Open-label platelet use",
+        "Lowest platelet count in first 24h",
+        "Mortality at day 90",
+        "ICU length of stay"
+      ],
+      "follow_up": "90 days for mortality and selected complications; hospital outcomes assessed."
+    },
+    "results": {
+      "headline_bullets": [
+        "Noninferiority not met: bleeding ratio 1.13 (95% CI 0.96–1.34), upper CI 1.34 exceeds margin 1.20.",
+        "Cryopreserved platelets associated with higher total bleeding (1273 vs 972 mL) and greater transfusion exposure (RBC 52.9% vs 38.8%, FFP 75.0% vs 50.0%).",
+        "Rescue open-label platelet use substantially higher (42.3% vs 12.2%), suggesting reduced haemostatic adequacy."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: 24-hour ICU chest drain bleeding (mL)",
+          "group_a": "605 (532–688)",
+          "group_b": "535 (480–596)",
+          "effect_measure": "Ratio of geometric means",
+          "effect_value": "1.13",
+          "ci_95": "0.96–1.34",
+          "p_value": "0.07 (one-sided)",
+          "note": "Noninferiority margin 1.20; upper CI 1.34 exceeds margin."
+        },
+        {
+          "outcome": "Total postsurgical chest drain bleeding (mL)",
+          "group_a": "1273 (1096–1479)",
+          "group_b": "972 (848–1114)",
+          "effect_measure": "Adjusted ratio",
+          "effect_value": "1.29",
+          "ci_95": "1.06–1.56",
+          "p_value": "",
+          "note": "Cryopreserved group had significantly greater bleeding."
+        },
+        {
+          "outcome": "BARC type 4 bleeding composite",
+          "group_a": "33/104 (31.7%)",
+          "group_b": "19/98 (19.4%)",
+          "effect_measure": "Adjusted risk difference",
+          "effect_value": "9.8%",
+          "ci_95": "-0.6% to 20.3%",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Received RBC transfusion in first 24h in ICU",
+          "group_a": "55/104 (52.9%)",
+          "group_b": "38/98 (38.8%)",
+          "effect_measure": "Adjusted risk difference",
+          "effect_value": "13.2%",
+          "ci_95": "3.8% to 22.5%",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Received FFP transfusion at any time",
+          "group_a": "78/104 (75.0%)",
+          "group_b": "49/98 (50.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "25.0%",
+          "ci_95": "12.1% to 37.9%",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Received cryoprecipitate transfusion at any time",
+          "group_a": "74/104 (71.2%)",
+          "group_b": "53/98 (54.1%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "17.1%",
+          "ci_95": "3.9% to 30.2%",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Received open-label (nonstudy) liquid platelets at any time",
+          "group_a": "44/104 (42.3%)",
+          "group_b": "12/98 (12.2%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "30.1%",
+          "ci_95": "18.6% to 41.6%",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Lowest platelet count in first 24h in ICU (×10^9/L)",
+          "group_a": "103 (81–129)",
+          "group_b": "140 (110–177)",
+          "effect_measure": "Difference in medians",
+          "effect_value": "-36",
+          "ci_95": "-50 to -22",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Mortality at day 90",
+          "group_a": "13/104 (12.5%)",
+          "group_b": "5/98 (5.1%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Trial not powered for mortality; interpret cautiously."
+        },
+        {
+          "outcome": "ICU length of stay (days)",
+          "group_a": "3.8 (2.0–6.0)",
+          "group_b": "3.0 (1.9–4.9)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Medians reported."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Safety outcomes not formally compared; numerically higher mortality (12.5% vs 5.1%) and possibly other adverse events in cryopreserved group, but trial not powered for safety."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, computer-generated randomisation with permuted blocks, stratified by hospital; allocation concealed from treating clinicians and patients."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind design, but differential open-label platelet use (42.3% vs 12.2%) likely increased risk of unblinding and could influence subsequent transfusion decisions."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary analysis included only transfused participants (202/388), creating a modified ITT cohort vulnerable to selection bias. 92 and 94 participants per group were randomised but did not require transfusion and were excluded."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Incomplete protocol separation due to rescue; open-label platelet exposure significantly different, and early open-label use before completion of study platelets (25.0% vs 3.1%) further complicates analysis."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Baseline characteristics among transfused participants were broadly similar (age 66.9 vs 67.2 years; EuroSCORE II 4.5 vs 4.5; CPB time 137 vs 141 minutes)."
+        },
+        {
+          "domain": "Dose and physiological separation",
+          "notes": "Cryopreserved group received more study platelets (median 2 vs 1 units) and more total platelets; lowest platelet count in 24h significantly lower (103 vs 140 ×10^9/L), indicating reduced effective platelet replacement."
+        },
+        {
+          "domain": "Adjunctive therapy",
+          "notes": "Greater exposure to FFP (75.0% vs 50.0%) and cryoprecipitate (71.2% vs 54.1%) in cryopreserved group, suggesting compensatory care and complicating attribution of bleeding outcomes."
+        }
+      ],
+      "verdict": "Overall, internal validity is moderate: randomisation and objective outcome measurement were strong, but the modified ITT analysis, substantial differential rescue platelet use, and likely partial unblinding reduce confidence that observed differences purely reflect platelet product efficacy."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High-risk adult cardiac surgery patients at Australian tertiary centres; findings most directly apply to similar cardiothoracic surgical populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Well-resourced tertiary centres; generalisability to low-resource hospitals, rural 'platelet deserts', and prehospital/military settings uncertain, despite these being key target use-cases."
+        },
+        {
+          "domain": "Intervention specificity",
+          "notes": "Cryopreserved platelets were group O apheresis units reconstituted in plasma; performance may differ with other cryopreservation methods, storage durations, or ABO strategies."
+        },
+        {
+          "domain": "Bleeding context",
+          "notes": "This was cardiac surgery bleeding; extrapolation to trauma, obstetric haemorrhage, and medical thrombocytopenia cannot be assumed."
+        }
+      ],
+      "verdict": "External validity is moderate for high-risk cardiac surgery in high-income settings using similar cryopreserved platelet manufacture and transfusion workflows, but limited for other haemorrhage contexts and the remote settings most motivated by platelet shelf-life constraints."
+    },
+    "strengths": [
+      "Double-blind, randomised multicentre design with stratification by hospital",
+      "Objective primary endpoint (24-hour ICU chest drain bleeding) with prespecified noninferiority margin",
+      "Pragmatic embedding into real-world perioperative bleeding management",
+      "Directly addresses a translational question: can a logistics-optimised platelet product replace standard platelets in major surgical bleeding?"
+    ],
+    "limitations": [
+      "Primary analysis included only transfused participants (202/388), weakening classic ITT protection against selection bias",
+      "Differential rescue/open-label platelet use (42.3% vs 12.2%) likely reduced blinding integrity and complicated causal attribution",
+      "Trial not powered to robustly assess uncommon safety outcomes or mortality; numerical imbalances cannot be definitively resolved",
+      "Cryopreserved platelets were group O and reconstituted in plasma; results may not generalise to other products, ABO strategies, or storage technologies"
+    ],
+    "critical_appraisal": {
+      "summary": "CLIP-II was a well-designed noninferiority trial with objective endpoints, but the modified ITT analysis, differential rescue platelet use, and potential unblinding reduce confidence that the observed inferiority of cryopreserved platelets is solely attributable to product efficacy.",
+      "strengths": [
+        "Double-blind, multicentre, objective primary outcome",
+        "Prespecified noninferiority margin and analysis",
+        "Pragmatic design enhances clinical relevance"
+      ],
+      "weaknesses": [
+        "Modified ITT (transfused-only) weakens selection bias protection",
+        "Differential rescue platelet use likely compromised blinding",
+        "Underpowered for safety outcomes",
+        "Limited generalisability beyond high-risk cardiac surgery"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In high-risk cardiac surgery patients requiring platelet transfusion, cryopreserved platelets did not meet noninferiority for haemostatic effectiveness and were associated with higher bleeding and increased transfusion exposure. Routine replacement of liquid-stored platelets with cryopreserved platelets is not supported.",
+    "clinical_bottom_line": {
+      "verdict": "Cryopreserved platelets should not replace standard liquid-stored platelets for routine use in cardiac surgery; they may serve as a contingency product during supply shortages.",
+      "applies_to": "High-risk adult cardiac surgery patients in tertiary centers.",
+      "does_not_mean": "That cryopreserved platelets are completely ineffective; they may still be better than nothing when liquid platelets are unavailable.",
+      "implementation_caveats": [
+        "If used as a contingency, anticipate higher bleeding and greater transfusion needs; ensure availability of rescue products and careful monitoring."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Noninferiority design choices",
+        "notes": "The trial used a 20% noninferiority margin (188 mL) and a transfused-only primary analysis cohort (modified ITT), aligning with the pragmatic clinical question but reducing the protective features of a full ITT framework."
+      },
+      {
+        "topic": "Potential unblinding via rescue",
+        "notes": "The large between-group difference in open-label platelet use (42.3% vs 12.2%) plausibly compromised blinding and may have contributed to downstream transfusion differences; accompanying editorial emphasised this as a key interpretive challenge."
+      },
+      {
+        "topic": "Consistency with prior trials",
+        "notes": "A pilot RCT (CLIP-I) supported feasibility but was underpowered; an older bypass-era trial suggested potential differences in haemostatic performance, underscoring the need for contemporary, adequately powered trials (which CLIP-II provides)."
+      },
+      {
+        "topic": "Biology vs effectiveness",
+        "notes": "Cryopreservation-associated platelet activation and functional change is well described; CLIP-II’s lower postoperative platelet counts and greater haemostatic product needs are consistent with reduced effective platelet replacement."
+      },
+      {
+        "topic": "Economic implications",
+        "notes": "A subsequent economic evaluation based on CLIP-II data reported that cryopreserved platelets were not cost-effective relative to liquid-stored platelets under base-case assumptions."
+      },
+      {
+        "topic": "Broader evidence base and guidance",
+        "notes": "Recent systematic reviews and transfusion guidelines provide evolving evidence, but direct evidence to support routine substitution of cryopreserved for liquid-stored platelets in major surgical bleeding remains limited."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CLIP-I",
+        "relation": "Pilot RCT in perioperative bleeding that supported feasibility but was underpowered for definitive clinical outcomes."
+      }
+    ],
+    "unresolved_questions": [
+      "Are cryopreserved platelets effective in other bleeding contexts (trauma, obstetrics)?",
+      "What is the optimal cryopreservation method, dosage, and ABO strategy to improve haemostasis?",
+      "Can improved products reduce bleeding and rescue transfusion needs?",
+      "What is the role of cryopreserved platelets in low-resource or remote settings where liquid platelets are unavailable?",
+      "What is the cost-effectiveness in contingency scenarios?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=202 transfused",
+        "Primary endpoint ratio 1.13 (95% CI 0.96–1.34) – noninferiority not met",
+        "Rescue open-label platelets 42.3% vs 12.2%",
+        "Mortality 12.5% vs 5.1% (not powered)"
+      ],
+      "one_line_takeaway": "Cryopreserved platelets did not meet noninferiority for haemostasis in cardiac surgery and were associated with more bleeding and transfusion; they should not replace standard liquid platelets for routine use."
+    }
+  },
+  "_source_id": "CLIP-II",
+  "_source_system": "Haematology"
+}

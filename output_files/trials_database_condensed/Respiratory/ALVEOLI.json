@@ -1,0 +1,326 @@
+{
+  "id": "ALVEOLI",
+  "trial_name": "ALVEOLI — Higher vs Lower PEEP in ARDS (2004)",
+  "specialty": "Respiratory",
+  "subtopic": "ARDS",
+  "year": 2004,
+  "journal": "New England Journal of Medicine",
+  "citation": "Brower RG, Lanken PN, MacIntyre N, Matthay MA, Morris A, Ancukiewicz M, et al; National Heart, Lung, and Blood Institute ARDS Clinical Trials Network. Higher versus lower positive end-expiratory pressures in patients with the acute respiratory distress syndrome. N Engl J Med. 2004;351(4):327-336.",
+  "doi": "https://doi.org/10.1056/NEJMoa032193",
+  "registration": "",
+  "trial_type": "RCT — multicenter, parallel-group, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 549,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In patients with ALI/ARDS ventilated with low tidal volumes, a protocolized higher-PEEP strategy improved oxygenation but did not reduce mortality or increase ventilator-free days compared to a lower-PEEP strategy.",
+  "pico": {
+    "population": "Mechanically ventilated ICU patients with acute lung injury/ARDS (PaO2/FiO2 ≤300), enrolled within 36 hours of meeting criteria.",
+    "intervention": "Higher-PEEP strategy using a higher FiO2/PEEP table to achieve PaO2 55–80 mmHg or SpO2 88–95%, with a low-tidal-volume, plateau-pressure-limited ventilation backbone.",
+    "comparison": "Lower-PEEP strategy using a lower FiO2/PEEP table to achieve the same oxygenation targets, with the same low-tidal-volume, plateau-pressure-limited ventilation backbone.",
+    "outcome": "Death before discharge home while breathing without assistance."
+  },
+  "keywords": [
+    "PEEP",
+    "ARDS",
+    "ALI",
+    "lung-protective ventilation",
+    "open lung",
+    "atelectrauma",
+    "recruitment"
+  ],
+  "related_trials": [
+    "LOVS",
+    "EXPRESS"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Ventilator-induced lung injury (VILI) was conceptualized as arising from regional overdistension and cyclic opening/closing ('atelectrauma'). PEEP can recruit lung units and reduce atelectrauma, but excessive PEEP may worsen overdistension and hemodynamic compromise. Lung-protective ventilation with lower tidal volumes had demonstrated a mortality benefit.",
+      "knowledge_gap": "Prior 'open lung' strategies often co-intervened (lower tidal volume, recruitment maneuvers, and higher PEEP), making the independent effect of higher PEEP on patient-centered outcomes uncertain.",
+      "hypothesis": "In patients managed with a low-tidal-volume, plateau-pressure-limited strategy, a protocolized higher-PEEP approach reduces mortality compared with a protocolized lower-PEEP approach."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, parallel-group ARDSNet trial; open-label ventilator management.",
+      "setting": "23 hospitals in the ARDSNet network; enrolled October 1999 to February 2002.",
+      "population": {
+        "inclusion": [
+          "Acute lung injury/ARDS with PaO2/FiO2 ≤300",
+          "Bilateral infiltrates on chest radiograph",
+          "No clinical evidence of left atrial hypertension",
+          "Enrolment within 36 hours of meeting eligibility criteria"
+        ],
+        "exclusion": [
+          ">36 hours since meeting criteria",
+          "Age <13 years",
+          "Pregnancy",
+          "Increased intracranial pressure",
+          "Severe neuromuscular disease",
+          "Sickle cell disease",
+          "Severe chronic respiratory disease",
+          "Body weight >1 kg per cm of height",
+          "Burns >40% body surface area",
+          "Severe chronic liver disease",
+          "Vasculitis with diffuse alveolar haemorrhage",
+          "Coexisting condition with estimated 6-month mortality >50%",
+          "Enrolment in another trial within 30 days"
+        ]
+      },
+      "intervention": "Higher-PEEP strategy: PEEP titrated using a higher FiO2/PEEP table. After 171 patients, the table was modified to eliminate combinations with PEEP <12 cmH2O. Recruitment maneuvers were assessed in the first 80 patients as single sustained inflations but not continued thereafter.",
+      "comparison": "Lower-PEEP strategy: PEEP titrated using a lower FiO2/PEEP table.",
+      "blinding": "Unblinded (ventilator settings not practically blindable); primary outcome largely objective (mortality/discharge status).",
+      "sample_size_power": "750 planned to detect a 10% absolute mortality reduction (from 28% to 18%) with 89% power at two-sided α=0.05; interim analyses after ~250 and ~500 patients with asymmetric stopping boundaries including a futility rule.",
+      "primary_outcome": "Death before discharge home while breathing without assistance.",
+      "secondary_outcomes": [
+        "Breathing without assistance by day 28",
+        "Ventilator-free days (day 1–28)",
+        "ICU-free days (day 1–28)",
+        "Barotrauma",
+        "Days without circulatory, coagulation, hepatic, or renal failure (day 1–28)"
+      ],
+      "follow_up": "Mortality and discharge status assessed using a 60-day cumulative approach; ventilator-free days, ICU-free days, and organ-failure–free days assessed to day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early for futility at the second interim analysis after 549 patients enrolled.",
+        "Higher PEEP improved oxygenation (day 1 PaO2/FiO2 220 vs 168) but did not improve mortality (27.5% vs 24.9%).",
+        "No difference in ventilator-free days (13.8 vs 14.5) or barotrauma (11% vs 10%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death before discharge home while breathing without assistance (primary, unadjusted)",
+          "group_a": "27.5%",
+          "group_b": "24.9%",
+          "effect_measure": "Difference (Lower − Higher)",
+          "effect_value": "−2.6 percentage points",
+          "ci_95": "−10.0 to 4.7",
+          "p_value": "0.48",
+          "note": "Higher PEEP n=276; Lower PEEP n=273"
+        },
+        {
+          "outcome": "Death before discharge home while breathing without assistance (covariate-adjusted)",
+          "group_a": "25.1%",
+          "group_b": "27.5%",
+          "effect_measure": "Difference",
+          "effect_value": "Not reported",
+          "ci_95": "−3.6 to 8.4",
+          "p_value": "0.47",
+          "note": "Adjusted for baseline imbalances (age and baseline PaO2/FiO2)"
+        },
+        {
+          "outcome": "Breathing without assistance by day 28",
+          "group_a": "72.3%",
+          "group_b": "72.8%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.89",
+          "note": ""
+        },
+        {
+          "outcome": "Ventilator-free days (day 1–28)",
+          "group_a": "13.8 ± 10.6",
+          "group_b": "14.5 ± 10.4",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.50",
+          "note": ""
+        },
+        {
+          "outcome": "ICU-free days (day 1–28)",
+          "group_a": "12.3 ± 10.3",
+          "group_b": "12.2 ± 10.4",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.83",
+          "note": ""
+        },
+        {
+          "outcome": "Barotrauma",
+          "group_a": "11%",
+          "group_b": "10%",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.51",
+          "note": ""
+        },
+        {
+          "outcome": "Days without circulatory, coagulation, hepatic, or renal failure (day 1–28)",
+          "group_a": "16 ± 11",
+          "group_b": "16 ± 11",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.82",
+          "note": ""
+        },
+        {
+          "outcome": "Protocol separation (day 1): PEEP (cmH2O)",
+          "group_a": "14.7 ± 3.5",
+          "group_b": "8.9 ± 3.5",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.01",
+          "note": ""
+        },
+        {
+          "outcome": "Protocol separation (day 1): FiO2",
+          "group_a": "0.44 ± 0.17",
+          "group_b": "0.54 ± 0.18",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.05",
+          "note": ""
+        },
+        {
+          "outcome": "Physiology (day 1): PaO2/FiO2",
+          "group_a": "220 ± 89",
+          "group_b": "168 ± 66",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.01",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Barotrauma: 11% (Higher PEEP) vs 10% (Lower PEEP), P=0.51",
+      "Higher PEEP increased airway pressures (e.g., day 1 plateau pressure 27 ± 6 vs 24 ± 7 cmH2O) without a detected increase in barotrauma."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central interactive voice system; permuted blocks of 4 and 6; stratified by hospital. Supports allocation concealment and balance across centres."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded ventilator management introduces potential performance bias (co-interventions, clinician behaviour), but the primary outcome (mortality/discharge status) is relatively objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "No post-randomisation exclusions were reported; outcomes are presented for all randomised patients (Higher PEEP n=276; Lower PEEP n=273)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Both arms were ventilated at low tidal volumes (approximately 6 mL/kg PBW). Higher-PEEP table was modified after 171 patients and recruitment manoeuvres were evaluated only in the first 80 higher-PEEP patients, which may increase within-arm heterogeneity over time."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly similar; notable imbalances included older age in Higher PEEP (54 ± 17 vs 49 ± 17 years) and lower baseline PaO2/FiO2 (151 ± 67 vs 165 ± 77), addressed via adjusted analyses (no change in inference)."
+        }
+      ],
+      "verdict": "Overall, internal validity is moderate to strong: randomisation/allocation processes were robust and protocol separation was clear, but lack of blinding, protocol evolution within the higher-PEEP arm, and early stopping for futility limit certainty about smaller subgroup-specific effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical adult ICU acute lung injury/ARDS population in a multicentre network, enrolled early (≤36 hours), increasing relevance to routine critical care. Important exclusions: significant chronic lung disease, severe chronic liver disease, extreme obesity, pregnancy, and conditions with high short-term mortality."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Uses pragmatic FiO2/PEEP tables (implementable at bedside), but does not incorporate modern personalised PEEP approaches (e.g., recruitability- or transpulmonary pressure-guided titration). Adjuncts now commonly used for moderate–severe ARDS (prone positioning, neuromuscular blockade, ECMO) were not protocolised and may modify the net effect of higher PEEP strategies in present-day practice."
+        }
+      ],
+      "verdict": "Findings are reasonably generalisable to adult ICU patients with early acute lung injury/ARDS managed with lung-protective ventilation, but applicability is more limited for extreme phenotypes, resource-limited settings, and modern care bundles where co-interventions may interact with PEEP strategy."
+    },
+    "strengths": [
+      "Large multicentre randomised trial",
+      "Pragmatic, protocolised PEEP delivery",
+      "Clear separation in PEEP/FiO2",
+      "Low-tidal-volume ventilation in both groups",
+      "Objective primary outcome",
+      "Pre-specified interim analyses and adjusted analyses addressing baseline imbalances"
+    ],
+    "limitations": [
+      "Unblinded intervention",
+      "Higher-PEEP protocol modified mid-trial",
+      "Recruitment manoeuvres applied only early in the higher-PEEP arm",
+      "Early stopping for futility (reduced power for smaller effects)",
+      "Broad eligibility (PaO2/FiO2 ≤300) may obscure severity-dependent benefit or harm",
+      "Limited reporting of co-interventions (e.g., prone positioning) that might influence outcomes"
+    ],
+    "critical_appraisal": {
+      "summary": "ALVEOLI is a well-conducted, pragmatic RCT with robust randomization and clear protocol separation, but its open-label design, mid-trial protocol changes, and early stopping for futility limit confidence in excluding smaller, clinically relevant effects, particularly in subgroups with more severe ARDS.",
+      "strengths": [
+        "Robust randomization and allocation concealment",
+        "Clear separation of the intervention (PEEP) between groups",
+        "Objective primary outcome (mortality)"
+      ],
+      "weaknesses": [
+        "Lack of blinding introduces potential for performance bias",
+        "Mid-trial protocol modification in the intervention arm",
+        "Early termination for futility reduces statistical power for detecting smaller effects"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In an unselected acute lung injury/ARDS cohort ventilated with low tidal volumes, 'routine' protocolised higher PEEP improved oxygenation but did not translate into improved survival or faster liberation from ventilation.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support the routine use of a higher-PEEP strategy for all patients with ALI/ARDS who are already receiving low-tidal-volume ventilation. The decision to use higher PEEP should be individualized.",
+      "applies_to": "Adult ICU patients with early ALI/ARDS (PaO2/FiO2 ≤300) managed with a lung-protective ventilation strategy.",
+      "does_not_mean": "Higher PEEP is harmful or should never be used. It means that a strategy of applying higher PEEP to all-comers based solely on an FiO2/PEEP table does not confer a mortality benefit.",
+      "implementation_caveats": [
+        "The benefit of higher PEEP may be concentrated in patients with more severe ARDS or higher lung recruitability, which this trial was not designed to fully assess.",
+        "Modern co-interventions (prone positioning, neuromuscular blockade) were not protocolized and may interact with PEEP strategy."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Powering and early stopping",
+        "notes": "The trial was powered for a large absolute mortality reduction (10%); stopping for futility strengthens inference against a large benefit, but cannot exclude smaller benefits (or harms) in clinically important subgroups."
+      },
+      {
+        "topic": "Protocol evolution within the intervention arm",
+        "notes": "The higher-PEEP table was modified after 171 patients to increase separation; this pragmatic adaptation improves 'dose' separation but complicates interpretation as a single uniform intervention."
+      },
+      {
+        "topic": "Subsequent large RCTs with higher-PEEP/open-lung approaches",
+        "notes": "Two major later trials (LOVS and EXPRESS) similarly did not demonstrate a clear mortality benefit for higher-PEEP strategies when applied broadly, reinforcing the probability that any benefit is modest and/or concentrated in specific phenotypes."
+      },
+      {
+        "topic": "Meta-analytic synthesis and heterogeneity of treatment effect",
+        "notes": "An individual patient data meta-analysis of the three major 'higher vs lower PEEP' trials (including ALVEOLI, LOVS, and EXPRESS) reported that overall benefit was not uniform and suggested effect modification by ARDS severity."
+      },
+      {
+        "topic": "Updated evidence synthesis",
+        "notes": "A Cochrane review (2021 update) concluded that higher vs lower PEEP likely results in little to no difference in mortality (RR 0.97; 95% CI 0.90 to 1.04) and little to no difference in barotrauma (RR 1.00; 95% CI 0.64 to 1.57), consistent with ALVEOLI’s neutral clinical outcomes despite physiologic improvements."
+      },
+      {
+        "topic": "Guideline trajectory",
+        "notes": "More recent consensus guidance incorporates ALVEOLI and later trials/meta-analyses, generally favouring lung-protective ventilation with consideration of higher PEEP in selected (often moderate–severe) ARDS, balancing oxygenation gains against overdistension and haemodynamic compromise."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "LOVS",
+        "relation": "A subsequent large RCT that also found no clear mortality benefit for a higher-PEEP strategy, reinforcing ALVEOLI's findings."
+      },
+      {
+        "trial": "EXPRESS",
+        "relation": "A subsequent large RCT that similarly did not demonstrate a clear mortality benefit for higher-PEEP strategies when applied broadly."
+      }
+    ],
+    "unresolved_questions": [
+      "Does a higher-PEEP strategy provide a mortality benefit in the subgroup of patients with more severe ARDS (e.g., PaO2/FiO2 <150)?",
+      "Can personalized PEEP titration strategies (e.g., guided by transpulmonary pressure, electrical impedance tomography, or recruitability) identify patients who benefit from higher PEEP?",
+      "How do modern co-interventions like prone positioning and neuromuscular blockade modify the effect of a higher-PEEP strategy?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=549 (stopped early for futility)",
+        "Mortality: 27.5% (Higher PEEP) vs 24.9% (Lower PEEP), P=0.48",
+        "Ventilator-free days: 13.8 vs 14.5, P=0.50",
+        "Day 1 PEEP: 14.7 vs 8.9 cmH2O"
+      ],
+      "one_line_takeaway": "Routine higher PEEP in unselected ARDS improves oxygenation but not survival; reserve it for individualized cases where the benefit of recruitment is judged to outweigh the risk of overdistension."
+    }
+  },
+  "_source_id": "ALVEOLI",
+  "_source_system": "Respiratory"
+}

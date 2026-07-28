@@ -1,0 +1,286 @@
+{
+  "id": "FLUID",
+  "trial_name": "FLUID — Hospital-Wide Lactated Ringer’s vs Normal Saline (2025)",
+  "specialty": "Cardiogenic Shock",
+  "subtopic": "Fluid Resuscitation",
+  "year": 2025,
+  "journal": "New England Journal of Medicine",
+  "citation": "McIntyre L, Fergusson D, McArdle T, et al. A crossover trial of hospital-wide lactated Ringer’s solution versus normal saline. N Engl J Med. 2025;393:660-670.",
+  "doi": "https://doi.org/10.1056/NEJMoa2416761",
+  "registration": "",
+  "trial_type": "Pragmatic, cluster-randomised, hospital-level crossover trial; open-label; administrative-data outcomes",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 43626,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In a hospital-wide cluster-crossover trial, default lactated Ringer’s vs normal saline did not significantly reduce 90-day death or readmission (adjusted relative difference 0.97, 95% CI 0.90–1.05).",
+  "pico": {
+    "population": "All hospital admissions (index admissions) across seven Ontario hospitals, excluding those with prior admission within 90 days, age <1 month, non-Ontario residents, and admissions during run-in/washout periods.",
+    "intervention": "Hospital-wide default use of lactated Ringer’s solution for intravenous crystalloid therapy, with clinician override allowed; target ≥80% of crystalloid inventory as assigned fluid.",
+    "comparison": "Hospital-wide default use of 0.9% normal saline, same operational approach.",
+    "outcome": "Death or hospital readmission within 90 days (primary composite)."
+  },
+  "keywords": [
+    "lactated Ringer's",
+    "normal saline",
+    "crystalloid",
+    "fluid resuscitation",
+    "cluster crossover",
+    "pragmatic trial"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "0.9% saline remains a common default crystalloid across emergency, perioperative and critical care pathways. Saline’s supraphysiological chloride load is biologically plausible as a driver of hyperchloraemic metabolic acidosis and renal vasoconstriction, and has been associated with adverse renal outcomes in non-randomised work. Prior pragmatic and individually randomised trials comparing balanced crystalloids with saline suggested (at most) small absolute effects, leaving uncertainty about whether a whole-hospital policy change would translate into meaningful patient-centred benefits at scale. Most prior definitive trials were ICU- or ED-centred; the “denominator” of general ward admissions and surgical/maternity/paediatric pathways remained comparatively under-tested in a policy-relevant way.",
+      "knowledge_gap": "Uncertainty about whether a whole-hospital policy change to balanced crystalloids would improve patient-centred outcomes across all admission types.",
+      "hypothesis": "Implementing lactated Ringer’s as the default, hospital-wide intravenous crystalloid (versus normal saline) reduces the 90-day composite of death or hospital readmission among all hospital admissions."
+    },
+    "methods": {
+      "design": "Pragmatic, cluster-randomised, hospital-level crossover trial; open-label; administrative-data outcomes; seven hospitals in Ontario, Canada; two 12-week intervention periods per hospital.",
+      "setting": "Whole-hospital (ED, wards, perioperative areas, and ICUs) within participating hospitals.",
+      "population": {
+        "inclusion": [
+          "All hospital admissions during active trial periods (analysed as “index” admissions)."
+        ],
+        "exclusion": [
+          "Prior hospital admission within the previous 90 days (to define index admissions)",
+          "age <1 month or missing birth date",
+          "not resident in Ontario",
+          "admissions during run-in/washout periods",
+          "data-quality exclusions (small numbers)"
+        ]
+      },
+      "intervention": "Hospital-wide default use of lactated Ringer’s solution for intravenous crystalloid therapy during assigned periods. Implementation via logistics and prescribing supports (e.g., stocking the assigned fluid to achieve an inventory target, and enabling default ordering), while allowing clinician override when clinically indicated. Target operational separation included maintaining ≥80% of available crystalloid inventory as the assigned trial fluid.",
+      "comparison": "Hospital-wide default use of 0.9% normal saline for intravenous crystalloid therapy during assigned periods, with the same operational approach and allowance for clinician override.",
+      "blinding": "Unblinded at clinician and site level (policy intervention); outcomes derived from routinely collected administrative data, reducing susceptibility of outcome ascertainment to performance/detection bias for objective endpoints.",
+      "sample_size_power": "Planned sample size of 12 hospitals to detect a 1.0 percentage point absolute reduction in the primary outcome (assumed 16% to 15%) with 80% power at a two-sided 5% significance level (cluster design assumptions included an intracluster correlation coefficient of 0.006 and cluster autocorrelation of 0.95); primary analysis by intention-to-treat using hospital-level aggregated outcomes and regression adjusted for calendar time, hospital size, and intervention period. Trial stopped early with 7 hospitals completing both periods.",
+      "primary_outcome": "Death or hospital readmission within 90 days.",
+      "secondary_outcomes": [
+        "Death within 90 days",
+        "Hospital readmission within 90 days",
+        "Emergency department visit within 90 days",
+        "New dialysis within 90 days",
+        "Hospital length of stay (hours)",
+        "Discharge to a facility other than home"
+      ],
+      "follow_up": "90 days from the index admission for the primary composite and most secondary outcomes."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary outcome (death/readmission at 90 days) was similar: 20.3% (SD 3.5) lactated Ringer’s vs 21.4% (SD 3.3) saline; adjusted relative difference 0.97 (95% CI 0.90–1.05), P=0.35.",
+        "All secondary outcomes (mortality, readmission, ED visits, new dialysis, length of stay, discharge destination) were also similar; no serious adverse events reported.",
+        "Pre-specified subgroup: age >80 years showed a risk difference of −3.41 percentage points (95% CI −6.25 to −0.56) for the primary outcome; other subgroups were consistent with the overall neutral result."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death or hospital readmission within 90 days (primary)",
+          "group_a": "20.3% (SD 3.5)",
+          "group_b": "21.4% (SD 3.3)",
+          "effect_measure": "Adjusted relative difference",
+          "effect_value": "0.97",
+          "ci_95": "0.90 to 1.05",
+          "p_value": "0.35",
+          "note": "Adjusted mean difference −0.53 percentage points (95% CI −1.85 to 0.79)"
+        },
+        {
+          "outcome": "Death within 90 days",
+          "group_a": "6.9% (SD 1.2)",
+          "group_b": "7.6% (SD 1.7)",
+          "effect_measure": "Adjusted relative difference",
+          "effect_value": "0.95",
+          "ci_95": "0.90 to 1.01",
+          "p_value": "Not reported",
+          "note": "Adjusted mean difference −0.35 percentage points (95% CI −0.73 to 0.03)"
+        },
+        {
+          "outcome": "Hospital readmission within 90 days",
+          "group_a": "15.1% (SD 2.9)",
+          "group_b": "15.4% (SD 2.1)",
+          "effect_measure": "Adjusted relative difference",
+          "effect_value": "0.97",
+          "ci_95": "0.86 to 1.09",
+          "p_value": "Not reported",
+          "note": "Adjusted mean difference −0.30 percentage points (95% CI −1.58 to 0.97)"
+        },
+        {
+          "outcome": "Emergency department visit within 90 days",
+          "group_a": "21.2% (SD 3.1)",
+          "group_b": "21.0% (SD 2.3)",
+          "effect_measure": "Adjusted relative difference",
+          "effect_value": "1.00",
+          "ci_95": "0.95 to 1.06",
+          "p_value": "Not reported",
+          "note": "Adjusted mean difference 0.04 percentage points (95% CI −1.34 to 1.41)"
+        },
+        {
+          "outcome": "New dialysis within 90 days",
+          "group_a": "0.5% (SD 0.3)",
+          "group_b": "0.6% (SD 0.5)",
+          "effect_measure": "Adjusted relative difference",
+          "effect_value": "0.91",
+          "ci_95": "0.50 to 1.68",
+          "p_value": "Not reported",
+          "note": "Adjusted mean difference −0.05 percentage points (95% CI −0.27 to 0.17)"
+        },
+        {
+          "outcome": "Hospital length of stay (hours)",
+          "group_a": "164.7 (SD 34.7)",
+          "group_b": "172.3 (SD 34.2)",
+          "effect_measure": "Adjusted mean difference",
+          "effect_value": "−0.002",
+          "ci_95": "−0.006 to 0.002",
+          "p_value": "Not reported",
+          "note": "Effect reported as published from adjusted regression on cluster-level summary data; adjusted relative difference not reported."
+        },
+        {
+          "outcome": "Discharge to a facility other than home",
+          "group_a": "15.4% (SD 4.8)",
+          "group_b": "16.2% (SD 4.6)",
+          "effect_measure": "Adjusted relative difference",
+          "effect_value": "0.98",
+          "ci_95": "0.87 to 1.11",
+          "p_value": "Not reported",
+          "note": "Adjusted mean difference −0.25 percentage points (95% CI −2.17 to 1.68)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Age >80 years",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "Risk difference",
+          "effect_value": "−3.41 percentage points",
+          "ci_95": "−6.25 to −0.56",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "ICU admission during index admission",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "Risk difference",
+          "effect_value": "−0.91 percentage points",
+          "ci_95": "−3.81 to 1.99",
+          "p_interaction": "Not reported"
+        }
+      ]
+    },
+    "safety": [
+      "No serious adverse events were reported by participating hospitals."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Hospital-level randomisation used permuted blocks (block size 2); allocation was held centrally and disclosed to sites approximately 1 month before initiating the first period."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery could influence co-interventions; however, outcomes were objectively captured via provincial administrative datasets, reducing subjectivity in ascertainment of death/readmission/dialysis."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary analysis included 43,626 index admissions (22,017 lactated Ringer’s; 21,609 saline); exclusions primarily reflected design definitions and data-linkage constraints rather than loss to follow-up. Post-randomisation exclusions: admissions excluded for being non-index (prior admission within 90 days; 1,211–1,934 per period), age <1 month or missing birth date (204–258 per period), non-Ontario residency (40–82 per period), and data-quality concerns (<6 per period)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Separation was incomplete but material: assigned trial fluid comprised 78.2% of administered intravenous crystalloids during lactated Ringer’s periods vs 93.6% during saline periods."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well matched at scale (e.g., age 62.7±22.0 vs 62.2±22.0 years; ICU admission on day 1: 7.0% vs 7.1%; mechanical ventilation on day 1: 3.3% vs 3.4%)."
+        }
+      ],
+      "verdict": "Moderate. The pragmatic cluster-crossover design and objective outcome capture support credible estimation of a policy-level effect, but early stopping (fewer clusters) and imperfect separation of crystalloid exposure materially limit precision and attenuate detectable effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad, whole-hospital admissions (medical, surgical, maternity, paediatric, mental health) were included, making results relevant to formulary-level decisions beyond ICU-only populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in Ontario hospitals with established procurement systems and administrative datasets; implementation may be harder where supply chains are constrained or where lactated Ringer’s availability is intermittent. Findings apply to a “default crystalloid” policy with clinician override, not to mandated patient-level administration of a fixed fluid volume. Exclusion of non-Ontario residents and infants <1 month may limit applicability to jurisdictions without comparable administrative linkage or neonatal populations."
+        }
+      ],
+      "verdict": "Generally good for similar high-income hospital systems considering a default crystalloid policy, with reduced transferability to settings where supply, ordering infrastructure, or case-mix (e.g., neonates) substantially differ."
+    },
+    "strengths": [
+      "Pragmatic policy intervention aligned to real-world formulary decisions",
+      "Large number of admissions across whole-hospital care pathways",
+      "Cluster crossover to mitigate between-hospital confounding",
+      "Objective, administrative-data outcomes with minimal loss to follow-up",
+      "Prespecified subgroup analyses and covariate adjustment"
+    ],
+    "limitations": [
+      "Stopped early with only seven clusters completing both periods, reducing power and precision",
+      "Open-label delivery with potential co-intervention changes",
+      "Incomplete exposure separation (78.2% vs 93.6% assigned fluid use)",
+      "Policy-level design cannot attribute effects to individual patient fluid receipt or volume",
+      "Results may not extrapolate to other balanced solutions (e.g., Plasma-Lyte) or to settings with different procurement and prescribing systems"
+    ],
+    "critical_appraisal": {
+      "summary": "FLUID provides moderate-quality evidence that a hospital-wide default lactated Ringer’s policy does not significantly reduce 90-day death/readmission compared with saline, but early termination and incomplete exposure separation limit precision and generalisability of the null finding.",
+      "strengths": [
+        "Pragmatic policy intervention aligned to real-world formulary decisions",
+        "Large number of admissions across whole-hospital care pathways",
+        "Cluster crossover to mitigate between-hospital confounding",
+        "Objective, administrative-data outcomes with minimal loss to follow-up",
+        "Prespecified subgroup analyses and covariate adjustment"
+      ],
+      "weaknesses": [
+        "Stopped early with only seven clusters completing both periods, reducing power and precision",
+        "Open-label delivery with potential co-intervention changes",
+        "Incomplete exposure separation (78.2% vs 93.6% assigned fluid use)",
+        "Policy-level design cannot attribute effects to individual patient fluid receipt or volume",
+        "Results may not extrapolate to other balanced solutions (e.g., Plasma-Lyte) or to settings with different procurement and prescribing systems"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In an unselected inpatient population, a hospital-wide lactated Ringer’s default policy did not materially change 90-day death/readmission compared with saline, suggesting that large outcome shifts from formulary substitution alone are unlikely.",
+    "clinical_bottom_line": {
+      "verdict": "Does not change practice; hospital-wide substitution of lactated Ringer’s for saline is unlikely to produce large population-level reductions in death/readmission.",
+      "applies_to": "Unselected inpatient populations in high-income hospital systems with established procurement and administrative data infrastructure.",
+      "does_not_mean": "That balanced crystalloids are harmful or that saline is superior; the trial was neutral and underpowered to detect small effects.",
+      "implementation_caveats": [
+        "Exposure separation was incomplete (78.2% vs 93.6%), so a stronger policy lever might yield different results.",
+        "Results may not apply to other balanced solutions like Plasma-Lyte.",
+        "Early stopping reduced cluster count, widening confidence intervals."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Extension of prior balanced-crystalloid evidence",
+        "notes": "FLUID extends prior balanced-crystalloid research to a whole-hospital policy setting; it complements ICU/ED pragmatic crossover trials and later large ICU trials that generally show small (or null) average effects, reinforcing that any benefit is likely modest and context-dependent."
+      },
+      {
+        "topic": "Magnitude of plausible benefit",
+        "notes": "Contemporary evidence syntheses (including systematic review/meta-analysis and individual patient data meta-analysis) support, at most, small absolute effects of balanced crystalloids over saline in broad critically ill populations; FLUID’s early termination means its confidence intervals remain compatible with similarly small benefit or harm in an unselected inpatient cohort."
+      },
+      {
+        "topic": "Methodological contribution (policy trial design)",
+        "notes": "FLUID’s published protocol and analysis plan, and the earlier pilot protocol, formalise a reproducible approach to hospital-wide crystalloid substitution trials (inventory targets, crossover structure, and administrative endpoint ascertainment)."
+      },
+      {
+        "topic": "Guideline context",
+        "notes": "Major critical care guidelines generally favour balanced crystalloids over saline for resuscitation in many contexts; these recommendations were largely developed before FLUID’s publication and therefore FLUID primarily strengthens whole-hospital generalisability rather than changing direction of guidance."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Whether stronger exposure separation (e.g., >90% assigned fluid use) would yield different results.",
+      "Whether specific high-risk subgroups (e.g., sepsis, AKI) benefit from balanced crystalloids.",
+      "Whether other balanced solutions (e.g., Plasma-Lyte) have different effects."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=43,626 index admissions",
+        "Primary outcome: 20.3% vs 21.4%, adjusted relative difference 0.97 (95% CI 0.90–1.05)",
+        "90-day mortality: 6.9% vs 7.6%, adjusted relative difference 0.95 (95% CI 0.90–1.01)",
+        "Assigned fluid use: 78.2% vs 93.6%"
+      ],
+      "one_line_takeaway": "Hospital-wide default lactated Ringer’s did not reduce 90-day death/readmission compared with saline, but incomplete exposure separation and early stopping limit certainty."
+    }
+  },
+  "_source_id": "FLUID",
+  "_source_system": "Circulatory"
+}

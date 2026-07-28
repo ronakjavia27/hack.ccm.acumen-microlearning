@@ -1,0 +1,270 @@
+{
+  "id": "SUP-ICU",
+  "trial_name": "SUP-ICU — Pantoprazole vs Placebo for Stress Ulcer Prophylaxis (2018)",
+  "specialty": "Gastrointestinal",
+  "subtopic": "Gastrointestinal Bleeding",
+  "year": 2018,
+  "journal": "New England Journal of Medicine",
+  "citation": "Krag M, Marker S, Perner A, Wetterslev J, Wise MP, Schefold JC, et al. Pantoprazole in Patients at Risk for Gastrointestinal Bleeding in the ICU. N Engl J Med. 2018;379:2199-2208.",
+  "doi": "10.1056/NEJMoa1714919",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3350,
+  "result_category": "Mixed",
+  "one_liner": "Pantoprazole 40 mg IV daily reduced clinically important GI bleeding but did not reduce 90-day mortality in ICU patients at risk.",
+  "pico": {
+    "population": "Adults acutely admitted to the ICU with ≥1 risk factor for GI bleeding (shock, coagulopathy, RRT, anticoagulants, mechanical ventilation >24 h, hepatic failure).",
+    "intervention": "Intravenous pantoprazole 40 mg once daily until ICU discharge, death, or day 90.",
+    "comparison": "Matching intravenous placebo once daily, with open-label acid suppression only if clinically indicated.",
+    "outcome": "90-day all-cause mortality (primary); clinically important GI bleeding; composite of clinically important events; infectious adverse events; days alive without life support."
+  },
+  "keywords": [
+    "pantoprazole",
+    "stress ulcer prophylaxis",
+    "GI bleeding",
+    "proton pump inhibitor",
+    "ICU",
+    "critical illness"
+  ],
+  "related_trials": [
+    "PEPTIC",
+    "REVISE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Stress-related mucosal disease and upper GI bleeding were historically frequent in critical illness. Modern ICU care (early enteral feeding, lung-protective ventilation, improved haemodynamic support) reduced bleeding incidence, shifting the risk–benefit balance for routine prophylaxis. Acid-suppressive prophylaxis (H2RAs/PPIs) remained common despite uncertainty about patient-important benefits (especially mortality) and plausible harms (e.g., infection through loss of gastric decontamination).",
+      "knowledge_gap": "Whether prophylactic pantoprazole reduces mortality or clinically important bleeding in contemporary ICU patients at risk of GI bleeding.",
+      "hypothesis": "Pantoprazole would reduce 90-day all-cause mortality compared with placebo."
+    },
+    "methods": {
+      "design": "Investigator-initiated, multicentre, parallel-group, randomised, placebo-controlled, double-blind trial conducted in 33 adult ICUs across six European countries.",
+      "setting": "33 adult ICUs in Denmark, Finland, Netherlands, Norway, Switzerland, and the United Kingdom; enrolled January 2016 to October 2017.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) acutely admitted to ICU",
+          "≥1 predefined risk factor for GI bleeding (e.g., shock/vasopressor requirement, coagulopathy, renal-replacement therapy, anticoagulant treatment, invasive mechanical ventilation expected >24 hours, acute or chronic hepatic failure)"
+        ],
+        "exclusion": [
+          "Existing/ongoing GI bleeding at ICU admission",
+          "Clinical indication for acid suppression",
+          "Current PPI/H2RA use at ICU admission (or inability to discontinue)",
+          "Prior randomisation",
+          "Pregnancy",
+          "Inability to receive trial intervention per protocol constraints"
+        ]
+      },
+      "intervention": "Intravenous pantoprazole 40 mg once daily, initiated after randomisation, continued until ICU discharge, death, or day 90.",
+      "comparison": "Matching intravenous placebo once daily, same initiation and discontinuation rules; open-label acid suppression permitted only if clinically indicated.",
+      "blinding": "Double-blind (patients, clinicians, investigators, statisticians); identical drug and placebo; independent blinded adjudication committee for key clinical events.",
+      "sample_size_power": "3350 patients to detect a 20% relative risk reduction in 90-day mortality (from 25% to 20%) with 90% power at α=0.05.",
+      "primary_outcome": "All-cause mortality at day 90.",
+      "secondary_outcomes": [
+        "Clinically important gastrointestinal bleeding (day 90)",
+        "Composite of clinically important events (GI bleeding, pneumonia, C. difficile infection, acute myocardial ischaemia)",
+        "One or more infectious adverse events",
+        "Days alive without life support at day 90"
+      ],
+      "follow_up": "90 days for primary outcome; in-ICU outcomes collected up to day 90."
+    },
+    "results": {
+      "headline_bullets": [
+        "Mortality at 90 days was nearly identical (31.1% vs 30.4%; RR 1.02; 95% CI 0.91–1.13; P=0.76).",
+        "Clinically important GI bleeding was reduced (2.5% vs 4.2%; RR 0.58; 95% CI 0.40–0.86).",
+        "Composite of clinically important events showed no difference (21.9% vs 22.6%; RR 0.97; 95% CI 0.83–1.12).",
+        "No difference in infectious adverse events (16.8% vs 16.9%; RR 0.99; 95% CI 0.84–1.16)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at day 90 (primary)",
+          "group_a": "510/1642 (31.1%)",
+          "group_b": "499/1640 (30.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.02",
+          "ci_95": "0.91–1.13",
+          "p_value": "0.76",
+          "note": "Modified ITT; 7 withdrew consent for data use, 9 lost to follow-up for this outcome."
+        },
+        {
+          "outcome": "Clinically important gastrointestinal bleeding (day 90)",
+          "group_a": "41/1644 (2.5%)",
+          "group_b": "69/1647 (4.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.58",
+          "ci_95": "0.40–0.86",
+          "p_value": "not reported",
+          "note": "Secondary outcome without multiplicity adjustment."
+        },
+        {
+          "outcome": "Composite of clinically important events (GI bleeding, pneumonia, C. difficile, acute myocardial ischaemia)",
+          "group_a": "360/1644 (21.9%)",
+          "group_b": "372/1647 (22.6%)",
+          "effect_measure": "RR",
+          "effect_value": "0.97",
+          "ci_95": "0.83–1.12",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "One or more infectious adverse events",
+          "group_a": "276/1644 (16.8%)",
+          "group_b": "279/1647 (16.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.99",
+          "ci_95": "0.84–1.16",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Days alive without life support at day 90 (median % of days)",
+          "group_a": "92 (IQR 60–97)",
+          "group_b": "92 (IQR 65–97)",
+          "effect_measure": "not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Median percentage, no between-group testing reported; metric may be insensitive to small bleeding-prevention benefits."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No increase in C. difficile infection or acute myocardial ischaemia (components of the composite, not separately reported).",
+      "Infectious adverse events occurred in 16.8% vs 16.9% (RR 0.99; 95% CI 0.84–1.16).",
+      "Pneumonia rates not significantly different (part of composite).",
+      "No other safety signals identified."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-generated sequence stratified by site and haematological malignancy; variable block sizes; concealment maintained via indistinguishable pantoprazole and placebo."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind with identical drug and placebo; independent adjudication committee blinded to allocation; primary outcome objective (mortality), bleeding outcome required overt bleeding plus consequence and was adjudicated blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "52 excluded post-randomisation (mis-randomised before first dose, 23 vs 29); 7 withdrew consent, 9 lost to follow-up; primary analysis modified ITT (excluding mis-randomised but including others). Early discontinuation of assigned regimen in 274/1645 (16.7%) vs 319/1653 (19.4%)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Major protocol violations: 46/1645 (2.8%) vs 43/1653 (2.6%); concurrent open-label acid suppression while on trial drug: 17/1645 (1.0%) vs 17/1653 (1.0%); median trial drug exposure 4 days (IQR 2–7) in both groups."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups comparable; median SAPS II 49 (IQR 38–62) vs 48 (IQR 37–60); median SOFA 8 (IQR 5–10) vs 8 (IQR 5–10); small imbalance in chronic lung disease (20.7% vs 17.0%) unlikely to bias primary outcome."
+        }
+      ],
+      "verdict": "Strong overall: rigorous concealment and blinding, objective primary outcome, and high follow-up completeness support internal validity; the main threats are the modified ITT exclusions (mis-randomisation before first dose) and non-trivial early discontinuation, which modestly reduce confidence in very small effect estimates."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad, pragmatic inclusion of acutely admitted adult ICU patients with common bleeding-risk features and high illness severity (median SAPS II 49) supports applicability to general mixed ICUs in high-income settings."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Excluded patients already on or requiring acid suppression and those with active GI bleeding; results apply to initiation of prophylaxis in acid-suppression–naïve patients. Six European countries; differences in transfusion, endoscopy, and infection surveillance may influence absolute event rates elsewhere."
+        }
+      ],
+      "verdict": "Good external validity for general mixed ICUs initiating prophylaxis in high-risk admissions; limited for patients already on chronic acid suppression or for settings with markedly different baseline bleeding or infection burdens."
+    },
+    "strengths": [
+      "Large sample size (3350 randomised)",
+      "Multicentre, international ICU setting (33 ICUs, 6 countries)",
+      "Placebo-controlled, double-blind design",
+      "Clinically meaningful bleeding definition requiring objective consequences",
+      "Patient-centred primary outcome (90-day mortality)",
+      "Prespecified interim monitoring with O’Brien–Fleming boundaries",
+      "Adjudication of key clinical events by blinded committee"
+    ],
+    "limitations": [
+      "Modified ITT due to post-randomisation exclusions before first dose (52 patients)",
+      "Moderate early discontinuation of assigned regimen (~17–19%)",
+      "Secondary outcomes not adjusted for multiplicity",
+      "Median drug exposure short (4 days), potentially limiting impact on later ICU/hospital events",
+      "Applicability limited to patients not already receiving acid suppression at ICU admission"
+    ],
+    "critical_appraisal": {
+      "summary": "This large, well-blinded RCT demonstrated a reduction in clinically important GI bleeding without improving 90-day mortality or the net benefit composite, supporting a targeted approach rather than universal prophylaxis.",
+      "strengths": [
+        "Large sample size and rigorous blinding",
+        "Clinically meaningful bleeding definition and patient-centred primary outcome",
+        "International multicentre design enhances external validity"
+      ],
+      "weaknesses": [
+        "Post-randomisation exclusions before first dose weaken ITT principle",
+        "Early discontinuation in ~18% and short exposure duration may dilute effect",
+        "Secondary outcomes not corrected for multiple comparisons"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Pantoprazole reduced clinically important upper gastrointestinal bleeding but did not improve 90-day survival; routine prophylaxis for all ICU patients is not supported.",
+    "clinical_bottom_line": {
+      "verdict": "Pantoprazole is effective for preventing clinically important GI bleeding in ICU patients at risk, but does not reduce mortality. Prophylaxis should be targeted to those with highest bleeding risk and discontinued when risk factors resolve.",
+      "applies_to": "Adult ICU patients with risk factors for GI bleeding who are not already on acid suppression.",
+      "does_not_mean": "Absence of mortality benefit does not mean bleeding prevention is unimportant, but the absolute benefit is modest and must be weighed against potential harms.",
+      "implementation_caveats": [
+        "Initiate only in patients meeting risk criteria",
+        "Discontinue prophylaxis when bleeding risk factors resolve (e.g., weaning from ventilation, resolution of shock)",
+        "Monitor for possible infectious complications in prolonged use (although not shown in this trial)"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Modified ITT and post-randomisation exclusions",
+        "notes": "Excluding mis-randomised patients before first dose strengthens ‘received treatment’ interpretability but weakens strict randomisation-based inference; because exclusions occurred after allocation, this remains a key methodological point."
+      },
+      {
+        "topic": "Low absolute bleeding risk and clinical value judgement",
+        "notes": "Absolute reduction in clinically important bleeding of 1.7 percentage points (2.5% vs 4.2%) may be considered small; whether this is ‘worth’ prophylaxis depends on patient values, competing risks, and local harms."
+      },
+      {
+        "topic": "Multiplicity and subgroup signals",
+        "notes": "Secondary outcomes reported without multiplicity adjustment; borderline SAPS II interaction in the primary report should be treated as hypothesis-generating, not practice-changing."
+      },
+      {
+        "topic": "Follow-up trial evidence",
+        "notes": "PEPTIC trial (cluster-crossover, PPI vs H2RA) found no mortality difference, supporting the view that any survival effect is small. REVISE (placebo-controlled, mechanically ventilated patients) confirmed reduced GI bleeding (1.9% vs 3.5%) and mortality HR 0.91 (95% CI 0.77–1.08), reinforcing the bleeding benefit, mortality-neutral pattern."
+      },
+      {
+        "topic": "Evidence synthesis",
+        "notes": "A 2024 NEJM Evidence meta-analysis concluded that PPIs reduce clinically important upper GI bleeding with little or no effect on mortality; remaining uncertainty centres on rare harms and optimal targeting."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "2024 SCCM/ASHP guideline emphasises restricting prophylaxis to adults at increased bleeding risk and discontinuing prophylaxis when risk factors resolve, explicitly incorporating contemporary placebo-controlled evidence."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PEPTIC",
+        "relation": "Cluster-crossover trial comparing PPI- vs H2RA-based prophylaxis; did not demonstrate a clear mortality advantage of one strategy, consistent with SUP-ICU’s null mortality result."
+      },
+      {
+        "trial": "REVISE",
+        "relation": "Large placebo-controlled RCT of pantoprazole in invasively ventilated patients; showed fewer clinically important upper GI bleeds (1.9% vs 3.5%) and no reduction in 90-day mortality (HR 0.91; 95% CI 0.77–1.08), directly reinforcing the SUP-ICU findings."
+      }
+    ],
+    "unresolved_questions": [
+      "Which subgroups derive the most net benefit from prophylaxis?",
+      "How to balance bleeding reduction against rare but serious harms (e.g., C. difficile, ischaemia) in individual patients?",
+      "Optimal duration of prophylaxis once risk factors resolve?",
+      "Whether a risk-stratified, biomarker-guided approach can further reduce unnecessary exposure."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3350 randomised",
+        "90-day mortality: 31.1% vs 30.4% (RR 1.02; 95% CI 0.91–1.13; P=0.76)",
+        "Clinically important GI bleeding: 2.5% vs 4.2% (RR 0.58; 95% CI 0.40–0.86)",
+        "Absolute reduction in bleeding: 1.7 percentage points"
+      ],
+      "one_line_takeaway": "Pantoprazole cuts clinically important GI bleeding by 42% (relative) but has no effect on 90-day survival; use it selectively, not universally."
+    }
+  },
+  "_source_id": "SUP-ICU",
+  "_source_system": "Gastrointestinal"
+}

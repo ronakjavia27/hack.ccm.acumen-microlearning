@@ -1,0 +1,293 @@
+{
+  "id": "CRASH",
+  "trial_name": "CRASH — Corticosteroids in Acute Head Injury (2004)",
+  "specialty": "Neurocritical Care",
+  "subtopic": "Raised Intracranial Pressure",
+  "year": 2004,
+  "journal": "The Lancet",
+  "citation": "CRASH trial collaborators. Effect of intravenous corticosteroids on death within 14 days in 10 008 adults with clinically significant head injury (MRC CRASH trial): randomised placebo-controlled trial. Lancet. 2004;364(9442):1321-8.",
+  "doi": "",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, pragmatic",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 10008,
+  "result_category": "Negative/Neutral",
+  "one_liner": "High-dose methylprednisolone increased 2-week mortality in adults with acute head injury (21.1% vs 17.9%; RR 1.18, 95% CI 1.09–1.27).",
+  "pico": {
+    "population": "Adults ≥16 years with clinically significant head injury (GCS ≤14) within 8 hours of injury, where clinician was substantially uncertain about corticosteroid indication.",
+    "intervention": "Methylprednisolone 2 g IV loading over 1 hour, then 0.4 g/hour for 48 hours.",
+    "comparison": "Placebo (sterile water) in identical vials and infusion schedule.",
+    "outcome": "Death within 2 weeks of randomisation (primary); death and disability at 6 months (planned, not reported in index publication)."
+  },
+  "keywords": [
+    "methylprednisolone",
+    "corticosteroids",
+    "traumatic brain injury",
+    "head injury",
+    "mortality",
+    "CRASH"
+  ],
+  "related_trials": [
+    "Cochrane Review (Alderson 2005)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Traumatic brain injury (TBI) is a leading cause of death and disability in young adults, with secondary injury mechanisms (oedema, raised intracranial pressure, inflammation) contributing to poor outcomes. Glucocorticoids were widely used after head injury to reduce cerebral oedema and intracranial pressure, despite uncertain effects on patient-important endpoints (mortality and disability). Earlier trials and meta-analyses were underpowered and imprecise, leaving substantial uncertainty about benefit or harm.",
+      "knowledge_gap": "Whether corticosteroids improve patient-important outcomes in acute head injury.",
+      "hypothesis": "Early high-dose intravenous methylprednisolone (started within 8 hours of injury) reduces death within 2 weeks and improves longer-term outcome (death and disability at 6 months) compared with placebo."
+    },
+    "methods": {
+      "design": "Randomised, placebo-controlled, double-blind, pragmatic, international, multicentre trial (239 hospitals in 49 countries; recruitment 1999–2004).",
+      "setting": "Acute hospital care for head injury (emergency/acute admissions), across diverse health systems internationally.",
+      "population": {
+        "inclusion": [
+          "Age ≥16 years",
+          "Clinically significant head injury (GCS ≤14)",
+          "Randomisation within 8 hours of injury",
+          "Treating clinician substantially uncertain about whether corticosteroids were indicated (uncertainty principle)"
+        ],
+        "exclusion": [
+          "Clear indication for corticosteroids",
+          "Clear contraindication to corticosteroids"
+        ]
+      },
+      "intervention": "Methylprednisolone sodium succinate: loading dose 2 g in 100 mL infused over 1 hour, followed by maintenance infusion 0.4 g/hour for 48 hours (20 mL/hour). Treatment packs contained identical-appearing vials prepared to preserve blinding.",
+      "comparison": "Placebo infusions (sterile water) in identical-appearing vials, delivered with the same loading and maintenance infusion schedule as the intervention arm.",
+      "blinding": "Double-blind (participants and clinicians); emergency unmasking via central service/pager when clinically required (allocation unmasked for 24/10008 [0.2%] patients: 15 methylprednisolone, 9 placebo).",
+      "sample_size_power": "Planned sample size 20,000 to detect a 2% absolute difference in mortality (baseline ~15%) with >90% power at two-sided α=0.01; trial stopped early after 10,008 participants due to harm.",
+      "primary_outcome": "Death within 2 weeks of randomisation.",
+      "secondary_outcomes": [
+        "Death and disability at 6 months (planned, not reported in index publication)",
+        "In-hospital complications: pneumonia treated with antibiotics, haematemesis or melaena requiring transfusion, one or more recorded complications"
+      ],
+      "follow_up": "2 weeks for primary outcome; 6 months planned for disability."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early for harm after interim analysis showed higher mortality with methylprednisolone.",
+        "2-week mortality: 21.1% methylprednisolone vs 17.9% placebo (RR 1.18, 95% CI 1.09–1.27, P=0.0001).",
+        "Excess mortality consistent across injury severity (heterogeneity P=0.22), possibly greater with later treatment (heterogeneity P=0.05).",
+        "No significant difference in recorded in-hospital complications; mechanism of harm not established."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death within 2 weeks (primary)",
+          "group_a": "1052/4985 (21.1%)",
+          "group_b": "893/4979 (17.9%)",
+          "effect_measure": "RR",
+          "effect_value": "1.18",
+          "ci_95": "1.09–1.27",
+          "p_value": "0.0001",
+          "note": "Mortality data available for 9964/10008 (99.6%) randomised patients."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "GCS 3–8 (severe)",
+          "group_a": "785/1972 (39.8%)",
+          "group_b": "687/1972 (34.8%)",
+          "effect_measure": "RR",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "0.22 (heterogeneity across all GCS subgroups)"
+        },
+        {
+          "subgroup": "GCS 9–12 (moderate)",
+          "group_a": "205/1553 (13.2%)",
+          "group_b": "143/1476 (9.7%)",
+          "effect_measure": "RR",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "GCS 13–14 (mild)",
+          "group_a": "62/1460 (4.2%)",
+          "group_b": "63/1531 (4.1%)",
+          "effect_measure": "RR",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Time to randomisation ≤1 hour",
+          "group_a": "227/1341 (16.9%)",
+          "group_b": "209/1342 (15.6%)",
+          "effect_measure": "RR",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "0.05 (heterogeneity across time subgroups)"
+        },
+        {
+          "subgroup": "Time to randomisation >1–≤3 hours",
+          "group_a": "308/1530 (20.1%)",
+          "group_b": "296/1560 (19.0%)",
+          "effect_measure": "RR",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Time to randomisation >3–≤8 hours",
+          "group_a": "517/2114 (24.5%)",
+          "group_b": "388/2077 (18.7%)",
+          "effect_measure": "RR",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Major extracranial injury present",
+          "group_a": "321/1134 (28%)",
+          "group_b": "244/1082 (23%)",
+          "effect_measure": "RR",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "0.27"
+        },
+        {
+          "subgroup": "No major extracranial injury",
+          "group_a": "731/3851 (19%)",
+          "group_b": "649/3897 (17%)",
+          "effect_measure": "RR",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": ""
+        }
+      ]
+    },
+    "safety": [
+      "Pneumonia treated with antibiotics (within 2 weeks, in hospital): 653/4890 (13.4%) methylprednisolone vs 604/4871 (12.4%) placebo.",
+      "Haematemesis or melaena requiring transfusion (within 2 weeks, in hospital): 77/4885 (1.6%) vs 61/4877 (1.3%).",
+      "One or more recorded complications (within 2 weeks, in hospital): 2942/4985 (59.0%) vs 2889/4979 (58.0%).",
+      "Complications were not adjudicated; cause of death was not collected.",
+      "No large increase in infectious or GI bleeding complications to explain mortality difference."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Allocation concealed using central telephone randomisation (21%) or local numbered treatment packs (79%) from a centrally generated random sequence. Baseline prognostic variables balanced."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind maintained; emergency unmasking in only 24/10008 (0.2%) patients. Primary endpoint (mortality) is objective and robust to ascertainment bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "2-week mortality outcome available for 9964/10008 (99.6%). Eligibility deviations (62 age <16, 21 randomised >8h, 3 stopped infusion) included in ITT analyses."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Adherence known for 9848/10008 (98%); 99% received full loading dose; 83% received ≥24h of maintenance infusion (due to early death/discharge)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Broad severity spectrum: severe GCS 3–8 (40% vs 39%), moderate 9–12 (31% vs 30%), mild 13–14 (29% vs 31%). Median time to randomisation 3h (IQR 1–5). Major extracranial injury 23% vs 22%."
+        },
+        {
+          "domain": "Heterogeneity of treatment effect",
+          "notes": "No evidence that mortality effect differed by injury severity (heterogeneity P=0.22). Possible interaction by time to treatment (heterogeneity P=0.05), with greater harm when treatment started later."
+        },
+        {
+          "domain": "Dose and regimen specificity",
+          "notes": "Tested a fixed, very high-dose methylprednisolone strategy (2 g loading, then 0.4 g/hour for 48 hours). Internal validity is strongest for this specific regimen; does not test lower-dose, shorter-course, or physiologically guided steroid regimens."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Mortality ascertained to 2 weeks with minimal missingness. Non-fatal events after discharge within 14 days not recorded, which may underestimate event rates but unlikely to explain mortality divergence."
+        },
+        {
+          "domain": "Statistical rigor",
+          "notes": "Intention-to-treat analyses with prespecified subgroup structure and appropriate confidence intervals. Early stopping for harm can influence effect-size estimation; magnitude should be interpreted cautiously, but direction is clear."
+        }
+      ],
+      "verdict": "Internal validity for the observed increase in 2-week mortality is strong (concealed allocation, double blinding, near-complete outcome ascertainment, objective endpoint), with main limitations being early stopping and limited measurement of co-interventions/mechanistic mediators."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Large international recruitment (239 hospitals, 49 countries) supports broad applicability across diverse resource settings. Included wide severity spectrum (mild to severe) and substantial extracranial injury burden (23% vs 22%), reflecting real-world trauma case-mix."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Directly applicable to routine early administration of high-dose methylprednisolone in adult clinically significant head injury within 8 hours. Extrapolation to paediatric populations, patients randomised beyond 8 hours, or alternative steroid molecules/doses/physiology-guided approaches is uncertain (not tested)."
+        }
+      ],
+      "verdict": "External validity is high for adult hospital-managed head injury within 8 hours across heterogeneous global settings; applicability is limited to the tested high-dose methylprednisolone regimen and does not establish effects of other corticosteroid strategies."
+    },
+    "strengths": [
+      "Very large sample (10,008 randomised) with high completeness of primary outcome (99.6%).",
+      "International, multicentre pragmatic design across 49 countries, enhancing generalisability.",
+      "Double-blind, placebo-controlled delivery with rare unmasking (0.2%), supporting unbiased mortality ascertainment.",
+      "Prespecified subgroup framework and robust estimation using relative risks with confidence intervals."
+    ],
+    "limitations": [
+      "Stopped early for harm, which can affect effect-size estimation and limits planned precision for smaller subgroup interactions.",
+      "Index report provides early (2-week) outcomes; planned 6-month disability outcomes were not reported in this publication.",
+      "Cause of death, detailed clinical course, and granular co-interventions (including intracranial pressure management and metabolic mediators) were not systematically collected, constraining causal explanation for excess mortality.",
+      "Non-fatal outcomes after discharge within 14 days were not recorded."
+    ],
+    "critical_appraisal": {
+      "summary": "CRASH provides high-quality evidence that high-dose methylprednisolone increases early mortality in acute TBI; internal validity is strong despite early stopping, and external validity is broad across global settings.",
+      "strengths": [
+        "Large sample size with near-complete follow-up",
+        "Double-blind, placebo-controlled design",
+        "International multicenter pragmatic enrollment"
+      ],
+      "weaknesses": [
+        "Early stopping for harm may overestimate effect size",
+        "Lack of 6-month functional outcomes in index publication",
+        "Limited mechanistic data to explain harm"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Routine early high-dose methylprednisolone in adult clinically significant head injury increases early mortality and should not be used for this indication.",
+    "clinical_bottom_line": {
+      "verdict": "Do not use high-dose methylprednisolone in acute head injury; it increases mortality.",
+      "applies_to": "Adults ≥16 years with GCS ≤14 within 8 hours of injury, across all severity levels.",
+      "does_not_mean": "Does not inform on other corticosteroid regimens, pediatric populations, or spinal cord injury.",
+      "implementation_caveats": [
+        "Avoid high-dose methylprednisolone in acute TBI.",
+        "The harm appears consistent across severity subgroups, so no subgroup is likely to benefit."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Mechanism of harm",
+        "notes": "No large increase in recorded infections or GI bleeding; cause of excess mortality remains unexplained. Limited data on concomitant injuries and co-interventions hinder causal explanation."
+      },
+      {
+        "topic": "Early stopping and interpretation",
+        "notes": "Trial stopped early for harm; effect size may be overestimated, but direction of effect is clear. Correspondence in The Lancet addressed interpretability issues."
+      },
+      {
+        "topic": "Impact on guidelines",
+        "notes": "Updated Cochrane review concluded corticosteroids should not be used routinely in acute TBI. Subsequent evidence-based guidelines recommend against corticosteroids for improving outcome or reducing ICP in severe TBI."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Cochrane Review (Alderson 2005)",
+        "relation": "Updated meta-analysis incorporating CRASH; concluded corticosteroids increase mortality in acute traumatic brain injury and should not be used routinely."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the mechanism of increased mortality with methylprednisolone?",
+      "Would lower-dose or shorter-course corticosteroids have different effects?",
+      "What are the 6-month functional outcomes in the CRASH population?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=10,008",
+        "2-week mortality: 21.1% vs 17.9% (RR 1.18, 95% CI 1.09–1.27)",
+        "Trial stopped early for harm",
+        "No benefit across any severity subgroup"
+      ],
+      "one_line_takeaway": "High-dose methylprednisolone after acute head injury increases mortality and should not be used."
+    }
+  },
+  "_source_id": "CRASH",
+  "_source_system": "Neuro"
+}

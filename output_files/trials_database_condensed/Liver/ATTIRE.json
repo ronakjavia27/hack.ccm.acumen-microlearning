@@ -1,0 +1,257 @@
+{
+  "id": "ATTIRE",
+  "trial_name": "ATTIRE — Albumin Infusions in Hospitalized Patients with Cirrhosis (2021)",
+  "specialty": "Gastroenterology & Hepatology",
+  "subtopic": "Cirrhosis",
+  "year": 2021,
+  "journal": "N Engl J Med",
+  "citation": "China L, Freemantle N, Forrest E, Kallis Y, Ryder SD, Wright G, et al; ATTIRE Trial Investigators. Albumin Infusions in Hospitalized Patients with Cirrhosis. N Engl J Med. 2021;384(9):808-817",
+  "doi": "https://doi.org/10.1056/NEJMoa2022166",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, pragmatic, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 828,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In hospitalized patients with decompensated cirrhosis and low albumin, protocolized albumin infusion to achieve ≥30 g/L did not reduce infection, kidney dysfunction, or death, and increased serious pulmonary edema.",
+  "pico": {
+    "population": "Adults (≥18 years) with decompensated cirrhosis, serum albumin <30 g/L, expected hospital stay ≥5 days",
+    "intervention": "Targeted daily 20% human albumin solution infusions (dose by serum albumin level) to achieve/maintain serum albumin ≥30 g/L until day 14 or discharge",
+    "comparison": "Standard care; albumin allowed for usual clinical indications (e.g., SBP, large-volume paracentesis, hepatorenal syndrome) without protocolized supplementation",
+    "outcome": "Composite of infection, kidney dysfunction, or death between days 3 and 15 after randomization"
+  },
+  "keywords": [
+    "albumin",
+    "cirrhosis",
+    "hypoalbuminemia",
+    "decompensated cirrhosis",
+    "targeted infusion",
+    "pulmonary edema"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Hospitalised decompensated cirrhosis carries high short-term risks of infection, renal dysfunction, ICU admission, and death. Hypoalbuminaemia is common and associates with immune dysfunction, circulatory derangements, and adverse outcomes. Albumin has oncotic and non-oncotic functions (endotoxin binding, antioxidant, immunomodulation), providing a plausible mechanistic link. Albumin is established for specific indications (SBP, large-volume paracentesis, hepatorenal syndrome), but the benefit of targeted correction of serum albumin in unselected hospitalised decompensation was uncertain. Prior trials of longer-term albumin in cirrhosis suggested benefit in some contexts and no benefit in others, leaving a major evidence gap for inpatient practice.",
+      "knowledge_gap": "The benefit of routine inpatient 'target-to-level' albumin to correct hypoalbuminaemia in unselected decompensated cirrhosis was uncertain.",
+      "hypothesis": "Does targeted daily 20% human albumin solution to raise/maintain serum albumin at ≥30 g/L in hospitalised patients with decompensated cirrhosis reduce infection, kidney dysfunction, or death compared with standard care?"
+    },
+    "methods": {
+      "design": "Multicentre, parallel-group, investigator-initiated, pragmatic, open-label RCT in 35 NHS hospitals (England, Scotland, Wales).",
+      "setting": "35 NHS hospitals in England, Scotland, Wales; enrolled patients with decompensated cirrhosis and serum albumin <30 g/L within 72 hours of admission.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with diagnosed cirrhosis admitted with decompensation (e.g., ascites, encephalopathy, variceal bleeding, jaundice) requiring in-hospital treatment",
+          "Serum albumin <30 g/L measured within 72 hours of admission",
+          "Expected hospital stay ≥5 days (excluding social/administrative reasons)"
+        ],
+        "exclusion": [
+          "Advanced hepatocellular carcinoma with life expectancy <8 weeks or receiving palliative care only",
+          "Pregnancy or lactation",
+          "Severe cardiac dysfunction",
+          "Other investigator-defined unsuitability"
+        ]
+      },
+      "intervention": "Targeted 20% human albumin solution (HAS) with daily dosing based on serum albumin: <20 g/L → 400 mL, 20–25 g/L → 300 mL, 26–29 g/L → 200 mL, 30–34 g/L → 100 mL, ≥35 g/L → 0 mL. Infused at 100 mL/hour until day 14 or hospital discharge. Standard clinical indications for albumin (e.g., paracentesis, SBP, hepatorenal syndrome) could still be managed as clinically required.",
+      "comparison": "Standard care as delivered by the treating team. Albumin permitted for usual clinical indications at clinician discretion, without protocolised 'target-to-level' supplementation.",
+      "blinding": "Open-label treatment allocation.",
+      "sample_size_power": "778 patients required to detect 30% relative reduction in primary composite (30% to 21%) with 80% power at 5% significance; 828 randomizations enrolled due to lower-than-expected withdrawal.",
+      "primary_outcome": "Composite of infection, kidney dysfunction, or death between days 3 and 15 after randomization.",
+      "secondary_outcomes": [
+        "Mortality at 28 days, 3 months, and 6 months",
+        "Components of primary composite (infection, kidney dysfunction, death)"
+      ],
+      "follow_up": "Primary endpoint assessed days 3–15; mortality followed to 6 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "Median total albumin administered: 200 g (IQR 140–280) vs 20 g (IQR 0–120); adjusted mean difference 143 g (95% CI 127–158).",
+        "Primary composite occurred in 29.7% vs 30.2% (adjusted OR 0.98, 95% CI 0.71–1.33, P=0.87)—no benefit.",
+        "Components discordant: numerically fewer kidney dysfunction events (10.5% vs 14.4%, OR 0.68) but more infections (20.8% vs 17.9%, OR 1.22), neither statistically significant.",
+        "Serious pulmonary edema/fluid overload events more frequent in albumin group (23 vs 8).",
+        "6-month mortality numerically higher with albumin: 34.7% vs 30.0% (adjusted OR 1.27, 95% CI 0.93–1.73, P=0.13)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite (infection, kidney dysfunction, or death; days 3–15)",
+          "group_a": "113/380 (29.7%)",
+          "group_b": "120/397 (30.2%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.98",
+          "ci_95": "0.71 to 1.33",
+          "p_value": "0.87",
+          "note": "Primary endpoint window began day 3 to allow time for albumin correction."
+        },
+        {
+          "outcome": "Infection component (days 3–15)",
+          "group_a": "79/380 (20.8%)",
+          "group_b": "71/397 (17.9%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "1.22",
+          "ci_95": "0.85 to 1.75",
+          "p_value": "0.28",
+          "note": ""
+        },
+        {
+          "outcome": "Kidney dysfunction component (days 3–15)",
+          "group_a": "40/380 (10.5%)",
+          "group_b": "57/397 (14.4%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.68",
+          "ci_95": "0.44 to 1.11",
+          "p_value": "0.12",
+          "note": ""
+        },
+        {
+          "outcome": "Death component (days 3–15)",
+          "group_a": "30/380 (7.9%)",
+          "group_b": "33/397 (8.3%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.95",
+          "ci_95": "0.56 to 1.59",
+          "p_value": "0.85",
+          "note": ""
+        },
+        {
+          "outcome": "Death at 28 days",
+          "group_a": "53/380 (14.0%)",
+          "group_b": "62/397 (15.6%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.86",
+          "ci_95": "0.57 to 1.30",
+          "p_value": "0.47",
+          "note": ""
+        },
+        {
+          "outcome": "Death at 3 months",
+          "group_a": "92/380 (24.2%)",
+          "group_b": "93/397 (23.4%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "1.05",
+          "ci_95": "0.74 to 1.48",
+          "p_value": "0.80",
+          "note": ""
+        },
+        {
+          "outcome": "Death at 6 months",
+          "group_a": "132/380 (34.7%)",
+          "group_b": "119/397 (30.0%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "1.27",
+          "ci_95": "0.93 to 1.73",
+          "p_value": "0.13",
+          "note": ""
+        }
+      ],
+      "subgroup_table": [],
+      "note": "No subgroup effect modification data reported; prespecified subgroup analyses showed no credible effect modification."
+    },
+    "safety": [
+      "Pulmonary edema/fluid overload (serious adverse events): 23 events in albumin group vs 8 in standard care."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central allocation with minimisation (site and key baseline factors), supporting allocation concealment at enrolment and reducing selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design increases risk of differential co-interventions and diagnostic suspicion, particularly for infection outcomes. Composite endpoint includes objective components (creatinine thresholds, death) that mitigate but do not eliminate detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Of 829 randomizations, 1 withdrew permission for data usage; primary analysis conducted in 777 unique patients (380 vs 397) with high completeness for key endpoints. ITT analysis used mixed-effects logistic regression adjusted for stratification; prespecified sensitivity analyses (including alternative endpoint windows and re-randomizations) consistent with primary result. Prespecified information size achieved."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "A meaningful proportion did not receive allocated therapy (e.g., short admissions, early deterioration), reflecting pragmatic practice. Total albumin separation large: median 200 g (IQR 140–280) vs 20 g (IQR 0–120), adjusted mean difference 143 g (95% CI 127–158). Daily median albumin per patient: day 2 = 60 g (IQR 40–60) vs 0 g; day 3 = 40 g (IQR 20–40) vs 0 g; days 4–12 = 20 g (IQR 0–20) vs 0 g. Albumin use in standard care occurred (median 20 g) consistent with guideline indications, but between-group separation remained large."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced between arms; mean MELD 19.6 vs 19.5; mean baseline serum albumin 24.7±3.0 vs 24.7±2.9 g/L; baseline infection at randomisation 25.8% vs 28.5%."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong given robust randomisation, large biological separation, and consistent sensitivity analyses; key limitations are the open-label design and the day 3–15 primary endpoint window, which may underweight very early events and introduces potential detection bias for infection outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Hospitalised, acutely decompensated cirrhosis with hypoalbuminaemia is common internationally; UK NHS setting and broad inclusion of decompensation syndromes support generalisability to similar inpatient services."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Excluded patients with very short expected stays (<5 days), advanced HCC with limited life expectancy, and severe cardiac dysfunction. In resource-limited settings where albumin is scarce or unaffordable, ATTIRE supports avoiding routine 'target-to-level' albumin strategies. Protocolised daily albumin measurements and dosing are feasible in high-resource ward environments but may be less scalable in overstretched services."
+        }
+      ],
+      "verdict": "External validity is good for typical high-risk inpatient decompensated cirrhosis populations in systems with access to albumin, but generalisability is reduced for patients with brief admissions, advanced malignancy, or significant cardiac dysfunction, and for low-resource hospitals."
+    },
+    "strengths": [
+      "Large multicentre pragmatic design",
+      "Clinically meaningful composite endpoint",
+      "Substantial intervention–control biological separation (albumin dose)",
+      "Prespecified sensitivity analyses including alternative endpoint windows and inclusion of re-randomisations",
+      "Robust mortality follow-up to 6 months"
+    ],
+    "limitations": [
+      "Open-label treatment (risk of co-intervention and diagnostic bias for infection)",
+      "Primary endpoint window (days 3–15) excludes very early events by design",
+      "Composite endpoint combines outcomes with different mechanistic pathways and directions",
+      "Clinically relevant harm signal (pulmonary oedema/fluid overload) complicates risk–benefit",
+      "Protocol intensity may limit feasibility in lower-resource settings"
+    ],
+    "critical_appraisal": {
+      "summary": "ATTIRE is a large, pragmatic RCT with robust randomisation and large biological separation, providing moderate-to-strong internal validity; the open-label design and day 3–15 endpoint window introduce potential bias, but sensitivity analyses are consistent. The trial shows no benefit and a safety signal, so the overall evidence is moderate.",
+      "strengths": [
+        "Large multicentre pragmatic design",
+        "Substantial biological separation",
+        "Robust sensitivity analyses and mortality follow-up"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Primary endpoint window excludes early events",
+        "Safety signal complicates risk–benefit"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine inpatient 'target-to-level' albumin infusions to raise serum albumin to ≥30 g/L should not be adopted as a default strategy for decompensated cirrhosis, given no improvement in infection/kidney dysfunction/death and evidence of harm. Albumin use should remain focused on established indications (e.g., SBP, large-volume paracentesis, hepatorenal syndrome).",
+    "clinical_bottom_line": {
+      "verdict": "Do not use protocolized albumin infusions to normalize serum albumin in hospitalized patients with decompensated cirrhosis.",
+      "applies_to": "Hospitalized adults with decompensated cirrhosis and hypoalbuminaemia, excluding those with very short stays, advanced HCC, or severe cardiac dysfunction.",
+      "does_not_mean": "Albumin should not be used at all; it remains indicated for SBP, large-volume paracentesis, and hepatorenal syndrome.",
+      "implementation_caveats": [
+        "Exclude patients with significant cardiac dysfunction or volume sensitivity",
+        "Do not apply to patients with very short expected stays (<5 days)",
+        "In resource-limited settings, avoid routine albumin normalization; prioritize standard indications"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite endpoint construction and harm signal",
+        "notes": "Despite achieving the biochemical target, there was no improvement in clinically meaningful outcomes and increased pulmonary oedema/fluid overload. The accompanying editorial interpreted this as evidence that aggressive albumin correction in advanced cirrhosis can be 'friend and foe', emphasising cardiopulmonary risk with high-volume oncotic therapy."
+      },
+      {
+        "topic": "Cardiovascular safety and beta-blocker interaction",
+        "notes": "Correspondence raised concern that cirrhotic cardiomyopathy (and related haemodynamic vulnerability) may predispose to pulmonary oedema with high-dose albumin, and queried whether variceal bleeding presentations and beta-blocker management could influence safety signals. The trialists replied that beta-blocker use was similar between groups and highlighted that a substantial proportion of gastrointestinal bleeding serious adverse events occurred in participants admitted with variceal bleeding in the albumin arm."
+      },
+      {
+        "topic": "Primary endpoint window (days 3–15)",
+        "notes": "Methodological debate centres on the prespecified day 3–15 window (chosen to allow time for albumin correction): this can under-represent very early events, but supportive analyses using earlier windows were directionally consistent with the primary finding."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Future research should prioritise phenotyping (e.g., cardiac reserve, haemodynamic profile, inflammatory endotypes) to identify who is harmed by albumin loading and whether any subpopulation might benefit from different targets, preparations, or co-interventions."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=828 randomizations (777 primary analysis)",
+        "Primary composite Adj OR 0.98 (95% CI 0.71–1.33)",
+        "Pulmonary edema SAEs: 23 vs 8 events",
+        "6-month mortality 35% vs 30% (Adj OR 1.27, 95% CI 0.93–1.73)"
+      ],
+      "one_line_takeaway": "Targeted albumin infusion to normalize serum albumin in hospitalized decompensated cirrhosis does not improve outcomes and increases pulmonary edema; avoid routine albumin 'normalization'."
+    }
+  },
+  "_source_id": "ATTIRE",
+  "_source_system": "Liver"
+}

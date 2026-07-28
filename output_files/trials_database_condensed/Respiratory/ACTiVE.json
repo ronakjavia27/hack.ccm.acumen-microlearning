@@ -1,0 +1,289 @@
+{
+  "id": "ACTiVE",
+  "trial_name": "ACTiVE — Automated Closed-Loop Ventilation vs Protocolized Conventional Ventilation (2025)",
+  "specialty": "Critical Care",
+  "subtopic": "Mechanical Ventilation",
+  "year": 2025,
+  "journal": "JAMA",
+  "citation": "Sinnige JS, Buiteman-Kruizinga LA, Horn J, Paulus F, Schultz MJ, Serpa Neto A, et al; ACTiVE Investigators and the Protective Ventilation Network. Effect of Automated Closed-Loop Ventilation vs Protocolized Conventional Ventilation on Ventilator-Free Days in Critically Ill Adults: A Randomized Clinical Trial. JAMA. Published online December 8, 2025.",
+  "doi": "https://doi.org/10.1001/jama.2025.24384",
+  "registration": "",
+  "trial_type": "RCT — multicenter, international, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1201,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In protocolized ICUs, automated closed-loop ventilation improved early physiologic quality metrics but did not increase ventilator-free days or reduce mortality compared to protocolized conventional ventilation.",
+  "pico": {
+    "population": "Critically ill adults receiving invasive ventilation, expected to remain ventilated for ≥24 hours",
+    "intervention": "Automated closed-loop ventilation (INTELLiVENT-ASV) with automated titration of ventilation and oxygenation targets using end-tidal CO2 and SpO2",
+    "comparison": "Protocolized conventional ventilation using standard modes with predefined lung-protective and oxygenation/ventilation targets",
+    "outcome": "Ventilator-free days at day 28"
+  },
+  "keywords": [
+    "closed-loop ventilation",
+    "INTELLiVENT-ASV",
+    "mechanical ventilation",
+    "ventilator-free days",
+    "lung-protective ventilation",
+    "automation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Invasive mechanical ventilation requires continuous titration of tidal volume, pressure, and oxygenation targets to prevent ventilator-associated lung injury. Prior studies of closed-loop systems focused on process measures (time in target ranges, number of manual setting changes) and were not definitive for patient-centred outcomes in heterogeneous ICU populations.",
+      "knowledge_gap": "Whether automated closed-loop ventilation improves patient-centred outcomes compared to protocolized conventional ventilation in a broad ICU population was unknown.",
+      "hypothesis": "Early, automated, closed-loop ventilation (INTELLiVENT-ASV) increases ventilator-free days at day 28 compared with protocolized conventional ventilation, and improves ventilation quality (time within predefined physiologic zones)."
+    },
+    "methods": {
+      "design": "Multicentre, international, investigator-initiated, randomised, open-label, superiority trial",
+      "setting": "7 ICUs in the Netherlands and Switzerland",
+      "population": {
+        "inclusion": [
+          "Critically ill adults receiving invasive ventilation",
+          "Expected to remain invasively ventilated for at least 24 hours"
+        ],
+        "exclusion": [
+          "Situations where the study mode could not be applied safely or reliably (e.g., practical/device constraints, inability to obtain/maintain consent)"
+        ]
+      },
+      "intervention": "Automated closed-loop ventilation using INTELLiVENT-ASV on a single ventilator platform, with automated titration of ventilation and oxygenation targets using end-tidal CO2 and SpO2. Implemented immediately after randomisation and used throughout invasive ventilation during the ICU course.",
+      "comparison": "Protocolised conventional ventilation using standard ventilator modes with predefined targets for lung-protective ventilation and oxygenation/ventilation goals. Co-interventions (sedation/analgesia and weaning approach) were protocolised and intended to be similar between groups.",
+      "blinding": "Open-label (no participant/clinician blinding)",
+      "sample_size_power": "1200 patients required to detect an increase in mean ventilator-free days at day 28 of 1.5 days (from 20.0 to 21.5) assuming SD 9.0, with 80% power at 5% significance level.",
+      "primary_outcome": "Ventilator-free days at day 28",
+      "secondary_outcomes": [
+        "28-day mortality",
+        "90-day mortality",
+        "Duration of invasive ventilation among survivors",
+        "Ventilation quality (ordered zones; first 6 h; subset)",
+        "Time in critical ventilation zone (first 6 h; subset)",
+        "Severe hypoxaemia (PaO2<55 mm Hg)",
+        "Need for rescue strategies (composite)",
+        "Ventilator-associated pneumonia",
+        "Pneumothorax"
+      ],
+      "follow_up": "90 days (primary endpoint at day 28)"
+    },
+    "results": {
+      "headline_bullets": [
+        "No improvement in ventilator-free days at day 28 with closed-loop ventilation (OR 0.91; 95% CI 0.77 to 1.06; P=0.23).",
+        "Mortality was similar at 28 days (37.2% vs 36.5%; HR 1.04; P=0.69) and 90 days (41.0% vs 40.0%; HR 1.04; P=0.66).",
+        "Closed-loop ventilation improved early ventilation quality in a subset (critical-zone time 11.6% vs 35.8%; P<0.001), but this did not translate into better patient-centred outcomes.",
+        "Signals for reduced rescue strategies and severe hypoxaemia were attenuated after multiplicity correction."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Ventilator-free days at day 28 (primary; median [IQR])",
+          "group_a": "16.7 (0.0–25.0)",
+          "group_b": "16.3 (0.0–25.0)",
+          "effect_measure": "OR",
+          "effect_value": "0.91",
+          "ci_95": "0.77 to 1.06",
+          "p_value": "0.23",
+          "note": "Ordinal model; OR >1 would favour more VFDs (benefit)."
+        },
+        {
+          "outcome": "28-day mortality (No./total, %)",
+          "group_a": "224/602 (37.2)",
+          "group_b": "218/597 (36.5)",
+          "effect_measure": "HR",
+          "effect_value": "1.04",
+          "ci_95": "0.86 to 1.25",
+          "p_value": "0.69",
+          "note": "Holm–Bonferroni corrected P=1.000."
+        },
+        {
+          "outcome": "90-day mortality (No./total, %)",
+          "group_a": "246/600 (41.0)",
+          "group_b": "237/592 (40.0)",
+          "effect_measure": "HR",
+          "effect_value": "1.04",
+          "ci_95": "0.87 to 1.24",
+          "p_value": "0.66",
+          "note": "Holm–Bonferroni corrected P=1.000."
+        },
+        {
+          "outcome": "Duration of invasive ventilation among survivors (median [IQR], days)",
+          "group_a": "3.3 (1.0–9.4)",
+          "group_b": "2.6 (1.0–8.7)",
+          "effect_measure": "MdD",
+          "effect_value": "0.7 d",
+          "ci_95": "−0.0 to 1.4",
+          "p_value": "0.05",
+          "note": "Holm–Bonferroni corrected P=0.810."
+        },
+        {
+          "outcome": "Ventilation quality (ordered zones; first 6 h; subset)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "OR",
+          "effect_value": "1.50",
+          "ci_95": "1.43 to 1.57",
+          "p_value": "<0.001",
+          "note": "Higher odds of being in a better ventilation zone; Holm–Bonferroni corrected P<0.001."
+        },
+        {
+          "outcome": "Time in critical ventilation zone (first 6 h; subset; mean [SD], %)",
+          "group_a": "11.6 (26.9)",
+          "group_b": "35.8 (45.0)",
+          "effect_measure": "MD",
+          "effect_value": "−24.6%",
+          "ci_95": "−36.6 to −12.6",
+          "p_value": "<0.001",
+          "note": "Subset n=78 vs 64 from 3 centres; multiplicity not applied to zone-level CIs."
+        },
+        {
+          "outcome": "Severe hypoxaemia: PaO2<55 mm Hg (No./total, %)",
+          "group_a": "96/599 (16.0)",
+          "group_b": "126/596 (21.1)",
+          "effect_measure": "AD",
+          "effect_value": "−5.1%",
+          "ci_95": "−9.4 to −0.7",
+          "p_value": "0.02",
+          "note": "Holm–Bonferroni corrected P=0.352."
+        },
+        {
+          "outcome": "Need for rescue strategies (composite) (No./total, %)",
+          "group_a": "86/599 (14.4)",
+          "group_b": "121/596 (20.3)",
+          "effect_measure": "AD",
+          "effect_value": "−6.0%",
+          "ci_95": "−10.2 to −1.7",
+          "p_value": "0.006",
+          "note": "Holm–Bonferroni corrected P=0.108; components included recruitment manoeuvres, prone positioning, bronchoscopy for atelectasis."
+        },
+        {
+          "outcome": "Ventilator-associated pneumonia (No./total, %)",
+          "group_a": "13/599 (2.2)",
+          "group_b": "21/596 (3.5)",
+          "effect_measure": "AD",
+          "effect_value": "−1.4%",
+          "ci_95": "−3.3 to 0.4",
+          "p_value": "0.13",
+          "note": "Holm–Bonferroni corrected P=1.000."
+        },
+        {
+          "outcome": "Pneumothorax (No./total, %)",
+          "group_a": "6/599 (1.0)",
+          "group_b": "2/596 (0.3)",
+          "effect_measure": "AD",
+          "effect_value": "0.7%",
+          "ci_95": "−0.3 to 1.6",
+          "p_value": "0.16",
+          "note": "Holm–Bonferroni corrected P=1.000."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Ventilator-associated pneumonia: 2.2% vs 3.5% (AD −1.4%; 95% CI −3.3 to 0.4; P=0.13)",
+      "Pneumothorax: 1.0% vs 0.3% (AD 0.7%; 95% CI −0.3 to 1.6; P=0.16)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with centre as a stratification factor; centre included as a random effect in analyses."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design creates potential for clinician-influenced co-interventions (e.g., rescue strategies, extubation timing), although major outcomes were objective and co-interventions were protocolised."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Randomised: 1514 participants. Included in modified intention-to-treat analysis: 1201 (602 closed-loop; 599 conventional); 313 excluded post-randomisation due to withdrawal/non-obtained consent (150 vs 163). Primary outcome denominators were slightly lower due to missing data (e.g., VFDs: n=601 vs 595)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clear separation in exposure: patient-level percentage of ventilated days on INTELLiVENT-ASV was 100.0% (IQR 80.0–100.0) in the closed-loop group vs 0.0% (0.0–0.0) in conventional ventilation. Cross-use at 1 hour: INTELLiVENT-ASV was used in 23/594 (3.9%) of patients in the conventional group."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Baseline physiology and illness severity were broadly similar between groups (e.g., height median 175 cm in both; weight median 80 kg in both; APACHE IV median 85 vs 82)."
+        }
+      ],
+      "verdict": "Moderate: robust randomisation and strong intervention–control separation support causal inference, but the open-label design and substantial post-randomisation exclusions (modified ITT) introduce plausible risks of bias and reduce interpretability for patient-centred outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High-income, protocol-driven ICUs in 2 European countries; findings most applicable to similar settings with established lung-protective ventilation culture. Heterogeneous ICU case-mix with relatively low ARDS frequency (2.5% vs 2.0% developing ARDS after 48 hours); applicability to ARDS-enriched cohorts remains uncertain."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Intervention is platform-specific (INTELLiVENT-ASV on a single ventilator family), limiting direct generalisability to other devices/algorithms. Potentially greater impact in settings with less protocolised ventilation or where staffing/workload constrains frequent manual titration."
+        }
+      ],
+      "verdict": "Moderate and context-dependent: generalisable to high-resource ICUs using similar ventilator platforms and protocolised care, but uncertain transfer to low-resource settings, different devices, or ARDS-dominant populations."
+    },
+    "strengths": [
+      "Large, multicentre, international RCT with early initiation of the assigned ventilation strategy.",
+      "Clear separation of the intervention exposure with minimal cross-use in the control group.",
+      "Prespecified statistical approach for a bounded, skewed primary endpoint and multiplicity control for secondary outcomes.",
+      "High follow-up completion through 90 days as reported in the manuscript."
+    ],
+    "limitations": [
+      "Open-label design with clinician-mediated components (rescue therapies; extubation decisions) that could influence composites such as VFDs.",
+      "Substantial post-randomisation exclusions due to consent withdrawal/non-obtainment, resulting in a modified ITT analysis set.",
+      "Ventilation quality analysis was conducted in a subset from 3 centres, potentially limiting generalisability of mechanistic findings.",
+      "Control arm used protocolised conventional ventilation (not 'usual care'), potentially reducing detectable effect size in a high-performing system."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, large RCT with strong intervention separation, but the open-label design and modified ITT analysis introduce bias risks that temper confidence in the neutral patient-centred findings, despite a clear mechanistic signal for improved ventilation quality.",
+      "strengths": [
+        "Large sample size with early, protocolized intervention delivery.",
+        "Excellent separation of the intervention with minimal crossover.",
+        "Appropriate statistical handling of a complex primary endpoint."
+      ],
+      "weaknesses": [
+        "Open-label design susceptible to performance bias for clinician-mediated outcomes.",
+        "High rate of post-randomisation exclusions (313/1514) deviates from a true ITT principle.",
+        "Key mechanistic finding derived from a small, non-random subset of centres."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Automated closed-loop ventilation did not improve VFDs at day 28 and did not reduce mortality. Closed-loop ventilation improved early ventilation quality in a subset, supporting that the algorithm meaningfully altered delivered ventilation.",
+    "clinical_bottom_line": {
+      "verdict": "In high-performing ICUs with protocolised conventional ventilation, automation may improve process metrics without translating into more ventilator-free days. Implementation decisions should consider device availability, staffing/workload, and whether local usual care leaves meaningful room for improvement.",
+      "applies_to": "High-resource, protocol-driven ICUs using a similar ventilator platform and lung-protective ventilation culture.",
+      "does_not_mean": "Closed-loop ventilation is harmful or should be abandoned; it is a process optimiser whose patient-centred benefit is context-dependent.",
+      "implementation_caveats": [
+        "Benefit may be greater in settings with less protocolised care or staffing constraints.",
+        "Findings are specific to the INTELLiVENT-ASV system and may not apply to other closed-loop algorithms.",
+        "The low ARDS rate limits conclusions for populations with more severe gas exchange impairment."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Post-randomisation exclusions",
+        "notes": "Post-randomisation exclusions due to deferred/withdrawn consent (313/1514 randomised) shift interpretation away from a strict intention-to-treat framework and increase vulnerability to bias if exclusions are not exchangeable between groups."
+      },
+      {
+        "topic": "Composite endpoint construction",
+        "notes": "Ventilator-free days are a composite with structural zeros (death) and a bounded, often skewed distribution; ACTiVE’s ordinal modelling approach aligns with modern methodological recommendations, but component outcomes (mortality and duration among survivors) remain essential for clinical interpretation."
+      },
+      {
+        "topic": "Generalizability of mechanistic signal",
+        "notes": "A key 'success' signal (improved ventilation quality) was derived from a centre-limited subset, raising questions about representativeness and the extent to which early process improvements translate into patient-centred outcomes at scale."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Would closed-loop ventilation show patient-centred benefit in settings with lower baseline adherence to lung-protective ventilation?",
+      "Are there specific subphenotypes (e.g., ARDS) that derive greater benefit from automated titration?",
+      "How do different closed-loop algorithms compare in their effects on both process and patient-centred outcomes?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1201 (modified ITT)",
+        "Primary VFDs: OR 0.91 (95% CI 0.77–1.06), P=0.23",
+        "28-day mortality: 37.2% vs 36.5% (HR 1.04, P=0.69)",
+        "Critical-zone time: 11.6% vs 35.8% (P<0.001, subset)"
+      ],
+      "one_line_takeaway": "Automated closed-loop ventilation improves physiologic metrics but does not increase ventilator-free days or survival in protocolized ICUs, making its benefit context-dependent rather than universal."
+    }
+  },
+  "_source_id": "ACTiVE",
+  "_source_system": "Respiratory"
+}
