@@ -1,0 +1,310 @@
+{
+  "id": "ANTHARTIC",
+  "trial_name": "ANTHARTIC — Prevention of Early Ventilator-Associated Pneumonia after Cardiac Arrest (2019)",
+  "specialty": "Post-Cardiac Arrest Syndrome",
+  "subtopic": "Antibiotic Prophylaxis – Ventilator-Associated Pneumonia",
+  "year": 2019,
+  "journal": "N Engl J Med",
+  "citation": "François B, Cariou A, Clère-Jehl R, Dequin PF, Renon-Carron F, Daix T, et al; CRICS-TRIGGERSEP Network and the ANTHARTIC Study Group. Prevention of early ventilator-associated pneumonia after cardiac arrest. N Engl J Med. 2019;381(19):1831-1842.",
+  "doi": "https://doi.org/10.1056/NEJMoa1812379",
+  "registration": "",
+  "trial_type": "RCT — multicentre, double-blind, placebo-controlled, investigator-initiated",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 194,
+  "result_category": "Mixed",
+  "one_liner": "In comatose post-cardiac arrest patients with shockable rhythms, early 48-hour amoxicillin-clavulanate prophylaxis reduced early VAP (19% vs 34%) but did not improve mortality or neurological outcomes.",
+  "pico": {
+    "population": "Adults ≥18 years with out-of-hospital cardiac arrest with shockable rhythm, Glasgow Coma Scale ≤8, intubated and mechanically ventilated, planned targeted temperature management at 32–34°C",
+    "intervention": "Amoxicillin–clavulanate 1 g/200 mg IV every 8 hours for 48 hours, initiated within 6 hours after cardiac arrest (renal dose adjustment per prespecified thresholds)",
+    "comparison": "Matching placebo IV every 8 hours for 48 hours; both arms received standard VAP-prevention bundles and TTM",
+    "outcome": "Primary: early VAP (≤7 days, adjudicated). Secondary: any VAP, ventilator-free days, ICU stay, mortality, neurological outcome, antibiotic exposure, adverse events, emergence of antibiotic-resistant bacteria."
+  },
+  "keywords": [
+    "ventilator-associated pneumonia",
+    "cardiac arrest",
+    "antibiotic prophylaxis",
+    "amoxicillin-clavulanate",
+    "targeted temperature management",
+    "post-resuscitation care"
+  ],
+  "related_trials": [
+    "PROPHY-VAP",
+    "PROTECT"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Early-onset pneumonia/VAP is common after OHCA due to aspiration during resuscitation, mechanical ventilation, and post–cardiac arrest immune dysregulation. VAP increases antibiotic exposure and may prolong ICU stay, but attributable mortality is uncertain.",
+      "knowledge_gap": "Prior observational studies and small trials suggested potential reductions in pneumonia with early/prophylactic antibiotics, but effects on patient-centred outcomes and antimicrobial resistance were unclear; high-quality blinded evidence was needed.",
+      "hypothesis": "Short-course early IV amoxicillin–clavulanate would reduce early VAP (≤7 days) and subsequent antibiotic use without increasing serious adverse events or resistance, and these reductions might translate into shorter ICU stay and improved outcomes."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, placebo-controlled trial in 16 ICUs in France.",
+      "setting": "ICU admission after OHCA with planned TTM (32–34°C).",
+      "population": {
+        "inclusion": [
+          "≥18 years",
+          "OHCA with shockable rhythm",
+          "Glasgow Coma Scale ≤8",
+          "Intubated and mechanically ventilated",
+          "Randomisation within 6 hours after cardiac arrest"
+        ],
+        "exclusion": [
+          "Antibiotic therapy at baseline",
+          "Suspected or confirmed infection at baseline",
+          "Penicillin allergy",
+          "Expected death within 24 hours per treating clinician",
+          "Non-shockable rhythm"
+        ]
+      },
+      "intervention": "Amoxicillin–clavulanate 1 g/200 mg IV every 8 hours for 48 hours, initiated immediately after randomisation (within 6 hours of arrest). Renal dose adjustment according to prespecified thresholds.",
+      "comparison": "Matching placebo IV every 8 hours for 48 hours; identical VAP-prevention bundle, sedation, and TTM protocols applied to both groups. Subsequent antibiotics were clinically driven.",
+      "blinding": "Double-blind (patients, clinicians, investigators, outcome adjudicators).",
+      "sample_size_power": "192 patients required to detect a 25 percentage-point absolute reduction in early VAP (from 68% to 43%) with 90% power at two-sided 5% significance level, targeting 91 VAP events and accounting for ~15% competing mortality.",
+      "primary_outcome": "Early VAP (occurring within 7 days after randomisation), adjudicated using predefined clinical, radiographic, and microbiological criteria.",
+      "secondary_outcomes": [
+        "Any VAP (early or late) throughout ICU stay",
+        "Ventilator-free days to day 28",
+        "ICU length of stay (survivors and overall)",
+        "28-day mortality",
+        "Neurological outcome (CPC score) at hospital discharge, 90 days, and 12 months",
+        "Non-study systemic antibiotic exposure (proportion of ICU days on antibiotics)",
+        "Emergence of antibiotic-resistant bacteria at day 7",
+        "Serious adverse events"
+      ],
+      "follow_up": "Primary endpoint through day 7; secondary outcomes to day 28; functional outcomes at 3 and 12 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "Early VAP reduced from 34% (placebo) to 19% (amoxicillin–clavulanate), HR 0.53 (95% CI 0.31–0.92, P=0.03).",
+        "Overall VAP lower in intervention arm (23% vs 39%; HR 0.55, 95% CI 0.33–0.91).",
+        "No significant differences in 28-day mortality (41% vs 37%), ventilator‑free days, or neurological outcomes.",
+        "Less post‑trial antibiotic exposure (median 23% vs 50% of ICU days) without increased resistant bacteria at day 7 (1% vs 7%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Early VAP (≤7 days) – primary",
+          "group_a": "19/99 (19%)",
+          "group_b": "32/95 (34%)",
+          "effect_measure": "HR",
+          "effect_value": "0.53",
+          "ci_95": "0.31 to 0.92",
+          "p_value": "0.03",
+          "note": "Competing-risk analysis (Fine–Gray); adjudicated diagnosis"
+        },
+        {
+          "outcome": "Any VAP (early or late)",
+          "group_a": "23/99 (23%)",
+          "group_b": "37/95 (39%)",
+          "effect_measure": "HR",
+          "effect_value": "0.55",
+          "ci_95": "0.33 to 0.91",
+          "p_value": "Not reported",
+          "note": "Across ICU stay; competing-risk analysis"
+        },
+        {
+          "outcome": "Ventilator-free days to day 28",
+          "group_a": "Median 21 (IQR 0 to 26)",
+          "group_b": "Median 19 (IQR 0 to 25)",
+          "effect_measure": "Median difference",
+          "effect_value": "0 days",
+          "ci_95": "0 to 0",
+          "p_value": "",
+          "note": "Death counted as zero ventilator-free days"
+        },
+        {
+          "outcome": "ICU length of stay (discharged alive)",
+          "group_a": "Median 5 days (IQR 3.5 to 8.5)",
+          "group_b": "Median 8 days (IQR 3 to 11)",
+          "effect_measure": "Median difference",
+          "effect_value": "−1 day",
+          "ci_95": "−3 to 0",
+          "p_value": "",
+          "note": "Reported for survivors; survivor-only analysis"
+        },
+        {
+          "outcome": "28-day mortality",
+          "group_a": "41/99 (41%)",
+          "group_b": "35/95 (37%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+4 percentage points",
+          "ci_95": "−10 to 18",
+          "p_value": "Not reported",
+          "note": "No statistically significant between-group difference"
+        },
+        {
+          "outcome": "Non-study systemic antibiotic exposure (proportion of ICU days)",
+          "group_a": "Median 23% (IQR 0 to 64)",
+          "group_b": "Median 50% (IQR 0 to 70)",
+          "effect_measure": "Median difference",
+          "effect_value": "0 percentage points",
+          "ci_95": "−15 to 0",
+          "p_value": "",
+          "note": "Downstream treatment antibiotics beyond trial drug"
+        },
+        {
+          "outcome": "Antibiotic-resistant bacteria detected at day 7",
+          "group_a": "1/99 (1%)",
+          "group_b": "7/95 (7%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Baseline carriage: 2/99 vs 5/95; rectal swab screening"
+        },
+        {
+          "outcome": "Serious adverse events",
+          "group_a": "55 events in 48 patients",
+          "group_b": "52 events in 42 patients",
+          "effect_measure": "Risk difference",
+          "effect_value": "+4 percentage points",
+          "ci_95": "−10 to 18",
+          "p_value": "",
+          "note": "Overall adverse events: 309 (160 vs 149)"
+        },
+        {
+          "outcome": "Unfavourable neurological outcome (CPC 3–5) at 90 days",
+          "group_a": "40/99 (40%)",
+          "group_b": "39/95 (41%)",
+          "effect_measure": "Not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "From supplemental appendix"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Serious adverse events: 55 events in 48 intervention patients vs 52 events in 42 placebo patients (risk difference +4 percentage points, 95% CI −10 to 18).",
+      "Overall adverse events: 309 total (160 in amoxicillin–clavulanate arm vs 149 in placebo arm).",
+      "Resistance emergence: Antibiotic-resistant bacteria detected at day 7 in 1% (intervention) vs 7% (placebo); baseline carriage 2% vs 5%."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation with fixed blocks of 4; robust allocation concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind design; identical preparation and administration schedule in both groups; outcome adjudicators blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT (4 patients excluded from analysis, all in placebo group: 2 withdrew consent, 2 did not receive placebo) may introduce minor bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Drug administered within 6 hours of arrest; short standardised course; both arms received similar TTM and VAP-prevention bundles; no crossover concerns."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched: median age 63 vs 61 years; bystander CPR 78% vs 77%; no-flow time median 2 vs 1 min; time from arrest to randomisation median 185 vs 182 min."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate-to-strong: allocation concealment and blinding robust, analysis appropriately handled competing risks, but modified ITT exclusions and inherent diagnostic uncertainty around VAP modestly limit confidence in the exact magnitude of effect."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Restricted to shockable rhythms, coma, and TTM at 32–34°C; results may not apply to non-shockable rhythms, in-hospital arrests, or contemporary normothermia strategies."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in French ICUs with protocolised bundles and intensive microbiological sampling; local resistance patterns and VAP epidemiology influence generalisability."
+        }
+      ],
+      "verdict": "External validity is moderate for similar post-OHCA shockable-rhythm populations managed with early structured VAP prevention, but limited when extrapolated to broader cardiac arrest cohorts and current temperature management practices."
+    },
+    "strengths": [
+      "Double-blind, placebo-controlled design with central randomisation and independent adjudication.",
+      "Early administration (≤6 hours) and short, standardised antibiotic course with renal adjustment.",
+      "Competing-risk analysis prespecified for VAP endpoint.",
+      "Systematic microbiological surveillance and assessment of resistant bacteria emergence.",
+      "Clinically relevant secondary outcomes (antibiotic exposure, ICU stay, mortality, neurological outcome)."
+    ],
+    "limitations": [
+      "Modified ITT analysis with post-randomisation exclusions confined to the placebo group.",
+      "VAP diagnosis is partially subjective in post-arrest patients; misclassification remains possible despite adjudication.",
+      "Planned control event rate (68%) substantially exceeded observed early VAP (34%), limiting power for some secondary outcomes.",
+      "Population restricted to shockable rhythm, TTM 32–34°C, not reflecting all cardiac arrest patients or current temperature practices."
+    ],
+    "critical_appraisal": {
+      "summary": "ANTHARTIC is a well-conducted, double-blind RCT that convincingly shows a short course of early amoxicillin–clavulanate reduces early VAP in a selected post-arrest population, but the absence of patient-centred benefit, along with diagnostic subjectivity and limited generalisability, tempers its role in routine practice.",
+      "strengths": [
+        "Rigorous blinding and allocation concealment",
+        "Prespecified competing-risk analysis",
+        "Objective measurement of antibiotic exposure and surveillance cultures",
+        "Independent adjudication of VAP"
+      ],
+      "weaknesses": [
+        "Modified ITT with unequal exclusions",
+        "Subjective primary endpoint in a population with complex lung insults",
+        "Overestimated control event rate reduced power for secondary and subgroup analyses",
+        "Restricted to narrow post-resuscitation protocol"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In comatose OHCA survivors with shockable rhythms treated with TTM, 48 hours of early amoxicillin–clavulanate reduced early VAP (19% vs 34%; HR 0.53) and downstream antibiotic exposure but did not significantly alter mortality or neurological outcomes.",
+    "clinical_bottom_line": {
+      "verdict": "Early antibiotic prophylaxis reduces VAP but does not improve survival or neurological function; routine use is not recommended by current guidelines.",
+      "applies_to": "Comatose survivors of shockable-rhythm OHCA undergoing 32–34°C targeted temperature management.",
+      "does_not_mean": "That antibiotics improve mortality or should replace high-quality VAP prevention bundles.",
+      "implementation_caveats": [
+        "May be considered in settings with very high early VAP rates and low antimicrobial resistance, but careful stewardship is mandatory.",
+        "Short duration (48 h) and narrow-spectrum regimen should be guided by local epidemiology.",
+        "Future trials may identify subgroups that derive net clinical benefit."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Diagnostic uncertainty",
+        "notes": "Differentiating aspiration pneumonitis, colonisation, and true VAP in the early post-arrest period under sedation and temperature management is challenging; outcome misclassification could affect effect estimates."
+      },
+      {
+        "topic": "Event-rate assumptions",
+        "notes": "Observed placebo early VAP (34%) was far below the assumed 68%; while primary endpoint reached significance, the divergence complicates interpretation of power and generalisability for secondary endpoints."
+      },
+      {
+        "topic": "Patient-centred benefit unproven",
+        "notes": "A meta-analysis including ANTHARTIC found reductions in pneumonia without improvement in mortality or neurological recovery, reinforcing caution with routine prophylaxis."
+      },
+      {
+        "topic": "Guideline position",
+        "notes": "European post-resuscitation care guidelines recommend against routine prophylactic antibiotics after cardiac arrest."
+      },
+      {
+        "topic": "Newer trials diversify evidence",
+        "notes": "PROPHY-VAP (ceftriaxone in acute brain injury) and PROTECT (ceftriaxone after OHCA with microbiome/resistome endpoints) extend evaluation to different populations/regimens but have not yet shown clear survival or functional benefit."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PROPHY-VAP",
+        "relation": "Ceftriaxone prophylaxis in mechanically ventilated patients with acute brain injury; extends the prophylactic antibiotic question to a different neuro-intensive population, similarly without convincing patient-centred benefit."
+      },
+      {
+        "trial": "PROTECT",
+        "relation": "Ceftriaxone prophylaxis after OHCA, including microbiome and resistome endpoints; broadens the evaluation to a broader post-arrest cohort but has not yet established survival or functional benefit."
+      }
+    ],
+    "unresolved_questions": [
+      "Whether preventing early VAP translates into meaningful patient-centred improvements (survival, neurological recovery) in a larger, appropriately powered trial.",
+      "Optimal antibiotic choice, timing, and duration if prophylaxis were to be considered.",
+      "Long-term ecological safety and impact on resistance beyond 7 days of follow-up.",
+      "Role of prophylaxis in current normothermia protocols and non-shockable rhythms."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=194 (99 intervention, 95 placebo)",
+        "Early VAP: 19% vs 34%, HR 0.53 (0.31–0.92), P=0.03",
+        "28-day mortality: 41% vs 37%, risk difference +4 percentage points (ns)",
+        "Antibiotic-resistant bacteria day 7: 1% vs 7%"
+      ],
+      "one_line_takeaway": "A 48-hour course of amoxicillin-clavulanate reduces early VAP after cardiac arrest but does not improve survival; routine prophylaxis is not recommended."
+    }
+  },
+  "_source_id": "ANTHARTIC",
+  "_source_system": "Resuscitation"
+}

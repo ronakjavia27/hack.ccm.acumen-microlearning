@@ -1,0 +1,397 @@
+{
+  "id": "iap-apa-epc-ipc-jps-acute-pancreatitis-guidelines-2025",
+  "doc_type": "guideline",
+  "title": "International Association of Pancreatology Revised Guidelines on Acute Pancreatitis 2025: Supported and Endorsed by the American Pancreatic Association, European Pancreatic Club, Indian Pancreas Club, and Japan Pancreas Society",
+  "issuing_bodies": [
+    "IAP",
+    "APA",
+    "EPC",
+    "IPC",
+    "JPS"
+  ],
+  "year": 2025,
+  "doi": "10.1016/j.pan.2025.04.020",
+  "specialty": [
+    "gastroenterology",
+    "surgery",
+    "multi_system"
+  ],
+  "tags": [
+    "acute pancreatitis",
+    "fluid therapy",
+    "pancreatic necrosis",
+    "step-up approach",
+    "ercp",
+    "enteral nutrition",
+    "walled-off necrosis",
+    "post-ercp pancreatitis"
+  ],
+  "one_line_summary": "Updated evidence-based international guidelines providing comprehensive recommendations for the diagnosis, fluid resuscitation, nutritional support, antibiotic stewardship, and minimally invasive step-up management of acute pancreatitis.",
+  "key_pearls": [
+    "- **Diagnosis of acute pancreatitis** requires meeting **2 of 3 criteria**: typical **upper abdominal pain**, biochemical **serum lipase or amylase >3 times ULN**, or characteristic findings on **abdominal CT or ultrasound**.",
+    "- **Fluid resuscitation** should utilize **Lactated Ringer's solution** at a **moderate infusion rate of 1.5 mL/kg/h**; aggressive fluid resuscitation increases *fluid overload* without improving clinical outcomes.",
+    "- **Prophylactic antibiotics** are **not recommended** to prevent infectious complications regardless of disease severity; antibiotic therapy is strictly reserved for proven extrapancreatic infections or gas-forming **infected necrotizing pancreatitis**.",
+    "- **Early oral feeding** with a regular **low-fat solid diet** should be initiated as soon as abdominal pain subsides in mild cases; if oral intake is intolerable at **72 hours**, start **nasoenteric tube feeding** using standard *polymeric formulas*.",
+    "- Urgent **ERCP within 72 hours** is indicated *only* in patients with acute biliary pancreatitis presenting with concomitant **acute cholangitis**; routine early ERCP is **contraindicated** in predicted severe biliary pancreatitis without cholangitis.",
+    "- Invasive interventional management for **infected necrotizing pancreatitis** should be delayed for **3 to 4 weeks** until the necrotic collection forms **walled-off necrosis (WON)**, utilizing a minimally invasive **step-up approach** (catheter drainage followed by necrosectomy if necessary)."
+  ],
+  "consensus_method": "GRADE methodology and formal expert consensus across international working groups.",
+  "search_period": "Systematic literature search conducted through April 2025 across PubMed, Embase, and Cochrane databases.",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Diagnosis, Etiology, and Prognostication",
+      "narrative": "- Acute pancreatitis (AP) diagnosis requires at least **2 out of 3 criteria**: typical clinical pain, biochemical enzyme elevation (**serum lipase or amylase >3 times ULN**), and radiological evidence on **CECT** or **ultrasound**.\n- Routine serial measurement of serum pancreatic enzymes is not **recommended** to track disease progress.\n- Etiology should be routinely screened during admission via detailed history, **liver function tests** (ALT >**150 U**/L indicates biliary cause), **serum calcium**, **triglycerides**, and **transabdominal ultrasound**.\n- In idiopathic cases, perform a **repeat transabdominal ultrasound** post-discharge, followed by **EUS** or **MRCP** if unresolved.\n- Severity prediction relies on persistent **SIRS at 48 hours**, elevated **CRP (>150 mg/L)**, or **IL-6 (>50 pg/mL)**. **Persistent organ failure (>48 hours)** remains the primary determinant of overall **mortality**.",
+      "recommendations": [
+        {
+          "rec_id": "R1.1",
+          "statement": "Diagnose acute pancreatitis based on the fulfillment of two out of three criteria: clinical upper abdominal pain, biochemical serum lipase or amylase concentration **>3 times upper limit of normal**, and radiological features on cross-sectional imaging.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "R1.2",
+          "statement": "Perform repeat transabdominal ultrasound after discharge in idiopathic acute pancreatitis; if unrevealing, proceed sequentially with **endoscopic ultrasonography (EUS)** and **MRI/MRCP**.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R1.3",
+          "statement": "Use **persistent SIRS at 48 hours** alone or combined with **C-reactive protein (CRP)** or **Interleukin-6 (IL-6)** to predict severe acute pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R1.4",
+          "statement": "Identify **persistent organ failure (>48 hours)** as the primary clinical outcome determinant for predicting **mortality** in acute pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Abdominal Imaging Protocols",
+      "narrative": "- Routine initial **CECT** within **48 hours** is not **recommended** unless diagnostic uncertainty exists.\n- Optimal timing for initial staging CECT to assess pancreatic tissue perfusion and severity is **72 to 96 hours** post-symptom onset.\n- Multiphasic CECT (**pancreatic and portal venous phases**) with slice thickness **<=2 mm** is **recommended** when local complications or arterial pseudoaneurysms are suspected.\n- **MRI with T2-weighted sequences** is **superior** to CT for differentiating liquid content from solid debris within **walled-off necrosis (WON)** prior to intervention.",
+      "recommendations": [
+        {
+          "rec_id": "R2.1",
+          "statement": "Perform initial CECT assessment for acute pancreatitis severity at least **72 to 96 hours** after symptom onset, or earlier only if diagnostic uncertainty or acute clinical deterioration occurs.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Fluid Therapy and Analgesia",
+      "narrative": "- Resuscitation with **Lactated Ringer's solution** provides **superior** reduction in systemic inflammation compared to normal saline.\n- **Moderate fluid administration (1.5 mL/kg/h)** is **superior** to aggressive fluid loading, which carries a **21% risk of fluid overload** without therapeutic benefit.\n- Targeted clinical endpoints include **MAP between 65 and 85 mmHg**, **urine output >=0.5 mL/kg/h**, **BUN <20 mg/dL**, and **hematocrit <44%**.\n- Pain should be regularly evaluated using validated *visual analog (VAS)* or *numeric rating scales (NRS)*. Both **opioids** and **NSAIDs** are effective, with opioids preferred in severe pain.",
+      "recommendations": [
+        {
+          "rec_id": "R3.1",
+          "statement": "Administer **Lactated Ringer's solution** as the primary fluid for resuscitation in acute pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R3.2",
+          "statement": "Infuse resuscitation fluid at a **moderate rate of 1.5 mL/kg/h**, providing a fluid bolus only in the presence of baseline hypovolemia or hypotension.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R3.3",
+          "statement": "Utilize **opioid analgesics** or **NSAIDs** for pain control; reserve opioids for patients presenting with severe abdominal pain.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Antibiotics and Infection Control",
+      "narrative": "- Infectious necrosis occurs in approximately **5%** of AP cases, while extrapancreatic infections occur in **14% to 37%**.\n- **Prophylactic antibiotics** do not decrease **mortality** or rates of infected pancreatic necrosis and are strongly discouraged.\n- Definite indications for antibiotic administration include positive microbiological cultures or the presence of **extralluminal gas bubbles** within peripancreatic collections on CECT.\n- Neither **probiotics** nor **selective gut decontamination** are **recommended** to prevent infectious complications.",
+      "recommendations": [
+        {
+          "rec_id": "R4.1",
+          "statement": "Do not administer **systemic antibiotic prophylaxis** to prevent infectious complications in acute pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "R4.2",
+          "statement": "Initiate targeted antibiotic therapy upon positive culture results or clear CT findings of **gas bubbles** within necrotic collections.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R4.3",
+          "statement": "Do not use **probiotic supplementation** to prevent infectious complications in acute pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Nutritional Support",
+      "narrative": "- Patients with mild AP should resume an **oral low-fat solid diet** immediately upon resolution of abdominal pain and nausea.\n- If oral refeeding is not tolerated within **72 hours**, start enteral tube nutrition.\n- Both **nasogastric (NG)** and **nasojejunal (NJ)** routes demonstrate **equivalent** safety and clinical efficacy.\n- Standard **polymeric formulas** are as effective and tolerable as elemental or semi-elemental formulations.\n- **Parenteral nutrition (PN)** should be withheld during the first week unless enteral tube feeding fails or is **contraindicated**.",
+      "recommendations": [
+        {
+          "rec_id": "R5.1",
+          "statement": "Start oral refeeding with a regular, **low-fat solid diet** as soon as clinical symptoms improve and the patient demonstrates appetite.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R5.2",
+          "statement": "Initiate **early enteral tube feeding** within **72 hours** of admission if oral refeeding is not tolerated in predicted severe pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "R5.3",
+          "statement": "Administer enteral tube feeding via either **nasogastric** or **nasojejunal** routes using standard **polymeric formulations**.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "R5.4",
+          "statement": "Reserve **total parenteral nutrition** for patients unable to tolerate or achieve full nutritional targets via the enteral route.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Biliary Tract Management and Prevention of Post-ERCP Pancreatitis",
+      "narrative": "- Routine early ERCP (<72 hours) in acute gallstone pancreatitis without cholangitis does not improve clinical outcomes.\n- Urgent **ERCP within 24-72 hours** is **mandatory** for acute biliary pancreatitis complicated by **acute cholangitis**.\n- To prevent **post-ERCP pancreatitis (PEP)**, administer **100 mg rectal indomethacin or diclofenac** periprocedurally to all patients, alongside **periprocedural Lactated Ringer's hydration**.\n- A **5-Fr pancreatic duct stent** should be placed in high-risk patients or cases with inadvertent repeated pancreatic duct cannulation.",
+      "recommendations": [
+        {
+          "rec_id": "R6.1",
+          "statement": "Perform early **ERCP with endoscopic sphincterotomy within 72 hours** in patients with acute biliary pancreatitis presenting with **acute cholangitis**.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "R6.2",
+          "statement": "Do not perform early ERCP in predicted mild or severe acute biliary pancreatitis in the absence of acute cholangitis.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "R6.3",
+          "statement": "Administer **rectal indomethacin or diclofenac 100 mg** periprocedurally to all average- and high-risk patients undergoing ERCP for PEP prophylaxis.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "R6.4",
+          "statement": "Place a **prophylactic pancreatic duct stent** during ERCP in high-risk cases or following multiple inadvertent pancreatic duct cannulations.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Management of Necrotizing Pancreatitis and Step-Up Interventions",
+      "narrative": "- Sterile pancreatic necrosis should be managed conservatively without invasive interventions.\n- Infected necrotizing pancreatitis (INP) should be managed with an initial conservative strategy using **broad-spectrum IV antibiotics**.\n- Postpone drainage procedures until encapsulation occurs at **3 to 4 weeks**, forming **walled-off necrosis (WON)**.\n- If medical therapy fails or sepsis progresses, apply the minimally invasive **step-up approach**: initial **percutaneous catheter drainage (PCD)** or **endoscopic transluminal drainage (ETD)**, followed by **minimally invasive necrosectomy** (e.g., *VARD*, *per-oral endoscopic necrosectomy*) if clinical improvement is incomplete.\n- For endoscopic WON drainage, **lumen-apposing metal stents (LAMS)** are preferred over plastic stents if solid necrosis exceeds **30%**.",
+      "recommendations": [
+        {
+          "rec_id": "R7.1",
+          "statement": "Delay invasive interventions for suspected or proven infected necrotizing pancreatitis for **3 to 4 weeks** to allow maturation into **walled-off necrosis (WON)**.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "R7.2",
+          "statement": "Utilize a **minimally invasive step-up approach** (catheter drainage followed by necrosectomy if necessary) for infected necrotizing pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "R7.3",
+          "statement": "Prefer **lumen-apposing metal stents (LAMS)** over plastic stents for endoscopic drainage of WON if infected or containing **>30% solid necrosis**.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "R7.4",
+          "statement": "Perform necrosectomy in patients with infected necrosis who demonstrate persistent signs of sepsis or clinical deterioration despite adequate catheter drainage.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Non-Infectious Complications and Disconnected Duct Syndrome",
+      "narrative": "- **Intra-abdominal hypertension (IAH)** is defined by sustained **IAP >12 mmHg**; **abdominal compartment syndrome (ACS)** requires sustained **IAP >20 mmHg** with new organ failure.\n- Arterial pseudoaneurysms or acute hemorrhagic complications should be treated primarily with **catheter-directed angioembolization**.\n- Anticoagulation is not indicated for isolated splenic vein thrombosis but may be considered for extensive portal/mesenteric venous thrombosis.\n- **Disconnected pancreatic duct syndrome (DPDS)** occurs following central necrosis; symptomatic DPDS with persistent external pancreatic fistula or recurrent fluid collections should be treated with long-term **endoscopic transmural plastic stenting** or surgical resection/bypass.",
+      "recommendations": [
+        {
+          "rec_id": "R8.1",
+          "statement": "Perform **catheter angioembolization** as first-line therapy for arterial pseudoaneurysms and acute hemorrhagic complications in acute pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "R8.2",
+          "statement": "Do not routinely administer anticoagulation for isolated splenic vein thrombosis associated with acute pancreatitis.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "R8.3",
+          "statement": "Perform **endoscopic transmural internal drainage** as the primary intervention for symptomatic post-acute **disconnected pancreatic duct syndrome (DPDS)**.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Management of Special Etiologies and Populations",
+      "narrative": "- **Pediatric AP**: Diagnostics follow adult criteria; initial imaging relies on **transabdominal ultrasound**; general therapeutic management mimics adult strategies.\n- **Hypertriglyceridemia-associated pancreatitis (HTGP)**: Maintain fasting for **48 hours**, administer **IV insulin** (particularly in diabetics) to promote LPL activity, consider short-term **LMWH**, and reserve **plasmapheresis** for persistent organ failure or acute renal failure with severe hypertriglyceridemia. Maintain post-discharge **TG <500 mg/dL**.\n- **Pregnancy**: Initial diagnosis should rely on ultrasound or non-contrast **MRI**; manage identically to non-pregnant adults. Perform **laparoscopic cholecystectomy in the second or early third trimester** for mild biliary pancreatitis.",
+      "recommendations": [
+        {
+          "rec_id": "R9.1",
+          "statement": "Administer **intravenous insulin** as first-line therapy to lower serum triglyceride levels in diabetic patients presenting with **hypertriglyceridemia-induced acute pancreatitis**.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R9.2",
+          "statement": "Maintain long-term serum triglyceride levels **<500 mg/dL** post-discharge to prevent recurrent hypertriglyceridemic pancreatitis.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "R9.3",
+          "statement": "Perform **early laparoscopic cholecystectomy** during the second or early third trimester in pregnant patients recovering from mild acute biliary pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Discharge Criteria, Prevention of Recurrence, and Long-Term Care",
+      "narrative": "- Discharge criteria require tolerance of oral solid intake, pain control on non-opioid analgesics, absence of fever, and stabilizing inflammatory markers.\n- For mild acute biliary pancreatitis, perform **index-admission cholecystectomy** to reduce recurrent biliary events (**2% vs 9%** in interval surgery).\n- In severe biliary necrotizing pancreatitis, delay cholecystectomy until peripancreatic collections resolve or stabilize (typically **8 weeks**).\n- Screen all acute pancreatitis survivors for **post-pancreatitis diabetes mellitus (PPDM)** annually using **fasting glucose and HbA1c**, starting **3 to 6 months** post-recovery.\n- Treat pancreatic exocrine insufficiency (PEI; **fecal elastase <100 mcg/g**) with **Pancreatic Enzyme Replacement Therapy (PERT)**.",
+      "recommendations": [
+        {
+          "rec_id": "R10.1",
+          "statement": "Perform **cholecystectomy during index hospital admission** for mild acute biliary pancreatitis to prevent recurrent pancreatitis.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R10.2",
+          "statement": "Delay cholecystectomy in moderate to severe biliary pancreatitis until peripancreatic fluid collections and inflammatory changes have resolved.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "R10.3",
+          "statement": "Screen all patients post-acute pancreatitis annually for **diabetes mellitus** using fasting blood glucose and **HbA1c** starting **3 to 6 months** after recovery.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R10.4",
+          "statement": "Prescribe **Pancreatic Enzyme Replacement Therapy (PERT)** for patients presenting with steatorrhea or malnutrition alongside **fecal elastase <100 mcg/g**.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Initial Diagnostic Confirmation and Etiologic Triage",
+      "action": "Confirm diagnosis using at least 2 of 3 criteria: typical upper abdominal pain, serum lipase/amylase >3x ULN, or ultrasound/CT findings. Immediately order LFTs (ALT >**150 U**/L indicates biliary etiology), serum calcium, triglycerides, and transabdominal USG."
+    },
+    {
+      "step": 2,
+      "title": "Controlled Hemodynamic Resuscitation",
+      "action": "Initiate IV Lactated Ringer's solution at a moderate rate of **1.5 mL**/kg/h. Give a 10-**20 mL**/kg bolus only if clinical hypovolemia or shock is present. Titrate resuscitation to achieve MAP 65-**85 mmHg**, urine output >=**0.5 mL**/kg/h, BUN <**20 mg**/dL, and hematocrit <44%."
+    },
+    {
+      "step": 3,
+      "title": "Severity Risk Stratification and Analgesia",
+      "action": "Assess pain using numeric rating scales and administer multimodal analgesia (NSAIDs or short-acting IV opioids like buprenorphine/fentanyl). Evaluate persistent SIRS, CRP (>**150 mg**/L), or IL-6 at 48 hours. Transfer patients with organ failure or infected necrosis to an ICU or high-volume tertiary center."
+    },
+    {
+      "step": 4,
+      "title": "Nutritional Support Protocol",
+      "action": "In mild cases, start an oral low-fat solid diet as soon as abdominal pain subsides. If oral intake is not tolerated by 72 hours, place a nasogastric or nasojejunal tube and begin enteral feeding with standard polymeric formula. Avoid total parenteral nutrition unless enteral route is completely **contraindicated**."
+    },
+    {
+      "step": 5,
+      "title": "Infection Management and Biliary Intervention",
+      "action": "Withhold prophylactic antibiotics. If acute cholangitis is present, perform urgent ERCP within 72 hours. For PEP prophylaxis, administer rectal indomethacin **100 mg** periprocedurally. Initiate targeted broad-spectrum IV antibiotics only for proven extrapancreatic infection or gas-forming infected necrosis."
+    },
+    {
+      "step": 6,
+      "title": "Delayed Step-Up Management of Necrosis",
+      "action": "Maintain conservative medical support for acute necrotizing pancreatitis. Delay invasive drainage for 3-4 weeks until walled-off necrosis (WON) develops. If clinical infection or deterioration occurs, perform percutaneous or EUS-guided transmural LAMS drainage, stepping up to minimally invasive retroperitoneal or endoscopic necrosectomy only if drainage alone fails."
+    }
+  ],
+  "strengths_limitations": "- **Strengths**: Extensive global multi-society endorsement (IAP, APA, EPC, IPC, JPS); rigorous incorporation of level 1 RCT evidence generated over the past decade; application of standard GRADE methodology; explicit inclusion of patient perspectives and values across all clinical domains.\n- **Limitations**: Scarcity of high-quality randomized evidence for specific pediatric, pregnant, and traumatic pancreatitis subgroups; limited direct evidence for novel targeted anti-inflammatory biological therapies.",
+  "drugs_doses": [
+    {
+      "drug": "Lactated Ringer's Solution",
+      "dose": "1.5 mL/kg/h IV continuous infusion; bolus 10-20 mL/kg only if hypovolemic",
+      "indication": "Fluid resuscitation in acute pancreatitis and periprocedural hydration for post-ERCP pancreatitis prophylaxis",
+      "adverse_effects": "Fluid overload, peripheral and pulmonary edema, hyperchloremic metabolic acidosis if overadministered"
+    },
+    {
+      "drug": "Indomethacin",
+      "dose": "100 mg rectally once periprocedurally (within 30 minutes before or after ERCP)",
+      "indication": "Prevention of post-ERCP pancreatitis (PEP) in high- and average-risk patients",
+      "adverse_effects": "Gastrointestinal mucosal ulceration, transient renal dysfunction, NSAID-induced hypersensitivity"
+    },
+    {
+      "drug": "Diclofenac",
+      "dose": "100 mg rectally once periprocedurally or 75 mg IV/IM for acute pain",
+      "indication": "Post-ERCP pancreatitis prophylaxis and acute pancreatitis analgesia",
+      "adverse_effects": "Gastric irritation, acute kidney injury, bleeding risk"
+    },
+    {
+      "drug": "Insulin (Regular)",
+      "dose": "Continuous IV infusion titrated to maintain blood glucose 110-150 mg/dL while rapidly clearing chylomicrons",
+      "indication": "First-line therapy for hypertriglyceridemia-induced acute pancreatitis (especially in diabetic patients)",
+      "adverse_effects": "Hypoglycemia, hypokalemia (requires routine blood glucose and electrolyte monitoring)"
+    },
+    {
+      "drug": "Low Molecular Weight Heparin (Enoxaparin)",
+      "dose": "1 mg/kg subcutaneously every 12-24 hours for short-term duration (<3 days)",
+      "indication": "Adjunctive triglyceride-lowering therapy in hypertriglyceridemic acute pancreatitis",
+      "adverse_effects": "Major intra-abdominal or retroperitoneal hemorrhage, heparin-induced thrombocytopenia"
+    },
+    {
+      "drug": "Buprenorphine",
+      "dose": "0.3-0.6 mg IV/IM every 6-8 hours as needed",
+      "indication": "Severe abdominal pain management in acute pancreatitis",
+      "adverse_effects": "Sedation, nausea, respiratory depression, constipation, Sphincter of Oddi spasm (minimal)"
+    },
+    {
+      "drug": "Pentazocine",
+      "dose": "30 mg IV/IM every 3-4 hours as needed",
+      "indication": "Analgesia for severe acute pancreatitis pain",
+      "adverse_effects": "Sedation, psychotomimetic effects (hallucinations, confusion), dizziness, nausea"
+    },
+    {
+      "drug": "Pancrelipase (PERT)",
+      "dose": "25,000-50,000 USP units lipase per main meal (half-dose with snacks), titrated to clinical steatorrhea response",
+      "indication": "Pancreatic exocrine insufficiency post-acute necrotizing pancreatitis (fecal elastase <100 mcg/g)",
+      "adverse_effects": "Abdominal cramps, nausea, hyperuricemia, fibrosing colonopathy (at extremely high doses)"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2025-07-10",
+  "article_subtype": "Guideline",
+  "subtopic": "Gastroenterology"
+}

@@ -1,0 +1,421 @@
+{
+  "id": "isccm-management-potential-organ-donor-2024",
+  "doc_type": "guideline",
+  "title": "Management of Potential Organ Donor: Indian Society of Critical Care Medicine—Position Statement",
+  "issuing_bodies": [
+    "ISCCM"
+  ],
+  "year": 2024,
+  "doi": "10.5005/jp-journals-10071-24698",
+  "specialty": [
+    "multi_system",
+    "neurology",
+    "pharmacology"
+  ],
+  "tags": [
+    "organ donation",
+    "brainstem death",
+    "apnea test",
+    "donor optimization",
+    "hormone replacement therapy",
+    "expanded criteria donor",
+    "critical care"
+  ],
+  "one_line_summary": "Comprehensive position statement by the Indian Society of **Critical** Care Medicine providing evidence-based guidance on diagnosing brainstem death, hemodynamic optimization, and organ preservation in potential adult deceased donors.",
+  "key_pearls": [
+    "**Apnea testing** requires strict prerequisites: core temperature **>= 36.5°C**, **SBP >= 100 mm Hg**, euvolemia, and normocapnia; a positive test requires absent respiratory effort with **PaCO2 >= 60 mm Hg** or a **>= 20 mm Hg** rise over baseline.",
+    "Hemodynamic optimization targets a **MAP > 60–65 mm Hg** and **urine output 0.5–2 mL/kg/h** using balanced isotonic crystalloids while strictly avoiding hydroxyethyl starch colloids.",
+    "Hormonal replacement therapy (**HRT**) with IV **methylprednisolone** (**15 mg/kg** q24h), **T4** (or enteral thyroxine **300–400 mcg** q8h), and **vasopressin** (**0.5–2.4 U/h**) is **recommended** for hemodynamically unstable donors.",
+    "Serum sodium must be aggressively managed to remain **< 160 mEq/L** (target **135–155 mEq/L**), and blood glucose maintained between **80–150 mg/dL** with continuous **insulin** infusion.",
+    "Lung-protective ventilation using low tidal volumes (**6–8 mL/kg** predicted body weight), PEEP **>= 5 cm H2O**, and plateau pressures **< 30 cm H2O** doubles the yield of transplantable lungs.",
+    "Donor bacteremia or positive blood cultures are not **absolute** contraindications to donation, provided pathogen-specific antibiotics are administered for **>= 48 hours** before procurement and continued in recipients for **7–10 days**."
+  ],
+  "consensus_method": "Comprehensive literature review and consensus position statement by the ISCCM panel of critical care experts",
+  "search_period": "Through 2023",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Role of Intensivist and Evaluation of Deceased Donor",
+      "narrative": "- Trained **critical** care personnel must be actively involved in the early identification, assessment, and maintenance of potential organ donors.\n- Intensivists play a vital role in identifying brain death alert signs (GCS **< 4** not explained by sedation), preserving organ perfusion, and preventing hemodynamic collapse.\n- Evaluation requires a structured approach including physical examination, detailed past/present medical history, laboratory screening, radiological imaging, and organ-specific diagnostic procedures.",
+      "recommendations": [
+        {
+          "rec_id": "R1",
+          "statement": "The ISCCM recommends that trained **critical** care personnel be involved in the early identification, assessment, evaluation, and management of potential organ donors.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R13",
+          "statement": "The ISCCM recommends that an intensivist along with procurement team members evaluate the organ donor meticulously using detailed history, physical examination, biochemical/microbiological testing, and organ-specific diagnostics (HRCT, bronchoscopy, TEE, organ biopsy).",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Brainstem Death Diagnosis and Clinical Examination",
+      "narrative": "- Brainstem death diagnosis requires a clear, irreversible cause of catastrophic brain injury supported by neuroimaging.\n- Preconditions must be strictly checked: core temperature **>= 34°C** (for examination) and **>= 36.5°C** (for apnea test), normal metabolic/acid-base parameters, absence of severe endocrine disturbance, and exclusion of drug intoxication (wait **>= 5 half-lives** if CNS depressants were administered).\n- Clinical testing must demonstrate complete absence of brainstem reflexes: non-reactive pupils, absent corneal, oculocephalic, oculovestibular (cold caloric), gag, and cough reflexes, with no motor response within cranial nerve territory.",
+      "recommendations": [
+        {
+          "rec_id": "R2",
+          "statement": "The ISCCM recommends that for the declaration of brainstem death, there should be a potential irreversible cause of catastrophic brain injury (supported radiologically), confounding factors ruled out, and precondition criteria strictly checked.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R4",
+          "statement": "The ISCCM recommends a thorough evaluation of potential deceased organ donors including proximate cause determination, detailed medical history, clinical neurological reflex examination, and apnea testing.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R6",
+          "statement": "The ISCCM recommends that intensivists be aware of compatible (spinal reflexes, sweating, blushing, normotension, absence of diabetes insipidus) and incompatible (decerebrate/decorticate posturing, seizures, true motor responses) observations in brainstem death.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Apnea Testing Protocols and Special Considerations",
+      "narrative": "- Apnea testing (AT) is **mandatory** to confirm brainstem death by proving absent respiratory drive under hypercarbic stimulation.\n- Prerequisites prior to AT: core temperature **>= 36.5°C**, euvolemia, baseline **PaCO2 >= 40 mm Hg**, and normal **PaO2**.\n- Procedure: preoxygenate with **100% O2** for **10–15 min**, disconnect ventilator, deliver **4–6 L/min** O2 via tracheal catheter or CPAP/PEEP valve, observe for **8–10 min**, and obtain ABG.\n- Positive AT interpretation: complete absence of respiratory efforts and post-test **PaCO2 >= 60 mm Hg** or a **>= 20 mm Hg** rise over baseline **PaCO2**.\n- If desaturation or hypotension occurs, modify AT using a PEEP valve, T-piece with CPAP, or ventilator CPAP-mode. On V-V ECMO, reduce sweep gas flow to **0–1 L/min** during testing.",
+      "recommendations": [
+        {
+          "rec_id": "R5",
+          "statement": "The ISCCM recommends that apnea testing is **mandatory** to confirm brainstem death and must be performed following strict protocolized steps using oxygen insufflation, PEEP valve, T-piece, Bains circuit, or ventilator CPAP mode once prerequisites are satisfied.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R8",
+          "statement": "In patients on ECMO, clinical examination should be performed and sweep gas flow decreased to 0.5–**1 L**/min during apnea testing. In patients treated with targeted temperature management (TTM), brain death evaluation must not be initiated until at least 24 hours after complete rewarming.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Ancillary Testing Guidelines",
+      "narrative": "- Ancillary confirmatory tests are **not mandatory** under Indian law (THOA) if complete clinical examination and apnea testing can be conclusively performed.\n- Indications for ancillary tests: severe facial trauma, cervical/cranial injuries preventing physical exam, persistent confounding drug effects, or disagreement among examining physicians.\n- Diagnostic modalities: Digital Subtraction Angiography (**DSA**, gold standard with **100%** sensitivity/specificity), Transcranial Doppler (**TCD**), **SPECT** radionuclide imaging, **CTA/MRA**, and **EEG** / evoked potentials.",
+      "recommendations": [
+        {
+          "rec_id": "R7",
+          "statement": "The ISCCM recommends that ancillary tests are not **mandatory** for diagnosing brainstem death and should only be conducted if clinical examination cannot be fully performed, confounders persist, or the medical panel is in doubt.",
+          "strength": "conditional",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Legal Framework, Certification, and Communication in India",
+      "narrative": "- Legal certification under THOA (amended 2011, rules 2014) requires a panel of 4 medical practitioners: medical superintendent/hospital in-charge, primary treating doctor, independent specialist, and a neurologist/neurosurgeon (or approved surgeon/physician/intensivist if neuro-specialist unavailable).\n- Two sets of neurological examinations and ATs must be performed **6 hours** apart in adults.\n- Certification and state notification of brainstem death is **mandatory** irrespective of whether organ donation occurs.\n- Opt-in consent from the next-of-kin is legally required even if the deceased held a donor card. Medicolegal cases require police and coroner clearance.",
+      "recommendations": [
+        {
+          "rec_id": "R3",
+          "statement": "The ISCCM describes the administrative network of NOTTO, ROTTO, and SOTTO for coordinating national organ donation, retrieval, and allocation.",
+          "strength": "expert_opinion",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R9",
+          "statement": "The ISCCM recommends strict adherence to THOA regulations requiring brainstem death certification by a 4-doctor panel with two examinations 6 hours apart, recorded using standardized Form 10.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R10",
+          "statement": "The ISCCM recommends stepwise communication with the next of kin regarding **prognosis** and brainstem death state, involving transplant coordinators to obtain formal consent.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R11",
+          "statement": "The ISCCM mandates the certification and formal notification of brainstem death in all cases, irrespective of whether organ donation takes place.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R12",
+          "statement": "The ISCCM recommends establishing a **critical** pathway for sequential tasks in deceased organ donation programs to maintain protocol uniformity and prevent conflicts of interest.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R16",
+          "statement": "The ISCCM recommends seamless coordination between Non-Transplant Organ Retrieval Centers (NTORCs) and transplant centers via SOTTO/ROTTO/NOTTO to minimize cold ischemia times and prevent organ wastage.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Donor Suitability, Contraindications, and Expanded Criteria",
+      "narrative": "- **Absolute** contraindications: metastatic active malignancies, active hematological malignancies, high-risk CNS tumors (grade III/IV, shunt, or prior surgery), untreated systemic infections of unknown origin, viral encephalitis, rabies, active fungal/opportunistic infections, and end-stage chronic organ failure of the specific target organ.\n- Bacteremia is **not** an **absolute** contraindication if treated with effective antibiotics for **>= 48 hours** prior to retrieval.\n- Expanded Criteria Donors (**ECD**) enable utilization of borderline organs (e.g., kidney donor age **> 60 years** or **50–59 years** with hypertension/Cerebrovascular cause of death/creatinine **> 1.5 mg/dL**; liver with steatosis **> 30%** or transaminitis **> 10x** ULN) with specialized informed consent.",
+      "recommendations": [
+        {
+          "rec_id": "R14",
+          "statement": "The ISCCM recommends screening to exclude **absolute** contraindications for organ donation categorized under metastatic malignancy, active high-risk infections, and chronic end-stage organ failure.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R15",
+          "statement": "The ISCCM recommends utilizing standard and expanded criteria (ECD) for organ selection as defined by NOTTO/SOTTO guidelines to safely expand the donor pool.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Hemodynamic Management and Resuscitation Protocols",
+      "narrative": "- Brainstem death produces a transient autonomic/catecholamine storm (hypertension, tachycardia, arrhythmias) followed by loss of sympathetic tone, vasoplegia, and severe hypotension.\n- Antihypertensives during the autonomic storm should generally be avoided; if necessary, use ultra-short-acting agents (**esmolol**, **sodium nitroprusside**).\n- Primary targets: **MAP > 60–65 mm Hg**, SBP **> 100 mm Hg**, CVP **6–10 cm H2O**, cardiac index **> 2.4 L/min/m2**, and urine output **0.5–2 mL/kg/h**.\n- Fluid resuscitation: use balanced isotonic crystalloids (Plasmalyte-A, Ringer's Lactate); **avoid hydroxyethyl starch colloids** due to nephrotoxicity.\n- Vasopressor support: low-dose **vasopressin** (**0.5–2.4 U/h**) is preferred for vasoplegia and DI, paired with **norepinephrine** or **dobutamine** (for myocardial dysfunction with EF **< 45%**).",
+      "recommendations": [
+        {
+          "rec_id": "R17",
+          "statement": "The ISCCM recommends multimodal physiological management of potential organ donors to optimize organ perfusion, function, and post-transplant graft **survival**.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R18",
+          "statement": "The ISCCM recommends routine general supportive care including hand hygiene, 30-45° head elevation, eye taping, stress ulcer prophylaxis, DVT prophylaxis, and upper-extremity invasive lines.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R19",
+          "statement": "The ISCCM recommends continuous monitoring of hemodynamic parameters, blood pressure, continuous ECG, core temperature, and urine output, utilizing bedside echocardiography and dynamic measures (PPV/SVV) to guide fluid responsiveness.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R22",
+          "statement": "The ISCCM recommends aggressive hemodynamic management to maintain normovolemia, MAP 60–65 mm Hg, and optimal cardiac output using the minimum vasoactive support.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R23",
+          "statement": "The ISCCM recommends that routine use of antihypertensives during the transient autonomic storm should generally be avoided; short-acting agents may be used if transiently required.",
+          "strength": "conditional",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R24",
+          "statement": "The ISCCM recommends managing hypotension using a structured VIP/VIPPS approach combining volume expansion, vasopressors/inotropes, and hormonal replacement.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R25",
+          "statement": "The ISCCM recommends fluid resuscitation with balanced isotonic crystalloids and transfusion of packed RBCs to maintain hematocrit > 30%, while strictly avoiding hydroxyethyl starch colloids.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R26",
+          "statement": "The ISCCM recommends vasopressors (low-dose vasopressin and/or norepinephrine) to maintain MAP > 60–65 mm Hg and SBP > 100 mm Hg following or alongside adequate fluid resuscitation.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R27",
+          "statement": "The ISCCM recommends initiation of hormonal replacement therapy with T4 and methylprednisolone in hemodynamically unstable donors who remain refractory to fluid resuscitation and vasopressors.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R28",
+          "statement": "The ISCCM recommends prompt detection, prevention, and treatment of cardiac arrhythmias using standard antiarrhythmics (amiodarone) or cardioversion; atropine is ineffective for bradycardia following brainstem death.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Metabolic, Endocrine, and Hormonal Optimization",
+      "narrative": "- Central diabetes insipidus (DI) occurs in **46–78%** of donors due to loss of posterior pituitary function, causing severe polyuria, hypernatremia, and hypovolemia.\n- Target serum sodium: **< 160 mEq/L** (ideally **135–155 mEq/L**). Treat DI with **desmopressin** (**1–4 mcg** IV q6h) in stable donors or **vasopressin** infusion (**0.5–2.4 U/h**) in unstable donors, hypotonic fluids (**D5W** or **0.45% Saline**), and serum sodium monitoring q2–4h.\n- Glycemic control: target blood glucose **80–150 mg/dL** (or **120–180 mg/dL** target range) using regular insulin infusion.\n- Hormonal Replacement Therapy (**HRT**) bundle: **methylprednisolone** (**15 mg/kg** IV q24h or **250 mg** bolus + **100 mg/h**), **thyroxine T4** (**20 mcg** IV bolus + **10 mcg/h** or enteral **300–400 mcg** q8h), **vasopressin**, and **insulin**.",
+      "recommendations": [
+        {
+          "rec_id": "R20",
+          "statement": "The ISCCM recommends monitoring arterial blood gases, lactate, electrolytes, and blood glucose every 2–4 hours, alongside routine blood, urine, and tracheal secretion cultures.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R21",
+          "statement": "The ISCCM recommends allowing adequate time (up to 20–50 hours for kidneys, or procurement within 30 hours of brainstem death) for donor resuscitation and recovery from autonomic storm injury.",
+          "strength": "conditional",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R29",
+          "statement": "The ISCCM recommends aggressive management of serum sodium to maintain values < **160 mEq**/L (target 135–**155 mEq**/L) and maintenance of blood glucose between 80–**150 mg**/dL with IV insulin.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R34",
+          "statement": "The ISCCM recommends hormonal replacement therapy consisting of vasopressin/desmopressin, IV high-dose methylprednisolone, insulin infusion, and T4/T3 thyroid supplementation in potential organ donors.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Respiratory, Thermal, Hematologic, and Nutritional Support",
+      "narrative": "- Lung-protective ventilation strategy: tidal volume **6–8 mL/kg** predicted body weight, PEEP **>= 5 cm H2O**, plateau pressure **< 30 cm H2O**, closed tracheal suctioning, recruitment maneuvers after disconnection, and target **PaO2 > 70 mm Hg** (or P/F ratio **> 300** for lung donation).\n- Temperature control: hypothermia occurs due to loss of hypothalamic thermoregulation; actively warm using thermal blankets and warmed fluids to maintain core body temperature **35–37°C** (or mild target **34–35°C** to prevent delayed graft function in kidneys).\n- Hematologic: maintain **Hct > 30%** (hemoglobin **> 7.0–9.0 g/dL**) with PRBC transfusions. Continue LMWH in non-bleeding donors with normal coagulation profile.\n- Nutrition: continue enteral nutrition to maintain mucosal barrier integrity, prevent bacterial translocation, and replenish hepatic glycogen reserves.",
+      "recommendations": [
+        {
+          "rec_id": "R30",
+          "statement": "The ISCCM recommends protective mechanical ventilation using low tidal volumes (6–**8 mL**/kg), plateau pressure < 30 cm H2O, PEEP >= 5 cm H2O, and minimum FiO2 to maintain PaO2 > 70 mm Hg.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R31",
+          "statement": "The ISCCM recommends active prevention and treatment of hypothermia to maintain donor core temperature between 35–36°C.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R32",
+          "statement": "The ISCCM recommends packed red blood cell transfusion if hematocrit drops below 30% and continuation of LMWH thromboprophylaxis in patients with normal coagulation.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R33",
+          "statement": "The ISCCM recommends continuing enteral nutrition in potential organ donors to maintain intestinal mucosal integrity, prevent translocation, and optimize allograft glycogen stores.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Infection Control, Hurdles, and Controlled DCDD",
+      "narrative": "- Infection control: strict aseptic care of invasive lines, catheters, and airway; routine microbiological screening.\n- Donor bacteremia or positive blood cultures are not **absolute** contraindications provided effective pathogen-specific antibiotics are administered for **>= 48 hours** prior to procurement and recipient receives **7–10 days** of pathogen-directed therapy.\n- Controlled Donation after Circulatory Determination of Death (**DCDD**): **recommended** following withdrawal of life-sustaining treatment (WLST) under established EOLC guidelines. A 'no-touch' period of **5–20 minutes** is observed after circulatory arrest before organ retrieval.",
+      "recommendations": [
+        {
+          "rec_id": "R35",
+          "statement": "The ISCCM recommends adopting strict infection control measures and microbiological screening protocols to minimize infectious transmission to recipients.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R36",
+          "statement": "The ISCCM recommends that donor bacteremia or sepsis is not a contraindication to organ donation, provided pathogen-specific antibiotics are administered for at least 48 hours before procurement and recipients receive 7–10 days of targeted antibiotic therapy.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R37",
+          "statement": "The ISCCM recommends systematic documentation of reasons for organ donation refusal and implementation of corrective measures (coordinator training, public education, legal simplification) to overcome hurdles in India.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "R38",
+          "statement": "The ISCCM recommends the implementation and legislative enablement of Donation after Circulatory Determination of Death (DCDD) in India to expand the deceased donor pool.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Prerequisite Check and Confounder Exclusion",
+      "action": "Ensure core temperature is **>= 36.5°C**, SBP **>= 100 mm Hg** (resuscitate with balanced crystalloids if needed), correct gross electrolyte or acid-base abnormalities, rule out drug intoxication (wait **>= 5 half-lives**), and confirm irreversible structural brain injury on CT/MRI."
+    },
+    {
+      "step": 2,
+      "title": "Clinical Neurological Examination",
+      "action": "Test cranial nerve reflexes systematically: pupil light reflex (CN II, III), corneal and oculocephalic reflexes (CN V, VII, VIII), oculovestibular cold caloric test (CN III, VI, VIII), and gag/cough reflexes (CN IX, X). Confirm total absence of motor response to supraorbital/sternal noxious stimuli."
+    },
+    {
+      "step": 3,
+      "title": "Perform Initial Apnea Test (AT)",
+      "action": "Preoxygenate with **100% FiO2** for **10-15 minutes**. Disconnect ventilator and deliver tracheal **100% O2** at **4-6 L/min** (or use CPAP valve **5-10 cm H2O**). Observe for respiratory effort for **8-10 minutes**. Draw ABG: positive test requires no respiratory effort and **PaCO2 >= 60 mm Hg** (or **>= 20 mm Hg** above baseline). Repeat complete examination and AT after **6 hours** with the 4-doctor panel."
+    },
+    {
+      "step": 4,
+      "title": "Hemodynamic Stabilization (VIP Approach)",
+      "action": "Target **MAP > 60-65 mm Hg** and **UOP 0.5-2 mL/kg/h**. Infuse balanced crystalloids (Plasmalyte/Ringer's); avoid hydroxyethyl starch. Start **vasopressin** (**0.5-2.4 U/h**) for vasoplegia or diabetes insipidus. Add **norepinephrine** or **dobutamine** (if EF **< 45%**) as needed."
+    },
+    {
+      "step": 5,
+      "title": "Endocrine, Glycemic, and Electrolyte Optimization",
+      "action": "Administer IV **methylprednisolone** (**15 mg/kg** q24h), enteral/IV **T4** (300-**400 mcg** q8h) in unstable donors, and regular **insulin** infusion targeting blood glucose **80-150 mg/dL**. Correct hypernatremia (target sodium **< 160 mEq/L**) using **5% Dextrose** or **0.45% Saline**."
+    },
+    {
+      "step": 6,
+      "title": "Lung Protection and Active Warming",
+      "action": "Set mechanical ventilation to tidal volume **6-8 mL/kg** predicted body weight, PEEP **>= 5 cm H2O**, plateau pressure **< 30 cm H2O**, and maintain **PaO2 > 70 mm Hg**. Maintain donor core temperature at **35-36°C** using active warming blankets and warmed IV fluids."
+    },
+    {
+      "step": 7,
+      "title": "Donor Evaluation and SOTTO/NOTTO Notification",
+      "action": "Draw complete blood count, blood group, HLA, biochemistry, coagulation profile, and serology (HIV, HBsAg, HCV, VDRL, CMV). Perform echocardiogram, chest radiograph, and organ-specific testing. Complete Form 10, obtain next-of-kin consent via transplant coordinator, and notify SOTTO/NOTTO."
+    }
+  ],
+  "strengths_limitations": "- **Strengths**: Provides a comprehensive, multi-system management bundle tailored specifically to the Indian legal framework (THOA) and **critical** care infrastructure, addressing both standard and expanded criteria donors.\n- **Limitations**: Many recommendations are based on expert consensus and retrospective observational data due to ethical and practical limitations in conducting randomized controlled trials in brainstem-dead donors.",
+  "drugs_doses": [
+    {
+      "drug": "Methylprednisolone",
+      "dose": "15 mg/kg IV immediately after BD diagnosis and q24h thereafter; alternatively 250 mg IV bolus followed by 100 mg/h infusion until retrieval",
+      "indication": "Hormonal replacement therapy and anti-inflammatory donor lung optimization in hemodynamically unstable organ donors",
+      "adverse_effects": "Hyperglycemia, fluid retention, acute steroid-induced electrolyte shifts"
+    },
+    {
+      "drug": "Thyroxine (T4)",
+      "dose": "20 mcg IV bolus followed by 10 mcg/h IV infusion; or enteral 300–400 mcg via NG tube q8h",
+      "indication": "Hormonal replacement therapy in hemodynamically unstable organ donors with sick euthyroid state",
+      "adverse_effects": "Tachycardia, ventricular arrhythmias, myocardial ischemia"
+    },
+    {
+      "drug": "Vasopressin",
+      "dose": "1 U IV bolus followed by continuous IV infusion of 0.5–2.4 U/h (up to 4.0 U/h)",
+      "indication": "Vasodilatory shock, vasoplegia, catecholamine-sparing hemodynamic support, and central diabetes insipidus in organ donors",
+      "adverse_effects": "Excessive peripheral vasoconstriction, splanchnic and coronary ischemia at high doses"
+    },
+    {
+      "drug": "Desmopressin (DDAVP)",
+      "dose": "1–4 mcg IV initial dose, followed by 1–2 mcg IV q6h; or 10–20 mcg intranasally",
+      "indication": "Central diabetes insipidus in hemodynamically stable brain-dead organ donors",
+      "adverse_effects": "Hyponatremia, water intoxication, lack of vasopressor effect (V2 selective)"
+    },
+    {
+      "drug": "Norepinephrine",
+      "dose": "Continuous IV infusion titrated to target MAP > 60–65 mm Hg (preferably avoid high doses > 0.05 mcg/kg/min)",
+      "indication": "Severe persistent hypotension and vasoplegia following brainstem death",
+      "adverse_effects": "Excessive alpha-adrenergic vasoconstriction, peripheral gangrene, organ hypoperfusion"
+    },
+    {
+      "drug": "Insulin (Regular)",
+      "dose": "Continuous IV infusion titrated to maintain blood glucose 80–150 mg/dL (or 120–180 mg/dL)",
+      "indication": "Stress hyperglycemia, corticosteroid-induced hyperglycemia, and peripheral insulin resistance in donors",
+      "adverse_effects": "Hypoglycemia, hypokalemia"
+    },
+    {
+      "drug": "Dobutamine",
+      "dose": "Continuous IV infusion of 2.5–10.0 mcg/kg/min titrated to cardiac output",
+      "indication": "Myocardial dysfunction, stress cardiomyopathy, or low ejection fraction (EF < 45%) in potential heart donors",
+      "adverse_effects": "Tachycardia, tachyarrhythmias, hypotension from beta-2 vasodilation"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2024-10-25",
+  "article_subtype": "Guideline",
+  "subtopic": "Multisystem"
+}

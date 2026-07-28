@@ -1,0 +1,158 @@
+{
+  "id": "sccm-corticosteroids-sepsis-ards-cap-2024",
+  "doc_type": "guideline",
+  "title": "2024 Focused Update: Guidelines on Use of Corticosteroids in Sepsis, Acute Respiratory Distress Syndrome, and Community-Acquired Pneumonia",
+  "issuing_bodies": [
+    "SCCM"
+  ],
+  "year": 2024,
+  "doi": "10.1097/CCM.0000000000006172",
+  "specialty": [
+    "pulmonology",
+    "infectious_disease",
+    "multi_system"
+  ],
+  "tags": [
+    "corticosteroids",
+    "sepsis",
+    "septic shock",
+    "ards",
+    "community-acquired pneumonia",
+    "hydrocortisone",
+    "dexamethasone",
+    "methylprednisolone"
+  ],
+  "one_line_summary": "Updated SCCM guidelines recommend low-dose corticosteroids for adult septic shock, **critically** ill ARDS, and severe community-acquired pneumonia, while advising against high-dose short-course administration in septic shock.",
+  "key_pearls": [
+    "For adult patients with **septic shock**, the panel suggests administering **low-dose corticosteroids** (typically **hydrocortisone 200 mg/day** IV for **5–7 days**) to accelerate shock reversal and reduce short-term **mortality**.",
+    "High-dose, short-duration **corticosteroid** regimens (**> 400 mg/day hydrocortisone equivalent** for **< 3 days**) are strongly **recommended** against in **septic shock** due to lack of efficacy and increased risk of adverse effects.",
+    "In adult **critically** ill patients with **ARDS**, **corticosteroids** (e.g., **dexamethasone 20 mg/day** or **methylprednisolone 1 mg/kg/day**) are suggested as they probably reduce **28-day mortality** (*RR* **0.82**) and duration of mechanical ventilation.",
+    "In hospitalized adult patients with **severe bacterial CAP**, administering **corticosteroids** is strongly **recommended** as it **significantly** reduces hospital **mortality** (*RR* **0.62**) and the need for invasive mechanical ventilation.",
+    "No recommendation is made regarding **corticosteroid** administration in non-severe **CAP** or in pediatric patients with **sepsis**, **ARDS**, or **CAP** due to insufficient direct clinical evidence."
+  ],
+  "consensus_method": "GRADE approach with Evidence-to-Decision framework; formal web-based vote with 80% consensus threshold among at least 75% panel members.",
+  "search_period": null,
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Corticosteroids in Sepsis and Septic Shock",
+      "narrative": "- Administration of **corticosteroids** in **sepsis** and **septic shock** probably reduces ICU/short-term **14–30 day mortality** (*RR* **0.93**; **95% CI**, **0.88–0.98**) and may reduce long-term **mortality** (*RR* **0.94**; **95% CI**, **0.89–1.00**).\n- **Corticosteroid** treatment **significantly** increases rates of **shock reversal** (*RR* **1.24**; **95% CI**, **1.11–1.38**) and reduces organ failure as measured by **SOFA score** at day 7 (**MD 1.41 points lower**).\n- Common adverse events include increased rates of **hyperglycemia** (*RR* **1.13**) and **hypernatremia** (*RR* **1.64**), along with a potential increase in **neuromuscular weakness** (*RR* **1.21**).\n- High-dose short-duration regimens (**> 400 mg/day hydrocortisone equivalent** for **< 3 days**) demonstrate clear net harm and lack of efficacy compared to lower-dose longer courses.",
+      "recommendations": [
+        {
+          "rec_id": "1A",
+          "statement": "We suggest administering corticosteroids to adult patients with septic shock.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "1B",
+          "statement": "We recommend against administration of high dose/short duration corticosteroids (> **400 mg**/d hydrocortisone **equivalent** for less than 3 d) for adult patients with septic shock.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Corticosteroids in Acute Respiratory Distress Syndrome",
+      "narrative": "- Systemic **corticosteroids** in **critically** ill patients with **ARDS** probably reduce **28-day mortality** (*RR* **0.82**; **95% CI**, **0.72–0.95**).\n- Treatment with **corticosteroids** may lead to fewer days of mechanical ventilation and a shorter overall **hospital length of stay**.\n- Courses longer than **7 days** demonstrated a greater **mortality** benefit compared to shorter courses (*p-value* for subgroup interaction = **0.04**).\n- Adverse effects include an increased risk of **hyperglycemia** (*RR* **1.11**; **95% CI**, **1.01–1.23**); impacts on **gastrointestinal bleeding** and **secondary infections** remain uncertain.",
+      "recommendations": [
+        {
+          "rec_id": "2A",
+          "statement": "We suggest administering corticosteroids to adult hospitalized patients with acute respiratory distress syndrome.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Corticosteroids in Community-Acquired Pneumonia",
+      "narrative": "- In hospitalized patients with **severe bacterial CAP**, **corticosteroid** administration probably reduces hospital **mortality** (*RR* **0.62**; **95% CI**, **0.45–0.85**).\n- In non-severe **CAP**, **corticosteroids** did not show a clear **mortality** benefit (*RR* **1.08**; **95% CI**, **0.83–1.42**; *p-value* for subgroup interaction = **0.01**).\n- Across all hospitalized **CAP** patients, **corticosteroids** reduce the need for **invasive mechanical ventilation** and decrease both ICU and hospital length of stay.\n- **Hyperglycemia** risk is increased (*moderate certainty*), and there may be a small increase in **secondary infections** (*low certainty*).",
+      "recommendations": [
+        {
+          "rec_id": "3A",
+          "statement": "We recommend administering corticosteroids to adult patients hospitalized with severe bacterial community-acquired pneumonia.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "3B",
+          "statement": "We make no recommendation for administering corticosteroids for adult patients hospitalized with less severe bacterial community-acquired pneumonia.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Patient Risk Stratification and Indication Assessment",
+      "action": "Identify adult hospitalized patients presenting with septic shock requiring vasopressors, early/persistent ARDS, or severe bacterial CAP (e.g., PSI class IV/V, ATS/IDSA severe criteria, or requiring ICU admission/vasopressors)."
+    },
+    {
+      "step": 2,
+      "title": "Initiate Corticosteroid Therapy for Septic Shock",
+      "action": "Administer hydrocortisone **200 mg** IV daily as continuous infusion or **50 mg** IV every 6 hours for 5–7 days. Enteral fludrocortisone 50 µg daily may be added."
+    },
+    {
+      "step": 3,
+      "title": "Initiate Corticosteroid Therapy for ARDS",
+      "action": "Administer dexamethasone **20 mg** IV daily for 5 days then **10 mg** daily for 5 days, or methylprednisolone **1 mg**/kg/day IV continuous infusion, continuing treatment for 7 to 14 days."
+    },
+    {
+      "step": 4,
+      "title": "Initiate Corticosteroid Therapy for Severe CAP",
+      "action": "Administer hydrocortisone **200 mg** IV daily continuous infusion for 4–7 days or methylprednisolone **0.5 mg**/kg IV every 12 hours for 5–7 days."
+    },
+    {
+      "step": 5,
+      "title": "Adverse Effect Monitoring and Prevention",
+      "action": "Monitor serum glucose continuously and manage hyperglycemia with insulin protocols; monitor serum sodium levels; avoid high-dose short-duration regimens (> **400 mg**/day hydrocortisone **equivalent** for < 3 days)."
+    }
+  ],
+  "strengths_limitations": "- Strengths: Utilized rigorous GRADE methodology, systematic reviews, and Evidence-to-Decision frameworks with an international multidisciplinary panel; incorporated substantial new evidence including the CAPE COD and ADRENAL trials.\n- Limitations: Insufficient data to form recommendations for pediatric populations; inconsistent reporting and variable definitions of steroid-related adverse effects (e.g., neuromuscular weakness, secondary infections); heterogeneity in diagnostic criteria and dosing strategies across included trials.",
+  "drugs_doses": [
+    {
+      "drug": "hydrocortisone",
+      "dose": "200 mg IV daily (continuous infusion or 50 mg IV every 6 hours) for 5–7 days",
+      "indication": "Septic shock in adult patients",
+      "adverse_effects": "Hyperglycemia, hypernatremia, neuromuscular weakness"
+    },
+    {
+      "drug": "fludrocortisone",
+      "dose": "50 µg orally/enterally once daily for 5–7 days",
+      "indication": "Adjunctive therapy with hydrocortisone in adult septic shock",
+      "adverse_effects": "Hypernatremia, fluid retention, hypokalemia"
+    },
+    {
+      "drug": "dexamethasone",
+      "dose": "20 mg IV daily for 5 days, then 10 mg IV daily for 5 days (or until extubation)",
+      "indication": "Early ARDS (within 24 hours of onset)",
+      "adverse_effects": "Hyperglycemia, neuromuscular weakness, secondary infection"
+    },
+    {
+      "drug": "methylprednisolone",
+      "dose": "1 mg/kg IV bolus, then 1 mg/kg/day continuous infusion for days 1–14, then tapered over days 15–28",
+      "indication": "Early or unresolving ARDS",
+      "adverse_effects": "Hyperglycemia, neuromuscular weakness, secondary infection"
+    },
+    {
+      "drug": "hydrocortisone",
+      "dose": "200 mg IV once, then 10 mg/hr IV continuous infusion for 4–7 days (or up to 8–14 days with taper)",
+      "indication": "Severe community-acquired bacterial pneumonia in adult patients",
+      "adverse_effects": "Hyperglycemia, secondary infections"
+    },
+    {
+      "drug": "methylprednisolone",
+      "dose": "0.5 mg/kg IV every 12 hours for 7 days OR 40 mg IV daily for 7 days tapered over 20 days",
+      "indication": "Severe community-acquired bacterial pneumonia in adult patients",
+      "adverse_effects": "Hyperglycemia, secondary infections"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2024-10-24",
+  "article_subtype": "Guideline",
+  "subtopic": "Pulmonology"
+}

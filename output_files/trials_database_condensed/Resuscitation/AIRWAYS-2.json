@@ -1,0 +1,312 @@
+{
+  "id": "AIRWAYS-2",
+  "trial_name": "AIRWAYS-2 — Supraglottic Airway vs Tracheal Intubation in OHCA",
+  "specialty": "Resuscitation",
+  "subtopic": "ICU Quality Improvement",
+  "year": 2018,
+  "journal": "JAMA",
+  "citation": "Benger JR, Kirby K, Black S, et al. Effect of a strategy of a supraglottic airway device vs tracheal intubation during out-of-hospital cardiac arrest on functional outcome: the AIRWAYS-2 randomized clinical trial. JAMA. 2018;320(8):779-791",
+  "doi": "",
+  "registration": "",
+  "trial_type": "Cluster RCT — pragmatic, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 9289,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In UK paramedic OHCA, i-gel-first vs tracheal intubation-first did not improve functional outcome (mRS 0–3 6.4% vs 6.8%, OR 0.92, P=0.33) despite higher ventilation success and ROSC.",
+  "pico": {
+    "population": "Adult non-traumatic OHCA attended by paramedics in UK ambulance services",
+    "intervention": "Initial supraglottic airway device (i-gel) strategy",
+    "comparison": "Initial tracheal intubation strategy",
+    "outcome": "Functional outcome (mRS 0–3) at hospital discharge or 30 days if still inpatient"
+  },
+  "keywords": [
+    "i-gel",
+    "supraglottic airway",
+    "tracheal intubation",
+    "out-of-hospital cardiac arrest",
+    "EMS",
+    "airway management",
+    "cluster randomised trial"
+  ],
+  "related_trials": [
+    "PART",
+    "CAAM"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Advanced airway management in OHCA aims to secure ventilation/oxygenation while minimising interruption to chest compressions; the optimal strategy in paramedic-led systems was uncertain. Endotracheal intubation is technically demanding, may require pauses, and success varies with operator experience. Supraglottic airway devices are easier and faster, but concerns about aspiration, inadequate ventilation, and displacement persisted. Observational comparisons were inconsistent and confounded.",
+      "knowledge_gap": "Optimal airway strategy in paramedic-led OHCA was unknown.",
+      "hypothesis": "An initial i-gel strategy would improve functional outcome (mRS 0–3) compared to tracheal intubation."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, cluster randomised clinical trial with paramedics as clusters; four English ambulance services; prehospital setting.",
+      "setting": "UK ambulance services; OHCA attended by a participating study paramedic.",
+      "population": {
+        "inclusion": [
+          "Adult (≥18 years) non-traumatic OHCA where resuscitation was attempted and the study paramedic was first or second on scene and eligible to deliver AAM."
+        ],
+        "exclusion": [
+          "Traumatic injury",
+          "Age <18 years",
+          "Not an OHCA / treated in hospital",
+          "Mouth opening <2 cm",
+          "Detained by His Majesty’s Prison Service",
+          "Resuscitation not commenced or not continued by ambulance staff",
+          "Study paramedic not first/second on scene or airway management already started"
+        ]
+      },
+      "intervention": "Allocated strategy: trial supraglottic airway device (i-gel) as initial AAM. Escalation/rescue: standard airway ladder permitted; other approaches as clinically indicated.",
+      "comparison": "Allocated strategy: tracheal intubation as initial AAM. Technique support: two-person technique, bougie where appropriate; rescue with supraglottic devices permitted after unsuccessful attempts.",
+      "blinding": "Unblinded (procedural intervention); primary outcome assessed via hospital status and mRS by assessors independent of prehospital allocation where feasible.",
+      "sample_size_power": "Planned sample size 9070 (4535 per group) to detect 2% absolute increase in good neurological outcome (mRS 0–3) from 8% to 10%, 90% power, α=0.05, ICC=0.005. Actual analysed: 9289 (4882 i-gel, 4407 TI).",
+      "primary_outcome": "Functional outcome (mRS 0–3) at hospital discharge or 30 days if still inpatient.",
+      "secondary_outcomes": [
+        "Time to death",
+        "72-hour survival",
+        "Initial ventilation success (≤2 attempts)",
+        "Unintended loss of airway",
+        "Regurgitation",
+        "Aspiration",
+        "ROSC at ED/hospital arrival",
+        "Chest compression fraction"
+      ],
+      "follow_up": "Primary at hospital discharge/30 days; survivors eligible for 3- and 6-month follow-up."
+    },
+    "results": {
+      "headline_bullets": [
+        "i-gel strategy improved initial ventilation success (87.4% vs 79.0%, OR 1.92, P<0.001) and ROSC (30.6% vs 28.4%, OR 1.12, P=0.02).",
+        "Primary outcome (mRS 0–3 at discharge/30 days) was similar: 6.4% vs 6.8% (OR 0.92, P=0.33).",
+        "Unintended airway loss was higher with i-gel (10.6% vs 5.0%, OR 2.29, P<0.001).",
+        "Regurgitation and aspiration rates were not significantly different."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: mRS 0–3 at hospital discharge/30 days",
+          "group_a": "311/4882 (6.4%)",
+          "group_b": "300/4407 (6.8%)",
+          "effect_measure": "OR",
+          "effect_value": "0.92",
+          "ci_95": "0.77–1.09",
+          "p_value": "0.33",
+          "note": "Adjusted risk difference −0.6% (95% CI −1.6 to 0.4)"
+        },
+        {
+          "outcome": "Time to death",
+          "group_a": "Median 67 min (IQR 41–267); n=4871",
+          "group_b": "Median 63 min (IQR 41–216); n=4400",
+          "effect_measure": "HR",
+          "effect_value": "0.97",
+          "ci_95": "0.93–1.02",
+          "p_value": "0.22",
+          "note": ""
+        },
+        {
+          "outcome": "72-hour survival",
+          "group_a": "664/4872 (13.6%)",
+          "group_b": "575/4395 (13.1%)",
+          "effect_measure": "OR",
+          "effect_value": "1.04",
+          "ci_95": "0.92–1.18",
+          "p_value": "0.54",
+          "note": "Adjusted risk difference 0.4% (95% CI −1.0 to 1.9)"
+        },
+        {
+          "outcome": "Initial ventilation success (≤2 attempts at AAM)",
+          "group_a": "4255/4868 (87.4%)",
+          "group_b": "3473/4397 (79.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.92",
+          "ci_95": "1.66–2.22",
+          "p_value": "<0.001",
+          "note": "Adjusted risk difference 8.3% (95% CI 6.3 to 10.2)"
+        },
+        {
+          "outcome": "Any unintended loss of a previously established airway (among those with ≥1 successful AAM)",
+          "group_a": "412/3900 (10.6%)",
+          "group_b": "153/3081 (5.0%)",
+          "effect_measure": "OR",
+          "effect_value": "2.29",
+          "ci_95": "1.86–2.82",
+          "p_value": "<0.001",
+          "note": "Adjusted risk difference 5.9% (95% CI 4.6 to 7.2)"
+        },
+        {
+          "outcome": "Regurgitation at any time",
+          "group_a": "1268/4865 (26.1%)",
+          "group_b": "1072/4372 (24.5%)",
+          "effect_measure": "OR",
+          "effect_value": "1.08",
+          "ci_95": "0.96–1.20",
+          "p_value": "0.21",
+          "note": "Adjusted risk difference 1.4% (95% CI −0.6 to 3.4)"
+        },
+        {
+          "outcome": "Aspiration at any time",
+          "group_a": "729/4824 (15.1%)",
+          "group_b": "647/4337 (14.9%)",
+          "effect_measure": "OR",
+          "effect_value": "1.01",
+          "ci_95": "0.88–1.16",
+          "p_value": "0.84",
+          "note": "Adjusted risk difference 0.1% (95% CI −1.5 to 1.8)"
+        },
+        {
+          "outcome": "ROSC at arrival to ED or hospital",
+          "group_a": "1495/4880 (30.6%)",
+          "group_b": "1249/4404 (28.4%)",
+          "effect_measure": "OR",
+          "effect_value": "1.12",
+          "ci_95": "1.02–1.23",
+          "p_value": "0.02",
+          "note": "Adjusted risk difference 2.2% (95% CI 0.3 to 4.2)"
+        },
+        {
+          "outcome": "Chest compression fraction (subset, two ambulance trusts)",
+          "group_a": "Median 86% (IQR 81–91); n=34",
+          "group_b": "Median 83% (IQR 74–89); n=32",
+          "effect_measure": "GMR",
+          "effect_value": "0.82",
+          "ci_95": "0.62–1.07",
+          "p_value": "0.14",
+          "note": "Very small analysed subset (returned/usable compression cards)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Regurgitation: 26.1% vs 24.5% (OR 1.08, 95% CI 0.96–1.20, P=0.21)",
+      "Aspiration: 15.1% vs 14.9% (OR 1.01, 95% CI 0.88–1.16, P=0.84)",
+      "Unintended loss of airway after successful AAM: 10.6% vs 5.0% (OR 2.29, 95% CI 1.86–2.82, P<0.001)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Paramedics randomised 1:1 via secure web-based system, varying block sizes (4–8), stratification by EMS organisation, paramedic experience, distance to usual destination hospital; allocation concealed at time of paramedic enrolment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded providers; primary outcome anchored to mortality and mRS assessed at discharge, reducing bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary outcome analysis included 4407/4410 (TI) and 4882/4886 (SAD); minimal exclusions, mostly administrative, limiting attrition bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Substantial crossover: 623 in TI arm received SAD first; 116 in SAD arm received TI first. ~30% had airway management already in progress at paramedic arrival, diluting contrast."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Age, witnessed arrest, presenting rhythm, bystander CPR well balanced."
+        }
+      ],
+      "verdict": "Moderate-to-strong: randomisation and near-complete outcome ascertainment were robust, but unblinded delivery, pragmatic pre-arrival care, and substantial crossover likely diluted true between-strategy effect on functional outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Large UK OHCA cohort; typical age and rhythm distributions; exclusions pragmatic. Applicable to paramedic-led systems."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings most applicable to UK-style paramedic EMS; uncertain for physician-led systems with higher TI success. i-gel strategy feasible, but local airway algorithms (attempt limits, videolaryngoscopy) can modify effects."
+        }
+      ],
+      "verdict": "Strong for UK paramedic OHCA care; more limited for EMS models with different TI proficiency or post-arrest pathways."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre trial with paramedic-level randomisation aligned to real-world operational constraints.",
+      "Clinically meaningful primary endpoint (functional outcome) with near-complete ascertainment.",
+      "Prespecified clustered analyses with mixed-effects modelling and adjustment for stratification factors.",
+      "Rich process measures (ventilation success, airway loss, regurgitation/aspiration, ROSC timing) that help interpret null functional findings."
+    ],
+    "limitations": [
+      "Unblinded procedural delivery and pragmatic pre-arrival care (airway already in progress in ~30%) reduce controllability and potentially dilute between-group contrast.",
+      "Substantial crossover/contamination, particularly from TI allocation to SAD-first airway (623 received trial SAD first in the TI arm), complicating interpretation of “strategy” effects.",
+      "Lower-than-anticipated good-outcome event rate (6.4–6.8% vs planning centred on 9%) limits power for modest absolute effects.",
+      "Compression fraction assessment was limited to a very small analysed subset, constraining inference about interruption-mediated mechanisms."
+    ],
+    "critical_appraisal": {
+      "summary": "AIRWAYS-2 is a well-conducted cluster RCT that provides moderate confidence in the finding of no significant difference in functional outcome between i-gel and TI strategies in UK paramedic OHCA, though crossover and unblinding may dilute any true effect. External validity is strong for similar EMS systems.",
+      "strengths": [
+        "Large sample size",
+        "Pragmatic design aligned with real-world EMS",
+        "Meaningful primary outcome (functional recovery)",
+        "Appropriate clustered statistical analysis with mixed-effects models",
+        "Rich process measures aiding interpretation"
+      ],
+      "weaknesses": [
+        "Unblinded delivery",
+        "Substantial crossover/contamination reducing contrast",
+        "Lower-than-anticipated event rate limiting power for modest effects",
+        "Limited compression fraction data preventing full mechanistic analysis"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "i-gel-first strategy improved ventilation success and modestly increased ROSC but did not improve neurologically favourable survival at discharge/30 days; airway strategy alone is unlikely to be a dominant determinant of functional outcome in OHCA.",
+    "clinical_bottom_line": {
+      "verdict": "In UK paramedic OHCA, an i-gel-first strategy is a reasonable alternative to tracheal intubation-first, as it improves ventilation success and ROSC without compromising functional outcome, but it does not improve survival. The choice should be guided by system proficiency and CPR quality.",
+      "applies_to": "Paramedic-led EMS systems with similar airway governance and training.",
+      "does_not_mean": "That supraglottic airways are superior to intubation for all OHCA settings; the trial found no functional outcome difference.",
+      "implementation_caveats": [
+        "Airway vigilance is critical because i-gel had higher unintended airway loss after placement.",
+        "Training and equipment must support both strategies and rescue pathways.",
+        "Local context (TI success rates, CPR interruption patterns) may influence choice."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Strategy vs device effect",
+        "notes": "Cluster allocation to a strategy (rather than forced device delivery) improved pragmatic relevance but introduced dilution through crossover; TI arm had 623 SAD-first, SAD arm had 116 TI-first."
+      },
+      {
+        "topic": "Event rate and detectable effect",
+        "notes": "Good neurological recovery occurred in 6.4–6.8%, lower than planning assumption of 9%, reducing power for smaller true effects."
+      },
+      {
+        "topic": "Comparison with PART",
+        "notes": "PART trial (laryngeal tube vs TI) showed improved 72-hour survival with supraglottic strategy in a different EMS context, suggesting effect modification by provider skill."
+      },
+      {
+        "topic": "Bag-mask vs TI",
+        "notes": "CAAM trial (bag-mask ventilation vs TI) found no superiority of TI, supporting the notion that 'advanced airway first' is not invariably superior."
+      },
+      {
+        "topic": "Synthesis evidence",
+        "notes": "Systematic reviews and meta-analyses conclude that airway choice influences process measures more consistently than long-term neurological outcome, with substantial heterogeneity across EMS models."
+      },
+      {
+        "topic": "Guideline convergence",
+        "notes": "Major guidelines after AIRWAYS-2 recommend matching airway approach to provider skill and minimising compression interruptions; SAD or TI acceptable if competently delivered."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PART",
+        "relation": "Compared laryngeal tube vs TI in US EMS; showed improved 72-hour survival with supraglottic strategy, highlighting potential effect modification by provider skill and local airway governance."
+      },
+      {
+        "trial": "CAAM",
+        "relation": "Compared bag-mask ventilation vs TI in OHCA; found no superiority of TI, supporting the finding that advanced airway first is not invariably superior when TI success and interruption patterns are unfavourable."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal airway strategy in physician-led EMS systems with high TI success rates.",
+      "Role of compression fraction and interruption in mediating airway strategy effects.",
+      "Long-term functional outcomes beyond 30 days."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=9289 (4882 i-gel, 4407 TI)",
+        "Primary mRS 0–3: 6.4% vs 6.8% (OR 0.92, 95% CI 0.77–1.09, P=0.33)",
+        "Initial ventilation success: 87.4% vs 79.0% (OR 1.92, P<0.001)",
+        "Unintended airway loss: 10.6% vs 5.0% (OR 2.29, P<0.001)"
+      ],
+      "one_line_takeaway": "An i-gel strategy is a reasonable alternative to intubation in paramedic OHCA, but airway choice alone does not determine functional survival; prioritize system proficiency and CPR quality."
+    }
+  },
+  "_source_id": "AIRWAYS-2",
+  "_source_system": "Resuscitation"
+}

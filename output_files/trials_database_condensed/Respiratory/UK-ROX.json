@@ -1,0 +1,354 @@
+{
+  "id": "UK-ROX",
+  "trial_name": "UK-ROX — Conservative vs Usual Oxygen Therapy in Mechanically Ventilated ICU Adults (2025)",
+  "specialty": "Critical Care",
+  "subtopic": "Mechanical Ventilation",
+  "year": 2025,
+  "journal": "JAMA",
+  "citation": "Martin DS, Gould DW, Shahid T, et al; UK-ROX Investigators. Conservative Oxygen Therapy With Mechanical Ventilation in Critically Ill Adult Patients: the UK-ROX Randomized Clinical Trial. JAMA. 2025;334(5):398-408.",
+  "doi": "https://doi.org/10.1001/jama.2025.9663",
+  "registration": "Not specified in source",
+  "trial_type": "RCT — multicenter, pragmatic, registry-embedded, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 16500,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In 16,500 invasively ventilated ICU adults, a conservative oxygen strategy (SpO2 88-92%) reduced oxygen exposure but did not reduce 90-day mortality compared to usual care (35.4% vs 34.9%).",
+  "pico": {
+    "population": "Critically ill adults receiving unplanned invasive mechanical ventilation and supplemental oxygen in UK ICUs",
+    "intervention": "Conservative oxygen therapy titrated to SpO2 90% (range 88-92%) with mandatory bedside monitor alarms",
+    "comparison": "Usual oxygen therapy according to clinician judgement and local practice, with no trial-mandated SpO2 target or alarm limits",
+    "outcome": "90-day all-cause mortality"
+  },
+  "keywords": [
+    "oxygen therapy",
+    "conservative oxygen",
+    "mechanical ventilation",
+    "hyperoxia",
+    "SpO2 targets",
+    "pragmatic trial"
+  ],
+  "related_trials": [
+    "ICU-ROX",
+    "HOT-ICU",
+    "PILOT",
+    "ICONIC",
+    "HOT-COVID",
+    "Oxy-PICU",
+    "Oxygen-ICU",
+    "Mega-ROX"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Oxygen is among the most frequently administered ICU therapies, historically delivered liberally to avoid cellular hypoxia. Pathophysiological data support biological plausibility for oxygen toxicity (oxidative stress, vasoconstriction, absorption atelectasis) and associations between hyperoxaemia and worse outcomes in mechanically ventilated ICU cohorts.",
+      "knowledge_gap": "Prior adult ICU RCTs comparing conservative vs liberal oxygenation targets were generally neutral for mortality, raising the possibility of true absence of benefit, inadequate between-group oxygen separation, effect heterogeneity across illness phenotypes, or outcome selection insensitivity.",
+      "hypothesis": "Reducing exposure to supplemental oxygen using a protocolised conservative strategy (target SpO2 88%–92%) would reduce 90-day mortality compared with usual oxygen therapy in invasively ventilated critically ill adults."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, registry-embedded, parallel-group RCT across 97 UK ICUs; open-label delivery; centralised outcomes via data linkage; investigator-initiated and publicly funded.",
+      "setting": "Adult general ICUs in England, Wales, and Northern Ireland (via ICNARC Case Mix Programme infrastructure).",
+      "population": {
+        "inclusion": [
+          "Critically ill adults receiving unplanned invasive mechanical ventilation and supplemental oxygen",
+          "Randomised within 12 hours of meeting eligibility criteria"
+        ],
+        "exclusion": [
+          "Clinician judged one strategy indicated/contraindicated",
+          "Previous UK-ROX enrolment within 90 days",
+          "Receiving extracorporeal membrane oxygenation",
+          "Anticipated imminent extubation/discharge/transfer/death/treatment withdrawal"
+        ]
+      },
+      "intervention": "Conservative oxygen therapy: oxygen titrated to achieve SpO2 90% (acceptable range 88%–92%). Mandatory bedside monitor alarms: lower SpO2 alarm 88%; upper alarm 92% (upper alarm could be deactivated if FiO2 = 0.21). Delivered from randomisation until ICU discharge, death, or day 90; if readmitted within 90 days, protocol reinstated.",
+      "comparison": "Usual oxygen therapy: oxygen administered according to clinician judgement and local practice; no trial-mandated SpO2 target or alarm limits. Co-interventions (ventilation mode, PEEP strategy, sedation, haemodynamic management) were not protocolised and followed local practice.",
+      "blinding": "Unblinded (non-pharmacologic, bedside titration intervention); primary endpoint (registry-linked mortality) objective; potential for performance bias in co-interventions and event ascertainment for less objective secondary outcomes.",
+      "sample_size_power": "A total sample size of 16,500 was planned to detect a 2.5% absolute reduction in 90-day mortality (from 37.0% to 34.5%) with 90% power at a two-sided 5% significance level, allowing for ~6% losses; 2 interim analyses were planned after 4,500 and 10,000 participants using a Haybittle–Peto stopping rule (P<.001) for benefit or harm.",
+      "primary_outcome": "Death by 90 days",
+      "secondary_outcomes": [
+        "Death at ICU discharge",
+        "Death at hospital discharge",
+        "Days alive and free of organ support at 30 days (ordinal composite)",
+        "Time to death (to 12 months)",
+        "Oxygen exposure (cumulative 100% oxygen-equivalent hours over first 10 days)",
+        "Achieved oxygenation (mean SpO2, FiO2, PaO2 while receiving supplemental oxygen)",
+        "Serious adverse events"
+      ],
+      "follow_up": "Primary endpoint at 90 days; additional in-hospital timepoints (ICU and hospital discharge mortality); secondary outcomes included 30-day organ support composite, 60-day mortality, and (for those consenting to linkage) 12-month mortality and health resource outcomes."
+    },
+    "results": {
+      "headline_bullets": [
+        "No significant difference in 90-day mortality: 35.4% conservative vs 34.9% usual care (adjusted risk difference 0.7%; 95% CI -0.7 to 2.0; P=.28).",
+        "Conservative therapy reduced oxygen exposure by 29% (mean SpO2 on oxygen 93.3% vs 95.2%), but the absolute separation in achieved oxygenation was modest (~2% SpO2 and ~8 mm Hg PaO2).",
+        "All secondary mortality and organ-support outcomes were neutral.",
+        "Serious adverse events were uncommon but numerically higher in the conservative group (0.7% vs 0.4%), including rare ischaemic events (mesenteric ischaemia 7 vs 0)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: Death by 90 days",
+          "group_a": "2908/8211 (35.4%)",
+          "group_b": "2858/8183 (34.9%)",
+          "effect_measure": "Adjusted risk difference",
+          "effect_value": "0.7%",
+          "ci_95": "-0.7 to 2.0",
+          "p_value": "0.28",
+          "note": "Primary analysis used linked 90-day mortality; missingness was low (data unavailable for 40 participants; 66 requested all data removed)."
+        },
+        {
+          "outcome": "Death at ICU discharge",
+          "group_a": "2388/8258 (28.9%)",
+          "group_b": "2388/8242 (29.0%)",
+          "effect_measure": "Adjusted risk difference",
+          "effect_value": "-0.1%",
+          "ci_95": "-1.3 to 1.1",
+          "p_value": "0.94",
+          "note": "No signal of early in-ICU mortality benefit or harm."
+        },
+        {
+          "outcome": "Death at hospital discharge",
+          "group_a": "2846/8258 (34.5%)",
+          "group_b": "2805/8242 (34.0%)",
+          "effect_measure": "Adjusted risk difference",
+          "effect_value": "0.5%",
+          "ci_95": "-0.8 to 1.9",
+          "p_value": "0.46",
+          "note": "Consistent with the 90-day mortality finding."
+        },
+        {
+          "outcome": "Days alive and free of organ support at 30 days (ordinal composite)",
+          "group_a": "Mean 12.9 (SD 12.2)",
+          "group_b": "Mean 12.8 (SD 12.1)",
+          "effect_measure": "Proportional OR",
+          "effect_value": "1.01",
+          "ci_95": "0.96 to 1.07",
+          "p_value": "0.64",
+          "note": "Mean difference 0.1 days; 95% CI -0.1 to 0.4; P=.30 (reported)."
+        },
+        {
+          "outcome": "Time to death (to 12 months)",
+          "group_a": "—",
+          "group_b": "—",
+          "effect_measure": "HR",
+          "effect_value": "1.01",
+          "ci_95": "0.96 to 1.05",
+          "p_value": "0.82",
+          "note": "Secondary analysis in those with longer-term follow-up available."
+        },
+        {
+          "outcome": "Oxygen exposure (enhanced data subset): cumulative 100% oxygen-equivalent hours over first 10 days",
+          "group_a": "20.3 h",
+          "group_b": "28.7 h",
+          "effect_measure": "Difference",
+          "effect_value": "-8.4 h",
+          "ci_95": "-10.8 to -6.0",
+          "p_value": "Not reported",
+          "note": "Estimated 29% lower supplemental oxygen exposure in the conservative group (reported)."
+        },
+        {
+          "outcome": "Achieved oxygenation (enhanced data subset): mean SpO2 while receiving supplemental oxygen",
+          "group_a": "93.3%",
+          "group_b": "95.2%",
+          "effect_measure": "Difference",
+          "effect_value": "-2.0%",
+          "ci_95": "-2.2 to -1.8",
+          "p_value": "Not reported",
+          "note": "Mean FiO2 0.31 vs 0.35 (difference -0.04; 95% CI -0.04 to -0.03); mean PaO2 71.5 vs 79.5 mm Hg (difference -8.0; 95% CI -9.3 to -6.7)."
+        },
+        {
+          "outcome": "Serious adverse events (any)",
+          "group_a": "58/8230 (0.7%)",
+          "group_b": "29/8204 (0.4%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Specified SAEs included supraventricular tachycardia 12 vs 8; atrial fibrillation 14 vs 13; myocardial ischaemia/infarction 19 vs 11; mesenteric ischaemia 7 vs 0 (events/patients as reported)."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Hypoxic-ischaemic encephalopathy (HIE)",
+          "group_a": "58.0%",
+          "group_b": "58.6%",
+          "effect_measure": "Adjusted risk difference",
+          "effect_value": "-1.3%",
+          "ci_95": "-6.2 to 3.6",
+          "p_interaction": "Not reported",
+          "note": "OR 0.94 (0.76 to 1.17)."
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events (any): 0.7% conservative vs 0.4% usual care.",
+      "Supraventricular tachycardia: 12 vs 8 events.",
+      "Atrial fibrillation: 14 vs 13 events.",
+      "Myocardial ischaemia/infarction: 19 vs 11 events.",
+      "Mesenteric ischaemia: 7 vs 0 events."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with stratification by site and prespecified diagnostic subgroup; allocation concealed until assignment; all 16,500 randomised participants received their allocated strategy as recorded."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery could influence oxygen titration intensity, alarm responsiveness, and co-interventions; however, the primary endpoint (mortality) is objective and registry-linked, limiting detection bias for the primary outcome."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Requested complete data removal: 28/8258 (0.34%) in conservative vs 38/8242 (0.46%) in usual; primary outcome linkage unavailable for 40 participants (e.g., not an NHS patient); primary analysis included 16,434 participants with analysable 90-day outcomes."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "In the enhanced subset, non-adherence in the conservative group was frequent by prespecified flags (526/1252 [42.1%] with any non-adherence), though the duration of non-adherence was limited (10.6% of time receiving supplemental oxygen)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Randomised groups were well balanced (median age 60 years; female 38.2%); baseline median SpO2 before randomisation was high (97% vs 96%), implying many patients started from a relatively 'non-hypoxaemic' baseline oxygenation state."
+        }
+      ],
+      "verdict": "Overall, internal validity for the primary endpoint appears strong given concealed randomisation, minimal withdrawal/unlinked outcomes, and objective registry-linked mortality ascertainment; however, open-label care, protocol non-adherence, and modest oxygen separation likely limited the trial’s ability to detect small treatment effects attributable purely to oxygen dose."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Large, pragmatic enrolment across 97 UK ICUs with broad unplanned invasive mechanical ventilation eligibility; randomised cohorts were representative of the wider eligible ICU population on key demographic factors (e.g., median age 60 years; female ~38%). Of 49,233 eligible patients, 16,500 were randomised; 14,865 eligible patients were missed/identified too late; 6,589 did not undergo randomisation due to clinical decision (often imminent extubation/discharge/transfer/death/withdrawal); and 10,582 were excluded because one strategy was indicated or contraindicated by the treating clinician."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings are most directly applicable to ICUs with contemporary oxygen practices similar to the UK (baseline SpO2 before randomisation ~96%–97%); settings with systematically higher baseline oxygenation may achieve different separation and potentially different effects. Patients with clear clinical indications for distinct oxygenation targets were preferentially excluded by design, limiting inference in those high-stakes phenotypes."
+        }
+      ],
+      "verdict": "Generalisability is high for unplanned invasively ventilated adults in UK-type ICUs and health systems with similar 'usual care' oxygen practices, but may be moderate in jurisdictions where usual care is more liberal."
+    },
+    "strengths": [
+      "Very large sample size (n=16,500) enabling detection of modest absolute effects.",
+      "Pragmatic registry-embedded delivery enhancing scalability and representativeness.",
+      "Early randomisation (median 5 hours) targeting early oxygen exposure.",
+      "Objective primary outcome via national linkage.",
+      "Prespecified interim monitoring and diagnostic strata."
+    ],
+    "limitations": [
+      "Open-label intervention with potential performance bias and unmeasured co-intervention imbalance.",
+      "Modest achieved oxygen separation (particularly given high baseline SpO2), which can dilute treatment effects.",
+      "Notable eligible-but-not-randomised proportion (missed/late identification).",
+      "Secondary outcomes requiring consent for linkage (reduced denominators at 12 months).",
+      "Protocol non-adherence common by trigger criteria.",
+      "Rare but numerically higher serious adverse events in the conservative group warrant cautious interpretation."
+    ],
+    "critical_appraisal": {
+      "summary": "UK-ROX is a landmark, high-quality, pragmatic trial demonstrating that a conservative oxygen strategy does not improve 90-day mortality in a broad UK ICU population, though the modest achieved separation in oxygen exposure and open-label design are key limitations.",
+      "strengths": [
+        "Massive sample size with high external validity due to pragmatic, registry-embedded design.",
+        "Objective, registry-linked primary outcome with minimal loss to follow-up.",
+        "Early intervention targeting the period of potential oxygen toxicity."
+      ],
+      "weaknesses": [
+        "Open-label design introduces risk of performance bias.",
+        "Modest separation in oxygen exposure between groups limits the ability to detect a true biological effect of oxygen dose.",
+        "High rate of protocol non-adherence in the conservative group."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "For invasively ventilated adults receiving supplemental oxygen in UK ICUs, targeting SpO2 88%–92% (via alarms and protocolised titration) should not be expected to reduce 90-day mortality compared with contemporary usual care.",
+    "clinical_bottom_line": {
+      "verdict": "This trial does not support a universal strategy of conservative oxygen therapy (SpO2 88-92%) to reduce mortality in mechanically ventilated ICU patients. It suggests that in settings with moderate usual care oxygenation, further restriction provides no average survival benefit.",
+      "applies_to": "Unselected, invasively ventilated adult ICU patients in settings with 'usual care' oxygen practices similar to the UK (baseline SpO2 ~96%).",
+      "does_not_mean": "Oxygen targets do not matter. It means that pushing saturations down into a conservative range from an already relatively moderate usual practice does not deliver an average mortality benefit at a population level.",
+      "implementation_caveats": [
+        "The safety signal of numerically higher ischaemic events with conservative therapy warrants vigilance against unintended hypoxaemia.",
+        "Patients with specific indications for higher or lower oxygen targets (e.g., certain neurological or cardiac conditions) were often excluded, so results may not apply to them.",
+        "The benefit of conservative oxygen therapy may be greater in settings where 'usual care' is more liberal, leading to a larger separation between groups."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "'Usual care' as a moving comparator and oxygen-separation dilution",
+        "notes": "The accompanying editorial highlighted the methodological challenge that 'usual care' in non-pharmacologic trials can drift and reduce between-group contrast, diluting effects."
+      },
+      {
+        "topic": "Positioning within the adult ICU RCT landscape",
+        "notes": "UK-ROX aligns with several adult ICU trials that did not show mortality benefit from conservative oxygenation targets, including ICU-ROX, HOT-ICU, PILOT, and ICONIC."
+      },
+      {
+        "topic": "Context-dependent benefits in specific phenotypes",
+        "notes": "In COVID-19 ICU patients (HOT-COVID), lower vs higher oxygenation targets increased days alive without life support; and in paediatric ICU (Oxy-PICU), conservative targets improved a 30-day organ support/death composite—highlighting that effects may differ by disease biology."
+      },
+      {
+        "topic": "Interpretation of earlier 'positive' oxygen trials",
+        "notes": "The Oxygen-ICU trial reported mortality benefit with conservative oxygen therapy but differed in size, setting, and design, and has been considered hypothesis-generating rather than definitive."
+      },
+      {
+        "topic": "UK baseline oxygen practice and separation feasibility",
+        "notes": "Pre-UK-ROX observational work in UK ICUs questioned whether oxygenation practice was already relatively 'usual' (i.e., not markedly hyperoxaemic), consistent with high baseline SpO2 at enrolment and potentially limiting incremental benefit from further reduction."
+      },
+      {
+        "topic": "Evidence synthesis post–neutral trials",
+        "notes": "Contemporary meta-analyses of ICU RCTs have generally reported no significant mortality difference between conservative and liberal oxygen strategies, supporting UK-ROX’s neutral mortality finding."
+      },
+      {
+        "topic": "'Heterogeneity of treatment effect' and individualisation",
+        "notes": "A focused critique argues that averaging across broad ICU populations may obscure meaningful subgroup-specific benefit or harm and advocates for approaches that identify patients most likely to benefit from particular oxygen targets."
+      },
+      {
+        "topic": "Trial-to-practice translation and next steps",
+        "notes": "The Mega-ROX programme is designed to address residual uncertainty at scale, including comparator strategies that may ensure clearer oxygen separation (e.g., protocolised liberal oxygen therapy with a minimum acceptable FiO2 of 0.3)."
+      },
+      {
+        "topic": "Secondary analyses suggesting differential effects",
+        "notes": "Individualised treatment effect modelling across ICU oxygen-target trials suggests patient-level factors may modify outcome effects of oxygen targets, reinforcing the need for stratified/precision approaches."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ICU-ROX",
+        "relation": "A prior adult ICU RCT that was neutral for mortality when comparing conservative vs usual oxygen therapy."
+      },
+      {
+        "trial": "HOT-ICU",
+        "relation": "A prior adult ICU RCT that was neutral for mortality when comparing a lower vs higher oxygenation target."
+      },
+      {
+        "trial": "PILOT",
+        "relation": "A prior adult ICU RCT that was neutral for mortality when comparing different oxygenation targets."
+      },
+      {
+        "trial": "ICONIC",
+        "relation": "A prior adult ICU RCT that was neutral for mortality when comparing conservative vs liberal oxygen therapy."
+      },
+      {
+        "trial": "HOT-COVID",
+        "relation": "A trial in COVID-19 ICU patients where lower vs higher oxygenation targets increased days alive without life support, suggesting a potential benefit in a specific phenotype."
+      },
+      {
+        "trial": "Oxy-PICU",
+        "relation": "A paediatric ICU trial where conservative targets improved a 30-day organ support/death composite, suggesting a potential benefit in a different population."
+      },
+      {
+        "trial": "Oxygen-ICU",
+        "relation": "An earlier, smaller single-center trial that reported a mortality benefit with conservative oxygen therapy, considered hypothesis-generating."
+      },
+      {
+        "trial": "Mega-ROX",
+        "relation": "A future programme designed to address residual uncertainty from UK-ROX, potentially using a protocolised liberal oxygen therapy comparator to ensure clearer oxygen separation."
+      }
+    ],
+    "unresolved_questions": [
+      "Would a strategy that achieves a larger separation in oxygen exposure (e.g., by protocolising liberal therapy) show a different effect on mortality?",
+      "Are there specific subgroups of ICU patients (e.g., post-cardiac arrest, traumatic brain injury) who derive benefit or harm from conservative oxygen targets?",
+      "What is the optimal SpO2 target for invasively ventilated ICU patients, balancing the risks of hypoxaemia and hyperoxaemia?",
+      "Is the signal of increased ischaemic events with conservative oxygen therapy a true effect, and if so, what is the mechanism?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=16,500",
+        "90-day mortality: 35.4% vs 34.9% (adjusted risk difference 0.7%, 95% CI -0.7 to 2.0, P=.28)",
+        "Oxygen exposure reduced by 29% (mean SpO2 93.3% vs 95.2%)",
+        "Serious adverse events: 0.7% vs 0.4% (mesenteric ischaemia 7 vs 0)"
+      ],
+      "one_line_takeaway": "For most ventilated ICU patients, a protocolised conservative oxygen target (SpO2 88-92%) reduces oxygen exposure but does not improve survival compared to usual care, shifting the focus to identifying which specific patients might benefit or be harmed."
+    }
+  },
+  "_source_id": "UK-ROX",
+  "_source_system": "Respiratory"
+}

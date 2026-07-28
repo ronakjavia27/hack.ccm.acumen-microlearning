@@ -1,0 +1,276 @@
+{
+  "id": "ARREST",
+  "trial_name": "ARREST — ECMO-facilitated Resuscitation for Refractory VF/VT OHCA (2020)",
+  "specialty": "Resuscitation",
+  "subtopic": "Extracorporeal Organ Support",
+  "year": 2020,
+  "journal": "The Lancet",
+  "citation": "Yannopoulos D, Bartos JA, Raveendran G, Walser E, Connett J, Murray TA, et al. Advanced reperfusion strategies for patients with out-of-hospital cardiac arrest and refractory ventricular fibrillation (ARREST): a phase 2, single centre, open-label, randomised controlled trial. Lancet. 2020;396(10265):1807-1816",
+  "doi": "",
+  "registration": "",
+  "trial_type": "RCT — single-centre, open-label, phase 2, pragmatic, Bayesian adaptive",
+  "evidence_level": "Moderate-quality RCT (early termination, small sample)",
+  "sample_size": 30,
+  "result_category": "Positive",
+  "one_liner": "In a highly selected cohort with refractory VF/VT OHCA, an ECMO-facilitated resuscitation pathway increased survival to hospital discharge (43% vs 7%) compared to standard ACLS, but the trial was stopped early after 30 patients.",
+  "pico": {
+    "population": "Adults (18–75 years) with refractory VF/VT OHCA after ≥3 shocks, no sustained ROSC, mechanical CPR in use, and estimated transport time <30 minutes",
+    "intervention": "Early ECMO-facilitated resuscitation: immediate transfer to catheterisation lab for VA-ECMO and coronary angiography/PCI",
+    "comparison": "Standard ACLS in the emergency department without VA-ECMO capability",
+    "outcome": "Survival to hospital discharge"
+  },
+  "keywords": [
+    "ECPR",
+    "VA-ECMO",
+    "refractory ventricular fibrillation",
+    "out-of-hospital cardiac arrest",
+    "mechanical CPR"
+  ],
+  "related_trials": [
+    "INCEPTION",
+    "PRAGUE OHCA"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Adults with OHCA and persistent shockable rhythms after multiple defibrillations have very low survival with conventional ACLS. ECPR plus immediate coronary angiography/PCI had shown promising outcomes in observational cohorts, but confounding by selection and system factors limited causal inference.",
+      "knowledge_gap": "Whether a protocolised ECMO-facilitated resuscitation strategy improves hard outcomes versus best conventional resuscitation, and whether benefits persist with acceptable neurological recovery.",
+      "hypothesis": "In adults with refractory VF/VT OHCA meeting strict transport and device criteria, early ECMO-facilitated resuscitation increases survival to hospital discharge compared with continued standard ACLS."
+    },
+    "methods": {
+      "design": "Phase 2, single-centre, open-label, pragmatic RCT with a hybrid Bayesian group-sequential design and response-adaptive randomisation. Randomisation occurred on hospital arrival.",
+      "setting": "An ECMO-capable centre within an integrated regional EMS system.",
+      "population": {
+        "inclusion": [
+          "Age 18–75 years",
+          "Refractory VF/VT (ongoing after 3 defibrillations)",
+          "No sustained ROSC",
+          "Automated mechanical CPR device in use",
+          "Estimated transport time <30 minutes"
+        ],
+        "exclusion": [
+          "Non-shockable rhythm (PEA/asystole)",
+          "Sustained ROSC achieved within the first 3 shocks",
+          "Estimated transport time >30 minutes",
+          "No automated mechanical CPR"
+        ]
+      },
+      "intervention": "Early ECMO-facilitated resuscitation strategy: immediate transfer to the catheterisation laboratory for VA-ECMO initiation and coronary angiography/PCI, followed by protocolised ICU care.",
+      "comparison": "Standard ACLS strategy: continued conventional resuscitation in the emergency department without VA-ECMO capability. Patients achieving ROSC could proceed to standard post-arrest care and invasive coronary management.",
+      "blinding": "Open-label treatment assignment. Emergency teams were masked before randomisation; ICU team was masked to allocation; functional outcome assessors were blinded.",
+      "sample_size_power": "Simulated design targeted survival probabilities of 0.37 (ECMO) vs 0.12 (ACLS), with ~5% type I error and 90% power. Maximum sample size 150 evaluable outcomes (planned randomisation up to 174).",
+      "primary_outcome": "Survival to hospital discharge",
+      "secondary_outcomes": [
+        "Survival to 3 months",
+        "Survival to 6 months",
+        "Functional outcome (CPC and mRS) at discharge, 3 months, and 6 months",
+        "Cumulative survival (time-to-event)"
+      ],
+      "follow_up": "Survival to hospital discharge (primary) and survival/functional status to 3 and 6 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early by DSMB after 30 patients due to efficacy (posterior probability of benefit 0.9861).",
+        "Survival to discharge was 43% (6/14) with early ECMO vs 7% (1/15) with standard ACLS.",
+        "At 6 months, all 6 survivors in the ECMO arm were alive with favourable neurological function (mean CPC 1.16); there were no survivors in the standard ACLS arm.",
+        "VA-ECMO was initiated in 80% (12/15) of the intervention arm; mean time from 911 call to ECMO initiation was 59 minutes."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival to hospital discharge (primary)",
+          "group_a": "6/14 (43%)",
+          "group_b": "1/15 (7%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "36.2%",
+          "ci_95": "3.7 to 59.2 (95% credible interval)",
+          "p_value": "Posterior probability=0.9861",
+          "note": "Primary outcome obtained in 29/30 (one early-ECMO patient withdrew on day 3)."
+        },
+        {
+          "outcome": "Survival to 3 months",
+          "group_a": "6/14 (43%)",
+          "group_b": "0/15 (0%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.0063",
+          "note": "No survivors in the standard ACLS arm beyond discharge except one in-hospital survivor (CPC 4, mRS 5)."
+        },
+        {
+          "outcome": "Survival to 6 months",
+          "group_a": "6/14 (43%)",
+          "group_b": "0/15 (0%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.0063",
+          "note": "Among survivors in the early ECMO arm: mean CPC 1.16 ± 0.4 (n=6) and mean mRS 1.3 ± 0.8 (n=6) at 6 months."
+        },
+        {
+          "outcome": "Cumulative survival (time-to-event)",
+          "group_a": "Higher cumulative survival",
+          "group_b": "Lower cumulative survival",
+          "effect_measure": "HR",
+          "effect_value": "0.16",
+          "ci_95": "0.06 to 0.41",
+          "p_value": "<0.0001 (log-rank)",
+          "note": "Cox model of survival time to death/discharge."
+        },
+        {
+          "outcome": "VA-ECMO initiated",
+          "group_a": "12/15 (80%)",
+          "group_b": "0/15 (0%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Two early-ECMO patients were pronounced dead due to severe metabolic derangements before cannulation."
+        },
+        {
+          "outcome": "Access-site bleeding requiring >3 units PRBC (ICU subgroup)",
+          "group_a": "2/13 (15%)",
+          "group_b": "Not applicable",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Complications reported among ICU admissions (early ECMO arm n=13; standard ACLS arm n=2)."
+        },
+        {
+          "outcome": "IVC trauma/retroperitoneal bleeding (ICU subgroup)",
+          "group_a": "1/13 (8%)",
+          "group_b": "Not applicable",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "No unanticipated device-related adverse events were reported."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Access-site bleeding requiring >3 units PRBC: 2/13 (15%) in the early ECMO arm.",
+      "IVC trauma/retroperitoneal bleeding: 1/13 (8%) in the early ECMO arm.",
+      "No unanticipated device-related adverse events were reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Secure randomisation schedule using permuted blocks (sizes 2, 4, 6) with allocation concealed by a scratch-off opaque layer; emergency teams were masked before randomisation."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery is unavoidable; the primary endpoint (survival) is objective; ICU clinicians were masked to allocation; functional outcome assessment used blinded evaluators."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "6/36 screened patients excluded pre-randomisation due to protocol misclassification; 30 randomised; 1/30 (early ECMO) withdrew consent on day 3 leading to missing primary outcome (primary endpoint analysed in 14 vs 15)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Early ECMO arm: all transferred to the catheterisation laboratory; VA-ECMO initiated in 12/15; 2/15 were declared dead due to severe metabolic derangements. Standard ACLS arm: VA-ECMO not available/used (0/15), with 2/15 transferred to the catheterisation laboratory after ROSC."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were broadly similar for prehospital timings and characteristics; small imbalances (male sex 93.3% vs 73.3%) are difficult to interpret with n=30."
+        }
+      ],
+      "verdict": "Internal validity is moderate: allocation concealment and objective primary outcome support credibility, but early stopping, small sample size, open-label delivery, and one missing primary endpoint meaningfully limit precision and robustness."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Highly selected cohort (18–75 years, refractory VF/VT after 3 shocks, mechanical CPR in use, and estimated transport time <30 minutes) within a specialised regional system; excludes non-shockable rhythms and longer transport/low-resource contexts."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings are tightly coupled to a coordinated EMS-to-cath-lab pathway with immediate access to VA-ECMO cannulation and coronary intervention; many systems cannot replicate time-to-cannulation (mean 59 minutes from 911 call). The tested strategy is a bundled pathway, so translation requires reproducing the bundle rather than adopting a single component."
+        }
+      ],
+      "verdict": "External validity is limited: results best generalise to mature ECPR-capable systems with short low-flow times and strict selection for refractory shockable OHCA."
+    },
+    "strengths": [
+      "Randomised evaluation of an ECPR-based system-of-care.",
+      "Prespecified adaptive/Bayesian monitoring.",
+      "Clear intervention–control separation (VA-ECMO 80% vs 0%).",
+      "Objective primary outcome.",
+      "Blinded ICU team and blinded functional outcome assessors.",
+      "Detailed time-metric reporting."
+    ],
+    "limitations": [
+      "Single centre.",
+      "Very small sample.",
+      "Early stopping at first interim analysis.",
+      "Open-label delivery.",
+      "One withdrawal leading to missing primary outcome.",
+      "Comparator reflects ED-based ACLS without ECPR access and may not represent the best achievable conventional strategy in all regions.",
+      "Adverse event comparisons are hard to interpret because most standard-arm patients died before ICU admission."
+    ],
+    "critical_appraisal": {
+      "summary": "A small, single-centre RCT with a large effect size but wide uncertainty due to early termination, providing proof-of-concept for an ECMO-facilitated system-of-care in highly selected refractory shockable OHCA.",
+      "strengths": [
+        "Randomised design with concealed allocation and objective primary outcome.",
+        "Clear separation of the intervention bundle from standard care.",
+        "Blinded functional outcome assessment."
+      ],
+      "weaknesses": [
+        "Early termination at first interim analysis inflates risk of effect-size overestimation.",
+        "Small sample size (n=30) yields imprecise estimates.",
+        "Single-centre design limits generalisability."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In a rigorously selected refractory VF/VT OHCA cohort, the early ECMO strategy was associated with substantially higher survival to discharge and preserved 6-month survival, with favourable functional outcomes among survivors.",
+    "clinical_bottom_line": {
+      "verdict": "This trial supports the plausibility of benefit for ECPR in refractory shockable OHCA when systems can deliver rapid cannulation and invasive management; it does not justify indiscriminate ECPR expansion.",
+      "applies_to": "Highly selected patients (18-75 years, refractory VF/VT, mechanical CPR, short transport) treated in mature, high-volume ECPR-capable systems.",
+      "does_not_mean": "ECPR is superior to standard ACLS in all OHCA patients or that ECMO alone is the key driver of benefit.",
+      "implementation_caveats": [
+        "Requires reproducing the entire system bundle (prehospital triage, mechanical CPR, rapid transport, 24/7 cath lab + ECMO team).",
+        "Mean time from 911 call to ECMO initiation was 59 minutes, a benchmark that may be difficult to achieve in many settings."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Timing and randomisation point",
+        "notes": "Correspondence argued that randomising on hospital arrival (mean 48.5 minutes from 911 call) may not optimally capture the time-sensitive biology of ECPR, suggesting earlier triage/randomisation could be important."
+      },
+      {
+        "topic": "Early stopping and small-sample inferential fragility",
+        "notes": "Termination after 30 participants raises the likelihood of effect-size inflation and leaves wide uncertainty (95% credible interval for the primary risk difference 3.7 to 59.2)."
+      },
+      {
+        "topic": "Bundle versus single-component attribution",
+        "notes": "The intervention combines ECPR with immediate invasive coronary evaluation and highly organised logistics; causal attribution to VA-ECMO alone is not supported by the design."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "INCEPTION",
+        "relation": "A subsequent multicentre RCT that did not demonstrate a statistically significant increase in 30-day survival with favourable neurological outcome (20% vs 16%; OR 1.4; 95% CI 0.5 to 3.5; P=0.52), and excluded 26/160 after randomisation, emphasising practical challenges of strict selection and delivery fidelity at scale."
+      },
+      {
+        "trial": "PRAGUE OHCA",
+        "relation": "An individual patient data pooled analysis combining ARREST and PRAGUE OHCA data explored how patient selection and low-flow times may modify benefit."
+      }
+    ],
+    "unresolved_questions": [
+      "Can the results be replicated in a multicentre, larger-scale RCT?",
+      "What is the optimal timing for randomisation and ECMO initiation?",
+      "What are the independent contributions of ECMO vs. early coronary angiography to the observed benefit?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=30 (stopped early)",
+        "Survival to discharge: 43% vs 7% (risk difference 36.2%)",
+        "6-month survival: 43% vs 0%",
+        "Mean time 911 call to ECMO: 59 minutes"
+      ],
+      "one_line_takeaway": "A bundled ECMO-facilitated resuscitation pathway can dramatically improve survival in highly selected refractory VF/VT OHCA, but only in systems that can replicate its rapid timelines and strict patient selection."
+    }
+  },
+  "_source_id": "ARREST",
+  "_source_system": "Resuscitation"
+}

@@ -1,0 +1,327 @@
+{
+  "id": "ALPS",
+  "trial_name": "ALPS — Amiodarone, Lidocaine, or Placebo in Out-of-Hospital Cardiac Arrest (2016)",
+  "specialty": "Resuscitation",
+  "subtopic": "Antiarrhythmic Therapy — Out-of-Hospital Cardiac Arrest",
+  "year": 2016,
+  "journal": "New England Journal of Medicine",
+  "citation": "Kudenchuk PJ, Brown SP, Daya M, et al. Amiodarone, lidocaine, or placebo in out-of-hospital cardiac arrest. N Engl J Med. 2016;374(18):1711-1722.",
+  "doi": "10.1056/NEJMoa1514204",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, prehospital, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 4667,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In shock-refractory VF/pVT OHCA, amiodarone and lidocaine improve admission outcomes but do not clearly improve overall discharge survival; any survival signal is most apparent in witnessed arrests.",
+  "pico": {
+    "population": "Adults with out-of-hospital cardiac arrest and shock-refractory VF/pulseless VT after at least one shock, with IV/IO access",
+    "intervention": "Amiodarone 300 mg IV/IO (plus optional 150 mg) or lidocaine 120 mg IV/IO (plus optional 60 mg)",
+    "comparison": "Placebo (normal saline)",
+    "outcome": "Survival to hospital discharge (primary); functionally favourable survival (mRS ≤3) at discharge"
+  },
+  "keywords": [
+    "amiodarone",
+    "lidocaine",
+    "cardiac arrest",
+    "VF",
+    "pulseless VT",
+    "antiarrhythmic",
+    "OHCA",
+    "prehospital",
+    "RCT"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Antiarrhythmic drugs (notably amiodarone, and historically lidocaine) were incorporated into resuscitation algorithms for shock-refractory VF/pulseless VT largely on the basis of modest prehospital trials demonstrating improved short-term endpoints (e.g., survival to hospital admission), with persistent uncertainty about patient-centred outcomes (survival with good neurological function).",
+      "knowledge_gap": "Uncertainty about patient-centred outcomes (survival with good neurological function).",
+      "hypothesis": "In adults with OHCA and shock-refractory VF/pulseless VT, treatment with amiodarone or lidocaine (vs placebo) improves survival to hospital discharge, and amiodarone is superior to lidocaine."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, double-blind, placebo-controlled, prehospital, parallel-group (1:1:1), Resuscitation Outcomes Consortium (ROC); conducted under exception from informed consent.",
+      "setting": "EMS-treated OHCA in ROC catchment (10 North American ROC centres; >200 EMS agencies; >250 receiving hospitals).",
+      "population": {
+        "inclusion": [
+          "Adults with OHCA and persistent/recurrent VF or pulseless VT after at least one shock, with IV/IO access and an indication for antiarrhythmic therapy."
+        ],
+        "exclusion": [
+          "Traumatic arrest; DNR/“opt out”; known pregnancy/prisoner; known allergy to study drugs; receipt of an antiarrhythmic before randomisation; non-shockable rhythms at the time of intended dosing (handled via post-randomisation exclusion from the per-protocol “efficacy” population)."
+        ]
+      },
+      "intervention": "Amiodarone (PM101 formulation): 150 mg per syringe; initial dose 300 mg (2 syringes) after shock-refractory VF/pVT, with an additional 150 mg (1 syringe) if VF/pVT persisted/recured (maximum 450 mg). Lidocaine: 60 mg per syringe; initial dose 120 mg (2 syringes), with an additional 60 mg (1 syringe) if VF/pVT persisted/recured (maximum 180 mg).",
+      "comparison": "Placebo (normal saline), visually identical syringes and dosing schedule to maintain blinding.",
+      "blinding": "Double-blind (EMS clinicians, in-hospital clinicians, investigators, and outcome assessors blinded); emergency unblinding permitted via prespecified process (infrequent).",
+      "sample_size_power": "A target of 3000 patients in the per-protocol (“efficacy”) population provided 90% power to detect an absolute increase in survival to discharge from 23.4% to 29.7%; group-sequential design with one-sided significance level 0.025 for each active drug vs placebo and two-sided 0.05 for amiodarone vs lidocaine.",
+      "primary_outcome": "Survival to hospital discharge.",
+      "secondary_outcomes": [
+        "Functionally favourable survival at discharge (Modified Rankin Scale ≤3)",
+        "ROSC at emergency department arrival",
+        "Admitted to hospital",
+        "Clinical seizure activity within 24 hours",
+        "Temporary cardiac pacing within 24 hours"
+      ],
+      "follow_up": "Through index hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "Neither amiodarone nor lidocaine significantly improved survival to hospital discharge vs placebo in the primary per-protocol analysis.",
+        "Both drugs significantly improved hospital admission rates (amiodarone +5.8%, lidocaine +7.4% vs placebo).",
+        "In witnessed arrests, both drugs showed ~5% absolute improvement in discharge survival (interaction P=0.05).",
+        "Intention-to-treat analyses showed smaller, non-significant differences in discharge survival."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival to hospital discharge (primary)",
+          "group_a": "Amiodarone: 237/970 (24.4%)",
+          "group_b": "Placebo: 222/1056 (21.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+3.2 percentage points",
+          "ci_95": "-0.4 to 7.0",
+          "p_value": "0.08",
+          "note": "Adjusted CI/P for sequential monitoring; per-protocol primary analysis."
+        },
+        {
+          "outcome": "Survival to hospital discharge (primary)",
+          "group_a": "Lidocaine: 233/985 (23.7%)",
+          "group_b": "Placebo: 222/1056 (21.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+2.6 percentage points",
+          "ci_95": "-1.0 to 6.3",
+          "p_value": "0.16",
+          "note": "No statistically significant difference vs placebo at prespecified boundary."
+        },
+        {
+          "outcome": "Survival to hospital discharge (head-to-head)",
+          "group_a": "Amiodarone: 237/970 (24.4%)",
+          "group_b": "Lidocaine: 233/985 (23.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+0.7 percentage points",
+          "ci_95": "-3.2 to 4.7",
+          "p_value": "0.70",
+          "note": "No evidence of superiority of amiodarone over lidocaine."
+        },
+        {
+          "outcome": "Functionally favourable survival at discharge (mRS ≤3)",
+          "group_a": "Amiodarone: 182/969 (18.8%)",
+          "group_b": "Placebo: 175/1052 (16.6%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+2.1 percentage points",
+          "ci_95": "-1.3 to 5.5",
+          "p_value": "0.22",
+          "note": "mRS unavailable in a small number; denominators reflect available mRS."
+        },
+        {
+          "outcome": "Functionally favourable survival at discharge (mRS ≤3)",
+          "group_a": "Lidocaine: 173/991 (17.5%)",
+          "group_b": "Placebo: 175/1052 (16.6%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+0.8 percentage points",
+          "ci_95": "-2.5 to 4.1",
+          "p_value": "0.61",
+          "note": "No significant difference vs placebo."
+        },
+        {
+          "outcome": "ROSC at emergency department arrival",
+          "group_a": "Amiodarone: 350/974 (35.9%)",
+          "group_b": "Placebo: 366/1059 (34.6%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+1.4 percentage points",
+          "ci_95": "-2.4 to 5.1",
+          "p_value": "0.52",
+          "note": "Intermediate endpoint; not powered for mechanistic outcomes."
+        },
+        {
+          "outcome": "ROSC at emergency department arrival",
+          "group_a": "Lidocaine: 396/992 (39.9%)",
+          "group_b": "Placebo: 366/1059 (34.6%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+5.4 percentage points",
+          "ci_95": "1.7 to 9.1",
+          "p_value": "0.01",
+          "note": "Signal for improved short-term physiology without clear translation to discharge survival."
+        },
+        {
+          "outcome": "Admitted to hospital",
+          "group_a": "Amiodarone: 445/974 (45.7%)",
+          "group_b": "Placebo: 420/1059 (39.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+5.8 percentage points",
+          "ci_95": "1.9 to 9.7",
+          "p_value": "0.003",
+          "note": "Consistent with an effect on early resuscitation success."
+        },
+        {
+          "outcome": "Admitted to hospital",
+          "group_a": "Lidocaine: 467/993 (47.0%)",
+          "group_b": "Placebo: 420/1059 (39.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+7.4 percentage points",
+          "ci_95": "3.5 to 11.3",
+          "p_value": "<0.001",
+          "note": "Largest observed difference among intermediate outcomes."
+        },
+        {
+          "outcome": "Clinical seizure activity within 24 hours (safety)",
+          "group_a": "Lidocaine: 51/993 (5.1%)",
+          "group_b": "Placebo: 39/1058 (3.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+1.4 percentage points",
+          "ci_95": "Not reported",
+          "p_value": "0.05",
+          "note": "Interpretation limited by ascertainment during post-arrest care."
+        },
+        {
+          "outcome": "Temporary cardiac pacing within 24 hours (safety)",
+          "group_a": "Amiodarone: 48/981 (4.9%)",
+          "group_b": "Placebo: 29/1075 (2.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+2.2 percentage points",
+          "ci_95": "Not reported",
+          "p_value": "0.006",
+          "note": "Consistent with bradyarrhythmic effects; other serious adverse events were uncommon."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Bystander-witnessed arrest",
+          "group_a": "Amiodarone or Lidocaine (combined analysis not fully reported)",
+          "group_b": "Placebo",
+          "effect_measure": "Risk difference",
+          "effect_value": "~5 percentage points (each drug vs placebo)",
+          "ci_95": "Not reported",
+          "p_interaction": "0.05",
+          "note": "Approximate absolute improvement; interaction P=0.05 for witnessed vs unwitnessed; exact subgroup counts not provided in main paper."
+        }
+      ]
+    },
+    "safety": [
+      "Lidocaine associated with higher clinical seizure activity within 24 hours (5.1% vs 3.7%, P=0.05).",
+      "Amiodarone associated with higher temporary cardiac pacing within 24 hours (4.9% vs 2.7%, P=0.006).",
+      "Other serious adverse events were uncommon and similar between groups."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Allocation occurred via opening a blinded trial-drug kit with central randomisation; concealment and blinding were strong by design (prehospital environment, identical syringes)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind design mitigated differential co-interventions; unblinding was rare (24/3026, 0.8%)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "4667 randomised; 4653 included in intention-to-treat; 3026 included in the per-protocol population; primary endpoint analysis used 970 (amiodarone), 985 (lidocaine), 1056 (placebo), after additional small exclusions for missing outcome data (4 in per-protocol). This large post-randomisation attrition from the primary analysis set is a major threat to strict ITT inference."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Time from 911 call to first dose was similar (amiodarone 19.3±7.4 min vs lidocaine 19.3±7.4 min vs placebo 19.3±7.2 min); shocks after first dose were also similar (3.6±4.8 vs 3.4±4.5 vs 3.5±4.6), supporting comparable exposure windows. Open-label antiarrhythmic use was low but numerically higher in placebo (amiodarone 1.4% and lidocaine 1.2% in placebo vs ≤1.3% in active arms), reducing risk of major “contamination”."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Per-protocol groups were well balanced: mean age 63.5±13.6 vs 63.5±13.8 vs 63.3±13.6 years; men 77.9% vs 77.5% vs 78.9%; bystander witnessed 58.4% vs 57.6% vs 58.8%; bystander CPR 56.8% vs 57.9% vs 59.5%; time from call to EMS arrival 5.0±2.7 vs 5.1±2.9 vs 5.0±2.7 min."
+        }
+      ],
+      "verdict": "Moderate—randomisation, blinding, and baseline balance were strong, but reliance on a per-protocol primary analysis with substantial post-randomisation exclusions limits the robustness of causal inference for the trial’s primary estimand."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Reflects adult OHCA with shock-refractory VF/pVT managed by advanced EMS systems capable of IV/IO access, defibrillation, and protocolised ALS; excludes non-shockable rhythms and trauma."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Applicability is highest in systems resembling ROC (high-quality CPR/defibrillation infrastructure, transport and post-arrest care capacity); generalisability is reduced where drug delivery is delayed, vascular access is not feasible, or post-arrest care differs substantially. Amiodarone formulation (PM101) and dose schedule were aligned with contemporary ALS practice, but formulation differences may matter in other settings."
+        }
+      ],
+      "verdict": "Good for shock-refractory VF/pVT OHCA in well-developed EMS systems; limited for non-shockable arrests and for systems without timely drug delivery or comparable post-arrest pathways."
+    },
+    "strengths": [
+      "Large, multicentre, blinded, placebo-controlled design.",
+      "Pragmatic prehospital implementation within a mature research network.",
+      "Clinically important primary endpoint (survival to discharge) with functional outcome captured.",
+      "Prespecified subgroup hypothesis (witnessed arrest)."
+    ],
+    "limitations": [
+      "Primary reliance on a per-protocol (“efficacy”) population with extensive post-randomisation exclusions.",
+      "Drug administration occurred relatively late in the resuscitation timeline (mean ~19 minutes from 911 call), potentially diluting effect.",
+      "Hospital and post-arrest care not protocolised (pragmatic but introduces downstream variability).",
+      "Three-arm comparisons with multiple secondary endpoints increase interpretive complexity."
+    ],
+    "critical_appraisal": {
+      "summary": "ALPS was a large, well-conducted RCT with strong internal validity for its per-protocol analysis, but the primary reliance on per-protocol population and late drug administration limit confidence in overall effect on discharge survival. The trial provides moderate-quality evidence that antiarrhythmics improve early resuscitation endpoints but not discharge survival overall, with a possible benefit in witnessed arrests.",
+      "strengths": [
+        "Large sample size",
+        "Double-blind, placebo-controlled",
+        "Multicenter, pragmatic prehospital design",
+        "Clinically relevant primary outcome",
+        "Prespecified subgroup analysis"
+      ],
+      "weaknesses": [
+        "Per-protocol primary analysis with substantial post-randomisation exclusions",
+        "Late drug administration (~19 min) may dilute effect",
+        "Unprotocolised post-arrest care",
+        "Multiple secondary endpoints increase risk of false positives"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Antiarrhythmic drugs improve intermediate outcomes (hospital admission) but do not clearly improve survival to discharge overall. A potential benefit exists in witnessed arrests, where absolute improvements of ~5% were observed, suggesting time-dependent efficacy.",
+    "clinical_bottom_line": {
+      "verdict": "Does not change routine practice; antiarrhythmics remain reasonable options for shock-refractory VF/pVT, but emphasis should remain on rapid defibrillation and high-quality CPR. Consider use particularly in witnessed arrests where benefit may be greater.",
+      "applies_to": "Adults with shock-refractory VF/pulseless VT in EMS systems with timely drug delivery.",
+      "does_not_mean": "That antiarrhythmics are ineffective; they improve early resuscitation success, but this does not consistently translate to discharge survival.",
+      "implementation_caveats": [
+        "Drug administration should not delay defibrillation or CPR.",
+        "Benefit likely time-dependent; greatest in witnessed arrests with short downtime.",
+        "Formulation and dosing may vary; this trial used specific formulations (PM101 amiodarone)."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Per-protocol as primary analysis set",
+        "notes": "The trial’s principal causal estimate was anchored to a post-randomisation “efficacy/per-protocol” population, which risks bias if exclusions relate to prognosis or are influenced by early resuscitation dynamics; this design choice drove post-publication critique."
+      },
+      {
+        "topic": "Upstream benefit, downstream attenuation",
+        "notes": "Both active drugs improved admission to hospital, but the effect attenuated by discharge—raising questions about drug timing, post-arrest brain injury dominating prognosis, and downstream care variability."
+      },
+      {
+        "topic": "Subgroup credibility",
+        "notes": "The witnessed-arrest interaction (P=0.05) is clinically coherent but near the conventional threshold; must be interpreted in context of multiple subgroup tests and modest absolute effect sizes."
+      },
+      {
+        "topic": "Meta-analytic synthesis",
+        "notes": "Post-ALPS systematic reviews and network meta-analyses generally support improved ROSC/survival to hospital admission with amiodarone/lidocaine, with inconsistent or modest effects on survival to discharge and neurological outcomes, mirroring ALPS’ pattern of results."
+      },
+      {
+        "topic": "Guideline positioning",
+        "notes": "Subsequent guideline statements continue to endorse either amiodarone or lidocaine as reasonable therapies for shock-refractory VF/pVT, while emphasising that the certainty for improvement in patient-centred outcomes remains limited."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Post-ALPS systematic reviews and network meta-analyses",
+        "relation": "These analyses pooled ALPS with earlier trials, showing consistent improvement in ROSC and hospital admission with amiodarone/lidocaine, but inconsistent effects on survival to discharge and neurological outcomes."
+      }
+    ],
+    "unresolved_questions": [
+      "Does earlier drug administration (e.g., after first shock) improve discharge survival?",
+      "Can post-arrest care protocols enhance translation of early ROSC benefit to long-term survival?",
+      "Is there a subgroup (e.g., shorter downtime) that derives clear mortality benefit?",
+      "What is the optimal antiarrhythmic agent and dosing in the current era of high-quality CPR?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3026 (per-protocol primary analysis)",
+        "Primary outcome: survival to discharge 24.4% amiodarone vs 21.0% placebo (risk diff +3.2%, P=0.08)",
+        "Lidocaine vs placebo: 23.7% vs 21.0% (risk diff +2.6%, P=0.16)",
+        "Hospital admission: amiodarone +5.8%, lidocaine +7.4% vs placebo (both significant)",
+        "Witnessed arrest subgroup: ~5% absolute improvement in discharge survival (interaction P=0.05)"
+      ],
+      "one_line_takeaway": "In shock-refractory VF/pVT, amiodarone or lidocaine may improve early resuscitation success but do not clearly increase survival to discharge; consider use in witnessed arrests where benefit is plausible."
+    }
+  },
+  "_source_id": "ALPS",
+  "_source_system": "Resuscitation"
+}
