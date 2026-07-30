@@ -141,11 +141,15 @@ def _kv_get(key):
             if r.ok:
                 res = r.json().get("result")
                 if res is not None:
+                    if isinstance(res, str):
+                        parsed = json.loads(res)
+                        if isinstance(parsed, dict) and "value" in parsed:
+                            raw = parsed["value"]
+                            return json.loads(raw) if raw and isinstance(raw, str) else raw
+                        return parsed
                     if isinstance(res, dict):
                         raw = res.get("value")
                         return json.loads(raw) if raw and isinstance(raw, str) else raw
-                    if isinstance(res, str):
-                        return json.loads(res)
                     return res
             return None
         except Exception:
