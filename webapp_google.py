@@ -22,7 +22,7 @@ COOKIE_SECURE = revamped_webapp.COOKIE_SECURE
 
 GOOGLE_CLIENT_ID = os.environ.get("OAUTH_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.environ.get("OAUTH_CLIENT_SECRET", "")
-PRODUCTION_DOMAIN = "hackccm.vercel.app"
+PRODUCTION_DOMAIN = "hack-ccm-acumen-microlearning.vercel.app"
 ADMIN_EMAILS = set(os.environ.get("ADMIN_EMAILS", "").lower().split(",") if os.environ.get("ADMIN_EMAILS") else [])
 
 # =====================================================================
