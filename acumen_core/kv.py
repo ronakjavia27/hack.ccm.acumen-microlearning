@@ -1,4 +1,4 @@
-"""Local file-backed key-value store (replaces Vercel KV for local dev)."""
+"""Key-value store — uses Upstash Redis when KV_URL/KV_TOKEN are set, else local file."""
 
 import json
 import os
@@ -7,6 +7,13 @@ import re
 _KV_FILE = os.path.join(os.path.dirname(__file__), "..", "local_kv.json")
 _KV_FILE = os.path.normpath(_KV_FILE)
 _lock = __import__("threading").Lock()
+
+KV_URL = os.environ.get("KV_URL", "")
+KV_TOKEN = os.environ.get("KV_TOKEN", "")
+
+
+def _use_upstash():
+    return bool(KV_URL and KV_TOKEN)
 
 
 def _load():
@@ -27,26 +34,74 @@ def _save(data):
 
 
 def kv_get(key: str):
+    if _use_upstash():
+        import requests
+        try:
+            r = requests.get(f"{KV_URL}/get/{key}", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            if r.ok:
+                res = r.json().get("result")
+                if res is not None:
+                    if isinstance(res, str):
+                        parsed = json.loads(res)
+                        if isinstance(parsed, dict) and "value" in parsed:
+                            raw = parsed["value"]
+                            return json.loads(raw) if raw and isinstance(raw, str) else raw
+                        return parsed
+                    if isinstance(res, dict):
+                        raw = res.get("value")
+                        return json.loads(raw) if raw and isinstance(raw, str) else raw
+                    return res
+            return None
+        except Exception:
+            return None
     with _lock:
         data = _load()
         return data.get(key)
 
 
 def kv_set(key: str, value):
+    if _use_upstash():
+        import requests
+        try:
+            r = requests.post(f"{KV_URL}/set/{key}", json={"key": key, "value": json.dumps(value)}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            return r.ok
+        except Exception:
+            return False
     with _lock:
         data = _load()
         data[key] = value
         _save(data)
+        return True
 
 
 def kv_delete(key: str):
+    if _use_upstash():
+        import requests
+        try:
+            r = requests.post(f"{KV_URL}/del/{key}", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            return r.ok
+        except Exception:
+            return False
     with _lock:
         data = _load()
         data.pop(key, None)
         _save(data)
+        return True
 
 
 def kv_scan(pattern: str):
+    if _use_upstash():
+        import requests
+        try:
+            r = requests.post(f"{KV_URL}/scan/0", json={"match": pattern, "count": 200}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            if r.ok:
+                res = r.json().get("result")
+                if isinstance(res, list) and len(res) == 2 and isinstance(res[1], list):
+                    return res[1]
+                return []
+            return []
+        except Exception:
+            return []
     with _lock:
         data = _load()
         regex = re.escape(pattern).replace(r"\*", ".*")
