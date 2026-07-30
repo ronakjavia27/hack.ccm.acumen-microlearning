@@ -13,7 +13,6 @@ app = revamped_webapp.app
 _kv_get = revamped_webapp._kv_get
 _kv_set = revamped_webapp._kv_set
 _kv_delete = revamped_webapp._kv_delete
-_kv_scan = revamped_webapp._kv_scan
 _session_id = revamped_webapp._session_id
 _get_session_user = revamped_webapp._get_session_user
 SESSION_COOKIE_NAME = revamped_webapp.SESSION_COOKIE_NAME
@@ -23,7 +22,6 @@ COOKIE_SECURE = revamped_webapp.COOKIE_SECURE
 GOOGLE_CLIENT_ID = os.environ.get("OAUTH_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.environ.get("OAUTH_CLIENT_SECRET", "")
 PRODUCTION_DOMAIN = "hackccm.vercel.app"
-ADMIN_EMAILS = set(os.environ.get("ADMIN_EMAILS", "").lower().split(",") if os.environ.get("ADMIN_EMAILS") else [])
 
 # Save the original dashboard HTML before we override LANDING_HTML
 ORIGINAL_DASHBOARD_HTML = revamped_webapp.LANDING_HTML
@@ -469,91 +467,3 @@ async def google_oauth_callback(request: Request, code: str = "", state: str = "
     resp.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
     return resp
 
-# =====================================================================
-# ADMIN — require admin user
-# =====================================================================
-
-async def _require_admin(request: Request, response: Response):
-    user = _get_session_user(request)
-    if not user:
-        response.delete_cookie(SESSION_COOKIE_NAME)
-        raise HTTPException(401, "Login required")
-    email = user.get("email", "").lower()
-    if not user.get("is_admin") and email not in ADMIN_EMAILS:
-        raise HTTPException(403, "Admin access required")
-    return user
-
-# =====================================================================
-# ADMIN — list all users
-# =====================================================================
-
-@app.get("/api/admin/users")
-async def admin_list_users(request: Request, response: Response):
-    await _require_admin(request, response)
-    keys = _kv_scan("auth:users:*")
-    users = []
-    for key in keys:
-        email = key.replace("auth:users:", "", 1)
-        user = _kv_get(key)
-        if user and isinstance(user, dict):
-            safe = {k: v for k, v in user.items() if k != "password_hash"}
-            safe["email"] = email
-            users.append(safe)
-    users.sort(key=lambda u: u.get("created_at", ""), reverse=True)
-    return {"users": users, "count": len(users)}
-
-# =====================================================================
-# ADMIN — update user (features / is_admin / delete)
-# =====================================================================
-
-@app.put("/api/admin/users/{email:path}")
-async def admin_update_user(request: Request, response: Response, email: str):
-    await _require_admin(request, response)
-    body = await request.json()
-    email = email.strip().lower()
-    key = f"auth:users:{email}"
-    user = _kv_get(key)
-    if not user or not isinstance(user, dict):
-        raise HTTPException(404, "User not found")
-
-    if "is_admin" in body:
-        val = body["is_admin"]
-        user["is_admin"] = bool(val) if val is not None else False
-
-    if "features" in body and isinstance(body["features"], dict):
-        user["features"] = body["features"]
-
-    if "add_feature" in body and isinstance(body["add_feature"], str):
-        user.setdefault("features", {})[body["add_feature"]] = True
-
-    if "remove_feature" in body and isinstance(body["remove_feature"], str):
-        user.setdefault("features", {}).pop(body["remove_feature"], None)
-
-    _kv_set(key, user)
-    safe = {k: v for k, v in user.items() if k != "password_hash"}
-    return {"ok": True, "user": safe}
-
-# =====================================================================
-# ADMIN — delete user
-# =====================================================================
-
-@app.delete("/api/admin/users/{email:path}")
-async def admin_delete_user(request: Request, response: Response, email: str):
-    await _require_admin(request, response)
-    email = email.strip().lower()
-    key = f"auth:users:{email}"
-    user = _kv_get(key)
-    if not user:
-        raise HTTPException(404, "User not found")
-
-    # Delete all sessions for this user (scan auth:session:*)
-    session_keys = _kv_scan("auth:session:*")
-    deleted_sessions = 0
-    for sk in session_keys:
-        sess = _kv_get(sk)
-        if sess and isinstance(sess, dict) and sess.get("email", "").lower() == email:
-            _kv_delete(sk)
-            deleted_sessions += 1
-
-    _kv_delete(key)
-    return {"ok": True, "deleted": email, "sessions_removed": deleted_sessions}

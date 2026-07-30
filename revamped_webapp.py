@@ -2850,10 +2850,6 @@ async def api_signup(body: dict, response: Response):
             "created_at": datetime.utcnow().isoformat(),
             "features": {},
         }
-        # First user becomes admin automatically
-        existing_users = _kv_scan("auth:users:*")
-        if not existing_users:
-            user["is_admin"] = True
         _kv_set(f"auth:users:{email}", user)
         sid = _session_id()
         _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
