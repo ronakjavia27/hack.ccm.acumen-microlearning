@@ -128,86 +128,9 @@ SESSION_COOKIE_NAME = "hackccm_sess"
 SESSION_MAX_AGE = 2592000  # 30 days
 COOKIE_SECURE = os.environ.get("VERCEL", "").lower() == "1"
 
-KV_URL = os.environ.get("KV_REST_API_URL")
-KV_TOKEN = os.environ.get("KV_REST_API_TOKEN")
-AUTH_KV_FILE = Path("data/auth_kv.json")
+from acumen_core.kv import kv_get as _kv_get, kv_set as _kv_set, kv_delete as _kv_delete, kv_scan as _kv_scan
 
-# ---- Vercel KV helpers (with local file fallback) ----
-def _kv_get(key):
-    if KV_URL and KV_TOKEN:
-        import requests
-        try:
-            r = requests.get(f"{KV_URL}/get/{key}", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
-            if r.ok:
-                res = r.json().get("result")
-                if res is not None:
-                    if isinstance(res, str):
-                        parsed = json.loads(res)
-                        if isinstance(parsed, dict) and "value" in parsed:
-                            raw = parsed["value"]
-                            return json.loads(raw) if raw and isinstance(raw, str) else raw
-                        return parsed
-                    if isinstance(res, dict):
-                        raw = res.get("value")
-                        return json.loads(raw) if raw and isinstance(raw, str) else raw
-                    return res
-            return None
-        except Exception:
-            return None
-    AUTH_KV_FILE.parent.mkdir(parents=True, exist_ok=True)
-    if AUTH_KV_FILE.exists():
-        return json.loads(AUTH_KV_FILE.read_text()).get(key)
-    return None
-
-def _kv_set(key, value, ttl=None):
-    if KV_URL and KV_TOKEN:
-        import requests
-        try:
-            url = f"{KV_URL}/set/{key}"
-            if ttl:
-                url += f"?EX={ttl}"
-            r = requests.post(url, json={"key": key, "value": json.dumps(value)}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
-            return r.ok
-        except Exception:
-            return False
-    AUTH_KV_FILE.parent.mkdir(parents=True, exist_ok=True)
-    data = json.loads(AUTH_KV_FILE.read_text()) if AUTH_KV_FILE.exists() else {}
-    data[key] = value
-    AUTH_KV_FILE.write_text(json.dumps(data, indent=2))
-    return True
-
-def _kv_delete(key):
-    if KV_URL and KV_TOKEN:
-        import requests
-        try:
-            r = requests.post(f"{KV_URL}/del/{key}", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
-            return r.ok
-        except Exception:
-            return False
-    if AUTH_KV_FILE.exists():
-        data = json.loads(AUTH_KV_FILE.read_text())
-        data.pop(key, None)
-        AUTH_KV_FILE.write_text(json.dumps(data, indent=2))
-    return True
-
-def _kv_scan(pattern):
-    if KV_URL and KV_TOKEN:
-        import requests
-        try:
-            r = requests.post(f"{KV_URL}/scan/0", json={"match": pattern, "count": 200}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
-            if r.ok:
-                res = r.json().get("result")
-                if isinstance(res, list) and len(res) == 2 and isinstance(res[1], list):
-                    return res[1]
-                return []
-            return []
-        except Exception:
-            return []
-    if AUTH_KV_FILE.exists():
-        data = json.loads(AUTH_KV_FILE.read_text())
-        pat = re.escape(pattern).replace(r"\*", ".*")
-        return [k for k in data if re.match(pat, k)]
-    return []
+# =====================================================================
 
 # ---- Password hashing (stdlib only) ----
 def _hash_password(password):
