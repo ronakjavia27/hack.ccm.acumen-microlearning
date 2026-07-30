@@ -96,26 +96,31 @@ async def api_info():
     kv_ok = _use_upstash()
     scan_all = []
     scan_users = []
-    raw_scan = None
+    user_sample = []
+    raw_keys = None
     if kv_ok:
         keys = kv_scan("*")
         scan_all = keys[:20]
         keys2 = kv_scan("auth:users:*")
         scan_users = keys2[:10]
+        for k in scan_users[:3]:
+            u = kv_get(k)
+            if u:
+                u.pop("password_hash", None)
+                user_sample.append({"key": k, "data": u})
         try:
-            rs = req.post(f"{KV_URL}/scan/0", json={"match": "*", "count": 200}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
-            raw_scan = {"status": rs.status_code, "body": rs.text[:500] if rs.ok else rs.text[:200]}
+            rs = req.get(f"{KV_URL}/keys/auth:users:*", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            raw_keys = {"status": rs.status_code, "body": rs.text[:500] if rs.ok else rs.text[:200]}
         except Exception as e:
-            raw_scan = {"error": str(e)[:200]}
+            raw_keys = {"error": str(e)[:200]}
     return {
         "kv_connected": kv_ok,
-        "kv_url_preview": KV_URL[:30] + "..." if KV_URL else None,
-        "kv_token_set": bool(KV_TOKEN),
         "keys_all_count": len(scan_all),
         "keys_all_sample": scan_all,
         "keys_users_found": len(scan_users),
         "keys_users_sample": scan_users,
-        "raw_scan": raw_scan,
+        "user_sample": user_sample,
+        "raw_keys": raw_keys,
         "modules": [s.kind for s in all_kinds()],
         "repo_root": str(REPO_ROOT),
     }

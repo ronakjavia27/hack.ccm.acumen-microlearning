@@ -93,11 +93,11 @@ def kv_scan(pattern: str):
     if _use_upstash():
         import requests
         try:
-            r = requests.post(f"{KV_URL}/scan/0", json={"match": pattern, "count": 200}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            r = requests.get(f"{KV_URL}/keys/{pattern}", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=10)
             if r.ok:
                 res = r.json().get("result")
-                if isinstance(res, list) and len(res) == 2 and isinstance(res[1], list):
-                    return res[1]
+                if isinstance(res, list):
+                    return res
                 return []
             return []
         except Exception:

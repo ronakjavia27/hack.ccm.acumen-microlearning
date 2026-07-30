@@ -264,6 +264,11 @@ def _user_has_feature(user, feature):
     overrides = user.get("features", {}) or {}
     return {**defaults, **overrides}.get(feature, False)
 
+
+def _require_feature(user, feature):
+    if not _user_has_feature(user, feature):
+        raise HTTPException(status_code=403, detail=f"Feature '{feature}' is not enabled for this account")
+
 # ---- Landing page HTML ----
 LANDING_HTML = """<!DOCTYPE html>
 <html lang="en">
@@ -591,6 +596,11 @@ async def render_dashboard(request: Request):
     condensed_types_list = sorted(set(t.get("trial_type", "") for t in condensed_index if t.get("trial_type")))
     condensed_result_cats_js = json.dumps(condensed_result_cats)
     condensed_types_list_js = json.dumps(condensed_types_list)
+
+    # Compute resolved feature flags for the authenticated user
+    user_features = {f: _user_has_feature(user, f) for f in FEATURE_FLAGS}
+    user_features_js = json.dumps(user_features)
+    user_is_admin_js = "true" if user.get("is_admin") else "false"
 
     html = f"""<!DOCTYPE html>
 <html lang="en" data-theme="dim">
@@ -1204,6 +1214,7 @@ async def render_dashboard(request: Request):
     </div>
 
     <!-- Core Critical Care Trials hero card -->
+    {'' if not _user_has_feature(user, 'condensed_trials') else '''
     <div class="trials-hero-card trials-hero-condensed" style="cursor:pointer;margin-top:16px">
       <div data-view="trials-condensed" role="button" tabindex="0">
         <span class="trophy">&#128221;</span>
@@ -1212,6 +1223,7 @@ async def render_dashboard(request: Request):
         <p class="sub" style="margin-top:4px">{len(condensed_index)} trials &mdash; tap to explore</p>
       </div>
     </div>
+    '''}
   </section>
 
   <!-- ESBICM MAIN (specialty grid + filter) -->
@@ -1483,6 +1495,10 @@ const CONDENSED_SYSTEMS = {condensed_systems_js};
 const CONDENSED_RESULT_CATS = {condensed_result_cats_js};
 const CONDENSED_TYPES = {condensed_types_list_js};
 
+// Feature flags (resolved server-side: defaults + per-user overrides)
+const USER_FEATURES = {user_features_js};
+const USER_IS_ADMIN = {user_is_admin_js};
+
 let _trialFilterState = {{ specialty: '', result_category: '', trial_type: '' }};
 let _currentTrialList = [];
 let _currentTrialIdx = -1;
@@ -1529,6 +1545,24 @@ function emptyStateHTML(label){{
 // VIEW SWITCHING
 // =====================================================================
 function showView(name){{
+  // Feature flag check: block views that the user doesn't have access to
+  var featureMap = {{
+    'trials': 'trials',
+    'trials-esbicm': 'trials',
+    'trials-condensed': 'condensed_trials',
+    'trials-specialty': 'trials',
+    'trials-detail': 'trials_detail',
+    'condensed-system': 'condensed_trials',
+    'condensed-detail': 'trials_detail',
+    'papers': 'papers',
+    'guidelines': 'guidelines',
+    'pearls': 'pearls',
+    'search': 'search'
+  }};
+  var requiredFeature = featureMap[name];
+  if (requiredFeature && !USER_IS_ADMIN && !USER_FEATURES[requiredFeature]) {{
+    return;
+  }}
   document.querySelectorAll('.view').forEach(function(v){{ v.classList.remove('active'); }});
   var target = document.getElementById('view-'+name);
   (target || document.getElementById('view-home')).classList.add('active');
@@ -2813,6 +2847,34 @@ document.addEventListener('keydown', function(e){{
     if(savedFont) setSiteFontSize(+savedFont); else setSiteFontSize(16);
   }} catch(e){{ setTheme('dim'); setSiteFontSize(16); }}
 
+  // Hide nav/drawer links for disabled features (admins see all)
+  if (!USER_IS_ADMIN) {{
+    var navFeatureMap = {{
+      'papers': 'papers',
+      'guidelines': 'guidelines',
+      'pearls': 'pearls',
+      'trials': 'trials',
+      'trials-esbicm': 'trials',
+      'trials-condensed': 'condensed_trials',
+      'trials-specialty': 'trials',
+      'trials-detail': 'trials_detail',
+      'condensed-system': 'condensed_trials',
+      'condensed-detail': 'trials_detail'
+    }};
+    Object.keys(navFeatureMap).forEach(function(viewName) {{
+      var feature = navFeatureMap[viewName];
+      if (!USER_FEATURES[feature]) {{
+        var el = document.querySelector('[data-view="' + viewName + '"]');
+        if (el) el.style.display = 'none';
+      }}
+    }});
+    // Hide search trigger if search feature is disabled
+    if (!USER_FEATURES['search']) {{
+      var searchEl = document.getElementById('searchTrigger');
+      if (searchEl) searchEl.style.display = 'none';
+    }}
+  }}
+
   renderFilterCheckboxes();
   showView('home');
 }})();
@@ -2920,6 +2982,7 @@ async def get_json_summary(request: Request, file_name: str, system: str = "Gene
     user = _get_session_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "papers")
     base_name = os.path.splitext(file_name)[0]
     clean_system = "".join(x for x in str(system) if x.isalnum() or x in "._- ").strip()
     clean_type = "".join(x for x in str(type) if x.isalnum() or x in "._- ").strip()
@@ -2961,6 +3024,7 @@ async def search_summaries(request: Request, q: str = ""):
     user = _get_session_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "search")
     if not q.strip():
         return {"matches": []}
     query = q.strip().lower()
@@ -2988,6 +3052,7 @@ async def get_pearls(request: Request, q: str = "", system: str = "", type: str 
     user = _get_session_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "pearls")
     pearls = load_pearls()
     filtered = []
     for p in pearls:
@@ -3009,6 +3074,7 @@ async def get_trials_stats(request: Request):
     user = _get_session_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "trials")
     idx = load_trial_index()
     counts = {}
     for t in idx:
@@ -3030,6 +3096,7 @@ async def get_trials(
     user = _get_session_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "trials")
     idx = load_trial_index()
     filtered = []
     for t in idx:
@@ -3058,6 +3125,7 @@ async def get_trial(request: Request, slug: str):
     user = _get_session_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "trials")
     idx = load_trial_index()
     match = None
     for t in idx:
@@ -3083,6 +3151,7 @@ async def get_condensed_trials(request: Request, system: str = ""):
     user = _get_session_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "condensed_trials")
     idx = load_condensed_trial_index()
     if system:
         idx = [c for c in idx if c["system"] == system]
@@ -3094,6 +3163,7 @@ async def get_condensed_trial(request: Request, system: str, name: str):
     user = _get_session_user(request)
     if not user:
         raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "condensed_trials")
     from urllib.parse import unquote
     system = unquote(system)
     name = unquote(name)
