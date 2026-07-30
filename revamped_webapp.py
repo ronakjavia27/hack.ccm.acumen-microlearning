@@ -287,6 +287,14 @@ button:hover{background:#d4a55e}
 .error{color:#f55;font-size:13px;margin:8px 0;min-height:18px}
 .success{color:#4ade80;font-size:13px;margin:8px 0}
 .ecg{text-align:center;font-size:32px;margin-bottom:12px;opacity:.3;letter-spacing:4px}
+.legal{text-align:center;margin-top:20px;font-size:12px;color:#8A7F6A}
+.legal a{color:#8A7F6A;text-decoration:none;border-bottom:1px dotted #8A7F6A;cursor:pointer}
+.legal a:hover{color:#C4B18C}
+.overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:20px}
+.overlay-content{background:#29241B;border:1px solid #3A3226;border-radius:16px;padding:32px;max-width:560px;width:100%;max-height:80vh;overflow-y:auto;color:#F1E4CE;font-size:14px;line-height:1.6}
+.overlay-content h2{margin-bottom:16px;font-size:20px}
+.overlay-content strong{color:#E8B778}
+.overlay-close{float:right;background:none;border:none;color:#C4B18C;font-size:24px;cursor:pointer;line-height:1}
 </style>
 </head>
 <body>
@@ -297,7 +305,7 @@ button:hover{background:#d4a55e}
 <div class="tabs"><div class="tab active" onclick="switchTab('login')" id="tabLogin">Sign In</div><div class="tab" onclick="switchTab('signup')" id="tabSignup">Create Account</div></div>
 <form class="form" id="loginForm">
 <input type="email" id="loginEmail" placeholder="Email" required>
-<div class="pw-wrap"><input type="password" id="loginPassword" placeholder="Password" required></div>
+<div class="pw-wrap"><input type="password" id="loginPassword" placeholder="Password" required><button type="button" class="toggle" id="loginPwToggle">Show</button></div>
 <div class="error" id="loginError"></div>
 <button type="submit">Sign In</button>
 </form>
@@ -305,16 +313,28 @@ button:hover{background:#d4a55e}
 <input type="email" id="signupEmail" placeholder="Email" required>
 <div class="pw-wrap"><input type="password" id="signupPassword" placeholder="Password (min 8 chars)" required><button type="button" class="toggle" id="pwToggle">Show</button></div>
 <div class="row"><input type="text" id="signupFirstName" placeholder="First name"><input type="text" id="signupLastName" placeholder="Last name"></div>
-<input type="text" id="signupWorkplace" placeholder="Workplace / Institution">
-<input type="text" id="signupCity" placeholder="City">
+<div class="row"><input type="text" id="signupWorkplace" placeholder="Workplace / Institution"><input type="text" id="signupCity" placeholder="City"></div>
 <div class="error" id="signupError"></div>
 <div class="success" id="signupSuccess"></div>
 <button type="submit">Create Account</button>
 </form>
+<div class="legal"><a id="landingDisclaimerLink">&#9888;&#65039; Disclaimer</a></div>
+</div>
+<div class="overlay" id="landingDisclaimerOverlay">
+<div class="overlay-content">
+<button class="overlay-close" id="landingDisclaimerClose">&times;</button>
+<div id="landingDisclaimerText"></div>
+</div>
 </div>
 <script>
 function switchTab(t){document.querySelectorAll('.tab').forEach(el=>el.classList.toggle('active',el.id==='tab'+t.charAt(0).toUpperCase()+t.slice(1)));document.getElementById('loginForm').classList.toggle('hidden',t!=='login');document.getElementById('signupForm').classList.toggle('hidden',t!=='signup')}
 document.getElementById('pwToggle').onclick=function(){var p=document.getElementById('signupPassword');p.type=p.type==='password'?'text':'password';this.textContent=p.type==='password'?'Show':'Hide'}
+document.getElementById('loginPwToggle').onclick=function(){var p=document.getElementById('loginPassword');p.type=p.type==='password'?'text':'password';this.textContent=p.type==='password'?'Show':'Hide'}
+var discText='**Welcome to hack.CCM \\u{1F9A9} \\u2014 Please Read Before You Explore**\\n\\nWelcome! This platform is a hobby passion project designed to make critical care education more structured, accessible, and easily retainable.\\n\\n**\\u26A0\\uFE0F For Education, Not Consultation**\\nThis is a tool for knowledge enhancement and personal study only. It is not a clinical decision-making tool. Always rely on official guidelines and your own institutional protocols for real-world patient care.\\n\\n**\\u{1F916} The AI Factor**\\nAs the saying goes, \\"To err is human; to hallucinate is AI.\\" While we have taken immense care to review the data and eliminate errors, AI-assisted formatting isn\\'t always flawless.\\n\\n**\\u{1F6D1} Use Responsibly**\\nDouble-check critical values and protocols. You are the clinician; this is just your study buddy.\\n\\n**\\u{1F50D} Spotted a Discrepancy?**\\nIf you find any errors, outdated data, or weird AI quirks, please help us improve! Report it via our Feedback button below.';
+function showLandingDisclaimer(){document.getElementById('landingDisclaimerText').innerHTML=discText.replace(/\\*\\*(.+?)\\*\\*/g,'<strong>$1</strong>').replace(/\\n\\n/g,'</p><p>').replace(/\\n/g,'<br>');document.getElementById('landingDisclaimerOverlay').style.display='flex'}
+document.getElementById('landingDisclaimerLink').addEventListener('click',showLandingDisclaimer);
+document.getElementById('landingDisclaimerClose').addEventListener('click',function(){document.getElementById('landingDisclaimerOverlay').style.display='none'});
+document.getElementById('landingDisclaimerOverlay').addEventListener('click',function(e){if(e.target===this)this.style.display='none'});
 document.getElementById('loginForm').onsubmit=async function(e){e.preventDefault();var b=this.querySelector('button');b.disabled=true;var err=document.getElementById('loginError');err.textContent='';try{var r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('loginEmail').value,password:document.getElementById('loginPassword').value})});if(r.ok){window.location.reload();return}var d=await r.json();err.textContent=d.detail||'Invalid email or password'}catch(e){err.textContent='Network error'}b.disabled=false}
 document.getElementById('signupForm').onsubmit=async function(e){e.preventDefault();var b=this.querySelector('button');b.disabled=true;var err=document.getElementById('signupError');var ok=document.getElementById('signupSuccess');err.textContent='';ok.textContent='';var pw=document.getElementById('signupPassword').value;try{var r=await fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('signupEmail').value,password:pw,first_name:document.getElementById('signupFirstName').value,last_name:document.getElementById('signupLastName').value,workplace:document.getElementById('signupWorkplace').value,city:document.getElementById('signupCity').value})});if(r.ok){window.location.reload();return}var d=await r.json();err.textContent=d.detail||'Account creation failed'}catch(e){err.textContent='Network error'}b.disabled=false}
 </script>
@@ -952,6 +972,7 @@ async def render_dashboard(request: Request):
     <div class="header-actions">
       <button class="icon-btn" id="searchTrigger" aria-label="Search">&#128269;</button>
       <button class="icon-btn theme-btn" id="themeBtn" aria-label="Change theme">&#9712;</button>
+      <button class="icon-btn" id="headerLogout" aria-label="Sign out">&#128682;</button>
     </div>
   </div>
   <svg class="ecg-line ecg-sweep" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg>
@@ -1346,6 +1367,7 @@ async def render_dashboard(request: Request):
   <button class="drawer-link" data-view="feedback">&#128172; Feedback</button>
   <button class="drawer-link" data-view="about">&#8505;&#65039; About us</button>
   <button class="drawer-link" data-open-disclaimer>&#9888;&#65039; Disclaimer</button>
+  <button class="drawer-link" id="drawerLogout">&#128682; Sign Out</button>
 </nav>
 
 <!-- GLOBAL SEARCH -->
@@ -2486,6 +2508,9 @@ document.getElementById('themeBtn').addEventListener('click', function(){{
   var cur = document.documentElement.getAttribute('data-theme');
   setTheme(THEMES[(THEMES.indexOf(cur)+1) % THEMES.length]);
 }});
+function doLogout(){{ fetch('/api/logout',{{method:'POST'}}).then(function(){{ window.location.reload(); }}); }}
+document.getElementById('headerLogout').addEventListener('click', doLogout);
+document.getElementById('drawerLogout').addEventListener('click', function(){{ closeDrawer(); doLogout(); }});
 document.getElementById('filterToggleBtn').addEventListener('click', openSheet);
 document.getElementById('guidelinesFilterToggleBtn').addEventListener('click', openSheet);
 document.getElementById('sheetBackdrop').addEventListener('click', closeSheet);
