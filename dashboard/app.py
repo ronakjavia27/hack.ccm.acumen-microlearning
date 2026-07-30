@@ -91,11 +91,26 @@ async def dashboard_index():
 @router.get("/api/info")
 async def api_info():
     _ensure_bootstrap()
+    from acumen_core.kv import _use_upstash, kv_scan, kv_get
+    kv_ok = _use_upstash()
+    scan_sample = []
+    if kv_ok:
+        keys = kv_scan("auth:users:*")
+        scan_sample = keys[:5]
+        user_sample = []
+        for k in scan_sample:
+            u = kv_get(k)
+            if u:
+                u.pop("password_hash", None)
+            user_sample.append(u)
     return {
         "console_version": "0.1.0",
         "modules": [s.kind for s in all_kinds()],
         "repo_root": str(REPO_ROOT),
         "backup_dir": str(backup_mod.BACKUP_DIR),
+        "kv_connected": kv_ok,
+        "kv_user_keys_found": len(scan_sample),
+        "kv_user_sample": user_sample,
     }
 
 
