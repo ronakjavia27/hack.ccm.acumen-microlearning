@@ -37,7 +37,7 @@ GOOGLE_LANDING_HTML = f"""<!DOCTYPE html>
 <style>
 *{{margin:0;padding:0;box-sizing:border-box}}
 body{{background:#1F1B14;color:#F1E4CE;font-family:system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center}}
-.card{{background:#29241B;border:1px solid #3A3226;border-radius:16px;padding:48px 40px;width:440px;max-width:94vw}}
+.card{{background:#29241B;border:1px solid #3A3226;border-radius:16px;padding:48px 40px;width:440px;max-width:94vw;text-align:center}}
 h1{{font-size:28px;margin-bottom:4px;letter-spacing:-.02em}}
 .sub{{color:#C4B18C;font-size:14px;margin-bottom:28px}}
 .tabs{{display:flex;gap:0;margin-bottom:24px;border-bottom:1px solid #3A3226}}
