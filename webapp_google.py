@@ -22,7 +22,7 @@ COOKIE_SECURE = revamped_webapp.COOKIE_SECURE
 
 GOOGLE_CLIENT_ID = os.environ.get("OAUTH_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.environ.get("OAUTH_CLIENT_SECRET", "")
-PRODUCTION_DOMAIN = "hack-ccm-acumen-microlearning.vercel.app"
+PRODUCTION_DOMAIN = "hackccm.vercel.app"
 ADMIN_EMAILS = set(os.environ.get("ADMIN_EMAILS", "").lower().split(",") if os.environ.get("ADMIN_EMAILS") else [])
 
 # =====================================================================
@@ -108,8 +108,9 @@ button:hover{{background:#d4a55e}}
 <script>
 var CLIENT_ID = '{GOOGLE_CLIENT_ID}';
 var IS_PRODUCTION = location.hostname === '{PRODUCTION_DOMAIN}';
+var HAS_GOOGLE_CLIENT = Boolean(CLIENT_ID);
 
-if (IS_PRODUCTION) {{
+if (IS_PRODUCTION && HAS_GOOGLE_CLIENT) {{
   document.getElementById('googleSection').classList.remove('hidden');
   function handleGoogleCredential(response) {{
     var errEl = document.getElementById('loginError');
@@ -177,12 +178,17 @@ revamped_webapp.LANDING_HTML = GOOGLE_LANDING_HTML
 async def google_auth_redirect(request: Request, redirect: str = ""):
     hostname = request.url.hostname
     is_production = hostname == PRODUCTION_DOMAIN
+    has_client = bool(GOOGLE_CLIENT_ID)
 
     state = secrets.token_urlsafe(16)
     if redirect:
         _kv_set(f"auth:oauth:state:{state}", {"redirect": redirect, "created_at": datetime.utcnow().isoformat()}, ttl=600)
 
-    if not is_production:
+    if not is_production or not has_client:
+        if not is_production:
+            msg = f"Google Sign-In is only available on <strong>{PRODUCTION_DOMAIN}</strong>."
+        else:
+            msg = "Google Sign-In is not configured. Please set <strong>OAUTH_CLIENT_ID</strong>."
         html = f"""<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -200,8 +206,8 @@ p{{color:#C4B18C;font-size:14px;margin-bottom:16px;line-height:1.5}}
 <div class="card">
 <div style="font-size:40px;margin-bottom:12px;opacity:.3">_~^~_~^~_</div>
 <h1>hack.CCM</h1>
-<p>Google Sign-In is only available on <strong>{PRODUCTION_DOMAIN}</strong>.</p>
-<p>Please use <strong>email &amp; password</strong> to sign in on this preview environment, or visit the production site.</p>
+<p>{msg}</p>
+<p>Please use <strong>email &amp; password</strong> to sign in, or configure Google OAuth credentials.</p>
 <a href="/" class="back">&larr; Back to sign in</a>
 </div>
 </body>
