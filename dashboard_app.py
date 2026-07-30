@@ -7,9 +7,18 @@ Or:
     uvicorn dashboard_app:app --host 0.0.0.0 --port 8878
 """
 import argparse
+import os
+from pathlib import Path
 import uvicorn
+from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse, Response
+
+# Load .env so KV module can find Upstash credentials
+_env_path = Path(__file__).parent / ".env"
+if _env_path.exists():
+    load_dotenv(_env_path)
+
 from dashboard.app import router
 
 app = FastAPI(title="hack.CCM Dashboard", description="Admin console for managing hack.CCM content")

@@ -8,8 +8,8 @@ _KV_FILE = os.path.join(os.path.dirname(__file__), "..", "local_kv.json")
 _KV_FILE = os.path.normpath(_KV_FILE)
 _lock = __import__("threading").Lock()
 
-KV_URL = os.environ.get("KV_URL", "")
-KV_TOKEN = os.environ.get("KV_TOKEN", "")
+KV_URL = os.environ.get("KV_REST_API_URL", "") or os.environ.get("KV_URL", "")
+KV_TOKEN = os.environ.get("KV_REST_API_TOKEN", "") or os.environ.get("KV_TOKEN", "")
 
 
 def _use_upstash():
