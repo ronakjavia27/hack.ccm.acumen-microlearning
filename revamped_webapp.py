@@ -280,8 +280,9 @@ h1{font-size:28px;margin-bottom:4px;letter-spacing:-.02em}
 .form input:focus{border-color:#E8B778}
 .form .row{display:flex;gap:10px}
 .form .row input{flex:1}
-.pw-wrap{position:relative}
-.pw-wrap .toggle{position:absolute;right:12px;top:10px;background:none;border:none;color:#C4B18C;cursor:pointer;font-size:12px}
+.pw-wrap{position:relative;display:flex;align-items:stretch}
+.pw-wrap input{flex:1;padding-right:48px}
+.pw-wrap .toggle{position:absolute;right:8px;top:50%;transform:translateY(-50%);background:none;border:none;color:#C4B18C;cursor:pointer;font-size:12px;padding:4px 8px;line-height:1;white-space:nowrap}
 button{width:100%;padding:11px;background:#E8B778;color:#1F1B14;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:.15s}
 button:hover{background:#d4a55e}
 .error{color:#f55;font-size:13px;margin:8px 0;min-height:18px}
