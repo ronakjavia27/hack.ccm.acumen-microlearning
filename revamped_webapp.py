@@ -180,7 +180,7 @@ def _kv_delete(key):
     if KV_URL and KV_TOKEN:
         import requests
         try:
-            r = requests.delete(f"{KV_URL}/del/{key}", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            r = requests.post(f"{KV_URL}/del/{key}", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
             return r.ok
         except Exception:
             return False
