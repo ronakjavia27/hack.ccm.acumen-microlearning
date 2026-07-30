@@ -91,26 +91,33 @@ async def dashboard_index():
 @router.get("/api/info")
 async def api_info():
     _ensure_bootstrap()
-    from acumen_core.kv import _use_upstash, kv_scan, kv_get
+    from acumen_core.kv import _use_upstash, kv_scan, kv_get, KV_URL, KV_TOKEN
+    import requests as req
     kv_ok = _use_upstash()
-    scan_sample = []
+    scan_all = []
+    scan_users = []
+    raw_scan = None
     if kv_ok:
-        keys = kv_scan("auth:users:*")
-        scan_sample = keys[:5]
-        user_sample = []
-        for k in scan_sample:
-            u = kv_get(k)
-            if u:
-                u.pop("password_hash", None)
-            user_sample.append(u)
+        keys = kv_scan("*")
+        scan_all = keys[:20]
+        keys2 = kv_scan("auth:users:*")
+        scan_users = keys2[:10]
+        try:
+            rs = req.post(f"{KV_URL}/scan/0", json={"match": "*", "count": 200}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            raw_scan = {"status": rs.status_code, "body": rs.text[:500] if rs.ok else rs.text[:200]}
+        except Exception as e:
+            raw_scan = {"error": str(e)[:200]}
     return {
-        "console_version": "0.1.0",
+        "kv_connected": kv_ok,
+        "kv_url_preview": KV_URL[:30] + "..." if KV_URL else None,
+        "kv_token_set": bool(KV_TOKEN),
+        "keys_all_count": len(scan_all),
+        "keys_all_sample": scan_all,
+        "keys_users_found": len(scan_users),
+        "keys_users_sample": scan_users,
+        "raw_scan": raw_scan,
         "modules": [s.kind for s in all_kinds()],
         "repo_root": str(REPO_ROOT),
-        "backup_dir": str(backup_mod.BACKUP_DIR),
-        "kv_connected": kv_ok,
-        "kv_user_keys_found": len(scan_sample),
-        "kv_user_sample": user_sample,
     }
 
 
