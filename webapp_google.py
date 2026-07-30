@@ -13,7 +13,9 @@ app = revamped_webapp.app
 _kv_get = revamped_webapp._kv_get
 _kv_set = revamped_webapp._kv_set
 _kv_delete = revamped_webapp._kv_delete
+_kv_scan = revamped_webapp._kv_scan
 _session_id = revamped_webapp._session_id
+_get_session_user = revamped_webapp._get_session_user
 SESSION_COOKIE_NAME = revamped_webapp.SESSION_COOKIE_NAME
 SESSION_MAX_AGE = revamped_webapp.SESSION_MAX_AGE
 COOKIE_SECURE = revamped_webapp.COOKIE_SECURE
@@ -21,6 +23,7 @@ COOKIE_SECURE = revamped_webapp.COOKIE_SECURE
 GOOGLE_CLIENT_ID = os.environ.get("OAUTH_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.environ.get("OAUTH_CLIENT_SECRET", "")
 PRODUCTION_DOMAIN = "hackccm.vercel.app"
+ADMIN_EMAILS = set(os.environ.get("ADMIN_EMAILS", "").lower().split(",") if os.environ.get("ADMIN_EMAILS") else [])
 
 # =====================================================================
 # LANDING PAGE — add Google OAuth button
@@ -133,7 +136,7 @@ try {{
     throw new Error('GSI not loaded');
   }}
 }} catch(e) {{
-  document.getElementById('googleButtonWrapper').innerHTML = '<a href="https://{PRODUCTION_DOMAIN}/api/auth/google?redirect=' + encodeURIComponent(location.href) + '" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:1px solid #3A3226;border-radius:8px;color:#F1E4CE;text-decoration:none;font-size:14px;background:#1F1B14"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.6-5.9 8-11.3 8-6.4 0-11.6-5.2-11.6-11.6S17.6 12.8 24 12.8c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.7 29.4 4.5 24 4.5 12.7 4.5 3.5 13.7 3.5 25S12.7 45.5 24 45.5 44.5 36.3 44.5 25c0-1.6-.2-3.2-.5-4.7l-.4-.2z"/><path fill="#FF3D00" d="M4.9 14.7l6.6 4.9C13 15 18 12.8 24 12.8c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.7 29.4 4.5 24 4.5 16.1 4.5 9.2 8.6 5.7 14.5l-.8.2z"/><path fill="#4CAF50" d="M24 45.5c5.5 0 10.5-2 14.3-5.3l-6.6-5.6c-2.2 1.5-5 2.4-7.7 2.4-5.5 0-10.2-3.6-11.8-8.6l-6.8 5.3C9.2 41.4 16.1 45.5 24 45.5z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6c-.1.1 7.7-6 7.7-18.5 0-1.6-.2-3.2-.5-4.7l-.4-.1z"/></svg> Sign in with Google</a>';
+  document.getElementById('googleButtonWrapper').innerHTML = '<a href="' + location.origin + '/api/auth/google?redirect=' + encodeURIComponent(location.href) + '" style="display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:1px solid #3A3226;border-radius:8px;color:#F1E4CE;text-decoration:none;font-size:14px;background:#1F1B14"><svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.6-5.9 8-11.3 8-6.4 0-11.6-5.2-11.6-11.6S17.6 12.8 24 12.8c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.7 29.4 4.5 24 4.5 12.7 4.5 3.5 13.7 3.5 25S12.7 45.5 24 45.5 44.5 36.3 44.5 25c0-1.6-.2-3.2-.5-4.7l-.4-.2z"/><path fill="#FF3D00" d="M4.9 14.7l6.6 4.9C13 15 18 12.8 24 12.8c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.7 29.4 4.5 24 4.5 16.1 4.5 9.2 8.6 5.7 14.5l-.8.2z"/><path fill="#4CAF50" d="M24 45.5c5.5 0 10.5-2 14.3-5.3l-6.6-5.6c-2.2 1.5-5 2.4-7.7 2.4-5.5 0-10.2-3.6-11.8-8.6l-6.8 5.3C9.2 41.4 16.1 45.5 24 45.5z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6c-.1.1 7.7-6 7.7-18.5 0-1.6-.2-3.2-.5-4.7l-.4-.1z"/></svg> Sign in with Google</a>';
 }}
 
 // Handle session param from redirect flow
@@ -172,6 +175,19 @@ async def google_auth_redirect(request: Request, redirect: str = ""):
     if redirect:
         _kv_set(f"auth:oauth:state:{state}", {"redirect": redirect, "created_at": datetime.utcnow().isoformat()}, ttl=600)
 
+    # Build server-side redirect URL to Google OAuth
+    from urllib.parse import urlencode
+    oauth_params = {
+        "client_id": GOOGLE_CLIENT_ID,
+        "redirect_uri": f"https://{PRODUCTION_DOMAIN}/api/auth/google/callback",
+        "response_type": "code",
+        "scope": "openid email profile",
+        "state": state,
+        "access_type": "online",
+        "prompt": "select_account",
+    }
+    oauth_url = "https://accounts.google.com/o/oauth2/v2/auth?" + urlencode(oauth_params)
+
     html = f"""<!DOCTYPE html>
 <html lang="en">
 <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
@@ -183,8 +199,11 @@ body{{background:#1F1B14;color:#F1E4CE;font-family:system-ui,sans-serif;display:
 .card{{background:#29241B;border:1px solid #3A3226;border-radius:16px;padding:40px;width:400px;max-width:94vw;text-align:center}}
 h1{{font-size:24px;margin-bottom:4px}}
 p{{color:#C4B18C;font-size:14px;margin-bottom:24px}}
-.google-btn-wrapper{{display:flex;justify-content:center}}
-.error{{color:#f55;font-size:13px;margin:12px 0;min-height:18px}}
+.google-btn-wrapper{{display:flex;justify-content:center;min-height:42px;margin-bottom:8px}}
+.fallback{{display:none;margin-top:16px}}
+.fallback a{{display:inline-flex;align-items:center;gap:8px;padding:10px 24px;border:1px solid #3A3226;border-radius:8px;color:#F1E4CE;text-decoration:none;font-size:14px;background:#1F1B14;transition:.15s}}
+.fallback a:hover{{border-color:#E8B778}}
+.msg{{color:#8A7F6A;font-size:12px;margin-top:12px}}
 .back{{display:inline-block;margin-top:20px;color:#8A7F6A;font-size:13px;text-decoration:none}}
 .back:hover{{color:#C4B18C}}
 </style>
@@ -193,42 +212,64 @@ p{{color:#C4B18C;font-size:14px;margin-bottom:24px}}
 <div class="card">
 <div style="font-size:40px;margin-bottom:12px;opacity:.3">_~^~_~^~_</div>
 <h1>hack.CCM</h1>
-<p>Sign in with Google to continue</p>
+<p>Sign in with Google</p>
 <div class="google-btn-wrapper" id="googleButtonWrapper"></div>
-<div class="error" id="error"></div>
+<div class="msg" id="statusMsg">Loading Google Sign-In…</div>
+<div class="fallback" id="fallbackSection">
+<div style="color:#8A7F6A;font-size:12px;margin-bottom:8px">or</div>
+<a href="{oauth_url}" id="serverRedirectLink">
+<svg width="18" height="18" viewBox="0 0 48 48"><path fill="#FFC107" d="M43.6 20.1H42V20H24v8h11.3c-1.6 4.6-5.9 8-11.3 8-6.4 0-11.6-5.2-11.6-11.6S17.6 12.8 24 12.8c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.7 29.4 4.5 24 4.5 12.7 4.5 3.5 13.7 3.5 25S12.7 45.5 24 45.5 44.5 36.3 44.5 25c0-1.6-.2-3.2-.5-4.7l-.4-.2z"/><path fill="#FF3D00" d="M4.9 14.7l6.6 4.9C13 15 18 12.8 24 12.8c3 0 5.7 1.1 7.8 2.9l5.7-5.7C34.1 6.7 29.4 4.5 24 4.5 16.1 4.5 9.2 8.6 5.7 14.5l-.8.2z"/><path fill="#4CAF50" d="M24 45.5c5.5 0 10.5-2 14.3-5.3l-6.6-5.6c-2.2 1.5-5 2.4-7.7 2.4-5.5 0-10.2-3.6-11.8-8.6l-6.8 5.3C9.2 41.4 16.1 45.5 24 45.5z"/><path fill="#1976D2" d="M43.6 20.1H42V20H24v8h11.3c-.8 2.3-2.2 4.3-4.1 5.7l6.6 5.6c-.1.1 7.7-6 7.7-18.5 0-1.6-.2-3.2-.5-4.7l-.4-.1z"/></svg> Continue with Google (redirect)
+</a>
+<div class="msg">After signing in you'll be sent back to continue.</div>
+</div>
+<a href="/" class="back">Back to home</a>
 </div>
 <script>
 var CLIENT_ID = '{GOOGLE_CLIENT_ID}';
-var STATE = '{state}';
-var REDIRECT = '{redirect}';
+
 function handleCredentialResponse(response) {{
-  var errEl = document.getElementById('error');
-  errEl.textContent = '';
   fetch('/api/auth/google', {{
     method: 'POST',
     headers: {{'Content-Type': 'application/json'}},
-    body: JSON.stringify({{credential: response.credential, state: STATE}})
+    body: JSON.stringify({{credential: response.credential}})
   }}).then(function(r) {{
     if (!r.ok) return r.json().then(function(d) {{ throw new Error(d.detail || 'Auth failed'); }});
     return r.json();
   }}).then(function(data) {{
-    if (data.sid && REDIRECT) {{
-      window.location.href = REDIRECT + (REDIRECT.includes('?') ? '&' : '?') + 'hackccm_sess=' + data.sid;
-    }} else if (data.sid) {{
+    if (data.sid) {{
       document.cookie = '{SESSION_COOKIE_NAME}=' + data.sid + ';path=/;max-age={SESSION_MAX_AGE}';
-      window.location.href = '/';
+      window.location.href = data.redirect || '/';
     }}
   }}).catch(function(err) {{
-    errEl.textContent = err.message;
+    document.getElementById('statusMsg').textContent = err.message;
+    showFallback();
   }});
 }}
+
+function showFallback() {{
+  document.getElementById('statusMsg').textContent = 'Popup sign-in unavailable — use the redirect option below.';
+  document.getElementById('fallbackSection').style.display = 'block';
+}}
+
 try {{
   if (typeof google !== 'undefined' && google.accounts) {{
     google.accounts.id.initialize({{client_id: CLIENT_ID, callback: handleCredentialResponse, cancel_on_tap_outside: false}});
     google.accounts.id.renderButton(document.getElementById('googleButtonWrapper'), {{type: 'standard', shape: 'rectangular', theme: 'outline', size: 'large', text: 'signin_with'}});
     google.accounts.id.prompt();
+    document.getElementById('statusMsg').textContent = '';
+    document.getElementById('fallbackSection').style.display = 'block';
+  }} else {{
+    throw new Error('GSI not loaded');
   }}
-}} catch(e) {{}}
+}} catch(e) {{
+  showFallback();
+}}
+
+setTimeout(function() {{
+  if (document.getElementById('statusMsg').textContent !== '') {{
+    showFallback();
+  }}
+}}, 3000);
 </script>
 </body>
 </html>"""
@@ -305,3 +346,174 @@ async def google_auth_handler(body: dict, response: Response):
     except Exception as e:
         import traceback
         return JSONResponse(500, {"error": type(e).__name__, "detail": str(e), "traceback": traceback.format_exc()})
+
+# =====================================================================
+# GOOGLE OAUTH — server-side redirect callback
+# =====================================================================
+
+@app.get("/api/auth/google/callback")
+async def google_oauth_callback(request: Request, code: str = "", state: str = "", error: str = ""):
+    if error or not code:
+        return HTMLResponse(f"<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Sign-in cancelled or failed</h2><p style='color:#f55;margin:12px 0'>{error or 'No authorization code received'}</p><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>")
+
+    # Verify state
+    state_data = _kv_get(f"auth:oauth:state:{state}")
+    if not state_data or not isinstance(state_data, dict):
+        return HTMLResponse("<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Invalid or expired state</h2><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=403)
+    redirect_to = state_data.get("redirect", "/")
+    _kv_delete(f"auth:oauth:state:{state}")
+
+    # Exchange code for tokens
+    import requests as http
+    token_resp = http.post("https://oauth2.googleapis.com/token", data={
+        "code": code,
+        "client_id": GOOGLE_CLIENT_ID,
+        "client_secret": GOOGLE_CLIENT_SECRET,
+        "redirect_uri": f"https://{PRODUCTION_DOMAIN}/api/auth/google/callback",
+        "grant_type": "authorization_code",
+    }, timeout=10)
+    if not token_resp.ok:
+        return HTMLResponse(f"<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Token exchange failed</h2><p style='color:#f55;margin:12px 0'>{token_resp.status_code}</p><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=502)
+
+    tokens = token_resp.json()
+    id_token = tokens.get("id_token", "")
+    if not id_token:
+        return HTMLResponse("<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>No ID token received</h2><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=502)
+
+    # Verify the ID token via Google's tokeninfo endpoint
+    verify = http.get(f"https://oauth2.googleapis.com/tokeninfo?id_token={id_token}", timeout=10)
+    if not verify.ok:
+        return HTMLResponse("<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Token verification failed</h2><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=502)
+
+    info = verify.json()
+    email = str(info.get("email", "")).strip().lower()
+    if not email or not info.get("email_verified"):
+        return HTMLResponse("<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Email not verified</h2><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=403)
+
+    google_uid = info.get("sub", "")
+    given_name = str(info.get("given_name", "") or "")
+    family_name = str(info.get("family_name", "") or "")
+    now = datetime.utcnow().isoformat()
+
+    existing = _kv_get(f"auth:users:{email}")
+    if existing and isinstance(existing, dict):
+        existing["google_uid"] = google_uid
+        existing["auth_provider"] = "google"
+        existing.pop("password_hash", None)
+        existing["first_name"] = existing.get("first_name") or given_name or family_name
+        existing["last_name"] = existing.get("last_name") or family_name
+        existing["last_login"] = now
+        user = existing
+    else:
+        user = {
+            "email": email,
+            "google_uid": google_uid,
+            "auth_provider": "google",
+            "first_name": given_name or info.get("name", ""),
+            "last_name": family_name,
+            "created_at": now,
+            "last_login": now,
+            "features": {},
+        }
+
+    _kv_set(f"auth:users:{email}", user)
+
+    sid = _session_id()
+    _kv_set(f"auth:session:{sid}", {"email": email, "created_at": now}, ttl=SESSION_MAX_AGE)
+
+    # Redirect back with session cookie
+    sep = "&" if "?" in redirect_to else "?"
+    redirect_url = f"{redirect_to}{sep}hackccm_sess={sid}"
+    resp = HTMLResponse(status_code=302)
+    resp.headers["Location"] = redirect_url
+    resp.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+    return resp
+
+# =====================================================================
+# ADMIN — require admin user
+# =====================================================================
+
+async def _require_admin(request: Request, response: Response):
+    user = _get_session_user(request)
+    if not user:
+        response.delete_cookie(SESSION_COOKIE_NAME)
+        raise HTTPException(401, "Login required")
+    email = user.get("email", "").lower()
+    if not user.get("is_admin") and email not in ADMIN_EMAILS:
+        raise HTTPException(403, "Admin access required")
+    return user
+
+# =====================================================================
+# ADMIN — list all users
+# =====================================================================
+
+@app.get("/api/admin/users")
+async def admin_list_users(request: Request, response: Response):
+    await _require_admin(request, response)
+    keys = _kv_scan("auth:users:*")
+    users = []
+    for key in keys:
+        email = key.replace("auth:users:", "", 1)
+        user = _kv_get(key)
+        if user and isinstance(user, dict):
+            safe = {k: v for k, v in user.items() if k != "password_hash"}
+            safe["email"] = email
+            users.append(safe)
+    users.sort(key=lambda u: u.get("created_at", ""), reverse=True)
+    return {"users": users, "count": len(users)}
+
+# =====================================================================
+# ADMIN — update user (features / is_admin / delete)
+# =====================================================================
+
+@app.put("/api/admin/users/{email:path}")
+async def admin_update_user(request: Request, response: Response, email: str):
+    await _require_admin(request, response)
+    body = await request.json()
+    email = email.strip().lower()
+    key = f"auth:users:{email}"
+    user = _kv_get(key)
+    if not user or not isinstance(user, dict):
+        raise HTTPException(404, "User not found")
+
+    if "is_admin" in body:
+        val = body["is_admin"]
+        user["is_admin"] = bool(val) if val is not None else False
+
+    if "features" in body and isinstance(body["features"], dict):
+        user["features"] = body["features"]
+
+    if "add_feature" in body and isinstance(body["add_feature"], str):
+        user.setdefault("features", {})[body["add_feature"]] = True
+
+    if "remove_feature" in body and isinstance(body["remove_feature"], str):
+        user.setdefault("features", {}).pop(body["remove_feature"], None)
+
+    _kv_set(key, user)
+    safe = {k: v for k, v in user.items() if k != "password_hash"}
+    return {"ok": True, "user": safe}
+
+# =====================================================================
+# ADMIN — delete user
+# =====================================================================
+
+@app.delete("/api/admin/users/{email:path}")
+async def admin_delete_user(request: Request, response: Response, email: str):
+    await _require_admin(request, response)
+    email = email.strip().lower()
+    key = f"auth:users:{email}"
+    user = _kv_get(key)
+    if not user:
+        raise HTTPException(404, "User not found")
+
+    # Delete all sessions for this user (scan auth:session:*)
+    session_keys = _kv_scan("auth:session:*")
+    deleted_sessions = 0
+    for sk in session_keys:
+        sess = _kv_get(sk)
+        if sess and isinstance(sess, dict) and sess.get("email", "").lower() == email:
+            _kv_delete(sk)
+            deleted_sessions += 1
+
+    _kv_delete(key)
+    return {"ok": True, "deleted": email, "sessions_removed": deleted_sessions}
