@@ -1,0 +1,106 @@
+{
+  "timestamp": "2026-07-30T07:27:10.363Z",
+  "target": "https://www.criticalcarebuddy.com/dashboard",
+  "summary": {
+    "pass": 6,
+    "fail": 13,
+    "total": 19
+  },
+  "tests": [
+    {
+      "name": "Content loads without JS",
+      "passed": false,
+      "detail": "Page title found: false"
+    },
+    {
+      "name": "Status 200",
+      "passed": true,
+      "detail": "HTTP 200"
+    },
+    {
+      "name": "Content size > 10KB",
+      "passed": false,
+      "detail": "1.9KB"
+    },
+    {
+      "name": "Extract page text",
+      "passed": true,
+      "detail": "7414 chars extracted"
+    },
+    {
+      "name": "Screenshot bypass",
+      "passed": true,
+      "detail": "117.1KB"
+    },
+    {
+      "name": "Print-to-PDF bypass",
+      "passed": false,
+      "detail": "1.1KB"
+    },
+    {
+      "name": "Text selection works",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "Right-click guard present",
+      "passed": false,
+      "detail": "oncontextmenu: false"
+    },
+    {
+      "name": "user-select:none CSS guard",
+      "passed": true,
+      "detail": ""
+    },
+    {
+      "name": "Dedicated guard script loaded",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "Content still accessible after blocking guard scripts",
+      "passed": true,
+      "detail": "7414 chars"
+    },
+    {
+      "name": "Guard-blocked PDF extraction",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "debugger trap present",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "DevTools detection code present",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "Element ID detection trick used",
+      "passed": false,
+      "detail": ""
+    },
+    {
+      "name": "Right-click event fires",
+      "passed": true,
+      "detail": "contextmenu listener was called"
+    },
+    {
+      "name": "F12 key event fires",
+      "passed": false,
+      "detail": "keydown listener caught F12"
+    },
+    {
+      "name": "Ctrl+Shift+I event fires",
+      "passed": false,
+      "detail": "keydown listener caught Ctrl+Shift+I"
+    },
+    {
+      "name": "Ctrl+P print event fires",
+      "passed": false,
+      "detail": "keydown listener caught Ctrl+P"
+    }
+  ]
+}
