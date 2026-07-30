@@ -1,0 +1,342 @@
+{
+  "id": "LOVIT",
+  "trial_name": "LOVIT — Intravenous Vitamin C in Adults with Sepsis in the Intensive Care Unit (2022)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Adjunctive Therapies",
+  "year": 2022,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Lamontagne F, Masse MH, Menard J, Sprague S, Pinto R, Heyland DK, et al. Intravenous Vitamin C in Adults with Sepsis in the Intensive Care Unit. N Engl J Med. 2022;386(25):2387-2398.",
+  "doi": "https://doi.org/10.1056/NEJMoa2200644",
+  "registration": "",
+  "trial_type": "RCT — multicentre, international, double-blind, placebo-controlled",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 863,
+  "result_category": "Negative/Neutral",
+  "one_liner": "High-dose intravenous vitamin C in ICU adults with sepsis receiving vasopressors increased the 28-day composite risk of death or persistent organ dysfunction.",
+  "pico": {
+    "population": "Adults (≥18 years) admitted to ICU for ≤24 hours with suspected or confirmed infection receiving vasopressors.",
+    "intervention": "Intravenous vitamin C (ascorbic acid) 50 mg/kg every 6 hours for up to 96 hours (maximum 16 doses).",
+    "comparison": "Matching placebo intravenous infusion every 6 hours for up to 96 hours alongside usual care.",
+    "outcome": "Composite of death or persistent organ dysfunction at day 28."
+  },
+  "keywords": [
+    "vitamin C",
+    "ascorbic acid",
+    "sepsis",
+    "septic shock",
+    "adjunctive therapy",
+    "organ dysfunction"
+  ],
+  "related_trials": [
+    "C-EASIE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Critically ill patients with sepsis frequently have low circulating vitamin C levels due to increased consumption, reduced intake/absorption, and altered distribution. Vitamin C has antioxidant, endothelial-stabilising, and cofactor roles in catecholamine synthesis and immune function.",
+      "knowledge_gap": "Early small trials of vitamin C monotherapy or metabolic resuscitation produced heterogeneous signals for shock resolution and mortality, but were underpowered or relied on surrogate endpoints while off-label use grew.",
+      "hypothesis": "A 96-hour course of high-dose IV vitamin C reduces death or persistent organ dysfunction at day 28 compared with placebo in ICU adults with sepsis requiring vasopressors."
+    },
+    "methods": {
+      "design": "Multicentre, international, investigator-initiated, double-blind, placebo-controlled RCT.",
+      "setting": "35 ICUs in Canada, France, and New Zealand; enrolled November 2018 to July 2021.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) admitted to ICU for ≤24 hours",
+          "Suspected or confirmed infection as primary reason for ICU admission",
+          "Receiving vasopressor infusion at screening/randomisation"
+        ],
+        "exclusion": [
+          "Known allergy to vitamin C",
+          "Known G6PD deficiency",
+          "Pregnancy or breastfeeding",
+          "History of kidney stones within previous year",
+          "Limitations of life-sustaining treatment or expected death within 48 hours",
+          "Receipt of IV vitamin C during current hospitalisation (excluding parenteral nutrition)",
+          "Inability to obtain consent within local frameworks"
+        ]
+      },
+      "intervention": "Intravenous vitamin C (ascorbic acid) 50 mg/kg every 6 hours for up to 96 hours (maximum 16 doses), initiated as soon as feasible.",
+      "comparison": "Matching placebo IV infusion every 6 hours for up to 96 hours plus usual sepsis care.",
+      "blinding": "Double-blind (participants, clinicians, investigators, and outcome assessors); pharmacy-dispensed identical study preparations.",
+      "sample_size_power": "770 patients needed to detect a 10% absolute reduction in primary outcome (50% to 40%) with 80% power at 2-sided alpha 0.05; planned 800; 872 randomised; primary ITT analysis.",
+      "primary_outcome": "Composite of death or persistent organ dysfunction at day 28 (defined as vasopressor requirement, invasive mechanical ventilation, or new renal-replacement therapy).",
+      "secondary_outcomes": [
+        "28-day all-cause mortality",
+        "Persistent organ dysfunction at day 28",
+        "ICU mortality",
+        "In-hospital mortality",
+        "6-month mortality",
+        "Days without organ dysfunction in ICU to day 28",
+        "Vasopressor-free days to day 28",
+        "Ventilator-free days to day 28",
+        "Stage 3 acute kidney injury",
+        "Adverse events and hypoglycemia"
+      ],
+      "follow_up": "Primary endpoint at day 28; survival and quality of life assessed to 6 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary composite outcome of death or persistent organ dysfunction at day 28 was significantly higher in the vitamin C group (44.5% vs 38.5%; RR 1.21; P=0.01).",
+        "The primary endpoint signal was driven predominantly by increased 28-day mortality (35.4% vs 31.6%; RR 1.17).",
+        "No improvements were observed in organ support-free days, ventilator-free days, vasopressor-free days, or 6-month survival."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death or persistent organ dysfunction at day 28 (primary)",
+          "group_a": "191/429 (44.5%)",
+          "group_b": "167/434 (38.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.21",
+          "ci_95": "1.04–1.40",
+          "p_value": "0.01",
+          "note": "Persistent organ dysfunction defined as vasopressor use, invasive mechanical ventilation, or new RRT"
+        },
+        {
+          "outcome": "Death at day 28",
+          "group_a": "152/429 (35.4%)",
+          "group_b": "137/433 (31.6%)",
+          "effect_measure": "RR",
+          "effect_value": "1.17",
+          "ci_95": "0.98–1.40",
+          "p_value": "Not reported",
+          "note": "All-cause mortality component"
+        },
+        {
+          "outcome": "Persistent organ dysfunction at day 28",
+          "group_a": "39/429 (9.1%)",
+          "group_b": "30/433 (6.9%)",
+          "effect_measure": "RR",
+          "effect_value": "1.30",
+          "ci_95": "0.83–2.05",
+          "p_value": "Not reported",
+          "note": "Composite component reported separately"
+        },
+        {
+          "outcome": "ICU death",
+          "group_a": "110/429 (25.6%)",
+          "group_b": "97/433 (22.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.15",
+          "ci_95": "0.92–1.44",
+          "p_value": "Not reported",
+          "note": "All-cause ICU mortality"
+        },
+        {
+          "outcome": "Hospital death",
+          "group_a": "132/429 (30.8%)",
+          "group_b": "122/433 (28.2%)",
+          "effect_measure": "RR",
+          "effect_value": "1.09",
+          "ci_95": "0.90–1.31",
+          "p_value": "Not reported",
+          "note": "All-cause in-hospital mortality"
+        },
+        {
+          "outcome": "Death by 6 months",
+          "group_a": "191/417 (45.8%)",
+          "group_b": "185/426 (43.4%)",
+          "effect_measure": "HR",
+          "effect_value": "1.14",
+          "ci_95": "0.93–1.39",
+          "p_value": "Not reported",
+          "note": "Time-to-event analysis"
+        },
+        {
+          "outcome": "Days without organ dysfunction in ICU (to day 28)",
+          "group_a": "17.0 (-1 to 25.0)",
+          "group_b": "19.5 (-1 to 25.0)",
+          "effect_measure": "Median diff",
+          "effect_value": "-2.43",
+          "ci_95": "-7.23 to 2.37",
+          "p_value": "Not reported",
+          "note": "Higher values indicate more days alive and free of organ dysfunction"
+        },
+        {
+          "outcome": "Vasopressor-free days (to day 28)",
+          "group_a": "22.0 (15.0 to 25.0)",
+          "group_b": "23.0 (14.0 to 25.0)",
+          "effect_measure": "Median diff",
+          "effect_value": "-0.55",
+          "ci_95": "-2.44 to 1.35",
+          "p_value": "Not reported",
+          "note": "Median (IQR) reported"
+        },
+        {
+          "outcome": "Ventilator-free days (to day 28)",
+          "group_a": "26.0 (7.0 to 28.0)",
+          "group_b": "28.0 (9.0 to 28.0)",
+          "effect_measure": "Median diff",
+          "effect_value": "-0.96",
+          "ci_95": "-3.56 to 1.64",
+          "p_value": "Not reported",
+          "note": "Median (IQR) reported"
+        },
+        {
+          "outcome": "Stage 3 acute kidney injury",
+          "group_a": "162/429 (37.8%)",
+          "group_b": "164/433 (37.9%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.85–1.19",
+          "p_value": "Not reported",
+          "note": "No difference in severe AKI rates"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Sex — Female",
+          "group_a": "72/151",
+          "group_b": "62/173",
+          "effect_measure": "RR",
+          "effect_value": "1.39",
+          "ci_95": "1.10–1.76",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "Sex — Male",
+          "group_a": "119/278",
+          "group_b": "104/260",
+          "effect_measure": "RR",
+          "effect_value": "1.11",
+          "ci_95": "0.92–1.34",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "Predicted risk — Quartile 1 (lowest risk)",
+          "group_a": "22/95",
+          "group_b": "12/98",
+          "effect_measure": "RR",
+          "effect_value": "2.05",
+          "ci_95": "1.08–3.90",
+          "p_interaction": "Not reported"
+        },
+        {
+          "subgroup": "Predicted risk — Quartile 2",
+          "group_a": "55/117",
+          "group_b": "39/118",
+          "effect_measure": "RR",
+          "effect_value": "1.49",
+          "ci_95": "1.09–2.03",
+          "p_interaction": "Not reported"
+        }
+      ]
+    },
+    "safety": [
+      "Hypoglycaemia: 26/429 (6.1%) in vitamin C vs 22/433 (5.1%) in placebo (RR 1.25; 95% CI 0.73 to 2.14), influenced by glucose meter point-of-care interference artefact.",
+      "Adjudicated serious adverse events: 1/429 (0.2%) in vitamin C vs 0/433 (0%) in placebo, due to one life-threatening anaphylaxis event in the vitamin C group.",
+      "Stage 3 acute kidney injury occurred in 162/429 (37.8%) vs 164/433 (37.9%) (RR 1.00; 95% CI 0.85 to 1.19)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with allocation concealment, stratified by trial site."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind using identical study preparations dispensed by pharmacy; low risk of co-intervention bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "872 randomised; 8 ineligible excluded post-randomisation; 1 deferred-consent participant retained for primary outcome only; 1 missing day 28 status."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "99.1% vs 98.6% received ≥1 infusion; median 16 doses (IQR 14-16) both groups; open-label exposure 0.2% in both arms."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: age 65±14 vs 67±14; APACHE II 24±7 vs 24±7; SOFA 12±3 vs 12±3; invasive vent 48.7% vs 49.2%; corticosteroids 65.5% vs 60.7%; thiamine 26.1% vs 24.5%."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong given double blinding, central randomisation, high protocol adherence, and balanced co-interventions."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical ICU septic shock population (older, high APACHE II/SOFA, ~50% ventilated); mostly enrolled in Canadian ICUs with contributions from France and New Zealand."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Directly applies to adult ICU patients with vasopressor-dependent sepsis in high-income settings; does not inform non-ICU sepsis, pediatrics, or alternative dosing schedules."
+        }
+      ],
+      "verdict": "External validity is good for adult ICU patients with vasopressor-dependent sepsis in similar health systems, but limited for non-ICU populations."
+    },
+    "strengths": [
+      "Large, international, multicentre, double-blind placebo-controlled design",
+      "High protocol adherence and minimal open-label vitamin C contamination",
+      "Patient-centred primary outcome with follow-up extending to 6 months",
+      "Balanced baseline characteristics and co-intervention delivery"
+    ],
+    "limitations": [
+      "Post-randomisation exclusions of 8 ineligible patients",
+      "Composite primary outcome driven by mortality while secondary components showed smaller non-significant differences",
+      "Prespecified adjusted analysis attenuated the effect estimate (RR 1.15; 95% CI 0.90 to 1.47)",
+      "Baseline vitamin C levels measured in a subset only (324 vs 322; mean 20.6±70.6 vs 19.1±39.7 µmol/L) with no post-treatment levels reported"
+    ],
+    "critical_appraisal": {
+      "summary": "LOVIT is a rigorous, high-quality RCT providing definitive evidence that high-dose IV vitamin C does not improve outcomes in vasopressor-dependent ICU sepsis and carries potential harm.",
+      "strengths": [
+        "Double-blind design with identical matching placebo",
+        "Excellent protocol compliance and low open-label contamination",
+        "Complete 28-day and 6-month clinical follow-up"
+      ],
+      "weaknesses": [
+        "Interpretive complexity of composite outcome driven by mortality component",
+        "Lack of systematic post-dose pharmacodynamic plasma vitamin C measurements"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In adults with sepsis receiving vasopressors in the ICU, those who received intravenous vitamin C had a higher risk of death or persistent organ dysfunction at 28 days than those who received placebo.",
+    "clinical_bottom_line": {
+      "verdict": "High-dose IV vitamin C should not be routinely administered to adult ICU patients with sepsis requiring vasopressors.",
+      "applies_to": "Adult ICU patients with sepsis or septic shock requiring vasopressor support.",
+      "does_not_mean": "Does not mean nutritional replacement or lower-dose physiologic supplementation in proven deficiency is harmful.",
+      "implementation_caveats": [
+        "High-dose IV vitamin C can cause point-of-care blood glucose meter interference, risking iatrogenic hypoglycemia or inappropriate insulin delivery",
+        "Cessation of routine off-label use should be reinforced in clinical guidelines"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Biological mechanism of harm vs pro-oxidant risk",
+        "notes": "Critiques highlighted that high-dose vitamin C acts pharmacologically rather than nutritionally, with potential pro-oxidant chemistry in specific microenvironments."
+      },
+      {
+        "topic": "Discontinuation and rebound hypothesis",
+        "notes": "A secondary analysis hypothesized that abrupt cessation after 96 hours might cause rebound withdrawal harm, though this remains unverified by PK data."
+      },
+      {
+        "topic": "Frequentist vs Bayesian interpretations",
+        "notes": "Bayesian reanalyses showed sensitivity to prior beliefs, but editorial consensus maintained that Bayesian models should not override robust frequentist harm signals."
+      },
+      {
+        "topic": "Guideline updates",
+        "notes": "LOVIT catalyzed rapid recommendation guidelines and Japanese guideline updates to advise against routine IV vitamin C in sepsis."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "C-EASIE",
+        "relation": "Multicentre follow-up trial of early vitamin C in sepsis/septic shock that similarly showed no clinically important benefit."
+      }
+    ],
+    "unresolved_questions": [
+      "Whether lower physiological dosing or prolonged tapered regimens avoid abrupt withdrawal effects without toxicity",
+      "Whether targeted therapy based on baseline plasma vitamin C levels would yield different outcomes"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=863 analyzed",
+        "Primary composite: 44.5% vs 38.5% (RR 1.21, p=0.01)",
+        "28-day mortality: 35.4% vs 31.6% (RR 1.17)",
+        "6-month mortality: 45.8% vs 43.4% (HR 1.14)"
+      ],
+      "one_line_takeaway": "Do not give high-dose IV vitamin C in septic shock; LOVIT showed increased 28-day death or persistent organ dysfunction without organ support benefit."
+    }
+  },
+  "_source_id": "LOVIT",
+  "_source_system": "Sepsis"
+}

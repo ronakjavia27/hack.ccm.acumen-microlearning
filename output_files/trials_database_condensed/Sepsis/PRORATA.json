@@ -1,0 +1,313 @@
+{
+  "id": "PRORATA",
+  "trial_name": "PRORATA — Procalcitonin to Reduce Patients' Exposure to Antibiotics in Intensive Care Units (2010)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Biomarkers",
+  "year": 2010,
+  "journal": "Lancet",
+  "citation": "Bouadma L, Luyt C-E, Tubach F, et al. Use of procalcitonin to reduce patients' exposure to antibiotics in intensive care units (PRORATA trial): a multicentre randomised controlled trial. Lancet. 2010;375(9713):463-474.",
+  "doi": "https://doi.org/10.1016/S0140-6736(09)61879-1",
+  "registration": "",
+  "trial_type": "RCT — multicentre, open-label, parallel-group, superiority (antibiotic exposure) and non-inferiority (mortality)",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 621,
+  "result_category": "Mixed",
+  "one_liner": "A daily procalcitonin-guided algorithm reduced ICU antibiotic duration by 3 days without compromising 28-day survival, though clinician overrides were frequent and 60-day mortality point estimates numerically favored standard care.",
+  "pico": {
+    "population": "Adult ICU patients in France with suspected bacterial infection prompting systemic antibiotics and an expected ICU stay >3 days (n=621 analyzed).",
+    "intervention": "Procalcitonin (PCT)-guided strategy with daily PCT measurements informing antibiotic initiation (<0.25 µg/L strongly discouraged to ≥1 µg/L strongly encouraged) and discontinuation (stop if <0.25 µg/L or dropped ≥80% from peak).",
+    "comparison": "Standard-care antibiotic management based on contemporary guidelines and clinical judgement, with PCT levels masked to clinicians.",
+    "outcome": "Co-primary: Superiority for days without antibiotics (days 1–28) and non-inferiority for all-cause mortality at 28 days (10% non-inferiority margin, 90% CI)."
+  },
+  "keywords": [
+    "procalcitonin",
+    "antibiotic stewardship",
+    "biomarkers",
+    "sepsis",
+    "de-escalation"
+  ],
+  "related_trials": [
+    "SAPS"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "ICU patients experience high empiric antibiotic exposure, driving antimicrobial resistance, drug toxicity, Clostridioides difficile infection, and resistant organisms. Routine clinical signs and CRP are non-specific, causing delayed discontinuation.",
+      "knowledge_gap": "Evidence for PCT-guided stewardship in ICU was limited by small trials, heterogeneous algorithms/assays, and uncertainty regarding mortality non-inferiority.",
+      "hypothesis": "A PCT-guided strategy reduces antibiotic exposure (increases antibiotic-free days) in ICU patients with suspected bacterial infection while remaining non-inferior for 28-day and 60-day mortality."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, controlled, parallel-group, open-label, investigator-initiated trial across 7 French ICUs, stratified by centre with variable block sizes; blinded expert adjudication of infectious outcomes.",
+      "setting": "7 adult ICUs in France; enrolled at ICU admission or during stay upon new suspected infection.",
+      "population": {
+        "inclusion": [
+          "Age ≥18 years",
+          "Suspected bacterial infection prompting consideration of systemic antibiotics",
+          "Expected ICU stay >3 days"
+        ],
+        "exclusion": [
+          "Expected ICU stay <3 days",
+          "Simplified Acute Physiology Score (SAPS) II >65",
+          "Receipt of antibiotics for >24 hours before eligibility assessment",
+          "Anticipated need for long-term antibiotic therapy",
+          "Pregnancy",
+          "Do-not-resuscitate order at inclusion",
+          "Bone marrow transplant",
+          "AIDS",
+          "Cystic fibrosis",
+          "Medullary thyroid carcinoma"
+        ]
+      },
+      "intervention": "PCT measured at suspicion and daily during therapy with turnaround ~2 hours. Initiation guidance: <0.25 µg/L strongly discouraged, 0.25–<0.5 discouraged, 0.5–<1 encouraged, ≥1 strongly encouraged. Continuation/discontinuation guidance: stop strongly encouraged if <0.25 µg/L; stop encouraged if 0.25–<0.5 µg/L or decreased by ≥80% from peak; continuation encouraged if ≥0.5 µg/L with drop <80%; change antibiotics strongly encouraged if PCT increased vs peak and remained ≥0.5 µg/L. Clinical overrides permitted for severe syndromes (e.g. septic shock, meningitis) or ongoing clinical instability.",
+      "comparison": "Standard-care antibiotic management based on contemporary guidelines and clinician judgement without access to PCT values.",
+      "blinding": "Open-label for treating clinicians and patients; expert adjudication committee was blinded to allocation when confirming relapse and superinfection.",
+      "sample_size_power": "133 patients/group for 3-day increase in antibiotic-free days (assumed mean 12, SD 7.5; 90% power, alpha 0.05); 300 patients/group to exclude 10% absolute mortality difference (assumed 35% mortality; 80% power, two-sided 90% CI). Planned enrolment 630.",
+      "primary_outcome": "Co-primary: Days without antibiotics through day 28 (superiority) and all-cause mortality at day 28 (non-inferiority, 10% absolute margin).",
+      "secondary_outcomes": [
+        "All-cause mortality at day 60",
+        "Total antibiotic exposure (days of therapy, days 1–28)",
+        "Relapse through day 28",
+        "Superinfection through day 28",
+        "Multidrug-resistant bacteria acquisition through day 28",
+        "SOFA score at day 28",
+        "ICU length of stay",
+        "Duration of first antibiotic episode"
+      ],
+      "follow_up": "Antibiotic exposure and infectious outcomes through day 28; mortality assessed at day 28 and day 60."
+    },
+    "results": {
+      "headline_bullets": [
+        "PCT guidance increased antibiotic-free days by 2.7 days (14.3 vs 11.6 days, P<0.0001) and reduced overall antibiotic therapy by 3.0 days (10.3 vs 13.3 days, P<0.0001).",
+        "Day 28 all-cause mortality met non-inferiority criteria (21.2% vs 20.4%, difference 0.8%, 90% CI -4.6 to 6.2).",
+        "Day 60 mortality was numerically higher in the PCT group (30.0% vs 26.1%, difference 3.8%, 90% CI -2.1 to 9.7), with the upper CI boundary approaching the 10% non-inferiority margin.",
+        "Clinician overrides occurred frequently in both groups (overall non-adherence 45%), yet substantial separation in antibiotic duration was maintained."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality (day 28)",
+          "group_a": "65/307 (21.2%)",
+          "group_b": "64/314 (20.4%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.8%",
+          "ci_95": "90% CI -4.6 to 6.2",
+          "p_value": "NR",
+          "note": "Co-primary endpoint (non-inferiority margin 10%)"
+        },
+        {
+          "outcome": "All-cause mortality (day 60)",
+          "group_a": "92/307 (30.0%)",
+          "group_b": "82/314 (26.1%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "3.8%",
+          "ci_95": "90% CI -2.1 to 9.7",
+          "p_value": "NR",
+          "note": "Non-inferiority margin 10%"
+        },
+        {
+          "outcome": "Days without antibiotics (day 1–28)",
+          "group_a": "14.3 (SD 9.1)",
+          "group_b": "11.6 (SD 8.2)",
+          "effect_measure": "Mean difference",
+          "effect_value": "2.7 days",
+          "ci_95": "1.4 to 4.1",
+          "p_value": "<0.0001",
+          "note": "Co-primary endpoint (superiority)"
+        },
+        {
+          "outcome": "Antibiotic exposure (days of therapy, day 1–28)",
+          "group_a": "10.3 (SD 7.3)",
+          "group_b": "13.3 (SD 8.7)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-3.0 days",
+          "ci_95": "-4.1 to -1.8",
+          "p_value": "<0.0001",
+          "note": "653 vs 812 days per 1000 inpatient days"
+        },
+        {
+          "outcome": "Relapse (day 1–28)",
+          "group_a": "20/307 (6.5%)",
+          "group_b": "16/314 (5.1%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.4%",
+          "ci_95": "-2.3 to 5.1",
+          "p_value": "0.45",
+          "note": "Adjudicated by blinded expert committee"
+        },
+        {
+          "outcome": "Superinfection (day 1–28)",
+          "group_a": "106/307 (34.5%)",
+          "group_b": "97/314 (30.9%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "3.6%",
+          "ci_95": "-3.8 to 11.0",
+          "p_value": "0.29",
+          "note": "High event rates in both groups"
+        },
+        {
+          "outcome": "Multidrug-resistant bacteria (day 1–28)",
+          "group_a": "55/307 (17.9%)",
+          "group_b": "52/314 (16.6%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "1.3%",
+          "ci_95": "-4.6 to 7.2",
+          "p_value": "0.67",
+          "note": "No significant difference detected"
+        },
+        {
+          "outcome": "SOFA score (day 28)",
+          "group_a": "1.5 (SD 3.0)",
+          "group_b": "0.9 (SD 2.4)",
+          "effect_measure": "Mean difference",
+          "effect_value": "0.6",
+          "ci_95": "0.0 to 1.1",
+          "p_value": "0.0370",
+          "note": "Statistically higher in PCT group"
+        },
+        {
+          "outcome": "ICU length of stay from inclusion",
+          "group_a": "15.9 (SD 16.1) days",
+          "group_b": "14.4 (SD 14.1) days",
+          "effect_measure": "Mean difference",
+          "effect_value": "1.5 days",
+          "ci_95": "-0.9 to 3.9",
+          "p_value": "0.23",
+          "note": "No reduction in length of stay"
+        },
+        {
+          "outcome": "Duration of first antibiotic episode (overall)",
+          "group_a": "6.1 (SD 6.0) days",
+          "group_b": "9.9 (SD 7.1) days",
+          "effect_measure": "Mean difference",
+          "effect_value": "-3.8 days",
+          "ci_95": "-4.8 to -2.7",
+          "p_value": "<0.0001",
+          "note": "Largest separation seen in first episode duration"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Duration of first episode: ventilator-associated pneumonia",
+          "group_a": "7.3 (SD 5.3) days",
+          "group_b": "9.4 (SD 5.7) days",
+          "effect_measure": "Mean difference",
+          "effect_value": "-2.1 days",
+          "ci_95": "-4.0 to -0.3",
+          "p_interaction": "0.0210"
+        }
+      ]
+    },
+    "safety": [
+      "Day 28 all-cause mortality: 21.2% PCT vs 20.4% control (diff 0.8%, 90% CI -4.6 to 6.2)",
+      "Day 60 all-cause mortality: 30.0% PCT vs 26.1% control (diff 3.8%, 90% CI -2.1 to 9.7)",
+      "Relapse rate: 6.5% vs 5.1% (P=0.45)",
+      "Superinfection rate: 34.5% vs 30.9% (P=0.29)",
+      "Multidrug-resistant bacteria acquisition: 17.9% vs 16.6% (P=0.67)",
+      "Day 28 SOFA score was statistically higher in the PCT-guided group (1.5 vs 0.9, P=0.0370)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated allocation; stratified by centre with variable block sizes; allocation concealed prior to randomisation."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label for treating clinicians and patients; potential performance bias offset by blinded expert adjudication committee for relapse and superinfection, and objective mortality measurement."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "630 randomised, 9 excluded post-randomisation; 621 analysed in ITT population (307 PCT vs 314 control). 1 patient lost to follow-up per group for day 60 mortality."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High overall non-adherence (45%). PCT algorithm overridden in 219 episodes (including initiating antibiotics despite PCT <0.5 µg/L in 65 patients and continuing despite stop advice in unstable patients). Control group non-adherence occurred in 146 episodes (postponed initiation n=15, premature stopping n=46, continuation beyond guidance n=85)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: age 64.4 vs 64.7 years; SAPS II 44.7 vs 42.6; day 1 SOFA 7.5 vs 7.2; septic shock 21.8% vs 18.5%; mechanical ventilation 78.5% vs 74.8%."
+        }
+      ],
+      "verdict": "Internal validity is moderate: causal inference for antibiotic reduction is supported, but open-label care, high clinician override rates (45%), and an imprecisely estimated 60-day mortality point estimate introduce risk of performance and implementation bias."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU patients with suspected bacterial infection typical of general ICUs. Excluded very high acuity (SAPS II >65) and severely immunocompromised cohorts (AIDS, bone marrow transplant)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "7 ICUs within France; requires rapid laboratory PCT turnaround (~2 hours) and a structured stewardship workflow. Reductions were largest where baseline treatment durations were longest."
+        }
+      ],
+      "verdict": "External validity is moderate: applicable to general adult ICU populations with access to rapid PCT assays, but less generalizable to severely immunocompromised or extremely high-severity cohorts."
+    },
+    "strengths": [
+      "Pragmatic trial design evaluating a biomarker-guided discontinuation algorithm in a high-risk ICU cohort",
+      "Explicit PCT algorithm combined with rapid laboratory turnaround time (~2 hours)",
+      "Blinded expert committee adjudication of relapse and superinfection endpoints",
+      "Achieved clear separation in antibiotic exposure (-3.0 therapy days and +2.7 antibiotic-free days)"
+    ],
+    "limitations": [
+      "Open-label design susceptible to performance bias and co-interventions",
+      "High protocol deviation/override rates in both arms (45% overall) complicate algorithm-specific evaluation",
+      "Generous 10% non-inferiority mortality margin, with day 60 mortality point estimate numerically favoring control",
+      "Single-country setting where control clinicians received explicit protocol duration guidelines"
+    ],
+    "critical_appraisal": {
+      "summary": "PRORATA provides moderate-certainty evidence that daily PCT guidance reduces ICU antibiotic duration, though open-label overrides and imprecise long-term mortality estimates warrant clinical caution.",
+      "strengths": [
+        "Multicenter randomized design with rapid test turnaround",
+        "Blinded expert adjudication of secondary infectious events",
+        "Consistent reduction in antibiotic exposure across various infection sites"
+      ],
+      "weaknesses": [
+        "High non-adherence/override rate (45%)",
+        "Open-label administration",
+        "Generous 10% non-inferiority margin for mortality"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "A procalcitonin-guided strategy significantly reduced antibiotic exposure in ICU patients with suspected bacterial infection without compromising 28-day survival.",
+    "clinical_bottom_line": {
+      "verdict": "Procalcitonin serves effectively as an 'off-ramp' to shorten antibiotic durations in ICU patients rather than a trigger to withhold initial therapy.",
+      "applies_to": "General adult ICU patients with suspected bacterial infection (respiratory, UTI, abdominal).",
+      "does_not_mean": "Does not mean PCT should be used as a stand-alone test to withhold initial empiric antibiotics in unstable patients or septic shock.",
+      "implementation_caveats": [
+        "Requires rapid lab turnaround (~2 hours) to influence daily clinician decisions",
+        "Algorithm permits and requires clinical overrides for unstable patients or high-risk syndromes",
+        "Effectiveness relies on shortening established therapy rather than preventing initial empiric doses"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Non-inferiority margin and mortality interpretation",
+        "notes": "A 10% absolute mortality margin is wide. Day 60 mortality numerically favored standard care (30.0% vs 26.1%) with the upper 90% CI reaching 9.7%, leaving potential safety concerns in high-risk subsets."
+      },
+      {
+        "topic": "Open-label stewardship and high override rates",
+        "notes": "High override rates (45% overall non-adherence) mean the trial evaluates PCT as a decision-support guide within clinical discretion rather than strict algorithm efficacy."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "SAPS",
+        "relation": "Subsequent large multicentre ICU trial reproducing PCT-guided antibiotic duration reductions without excess mortality."
+      }
+    ],
+    "unresolved_questions": [
+      "Safety and efficacy in patients excluded by design, such as SAPS II >65 or severely immunocompromised (AIDS, bone marrow transplant).",
+      "Whether PCT-guided reduction in antibiotic days directly leads to long-term reductions in hospital-acquired multidrug-resistant colonization."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=621 analysed",
+        "+2.7 antibiotic-free days (14.3 vs 11.6 days)",
+        "-3.0 days total antibiotic therapy (10.3 vs 13.3 days)",
+        "Day 28 mortality 21.2% vs 20.4% (diff 0.8%, 90% CI -4.6 to 6.2)"
+      ],
+      "one_line_takeaway": "Daily procalcitonin safely shortens ICU antibiotic durations by ~3 days as a discontinuation tool, but clinical judgment must override low values in unstable patients."
+    }
+  },
+  "_source_id": "PRORATA",
+  "_source_system": "Sepsis"
+}

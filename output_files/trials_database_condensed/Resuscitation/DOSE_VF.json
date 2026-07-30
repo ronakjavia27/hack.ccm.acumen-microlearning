@@ -1,0 +1,263 @@
+{
+  "id": "DOSE_VF",
+  "trial_name": "DOSE VF — Defibrillation Strategies for Refractory Ventricular Fibrillation (2022)",
+  "specialty": "Resuscitation",
+  "subtopic": "ICU Quality Improvement",
+  "year": 2022,
+  "journal": "N Engl J Med",
+  "citation": "Cheskes S, Verbeek PR, Drennan IR, et al. Defibrillation Strategies for Refractory Ventricular Fibrillation. N Engl J Med. 2022;387(21):1947-1956",
+  "doi": "10.1056/NEJMoa2207304",
+  "registration": "",
+  "trial_type": "Pragmatic, cluster-randomised, crossover, three-arm trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 405,
+  "result_category": "Positive",
+  "one_liner": "In adult OHCA with refractory VF after three shocks, double sequential external defibrillation (DSED) improved survival to hospital discharge compared with standard defibrillation (30.4% vs 13.3%), while vector change (VC) showed a less certain benefit.",
+  "pico": {
+    "population": "Adults with out-of-hospital cardiac arrest and refractory VF/pulseless VT after three standard defibrillation attempts.",
+    "intervention": "DSED (two defibrillators, anterior-lateral and anterior-posterior pads, two sequential shocks <1 sec apart at max energy) or VC (switch to anterior-posterior pad position, max energy shocks).",
+    "comparison": "Continued standard defibrillation (anterior-lateral pads, single defibrillator, escalating then max energy).",
+    "outcome": "Survival to hospital discharge."
+  },
+  "keywords": [
+    "defibrillation",
+    "refractory ventricular fibrillation",
+    "double sequential external defibrillation",
+    "vector change",
+    "out-of-hospital cardiac arrest",
+    "resuscitation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Refractory VF after multiple shocks has very low survival. Standard repeated shocks in fixed pad vector may fail due to inadequate current vector. VC and DSED were proposed as alternatives.",
+      "knowledge_gap": "Lack of randomised evidence on patient-centred outcomes for VC and DSED.",
+      "hypothesis": "Switching defibrillation strategy (VC or DSED) after three failed standard shocks improves survival to discharge."
+    },
+    "methods": {
+      "design": "Pragmatic, cluster-randomised, crossover, three-arm trial in six paramedic services in Ontario, Canada.",
+      "setting": "Prehospital, six paramedic services.",
+      "population": {
+        "inclusion": [
+          "Adult OHCA with VF/pulseless VT persisting after three consecutive standard defibrillation attempts with 2-min CPR cycles between shocks."
+        ],
+        "exclusion": [
+          "Not meeting refractory shock criteria prior to randomisation, inability to deliver assigned strategy (e.g., equipment availability)."
+        ]
+      },
+      "intervention": "DSED: two defibrillators, anterior-lateral pads retained, additional anterior-posterior pads, two sequential shocks <1 sec apart at max energy (ZOLL 200 J, LIFEPAK 360 J). VC: switch to anterior-posterior pads, max energy shocks.",
+      "comparison": "Standard: continued anterior-lateral pads, single defibrillator, escalating energy then max (ZOLL: 120/150/200 J for shocks 1-3; LIFEPAK: 200/300/360 J).",
+      "blinding": "Open-label for clinicians; objective primary outcome.",
+      "sample_size_power": "Planned 930 patients (310 per arm) to detect 8% absolute increase in survival (12% to 20%) with >80% power, two-sided alpha 0.05; no multiplicity adjustment. Trial stopped early at 405 patients.",
+      "primary_outcome": "Survival to hospital discharge.",
+      "secondary_outcomes": [
+        "VF termination after first eligible shock",
+        "Return of spontaneous circulation (ROSC)",
+        "Good neurological outcome at discharge (mRS ≤2)"
+      ],
+      "follow_up": "Through hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "DSED improved survival to discharge (30.4% vs 13.3%, adjusted RR 2.21, 95% CI 1.33-3.67).",
+        "VC showed a survival signal (21.7% vs 13.3%, adjusted RR 1.71, 95% CI 1.01-2.88) but with fragility index 1.",
+        "Both DSED and VC improved VF termination (84.0% and 79.9% vs 67.6%).",
+        "Trial stopped early at 405 of planned 930 patients."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival to hospital discharge",
+          "group_a": "DSED 38/125 (30.4%)",
+          "group_b": "Standard 18/136 (13.3%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "2.21",
+          "ci_95": "1.33 to 3.67",
+          "p_value": "Global P=0.009",
+          "note": "Absolute difference 17.1%"
+        },
+        {
+          "outcome": "Survival to hospital discharge",
+          "group_a": "VC 31/144 (21.7%)",
+          "group_b": "Standard 18/136 (13.3%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.71",
+          "ci_95": "1.01 to 2.88",
+          "p_value": "",
+          "note": "Fragility index 1"
+        },
+        {
+          "outcome": "VF termination after first eligible shock",
+          "group_a": "DSED 105/125 (84.0%)",
+          "group_b": "Standard 92/136 (67.6%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.25",
+          "ci_95": "1.09 to 1.44",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "VF termination after first eligible shock",
+          "group_a": "VC 115/144 (79.9%)",
+          "group_b": "Standard 92/136 (67.6%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.18",
+          "ci_95": "1.03 to 1.36",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "ROSC",
+          "group_a": "DSED 58/125 (46.4%)",
+          "group_b": "Standard 36/136 (26.5%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.72",
+          "ci_95": "1.22 to 2.42",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "ROSC",
+          "group_a": "VC 51/144 (35.4%)",
+          "group_b": "Standard 36/136 (26.5%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.39",
+          "ci_95": "0.97 to 1.99",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Good neurological outcome (mRS ≤2) at discharge",
+          "group_a": "DSED 34/124 (27.4%)",
+          "group_b": "Standard 15/134 (11.2%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "2.21",
+          "ci_95": "1.26 to 3.88",
+          "p_value": "",
+          "note": "Denominators differ due to missing data"
+        },
+        {
+          "outcome": "Good neurological outcome (mRS ≤2) at discharge",
+          "group_a": "VC 23/142 (16.2%)",
+          "group_b": "Standard 15/134 (11.2%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.48",
+          "ci_95": "0.81 to 2.71",
+          "p_value": "",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Harms/adverse events not comprehensively reported beyond feasibility/safety observations."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Cluster randomisation with crossover reduces contamination but only six clusters, risk of period effects and confounding. Only three crossover periods and early termination increase susceptibility to time-varying confounding (e.g., pandemic-related changes)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; objective primary outcome reduces but does not eliminate bias; neurological outcome may be less robust. CPR process measures similar across groups (chest compression fraction ~90%, amiodarone use ~86-89%, epinephrine doses ~2.2-2.4)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Survival outcome missing for 2 patients; mRS missing for 3 patients. ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Assigned strategy delivered in 87.7% overall; adherence: standard 84.6%, VC 86.8%, DSED 92.0%. Non-adherence operational (e.g., second defibrillator not available). Number of standard shocks delivered: standard 7.4±3.0, VC 4.2±2.1, DSED 3.9±1.4, indicating separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Bystander-witnessed arrest imbalance: standard 60.3%, VC 76.4%, DSED 66.4% (prognostic). Age, sex, bystander CPR similar. Time from 911 call to first shock ~9 min, paramedic arrival to first shock ~1.3-1.5 min, similar across arms."
+        }
+      ],
+      "verdict": "Moderate: early stopping, small cluster count, open-label, and prognostic imbalance limit certainty."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult OHCA with shockable rhythms progressing to refractory VF in organised EMS; bystander witness/CPR rates may be higher than some regions."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "VC is low-cost, implementable; DSED requires two defibrillators, training, and may not be feasible in all systems. Results apply to out-of-hospital, not in-hospital."
+        }
+      ],
+      "verdict": "Reasonable for EMS systems that can protocolise escalation after three failed shocks, especially for VC; DSED adoption depends on resources."
+    },
+    "strengths": [
+      "Pragmatic cluster-crossover design aligned with EMS implementation.",
+      "Clinically meaningful primary outcome with concordant secondary outcomes.",
+      "High protocol adherence for complex DSED intervention.",
+      "Comparable CPR quality and drug use across arms."
+    ],
+    "limitations": [
+      "Early termination (405/930) increases imprecision and risk of overestimation.",
+      "Small number of clusters (six) increases susceptibility to confounding.",
+      "Open-label delivery; neurological outcome at discharge may be less robust.",
+      "Post-ROSC/in-hospital care not standardised.",
+      "Harms/adverse events not comprehensively reported."
+    ],
+    "critical_appraisal": {
+      "summary": "DOSE VF provides the strongest randomised evidence to date that switching defibrillation strategy after three failed shocks improves survival, but early termination and methodological constraints temper confidence in the magnitude of benefit.",
+      "strengths": [
+        "Pragmatic design, high adherence, concordant mechanistic outcomes."
+      ],
+      "weaknesses": [
+        "Early stopping, small cluster count, open-label, prognostic imbalance."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "After three unsuccessful shocks for VF/pulseless VT in OHCA, protocolised escalation to an alternative defibrillation strategy (particularly DSED) can plausibly improve survival to discharge in capable EMS systems.",
+    "clinical_bottom_line": {
+      "verdict": "DSED should be considered for refractory VF after three standard shocks in systems with the capability; VC is a simpler alternative but with less certain survival benefit.",
+      "applies_to": "Adult OHCA with refractory VF/pulseless VT in EMS systems that can implement protocolised escalation.",
+      "does_not_mean": "DSED is not a replacement for high-quality CPR and standard defibrillation; it is an escalation after failure.",
+      "implementation_caveats": [
+        "DSED requires two defibrillators, additional pads, and team training.",
+        "VC is easier to implement but survival benefit is less robust.",
+        "Extrapolation to in-hospital arrest is uncertain."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping and effect-size inflation risk",
+        "notes": "Stopped at 405/930, wide CIs, potential overestimation of treatment effect sizes."
+      },
+      {
+        "topic": "Cluster-crossover complexity and small cluster count",
+        "notes": "Only six clusters raises vulnerability to time-varying confounding (including pandemic-era system changes) despite crossover."
+      },
+      {
+        "topic": "VC versus DSED interpretation",
+        "notes": "VC survival estimate fragile (fragility index 1); DSED more consistent but operationally demanding."
+      },
+      {
+        "topic": "Evidence synthesis trajectory",
+        "notes": "Pre-DOSE VF syntheses found very low certainty; network meta-analyses now incorporate DOSE VF but limited by few randomised datasets."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Optimal DSED energy, pad vectors, and inter-shock delay.",
+      "Long-term neurological outcomes beyond discharge.",
+      "Effectiveness in in-hospital cardiac arrest.",
+      "Comparative effectiveness in systems with different baseline survival rates."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=405 (planned 930)",
+        "DSED survival 30.4% vs standard 13.3% (RR 2.21)",
+        "VC survival 21.7% vs 13.3% (RR 1.71, fragility index 1)",
+        "DSED VF termination 84.0% vs 67.6%"
+      ],
+      "one_line_takeaway": "For refractory VF after three shocks, double sequential defibrillation improves survival to discharge; vector change is a simpler but less certain alternative."
+    }
+  },
+  "_source_id": "DOSE_VF",
+  "_source_system": "Resuscitation"
+}

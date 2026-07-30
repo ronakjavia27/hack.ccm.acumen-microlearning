@@ -1,0 +1,284 @@
+{
+  "id": "SSSP-2",
+  "trial_name": "SSSP-2 — Effect of an Early Resuscitation Protocol on In-Hospital Mortality Among Adults With Sepsis and Hypotension (2017)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Fluids & Resuscitation",
+  "year": 2017,
+  "journal": "JAMA",
+  "citation": "Andrews B, Semler MW, Muchemwa L, Kelly P, Lakhi S, Heimburger DC, et al. Effect of an early resuscitation protocol on in-hospital mortality among adults with sepsis and hypotension: a randomized clinical trial. JAMA. 2017;318(13):1233-1240.",
+  "doi": "https://doi.org/10.1001/jama.2017.10913",
+  "registration": "",
+  "trial_type": "RCT — single-centre, open-label, parallel-group, superiority",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 209,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with sepsis and hypotension in a low-resource Zambian emergency department, a protocolised 6-hour resuscitation protocol significantly increased in-hospital mortality compared with usual care (48.1% vs 33.0%).",
+  "pico": {
+    "population": "Adults with suspected infection, ≥2 SIRS criteria, and hypotension (SBP ≤90 mm Hg or MAP ≤65 mm Hg) in a low-resource emergency department in Zambia.",
+    "intervention": "Protocolised 6-hour resuscitation (2 L crystalloid in hour 1, up to 4 L by 6 h, dopamine for persistent hypotension, and PRBC transfusion for Hb <7 g/dL).",
+    "comparison": "Usual care determined by treating clinicians with study nurse monitoring but no mandated protocol targets.",
+    "outcome": "In-hospital mortality."
+  },
+  "keywords": [
+    "sepsis",
+    "resuscitation protocol",
+    "fluid resuscitation",
+    "low-resource setting",
+    "dopamine",
+    "sub-Saharan Africa",
+    "HIV"
+  ],
+  "related_trials": [
+    "CLASSIC",
+    "CLOVERS"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Early protocolised sepsis resuscitation (fluids, vasopressors, antimicrobials) was developed and tested in high-resource systems with reliable ICU support.",
+      "knowledge_gap": "Low-resource settings have limited ICU beds, mechanical ventilation, and monitoring, raising uncertainty about the balance between benefit and iatrogenic harm from aggressive resuscitation.",
+      "hypothesis": "A simplified 6-hour early resuscitation protocol for adults with suspected infection and hypotension in a low-resource emergency department would reduce in-hospital mortality compared with usual care."
+    },
+    "methods": {
+      "design": "Randomised, single-centre, open-label, parallel-group trial.",
+      "setting": "Emergency Department of University Teaching Hospital, Lusaka, Zambia; enrolled Jun 2012–Oct 2013. Only 0.5% managed in an ICU.",
+      "population": {
+        "inclusion": [
+          "Adults with suspected infection",
+          "≥2 SIRS criteria",
+          "Hypotension (SBP ≤90 mm Hg or MAP ≤65 mm Hg)",
+          "Enrolment within 4 h of qualifying BP and within 24 h of ED registration"
+        ],
+        "exclusion": [
+          "Suspected GI bleeding without fever",
+          "Immediate surgery required",
+          "Severe hypoxaemic respiratory failure (RR >40/min and SpO2 <90%)",
+          "Suspected heart failure exacerbation",
+          "End-stage renal disease"
+        ]
+      },
+      "intervention": "Protocolised 6-hour resuscitation delivered by study nurse: rapid crystalloid (2 L in first hour, reassessment up to 4 L by 6 h), dopamine for persistent hypotension after fluids, and PRBC transfusion for Hb <7 g/dL. Clinical reassessments included JVP, RR, and SpO2.",
+      "comparison": "Usual care by treating clinicians with study nurse monitoring, without mandated targets for fluids, vasopressors, or transfusions.",
+      "blinding": "Open-label (unblinded delivery; objective primary outcome).",
+      "sample_size_power": "212 patients required to detect a 20% absolute reduction in in-hospital mortality (65% to 45%) with 80% power at 5% significance level.",
+      "primary_outcome": "In-hospital mortality.",
+      "secondary_outcomes": [
+        "28-day mortality",
+        "Length of hospital stay",
+        "Intravenous fluid volume in first 6 h",
+        "Dopamine use in first 6 h",
+        "Clinical respiratory compromise in first 6 h",
+        "Change in lactate at 6 h"
+      ],
+      "follow_up": "In-hospital outcomes to discharge; vital status assessed to 28 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "The trial completed planned enrolment without early termination (209 analyzed of 212 randomized).",
+        "Protocolised resuscitation significantly increased in-hospital mortality (48.1% vs 33.0%, RR 1.46) and 28-day mortality (67.0% vs 45.3%, RR 1.48).",
+        "Clear exposure separation occurred in early IV fluids (median 3.5 L vs 2.0 L in 6 h) and dopamine use (14.2% vs 1.9%).",
+        "Protocol group had significantly higher early clinical respiratory compromise (35.8% vs 22.3%) despite greater 6-hour lactate reduction."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "In-hospital mortality (primary)",
+          "group_a": "51/106 (48.1%)",
+          "group_b": "34/103 (33.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.46",
+          "ci_95": "1.04–2.05",
+          "p_value": "0.03",
+          "note": "Absolute difference 15.1% (95% CI 2.0% to 28.3%). Unadjusted OR 1.88 (95% CI 1.07–3.30; P=0.03); Adjusted OR 1.93 (95% CI 1.09–3.43; P=0.03); Unadjusted HR 1.65 (95% CI 1.12–2.44; P=0.01); Adjusted HR 1.68 (95% CI 1.14–2.49; P=0.009)"
+        },
+        {
+          "outcome": "28-day mortality",
+          "group_a": "67.0%",
+          "group_b": "45.3%",
+          "effect_measure": "RR",
+          "effect_value": "1.48",
+          "ci_95": "1.14–1.91",
+          "p_value": "0.002",
+          "note": "Vital status at day 28 available for 94.2% overall"
+        },
+        {
+          "outcome": "Length of hospital stay (days)",
+          "group_a": "Median 5 (IQR 3–7)",
+          "group_b": "Median 7 (IQR 4–11)",
+          "effect_measure": "Difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.01",
+          "note": "Shorter stay reflects higher early mortality in protocol group"
+        },
+        {
+          "outcome": "Intravenous fluid volume in first 6 h (L)",
+          "group_a": "Median 3.5 (IQR 2.7–4.0)",
+          "group_b": "Median 2.0 (IQR 1.0–2.5)",
+          "effect_measure": "Difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "<0.001",
+          "note": "Fluid >3 L: 68.9% vs 6.8% (P<0.001); Fluid >4 L: 16.0% vs 1.0% (P<0.001)"
+        },
+        {
+          "outcome": "Dopamine use in first 6 h",
+          "group_a": "15/106 (14.2%)",
+          "group_b": "2/103 (1.9%)",
+          "effect_measure": "Difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.001",
+          "note": "Dopamine duration: median 4 (IQR 4–5) h vs 4 (IQR 4–4) h; P=0.52"
+        },
+        {
+          "outcome": "Clinical respiratory compromise in first 6 h",
+          "group_a": "38/106 (35.8%)",
+          "group_b": "23/103 (22.3%)",
+          "effect_measure": "Difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.03",
+          "note": "Iatrogenic pulmonary oedema: 2/106 (1.9%) vs 0/103 (0%)"
+        },
+        {
+          "outcome": "Change in lactate at 6 h (mmol/L)",
+          "group_a": "Median −1.2 (IQR −3.4 to 0.3)",
+          "group_b": "Median −0.5 (IQR −2.2 to 1.1)",
+          "effect_measure": "Difference",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "0.02",
+          "note": "Hypotension resolution at 6 h: 76.4% vs 95.1% (P<0.001)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "As-treated analysis by fluid volume (≥3 L vs <3 L)",
+          "group_a": "≥3 L fluid",
+          "group_b": "<3 L fluid",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "1.41",
+          "ci_95": "0.80–2.49",
+          "p_interaction": "0.24"
+        }
+      ]
+    },
+    "safety": [
+      "Clinical respiratory compromise in first 6 h was higher in protocol group: 35.8% vs 22.3% (P=0.03).",
+      "Iatrogenic pulmonary oedema occurred in 2/106 (1.9%) protocol patients vs 0/103 (0%) usual care patients."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Sequential envelopes used for allocation concealment after eligibility confirmation; baseline SAPS-3 scores were comparable (median 52 vs 54)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery allowed potential co-intervention and discharge bias; primary mortality endpoint is objective. Nurse monitoring in control arm created a monitored usual care condition."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "3 of 212 patients excluded post-randomisation due to ineligibility (n=209 analyzed). 28-day vital status recorded in 94.2%."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clear exposure separation in fluid volume (median 3.5 L vs 2.0 L) and dopamine (14.2% vs 1.9%). Hypotension resolution at 6 h was lower in protocol group (76.4% vs 95.1%; P<0.001)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Severely immunocompromised cohort (89.5% HIV-positive, median CD4 66–68 cells/µL, median albumin 2.1–2.3 g/dL, mean Hb 7.8 g/dL). Baseline JVP above sternal angle present in 20.8% vs 10.7%."
+        }
+      ],
+      "verdict": "Internal validity is moderate due to open-label design, minor post-randomisation exclusions, and single-centre setting."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High-burden low-resource ED population with advanced HIV, severe anaemia, and hypoalbuminaemia; only 0.5% treated in ICU."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Highly applicable to resource-constrained settings lacking ICU and ventilatory rescue; less applicable to high-resource ICUs using norepinephrine, infusion pumps, and advanced hemodynamic monitoring."
+        }
+      ],
+      "verdict": "External validity is strong for similar low-resource emergency settings with high HIV burden, but limited for high-resource critical care environments."
+    },
+    "strengths": [
+      "First randomized trial evaluating protocolised sepsis resuscitation in a low-resource sub-Saharan ED.",
+      "Pragmatic design integrated into emergency workflow with rapid enrolment (median ~70-75 min from ED registration).",
+      "Clear separation achieved between arms for fluid and vasopressor exposures.",
+      "Objective primary endpoint with findings consistent across unadjusted, adjusted, and Cox proportional hazard models."
+    ],
+    "limitations": [
+      "Single-centre, open-label trial with potential for co-intervention bias.",
+      "Observed control mortality (33.0%) was far lower than hypothesized (65%), reducing power.",
+      "Multi-component bundle prevents isolating individual effect of fluids vs dopamine vs transfusion.",
+      "Used dopamine rather than norepinephrine as the protocolised vasopressor.",
+      "Clinical volume status assessment (JVP, respiratory examination) is operator-dependent."
+    ],
+    "critical_appraisal": {
+      "summary": "SSSP-2 provides moderate-quality evidence that fixed-volume resuscitation protocols in low-resource settings lacking critical care rescue increase mortality.",
+      "strengths": [
+        "Pragmatic RCT in an underrepresented population",
+        "Clear contrast in resuscitation exposures",
+        "Consistent harm signal across all analytical models"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Lower than expected control mortality",
+        "Inability to isolate single intervention component"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In adults with sepsis and hypotension in a low-resource Zambian emergency department, a simplified 6-hour resuscitation protocol increased in-hospital mortality compared with usual care.",
+    "clinical_bottom_line": {
+      "verdict": "Do not implement rigid fixed-volume resuscitation protocols in low-resource settings without critical care backup; individualized frequent reassessment is essential.",
+      "applies_to": "Adult ED patients with sepsis and hypotension in low-resource health systems with high HIV prevalence and limited ICU capacity.",
+      "does_not_mean": "Resuscitation fluids and vasopressors should be withheld entirely in resource-limited settings.",
+      "implementation_caveats": [
+        "Fixed fluid boluses (2–4 L) without ventilatory backup risk iatrogenic pulmonary oedema.",
+        "Dopamine is no longer first-line vasopressor in modern practice.",
+        "Biochemical improvements (e.g., lactate clearance) do not guarantee survival benefit."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Iatrogenic harm vs context mismatch",
+        "notes": "Aggressive fluid protocols increase mortality when ventilatory support and critical care rescue are unavailable to treat fluid overload."
+      },
+      {
+        "topic": "Protocol component attribution",
+        "notes": "Debate exists over whether fluid volume, dopamine toxicity, or delayed antibiotics drove harm; trialists noted antibiotic timing was identical between groups."
+      },
+      {
+        "topic": "Surrogate endpoints in sepsis trials",
+        "notes": "Protocol improved 6-hour lactate clearance (−1.2 vs −0.5 mmol/L) yet increased mortality, proving biochemical markers are unreliable surrogates for outcome."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CLASSIC",
+        "relation": "Supported fluid-sparing strategies and caution with liberal early fluids in ICU sepsis."
+      },
+      {
+        "trial": "CLOVERS",
+        "relation": "Demonstrated equivalent outcomes between restrictive and liberal fluid strategies in early septic shock."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal fluid volume and vasopressor threshold in low-resource settings lacking mechanical ventilation?",
+      "Which specific protocol element (fluids vs dopamine) contributed most to the excess mortality?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "In-hospital mortality: 48.1% protocol vs 33.0% control (RR 1.46, P=0.03)",
+        "28-day mortality: 67.0% vs 45.3% (RR 1.48, P=0.002)",
+        "IV fluid in first 6 h: median 3.5 L vs 2.0 L (P<0.001)"
+      ],
+      "one_line_takeaway": "In low-resource settings lacking ICU backup, rigid early fluid/vasopressor protocols increase mortality despite improving lactate clearance."
+    }
+  },
+  "_source_id": "SSSP-2",
+  "_source_system": "Sepsis"
+}

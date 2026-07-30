@@ -1,0 +1,319 @@
+{
+  "id": "EXACT",
+  "trial_name": "EXACT — Lower vs Higher Oxygen Saturation Targets in OHCA (2022)",
+  "specialty": "Critical Illness Recovery",
+  "subtopic": "Oxygenation — Post-Cardiac Arrest",
+  "year": 2022,
+  "journal": "JAMA",
+  "citation": "Bernard SA, Bray JE, Smith K, et al; for the EXACT Investigators. Effect of lower vs higher oxygen saturation targets on survival to hospital discharge among patients resuscitated after out-of-hospital cardiac arrest: the EXACT randomized clinical trial. JAMA. 2022;328(18):1818-1826.",
+  "doi": "https://doi.org/10.1001/jama.2018.7044",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 428,
+  "result_category": "Negative",
+  "one_liner": "In adult OHCA survivors, targeting SpO2 90–94% vs 98–100% from prehospital to ICU did not improve survival to discharge and was associated with more hypoxaemia and rearrest.",
+  "pico": {
+    "population": "Adults with OHCA of presumed cardiac cause, sustained ROSC, coma (GCS ≤8), advanced airway, and SpO2 ≥95% at randomisation.",
+    "intervention": "Oxygen titration to SpO2 90–94% from prehospital randomisation through ED care until first arterial blood gas in ICU.",
+    "comparison": "Oxygen titration to SpO2 98–100% over same period.",
+    "outcome": "Survival to hospital discharge."
+  },
+  "keywords": [
+    "oxygen",
+    "cardiac arrest",
+    "post-resuscitation",
+    "hyperoxaemia",
+    "hypoxaemia",
+    "SpO2 targets",
+    "EXACT"
+  ],
+  "related_trials": [
+    "BOX"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "After ROSC, hyperoxaemia is common and linked to worse outcomes in observational studies, but even brief hypoxaemia may exacerbate secondary brain injury. The optimal early oxygen strategy is uncertain.",
+      "knowledge_gap": "Whether a lower vs higher oxygen saturation target improves survival to discharge.",
+      "hypothesis": "Targeting SpO2 90–94% would improve survival to hospital discharge compared to 98–100%."
+    },
+    "methods": {
+      "design": "Multicentre, parallel-group, randomised clinical trial with prehospital randomisation.",
+      "setting": "Two Australian states (Victoria and South Australia), two EMS systems, 15 receiving hospitals. Enrolment May 2017 – March 2020.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with OHCA of presumed cardiac cause",
+          "Sustained ROSC",
+          "Coma (GCS ≤8)",
+          "Advanced airway in situ (ETT or SGA)",
+          "SpO2 ≥95% at randomisation while receiving high inspired oxygen"
+        ],
+        "exclusion": [
+          "Obvious non-cardiac aetiology (respiratory, trauma, hanging, drowning)",
+          "Pregnancy",
+          "Pre-arrest dependence in activities of daily living or known treatment limitations",
+          "Home oxygen therapy"
+        ]
+      },
+      "intervention": "Lower oxygen target: SpO2 90–94% from randomisation until first ICU arterial blood gas. 100% oxygen permitted for intubation and hypoxic events.",
+      "comparison": "Higher oxygen target: SpO2 98–100% over same period.",
+      "blinding": "Open-label; prehospital and in-hospital clinicians not blinded. Outcome assessment at 12 months was blinded.",
+      "sample_size_power": "Planned 1416; stopped at 428 due to COVID-19 pandemic.",
+      "primary_outcome": "Survival to hospital discharge.",
+      "secondary_outcomes": [
+        "Hypoxaemia (SpO2 <90%) prior to ICU admission",
+        "Hypoxaemia requiring 100% oxygen prior to ICU admission",
+        "Rearrest requiring CPR prior to ICU admission",
+        "Hypoxia with rearrest prior to ICU admission",
+        "Survival to ICU discharge",
+        "Favourable neurological outcome at discharge (CPC 0–2)",
+        "Discharge home among survivors",
+        "Hospital length of stay",
+        "12-month survival and neurological status (descriptive)"
+      ],
+      "follow_up": "In-hospital to discharge; telephone follow-up at 12 months (80.3% of hospital survivors)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early (428/1416 planned).",
+        "Primary outcome: survival to discharge 38.3% (lower) vs 47.9% (higher); OR 0.68 (95% CI 0.46–1.00, P=0.05).",
+        "Lower-target group had more hypoxaemia <90% (33.6% vs 10.0%) and hypoxaemia with rearrest (8.4% vs 0.5%).",
+        "No clear benefit in neurological outcomes or hospital length of stay."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival to hospital discharge (primary)",
+          "group_a": "82/214 (38.3%)",
+          "group_b": "101/211 (47.9%)",
+          "effect_measure": "OR",
+          "effect_value": "0.68",
+          "ci_95": "0.46–1.00",
+          "p_value": "0.05",
+          "note": "Absolute difference −9.6 percentage points (95% CI −18.9 to −0.2)"
+        },
+        {
+          "outcome": "Hypoxia (SpO2 <90%) prior to ICU admission",
+          "group_a": "72/214 (33.6%)",
+          "group_b": "21/211 (10.0%)",
+          "effect_measure": "OR",
+          "effect_value": "4.56",
+          "ci_95": "2.69–7.73",
+          "p_value": "<0.001",
+          "note": "Absolute difference 23.7 percentage points (95% CI 15.8 to 31.5)"
+        },
+        {
+          "outcome": "Hypoxia requiring 100% oxygen prior to ICU admission",
+          "group_a": "50/214 (23.4%)",
+          "group_b": "6/211 (2.8%)",
+          "effect_measure": "OR",
+          "effect_value": "10.39",
+          "ci_95": "4.32–25.00",
+          "p_value": "<0.001",
+          "note": "Absolute difference 20.5 percentage points (95% CI 14.6 to 26.4)"
+        },
+        {
+          "outcome": "Rearrest requiring CPR prior to ICU admission",
+          "group_a": "35/214 (16.4%)",
+          "group_b": "21/211 (10.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.76",
+          "ci_95": "0.98–3.17",
+          "p_value": "0.06",
+          "note": "Absolute difference 6.4 percentage points (95% CI −0.3 to 13.1)"
+        },
+        {
+          "outcome": "Hypoxia with rearrest prior to ICU admission",
+          "group_a": "18/214 (8.4%)",
+          "group_b": "1/211 (0.5%)",
+          "effect_measure": "OR",
+          "effect_value": "19.25",
+          "ci_95": "2.51–147.81",
+          "p_value": "0.004",
+          "note": "Absolute difference 7.9 percentage points (95% CI 4.0 to 11.7)"
+        },
+        {
+          "outcome": "Survival to ICU discharge",
+          "group_a": "85/192 (44.3%)",
+          "group_b": "103/197 (52.3%)",
+          "effect_measure": "OR",
+          "effect_value": "0.73",
+          "ci_95": "0.49–1.08",
+          "p_value": "0.11",
+          "note": "ICU denominator excludes those not admitted to ICU"
+        },
+        {
+          "outcome": "Favourable neurological outcome at discharge (CPC 0–2)",
+          "group_a": "78/214 (36.6%)",
+          "group_b": "88/211 (41.9%)",
+          "effect_measure": "OR",
+          "effect_value": "0.80",
+          "ci_95": "0.54–1.18",
+          "p_value": "0.25",
+          "note": "Difference 5.3 percentage points (95% CI −14.6 to 4.0)"
+        },
+        {
+          "outcome": "Discharged home (among hospital survivors)",
+          "group_a": "41/82 (50.0%)",
+          "group_b": "44/101 (43.6%)",
+          "effect_measure": "OR",
+          "effect_value": "1.27",
+          "ci_95": "0.67–2.42",
+          "p_value": "0.47",
+          "note": "Discharge destination analysed among survivors only"
+        },
+        {
+          "outcome": "Hospital length of stay (days), median (IQR)",
+          "group_a": "11.0 (3.0–22.0)",
+          "group_b": "11.0 (4.0–23.0)",
+          "effect_measure": "Difference in medians",
+          "effect_value": "0.1 days",
+          "ci_95": "−1.3 to 1.6",
+          "p_value": "0.85",
+          "note": "Median (IQR)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Bystander CPR present",
+          "group_a": "Not reported separately",
+          "group_b": "Not reported separately",
+          "effect_measure": "OR",
+          "effect_value": "0.48",
+          "ci_95": "0.32–0.74",
+          "p_interaction": "0.01",
+          "note": "Subgroup of primary outcome; interaction P=0.01"
+        },
+        {
+          "subgroup": "Bystander CPR absent",
+          "group_a": "Not reported separately",
+          "group_b": "Not reported separately",
+          "effect_measure": "OR",
+          "effect_value": "1.96",
+          "ci_95": "0.79–4.86",
+          "p_interaction": "0.01",
+          "note": "Subgroup of primary outcome; interpret cautiously given multiplicity"
+        }
+      ]
+    },
+    "safety": [
+      "Sustained hypoxic events (SpO2 <90% unresponsive to 100% oxygen): 5 (2.3%) lower vs 3 (1.4%) higher target.",
+      "Rearrest with hypoxia (SpO2 <90%): 3 (1.4%) all in lower-target group."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Prehospital randomisation enabled early intervention but introduced operational exclusions (e.g., no randomisation envelope). Baseline characteristics were broadly similar (age median 65 years, male ~77%, bystander CPR ~80% in both groups)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label oxygen targeting may influence co-interventions; however, primary outcome is objective. Neurologic status assessed by CPC, which can be influenced by documentation quality."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "428 randomised; 425 included in primary analysis (214 vs 211). Exclusions for consent/withdrawal. Complete in-hospital follow-up; 12-month follow-up incomplete (80.3% of survivors)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clear oxygen delivery separation in prehospital/ED phase (ED arrival oxygen flow median 2 vs 12 L/min). Lower-target arm had frequent hypoxaemia excursions, indicating difficulty maintaining target."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced on key prognostic factors."
+        }
+      ],
+      "verdict": "The randomised design and objective primary outcome support causal inference; however, open-label delivery, early termination, and frequent hypoxaemic excursions in the lower-target arm introduce meaningful uncertainty about whether harm is inherent to oxygen restriction or difficulty maintaining the target."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Applies to adult OHCA with presumed cardiac cause, sustained ROSC, coma, advanced airway, and initial SpO2 ≥95%. Excluded non-cardiac aetiologies, trauma, drowning, etc."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in two Australian EMS systems with established post-arrest pathways. Implementation elsewhere may be limited by pulse oximetry reliability, oxygen blending capability, transport times, and local targets."
+        }
+      ],
+      "verdict": "Moderate—highly relevant to similar EMS/hospital systems treating adult cardiac-cause OHCA with early ROSC, but less generalisable to arrests of respiratory aetiology or settings without consistent monitoring and oxygen blending capability."
+    },
+    "strengths": [
+      "Prehospital randomisation captures early intervention window.",
+      "Multicentre, pragmatic design across two EMS systems and 15 hospitals.",
+      "Objective primary outcome with complete in-hospital follow-up.",
+      "Detailed reporting of oxygen delivery and physiological separation."
+    ],
+    "limitations": [
+      "Early stopping due to COVID-19 (428/1416 planned) reduced power and increased uncertainty.",
+      "Open-label design may influence co-interventions and withdrawal-of-care decisions.",
+      "Lower-target arm experienced frequent hypoxaemia, suggesting practical difficulty maintaining the narrow target.",
+      "Selected population (already well oxygenated, presumed cardiac cause, advanced airway) may not reflect all post-arrest patients.",
+      "Long-term outcomes incomplete (80.3% follow-up) and not powered for inference."
+    ],
+    "critical_appraisal": {
+      "summary": "EXACT provides moderate-quality evidence that targeting SpO2 90–94% after OHCA may increase harm, primarily due to inadvertent hypoxaemia; early termination and open-label design limit confidence, but the consistent safety signal supports avoidance of aggressive oxygen restriction.",
+      "strengths": [
+        "Prehospital randomisation",
+        "Objective primary outcome",
+        "Complete in-hospital follow-up",
+        "Detailed physiological data"
+      ],
+      "weaknesses": [
+        "Early stopping",
+        "Open-label",
+        "Frequent hypoxaemia in intervention arm",
+        "Selected population"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Titrate oxygen after ROSC to avoid both hypoxaemia and sustained hyperoxaemia, recognising that overly aggressive early oxygen restriction may be difficult to implement safely in routine care.",
+    "clinical_bottom_line": {
+      "verdict": "After ROSC in OHCA patients, avoid targeting SpO2 90–94% as a routine strategy; instead, titrate oxygen to prevent hypoxaemia while avoiding sustained hyperoxaemia (e.g., SpO2 94–98%).",
+      "applies_to": "Adult OHCA patients with presumed cardiac cause, sustained ROSC, coma, advanced airway, and initial SpO2 ≥95%.",
+      "does_not_mean": "This does not mean that normoxia or slight hyperoxaemia is harmful; rather, the lower target of 90–94% risked excessive hypoxaemia.",
+      "implementation_caveats": [
+        "Ensure reliable pulse oximetry and consider arterial blood gas confirmation.",
+        "Use oxygen blending devices to titrate FiO2.",
+        "Monitor continuously for hypoxaemia and be prepared to increase FiO2 if SpO2 falls.",
+        "Protocols should incorporate safety thresholds and rescue oxygen."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Lower target as hypoxaemia",
+        "notes": "SpO2 90–94% may represent clinically relevant hypoxaemia, reframing the comparison as 'mild hypoxaemia vs normoxaemia' rather than 'normoxaemia vs hyperoxaemia.'"
+      },
+      {
+        "topic": "Ventilation and PaCO2 confounding",
+        "notes": "Median first PaCO2 in the ED was 60 mm Hg in both groups, raising questions about hypoventilation and its interplay with oxygenation and neurological injury."
+      },
+      {
+        "topic": "Relation to other evidence (BOX, meta-analysis)",
+        "notes": "The BOX oxygenation component found no benefit of lower vs higher PaO2 targets; pre-EXACT meta-analysis suggested uncertainty about conservative oxygen strategies, highlighting the importance of avoiding extremes."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "BOX",
+        "relation": "The BOX trial's oxygenation component compared PaO2 targets in comatose OHCA survivors and found no clear benefit of a lower vs higher oxygenation strategy within normoxaemic ranges, supporting EXACT's conclusion that avoiding extremes is key."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal safe SpO2 range after OHCA that balances hypoxaemia risk and hyperoxaemia?",
+      "Can protocols be developed to reliably maintain a narrow target without frequent hypoxaemia?",
+      "Is the harm from lower target due to hypoxaemia itself or to associated co-interventions?",
+      "Does the effect differ by bystander CPR status, and if so, why?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=428 (stopped early)",
+        "Primary outcome: 38.3% vs 47.9% (OR 0.68, 95% CI 0.46–1.00, P=0.05)",
+        "Hypoxaemia <90%: 33.6% vs 10.0%",
+        "Hypoxaemia with rearrest: 8.4% vs 0.5%"
+      ],
+      "one_line_takeaway": "After OHCA, avoid targeting SpO2 90–94% as it may cause harm through hypoxaemia; titrate oxygen to prevent hypoxaemia while avoiding sustained hyperoxaemia."
+    }
+  },
+  "_source_id": "EXACT",
+  "_source_system": "Resuscitation"
+}

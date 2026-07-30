@@ -1,0 +1,307 @@
+{
+  "id": "SCREEN",
+  "trial_name": "SCREEN — Electronic Sepsis Screening Among Patients Admitted to Hospital Wards (2025)",
+  "specialty": "Sepsis",
+  "subtopic": "Sepsis Bundles",
+  "year": 2025,
+  "journal": "JAMA",
+  "citation": "Arabi YM, Vishwakarma RK, Al-Dorzi HM, Al Mofleh A, Murthy S, Bihari S, et al; SCREEN Trial Group. Electronic sepsis screening among patients admitted to hospital wards: a stepped-wedge cluster randomized trial. JAMA. 2025 Mar 4;333(9):763-773.",
+  "doi": "10.1001/jama.2024.25982",
+  "registration": "",
+  "trial_type": "Pragmatic stepped-wedge cluster randomized trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 60055,
+  "result_category": "Mixed",
+  "one_liner": "Real-time qSOFA-based EHR sepsis alerts combined with a structured workflow reduced adjusted 90-day in-hospital mortality, despite a 0.0% unadjusted risk difference and increases in Code Blue activations, incident KRT, and C. difficile infections.",
+  "pico": {
+    "population": "Adult and adolescent patients (aged 14 years or older) admitted to medical, surgical, mixed, or oncology hospital wards across 5 hospitals in Saudi Arabia (n=60,055 analysed across 43 wards).",
+    "intervention": "Real-time revealed qSOFA-derived EHR screening alerts (>=2 components within 12 hours) displayed to nurses and physicians, with escalation prompts and structured bedside assessment workflows.",
+    "comparison": "Masked (silent background) electronic alerts with usual clinical care and routine sepsis management pathways.",
+    "outcome": "In-hospital mortality by day 90."
+  },
+  "keywords": [
+    "sepsis screening",
+    "qSOFA",
+    "electronic health record",
+    "clinical decision support",
+    "stepped-wedge trial",
+    "sepsis response workflow"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Sepsis is common, time-critical, and frequently first recognized outside the ICU; delays in recognition and treatment worsen outcomes. Ward deterioration is often subtle and documentation intermittent.",
+      "knowledge_gap": "Automated EHR screening alerts are widely implemented, but high-quality randomized evidence demonstrating patient-centered benefits (especially mortality) remains inconsistent and limited.",
+      "hypothesis": "Real-time qSOFA-derived electronic sepsis screening with a structured EHR response workflow reduces 90-day in-hospital mortality compared with masked alerts and usual care."
+    },
+    "methods": {
+      "design": "Pragmatic stepped-wedge cluster randomized trial across 5 hospitals, 9 sequences, and 10 study periods (October 2019 to July 2021).",
+      "setting": "Adult and adolescent hospital wards (medical, surgical, mixed, oncology) across 5 hospitals in Saudi Arabia.",
+      "population": {
+        "inclusion": [
+          "Patients aged 14 years or older admitted to participating eligible wards during study periods."
+        ],
+        "exclusion": [
+          "Non-eligible wards (pediatric, neonatal, obstetric, cardiac wards).",
+          "Patients without commitment to full life-support at ward admission (2,323/62,378 [3.7%] excluded).",
+          "Ward-period data during conversion to ICU beds for COVID-19 surges."
+        ]
+      },
+      "intervention": "qSOFA trigger (>=2 components present within 12 hours: respiratory rate, SBP, mental status documentation) displayed in real-time to nurses/physicians with escalation prompts and embedded EHR response workflow (lactate, cultures, fluids, antibiotics).",
+      "comparison": "Masked electronic alert algorithm running in background without displaying prompts; clinicians managed suspected sepsis per routine practice.",
+      "blinding": "Unblinded at clinical level (alerts visible on intervention wards); primary and secondary outcomes were EHR-derived and objective.",
+      "sample_size_power": "Targeted 65,250 patients across 45 wards to detect a 0.79% absolute reduction in 90-day mortality (3.13% to 2.46%) with 80% power at 5% two-sided significance (ICC 0.22). 60,055 patients analysed across 43 wards.",
+      "primary_outcome": "In-hospital mortality by day 90 after ward admission (discharge alive before day 90 counted as alive).",
+      "secondary_outcomes": [
+        "ICU admission",
+        "Rapid response team activation",
+        "Code blue activation",
+        "Vasopressor therapy",
+        "Mechanical ventilation",
+        "Incident kidney replacement therapy",
+        "New multidrug-resistant organism acquisition",
+        "New Clostridioides difficile infection",
+        "Hospital length of stay",
+        "ICU-free days up to day 90",
+        "Antibiotic-free days up to day 90"
+      ],
+      "follow_up": "In-hospital follow-up to day 90 post ward admission (final follow-up late October 2021)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Electronic screening significantly reduced adjusted 90-day in-hospital mortality (aRR 0.85; 95% CI 0.77-0.93; P<0.001), though the unadjusted risk difference was 0.0%.",
+        "Screening drove significant diagnostic and therapeutic process separation (higher rates of lactate testing, blood cultures, IV fluid administration, and new antibiotic starts).",
+        "Secondary outcomes demonstrated trade-offs: lower vasopressor use and hospital LOS, but higher Code Blue activations, incident KRT, and C. difficile infections."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "In-hospital mortality by day 90 (Primary)",
+          "group_a": "937/29,442 (3.2%)",
+          "group_b": "961/30,613 (3.1%)",
+          "effect_measure": "aRR",
+          "effect_value": "0.85",
+          "ci_95": "0.77–0.93",
+          "p_value": "<0.001",
+          "note": "Unadjusted RD 0.0% (95% CI -0.2% to 0.3%); NTS 206 (95% CI 140 to 425)"
+        },
+        {
+          "outcome": "ICU admission",
+          "group_a": "1,753/29,442 (6.0%)",
+          "group_b": "1,550/30,613 (5.1%)",
+          "effect_measure": "aOR",
+          "effect_value": "1.03",
+          "ci_95": "0.94–1.13",
+          "p_value": "0.50",
+          "note": "FDR-adjusted P=0.50"
+        },
+        {
+          "outcome": "Rapid response team activation",
+          "group_a": "1,402/29,442 (4.8%)",
+          "group_b": "1,330/30,613 (4.3%)",
+          "effect_measure": "aOR",
+          "effect_value": "0.96",
+          "ci_95": "0.89–1.04",
+          "p_value": "0.27",
+          "note": "FDR-adjusted P=0.30"
+        },
+        {
+          "outcome": "Code blue activation",
+          "group_a": "296/29,442 (1.0%)",
+          "group_b": "188/30,613 (0.6%)",
+          "effect_measure": "aOR",
+          "effect_value": "1.24",
+          "ci_95": "1.02–1.50",
+          "p_value": "0.03",
+          "note": "FDR-adjusted P=0.04"
+        },
+        {
+          "outcome": "Vasopressor therapy",
+          "group_a": "862/29,442 (2.9%)",
+          "group_b": "844/30,613 (2.8%)",
+          "effect_measure": "aRR",
+          "effect_value": "0.86",
+          "ci_95": "0.78–0.94",
+          "p_value": "0.002",
+          "note": "FDR-adjusted P=0.004"
+        },
+        {
+          "outcome": "Mechanical ventilation",
+          "group_a": "814/29,442 (2.8%)",
+          "group_b": "700/30,613 (2.3%)",
+          "effect_measure": "aOR",
+          "effect_value": "0.93",
+          "ci_95": "0.84–1.03",
+          "p_value": "0.18",
+          "note": "FDR-adjusted P=0.22"
+        },
+        {
+          "outcome": "Incident kidney replacement therapy",
+          "group_a": "1,294/28,842 (4.5%)",
+          "group_b": "1,088/30,168 (3.6%)",
+          "effect_measure": "aOR",
+          "effect_value": "1.20",
+          "ci_95": "1.11–1.31",
+          "p_value": "<0.001",
+          "note": "Excludes baseline dialysis or started <=48h of admission; FDR-adjusted P<0.001"
+        },
+        {
+          "outcome": "New multidrug-resistant organisms",
+          "group_a": "526/29,442 (1.8%)",
+          "group_b": "598/30,613 (2.0%)",
+          "effect_measure": "aOR",
+          "effect_value": "0.88",
+          "ci_95": "0.78–0.99",
+          "p_value": "0.03",
+          "note": "FDR-adjusted P=0.04"
+        },
+        {
+          "outcome": "New Clostridioides difficile infection",
+          "group_a": "186/29,442 (0.6%)",
+          "group_b": "147/30,613 (0.5%)",
+          "effect_measure": "aOR",
+          "effect_value": "1.30",
+          "ci_95": "1.03–1.65",
+          "p_value": "0.03",
+          "note": "FDR-adjusted P=0.04"
+        },
+        {
+          "outcome": "Hospital length of stay (days)",
+          "group_a": "Median 3.7 (IQR 1.8–7.8)",
+          "group_b": "Median 3.9 (IQR 2.0–8.1)",
+          "effect_measure": "beta",
+          "effect_value": "-0.10",
+          "ci_95": "-0.12 to -0.07",
+          "p_value": "<0.001",
+          "note": "Negative binomial model; FDR-adjusted P<0.001"
+        },
+        {
+          "outcome": "ICU-free days up to day 90",
+          "group_a": "Mean 86.9 (SD 15.7)",
+          "group_b": "Mean 87.0 (SD 15.6)",
+          "effect_measure": "beta",
+          "effect_value": "0.005",
+          "ci_95": "0.002–0.008",
+          "p_value": "<0.001",
+          "note": "FDR-adjusted P=0.004; missing data: 56 vs 45"
+        },
+        {
+          "outcome": "Antibiotic-free days up to day 90",
+          "group_a": "Mean 83.8 (SD 16.1)",
+          "group_b": "Mean 83.9 (SD 16.0)",
+          "effect_measure": "beta",
+          "effect_value": "0.004",
+          "ci_95": "0.001–0.006",
+          "p_value": "0.001",
+          "note": "FDR-adjusted P=0.004; deaths assigned 0 days"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Higher rate of Code Blue activation in screening group (1.0% vs 0.6%, aOR 1.24, 95% CI 1.02-1.50).",
+      "Higher rate of incident kidney replacement therapy (4.5% vs 3.6%, aOR 1.20, 95% CI 1.11-1.31).",
+      "Higher rate of new C. difficile infection (0.6% vs 0.5%, aOR 1.30, 95% CI 1.03-1.65)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "45 ward clusters randomized into 9 sequences via concealed computer list; stepped-wedge design with sequential crossover."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded at clinician level; primary mortality endpoint objective and EHR-derived, minimizing subjective assessment bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "60,055 analysed out of 65,250 planned; 2,323 admissions excluded due to non-full life-support orders; 2 wards dropped post-randomization and ward-periods excluded during COVID-19 ICU conversions."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Alert burden among triggered patients: 9,447 total alerts (median 3 [IQR 1-5]) vs 8,418 (median 2 [IQR 1-4]); nurse ack 73.4% vs 12.2%; physician ack 72.3% vs 12.7%. Process gains seen: lactate <=12h 14.2% vs 10.3%; IV fluids <=12h 14.4% vs 6.8%; blood cultures 60.3% vs 49.9%; new antibiotics 80.8% vs 72.2%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Median age (59 years) and Charlson comorbidity index (median 2) matched; time-varying case-mix shifts occurred (COVID-19 11.8% vs 5.2%; immunocompromised 22.7% vs 15.8%). Overall baseline mortality low (3.1%-3.2%)."
+        }
+      ],
+      "verdict": "Internal validity is moderate due to unblinded implementation, pandemic-related case-mix shifts, minor contamination in controls, and reliance on adjusted modeling for a mortality signal with 0.0% unadjusted absolute difference."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad, pragmatic inclusion of medical, surgical, mixed, and oncology ward admissions across 5 hospitals."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires mature EHR infrastructure and established ward escalation pathways. Excludes cardiac, obstetric, and pediatric wards, as well as non-full treatment patients."
+        }
+      ],
+      "verdict": "External validity is moderate, applying best to tertiary systems with integrated EHR alerts, though transferability to non-pandemic settings or low-resource EHRs is uncertain."
+    },
+    "strengths": [
+      "Large pragmatic sample size (n=60,055 ward admissions) across 5 hospitals and 43 wards.",
+      "Stepped-wedge cluster randomized design appropriate for health-system level digital interventions.",
+      "Objective primary endpoint with prespecified protocol and statistical analysis plan.",
+      "Clear process separation demonstrating biological plausibility (earlier lactates, fluids, cultures, and antibiotics)."
+    ],
+    "limitations": [
+      "Primary mortality benefit depended entirely on multivariable modeling adjusted for time/period effects (unadjusted RD 0.0%).",
+      "Trial conducted during COVID-19 pandemic with ward-to-ICU conversions and shifting patient case-mix.",
+      "Minor contamination present in control wards (12% alert acknowledgement during transition/transfers).",
+      "Secondary harm signals noted: increased Code Blue activations, incident KRT, and C. difficile infections."
+    ],
+    "critical_appraisal": {
+      "summary": "SCREEN provides large pragmatic trial evidence that electronic qSOFA screening improves early diagnostic and therapeutic care and is associated with reduced adjusted mortality, though absolute mortality changes were minimal and accompanied by secondary harm signals.",
+      "strengths": [
+        "Large pragmatic trial with >60,000 ward admissions.",
+        "Rigorously prespecified protocol with FDR adjustment for secondary outcomes.",
+        "Clear process separation confirming clinical adoption of alert workflows."
+      ],
+      "weaknesses": [
+        "Discrepancy between adjusted relative risk (aRR 0.85) and unadjusted risk difference (0.0%).",
+        "Disruptions and temporal confounding from the COVID-19 pandemic.",
+        "Increased rates of incident KRT, C. difficile, and Code Blue calls."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Real-time electronic sepsis screening coupled with a structured EHR response workflow was associated with lower adjusted in-hospital mortality by day 90 among ward patients.",
+    "clinical_bottom_line": {
+      "verdict": "Implementing qSOFA EHR alerts and response pathways can improve sepsis care delivery and may lower adjusted mortality, but hospitals must weigh this against potential over-escalation risks and antimicrobial adverse events.",
+      "applies_to": "Adult and adolescent inpatients admitted to medical, surgical, mixed, and oncology hospital wards in healthcare systems with mature EHR systems.",
+      "does_not_mean": "Electronic alerts are a standalone solution or free of harm; unadjusted mortality was unchanged and diagnostic over-triggering can increase C. difficile and acute renal replacement therapy.",
+      "implementation_caveats": [
+        "Must be integrated with antimicrobial stewardship to mitigate C. difficile risk.",
+        "Requires defined clinical response teams to prevent non-useful Code Blue over-activation.",
+        "Susceptible to alert fatigue if background trigger thresholds are not calibrated."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Adjusted vs Unadjusted Effect in Stepped-Wedge Design",
+        "notes": "Near-zero unadjusted mortality difference (0.0%) vs statistically significant adjusted reduction (aRR 0.85) highlights high dependency on statistical modeling of time-varying cluster and secular trends during a pandemic."
+      },
+      {
+        "topic": "Benefit-Harm Trade-offs of Digital Alerting",
+        "notes": "Increased diagnostic/treatment intensity led to higher rates of incident KRT (4.5% vs 3.6%) and C. difficile (0.6% vs 0.5%), proving that improved process metrics can induce unintended iatrogenic harms."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "What is the optimal alert algorithm (e.g., machine-learning vs qSOFA) to maximize sensitivity while minimizing false-positive escalation cascades?",
+      "Would the mortality signal remain robust outside of pandemic-era ward conditions?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=60,055 ward admissions across 5 hospitals",
+        "Adjusted 90-day mortality reduced: aRR 0.85 (95% CI 0.77–0.93)",
+        "Unadjusted mortality difference identical: 3.2% vs 3.1% (RD 0.0%)",
+        "Number needed to screen = 206"
+      ],
+      "one_line_takeaway": "EHR sepsis screening improves early care processes and adjusted mortality, but requires stewardship and escalation controls to prevent iatrogenic harms."
+    }
+  },
+  "_source_id": "SCREEN",
+  "_source_system": "Sepsis"
+}

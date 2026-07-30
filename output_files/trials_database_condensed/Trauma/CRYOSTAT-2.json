@@ -1,0 +1,313 @@
+{
+  "id": "CRYOSTAT-2",
+  "trial_name": "CRYOSTAT-2 — Early and Empirical High-Dose Cryoprecipitate for Hemorrhage After Traumatic Injury (2023)",
+  "specialty": "Trauma",
+  "subtopic": "Trauma Coagulopathy",
+  "year": 2023,
+  "journal": "JAMA",
+  "citation": "Davenport R, Curry N, Fox EE, et al; CRYOSTAT-2 Investigators. Early and Empirical High-Dose Cryoprecipitate for Hemorrhage After Traumatic Injury: The CRYOSTAT-2 Randomized Clinical Trial. JAMA. 2023;330(19):1882-1891.",
+  "doi": "10.1001/jama.2023.21019",
+  "registration": "",
+  "trial_type": "Pragmatic, parallel-group, randomised, open-label, multicentre superiority trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1604,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Empirical early high-dose cryoprecipitate added to standard major hemorrhage protocols did not reduce 28-day mortality in adults with active traumatic hemorrhage.",
+  "pico": {
+    "population": "Adult trauma patients (age >=16) with active hemorrhage triggering a major hemorrhage protocol, SBP <90 mm Hg, receiving >=1 unit blood component within 3 hours of injury.",
+    "intervention": "Empirical high-dose cryoprecipitate (3 pools, ~6 g fibrinogen equivalent) targeted within 90 minutes of hospital arrival and within 3 hours of injury, plus standard care.",
+    "comparison": "Standard care major hemorrhage protocol alone (balanced component therapy, with cryoprecipitate permitted if protocol/clinician triggered).",
+    "outcome": "28-day all-cause mortality."
+  },
+  "keywords": [
+    "cryoprecipitate",
+    "trauma-induced coagulopathy",
+    "fibrinogen",
+    "major hemorrhage protocol",
+    "damage control resuscitation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Severe traumatic hemorrhage causes early preventable death. Fibrinogen is often the first coagulation factor to reach critically low levels, leading to increased bleeding and mortality.",
+      "knowledge_gap": "Cryoprecipitate is traditionally delivered late due to preparation logistics, and the clinical efficacy of empirical early replacement remains uncertain.",
+      "hypothesis": "Empirical early high-dose cryoprecipitate delivered within a pragmatic window improves 28-day mortality compared with standard major hemorrhage protocols."
+    },
+    "methods": {
+      "design": "Pragmatic, parallel-group, open-label, multicentre RCT stratified by centre across 26 major trauma centres in the UK and US.",
+      "setting": "26 major trauma centres (UK and US); emergency department and early in-hospital resuscitation.",
+      "population": {
+        "inclusion": [
+          "Injured adults (>=16 years or judged adult)",
+          "Active hemorrhage with activation of major hemorrhage protocol",
+          "Systolic blood pressure <90 mm Hg at any time",
+          "Receipt of >=1 unit of any blood component",
+          "Randomisation within 3 hours of injury"
+        ],
+        "exclusion": [
+          "Transfer from another hospital",
+          ">3 hours elapsed since injury",
+          "Injuries considered incompatible with life by trauma team leader"
+        ]
+      },
+      "intervention": "Empirical high-dose cryoprecipitate (3 pools, ~6 g fibrinogen equivalent) added to standard care, targeting administration within 90 minutes of arrival and within 3 hours of injury.",
+      "comparison": "Standard care major hemorrhage protocol with balanced component therapy. Standard cryoprecipitate allowed if triggered by local protocol or clinician judgment.",
+      "blinding": "Unblinded (open-label, no placebo).",
+      "sample_size_power": "Planned 1600 patients; powered for 7% absolute reduction in 28-day mortality (26% to 19%) with 90% power at 2-sided 5% alpha using group sequential O'Brien-Fleming design.",
+      "primary_outcome": "28-day all-cause mortality (intention-to-treat analysis using mixed logistic regression adjusting for centre).",
+      "secondary_outcomes": [
+        "Mortality at 6 hours, 24 hours, and 12 months",
+        "Cryoprecipitate pools transfused in first 24 hours",
+        "Total blood products and crystalloids in first 24 hours",
+        "Cumulative incidence of thrombotic events at day 28",
+        "Ventilator days",
+        "EQ-5D-5L index value at discharge",
+        "Glasgow Outcome Scale"
+      ],
+      "follow_up": "Primary outcome at 28 days; long-term survival to 12 months; functional/QoL outcomes at hospital discharge and follow-up."
+    },
+    "results": {
+      "headline_bullets": [
+        "Early high-dose cryoprecipitate delivered cryoprecipitate faster (median 68 vs 120 min) and increased exposure (median 3 vs 0 pools in 24 hours).",
+        "No significant reduction in 28-day all-cause mortality (25.3% vs 26.1%, OR 0.96).",
+        "No differences detected in 6-hour, 24-hour, or 12-month mortality, total blood product use, ventilator days, or thrombotic events.",
+        "Prespecified subgroup analysis showed higher 28-day mortality with early cryoprecipitate in penetrating trauma (16.2% vs 10.0%, OR 1.74, interaction P=0.004)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at 28 days (primary)",
+          "group_a": "192/760 (25.3%)",
+          "group_b": "201/771 (26.1%)",
+          "effect_measure": "OR",
+          "effect_value": "0.96",
+          "ci_95": "0.75–1.23",
+          "p_value": "0.74",
+          "note": "RR 0.97 (95% CI 0.81–1.17); 1531 analysed of 1604 randomised"
+        },
+        {
+          "outcome": "Mortality at 6 hours",
+          "group_a": "56/784 (7.1%)",
+          "group_b": "68/795 (8.6%)",
+          "effect_measure": "OR",
+          "effect_value": "0.82",
+          "ci_95": "0.58–1.17",
+          "p_value": "0.26",
+          "note": "Absolute difference -1.4% (95% CI -4.1 to 1.2)"
+        },
+        {
+          "outcome": "Mortality at 24 hours",
+          "group_a": "88/783 (11.2%)",
+          "group_b": "97/794 (12.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.91",
+          "ci_95": "0.63–1.31",
+          "p_value": "0.61",
+          "note": "Absolute difference -1.0% (95% CI -4.2 to 2.2)"
+        },
+        {
+          "outcome": "Kaplan-Meier estimated 12-month mortality",
+          "group_a": "26.6%",
+          "group_b": "27.7%",
+          "effect_measure": "HR",
+          "effect_value": "0.96",
+          "ci_95": "0.79–1.17",
+          "p_value": "0.71",
+          "note": "95% CIs: intervention 23.6–30.0%, standard care 24.6–31.1%"
+        },
+        {
+          "outcome": "Cryoprecipitate pools transfused in 24h (median [IQR])",
+          "group_a": "3 (3 to 3)",
+          "group_b": "0 (0 to 2)",
+          "effect_measure": "MD",
+          "effect_value": "3",
+          "ci_95": "3 to 3",
+          "p_value": "NR",
+          "note": "Received cryo within 24h: 85% (665/785) vs 32% (256/795)"
+        },
+        {
+          "outcome": "Total blood products in 24h (units; median [IQR])",
+          "group_a": "12 (7 to 21)",
+          "group_b": "10 (5 to 18)",
+          "effect_measure": "MD",
+          "effect_value": "2",
+          "ci_95": "0.8 to 3.2",
+          "p_value": "NR",
+          "note": "RBC median 5 vs 5 units; plasma median 4 vs 4 units"
+        },
+        {
+          "outcome": "Crystalloids in 24h (mL; median [IQR])",
+          "group_a": "2000 (700 to 3500)",
+          "group_b": "1600 (250 to 3200)",
+          "effect_measure": "MD",
+          "effect_value": "400",
+          "ci_95": "131.5 to 668.5",
+          "p_value": "NR",
+          "note": "Higher volume in early cryo group"
+        },
+        {
+          "outcome": "Cumulative thrombotic events at day 28",
+          "group_a": "12.7%",
+          "group_b": "12.9%",
+          "effect_measure": "Absolute diff",
+          "effect_value": "-0.2%",
+          "ci_95": "-4.1 to 3.7",
+          "p_value": "0.89",
+          "note": "VTE 6.9% vs 7.1%; arterial events 3.3% vs 3.2%"
+        },
+        {
+          "outcome": "Ventilator days (median [IQR])",
+          "group_a": "1 (0 to 6)",
+          "group_b": "1 (0 to 7)",
+          "effect_measure": "MD",
+          "effect_value": "0",
+          "ci_95": "-0.3 to 0.3",
+          "p_value": "0.90",
+          "note": "No effect on ventilator utilisation"
+        },
+        {
+          "outcome": "EQ-5D-5L index value at discharge (median [IQR])",
+          "group_a": "0.51 (0.26 to 0.72)",
+          "group_b": "0.50 (0.20 to 0.73)",
+          "effect_measure": "MD",
+          "effect_value": "0",
+          "ci_95": "-0.1 to 0.1",
+          "p_value": "0.80",
+          "note": "Quality of life at discharge unchanged"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Penetrating trauma (28-day mortality)",
+          "group_a": "16.2%",
+          "group_b": "10.0%",
+          "effect_measure": "OR",
+          "effect_value": "1.74",
+          "ci_95": "1.20–2.51",
+          "p_interaction": "0.004"
+        },
+        {
+          "subgroup": "Blunt trauma (28-day mortality)",
+          "group_a": "30.4%",
+          "group_b": "34.8%",
+          "effect_measure": "OR",
+          "effect_value": "0.82",
+          "ci_95": "0.62–1.09",
+          "p_interaction": "0.004"
+        }
+      ]
+    },
+    "safety": [
+      "Cumulative thrombotic events at day 28: 12.7% (95% CI 10.1–15.6) vs 12.9% (95% CI 10.2–15.8), absolute difference -0.2% (95% CI -4.1 to 3.7, P=0.89).",
+      "Venous thromboembolism: 6.9% in intervention vs 7.1% in standard care.",
+      "Arterial thrombotic events: 3.3% in intervention vs 3.2% in standard care.",
+      "Increased 28-day mortality observed in penetrating trauma subgroup (16.2% vs 10.0%, OR 1.74, 95% CI 1.20–2.51)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centre-stratified computer-generated randomisation using sequential sealed envelopes."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded without placebo; primary mortality endpoint is objective, but clinical co-interventions and subjective secondary outcomes could be influenced."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1604 randomised (799 vs 805); 73 (4.6%) excluded from primary analysis due to consent withdrawal or missing outcome (39 vs 34), leaving 1531 analysed (760 vs 771)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Only 54% (434/799) received intervention within protocol delivery constraints; 32% (256/795) of standard care received cryoprecipitate in first 24h."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups balanced for ISS (median 29 vs 29), SBP <90 mm Hg (32% vs 34%), and TXA use (79% vs 80%); slight imbalance in severe head injury (head AIS >=4: 24% vs 29%)."
+        }
+      ],
+      "verdict": "Internal validity is moderate due to open-label design, protocol non-adherence (46% non-compliant), 4.6% post-randomisation exclusions, and standard care contamination."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Representative of adult major trauma patients with hypotensive active hemorrhage in mature trauma systems."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Applicable to major trauma centers operating component transfusion protocols; less generalisable where cryoprecipitate delivery is slow/absent or where fibrinogen concentrate or prehospital whole blood strategies dominate."
+        }
+      ],
+      "verdict": "External validity is moderate-to-good for mature major trauma centers with standard component therapy protocols."
+    },
+    "strengths": [
+      "Large pragmatic multicentre trial across 26 major trauma centres in UK and US",
+      "Pragmatic design evaluating a real-world systems-level intervention",
+      "Objective primary endpoint with long-term follow-up to 12 months",
+      "Achieved significant separation in timing (68 vs 120 min) and total cryoprecipitate dose"
+    ],
+    "limitations": [
+      "Unblinded design without placebo control",
+      "High rate of protocol delivery deviation (only 54% received intervention per protocol constraints)",
+      "Substantial contamination with cryoprecipitate in standard care arm (32%)",
+      "Loss of 4.6% of randomised cohort post-randomisation",
+      "Lack of patient selection using viscoelastic or laboratory hypofibrinogenemia criteria"
+    ],
+    "critical_appraisal": {
+      "summary": "CRYOSTAT-2 provides strong pragmatic evidence that universal empirical high-dose cryoprecipitate does not improve survival in major trauma, though implementation delays and control-arm contamination weaken causal precision.",
+      "strengths": [
+        "Large sample size (n=1604) in major trauma networks",
+        "Robust objective mortality endpoint at 28 days and 12 months",
+        "Prespecified subgroup and safety analyses"
+      ],
+      "weaknesses": [
+        "Protocol adherence rate of only 54%",
+        "32% crossover cryoprecipitate use in standard care",
+        "Unblinded administration"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In adults with traumatic injury and active hemorrhage requiring major hemorrhage protocols, empirical early high-dose cryoprecipitate did not reduce 28-day all-cause mortality compared with standard care.",
+    "clinical_bottom_line": {
+      "verdict": "Do not routinely administer empirical early high-dose cryoprecipitate to all unselected trauma activations triggering major hemorrhage protocols.",
+      "applies_to": "Adult trauma activations with severe bleeding and hypotension managed with major hemorrhage protocols.",
+      "does_not_mean": "Fibrinogen replacement is ineffective; targeted replacement for documented hypofibrinogenemia remains indicated.",
+      "implementation_caveats": [
+        "Universal empirical dosing increases transfusion volume and costs without clinical benefit",
+        "Real-world delivery delays limit the ability to achieve immediate early fibrinogen replacement with cryoprecipitate",
+        "Concern for potential harm in penetrating trauma requires cautious evaluation"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Intervention timing and treatment fidelity",
+        "notes": "Only 54% of patients received cryoprecipitate within protocol time constraints, and 32% of standard care received cryoprecipitate within 24 hours, making this a comparison of timing/intensity rather than binary exposure."
+      },
+      {
+        "topic": "Penetrating trauma mortality signal",
+        "notes": "A statistically significant interaction (P=0.004) showed higher 28-day mortality in penetrating trauma (16.2% vs 10.0%, OR 1.74), though mechanistic plausibility remains uncertain."
+      },
+      {
+        "topic": "Empirical vs targeted haemostatic resuscitation",
+        "notes": "Broad unselected administration without viscoelastic or laboratory confirmation of hypofibrinogenemia likely diluted potential treatment benefits."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Does targeted fibrinogen replacement based on viscoelastic or rapid point-of-care testing improve survival?",
+      "Is the mortality signal in penetrating trauma a true biological harm or a false-positive subgroup finding?",
+      "Can prehospital administration or fibrinogen concentrates overcome logistics delays to demonstrate early benefit?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1604 (1531 analysed)",
+        "28-day mortality: 25.3% vs 26.1% (OR 0.96, p=0.74)",
+        "Penetrating trauma mortality: 16.2% vs 10.0% (OR 1.74, interaction p=0.004)",
+        "Delivery time to cryo: 68 min vs 120 min (54% protocol compliance)"
+      ],
+      "one_line_takeaway": "Do not give routine empirical cryoprecipitate in severe trauma resuscitation; reserve fibrinogen replacement for targeted, laboratory-guided administration."
+    }
+  },
+  "_source_id": "CRYOSTAT-2",
+  "_source_system": "Trauma"
+}

@@ -1,0 +1,376 @@
+{
+  "id": "ANDROMEDA_SHOCK_2",
+  "trial_name": "ANDROMEDA-SHOCK-2 — Personalized Hemodynamic Resuscitation Targeting Capillary Refill Time in Early Septic Shock (2025)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Fluids & Resuscitation",
+  "year": 2025,
+  "journal": "JAMA",
+  "citation": "The ANDROMEDA-SHOCK-2 Investigators for the ANDROMEDA Research Network, Spanish Society of Anesthesiology, Reanimation and Pain Therapy (SEDAR), and Latin American Intensive Care Network (LIVEN). Personalized Hemodynamic Resuscitation Targeting Capillary Refill Time in Early Septic Shock: The ANDROMEDA-SHOCK-2 Randomized Clinical Trial. JAMA. 2025;334(22):1988-1999.",
+  "doi": "https://doi.org/10.1001/jama.2025.20402",
+  "registration": "",
+  "trial_type": "RCT — multicenter, international, open-label, parallel-group, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1501,
+  "result_category": "Mixed",
+  "one_liner": "CRT-targeted personalized resuscitation in early septic shock improved a hierarchical composite win ratio by reducing organ support duration and ICU stay without reducing 28-day mortality.",
+  "pico": {
+    "population": "Adult ICU patients with early septic shock (lactate ≥2 mmol/L, requiring norepinephrine for MAP >65 mmHg after ≥1000 mL fluids, enrolled within 4 hours of onset).",
+    "intervention": "A 6-hour protocolized, CRT-targeted (≤3 seconds) phenotype-based resuscitation strategy incorporating fluid responsiveness, arterial tone, and echocardiography.",
+    "comparison": "Usual care resuscitation according to local protocols or international guidelines without a mandated CRT algorithm.",
+    "outcome": "Hierarchical composite of 28-day all-cause mortality, duration of vital support, and hospital length of stay analyzed via win ratio."
+  },
+  "keywords": [
+    "capillary refill time",
+    "CRT",
+    "septic shock",
+    "hemodynamic resuscitation",
+    "fluid responsiveness",
+    "win ratio",
+    "phenotype-based resuscitation"
+  ],
+  "related_trials": [
+    "ANDROMEDA-SHOCK"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Early septic shock resuscitation aims to restore tissue perfusion, but indiscriminate fluids and vasoactives can cause harm such as fluid overload and vasoconstriction toxicity.",
+      "knowledge_gap": "Lactate trends are biologically non-specific and lag behind real-time microcirculatory changes. CRT is a rapid bedside perfusion marker, but prior trial data left uncertainty regarding mortality and organ dysfunction.",
+      "hypothesis": "A protocolized, hemodynamic phenotype-based resuscitation strategy targeting normal CRT (≤3 seconds) during the first 6 hours of early septic shock improves patient-centered outcomes versus usual care."
+    },
+    "methods": {
+      "design": "Multicenter, international, investigator-initiated, open-label, parallel-group randomized clinical trial with 1:1 allocation.",
+      "setting": "86 ICUs across 19 countries; enrolled March 2022 to April 2025; follow-up to 90 days.",
+      "population": {
+        "inclusion": [
+          "Adult ICU patients (recruited from ICU, ED, ward, or OR)",
+          "Suspected or confirmed infection",
+          "Serum lactate ≥2 mmol/L",
+          "Norepinephrine required to maintain MAP >65 mm Hg after receiving ≥1000 mL fluids",
+          "Enrolment within 4 hours of septic shock onset"
+        ],
+        "exclusion": [
+          ">4 hours after septic shock onset",
+          "Anticipated surgery or acute dialysis within 6 hours",
+          "Life expectancy <90 days",
+          "Refractory shock",
+          "Do-not-resuscitate status",
+          "Child-Pugh B/C cirrhosis",
+          "Severe ARDS",
+          "Active bleeding",
+          "Pregnancy",
+          "CRT not reliably assessable (peripheral vascular disease, hypothermia, darker skin tone, Raynaud syndrome)"
+        ]
+      },
+      "intervention": "6-hour algorithm targeting CRT ≤3 seconds (measured with glass slide pressure on ventral distal phalanx for 10 seconds). Hourly reassessment. Tier 1: Pulse pressure <40 mmHg triggers fluid responsiveness test and up to two 500 mL boluses (max 1000 mL); pulse pressure ≥40 mmHg with DAP <50 mmHg triggers norepinephrine titration to DAP ≥50 mmHg (1-hour test). Tier 2: Basic echocardiography for cardiac dysfunction and re-testing fluid responsiveness for further 500 mL boluses. Transient MAP test to 80-85 mmHg in chronic hypertensives and dobutamine test at 5 μg/kg/min for 1 hour. Clinical overrides allowed.",
+      "comparison": "Usual care resuscitation per local protocols or guidelines. Fluid responsiveness and echocardiography permitted but not mandated. CRT measured at baseline and 6 hours without mandated protocol. Unrestricted clinician-directed care after 6 hours.",
+      "blinding": "Open-label (clinicians and participants unblinded; objective mortality contrasted with clinician-influenced organ support duration).",
+      "sample_size_power": "Targeted a win ratio of 1.15 with α=0.05 and 90% power, requiring ~1500 participants.",
+      "primary_outcome": "Hierarchical composite analyzed via stratified win ratio: 28-day all-cause mortality → duration of vital support within 28 days → hospital length of stay up to 28 days.",
+      "secondary_outcomes": [
+        "All-cause mortality at 28 days",
+        "Duration of vital support within 28 days",
+        "Vital support-free days within 28 days",
+        "Hospital length of stay up to 28 days",
+        "ICU length of stay up to 28 days",
+        "All-cause mortality at 90 days",
+        "Resuscitation fluids during first 6 hours",
+        "Inotrope use during first 6 hours"
+      ],
+      "follow_up": "Primary composite and components through 28 days; mortality and selected tertiary outcomes through 90 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "CRT-targeted resuscitation significantly improved the primary composite win ratio (1.16, P=0.04).",
+        "No difference was observed in 28-day mortality (26.5% vs 26.6%) or 90-day mortality (32.1% vs 33.2%).",
+        "Benefit was driven by reduced vital support duration (-1.31 days) and shorter ICU stay (-1.02 days).",
+        "Protocol separation included 251 mL less fluid and 6.1% greater inotrope exposure in the CRT group."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary hierarchical composite (win ratio)",
+          "group_a": "131,131 wins (48.9%)",
+          "group_b": "113,117 wins (42.2%)",
+          "effect_measure": "Win ratio",
+          "effect_value": "1.16",
+          "ci_95": "1.02–1.33",
+          "p_value": "0.04",
+          "note": "Ties 23,113 (8.6%); higher favours CRT-PHR"
+        },
+        {
+          "outcome": "All-cause mortality at 28 days",
+          "group_a": "191/720 (26.5%)",
+          "group_b": "198/745 (26.6%)",
+          "effect_measure": "HR",
+          "effect_value": "0.99",
+          "ci_95": "0.81–1.21",
+          "p_value": "0.91",
+          "note": "Component of primary composite"
+        },
+        {
+          "outcome": "Duration of vital support within 28 days (days)",
+          "group_a": "5.9 ± 7.4 (median 3.0)",
+          "group_b": "7.2 ± 8.3 (median 4.0)",
+          "effect_measure": "MD",
+          "effect_value": "-1.31",
+          "ci_95": "-2.15 to -0.46",
+          "p_value": "",
+          "note": "Component of primary composite; lower favours CRT-PHR"
+        },
+        {
+          "outcome": "Vital support-free days within 28 days (days)",
+          "group_a": "16.5 ± 11.3 (median 23)",
+          "group_b": "15.4 ± 11.4 (median 22)",
+          "effect_measure": "pOR",
+          "effect_value": "1.28",
+          "ci_95": "1.06–1.54",
+          "p_value": "",
+          "note": "Higher favours CRT-PHR"
+        },
+        {
+          "outcome": "Hospital length of stay up to 28 days (days)",
+          "group_a": "15.3 ± 10.3 (median 12.0)",
+          "group_b": "16.2 ± 10.5 (median 13.0)",
+          "effect_measure": "MD",
+          "effect_value": "-0.85",
+          "ci_95": "-1.80 to 0.10",
+          "p_value": "",
+          "note": "Component of primary composite; truncated at day 28"
+        },
+        {
+          "outcome": "ICU length of stay up to 28 days (days)",
+          "group_a": "7.9 ± 5.9 (median 6.0)",
+          "group_b": "8.8 ± 6.3 (median 6.0)",
+          "effect_measure": "MD",
+          "effect_value": "-1.02",
+          "ci_95": "-1.82 to -0.23",
+          "p_value": "",
+          "note": "Tertiary outcome; truncated at day 28"
+        },
+        {
+          "outcome": "All-cause mortality at 90 days",
+          "group_a": "231/719 (32.1%)",
+          "group_b": "247/744 (33.2%)",
+          "effect_measure": "HR",
+          "effect_value": "0.93",
+          "ci_95": "0.78–1.11",
+          "p_value": "",
+          "note": "Tertiary outcome"
+        },
+        {
+          "outcome": "Resuscitation fluids in first 6 hours (mL)",
+          "group_a": "928 ± 684",
+          "group_b": "1179 ± 846",
+          "effect_measure": "MD",
+          "effect_value": "-251",
+          "ci_95": "-312 to -190",
+          "p_value": "",
+          "note": "Process metric"
+        },
+        {
+          "outcome": "Inotrope use during first 6 hours",
+          "group_a": "70/720 (9.7%)",
+          "group_b": "27/747 (3.6%)",
+          "effect_measure": "Abs Diff",
+          "effect_value": "6.1%",
+          "ci_95": "3.3–8.9",
+          "p_value": "",
+          "note": "Process metric"
+        },
+        {
+          "outcome": "Norepinephrine dose in first 6 hours (μg/kg/min)",
+          "group_a": "0.28 ± 0.25",
+          "group_b": "0.24 ± 0.22",
+          "effect_measure": "MD",
+          "effect_value": "0.04",
+          "ci_95": "0.02–0.05",
+          "p_value": "",
+          "note": "Process metric"
+        },
+        {
+          "outcome": "Vasopressin use during first 6 hours",
+          "group_a": "274/684 (40.1%)",
+          "group_b": "239/694 (34.4%)",
+          "effect_measure": "Abs Diff",
+          "effect_value": "5.7%",
+          "ci_95": "0.1–11.3",
+          "p_value": "",
+          "note": "Adjunctive therapy process metric"
+        },
+        {
+          "outcome": "Corticosteroid use during first 6 hours",
+          "group_a": "343/720 (47.6%)",
+          "group_b": "362/747 (48.5%)",
+          "effect_measure": "Abs Diff",
+          "effect_value": "-0.9%",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Adjunctive therapy process metric"
+        },
+        {
+          "outcome": "Capillary refill time at 6 hours (seconds)",
+          "group_a": "2.80 ± 1.42",
+          "group_b": "3.37 ± 1.91",
+          "effect_measure": "MD",
+          "effect_value": "-0.55",
+          "ci_95": "-0.71 to -0.38",
+          "p_value": "",
+          "note": "Physiologic target"
+        },
+        {
+          "outcome": "Serum lactate at 6 hours (mmol/L)",
+          "group_a": "3.16 ± 2.39",
+          "group_b": "3.45 ± 2.99",
+          "effect_measure": "MD",
+          "effect_value": "-0.30",
+          "ci_95": "-0.53 to -0.08",
+          "p_value": "",
+          "note": "Physiologic marker"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "SOFA score ≥10 at baseline",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Win ratio",
+          "effect_value": "1.475",
+          "ci_95": "1.166–1.863",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Serum lactate ≥4 mmol/L at baseline",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Win ratio",
+          "effect_value": "1.390",
+          "ci_95": "1.134–1.700",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "Baseline CRT >3 seconds",
+          "group_a": "",
+          "group_b": "",
+          "effect_measure": "Win ratio",
+          "effect_value": "1.186",
+          "ci_95": "1.006–1.416",
+          "p_interaction": ""
+        }
+      ]
+    },
+    "safety": [
+      "Protocol-related serious adverse events were not specifically reported in summary outcome tables; trial safety monitoring focused on clinical outcomes rather than adjudicated protocol harms."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation with centre stratification and variable block sizes; allocation concealment was structurally robust."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label care introduces risk of co-intervention and performance bias for clinician-influenced outcomes (organ support duration and discharge timing), though mortality was objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1501 randomised; 1467 included in primary analysis (CRT-PHR 720, usual care 747). Exclusions: 14 vs 6 withdrew consent, 10 vs 4 ineligible; loss to follow-up at day 28 was 14 vs 6."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "In CRT-PHR arm, 44 protocol violations and 111 deviations occurred; 262/720 (36.4%) had normal baseline CRT throughout 6 hours and received no protocol interventions; 458/720 (63.6%) entered algorithm with abnormal CRT."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: APACHE II median 19 vs 18; SOFA median 9 vs 9; lactate median 3.70 vs 3.62 mmol/L; norepinephrine mean 0.22 vs 0.22 μg/kg/min; pre-randomisation fluids median 1500 mL in both groups."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong, supported by concealed randomisation, large sample size, and clear process separation, but limited by open-label design and reliance on clinician-influenced composite components."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Reflects ICU adults with early, vasopressor-dependent septic shock after ≥1 L fluids, but excluded late presentation (>4h), planned surgery/dialysis, severe ARDS, advanced cirrhosis, active bleeding, pregnancy, and DNR status."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Recruitment across 86 ICUs in 19 countries supports broad ICU applicability; however, patients with unassessable CRT (hypothermia, vascular disease, dark skin tone, Raynaud syndrome) were excluded, and translation requires protocol training and bedside echocardiography/fluid-responsiveness tools."
+        }
+      ],
+      "verdict": "Generalisability is moderate for ICU patients with early septic shock when CRT measurement can be standardized, but limited in settings without echocardiography/fluid-responsiveness tools and in populations where CRT is unreliable."
+    },
+    "strengths": [
+      "Large, multinational pragmatic RCT (1501 randomised) in early septic shock.",
+      "Clear biological target (CRT) with standardized technique and structured decision algorithm.",
+      "Demonstrated protocol separation (less early fluids, more targeted vasoactives/inotropes, faster CRT normalisation).",
+      "Prepublished protocol and statistical analysis plan."
+    ],
+    "limitations": [
+      "Open-label design with primary endpoint driven by clinician-influenced decisions (organ support duration and discharge).",
+      "Post-randomisation exclusions and slight differential loss to follow-up (14 vs 6).",
+      "Modest fluid volume separation over 6 hours (-251 mL) alongside increased inotrope and vasopressin exposure.",
+      "Exclusion of patients with unassessable CRT (darker skin tone, hypothermia, peripheral vascular disease)."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-executed multicenter trial demonstrating that CRT-targeted resuscitation reduces organ support duration without altering 28-day mortality.",
+      "strengths": [
+        "Multicenter pragmatic design across 19 countries",
+        "Clear, reproducible bedside algorithm",
+        "Rigorous prespecified win ratio statistical plan"
+      ],
+      "weaknesses": [
+        "Open-label design creates performance bias risk for duration-based outcomes",
+        "Exclusion of patients with darker skin tone or peripheral vascular disease",
+        "No explicit reporting of protocol-related adverse events"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "CRT-targeted personalized hemodynamic resuscitation over 6 hours in early septic shock improved a hierarchical composite outcome of 28-day mortality, duration of vital support, and hospital length of stay compared with usual care.",
+    "clinical_bottom_line": {
+      "verdict": "Incorporate CRT reassessment during initial septic shock resuscitation to limit fluid overload and tailor vasoactive/inotrope therapy; expect faster organ support liberation rather than reduced mortality.",
+      "applies_to": "Adult ICU patients presenting with early septic shock (within 4 hours of onset) requiring norepinephrine after initial fluid loading.",
+      "does_not_mean": "CRT targeting does not reduce 28-day or 90-day all-cause mortality, nor should it replace comprehensive hemodynamic evaluation.",
+      "implementation_caveats": [
+        "Requires standardized glass-slide CRT technique and bedside chronometer timing",
+        "Requires access to fluid responsiveness assessment tools and basic echocardiography",
+        "Inapplicable in patients with hypothermia, peripheral vascular disease, Raynaud syndrome, or darker skin tone where CRT is unreliable"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Primary outcome win ratio interpretation",
+        "notes": "The positive win ratio (1.16) was driven entirely by organ support duration and ICU stay rather than mortality, raising concerns that open-label clinician decisions regarding organ support weaning influenced results."
+      },
+      {
+        "topic": "Increased vasoactive and inotrope exposure",
+        "notes": "CRT-PHR reduced early fluids (-251 mL) at the cost of higher inotrope (9.7% vs 3.6%) and vasopressin (40.1% vs 34.4%) exposure, highlighting potential trade-offs regarding ischemia or arrhythmia risks."
+      },
+      {
+        "topic": "CRT measurement reliability and equity",
+        "notes": "Exclusion of patients with darker skin tone, hypothermia, or vascular disease limits real-world equity and generalizability without extensive training."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ANDROMEDA-SHOCK",
+        "relation": "The original ANDROMEDA-SHOCK trial (2019) suggested CRT-targeted resuscitation reduced organ dysfunction and mortality versus lactate targeting; ANDROMEDA-SHOCK-2 served as the larger confirmatory trial."
+      }
+    ],
+    "unresolved_questions": [
+      "Does CRT-targeted resuscitation reduce mortality in higher-severity subgroups (SOFA ≥10 or lactate ≥4 mmol/L) in dedicated trials?",
+      "What is the net safety profile regarding arrhythmia and ischemic events from increased early vasopressin and inotrope exposure?",
+      "Can CRT-targeted protocols be effectively implemented outside the ICU without basic echocardiography or fluid responsiveness testing?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1501 across 86 ICUs in 19 countries",
+        "Primary hierarchical win ratio 1.16 (95% CI 1.02–1.33, P=0.04)",
+        "28-day mortality identical: 26.5% vs 26.6% (HR 0.99)",
+        "6-hour fluid separation: -251 mL (928 mL vs 1179 mL)",
+        "Vital support duration reduction: -1.31 days"
+      ],
+      "one_line_takeaway": "CRT-targeted resuscitation in early septic shock shortens organ support duration and ICU stay without changing 28-day mortality."
+    }
+  },
+  "_source_id": "ANDROMEDA_SHOCK_2",
+  "_source_system": "Sepsis"
+}

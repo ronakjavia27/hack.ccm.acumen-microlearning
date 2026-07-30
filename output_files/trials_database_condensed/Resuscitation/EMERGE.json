@@ -1,0 +1,295 @@
+{
+  "id": "EMERGE",
+  "trial_name": "EMERGE — Emergency vs Delayed Coronary Angiogram in Survivors of Out-of-Hospital Cardiac Arrest (2022)",
+  "specialty": "Resuscitation",
+  "subtopic": "ICU Quality Improvement",
+  "year": 2022,
+  "journal": "JAMA Cardiology",
+  "citation": "Hauw-Berlemont C, Lamhaut L, Diehl JL, et al; EMERGE Trial Investigators. Emergency vs delayed coronary angiogram in survivors of out-of-hospital cardiac arrest: results of the randomized, multicentric EMERGE trial. JAMA Cardiol. 2022;7(7):700-707.",
+  "doi": "",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 279,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In OHCA survivors without ST-segment elevation, routine emergency coronary angiography did not improve 180-day neurologically intact survival compared with a delayed strategy (48-96 hours).",
+  "pico": {
+    "population": "Adult survivors of out-of-hospital cardiac arrest with sustained ROSC, no ST-segment elevation, no obvious non-cardiac cause",
+    "intervention": "Emergency coronary angiography strategy (immediate transfer to cath lab, PCI if culprit lesion)",
+    "comparison": "Delayed coronary angiography strategy (planned at 48–96 hours, urgent angiography allowed if clinically indicated)",
+    "outcome": "180-day survival free of major neurological sequelae (CPC 1–2)"
+  },
+  "keywords": [
+    "out-of-hospital cardiac arrest",
+    "coronary angiography",
+    "ST-segment elevation",
+    "neurological outcome",
+    "timing"
+  ],
+  "related_trials": [
+    "COACT",
+    "PEARL",
+    "TOMAHAWK"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "OHCA survivors without ST-elevation can have acute coronary culprit lesions, and post-ROSC ECG has imperfect sensitivity. Observational data and early cardiac arrest centre pathways supported routine early angiography as potentially time-critical.",
+      "knowledge_gap": "Equipoise persisted regarding whether a routine 'go-to-cath-lab' strategy improves patient-centred outcomes vs a selective or delayed approach, given competing post-arrest ICU priorities.",
+      "hypothesis": "Emergency CAG strategy would be superior to delayed CAG (48–96 h) for 180-day neurologically intact survival."
+    },
+    "methods": {
+      "design": "Investigator-initiated, multicentre, open-label, randomised, parallel-group, superiority trial",
+      "setting": "France; centres with ICU and 24/7 interventional cardiology; enrolment June/2018–?/2022 (stopped early)",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years with out-of-hospital sudden cardiac arrest and sustained ROSC",
+          "No obvious non-cardiac cause identified at presentation",
+          "No ischaemic ST-segment elevation on post-ROSC ECG (LBBB not treated as STEMI equivalent)",
+          "Admitted to centre with ICU and 24/7 interventional cardiology"
+        ],
+        "exclusion": [
+          "In-hospital cardiac arrest",
+          "No ROSC",
+          "Ischaemic ST-segment elevation",
+          "Suspected non-cardiac aetiology",
+          "Major comorbidity with life expectancy <1 year",
+          "Pregnancy",
+          "Legal protection status",
+          "Participation in another interventional trial"
+        ]
+      },
+      "intervention": "Emergency coronary angiography: immediate transfer to cath lab as soon as feasible; PCI if culprit lesion identified.",
+      "comparison": "Delayed coronary angiography planned for 48–96 hours after ICU admission; urgent angiography before planned window permitted if clinically indicated.",
+      "blinding": "Open-label for clinicians; primary endpoint assessed by an independent physician masked to allocation.",
+      "sample_size_power": "Planned 970 to detect 10% absolute improvement (36%→46%) with 80% power, two-sided α=0.05, allowing 30% crossover and 10% loss to follow-up. Stopped early after 338 randomised; 279 analysed.",
+      "primary_outcome": "180-day survival free of major neurological sequelae (CPC 1–2)",
+      "secondary_outcomes": [
+        "180-day survival",
+        "Shock during first 48 hours",
+        "VT/VF during first 48 hours",
+        "Withdrawal of life-sustaining care"
+      ],
+      "follow_up": "180 days (neurological outcome also at ICU discharge and 90 days)"
+    },
+    "results": {
+      "headline_bullets": [
+        "Emergency CAG did not improve 180-day neurologically intact survival: 34.1% vs 30.7% (HR 0.87, 95% CI 0.65–1.15, P=0.32).",
+        "Large separation in angiography timing (median 2h vs 65.5h from arrest) but no patient-centred outcome benefit.",
+        "Early stopping substantially reduced statistical power; wide CIs do not exclude clinically important effects."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "180-day survival free of major neurological sequelae (CPC 1–2)",
+          "group_a": "47/141 (34.1%)",
+          "group_b": "42/138 (30.7%)",
+          "effect_measure": "HR",
+          "effect_value": "0.87",
+          "ci_95": "0.65–1.15",
+          "p_value": "0.32",
+          "note": "Time-to-event analysis; major neurological sequelae = CPC 3–5"
+        },
+        {
+          "outcome": "180-day survival",
+          "group_a": "51/141 (36.2%)",
+          "group_b": "46/138 (33.3%)",
+          "effect_measure": "HR",
+          "effect_value": "0.86",
+          "ci_95": "0.64–1.15",
+          "p_value": "0.31",
+          "note": ""
+        },
+        {
+          "outcome": "Coronary angiography performed",
+          "group_a": "126/141 (89.4%)",
+          "group_b": "74/138 (53.6%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Delayed group: 23/74 (31.1%) urgent angiography before planned window"
+        },
+        {
+          "outcome": "Time from OHCA to angiography, median (IQR), hours",
+          "group_a": "2 (2–3)",
+          "group_b": "65.5 (40.8–74.8)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Mean delay randomisation→angiography: 0.6 vs 55.1 h"
+        },
+        {
+          "outcome": "Shock during first 48 hours",
+          "group_a": "50/129 (38.8%)",
+          "group_b": "53/133 (39.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.76–1.39",
+          "p_value": "0.86",
+          "note": ""
+        },
+        {
+          "outcome": "VT/VF during first 48 hours",
+          "group_a": "10/141 (7.1%)",
+          "group_b": "5/138 (3.6%)",
+          "effect_measure": "RR",
+          "effect_value": "0.51",
+          "ci_95": "0.18–1.46",
+          "p_value": "0.21",
+          "note": ""
+        },
+        {
+          "outcome": "Withdrawal of life-sustaining care",
+          "group_a": "56/141 (39.7%)",
+          "group_b": "65/138 (47.1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.19",
+          "ci_95": "0.91–1.55",
+          "p_value": "0.22",
+          "note": "Competing pathway for outcome; no between-group difference"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Pre-specified prognostic strata: Group 1 (age<75, shockable, no-flow<5, low-flow<20, epi<1 mg)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": ""
+        }
+      ]
+    },
+    "safety": [
+      "Shock during first 48 hours: 38.8% vs 39.8% (RR 1.03, 95% CI 0.76–1.39)",
+      "VT/VF during first 48 hours: 7.1% vs 3.6% (RR 0.51, 95% CI 0.18–1.46)",
+      "Withdrawal of life-sustaining care: 39.7% vs 47.1% (RR 1.19, 95% CI 0.91–1.55)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised web-based 1:1, variable blocks, stratified by prognostic stratum. Randomisation early (prehospital or within 1h). Allocation concealed."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; co-interventions (e.g., haemodynamic support, neuroprognostication) could be influenced. Primary outcome assessed by masked physician."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "338 randomised, 59 (17.5%) excluded post-randomisation (37 lack of consent, 16 ineligible, 6 other). 279 analysed = modified ITT. Deferred consent with post-randomisation exclusion may introduce selection bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Emergency group: angiography 89.4%; delayed: only 53.6% had angiography, 31.1% of those early/urgent (within 14.7h). PCI among those catheterised 30.2% vs 23.0%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Broadly similar: age 65.4 vs 63.9, male 73.1% vs 66.7%, non-shockable rhythm 65.2% vs 69.9%, GCS median 3 in both, TTM 52% vs 53.7%."
+        }
+      ],
+      "verdict": "Internal validity is moderate: randomisation and separation in timing were strong, but early stopping, substantial post-randomisation exclusions, and control group non-adherence reduce precision and raise residual bias."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Pragmatic OHCA cohort without ST-elevation, majority non-shockable rhythms, reflecting real-world case-mix. Enrolled only in centres with 24/7 cath lab and ICU – may select for higher-resource systems."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Applicable to OHCA survivors without ST-elevation or obvious non-cardiac cause. Results support an ICU-first, selective invasive strategy where urgent angiography is available. Cautious extrapolation to systems with different neuroprognostication or withdrawal-of-care practices."
+        }
+      ],
+      "verdict": "External validity is moderate: population is clinically representative, but generalisability is strongest in resource-rich systems with structured regional pathways."
+    },
+    "strengths": [
+      "Randomised design addressing a high-impact systems-of-care question",
+      "Clinically meaningful primary outcome (neurologically intact survival at 180 days)",
+      "Early randomisation (prehospital/early hospital) testing real-world pathway decision",
+      "Masked primary outcome assessment",
+      "Substantial achieved separation in angiography timing (median 2h vs 65.5h)"
+    ],
+    "limitations": [
+      "Early stopping for funding/recruitment shortfall, 279 of planned 970 → underpowered, wide CIs",
+      "Post-randomisation exclusions for consent/eligibility (17.5%), deviating from strict ITT",
+      "Open-label with potential co-intervention bias",
+      "Protocol non-adherence in delayed group: only 53.6% underwent angiography, 23 patients urgent early angiography",
+      "High competing risk of neurological death limiting proportion who can benefit from revascularisation"
+    ],
+    "critical_appraisal": {
+      "summary": "EMERGE is a moderate-quality RCT that found no benefit of routine emergency angiography on neurologically intact survival, but early stopping, protocol deviations, and wide confidence intervals limit definitive conclusions; in context of other trials, supports a selective invasive strategy.",
+      "strengths": [
+        "Masked outcome assessment",
+        "Early randomisation testing real-world pathway",
+        "Large separation in timing"
+      ],
+      "weaknesses": [
+        "Underpowered due to early stopping",
+        "Modified ITT with post-randomisation exclusions",
+        "Control group contamination and low angiography rate"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "A routine emergency angiography strategy did not improve neurologically intact survival compared with a delayed strategy. These data support an ICU-first, selective invasive strategy, with urgent angiography reserved for evolving clinical indications.",
+    "clinical_bottom_line": {
+      "verdict": "In OHCA survivors without ST-elevation, routine immediate angiography is not superior to a delayed (48-96h) strategy; practice should be ICU-first with selective/urgent angiography when clinically indicated.",
+      "applies_to": "Adults after OHCA without ST-elevation, no obvious non-cardiac cause, managed in centres with cath-lab capability and ICU.",
+      "does_not_mean": "This does not apply to patients with STEMI or those with clear non-cardiac aetiologies, nor does it preclude urgent angiography for haemodynamic instability or recurrent ischaemia.",
+      "implementation_caveats": [
+        "Ensure capacity for urgent angiography within hours if clinically indicated",
+        "Post-arrest care bundles and neuroprognostication may influence outcomes independent of revascularisation",
+        "Systems should develop clear criteria for early vs delayed catheterisation"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Precision after early stopping",
+        "notes": "Stopping far short of planned sample size leaves wide confidence intervals that cannot exclude clinically important benefit or harm."
+      },
+      {
+        "topic": "Deferred consent and post-randomisation exclusions",
+        "notes": "Excluding 59 participants after allocation (mainly lack of consent) may introduce selection bias if exclusions are associated with prognosis or pathway."
+      },
+      {
+        "topic": "Contamination of control strategy",
+        "notes": "Delayed strategy included no angiography (often early death) and urgent early angiography in 23 patients, complicating attribution to timing alone."
+      },
+      {
+        "topic": "Contrast with earlier observational data",
+        "notes": "Historic registry and consensus support for early angiography conflicts with EMERGE and other RCTs; nearly half of catheterised patients had no significant coronary disease."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "COACT",
+        "relation": "Also found no benefit of immediate vs delayed angiography in OHCA without ST-elevation, with largely neutral results."
+      },
+      {
+        "trial": "PEARL",
+        "relation": "Similar neutral findings for immediate angiography in post-cardiac arrest without STEMI."
+      },
+      {
+        "trial": "TOMAHAWK",
+        "relation": "Large randomised trial confirming no benefit of immediate angiography vs delayed/selective strategy in the same population."
+      }
+    ],
+    "unresolved_questions": [
+      "How to better select patients with potentially reversible coronary occlusion (biomarkers, imaging, refined ECG criteria)?",
+      "Impact of withdrawal-of-care practices on outcome assessment in open-label trials?",
+      "Systems-level evaluation of pathways incorporating patient-centred outcomes and competing risks?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=279 analysed (338 randomised)",
+        "Primary outcome 34.1% vs 30.7% (HR 0.87, 95% CI 0.65–1.15)",
+        "Angiography timing: median 2h vs 65.5h",
+        "Angiography performed: 89.4% vs 53.6%"
+      ],
+      "one_line_takeaway": "In comatose OHCA survivors without ST-elevation, don't rush to the cath lab – an ICU-first selective strategy is just as good."
+    }
+  },
+  "_source_id": "EMERGE",
+  "_source_system": "Resuscitation"
+}

@@ -1,0 +1,297 @@
+{
+  "id": "PROPPR",
+  "trial_name": "PROPPR — Transfusion of Plasma, Platelets, and Red Blood Cells in a 1:1:1 vs a 1:1:2 Ratio and Mortality in Patients With Severe Trauma (2015)",
+  "specialty": "Trauma",
+  "subtopic": "Damage Control Resuscitation",
+  "year": 2015,
+  "journal": "JAMA",
+  "citation": "Holcomb JB, Tilley BC, Baraniuk S, et al; PROPPR Study Group. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio and mortality in patients with severe trauma: the PROPPR randomized clinical trial. JAMA. 2015;313(5):471-482.",
+  "doi": "https://doi.org/10.1001/jama.2015.12",
+  "registration": "",
+  "trial_type": "RCT — pragmatic, phase 3, multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 680,
+  "result_category": "Mixed",
+  "one_liner": "In severely injured trauma patients predicted to need massive transfusion, a 1:1:1 plasma:platelets:RBC ratio did not significantly reduce 24-hour or 30-day all-cause mortality compared with 1:1:2, but significantly decreased 24-hour exsanguination deaths and increased achievement of anatomic hemostasis.",
+  "pico": {
+    "population": "Adult trauma patients (age >=15 years or weight >=50 kg) admitted directly from the injury scene with severe trauma and predicted to require massive transfusion who received >=1 unit of blood component.",
+    "intervention": "Transfusion strategy targeting a 1:1:1 ratio of plasma:platelets:RBC (1 unit plasma + 1 platelet dose + 1 unit RBC) delivered via pre-packed blood bank containers during active hemorrhage resuscitation.",
+    "comparison": "Transfusion strategy targeting a 1:1:2 ratio of plasma:platelets:RBC (1 unit plasma + 1 platelet dose + 2 units RBC) delivered via pre-packed blood bank containers.",
+    "outcome": "Co-primary endpoints: All-cause mortality at 24 hours and 30 days."
+  },
+  "keywords": [
+    "damage control resuscitation",
+    "massive transfusion protocol",
+    "trauma hemorrhage",
+    "plasma platelets RBC ratio",
+    "exsanguination"
+  ],
+  "related_trials": [
+    "European guidance on traumatic major bleeding"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Hemorrhage is a leading early cause of death after severe trauma. Damage control resuscitation emphasizing early, higher plasma and platelet ratios alongside RBCs was increasingly adopted based on observational data.",
+      "knowledge_gap": "Observational evidence was limited by survival bias and confounding. Resuscitation practice varied widely (including RBC-heavy early protocols and delayed platelets), and safety concerns persisted regarding inflammatory, volume-related, and thrombotic complications.",
+      "hypothesis": "In adults with severe trauma predicted to require massive transfusion, a 1:1:1 plasma:platelets:RBC ratio during active hemorrhage resuscitation reduces 24-hour and 30-day all-cause mortality compared with a 1:1:2 strategy without increasing adverse safety events."
+    },
+    "methods": {
+      "design": "Pragmatic, phase 3, multisite, randomized, open-label clinical trial with site-stratified randomization at container seal break.",
+      "setting": "12 Level I trauma centers in North America; emergency department activations for highest-level trauma.",
+      "population": {
+        "inclusion": [
+          "Age >=15 years (or weight >=50 kg)",
+          "Direct arrival from injury scene",
+          "Predicted need for massive transfusion",
+          "Received >=1 unit of blood component within 1 hour of arrival or during prehospital transport"
+        ],
+        "exclusion": [
+          "CPR >5 minutes pre-randomization",
+          "Devastating traumatic brain injury (GCS 3 with head AIS >=5)",
+          "Emergency thoracotomy",
+          "Pregnancy",
+          "Prisoners",
+          "Burns >20% TBSA",
+          "Known opt-out/objection",
+          "Expected death within 1 hour of ED admission",
+          "Fourth unit of RBC transfused prior to randomization"
+        ]
+      },
+      "intervention": "1:1:1 strategy targeting 1 unit plasma + 1 platelet dose + 1 unit RBC issued sequentially in blood bank coolers. First cooler targeted within 10 minutes of request and continued during active bleeding until anatomic hemostasis or protocol cessation.",
+      "comparison": "1:1:2 strategy targeting 1 unit plasma + 1 platelet dose + 2 units RBC issued in sequential blood bank coolers (platelets delivered later relative to RBCs).",
+      "blinding": "Unblinded at bedside due to visible blood product differences. Mortality endpoints objective; cause of death adjudicated.",
+      "sample_size_power": "Initially planned sample size of 580 to detect a 10% absolute reduction in 24-hour mortality (21% to 11%, 90% power, alpha 0.044 adjusted for interim analyses) and 12% absolute reduction in 30-day mortality (35% to 23%, 88% power). Randomized 680 patients total.",
+      "primary_outcome": "Co-primary endpoints: All-cause mortality at 24 hours and 30 days post-injury.",
+      "secondary_outcomes": [
+        "Death due to exsanguination within 24 hours",
+        "Time to death due to exsanguination",
+        "Achievement of anatomic hemostasis",
+        "Time to anatomic hemostasis",
+        "Total blood products transfused at 24 hours",
+        "Acute respiratory distress syndrome (ARDS) to 30 days",
+        "Multiple organ failure to 30 days",
+        "Venous thromboembolism (DVT or PE) to 30 days"
+      ],
+      "follow_up": "24 hours and 30 days after injury/admission."
+    },
+    "results": {
+      "headline_bullets": [
+        "No statistically significant difference in co-primary all-cause mortality at 24 hours (12.7% vs 17.0%, adjusted RR 0.75) or 30 days (22.4% vs 26.1%, adjusted RR 0.85).",
+        "Significant reduction in 24-hour deaths due to exsanguination with 1:1:1 (9.2% vs 14.6%, P=0.03).",
+        "Significantly higher rate of achieved anatomic hemostasis with 1:1:1 (86.1% vs 78.1%, P=0.006).",
+        "Total blood products transfused at 24 hours were higher with 1:1:1 (median 25.5 vs 19.0 units, P<0.001) without increasing 30-day complications (ARDS, organ failure, VTE)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at 24 h (co-primary)",
+          "group_a": "43/338 (12.7%)",
+          "group_b": "58/342 (17.0%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "0.75",
+          "ci_95": "0.52–1.08",
+          "p_value": "0.12",
+          "note": "Risk difference −4.2% (95% CI −9.6 to 1.1)"
+        },
+        {
+          "outcome": "All-cause mortality at 30 d (co-primary)",
+          "group_a": "75/335 (22.4%)",
+          "group_b": "89/341 (26.1%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "0.85",
+          "ci_95": "0.65–1.11",
+          "p_value": "0.23",
+          "note": "Risk difference −3.7% (95% CI −10.2 to 2.7); 4 patients missing 30-day status (3 vs 1)"
+        },
+        {
+          "outcome": "Death due to exsanguination within 24 h",
+          "group_a": "31/338 (9.2%)",
+          "group_b": "50/342 (14.6%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-5.4%",
+          "ci_95": "-10.4 to -0.5",
+          "p_value": "0.03",
+          "note": "Mean time to exsanguination death: 105.7 ± 73.8 vs 96.1 ± 68.7 min (P=0.50)"
+        },
+        {
+          "outcome": "Achieved anatomic hemostasis",
+          "group_a": "291/338 (86.1%)",
+          "group_b": "267/342 (78.1%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "8.0%",
+          "ci_95": "2.3 to 13.7",
+          "p_value": "0.006",
+          "note": "Defined by surgeon in OR or resolution of contrast blush on IR angiography"
+        },
+        {
+          "outcome": "Time to anatomic hemostasis",
+          "group_a": "105 (64–179) min",
+          "group_b": "100 (56–181) min",
+          "effect_measure": "Median Difference",
+          "effect_value": "5 min",
+          "ci_95": "Not reported",
+          "p_value": "0.44",
+          "note": "Values are median (IQR)"
+        },
+        {
+          "outcome": "Total blood products to 24 h after admission",
+          "group_a": "25.5 (14.0–40.0) units",
+          "group_b": "19.0 (12.0–33.0) units",
+          "effect_measure": "Median Difference",
+          "effect_value": "6.5 units",
+          "ci_95": "Not reported",
+          "p_value": "<0.001",
+          "note": "Values are median (IQR); includes pre-randomization, intervention, and post-intervention periods"
+        },
+        {
+          "outcome": "Acute respiratory distress syndrome (to 30 d)",
+          "group_a": "24/334 (7.2%)",
+          "group_b": "19/338 (5.6%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "1.6%",
+          "ci_95": "-2.2 to 5.4",
+          "p_value": "0.42",
+          "note": "Assessed among patients surviving >=24 hours"
+        },
+        {
+          "outcome": "Multiple organ failure (to 30 d)",
+          "group_a": "33/338 (9.8%)",
+          "group_b": "31/342 (9.1%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "0.7%",
+          "ci_95": "-3.8 to 5.2",
+          "p_value": "0.79",
+          "note": "No excess organ failure signal with higher plasma/platelet delivery"
+        },
+        {
+          "outcome": "Venous thromboembolism (DVT or PE to 30 d)",
+          "group_a": "27/338 (8.0%)",
+          "group_b": "32/342 (9.4%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-1.4%",
+          "ci_95": "-5.8 to 2.9",
+          "p_value": "0.53",
+          "note": "DVT: 4.5% vs 5.3%; PE: 3.3% vs 4.4%"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Acute respiratory distress syndrome (ARDS) to 30 days: 7.2% in 1:1:1 vs 5.6% in 1:1:2 (P=0.42; RD 1.6%, 95% CI -2.2 to 5.4)",
+      "Multiple organ failure to 30 days: 9.8% in 1:1:1 vs 9.1% in 1:1:2 (P=0.79; RD 0.7%, 95% CI -3.8 to 5.2)",
+      "Venous thromboembolism (DVT or PE) to 30 days: 8.0% in 1:1:1 vs 9.4% in 1:1:2 (P=0.53; RD -1.4%, 95% CI -5.8 to 2.9)",
+      "DVT rate: 4.5% in 1:1:1 vs 5.3% in 1:1:2; PE rate: 3.3% in 1:1:1 vs 4.4% in 1:1:2",
+      "No signal for excess inflammatory, infectious, or volume-overload complications with higher plasma and platelet exposure"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Site-stratified randomization executed via blood bank pre-packed coolers; allocation randomized at container seal break."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded delivery at bedside due to visible product physical differences. Primary mortality endpoints were objective; cause of death required committee adjudication."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "680 randomized (338 in 1:1:1; 342 in 1:1:2); 669 received randomized products. Primary ITT analysis; 24h mortality complete; 30d status missing in 4 patients (3 vs 1). GOS-E recorded in small subset (30 vs 28)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Products transfused out of order: 4% (1:1:1) vs 7% (1:1:2) (P=0.01). Active phase separation achieved: median plasma:RBC ratio 1.0 vs 0.5, platelets:RBC ratio 1.5 vs 0.4. Platelets given to 98.5% vs 59.9%. Post-protocol care at clinician discretion."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well-matched: ISS 26.5 vs 26; SBP <=90 mm Hg in 38.5% vs 39.8%; base excess -8.0 ± 7.6 vs -8.5 ± 7.7. TXA use: 18.9% vs 19.9%. Non-TXA procoagulants: 5.6% vs 4.4%. True massive transfusion (>=10 RBC units in 24h): 45.3% vs 46.8%."
+        }
+      ],
+      "verdict": "Internal validity is strong, supported by pragmatic site-stratified randomization, complete primary follow-up, objective endpoints, and clear operational protocol separation during active resuscitation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High-acuity trauma population: median age 34 years; 75% male; blunt trauma 51–55%, penetrating 45–49%; shock physiology in ~40%. Excluded severe TBI (GCS 3 with head AIS >=5), burns >20%, pregnancy, CPR >5 min, and emergency thoracotomy."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Highly applicable to mature Level I trauma centers with 24/7 blood bank capabilities for issuing thawed plasma and platelets in pre-packed coolers within 10 minutes. Less generalizable to resource-limited settings or systems utilizing prehospital whole blood."
+        }
+      ],
+      "verdict": "External validity is moderate-to-high for major trauma centers operating massive transfusion protocols with rapid component availability, but limited for excluded severe TBI phenotypes and low-resource settings."
+    },
+    "strengths": [
+      "Large pragmatic multicenter RCT addressing time-critical trauma resuscitation",
+      "Operationally realistic intervention using pre-packed blood bank coolers issued rapidly (median ED arrival to randomization ~26–28 min)",
+      "Prespecified co-primary endpoints with high completeness of mortality follow-up",
+      "Demonstrated clear operational separation in plasma and platelet delivery ratios without increasing safety complications"
+    ],
+    "limitations": [
+      "Unblinded design with risk of co-intervention differences post-protocol phase",
+      "All-cause mortality endpoint susceptible to dilution from non-hemorrhagic deaths (e.g., severe TBI)",
+      "Only 45–47% of enrolled patients ultimately required >=10 units of RBCs in 24 hours (imperfect prognostic enrichment)",
+      "Functional outcome data (GOS-E) collected in only a small exploratory subset (n=58 total)"
+    ],
+    "critical_appraisal": {
+      "summary": "PROPPR is a landmark, high-quality pragmatic RCT demonstrating that early 1:1:1 component resuscitation improves early hemostasis and reduces 24-hour exsanguination deaths without increasing organ failure or thrombotic complications, despite neutral all-cause mortality.",
+      "strengths": [
+        "Site-stratified randomization with intention-to-treat analysis",
+        "High adherence to component ratio delivery during active hemorrhage phase",
+        "Objective primary endpoints with systematic complication tracking"
+      ],
+      "weaknesses": [
+        "Unblinded bedside delivery",
+        "Potential dilution of primary endpoint by non-bleeding causes of death",
+        "Incomplete prognostic enrichment with over half of participants receiving <10 RBC units"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Among patients with severe trauma and predicted massive transfusion, a 1:1:1 ratio compared with 1:1:2 did not result in significant differences in 24-hour or 30-day mortality. However, 1:1:1 resulted in more patients achieving hemostasis and fewer deaths due to exsanguination at 24 hours, with no safety differences.",
+    "clinical_bottom_line": {
+      "verdict": "Supports early balanced component resuscitation (1:1:1 plasma:platelets:RBC) as the preferred initial strategy in massive transfusion protocols to improve early hemostasis and reduce early exsanguination.",
+      "applies_to": "Adult trauma patients admitted direct from scene with severe injury and predicted need for massive transfusion.",
+      "does_not_mean": "Does not prove an overall 30-day all-cause mortality benefit, nor does it establish superiority of ratio-based component therapy over cold-stored whole blood or viscoelastic-guided resuscitation.",
+      "implementation_caveats": [
+        "Requires blood bank infrastructure capable of preparing thawed plasma and platelets in cooler containers within 10 minutes",
+        "Massive transfusion protocol activation criteria must balance rapid deployment against blood component wastage, given ~54% non-massive transfusion rate"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Primary endpoint neutrality vs secondary benefit",
+        "notes": "Co-primary all-cause mortality was statistically neutral, sparking debate regarding whether secondary reductions in exsanguination deaths represented true treatment effect or selective over-interpretation."
+      },
+      {
+        "topic": "Bayesian re-analysis",
+        "notes": "A subsequent Bayesian re-analysis demonstrated a high posterior probability of mortality benefit for 1:1:1, challenging rigid frequentist interpretations in heterogeneous emergency resuscitation trials."
+      },
+      {
+        "topic": "Ratio-based vs alternative DCR strategies",
+        "notes": "Fixed component ratio strategies are increasingly compared against cold-stored whole blood, prehospital plasma, and viscoelastic-guided (TEG/ROTEM) resuscitation."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "European guidance on traumatic major bleeding",
+        "relation": "Incorporated PROPPR trial evidence to endorse early balanced blood component resuscitation within damage control protocols."
+      }
+    ],
+    "unresolved_questions": [
+      "Comparative efficacy and safety of 1:1:1 component resuscitation vs low-titer O negative whole blood",
+      "Impact of prehospital plasma and RBC transfusion prior to MTP activation",
+      "Optimal transition point from fixed ratio-based resuscitation to viscoelastic-guided goal-directed therapy"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "N=680",
+        "24h mortality: 12.7% (1:1:1) vs 17.0% (1:1:2) (P=0.12)",
+        "30d mortality: 22.4% (1:1:1) vs 26.1% (1:1:2) (P=0.23)",
+        "24h exsanguination death: 9.2% vs 14.6% (P=0.03)",
+        "Anatomic hemostasis: 86.1% vs 78.1% (P=0.006)"
+      ],
+      "one_line_takeaway": "1:1:1 transfusion does not significantly improve 30-day all-cause survival over 1:1:2, but reduces early exsanguination deaths and improves hemostasis without increasing complications."
+    }
+  },
+  "_source_id": "PROPPR",
+  "_source_system": "Trauma"
+}

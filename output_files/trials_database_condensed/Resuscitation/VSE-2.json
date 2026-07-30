@@ -1,0 +1,326 @@
+{
+  "id": "VSE-2",
+  "trial_name": "VSE-2 — Vasopressin, Steroids, and Epinephrine in In-Hospital Cardiac Arrest (2013)",
+  "specialty": "Resuscitation & Critical Care",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 2013,
+  "journal": "JAMA",
+  "citation": "Mentzelopoulos SD, Malachias S, Chamos C, Konstantopoulos D, Ntaidou T, Papastylianou A, et al. Vasopressin, Steroids, and Epinephrine and Neurologically Favorable Survival After In-Hospital Cardiac Arrest: A Randomized Clinical Trial. JAMA. 2013;310(3):270-279.",
+  "doi": "https://doi.org/10.1001/jama.2013.7832",
+  "registration": "",
+  "trial_type": "RCT — multicentre, randomised, double-blind, placebo-controlled, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 268,
+  "result_category": "Positive",
+  "one_liner": "A combined vasopressin-steroids-epinephrine bundle during CPR and post-ROSC hydrocortisone improved ROSC and survival to discharge with favorable neurological outcome in vasopressor-requiring IHCA.",
+  "pico": {
+    "population": "Adults (>=18 years) with vasopressor-requiring in-hospital cardiac arrest.",
+    "intervention": "Vasopressin (20 IU/cycle) + epinephrine (1 mg/cycle) for 5 CPR cycles, methylprednisolone (40 mg IV x1) during CPR, plus hydrocortisone (300 mg/day IV for up to 7 days) for postresuscitation shock.",
+    "comparison": "Epinephrine (1 mg/cycle) + saline placebos during CPR and post-ROSC shock saline placebo infusion.",
+    "outcome": "Co-primary: ROSC >=20 minutes and survival to hospital discharge with CPC 1-2."
+  },
+  "keywords": [
+    "in-hospital cardiac arrest",
+    "vasopressin",
+    "epinephrine",
+    "corticosteroids",
+    "methylprednisolone",
+    "hydrocortisone",
+    "postresuscitation shock",
+    "cerebral performance category"
+  ],
+  "related_trials": [
+    "VAM-IHCA"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Survival with good neurological function after in-hospital cardiac arrest (IHCA) remains poor. Epinephrine improves CPR hemodynamics and ROSC but has contested long-term effects, while vasopressin and corticosteroids may synergistically augment perfusion and attenuate post-arrest systemic inflammation.",
+      "knowledge_gap": "Whether combining vasopressin, methylprednisolone, and epinephrine during CPR with post-ROSC hydrocortisone improves patient-centered neurological survival.",
+      "hypothesis": "In adults with vasopressor-requiring IHCA, VSE during CPR plus stress-dose hydrocortisone for postresuscitation shock improves ROSC and survival to discharge with CPC 1-2 versus epinephrine-based standard care."
+    },
+    "methods": {
+      "design": "Multicentre (3-hospital), randomised, double-blind, placebo-controlled, parallel-group trial in Greece.",
+      "setting": "3 hospitals (ICU/CCU, ED, wards, operating theatre); enrolled 2008-2010.",
+      "population": {
+        "inclusion": [
+          "Adults (>=18 years) with IHCA requiring vasopressor administration during CPR."
+        ],
+        "exclusion": [
+          "Terminal illness with life expectancy <6 weeks or DNR order",
+          "Exsanguination",
+          "Arrest before hospital admission",
+          "Intravenous corticosteroids prior to arrest",
+          "Previous enrolment in trial",
+          "ROSC achieved before study-drug administration (16 per group excluded post-randomisation)"
+        ]
+      },
+      "intervention": "First 5 CPR cycles (~3 min/cycle): vasopressin 20 IU/cycle + epinephrine 1 mg/cycle; first CPR cycle: methylprednisolone 40 mg IV once. Postresuscitation shock (>4h): hydrocortisone 300 mg/day continuous IV for up to 7 days, then tapered (200 mg day 8, 100 mg day 9, then stop); hydrocortisone capped at <=3 days if acute MI present.",
+      "comparison": "First 5 CPR cycles: epinephrine 1 mg/cycle + saline placebo; first CPR cycle: saline placebo. Postresuscitation shock: saline placebo infusion (open-label hydrocortisone permitted clinically, cancelling study infusion).",
+      "blinding": "Double-blind for intra-arrest and post-arrest study infusions; syringes prepared by dedicated unblinded pharmacist.",
+      "sample_size_power": "Assumed CPC 1-2 survival of 4% control vs 15% VSE; alpha 0.05; power 80%; 244 patients required (300 planned to account for exclusions). Modified ITT analysis.",
+      "primary_outcome": "Co-primary: ROSC >=20 minutes and survival to hospital discharge with CPC 1-2.",
+      "secondary_outcomes": [
+        "Poor outcome during follow-up to day 60 (death or CPC 3-5)",
+        "Duration of advanced life support",
+        "Epinephrine dose during advanced life support",
+        "Mean arterial pressure during CPR and ~20 min after ROSC",
+        "Neurologic failure-free days (days 1-60)",
+        "Renal failure-free days (days 1-60)",
+        "Patient-days requiring insulin"
+      ],
+      "follow_up": "Daily assessment through days 1-10; clinical outcomes to day 60; CPC at hospital discharge; post hoc 1-year follow-up."
+    },
+    "results": {
+      "headline_bullets": [
+        "VSE significantly increased ROSC >=20 minutes (83.9% vs 65.9%, OR 2.98).",
+        "VSE significantly improved survival to discharge with favorable neurological outcome (CPC 1-2: 13.9% vs 5.1%, OR 3.28).",
+        "The treatment effect was most pronounced in patients with postresuscitation shock (CPC 1-2: 21.1% vs 8.2%, OR 3.74).",
+        "VSE produced higher intra-arrest and post-ROSC blood pressure with lower total epinephrine requirement."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "ROSC >=20 minutes (co-primary)",
+          "group_a": "109/130 (83.9%)",
+          "group_b": "91/138 (65.9%)",
+          "effect_measure": "OR",
+          "effect_value": "2.98",
+          "ci_95": "1.39-6.40",
+          "p_value": "0.005",
+          "note": "Logistic regression"
+        },
+        {
+          "outcome": "Survival to discharge with CPC 1-2 (co-primary)",
+          "group_a": "18/130 (13.9%)",
+          "group_b": "7/138 (5.1%)",
+          "effect_measure": "OR",
+          "effect_value": "3.28",
+          "ci_95": "1.17-9.20",
+          "p_value": "0.02",
+          "note": "CPC assessed at hospital discharge"
+        },
+        {
+          "outcome": "Poor outcome during follow-up to day 60 (death or CPC 3-5)",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "0.70",
+          "ci_95": "0.54-0.92",
+          "p_value": "0.009",
+          "note": "Time-to-event analysis"
+        },
+        {
+          "outcome": "Duration of advanced life support",
+          "group_a": "13 min (6 to 20)",
+          "group_b": "19 min (9 to 30)",
+          "effect_measure": "Median (IQR)",
+          "effect_value": "13 vs 19",
+          "ci_95": "N/A",
+          "p_value": "0.01",
+          "note": "Minutes"
+        },
+        {
+          "outcome": "Epinephrine dose during advanced life support",
+          "group_a": "4 mg (2 to 5)",
+          "group_b": "5 mg (3 to 9)",
+          "effect_measure": "Median (IQR)",
+          "effect_value": "4 vs 5",
+          "ci_95": "N/A",
+          "p_value": "0.002",
+          "note": "Milligrams"
+        },
+        {
+          "outcome": "Mean arterial pressure during CPR (arterial line subgroup)",
+          "group_a": "75.6 mm Hg (26.9)",
+          "group_b": "52.2 mm Hg (16.9)",
+          "effect_measure": "Mean (SD)",
+          "effect_value": "75.6 vs 52.2",
+          "ci_95": "N/A",
+          "p_value": "<0.001",
+          "note": "mm Hg"
+        },
+        {
+          "outcome": "Mean arterial pressure ~20 min after ROSC (arterial line subgroup)",
+          "group_a": "93.7 mm Hg (31.3)",
+          "group_b": "69.1 mm Hg (20.4)",
+          "effect_measure": "Mean (SD)",
+          "effect_value": "93.7 vs 69.1",
+          "ci_95": "N/A",
+          "p_value": "<0.001",
+          "note": "mm Hg"
+        },
+        {
+          "outcome": "Patient-days requiring insulin (target glucose <=180 mg/dL)",
+          "group_a": "249/494 (50.4%)",
+          "group_b": "130/361 (36.0%)",
+          "effect_measure": "Proportion",
+          "effect_value": "50.4% vs 36.0%",
+          "ci_95": "N/A",
+          "p_value": "<0.001",
+          "note": "Higher insulin exposure in steroid arm"
+        },
+        {
+          "outcome": "Post hoc: 1-year survival with CPC 1-2",
+          "group_a": "11/130 (8.5%)",
+          "group_b": "5/138 (3.6%)",
+          "effect_measure": "OR",
+          "effect_value": "2.46",
+          "ci_95": "0.76-7.99",
+          "p_value": "0.13",
+          "note": "Post hoc follow-up"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Postresuscitation shock: CPC 1-2 survival to discharge",
+          "group_a": "16/76 (21.1%)",
+          "group_b": "6/73 (8.2%)",
+          "effect_measure": "OR",
+          "effect_value": "3.74",
+          "ci_95": "1.20-11.62",
+          "p_interaction": "0.02"
+        },
+        {
+          "subgroup": "Postresuscitation shock: poor outcome to day 60",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "0.61",
+          "ci_95": "0.43-0.89",
+          "p_interaction": "0.009"
+        },
+        {
+          "subgroup": "Postresuscitation shock: neurologic failure-free days (days 1-60)",
+          "group_a": "0 (0 to 18); max 58",
+          "group_b": "0 (0 to 0); max 58",
+          "effect_measure": "Median (IQR)",
+          "effect_value": "0 vs 0",
+          "p_interaction": "0.005"
+        },
+        {
+          "subgroup": "Postresuscitation shock: renal failure-free days (days 1-60)",
+          "group_a": "2 (0 to 40); max 60",
+          "group_b": "0 (0 to 2); max 60",
+          "effect_measure": "Median (IQR)",
+          "effect_value": "2 vs 0",
+          "p_interaction": "0.009"
+        }
+      ]
+    },
+    "safety": [
+      "Patient-days requiring insulin were significantly higher in the VSE group (50.4% vs 36.0%, p<0.001; target glucose <=180 mg/dL), reflecting steroid-induced hyperglycemia."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated sequence (Research Randomizer v4) with pharmacy-prepared identical syringes; allocation concealed from bedside clinicians and investigators."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind setup for intra-arrest and post-arrest study drugs; CPR drug delivery was managed separately from core code team."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT analysis; 32 of 300 randomised patients (16 per arm) were excluded after achieving ROSC prior to study drug delivery."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Post-arrest steroid separation was imperfect: 58/76 VSE shock survivors received study hydrocortisone, while 15/73 control shock survivors received open-label hydrocortisone."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well-balanced baseline features (mean age 65.5 vs 68.2); high prevalence of non-shockable rhythms (asystole most common). Inter-center statistical heterogeneity was low (ROSC I2=0.16; CPC 1-2 I2=0)."
+        }
+      ],
+      "verdict": "Internal validity is moderate due to robust double-blinding offset by post-randomisation exclusions, post-arrest steroid crossovers, and small absolute numbers of favorable neurological survivors."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled high-severity IHCA requiring vasopressors across typical hospital units (ICU, CCU, ED, wards, OR); excluded arrests rapidly reversed without vasopressors."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires rapid availability of vasopressin and steroids during resuscitation, as well as protocolised post-ROSC shock care pathways under older CPR algorithm context."
+        }
+      ],
+      "verdict": "External validity is limited-to-moderate, applying primarily to adult high-severity vasopressor-requiring IHCA with postresuscitation shock."
+    },
+    "strengths": [
+      "Multicentre, double-blind, placebo-controlled design",
+      "Patient-centred primary outcome of favorable discharge neurological survival (CPC 1-2)",
+      "Strong physiological separation demonstrated in blood pressure and organ failure-free days",
+      "Pre-specified subgroup evaluation in postresuscitation shock patients"
+    ],
+    "limitations": [
+      "Multicomponent bundle prevents isolating individual effect of vasopressin vs corticosteroids",
+      "Modified ITT set excluded 32 patients with early ROSC before drug delivery",
+      "Post-arrest hydrocortisone protocol deviations and open-label crossover in control arm",
+      "Small absolute number of favorable neurological survivors (18 vs 7)",
+      "Conducted across 3 Greek hospitals under older resuscitation algorithm guidelines"
+    ],
+    "critical_appraisal": {
+      "summary": "VSE-2 demonstrates that an arrest-to-ICU drug bundle increases ROSC and discharge CPC 1-2 survival in vasopressor-requiring IHCA, though confidence is constrained by modified ITT exclusions, crossover, and small event totals.",
+      "strengths": [
+        "Rigorous double-blind design with identical pharmacy-prepared syringes",
+        "Primary focus on patient-centered functional outcome (CPC 1-2)",
+        "Biologically plausible hemodynamic separation during CPR and post-ROSC"
+      ],
+      "weaknesses": [
+        "Exclusion of 32 patients post-randomisation",
+        "Open-label corticosteroid contamination in post-ROSC control arm",
+        "Small absolute difference in neurologically intact survivors (18 vs 7)"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Vasopressin-steroids-epinephrine during CPR and stress-dose hydrocortisone during postresuscitation shock improved ROSC and survival to discharge with CPC 1-2 in vasopressor-requiring IHCA.",
+    "clinical_bottom_line": {
+      "verdict": "Consider implementing the VSE bundle for vasopressor-requiring IHCA, particularly in patients who develop postresuscitation shock.",
+      "applies_to": "Adult patients with vasopressor-requiring in-hospital cardiac arrest and post-ROSC vasoplegic shock.",
+      "does_not_mean": "Does not replace rapid defibrillation, apply to promptly reversed shockable IHCA, or prove efficacy of any single bundle drug in isolation.",
+      "implementation_caveats": [
+        "Requires immediate availability of vasopressin and methylprednisolone in code carts",
+        "Requires protocolised post-ROSC hydrocortisone administration (300 mg/day continuous) and taper",
+        "Requires close blood glucose monitoring due to increased insulin requirements from corticosteroid administration"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Bundle attribution",
+        "notes": "Multicomponent intervention combining vasopressin, methylprednisolone, hydrocortisone, and lower epinephrine exposure prevents isolating the effective component."
+      },
+      {
+        "topic": "Reproducibility in VAM-IHCA",
+        "notes": "The subsequent larger VAM-IHCA trial confirmed higher ROSC with vasopressin and methylprednisolone but failed to show statistically significant improvements in longer-term CPC 1-2 survival."
+      },
+      {
+        "topic": "Modified ITT set",
+        "notes": "Exclusion of 32 patients achieving ROSC prior to drug administration creates potential selection bias."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "VAM-IHCA",
+        "relation": "Larger multicentre RCT testing intra-arrest vasopressin plus methylprednisolone (without post-ROSC hydrocortisone); replicated ROSC improvement but failed to confirm significant long-term functional survival benefit."
+      }
+    ],
+    "unresolved_questions": [
+      "Is the neurological survival benefit dependent on the post-ROSC hydrocortisone phase?",
+      "Does VSE improve long-term survival beyond hospital discharge (1-year functional survival was not statistically significant)?",
+      "How does VSE perform within contemporary CPR algorithms and updated targeted temperature management protocols?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=268 primary analysis",
+        "ROSC >=20 min: 83.9% vs 65.9% (OR 2.98)",
+        "CPC 1-2 discharge survival: 13.9% vs 5.1% (OR 3.28)",
+        "Post-arrest shock CPC 1-2 survival: 21.1% vs 8.2% (OR 3.74)",
+        "MAP during CPR: 75.6 vs 52.2 mm Hg (P<0.001)"
+      ],
+      "one_line_takeaway": "VSE improves ROSC and discharge neurological survival in vasopressor-requiring IHCA with post-arrest shock, but wider adoption is tempered by unconfirmed long-term durability in subsequent trials."
+    }
+  },
+  "_source_id": "VSE-2",
+  "_source_system": "Resuscitation"
+}

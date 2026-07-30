@@ -1,0 +1,323 @@
+{
+  "id": "HYPOLYTE",
+  "trial_name": "HYPOLYTE — Hydrocortisone Therapy for Patients With Multiple Trauma (2011)",
+  "specialty": "Trauma",
+  "subtopic": "Polytrauma",
+  "year": 2011,
+  "journal": "JAMA",
+  "citation": "Roquilly A, Mahe PJ, Seguin P, Guitton C, Floch H, Tellier AC, et al. Hydrocortisone therapy for patients with multiple trauma: the randomized controlled HYPOLYTE study. JAMA. 2011;305(12):1201-1209.",
+  "doi": "10.1001/jama.2011.360",
+  "registration": "",
+  "trial_type": "RCT — multicentre, double-blind, placebo-controlled, parallel-group",
+  "evidence_level": "Moderate-quality RCT (stopped early)",
+  "sample_size": 149,
+  "result_category": "Positive",
+  "one_liner": "In mechanically ventilated polytrauma patients, early stress-dose hydrocortisone significantly reduced 28-day hospital-acquired pneumonia and duration of mechanical ventilation without altering mortality.",
+  "pico": {
+    "population": "Adults (>15 years 3 months) with severe multiple trauma (>=2 injuries, ISS >15) intubated within 36 hours of injury and expected to require mechanical ventilation for >48 hours.",
+    "intervention": "Hydrocortisone IV 50 mg bolus then 200 mg/day continuous infusion for 5 days, tapered to 100 mg on day 6 and 50 mg on day 7; discontinued if baseline corticotropin testing showed adapted response.",
+    "comparison": "Matching IV placebo bolus and continuous infusion with identical tapering and stopping rules, plus standard ICU care.",
+    "outcome": "Primary outcome was time-to-first hospital-acquired pneumonia (HAP) within 28 days."
+  },
+  "keywords": [
+    "hydrocortisone",
+    "polytrauma",
+    "hospital-acquired pneumonia",
+    "CIRCI",
+    "mechanical ventilation",
+    "etomidate"
+  ],
+  "related_trials": [
+    "Corti-TC",
+    "CRASH"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Mechanically ventilated patients with severe multiple trauma suffer high rates of hospital-acquired pneumonia (HAP), prolonging ventilation and ICU stay.",
+      "knowledge_gap": "Post-traumatic inflammation and critical illness-related corticosteroid insufficiency (CIRCI), often exacerbated by etomidate, contribute to infection risk, but whether low-dose hydrocortisone prevents HAP remained unproven.",
+      "hypothesis": "In adults with multiple trauma expected to require >48 hours of mechanical ventilation, early protocolised hydrocortisone reduces time-to-first HAP within 28 days compared with placebo."
+    },
+    "methods": {
+      "design": "Multicentre, randomized, double-blind, placebo-controlled, parallel-group trial with central block randomization (block size 4) stratified by centre, severe TBI, and ISS >30.",
+      "setting": "7 ICUs in France; enrolment November 2006 to August 2009.",
+      "population": {
+        "inclusion": [
+          "Age > 15 years and 3 months",
+          "Multiple trauma (>= 2 injuries and ISS > 15)",
+          "Enrolled within 36 hours of trauma onset",
+          "Intubated and expected to require mechanical ventilation > 48 hours"
+        ],
+        "exclusion": [
+          "Pre-existing adrenal insufficiency",
+          "Immunodeficiency or immunosuppression",
+          "Ongoing systemic corticosteroids",
+          "Pregnancy",
+          "Anticipated death within 24 hours",
+          "Prior inclusion in another trial",
+          "Refusal or withdrawal of consent"
+        ]
+      },
+      "intervention": "Hydrocortisone hemisuccinate IV: 50 mg bolus then continuous infusion 200 mg/day for 5 days, 100 mg on day 6, 50 mg on day 7. Initiated immediately after baseline corticotropin test (250 ug short ACTH test). Discontinued if cortisol response was adapted (median exposure 34 hours; IQR 20-49).",
+      "comparison": "Matching placebo bolus and continuous infusion with identical tapering and stopping rules, plus standard ICU care.",
+      "blinding": "Double-blind (patients, clinicians, investigators, and outcome assessors blinded; unblinded pharmacist prepared identical syringes).",
+      "sample_size_power": "Initial target 180 (45/group with CIRCI) for 80% power to detect 20% absolute ARR in HAP (50% to 30%). Revised to 150 total after interim analysis showed observed CIRCI prevalence was ~70% (higher than assumed 50%). Analyzed 149 in ITT.",
+      "primary_outcome": "Time-to-first hospital-acquired pneumonia (HAP) episode within 28 days post-randomization.",
+      "secondary_outcomes": [
+        "Mechanical ventilation-free days (days 0-28)",
+        "Duration of mechanical ventilation",
+        "ICU length of stay",
+        "Acute lung injury / ARDS incidence",
+        "28-day mortality",
+        "Adverse events (hyponatremia, GI bleeding/perforation, persistent CIRCI at day 8)"
+      ],
+      "follow_up": "28 days post-randomization with daily ICU data collection."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early at 150 patients due to higher-than-expected prevalence of corticosteroid insufficiency (~70%).",
+        "Hydrocortisone significantly reduced 28-day HAP incidence (35.6% vs 51.3%; HR 0.51).",
+        "Hydrocortisone increased ventilator-free days (+4 days) and reduced median duration of mechanical ventilation (-5 days) and ICU stay (-6 days).",
+        "No mortality difference was observed (8.2% vs 5.3%; P=0.44)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Hospital-acquired pneumonia by day 28 (primary; ITT)",
+          "group_a": "26/73 (35.6%)",
+          "group_b": "39/76 (51.3%)",
+          "effect_measure": "HR",
+          "effect_value": "0.51",
+          "ci_95": "0.30–0.83",
+          "p_value": "0.007",
+          "note": "Time-to-first HAP episode within 28 days"
+        },
+        {
+          "outcome": "Mechanical ventilation-free days (0–28 days; ITT)",
+          "group_a": "16 (SD 8)",
+          "group_b": "12 (SD 9)",
+          "effect_measure": "Mean Diff",
+          "effect_value": "+4 days",
+          "ci_95": "2–7",
+          "p_value": "0.001",
+          "note": "Increased ventilator-free time"
+        },
+        {
+          "outcome": "Duration of mechanical ventilation (days; ITT)",
+          "group_a": "8 (IQR 4–15)",
+          "group_b": "13 (IQR 10–22)",
+          "effect_measure": "Median Diff",
+          "effect_value": "-5 days",
+          "ci_95": "-12 to -1",
+          "p_value": "0.007",
+          "note": "HR for successful weaning 1.71 (95% CI 1.20-2.44; P=0.003)"
+        },
+        {
+          "outcome": "ICU length of stay (days; ITT)",
+          "group_a": "18 (SD 15)",
+          "group_b": "24 (SD 16)",
+          "effect_measure": "Mean Diff",
+          "effect_value": "-6 days",
+          "ci_95": "-11 to -1",
+          "p_value": "0.03",
+          "note": "Resource utilization reduction"
+        },
+        {
+          "outcome": "Acute lung injury / ARDS (ITT)",
+          "group_a": "3/73 (4.1%)",
+          "group_b": "11/76 (14.5%)",
+          "effect_measure": "Absolute Diff",
+          "effect_value": "-10%",
+          "ci_95": "-19% to -1%",
+          "p_value": "0.04",
+          "note": "Secondary pulmonary morbidity endpoint"
+        },
+        {
+          "outcome": "28-day mortality (ITT)",
+          "group_a": "6/73 (8.2%)",
+          "group_b": "4/76 (5.3%)",
+          "effect_measure": "Absolute Diff",
+          "effect_value": "+3%",
+          "ci_95": "-5% to 11%",
+          "p_value": "0.44",
+          "note": "Trial not powered for mortality"
+        },
+        {
+          "outcome": "Hyponatraemia (ITT)",
+          "group_a": "0/73 (0%)",
+          "group_b": "7/76 (9.2%)",
+          "effect_measure": "Absolute Diff",
+          "effect_value": "-9%",
+          "ci_95": "-16% to -3%",
+          "p_value": "0.01",
+          "note": "Metabolic tolerance parameter"
+        },
+        {
+          "outcome": "Gastrointestinal bleeding/perforation (ITT)",
+          "group_a": "1/73 (1.4%)",
+          "group_b": "0/76 (0%)",
+          "effect_measure": "Absolute Diff",
+          "effect_value": "+1%",
+          "ci_95": "-2% to 4%",
+          "p_value": "0.49",
+          "note": "Complication endpoint"
+        },
+        {
+          "outcome": "Corticosteroid insufficiency on day 8",
+          "group_a": "25/40 (62.5%)",
+          "group_b": "17/51 (33.3%)",
+          "effect_measure": "Absolute Diff",
+          "effect_value": "+29%",
+          "ci_95": "9% to 49%",
+          "p_value": "0.001",
+          "note": "Assessed among evaluated subset; persistent adrenal suppression signal"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "CIRCI subgroup (modified ITT)",
+          "group_a": "20/56 (35.7%)",
+          "group_b": "31/57 (54.4%)",
+          "effect_measure": "HR",
+          "effect_value": "0.47",
+          "ci_95": "0.25–0.86",
+          "p_value": "0.01",
+          "p_interaction": ""
+        },
+        {
+          "subgroup": "CIRCI + Traumatic Brain Injury subgroup",
+          "group_a": "13/32 (40.6%)",
+          "group_b": "25/35 (71.4%)",
+          "effect_measure": "HR",
+          "effect_value": "0.36",
+          "ci_95": "0.17–0.74",
+          "p_value": "0.005",
+          "p_interaction": "0.12"
+        }
+      ]
+    },
+    "safety": [
+      "28-day mortality: 8.2% hydrocortisone vs 5.3% placebo (P=0.44)",
+      "Hyponatremia: 0% hydrocortisone vs 9.2% placebo (P=0.01)",
+      "Gastrointestinal bleeding/perforation: 1.4% hydrocortisone vs 0% placebo (P=0.49)",
+      "Persistent corticosteroid insufficiency at day 8: 62.5% hydrocortisone vs 33.3% placebo (P=0.001)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-generated randomisation, block size 4, stratified by centre, severe TBI, and ISS >30. Concealment managed by unblinded pharmacy."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind design with identical study syringes. Corticotropin testing results guided drug duration but allocation was concealed."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "150 enrolled, 1 consent withdrawal; ITT analysis performed on 149 patients (73 hydrocortisone, 76 placebo)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Early start at mean 25 (SD 13) hours. Discontinuation protocol followed for adapted cortisol responses at median 34 hours."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Balanced age (36 vs 36), male sex (76.7% vs 80.3%), ISS (29 vs 27), TBI (57.5% vs 55.3%), CIRCI prevalence (76.7% vs 75.0%), and etomidate use (62.0% vs 65.8%). Co-interventions (antibiotics, decontamination) were identical."
+        }
+      ],
+      "verdict": "Internal validity is moderate to strong due to concealed central randomization, double blinding, complete follow-up, and baseline balance, though limited by early trial termination."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Younger trauma cohort (mean age 36) with high severe TBI rate (~56%) and high etomidate exposure (~64%), excluding immunosuppressed or non-intubated patients."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires rapid ACTH testing and early enrolment window (<=36h), which may limit feasibility in systems with different diagnostic resources or etomidate practices."
+        }
+      ],
+      "verdict": "External validity is moderate for early-intubated young polytrauma patients in high-resource ICUs, but restricted by etomidate dependency and diagnostic complexity."
+    },
+    "strengths": [
+      "Multicentre, randomized, double-blind, placebo-controlled trial design",
+      "Early therapeutic window (mean 25 hours post-trauma)",
+      "Use of quantitative microbiological criteria for HAP definition",
+      "Prespecified physiological subgroup analysis targeting CIRCI"
+    ],
+    "limitations": [
+      "Trial stopped early with small sample size (n=149), increasing risk of overestimated effect size",
+      "No central adjudication for pneumonia diagnosis",
+      "High rate of etomidate exposure (64%) confounds CIRCI etiology",
+      "Increased secondary adrenal suppression noted at day 8 in intervention arm"
+    ],
+    "critical_appraisal": {
+      "summary": "HYPOLYTE provides a plausible physiological signal for pneumonia reduction and faster ventilator liberation using stress-dose steroids in severe trauma, but early stopping and underpowered mortality limit definitive conclusions.",
+      "strengths": [
+        "Double-blind design with concealed central allocation",
+        "Rigorous quantitative diagnostic criteria for pneumonia",
+        "Balanced baseline co-interventions and trauma severity"
+      ],
+      "weaknesses": [
+        "Early stopping leads to potential overestimation of effect size",
+        "Underpowered for mortality and rare adverse events",
+        "Etomidate-induced adrenal suppression confounds trauma-induced CIRCI"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In patients with multiple trauma, treatment with hydrocortisone significantly reduced the risk of hospital-acquired pneumonia by day 28 and reduced duration of mechanical ventilation.",
+    "clinical_bottom_line": {
+      "verdict": "Hydrocortisone can be considered in severe polytrauma requiring prolonged ventilation (especially if etomidate was given or CIRCI is documented), but routine practice adoption is not mandatory.",
+      "applies_to": "Intubated polytrauma patients (ISS >15) within 36 hours of injury expected to require >48 hours of ventilation.",
+      "does_not_mean": "High-dose corticosteroid administration in severe traumatic brain injury is safe or beneficial.",
+      "implementation_caveats": [
+        "Requires ACTH baseline testing if protocolized withdrawal is planned",
+        "Monitor for secondary adrenal suppression upon discontinuation at day 8",
+        "Consider baseline etomidate exposure as a key contributing factor"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping and modest sample size",
+        "notes": "Accompanying editorials highlighted that early stopping inflates effect sizes and that morbidity benefits require confirmation in larger trials before widespread implementation."
+      },
+      {
+        "topic": "Diagnostic bias and CIRCI criteria reliability",
+        "notes": "Critiques raised concerns that steroid antipyretic effects might reduce diagnostic sampling for pneumonia and that ACTH testing thresholds are unreliable; authors demonstrated persistent effect in sensitivity analyses."
+      },
+      {
+        "topic": "Etomidate as a confounding variable",
+        "notes": "A post-hoc analysis confirmed etomidate increased HAP risk (HR 2.48) and hydrocortisone reduced HAP in etomidate-exposed patients (40% vs 62%), raising whether benefit represents treating etomidate-induced adrenal suppression."
+      },
+      {
+        "topic": "Confirmatory evidence discrepancy",
+        "notes": "The subsequent Corti-TC trial in severe TBI evaluating hydrocortisone plus fludrocortisone failed to show a statistically significant reduction in HAP (45% vs 53%; HR 0.75; P=0.07)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Corti-TC",
+        "relation": "Subsequent RCT evaluating hydrocortisone plus fludrocortisone in severe TBI that showed a non-statistically significant reduction in HAP (45% vs 53%, P=0.07)."
+      },
+      {
+        "trial": "CRASH",
+        "relation": "Large pragmatic trial demonstrating increased mortality with high-dose methylprednisolone in severe TBI, contrasting with low-dose hydrocortisone protocols."
+      }
+    ],
+    "unresolved_questions": [
+      "Does hydrocortisone provide benefit in polytrauma without prior etomidate exposure?",
+      "Is baseline ACTH testing necessary, or is empirical low-dose hydrocortisone safe for all severe ventilated trauma patients?",
+      "What is the net effect of early low-dose hydrocortisone on long-term neurological and functional outcomes in TBI cohorts?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=149",
+        "Primary HAP 35.6% vs 51.3% (HR 0.51)",
+        "Ventilator-free days 16 vs 12 (+4 days)",
+        "28-day mortality 8.2% vs 5.3% (P=0.44)"
+      ],
+      "one_line_takeaway": "Early low-dose hydrocortisone reduces pneumonia and mechanical ventilation duration in severe trauma, but early trial termination and mixed confirmatory data prevent routine practice adoption."
+    }
+  },
+  "_source_id": "HYPOLYTE",
+  "_source_system": "Trauma"
+}

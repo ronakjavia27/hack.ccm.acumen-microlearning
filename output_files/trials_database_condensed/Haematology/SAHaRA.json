@@ -1,0 +1,301 @@
+{
+  "id": "SAHaRA",
+  "trial_name": "SAHaRA — Liberal or Restrictive Transfusion Strategy in Aneurysmal Subarachnoid Hemorrhage (2025)",
+  "specialty": "Haematology",
+  "subtopic": "Blood Product Transfusion",
+  "year": 2025,
+  "journal": "New England Journal of Medicine",
+  "citation": "English SW, Delaney A, Fergusson DA, Chassé M, Turgeon AF, Lauzier F, et al.; SAHARA Trial Investigators on behalf of the Canadian Critical Care Trials Group. Liberal or Restrictive Transfusion Strategy in Aneurysmal Subarachnoid Hemorrhage. N Engl J Med. 2025;392(11):1079-1088.",
+  "doi": "https://doi.org/10.1056/NEJMoa2410962",
+  "registration": "",
+  "trial_type": "RCT — pragmatic, investigator-initiated, open-label, multicenter, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 742,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with aneurysmal subarachnoid hemorrhage and anemia, a liberal transfusion strategy (Hb threshold ≤10.0 g/dL) did not significantly reduce unfavorable 12-month neurological outcomes compared with a restrictive strategy (Hb threshold ≤8.0 g/dL).",
+  "pico": {
+    "population": "Adults (≥18 years) with first-ever aneurysmal subarachnoid hemorrhage (aSAH) and anemia (Hb ≤10.0 g/dL) within 10 days of admission.",
+    "intervention": "Liberal red-cell transfusion strategy: mandatory single-unit leukoreduced RBC transfusion for Hb ≤10.0 g/dL.",
+    "comparison": "Restrictive red-cell transfusion strategy: single-unit leukoreduced RBC transfusion permitted only for Hb ≤8.0 g/dL.",
+    "outcome": "Unfavorable neurological outcome at 12 months, defined as modified Rankin Scale (mRS) score ≥4."
+  },
+  "keywords": [
+    "subarachnoid hemorrhage",
+    "red blood cell transfusion",
+    "transfusion threshold",
+    "modified Rankin Scale",
+    "vasospasm",
+    "delayed cerebral ischemia"
+  ],
+  "related_trials": [
+    "TRAIN",
+    "HEMOTION"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Anemia is common in acute aSAH due to phlebotomy, inflammation, hemodilution, surgical loss, and critical illness. Red blood cell transfusion is often used to boost oxygen delivery, but carries risks such as pulmonary/immunological complications, thrombosis, cost, and multi-unit donor exposure.",
+      "knowledge_gap": "Prior evidence for transfusion targets in aSAH was restricted to observational studies and small mechanistic trials, leaving uncertainty on whether targeting higher Hb improves neurological outcomes.",
+      "hypothesis": "Among adults with aSAH and anemia (Hb ≤10.0 g/dL) within 10 days of admission, a liberal transfusion strategy (threshold ≤10.0 g/dL) reduces 12-month unfavorable neurological outcomes compared to a restrictive strategy (threshold ≤8.0 g/dL)."
+    },
+    "methods": {
+      "design": "Pragmatic, investigator-initiated, open-label RCT with blinded outcome and imaging adjudication across 23 centers in Canada, Australia, and the USA (pilot: Oct 2015–Nov 2016; full trial: Mar 2018–Jul 2023). Interim analysis used a Haybittle–Peto stopping boundary after 370 patients.",
+      "setting": "23 tertiary neurocritical care centers across Canada, Australia, and the USA.",
+      "population": {
+        "inclusion": [
+          "Adults aged ≥18 years",
+          "First-ever aneurysmal subarachnoid hemorrhage",
+          "Hemoglobin ≤10.0 g/dL within first 10 days after hospital admission"
+        ],
+        "exclusion": [
+          "Non-aneurysmal subarachnoid hemorrhage",
+          "Active bleeding causing hemodynamic instability",
+          "Contraindication to blood transfusion or known objection to blood products"
+        ]
+      },
+      "intervention": "Mandatory leukoreduced RBC transfusion (1 unit at a time) whenever Hb ≤10.0 g/dL. Applied from randomization until day 21 post-presentation, ICU discharge, or death. Daily Hb monitoring through at least day 10 or ICU discharge.",
+      "comparison": "Leukoreduced RBC transfusion (1 unit at a time) permitted only when Hb ≤8.0 g/dL. Maintained across same intervention window and monitoring protocol.",
+      "blinding": "Open-label for treating clinical teams and patients; blinded outcome adjudicators for 12-month mRS and blinded imaging adjudicators for radiographic outcomes.",
+      "sample_size_power": "740 patients planned to detect a 25% relative reduction in unfavorable outcome (mRS ≥4) from 40% to 30% with 80% power at alpha=0.05 (allowing ~3% loss to follow-up).",
+      "primary_outcome": "Unfavorable neurological outcome at 12 months post-randomization (modified Rankin Scale score ≥4).",
+      "secondary_outcomes": [
+        "12-month all-cause mortality",
+        "Functional Independence Measure (FIM) at 12 months",
+        "EQ-5D-5L health-utility index at 12 months",
+        "EQ-5D visual analogue scale at 12 months",
+        "New radiographic vasospasm during intervention period",
+        "New delayed cerebral ischemia (DCI) during intervention period",
+        "New cerebral infarction during intervention period",
+        "Any RBC transfusion and total RBC units transfused",
+        "New intubation"
+      ],
+      "follow_up": "Primary endpoint evaluated at 12 months post-randomization; in-hospital events tracked during intervention window (up to day 21) and up to day 28."
+    },
+    "results": {
+      "headline_bullets": [
+        "No statistically significant difference was found between liberal and restrictive transfusion strategies for the primary composite outcome of 12-month disability (mRS ≥4: 33.5% vs 37.7%, RR 0.88, P=0.22).",
+        "Liberal strategy significantly reduced radiographic vasospasm (31.5% vs 40.7%, RR 0.77), but this did not translate into reductions in DCI (17.5% vs 19.9%) or cerebral infarction (15.9% vs 17.8%).",
+        "Substantial protocol separation was achieved: 99.7% of liberal group patients received RBCs (median 2 units) vs 35.0% of restrictive group patients (median 0 units)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: 12-month unfavorable neurological outcome (mRS ≥4)",
+          "group_a": "122/364 (33.5%)",
+          "group_b": "136/361 (37.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.88",
+          "ci_95": "0.72–1.09",
+          "p_value": "0.22",
+          "note": "Adjusted for center and sex; outcome available in 725/732 (99.0%) analyzed patients"
+        },
+        {
+          "outcome": "12-month mortality",
+          "group_a": "40/364 (11.0%)",
+          "group_b": "52/361 (14.4%)",
+          "effect_measure": "RR",
+          "effect_value": "0.77",
+          "ci_95": "0.52–1.14",
+          "p_value": "NR",
+          "note": "Not powered for mortality"
+        },
+        {
+          "outcome": "Functional Independence Measure (FIM) at 12 months",
+          "group_a": "99.7 ± 37.3",
+          "group_b": "100.8 ± 36.4",
+          "effect_measure": "MD",
+          "effect_value": "-1.1",
+          "ci_95": "-7.0 to 4.9",
+          "p_value": "NR",
+          "note": "Scale range 18–126; higher indicates better functional independence"
+        },
+        {
+          "outcome": "EQ-5D-5L health-utility index at 12 months",
+          "group_a": "0.74 ± 0.26",
+          "group_b": "0.72 ± 0.27",
+          "effect_measure": "MD",
+          "effect_value": "0.02",
+          "ci_95": "-0.04 to 0.07",
+          "p_value": "NR",
+          "note": "Patient-reported health status; scale 0–1"
+        },
+        {
+          "outcome": "EQ-5D visual analogue scale at 12 months",
+          "group_a": "72.0 ± 23.9",
+          "group_b": "71.7 ± 24.6",
+          "effect_measure": "MD",
+          "effect_value": "0.3",
+          "ci_95": "-5.4 to 6.0",
+          "p_value": "NR",
+          "note": "Patient-reported quality of life; scale 0–100"
+        },
+        {
+          "outcome": "New radiographic vasospasm",
+          "group_a": "115/365 (31.5%)",
+          "group_b": "149/366 (40.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.77",
+          "ci_95": "0.63–0.95",
+          "p_value": "NR",
+          "note": "Blinded adjudication during intervention window"
+        },
+        {
+          "outcome": "New delayed cerebral ischemia (DCI)",
+          "group_a": "64/365 (17.5%)",
+          "group_b": "73/366 (19.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.88",
+          "ci_95": "0.64–1.21",
+          "p_value": "NR",
+          "note": "Assessed during intervention period"
+        },
+        {
+          "outcome": "New cerebral infarction",
+          "group_a": "58/365 (15.9%)",
+          "group_b": "65/366 (17.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.89",
+          "ci_95": "0.63–1.26",
+          "p_value": "NR",
+          "note": "Assessed during intervention period"
+        },
+        {
+          "outcome": "Any RBC transfusion",
+          "group_a": "365/366 (99.7%)",
+          "group_b": "128/366 (35.0%)",
+          "effect_measure": "RR",
+          "effect_value": "2.86",
+          "ci_95": "2.42–3.38",
+          "p_value": "NR",
+          "note": "Demonstrates large exposure contrast"
+        },
+        {
+          "outcome": "RBC units transfused (median, IQR)",
+          "group_a": "2 (2–4)",
+          "group_b": "0 (0–1)",
+          "effect_measure": "MD",
+          "effect_value": "2.0",
+          "ci_95": "1.78–2.20",
+          "p_value": "NR",
+          "note": "Cumulative donor exposure during intervention window"
+        },
+        {
+          "outcome": "New intubation",
+          "group_a": "22/364 (6.0%)",
+          "group_b": "40/363 (11.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.56",
+          "ci_95": "0.34–0.93",
+          "p_value": "NR",
+          "note": "Unblinded tertiary outcome; no difference in ventilation duration or ICU length of stay"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Acute transfusion reaction occurred in 2/366 (0.5%) patients in the liberal group vs 1/366 (0.3%) in the restrictive group (OR 2.01, 95% CI 0.18–22.3)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, concealed, computer-generated randomization with variable block sizes (4 and 6) stratified by center."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery introduces potential performance bias for unblinded outcomes (e.g., intubation decisions). Primary 12-month mRS and imaging endpoints were blindly adjudicated."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "742 randomized (10 excluded due to revoked consent/ethics removal). 732 included in ITT analysis, with 12-month outcome available for 725/732 (99.0%)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Overall protocol violations were low (12 in 11 patients, 1.5%). Implementation deviations were frequent (e.g., time-to-transfusion >6 hours in 134 liberal arm patients; transfusion within 0.5 g/dL above limit in 8 restrictive patients; missed transfusion for Hb 9.5–10.0 g/dL in 33 liberal patients)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced for severity and prognosis. Median Hb at randomization was 9.4 g/dL in both groups. Modified Fisher grade 3–4 predominated and ~1/3 had WFNS grade IV–V. Pre-randomization vasospasm was 36.6% vs 35.0% and pre-randomization DCI was 13.7% vs 15.6%."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong given central concealed randomization, 99% complete follow-up, and blinded adjudication, despite open-label execution and frequent time-to-transfusion delays."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Representative of adult aSAH patients with anemia in high-resource ICUs; median age 56 years, high proportion with high-grade hemorrhage."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in 23 tertiary ICUs across high-income health systems with protocolized neurocritical care, frequent Hb monitoring, and advanced endovascular/CSF management."
+        }
+      ],
+      "verdict": "Findings are highly generalizable to high-resource neurocritical care units managing aSAH, but may not apply to non-aneurysmal SAH or massive active bleeding."
+    },
+    "strengths": [
+      "Largest pragmatic randomized trial evaluating transfusion thresholds in aneurysmal SAH to date.",
+      "Multicenter, multinational design across 23 ICUs with concealed allocation and 99% completeness of 12-month follow-up.",
+      "Blinded adjudication of the primary functional endpoint (mRS) and central imaging endpoints.",
+      "Achieved clear physiological separation in pretransfusion Hb (9.6 vs 7.6 g/dL) and transfusion rates (99.7% vs 35.0%)."
+    ],
+    "limitations": [
+      "Unavoidable open-label intervention delivery, which may influence clinician decisions such as re-intubation.",
+      "A substantial portion of patients (35–36%) had pre-existing vasospasm or DCI prior to trial enrollment.",
+      "Operational delays in transfusion delivery were common in the liberal arm.",
+      "Secondary outcomes lacked multiplicity adjustment and must be interpreted as hypothesis-generating."
+    ],
+    "critical_appraisal": {
+      "summary": "SAHaRA is a robust, well-conducted pragmatic RCT demonstrating that routine liberal red blood cell transfusion does not improve 12-month functional recovery in aSAH.",
+      "strengths": [
+        "Pragmatic multicenter design with near-complete 12-month follow-up",
+        "Blinded primary outcome and imaging adjudication",
+        "Substantial separation in transfusion exposure and hemoglobin targets"
+      ],
+      "weaknesses": [
+        "Open-label design prone to management bias",
+        "High prevalence of secondary brain injury before intervention initiation",
+        "Implementation timing delays in transfusion delivery"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In patients with aneurysmal subarachnoid hemorrhage and anemia, a liberal transfusion strategy (Hb ≤10.0 g/dL) did not significantly reduce unfavorable neurological outcomes at 12 months compared with a restrictive strategy (Hb ≤8.0 g/dL).",
+    "clinical_bottom_line": {
+      "verdict": "Routine liberal transfusion (threshold 10 g/dL) should not be used in aSAH patients; a restrictive threshold of 8 g/dL is safe and markedly reduces blood product administration.",
+      "applies_to": "Adult patients with first-ever aneurysmal subarachnoid hemorrhage developing anemia (Hb ≤10.0 g/dL) during the first 10 days of admission.",
+      "does_not_mean": "Does not mean transfusion should be withheld in hemodynamically unstable patients with active major hemorrhage or clear individualized clinical indications.",
+      "implementation_caveats": [
+        "Reductions in radiographic vasospasm do not correlate with clinical functional recovery or DCI prevention.",
+        "A restrictive threshold of 8.0 g/dL avoids unnecessary donor exposures in 65% of patients without compromising 12-month disability or mortality."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Radiographic vasospasm vs functional outcome dissociation",
+        "notes": "Liberal transfusion reduced radiographic vasospasm (RR 0.77) but failed to decrease DCI, infarction, or disability, proving that radiographic vasospasm is an unreliable surrogate endpoint in aSAH."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TRAIN",
+        "relation": "Conducted in a broader acute brain injury population and similarly demonstrated no significant functional improvement with liberal transfusion."
+      },
+      {
+        "trial": "HEMOTION",
+        "relation": "Conducted in traumatic brain injury and found no functional outcome improvement with a liberal (10 g/dL) vs restrictive (7 g/dL) transfusion threshold."
+      }
+    ],
+    "unresolved_questions": [
+      "Does a subgroup of aSAH patients with persistent severe microvascular ischemia benefit from higher oxygen delivery targets?",
+      "Would earlier administration of transfusion prior to the onset of vasospasm alter functional outcomes?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=742",
+        "Primary mRS ≥4 at 12 months: 33.5% vs 37.7% (RR 0.88, P=0.22)",
+        "Transfusion rate: 99.7% (median 2 units) vs 35.0% (median 0 units)"
+      ],
+      "one_line_takeaway": "In aneurysmal SAH, target a restrictive transfusion threshold of 8 g/dL; targeting 10 g/dL increases blood exposure without improving 12-month neurological recovery."
+    }
+  },
+  "_source_id": "SAHaRA",
+  "_source_system": "Haematology"
+}

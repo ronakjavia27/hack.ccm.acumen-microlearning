@@ -1,0 +1,263 @@
+{
+  "id": "FEAST",
+  "trial_name": "FEAST — Mortality after Fluid Bolus in African Children with Severe Infection (2011)",
+  "specialty": "Pediatric Sepsis",
+  "subtopic": "Pediatric Sepsis",
+  "year": 2011,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Maitland K, Kiguli S, Opoka RO, et al. Mortality after Fluid Bolus in African Children with Severe Infection. N Engl J Med. 2011;364(26):2483–2495",
+  "doi": "https://doi.org/10.1056/NEJMoa1101549",
+  "registration": "",
+  "trial_type": "RCT — multicentre, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3141,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In African children with severe febrile illness and impaired perfusion, fluid boluses with albumin or saline increased 48-hour mortality compared to no bolus.",
+  "pico": {
+    "population": "African children aged >60 days to <12 years admitted with severe febrile illness and signs of impaired perfusion.",
+    "intervention": "Fluid bolus therapy with 5% human albumin solution or 0.9% saline (20–40 mL/kg over 1 hour).",
+    "comparison": "No fluid bolus control (maintenance fluids only; rescue saline given only if hypotensive shock developed).",
+    "outcome": "Primary outcome was all-cause mortality at 48 hours; secondary outcomes included 4-week mortality, neurological sequelae, and safety events."
+  },
+  "keywords": [
+    "pediatric sepsis",
+    "fluid bolus",
+    "albumin",
+    "saline",
+    "resuscitation",
+    "FEAST trial",
+    "impaired perfusion"
+  ],
+  "related_trials": [
+    "GASTRO",
+    "GASTROSAM"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Rapid fluid bolus therapy was standard in paediatric shock algorithms based on physiological extrapolation and high-resource critical care practice.",
+      "knowledge_gap": "In low-resource African hospital settings with high rates of malaria and severe anaemia and limited ICU facilities, it was unknown whether fluid boluses improved survival or caused harm.",
+      "hypothesis": "Fluid bolus therapy (albumin or saline) reduces 48-hour mortality compared with no bolus in children with severe febrile illness and impaired perfusion, and albumin is superior to saline."
+    },
+    "methods": {
+      "design": "Multicentre, open-label, randomised controlled trial stopped early for harm by the DSMB.",
+      "setting": "District hospitals in Africa; enrolled patients across two strata (FEAST A without severe hypotension, FEAST B with hypotensive shock).",
+      "population": {
+        "inclusion": [
+          "Children aged >60 days and <12 years",
+          "History of fever and/or abnormal temperature (pyrexia >=37.5°C or hypothermia <36°C)",
+          "Severe illness (>=1): impaired consciousness (prostration or coma) or respiratory distress (deep breathing or increased work of breathing)",
+          "Impaired perfusion (>=1): capillary refill >2 seconds, lower limb temperature gradient, weak radial pulse volume, or severe tachycardia (HR >180 bpm if <12 months; >160 bpm if 12 months–5 years; >140 bpm if >5 years)",
+          "Strata FEAST A: impaired perfusion without severe hypotension (3 arms: albumin vs saline vs no bolus)",
+          "Strata FEAST B: hypotensive shock (2 arms: albumin vs saline; severe SBP <50 mmHg if <12 months, <60 mmHg if 12 months–5 years, <70 mmHg if >5 years plus >=1 sign of impaired perfusion)"
+        ],
+        "exclusion": [
+          "Severe acute malnutrition (visible severe wasting and/or kwashiorkor)",
+          "Gastroenteritis (>3 watery stools in the previous 24 hours)",
+          "Contraindications to volume expansion (chronic renal failure, pulmonary oedema with SpO2 <90% plus bilateral basal crepitations)",
+          "Non-infectious severe illness (trauma, burns, intoxication)",
+          "Prior isotonic volume expansion during current illness"
+        ]
+      },
+      "intervention": "5% human albumin solution or 0.9% saline administered over 1 hour. FEAST A initial bolus 20 mL/kg; at 1 hour, repeat 20 mL/kg if impaired perfusion persisted, or 40 mL/kg if hypotensive shock developed. FEAST B initial bolus 40 mL/kg; repeat 20–40 mL/kg at 1 hour if perfusion deficit/shock persisted. Protocolised 24-hour maximum volume limit: 80 mL/kg.",
+      "comparison": "No bolus control in FEAST A (low-volume maintenance fluids per national guidelines). Rescue 0.9% saline 40 mL/kg over 1 hour was administered only if hypotensive shock developed.",
+      "blinding": "Open-label (unblinded) treatment allocation; primary endpoint (mortality) was objective.",
+      "sample_size_power": "Trial monitored independently with prespecified stopping rules; DSMB recommended early termination due to excess mortality in bolus groups.",
+      "primary_outcome": "All-cause mortality at 48 hours.",
+      "secondary_outcomes": [
+        "All-cause mortality at 4 weeks",
+        "Neurological sequelae at discharge",
+        "Pulmonary oedema or raised intracranial pressure"
+      ],
+      "follow_up": "48 hours primary endpoint; follow-up continued to 4 weeks."
+    },
+    "results": {
+      "headline_bullets": [
+        "Fluid bolus therapy (saline or albumin) significantly increased 48-hour mortality compared with no bolus.",
+        "Albumin conferred no mortality benefit over 0.9% saline.",
+        "Excess mortality persisted at 4 weeks.",
+        "Classic fluid overload features (pulmonary oedema / raised ICP) were rare and did not explain the increased mortality."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "48-hour mortality (Saline vs No bolus)",
+          "group_a": "110/1047 (10.5%)",
+          "group_b": "76/1044 (7.3%)",
+          "effect_measure": "RR",
+          "effect_value": "1.44",
+          "ci_95": "1.09–1.90",
+          "p_value": "0.01",
+          "note": "Prespecified primary comparison"
+        },
+        {
+          "outcome": "48-hour mortality (Albumin vs Saline)",
+          "group_a": "111/1050 (10.6%)",
+          "group_b": "110/1047 (10.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.01",
+          "ci_95": "0.78–1.29",
+          "p_value": "0.96",
+          "note": "Prespecified primary comparison"
+        },
+        {
+          "outcome": "48-hour mortality (Any bolus vs No bolus)",
+          "group_a": "221/2097 (10.5%)",
+          "group_b": "76/1044 (7.3%)",
+          "effect_measure": "RR",
+          "effect_value": "1.45",
+          "ci_95": "1.13–1.86",
+          "p_value": "0.003",
+          "note": "Prespecified secondary outcome"
+        },
+        {
+          "outcome": "4-week mortality (Any bolus vs No bolus)",
+          "group_a": "255/2097 (12.2%)",
+          "group_b": "91/1044 (8.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.40",
+          "ci_95": "1.12–1.75",
+          "p_value": "0.004",
+          "note": "Persistent excess mortality at 4 weeks"
+        },
+        {
+          "outcome": "Pulmonary oedema or raised ICP",
+          "group_a": "50/2097 (2.4%)",
+          "group_b": "18/1044 (1.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.38",
+          "ci_95": "0.82–2.34",
+          "p_value": "0.12",
+          "note": "Rare events across all groups"
+        },
+        {
+          "outcome": "New neurological sequelae at discharge",
+          "group_a": "44/2097 (2.1%)",
+          "group_b": "21/1044 (2.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.04",
+          "ci_95": "0.62–1.75",
+          "p_value": "0.92",
+          "note": "No significant difference"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Pulmonary oedema or raised ICP occurred in 2.4% (50/2097) in any bolus group vs 1.7% (18/1044) in control (p=0.12).",
+      "New neurological sequelae at discharge occurred in 2.1% (44/2097) vs 2.0% (21/1044) (p=0.92)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Large, multicentre randomised design with robust protocolisation and prospective outcome ascertainment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; however, primary endpoint (mortality) is objective and immune to detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Intention-to-treat analysis with complete outcome ascertainment."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Rescue saline (40 mL/kg) administered to control group children who developed hypotensive shock per protocol."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well-balanced baseline characteristics across study arms."
+        }
+      ],
+      "verdict": "High internal validity for primary mortality endpoint given robust multicentre randomisation and objective endpoint."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Highly representative of severely ill febrile children presenting to African hospitals with impaired perfusion, high malaria burden, and severe anaemia."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in resource-limited settings without advanced PICU supportive care (mechanical ventilation, central lines, vasoactive infusions)."
+        }
+      ],
+      "verdict": "Strong generalisability to low-resource settings, but extrapolation to high-resource PICU contexts or dehydration phenotypes is limited."
+    },
+    "strengths": [
+      "Large pragmatic multicentre RCT with 3,141 children enrolled",
+      "Objective, clinically relevant primary endpoint (48-hour mortality)",
+      "Direct comparison of colloid (albumin) versus crystalloid (saline) and no bolus control",
+      "High rate of complete follow-up to 4 weeks"
+    ],
+    "limitations": [
+      "Open-label design",
+      "Stopped early for harm by DSMB",
+      "Lack of advanced supportive critical care modalities (invasive ventilation, vasoactive drugs)",
+      "Excluded gastroenteritis and severe acute malnutrition, limiting applicability to pure dehydration"
+    ],
+    "critical_appraisal": {
+      "summary": "High-quality, landmark RCT demonstrating clear early mortality harm from rapid fluid boluses in African children with severe febrile illness and impaired perfusion.",
+      "strengths": [
+        "Large sample size and multicentre design",
+        "Rigorous trial oversight and objective primary endpoint",
+        "Clear prospective hypothesis testing of colloid vs crystalloid vs control"
+      ],
+      "weaknesses": [
+        "Unblinded intervention delivery",
+        "Early termination may overestimate magnitude of effect",
+        "Absence of mechanical ventilation and inotropes limits direct translation to high-resource PICU settings"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Fluid boluses with saline or albumin significantly increased 48-hour mortality compared with no bolus control in African children with severe febrile illness and impaired perfusion.",
+    "clinical_bottom_line": {
+      "verdict": "Avoid routine rapid IV fluid boluses in children presenting with severe febrile illness and impaired perfusion in low-resource settings without mechanical ventilation and vasoactive support.",
+      "applies_to": "Pediatric patients in resource-limited settings presenting with severe febrile illness, impaired perfusion, malaria, or severe anaemia without frank hypotensive shock.",
+      "does_not_mean": "Do not give IV fluids for diarrhoeal dehydration or severe acute malnutrition; FEAST explicitly excluded these groups.",
+      "implementation_caveats": [
+        "Hypotensive shock still warrants targeted volume expansion per protocol.",
+        "Maintenance fluid administration remains necessary.",
+        "Rehydration strategies in gastroenteritis and severe malnutrition are supported by separate evidence."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Generalising to high-resource PICU settings",
+        "notes": "High-resource guidelines still recommend fluid boluses for septic shock where invasive monitoring, mechanical ventilation, and vasoactive drugs are immediately available."
+      },
+      {
+        "topic": "Mechanism of mortality harm",
+        "notes": "Excess deaths were not driven by pulmonary oedema or raised ICP, but rather early cardiovascular collapse following bolus administration."
+      },
+      {
+        "topic": "Post-FEAST guideline implementation",
+        "notes": "Global guideline adoption of FEAST findings in low-resource settings has been variable and contentious."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "GASTRO",
+        "relation": "Evaluated IV rehydration strategies in non-malnourished children with severe diarrhoeal dehydration, demonstrating no mortality harm."
+      },
+      {
+        "trial": "GASTROSAM",
+        "relation": "Evaluated IV rehydration strategies in children with severe acute malnutrition and dehydrating gastroenteritis, confirming no mortality harm signal."
+      }
+    ],
+    "unresolved_questions": [
+      "Mechanism explaining rapid cardiovascular collapse after fluid boluses in normotensive severe infection.",
+      "Safety and efficacy of small-volume slow fluid administration vs early vasoactive agent initiation in low-resource pediatric shock."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3141",
+        "48-hr mortality: 10.5% (bolus) vs 7.3% (no bolus), RR 1.45 (p=0.003)",
+        "Albumin vs Saline mortality identical: 10.6% vs 10.5% (RR 1.01)",
+        "Pulmonary oedema/raised ICP rare: 2.4% vs 1.7% (p=0.12)"
+      ],
+      "one_line_takeaway": "In low-resource pediatric severe febrile illness, rapid fluid boluses cause early mortality from cardiovascular collapse, not fluid overload, and should be avoided."
+    }
+  },
+  "_source_id": "FEAST",
+  "_source_system": "Sepsis"
+}

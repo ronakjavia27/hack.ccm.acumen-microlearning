@@ -1,0 +1,318 @@
+{
+  "id": "HYPERION",
+  "trial_name": "HYPERION — Targeted Temperature Management for Cardiac Arrest with Nonshockable Rhythm (2019)",
+  "specialty": "Cardiac Arrest",
+  "subtopic": "Targeted Temperature Management",
+  "year": 2019,
+  "journal": "N Engl J Med",
+  "citation": "Lascarrou JB, Merdji H, Le Gouge A, et al. Targeted Temperature Management for Cardiac Arrest with Nonshockable Rhythm. N Engl J Med. 2019;381(24):2327-2337",
+  "doi": "https://doi.org/10.1056/NEJMoa1906661",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, blinded outcome assessment, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 584,
+  "result_category": "Mixed (primary neurological outcome positive, no mortality benefit)",
+  "one_liner": "In comatose adults after non-shockable cardiac arrest, targeted hypothermia at 33°C for 24 hours improved favourable neurological outcome at 90 days compared to targeted normothermia (37°C), but did not reduce mortality.",
+  "pico": {
+    "population": "Comatose adults (GCS ≤8) resuscitated from in-hospital or out-of-hospital cardiac arrest with a non-shockable rhythm (asystole/PEA), no-flow ≤10 min, low-flow ≤60 min, time to screening ≤300 min, excluding severe haemodynamic instability (norepinephrine >1 µg/kg/min or epinephrine >1 µg/kg/min)",
+    "intervention": "Targeted hypothermia: core temperature 33°C (range 32.5–33.5°C) for 24 hours, followed by controlled rewarming and active normothermia (36.5–37.5°C) up to 48 hours; cooling devices (surface or intravascular) with continuous core monitoring; anti-shivering allowed, sedation recommended first 12 hours",
+    "comparison": "Active targeted normothermia at 37°C (range 36.5–37.5°C) for 48 hours with fever prevention",
+    "outcome": "Favourable neurological outcome (Cerebral Performance Category 1–2) at 90 days"
+  },
+  "keywords": [
+    "hypothermia",
+    "targeted temperature management",
+    "cardiac arrest",
+    "non-shockable rhythm",
+    "CPC",
+    "neurological outcome"
+  ],
+  "related_trials": [
+    "TTM2"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Non-shockable rhythms (asystole, PEA) constitute a large proportion of cardiac arrests and are associated with very poor neurological outcomes despite ROSC. Earlier hypothermia evidence was largely derived from shockable out-of-hospital cardiac arrest cohorts; evidence in non-shockable rhythms, non-cardiac aetiologies, and in-hospital arrest was limited and conflicting.",
+      "knowledge_gap": "Unclear whether moderate therapeutic hypothermia (33°C) improves outcomes beyond active normothermia/fever prevention in this high-mortality subgroup.",
+      "hypothesis": "In comatose adults after non-shockable cardiac arrest, targeted hypothermia at 33°C for 24 hours would improve favourable neurological outcome at 90 days compared with targeted normothermia at 37°C."
+    },
+    "methods": {
+      "design": "Investigator-initiated, pragmatic, multicentre, open-label, randomised, controlled superiority trial with blinded outcome assessment",
+      "setting": "25 ICUs in France, enrolling both in-hospital and out-of-hospital cardiac arrests",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years",
+          "Coma (GCS ≤8) after return of spontaneous circulation",
+          "Non-shockable rhythm (asystole, PEA, or unknown/not shocked)",
+          "No-flow time ≤10 minutes",
+          "Low-flow time ≤60 minutes",
+          "Time from cardiac arrest to screening ≤300 minutes"
+        ],
+        "exclusion": [
+          "Moribund condition",
+          "Child–Pugh class C cirrhosis",
+          "Pregnancy/breast-feeding",
+          "High risk of bleeding",
+          "Lack of health insurance/guardianship constraints",
+          "Severe haemodynamic instability (norepinephrine >1 µg/kg/min or epinephrine >1 µg/kg/min)",
+          "Prior inclusion in another cardiac-arrest RCT",
+          "Logistical constraints"
+        ]
+      },
+      "intervention": "Targeted hypothermia: core temperature 33°C (range 32.5–33.5°C) for 24 hours after randomisation, then controlled rewarming and active normothermia (36.5–37.5°C) through 48 hours; cooling via surface or intravascular devices with continuous core monitoring; anti-shivering allowed, sedation recommended for first 12 hours.",
+      "comparison": "Targeted normothermia: core temperature 37°C (range 36.5–37.5°C) actively maintained for 48 hours with fever prevention.",
+      "blinding": "Open-label to treating clinicians; day‑90 neurological outcome assessed by a blinded psychologist.",
+      "sample_size_power": "584 patients required to detect a 9% absolute increase in favourable neurological outcome (from 14% to 23%) with 80% power, two‑sided alpha 0.05; interim analyses used Peto–Haybittle boundary (P<0.001) and final alpha adjusted to 0.049.",
+      "primary_outcome": "Favourable neurological outcome (CPC 1–2) at 90 days",
+      "secondary_outcomes": [
+        "Death by day 90",
+        "Death in ICU (time‑to‑event)",
+        "Survival to hospital discharge (time‑to‑event)",
+        "Vasopressor requirement (days 0–7)",
+        "Severe cardiac arrhythmia (days 0–7)",
+        "Ventilator‑associated pneumonia (days 0–28)",
+        "Mechanical ventilation duration",
+        "ICU length of stay"
+      ],
+      "follow_up": "90 days"
+    },
+    "results": {
+      "headline_bullets": [
+        "33°C hypothermia increased favourable neurological outcome at 90 days: 10.2% vs 5.7% (absolute difference 4.5%, 95% CI 0.1–8.9, P=0.04).",
+        "Mortality was extremely high and similar between groups (81.3% vs 83.2% by day 90).",
+        "Temperature separation was achieved (mean 12–24h core temperature 33.5 ± 1.1°C vs 37.0 ± 0.7°C).",
+        "No significant differences in safety outcomes; ventilator‑associated pneumonia numerically higher with hypothermia (15.5% vs 11.8%, HR 1.34, 95% CI 0.86–2.01)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: Favourable neurological outcome (CPC 1–2) at day 90",
+          "group_a": "29/284 (10.2%)",
+          "group_b": "17/297 (5.7%)",
+          "effect_measure": "ARD",
+          "effect_value": "4.5%",
+          "ci_95": "0.1 to 8.9",
+          "p_value": "0.04",
+          "note": "Blinded assessment; missing day‑90 status imputed as dead per prespecified plan"
+        },
+        {
+          "outcome": "Death by day 90",
+          "group_a": "231/284 (81.3%)",
+          "group_b": "247/297 (83.2%)",
+          "effect_measure": "ARD",
+          "effect_value": "−1.9%",
+          "ci_95": "−8.0 to 4.4",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Death in ICU (time‑to‑event)",
+          "group_a": "228/284 (80.3%)",
+          "group_b": "239/297 (80.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.93",
+          "ci_95": "0.78 to 1.10",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Survival to hospital discharge (time‑to‑event)",
+          "group_a": "56/284 (19.7%)",
+          "group_b": "50/297 (16.8%)",
+          "effect_measure": "HR",
+          "effect_value": "1.19",
+          "ci_95": "0.81 to 1.74",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Vasopressor requirement (days 0–7)",
+          "group_a": "233/284 (82.0%)",
+          "group_b": "241/297 (81.1%)",
+          "effect_measure": "HR",
+          "effect_value": "1.01",
+          "ci_95": "0.92 to 1.11",
+          "p_value": "0.81",
+          "note": ""
+        },
+        {
+          "outcome": "Severe cardiac arrhythmia (days 0–7)",
+          "group_a": "35/284 (12.3%)",
+          "group_b": "31/297 (10.4%)",
+          "effect_measure": "HR",
+          "effect_value": "1.19",
+          "ci_95": "0.74 to 1.91",
+          "p_value": "0.48",
+          "note": ""
+        },
+        {
+          "outcome": "Ventilator‑associated pneumonia (days 0–28)",
+          "group_a": "44/284 (15.5%)",
+          "group_b": "35/297 (11.8%)",
+          "effect_measure": "HR",
+          "effect_value": "1.34",
+          "ci_95": "0.86 to 2.01",
+          "p_value": "0.19",
+          "note": "Numerically higher with hypothermia; not statistically significant"
+        },
+        {
+          "outcome": "Mechanical ventilation duration, median (IQR)",
+          "group_a": "4.5 (2.0–7.0) days",
+          "group_b": "4.0 (2.0–7.0) days",
+          "effect_measure": "none",
+          "effect_value": "none",
+          "ci_95": "none",
+          "p_value": "not reported",
+          "note": "Descriptive; no between‑group effect reported"
+        },
+        {
+          "outcome": "ICU length of stay, median (IQR)",
+          "group_a": "4.0 (2.0–9.0) days",
+          "group_b": "4.0 (2.0–10.0) days",
+          "effect_measure": "none",
+          "effect_value": "none",
+          "ci_95": "none",
+          "p_value": "not reported",
+          "note": "Descriptive; limited by high early mortality"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Ventilator‑associated pneumonia (days 0–28): 15.5% hypothermia vs 11.8% normothermia, HR 1.34 (95% CI 0.86–2.01, P=0.19); not statistically significant.",
+      "Severe cardiac arrhythmia (days 0–7): 12.3% vs 10.4%, HR 1.19 (95% CI 0.74–1.91, P=0.48).",
+      "Vasopressor requirement (days 0–7): 82.0% vs 81.1%, HR 1.01 (95% CI 0.92–1.11, P=0.81).",
+      "Early discontinuation of temperature management: 12.7% hypothermia vs 3.0% normothermia; reasons included haemodynamic instability and other adverse events.",
+      "No statistically significant differences in other serious adverse events reported."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised, web‑based randomisation with concealment; stratified by centre and location of arrest (in‑ vs out‑of‑hospital); baseline characteristics well balanced (median age 67 years; male 65.1% vs 63.3%; circulatory shock 56.0% vs 60.6%)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open‑label intervention; treating teams unblinded. Primary outcome assessed by a blinded psychologist, reducing detection bias but not eliminating potential for confounding from differential co‑interventions."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "Modified ITT: 3 post‑randomisation withdrawals excluded (581/584 analysed). Only 1 patient lost to follow‑up in hypothermia and 2 in normothermia; missing day‑90 status imputed as death per prespecified plan."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "All patients received assigned intervention. Early discontinuation of temperature management more common in hypothermia (12.7%) vs normothermia (3.0%). Temperature separation was adequate (mean 12–24h core temperature 33.5 ± 1.1°C vs 37.0 ± 0.7°C)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Balanced across key prognostic factors (age, sex, shock, arrest location). Late randomisation relative to arrest (median ~226 min) and high prevalence of asphyxial aetiology (~55%)."
+        },
+        {
+          "domain": "Statistical fragility",
+          "notes": "Primary outcome statistically significant but with small number of events (29 vs 17); confidence interval close to null (0.1–8.9); high WLST prevalence (93% of deaths) and slightly earlier WLST in normothermia (median 5 vs 4 days) introduce potential for self‑fulfilling prognostication bias."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate: randomisation and blinded outcome assessment strengthen causal inference, but open‑label care, high WLST prevalence, late randomisation, and a fragile primary effect limit confidence in the magnitude and reproducibility of benefit."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Includes both in‑hospital and out‑of‑hospital non‑shockable arrests; high proportion of non‑cardiac/asphyxial causes (~55%), more representative than earlier hypothermia trials. Stringent no‑flow/low‑flow limits and exclusion of severe haemodynamic instability exclude the sickest patients."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires ICU‑based temperature management capability and structured post‑cardiac arrest care. Results generalise best to systems with high bystander CPR rates and protocolised neuroprognostication; applicability limited in resource‑limited settings or prolonged low‑flow contexts."
+        }
+      ],
+      "verdict": "Generalisability is moderate: the enrolled cohort reflects many real‑world non‑shockable arrests, but strict inclusion criteria and system‑of‑care dependencies limit transfer to settings with longer downtimes or fewer temperature‑management resources."
+    },
+    "strengths": [
+      "Pragmatic multicentre design in a historically under‑tested population",
+      "Explicit focus on non‑shockable rhythm (asystole/PEA)",
+      "Robust temperature separation achieved (core temperature curves well separated)",
+      "Blinded day‑90 neurological outcome assessment by a psychologist",
+      "Prespecified interim monitoring and alpha adjustment"
+    ],
+    "limitations": [
+      "Open‑label delivery with potential for co‑intervention and prognostication bias",
+      "Borderline primary effect with small number of favourable outcomes (29 vs 17) and CI close to null",
+      "Late randomisation relative to arrest (median ~226 min), potentially missing early reperfusion injury",
+      "High prevalence of withdrawal of life‑sustaining therapy (93% of deaths) with slightly earlier WLST in normothermia",
+      "Mortality unchanged and absolute benefit small; pneumonia numerically higher under hypothermia"
+    ],
+    "critical_appraisal": {
+      "summary": "A well‑designed RCT that demonstrates a small, statistically borderline improvement in favourable neurological outcome with 33°C hypothermia vs active normothermia, but no mortality benefit; open‑label care, high WLST rates, and wide confidence intervals reduce confidence in the effect size.",
+      "strengths": [
+        "Pragmatic multicentre design in a historically under‑tested population",
+        "Explicit focus on non‑shockable rhythm",
+        "Robust temperature separation achieved",
+        "Blinded day‑90 neurological outcome assessment",
+        "Prespecified interim monitoring and analysis plan"
+      ],
+      "weaknesses": [
+        "Open‑label delivery with potential prognostication bias",
+        "Borderline primary effect with small number of favourable outcomes",
+        "Late randomisation relative to arrest",
+        "High WLST prevalence",
+        "Mortality unchanged and absolute benefit small"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Moderate hypothermia at 33°C improved neurological outcome in non‑shockable cardiac arrest, but the benefit was small and mortality unchanged; in the context of later trials, emphasis has shifted to fever prevention and structured post‑arrest care over routine deep hypothermia.",
+    "clinical_bottom_line": {
+      "verdict": "For selected comatose survivors of non‑shockable cardiac arrest, 33°C hypothermia may improve neurological outcomes over active normothermia, but overall mortality remains extremely high, and the practice is not universally recommended; meticulous fever prevention is a more broadly accepted standard.",
+      "applies_to": "Comatose adults after resuscitation from non‑shockable rhythm (both in‑hospital and out‑of‑hospital) with short no‑flow (<10 min) and low‑flow (<60 min) times, treated in ICUs with temperature management capability.",
+      "does_not_mean": "HYPERION does not support routine deep hypothermia for all cardiac arrest patients, nor does it demonstrate that cooling reduces mortality.",
+      "implementation_caveats": [
+        "Requires rigorous temperature control and monitoring",
+        "Risk of increased infection and early discontinuation",
+        "Need for structured neuroprognostication to avoid self‑fulfilling withdrawal patterns",
+        "Benefit appears limited to neurological outcome; no survival advantage"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Borderline statistical signal with low event counts",
+        "notes": "Absolute risk difference for CPC 1–2 was 4.5% (95% CI 0.1–8.9, P=0.04); small number of favourable outcomes increases fragility and susceptibility to minor biases or misclassification."
+      },
+      {
+        "topic": "Open‑label care and WLST interplay",
+        "notes": "Unblinded temperature assignment may influence prognostication and WLST decisions, potentially biasing neurological outcomes despite blinded assessment."
+      },
+      {
+        "topic": "Reconciliation with later normothermia‑era evidence",
+        "notes": "TTM2 (predominantly shockable OHCA) found no benefit of hypothermia vs normothermia with fever prevention and higher arrhythmia risk, shifting the evidentiary centre of gravity away from routine 33°C cooling."
+      },
+      {
+        "topic": "Meta‑analytic synthesis",
+        "notes": "Individual patient data meta‑analyses of modern temperature‑control trials support fever prevention and question routine hypothermia across arrest subtypes, with no consistent improvement in patient‑centred outcomes."
+      },
+      {
+        "topic": "Guideline evolution",
+        "notes": "Post‑cardiac arrest guidelines now emphasise active fever prevention and careful temperature control rather than mandatory deep hypothermia for all patients."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TTM2",
+        "relation": "TTM2, a large trial of hypothermia vs normothermia after out‑of‑hospital cardiac arrest (predominantly shockable rhythms), found no benefit of hypothermia and higher arrhythmia risk, influencing the interpretation of HYPERION’s findings and shifting guidelines away from routine deep cooling."
+      }
+    ],
+    "unresolved_questions": [
+      "Does the neurological benefit of 33°C hypothermia persist in an era of active fever prevention and improved post‑arrest care?",
+      "Is there a subset of patients with non‑shockable rhythms (e.g., asphyxial arrest, early randomisation) who could derive clinically meaningful benefit?",
+      "How do WLST practices interact with temperature management to influence reported neurological outcomes?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=584 randomised",
+        "CPC 1–2 at 90 days: 10.2% vs 5.7% (ARD 4.5%, 95% CI 0.1–8.9, p=0.04)",
+        "Mortality at 90 days: ~82% both groups",
+        "Temperature separation achieved: mean 12–24h 33.5°C vs 37.0°C"
+      ],
+      "one_line_takeaway": "33°C hypothermia for 24 hours after non‑shockable cardiac arrest improved neurological outcome without reducing mortality; current standard is fever prevention, not routine deep hypothermia."
+    }
+  },
+  "_source_id": "HYPERION",
+  "_source_system": "Resuscitation"
+}

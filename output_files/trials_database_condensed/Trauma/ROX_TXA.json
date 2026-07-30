@@ -1,0 +1,283 @@
+{
+  "id": "ROX_TXA",
+  "trial_name": "ROX TXA — Prehospital Tranexamic Acid in Traumatic Brain Injury (2020)",
+  "specialty": "Trauma",
+  "subtopic": "Traumatic Brain Injury",
+  "year": 2020,
+  "journal": "JAMA",
+  "citation": "Rowell SE, Meier EN, McKnight B, et al. Effect of out-of-hospital tranexamic acid vs placebo on 6-month functional neurologic outcomes in patients with moderate or severe traumatic brain injury. JAMA. 2020;324(10):961-974.",
+  "doi": "https://doi.org/10.1001/jama.2020.8958",
+  "registration": "NCT01990040",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, 3-arm",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1063,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Prehospital tranexamic acid did not significantly improve 6-month functional neurological outcome in non-hypotensive patients with suspected moderate-to-severe TBI.",
+  "pico": {
+    "population": "Out-of-hospital patients age >=15 years (or >50 kg) with suspected moderate-to-severe TBI (GCS <=12) without shock (SBP >=90 mmHg) treated within 2 hours of injury.",
+    "intervention": "Prehospital tranexamic acid (TXA) as either a 2 g bolus-only strategy or a 1 g bolus plus 1 g 8-hour in-hospital maintenance strategy.",
+    "comparison": "Matching placebo out-of-hospital infusion plus 8-hour in-hospital maintenance infusion.",
+    "outcome": "Favourable functional neurological outcome at 6 months, defined as Extended Glasgow Outcome Scale (GOSE) >4."
+  },
+  "keywords": [
+    "tranexamic acid",
+    "TXA",
+    "traumatic brain injury",
+    "TBI",
+    "prehospital care",
+    "antifibrinolytic",
+    "GOSE"
+  ],
+  "related_trials": [
+    "CRASH-3",
+    "BRAIN-PROTECT"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Traumatic brain injury (TBI) is a major cause of death and disability with few proven pharmacological treatments. Early intracranial hemorrhage expansion and trauma-induced coagulopathy contribute to secondary brain injury.",
+      "knowledge_gap": "Uncertainty remained regarding whether ultra-early prehospital TXA administration improves long-term functional outcomes in non-hypotensive TBI and which dosing regimen is optimal and safe.",
+      "hypothesis": "Prehospital TXA improves 6-month functional neurological outcome in non-shock suspected moderate-to-severe TBI, with potential differences between 2 g bolus-only vs 1 g bolus plus 1 g maintenance infusion strategies."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, double-blind, placebo-controlled, three-arm group sequential trial (Resuscitation Outcomes Consortium).",
+      "setting": "12 ROC sites comprising 39 EMS agencies and 20 trauma centres in the US and Canada (conducted May 2015 to November 2017).",
+      "population": {
+        "inclusion": [
+          "Age >=15 years or estimated weight >50 kg",
+          "Blunt or penetrating trauma with suspected TBI",
+          "Prehospital GCS <=12 prior to sedatives or paralytics",
+          "Prehospital SBP >=90 mmHg",
+          "At least 1 reactive pupil (or both reactive if GCS 4–12)",
+          "Ability to start out-of-hospital infusion within 2 hours of injury"
+        ],
+        "exclusion": [
+          "GCS 3 with neither pupil reactive",
+          "CPR prior to randomisation",
+          "Time from injury to infusion >2 hours or unknown",
+          "Suspected seizure activity, acute MI, or stroke",
+          "Known history of seizures, thromboembolic disorder, or renal dialysis",
+          "Pregnancy or incarcerated status",
+          "Opt-out or declined participation"
+        ]
+      },
+      "intervention": "Bolus-maintenance strategy (1 g TXA in 250 mL prehospital + 1 g/8 h in-hospital) OR Bolus-only strategy (2 g TXA in 250 mL prehospital + placebo in-hospital over 8 h).",
+      "comparison": "Placebo 250 mL out-of-hospital infusion followed by placebo in-hospital infusion over 8 hours.",
+      "blinding": "Double-blind (prehospital clinicians, in-hospital clinicians, patients, outcome assessors).",
+      "sample_size_power": "1200 planned to yield ~963 treated patients for analysis; designed to detect a 7% absolute difference in favourable outcome (combined TXA vs placebo) with 80% power using asymmetric group sequential design (1-sided alpha=0.10 for benefit, 1-sided alpha=0.025 for harm).",
+      "primary_outcome": "Favourable functional neurological outcome at 6 months (GOSE >4).",
+      "secondary_outcomes": [
+        "28-day mortality",
+        "Disability Rating Scale (DRS) at 6 months",
+        "Progression of intracranial haemorrhage at 24 hours (>33% increase in volume on paired CT)",
+        "Seizure activity",
+        "Thromboembolic events"
+      ],
+      "follow_up": "28 days for mortality/early clinical events; 6 months for GOSE and DRS."
+    },
+    "results": {
+      "headline_bullets": [
+        "Favourable 6-month functional outcome did not differ significantly between combined TXA strategies and placebo (65% vs 62%; adjusted difference 3.5%, 95% CI -0.9 to 10.2).",
+        "Overall 28-day mortality was 14% with TXA vs 17% with placebo (adjusted difference -2.9%, 95% CI -7.9 to 2.1).",
+        "Seizures occurred more frequently with 2 g bolus TXA (5% vs 2% placebo), while thromboembolic events were lower with bolus-maintenance TXA (4% vs 10% placebo).",
+        "An exploratory subgroup with CT-confirmed intracranial hemorrhage showed reduced 28-day mortality with the 2 g bolus strategy (18% vs 27%, p=0.03)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Favourable functional outcome at 6 months (GOSE >4)",
+          "group_a": "425/657 (65%)",
+          "group_b": "192/309 (62%)",
+          "effect_measure": "Adjusted difference",
+          "effect_value": "3.5%",
+          "ci_95": "-0.9 to 10.2",
+          "p_value": "0.16",
+          "note": "Combined TXA vs placebo; site-adjusted; primary endpoint; missing GOSE imputed"
+        },
+        {
+          "outcome": "28-day mortality",
+          "group_a": "94/657 (14%)",
+          "group_b": "53/309 (17%)",
+          "effect_measure": "Adjusted difference",
+          "effect_value": "-2.9%",
+          "ci_95": "-7.9 to 2.1",
+          "p_value": "0.26",
+          "note": "Combined TXA vs placebo; 87% of deaths attributed to neurological injury"
+        },
+        {
+          "outcome": "Disability Rating Scale at 6 months",
+          "group_a": "Median 1 (IQR 0 to 5)",
+          "group_b": "Median 1 (IQR 0 to 8)",
+          "effect_measure": "Adjusted difference",
+          "effect_value": "-0.9",
+          "ci_95": "-2.5 to 0.7",
+          "p_value": "0.29",
+          "note": "Combined TXA vs placebo; lower scores indicate less disability"
+        },
+        {
+          "outcome": "Progression of intracranial haemorrhage at 24 hours",
+          "group_a": "53/332 (16%)",
+          "group_b": "30/148 (20%)",
+          "effect_measure": "Adjusted difference",
+          "effect_value": "-5.4%",
+          "ci_95": "-12.8 to 2.1",
+          "p_value": "0.16",
+          "note": "Combined TXA vs placebo; paired CT required; defined as >33% volume increase"
+        },
+        {
+          "outcome": "Seizure/seizure-like activity",
+          "group_a": "17/345 (5%)",
+          "group_b": "7/309 (2%)",
+          "effect_measure": "Adjusted difference",
+          "effect_value": "2.8%",
+          "ci_95": "-0.1 to 5.6",
+          "p_value": "null",
+          "note": "Bolus-only TXA vs placebo; bolus-only vs bolus-maintenance difference 3.4% (95% CI 0.7 to 6.1)"
+        },
+        {
+          "outcome": "Any thromboembolic event",
+          "group_a": "13/312 (4%)",
+          "group_b": "30/309 (10%)",
+          "effect_measure": "Adjusted difference",
+          "effect_value": "-5.8%",
+          "ci_95": "-9.8 to -1.8",
+          "p_value": "null",
+          "note": "Bolus-maintenance TXA vs placebo; composite vascular occlusive outcome"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "28-day mortality with intracranial haemorrhage on initial CT",
+          "group_a": "35/197 (18%)",
+          "group_b": "47/171 (27%)",
+          "effect_measure": "Adjusted difference",
+          "effect_value": "-8.2%",
+          "ci_95": "-16.6 to -0.8",
+          "p_interaction": "0.03"
+        }
+      ]
+    },
+    "safety": [
+      "Seizure/seizure-like activity occurred in 17/345 (5%) of bolus-only TXA vs 7/309 (2%) of placebo (adjusted diff 2.8%, 95% CI -0.1 to 5.6; difference between bolus-only and bolus-maintenance was 3.4%, 95% CI 0.7 to 6.1).",
+      "Thromboembolic events occurred in 13/312 (4%) of bolus-maintenance TXA vs 30/309 (10%) of placebo (adjusted diff -5.8%, 95% CI -9.8 to -1.8).",
+      "Divergent safety profiles between 2 g bolus-only and bolus-maintenance regimens indicate dose- and administration-dependent effects."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated randomisation using permuted blocks (sizes 3 and 6); allocation concealed via sequentially used identical study kits on EMS vehicles."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blinded with matched placebo kits. Emergency unblinding was rare (7/312, 4/345, 11/309), with open-label TXA given in 53% of unblinded cases."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1063 randomised; 97 did not receive infusion and 1 incarcerated patient was excluded, leaving 966 treated patients for modified ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Prehospital infusion completion was 93–95%; in-hospital infusion was initiated in 79–86% and completed in 69–77% of patients."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced except penetrating mechanism (4% bolus-maintenance, 1% bolus-only, 5% placebo). Median time from injury to start of prehospital infusion was ~40 min (43 min, 40 min, 41 min across arms)."
+        }
+      ],
+      "verdict": "Internal validity is moderate: strong randomisation, concealment, and ultra-early delivery, but post-randomisation exclusions (97 untreated) and incomplete in-hospital infusions reduce precision."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Applies to non-hypotensive (SBP >=90 mmHg) suspected TBI treated within 2 hours in advanced EMS systems. Excludes hypotensive, polytrauma, delayed (>2h), or pediatric (<15 yrs) patients."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Pragmatic prehospital enrolment led to ~20% of patients having in-hospital GCS >12 and ~24% having no head injury on AIS, diluting potential TBI-specific treatment effect."
+        }
+      ],
+      "verdict": "External validity is moderate: generalisable to early prehospital management of non-hypotensive suspected TBI in high-resource EMS systems, but not to hypotensive hemorrhagic trauma."
+    },
+    "strengths": [
+      "Large, multicentre, double-blind prehospital RCT evaluating patient-centred 6-month functional outcomes",
+      "Ultra-early drug administration with median time to infusion start of ~40 minutes from injury",
+      "Rigorous evaluation of two distinct dosing regimens (2 g bolus vs 1 g + 1 g maintenance)"
+    ],
+    "limitations": [
+      "Modified ITT analysis excluded 97 randomised but untreated patients post-randomisation",
+      "Incomplete in-hospital infusion completion (69–77%) reduced separation between TXA strategies",
+      "Missing 6-month outcome data required multiple imputation (20 datasets)",
+      "Primary analysis combined two divergent TXA regimens",
+      "Excluded patients with shock or polytrauma"
+    ],
+    "critical_appraisal": {
+      "summary": "A high-quality, prehospital double-blind RCT demonstrating that hyperacute TXA does not significantly improve 6-month functional outcome in non-hypotensive suspected TBI.",
+      "strengths": [
+        "Double-blind design with identical study kits",
+        "Ultra-early prehospital administration (median ~40 min)",
+        "Long-term 6-month patient-centred functional primary endpoint (GOSE)"
+      ],
+      "weaknesses": [
+        "Post-randomisation exclusion of 97 untreated patients",
+        "Pragmatic field enrollment resulted in ~24% of patients without head injury",
+        "Primary endpoint combined two regimens with divergent safety and mortality trends"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Out-of-hospital TXA administration did not significantly improve 6-month functional outcome in patients with moderate-to-severe TBI who were not in shock.",
+    "clinical_bottom_line": {
+      "verdict": "Routine prehospital TXA should not be administered purely for neuroprotection in hemodynamically stable suspected TBI.",
+      "applies_to": "Prehospital adult and adolescent trauma patients with suspected moderate-to-severe TBI (GCS <=12) and SBP >=90 mmHg.",
+      "does_not_mean": "Does not refute the efficacy of TXA in traumatic hemorrhagic shock or bleeding trauma.",
+      "implementation_caveats": [
+        "2 g bolus-only TXA strategy increased seizure activity (5% vs 2% placebo).",
+        "Pragmatic prehospital criteria capture a heterogeneous population with high rates (~24%) of minor or non-head injuries."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Prehospital enrolment heterogeneity",
+        "notes": "Field criteria enrolled ~20% of patients with in-hospital GCS >12 and ~24% with no head injury on AIS, potentially diluting treatment effects."
+      },
+      {
+        "topic": "Regimen divergence and safety signals",
+        "notes": "Bolus-only 2 g TXA increased seizure risk (5% vs 2%), whereas bolus-maintenance showed lower thromboembolic rates (4% vs 10%). Mortality reduction in CT-positive patients was limited to the 2 g bolus strategy (18% vs 27%, p=0.03)."
+      },
+      {
+        "topic": "Post-publication TEG data correction",
+        "notes": "A correction amended a TEG clot lysis table value (>3% lysis at 30 min) from 31 to 3 in the bolus-only group, reflecting data curation challenges without altering primary findings."
+      },
+      {
+        "topic": "Evidence synthesis in TBI",
+        "notes": "CRASH-3 found no overall head-injury mortality benefit (RR 0.94; 95% CI 0.86 to 1.02), while meta-analyses show reduced haematoma expansion (RR 0.77; 95% CI 0.63 to 0.93) without improved functional outcome."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CRASH-3",
+        "relation": "In-hospital trial showing no overall reduction in head-injury mortality with TXA (RR 0.94; 95% CI 0.86 to 1.02), aligned with ROC TXA neutral functional results."
+      },
+      {
+        "trial": "BRAIN-PROTECT",
+        "relation": "Observational prehospital study showing no overall 30-day mortality benefit with TXA (OR 1.17; 95% CI 0.84 to 1.65) and higher adjusted mortality in isolated severe TBI (OR 2.05; 95% CI 1.22 to 3.45)."
+      }
+    ],
+    "unresolved_questions": [
+      "Does ultra-early TXA benefit specific neuroimaging-confirmed TBI subgroups (e.g., CT-positive intracranial hemorrhage)?",
+      "What is the optimal TXA dose that balances reduction in hematoma expansion against seizure activity?",
+      "Can prehospital biomarker enrichment refine candidate selection for acute TBI therapies?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=966 treated patients analyzed (1063 randomised)",
+        "Primary GOSE >4 at 6 months: 65% TXA vs 62% Placebo (p=0.16)",
+        "28-day mortality: 14% TXA vs 17% Placebo (p=0.26)",
+        "Seizure activity: 5% (2 g bolus TXA) vs 2% (Placebo)",
+        "Median time to infusion start: ~40 minutes from injury"
+      ],
+      "one_line_takeaway": "Prehospital TXA does not improve 6-month functional outcomes in non-hypotensive moderate-to-severe TBI and should not be routinely given solely for TBI neuroprotection."
+    }
+  },
+  "_source_id": "ROX_TXA",
+  "_source_system": "Trauma"
+}

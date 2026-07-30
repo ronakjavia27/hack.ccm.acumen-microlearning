@@ -1,0 +1,360 @@
+{
+  "id": "6S",
+  "trial_name": "6S — Hydroxyethyl Starch 130/0.42 vs Ringer's Acetate in Severe Sepsis (2012)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Fluids & Resuscitation",
+  "year": 2012,
+  "journal": "N Engl J Med",
+  "citation": "Perner A, Haase N, Guttormsen AB, et al. Hydroxyethyl starch 130/0.42 versus Ringer's acetate in severe sepsis. N Engl J Med. 2012;367(2):124-134.",
+  "doi": "https://doi.org/10.1056/NEJMoa1204242",
+  "registration": "",
+  "trial_type": "RCT — investigator-initiated, multicentre, parallel-group, double-blind, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 798,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Resuscitation with 6% HES 130/0.42 significantly increased 90-day mortality and renal replacement therapy compared to Ringer's acetate in severe sepsis.",
+  "pico": {
+    "population": "Adult ICU patients (aged 18 or older) with severe sepsis within the prior 24 hours requiring fluid resuscitation.",
+    "intervention": "6% Hydroxyethyl starch (HES) 130/0.42 in a balanced electrolyte solution (capped at 33 mL/kg ideal body weight/day).",
+    "comparison": "Ringer's acetate balanced crystalloid (capped at same daily dose; open-label Ringer's permitted beyond cap).",
+    "outcome": "Composite of all-cause mortality or dialysis dependence at 90 days."
+  },
+  "keywords": [
+    "hydroxyethyl starch",
+    "HES 130/0.42",
+    "Ringer's acetate",
+    "fluid resuscitation",
+    "sepsis",
+    "acute kidney injury",
+    "renal replacement therapy"
+  ],
+  "related_trials": [
+    "CHEST"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Hydroxyethyl starch solutions were widely used in sepsis for volume expansion based on perceived hemodynamic efficiency compared to crystalloids.",
+      "knowledge_gap": "Older starch formulations caused renal impairment and coagulopathy, but whether newer, low-molecular-weight tetrastarches (HES 130/0.42) were safer in severe sepsis remained controversial.",
+      "hypothesis": "Resuscitation with 6% HES 130/0.42 in a balanced carrier solution reduces 90-day mortality or dialysis dependence compared with Ringer's acetate in severe sepsis."
+    },
+    "methods": {
+      "design": "Multicenter, double-blind, randomized, parallel-group trial with stratified randomization by presence of shock, hematological malignancy, and hospital type (university vs non-university).",
+      "setting": "26 ICUs across Denmark, Finland, Iceland, Norway, and Sweden.",
+      "population": {
+        "inclusion": [
+          "Adults aged 18 years or older in ICU",
+          "Fulfilled severe sepsis criteria within the previous 24 hours",
+          "Clinically judged to require intravascular volume expansion"
+        ],
+        "exclusion": [
+          "Receipt of >1000 mL synthetic colloid in the 24 hours pre-randomization",
+          "Ongoing renal-replacement therapy at screening",
+          "Conditions where trial fluid was considered unsafe or inappropriate"
+        ]
+      },
+      "intervention": "6% HES 130/0.42 in a balanced carrier solution as the primary resuscitation fluid. Capped at 33 mL/kg ideal body weight/day; open-label Ringer's acetate permitted if cap reached. Permanently stopped if RRT initiated or severe adverse reaction occurred.",
+      "comparison": "Ringer's acetate as the primary resuscitation fluid, capped at 33 mL/kg ideal body weight/day to maintain blinding; open-label Ringer's acetate permitted beyond cap.",
+      "blinding": "Double-blind using identical masked fluid containers; clinicians, patients, investigators, and outcome assessors were blinded.",
+      "sample_size_power": "800 patients planned to detect a 10% absolute reduction in primary outcome (50% to 40%) with 80% power at alpha 0.05, assuming 45% mortality and 5% dialysis dependence.",
+      "primary_outcome": "Composite of death or dialysis dependence at 90 days post-randomization.",
+      "secondary_outcomes": [
+        "90-day mortality",
+        "28-day mortality",
+        "Renal replacement therapy use up to day 90",
+        "Dialysis dependence at day 90",
+        "Bleeding complications in ICU",
+        "Organ failure and ICU/hospital-free days"
+      ],
+      "follow_up": "90 days post-randomization."
+    },
+    "results": {
+      "headline_bullets": [
+        "HES 130/0.42 significantly increased 90-day mortality (51% vs 43%, P=0.03).",
+        "HES 130/0.42 significantly increased the requirement for renal replacement therapy (22% vs 16%, P=0.04).",
+        "Bleeding risks and blood product transfusions were significantly higher in the HES group.",
+        "Total trial fluid administered was identical between groups (median 3000 mL vs 3000 mL, P=0.20)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite: death or dialysis dependence at day 90",
+          "group_a": "202/398 (51%)",
+          "group_b": "173/400 (43%)",
+          "effect_measure": "RR",
+          "effect_value": "1.17",
+          "ci_95": "1.01–1.36",
+          "p_value": "0.03",
+          "note": "Modified intention-to-treat analysis"
+        },
+        {
+          "outcome": "Death at day 90",
+          "group_a": "201/398 (51%)",
+          "group_b": "172/400 (43%)",
+          "effect_measure": "RR",
+          "effect_value": "1.17",
+          "ci_95": "1.01–1.36",
+          "p_value": "0.03",
+          "note": "Kaplan-Meier log-rank P=0.07"
+        },
+        {
+          "outcome": "Death at day 28",
+          "group_a": "154/398 (39%)",
+          "group_b": "144/400 (36%)",
+          "effect_measure": "RR",
+          "effect_value": "1.08",
+          "ci_95": "0.90–1.28",
+          "p_value": "0.43",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Renal replacement therapy (any use to day 90)",
+          "group_a": "87/398 (22%)",
+          "group_b": "65/400 (16%)",
+          "effect_measure": "RR",
+          "effect_value": "1.35",
+          "ci_95": "1.01–1.80",
+          "p_value": "0.04",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Dialysis dependence at day 90",
+          "group_a": "1/398 (0.3%)",
+          "group_b": "1/400 (0.3%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "1.00",
+          "note": "RRT required during days 86–94"
+        },
+        {
+          "outcome": "Severe bleeding in ICU",
+          "group_a": "38/398 (10%)",
+          "group_b": "25/400 (6%)",
+          "effect_measure": "RR",
+          "effect_value": "1.52",
+          "ci_95": "0.94–2.48",
+          "p_value": "0.09",
+          "note": "Protocol-defined serious adverse reaction"
+        },
+        {
+          "outcome": "Severe allergic reaction in ICU",
+          "group_a": "1/398 (0.3%)",
+          "group_b": "0/400 (0%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.32",
+          "note": "Protocol-defined serious adverse reaction"
+        },
+        {
+          "outcome": "Any bleeding in ICU (post-hoc)",
+          "group_a": "93/398 (23%)",
+          "group_b": "60/399 (15%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.003",
+          "note": "Missing data for 1 participant in Ringer's group"
+        },
+        {
+          "outcome": "Doubling of plasma creatinine OR RRT (post-hoc)",
+          "group_a": "175/398 (44%)",
+          "group_b": "147/400 (37%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.04",
+          "note": "Composite renal injury metric"
+        },
+        {
+          "outcome": "Mean % days alive without RRT up to day 90",
+          "group_a": "91",
+          "group_b": "93",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.048",
+          "note": "Higher is better"
+        },
+        {
+          "outcome": "Mean % days alive and out of hospital up to day 90",
+          "group_a": "29",
+          "group_b": "34",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.048",
+          "note": "Higher is better"
+        },
+        {
+          "outcome": "Cumulative trial fluid in ICU (mL, median [IQR])",
+          "group_a": "3000 (1500–5000)",
+          "group_b": "3000 (1000–5000)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.20",
+          "note": "Fluid exposure volume was balanced"
+        },
+        {
+          "outcome": "Blood products in ICU (mL, median [IQR])",
+          "group_a": "1340 (566–2700)",
+          "group_b": "1055 (600–2755)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.003",
+          "note": "Includes packed red cells, plasma, and platelets"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Shock at randomisation — Yes",
+          "group_a": "179/336",
+          "group_b": "148/337",
+          "effect_measure": "RR",
+          "effect_value": "1.21",
+          "ci_95": "1.04–1.42",
+          "p_interaction": "0.22"
+        },
+        {
+          "subgroup": "Shock at randomisation — No",
+          "group_a": "23/62",
+          "group_b": "25/63",
+          "effect_measure": "RR",
+          "effect_value": "0.93",
+          "ci_95": "0.60–1.46",
+          "p_interaction": "0.22"
+        },
+        {
+          "subgroup": "Acute kidney injury at randomisation — Yes",
+          "group_a": "72/142",
+          "group_b": "63/140",
+          "effect_measure": "RR",
+          "effect_value": "1.13",
+          "ci_95": "0.88–1.44",
+          "p_interaction": "0.60"
+        },
+        {
+          "subgroup": "Acute kidney injury at randomisation — No",
+          "group_a": "130/256",
+          "group_b": "110/260",
+          "effect_measure": "RR",
+          "effect_value": "1.20",
+          "ci_95": "1.00–1.45",
+          "p_interaction": "0.60"
+        }
+      ]
+    },
+    "safety": [
+      "Increased 90-day all-cause mortality with HES 130/0.42 (51% vs 43%, RR 1.17, P=0.03)",
+      "Increased requirement for renal replacement therapy with HES 130/0.42 (22% vs 16%, RR 1.35, P=0.04)",
+      "Increased rate of any bleeding event in ICU with HES (23% vs 15%, P=0.003)",
+      "Higher volume of blood products transfused in HES group (median 1340 vs 1055 mL, P=0.003)",
+      "Severe bleeding in ICU: 10% in HES vs 6% in Ringer's (RR 1.52, 95% CI 0.94–2.48, P=0.09)",
+      "Severe allergic reaction in ICU: 0.3% in HES vs 0% in Ringer's (P=0.32)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central stratified randomization ensured good allocation concealment and baseline group balance."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind design using identical masked fluid bags successfully minimized performance and outcome detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "804 randomized, 798 analyzed in modified ITT (received >=1 dose of fluid); 90-day primary outcome follow-up was complete."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Daily cap exceeded in 28 HES vs 41 Ringer's patients. Non-trial synthetic colloids given post-randomization to 39 HES vs 38 Ringer's patients. 42% in each group received synthetic colloids in 24 hours pre-randomization (median 700 vs 500 mL)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: median SAPS II 50 vs 52, SOFA 9 vs 9, shock present in 84% vs 84%, kidney injury present in 36% vs 35%, median time from admission to randomization 3.7 vs 4.0 hours."
+        }
+      ],
+      "verdict": "Internal validity is high, supported by double-blinding, complete follow-up, and balanced groups, though unprotocolized RRT triggers add minor variability."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled critically ill adults with severe sepsis and high disease severity (84% shock) across 26 Scandinavian ICUs."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Directly applicable to ICU fluid resuscitation in sepsis, but less applicable to pre-ICU resuscitation or non-septic patient populations."
+        }
+      ],
+      "verdict": "External validity is good for adult ICU patients with severe sepsis and septic shock in developed healthcare systems."
+    },
+    "strengths": [
+      "Large, double-blind, multicenter RCT comparing modern tetrastarch to balanced crystalloid",
+      "Pragmatic design evaluating patient-centered, hard outcomes at 90 days",
+      "High baseline balance and complete primary outcome follow-up",
+      "Equal volume of trial fluid administered between groups, isolating fluid type as the causal exposure"
+    ],
+    "limitations": [
+      "Modified intention-to-treat design excluded 6 randomized patients who received no trial fluid",
+      "Initiation thresholds for RRT were determined by treating clinicians rather than strict protocolized criteria",
+      "Pre-randomization exposure to synthetic colloids in 42% of patients may have blunted baseline separation",
+      "Composite outcome primary driver was mortality, as 90-day dialysis dependence was rare (1 patient per group)"
+    ],
+    "critical_appraisal": {
+      "summary": "High-quality, double-blind RCT demonstrating clear clinical harm (increased 90-day mortality and RRT) from HES 130/0.42 compared to balanced crystalloid in severe sepsis.",
+      "strengths": [
+        "Double-blind pragmatic design",
+        "Use of balanced crystalloid comparator rather than saline",
+        "Clear isolation of toxicity independent of total fluid volume"
+      ],
+      "weaknesses": [
+        "Lack of standardized criteria for RRT initiation",
+        "High rates of pre-randomization colloid administration"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In patients with severe sepsis, resuscitation with 6% HES 130/0.42 significantly increased 90-day mortality and the need for renal replacement therapy compared with Ringer's acetate.",
+    "clinical_bottom_line": {
+      "verdict": "Do not use hydroxyethyl starch solutions for fluid resuscitation in patients with sepsis or septic shock; use crystalloids.",
+      "applies_to": "Adult ICU patients requiring volume expansion for severe sepsis or septic shock.",
+      "does_not_mean": "Early hemodynamic goals were non-beneficial; hemodynamic surrogates (lactate 2.2 vs 2.2 mmol/L at 0-12h) appeared similar despite diverging long-term clinical harms.",
+      "implementation_caveats": [
+        "Total fluid balance during ICU stay was similar (median 5452 vs 4616 mL, P=0.17)",
+        "Toxicity occurs even within recommended daily dosing limits (33 mL/kg/day)"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Unprotocolized RRT Initiation",
+        "notes": "Critics argued RRT timing depended on clinician preference, but concordance with the objective mortality signal reinforced genuine renal harm."
+      },
+      {
+        "topic": "Lack of Physiological Hemodynamic Separation",
+        "notes": "Lactate values (0-12h 2.2 vs 2.2 mmol/L; 12-24h 2.0 vs 2.0 mmol/L) were identical, demonstrating that early surrogate targets fail to reflect delayed organ toxicity."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CHEST",
+        "relation": "Subsequent large ICU RCT in a broader population that confirmed increased RRT requirement with HES 130/0.42 and no survival advantage over saline."
+      }
+    ],
+    "unresolved_questions": [
+      "Whether non-septic surgical or trauma populations experience the same risk of renal toxicity and mortality from low-substitution starches."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=798 analyzed",
+        "90-day mortality: 51% (HES) vs 43% (Ringer's) [RR 1.17, P=0.03]",
+        "Renal replacement therapy: 22% (HES) vs 16% (Ringer's) [RR 1.35, P=0.04]",
+        "Bleeding events: 23% vs 15% (P=0.003)"
+      ],
+      "one_line_takeaway": "Hydroxyethyl starch 130/0.42 causes increased mortality and renal failure in severe sepsis and should be avoided in favor of balanced crystalloids."
+    }
+  },
+  "_source_id": "6S",
+  "_source_system": "Sepsis"
+}

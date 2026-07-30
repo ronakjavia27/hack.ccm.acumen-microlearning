@@ -1,0 +1,331 @@
+{
+  "id": "BOX_-_Fever_Control",
+  "trial_name": "BOX - Fever Control",
+  "specialty": "Post-Cardiac Arrest Care",
+  "subtopic": "Temperature Management",
+  "year": 2023,
+  "journal": "New England Journal of Medicine",
+  "citation": "Hassager C, Schmidt H, Møller JE, Grand J, Mølstrøm S, Beske RP, et al. Duration of device-based fever prevention after cardiac arrest. N Engl J Med. 2023;388(10):888-897.",
+  "doi": "10.1056/NEJMoa2212528",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 789,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In comatose OHCA survivors receiving 24h of 36°C device-based temperature control, extending device-based fever prevention to 72h (vs 36h) reduced fever but did not improve death or neurological outcome at discharge.",
+  "pico": {
+    "population": "Comatose adults after out-of-hospital cardiac arrest of presumed cardiac cause, treated with device-based temperature control at 36°C for 24 hours",
+    "intervention": "Device-based fever prevention (target 37°C) continued for 48 hours after rewarming (total 72 hours from initiation)",
+    "comparison": "Device-based fever prevention (target 37°C) continued for 12 hours after rewarming (total 36 hours from initiation)",
+    "outcome": "Composite of death or CPC 3–4 at discharge within 90 days"
+  },
+  "keywords": [
+    "cardiac arrest",
+    "temperature management",
+    "fever prevention",
+    "targeted temperature management",
+    "post-cardiac arrest care",
+    "device-based temperature control",
+    "therapeutic hypothermia"
+  ],
+  "related_trials": [
+    "BOX platform trial"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Post-cardiac arrest brain injury evolves over hours to days; temperature is a modifiable variable linked to secondary injury. Practice shifted from routine deep hypothermia to active fever prevention, especially after rewarming. Guidelines recommend active fever prevention for up to 72 hours, but evidence for duration is indirect and observational. Device-based temperature control is resource-intensive and may prolong sedation, ventilation, and ICU workload.",
+      "knowledge_gap": "The optimal duration of device-based fever prevention after initial targeted temperature management is uncertain.",
+      "hypothesis": "72-hour device-based fever prevention would reduce the composite of death or poor neurological outcome compared with 36-hour management."
+    },
+    "methods": {
+      "design": "Investigator-initiated, randomised, controlled, open-label, multicentre (two Danish centres), second-stage randomisation within the BOX platform trial; web-based randomisation with variable block sizes, stratified by site.",
+      "setting": "ICUs at Rigshospitalet (Copenhagen University Hospital) and Odense University Hospital, Denmark; enrolled patients after ROSC and early stabilisation.",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years",
+          "Out-of-hospital cardiac arrest",
+          "Sustained ROSC",
+          "Presumed cardiac cause",
+          "Unconscious after ROSC (GCS ≤8)",
+          "Eligible for targeted temperature management and BOX trial inclusion"
+        ],
+        "exclusion": [
+          "In-hospital cardiac arrest",
+          "Non-cardiac cause",
+          "Pregnancy",
+          "Unwitnessed asystole",
+          "Suspected intracranial bleeding or stroke",
+          "Additional protocol-specified exclusions (details not fully reported)"
+        ]
+      },
+      "intervention": "Common initial phase: device-based temperature management to 36°C for 24 hours, then rewarming to 37°C at ≤0.5°C/hour. 72-hour group: continue device-based fever prevention (target 37°C) for 48 hours after rewarming (total 72 hours from initiation), or until awakening. Post-device fever >38°C treated with paracetamol and physical measures.",
+      "comparison": "Common initial phase identical. 36-hour group: continue device-based fever prevention (target 37°C) for 12 hours after rewarming (total 36 hours from initiation), or until awakening. Post-device fever treatment same.",
+      "blinding": "Open-label (no blinding of clinicians or participants); primary and secondary outcomes derived from discharge status and follow-up assessments, with potential for detection bias in functional outcomes.",
+      "sample_size_power": "No dedicated prospective sample size calculation for this substudy; with 789 participants, protocol anticipated 80% power at two-sided alpha 0.05 to detect a 27.5% relative difference in the primary composite outcome given the observed BOX event rate.",
+      "primary_outcome": "Composite of death or CPC 3–4 at discharge within 90 days.",
+      "secondary_outcomes": [
+        "Death within 90 days",
+        "Modified Rankin scale at 3 months",
+        "Montreal Cognitive Assessment at 3 months",
+        "Temperature >37.7°C at ≥1 time point (24–72 hours)",
+        "Temperature >38.5°C at ≥1 time point (24–72 hours)",
+        "Serious adverse events (any, infection, arrhythmia, bleeding, seizure)"
+      ],
+      "follow_up": "Primary outcome assessed at discharge within 90 days; neurological and cognitive follow-up at approximately 3 months where feasible."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary composite outcome (death or CPC 3–4 at discharge) was neutral: 32.3% (36h) vs 33.6% (72h); HR 0.99 (95% CI 0.77–1.26), P=0.92.",
+        "90-day mortality was similar: 29.5% vs 30.3%; HR 0.97 (95% CI 0.75–1.26), P=0.83.",
+        "Longer device use reduced fever exposure (e.g., temp >37.7°C: 50.1% vs 38.1%; RR 1.28, 95% CI 1.10–1.49) but without clinical benefit.",
+        "Serious adverse events were common but similar between groups (any SAE: 43.3% vs 45.2%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite: death or CPC 3–4 at discharge (within 90 days)",
+          "group_a": "127/393 (32.3%)",
+          "group_b": "133/396 (33.6%)",
+          "effect_measure": "HR",
+          "effect_value": "0.99",
+          "ci_95": "0.77–1.26",
+          "p_value": "0.92",
+          "note": "Group A = 36-hour; Group B = 72-hour. HR from Cox model."
+        },
+        {
+          "outcome": "Death within 90 days",
+          "group_a": "116/393 (29.5%)",
+          "group_b": "120/396 (30.3%)",
+          "effect_measure": "HR",
+          "effect_value": "0.97",
+          "ci_95": "0.75–1.26",
+          "p_value": "0.83",
+          "note": "All-cause mortality."
+        },
+        {
+          "outcome": "Modified Rankin scale at 3 months (median, IQR)",
+          "group_a": "1 (0–2); n=255 assessed",
+          "group_b": "1 (0–2); n=251 assessed",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Functional outcome among survivors assessed; no formal comparison reported."
+        },
+        {
+          "outcome": "Montreal Cognitive Assessment at 3 months (median, IQR)",
+          "group_a": "26 (22–28); n=256 assessed",
+          "group_b": "27 (24–29); n=253 assessed",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Cognitive outcome among survivors assessed; no formal comparison reported."
+        },
+        {
+          "outcome": "Temperature >37.7°C at ≥1 time point (24–72 hours)",
+          "group_a": "197/393 (50.1%)",
+          "group_b": "151/396 (38.1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.28",
+          "ci_95": "1.10–1.49",
+          "p_value": "",
+          "note": "RR reflects higher fever exposure in the 36-hour group (Group A). P not reported."
+        },
+        {
+          "outcome": "Temperature >38.5°C at ≥1 time point (24–72 hours)",
+          "group_a": "46/393 (11.6%)",
+          "group_b": "24/396 (6.1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.49",
+          "ci_95": "1.06–2.08",
+          "p_value": "",
+          "note": "RR reflects higher fever exposure in the 36-hour group (Group A). P not reported."
+        },
+        {
+          "outcome": "Any serious adverse event",
+          "group_a": "170/393 (43.3%)",
+          "group_b": "179/396 (45.2%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Composite SAE; no significant difference."
+        },
+        {
+          "outcome": "Infection (serious adverse event)",
+          "group_a": "152/393 (38.7%)",
+          "group_b": "162/396 (40.9%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Cardiac arrhythmia requiring treatment (serious adverse event)",
+          "group_a": "123/393 (31.3%)",
+          "group_b": "117/396 (29.5%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Bleeding requiring transfusion (serious adverse event)",
+          "group_a": "50/393 (12.7%)",
+          "group_b": "51/396 (12.9%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": ""
+        },
+        {
+          "outcome": "Seizure requiring treatment (serious adverse event)",
+          "group_a": "22/393 (5.6%)",
+          "group_b": "15/396 (3.8%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "",
+          "note": "Event counts small; interpretation limited."
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Any serious adverse event: 170/393 (43.3%) in 36-hour group vs 179/396 (45.2%) in 72-hour group.",
+      "Infection: 152/393 (38.7%) vs 162/396 (40.9%).",
+      "Cardiac arrhythmia requiring treatment: 123/393 (31.3%) vs 117/396 (29.5%).",
+      "Bleeding requiring transfusion: 50/393 (12.7%) vs 51/396 (12.9%).",
+      "Seizure requiring treatment: 22/393 (5.6%) vs 15/396 (3.8%).",
+      "No significant differences between groups for any SAE category."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Web-based randomisation with variable block sizes and stratification by site; allocation concealment likely for assignment generation, but treatment was unblinded after allocation."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; knowledge of treatment duration may influence sedation, ventilation, mobilisation, and discharge decisions. Primary endpoint uses CPC at discharge, which is coarse and may be influenced by discharge timing and WLST decisions; functional outcomes susceptible to non-blinded assessment."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "7/393 (1.8%) in 36-hour group and 10/396 (2.5%) in 72-hour group did not receive assigned intervention; ITT analysis used. Trial powered to detect 27.5% relative difference; smaller effects may be missed."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Temperature separation achieved but incomplete: 50.1% vs 38.1% had temp >37.7°C (RR 1.28). After device discontinuation, fever >38°C treated in both groups with paracetamol and physical measures, potentially attenuating exposure differences. The tested 'dose' was duration of device-based fever prevention (36 vs 72 hours). Two-centre design; device choice differed by centre (surface vs intravascular), but stratified randomisation mitigates imbalance. Median time from arrest to randomisation 146 min (IQR 113–186 vs 112–189)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups closely balanced: age 63±12 years, male ~81%, shockable rhythm ~83%, median time to ROSC 20 min (IQR 14–30 vs 14–31), emergency coronary angiography ~88%."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong: randomisation and baseline balance are robust and temperature separation occurred, but open-label delivery and functional outcome ascertainment introduce meaningful risks of performance and detection bias, particularly for non-mortality outcomes. The trial was powered to detect a 27.5% relative difference, so smaller effects may be missed."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Predominantly witnessed OHCA with high bystander CPR and shockable rhythms; results best generalised to similar 'presumed cardiac cause' cohorts with organised post-arrest systems. Excluded non-cardiac causes, in-hospital arrests, and selected severe neurological presentations; findings should not be extrapolated to broader arrest aetiologies or in-hospital cardiac arrest populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Two Danish centres with structured post-resuscitation pathways and high access to coronary angiography (~88%); may not reflect resource-limited environments. Both arms used device-based temperature management and fever treatment protocols; applicability strongest for centres using similar devices and a 36°C/rewarm-to-37°C framework."
+        }
+      ],
+      "verdict": "Generalisability is good for high-resource ICUs treating comatose OHCA of presumed cardiac cause with established post-arrest pathways, but is limited for non-cardiac, in-hospital, and predominantly non-shockable cohorts."
+    },
+    "strengths": [
+      "Clinically direct question addressing a high-variation component of standard post-arrest care (duration of fever prevention).",
+      "Large sample (n=789) within a rigorously run platform framework, with excellent baseline balance and pragmatic delivery.",
+      "Demonstrated biological separation in fever exposure (higher temperature excursions in the shorter-duration group).",
+      "Patient-centred endpoints including mortality and functional/cognitive measures (mRS and MoCA at ~3 months) among those assessed."
+    ],
+    "limitations": [
+      "Open-label design; potential co-intervention differences (sedation duration, ventilation, mobilisation, and discharge timing) cannot be excluded.",
+      "Primary endpoint incorporates CPC at discharge (within 90 days), which may be influenced by local discharge practices and is an imprecise neurological scale.",
+      "Follow-up assessments (mRS, MoCA) were available only for a subset of the randomised cohort, limiting interpretability for survivorship outcomes.",
+      "Power assumptions were geared toward detecting a large effect (27.5% relative difference); smaller clinically meaningful effects may be missed.",
+      "Two-country, two-centre context may not reflect broader international variation in post-arrest care bundles and prognostication practices."
+    ],
+    "critical_appraisal": {
+      "summary": "This well-conducted, open-label RCT found that extending device-based fever prevention from 36 to 72 hours after OHCA reduced fever but did not improve death or neurological outcomes, with moderate-to-strong internal validity and good generalisability to similar high-resource settings.",
+      "strengths": [
+        "Clinically relevant question",
+        "Large sample with excellent baseline balance",
+        "Demonstrated biological separation in fever exposure",
+        "Patient-centred endpoints including functional and cognitive measures"
+      ],
+      "weaknesses": [
+        "Open-label design risking performance and detection bias",
+        "Primary endpoint (CPC at discharge) is coarse and susceptible to local practices",
+        "Incomplete follow-up for functional/cognitive outcomes",
+        "Powered only for large effect size",
+        "Limited to two Danish centres, potentially limiting generalisability"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In patients already managed with device-based temperature control to 36°C for 24 hours and active fever treatment thereafter, extending device-based fever prevention from 36 to 72 hours did not improve the composite of death or poor neurological outcome, nor 90-day mortality.",
+    "clinical_bottom_line": {
+      "verdict": "Extending device-based fever prevention from 36 to 72 hours after OHCA does not improve survival or neurological outcomes and should not be routinely mandated; a 36-hour strategy with consistent post-device fever treatment appears reasonable.",
+      "applies_to": "Comatose survivors of presumed cardiac-cause OHCA treated with device-based temperature control at 36°C for 24 hours in high-resource ICUs with established post-arrest pathways.",
+      "does_not_mean": "That fever prevention is unimportant; both arms received active fever treatment after device discontinuation, and the trial does not address the value of fever prevention per se, only the duration of device-based prevention.",
+      "implementation_caveats": [
+        "Effects on sedation duration, ventilation time, and ICU length of stay were not reported and remain unknown.",
+        "Centres without device-based temperature management or different post-arrest protocols may not replicate these findings.",
+        "The trial does not support extending device use solely for fever prevention beyond 36 hours if adequate pharmacological/environmental fever treatment is available."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Guideline-recommended duration vs direct evidence",
+        "notes": "The trial directly tested a key 'duration' element of temperature management that had been operationalised in guidelines despite limited direct RCT evidence for a specific duration, particularly beyond early post-ROSC care."
+      },
+      {
+        "topic": "What 'fever prevention' actually means in practice",
+        "notes": "Both groups received active fever treatment after device discontinuation (paracetamol and physical measures), so the causal contrast is 'device-based prevention duration' rather than 'fever treated vs not treated'; this may partly explain why substantial temperature separation did not yield clinical benefit."
+      },
+      {
+        "topic": "Endpoint construction and susceptibility to care-pathway effects",
+        "notes": "CPC at discharge is clinically meaningful but coarse and can be influenced by discharge timing and withdrawal-of-life-sustaining-therapy practices; neutrality could reflect true absence of effect or modest effect masked by endpoint and pathway variability."
+      },
+      {
+        "topic": "Platform-trial context and bundle-of-care complexity",
+        "notes": "The BOX programme tested multiple physiological targets; a key methodological implication is that modest incremental differences in a single physiological domain may yield small (or absent) net effects when embedded in high-quality post-arrest care, reinforcing the need for precise, adequately powered tests of each component."
+      },
+      {
+        "topic": "Subsequent evidence direction",
+        "notes": "The neutral clinical results in the presence of improved fever suppression are consistent with a broader trend in post-arrest temperature research: meticulous avoidance of fever is prioritised, while incremental intensification (deeper targets or longer durations) has not consistently produced outcome gains in contemporary care bundles."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "BOX platform trial",
+        "relation": "This fever control substudy is embedded within the BOX platform trial, which randomised patients to different blood pressure and oxygenation targets as well; the platform design allowed efficient testing of multiple interventions in a shared cohort."
+      }
+    ],
+    "unresolved_questions": [
+      "Does duration of device-based fever prevention affect sedation duration, ventilation time, or ICU length of stay?",
+      "Are there subgroups (e.g., non-shockable rhythms, longer time to ROSC) that might benefit from longer fever prevention?",
+      "What is the optimal fever threshold and treatment strategy after device discontinuation?",
+      "Would a larger sample or more sensitive neurological endpoints detect a smaller but clinically meaningful benefit?",
+      "How do these findings apply to centres without routine device-based temperature management or with different post-arrest care bundles?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=789",
+        "Primary composite (death/CPC 3-4): 32.3% vs 33.6%, HR 0.99 (95% CI 0.77–1.26), P=0.92",
+        "90-day mortality: 29.5% vs 30.3%, HR 0.97 (95% CI 0.75–1.26), P=0.83",
+        "Fever >37.7°C reduced: 50.1% vs 38.1%, RR 1.28 (95% CI 1.10–1.49)"
+      ],
+      "one_line_takeaway": "In comatose OHCA survivors receiving 24h of 36°C device-based temperature control, extending device-based fever prevention to 72h (vs 36h) reduced fever but did not improve survival or neurological outcomes, supporting a 36h strategy as reasonable."
+    }
+  },
+  "_source_id": "BOX_-_Fever_Control",
+  "_source_system": "Resuscitation"
+}

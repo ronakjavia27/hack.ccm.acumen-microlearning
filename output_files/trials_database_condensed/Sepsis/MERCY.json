@@ -1,0 +1,293 @@
+{
+  "id": "MERCY",
+  "trial_name": "MERCY — Continuous vs Intermittent Meropenem in ICU Sepsis (2023)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Septic Shock",
+  "year": 2023,
+  "journal": "JAMA",
+  "citation": "Monti G, Bradić N, Marzaroli M, et al; for the MERCY Investigators. Continuous vs intermittent meropenem administration in critically ill patients with sepsis: the MERCY randomized clinical trial. JAMA. 2023;330(2):141-151.",
+  "doi": "https://doi.org/10.1001/jama.2023.10598",
+  "registration": "NCT03452839",
+  "trial_type": "RCT — multicenter, double-blind, double-dummy, parallel-group superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 607,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Continuous meropenem infusion did not reduce 28-day mortality or emergence of resistant organisms compared to intermittent infusion in ICU sepsis.",
+  "pico": {
+    "population": "Adult ICU patients (≥18 years) with sepsis or septic shock prescribed a new course of meropenem expected to start within 24 hours.",
+    "intervention": "Continuous meropenem infusion (1 g loading dose, then typically 3 g/24h adjusted for CrCl) plus double-dummy intermittent placebo boluses.",
+    "comparison": "Intermittent meropenem infusions (1 g loading dose, then typically 1 g q8h over 30–60 min) plus double-dummy continuous placebo infusion.",
+    "outcome": "Composite of 28-day all-cause mortality or emergence of new pan-drug-resistant (PDR) or extensively drug-resistant (XDR) organisms."
+  },
+  "keywords": [
+    "meropenem",
+    "continuous infusion",
+    "beta-lactam PK/PD",
+    "sepsis",
+    "septic shock",
+    "antimicrobial resistance"
+  ],
+  "related_trials": [
+    "BLING III"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Meropenem is a time-dependent beta-lactam whose efficacy relies on maintaining free drug concentrations above pathogen MIC. Critical illness causes marked PK variability (augmented renal clearance, altered volume of distribution, RRT), risking underexposure with standard intermittent dosing. Sepsis guidelines suggest prolonged infusions after a loading dose, though prior meta-analyses reporting lower mortality (RR ~0.70; 95% CI 0.56 to 0.87) were heterogeneous and at risk of bias.",
+      "knowledge_gap": "Whether continuous meropenem infusion improves patient-important clinical and stewardship outcomes in contemporary ICU practice when compared against an optimized, loading-dose intermittent regimen.",
+      "hypothesis": "In adult ICU patients with sepsis or septic shock, continuous meropenem administration following a loading dose reduces the composite of 28-day all-cause mortality or emergence of new PDR/XDR organisms compared to dose-matched intermittent administration."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, investigator-initiated, international, double-blind, double-dummy, parallel-group superiority trial.",
+      "setting": "31 ICUs across 26 hospitals in 4 countries; enrolled June 2018 to August 2022.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) in ICU with sepsis or septic shock",
+          "Suspected or proven infection plus ≥2 SIRS criteria and SOFA score ≥2",
+          "Clinicians prescribed a new course of meropenem expected to start within 24 hours of randomisation",
+          "Anticipated ICU stay >48 hours"
+        ],
+        "exclusion": [
+          "Refusal or withdrawal of consent",
+          "Known allergy to carbapenems",
+          "Meropenem received within 48 hours prior to screening",
+          "Gram-negative pathogen known to be meropenem-resistant at enrolment",
+          "SAPS II score ≥65",
+          "AIDS",
+          "Immunosuppressive therapy or long-term corticosteroids"
+        ]
+      },
+      "intervention": "Standardised 1 g meropenem loading dose followed by continuous infusion delivering protocol dose (typically 3 g/24h for CrCl >50 mL/min; dose-adjusted for CrCl 10–50 mL/min; escalation permitted) plus double-dummy intermittent placebo boluses.",
+      "comparison": "Standardised 1 g meropenem loading dose followed by intermittent bolus infusions over 30–60 minutes (typically 1 g every 8 hours for CrCl >50 mL/min; renal-adjusted; more frequent in first 24h if preserved renal function) plus double-dummy continuous placebo infusion.",
+      "blinding": "Double-blind, double-dummy (patients, clinicians, investigators, outcome assessors blinded; masked study drug prepared by site pharmacy/research staff).",
+      "sample_size_power": "600 patients (300 per group) planned to detect a 12% absolute reduction in primary composite outcome (52% to 40%) with >80% power at 5% significance level.",
+      "primary_outcome": "Composite of 28-day all-cause mortality or emergence of new PDR/XDR organisms.",
+      "secondary_outcomes": [
+        "All-cause mortality at day 28",
+        "Emergence of new PDR/XDR organism by day 28",
+        "All-cause mortality at day 90",
+        "Days alive and free from antibiotics at day 28",
+        "Days alive and free from ICU at day 28",
+        "Study drug-related adverse events (seizures, allergic reactions)"
+      ],
+      "follow_up": "Primary endpoint at day 28; mortality follow-up to day 90."
+    },
+    "results": {
+      "headline_bullets": [
+        "Enrolled 607 patients (303 continuous vs 304 intermittent) with full ITT primary outcome ascertainment.",
+        "Primary composite outcome (28-day death or new PDR/XDR organism) showed no significant difference (47% vs 49%; RR 0.96).",
+        "All-cause mortality was similar at day 28 (30% vs 33%) and identical at day 90 (42% vs 42%).",
+        "No study drug-related seizures or allergic reactions were observed in either group."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite at day 28 (death or new PDR/XDR organism)",
+          "group_a": "142/303 (47%)",
+          "group_b": "149/304 (49%)",
+          "effect_measure": "RR",
+          "effect_value": "0.96",
+          "ci_95": "0.81–1.13",
+          "p_value": "0.60",
+          "note": "Absolute difference −2.1% (95% CI −9.8% to 5.6%)"
+        },
+        {
+          "outcome": "All-cause mortality at day 28",
+          "group_a": "91/303 (30%)",
+          "group_b": "99/304 (33%)",
+          "effect_measure": "RR",
+          "effect_value": "0.92",
+          "ci_95": "0.73–1.17",
+          "p_value": "0.50",
+          "note": "Objective component of primary composite"
+        },
+        {
+          "outcome": "Emergence of new PDR/XDR organism by day 28",
+          "group_a": "68/288 (24%)",
+          "group_b": "70/280 (25%)",
+          "effect_measure": "RR",
+          "effect_value": "0.94",
+          "ci_95": "0.71–1.26",
+          "p_value": "0.70",
+          "note": "Denominators exclude deaths within 48 hours (15 continuous vs 24 intermittent)"
+        },
+        {
+          "outcome": "All-cause mortality at day 90",
+          "group_a": "127/303 (42%)",
+          "group_b": "127/304 (42%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.83–1.21",
+          "p_value": "0.97",
+          "note": "No signal of late mortality separation"
+        },
+        {
+          "outcome": "Days alive and free from antibiotics at day 28",
+          "group_a": "Median 3 (IQR 0–15)",
+          "group_b": "Median 2 (IQR 0–15)",
+          "effect_measure": "MD",
+          "effect_value": "0.4",
+          "ci_95": "−0.9 to 1.7",
+          "p_value": "0.57",
+          "note": "Mean difference"
+        },
+        {
+          "outcome": "Days alive and free from ICU at day 28",
+          "group_a": "Median 0 (IQR 0–19)",
+          "group_b": "Median 0 (IQR 0–19)",
+          "effect_measure": "MD",
+          "effect_value": "0.6",
+          "ci_95": "−1.0 to 2.2",
+          "p_value": "0.40",
+          "note": "Mean difference"
+        },
+        {
+          "outcome": "Study drug–related seizures or allergic reactions",
+          "group_a": "0/303 (0%)",
+          "group_b": "0/304 (0%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "N/A",
+          "note": "No study drug–related seizures or allergic reactions reported"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Acute kidney injury at randomisation",
+          "group_a": "36/86",
+          "group_b": "54/98",
+          "effect_measure": "RR",
+          "effect_value": "0.76",
+          "ci_95": "0.56–1.03",
+          "p_interaction": "0.071"
+        },
+        {
+          "subgroup": "Pathogens with high carbapenem MIC",
+          "group_a": "56/92",
+          "group_b": "49/82",
+          "effect_measure": "RR",
+          "effect_value": "1.02",
+          "ci_95": "0.80–1.30",
+          "p_interaction": "0.55"
+        }
+      ]
+    },
+    "safety": [
+      "Zero study drug–related seizures reported in either arm (0/303 vs 0/304)",
+      "Zero study drug–related allergic reactions reported in either arm (0/303 vs 0/304)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation stratified by site; concealment preserved via masked pharmacy preparation."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind, double-dummy design maintained blinding across patients, treating staff, investigators, and outcome assessors."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Full ITT analysis on all 607 patients. Per-protocol excluded 12 ineligible patients (7 continuous vs 5 intermittent) yielding similar results (RR 0.97; 95% CI 0.82 to 1.15)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Rapid administration (median 7 min from randomisation to first dose in both arms); crossover rare (1 patient, 0.3%)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well-balanced acuity: septic shock 62% vs 60%, SOFA median 9 vs 9, SAPS II median 44 vs 43, vasopressors 62% vs 61%, invasive airway 74% vs 78%, hospital-to-randomisation 9 vs 8 days, ICU-to-randomisation 5 vs 5 days, prior antibiotics 67% vs 65%, blood culture positivity 23% vs 20%. Dose tier balance: standard 3 g/day (62% vs 64%), low 2 g/day (24% vs 28%), high 6 g/day (11% vs 6.9%). Median treatment duration 11 vs 11 days; total dose 24 g vs 21 g; concomitant antibiotics 73% vs 74%."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong given allocation concealment, double-dummy double-blind execution, minimal crossover, and complete ITT follow-up."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Reflects high-acuity ICU sepsis (61% septic shock, 76% ventilated). Excluded SAPS II ≥65, AIDS, immunosuppression/steroids, and baseline meropenem resistance."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Directly applicable to ICUs with infusion pump and stability workflows. Comparator used 30–60 min intermittent infusions with a mandatory 1 g loading dose; applicability to extended intermittent infusions (e.g., 3–4 hours) is unknown."
+        }
+      ],
+      "verdict": "Generalisability is good for high-resource ICUs treating severe sepsis/septic shock with meropenem, but limited for immunocompromised patients, extreme severity, or alternative infusion strategies."
+    },
+    "strengths": [
+      "Large, international multicentre RCT (n=607) with double-blind, double-dummy design",
+      "Protocolised dosing with universal 1 g loading dose and matched total daily dose",
+      "High protocol adherence with minimal crossover and rapid drug initiation (median 7 minutes)",
+      "Evaluated both patient-centred outcomes (28- and 90-day mortality) and stewardship endpoints (PDR/XDR emergence)"
+    ],
+    "limitations": [
+      "Primary composite endpoint combines mortality with culture-defined resistance, introducing causal and sampling heterogeneity",
+      "No therapeutic drug monitoring or PK sampling performed to verify actual serum concentration/target attainment separation",
+      "Enrolment occurred late in ICU stay (median 5 days) after significant baseline antibiotic exposure (66%)",
+      "Exclusion of SAPS II ≥65 and immunosuppressed patients limits applicability to these groups"
+    ],
+    "critical_appraisal": {
+      "summary": "MERCY is a high-quality, double-blind RCT demonstrating that continuous meropenem infusion does not superiorly reduce mortality or resistance emergence over dose-matched intermittent infusion when an early loading dose is given.",
+      "strengths": [
+        "Double-blind double-dummy design",
+        "Mandatory loading dose in both groups",
+        "Complete 90-day follow-up"
+      ],
+      "weaknesses": [
+        "Lack of serum drug level verification (PK/PD validation)",
+        "Late randomisation timing during ICU stay",
+        "Composite primary endpoint"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In critically ill patients with sepsis or septic shock, continuous administration of meropenem did not improve a composite of 28-day mortality and emergence of PDR/XDR organisms compared with intermittent administration.",
+    "clinical_bottom_line": {
+      "verdict": "Does not support routine default conversion to continuous meropenem infusion in unselected ICU sepsis patients when standard intermittent dosing includes a loading dose.",
+      "applies_to": "Adult ICU patients with sepsis or septic shock starting meropenem.",
+      "does_not_mean": "Does not mean continuous infusion is harmful, nor does it rule out benefit from PK-guided therapeutic drug monitoring in specific subgroups.",
+      "implementation_caveats": [
+        "Continuous infusion adds pump, nursing, and drug stability overhead without clear clinical outcome superiority",
+        "Always ensure a 1 g loading dose is administered regardless of administration mode"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite endpoint construction",
+        "notes": "Combining 28-day mortality with culture-based PDR/XDR emergence creates interpretive complexity due to differing causal drivers and variable survivor sampling."
+      },
+      {
+        "topic": "PK/PD separation and optimized control arm",
+        "notes": "Without drug level sampling, it is unclear if continuous infusion failed clinically or failed to produce meaningful PK separation. Furthermore, the control arm received an optimized regimen with a mandated 1 g loading dose and prompt dosing, narrowing potential gains."
+      },
+      {
+        "topic": "Discordance with prior meta-analyses",
+        "notes": "Earlier meta-analyses suggesting reduced mortality with continuous beta-lactams were largely based on unblinded, heterogeneous trials lacking universal loading doses."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "BLING III",
+        "relation": "Evaluated continuous vs intermittent infusion across multiple beta-lactam agents in ICU sepsis, expanding on single-drug findings from MERCY."
+      },
+      {
+        "trial": "2024 JAMA Bayesian Meta-analysis",
+        "relation": "Synthesised prolonged vs intermittent beta-lactam infusion RCTs in sepsis including MERCY to establish contemporary pooled estimates."
+      }
+    ],
+    "unresolved_questions": [
+      "Whether PK-guided, therapeutic drug monitoring (TDM)-targeted continuous infusion improves outcomes in targeted high-risk subgroups.",
+      "Whether hyper-early continuous infusion (initiated immediately upon ICU admission) provides clinical benefit.",
+      "Efficacy of continuous infusion in cohorts infected specifically with high-MIC pathogens."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=607 (303 continuous vs 304 intermittent)",
+        "Primary composite: 47% vs 49% (RR 0.96; 95% CI 0.81–1.13; p=0.60)",
+        "28-day mortality: 30% vs 33% (RR 0.92)",
+        "90-day mortality: 42% vs 42% (RR 1.00)"
+      ],
+      "one_line_takeaway": "Continuous meropenem infusion provides no mortality or resistance benefit over an optimized loading-dose intermittent regimen in ICU sepsis."
+    }
+  },
+  "_source_id": "MERCY",
+  "_source_system": "Sepsis"
+}

@@ -1,0 +1,280 @@
+{
+  "id": "Wenzel",
+  "trial_name": "Wenzel — Vasopressin vs Epinephrine in Out-of-Hospital Cardiopulmonary Resuscitation (2004)",
+  "specialty": "Resuscitation",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 2004,
+  "journal": "N Engl J Med",
+  "citation": "Wenzel V, Krismer AC, Arntz HR, Sitter H, Stadlbauer KH, Lindner KH, for the European Resuscitation Council Vasopressor During Cardiopulmonary Resuscitation Study Group. A comparison of vasopressin and epinephrine for out-of-hospital cardiopulmonary resuscitation. N Engl J Med. 2004;350:105-13.",
+  "doi": "10.1056/NEJMoa025431",
+  "registration": "N/A",
+  "trial_type": "RCT — multicenter, double-blind, randomized controlled prehospital trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1186,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In out-of-hospital cardiac arrest, initial vasopressin did not improve overall survival to hospital discharge compared to epinephrine.",
+  "pico": {
+    "population": "Adults with non-traumatic out-of-hospital cardiopulmonary arrest requiring intravenous vasopressors.",
+    "intervention": "Vasopressin 40 IU IV initial dose, repeated once after 3 minutes if no ROSC (max 80 IU), followed by optional epinephrine if needed.",
+    "comparison": "Epinephrine 1 mg IV initial dose, repeated once after 3 minutes if no ROSC (max 2 mg), followed by optional epinephrine if needed.",
+    "outcome": "Primary: survival to hospital admission. Secondary: ROSC, survival to hospital discharge, neurological CPC score at discharge."
+  },
+  "keywords": [
+    "vasopressin",
+    "epinephrine",
+    "cardiopulmonary resuscitation",
+    "out-of-hospital cardiac arrest",
+    "asystole",
+    "advanced life support"
+  ],
+  "related_trials": [
+    "Mentzelopoulos VSE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Epinephrine was the standard vasopressor in advanced life support for cardiac arrest based on alpha-adrenergic vasopressor physiology, but lacked firm evidence for improving neurologically intact survival. Vasopressin acts via non-adrenergic V1 receptors, retains vasoconstrictive properties in severe acidemia/hypoxia, and has a longer half-life than epinephrine.",
+      "knowledge_gap": "Uncertainty remained whether replacing epinephrine with vasopressin as a first-line agent or rescue drug would improve patient-centered outcomes like hospital discharge survival and neurological recovery, and whether effects varied by presenting rhythm.",
+      "hypothesis": "In adult out-of-hospital cardiac arrest, vasopressin (40 IU, repeated once) compared with epinephrine (1 mg, repeated once) improves hospital admission and discharge survival, with potential rhythm-dependent treatment effects."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, investigator-initiated, double-blind, controlled prehospital trial.",
+      "setting": "44 advanced life-support units (physician-staffed mobile ICUs) in Austria, Germany, and Switzerland.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with out-of-hospital cardiopulmonary arrest due to ventricular fibrillation (VF), pulseless electrical activity (PEA), or asystole requiring CPR and IV vasopressors.",
+          "VF patients were randomised only after three unsuccessful defibrillation shocks."
+        ],
+        "exclusion": [
+          "Age <18 years",
+          "Pregnancy",
+          "Trauma",
+          "Primary intracerebral haemorrhage",
+          "Contraindication to vasopressors",
+          "Hypothermia",
+          "Terminal illness",
+          "Do-not-resuscitate order",
+          "Arrest due to haemorrhagic shock",
+          "Participation in another study"
+        ]
+      },
+      "intervention": "Vasopressin 40 IU IV initial injection. If no ROSC after 3 minutes, a second 40 IU vasopressin injection was administered (max 80 IU study drug). If ROSC did not occur after two study injections, additional epinephrine was permitted per standard local algorithm. All injections were followed by a 20 mL saline flush.",
+      "comparison": "Epinephrine 1 mg IV initial injection. If no ROSC after 3 minutes, a second 1 mg epinephrine injection was administered (max 2 mg study drug). If ROSC did not occur after two study injections, additional epinephrine was permitted per standard local algorithm. All injections were followed by a 20 mL saline flush.",
+      "blinding": "Double-blind (study drugs prepared in coded, indistinguishable packs centrally).",
+      "sample_size_power": "Planned N=1500 (571 per group needed for 80% power at alpha 0.05 to detect a 25% relative improvement in hospital admission, plus a 30% safety margin). Trial was stopped early due to funding loss after 1219 were randomised and 1186 analysed.",
+      "primary_outcome": "Survival to hospital admission.",
+      "secondary_outcomes": [
+        "ROSC with study drug",
+        "Survival to hospital discharge",
+        "Cerebral Performance Category (CPC) among survivors at hospital discharge"
+      ],
+      "follow_up": "To hospital admission and hospital discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early due to funding loss (1219 randomised, 1186 analysed).",
+        "Primary endpoint of survival to hospital admission showed a non-significant trend favoring vasopressin (36.3% vs 31.2%, P=0.06).",
+        "Overall survival to hospital discharge was identical in both groups (9.9% vs 9.9%, P=0.99).",
+        "Pre-specified subgroup analysis of asystole showed higher admission (29.0% vs 20.3%, P=0.02) and discharge survival (4.7% vs 1.5%, P=0.04) with vasopressin."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "ROSC with study drugs (overall)",
+          "group_a": "145/589 (24.6%)",
+          "group_b": "167/597 (28.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.2",
+          "ci_95": "0.9–1.5",
+          "p_value": "0.19",
+          "note": "Trial convention: OR < 1 indicates advantage for vasopressin."
+        },
+        {
+          "outcome": "Survival to hospital admission (overall primary)",
+          "group_a": "214/589 (36.3%)",
+          "group_b": "186/597 (31.2%)",
+          "effect_measure": "OR",
+          "effect_value": "0.8",
+          "ci_95": "0.6–1.0",
+          "p_value": "0.06",
+          "note": "Borderline statistical significance; did not meet 0.05 threshold."
+        },
+        {
+          "outcome": "Survival to hospital discharge (overall)",
+          "group_a": "57/578 (9.9%)",
+          "group_b": "58/588 (9.9%)",
+          "effect_measure": "OR",
+          "effect_value": "1.0",
+          "ci_95": "0.7–1.5",
+          "p_value": "0.99",
+          "note": "11 (vasopressin) and 9 (epinephrine) lost to follow-up before discharge."
+        },
+        {
+          "outcome": "Good CPC at discharge among survivors (overall)",
+          "group_a": "15/46 (32.6%)",
+          "group_b": "16/46 (34.8%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.35",
+          "note": "CPC missing for 11 vasopressin and 12 epinephrine survivors."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Asystole - Survival to hospital admission",
+          "group_a": "76/262 (29.0%)",
+          "group_b": "54/266 (20.3%)",
+          "effect_measure": "OR",
+          "effect_value": "0.6",
+          "ci_95": "0.4–0.9",
+          "p_interaction": "N/A",
+          "p_value": "0.02"
+        },
+        {
+          "subgroup": "Asystole - Survival to hospital discharge",
+          "group_a": "12/257 (4.7%)",
+          "group_b": "4/262 (1.5%)",
+          "effect_measure": "OR",
+          "effect_value": "0.3",
+          "ci_95": "0.1–1.0",
+          "p_interaction": "N/A",
+          "p_value": "0.04"
+        },
+        {
+          "subgroup": "No ROSC with study drug + received additional epinephrine - Admission",
+          "group_a": "96/373 (25.7%)",
+          "group_b": "59/359 (16.4%)",
+          "effect_measure": "OR",
+          "effect_value": "0.6",
+          "ci_95": "0.4–0.8",
+          "p_interaction": "N/A",
+          "p_value": "0.002"
+        },
+        {
+          "subgroup": "No ROSC with study drug + received additional epinephrine - Discharge",
+          "group_a": "23/369 (6.2%)",
+          "group_b": "6/355 (1.7%)",
+          "effect_measure": "OR",
+          "effect_value": "0.3",
+          "ci_95": "0.1–0.6",
+          "p_interaction": "N/A",
+          "p_value": "0.002"
+        }
+      ]
+    },
+    "safety": [
+      "Adverse events specific to study drugs were not separately detailed beyond standard resuscitation endpoints; early trial termination was due to funding loss rather than safety concerns."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Coded drug boxes prepared centrally and distributed to 44 units; stratified by centre."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind with indistinguishable packs. Objective primary/secondary survival endpoints minimized bias; CPC scoring was more subjective with missing data."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1219 randomised, 1186 analysed (33 excluded due to missing drug codes). Loss to discharge follow-up: 1.9% (11/589) vs 1.5% (9/597). Missing CPC data in 11 vs 12 survivors."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Delivery timing was similar (time to 1st injection 9.6±4.1 vs 10.2±4.3 min; 2nd injection 13.3±5.6 vs 13.9±5.8 min). Key co-interventions similar (intubation 84.7% vs 86.1%; fibrinolysis 7.1% vs 7.0%; sodium bicarbonate 86.4% vs 85.9%). High post-study drug epinephrine use reduced group separation (total epinephrine dose 7.3±5.2 vs 7.2±5.1 mg; time to standard epinephrine protocol 17.5±6.3 vs 17.6±5.5 min)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well-balanced: age 66.9±15.7 vs 66.0±16.0 years; witnessed arrest 75.4% vs 74.2%; bystander CPR 45.2% vs 45.1%. Rhythms: VF 37.9% vs 41.7%; PEA 17.7% vs 13.7%; asystole 44.5% vs 44.6%."
+        }
+      ],
+      "verdict": "Moderate internal validity: randomisation and blinding were strong, but early termination for funding, post-randomisation rescue epinephrine exposure diluting group separation, and unadjusted subgroup testing limit conclusions."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Non-traumatic adult OHCA patients studied. Screening yield was low (5967 assessed, 4748 excluded) due to strict field exclusion criteria (trauma, haemorrhagic shock, terminal illness, DNR)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in physician-staffed prehospital EMS units in Austria, Germany, and Switzerland. May not directly apply to paramedic-only EMS systems, delayed vasopressor protocols, or different termination-of-resuscitation rules."
+        }
+      ],
+      "verdict": "Moderate external validity, most applicable to adult non-traumatic OHCA managed by physician-led prehospital ALS teams with rapid IV access."
+    },
+    "strengths": [
+      "Large multicenter double-blind prehospital RCT in high-acuity emergency resuscitation",
+      "Pragmatic integration into standard prehospital ALS operational workflows across 44 units",
+      "Objective primary and secondary endpoints with pre-specified rhythm subgroup reporting"
+    ],
+    "limitations": [
+      "Early stopping due to funding loss reduced statistical power for discharge survival and CPC outcomes",
+      "Primary endpoint of hospital admission is non-patient-centered and influenced by transport/termination practice",
+      "Dilution of treatment contrast because most vasopressin patients subsequently received rescue epinephrine",
+      "Post-randomisation subgrouping ('additional epinephrine' cohort) introduces selection bias",
+      "Incomplete CPC neurological data among survivors"
+    ],
+    "critical_appraisal": {
+      "summary": "A large, blinded prehospital trial demonstrating that initial vasopressin mono-replacement does not improve discharge survival over epinephrine in OHCA, though secondary subgroup findings are limited by early stopping and rescue drug crossover.",
+      "strengths": [
+        "Rigorous central double-blinding in demanding prehospital environment",
+        "Stratification by center across 44 physician-staffed ALS units"
+      ],
+      "weaknesses": [
+        "Underpowered due to early termination (N=1186 vs planned N=1500)",
+        "High crossover exposure to rescue epinephrine in the vasopressin arm",
+        "Subgroup p-values unadjusted for multiple hypothesis testing"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Vasopressin is superior to epinephrine in patients with asystole, but vasopressin and epinephrine are similarly effective in the treatment of out-of-hospital cardiac arrest overall.",
+    "clinical_bottom_line": {
+      "verdict": "Vasopressin should not replace epinephrine as routine first-line therapy in unselected out-of-hospital cardiac arrest.",
+      "applies_to": "Adult patients with non-traumatic out-of-hospital cardiac arrest receiving advanced life support.",
+      "does_not_mean": "Does not imply vasopressin is completely inactive in resuscitation; it may play a role in combination protocols (e.g. IHCA VSE regimens), but mono-replacement in OHCA shows no overall discharge benefit.",
+      "implementation_caveats": [
+        "Asystole subgroup benefits were hypothesis-generating from a trial stopped early",
+        "International resuscitation guidelines do not endorse vasopressin mono-substitution"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Short-term vs long-term endpoints",
+        "notes": "Hospital admission favored vasopressin numerically (36.3% vs 31.2%, P=0.06), but discharge survival was identical (9.9% vs 9.9%), highlighting the disconnect between ROSC/admission and patient-centered discharge survival."
+      },
+      {
+        "topic": "Asystole subgroup interpretation",
+        "notes": "The asystole signal (discharge survival 4.7% vs 1.5%, P=0.04) was unadjusted for multiplicity and involved small absolute event counts (12 vs 4 patients), making it hypothesis-generating."
+      },
+      {
+        "topic": "Post-randomisation subset bias",
+        "notes": "The benefit seen in patients failing initial study drug who received rescue epinephrine represents a post-randomisation subset prone to selection bias rather than a clean trial of combination therapy."
+      },
+      {
+        "topic": "Guideline consensus",
+        "notes": "Subsequent evidence syntheses and major guidelines (AHA/ERC) did not adopt vasopressin as a routine substitute for epinephrine in cardiac arrest."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Mentzelopoulos VSE",
+        "relation": "Tested combination vasopressin + epinephrine + methylprednisolone in in-hospital cardiac arrest (IHCA), showing improved ROSC and discharge survival, contrasting with vasopressin mono-replacement in OHCA."
+      }
+    ],
+    "unresolved_questions": [
+      "Does initial vasopressin offer true benefit in refractory asystolic arrest if given very early?",
+      "Is combination vasopressin plus epinephrine superior to epinephrine alone in prehospital OHCA?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "N=1186 analysed (planned 1500, stopped early for funding)",
+        "Hospital admission: 36.3% vs 31.2% (P=0.06)",
+        "Hospital discharge survival identical: 9.9% vs 9.9% (P=0.99)",
+        "Asystole discharge survival: 4.7% vs 1.5% (P=0.04)"
+      ],
+      "one_line_takeaway": "Vasopressin does not improve overall survival to hospital discharge compared to epinephrine in out-of-hospital cardiac arrest."
+    }
+  },
+  "_source_id": "Wenzel",
+  "_source_system": "Resuscitation"
+}

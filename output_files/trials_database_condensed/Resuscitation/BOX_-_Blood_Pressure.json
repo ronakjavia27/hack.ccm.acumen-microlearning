@@ -1,0 +1,324 @@
+{
+  "id": "BOX_-_Blood_Pressure",
+  "trial_name": "BOX - Blood Pressure",
+  "specialty": "Resuscitation",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 2022,
+  "journal": "New England Journal of Medicine",
+  "citation": "Kjaergaard J, Møller JE, Schmidt H, et al. Blood-pressure targets in comatose survivors of cardiac arrest. N Engl J Med. 2022;387:1456-66.",
+  "doi": "https://doi.org/10.1056/NEJMoa2208687",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, factorial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 802,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In comatose OHCA survivors, targeting a higher MAP (77 mmHg) did not reduce death or severe disability compared with a lower MAP (63 mmHg).",
+  "pico": {
+    "population": "Adults (≥18 years) with sustained ROSC after OHCA, unconscious (GCS 3-8), presumed cardiac cause, eligible for targeted temperature management, randomised within 4 hours of ROSC.",
+    "intervention": "Higher MAP target (actual 77 mmHg) via calibrated pressure module (displayed ~70 mmHg).",
+    "comparison": "Lower MAP target (actual 63 mmHg) via calibrated pressure module (displayed ~70 mmHg).",
+    "outcome": "Primary composite: death from any cause or CPC 3-4 at discharge within 90 days."
+  },
+  "keywords": [
+    "cardiac arrest",
+    "blood pressure",
+    "mean arterial pressure",
+    "vasopressors",
+    "post-cardiac arrest care",
+    "haemodynamic targets"
+  ],
+  "related_trials": [
+    "COMACARE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Post–cardiac arrest syndrome commonly features myocardial stunning and vasoplegia, with hypotension early after ROSC. Observational data suggested an association between early hypotension and worse neurological outcome, but causal inference is limited by confounding. Cerebral autoregulation may be impaired and/or right-shifted (especially in chronic hypertension), creating equipoise between permissive lower MAP and vasopressor-driven higher MAP. Before BOX, randomised evidence for specific MAP targets after OHCA was sparse, small, and used surrogate endpoints rather than patient-centred functional outcomes.",
+      "knowledge_gap": "Randomised evidence for specific MAP targets after OHCA was sparse, small, and used surrogate endpoints.",
+      "hypothesis": "A higher MAP target (77 mmHg) would improve survival with favourable neurological outcome by improving end-organ (especially cerebral) perfusion compared with a lower MAP target (63 mmHg)."
+    },
+    "methods": {
+      "design": "Randomised, investigator-initiated, two-centre, parallel-group blood-pressure trial embedded within a 2×2 factorial design; blood-pressure intervention double-blind; conducted in specialised cardiac arrest centres in Denmark. Median time from ROSC to randomisation 146 minutes.",
+      "setting": "Two specialised cardiac arrest centres in Denmark.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with sustained ROSC after OHCA",
+          "Unconscious (Glasgow Coma Scale 3–8)",
+          "Presumed cardiac cause",
+          "Eligible for targeted temperature management",
+          "Randomised within 4 hours after ROSC"
+        ],
+        "exclusion": [
+          "Unwitnessed asystole",
+          "Suspected intracranial haemorrhage/stroke/intoxication",
+          "Pregnancy",
+          "Severe COPD",
+          "Known limitation of care",
+          "MAP <50 mmHg",
+          ">4 hours from ROSC to randomisation"
+        ]
+      },
+      "intervention": "High blood-pressure target: actual MAP target 77 mmHg, achieved using a modified pressure module calibrated so displayed pressures were ~10% lower than measured (clinical teams targeted a displayed MAP of ~70 mmHg, yielding a higher actual MAP). Vasopressor, inotrope, and fluid therapy were titrated by the treating team to meet the displayed target; the intervention ran while invasive blood pressure monitoring was used during ICU care.",
+      "comparison": "Low blood-pressure target: actual MAP target 63 mmHg, using the same modified module calibrated so displayed pressures were ~10% higher than measured (displayed ~70 mmHg corresponding to a lower actual MAP). Otherwise the same post-arrest ICU pathways and co-interventions were available (including temperature management, early coronary angiography/PCI where indicated, and standard organ support).",
+      "blinding": "Double-blind for blood-pressure assignment (clinical staff, patients, investigators, and outcome assessors masked via calibrated module); oxygenation assignment within the factorial platform was not blinded.",
+      "sample_size_power": "Power calculation: 846 patients required to detect a 10% absolute reduction in mortality (from 38% to 28%) with 90% power at a two-sided 5% significance level; trial planned 800 participants.",
+      "primary_outcome": "Primary composite: death from any cause or CPC 3–4 at discharge within 90 days.",
+      "secondary_outcomes": [
+        "Death from any cause within 90 days",
+        "Poor neurological outcome at 3 months (CPC 3–4)",
+        "Severe disability or death at 3 months (mRS 4–6)",
+        "Renal replacement therapy during ICU stay",
+        "Serious adverse events (infection, arrhythmia, bleeding, seizures, metabolic/electrolyte disorders)"
+      ],
+      "follow_up": "Primary outcome assessed to hospital discharge within 90 days; functional and cognitive outcomes assessed at 3 months (90 days)."
+    },
+    "results": {
+      "headline_bullets": [
+        "In comatose survivors of presumed-cardiac OHCA, targeting MAP 77 mmHg did not reduce death or severe disability compared with targeting MAP 63 mmHg.",
+        "Early haemodynamic separation was achieved (mean MAP difference 10.5 mmHg from 2–48 h), but required greater vasopressor exposure.",
+        "Mortality at 90 days was similar between groups (31% vs 29%), and functional outcomes (CPC and mRS at 3 months) did not differ meaningfully.",
+        "Serious adverse events were broadly comparable between MAP targets."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite: death from any cause or CPC 3–4 at discharge within 90 days",
+          "group_a": "133/393 (34%)",
+          "group_b": "127/396 (32%)",
+          "effect_measure": "HR",
+          "effect_value": "1.08",
+          "ci_95": "0.84 to 1.37",
+          "p_value": "0.56",
+          "note": "Composite dominated by death; no interaction with oxygen assignment (P=0.89)"
+        },
+        {
+          "outcome": "Death from any cause within 90 days",
+          "group_a": "122/393 (31%)",
+          "group_b": "114/396 (29%)",
+          "effect_measure": "HR",
+          "effect_value": "1.13",
+          "ci_95": "0.87 to 1.47",
+          "p_value": "",
+          "note": "Vital status obtained via registry and/or hospital records"
+        },
+        {
+          "outcome": "Poor neurological outcome at 3 months (CPC 3–4)",
+          "group_a": "31/393 (8%)",
+          "group_b": "32/396 (8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.98",
+          "ci_95": "0.62 to 1.56",
+          "p_value": "",
+          "note": "Telephone interview where feasible; some chart-derived assessments"
+        },
+        {
+          "outcome": "Severe disability or death at 3 months (mRS 4–6)",
+          "group_a": "134/393 (34%)",
+          "group_b": "125/396 (32%)",
+          "effect_measure": "RR",
+          "effect_value": "1.09",
+          "ci_95": "0.90 to 1.31",
+          "p_value": "",
+          "note": "No difference in ordinal distributions of CPC or mRS reported"
+        },
+        {
+          "outcome": "Renal replacement therapy initiated during ICU stay",
+          "group_a": "41/393 (10%)",
+          "group_b": "40/396 (10%)",
+          "effect_measure": "HR",
+          "effect_value": "1.03",
+          "ci_95": "0.67 to 1.57",
+          "p_value": "",
+          "note": "Event rate similar between groups"
+        },
+        {
+          "outcome": "Mean arterial pressure during ICU stay (median, IQR), mmHg",
+          "group_a": "76 (74–78)",
+          "group_b": "72 (70–74)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "N/A",
+          "note": "Achieved separation was larger early: mean difference 10.5 mmHg from 2–48 h"
+        },
+        {
+          "outcome": "Norepinephrine total dose during ICU stay (median, IQR), mg",
+          "group_a": "10.7 (3.5–24.2)",
+          "group_b": "6.8 (1.8–15.0)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "N/A",
+          "note": "Mean norepinephrine infusion difference (2–48 h): 0.038 µg/kg/min (95% CI 0.026 to 0.049)"
+        },
+        {
+          "outcome": "Serious adverse events: infection",
+          "group_a": "102/393 (26%)",
+          "group_b": "110/396 (28%)",
+          "effect_measure": "RR",
+          "effect_value": "0.93",
+          "ci_95": "0.75 to 1.16",
+          "p_value": "0.45",
+          "note": "No signal of increased serious infection with higher MAP"
+        },
+        {
+          "outcome": "Serious adverse events: arrhythmia",
+          "group_a": "59/393 (15%)",
+          "group_b": "50/396 (13%)",
+          "effect_measure": "RR",
+          "effect_value": "1.19",
+          "ci_95": "0.85 to 1.67",
+          "p_value": "0.27",
+          "note": "Despite greater vasoactive exposure in the high-target group, no statistically significant increase"
+        },
+        {
+          "outcome": "Serious adverse events: any bleeding",
+          "group_a": "82/393 (21%)",
+          "group_b": "92/396 (23%)",
+          "effect_measure": "RR",
+          "effect_value": "0.89",
+          "ci_95": "0.70 to 1.13",
+          "p_value": "0.29",
+          "note": "Uncontrolled bleeding: 22 (6%) vs 16 (4%); RR 1.39 (95% CI 0.76 to 2.55)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Infection: 26% vs 28%, RR 0.93 (0.75-1.16), P=0.45",
+      "Arrhythmia: 15% vs 13%, RR 1.19 (0.85-1.67), P=0.27",
+      "Any bleeding: 21% vs 23%, RR 0.89 (0.70-1.13), P=0.29; uncontrolled bleeding 6% vs 4%, RR 1.39 (0.76-2.55)",
+      "Seizures, metabolic/electrolyte disorders: no significant differences reported"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated assignment in permuted blocks (varying size), stratified by centre and initial rhythm; allocation concealment maintained via central randomisation and device-based masking."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Blood-pressure intervention was double-blind using a calibrated module; this is unusually robust for haemodynamic target trials and limits co-intervention bias linked to knowledge of assignment."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "802 randomised; 789 included (12 withdrew consent for use of data; 1 randomised twice). Two patients were censored early (day 12 and day 13) due to incomplete follow-up data in non-residents."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Early haemodynamic separation (2–48 hours) was substantial (mean MAP difference 10.5 mmHg) with higher vasoactive exposure; over the ICU stay, median MAP was 76 vs 72 mmHg, suggesting attenuation of separation beyond the early phase."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups were well balanced: age 63±13 vs 62±13 years; shockable rhythm 86% vs 84%; time to ROSC 21 (16–30) vs 21 (16–31) min; hypertension 38% vs 38%."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Primary outcome (death or CPC 3–4 at discharge) uses hard mortality plus a functional component; 3-month CPC/mRS were mainly via telephone interview, with some chart-based assessments when direct interview was not possible; MoCA and health-related quality of life had substantial missingness (COVID-era and other constraints)."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Primary analysis used a stratified Cox model adjusted for factorial oxygenation assignment; intention-to-treat principle applied; interaction testing between BP and oxygenation targets prespecified and negative (P=0.89)."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate-to-strong given robust randomisation, unusually effective blinding for a haemodynamic target, and clear early separation, tempered by post-randomisation consent withdrawals, attenuation of separation over the ICU stay, and missingness in cognitive outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Participants were OHCA survivors with presumed cardiac cause and a high proportion of favourable arrest features (e.g., shockable rhythms, high bystander CPR rates), managed in specialised Danish cardiac arrest centres."
+        },
+        {
+          "domain": "Important exclusions",
+          "notes": "Unwitnessed asystole, suspected non-cardiac aetiologies (e.g., intracranial bleed/intoxication), very early profound hypotension (MAP <50 mmHg), and delayed enrolment (>4 hours after ROSC) limit applicability to non-shockable, non-cardiac, or late-presenting cohorts."
+        },
+        {
+          "domain": "Health-system context",
+          "notes": "High uptake of coronary angiography/PCI and protocolised post-arrest care may not translate to lower-resource systems; vasoactive practices (including dopamine use) may differ internationally."
+        },
+        {
+          "domain": "Representativeness analysis",
+          "notes": "In a registry comparison, trial participants differed from the broader OHCA-with-ROSC population at participating centres: shockable rhythm 85% vs 61%; ROSC at hospital arrival 77% vs 49%; 30-day mortality 30% vs 55%."
+        }
+      ],
+      "verdict": "Generalisability is moderate-to-limited: the findings best apply to comatose OHCA survivors of presumed cardiac cause treated in high-functioning cardiac arrest centres, and less directly to non-cardiac causes, non-shockable rhythms, in-hospital arrest, or resource-limited settings."
+    },
+    "strengths": [
+      "Methodological innovation: effective double blinding of a MAP-target intervention using a calibrated monitoring module.",
+      "Patient-centred primary endpoint incorporating mortality and severe functional outcome.",
+      "Early randomisation (median 146 minutes after ROSC) and protocolised post-arrest care pathways.",
+      "Factorial platform enabled assessment of interaction with oxygenation targets, reducing the risk that a bundled co-intervention explained findings."
+    ],
+    "limitations": [
+      "Two-centre design with a selected, relatively favourable-prognosis OHCA population, limiting generalisability.",
+      "Achieved MAP separation was greatest early and smaller across the total ICU stay (median MAP 76 vs 72 mmHg), potentially limiting sensitivity to detect modest clinical effects.",
+      "Primary composite was largely driven by mortality; the disability component at discharge may be influenced by discharge practices even though assignment was masked.",
+      "Substantial missingness in cognitive and quality-of-life outcomes at 3 months, reducing interpretability for those endpoints."
+    ],
+    "critical_appraisal": {
+      "summary": "This well-blinded RCT found no benefit of higher MAP targeting on death or disability, with increased vasopressor exposure; internal validity is moderate-to-strong, external validity limited to selected OHCA populations.",
+      "strengths": [
+        "Effective blinding of haemodynamic target",
+        "Patient-centred primary outcome",
+        "Early randomisation",
+        "Factorial design"
+      ],
+      "weaknesses": [
+        "Two-centre, selected population",
+        "Attenuation of MAP separation over time",
+        "Missing cognitive outcomes"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine targeting of a higher MAP (around 77 mmHg) in unselected comatose OHCA survivors did not improve survival or functional outcome compared with a lower target (around 63 mmHg). Given the increased vasopressor exposure required to achieve higher MAP, a default strategy of “avoid hypotension” (rather than “induce hypertension”) is supported for most patients.",
+    "clinical_bottom_line": {
+      "verdict": "Does not support routine higher MAP targeting; avoid hypotension is sufficient.",
+      "applies_to": "Comatose OHCA survivors of presumed cardiac cause with shockable rhythms, treated in high-resource centres.",
+      "does_not_mean": "Higher MAP is harmful; it simply did not show benefit. Individualised targets may still be considered in selected patients (e.g., chronic hypertension, autoregulation monitoring).",
+      "implementation_caveats": [
+        "Increased vasopressor exposure with higher MAP target without outcome benefit",
+        "Findings may not apply to non-cardiac arrest, non-shockable rhythms, or in-hospital arrest",
+        "Attenuation of MAP separation over time may limit detection of modest effects"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Editorial commentary",
+        "notes": "The accompanying editorial emphasised that although blinding and early separation were strengths, higher MAP targeting required substantially more vasoactive support and did not translate into improved patient-centred outcomes."
+      },
+      {
+        "topic": "Prior pilot evidence",
+        "notes": "Prior randomised pilot work (e.g., COMACARE) was underpowered for clinical endpoints and often focused on biomarkers; BOX provided the first large-scale, blinded clinical-outcome test of higher vs lower MAP targets in this setting."
+      },
+      {
+        "topic": "Meta-analysis alignment",
+        "notes": "An individual patient data meta-analysis pooling randomised trials comparing higher vs lower MAP targets after cardiac arrest reported no compelling evidence of benefit for higher targets on key clinical outcomes, aligning with BOX’s neutral results."
+      },
+      {
+        "topic": "Expert consensus",
+        "notes": "Recent European expert consensus on intensive care after cardiac arrest highlights individualised haemodynamic management (avoid hypotension; consider patient phenotype and cerebral/organ perfusion monitoring where available) rather than uniform vasopressor-driven hypertension in all patients."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "COMACARE",
+        "relation": "Prior pilot RCT comparing higher vs lower MAP targets, underpowered for clinical outcomes; BOX provides larger, blinded confirmation."
+      }
+    ],
+    "unresolved_questions": [
+      "Do higher MAP targets benefit patients with chronic hypertension or impaired cerebral autoregulation?",
+      "Can individualised perfusion targets (e.g., based on autoregulation monitoring) improve outcomes?",
+      "What is the optimal MAP target in non-shockable rhythms or in-hospital cardiac arrest?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=802 (789 analysed)",
+        "Primary composite: 34% vs 32%, HR 1.08 (0.84-1.37), P=0.56",
+        "90-day mortality: 31% vs 29%, HR 1.13 (0.87-1.47)",
+        "Mean MAP difference early: 10.5 mmHg, more norepinephrine in high-target group"
+      ],
+      "one_line_takeaway": "In comatose OHCA survivors, targeting a higher MAP (77 mmHg) does not improve survival or neurological outcome compared with a lower MAP (63 mmHg); avoid hypotension, don't routinely chase higher pressures."
+    }
+  },
+  "_source_id": "BOX_-_Blood_Pressure",
+  "_source_system": "Resuscitation"
+}

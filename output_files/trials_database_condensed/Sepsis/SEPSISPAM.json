@@ -1,0 +1,296 @@
+{
+  "id": "SEPSISPAM",
+  "trial_name": "SEPSISPAM — High versus low blood-pressure target in patients with septic shock (2014)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Vasopressors & Hemodynamic Support",
+  "year": 2014,
+  "journal": "New England Journal of Medicine",
+  "citation": "Asfar P, Meziani F, Hamel JF, et al; SEPSISPAM Investigators. High versus low blood-pressure target in patients with septic shock. N Engl J Med. 2014;370(17):1583-1593.",
+  "doi": "https://doi.org/10.1056/NEJMoa1312173",
+  "registration": null,
+  "trial_type": "RCT — multicenter, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 776,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Targeting a higher MAP (80–85 mmHg) compared to a lower MAP (65–70 mmHg) in septic shock did not reduce 28-day mortality and increased atrial fibrillation, though it reduced renal replacement therapy in chronic hypertension.",
+  "pico": {
+    "population": "Adult ICU patients with septic shock requiring vasopressors after fluid resuscitation (n=776 analysed).",
+    "intervention": "High-target MAP strategy (80–85 mmHg) maintained for 5 days using vasopressors (primarily norepinephrine).",
+    "comparison": "Low-target MAP strategy (65–70 mmHg) maintained for 5 days using vasopressors (primarily norepinephrine).",
+    "outcome": "Primary: 28-day mortality. Key secondary: 90-day mortality, renal replacement therapy, organ-support-free days, and adverse events."
+  },
+  "keywords": [
+    "septic shock",
+    "mean arterial pressure",
+    "MAP target",
+    "norepinephrine",
+    "chronic hypertension",
+    "renal replacement therapy",
+    "atrial fibrillation"
+  ],
+  "related_trials": [
+    "OVATION",
+    "65 Trial"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "MAP targets in septic shock were largely consensus-driven (typically ≥65 mmHg) with wide practice variation. Higher targets were hypothesized to benefit chronic hypertension due to right-shifted renal autoregulation.",
+      "knowledge_gap": "Uncertainty whether higher MAP targets protect organs or cause net harm due to increased catecholamine exposure.",
+      "hypothesis": "Targeting a higher MAP (80–85 mmHg) vs a lower MAP (65–70 mmHg) during early septic shock reduces 28-day mortality, with potential effect modification by pre-existing chronic hypertension."
+    },
+    "methods": {
+      "design": "Randomised, multicentre, parallel-group, open-label trial with prespecified subgroup stratification by chronic arterial hypertension.",
+      "setting": "29 ICUs in France.",
+      "population": {
+        "inclusion": [
+          "Adults with septic shock requiring vasopressors despite fluid resuscitation",
+          "Minimum fluid load of 30 mL/kg prior to inclusion",
+          "Enrolment within 6 hours of shock onset"
+        ],
+        "exclusion": [
+          "Shock duration >6 hours",
+          "Inadequate fluid challenge",
+          "Catecholamine dose <0.1 µg/kg/min",
+          "Lack of consent or guardianship/prisoner status"
+        ]
+      },
+      "intervention": "High-target MAP strategy: vasopressors (primarily norepinephrine) titrated to maintain MAP 80–85 mmHg for up to 5 days, with protocolised decrement schedules.",
+      "comparison": "Low-target MAP strategy: vasopressors titrated to maintain MAP 65–70 mmHg for up to 5 days, otherwise identical co-interventions.",
+      "blinding": "Open-label bedside hemodynamic management; objective outcomes evaluated unblinded.",
+      "sample_size_power": "800 patients planned to detect a 10% absolute mortality reduction (45% to 35%) with 80% power at alpha 0.05; Peto-Haybittle interim monitoring (P<0.001) at 200, 400, 600 patients.",
+      "primary_outcome": "28-day all-cause mortality.",
+      "secondary_outcomes": [
+        "90-day all-cause mortality",
+        "Survival at day 28 without organ support (vasopressors, mechanical ventilation, or RRT)",
+        "Renal-replacement therapy (days 1–7)",
+        "Doubling of plasma creatinine",
+        "Prespecified serious adverse events (atrial fibrillation, myocardial infarction)"
+      ],
+      "follow_up": "28 days (primary) and 90 days (secondary)."
+    },
+    "results": {
+      "headline_bullets": [
+        "No difference in 28-day mortality between high-target (36.6%) and low-target MAP (34.0%) groups (HR 1.07; 95% CI 0.84–1.38; P=0.57).",
+        "High-target MAP significantly increased newly diagnosed atrial fibrillation (6.7% vs 2.8%; P=0.02).",
+        "Patients with chronic hypertension in the high-target group had lower RRT rates (31.7% vs 42.2%; P=0.046; interaction P=0.02) and less creatinine doubling (38.9% vs 52.0%; P=0.02)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death at day 28 (primary)",
+          "group_a": "142/388 (36.6%)",
+          "group_b": "132/388 (34.0%)",
+          "effect_measure": "HR",
+          "effect_value": "1.07",
+          "ci_95": "0.84–1.38",
+          "p_value": "0.57",
+          "note": "Time-to-event analysis"
+        },
+        {
+          "outcome": "Death at day 90",
+          "group_a": "170/388 (43.8%)",
+          "group_b": "164/388 (42.3%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.74",
+          "note": "Effect estimate not reported"
+        },
+        {
+          "outcome": "Survival at day 28 without organ support",
+          "group_a": "235/388 (60.6%)",
+          "group_b": "241/388 (62.1%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.66",
+          "note": "Organ support: vasopressors, ventilation, or RRT"
+        },
+        {
+          "outcome": "Renal-replacement therapy (day 1–7) overall",
+          "group_a": "130/388 (33.5%)",
+          "group_b": "139/388 (35.8%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.50",
+          "note": "Overall cohort"
+        },
+        {
+          "outcome": "Doubling of plasma creatinine overall",
+          "group_a": "150/388 (38.7%)",
+          "group_b": "161/388 (41.5%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.42",
+          "note": "Excludes patients treated with RRT"
+        },
+        {
+          "outcome": "Newly diagnosed atrial fibrillation",
+          "group_a": "26/388 (6.7%)",
+          "group_b": "11/388 (2.8%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.02",
+          "note": "Serious adverse event"
+        },
+        {
+          "outcome": "Acute myocardial infarction",
+          "group_a": "7/388 (1.8%)",
+          "group_b": "2/388 (0.5%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.18",
+          "note": "Serious adverse event"
+        },
+        {
+          "outcome": "Any serious adverse event",
+          "group_a": "74/388 (19.1%)",
+          "group_b": "69/388 (17.8%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.64",
+          "note": "Composite SAE"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Renal-replacement therapy (day 1–7) — Chronic arterial hypertension",
+          "group_a": "53/167 (31.7%)",
+          "group_b": "73/173 (42.2%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_interaction": "0.02",
+          "p_value": "0.046"
+        },
+        {
+          "subgroup": "Doubling of plasma creatinine — Chronic arterial hypertension",
+          "group_a": "65/167 (38.9%)",
+          "group_b": "90/173 (52.0%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_interaction": "NR",
+          "p_value": "0.02"
+        }
+      ]
+    },
+    "safety": [
+      "Newly diagnosed atrial fibrillation: 6.7% (high-target) vs 2.8% (low-target), P=0.02.",
+      "Acute myocardial infarction: 1.8% (high-target) vs 0.5% (low-target), P=0.18.",
+      "Any serious adverse event: 19.1% (high-target) vs 17.8% (low-target), P=0.64.",
+      "Down-titration of vasopressors due to adverse effects occurred in 14/388 (3.6%) high-target patients."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-based randomisation with concealment and stratification by chronic hypertension; balance achieved (chronic hypertension 43.0% vs 44.6%; SAPS II 56.1 ± 15.5 vs 57.2 ± 16.2)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label bedside MAP titration creates scope for performance bias; primary endpoint (mortality) is objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "798 randomised; 22 excluded post-randomisation (14 low-target, 8 high-target) for consent/legal status; 388 per group analysed (776 total) on ITT basis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "MAP targets not achieved in 64/388 (16.5%) high-target vs 40/388 (10.3%) low-target (P=0.01). Observed MAPs averaged 85–90 mmHg in high-target and 70–75 mmHg in low-target, narrowing contrast."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: SOFA 10.7 ± 3.1 vs 10.8 ± 3.1; delay from vasopressor start to inclusion 3.5 ± 2.2 vs 3.6 ± 2.1 hours; norepinephrine day 1 median 0.58 vs 0.45 µg/kg/min."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong with robust allocation concealment and objective endpoints, though open-label design and incomplete MAP target separation narrowed physiological contrast."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical high-severity adult ICU septic shock population (~74–79% mechanically ventilated, ~43–45% chronic hypertension), conducted across 29 French ICUs."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "High applicability to modern high-income ICUs using norepinephrine-first resuscitation early in shock (<6 hours)."
+        }
+      ],
+      "verdict": "External validity is good for contemporary ICUs utilizing norepinephrine-first strategies in early septic shock."
+    },
+    "strengths": [
+      "Large, pragmatic, multicenter RCT testing a routine hemodynamic intervention",
+      "Prespecified stratification for chronic arterial hypertension",
+      "Objective primary mortality endpoint with high follow-up completeness",
+      "Clear separation in vasopressor dose (norepinephrine day 1 median 0.58 vs 0.45 µg/kg/min) and duration (4.7 vs 3.7 days)"
+    ],
+    "limitations": [
+      "Open-label MAP titration with potential for co-intervention bias",
+      "Protocol non-adherence in 16.5% high-target and 10.3% low-target groups",
+      "Achieved MAP in low-target arm averaged 70–75 mmHg, above the nominal 65–70 mmHg target",
+      "Final sample size (776) slightly under planned 800; control mortality (34.0%) lower than assumed 45%"
+    ],
+    "critical_appraisal": {
+      "summary": "Methodologically rigorous trial demonstrating no mortality difference overall, with increased atrial fibrillation from higher vasopressor doses, alongside a signal for reduced RRT in chronic hypertension.",
+      "strengths": [
+        "Multicenter randomisation with prespecified subgroup stratification",
+        "Documented physiological separation in MAP and catecholamine exposure"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Overtreatment of low-target arm relative to protocol target (achieved 70–75 mmHg)"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Targeting a mean arterial pressure of 80 to 85 mmHg as compared with 65 to 70 mmHg did not significantly reduce mortality at 28 days among patients with septic shock.",
+    "clinical_bottom_line": {
+      "verdict": "Default to a MAP target of 65–70 mmHg for general septic shock; consider selective targeting of 80–85 mmHg in chronic hypertension to protect renal function if arrhythmia risks permit.",
+      "applies_to": "Adult ICU patients with early septic shock requiring vasopressors.",
+      "does_not_mean": "Higher MAP targets should never be used; chronic hypertension patients may benefit renally.",
+      "implementation_caveats": [
+        "Higher MAP targets require more vasopressors (median 0.58 vs 0.45 µg/kg/min) and longer duration (4.7 vs 3.7 days).",
+        "Monitor closely for new-onset atrial fibrillation when escalating MAP targets."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Renal protection vs Arrhythmia risk",
+        "notes": "The reduction in RRT in chronic hypertension (31.7% vs 42.2%) must be balanced against a more than doubling of atrial fibrillation risk (6.7% vs 2.8%)."
+      },
+      {
+        "topic": "Usual care MAP overshoot",
+        "notes": "Low-target arm achieved MAPs of 70–75 mmHg rather than 65–70 mmHg, potentially diluting potential differences between groups."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "OVATION",
+        "relation": "Pilot RCT in vasodilatory shock comparing lower (60–65 mmHg) vs higher (75–80 mmHg) MAP targets, confirming feasibility and potential subgroup heterogeneity."
+      },
+      {
+        "trial": "65 Trial",
+        "relation": "Evaluated permissive hypotension (MAP 60–65 mmHg) in older patients with vasodilatory shock, supporting lower vasopressor exposure strategies."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal individualised MAP target titration based on dynamic autoregulation parameters rather than numerical blood pressure cutoffs.",
+      "Whether non-catecholamine vasopressors reduce the arrhythmia burden associated with higher MAP targets."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=776",
+        "28-day mortality 36.6% vs 34.0% (HR 1.07, P=0.57)",
+        "Atrial fibrillation 6.7% vs 2.8% (P=0.02)",
+        "RRT in chronic HTN 31.7% vs 42.2% (P=0.046)"
+      ],
+      "one_line_takeaway": "Target MAP 65–70 mmHg as default in septic shock to minimise catecholamine toxicity and atrial fibrillation, but consider 80–85 mmHg in chronic hypertension to reduce renal replacement therapy."
+    }
+  },
+  "_source_id": "SEPSISPAM",
+  "_source_system": "Sepsis"
+}

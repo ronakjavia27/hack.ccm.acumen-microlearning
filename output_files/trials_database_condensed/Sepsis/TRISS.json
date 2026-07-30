@@ -1,0 +1,335 @@
+{
+  "id": "BALANCE",
+  "trial_name": "BALANCE — Antibiotic Treatment for 7 versus 14 Days in Patients with Bloodstream Infections (2025)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Adjunctive Therapies",
+  "year": 2025,
+  "journal": "The New England Journal of Medicine",
+  "citation": "The BALANCE Investigators; for the Canadian Critical Care Trials Group, the Association of Medical Microbiology and Infectious Disease Canada Clinical Research Network, the Australian and New Zealand Intensive Care Society Clinical Trials Group, and the Australasian Society for Infectious Diseases Clinical Research Network. Antibiotic treatment for 7 versus 14 days in patients with bloodstream infections. N Engl J Med 2025;392:1065-1078.",
+  "doi": "https://doi.org/10.1056/NEJMoa2404991",
+  "registration": null,
+  "trial_type": "Pragmatic, randomised, international, multicentre, parallel-group, open-label, non-inferiority trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3608,
+  "result_category": "Positive",
+  "one_liner": "A 7-day antibiotic course was non-inferior to 14 days for 90-day all-cause mortality in hospitalised adults with bacterial bloodstream infections.",
+  "pico": {
+    "population": "Hospitalised adults (>=18 years) with bacterial bloodstream infection, including ICU patients (excluding S. aureus, fungal BSI, severe immunocompromise, and syndromes requiring prolonged treatment).",
+    "intervention": "7-day antibiotic strategy (stopping adequate systemic antibiotic therapy after 7 days for the index BSI).",
+    "comparison": "14-day antibiotic strategy (continuing adequate systemic antibiotic therapy to complete 14 days).",
+    "outcome": "90-day all-cause mortality (non-inferiority margin of 4 percentage points absolute risk difference)."
+  },
+  "keywords": [
+    "bloodstream infection",
+    "bacteraemia",
+    "antibiotic duration",
+    "antimicrobial stewardship",
+    "sepsis",
+    "ICU"
+  ],
+  "related_trials": [
+    "Prior Gram-Negative Bacteraemia RCTs"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Historically, 10 to 14 days of antibiotics has been routine for bloodstream infections despite limited randomised evidence, reflecting concern for relapse, metastatic infection, and untreated foci.",
+      "knowledge_gap": "Prior RCT evidence supporting shorter courses focused on uncomplicated Gram-negative bacteraemia, excluding ICU patients, Gram-positive pathogens, and complex infection syndromes.",
+      "hypothesis": "A 7-day antibiotic strategy is non-inferior to a 14-day strategy for 90-day all-cause mortality among hospitalised adults with bacterial bloodstream infection."
+    },
+    "methods": {
+      "design": "Pragmatic, randomised, international, multicentre, parallel-group, non-inferiority trial.",
+      "setting": "74 hospitals in 7 countries (Canada, Australia, New Zealand, Saudi Arabia, Israel, Switzerland, United States) across ICU and hospital ward settings.",
+      "population": {
+        "inclusion": [
+          "Adults (>=18 years) with >=1 blood culture positive for pathogenic bacteria",
+          "Admitted to hospital/ICU at time index blood culture drawn or resulted positive"
+        ],
+        "exclusion": [
+          "Severe immune compromise (neutrophils <0.5x10^9/L, solid-organ or bone marrow transplant immunosuppression)",
+          "Prosthetic heart valve or synthetic endovascular graft",
+          "Suspected infection syndrome requiring prolonged therapy (endocarditis, osteomyelitis, septic arthritis, undrainable abscess, unremovable prosthetic infection)",
+          "Single positive blood culture with a common contaminant",
+          "Staphylococcus aureus or Staphylococcus lugdunensis",
+          "Candida or other fungal species"
+        ]
+      },
+      "intervention": "7-day strategy: Stop adequate systemic antibiotic therapy after 7 days of treatment for the index BSI (agent selection at clinician discretion).",
+      "comparison": "14-day strategy: Continue adequate systemic antibiotic therapy to complete 14 days for the index BSI.",
+      "blinding": "Allocation concealed until day 7 after first positive blood culture; open-label thereafter; objective outcome adjudication and analyses were blinded.",
+      "sample_size_power": "Target sample size 3626 for 80% power at one-sided alpha 2.5%, assuming 22% 90-day mortality in 14-day group, 5% loss to follow-up, 3 interim analyses, 4 percentage-point non-inferiority margin.",
+      "primary_outcome": "Death from any cause by day 90 (intention-to-treat analysis).",
+      "secondary_outcomes": [
+        "90-day mortality in per-protocol and modified ITT populations",
+        "In-hospital and ICU mortality",
+        "Relapse of bacteraemia",
+        "Clostridioides difficile infection",
+        "Secondary infection or colonisation with antibiotic-resistant organisms",
+        "Antibiotic-free days up to day 28",
+        "Hospital and ICU length of stay / hospital-free days by day 28"
+      ],
+      "follow_up": "90 days for primary mortality outcome; day 28 and hospital discharge for secondary/safety outcomes."
+    },
+    "results": {
+      "headline_bullets": [
+        "3608 patients randomised (1814 to 7 days, 1794 to 14 days); 15 lost to follow-up for 90-day mortality.",
+        "Primary endpoint met non-inferiority: 90-day mortality was 14.5% (7-day) vs 16.1% (14-day), risk difference -1.6% (95.7% CI -4.0% to 0.8%).",
+        "Marked reduction in antibiotic exposure: median 19 antibiotic-free days vs 14 days (median difference 5 days, 95% CI 4.6 to 5.4).",
+        "Bacteraemia relapse (2.6% vs 2.2%) and C. difficile infection (1.7% vs 2.0%) were low and comparable."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death from any cause by day 90 (primary; ITT)",
+          "group_a": "261/1802 (14.5%)",
+          "group_b": "286/1779 (16.1%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-1.6%",
+          "ci_95": "-4.0% to 0.8%",
+          "p_value": null,
+          "note": "95.7% CI; upper bound 0.8% < 4.0% non-inferiority margin"
+        },
+        {
+          "outcome": "Death from any cause by day 90 (per-protocol)",
+          "group_a": "212/1536 (13.8%)",
+          "group_b": "250/1602 (15.6%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-2.0%",
+          "ci_95": "-4.5% to 0.6%",
+          "p_value": null,
+          "note": "Adherence-defined population (7+/-2 vs 14+/-2 days)"
+        },
+        {
+          "outcome": "Death from any cause by day 90 (modified ITT)",
+          "group_a": "247/1788 (13.8%)",
+          "group_b": "269/1764 (15.2%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-1.4%",
+          "ci_95": "-3.9% to 0.7%",
+          "p_value": null,
+          "note": "Excluded patients dying before day 7 of adequate treatment"
+        },
+        {
+          "outcome": "Death in hospital",
+          "group_a": "168/1814 (9.3%)",
+          "group_b": "184/1794 (10.3%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-1.0%",
+          "ci_95": "-2.9% to 0.9%",
+          "p_value": null,
+          "note": "In-hospital mortality"
+        },
+        {
+          "outcome": "Death in ICU",
+          "group_a": "91/1014 (9.0%)",
+          "group_b": "97/1008 (9.6%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-0.6%",
+          "ci_95": "-3.2% to 1.9%",
+          "p_value": null,
+          "note": "Enrolled in ICU or admitted to ICU after diagnosis"
+        },
+        {
+          "outcome": "Relapse of bacteraemia",
+          "group_a": "47/1814 (2.6%)",
+          "group_b": "39/1794 (2.2%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "0.4%",
+          "ci_95": "-0.6% to 1.4%",
+          "p_value": null,
+          "note": "Recurrent infection with same pathogen"
+        },
+        {
+          "outcome": "Clostridioides difficile infection",
+          "group_a": "31/1814 (1.7%)",
+          "group_b": "35/1794 (2.0%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-0.2%",
+          "ci_95": "-1.1% to 0.6%",
+          "p_value": null,
+          "note": "Adjudicated secondary outcome"
+        },
+        {
+          "outcome": "Secondary infection or colonisation with resistant organisms",
+          "group_a": "173/1814 (9.5%)",
+          "group_b": "152/1794 (8.5%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "1.1%",
+          "ci_95": "-0.8% to 2.9%",
+          "p_value": null,
+          "note": "All anatomical sites"
+        },
+        {
+          "outcome": "Secondary resistant organism infection/colonisation in sterile culture",
+          "group_a": "20/1814 (1.1%)",
+          "group_b": "24/1794 (1.3%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-0.2%",
+          "ci_95": "-1.0% to 0.5%",
+          "p_value": null,
+          "note": "Sterile-site isolates"
+        },
+        {
+          "outcome": "Antibiotic-free days up to day 28",
+          "group_a": "19 (11 to 21)",
+          "group_b": "14 (11 to 14)",
+          "effect_measure": "Median Difference",
+          "effect_value": "5.0",
+          "ci_95": "4.6 to 5.4",
+          "p_value": null,
+          "note": "Median (IQR); missing data for 2 patients in 14-day group"
+        },
+        {
+          "outcome": "Days in hospital",
+          "group_a": "10 (5 to 20)",
+          "group_b": "11 (6 to 20)",
+          "effect_measure": "Median Difference",
+          "effect_value": "-1.0",
+          "ci_95": "-1.5 to -0.5",
+          "p_value": null,
+          "note": "Median (IQR)"
+        },
+        {
+          "outcome": "ICU days (ICU-exposed subgroup)",
+          "group_a": "5 (2 to 12)",
+          "group_b": "5 (2 to 12)",
+          "effect_measure": "Median Difference",
+          "effect_value": "0.0",
+          "ci_95": "-0.4 to 0.4",
+          "p_value": null,
+          "note": "Median (IQR)"
+        },
+        {
+          "outcome": "Hospital-free days by day 28",
+          "group_a": "17 (8 to 20)",
+          "group_b": "15 (8 to 20)",
+          "effect_measure": "Median Difference",
+          "effect_value": "2.0",
+          "ci_95": "0.8 to 3.2",
+          "p_value": null,
+          "note": "Median (IQR); composite alive and out of hospital"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Gram-negative bacteraemia subgroup",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-2.8%",
+          "ci_95": "-5.6% to -0.1%",
+          "p_interaction": null
+        }
+      ]
+    },
+    "safety": [
+      "Allergy, hypersensitivity reaction, or both: 12/1814 (0.7%) in 7-day vs 8/1794 (0.4%) in 14-day group; risk difference 0.2% (95% CI -0.2% to 0.7%).",
+      "Acute kidney injury: 14/1814 (0.8%) in 7-day vs 14/1794 (0.8%) in 14-day group; risk difference 0.0% (95% CI -0.6% to 0.5%).",
+      "Clostridioides difficile infection: 31/1814 (1.7%) in 7-day vs 35/1794 (2.0%) in 14-day group; risk difference -0.2% (95% CI -1.1% to 0.6%)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with stratification by enrolment location; group assignment concealed until day 7 of adequate treatment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label after day 7; primary mortality endpoint is objective; secondary microbiological endpoints were adjudicated by blinded assessors."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "15 of 3608 patients lost to follow-up for day-90 mortality; per-protocol (13.8% vs 15.6%) and modified ITT (13.8% vs 15.2%) were concordant with primary ITT."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Nonadherence to assigned duration was 23.1% in the 7-day group vs 10.7% in the 14-day group; actual treatment duration was 8 days (IQR 7-10) vs 14 days (IQR 13-15)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well-balanced baseline characteristics: median age 70 in both; ICU enrolment 55.1% vs 54.2%; SOFA score 4 (IQR 2-6) vs 5 (IQR 2-7); mechanical ventilation 20.6% vs 21.9%; Gram-negative 71.6% vs 70.4%; Gram-positive 17.8% vs 16.8%; polymicrobial 10.6% vs 12.8%; urinary source ~42%, intraabdominal ~19%, lung ~13%."
+        }
+      ],
+      "verdict": "Internal validity is moderate to strong, supported by delayed allocation reveal and objective primary mortality endpoint, but limited by open-label design after day 7 and higher protocol nonadherence in the 7-day arm."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad hospital and ICU population with bacterial BSI across diverse infection sources (urinary, intraabdominal, lung, catheter, skin/soft tissue) and pathogens."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted across 74 hospitals in 7 high- and middle-income countries; does not apply to excluded high-risk cohorts."
+        }
+      ],
+      "verdict": "Generalisability is moderate; results support a 7-day antibiotic strategy for hospitalised and ICU adults with uncomplicated bacterial bloodstream infections but cannot be extrapolated to excluded complex populations."
+    },
+    "strengths": [
+      "Large international pragmatic RCT targeting an important antimicrobial stewardship question.",
+      "Thoughtful delayed allocation concealment until day 7 targeting the clinical decision window.",
+      "Inclusion of critically ill ICU patients (54.6% enrolled in ICU) and Gram-positive pathogens.",
+      "Objective 90-day mortality primary endpoint with 99.6% complete follow-up.",
+      "Concordant primary, per-protocol, and modified intention-to-treat analyses."
+    ],
+    "limitations": [
+      "Open-label administration after day 7 introduces potential performance bias for co-interventions.",
+      "Substantial nonadherence in 7-day arm (23.1%), which can bias ITT results toward non-inferiority.",
+      "Exclusion of S. aureus, fungal infections, severe neutropenia, transplant patients, and endocarditis limits scope.",
+      "The 4 percentage-point non-inferiority margin is subjective.",
+      "Secondary outcomes and subgroup analyses were not adjusted for multiplicity."
+    ],
+    "critical_appraisal": {
+      "summary": "BALANCE provides high-quality non-inferiority evidence that a 7-day antibiotic course is safe and effective compared to 14 days for hospitalised and ICU adults with bacterial bloodstream infections, provided complex syndromes and S. aureus are excluded.",
+      "strengths": [
+        "Pragmatic multicentre design with 3608 patients across 74 sites.",
+        "Delayed allocation reveal until day 7 mitigates early management divergence.",
+        "High follow-up rate for objective 90-day mortality."
+      ],
+      "weaknesses": [
+        "Unblinded antibiotic duration after day 7.",
+        "Higher rate of protocol nonadherence in the short-course group (23.1%)."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In hospitalised adults with bacterial bloodstream infections, a 7-day antibiotic strategy was non-inferior to a 14-day strategy with respect to 90-day all-cause mortality, with a significant reduction in overall antibiotic exposure.",
+    "clinical_bottom_line": {
+      "verdict": "A 7-day antibiotic duration should be the default strategy for hospitalised and ICU patients with bacterial bloodstream infection who demonstrate clinical improvement and adequate source control.",
+      "applies_to": "Hospitalised and ICU adults with bacterial bloodstream infection (Gram-negative, non-S. aureus Gram-positive, or polymicrobial) with controlled source.",
+      "does_not_mean": "Shorter courses are appropriate for S. aureus bacteraemia, fungal BSI, severely immunocompromised patients, endocarditis, or uncontrolled infection foci.",
+      "implementation_caveats": [
+        "Ensure patient has adequate clinical response and source control before stopping at day 7.",
+        "Do not apply to S. aureus, Candida, neutropenic, or prosthetic vascular/valve BSI."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Non-inferiority margin selection",
+        "notes": "The 4 percentage-point absolute margin represents a trade-off between reduced antibiotic exposure and tolerated risk; some clinicians may consider 4% too wide."
+      },
+      {
+        "topic": "Impact of nonadherence on non-inferiority",
+        "notes": "23.1% nonadherence in the 7-day arm could bias ITT results toward non-inferiority; however, per-protocol analysis (13.8% vs 15.6%) supported non-inferiority."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Prior Gram-Negative Bacteraemia RCTs",
+        "relation": "Earlier RCTs supported 7-day courses for uncomplicated Gram-negative bacteraemia; BALANCE expands this evidence base to ICU populations, Gram-positive BSI, and broader clinical settings."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal antibiotic duration in severe neutropenia, organ transplantation, or S. aureus bacteraemia.",
+      "Utility of biomarker-guided (e.g. procalcitonin) discontinuation versus fixed 7-day regimen.",
+      "Safety of courses shorter than 7 days (e.g. 3 to 5 days) in rapidly resolving uncomplicated BSI."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3608 randomized across 74 ICUs/hospitals",
+        "90-day mortality: 14.5% vs 16.1% (Risk Difference -1.6%, 95.7% CI -4.0% to 0.8%)",
+        "Antibiotic-free days to day 28: 19 vs 14 days (median difference 5 days)"
+      ],
+      "one_line_takeaway": "For hospitalised and ICU adults with bacterial bloodstream infection (excluding S. aureus and complex foci), 7 days of antibiotics is non-inferior to 14 days and safe."
+    }
+  },
+  "_source_id": "TRISS",
+  "_source_system": "Sepsis"
+}

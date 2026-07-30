@@ -1,0 +1,333 @@
+{
+  "id": "STOPAH",
+  "trial_name": "STOPAH — Prednisolone or Pentoxifylline for Alcoholic Hepatitis (2015)",
+  "specialty": "Gastroenterology & Critical Care",
+  "subtopic": "Alcohol-Associated Liver Disease",
+  "year": 2015,
+  "journal": "The New England Journal of Medicine",
+  "citation": "Thursz MR, Richardson P, Allison M, et al. Prednisolone or Pentoxifylline for Alcoholic Hepatitis. N Engl J Med. 2015;372(17):1619-1628.",
+  "doi": "https://doi.org/10.1056/NEJMoa1412278",
+  "registration": "",
+  "trial_type": "RCT — pragmatic, multicenter, double-blind, placebo-controlled 2x2 factorial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1103,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In severe alcoholic hepatitis, pentoxifylline provides no survival benefit, while prednisolone yields only a non-significant trend toward reduced 28-day mortality that is lost by 90 days and accompanied by increased serious infections.",
+  "pico": {
+    "population": "Hospitalised adults with severe alcoholic hepatitis (Maddrey discriminant function >=32, serum bilirubin >80 umol/L, recent heavy alcohol intake).",
+    "intervention": "Prednisolone 40 mg once daily, pentoxifylline 400 mg three times daily, or both for 28 days.",
+    "comparison": "Matching placebo(s) for 28 days.",
+    "outcome": "Primary: 28-day all-cause mortality; Secondary: 90-day and 1-year death or liver transplantation, serious infections, acute kidney injury."
+  },
+  "keywords": [
+    "severe alcoholic hepatitis",
+    "prednisolone",
+    "pentoxifylline",
+    "corticosteroids",
+    "Maddrey discriminant function"
+  ],
+  "related_trials": [
+    "N-acetylcysteine and Prednisolone trial"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Severe alcoholic hepatitis (Maddrey discriminant function >=32) carries a historical 1-month mortality of 20-30% and 6-month mortality of 30-40%. Prednisolone was widely used despite conflicting evidence and infection concerns; pentoxifylline was adopted based on small trials suggesting reduced hepatorenal syndrome.",
+      "knowledge_gap": "Conflicting meta-analyses and practice variation created uncertainty regarding whether prednisolone, pentoxifylline, or combination therapy improves survival in severe alcoholic hepatitis.",
+      "hypothesis": "A 28-day regimen of prednisolone and/or pentoxifylline reduces 28-day, 90-day, and 1-year mortality without additive adverse interactions."
+    },
+    "methods": {
+      "design": "Pragmatic, multicenter, randomised, double-blind, placebo-controlled 2x2 factorial trial conducted across 65 UK hospitals (January 2011 to February 2014).",
+      "setting": "65 UK hospitals (inpatient medical and hepatology wards, not restricted to ICU).",
+      "population": {
+        "inclusion": [
+          "Age >= 18 years",
+          "Clinical diagnosis of severe alcoholic hepatitis",
+          "Average alcohol intake >80 g/day for men or >60 g/day for women",
+          "Serum bilirubin >80 umol/L",
+          "Maddrey discriminant function >= 32",
+          "Recent onset of jaundice (<= 3 months) and recent alcohol excess (<= 2 months before admission)"
+        ],
+        "exclusion": [
+          "Other causes of chronic or acute liver disease",
+          "Serum AST >500 IU/L or ALT >300 IU/L",
+          "Abstinence from alcohol for >2 months",
+          "Previous trial entry within 6 months",
+          "Uncontrolled active gastrointestinal bleeding, untreated sepsis, severe renal failure (creatinine >500 umol/L or renal replacement therapy), or vasopressor support unless stabilised within the first 7 days of admission"
+        ]
+      },
+      "intervention": "Prednisolone 40 mg orally once daily for 28 days, pentoxifylline 400 mg orally three times daily for 28 days, or both.",
+      "comparison": "Matched placebos for each agent permitting double-blind 2x2 factorial allocation, plus standard supportive care and nutritional support at clinician discretion.",
+      "blinding": "Double-blind for participants, clinicians, and investigators using identical placebo tablets/capsules.",
+      "sample_size_power": "Target sample size was 1,200 to detect an absolute mortality reduction from 30% to 21% (513 per main-effect group). Enrolled 1,103 due to funding limitations.",
+      "primary_outcome": "All-cause mortality at 28 days.",
+      "secondary_outcomes": [
+        "Death or liver transplantation at 90 days",
+        "Death or liver transplantation at 1 year",
+        "Incidence of serious infections and acute kidney injury within 28 days"
+      ],
+      "follow_up": "28 days for primary endpoint; 90 days and 1 year for secondary endpoints (long-term follow-up truncated early for later recruits)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early at 1,103 participants due to funding constraints.",
+        "Pentoxifylline conferred no mortality benefit at 28 days (16% vs 16%), 90 days, or 1 year.",
+        "Prednisolone showed a non-significant trend toward reduced 28-day mortality in the primary model (14% vs 18%; OR 0.72; p=0.06), which reached significance in a prespecified adjusted model (OR 0.61; p=0.02).",
+        "Prednisolone mortality benefit was absent at 90 days (30% vs 29%) and 1 year (57% vs 56%), and it significantly increased serious infections (13% vs 7%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "28-day mortality (Prednisolone main effect)",
+          "group_a": "73/526 (14%)",
+          "group_b": "95/527 (18%)",
+          "effect_measure": "OR",
+          "effect_value": "0.72",
+          "ci_95": "0.52–1.01",
+          "p_value": "0.06",
+          "note": "Primary endpoint; unadjusted factorial logistic regression; no drug interaction (p=0.41)"
+        },
+        {
+          "outcome": "28-day mortality (Pentoxifylline main effect)",
+          "group_a": "85/518 (16%)",
+          "group_b": "83/535 (16%)",
+          "effect_measure": "OR",
+          "effect_value": "1.07",
+          "ci_95": "0.77–1.49",
+          "p_value": "0.69",
+          "note": "Primary endpoint main effect for pentoxifylline"
+        },
+        {
+          "outcome": "28-day mortality (Prednisolone adjusted model)",
+          "group_a": "73/526 (14%)",
+          "group_b": "95/527 (18%)",
+          "effect_measure": "OR",
+          "effect_value": "0.61",
+          "ci_95": "0.41–0.91",
+          "p_value": "0.02",
+          "note": "Adjusted for baseline age, encephalopathy, WBC, PT ratio, bilirubin, creatinine, urea"
+        },
+        {
+          "outcome": "90-day death or liver transplant (Prednisolone main effect)",
+          "group_a": "144/484 (30%)",
+          "group_b": "141/484 (29%)",
+          "effect_measure": "OR",
+          "effect_value": "1.02",
+          "ci_95": "0.77–1.35",
+          "p_value": "0.87",
+          "note": "Incomplete follow-up due to early trial termination"
+        },
+        {
+          "outcome": "90-day death or liver transplant (Pentoxifylline main effect)",
+          "group_a": "139/478 (29%)",
+          "group_b": "146/490 (30%)",
+          "effect_measure": "OR",
+          "effect_value": "0.97",
+          "ci_95": "0.73–1.28",
+          "p_value": "0.81",
+          "note": "No late mortality or transplantation signal"
+        },
+        {
+          "outcome": "1-year death or liver transplant (Prednisolone main effect)",
+          "group_a": "210/371 (57%)",
+          "group_b": "211/376 (56%)",
+          "effect_measure": "OR",
+          "effect_value": "1.01",
+          "ci_95": "0.76–1.35",
+          "p_value": "0.94",
+          "note": "Substantial loss of planned 12-month follow-up"
+        },
+        {
+          "outcome": "1-year death or liver transplant (Pentoxifylline main effect)",
+          "group_a": "205/365 (56%)",
+          "group_b": "216/382 (57%)",
+          "effect_measure": "OR",
+          "effect_value": "0.99",
+          "ci_95": "0.74–1.33",
+          "p_value": "0.97",
+          "note": "No 1-year survival improvement"
+        },
+        {
+          "outcome": "Serious infections within 28 days (Prednisolone main effect)",
+          "group_a": "71/547 (13%)",
+          "group_b": "38/545 (7%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.002",
+          "note": "Significant increase in serious infection with steroids"
+        },
+        {
+          "outcome": "Lung infections within 28 days (Prednisolone main effect)",
+          "group_a": "37/547 (7%)",
+          "group_b": "17/545 (3%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.007",
+          "note": "Pulmonary infection harm signal"
+        },
+        {
+          "outcome": "Acute kidney injury within 28 days (Pentoxifylline main effect)",
+          "group_a": "9/546 (2%)",
+          "group_b": "14/546 (3%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "NR",
+          "note": "No clinical signal for renal protection"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Placebo-Placebo group (28-day mortality)",
+          "group_a": "45/269 (17%)",
+          "group_b": "N/A",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_interaction": "N/A"
+        },
+        {
+          "subgroup": "Prednisolone-Placebo group (28-day mortality)",
+          "group_a": "38/266 (14%)",
+          "group_b": "N/A",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_interaction": "N/A"
+        },
+        {
+          "subgroup": "Pentoxifylline-Placebo group (28-day mortality)",
+          "group_a": "50/258 (19%)",
+          "group_b": "N/A",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_interaction": "N/A"
+        },
+        {
+          "subgroup": "Prednisolone-Pentoxifylline group (28-day mortality)",
+          "group_a": "35/260 (13%)",
+          "group_b": "N/A",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_interaction": "0.41"
+        }
+      ]
+    },
+    "safety": [
+      "Prednisolone significantly increased serious infections within 28 days (13% [71/547] vs 7% [38/545], p=0.002; absolute difference 6%).",
+      "Prednisolone significantly increased lung infections within 28 days (7% [37/547] vs 3% [17/545], p=0.007; absolute difference 4%).",
+      "Pentoxifylline failed to show a clinically meaningful reduction in acute kidney injury within 28 days (2% [9/546] vs 3% [14/546])."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-generated randomisation with permuted blocks of 4, stratified by geography and baseline risk category."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blinded using matched identical placebos for both agents; objective primary endpoint (all-cause mortality)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "ITT primary analysis on 1,053/1,103 participants (95.5% complete). Follow-up denominators dropped to 968 at 90 days (5% lost, 3% withdrawn, 4% truncated) and 747 at 1 year (8% lost, 4% withdrawn, 20% truncated) due to early study termination."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Biological separation confirmed by steroid-associated infection risk; crossovers not reported."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well-balanced groups: mean Discriminant Function 60.7–65.6, MELD 20.7–21.5, mean time to treatment 6.1–6.7 days, baseline sepsis 8–11%, baseline GI bleeding 5–8%, baseline renal failure <0.5%."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong for 28-day primary mortality outcomes, but moderate-to-low for 90-day and 1-year outcomes due to early termination and loss of follow-up."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Large real-world UK cohort with clinical entry criteria (mean bilirubin 17.6 mg/dL, DF 62.6, MELD 21.2) representing typical medical/hepatology ward admissions."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Exclusion or stabilization requirement for active bleeding, untreated sepsis, vasopressors, or severe acute kidney injury limits direct applicability to unstable ICU patients in multi-organ failure."
+        }
+      ],
+      "verdict": "Good applicability to hospitalised, non-critically ill or stabilised patients with severe alcoholic hepatitis, but limited for patients with unmanaged sepsis, septic shock, or multi-organ failure."
+    },
+    "strengths": [
+      "Largest double-blind placebo-controlled RCT in severe alcoholic hepatitis.",
+      "Factorial 2x2 design enabled efficient assessment of individual drugs and their interaction.",
+      "Pragmatic multicenter recruitment across 65 hospitals mirrors everyday practice.",
+      "High completeness of follow-up (95.5%) for the primary 28-day endpoint."
+    ],
+    "limitations": [
+      "Early termination (1,103 of 1,200 planned) reduced statistical power.",
+      "Substantial missing data at 90 days and 1 year due to early follow-up truncation.",
+      "Clinical diagnosis without mandatory liver biopsy introduces potential diagnostic misclassification.",
+      "Exclusion/stabilization criteria limit applicability to the most unstable ICU phenotypes."
+    ],
+    "critical_appraisal": {
+      "summary": "STOPAH is a landmark pragmatic trial demonstrating that pentoxifylline provides no clinical benefit and that prednisolone offers at best a non-significant, short-term survival trend that is accompanied by increased infection risk and absent long-term survival gains.",
+      "strengths": [
+        "Rigorous double-blind factorial structure.",
+        "Pragmatic enrolment across 65 centers ensuring high clinical relevance."
+      ],
+      "weaknesses": [
+        "Unpowered long-term secondary outcomes due to early trial closure.",
+        "Absence of histological diagnosis."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Pentoxifylline did not improve survival in severe alcoholic hepatitis. Prednisolone was associated with a trend toward reduced 28-day mortality that did not reach statistical significance, with no survival improvement at 90 days or 1 year.",
+    "clinical_bottom_line": {
+      "verdict": "Pentoxifylline should be abandoned for severe alcoholic hepatitis. Prednisolone should be used selectively for short-term benefit in patients screened for infection, with mandatory early response assessment (e.g., day 7 Lille score) to stop non-beneficial steroids.",
+      "applies_to": "Hospitalised patients with clinical severe alcoholic hepatitis (Maddrey DF >= 32) without active untreated infection or gastrointestinal bleeding.",
+      "does_not_mean": "Does not mean corticosteroids confer durable 90-day or 1-year survival benefits or that they are safe in the presence of active untreated infection.",
+      "implementation_caveats": [
+        "Screen and monitor rigorously for pulmonary and serious infections before and during steroid therapy.",
+        "Remove pentoxifylline from institutional orders and treatment protocols.",
+        "Re-evaluate treatment response early at day 7 to stop steroids in non-responders."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Clinical vs histological diagnosis",
+        "notes": "Omitting mandatory liver biopsy raised concerns about diagnostic noise diluting treatment response, though trialists noted non-biopsy strategies reflect real-world clinical care."
+      },
+      {
+        "topic": "Primary unadjusted vs secondary adjusted prednisolone results",
+        "notes": "Primary unadjusted analysis missed significance (p=0.06), whereas secondary multivariable adjustment was significant (OR 0.61; p=0.02), prompting debate on whether steroids provide a true modest short-term benefit."
+      },
+      {
+        "topic": "Steroid cessation and late mortality",
+        "notes": "Abrupt steroid discontinuation at 28 days was postulated to cause rebound inflammation, contributing to the loss of survival benefit by 90 days."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "N-acetylcysteine and Prednisolone trial",
+        "relation": "Shifted clinical focus toward combining corticosteroids with antioxidant/organ-protective strategies rather than pentoxifylline."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal management for non-responders to early corticosteroid therapy.",
+      "Efficacy and safety of corticosteroid therapy in critically ill ICU patients with organ failure requiring vasopressors or renal support.",
+      "Impact of combining early anti-inflammatory therapy with targeted infection prophylaxis or antioxidant agents."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1,103",
+        "Prednisolone 28-day mortality: 14% vs 18% (OR 0.72, p=0.06; adjusted OR 0.61, p=0.02)",
+        "Pentoxifylline 28-day mortality: 16% vs 16% (OR 1.07, p=0.69)",
+        "Prednisolone serious infection rate: 13% vs 7% (p=0.002)"
+      ],
+      "one_line_takeaway": "Pentoxifylline is ineffective in severe alcoholic hepatitis, while prednisolone provides at best a modest 28-day mortality reduction offset by doubled infection risk and no 90-day survival benefit."
+    }
+  },
+  "_source_id": "STOPAH",
+  "_source_system": "Liver"
+}

@@ -1,0 +1,266 @@
+{
+  "id": "LINC",
+  "trial_name": "LINC — Mechanical Chest Compressions and Simultaneous Defibrillation vs Conventional CPR in OHCA (2014)",
+  "specialty": "Cardiac Arrest & Resuscitation",
+  "subtopic": "Out-of-Hospital Cardiac Arrest — CPR Strategies",
+  "year": 2014,
+  "journal": "JAMA",
+  "citation": "Rubertsson S, Lindgren E, Smekal D, et al. Mechanical chest compressions and simultaneous defibrillation vs conventional cardiopulmonary resuscitation in out-of-hospital cardiac arrest: the LINC randomized trial. JAMA. 2014;311(1):53-61.",
+  "doi": "https://doi.org/10.1001/jama.2013.282538",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High",
+  "sample_size": 2589,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In out-of-hospital cardiac arrest, a LUCAS mechanical CPR plus timed defibrillation bundle did not improve 4-hour survival or 6-month favourable neurological outcome compared with conventional manual CPR.",
+  "pico": {
+    "population": "Adults (≥18 years) with unexpected EMS-treated out-of-hospital cardiac arrest, excluding traumatic arrest, pregnancy, body size incompatible with LUCAS, defibrillation before device arrival, and crew-witnessed immediate ROSC after defibrillation.",
+    "intervention": "Mechanical CPR with LUCAS device using a 3-minute compression cycle algorithm: first shock delivered at 90 seconds without rhythm analysis, then rhythm check after each cycle; if VF/VT, new 3-minute cycle and shock at 90 seconds (again without rhythm analysis). Standard ALS care otherwise.",
+    "comparison": "Conventional manual CPR according to 2005 European Resuscitation Council guidelines, with standard rhythm analysis and defibrillation during pauses.",
+    "outcome": "Primary: 4-hour survival. Secondary: ROSC, arrival at ED with palpable pulse, survival to hospital discharge, 6-month survival, 6-month survival with favourable neurological outcome (CPC 1–2)."
+  },
+  "keywords": [
+    "mechanical CPR",
+    "LUCAS",
+    "timed defibrillation",
+    "cardiac arrest",
+    "out-of-hospital cardiac arrest",
+    "CPR quality",
+    "EMS",
+    "resuscitation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Out-of-hospital cardiac arrest outcomes depend on early defibrillation and high-quality chest compressions with minimal interruptions. Manual CPR quality is variable, deteriorates with fatigue, and is logistically challenging during transport. Mechanical CPR devices can provide consistent compressions and higher chest compression fraction.",
+      "knowledge_gap": "The clinical value and safety of a timed defibrillation strategy without rhythm confirmation were unknown. Whether a bundle of mechanical CPR plus a pause‑minimising defibrillation algorithm improves early survival and longer‑term outcomes had not been tested in a large RCT.",
+      "hypothesis": "A prehospital bundle of LUCAS mechanical CPR combined with a timed defibrillation strategy would improve 4‑hour survival compared with conventional manual CPR, and any early survival benefit would translate into improved longer‑term favourable neurological outcome (CPC 1–2) at 6 months."
+    },
+    "methods": {
+      "design": "Multicentre, individual patient randomised controlled trial (1:1), open‑label.",
+      "setting": "4 Swedish, 1 British, and 1 Dutch EMS systems; enrolment January 2008 to August 2012, follow‑up completed February 2013.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with unexpected EMS‑treated out‑of‑hospital cardiac arrest"
+        ],
+        "exclusion": [
+          "Traumatic arrest (including hanging)",
+          "Known pregnancy",
+          "Body size too large or too small for LUCAS device",
+          "Defibrillated before study device arrival",
+          "Crew‑witnessed arrest with ROSC after immediate defibrillation"
+        ]
+      },
+      "intervention": "Manual compressions until LUCAS deployment, then mechanical compressions. 3‑minute cycles: first shock delivered at 90 s without rhythm analysis; after each cycle, rhythm analysis—if VF/VT, new 3‑minute cycle with shock at 90 s again (no pause). Standard ALS care otherwise.",
+      "comparison": "Conventional manual CPR per 2005 European Resuscitation Council guidelines, with rhythm analysis and defibrillation during pauses. Standard ALS care; post‑resuscitation care per local protocols (hypothermia, PCI not randomised).",
+      "blinding": "Open‑label (device and algorithm make blinding infeasible); primary outcome (4‑hour survival) is objective; neurological outcome assessment may be susceptible to unblinding.",
+      "sample_size_power": "Planned 2500 to detect a 6% absolute increase in 4‑hour survival (25% → 31%) with 90% power at a 2‑sided significance of 5% (final threshold P<0.048 after interim analysis).",
+      "primary_outcome": "4‑hour survival",
+      "secondary_outcomes": [
+        "Return of spontaneous circulation (ROSC)",
+        "Arrival at Emergency Department with palpable pulse",
+        "Survival to hospital discharge",
+        "6‑month survival",
+        "6‑month survival with favourable neurological outcome (CPC 1–2)"
+      ],
+      "follow_up": "Outcomes recorded to hospital discharge, 1 month, and 6 months (Cerebral Performance Category)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary outcome (4‑hour survival) nearly identical: 23.6% vs 23.7% (risk difference –0.05%, CI –3.3% to 3.2%, P>.99).",
+        "No significant differences in any secondary outcome, including 6‑month survival (8.5% vs 8.1%) and favourable neurological outcome (8.5% vs 7.6%, risk difference 0.86%, P=.43).",
+        "Intervention altered CPR process (higher chest compression fraction, different defibrillation exposure) but also delayed first defibrillation, potentially offsetting benefits."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "4‑hour survival (primary)",
+          "group_a": "307/1300 (23.6%)",
+          "group_b": "305/1289 (23.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−0.05%",
+          "ci_95": "−3.3% to 3.2%",
+          "p_value": ">.99",
+          "note": ""
+        },
+        {
+          "outcome": "Return of spontaneous circulation",
+          "group_a": "460/1300 (35.4%)",
+          "group_b": "446/1289 (34.6%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.78%",
+          "ci_95": "−2.9% to 4.5%",
+          "p_value": ".68",
+          "note": ""
+        },
+        {
+          "outcome": "Arrival at ED with palpable pulse",
+          "group_a": "366/1300 (28.2%)",
+          "group_b": "357/1289 (27.7%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.46%",
+          "ci_95": "−3.0% to 3.9%",
+          "p_value": ".83",
+          "note": ""
+        },
+        {
+          "outcome": "Survival to hospital discharge",
+          "group_a": "117/1300 (9.0%)",
+          "group_b": "118/1289 (9.2%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−0.15%",
+          "ci_95": "−2.4% to 2.1%",
+          "p_value": ".89",
+          "note": ""
+        },
+        {
+          "outcome": "6‑month survival",
+          "group_a": "111/1300 (8.5%)",
+          "group_b": "104/1289 (8.1%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.47%",
+          "ci_95": "−1.7% to 2.6%",
+          "p_value": ".67",
+          "note": ""
+        },
+        {
+          "outcome": "6‑month survival with CPC 1–2 (favourable neurological outcome)",
+          "group_a": "110/1300 (8.5%)",
+          "group_b": "98/1289 (7.6%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.86%",
+          "ci_95": "−1.2% to 3.0%",
+          "p_value": ".43",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Serious adverse events related to study procedure/device: 7 in intervention, 3 in comparison (definitions and event‑level details limited).",
+      "Device‑related adverse events: 23 events per 1282 device uses (8 malfunctions required discontinuation, 15 managed while continuing compressions)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation concealment",
+          "notes": "1:1 sealed opaque envelopes at the patient’s side; no manipulation reported."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open‑label design; primary outcome (4‑hour survival) objective and resistant to bias, but neurological outcome assessment could be influenced."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "4 withdrawals (4/2593); 2589 analysed (ITT). Post‑randomisation eligibility violations retained. Missing outcomes imputed as non‑survivors (conservative)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "73 intervention and 51 comparison patients did not receive allocated treatment. Crossovers: 64 from intervention to manual CPR, 46 from manual to mechanical CPR. In the mechanical group, 24% did not fully adhere to the defibrillation algorithm."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well matched (age ~69 years, witnessed arrest ~66%, bystander CPR ~56%, initial rhythms similar)."
+        },
+        {
+          "domain": "Separation of intervention (process measures)",
+          "notes": "Chest compression fraction higher in intervention (0.84 vs 0.78 from 10% sample). Defibrillation exposure differed markedly: 0 shocks in 24% vs 54%; 1 shock in 38% vs 13%; 4–20 shocks in 16% vs 18%. Time to first defibrillation later in intervention (median 17 vs 15.5 min)."
+        },
+        {
+          "domain": "Timing & “dose” of intervention",
+          "notes": "Bundle required device deployment then timed shock (at 90 s), potentially delaying shock in patients with shockable rhythm. Combines potential benefits with potential harms."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Sample size target achieved (2589 analysed); prespecified primary threshold (P<0.048); conservative imputation for missing outcomes; risk difference with 95% CI reported."
+        }
+      ],
+      "verdict": "Overall internal validity is moderate: randomisation was robust and primary outcome objective, but the open‑label bundle design, substantial protocol deviations, and bidirectional crossover dilute treatment contrast and limit inference."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Participants were typical high‑resource EMS OHCA patients. Key exclusions (early defibrillation, device‑size constraints) remove subsets with high baseline survival, limiting generalisability to those populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Tested a specific algorithm (timed shock without rhythm analysis) not used in all mechanical CPR implementations. Manual comparator reflected 2005 guidelines; contemporary practice may differ. Generalisable mainly to systems with training and device infrastructure."
+        }
+      ],
+      "verdict": "Generalisability is moderate: relevant to advanced prehospital systems considering routine deployment of this exact bundle, but not to all uses of mechanical CPR or to settings with very early defibrillation."
+    },
+    "strengths": [
+      "Large pragmatic multicentre prehospital randomised trial (n=2589) across multiple EMS systems and countries.",
+      "Clinically meaningful endpoints, including 6-month survival and neurological outcome (CPC).",
+      "Prespecified sample size and interim plan; objective primary outcome with minimal missingness.",
+      "Device safety and implementation issues described (crossover, adherence, device-related adverse events), aiding real-world interpretation."
+    ],
+    "limitations": [
+      "Open-label delivery with potential performance bias; neurological outcome assessment may be susceptible to unblinded influences.",
+      "Intervention was a bundle (mechanical compressions + timed shocks without rhythm analysis + workflow changes), limiting attribution of effects specifically to mechanical compressions.",
+      "Substantial deviations and crossovers (73/51 not receiving allocated treatment; 64/46 crossovers) reduce treatment separation and potentially bias toward the null.",
+      "CPR quality measures were formally quantified in only a 10% sample, limiting inference about compression depth/rate and interruption patterns across the full cohort.",
+      "Comparator reflected 2005 guideline era; changes in modern ALS and post-resuscitation care may alter applicability."
+    ],
+    "critical_appraisal": {
+      "summary": "LINC was a large, well‑powered RCT with an objective primary outcome, but the open‑label bundle design and significant protocol deviations introduce moderate internal validity concerns; generalisability is limited to systems that would implement this specific algorithm.",
+      "strengths": [
+        "Large sample, pragmatic design",
+        "Objective primary outcome",
+        "Long‑term neurological follow‑up"
+      ],
+      "weaknesses": [
+        "Open‑label, potential detection bias for CPC",
+        "Bundle effect prevents attribution to device alone",
+        "High crossover and non‑adherence"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine implementation of a LUCAS‑based mechanical CPR plus timed defibrillation algorithm did not improve early survival or longer‑term favourable neurological outcomes compared with conventional manual CPR.",
+    "clinical_bottom_line": {
+      "verdict": "LINC does not support routine prehospital use of mechanical CPR with this timed defibrillation strategy; the bundled intervention did not improve patient‑centred outcomes.",
+      "applies_to": "High‑resource EMS systems considering deployment of this exact bundle; excludes patients defibrillated very early.",
+      "does_not_mean": "Mechanical CPR is harmful or should never be used; it means routine use as tested did not enhance survival. The device may still have a role in selected scenarios (transport, cath lab, ECPR).",
+      "implementation_caveats": [
+        "Deployment delays can offset theoretical haemodynamic advantages.",
+        "Protocol fidelity is variable in real‑world practice.",
+        "Cost, training, and maintenance requirements must be considered."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Timed defibrillation without rhythm confirmation",
+        "notes": "First shock delivered at 90 s without prior rhythm check—led to unnecessary shocks in some patients and raised electrophysiological concerns about shock timing during the compression cycle."
+      },
+      {
+        "topic": "Neutral outcomes in subsequent routine mechanical CPR trials",
+        "notes": "Later large pragmatic RCTs (using different devices/strategies) also reported no routine survival benefit, reinforcing that mechanical CPR does not universally improve mortality and supports selective use."
+      },
+      {
+        "topic": "Guideline shift away from routine mechanical CPR",
+        "notes": "Modern international guidelines recommend against routine mechanical CPR deployment while endorsing selective use when high‑quality manual compressions are difficult or unsafe."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Subsequent large pragmatic RCTs (e.g., PARAMEDIC, CIRC)",
+        "relation": "Reinforced the neutral effect of routine mechanical CPR on survival, consistent with LINC; collectively shifted practice towards selective use."
+      }
+    ],
+    "unresolved_questions": [
+      "Does mechanical CPR improve outcomes when used selectively in settings where manual CPR is compromised (transport, cath lab, ECPR)?",
+      "What is the optimal defibrillation strategy during mechanical CPR (timing, rhythm checks)?",
+      "How can deployment delays be minimised to realise potential haemodynamic benefits?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2589",
+        "Primary (4‑hour survival): 23.6% vs 23.7% (risk difference –0.05%, CI –3.3% to 3.2%, P>.99)",
+        "6‑month favourable neurological outcome: 8.5% vs 7.6% (risk difference 0.86%, P=.43)"
+      ],
+      "one_line_takeaway": "Routine mechanical CPR with timed defibrillation does not improve OHCA survival; reserve the device for settings where manual CPR is inadequate."
+    }
+  },
+  "_source_id": "LINC",
+  "_source_system": "Resuscitation"
+}

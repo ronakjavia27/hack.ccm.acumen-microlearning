@@ -1,0 +1,287 @@
+{
+  "id": "PneumA",
+  "trial_name": "PneumA — Comparison of 8 vs 15 Days of Antibiotic Therapy for Ventilator-Associated Pneumonia in Adults (2003)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Adjunctive Therapies",
+  "year": 2003,
+  "journal": "JAMA",
+  "citation": "Chastre J, Wolff M, Fagon JY, Chevret S, Thomas F, Wermert D, et al; PneumA Trial Group. Comparison of 8 vs 15 days of antibiotic therapy for ventilator-associated pneumonia in adults: a randomized trial. JAMA. 2003 Nov 19;290(19):2588-98.",
+  "doi": "https://doi.org/10.1001/jama.290.19.2588",
+  "registration": null,
+  "trial_type": "RCT — multicenter, randomized, noninferiority, double-blind to day 8",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 401,
+  "result_category": "Mixed",
+  "one_liner": "An 8-day antibiotic course for VAP was noninferior to 15 days for 28-day mortality and overall recurrence, but nonfermenting Gram-negative bacilli had higher recurrence with shorter treatment.",
+  "pico": {
+    "population": "Adult ICU patients with bronchoscopically confirmed VAP receiving appropriate initial empirical antibiotic therapy.",
+    "intervention": "8-day antibiotic therapy course.",
+    "comparison": "15-day antibiotic therapy course.",
+    "outcome": "28-day all-cause mortality and microbiologically documented recurrent pulmonary infection."
+  },
+  "keywords": [
+    "ventilator-associated pneumonia",
+    "VAP",
+    "antibiotic duration",
+    "antimicrobial stewardship",
+    "nonfermenting Gram-negative bacilli",
+    "Pseudomonas aeruginosa"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Ventilator-associated pneumonia (VAP) was historically treated with 14–21 days of antibiotics due to fear of relapse, especially with Gram-negative organisms.",
+      "knowledge_gap": "Prolonged broad-spectrum antimicrobial therapy increases resistance selection pressure and superinfections, but robust evidence supporting shorter duration was lacking.",
+      "hypothesis": "An 8-day antibiotic course is noninferior to a 15-day course for 28-day mortality and recurrent pulmonary infection, while increasing antibiotic-free days and reducing resistant pathogen emergence."
+    },
+    "methods": {
+      "design": "Multicenter, randomized, double-blind (until day 8), noninferiority trial conducted in 51 ICUs in France.",
+      "setting": "51 adult ICUs in France; patients enrolled between study period with randomisation occurring 3 days post-bronchoscopy after microbiological confirmation.",
+      "population": {
+        "inclusion": [
+          "Age >= 18 years",
+          "Mechanical ventilation >= 48 hours",
+          "New and persistent infiltrate on chest radiography",
+          "Purulent tracheal secretions, temperature >= 38.3°C, or leukocyte count > 10,000/µL (>= 1 required for ARDS)",
+          "Positive quantitative cultures from BAL (>= 10^4 CFU/mL) or protected specimen brush/catheter (>= 10^3 CFU/mL)",
+          "Initiation within 24 hours of bronchoscopy of appropriate empirical antibiotics active against causative organism(s)"
+        ],
+        "exclusion": [
+          "Pregnancy",
+          "Concurrent enrollment in another trial",
+          "Low likelihood of survival (SAPS II > 65)",
+          "Neutropenia (leukocyte count < 1000/µL or neutrophils < 500/µL)",
+          "AIDS stage 3 (CDC 1993)",
+          "Immunosuppressants or long-term corticosteroids (>= 0.5 mg/kg/day for > 1 month)",
+          "Extrapulmonary infection requiring > 8 days of therapy diagnosed between days 1–3",
+          "Declined full life support",
+          "Early-onset pneumonia (< 5 days mechanical ventilation) without prior antibiotics in preceding 15 days"
+        ]
+      },
+      "intervention": "Antibiotic therapy discontinued at end of day 8 unless needed for documented pulmonary recurrence or pre-existing infection. Initial broad-spectrum beta-lactam plus aminoglycoside or fluoroquinolone encouraged, with de-escalation at 48–72 hours.",
+      "comparison": "Antibiotic therapy continued to end of day 15 using same initial choice and de-escalation strategy.",
+      "blinding": "Allocation concealed via central interactive voice system; double-blind until day 8, at which point continuation vs cessation unblinded treatment group.",
+      "sample_size_power": "400 patients (200/group) provided 90% power with alpha 10% to exclude a 10% noninferiority margin, assuming 15-day rates of 40% mortality and 25% recurrence; 4 planned interim analyses.",
+      "primary_outcome": "28-day all-cause mortality and microbiologically documented recurrent pulmonary infection.",
+      "secondary_outcomes": [
+        "Antibiotic-free days to day 28",
+        "Antibiotic-treatment days to day 28",
+        "Unfavourable outcome by day 28 (death, pulmonary recurrence, or new antibiotics > 48h)",
+        "60-day all-cause mortality",
+        "Emergence of multiresistant pathogens among recurrences"
+      ],
+      "follow_up": "Daily assessment to day 28 after bronchoscopy; vital status recorded at hospital discharge and day 60."
+    },
+    "results": {
+      "headline_bullets": [
+        "8-day therapy met noninferiority criteria for 28-day mortality (18.8% vs 17.2%) and overall pulmonary recurrence (28.9% vs 26.0%).",
+        "Short-course therapy significantly increased antibiotic-free days by 4.4 days (P < 0.001).",
+        "Nonfermenting Gram-negative bacilli showed significantly higher recurrence with 8-day therapy (40.6% vs 25.4%).",
+        "Recurrent infections in the 15-day group had a higher rate of multiresistant pathogens (62.3% vs 42.1%, P = 0.04)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality, day 28 (primary)",
+          "group_a": "37/197 (18.8%)",
+          "group_b": "35/204 (17.2%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "1.6%",
+          "ci_95": "90% CI -3.7 to 6.9",
+          "p_value": null,
+          "note": "Met 10% noninferiority margin"
+        },
+        {
+          "outcome": "Pulmonary infection recurrence, day 28 (primary)",
+          "group_a": "57/197 (28.9%)",
+          "group_b": "53/204 (26.0%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "2.9%",
+          "ci_95": "90% CI -3.2 to 9.1",
+          "p_value": null,
+          "note": "Met 10% noninferiority margin; required quantitative bronchoscopic culture"
+        },
+        {
+          "outcome": "Antibiotic-free days to day 28 (mean, SD)",
+          "group_a": "13.1 (7.4)",
+          "group_b": "8.7 (5.2)",
+          "effect_measure": "Mean Difference",
+          "effect_value": "4.4 days",
+          "ci_95": "95% CI 3.1 to 5.6",
+          "p_value": "<0.001",
+          "note": "Days alive without antibiotics"
+        },
+        {
+          "outcome": "Antibiotic-treatment days to day 28 (mean, SD)",
+          "group_a": "12.6 (6.2)",
+          "group_b": "17.1 (4.9)",
+          "effect_measure": "Mean Difference",
+          "effect_value": "-4.5 days",
+          "ci_95": "90% CI -5.4 to -3.6",
+          "p_value": null,
+          "note": "Days 9–15 separation was 1.3 (2.3) vs 6.6 (1.4) days (MD -5.3, 90% CI -5.6 to -5.0)"
+        },
+        {
+          "outcome": "Unfavourable outcome by day 28",
+          "group_a": "91/197 (46.2%)",
+          "group_b": "89/204 (43.6%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "2.6%",
+          "ci_95": "90% CI -5.6 to 10.7",
+          "p_value": null,
+          "note": "Composite of death, recurrence, or new antibiotics > 48h"
+        },
+        {
+          "outcome": "All-cause mortality, day 60",
+          "group_a": "50/197 (25.4%)",
+          "group_b": "57/204 (27.9%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "-2.6%",
+          "ci_95": "90% CI -9.8 to 4.7",
+          "p_value": null,
+          "note": "No long-term mortality difference"
+        },
+        {
+          "outcome": "Bronchoscopies for suspected recurrence",
+          "group_a": "120/197 (60.9%)",
+          "group_b": "93/204 (45.6%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": "0.003",
+          "note": "Higher diagnostic testing rate in 8-day group post-unblinding"
+        },
+        {
+          "outcome": "Multiresistant pathogens in recurrent infections",
+          "group_a": "42.1%",
+          "group_b": "62.3%",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": "0.04",
+          "note": "Proportion of recurrences with multidrug-resistant pathogens"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Nonfermenting Gram-negative bacilli stratum (recurrence at day 28)",
+          "group_a": "26/64 (40.6%)",
+          "group_b": "16/63 (25.4%)",
+          "effect_measure": "Risk Difference",
+          "effect_value": "15.2%",
+          "ci_95": "90% CI 3.9 to 26.6",
+          "p_interaction": null
+        }
+      ]
+    },
+    "safety": [
+      "No excess mortality observed with 8-day therapy at day 28 (18.8% vs 17.2%) or day 60 (25.4% vs 27.9%).",
+      "Multidrug-resistant pathogen emergence was higher among recurrent infections in the 15-day group (62.3% vs 42.1%, P = 0.04)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central IVRS, stratified by center, block size 4; concealed allocation until day 8."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blinded until day 8, after which unblinding occurred. Bronchoscopy rate for suspected recurrence was higher in the 8-day arm (60.9% vs 45.6%, P = 0.003), introducing detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "402 randomized, 1 withdrew consent in 15-day group; 401 analyzed (197 vs 204) by intention-to-treat."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clear exposure separation achieved (-4.5 treatment days). Subsequent post-regimen antibiotic courses occurred in 46.3% vs 44.3% of survivors."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well matched for SAPS II (47 vs 47), SOFA (8 vs 8), septic shock (24.4% vs 21.1%); modest imbalance in male sex (76.6% vs 67.6%, P = 0.046). Day 3 randomization excluded 70 early deaths and 79 with inappropriate initial antibiotics."
+        }
+      ],
+      "verdict": "Internal validity is moderate due to post-day 8 unblinding and differential bronchoscopy investigation rates, alongside delayed day-3 randomization."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU patients in France with bronchoscopically confirmed VAP and confirmed appropriate initial empiric coverage; excludes immunocompromised patients and SAPS II > 65."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires quantitative bronchoscopic diagnostic protocols; generalizability is limited where VAP is diagnosed clinically or where early empiric antibiotic failure is common."
+        }
+      ],
+      "verdict": "External validity is moderate and applies best to ICU patients with bronchoscopically confirmed VAP receiving prompt appropriate initial antibiotics."
+    },
+    "strengths": [
+      "Multicenter design across 51 ICUs with rigorous microbiological confirmation using quantitative cultures.",
+      "Clear separation of antibiotic exposure with direct measurement of antibiotic-free days.",
+      "Prespecified microbiological subgroup analyses isolating nonfermenting Gram-negative pathogens."
+    ],
+    "limitations": [
+      "Day 3 randomization enriches for survivors with early appropriate therapy, excluding early treatment failures.",
+      "Unblinding at day 8 led to significantly higher re-bronchoscopy rates in the 8-day group, introducing ascertainment bias for recurrence.",
+      "Permissive noninferiority margin of 10% and reliance on 90% confidence intervals for primary outcomes.",
+      "High rate of subsequent antibiotic use for extrapulmonary infections attenuated overall duration contrast."
+    ],
+    "critical_appraisal": {
+      "summary": "PneumA demonstrated that 8 days of antibiotics is effective and safe for most VAP cases, though unblinding and subgroup signals in nonfermenters require clinical nuance.",
+      "strengths": [
+        "Microbiologically validated VAP diagnosis via quantitative bronchoscopic sampling",
+        "Demonstrated clear reduction in antibiotic exposure and lower rate of MDR recurrent pathogens"
+      ],
+      "weaknesses": [
+        "Ascertainment bias due to unblinded diagnostic re-investigation after day 8",
+        "Selection bias from delayed randomization at day 3 after excluding early non-responders"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In patients with microbiologically confirmed VAP receiving appropriate initial therapy, an 8-day course was noninferior to a 15-day course, reduced antibiotic exposure, and decreased resistant pathogen emergence, though recurrence was higher in nonfermenting Gram-negative bacilli.",
+    "clinical_bottom_line": {
+      "verdict": "Default to 7–8 days of antibiotic therapy for VAP when initial empirical therapy was appropriate and clinical response is good.",
+      "applies_to": "Adult ICU patients with microbiologically confirmed VAP who show clinical improvement on appropriate initial antibiotics.",
+      "does_not_mean": "Does not mean 8 days is sufficient for nonfermenting Gram-negative bacilli (e.g., Pseudomonas, Acinetobacter) or patients with delayed clinical response, abscess, or empyema.",
+      "implementation_caveats": [
+        "Assess response at day 8 before stopping therapy.",
+        "Consider extending therapy beyond 8 days for nonfermenting Gram-negative organisms or slow clinical response.",
+        "Requires reliable initial microbiological diagnostics and effective empiric antibiotic selection."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Delayed Randomization (Day 3)",
+        "notes": "By excluding 70 early deaths and 79 patients with inappropriate initial therapy prior to day 3, results apply only to patients who survived and received effective initial therapy."
+      },
+      {
+        "topic": "Noninferiority Margin Selection",
+        "notes": "A 10% absolute noninferiority margin for mortality and recurrence was criticized as overly broad."
+      },
+      {
+        "topic": "Detection Bias for Recurrence",
+        "notes": "Clinicians were unblinded at day 8 and performed significantly more re-look bronchoscopies in the 8-day arm (60.9% vs 45.6%), potentially over-detecting recurrence in the short-course arm."
+      },
+      {
+        "topic": "Nonfermenter Pathogen Recurrence",
+        "notes": "Higher recurrence rate in nonfermenting Gram-negative bacilli (40.6% vs 25.4%) led to guidelines recommending individualized longer treatment durations for these organisms."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "What is the optimal duration for VAP caused specifically by Pseudomonas aeruginosa or Acinetobacter species?",
+      "Can biomarker-guided strategies (e.g., procalcitonin) safely shorten therapy below 8 days?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=401",
+        "28-day mortality: 18.8% vs 17.2% (RD 1.6%)",
+        "Recurrence in nonfermenters: 40.6% vs 25.4%",
+        "Antibiotic-free days: 13.1 vs 8.7 days (P<0.001)"
+      ],
+      "one_line_takeaway": "Treat VAP for 8 days rather than 15, but consider longer courses for nonfermenting Gram-negative bacilli like Pseudomonas."
+    }
+  },
+  "_source_id": "PneumA",
+  "_source_system": "Sepsis"
+}

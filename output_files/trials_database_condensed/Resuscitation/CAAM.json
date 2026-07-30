@@ -1,0 +1,340 @@
+{
+  "id": "CAAM",
+  "trial_name": "CAAM — Effect of Bag-Mask Ventilation vs Endotracheal Intubation During Cardiopulmonary Resuscitation on Neurological Outcome After Out-of-Hospital Cardiorespiratory Arrest (2018)",
+  "specialty": "Cardiac Arrest & Resuscitation",
+  "subtopic": "Airway & Ventilation",
+  "year": 2018,
+  "journal": "JAMA",
+  "citation": "Jabre P, Penaloza A, Pinero D, et al. Effect of Bag-Mask Ventilation vs Endotracheal Intubation During Cardiopulmonary Resuscitation on Neurologic Outcome After Out-of-Hospital Cardiorespiratory Arrest: A Randomized Clinical Trial. JAMA. 2018;319(8):779-787",
+  "doi": "https://doi.org/10.1001/jama.2018.0156",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, non-inferiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2043,
+  "result_category": "Mixed",
+  "one_liner": "In adults with non-shockable OHCA, initial bag-mask ventilation did not meet non-inferiority vs endotracheal intubation for 28-day favourable neurological outcome, with similar survival but differing safety profiles.",
+  "pico": {
+    "population": "Adults (≥18 years) with non-traumatic OHCA and initial non-shockable rhythm, treated by physician-led prehospital ALS teams",
+    "intervention": "Initial bag-mask ventilation (BMV) by emergency physician; rescue intubation permitted for failure/regurgitation",
+    "comparison": "Initial endotracheal intubation (ETI) by emergency physician; rescue BMV permitted before/between attempts or if failure",
+    "outcome": "Favourable neurological outcome at 28 days (Cerebral Performance Category 1-2)"
+  },
+  "keywords": [
+    "out-of-hospital cardiac arrest",
+    "airway management",
+    "bag-mask ventilation",
+    "endotracheal intubation",
+    "non-shockable rhythm",
+    "prehospital physician"
+  ],
+  "related_trials": [
+    "AIRWAYS-22",
+    "PART3"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Airway strategies during OHCA lacked high-quality comparative evidence. ETI offers a definitive airway but may cause interruptions and misplacement; BMV is immediately deployable but risks gastric insufflation and inadequate ventilation. Prior evidence was observational and confounded.",
+      "knowledge_gap": "No randomised evidence comparing initial BMV vs ETI strategies in OHCA existed.",
+      "hypothesis": "In adults with non-traumatic OHCA and initial non-shockable rhythm, initial BMV is non-inferior to initial ETI for 28-day favourable neurological outcome (non-inferiority margin: 1.0% absolute difference)."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, open-label, parallel-group, non-inferiority trial; stratified by centre with permuted blocks; prehospital physician-led advanced life support.",
+      "setting": "15 centres in France and 5 centres in Belgium, basic life support teams plus physician-staffed ALS units.",
+      "population": {
+        "inclusion": [
+          "age ≥18 years",
+          "non-traumatic OHCA",
+          "initial rhythm non-shockable",
+          "no spontaneous breathing and requiring advanced airway management"
+        ],
+        "exclusion": [
+          "foreign body/airway obstruction",
+          "trauma",
+          "major external bleeding",
+          "do-not-resuscitate status"
+        ]
+      },
+      "intervention": "Initial BMV by emergency physician. Rescue intubation allowed for ventilation failure or regurgitation.",
+      "comparison": "Initial ETI by emergency physician during CPR. Rescue BMV allowed before/between intubation attempts and in case of failure.",
+      "blinding": "Open-label; 28-day neurological outcome assessed by a blinded investigator.",
+      "sample_size_power": "Assuming 3.0% favourable neurological outcome in both groups, 2000 patients needed for 80% power at 1-sided α=2.5% with 1.0% absolute non-inferiority margin. Primary analysis ITT with supportive per-protocol and modified ITT analyses.",
+      "primary_outcome": "Favourable neurological outcome at day 28 (CPC 1–2).",
+      "secondary_outcomes": [
+        "Survival at day 28",
+        "Survival to hospital admission",
+        "Return of spontaneous circulation",
+        "Airway management difficulty",
+        "Airway management failure",
+        "Regurgitation",
+        "Recognised oesophageal intubation",
+        "Mainstem intubation",
+        "Dental injury",
+        "Accidental extubation"
+      ],
+      "follow_up": "28–35 days (primary endpoint assessed at day 28)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Favourable neurological outcome was similarly low in both groups (4.3% vs 4.2%), and non-inferiority of BMV was not demonstrated.",
+        "ROSC was lower with BMV (28.4% vs 33.2%), but 28-day survival was nearly identical (5.4% vs 5.3%).",
+        "BMV had more regurgitation (15.2%) and airway failure (6.7%), while ETI had a high rate of recognised oesophageal intubation (10.2%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Favourable neurological outcome at day 28 (CPC 1-2) – ITT",
+          "group_a": "44/1018 (4.3%)",
+          "group_b": "43/1022 (4.2%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.11%",
+          "ci_95": "1-sided 97.5% CI −1.64% to ∞",
+          "p_value": "0.11 (non-inferiority)",
+          "note": "Non-inferiority margin −1.0% not met."
+        },
+        {
+          "outcome": "Survival at day 28 – ITT",
+          "group_a": "55/1018 (5.4%)",
+          "group_b": "54/1022 (5.3%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "0.1%",
+          "ci_95": "95% CI −1.8% to 2.1%",
+          "p_value": "0.90",
+          "note": ""
+        },
+        {
+          "outcome": "Survival to hospital admission – ITT",
+          "group_a": "337/1018 (33.1%)",
+          "group_b": "376/1022 (36.8%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−3.7%",
+          "ci_95": "95% CI −7.7% to 0.3%",
+          "p_value": "0.07",
+          "note": ""
+        },
+        {
+          "outcome": "Return of spontaneous circulation – ITT",
+          "group_a": "289/1018 (28.4%)",
+          "group_b": "339/1022 (33.2%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "−4.7%",
+          "ci_95": "95% CI −8.8% to −0.5%",
+          "p_value": "0.03",
+          "note": ""
+        },
+        {
+          "outcome": "Airway management difficulty (safety population)",
+          "group_a": "186/1028 (18.1%)",
+          "group_b": "138/1030 (13.4%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "4.7%",
+          "ci_95": "95% CI 1.5% to 7.9%",
+          "p_value": "0.004",
+          "note": "Composite procedural difficulty; open-label may influence reporting."
+        },
+        {
+          "outcome": "Airway management failure (safety population)",
+          "group_a": "69/1028 (6.7%)",
+          "group_b": "22/1030 (2.1%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "4.6%",
+          "ci_95": "95% CI 2.8% to 6.4%",
+          "p_value": "<0.001",
+          "note": "BMV group: rescue intubation in 146 patients (55 ventilation failure, 100 gastric regurgitation; not mutually exclusive)."
+        },
+        {
+          "outcome": "Regurgitation (safety population)",
+          "group_a": "156/1028 (15.2%)",
+          "group_b": "77/1030 (7.5%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "7.7%",
+          "ci_95": "95% CI 4.9% to 10.4%",
+          "p_value": "<0.001",
+          "note": "Safety signal favouring ETI."
+        },
+        {
+          "outcome": "Recognised oesophageal intubation (ETI group only)",
+          "group_a": "Not applicable",
+          "group_b": "105/1030 (10.2%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Recognised and corrected. Also mainstem intubation 21/1030 (2.0%), dental injury 7/1030 (0.7%), accidental extubation 5/1030 (0.5%)."
+        },
+        {
+          "outcome": "Mainstem intubation (ETI group only)",
+          "group_a": "0",
+          "group_b": "21/1030 (2.0%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Dental injury (ETI group only)",
+          "group_a": "0",
+          "group_b": "7/1030 (0.7%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Accidental extubation (ETI group only)",
+          "group_a": "0",
+          "group_b": "5/1030 (0.5%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "BMV: regurgitation 156/1028 (15.2%), airway failure 69/1028 (6.7%); rescue intubation performed in 146 (55 ventilation failure, 100 regurgitation).",
+      "ETI: recognised oesophageal intubation 105/1030 (10.2%), mainstem intubation 21/1030 (2.0%), dental injury 7/1030 (0.7%), accidental extubation 5/1030 (0.5%).",
+      "Composite procedural difficulty higher with BMV (18.1% vs 13.4%, risk difference 4.7%, p=0.004)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centre-stratified, permuted blocks, sealed opaque envelopes opened in field; adequate concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery; primary outcome assessed by blinded investigator, reducing detection bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "3/2043 excluded from ITT (2 DNR, 1 not in cardiac arrest). Per-protocol numbers differed (BMV 995, ETI 943) due to crossovers/deviations."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Substantial rescue intubation in BMV arm (146, 14.3%) and some crossover in ETI arm (14 received BMV initially); strategy separation diluted."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: mean age 67.5 vs 68.7 years, male 67.1% vs 67.1%, bystander CPR 70.5% vs 72.7%, asystole 61.4% vs 60.9%, collapse-to-ALS time 15 min (IQR 10–23) in both groups."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "CPC at 28 days, standard but coarse; blinded assessment; susceptible to post-resuscitation care variability."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Planned size achieved; low event rate widened confidence intervals; non-inferiority not demonstrated despite near-identical point estimates."
+        }
+      ],
+      "verdict": "Overall internal validity moderate: randomisation and blinded outcome assessment are strengths, but open-label delivery, substantial rescue/crossover, and low event rate limit precision and interpretability."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Restricted to non-shockable OHCA with very low survival (4% favourable outcome); not applicable to shockable rhythms or higher-survival populations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Physician-staffed EMS with high ETI skill; thresholds for BMV failure/rescue may differ in paramedic-led or resource-limited systems. Supraglottic devices not tested."
+        }
+      ],
+      "verdict": "Generalisability moderate: most applicable to physician-led EMS treating predominately non-shockable OHCA, less so to other system configurations and patient populations."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre RCT with centre-stratified randomisation and allocation concealment.",
+      "Clinically meaningful primary endpoint assessed by a blinded investigator.",
+      "Prespecified non-inferiority framework with supportive per-protocol and modified ITT analyses.",
+      "Broad real-world prehospital cohort within a defined rhythm category."
+    ],
+    "limitations": [
+      "Open-label design may introduce performance bias in intermediate outcomes (e.g., airway difficulty).",
+      "Restricted to non-shockable rhythms, yielding low event rate and limited applicability to shockable rhythms.",
+      "Frequent rescue intubation in BMV arm (14.3%) dilutes strategy separation.",
+      "Airway-related mechanisms (chest compression interruption, ventilation quality) not quantified.",
+      "Non-inferiority margin (1.0% absolute) proportionally large relative to ~4% event rate; interpretation sensitive to CI width."
+    ],
+    "critical_appraisal": {
+      "summary": "Despite randomisation and blinded outcome assessment, the trial did not establish non-inferiority of BMV vs ETI due to very low event rates and dilution from frequent crossover, but near-identical patient-centred outcomes suggest clinical equipoise.",
+      "strengths": [
+        "Large pragmatic design",
+        "Blinded primary outcome",
+        "Stratified randomisation with concealment",
+        "Real-world prehospital setting"
+      ],
+      "weaknesses": [
+        "Open-label delivery",
+        "Low event rate limiting precision",
+        "Substantial rescue intubation reducing strategy separation",
+        "Restricted to non-shockable rhythms reducing generalisability"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In non-shockable OHCA, BMV did not meet non-inferiority criteria vs ETI; the nearly identical neurological outcomes and survival, together with differing safety trade-offs, support equipoise and the importance of matching airway strategy to system capabilities.",
+    "clinical_bottom_line": {
+      "verdict": "Do not abandon BMV or mandate ETI; outcomes are similar. BMV carries higher risk of regurgitation/airway failure, ETI carries risk of oesophageal intubation. Choose strategy based on provider skill, system resources, and scenario.",
+      "applies_to": "Non-traumatic OHCA with non-shockable rhythm, treated in physician-led or similarly skilled prehospital systems.",
+      "does_not_mean": "ETI is superior to BMV for neurologic outcome in all OHCA patients; point estimates were nearly identical and the trial studied a low-survival subgroup.",
+      "implementation_caveats": [
+        "If using BMV, ensure rapid response to regurgitation (suction, early consideration of definitive airway).",
+        "Emphasize rigorous ETI placement confirmation (waveform capnography) and preparedness for oesophageal intubation.",
+        "In paramedic-only systems, supraglottic devices may be an alternative intermediate strategy; they were not tested here.",
+        "The trial does not address airway strategy for shockable rhythms or patients with high predicted survival."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Non-inferiority design sensitivity",
+        "notes": "With favourable outcome ~4%, a 1% absolute non-inferiority margin is proportionally large; result sensitive to small shifts and protocol deviations."
+      },
+      {
+        "topic": "Interpretation of crossover/rescue",
+        "notes": "Rescue intubation in 146 BMV patients (14.3%) indicates pragmatic step-up practice but dilutes strategy separation and complicates attribution of downstream effects."
+      },
+      {
+        "topic": "Generalisability debate",
+        "notes": "Physician-staffed ETI performance and BMV failure thresholds may not translate to paramedic systems, where supraglottic devices are often the default intermediate airway."
+      },
+      {
+        "topic": "Relationship to other pragmatic airway RCTs",
+        "notes": "Two 2018 trials (AIRWAYS-22 and PART3) compared supraglottic devices with ETI and found no clear functional superiority, aligning with CAAM’s message that airway choice should be system-appropriate."
+      },
+      {
+        "topic": "Guideline incorporation",
+        "notes": "Resuscitation guidelines now emphasise choosing an airway strategy that minimises interruptions and matches provider competence; BMV and supraglottic airways are appropriate early strategies, ETI reserved for highly trained operators."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "AIRWAYS-22",
+        "relation": "Compared i-gel supraglottic device vs ETI; no difference in neurological outcome but higher initial airway success with i-gel, highlighting safety trade-offs similar to CAAM."
+      },
+      {
+        "trial": "PART3",
+        "relation": "Compared laryngeal tube vs ETI; no difference in 72-hour survival but better airway success with laryngeal tube, supporting the concept that intermediate airways are viable alternatives."
+      }
+    ],
+    "unresolved_questions": [
+      "What are the quantitative effects of airway technique on chest compression interruption and ventilation quality during BMV vs ETI?",
+      "How would a BMV-first strategy perform in paramedic-only systems with different rescue thresholds and ETI success rates?",
+      "Does initial airway strategy interact with post-resuscitation care (e.g., TTM, early angiography) to affect neurological outcome?",
+      "Would BMV be non-inferior in a population with higher baseline survival (e.g., shockable rhythms) where complication rates might differ?",
+      "How should advanced airway timing and technique be incorporated into optimal CPR bundles for prolonged downtime or refractory arrest?",
+      "What is the role of supraglottic airways as a bridge between BMV and ETI in this population?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2043",
+        "Favourable neurological outcome at 28 days: 4.3% vs 4.2% (risk difference 0.11%)",
+        "ROSC: 28.4% vs 33.2% (difference −4.7%)",
+        "28-day survival: 5.4% vs 5.3% (difference 0.1%)"
+      ],
+      "one_line_takeaway": "In non-shockable OHCA, bag-mask ventilation is not inferior to endotracheal intubation for neurologic outcome—either strategy works similarly; choose based on skill and system, knowing BMV risks regurgitation and ETI risks misplacement."
+    }
+  },
+  "_source_id": "CAAM",
+  "_source_system": "Resuscitation"
+}

@@ -5,6 +5,7 @@ Scrapes https://criticalcarereviews.com/collections/foundational-trials
 and saves each trial as structured JSON under trials_database/{System}/{Name}.json
 """
 
+import argparse
 import json
 import os
 import re
@@ -211,24 +212,71 @@ def save_trial(filepath, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 
+def get_existing_trial_names():
+    """Build a set of lowercase trial names already in trials_database/."""
+    names = set()
+    for root, _dirs, files in os.walk(OUTPUT_DIR):
+        for f in files:
+            if not f.endswith(".json"):
+                continue
+            fp = os.path.join(root, f)
+            try:
+                with open(fp, "r", encoding="utf-8") as jf:
+                    data = json.load(jf)
+                name = data.get("name", "").strip().lower()
+                if name:
+                    names.add(name)
+            except Exception:
+                pass
+    return names
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(
+        description="Scrape foundational trials from criticalcarereviews.com"
+    )
+    parser.add_argument(
+        "--newtrials",
+        action="store_true",
+        help="Only scrape trials not yet in the database (skip existing ones)",
+    )
+    return parser.parse_args()
+
+
 def main():
+    args = parse_args()
+
     print("Fetching listing page...")
     soup = fetch_soup(LISTING_URL)
     sections = parse_listing(soup)
     print(f"Found {len(sections)} system sections")
 
+    existing_names = get_existing_trial_names() if args.newtrials else set()
+
     total = sum(len(tr) for _, tr in sections)
     done = 0
     errors = []
+    skipped = 0
 
     for system_name, trials in sections:
         system_dir = os.path.join(OUTPUT_DIR, system_name)
         os.makedirs(system_dir, exist_ok=True)
-        print(f"\n{'='*60}")
-        print(f"  {system_name} ({len(trials)} trials)")
-        print(f"{'='*60}")
 
-        for trial in trials:
+        if args.newtrials:
+            new_in_system = [t for t in trials if t["name"].strip().lower() not in existing_names]
+            old_in_system = [t for t in trials if t["name"].strip().lower() in existing_names]
+            if old_in_system:
+                print(f"\n  {system_name}: {len(new_in_system)} new, {len(old_in_system)} already exist")
+            else:
+                print(f"\n  {system_name} ({len(new_in_system)} new)")
+            trials_to_process = new_in_system
+        else:
+            trials_to_process = trials
+            print(f"\n{'='*60}")
+            print(f"  {system_name} ({len(trials)} trials)")
+            print(f"{'='*60}")
+
+        for trial in trials_to_process:
             done += 1
             name = trial["name"]
             base = sanitize_filename(name)
@@ -269,6 +317,12 @@ def main():
 
     print(f"\n{'='*60}")
     print(f"  Complete! {done} trials saved under {OUTPUT_DIR}")
+    if args.newtrials:
+        skipped = sum(
+            1 for _, tr in sections
+            for t in tr if t["name"].strip().lower() in existing_names
+        )
+        print(f"  Skipped (already exist): {skipped}")
     if errors:
         print(f"  Errors ({len(errors)}):")
         for e in errors:

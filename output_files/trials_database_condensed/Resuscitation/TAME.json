@@ -1,0 +1,306 @@
+{
+  "id": "TAME",
+  "trial_name": "TAME — Mild Hypercapnia or Normocapnia after Out-of-Hospital Cardiac Arrest (2023)",
+  "specialty": "Resuscitation & Post-Cardiac Arrest Care",
+  "subtopic": "Temperature Management",
+  "year": 2023,
+  "journal": "N Engl J Med",
+  "citation": "Eastwood GM, Schneider AG, Suzuki S, et al. Mild hypercapnia or normocapnia after out-of-hospital cardiac arrest. N Engl J Med. 2023;389(1):45-57.",
+  "doi": "https://doi.org/10.1056/NEJMoa2214552",
+  "registration": "",
+  "trial_type": "Investigator-initiated, randomised, multicentre, international, parallel-group clinical trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1700,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In comatose OHCA survivors, targeting mild hypercapnia (PaCO2 50–55 mm Hg) for 24 hours did not improve 6-month favourable neurological outcomes or mortality compared to targeting normocapnia.",
+  "pico": {
+    "population": "Comatose, mechanically ventilated adult survivors of out-of-hospital cardiac arrest (OHCA) admitted to ICU within 180 minutes of ROSC.",
+    "intervention": "Targeted mild hypercapnia (PaCO2 50–55 mm Hg) for 24 hours post-randomisation.",
+    "comparison": "Targeted normocapnia (PaCO2 35–45 mm Hg) for 24 hours post-randomisation.",
+    "outcome": "Favourable neurological outcome at 6 months (GOS-E score 5–8)."
+  },
+  "keywords": [
+    "out-of-hospital cardiac arrest",
+    "OHCA",
+    "hypercapnia",
+    "normocapnia",
+    "post-cardiac arrest brain injury",
+    "mechanical ventilation",
+    "PaCO2"
+  ],
+  "related_trials": [
+    "TTM2",
+    "CCC"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Death and disability after OHCA are driven by post-cardiac arrest brain injury, compounded by systemic reperfusion injury and hemodynamic instability. PaCO2 strongly regulates cerebral blood flow and vascular tone.",
+      "knowledge_gap": "Observational data linked hypocapnia to worse outcomes after arrest, but suffered from confounding. Mild hypercapnia augments cerebral perfusion but can increase ICP, acidemia, and arrhythmias; net clinical impact was unknown.",
+      "hypothesis": "Actively targeting mild hypercapnia (PaCO2 50–55 mm Hg) for 24 hours improves early cerebral perfusion and increases the proportion of patients achieving favourable 6-month neurological recovery."
+    },
+    "methods": {
+      "design": "Investigator-initiated, randomised, multicentre, international, parallel-group RCT with open-label delivery and blinded outcome assessment.",
+      "setting": "63 ICUs across 17 countries; recruitment March 2018 to September 2021.",
+      "population": {
+        "inclusion": [
+          "Adult (≥18 years)",
+          "Out-of-hospital cardiac arrest (OHCA)",
+          "Sustained ROSC ≥20 minutes",
+          "Comatose on admission (FOUR motor score 0–3)",
+          "Mechanically ventilated",
+          "Randomisation within 180 minutes of ROSC"
+        ],
+        "exclusion": [
+          "Unwitnessed asystole",
+          "Admission tympanic temperature <30°C",
+          "ECMO prior to ROSC",
+          "Pregnancy",
+          "Suspected intracranial bleeding",
+          "Severe COPD with home oxygen therapy"
+        ]
+      },
+      "intervention": "Targeted mild hypercapnia (PaCO2 50–55 mm Hg) for 24 hours. Recommended deep sedation (RASS -4), ABGs checked at least q4h (alpha-stat approach), and ETCO2-guided ventilator titrations.",
+      "comparison": "Targeted normocapnia (PaCO2 35–45 mm Hg) for 24 hours using identical monitoring protocol (alpha-stat, q4h ABGs, ETCO2 guidance).",
+      "blinding": "Clinicians unblinded; assessors of neurological prognostication (≥96 hours) and 6-month outcomes were blinded; statisticians and authors blinded during analysis.",
+      "sample_size_power": "1624 patients required for 90% power to detect an 8% absolute increase in favourable outcome (50% to 58%, two-sided α=0.05); inflated to 1700 for withdrawal. Single interim analysis at 850 enrolments (O'Brien–Fleming boundary, P=0.005).",
+      "primary_outcome": "Favourable neurological outcome at 6 months, defined as Glasgow Outcome Scale–Extended (GOS-E) score 5–8.",
+      "secondary_outcomes": [
+        "Dichotomised favourable neurological outcome at 6 months using all available data",
+        "Poor functional outcome at 6 months (mRS 4–6)",
+        "All-cause mortality within 6 months",
+        "Health-related quality of life (EQ-VAS) at 6 months"
+      ],
+      "follow_up": "6 months (~180 days)"
+    },
+    "results": {
+      "headline_bullets": [
+        "Targeted mild hypercapnia did not significantly alter 6-month favourable neurological outcome (43.5% vs 44.6%; adjusted RR 0.98, 95% CI 0.87–1.11; P=0.76).",
+        "All-cause mortality at 6 months was similar between groups (48.2% vs 45.9%; adjusted RR 1.05, 95% CI 0.94–1.16).",
+        "Sensitivity analysis excluding co-enrolment in TTM2 was concordant (44.6% vs 44.7%; adjusted RR 1.00, 95% CI 0.87–1.15).",
+        "Clear physiological PaCO2 separation was achieved (mean 49.8±4.7 vs 40.8±4.2 mm Hg), but median time in target range was short (4 vs 7 hours)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Favourable neurological outcome at 6 months (GOS-E 5–8)",
+          "group_a": "332/764 (43.5%)",
+          "group_b": "350/784 (44.6%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "0.98",
+          "ci_95": "0.87–1.11",
+          "p_value": "0.76",
+          "note": "Primary outcome; structured blinded assessment"
+        },
+        {
+          "outcome": "Dichotomised favourable neurological outcome at 6 months (all data)",
+          "group_a": "348/788 (44.2%)",
+          "group_b": "365/806 (45.3%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "0.98",
+          "ci_95": "0.87–1.11",
+          "p_value": "",
+          "note": "Secondary approach to reduce missingness"
+        },
+        {
+          "outcome": "Poor functional outcome at 6 months (mRS 4–6)",
+          "group_a": "407/762 (53.4%)",
+          "group_b": "400/779 (51.3%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.05",
+          "ci_95": "0.95–1.15",
+          "p_value": "",
+          "note": "Includes death (mRS 6)"
+        },
+        {
+          "outcome": "Death within 6 months",
+          "group_a": "393/816 (48.2%)",
+          "group_b": "382/832 (45.9%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.05",
+          "ci_95": "0.94–1.16",
+          "p_value": "",
+          "note": "Evaluated at 6 months"
+        },
+        {
+          "outcome": "EQ-VAS at 6 months (survivors only)",
+          "group_a": "76.4 (74.1–78.6)",
+          "group_b": "74.5 (72.2–76.7)",
+          "effect_measure": "Mean difference",
+          "effect_value": "1.9",
+          "ci_95": "-0.9 to 4.7",
+          "p_value": "",
+          "note": "Higher scores indicate better perceived health"
+        },
+        {
+          "outcome": "EQ-VAS at 6 months (all patients; non-survivors = 0)",
+          "group_a": "35.8 (32.6–39.0)",
+          "group_b": "36.8 (33.6–40.0)",
+          "effect_measure": "Mean difference",
+          "effect_value": "-1.0",
+          "ci_95": "-5.0 to 3.0",
+          "p_value": "",
+          "note": "Preplanned approach for competing risk of death"
+        },
+        {
+          "outcome": "Pneumonia (ICU days 1–7)",
+          "group_a": "335/821 (40.8%)",
+          "group_b": "358/831 (43.1%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.35",
+          "note": "Prespecified adverse event"
+        },
+        {
+          "outcome": "Severe bleeding (GUSTO severe)",
+          "group_a": "16/829 (1.9%)",
+          "group_b": "14/839 (1.7%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.69",
+          "note": "Prespecified adverse event"
+        },
+        {
+          "outcome": "Suspected/confirmed raised ICP requiring normocapnia (ICU days 1–7)",
+          "group_a": "13/829 (1.6%)",
+          "group_b": "19/839 (2.3%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.31",
+          "note": "Prespecified serious adverse event"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Sensitivity excluding TTM2 co-enrolment",
+          "group_a": "267/599 (44.6%)",
+          "group_b": "275/615 (44.7%)",
+          "effect_measure": "Adjusted RR",
+          "effect_value": "1.00",
+          "ci_95": "0.87–1.15",
+          "p_interaction": ""
+        }
+      ]
+    },
+    "safety": [
+      "Pneumonia (ICU days 1–7): 40.8% (335/821) in hypercapnia vs 43.1% (358/831) in normocapnia (P=0.35).",
+      "Severe bleeding (GUSTO severe): 1.9% (16/829) vs 1.7% (14/839) (P=0.69).",
+      "Suspected/confirmed raised intracranial pressure necessitating normocapnia: 1.6% (13/829) vs 2.3% (19/839) (P=0.31)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation concealed allocation until assignment; TTM2 co-enrolment incorporated as prespecified covariate."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery created scope for co-intervention bias; however, outcome assessors and prognostication (≥96h) were blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1700 randomised; 24 excluded due to consent withdrawal. Primary outcome available for 1548 (6.9% missingness); mortality for 1648 (0.9% missingness). ITT analysis used."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Target PaCO2 achieved in 93.4% (hypercapnia) vs 95.9% (normocapnia); median hours in target were 4 vs 7. Early discontinuation in 8.2% vs 3.0% (pH <7.1 in 12 vs 3). NMB used in 67.7% vs 59.1%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well-balanced groups: age 61.2±14.3 vs 61.6±13.3 years, shockable rhythm 70.1% vs 72.5%, median arrest-to-ROSC 26 vs 25 min, initial PaCO2 52.8±17.3 vs 52.5±20.3 mm Hg."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong with robust randomisation and blinded outcome assessment, though limited by open-label design, overlap in achieved PaCO2, and differential paralytic use."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Reflects a high-functioning OHCA system (mostly witnessed, high bystander CPR, shockable rhythms). Excluded unwitnessed asystole, severe COPD, hypothermia <30°C, and intracranial bleeding."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires frequent ABGs, ETCO2 monitoring, and ventilator titrations in well-resourced ICUs; less generalisable to non-shockable arrests or lower-resource settings."
+        }
+      ],
+      "verdict": "External validity is moderate for comatose intubated OHCA survivors in advanced ICUs, but limited for non-shockable arrests, unwitnessed events, or severe COPD."
+    },
+    "strengths": [
+      "Definitive sample size (n=1700) across 63 international ICUs.",
+      "Blinded assessment of 6-month primary neurological outcome (GOS-E) and prognostication.",
+      "Demonstrable physiological separation in PaCO2 (time-weighted mean 49.8 vs 40.8 mm Hg).",
+      "Prespecified statistical analysis accounting for trial centres and TTM2 co-enrolment."
+    ],
+    "limitations": [
+      "Open-label intervention allowed differential co-interventions (e.g., higher neuromuscular blockade use: 67.7% vs 59.1%).",
+      "Randomisation occurred a median ~2.5 hours post-arrest, after baseline PaCO2 was already elevated (~53 mm Hg).",
+      "Limited duration spent in target PaCO2 range (median 4 hours in hypercapnia group).",
+      "Withdrawal of life-sustaining therapy was clinician-directed.",
+      "6.9% missingness for primary outcome (mitigated by multiple imputation and record adjudication)."
+    ],
+    "critical_appraisal": {
+      "summary": "TAME is a high-quality, large-scale international RCT demonstrating that targeting mild hypercapnia after OHCA does not improve 6-month neurological outcomes or survival.",
+      "strengths": [
+        "Large international sample size (n=1700)",
+        "Blinded outcome assessment at 6 months",
+        "Clear physiological PaCO2 separation between groups"
+      ],
+      "weaknesses": [
+        "Open-label intervention delivery",
+        "Short duration spent within exact target PaCO2 window",
+        "Differential paralytic use between arms"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In comatose adults resuscitated after out-of-hospital cardiac arrest, targeted mild hypercapnia did not result in a significantly higher percentage of patients with a favourable neurological outcome at 6 months than targeted normocapnia.",
+    "clinical_bottom_line": {
+      "verdict": "Do not routinely target mild hypercapnia post-OHCA. Maintain normocapnia and avoid hypocapnia and extreme hypercapnia.",
+      "applies_to": "Comatose mechanically ventilated adult OHCA survivors resuscitated and admitted to ICU.",
+      "does_not_mean": "Does not mean hypocapnia is safe; avoiding hypocapnia (<35 mm Hg) remains a critical standard of care.",
+      "implementation_caveats": [
+        "Focus on preventing hypocapnia rather than actively driving PaCO2 above 50 mm Hg.",
+        "Deliberate hypercapnia increases sedation and neuromuscular blockade requirements without patient-centred benefit."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Timing of intervention & biological leverage",
+        "notes": "Intervention began median 154 min post-arrest with initial PaCO2 ~53 mm Hg, meaning the early post-ROSC hypoperfusion phase had passed."
+      },
+      {
+        "topic": "Target fidelity & exposure duration",
+        "notes": "Median time within the target PaCO2 range was only 4 hours in the hypercapnia group, with 8.2% early discontinuation due to acidemia."
+      },
+      {
+        "topic": "Co-interventions & WLST",
+        "notes": "Higher neuromuscular blocker use in hypercapnia group (67.7% vs 59.1%); withdrawal of life-sustaining therapy was unblinded and clinician-directed."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TTM2",
+        "relation": "Co-enrolment permitted; TAME analysis controlled for TTM2 assignment, confirming consistent neutral outcomes across temperature strategies."
+      },
+      {
+        "trial": "CCC",
+        "relation": "Phase II feasibility RCT that established mild hypercapnia safety but was underpowered for neurological endpoints."
+      }
+    ],
+    "unresolved_questions": [
+      "Would hypercapnia delivered immediately post-ROSC (pre-hospital or <1 hour post-arrest) alter early reperfusion injury?",
+      "Is there a specific subpopulation (e.g., severe hypoxic-ischemic brain injury phenotypes) that benefits from augmented CBF via hypercapnia?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1700 across 63 ICUs",
+        "Primary GOS-E 5–8: 43.5% vs 44.6% (RR 0.98, p=0.76)",
+        "6-month mortality: 48.2% vs 45.9% (RR 1.05)",
+        "Time-weighted mean PaCO2: 49.8 vs 40.8 mm Hg"
+      ],
+      "one_line_takeaway": "Maintain normocapnia and avoid hypocapnia in post-cardiac arrest care; routine targeted mild hypercapnia provides no neurological or survival benefit."
+    }
+  },
+  "_source_id": "TAME",
+  "_source_system": "Resuscitation"
+}

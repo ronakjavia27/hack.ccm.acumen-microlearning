@@ -1,0 +1,277 @@
+{
+  "id": "PARAMEDIC",
+  "trial_name": "PARAMEDIC — Mechanical vs Manual Chest Compression for Out-of-Hospital Cardiac Arrest (2015)",
+  "specialty": "Resuscitation",
+  "subtopic": "Temperature Management",
+  "year": 2015,
+  "journal": "The Lancet",
+  "citation": "Perkins GD, Lall R, Quinn T, Deakin CD, Cooke MW, Horton J, et al. Mechanical versus manual chest compression for out-of-hospital cardiac arrest (PARAMEDIC): a pragmatic, cluster randomised controlled trial. Lancet. 2015;385:947-955.",
+  "doi": "10.1016/S0140-6736(14)61886-9",
+  "registration": "",
+  "trial_type": "Pragmatic, multicentre, cluster-randomised controlled trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 4471,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In a pragmatic UK prehospital implementation strategy, routine access to LUCAS-2 mechanical CPR did not improve 30-day survival and was associated with lower odds of favourable neurological outcome at 3 months.",
+  "pico": {
+    "population": "Adults (≥18 years) with non-traumatic out-of-hospital cardiac arrest attended by participating UK ambulance service vehicles, in whom resuscitation was attempted.",
+    "intervention": "LUCAS-2 mechanical chest compression device deployed by trained ambulance crews as soon as practicable during resuscitation, with manual compressions provided during deployment and when the device could not be used.",
+    "comparison": "Manual chest compressions delivered by ambulance clinicians according to contemporary UK resuscitation guidelines, without routine use of a mechanical device.",
+    "outcome": "Survival to 30 days (primary); favourable neurological outcome (CPC 1-2) at 3 months (secondary)."
+  },
+  "keywords": [
+    "mechanical CPR",
+    "LUCAS-2",
+    "out-of-hospital cardiac arrest",
+    "prehospital resuscitation",
+    "cluster randomised trial"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "High-quality manual chest compressions are difficult to sustain in real-world prehospital resuscitation, with fatigue and procedural/transport-related interruptions. Mechanical CPR devices can deliver consistent compression rate/depth and may facilitate CPR during transport or procedures, but patient-centred benefit (survival with good neurological outcome) was uncertain.",
+      "knowledge_gap": "Prior randomised evidence was mixed, and uptake of mechanical CPR in ambulance services was increasing without definitive pragmatic effectiveness data in the UK setting.",
+      "hypothesis": "In adults with non-traumatic OHCA, the use of the LUCAS-2 mechanical chest compression device (vs manual chest compressions) would improve survival to 30 days."
+    },
+    "methods": {
+      "design": "Pragmatic, multicentre, cluster-randomised controlled trial (emergency vehicles as clusters; allocation determined by first trial vehicle on scene); open-label; prehospital setting across four UK ambulance services (West Midlands, North East England, Wales, South Central); recruitment April 2010–June 2013.",
+      "setting": "Four UK ambulance services (West Midlands, North East England, Wales, South Central); prehospital.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with non-traumatic OHCA attended by a participating emergency vehicle, in whom resuscitation was attempted."
+        ],
+        "exclusion": [
+          "Traumatic arrest",
+          "Pregnancy",
+          "Age <18 years",
+          "Do-not-attempt-resuscitation status",
+          "Patients for whom 'recognition of life extinct'/no resuscitation was appropriate (e.g., obvious signs of death or prolonged asystolic arrest without reversible causes and without bystander CPR)."
+        ]
+      },
+      "intervention": "LUCAS-2 mechanical chest compression device deployed by trained ambulance crews as soon as practicable during resuscitation, with manual compressions provided during deployment and when the device could not be used.",
+      "comparison": "Manual chest compressions delivered by ambulance clinicians according to contemporary UK resuscitation guidelines, without routine use of a mechanical device.",
+      "blinding": "Treating ambulance crews were not blinded; ambulance dispatch staff and those collecting the primary outcome were masked to treatment allocation; blinding of 3-month neurological outcome assessment was not reported.",
+      "sample_size_power": "3675 patients required (245 clusters; assumed ICC 0.01, average cluster size 15) to detect absolute increase in 30-day survival from 5.0% to 7.5% with 80% power at 5% significance; target increased to 4344 after interim sample size re-estimation.",
+      "primary_outcome": "Survival to 30 days.",
+      "secondary_outcomes": [
+        "Favourable neurological outcome at 3 months (CPC 1-2)",
+        "Return of spontaneous circulation (ROSC)",
+        "Survived event",
+        "Survival to hospital discharge",
+        "Survival to 3 months",
+        "Survival to 12 months",
+        "Clinical adverse events"
+      ],
+      "follow_up": "30 days (primary); additional survival follow-up at 3 months and 12 months; neurological outcome (CPC) at 3 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "No improvement in 30-day survival (6% vs 7%; adjusted OR 0.86, 95% CI 0.64–1.15).",
+        "Lower favourable neurological outcome at 3 months with LUCAS-2 (5% vs 6%; adjusted OR 0.72, 95% CI 0.52–0.99).",
+        "Incomplete intervention delivery (60% received LUCAS-2); CACE analyses did not suggest benefit.",
+        "No serious adverse events; minor events only in LUCAS-2 arm (7 events, 0.4%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival to 30 days (primary)",
+          "group_a": "104/1652 (6%)",
+          "group_b": "193/2819 (7%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.86",
+          "ci_95": "0.64 to 1.15",
+          "p_value": "Not reported",
+          "note": "Intention-to-treat; fixed-effects logistic regression adjusted for prespecified covariates."
+        },
+        {
+          "outcome": "Favourable neurological outcome at 3 months (CPC 1-2)",
+          "group_a": "77/1652 (5%)",
+          "group_b": "168/2819 (6%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.72",
+          "ci_95": "0.52 to 0.99",
+          "p_value": "Not reported",
+          "note": "Secondary outcome; CPC derived from records or face-to-face assessment."
+        },
+        {
+          "outcome": "Return of spontaneous circulation (ROSC)",
+          "group_a": "522/1652 (32%)",
+          "group_b": "885/2819 (31%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.99",
+          "ci_95": "0.86 to 1.14",
+          "p_value": "Not reported",
+          "note": "Secondary outcome."
+        },
+        {
+          "outcome": "Survived event",
+          "group_a": "377/1652 (23%)",
+          "group_b": "658/2819 (23%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.97",
+          "ci_95": "0.82 to 1.14",
+          "p_value": "Not reported",
+          "note": "Secondary outcome."
+        },
+        {
+          "outcome": "Survival to hospital discharge",
+          "group_a": "145/1652 (9%)",
+          "group_b": "277/2819 (10%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.87",
+          "ci_95": "0.70 to 1.07",
+          "p_value": "Not reported",
+          "note": "Secondary outcome."
+        },
+        {
+          "outcome": "Survival to 3 months",
+          "group_a": "96/1652 (6%)",
+          "group_b": "182/2819 (6%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.83",
+          "ci_95": "0.61 to 1.12",
+          "p_value": "Not reported",
+          "note": "Secondary outcome."
+        },
+        {
+          "outcome": "Survival to 12 months",
+          "group_a": "89/1652 (5%)",
+          "group_b": "175/2819 (6%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.83",
+          "ci_95": "0.62 to 1.11",
+          "p_value": "Not reported",
+          "note": "Secondary outcome."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Initial shockable rhythm",
+          "group_a": "69/376 (18%)",
+          "group_b": "148/615 (24%)",
+          "effect_measure": "OR",
+          "effect_value": "0.71",
+          "ci_95": "0.52 to 0.98",
+          "p_interaction": "<0.05"
+        }
+      ]
+    },
+    "safety": [
+      "7 minor adverse events (0.4%) in LUCAS-2 group (chest bruising, lacerations, blood in mouth); no serious adverse events. No adverse events in manual group."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Cluster randomisation by emergency vehicle (n=418 vehicles; 147 LUCAS-2, 271 control), stratified by ambulance station and vehicle type. Allocation determined before arrest by first trial vehicle on scene, minimising selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label delivery; treating crews not blinded, which could influence co-interventions. Primary outcome (30-day survival) objective and masked outcome collectors; neurological outcome assessment blinding not reported."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Near-complete follow-up: 1 patient with unknown survival status in control group; CPC missing for 3 (LUCAS-2) and 4 (control). Intention-to-treat analysis used; CACE analyses also performed."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Intervention exposure: 985/1652 (60%) received LUCAS-2; 667/1652 (40%) received manual CPR only. Reasons for non-use included crew not trained (78), crew error (168), device not in vehicle (26), patient unsuitable (102), device issues (14), not possible to use (140), unknown (110). Control contamination low: 11/2819 (<1%) received LUCAS-2."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly comparable: age 70.4 vs 69.7 years; male 63% vs 65%; witnessed 66% vs 68%; bystander CPR 43% vs 44%; shockable rhythm 23% vs 22%; call-to-arrival 6.5 vs 6.3 min; total response interval 11.4 vs 11.2 min."
+        }
+      ],
+      "verdict": "Overall, internal validity appears moderate—a large pragmatic randomised design with objective primary outcome and near-complete follow-up, but open-label delivery, substantial non-adherence (60% device use), and lack of CPR-quality/process measures limit confidence that the intervention achieved sustained separation without unintended interruptions."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad inclusion of adult non-traumatic OHCA with attempted resuscitation in routine UK ambulance services; baseline characteristics typical (mean age ~70 years; ~two-thirds witnessed; bystander CPR ~44%). Participating stations urban/semi-urban, may under-represent rural response/transport profiles. Exclusion of traumatic arrest, pregnancy, and cases where resuscitation not attempted consistent with most OHCA trials."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Findings most applicable to systems considering routine mechanical CPR deployment for all eligible OHCA calls. Generalisability to selective-use strategies (e.g., for prolonged transport, catheterisation laboratory CPR, or bridging to ECPR) limited because trial tested pragmatic 'device carried on vehicle' strategy with incomplete uptake and without measuring CPR process metrics. Resource-limited EMS environments may have different trade-offs."
+        }
+      ],
+      "verdict": "Overall, external validity is good for routine UK-style prehospital OHCA care and for services contemplating widespread device implementation, but is less direct for highly protocolised 'selective-use' strategies (transport/PCI/ECPR) and for markedly different EMS staffing models."
+    },
+    "strengths": [
+      "Large, pragmatic, multicentre trial embedded in routine ambulance service practice (n=4471 across four services).",
+      "Cluster randomisation by vehicle minimised selection bias at the point of arrest and reflected real-world implementation constraints.",
+      "Objective primary endpoint (30-day survival) with masking of outcome collectors and near-complete follow-up.",
+      "Prespecified covariate adjustment and additional CACE analyses to address substantial non-compliance."
+    ],
+    "limitations": [
+      "Open-label intervention with potential for performance differences in co-interventions and resuscitation behaviour.",
+      "Incomplete intervention delivery (LUCAS-2 used in 60% of intervention-arm patients), reducing separation and potentially diluting effect estimates.",
+      "Key CPR process/quality metrics (compression fraction, pauses, time-to-first-shock) were not reported, limiting mechanistic interpretation.",
+      "Random-effects models did not converge; fixed-effects approaches were used, and clustering effects could not be modelled as originally planned (although estimated ICC was low)."
+    ],
+    "critical_appraisal": {
+      "summary": "PARAMEDIC was a large, pragmatic cluster-RCT with objective primary outcome and near-complete follow-up, but open-label delivery, substantial non-adherence (60% device use), and lack of CPR process metrics limit confidence in the intervention's effect. The trial found no benefit and a signal of harm for neurological outcome, supporting prioritisation of high-quality manual CPR.",
+      "strengths": [
+        "Large sample size (n=4471) embedded in routine practice",
+        "Cluster randomisation minimised selection bias",
+        "Objective primary outcome with masked collectors",
+        "Prespecified CACE analyses to address non-compliance"
+      ],
+      "weaknesses": [
+        "Open-label design with potential for performance bias",
+        "Incomplete intervention delivery (60% received device)",
+        "Lack of CPR quality metrics to assess mechanism",
+        "Random-effects model non-convergence"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Routine device deployment: In a pragmatic UK EMS implementation strategy, routine access to LUCAS-2 did not improve survival to 30 days and was associated with lower odds of favourable neurological outcome at 3 months.",
+    "clinical_bottom_line": {
+      "verdict": "Routine mechanical CPR deployment does not improve outcomes and may worsen neurological outcome; prioritise high-quality manual CPR, reserving mechanical CPR for situations where manual compressions are unsafe or impractical.",
+      "applies_to": "Adult non-traumatic OHCA in systems considering routine mechanical CPR deployment; less applicable to selective-use strategies (e.g., during transport or PCI).",
+      "does_not_mean": "Mechanical CPR is harmful in all settings; it may still have a role when manual CPR cannot be delivered safely or continuously, but deployment must avoid interruptions to defibrillation.",
+      "implementation_caveats": [
+        "Ensure crews are trained to minimise pauses during device deployment, especially in shockable rhythms.",
+        "Consider mechanical CPR only when manual compressions are difficult to sustain (e.g., during extrication, transport, or prolonged resuscitation).",
+        "Monitor CPR quality metrics if using mechanical devices to avoid unrecognised interruptions."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Pragmatic cluster design and non-compliance",
+        "notes": "The published protocol specified a pragmatic, vehicle-cluster design to mirror real deployment constraints and prespecified additional analyses to address non-adherence. Non-compliance (40% manual-only in the intervention arm) was a defining feature of the 'strategy' tested and motivated CACE analyses; these did not show benefit for 30-day survival."
+      },
+      {
+        "topic": "Mechanistic concerns: interruptions and shockable rhythms",
+        "notes": "Contemporary commentary highlighted that mechanical CPR may improve consistency but could introduce pauses during deployment and might delay critical early actions (especially defibrillation), potentially explaining absence of benefit in pragmatic settings. A prespecified subgroup analysis suggested lower 30-day survival with LUCAS-2 among patients with initial shockable rhythm (OR 0.71; 95% CI 0.52 to 0.98; interaction P<0.05), amplifying concerns about time-critical defibrillation within a device-deployment workflow."
+      },
+      {
+        "topic": "Correspondence: transport and in-hospital care",
+        "notes": "Correspondence queried whether differential transport with ongoing CPR and subsequent in-hospital management could influence interpretation of trial outcomes. The authors' reply emphasised post-randomisation selection issues and reported survival among those transported with CPR ongoing: 11/640 (1.7%) in the LUCAS-2 group vs 11/1081 (1.0%) in the control group."
+      },
+      {
+        "topic": "Health economic implications",
+        "notes": "A within-trial and model-based economic evaluation using PARAMEDIC trial data concluded that manual CPR dominated LUCAS-2 (poorer outcomes and higher costs with LUCAS-2) in most analyses, indicating poor value for money for routine deployment in OHCA. The NIHR Health Technology Assessment programme monograph reporting PARAMEDIC also integrated clinical and economic findings, supporting the interpretation that routine mechanical CPR deployment does not improve outcomes and is unlikely to be cost-effective at system level."
+      },
+      {
+        "topic": "Evidence syntheses and evolving guidance",
+        "notes": "Systematic reviews/meta-analyses incorporating PARAMEDIC alongside other large pragmatic RCTs have generally found no improvement in survival outcomes with mechanical CPR devices in OHCA, with heterogeneity driven by device type and deployment strategy. A Cochrane update concluded that mechanical CPR is not superior to manual CPR overall, but may be a reasonable alternative when high-quality manual compressions are not possible or are dangerous for rescuers, emphasising close monitoring to minimise no-flow time and avoid defibrillation delays. Contemporary guideline updates (e.g., 2025 AHA and 2025 ERC ALS guidance) incorporate large device trials and continue to frame mechanical CPR as a selective tool that must be deployed without compromising time-critical actions (especially in shockable rhythms)."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Whether mechanical CPR can improve outcomes if deployed with minimal interruption and in specific subgroups (e.g., prolonged transport, ECPR).",
+      "The role of CPR quality metrics in guiding mechanical CPR use."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=4471",
+        "30-day survival: 6% vs 7% (adjusted OR 0.86, 95% CI 0.64–1.15)",
+        "Favourable neurological outcome at 3 months: 5% vs 6% (adjusted OR 0.72, 95% CI 0.52–0.99)",
+        "LUCAS-2 used in only 60% of intervention arm"
+      ],
+      "one_line_takeaway": "Routine mechanical CPR does not improve survival and may worsen neurological outcome; prioritise high-quality manual CPR and use mechanical CPR selectively when manual compressions are unsafe or impractical."
+    }
+  },
+  "_source_id": "PARAMEDIC",
+  "_source_system": "Resuscitation"
+}

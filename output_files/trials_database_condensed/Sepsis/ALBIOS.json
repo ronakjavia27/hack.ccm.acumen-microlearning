@@ -1,0 +1,343 @@
+{
+  "id": "ALBIOS",
+  "trial_name": "ALBIOS — Albumin Replacement in Patients with Severe Sepsis or Septic Shock (2014)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Fluids & Resuscitation",
+  "year": 2014,
+  "journal": "New England Journal of Medicine",
+  "citation": "Caironi P, Tognoni G, Masson S, Fumagalli R, Pesenti A, Romero M, et al. Albumin replacement in patients with severe sepsis or septic shock. N Engl J Med. 2014;370(15):1412-1421",
+  "doi": "https://doi.org/10.1056/NEJMoa1305727",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1818,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Protocolised 20% albumin replacement to target serum albumin ≥30 g/L alongside crystalloids did not reduce 28-day or 90-day mortality in severe sepsis or septic shock.",
+  "pico": {
+    "population": "Adults (≥18 years) admitted to ICU within 24 hours of meeting severe sepsis or septic shock criteria.",
+    "intervention": "20% albumin solution added to crystalloids, dosed daily to target serum albumin ≥30 g/L for up to 28 days or ICU discharge.",
+    "comparison": "Crystalloids alone for volume replacement using identical hemodynamic targets.",
+    "outcome": "Primary outcome was all-cause mortality at 28 days; key secondary outcome was 90-day mortality."
+  },
+  "keywords": [
+    "albumin",
+    "colloids",
+    "crystalloids",
+    "fluid resuscitation",
+    "hypoalbuminemia",
+    "septic shock",
+    "sepsis"
+  ],
+  "related_trials": [
+    "SAFE"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Colloids, including human albumin, were widely used in sepsis for intravascular volume expansion, but clinical outcome superiority over crystalloids remained unproven. The SAFE trial found no overall mortality difference, though a pre-specified severe sepsis subgroup suggested possible benefit.",
+      "knowledge_gap": "Whether targeted, sustained correction of hypoalbuminemia using hyperoncotic 20% albumin improves survival and organ function in severe sepsis and septic shock.",
+      "hypothesis": "Targeted 20% albumin replacement to maintain serum albumin ≥30 g/L in addition to crystalloids reduces 28-day mortality compared with crystalloids alone."
+    },
+    "methods": {
+      "design": "Multicenter, open-label, randomized controlled trial stratified by ICU and time from meeting severe sepsis criteria (<6 hours vs 6–24 hours).",
+      "setting": "100 ICUs across Italy; enrolled patients meeting Sepsis-1 severe sepsis/septic shock criteria within prior 24 hours.",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years admitted to ICU",
+          "Meeting criteria for severe sepsis or septic shock within the prior 24 hours"
+        ],
+        "exclusion": [
+          "Clinical conditions mandating albumin administration",
+          "Known contraindication or allergy to albumin",
+          "Consent constraints or other protocol-specified exclusions"
+        ]
+      },
+      "intervention": "20% albumin plus crystalloids to maintain serum albumin ≥30 g/L daily for up to 28 days or ICU discharge.",
+      "comparison": "Crystalloids alone for fluid replacement; albumin and other colloids discouraged except for defined exceptions.",
+      "blinding": "Open-label (treating clinicians unblinded).",
+      "sample_size_power": "1350 patients originally planned for 80% power at alpha 0.05 to detect a 17% relative risk reduction in 28-day mortality (45% to 37.4%); sample re-estimated at interim analysis up to 1818 participants.",
+      "primary_outcome": "All-cause mortality at 28 days.",
+      "secondary_outcomes": [
+        "All-cause mortality at 90 days",
+        "SOFA scores (days 1–7)",
+        "Time to vasopressor/inotropic agent discontinuation",
+        "Renal replacement therapy requirement",
+        "Acute kidney injury incidence",
+        "ICU and hospital length of stay"
+      ],
+      "follow_up": "28 days for primary outcome; 90 days for long-term survival."
+    },
+    "results": {
+      "headline_bullets": [
+        "No difference in primary outcome of 28-day mortality (31.8% vs 32.0%; RR 1.00; P=0.94).",
+        "No difference in overall 90-day mortality (41.1% vs 43.6%; RR 0.94; P=0.29).",
+        "Albumin achieved biological separation (higher serum albumin and 6-hour MAP) and faster vasopressor weaning (median 3 vs 4 days; P=0.007).",
+        "Septic shock subgroup showed a univariable 90-day mortality reduction (RR 0.87; P=0.03) that attenuated after full adjustment (RR 0.88; P=0.07)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at 28 days (primary)",
+          "group_a": "285/895 (31.8%)",
+          "group_b": "288/900 (32.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.87–1.14",
+          "p_value": "0.94",
+          "note": "Intention-to-treat analysis"
+        },
+        {
+          "outcome": "All-cause mortality at 90 days",
+          "group_a": "365/888 (41.1%)",
+          "group_b": "389/893 (43.6%)",
+          "effect_measure": "RR",
+          "effect_value": "0.94",
+          "ci_95": "0.85–1.05",
+          "p_value": "0.29",
+          "note": "Key secondary endpoint"
+        },
+        {
+          "outcome": "SOFA score (days 1–7; median)",
+          "group_a": "6.00 (IQR 4.00–8.50)",
+          "group_b": "5.62 (IQR 3.92–8.28)",
+          "effect_measure": "Difference",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.23",
+          "note": "Global organ dysfunction score"
+        },
+        {
+          "outcome": "Cardiovascular SOFA subscore (median)",
+          "group_a": "1.20 (IQR 0.46–2.31)",
+          "group_b": "1.42 (IQR 0.60–2.50)",
+          "effect_measure": "Difference",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.03",
+          "note": "Modest clinical magnitude"
+        },
+        {
+          "outcome": "Time to vasopressor/inotrope suspension (days; median)",
+          "group_a": "3 (IQR 1–6)",
+          "group_b": "4 (IQR 2–7)",
+          "effect_measure": "Difference",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.007",
+          "note": "Tertiary outcome; susceptible to open-label bias"
+        },
+        {
+          "outcome": "Renal replacement therapy",
+          "group_a": "222/903 (24.6%)",
+          "group_b": "194/907 (21.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.15",
+          "ci_95": "0.97–1.36",
+          "p_value": "0.11",
+          "note": "Direction toward more RRT with albumin"
+        },
+        {
+          "outcome": "Acute kidney injury",
+          "group_a": "183/834 (21.9%)",
+          "group_b": "190/837 (22.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.96",
+          "ci_95": "0.80–1.16",
+          "p_value": "0.71",
+          "note": "No significant difference"
+        },
+        {
+          "outcome": "Serum albumin at day 1 (g/L; mean ± SD)",
+          "group_a": "28.6 ± 5.4",
+          "group_b": "24.0 ± 5.2",
+          "effect_measure": "Mean diff",
+          "effect_value": "4.6",
+          "ci_95": "NR",
+          "p_value": "<0.001",
+          "note": "Day 7: 29.4 ± 3.3 vs 23.1 ± 4.7 g/L (P<0.001)"
+        },
+        {
+          "outcome": "Mean arterial pressure at 6 hours (mmHg; mean ± SD)",
+          "group_a": "79 ± 14",
+          "group_b": "77 ± 13",
+          "effect_measure": "Mean diff",
+          "effect_value": "2.0",
+          "ci_95": "NR",
+          "p_value": "<0.001",
+          "note": "Physiological separation achieved"
+        },
+        {
+          "outcome": "Net fluid balance at day 2 (mL; median [IQR])",
+          "group_a": "350 [−705 to 1607]",
+          "group_b": "620 [−480 to 1945]",
+          "effect_measure": "Difference",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.002",
+          "note": "Total 7-day net balance did not differ (P=0.13)"
+        },
+        {
+          "outcome": "Total administered fluids over 7 days (mL; median)",
+          "group_a": "31867",
+          "group_b": "31970",
+          "effect_measure": "Difference",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.51",
+          "note": "Total crystalloids over 7 days: 14150 vs 16160 mL (P=0.07)"
+        },
+        {
+          "outcome": "Packed red blood cell volume (mL; median [IQR])",
+          "group_a": "600 [0–1200]",
+          "group_b": "300 [0–950]",
+          "effect_measure": "Difference",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "<0.001",
+          "note": "Co-intervention imbalance"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Septic shock at enrolment (90-day mortality)",
+          "group_a": "243/558 (43.6%)",
+          "group_b": "281/563 (49.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.77–0.99",
+          "p_interaction": "0.03"
+        },
+        {
+          "subgroup": "Septic shock at enrolment (90-day mortality, adjusted)",
+          "group_a": "243/558 (43.6%)",
+          "group_b": "281/563 (49.9%)",
+          "effect_measure": "RR",
+          "effect_value": "0.88",
+          "ci_95": "0.77–1.01",
+          "p_interaction": "0.07"
+        },
+        {
+          "subgroup": "No septic shock at enrolment (90-day mortality)",
+          "group_a": "122/330 (37.0%)",
+          "group_b": "108/330 (32.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.13",
+          "ci_95": "0.92–1.39",
+          "p_interaction": "0.03"
+        }
+      ]
+    },
+    "safety": [
+      "No statistically significant difference in AKI incidence (21.9% vs 22.7%; P=0.71).",
+      "No statistically significant difference in RRT use (24.6% vs 21.4%; P=0.11), though non-significantly higher in albumin group.",
+      "Higher PRBC transfusion volumes observed in albumin arm (median 600 vs 300 mL; P<0.001)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central computer-generated sequence stratified by ICU and enrolment timing; allocation concealment adequate."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; mortality is objective, but subjective outcomes like vasopressor weaning are vulnerable."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Minimal loss to follow-up (28-day mortality available in 895/903 vs 900/907 patients); ITT analysis performed."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "High noncompliance: 41.8% in albumin arm were noncompliant at least once; 37.1% of crystalloid controls received albumin; synthetic colloids used in 22.7% vs 23.6%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: median age 70 vs 69 years, female sex 39.9% vs 39.4%, median SAPS II 48 vs 48."
+        }
+      ],
+      "verdict": "Internal validity is moderate, limited by open-label design, high protocol noncompliance, and substantial control group crossover."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad adult ICU severe sepsis and septic shock cohort across 100 ICUs, but reflects Sepsis-1 definitions."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires daily serum albumin monitoring and hyperoncotic 20% albumin access, which is costly and resource-intensive."
+        }
+      ],
+      "verdict": "External validity is fair for modern practice, constrained by changing sepsis definitions and intervention resource requirements."
+    },
+    "strengths": [
+      "Large multicenter trial across 100 ICUs",
+      "Central randomization with pre-specified stratification",
+      "Pragmatic population with high baseline illness severity",
+      "Achieved clear biochemical and hemodynamic separation",
+      "Objective, patient-centered primary outcome"
+    ],
+    "limitations": [
+      "Open-label design introducing performance bias risk",
+      "Substantial control group contamination (37.1% received albumin)",
+      "Lower baseline mortality than assumed (32% vs 45%), reducing statistical power",
+      "Subgroup findings vulnerable to multiplicity and residual confounding"
+    ],
+    "critical_appraisal": {
+      "summary": "ALBIOS is a large, well-designed RCT showing that correcting hypoalbuminemia does not reduce mortality, though significant contamination biased results toward the null.",
+      "strengths": [
+        "Rigorous central randomization and complete follow-up for primary endpoint",
+        "Clear biochemical proof of target achievement"
+      ],
+      "weaknesses": [
+        "Open-label administration leading to co-intervention imbalances",
+        "High crossover and noncompliance rates in both arms"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In patients with severe sepsis or septic shock, replacement of albumin in addition to crystalloids to maintain a serum albumin level of 30 g/L or more did not improve survival at 28 or 90 days.",
+    "clinical_bottom_line": {
+      "verdict": "Does not support routine targeted albumin replacement to maintain serum albumin ≥30 g/L in sepsis.",
+      "applies_to": "Adult ICU patients with severe sepsis or septic shock.",
+      "does_not_mean": "Does not mean albumin is harmful or entirely ineffective as an adjunct in severe septic shock requiring massive crystalloid volumes.",
+      "implementation_caveats": [
+        "Crystalloids remain standard first-line resuscitation fluid.",
+        "Albumin can be considered conditionally when large crystalloid volumes are needed.",
+        "Targeting a specific serum albumin level (≥30 g/L) adds cost without survival benefit."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Targeted replacement vs resuscitation fluid choice",
+        "notes": "ALBIOS evaluated sustained correction of hypoalbuminemia rather than hyperoncotic albumin as an initial resuscitation bolus."
+      },
+      {
+        "topic": "Control group contamination and deviations",
+        "notes": "37.1% of control patients received albumin, which likely attenuated treatment differences toward the null."
+      },
+      {
+        "topic": "Septic shock subgroup signal",
+        "notes": "Univariable 90-day survival benefit in septic shock (RR 0.87; P=0.03) lost significance after full covariate adjustment (RR 0.88; P=0.07)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "SAFE",
+        "relation": "SAFE evaluated 4% albumin vs saline for ICU fluid resuscitation and found severe sepsis subgroup benefit, inspiring the ALBIOS trial."
+      }
+    ],
+    "unresolved_questions": [
+      "Does early hyperoncotic albumin resuscitation specifically benefit patients in refractory septic shock requiring high vasopressor doses?",
+      "What exact threshold of crystalloid volume marks the point where switching to albumin improves outcomes?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1818 across 100 ICUs",
+        "28-day mortality 31.8% vs 32.0% (RR 1.00; P=0.94)",
+        "90-day mortality 41.1% vs 43.6% (RR 0.94; P=0.29)",
+        "Septic shock 90-day mortality subgroup 43.6% vs 49.9% (RR 0.87; P=0.03)"
+      ],
+      "one_line_takeaway": "Targeted 20% albumin replacement to maintain serum albumin ≥30 g/L does not improve 28- or 90-day survival in sepsis, reinforcing crystalloids as primary resuscitation fluid."
+    }
+  },
+  "_source_id": "ALBIOS",
+  "_source_system": "Sepsis"
+}

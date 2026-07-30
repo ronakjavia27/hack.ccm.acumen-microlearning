@@ -1,0 +1,329 @@
+{
+  "id": "CRASH-2",
+  "trial_name": "CRASH-2 — Effects of Tranexamic Acid on Death, Vascular Occlusive Events, and Blood Transfusion in Trauma Patients (2010)",
+  "specialty": "Trauma",
+  "subtopic": "Damage Control Resuscitation",
+  "year": 2010,
+  "journal": "Lancet",
+  "citation": "CRASH-2 trial collaborators. Effects of tranexamic acid on death, vascular occlusive events, and blood transfusion in trauma patients with significant haemorrhage (CRASH-2): a randomised, placebo-controlled trial. Lancet. 2010;376(9734):23-32.",
+  "doi": "10.1016/S0140-6736(10)60835-5",
+  "registration": "ISRCTN86750102 / NCT00375258",
+  "trial_type": "RCT — international, double-blind, placebo-controlled, pragmatic, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 20211,
+  "result_category": "Positive",
+  "one_liner": "Early administration of tranexamic acid reduces all-cause mortality and death due to bleeding in adult trauma patients with or at risk for significant hemorrhage without increasing vascular occlusive events.",
+  "pico": {
+    "population": "Adult trauma patients presenting within 8 hours of injury with significant hemorrhage (e.g., SBP < 90 mmHg, HR > 110 bpm) or at risk of significant hemorrhage.",
+    "intervention": "Tranexamic acid 1 g IV loading dose infused over 10 minutes, followed by 1 g IV maintenance infusion over 8 hours.",
+    "comparison": "Matched placebo (identical infusion schedule) plus usual trauma care.",
+    "outcome": "28-day all-cause mortality, bleeding death, vascular occlusive events, and blood product transfusion requirements."
+  },
+  "keywords": [
+    "tranexamic acid",
+    "TXA",
+    "trauma hemorrhage",
+    "damage control resuscitation",
+    "antifibrinolytic"
+  ],
+  "related_trials": [
+    "STAAMP",
+    "PATCH"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Among trauma patients who reach the hospital alive, hemorrhage is a leading preventable cause of early mortality.",
+      "knowledge_gap": "Whether early short-course antifibrinolytic therapy safely reduces fatal bleeding without increasing thromboembolic complications in trauma.",
+      "hypothesis": "Early administration of tranexamic acid reduces death (overall and from bleeding) without increasing vascular occlusive events in adult trauma patients with or at risk of significant hemorrhage."
+    },
+    "methods": {
+      "design": "Randomised, double-blind, placebo-controlled, pragmatic, international multicentre trial across 274 hospitals in 40 countries.",
+      "setting": "274 hospitals across 40 countries; enrollment within 8 hours of injury.",
+      "population": {
+        "inclusion": [
+          "Adult trauma patients within 8 hours of injury",
+          "Significant hemorrhage (e.g., SBP < 90 mmHg and/or HR > 110 bpm) or considered at risk of significant hemorrhage based on clinician judgment"
+        ],
+        "exclusion": [
+          "Enrolment > 8 hours after injury (recorded as protocol deviation in 23 patients)",
+          "Age < 16 years (recorded as protocol deviation in 5 patients)",
+          "Non-traumatic hemorrhage (recorded as protocol deviation in 9 patients)",
+          "Consent withdrawal post-randomisation (4 patients removed)"
+        ]
+      },
+      "intervention": "Tranexamic acid 1 g IV loading dose over 10 minutes, followed by 1 g IV maintenance infusion over 8 hours (mean time since injury at randomisation ~2.8 hours).",
+      "comparison": "Matched placebo infusion (10-minute loading + 8-hour infusion) plus usual trauma care (transfusion, surgery, hemostatic adjuncts).",
+      "blinding": "Double-blind (patients, treating clinicians, and trial personnel masked); sequential numbered treatment packs; emergency unblinding not required.",
+      "sample_size_power": "Planned 20,000 patients to detect a relative risk of 0.90 for all-cause mortality assuming 20% baseline mortality (85% power at P < 0.01 and 95% power at P < 0.05).",
+      "primary_outcome": "All-cause mortality within 4 weeks (in-hospital follow-up up to 28 days).",
+      "secondary_outcomes": [
+        "Vascular occlusive events (MI, stroke, PE, DVT; fatal or non-fatal)",
+        "Death due to bleeding",
+        "Death due to vascular occlusion",
+        "Blood product transfusion requirements",
+        "Surgical interventions (neurosurgery, chest, abdominal, pelvic)",
+        "Dependency/functional status at discharge or day 28"
+      ],
+      "follow_up": "In-hospital follow-up to death, discharge, or 28 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "TXA significantly reduced all-cause mortality (14.5% vs 16.0%, RR 0.91) and death due to bleeding (4.9% vs 5.7%, RR 0.85).",
+        "Vascular occlusive events were not significantly increased with TXA (1.7% vs 2.0%, RR 0.84).",
+        "Blood product transfusion rates and surgical intervention rates were virtually identical between groups."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality (primary)",
+          "group_a": "1463/10060 (14.5%)",
+          "group_b": "1613/10067 (16.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.91",
+          "ci_95": "0.85–0.97",
+          "p_value": "0.0035",
+          "note": "Assessed up to 28 days in-hospital"
+        },
+        {
+          "outcome": "Death due to bleeding",
+          "group_a": "489/10060 (4.9%)",
+          "group_b": "574/10067 (5.7%)",
+          "effect_measure": "RR",
+          "effect_value": "0.85",
+          "ci_95": "0.76–0.96",
+          "p_value": "0.0077",
+          "note": "Cause-specific death classification as recorded by sites"
+        },
+        {
+          "outcome": "Death due to vascular occlusion",
+          "group_a": "33/10060 (0.3%)",
+          "group_b": "48/10067 (0.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.69",
+          "ci_95": "0.44–1.07",
+          "p_value": "0.096",
+          "note": "Fatal MI, stroke, or PE"
+        },
+        {
+          "outcome": "Any vascular occlusive event",
+          "group_a": "168/10060 (1.7%)",
+          "group_b": "201/10067 (2.0%)",
+          "effect_measure": "RR",
+          "effect_value": "0.84",
+          "ci_95": "0.68–1.02",
+          "p_value": "0.084",
+          "note": "Fatal or non-fatal MI, stroke, PE, or DVT"
+        },
+        {
+          "outcome": "Myocardial infarction",
+          "group_a": "35/10060 (0.3%)",
+          "group_b": "55/10067 (0.5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.64",
+          "ci_95": "0.42–0.97",
+          "p_value": "0.035",
+          "note": "Fatal or non-fatal"
+        },
+        {
+          "outcome": "Blood product transfusion (any)",
+          "group_a": "5067/10060 (50.4%)",
+          "group_b": "5160/10067 (51.3%)",
+          "effect_measure": "RR",
+          "effect_value": "0.98",
+          "ci_95": "0.96–1.01",
+          "p_value": "0.21",
+          "note": "Among transfused: mean units 6.06 (SD 9.98) vs 6.29 (SD 10.31)"
+        },
+        {
+          "outcome": "Surgical intervention",
+          "group_a": "4814/10060 (47.9%)",
+          "group_b": "4836/10067 (48.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.97–1.03",
+          "p_value": "0.79",
+          "note": "Includes neurosurgery, chest, abdominal, or pelvic surgery"
+        },
+        {
+          "outcome": "Dead or dependent at discharge/day 28",
+          "group_a": "3453/10060 (34.3%)",
+          "group_b": "3562/10067 (35.4%)",
+          "effect_measure": "RR",
+          "effect_value": "0.97",
+          "ci_95": "0.93–1.00",
+          "p_value": "0.12",
+          "note": "Functional status assessed at discharge or day 28"
+        },
+        {
+          "outcome": "No symptoms at discharge/day 28",
+          "group_a": "1483/10060 (14.7%)",
+          "group_b": "1334/10067 (13.3%)",
+          "effect_measure": "RR",
+          "effect_value": "1.11",
+          "ci_95": "1.04–1.19",
+          "p_value": "0.0023",
+          "note": "Full recovery at discharge or day 28"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Systolic blood pressure strata",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "Interaction",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_interaction": "0.51"
+        },
+        {
+          "subgroup": "Glasgow Coma Score strata",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "Interaction",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_interaction": "0.50"
+        },
+        {
+          "subgroup": "Type of injury (blunt vs penetrating)",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "Interaction",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_interaction": "0.37"
+        },
+        {
+          "subgroup": "Time from injury to randomisation",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "Interaction",
+          "effect_value": "N/A",
+          "ci_95": "0.11"
+        }
+      ]
+    },
+    "safety": [
+      "Any vascular occlusive event (MI, stroke, PE, DVT): 168/10060 (1.7%) vs 201/10067 (2.0%), RR 0.84 (95% CI 0.68–1.02, P=0.084)",
+      "Myocardial infarction: 35/10060 (0.3%) vs 55/10067 (0.5%), RR 0.64 (95% CI 0.42–0.97, P=0.035)",
+      "Stroke: 57/10060 (0.6%) vs 66/10067 (0.7%), RR 0.86 (95% CI 0.61–1.23, P=0.42)",
+      "Pulmonary embolism: 72/10060 (0.7%) vs 71/10067 (0.7%), RR 1.01 (95% CI 0.73–1.41, P=0.93)",
+      "Deep vein thrombosis: 40/10060 (0.4%) vs 41/10067 (0.4%), RR 0.98 (95% CI 0.63–1.51, P=0.91)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralized sequence generation with allocation via sequentially numbered packs (20,116 allocations) and telephone randomisation (95 allocations); strict concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind trial using identical matched placebo infusions; emergency unblinding was not required."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Intention-to-treat analysis; only 4 patients removed post-randomisation due to consent withdrawal."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Fixed dosing schedule; minor protocol deviations included 23 enrolled >8h, 5 aged <16, and 9 with non-traumatic bleeding."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Prognostic baseline variables closely matched (mean age 34.6 vs 34.5 years, male 83.6% vs 84.0%, blunt trauma 67.5% vs 67.7%, mean time since injury 2.8 vs 2.9 hours)."
+        }
+      ],
+      "verdict": "High overall internal validity for the primary objective mortality endpoint, with residual uncertainty concentrated in clinician-diagnosed secondary safety endpoints."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Massive international cohort across 274 hospitals in 40 countries using pragmatic inclusion criteria."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Broadly applicable to adult trauma with suspected bleeding, though variation in trauma system maturity and VTE screening practices exists across international sites."
+        }
+      ],
+      "verdict": "High external validity for early TXA administration in adult trauma patients with suspected significant bleeding."
+    },
+    "strengths": [
+      "Extremely large sample size (20,211 randomized patients across 40 countries)",
+      "Double-blind placebo-controlled design with complete allocation concealment",
+      "Near-complete follow-up for the primary endpoint",
+      "Low-cost, highly accessible, and easily scalable therapeutic intervention"
+    ],
+    "limitations": [
+      "Secondary safety events relied on clinical diagnosis, risking under-ascertainment of non-fatal VTE",
+      "Transfusion volume and surgical intervention rates were pragmatic, crude proxies for bleeding control",
+      "Lack of granular post-randomization protocol adherence details regarding maintenance infusion completion"
+    ],
+    "critical_appraisal": {
+      "summary": "Landmark international pragmatic RCT providing high-certainty evidence that early TXA administration safely reduces mortality in bleeding trauma patients.",
+      "strengths": [
+        "Rigorous double-blind placebo control",
+        "Pragmatic design reflecting real-world clinical decision-making",
+        "Minimal lost-to-follow-up in a global setting"
+      ],
+      "weaknesses": [
+        "Inability to detect exact mechanisms due to crude transfusion tracking",
+        "Pragmatic variability in diagnostic testing for thromboembolic events"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Tranexamic acid safely reduces all-cause mortality and death due to bleeding in trauma patients with or at risk of significant hemorrhage.",
+    "clinical_bottom_line": {
+      "verdict": "Administer TXA (1 g IV over 10 minutes followed by 1 g IV over 8 hours) as early as possible to adult trauma patients with or at risk for significant hemorrhage.",
+      "applies_to": "Adult trauma patients presenting within 3 hours of injury with physiological signs of shock (e.g., SBP < 90 mmHg, HR > 110 bpm) or clinician-assessed risk of major bleeding.",
+      "does_not_mean": "Does not mean TXA should be initiated > 3 hours after injury, nor does it replace surgical source control or balanced blood transfusion.",
+      "implementation_caveats": [
+        "Time-critical therapy: maximum efficacy requires administration as early as possible (< 1–3 hours from injury)",
+        "Administration > 3 hours post-injury is associated with potential harm/increased bleeding death",
+        "Total blood product requirements may not show a measurable reduction despite improved survival"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Transfusion paradox",
+        "notes": "Mortality was significantly reduced despite no detectable overall difference in blood product transfusions or surgical intervention rates."
+      },
+      {
+        "topic": "Time-to-treatment interaction",
+        "notes": "Subsequent exploratory analysis showed bleeding mortality reduction was greatest when TXA was given ≤1 hour (RR 0.68; 95% CI 0.57–0.82) and 1–3 hours (RR 0.79; 95% CI 0.64–0.97), while treatment >3 hours increased mortality due to bleeding (RR 1.44; 95% CI 1.12–1.84)."
+      },
+      {
+        "topic": "Thromboembolism ascertainment",
+        "notes": "Reliance on clinical diagnosis without routine protocolized screening in a pragmatic trial raised concerns for potential VTE under-reporting."
+      },
+      {
+        "topic": "Fibrinolysis phenotypes",
+        "notes": "Viscoelastic testing data suggest potential harm if TXA is given to patients in a physiological fibrinolytic shutdown state."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "STAAMP",
+        "relation": "Prehospital RCT evaluating early prehospital TXA dosing schemes in trauma."
+      },
+      {
+        "trial": "PATCH",
+        "relation": "Prehospital RCT evaluating bolus plus infusion TXA strategy on functional outcomes in severe trauma."
+      }
+    ],
+    "unresolved_questions": [
+      "Role of viscoelastic assays (TEG/ROTEM) to tailor TXA administration to hyperfibrinolytic phenotypes",
+      "Optimal prehospital dosing strategies and candidates in mature trauma networks"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=20,211 across 40 countries",
+        "All-cause mortality 14.5% vs 16.0% (RR 0.91, p=0.0035)",
+        "Bleeding mortality 4.9% vs 5.7% (RR 0.85, p=0.0077)",
+        "Vascular occlusive events 1.7% vs 2.0% (p=0.084)"
+      ],
+      "one_line_takeaway": "Give TXA (1 g IV over 10 min + 1 g IV over 8 h) as early as possible and within 3 hours to trauma patients with significant bleeding to reduce mortality."
+    }
+  },
+  "_source_id": "CRASH-2",
+  "_source_system": "Trauma"
+}

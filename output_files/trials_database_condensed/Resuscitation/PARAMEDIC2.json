@@ -1,0 +1,302 @@
+{
+  "id": "PARAMEDIC2",
+  "trial_name": "PARAMEDIC2 — Epinephrine in Out-of-Hospital Cardiac Arrest (2018)",
+  "specialty": "Cardiac Arrest",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 2018,
+  "journal": "N Engl J Med",
+  "citation": "Perkins GD, Ji C, Deakin CD, et al. A randomized trial of epinephrine in out-of-hospital cardiac arrest. N Engl J Med. 2018;379(8):711-721.",
+  "doi": "https://doi.org/10.1056/NEJMoa1806842",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, prehospital",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 8014,
+  "result_category": "Mixed",
+  "one_liner": "Epinephrine increased 30-day survival but did not significantly improve neurologically favourable survival, with more severe disability among survivors.",
+  "pico": {
+    "population": "Adults with out-of-hospital cardiac arrest treated by paramedics",
+    "intervention": "Epinephrine 1 mg IV/IO every 3–5 minutes (max 10 doses)",
+    "comparison": "Placebo (0.9% saline) in identical syringes and schedule",
+    "outcome": "30-day survival"
+  },
+  "keywords": [
+    "epinephrine",
+    "adrenaline",
+    "cardiac arrest",
+    "out-of-hospital",
+    "ROSC",
+    "neurological outcome"
+  ],
+  "related_trials": [
+    "Haywood 2021 long-term follow-up",
+    "AHA 2025 guidelines",
+    "ERC 2025 guidelines"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Adrenaline has been embedded in adult ALS algorithms for decades for its α-adrenergic vasoconstrictor effect, but evidence for clinically meaningful outcomes was limited and conflicted.",
+      "knowledge_gap": "Observational data were confounded by indication; it was unclear whether adrenaline improved long-term survival with good neurological function or merely increased ROSC at the cost of worse neurological outcomes.",
+      "hypothesis": "Standard-dose epinephrine would improve 30-day survival compared with placebo, and any survival benefit would translate into more survivors with favourable neurological outcome (mRS 0–3)."
+    },
+    "methods": {
+      "design": "Pragmatic, individually randomised, multicentre, double-blind, placebo-controlled, prehospital trial with deferred consent.",
+      "setting": "Five UK NHS ambulance services (England and Wales); paramedic-led ALS; randomisation at the point a study drug pack was opened during ongoing resuscitation.",
+      "population": {
+        "inclusion": [
+          "Adult out-of-hospital cardiac arrest with resuscitation attempted by participating paramedics",
+          "Trial pack opened for IV/IO study-drug administration during ALS"
+        ],
+        "exclusion": [
+          "Known/suspected age <16 years",
+          "Known pregnancy",
+          "Arrest due to anaphylaxis or life-threatening asthma",
+          "Adrenaline administered before ambulance arrival",
+          "Other protocol-specified ineligibility (e.g., DNAR status, ROSC before drug administration)"
+        ]
+      },
+      "intervention": "Epinephrine 1 mg (10 mL of 1:10,000) IV or IO; non-shockable rhythms: as soon as IV/IO access achieved; shockable rhythms: after the third shock; repeated every 3–5 minutes, up to 10 doses.",
+      "comparison": "0.9% saline in identical prefilled syringes, same dosing schedule and 10-dose cap.",
+      "blinding": "Double-blind (paramedics, receiving clinicians, outcome assessors, trial team); allocation concealed via identical packs/syringes.",
+      "sample_size_power": "Planned 8000 to detect a 2% absolute difference in 30-day survival (6% vs 8%) with 93% power at two-sided 5% significance.",
+      "primary_outcome": "Survival at 30 days",
+      "secondary_outcomes": [
+        "Survival until hospital admission (sustained ROSC)",
+        "Survival to hospital discharge",
+        "Survival to discharge with favourable neurological outcome (mRS 0–3)",
+        "Survival at 3 months",
+        "Survival at 3 months with favourable neurological outcome (mRS 0–3)",
+        "Severe neurological impairment among survivors at discharge (mRS 4–5)",
+        "ICU length of stay"
+      ],
+      "follow_up": "Primary at 30 days; neurological outcomes at discharge and 3 months; longer-term follow-up at 6 and 12 months reported subsequently."
+    },
+    "results": {
+      "headline_bullets": [
+        "Epinephrine increased 30-day survival from 2.4% to 3.2% (OR 1.39; 95% CI 1.06–1.82; P=0.02), NNT 112.",
+        "Large physiological signal: ROSC 36.3% vs 11.7%; sustained ROSC to hospital admission 23.8% vs 8.0% (OR 3.59).",
+        "No significant increase in favourable neurological survival at discharge (2.2% vs 1.9%) or 3 months (2.1% vs 1.6%).",
+        "Among survivors, severe disability at discharge (mRS 4–5) more frequent with epinephrine (31.0% vs 17.8%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival at 30 days (primary)",
+          "group_a": "130/4012 (3.2%)",
+          "group_b": "94/3995 (2.4%)",
+          "effect_measure": "OR",
+          "effect_value": "1.39",
+          "ci_95": "1.06 to 1.82",
+          "p_value": "0.02",
+          "note": "Adjusted OR 1.47; 95% CI 1.09 to 1.97"
+        },
+        {
+          "outcome": "Survival until hospital admission (sustained ROSC)",
+          "group_a": "947/3973 (23.8%)",
+          "group_b": "319/3982 (8.0%)",
+          "effect_measure": "OR",
+          "effect_value": "3.59",
+          "ci_95": "3.14 to 4.12",
+          "p_value": "Not reported",
+          "note": "Adjusted OR 3.83; 95% CI 3.30 to 4.43"
+        },
+        {
+          "outcome": "Survival to hospital discharge",
+          "group_a": "128/4009 (3.2%)",
+          "group_b": "91/3995 (2.3%)",
+          "effect_measure": "OR",
+          "effect_value": "1.41",
+          "ci_95": "1.08 to 1.86",
+          "p_value": "Not reported",
+          "note": "Adjusted OR 1.48; 95% CI 1.10 to 2.00"
+        },
+        {
+          "outcome": "Survival to discharge with favourable neurological outcome (mRS 0–3)",
+          "group_a": "87/4007 (2.2%)",
+          "group_b": "74/3994 (1.9%)",
+          "effect_measure": "OR",
+          "effect_value": "1.18",
+          "ci_95": "0.86 to 1.61",
+          "p_value": "Not reported",
+          "note": "Adjusted OR 1.19; 95% CI 0.85 to 1.68"
+        },
+        {
+          "outcome": "Survival at 3 months",
+          "group_a": "121/4009 (3.0%)",
+          "group_b": "86/3991 (2.2%)",
+          "effect_measure": "OR",
+          "effect_value": "1.41",
+          "ci_95": "1.07 to 1.87",
+          "p_value": "Not reported",
+          "note": "Adjusted OR 1.47; 95% CI 1.08 to 2.00"
+        },
+        {
+          "outcome": "Survival at 3 months with favourable neurological outcome (mRS 0–3)",
+          "group_a": "82/3986 (2.1%)",
+          "group_b": "63/3979 (1.6%)",
+          "effect_measure": "OR",
+          "effect_value": "1.31",
+          "ci_95": "0.94 to 1.82",
+          "p_value": "Not reported",
+          "note": "Adjusted OR 1.39; 95% CI 0.97 to 2.01"
+        },
+        {
+          "outcome": "Severe neurological impairment among survivors at discharge (mRS 4–5)",
+          "group_a": "39/126 (31.0%)",
+          "group_b": "16/90 (17.8%)",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_value": "Not reported",
+          "note": "Reported among survivors; illustrates disability burden"
+        },
+        {
+          "outcome": "Median ICU length of stay among survivors (days)",
+          "group_a": "7.5 (IQR 3.6–14.4)",
+          "group_b": "7.0 (IQR 3.7–19.1)",
+          "effect_measure": "Not applicable",
+          "effect_value": "Not applicable",
+          "ci_95": "Not applicable",
+          "p_value": "Not reported",
+          "note": "Among non-survivors: 2.0 (0.9–3.8) vs 3.0 (1.6–5.6)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Shockable vs non-shockable rhythm",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "Not reported",
+          "effect_value": "Not reported",
+          "ci_95": "Not reported",
+          "p_interaction": "0.15"
+        }
+      ]
+    },
+    "safety": [
+      "No specific safety concerns reported beyond the disability signal."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Individual allocation via concealed trial packs opened during resuscitation; 1:1 minimisation algorithm; allocation concealment robust due to indistinguishable packs/syringes."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind across prehospital and in-hospital phases; primary outcome objective; neurological outcome (mRS) more vulnerable but prespecified and standardised."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT: 8103 packs opened, 87 excluded post-randomisation (plus 2 unknown allocation), leaving 8014 analysed; primary outcome ascertainment near-complete (99.9%)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Median call-to-drug time similar (21.5 vs 21.1 min); mean doses similar (4.9 vs 5.1); resuscitation duration modestly longer in epinephrine arm (47.5 vs 43.1 min)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: age ~70 years, male ~65%, shockable rhythm ~19%, bystander CPR ~59%, medical cause ~91%."
+        }
+      ],
+      "verdict": "Internal validity is strong overall (concealed allocation, double-blind, near-complete follow-up), modestly tempered by post-randomisation exclusions and modified ITT."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Typical adult OHCA case-mix (mean age ~70, ~78% non-shockable rhythms, ~59% bystander CPR); excludes children, pregnancy, anaphylaxis/asthma, and pre-EMS adrenaline."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Generalises well to paramedic-led ALS in high-income EMS systems with similar response intervals; not directly tested in physician-led systems with earlier drug delivery or in-hospital cardiac arrest; comparator was placebo, not alternative vasopressor."
+        }
+      ],
+      "verdict": "External validity is generally good for adult OHCA managed by paramedic-led ALS in high-income EMS systems, limited for excluded subgroups and settings with different prehospital care structure."
+    },
+    "strengths": [
+      "Large sample size (n=8014) with high event ascertainment for primary endpoint.",
+      "Rare prehospital placebo-controlled, double-blind design, directly addressing confounding by indication.",
+      "Pragmatic delivery embedded within routine ALS pathways across multiple ambulance services.",
+      "Clinically meaningful outcome hierarchy: 30-day survival plus functional neurological outcomes (mRS) at discharge and 3 months."
+    ],
+    "limitations": [
+      "Modified ITT analysis and post-randomisation exclusions introduce small risk of bias vs strict ITT.",
+      "Absolute survival benefit small (0.8% at 30 days); estimates for favourable neurological survival imprecise due to low survivor numbers.",
+      "Median drug delivery time (~21 min from call) reflects real-world systems but limits inference about earlier administration.",
+      "mRS provides broad disability signal but may not capture cognitive and psychosocial morbidity typical after cardiac arrest."
+    ],
+    "critical_appraisal": {
+      "summary": "A well-conducted, pragmatic RCT that provides high-certainty evidence of a small survival benefit from epinephrine in OHCA, but no clear improvement in neurologically favourable survival, with a concerning increase in severe disability among survivors.",
+      "strengths": [
+        "Large, blinded, placebo-controlled design",
+        "Pragmatic prehospital delivery",
+        "Near-complete follow-up for objective primary outcome"
+      ],
+      "weaknesses": [
+        "Modified ITT",
+        "Imprecise neurological outcome estimates",
+        "Limited generalisability to earlier drug delivery or in-hospital settings"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Epinephrine increased 30-day survival but did not significantly improve favourable neurological outcome, and increased severe neurological impairment among survivors.",
+    "clinical_bottom_line": {
+      "verdict": "Epinephrine remains a standard ALS drug for OHCA, but its benefit is primarily in achieving ROSC and hospital admission; the survival gain is small and comes with a trade-off of more severe disability among survivors.",
+      "applies_to": "Adult OHCA patients treated by paramedic-led ALS in systems with similar response intervals; most applicable to non-shockable rhythms.",
+      "does_not_mean": "Epinephrine should be withheld; it still improves survival, but clinicians and systems must weigh the survival–disability trade-off.",
+      "implementation_caveats": [
+        "Guidelines continue to recommend epinephrine; timing and rhythm-based algorithms unchanged.",
+        "Shared decision-making and advance care planning may be informed by the quantified disability risk.",
+        "Systems should anticipate increased ICU/hospital utilisation from more ROSC and admissions."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Survival–neurological outcome tension",
+        "notes": "Absolute survival gain small (3.2% vs 2.4%), favourable neurological survival not significantly improved, and severe disability more common with epinephrine (31.0% vs 17.8%), challenging the ethical framing of 'benefit' in cardiac arrest trials."
+      },
+      {
+        "topic": "Longer-term outcomes",
+        "notes": "At 6 months: favourable neurological outcome 2.0% vs 1.5% (adjusted OR 1.35; 95% CI 0.93–1.97); survival 2.9% vs 2.2% (adjusted OR 1.43; 95% CI 1.05–1.96). At 12 months: survival 2.7% vs 2.0% (adjusted OR 1.38; 95% CI 1.00–1.92). Functional, cognitive, and quality-of-life domains assessed but detailed differences not reported in abstract."
+      },
+      {
+        "topic": "Economic evaluation",
+        "notes": "PARAMEDIC2 programme included an economic evaluation from NHS perspective (2016/17 GBP); cost-effectiveness results not reported in available abstract."
+      },
+      {
+        "topic": "Guideline impact",
+        "notes": "International guidelines (AHA 2025, ERC 2025) continue to incorporate epinephrine as standard therapy within adult ALS algorithms, with dosing and timing aligned to rhythm-based pathways."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Haywood 2021 long-term follow-up",
+        "relation": "Long-term outcomes of PARAMEDIC2 participants, reporting 6- and 12-month survival and neurological status."
+      },
+      {
+        "trial": "AHA 2025 guidelines",
+        "relation": "Guideline update that incorporates PARAMEDIC2 evidence, continuing to recommend epinephrine in ALS."
+      },
+      {
+        "trial": "ERC 2025 guidelines",
+        "relation": "European guideline update similarly maintaining epinephrine in ALS algorithms."
+      }
+    ],
+    "unresolved_questions": [
+      "Would earlier epinephrine administration (e.g., first dose before 21 min) alter the survival–disability trade-off?",
+      "Is there a subgroup (e.g., initial shockable rhythm, witnessed arrest) that derives net benefit without increased disability?",
+      "Can post-resuscitation care be optimised to reduce severe neurological impairment in epinephrine-treated survivors?",
+      "What are the long-term functional, cognitive, and quality-of-life outcomes beyond mRS?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=8014",
+        "30-day survival: 3.2% vs 2.4% (OR 1.39, NNT 112)",
+        "ROSC: 36.3% vs 11.7%",
+        "Severe disability among survivors at discharge: 31.0% vs 17.8%"
+      ],
+      "one_line_takeaway": "Epinephrine increases ROSC and modestly improves survival but does not clearly improve neurologically favourable survival, and increases severe disability among survivors."
+    }
+  },
+  "_source_id": "PARAMEDIC2",
+  "_source_system": "Resuscitation"
+}

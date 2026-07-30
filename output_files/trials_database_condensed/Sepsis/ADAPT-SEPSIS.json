@@ -1,0 +1,297 @@
+{
+  "id": "ADAPT-SEPSIS",
+  "trial_name": "ADAPT-Sepsis — Biomarker-Guided Antibiotic Duration in ICU Sepsis (2025)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Biomarkers",
+  "year": 2025,
+  "journal": "JAMA",
+  "citation": "Dark P, Hossain A, McAuley DF, et al; ADAPT-Sepsis Collaborators. Biomarker-guided antibiotic duration for hospitalized patients with suspected sepsis: the ADAPT-Sepsis randomized clinical trial. JAMA. 2025;333(8):682-693",
+  "doi": "https://doi.org/10.1001/jama.2024.26458",
+  "registration": "NCT03188796",
+  "trial_type": "RCT — multicenter, pragmatic, investigator-initiated, randomized, 1:1:1 parallel-group, concealed-intervention, superiority & non-inferiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 2760,
+  "result_category": "Mixed",
+  "one_liner": "Daily PCT-guided discontinuation advice reduced total antibiotic duration by 0.88 days and was non-inferior for 28-day mortality, whereas CRP-guided advice did not reduce antibiotic duration and failed to demonstrate non-inferiority.",
+  "pico": {
+    "population": "2760 critically ill adults with suspected sepsis receiving IV antibiotics for <24 hours in 41 UK ICUs",
+    "intervention": "Daily serum PCT-guided or daily serum CRP-guided concealed protocolized antibiotic discontinuation advice",
+    "comparison": "Standard care with neutral/time-delayed advice to maintain blinding",
+    "outcome": "Co-primary: total antibiotic duration to 28 days (superiority) and 28-day all-cause mortality (non-inferiority margin 5.4%)"
+  },
+  "keywords": [
+    "procalcitonin",
+    "C-reactive protein",
+    "biomarkers",
+    "antibiotic stewardship",
+    "sepsis duration"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Sepsis requires prompt antimicrobials, but unnecessarily prolonged courses cause toxicity, C. difficile infection, and resistance pressure. Biomarkers like PCT and CRP are widely measured, but clinical guidelines previously offered only conditional support for PCT and limited evidence for CRP stopping rules.",
+      "knowledge_gap": "Whether daily CRP guidance can safely substitute for PCT guidance to shorten antibiotic duration in ICU sepsis using protocolized stopping rules.",
+      "hypothesis": "Daily PCT or CRP discontinuation advice superiorly reduces total 28-day antibiotic duration versus standard care, and is non-inferior for 28-day mortality (5.4% non-inferiority margin)."
+    },
+    "methods": {
+      "design": "Multicenter, pragmatic, investigator-initiated, randomized, parallel-group trial in 41 UK ICUs with 1:1:1 allocation and concealed daily advice.",
+      "setting": "41 National Health Service adult ICUs in the United Kingdom; recruitment paused March–August 2020 due to COVID-19 lockdown.",
+      "population": {
+        "inclusion": [
+          "ICU admission",
+          "Suspected sepsis (suspected infection treated with IV antibiotics, considering >=2 SIRS criteria)",
+          "Started IV antibiotics <24 hours before screening",
+          "Clinician expectation that antibiotics would continue beyond the following day"
+        ],
+        "exclusion": [
+          "Expected antibiotic requirement >21 days",
+          "Local specialist infection advice recommending a specific duration at enrolment",
+          "Current antibiotic treatment for present episode for >=24 hours",
+          "Prophylactic antibiotics only",
+          "Prior trial participation"
+        ]
+      },
+      "intervention": "Daily PCT protocol: usual care if PCT >2.0 ug/L; supports stop if PCT 0.25–2.0 ug/L with >=80% reduction from peak; strongly supports stop if PCT <0.25 ug/L or 0.25–2.0 ug/L with >=90% reduction from peak. Daily CRP protocol: usual care if CRP >100 mg/L; suggest stop if CRP 25–100 mg/L with >=50% reduction from peak; strongly suggest stop if CRP <25 mg/L or 25–100 mg/L with >=75% reduction from peak.",
+      "comparison": "Standard care: antibiotic duration determined by clinicians using usual clinical assessment; neutral or time-delayed advice delivered to maintain concealment.",
+      "blinding": "Clinicians and participants were blinded to trial allocation and biomarker results. Standardized daily written advice provided across all groups.",
+      "sample_size_power": "2760 patients planned for 90% power to detect a 1-day reduction in antibiotic duration (alpha=0.05) and non-inferiority for 28-day mortality with a 5.4% absolute margin (90% power, 1-sided alpha=0.025, assuming 15% mortality); prespecified significance threshold alpha=0.025 for co-primary endpoints.",
+      "primary_outcome": "Total antibiotic treatment duration to 28 days (effectiveness; superiority) and 28-day all-cause mortality (safety; non-inferiority margin 5.4%).",
+      "secondary_outcomes": [
+        "Antibiotic duration for initial sepsis episode",
+        "Unscheduled care escalation or readmission (>=1 event)",
+        "New infection or superinfection at a different site (>=1 event)",
+        "Suspected clinically relevant antibiotic-related events (>=1 event)",
+        "90-day all-cause mortality"
+      ],
+      "follow_up": "Primary endpoints assessed to 28 days; mortality tracked to 90 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "PCT-guided advice reduced total 28-day antibiotic duration by 0.88 days (P=0.01) and met 28-day mortality non-inferiority.",
+        "CRP-guided advice did not reduce total antibiotic duration (0.09 days reduction; P=0.79) and failed to demonstrate non-inferiority for 28-day mortality.",
+        "Secondary outcomes including 90-day mortality, unscheduled care escalation, superinfections, and adverse drug events were similar across groups."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Total antibiotic duration to 28 days — PCT protocol",
+          "group_a": "9.8 (SD 7.2) days [n=898]",
+          "group_b": "10.7 (SD 7.6) days [n=905]",
+          "effect_measure": "MD (SC - PCT)",
+          "effect_value": "0.88",
+          "ci_95": "0.19–1.58",
+          "p_value": "0.01",
+          "note": "Unadjusted primary analysis; alpha=0.025 prespecified"
+        },
+        {
+          "outcome": "Total antibiotic duration to 28 days — CRP protocol",
+          "group_a": "10.6 (SD 7.7) days [n=892]",
+          "group_b": "10.7 (SD 7.6) days [n=905]",
+          "effect_measure": "MD (SC - CRP)",
+          "effect_value": "0.09",
+          "ci_95": "-0.60 to 0.79",
+          "p_value": "0.79",
+          "note": "Unadjusted primary analysis; no evidence of effect"
+        },
+        {
+          "outcome": "28-day mortality (NI margin 5.4%) — PCT protocol",
+          "group_a": "184/879 (20.9%)",
+          "group_b": "170/878 (19.4%)",
+          "effect_measure": "AD (PCT - SC)",
+          "effect_value": "1.57%",
+          "ci_95": "-2.18 to 5.32",
+          "p_value": "0.02",
+          "note": "1-sided NI P-value; Upper CI 5.32% < 5.4% margin (non-inferior)"
+        },
+        {
+          "outcome": "28-day mortality (NI margin 5.4%) — CRP protocol",
+          "group_a": "184/874 (21.1%)",
+          "group_b": "170/878 (19.4%)",
+          "effect_measure": "AD (CRP - SC)",
+          "effect_value": "1.69%",
+          "ci_95": "-2.07 to 5.45",
+          "p_value": "0.03",
+          "note": "1-sided NI P-value; Upper CI 5.45% > 5.4% margin (NI not met)"
+        },
+        {
+          "outcome": "Initial sepsis antibiotic duration — PCT protocol",
+          "group_a": "7.0 (SD 5.7) days [n=893]",
+          "group_b": "8.1 (SD 6.1) days [n=902]",
+          "effect_measure": "MD (SC - PCT)",
+          "effect_value": "1.13",
+          "ci_95": "0.58–1.68",
+          "p_value": "Not reported",
+          "note": "Secondary endpoint"
+        },
+        {
+          "outcome": "Initial sepsis antibiotic duration — CRP protocol",
+          "group_a": "7.4 (SD 6.0) days [n=889]",
+          "group_b": "8.1 (SD 6.1) days [n=902]",
+          "effect_measure": "MD (SC - CRP)",
+          "effect_value": "0.71",
+          "ci_95": "0.16–1.26",
+          "p_value": "Not reported",
+          "note": "Secondary endpoint"
+        },
+        {
+          "outcome": "Unscheduled care escalation / readmission — PCT protocol",
+          "group_a": "208/888 (23.4%)",
+          "group_b": "236/900 (26.2%)",
+          "effect_measure": "OR (SC vs PCT)",
+          "effect_value": "1.16",
+          "ci_95": "0.94–1.44",
+          "p_value": "Not reported",
+          "note": "AD (SC - PCT) 2.80% (95% CI -1.16 to 6.76)"
+        },
+        {
+          "outcome": "New infection or superinfection — PCT protocol",
+          "group_a": "29/908 (3.2%)",
+          "group_b": "24/913 (2.6%)",
+          "effect_measure": "OR (SC vs PCT)",
+          "effect_value": "0.82",
+          "ci_95": "0.47–1.42",
+          "p_value": "Not reported",
+          "note": "AD (SC - PCT) -0.57% (95% CI -2.13 to 0.93)"
+        },
+        {
+          "outcome": "Suspected antibiotic-related events — PCT protocol",
+          "group_a": "71/888 (8.0%)",
+          "group_b": "70/900 (7.8%)",
+          "effect_measure": "OR (SC vs PCT)",
+          "effect_value": "0.97",
+          "ci_95": "0.69–1.37",
+          "p_value": "Not reported",
+          "note": "AD (SC - PCT) -0.21% (95% CI -2.81 to 2.30)"
+        },
+        {
+          "outcome": "90-day mortality — PCT protocol",
+          "group_a": "217/847 (25.6%)",
+          "group_b": "215/842 (25.5%)",
+          "effect_measure": "OR (SC vs PCT)",
+          "effect_value": "1.00",
+          "ci_95": "0.80–1.24",
+          "p_value": "Not reported",
+          "note": "AD (SC - PCT) -0.09% (95% CI -4.29 to 4.08)"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "28-day mortality: PCT 20.9% (184/879) vs SC 19.4% (170/878); AD 1.57% (95% CI -2.18 to 5.32)",
+      "28-day mortality: CRP 21.1% (184/874) vs SC 19.4% (170/878); AD 1.69% (95% CI -2.07 to 5.45)",
+      "Suspected antibiotic-related events: PCT 8.0% (71/888) vs SC 7.8% (70/900)",
+      "New infection or superinfection at a different site: PCT 3.2% (29/908) vs SC 2.6% (24/913)",
+      "Infection relapse/recurrence requiring antibiotics: PCT 1.2% (11/908) vs SC 0.5% (5/913)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central minimisation by site, surgical status, and septic shock supported allocation concealment and baseline balance."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Clinicians were blinded to group allocation and trial biomarker results; standardised daily written advice minimized performance bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "2760 randomized (918 PCT, 924 CRP, 918 SC). 127 (4.6%) withdrew completely prior to day 28; 364 (13.2%) withdrew from intervention phase. Low primary endpoint missingness (2.0% for antibiotic duration, 4.8% for 90-day mortality)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Mean time to first stop advice was 3.2 days (PCT) vs 3.4 days (CRP) vs 5.5 days (SC). Strong stop advice occurred earlier in PCT (mean 3.5 days) than CRP (mean 5.1 days)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups well balanced: mean age 60.2–60.3 years, 60.2%–61.0% male, mean APACHE II 17.2–17.4, median SOFA 7, 48.5%–49.3% septic shock. Respiratory source predominant (31.2%–34.0%)."
+        }
+      ],
+      "verdict": "Moderate-to-strong internal validity supported by central randomization, masked intervention delivery, and low primary outcome missingness."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad ICU sepsis cohort across 41 UK ICUs supports generalizability to high-income mixed ICUs; excludes prolonged-course indications (>21 days) and specific specialist-mandated durations."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires rapid daily biomarker turnaround and advice infrastructure. Absolute duration reductions may be negligible in centers with short baseline treatment durations."
+        }
+      ],
+      "verdict": "Generalizable to mixed adult ICUs in high-income healthcare systems, but limited in settings without daily lab turnaround or with shorter default treatment courses."
+    },
+    "strengths": [
+      "Large pragmatic sample size (n=2760) across 41 UK ICUs",
+      "Concealed intervention design with blinded advice delivery",
+      "Head-to-head comparison of PCT and CRP discontinuation protocols",
+      "Consistent results across sensitivity, per-protocol, and Bayesian analyses"
+    ],
+    "limitations": [
+      "Modest effect size on total duration (0.88 days reduction for PCT)",
+      "CRP protocol failed non-inferiority for 28-day mortality",
+      "13.2% withdrawal rate from the intervention phase",
+      "No change in total defined daily doses (DDD) despite shorter duration",
+      "Recruitment interrupted by the COVID-19 pandemic"
+    ],
+    "critical_appraisal": {
+      "summary": "High-quality pragmatic trial demonstrating that daily PCT guidance modestly shortens antibiotic duration with non-inferior 28-day mortality, whereas CRP guidance is ineffective and unsafe for protocolized stopping.",
+      "strengths": [
+        "Blinded, concealed advice design to minimize clinician bias",
+        "Pragmatic multicenter enrollment across 41 ICUs",
+        "Comprehensive sensitivity and per-protocol safety evaluations"
+      ],
+      "weaknesses": [
+        "Absolute duration reduction was small (<1 day)",
+        "High rate of intervention phase discontinuation",
+        "Defined daily dose metrics did not decrease proportionately"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In critically ill adults with suspected sepsis, daily PCT-guided discontinuation advice significantly reduced antibiotic duration and was non-inferior for 28-day mortality, whereas CRP-guided advice did not reduce antibiotic duration and non-inferiority for 28-day mortality was not demonstrated.",
+    "clinical_bottom_line": {
+      "verdict": "Daily PCT guidance can be safely integrated into ICU antibiotic stewardship to shorten treatment courses, but CRP protocolized stopping rules should not be used.",
+      "applies_to": "Adult ICU patients with suspected sepsis receiving IV antibiotics for <24 hours without anticipated need for >21 days of treatment.",
+      "does_not_mean": "Does not mean PCT protocols should override clinical judgement, nor that CRP testing is useless for general trend monitoring.",
+      "implementation_caveats": [
+        "Requires infrastructure for daily serum PCT turnaround and decision support",
+        "Effect size is modest (~0.88 days reduction)",
+        "Slight numerical increase in infection relapse requiring antibiotics (1.2% vs 0.5%)"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Non-inferiority margin selection",
+        "notes": "The 5.4% absolute mortality margin was criticized as wide relative to overall baseline mortality (19.4%) and the modest 0.88-day duration reduction."
+      },
+      {
+        "topic": "Standard care duration",
+        "notes": "Mean standard care duration of 10.7 days is longer than contemporary practice in many units, potentially inflating absolute duration gains."
+      },
+      {
+        "topic": "Duration vs Defined Daily Dose",
+        "notes": "Total antibiotic duration decreased by 0.88 days with PCT, but defined daily doses (DDD) did not significantly drop, questioning antimicrobial resistance gains."
+      },
+      {
+        "topic": "Relapse rate signal",
+        "notes": "Infection relapse or recurrence requiring additional antibiotics occurred in 1.2% of PCT patients versus 0.5% in standard care."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is routine daily PCT guidance cost-effective when factoring in assay costs and clinical advice systems?",
+      "Does PCT-guided duration reduction lower long-term hospital-acquired resistance or C. difficile rates?",
+      "Does PCT guidance provide meaningful benefit in ICUs that already maintain short baseline antibiotic durations (e.g., 5-7 days)?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=2760 across 41 ICUs",
+        "PCT duration: 9.8 vs 10.7 days (MD 0.88 days, P=0.01)",
+        "PCT 28d mortality: 20.9% vs 19.4% (AD 1.57%, upper CI 5.32% < 5.4% margin)",
+        "CRP duration: 10.6 vs 10.7 days (P=0.79; failed non-inferiority)"
+      ],
+      "one_line_takeaway": "Daily PCT advice safely reduces ICU antibiotic duration by ~1 day, but CRP advice does not work and should not be used as a stopping rule."
+    }
+  },
+  "_source_id": "ADAPT-SEPSIS",
+  "_source_system": "Sepsis"
+}

@@ -1,0 +1,285 @@
+{
+  "id": "INCEPTION",
+  "trial_name": "INCEPTION — Early Extracorporeal CPR for Refractory Out-of-Hospital Cardiac Arrest (2023)",
+  "specialty": "Resuscitation",
+  "subtopic": "Extracorporeal Organ Support",
+  "year": 2023,
+  "journal": "New England Journal of Medicine",
+  "citation": "Suverein MM, Delnoij TSR, Lorusso R, et al. Early extracorporeal CPR for refractory out-of-hospital cardiac arrest. N Engl J Med. 2023;388(4):299-309",
+  "doi": "https://doi.org/10.1056/NEJMoa2204511",
+  "registration": "",
+  "trial_type": "RCT — multicentre, pragmatic, randomized, open-label trial",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 134,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with witnessed refractory shockable out-of-hospital cardiac arrest, an early ECPR strategy did not significantly improve 30-day favourable neurological survival compared with conventional CPR.",
+  "pico": {
+    "population": "Adults aged 18–70 years with witnessed refractory out-of-hospital cardiac arrest, initial shockable rhythm (VF/VT), bystander CPR, and no ROSC within 15 minutes.",
+    "intervention": "Early ECPR strategy: prehospital activation of ECPR team during ongoing CPR, intra-arrest transport, and VA-ECLS cannulation on ED arrival.",
+    "comparison": "Conventional CPR strategy: continued guideline-based ALS without planned extracorporeal life support.",
+    "outcome": "30-day survival with favourable neurological outcome (Cerebral Performance Category 1–2)."
+  },
+  "keywords": [
+    "ECPR",
+    "out-of-hospital cardiac arrest",
+    "extracorporeal membrane oxygenation",
+    "cardiopulmonary resuscitation",
+    "refractory ventricular fibrillation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Refractory out-of-hospital cardiac arrest (OHCA) with an initial shockable rhythm carries very high mortality once conventional ALS is prolonged. Extracorporeal CPR (ECPR) provides immediate circulatory support to allow time for definitive therapy.",
+      "knowledge_gap": "Pre-trial evidence was largely observational, heterogeneous, and limited in sample size, leaving uncertainty about ECPR effectiveness within real-world regional EMS systems.",
+      "hypothesis": "An early ECPR strategy improves 30-day survival with favourable neurological outcome compared with continued conventional CPR in witnessed refractory shockable OHCA."
+    },
+    "methods": {
+      "design": "Multicentre, pragmatic, open-label RCT in the Netherlands; prehospital randomisation during intra-arrest transport (1:1 allocation using variable permuted blocks of 2, 4, 6, stratified by ECPR centre).",
+      "setting": "Prehospital EMS networks and 10 ECPR-capable hospitals in the Netherlands.",
+      "population": {
+        "inclusion": [
+          "Age 18–70 years",
+          "Witnessed OHCA",
+          "Initial rhythm VF/VT or AED shock delivered",
+          "Bystander basic life support delivered",
+          "No sustained ROSC within 15 minutes of conventional CPR"
+        ],
+        "exclusion": [
+          "Sustained ROSC within 15 minutes with sustained haemodynamic recovery",
+          "Terminal heart failure (NYHA III–IV)",
+          "Severe pulmonary disease (COPD GOLD III–IV)",
+          "Disseminated malignancy",
+          "Suspected or obvious pregnancy",
+          "Bilateral femoral bypass surgery",
+          "Known contraindication to ECPR or pre-arrest CPC 3–4",
+          "Known advance directive refusing life support",
+          "Multitrauma with Injury Severity Score >15",
+          "Expected time-to-start cannulation >60 minutes from cardiac arrest onset"
+        ]
+      },
+      "intervention": "Activation of ECPR team during ongoing CPR and intra-arrest transport; VA-ECLS cannulation performed on ED arrival if arrest persisted, followed by downstream coronary angiography/PCI and post-arrest care.",
+      "comparison": "Continued conventional guideline-based ALS without planned ECLS initiation; hospital resuscitation and post-arrest care at clinician discretion.",
+      "blinding": "Open-label allocation; prehospital EMS teams were kept unaware of assignment during early care; primary outcome assessed by independent neurologist blinded to allocation.",
+      "sample_size_power": "Initially 110 patients planned (80% power, two-sided alpha 0.05 to detect CPC 1–2 increase from 8% to 30%). Adaptive recalculation expanded sample to 134 patients (160 randomised; 26 excluded post-arrival).",
+      "primary_outcome": "Survival with favourable neurological outcome (CPC 1–2) at 30 days.",
+      "secondary_outcomes": [
+        "Survival with favourable neurological outcome (CPC 1–2) at 3 months",
+        "Survival with favourable neurological outcome (CPC 1–2) at 6 months",
+        "Survival to hospital discharge",
+        "ICU admission rate"
+      ],
+      "follow_up": "30 days (primary), 3 months, and 6 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "30-day favourable neurological survival was 20% (14/70) with ECPR vs 16% (10/62) with conventional CPR (OR 1.4, 95% CI 0.5–3.5, P=0.52).",
+        "Large delivery separation was achieved: ECPR initiated in 74% vs 5%, and ICU admission rate was 81% vs 36%.",
+        "Median time from arrest to ECLS flow among treated patients was 74 minutes (IQR 63–87).",
+        "ECPR caused major bleeding in 16% vs 3% and lower limb ischaemia in 6% vs 0%."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "30-day survival with CPC 1–2 (Primary)",
+          "group_a": "14/70 (20%)",
+          "group_b": "10/62 (16%)",
+          "effect_measure": "OR",
+          "effect_value": "1.4",
+          "ci_95": "0.5–3.5",
+          "p_value": "0.52",
+          "note": "Model-based Risk Ratio 1.05 (95% CI 0.97–1.13)"
+        },
+        {
+          "outcome": "3-month survival with CPC 1–2",
+          "group_a": "13/70 (19%)",
+          "group_b": "9/62 (15%)",
+          "effect_measure": "OR",
+          "effect_value": "1.5",
+          "ci_95": "0.6–3.8",
+          "p_value": null,
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "6-month survival with CPC 1–2",
+          "group_a": "13/70 (19%)",
+          "group_b": "10/62 (16%)",
+          "effect_measure": "OR",
+          "effect_value": "1.3",
+          "ci_95": "0.5–3.3",
+          "p_value": null,
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Survival to hospital discharge",
+          "group_a": "14/70 (20%)",
+          "group_b": "13/64 (20%)",
+          "effect_measure": "OR",
+          "effect_value": "1.0",
+          "ci_95": "0.4–2.4",
+          "p_value": null,
+          "note": "In-hospital endpoint"
+        },
+        {
+          "outcome": "Admitted to ICU",
+          "group_a": "57/70 (81%)",
+          "group_b": "23/64 (36%)",
+          "effect_measure": "OR",
+          "effect_value": "0.1",
+          "ci_95": "0.1–0.3",
+          "p_value": null,
+          "note": "Reflects pathway separation"
+        },
+        {
+          "outcome": "Percutaneous Coronary Intervention (PCI)",
+          "group_a": "34/70 (49%)",
+          "group_b": "14/64 (22%)",
+          "effect_measure": null,
+          "effect_value": null,
+          "ci_95": null,
+          "p_value": null,
+          "note": "Coronary intervention rate"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Time from arrest to EMS transport start",
+          "group_a": "21 ± 9 min",
+          "group_b": "25 ± 9 min",
+          "effect_measure": "Mean diff",
+          "effect_value": "-4.1 min",
+          "ci_95": "-7.2 to -0.9",
+          "p_interaction": null
+        },
+        {
+          "subgroup": "Time from arrest to ED arrival",
+          "group_a": "36 ± 12 min",
+          "group_b": "38 ± 11 min",
+          "effect_measure": "Mean diff",
+          "effect_value": "-2.1 min",
+          "ci_95": "-6.0 to 1.7",
+          "p_interaction": null
+        }
+      ]
+    },
+    "safety": [
+      "Major bleeding (serious adverse event): 11/70 (16%) in ECPR strategy vs 2/64 (3%) in conventional CPR strategy.",
+      "Lower limb ischaemia (serious adverse event): 4/70 (6%) in ECPR strategy vs 0/64 (0%) in conventional CPR strategy."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "1:1 allocation using smartphone app with variable permuted blocks (2, 4, 6) stratified by ECPR centre; prehospital assignment while teams mobilised."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design once ECPR team mobilised. Prehospital EMS teams were kept unaware of assignment; primary 30-day CPC outcome was evaluated by an independent blinded neurologist."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "160 randomised; 26 excluded post-arrival (eligibility criteria not met on ED evaluation). Primary analysis on 132–134 patients (70 ECPR, 62–64 conventional; 1 missing assessment, 1 withdrawn in conventional arm)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "ECPR initiated in 52/70 (74%) in ECPR arm (13 had ROSC [19%], 3 logistic failure [4%]). Crossover to ECPR occurred in 3/64 (5%) in conventional arm."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: age 54±12 vs 57±10 years; male 90% vs 89%; witnessed arrest 97% vs 98%; CPR started ≤5 min 99% vs 95%; acute MI etiology 73% vs 81%."
+        }
+      ],
+      "verdict": "Internal validity is moderate, limited by post-randomisation exclusions and unblinded post-arrest care, but supported by concealed prehospital allocation and blinded primary endpoint adjudication."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Highly selected candidate cohort (aged 18–70, witnessed shockable rhythm, bystander CPR, refractory after 15 min). Excludes unwitnessed arrests, non-shockable rhythms, and older patients."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Applies to mature prehospital regional health systems with intra-arrest transport capability, rapid time-to-flow (median 74 min achieved), and immediate access to ECPR and PCI."
+        }
+      ],
+      "verdict": "External validity is limited to highly organized regional networks treating strictly selected young-to-middle-aged patients with witnessed shockable refractory OHCA."
+    },
+    "strengths": [
+      "Pragmatic, multicentre RCT embedded in a mature national prehospital EMS and hospital network.",
+      "Blinded neurological assessment for the primary clinical outcome (30-day CPC 1–2).",
+      "Prehospital concealed randomisation preventing differential early prehospital resuscitation.",
+      "Granular reporting of time intervals, including transport, cannulation, and ECLS flow start."
+    ],
+    "limitations": [
+      "Modified ITT design with post-randomisation exclusions (26/160; 16%) after hospital arrival.",
+      "Incomplete intervention delivery: 26% of ECPR group were not cannulated (mostly due to pre-initiation ROSC).",
+      "Wide 95% confidence intervals (OR 0.5–3.5) due to small sample size, leaving potential benefit or harm uncertain.",
+      "Unblinded downstream post-cardiac arrest care without standardized neuroprognostication guidelines."
+    ],
+    "critical_appraisal": {
+      "summary": "INCEPTION is a pragmatic multicentre RCT demonstrating that an early ECPR strategy within a regional EMS network did not significantly improve 30-day CPC 1–2 survival, though findings are limited by low power and protocol non-adherence.",
+      "strengths": [
+        "Pragmatic system-level design",
+        "Concealed prehospital randomisation",
+        "Blinded primary outcome adjudication",
+        "Detailed time-to-treatment metrics"
+      ],
+      "weaknesses": [
+        "Exclusions post-randomisation (26/160)",
+        "26% non-cannulation rate in intervention group",
+        "Wide confidence interval spanning potential benefit",
+        "Unblinded post-arrest management"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Among patients with refractory out-of-hospital cardiac arrest, an early ECPR strategy did not significantly improve survival with a favourable neurological outcome at 30 days compared with conventional CPR.",
+    "clinical_bottom_line": {
+      "verdict": "Early ECPR should not be implemented as a universal rescue strategy for refractory OHCA unless supported by strict candidate selection and optimized regional systems achieving rapid time-to-flow.",
+      "applies_to": "Adults aged 18–70 with witnessed refractory VF/VT OHCA receiving bystander CPR within organized ECPR networks.",
+      "does_not_mean": "ECPR is universally ineffective; the wide CI (OR 0.5–3.5) does not rule out clinically meaningful benefit in highly selected patients or faster systems.",
+      "implementation_caveats": [
+        "Requires system capability to achieve median arrest-to-flow times ≤74 minutes.",
+        "Complications are frequent: major bleeding (16%) and limb ischemia (6%) require active monitoring.",
+        "Dramatically increases ICU resource burden (81% vs 36% ICU admission)."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Modified ITT and Post-Randomisation Exclusions",
+        "notes": "26 of 160 patients were excluded after hospital arrival because eligibility criteria were not met, introducing potential bias in modified ITT analysis."
+      },
+      {
+        "topic": "Time-to-Flow and Non-Cannulation",
+        "notes": "26% assigned to ECPR did not receive ECLS (19% due to ROSC), diluting intervention efficacy; overall median arrest-to-flow of 74 minutes may be beyond the optimal neurological rescue window."
+      },
+      {
+        "topic": "Post-Arrest Care and Neuroprognostication",
+        "notes": "Non-standardized neuroprognostication and withdrawal of life-sustaining treatment decisions in open-label post-arrest ICUs can directly alter 30-day CPC outcomes."
+      },
+      {
+        "topic": "Resource Allocation and Organ Donation",
+        "notes": "ECPR doubled ICU admissions (81% vs 36%) without increasing 30-day CPC 1–2 survival, raising economic and societal considerations including organ donation opportunities."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Resuscitation Guidelines",
+        "relation": "Guideline updates maintain conditional/selective recommendations for ECPR in refractory cardiac arrest within experienced, protocolised systems."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the maximum arrest-to-ECLS-flow time limit beyond which ECPR confers no benefit?",
+      "Does ECPR improve survival in specific subgroups like acute coronary occlusion or ultra-short transport times?",
+      "How do standardized protocols for withdrawal of life-sustaining therapy impact ECPR trial results?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=134 analyzed (70 ECPR vs 64 conventional)",
+        "30-day CPC 1–2: 20% vs 16% (OR 1.4, 95% CI 0.5–3.5, P=0.52)",
+        "Median arrest-to-ECLS flow: 74 minutes (IQR 63–87)",
+        "Major bleeding 16% vs 3%; Limb ischaemia 6% vs 0%"
+      ],
+      "one_line_takeaway": "In a regional network, an early ECPR strategy did not significantly improve 30-day favourable neurological survival for refractory shockable OHCA."
+    }
+  },
+  "_source_id": "INCEPTION",
+  "_source_system": "Resuscitation"
+}

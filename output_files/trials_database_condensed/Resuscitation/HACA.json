@@ -1,0 +1,329 @@
+{
+  "id": "HACA",
+  "trial_name": "HACA — Mild Therapeutic Hypothermia After Cardiac Arrest (2002)",
+  "specialty": "Resuscitation",
+  "subtopic": "Temperature Management",
+  "year": 2002,
+  "journal": "N Engl J Med",
+  "citation": "Hypothermia after Cardiac Arrest Study Group. Mild therapeutic hypothermia to improve the neurologic outcome after cardiac arrest. N Engl J Med. 2002;346(8):549-556",
+  "doi": "https://doi.org/10.1056/NEJMoa012689",
+  "registration": "not reported",
+  "trial_type": "RCT — multicenter, open-label, blinded outcome assessment",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 275,
+  "result_category": "Positive",
+  "one_liner": "Induced mild hypothermia (32–34°C) for 24 h improved favorable neurological outcome (55% vs 39%; RR 1.40, 95% CI 1.08–1.81) and reduced mortality (41% vs 55%) at 6 months in comatose survivors of witnessed shockable out-of-hospital cardiac arrest.",
+  "pico": {
+    "population": "Adults (18–75 y) comatose after witnessed out-of-hospital ventricular fibrillation cardiac arrest, with specific time windows (bystander BLS 5–15 min, EMS attempt 15–60 min, ROSC ≤60 min, stable MAP/oxygenation)",
+    "intervention": "Induced mild hypothermia to 32–34°C (bladder temp) for 24 h using external cooling (TheraKool) ± ice packs and cold fluids (4°C Ringer’s lactate 30 mL/kg up to 2 L); sedation with midazolam/fentanyl + pancuronium paralysis",
+    "comparison": "Standard ICU care with normothermia; no protocolised temperature management in control group",
+    "outcome": "Favorable neurological outcome (Cerebral Performance Category 1–2) at 6 months"
+  },
+  "keywords": [
+    "hypothermia",
+    "cardiac arrest",
+    "temperature management",
+    "post-resuscitation care",
+    "ventricular fibrillation",
+    "CPC"
+  ],
+  "related_trials": [
+    "TTM (Nielsen 2013)",
+    "TTM2 (Dankiewicz 2021)",
+    "HYPERION (Lascarrou 2019)"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Comatose survivors of out-of-hospital cardiac arrest frequently died or had severe neurological disability due to global cerebral ischaemia–reperfusion injury. Experimental and early clinical data suggested that mild hypothermia could attenuate reperfusion injury.",
+      "knowledge_gap": "High-quality randomised evidence in adults was lacking; post-resuscitation fever was increasingly recognized as potentially harmful.",
+      "hypothesis": "Induced mild hypothermia (32–34°C) would increase the proportion with CPC 1–2 at 6 months and reduce mortality, without materially increasing complications."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, controlled, open-label trial with blinded outcome assessment.",
+      "setting": "Multiple centres across Europe (exact number not stated in scraped summary); patients admitted to ICU after out-of-hospital cardiac arrest.",
+      "population": {
+        "inclusion": [
+          "Age 18–75 years",
+          "Witnessed cardiac arrest",
+          "Initial rhythm ventricular fibrillation",
+          "Interval collapse to bystander BLS 5–15 min",
+          "Interval collapse to EMS attempt 15–60 min",
+          "ROSC within 60 min",
+          "Persistent coma (no verbal response) after ROSC"
+        ],
+        "exclusion": [
+          "Tympanic temp on admission <30°C",
+          "Coma before arrest due to CNS depressants",
+          "Pregnancy",
+          "Response to verbal commands before randomisation",
+          "MAP <60 mmHg for >30 min after ROSC",
+          "Oxygen saturation <85% for >15 min after ROSC",
+          "Terminal illness",
+          "Follow-up impractical",
+          "Enrolment in another study",
+          "Arrest after arrival of emergency personnel",
+          "Known pre-existing coagulopathy"
+        ]
+      },
+      "intervention": "External cooling with TheraKool device (forced cold air) escalated to ice packs and cold (4°C) Ringer’s lactate if needed. Target bladder temperature 32–34°C. Cooling started as soon as possible after ROSC, aiming for target within 4 h. Cold fluids: Ringer’s lactate 4°C, 30 mL/kg (max 2 L) over 30 min if target not reached. Sedation/shivering: midazolam 0.125 mg/kg/h + fentanyl 0.002 mg/kg/h (adjustable) + pancuronium 0.1 mg/kg every 2 h for 32 h. Maintain 32–34°C for 24 h from start of cooling, then passive rewarming over ~8 h.",
+      "comparison": "Standard ICU care with normothermia; patients on conventional bed without active cooling. Other post-resuscitation treatments per local practice.",
+      "blinding": "Treating clinicians unblinded for first 48 h; outcome assessors blinded to group allocation.",
+      "sample_size_power": "Not reported. Trial stopped early at 275 patients due to funding/slow enrolment.",
+      "primary_outcome": "Favorable neurological outcome (CPC 1–2) at 6 months.",
+      "secondary_outcomes": [
+        "All-cause mortality at 6 months",
+        "In-hospital mortality",
+        "Complications within 7 days (any, bleeding, pneumonia, sepsis, arrhythmia)"
+      ],
+      "follow_up": "6 months for primary endpoint; in-hospital and 7-day complications recorded."
+    },
+    "results": {
+      "headline_bullets": [
+        "Hypothermia increased favorable neurological outcome at 6 months (55% vs 39%; RR 1.40, P=0.009; NNT 6).",
+        "Mortality at 6 months was lower with hypothermia (41% vs 55%; RR 0.74, P=0.02; NNT 7).",
+        "Median time to target temperature was 8 h after ROSC; 19 patients never reached target, 14 discontinued early.",
+        "Overall complications were similar (73% vs 70%), but pneumonia, sepsis, and bleeding were numerically more frequent with hypothermia."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary composite (CPC 1–2 at 6 months)",
+          "group_a": "75/136 (55%)",
+          "group_b": "54/137 (39%)",
+          "effect_measure": "RR",
+          "effect_value": "1.40",
+          "ci_95": "1.08–1.81",
+          "p_value": "0.009",
+          "note": "NNT 6 (95% CI 3–25)"
+        },
+        {
+          "outcome": "Death by 6 months",
+          "group_a": "56/137 (41%)",
+          "group_b": "76/138 (55%)",
+          "effect_measure": "RR",
+          "effect_value": "0.74",
+          "ci_95": "0.58–0.95",
+          "p_value": "0.02",
+          "note": "NNT 7 (95% CI 4–33)"
+        },
+        {
+          "outcome": "In-hospital death",
+          "group_a": "50/137 (36%)",
+          "group_b": "69/138 (50%)",
+          "effect_measure": "not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.02",
+          "note": ""
+        },
+        {
+          "outcome": "Any complication within 7 days",
+          "group_a": "98/135 (73%)",
+          "group_b": "93/132 (70%)",
+          "effect_measure": "not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.70",
+          "note": ""
+        },
+        {
+          "outcome": "Bleeding (any severity, 7 days)",
+          "group_a": "35/135 (26%)",
+          "group_b": "26/138 (19%)",
+          "effect_measure": "not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Pneumonia (7 days)",
+          "group_a": "50/135 (37%)",
+          "group_b": "40/137 (29%)",
+          "effect_measure": "not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Sepsis (7 days)",
+          "group_a": "18/135 (13%)",
+          "group_b": "9/138 (7%)",
+          "effect_measure": "not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "not reported",
+          "note": ""
+        },
+        {
+          "outcome": "Clinically significant arrhythmia (7 days)",
+          "group_a": "48/135 (36%)",
+          "group_b": "44/138 (32%)",
+          "effect_measure": "not reported",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "not reported",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Any complication within 7 days: 73% vs 70% (P=0.70)",
+      "Bleeding any severity: 26% vs 19%",
+      "Pneumonia: 37% vs 29%",
+      "Sepsis: 13% vs 7%",
+      "Clinically significant arrhythmia: 36% vs 32%"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Block randomisation (blocks of 10) stratified by centre using sealed envelopes; concealment beyond envelope process not described."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label for first 48 h; co-interventions and withdrawal decisions could introduce performance bias; outcome assessors were blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Primary outcome missing for 1 patient in each arm (analysed as 75/136 vs 54/137); 14 patients discontinued cooling early (haemodynamic instability 8, bleeding 2, etc.)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "19 patients never reached target temperature; median time to target 8 h; 70% required ice packs; crossover not reported."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups similar on age and sex; notable imbalances: diabetes 19% vs 8%, coronary heart disease 43% vs 32% (both more in normothermia)."
+        }
+      ],
+      "verdict": "Moderate internal validity: randomisation and blinded outcome assessment support causal inference, but open-label delivery, incomplete target attainment, unreported power calculation, and early stopping increase imprecision and bias risk."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Highly selected: only witnessed VF arrests with constrained time windows and post-ROSC stability; excludes nonshockable rhythms, unwitnessed arrests, prolonged downtimes, refractory shock, age >75, pregnancy."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Cooling strategy (external device + ice/cold fluids, sedation, paralysis) is feasible in many ICUs but requires training; results may differ with variations in prehospital times, coronary reperfusion, and prognostication practices."
+        }
+      ],
+      "verdict": "Limited generalisability to a narrow subset of comatose post-cardiac arrest patients; evidence needed for broader populations (nonshockable rhythms, older age, longer downtimes)."
+    },
+    "strengths": [
+      "Randomised controlled design with clinically meaningful functional endpoint (CPC at 6 months)",
+      "Blinded outcome assessment, reducing detection bias for primary outcome",
+      "Pragmatic ICU-feasible cooling protocol (external cooling + escalation)",
+      "Protocolised temperature target and duration (32–34°C for 24 h, rewarming over 8 h)"
+    ],
+    "limitations": [
+      "Stopped early at 275 patients due to funding/feasibility, risking imprecision and overestimation of effect size",
+      "Open-label care with potential for differential co-interventions and prognostication/withdrawal bias",
+      "Highly selected population limits generalisability",
+      "Late attainment of target temperature (median 8 h) and incomplete protocol adherence (19 never reached target)",
+      "Control group temperature not protocolised, leaving uncertainty about contribution of induced hypothermia vs. fever avoidance"
+    ],
+    "critical_appraisal": {
+      "summary": "A landmark RCT that demonstrated a clinically important benefit of induced hypothermia in a narrow shockable out-of-hospital arrest cohort, but early stopping, open-label bias, and limited generalisability require cautious interpretation; subsequent trials have refined the role of temperature control.",
+      "strengths": [
+        "Blinded outcome assessment",
+        "Clinically meaningful primary endpoint",
+        "Pragmatic intervention protocol"
+      ],
+      "weaknesses": [
+        "Early termination",
+        "Open-label design",
+        "Highly selected population",
+        "Incomplete protocol adherence"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Induced mild hypothermia (32–34°C) for 24 h improved favorable neurological outcome at 6 months (55% vs 39%; RR 1.40, P=0.009) and reduced mortality (41% vs 55%; P=0.02) in comatose survivors of witnessed shockable out-of-hospital cardiac arrest.",
+    "clinical_bottom_line": {
+      "verdict": "In a restricted cohort (witnessed VF arrest, moderate downtime, early stability), mild hypothermia improves neurological recovery and survival; contemporary practice emphasizes active temperature control and fever prevention with a target temperature (e.g., 32–36°C) tailored to the patient.",
+      "applies_to": "Comatose adults after witnessed shockable out-of-hospital cardiac arrest with short to moderate downtimes and early post-ROSC hemodynamic/oxygenation stability.",
+      "does_not_mean": "That all post-cardiac arrest patients should be cooled to 32–34°C; later trials suggest no clear benefit of 33°C over 36°C when fever is avoided.",
+      "implementation_caveats": [
+        "Requires reliable temperature monitoring and shivering control (sedation/paralysis)",
+        "Delayed initiation (e.g., beyond ROSC+8 h) may reduce benefit",
+        "Complications like pneumonia, sepsis, and bleeding may be more frequent, warranting vigilant surveillance"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite endpoint construction",
+        "notes": "Not explicitly discussed for HACA, but subsequent trials debated optimal composite endpoints for post-arrest studies."
+      },
+      {
+        "topic": "Generalizability and selection",
+        "notes": "Correspondence highlighted that the eligible cohort was a minority of screened patients; restrictive rhythm and timing criteria limit inference to broader arrest populations."
+      },
+      {
+        "topic": "Baseline neurological severity and prognostic balance",
+        "notes": "Limited reporting of coma depth at enrolment raised concern about residual prognostic imbalance despite randomisation."
+      },
+      {
+        "topic": "Metabolic and fluid effects of cooling",
+        "notes": "Hypothermia was associated with lower potassium levels (median 3.5 vs 3.7 mmol/L at 24 h; 4.0 vs 4.4 at 48 h), higher fluid volumes (10.7 vs 8.8 L), and more positive fluid balance (5.6 vs 4.2 L)."
+      },
+      {
+        "topic": "Target temperature vs. fever avoidance",
+        "notes": "Subsequent RCTs comparing 33°C vs 36°C (TTM) did not show superiority of 33°C, challenging a ‘lower is better’ interpretation."
+      },
+      {
+        "topic": "Extension beyond shockable rhythms",
+        "notes": "A later RCT (HYPERION) in nonshockable rhythms reported improved neurological outcome with hypothermia, but overall evidence remains heterogeneous by rhythm and setting."
+      },
+      {
+        "topic": "Hypothermia vs active normothermia",
+        "notes": "A large contemporary RCT (TTM2) comparing hypothermia to targeted normothermia with active fever prevention did not show improved outcomes with hypothermia and reported more arrhythmias causing haemodynamic compromise."
+      },
+      {
+        "topic": "Guideline evolution",
+        "notes": "Modern guidance shifted from routine 32–34°C for all eligible patients to active temperature control with fever prevention, selecting a target temperature (e.g., ≤37.5°C or 32–36°C) tailored to context."
+      },
+      {
+        "topic": "Implementation framing",
+        "notes": "Contemporary scientific statements emphasize temperature management as a bundle (continuous monitoring, controlled cooling/normothermia, fever avoidance) rather than a single ‘hypothermia-only’ intervention."
+      },
+      {
+        "topic": "Evidence synthesis",
+        "notes": "Updated meta-analyses incorporating newer trials have reduced certainty that hypothermia confers mortality or neurological benefit versus active normothermia strategies."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TTM (Nielsen 2013)",
+        "relation": "Compared target temperature 33°C vs 36°C and found no significant difference in mortality or neurological outcome, challenging the HACA conclusion that 32–34°C is superior to normothermia."
+      },
+      {
+        "trial": "TTM2 (Dankiewicz 2021)",
+        "relation": "Compared hypothermia (33°C) vs active normothermia with fever prevention and found no difference in mortality; more arrhythmias with hypothermia, reinforcing that fever prevention may be the key rather than induced hypothermia."
+      },
+      {
+        "trial": "HYPERION (Lascarrou 2019)",
+        "relation": "RCT in nonshockable rhythms that showed improved neurological outcome with hypothermia vs normothermia, extending the HACA signal to a broader population but underscoring rhythm-specific heterogeneity."
+      }
+    ],
+    "unresolved_questions": [
+      "What is the optimal target temperature (32–36°C) in different rhythms and risk groups?",
+      "Is the benefit of temperature control driven primarily by fever avoidance rather than active hypothermia?",
+      "What is the role of cooling in patients with initial nonshockable rhythms, longer downtimes, or older age?",
+      "How should temperature management be integrated with early coronary angiography and other post-resuscitation therapies?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=275 (all witnessed VF)",
+        "Favorable neurological outcome (CPC 1–2) at 6 months: 55% vs 39% (RR 1.40, NNT 6)",
+        "6-month mortality: 41% vs 55% (RR 0.74, NNT 7)",
+        "NNT for one additional favorable outcome: 6 (95% CI 3–25)"
+      ],
+      "one_line_takeaway": "HACA proved that temperature control after cardiac arrest can save brains and lives, but later evidence refined the target: avoid fever (≤37.5°C) rather than targeting deep hypothermia in all patients."
+    }
+  },
+  "_source_id": "HACA",
+  "_source_system": "Resuscitation"
+}

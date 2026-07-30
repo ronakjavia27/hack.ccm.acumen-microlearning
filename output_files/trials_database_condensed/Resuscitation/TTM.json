@@ -1,0 +1,290 @@
+{
+  "id": "TTM",
+  "trial_name": "TTM — Targeted Temperature Management at 33°C versus 36°C after Cardiac Arrest (2013)",
+  "specialty": "Resuscitation",
+  "subtopic": "Temperature Management",
+  "year": 2013,
+  "journal": "New England Journal of Medicine",
+  "citation": "Nielsen N, Wetterslev J, Cronberg T, et al. Targeted temperature management at 33°C versus 36°C after cardiac arrest. N Engl J Med. 2013;369:2197-2206.",
+  "doi": "10.1056/NEJMoa1310519",
+  "registration": "",
+  "trial_type": "RCT — international, multicenter, parallel-group, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 939,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In unconscious adult OHCA survivors, targeting 33°C did not reduce 180-day mortality or improve neurological outcomes compared to targeting 36°C under active fever prevention.",
+  "pico": {
+    "population": "Unconscious adult survivors of out-of-hospital cardiac arrest of presumed cardiac cause with sustained ROSC >20 minutes.",
+    "intervention": "Targeted temperature management at 33°C for 28 hours, controlled rewarming to 37°C (0.5°C/hr), and fever prevention through 72 hours post-ROSC.",
+    "comparison": "Targeted temperature management at 36°C for 28 hours, controlled rewarming to 37°C, and fever prevention through 72 hours post-ROSC.",
+    "outcome": "Primary: 180-day all-cause mortality. Secondary: 180-day poor neurological outcome (CPC 3–5, mRS 4–6), serious adverse events."
+  },
+  "keywords": [
+    "targeted temperature management",
+    "therapeutic hypothermia",
+    "cardiac arrest",
+    "out-of-hospital cardiac arrest",
+    "fever prevention"
+  ],
+  "related_trials": [
+    "TTM2"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Mild therapeutic hypothermia (32–34°C) became standard care following 2002 trials showing improved neurological outcomes compared to non-protocolised usual care where fever was common.",
+      "knowledge_gap": "Uncertainty existed whether clinical benefits stemmed from true hypothermia or simply avoidance of hyperthermia, given that deeper cooling causes electrolyte shifts, arrhythmias, coagulopathy, infection, and prolonged sedation.",
+      "hypothesis": "In comatose adult survivors of OHCA of presumed cardiac cause, targeting 33°C improves survival and neurological outcomes compared with targeting 36°C when both groups receive active temperature control."
+    },
+    "methods": {
+      "design": "Randomised, international, multicentre (36 ICUs), parallel-group superiority trial with open-label temperature allocation and structured, blinded neuroprognostication.",
+      "setting": "36 ICUs across Europe and Australia; enrollment directly from ICU or Emergency Department.",
+      "population": {
+        "inclusion": [
+          "Adults aged ≥18 years",
+          "Out-of-hospital cardiac arrest of presumed cardiac cause",
+          "Sustained ROSC >20 minutes",
+          "Unconscious at screening (GCS < 8)"
+        ],
+        "exclusion": [
+          "Time from ROSC to screening >240 minutes",
+          "Unwitnessed arrest with initial asystole",
+          "Suspected intracranial haemorrhage or stroke",
+          "Initial body temperature <30°C"
+        ]
+      },
+      "intervention": "Active cooling to target 33°C using surface or intravascular devices with sedation/analgesia/anti-shivering. Maintained for 28 hours post-randomisation, rewarmed to 37°C at 0.5°C/hr, with ongoing fever prevention up to 72 hours post-ROSC.",
+      "comparison": "Active temperature control to maintain 36°C (including warming if needed) using identical timeline: 28-hour maintenance, controlled rewarming to 37°C, and active fever prevention up to 72 hours post-ROSC.",
+      "blinding": "Treating clinical team was unblinded to target temperature; outcome assessors and neuroprognostication assessors followed a strict protocol designed to minimise bias.",
+      "sample_size_power": "900 patients required to detect a hazard ratio of 0.80 for 180-day death (33°C vs 36°C) with 90% power at a two-sided 5% significance level; 950 planned for attrition.",
+      "primary_outcome": "All-cause mortality through end of trial (180 days).",
+      "secondary_outcomes": [
+        "Poor neurological outcome at 180 days defined by Cerebral Performance Category (CPC 3–5)",
+        "Poor neurological outcome at 180 days defined by modified Rankin Scale (mRS 4–6)",
+        "Binary 180-day death",
+        "Serious adverse events (days 1–7)"
+      ],
+      "follow_up": "180 days"
+    },
+    "results": {
+      "headline_bullets": [
+        "No difference in 180-day all-cause mortality between 33°C and 36°C targets (50% vs 48%; HR 1.06; P=0.51).",
+        "Poor neurological outcomes at 180 days were equivalent between groups by CPC (52% vs 53%) and mRS (51% vs 53%).",
+        "Hypokalaemia was significantly more frequent in the 33°C group (19% vs 13%; P=0.018).",
+        "No prespecified subgroup demonstrated treatment effect modification."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality through 180 days (primary)",
+          "group_a": "235/473 (50%)",
+          "group_b": "225/466 (48%)",
+          "effect_measure": "HR",
+          "effect_value": "1.06",
+          "ci_95": "0.89–1.28",
+          "p_value": "0.51",
+          "note": "Time-to-event analysis in modified intention-to-treat population"
+        },
+        {
+          "outcome": "Death at 180 days (secondary binary)",
+          "group_a": "236/473 (50%)",
+          "group_b": "225/466 (48%)",
+          "effect_measure": "RR",
+          "effect_value": "1.01",
+          "ci_95": "0.87–1.15",
+          "p_value": "0.92",
+          "note": "Binary mortality comparison at day 180"
+        },
+        {
+          "outcome": "Poor neurological outcome at 180 days (CPC 3–5)",
+          "group_a": "242/469 (52%)",
+          "group_b": "247/464 (53%)",
+          "effect_measure": "RR",
+          "effect_value": "0.98",
+          "ci_95": "0.88–1.10",
+          "p_value": "0.78",
+          "note": "Evaluated among patients with available 180-day CPC"
+        },
+        {
+          "outcome": "Poor neurological outcome at 180 days (mRS 4–6)",
+          "group_a": "239/469 (51%)",
+          "group_b": "247/464 (53%)",
+          "effect_measure": "RR",
+          "effect_value": "0.96",
+          "ci_95": "0.85–1.08",
+          "p_value": "0.48",
+          "note": "Evaluated among patients with available 180-day mRS"
+        },
+        {
+          "outcome": "Any serious adverse event excluding death (days 1–7)",
+          "group_a": "439/472 (93%)",
+          "group_b": "420/466 (90%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.086",
+          "note": "Collected in supplementary appendix during days 1–7"
+        },
+        {
+          "outcome": "Hypokalaemia (serious adverse event; days 1–7)",
+          "group_a": "86/472 (19%)",
+          "group_b": "58/466 (13%)",
+          "effect_measure": "N/A",
+          "effect_value": "N/A",
+          "ci_95": "N/A",
+          "p_value": "0.018",
+          "note": "Electrolyte disturbance related to deeper cooling"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Time to ROSC ≤25 min",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "HR",
+          "effect_value": "0.92",
+          "ci_95": "0.68–1.24",
+          "p_interaction": "0.20"
+        },
+        {
+          "subgroup": "Time to ROSC >25 min",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "HR",
+          "effect_value": "1.20",
+          "ci_95": "0.96–1.50",
+          "p_interaction": "0.20"
+        },
+        {
+          "subgroup": "Shock at admission absent",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "HR",
+          "effect_value": "1.03",
+          "ci_95": "0.83–1.28",
+          "p_interaction": "0.17"
+        },
+        {
+          "subgroup": "Shock at admission present",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "HR",
+          "effect_value": "1.35",
+          "ci_95": "0.90–2.03",
+          "p_interaction": "0.17"
+        }
+      ]
+    },
+    "safety": [
+      "Any non-fatal serious adverse event (days 1–7): 93% (33°C) vs 90% (36°C), P=0.086.",
+      "Hypokalaemia occurred significantly more frequently in the 33°C group (19% vs 13%; P=0.018).",
+      "Early rewarming in the 33°C group occurred for clinical instability: arrhythmia (n=6), severe circulatory instability (n=4), bleeding (n=2), uncontrolled lactate rise (n=2), and urgent CABG (n=1)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated assignment with concealed allocation stratified by site; baseline characteristics were well balanced."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded care team. Mortality is objective; potential bias in withdrawal of life-sustaining therapy was mitigated by structured neuroprognostication. Withdrawal within 10 days was similar (HR 1.11, 95% CI 0.88–1.40, P=0.38; median 5 days IQR 3–8 in both)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Screened 1431, randomised 950. Consent withdrawn in 1/476 (0.2%) in 33°C vs 3/474 (0.6%) in 36°C. Final modified ITT n=473 vs n=466. Per-protocol n=472 vs n=464. 180-day CPC/mRS complete for 469/473 and 464/466."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Crossovers rare (received wrong target 0 vs 1). Clear temperature separation achieved on Day 2 (36.0±1.5°C vs 37.2±0.7°C, P<0.001); fever prevented in both arms (hours >38°C median 0 vs 0, P=0.070; rebound >39°C 0 vs 0)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups matched for witnessed arrest (93% vs 93%), bystander CPR (74% vs 75%), initial shockable rhythm (359/473 [76%] vs 348/466 [75%]), day 1 angiography (60% vs 61%), day 1 PCI (40% vs 39%), shock at admission (15% vs 14%), and STEMI (40% vs 42%). Median ICU LOS 8 vs 8 days; hospital LOS 11 vs 10 days."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong given concealed randomisation, complete follow-up, and clear temperature separation, with main potential risk being unblinded care delivery."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Enrolled mostly witnessed OHCA with high rates of bystander CPR and shockable rhythms. Excluded unwitnessed asystolic arrests, non-cardiac causes, severe initial hypothermia (<30°C), or delayed screening (>240 min post-ROSC)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Highly generalisable to adult comatose OHCA survivors managed in well-resourced ICUs with protocolised temperature management and structured post-arrest care pathways."
+        }
+      ],
+      "verdict": "External validity is good for comatose adult OHCA survivors in modern ICU settings, but limited for non-cardiac arrests, unwitnessed asystole, or resource-constrained environments."
+    },
+    "strengths": [
+      "Large, international multicentre design across 36 ICUs with robust power.",
+      "Near-complete follow-up at 180 days for primary and secondary outcomes.",
+      "Active temperature control and fever prevention used in both arms, directly isolating target temperature.",
+      "Structured protocol for neuroprognostication and withdrawal of life-sustaining therapy to limit bias."
+    ],
+    "limitations": [
+      "Open-label design may influence clinical decision-making or co-interventions.",
+      "Enrolled up to 4 hours post-ROSC, leaving ultra-early or intra-arrest cooling unstudied.",
+      "CPC and mRS functional scales are relatively coarse outcome measures.",
+      "Increased rate of hypokalaemia and occasional early rewarming due to instability in the 33°C group."
+    ],
+    "critical_appraisal": {
+      "summary": "Landmark trial demonstrating that hypothermia at 33°C is not superior to 36°C when fever is actively controlled in both groups.",
+      "strengths": [
+        "Enforced active temperature control in control group",
+        "High statistical power for 180-day mortality",
+        "Standardised neuroprognostication"
+      ],
+      "weaknesses": [
+        "Unblinded clinical teams",
+        "Window up to 4 hours post-ROSC before initiation"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In comatose survivors of out-of-hospital cardiac arrest of presumed cardiac cause, targeted temperature management at 33°C did not confer a survival or functional benefit compared to 36°C.",
+    "clinical_bottom_line": {
+      "verdict": "33°C targeted hypothermia does not improve survival or neurological recovery over 36°C controlled normothermia with fever prevention.",
+      "applies_to": "Comatose adult survivors of out-of-hospital cardiac arrest of presumed cardiac cause.",
+      "does_not_mean": "Temperature control is unnecessary; uncontrolled fever must still be actively prevented.",
+      "implementation_caveats": [
+        "Active temperature management and fever prevention must be strictly maintained if targeting 36°C.",
+        "If 33°C is used, monitor closely for hypokalaemia, shivering, and hemodynamic instability."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Misinterpretation as absence of temperature control",
+        "notes": "TTM compared two active temperature management protocols (33°C vs 36°C with fever prevention in both), not hypothermia versus passive care."
+      },
+      {
+        "topic": "Timing of therapeutic window",
+        "notes": "Inclusion allowed up to 240 minutes post-ROSC, raising questions whether immediate intra-arrest cooling might yield different results."
+      },
+      {
+        "topic": "Shift in trial evidence base",
+        "notes": "Subsequent trials (TTM2) confirmed these findings, solidifying targeted normothermia and fever prevention as standard of care."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TTM2",
+        "relation": "Follow-up RCT in 2021 comparing 33°C hypothermia to targeted normothermia (fever prevention), confirming no survival benefit and higher arrhythmia rates with hypothermia."
+      }
+    ],
+    "unresolved_questions": [
+      "Does intra-arrest or ultra-early cooling initiated immediately at ROSC provide neuroprotection?",
+      "Are there specific patient subgroups or biological endotypes that derive benefit from 33°C cooling?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=939 analyzed",
+        "180-day mortality: 50% (33°C) vs 48% (36°C), HR 1.06",
+        "Poor neurological outcome: 52% vs 53%, RR 0.98",
+        "Hypokalaemia: 19% vs 13%, P=0.018"
+      ],
+      "one_line_takeaway": "Target 36°C with active fever control instead of 33°C hypothermia post-OHCA to avoid cooling side effects without sacrificing survival or neurological recovery."
+    }
+  },
+  "_source_id": "TTM",
+  "_source_system": "Resuscitation"
+}

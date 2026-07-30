@@ -1,0 +1,352 @@
+{
+  "id": "PATCH-Trauma",
+  "trial_name": "PATCH-Trauma — Prehospital Tranexamic Acid for Severe Trauma (2023)",
+  "specialty": "Trauma",
+  "subtopic": "Trauma Coagulopathy",
+  "year": 2023,
+  "journal": "The New England Journal of Medicine",
+  "citation": "PATCH-Trauma Investigators and the ANZICS Clinical Trials Group. Prehospital Tranexamic Acid for Severe Trauma. N Engl J Med. 2023;389(2):127-136.",
+  "doi": "https://doi.org/10.1056/NEJMoa2215457",
+  "registration": "",
+  "trial_type": "RCT — multicentre, randomised, double-blind, placebo-controlled pragmatic trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1310,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Prehospital tranexamic acid did not improve 6-month favorable functional survival in severe trauma patients, despite lowering early 24-hour and 28-day mortality.",
+  "pico": {
+    "population": "Adults (>=18 years) with major trauma at risk of trauma-induced coagulopathy (COAST score >=3) within 3 hours of injury.",
+    "intervention": "Prehospital IV/IO 1 g TXA bolus over ~10 minutes, followed by 1 g IV infusion over 8 hours in hospital.",
+    "comparison": "Matching 0.9% sodium chloride placebo bolus and infusion.",
+    "outcome": "Primary: Survival with favorable functional outcome at 6 months (GOS-E score 5-8)."
+  },
+  "keywords": [
+    "tranexamic acid",
+    "TXA",
+    "trauma-induced coagulopathy",
+    "prehospital care",
+    "GOS-E",
+    "hemorrhage"
+  ],
+  "related_trials": [
+    "CRASH-2",
+    "STAAMP"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Trauma-induced coagulopathy and hyperfibrinolysis cause early hemorrhagic death and major morbidity. CRASH-2 showed in-hospital TXA within 3 hours reduced mortality.",
+      "knowledge_gap": "Whether early prehospital TXA administration improves patient-important long-term functional recovery in advanced, modern trauma systems remained uncertain.",
+      "hypothesis": "Prehospital TXA with in-hospital continuation increases survival with favorable functional outcome at 6 months compared with placebo in severe trauma."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, placebo-controlled, investigator-initiated pragmatic trial in Australia, New Zealand, and Germany.",
+      "setting": "Participating ambulance services and trauma hospitals within advanced trauma systems; enrolled prehospital, continued in hospital.",
+      "population": {
+        "inclusion": [
+          "Adults (>=18 years) with major trauma",
+          "At risk of trauma-induced coagulopathy (COAST score >=3)",
+          "Treatment initiation feasible within 3 hours of injury"
+        ],
+        "exclusion": [
+          "Suspected pregnancy",
+          "Residence in nursing home or residential aged care facility"
+        ]
+      },
+      "intervention": "1 g IV/IO TXA bolus (10 mL) prehospital over ~10 minutes, then 1 g IV infusion in 100 mL over 8 hours upon hospital arrival.",
+      "comparison": "Matching 0.9% sodium chloride placebo bolus and infusion with identical volume, timing, and packaging.",
+      "blinding": "Double-blind (prehospital clinicians, hospital staff, patients/surrogates, investigators, outcome assessors).",
+      "sample_size_power": "1184 required to detect 9% absolute increase in 6-month favorable GOS-E (60% to 69%) at 90% power, alpha 0.05. Target raised to 1316 for 10% attrition. Enrolment stopped at 1310 due to drug expiry.",
+      "primary_outcome": "Survival with favorable functional outcome at 6 months (GOS-E score 5–8, upper moderate disability to good recovery).",
+      "secondary_outcomes": [
+        "Mortality at 24 hours, 28 days, and 6 months",
+        "Cause-specific mortality (bleeding, head injury) at 6 months",
+        "Vascular occlusive events to day 28, discharge, or death",
+        "Sepsis episodes to day 28, discharge, or death",
+        "Red blood cell transfusion units within 24 hours"
+      ],
+      "follow_up": "Clinical outcomes to 28 days (or hospital discharge/death); functional outcome at 6 months via structured telephone GOS-E interview."
+    },
+    "results": {
+      "headline_bullets": [
+        "Primary functional endpoint (GOS-E 5-8 at 6 months) was identical between TXA and placebo (53.7% vs 53.7%, RR 1.00).",
+        "TXA significantly reduced mortality at 24 hours (9.7% vs 14.1%, RR 0.69) and 28 days (17.3% vs 21.8%, RR 0.79).",
+        "Vascular occlusive events were not increased with TXA (8.5% vs 9.8%, RR 0.87).",
+        "TXA reduced 24-hour transfusion requirements among transfused patients by a median of 1 RBC unit."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival with favorable functional outcome at 6 months (GOS-E 5-8, primary complete-case)",
+          "group_a": "307/572 (53.7%)",
+          "group_b": "300/559 (53.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.90–1.12",
+          "p_value": "0.95",
+          "note": "Primary analysis"
+        },
+        {
+          "outcome": "Survival with favorable functional outcome at 6 months (multiple imputation)",
+          "group_a": "56.1%",
+          "group_b": "56.1%",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.90–1.11",
+          "p_value": "0.98",
+          "note": "Sensitivity analysis for missing data"
+        },
+        {
+          "outcome": "Mortality at 24 hours",
+          "group_a": "64/657 (9.7%)",
+          "group_b": "91/643 (14.1%)",
+          "effect_measure": "RR",
+          "effect_value": "0.69",
+          "ci_95": "0.51–0.94",
+          "p_value": "NR",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Mortality at 28 days",
+          "group_a": "114/657 (17.3%)",
+          "group_b": "140/643 (21.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.79",
+          "ci_95": "0.63–0.99",
+          "p_value": "NR",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "Mortality at 6 months",
+          "group_a": "122/657 (18.5%)",
+          "group_b": "148/643 (23.0%)",
+          "effect_measure": "HR",
+          "effect_value": "0.81",
+          "ci_95": "0.65–1.02",
+          "p_value": "NR",
+          "note": "Time-to-event analysis"
+        },
+        {
+          "outcome": "Bleeding mortality at 6 months",
+          "group_a": "35/657 (5.3%)",
+          "group_b": "48/643 (7.5%)",
+          "effect_measure": "HR",
+          "effect_value": "0.66",
+          "ci_95": "0.43–1.01",
+          "p_value": "NR",
+          "note": "Clinician-assigned cause of death"
+        },
+        {
+          "outcome": "Head injury mortality at 6 months",
+          "group_a": "72/657 (11.0%)",
+          "group_b": "79/643 (12.3%)",
+          "effect_measure": "HR",
+          "effect_value": "0.88",
+          "ci_95": "0.64–1.21",
+          "p_value": "NR",
+          "note": "Cause-specific secondary outcome"
+        },
+        {
+          "outcome": "Vascular occlusive events to day 28/discharge/death",
+          "group_a": "56/657 (8.5%)",
+          "group_b": "63/643 (9.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.62–1.22",
+          "p_value": "NR",
+          "note": "Includes DVT, PE, MI, stroke, arterial events"
+        },
+        {
+          "outcome": "Sepsis episodes to day 28/discharge/death",
+          "group_a": "114/657 (17.4%)",
+          "group_b": "117/643 (18.2%)",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.76–1.20",
+          "p_value": "NR",
+          "note": "Secondary outcome"
+        },
+        {
+          "outcome": "RBC units transfused within 24 hours (among transfused)",
+          "group_a": "Median 4 (IQR 2–8)",
+          "group_b": "Median 5 (IQR 2–9)",
+          "effect_measure": "Median diff",
+          "effect_value": "-1.00",
+          "ci_95": "-1.68 to -0.32",
+          "p_value": "NR",
+          "note": "Difference in medians (TXA minus placebo)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Time to first dose <1 hour",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "RR",
+          "effect_value": "1.03",
+          "ci_95": "0.82–1.28",
+          "p_interaction": "NR"
+        },
+        {
+          "subgroup": "Time to first dose 1 to <2 hours",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "RR",
+          "effect_value": "1.09",
+          "ci_95": "0.93–1.26",
+          "p_interaction": "NR"
+        },
+        {
+          "subgroup": "Time to first dose >=2 hours",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "RR",
+          "effect_value": "0.83",
+          "ci_95": "0.66–1.03",
+          "p_interaction": "NR"
+        },
+        {
+          "subgroup": "Penetrating or burn injury",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "RR",
+          "effect_value": "1.30",
+          "ci_95": "0.92–1.83",
+          "p_interaction": "NR"
+        },
+        {
+          "subgroup": "Post hoc: AIS head/neck >2",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "RR",
+          "effect_value": "0.93",
+          "ci_95": "0.73–1.18",
+          "p_interaction": "NR"
+        },
+        {
+          "subgroup": "Post hoc: AIS head/neck <=2",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "RR",
+          "effect_value": "1.06",
+          "ci_95": "0.96–1.18",
+          "p_interaction": "NR"
+        }
+      ]
+    },
+    "safety": [
+      "Vascular occlusive events occurred in 8.5% with TXA vs 9.8% with placebo (RR 0.87, 95% CI 0.62–1.22).",
+      "Sepsis episodes occurred in 17.4% with TXA vs 18.2% with placebo (RR 0.95, 95% CI 0.76–1.20).",
+      "No excess of thrombotic or septic complications was observed in the TXA group."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Pre-prepared identical study packs stratified by jurisdiction and baseline GCS (<9 vs >=9)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind with matched placebo packs maintained across prehospital and in-hospital teams."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "ITT population n=1300 (TXA 657, placebo 643). 13% missing 6-month primary outcome (TXA 572, placebo 559 assessed); multiple imputation gave identical results."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Full protocol adherence in 67.3% TXA vs 63.0% placebo; both doses given in 78.4% vs 74.7%. Open-label TXA given in 15.8% vs 16.5%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: mean age 45.4 vs 44.8 years, median ISS 29 vs 29, blunt trauma 91.8% vs 92.4%, GCS <9 in 40.2% vs 38.9%, SBP <=75 mm Hg in 38.4% vs 40.6%."
+        }
+      ],
+      "verdict": "Internal validity is moderate due to strong randomization and blinding, offset by 13% missing primary outcomes and ~16% open-label TXA contamination in both arms."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Severely injured adult trauma population (median ISS 29, ~40% GCS <9, ~40% severe hypotension) in advanced EMS systems."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "92% blunt trauma in advanced EMS networks; less applicable to penetrating trauma, pediatric trauma, pregnancy, or systems lacking early infusion capabilities."
+        }
+      ],
+      "verdict": "Highly applicable to adult severe blunt trauma in advanced trauma systems, but less generalizable to penetrating trauma or low-resource systems."
+    },
+    "strengths": [
+      "Large, double-blind, pragmatic RCT extending from prehospital field care into hospital.",
+      "Targeted high-risk population using a validated prehospital coagulopathy risk score (COAST >=3).",
+      "Patient-centered primary functional outcome (GOS-E at 6 months).",
+      "Rigorous pre-specified statistical plan with multiple imputation sensitivity analyses."
+    ],
+    "limitations": [
+      "13% missing primary outcome data at 6 months.",
+      "Substantial protocol non-adherence, with only 75-78% receiving both doses.",
+      "High open-label TXA contamination (~16% in both arms).",
+      "Low proportion of penetrating trauma (<8%), limiting subgroup power."
+    ],
+    "critical_appraisal": {
+      "summary": "PATCH-Trauma is a well-designed prehospital trial showing that while TXA reduces early 24-hour and 28-day mortality, it does not improve 6-month favorable functional recovery.",
+      "strengths": [
+        "Prehospital double-blind randomization with pragmatic field execution.",
+        "Use of patient-centered 6-month disability endpoint rather than short-term survival alone."
+      ],
+      "weaknesses": [
+        "Contamination from open-label TXA use in ~16% of controls.",
+        "13% loss to follow-up for 6-month primary outcome."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In adults with severe trauma at risk of coagulopathy treated in advanced EMS systems, prehospital TXA did not increase survival with favorable functional outcome at 6 months.",
+    "clinical_bottom_line": {
+      "verdict": "Supports early TXA administration to prevent early hemorrhagic death, but clinicians should not expect a shift in overall 6-month functional disability driven by traumatic brain injury.",
+      "applies_to": "Adult major trauma patients at risk of hemorrhage and trauma-induced coagulopathy within 3 hours of injury.",
+      "does_not_mean": "Does not mean TXA is ineffective at saving lives early; early mortality was significantly reduced without increasing thrombotic risk.",
+      "implementation_caveats": [
+        "Requires prehospital logistics to administer 1 g bolus over ~10 minutes and ensure follow-up 8-hour 1 g IV infusion in hospital.",
+        "Primary outcome in severe blunt trauma is heavily influenced by concurrent TBI recovery."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Endpoint selection vs biological mechanism",
+        "notes": "GOS-E at 6 months is heavily dominated by TBI, whereas TXA targets fibrinolysis and early bleeding death; this may obscure early lifesaving benefits."
+      },
+      {
+        "topic": "Neutral primary outcome vs positive early mortality signal",
+        "notes": "Significant early mortality reduction at 24h (RR 0.69) and 28d (RR 0.79) was detected in secondary outcomes without multiplicity adjustment."
+      },
+      {
+        "topic": "Open-label TXA contamination",
+        "notes": "16% of control patients received open-label TXA, potentially biasing the primary outcome effect towards the null."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CRASH-2",
+        "relation": "In-hospital RCT showing early TXA reduces 28-day mortality in bleeding trauma; PATCH-Trauma tested prehospital delivery with long-term functional endpoints."
+      },
+      {
+        "trial": "STAAMP",
+        "relation": "Prehospital TXA RCT in severe trauma which showed overall neutral results but benefit in specific high-risk and early-dosing subgroups."
+      }
+    ],
+    "unresolved_questions": [
+      "Which specific physiological or biomarker phenotypes (e.g., TEG/ROTEM hyperfibrinolysis) benefit most from prehospital TXA?",
+      "Does prehospital TXA improve functional outcomes in pure penetrating hemorrhage without concomitant TBI?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1300 ITT (657 TXA vs 643 placebo)",
+        "6-month favorable functional outcome identical: 53.7% vs 53.7% (RR 1.00)",
+        "24-hour mortality reduced: 9.7% vs 14.1% (RR 0.69)",
+        "28-day mortality reduced: 17.3% vs 21.8% (RR 0.79)",
+        "Vascular occlusive events similar: 8.5% vs 9.8% (RR 0.87)"
+      ],
+      "one_line_takeaway": "Prehospital TXA reduces early 24-hour and 28-day mortality in severe trauma without thrombotic harm, but does not alter 6-month functional disability."
+    }
+  },
+  "_source_id": "PATCH-Trauma",
+  "_source_system": "Trauma"
+}

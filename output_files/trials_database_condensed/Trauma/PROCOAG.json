@@ -1,0 +1,301 @@
+{
+  "id": "PROCOAG",
+  "trial_name": "PROCOAG — Early 4F-PCC in Trauma at Risk of Massive Transfusion (2023)",
+  "specialty": "Trauma",
+  "subtopic": "Trauma Coagulopathy",
+  "year": 2023,
+  "journal": "JAMA",
+  "citation": "Bouzat P, Charbit J, Abback P-S, Huet-Garrigue D, Delhaye N, Leone M, et al; PROCOAG Study Group. Efficacy and safety of early administration of 4-factor prothrombin complex concentrate in patients with trauma at risk of massive transfusion: the PROCOAG randomized clinical trial. JAMA. 2023;329(16):1367-1375.",
+  "doi": "https://doi.org/10.1001/jama.2023.4080",
+  "registration": "",
+  "trial_type": "RCT — multicentre, double-blind, randomised, placebo-controlled superiority trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 324,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Empirical early administration of 4F-PCC in trauma patients at risk of massive transfusion did not reduce 24-hour blood product consumption and significantly increased thromboembolic events.",
+  "pico": {
+    "population": "Adult trauma patients (>=18 years) requiring early RBC transfusion and judged at risk of massive transfusion (ABC score >=2 or clinician judgement)",
+    "intervention": "Early IV 4-factor prothrombin complex concentrate (4F-PCC; 25 IU factor IX/kg, 1 mL/kg at 120 mL/h) alongside protocolised trauma hemorrhage management",
+    "comparison": "Placebo (0.9% saline, 1 mL/kg) alongside protocolised trauma hemorrhage management",
+    "outcome": "Primary: total allogeneic blood products (RBC, FFP, platelets) within 24 hours; Safety: thromboembolic events within 28 days"
+  },
+  "keywords": [
+    "4-factor prothrombin complex concentrate",
+    "4F-PCC",
+    "trauma-induced coagulopathy",
+    "massive transfusion",
+    "damage control resuscitation",
+    "thromboembolism"
+  ],
+  "related_trials": [
+    "FiiRST-2"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Traumatic haemorrhage is a major driver of preventable early death. Trauma-induced coagulopathy is common and increases transfusion requirements and mortality. Standard component-based resuscitation is effective but can face delivery delays and may not rapidly correct factor depletion.",
+      "knowledge_gap": "4F-PCC rapidly restores vitamin K-dependent factors, but trauma use is off-label and largely supported by observational data. Whether empirical early 4F-PCC provides clinical haemostatic benefit on top of modern transfusion protocols without excess thrombotic harm was uncertain.",
+      "hypothesis": "In severe trauma requiring early RBC transfusion and at risk of massive transfusion, early 4F-PCC (25 IU factor IX/kg) reduces 24-hour allogeneic blood product use compared with placebo without excess 28-day thromboembolic complications."
+    },
+    "methods": {
+      "design": "Multicentre, double-blind, randomised, placebo-controlled superiority trial stratified by centre across 12 French level I trauma centres (Dec 2017 to Aug 2021).",
+      "setting": "12 French level I trauma centres during early emergency department resuscitation.",
+      "population": {
+        "inclusion": [
+          "Adults (>=18 years) with severe trauma (grade A trauma team activation)",
+          "Requiring RBC transfusion prehospital or within 1st hour after admission",
+          "Randomised within 1 hour of admission",
+          "Considered at risk of massive transfusion (ABC score >=2 or clinician judgement)"
+        ],
+        "exclusion": [
+          "Traumatic cardiac arrest with ongoing CPR at admission",
+          "Pregnancy",
+          "Major burns",
+          "Known congenital coagulopathy or bleeding disorder",
+          "Previous enrolment in PROCOAG"
+        ]
+      },
+      "intervention": "4F-PCC 1 mL/kg (25 IU factor IX/kg) IV via syringe pump at 120 mL/h as soon as possible after randomisation (median start 35 min post-admission) alongside protocolised trauma management including tranexamic acid and components.",
+      "comparison": "Placebo (0.9% saline) 1 mL/kg with identical appearance and delivery conditions alongside standard protocolised trauma hemorrhage management.",
+      "blinding": "Double-blind (patients, treating clinicians, investigators, outcome assessors, statisticians); masked drug prepared by unblinded nurse and hospital pharmacy.",
+      "sample_size_power": "324 patients required to detect a 3-unit reduction in 24-hour blood product use (from mean 12 to 9 units; 25% relative reduction) with 80% power at two-sided alpha 0.05. Primary analysis used modified ITT.",
+      "primary_outcome": "Total allogeneic blood products (units of RBC, FFP, and platelets combined) consumed within 24 hours.",
+      "secondary_outcomes": [
+        "RBC units within 24 h",
+        "Fresh frozen plasma units within 24 h",
+        "Platelet units within 24 h",
+        "Time to PTr <1.5 among severe coagulopathy (minutes)",
+        "Time to haemostasis (minutes)",
+        "Mortality at 24 h",
+        "Mortality at 28 days",
+        "At least 1 thromboembolic event by day 28"
+      ],
+      "follow_up": "Primary outcome tracked to 24 hours; clinical, mortality, and thromboembolic safety outcomes tracked to 28 days."
+    },
+    "results": {
+      "headline_bullets": [
+        "Empirical 4F-PCC did not reduce 24-hour total blood product consumption (median 12 vs 11 units; P=0.72).",
+        "No differences were observed in component transfusions, time to haemostasis, or mortality at 24 hours or 28 days.",
+        "4F-PCC significantly increased 28-day thromboembolic events (35% vs 24%; RR 1.48; P=0.03)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Total allogeneic blood products within 24 h (RBC+FFP+platelets)",
+          "group_a": "12 (6–20)",
+          "group_b": "11 (7–21)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.2 U",
+          "ci_95": "−2.99 to 3.33",
+          "p_value": "0.72",
+          "note": "Primary end point; median (IQR); analysed n=164 vs n=160"
+        },
+        {
+          "outcome": "RBC within 24 h (units)",
+          "group_a": "6 (3–9)",
+          "group_b": "6 (4–9)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−0.3 U",
+          "ci_95": "−1.8 to 1.3",
+          "p_value": "0.93",
+          "note": "Median (IQR)"
+        },
+        {
+          "outcome": "Fresh frozen plasma within 24 h (units)",
+          "group_a": "4 (1–7)",
+          "group_b": "4 (2–7)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.1 U",
+          "ci_95": "−1.3 to 1.5",
+          "p_value": "0.56",
+          "note": "Median (IQR)"
+        },
+        {
+          "outcome": "Platelets within 24 h (units)",
+          "group_a": "1 (0–2)",
+          "group_b": "1 (0–2)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "0.0 U",
+          "ci_95": "−0.3 to 0.3",
+          "p_value": "0.83",
+          "note": "Median (IQR)"
+        },
+        {
+          "outcome": "Time to PTr <1.5 among severe coagulopathy (minutes)",
+          "group_a": "0 (0–0)",
+          "group_b": "0 (0–0)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−8.5 min",
+          "ci_95": "−48.9 to 32.0",
+          "p_value": "0.86",
+          "note": "Median (IQR); competing-risk approach used"
+        },
+        {
+          "outcome": "Time to haemostasis (minutes)",
+          "group_a": "300 (155–635)",
+          "group_b": "288 (148–534)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "22 min",
+          "ci_95": "−73.3 to 73.8",
+          "p_value": "0.96",
+          "note": "Median (IQR); haemostasis timing clinically determined"
+        },
+        {
+          "outcome": "Mortality at 24 h",
+          "group_a": "18/164 (11%)",
+          "group_b": "21/160 (13%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−2%",
+          "ci_95": "−9 to 5",
+          "p_value": "0.67",
+          "note": "Binary outcome"
+        },
+        {
+          "outcome": "Mortality at 28 days",
+          "group_a": "27/164 (17%)",
+          "group_b": "33/160 (21%)",
+          "effect_measure": "Absolute difference",
+          "effect_value": "−3%",
+          "ci_95": "−12 to 5",
+          "p_value": "0.48",
+          "note": "Binary outcome"
+        },
+        {
+          "outcome": ">=1 thromboembolic event by day 28",
+          "group_a": "56/161 (35%)",
+          "group_b": "37/157 (24%)",
+          "effect_measure": "RR",
+          "effect_value": "1.48",
+          "ci_95": "1.04 to 2.10",
+          "p_value": "0.03",
+          "note": "Safety end point; passive surveillance; n=161 vs n=157 evaluable"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      ">=1 thromboembolic event by day 28 occurred in 56/161 (35%) in 4F-PCC group vs 37/157 (24%) in placebo group (RR 1.48, 95% CI 1.04 to 2.10, P=0.03).",
+      "Ancillary thrombin generation analysis demonstrated procoagulant shifts post-4F-PCC administration, supplying a potential mechanism for thrombotic harm."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Computer-generated variable block sizes (2/4/6), stratified by centre; central sequential sealed envelopes prepared by pharmacy ensured allocation concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind design; primary end point (blood units) is objective; thromboembolic outcomes relied on passive surveillance, introducing potential detection variability."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "327 randomised; 3 excluded due to consent withdrawal; modified ITT analyzed 324 (164 vs 160); per-protocol met in 308/324 (95%)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "95% received study product within 1 hour (159/164 vs 149/160); median time to treatment was 35 (25–53) min vs 30 (21–47) min."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "ISS 36 vs 36, SBP 89 vs 90 mmHg, lactate 5.4 vs 5.6 mmol/L, PTr >1.2 in 65% vs 68%; prehospital SBP higher with 4F-PCC (101 vs 90 mmHg). Co-interventions had minor imbalances: TXA 76% (124/164) vs 86% (138/160), fibrinogen 3g vs 3g, time to first FFP 73 vs 91 min."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong for transfusion outcomes due to blinding and high protocol adherence, though safety evaluation is limited by passive surveillance and slight co-intervention imbalances."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Represents major adult trauma in high-resource level I trauma centers with rapid component therapy; excludes pregnancy, severe burns, and ongoing CPR."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Applicable to trauma systems delivering early component therapy and TXA; results may not apply to settings with delayed plasma access, factor-first resuscitation protocols, or low resources."
+        }
+      ],
+      "verdict": "External validity is moderate, offering clear applicability to high-resource trauma systems but uncertain generalisability to alternative resuscitation models."
+    },
+    "strengths": [
+      "Multicentre, double-blind, randomised, placebo-controlled methodology in an acute emergency setting.",
+      "Ultra-early administration (median 35 min from arrival) testing the peak window of trauma coagulopathy.",
+      "High protocol adherence (95% per-protocol) and objective primary endpoint.",
+      "Pragmatic trial execution across 12 level I trauma centres."
+    ],
+    "limitations": [
+      "Empirical inclusion based on clinical risk rather than viscoelastic testing or laboratory-proven factor depletion.",
+      "Primary endpoint (component consumption) is operational/behavioral rather than direct clinical mortality.",
+      "Co-intervention imbalances, including lower tranexamic acid administration in the 4F-PCC group (76% vs 86%).",
+      "Thromboembolic event surveillance was passive rather than systematic, risking detection bias across centres."
+    ],
+    "critical_appraisal": {
+      "summary": "PROCOAG is a high-quality double-blind RCT demonstrating that empirical 4F-PCC does not decrease blood product use in major trauma and raises thromboembolic risk.",
+      "strengths": [
+        "Rigorous double-blind placebo control in hyperacute resuscitation",
+        "Rapid median time to study drug delivery",
+        "High per-protocol adherence across 12 level I trauma units"
+      ],
+      "weaknesses": [
+        "Empirical enrollment without viscoelastic or factor-level targeting",
+        "Passive safety surveillance for thromboembolic events",
+        "Minor imbalances in baseline co-interventions (TXA treatment)"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In patients with major trauma at risk of massive transfusion, early administration of 4F-PCC did not reduce 24-hour blood product consumption and increased thromboembolic events.",
+    "clinical_bottom_line": {
+      "verdict": "Routine empirical early 4F-PCC should not be administered to unselected trauma patients at risk of massive transfusion.",
+      "applies_to": "Adult major trauma patients requiring early blood transfusion in settings with rapid access to component-based damage control resuscitation.",
+      "does_not_mean": "Does not mean PCC has no role in trauma; targeted therapy for known factor deficiency, specific viscoelastic profiles, or warfarin reversal remains indicated.",
+      "implementation_caveats": [
+        "Empirical 4F-PCC increases 28-day thromboembolic risk (RR 1.48) without reducing transfusion requirements.",
+        "Shift resuscitation practice toward phenotype-guided haemostatic administration using viscoelastic assays or laboratory monitoring.",
+        "Maintain vigilant thromboembolic surveillance if PCC is administered."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Empirical vs phenotype-targeted therapy",
+        "notes": "JAMA correspondence argued empirical inclusion of patients without proven factor deficits dilutes benefit and exposes non-coagulopathic patients to thrombotic risks."
+      },
+      {
+        "topic": "Laboratory PT correction vs functional haemostasis",
+        "notes": "Commentary stressed 4F-PCC normalises prothrombin time but fails to correct fibrinogen or platelet deficits, offering negligible incremental gain when component protocols are established."
+      },
+      {
+        "topic": "Procoagulant mechanism of thrombosis",
+        "notes": "Ancillary thrombin generation analysis demonstrated procoagulant shifts post-4F-PCC, confirming a mechanistic foundation for the observed thrombotic harm."
+      },
+      {
+        "topic": "Observational evidence vs trial findings",
+        "notes": "Prior observational studies favoring PCC were highly susceptible to confounding and unstandardised safety tracking, as confirmed by systematic reviews."
+      },
+      {
+        "topic": "Guideline alignment",
+        "notes": "The European trauma bleeding guidelines advise against empirical factor concentrate therapy, recommending targeted treatment guided by laboratory or viscoelastic testing."
+      },
+      {
+        "topic": "Subsequent trial evidence",
+        "notes": "The FiiRST-2 RCT (2025) similarly showed early fibrinogen concentrate plus PCC was not superior to plasma for 24-hour blood component use."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "FiiRST-2",
+        "relation": "2025 RCT finding early fibrinogen concentrate plus PCC was not superior to frozen plasma for 24-hour blood product consumption."
+      }
+    ],
+    "unresolved_questions": [
+      "Does 4F-PCC offer net clinical benefit in a subgroup enriched by rapid point-of-care viscoelastic testing showing severe factor deficiency?",
+      "What is the optimal safety profile and dosing strategy of 4F-PCC when integrated into targeted resuscitation paradigms?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=324",
+        "24h total blood products: 12 vs 11 units (P=0.72)",
+        "28-day thromboembolism: 35% vs 24% (RR 1.48, P=0.03)",
+        "28-day mortality: 17% vs 21% (P=0.48)"
+      ],
+      "one_line_takeaway": "Empirical early 4F-PCC does not reduce blood product needs in major trauma and increases thromboembolic risk; adopt phenotype-guided resuscitation instead."
+    }
+  },
+  "_source_id": "PROCOAG",
+  "_source_system": "Trauma"
+}

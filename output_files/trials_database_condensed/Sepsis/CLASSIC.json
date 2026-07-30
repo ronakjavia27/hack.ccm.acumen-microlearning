@@ -1,0 +1,277 @@
+{
+  "id": "CLASSIC",
+  "trial_name": "CLASSIC — Restriction of Intravenous Fluid in ICU Patients with Septic Shock (2022)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Fluids & Resuscitation",
+  "year": 2022,
+  "journal": "N Engl J Med",
+  "citation": "Meyhoff TS, Hjortrup PB, Wetterslev J, et al. Restriction of Intravenous Fluid in ICU Patients with Septic Shock. N Engl J Med. 2022;386(26):2459-2470.",
+  "doi": "https://doi.org/10.1056/NEJMoa2202707",
+  "registration": "",
+  "trial_type": "RCT — international, multicenter, open-label, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1554,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adult ICU patients with septic shock post-initial resuscitation, restrictive IV fluid therapy did not reduce 90-day all-cause mortality compared to standard IV fluid therapy.",
+  "pico": {
+    "population": "Adult ICU patients (aged >=18 years) with septic shock who had received >=1 L IV fluid within 24 hours and shock onset within 12 hours.",
+    "intervention": "Protocolized restrictive IV fluid therapy during ICU stay (max 90 days), avoiding IV crystalloid unless specific hypoperfusion criteria were met.",
+    "comparison": "Standard IV fluid therapy according to usual care with no protocol upper limits.",
+    "outcome": "90-day all-cause mortality."
+  },
+  "keywords": [
+    "septic shock",
+    "fluid restriction",
+    "crystalloids",
+    "fluid resuscitation",
+    "fluid overload"
+  ],
+  "related_trials": [
+    "CLOVERS"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "IV crystalloids are foundational in septic shock, but observational data associate higher cumulative fluid exposure and fluid overload with worse outcomes.",
+      "knowledge_gap": "High-quality RCT evidence testing restrictive vs usual-care IV fluid strategies in established ICU septic shock after initial resuscitation was limited.",
+      "hypothesis": "In adult ICU patients with septic shock who received initial fluid resuscitation, a restrictive IV fluid strategy reduces 90-day all-cause mortality compared with standard IV fluid therapy."
+    },
+    "methods": {
+      "design": "Investigator-initiated, international, multicentre, randomised, parallel-group, open-label trial with concealed allocation and prespecified analyses.",
+      "setting": "31 ICUs (predominantly Scandinavia; also Switzerland, Italy, Czech Republic, UK, Belgium). Enrolled up to 2022.",
+      "population": {
+        "inclusion": [
+          "Adults aged >=18 years with septic shock",
+          "Received >=1 L IV fluid within 24 hours before screening",
+          "Onset of septic shock within 12 hours before screening",
+          "Planned ICU admission or already admitted to ICU"
+        ],
+        "exclusion": [
+          "Conditions mandating specific fluid strategies or expected large obligatory fluid loads (e.g., major haemorrhage or burns)",
+          "Clinician-determined contraindications to the trial strategy",
+          "Additional protocol-defined exclusions"
+        ]
+      },
+      "intervention": "Restrictive IV fluid therapy in ICU (max 90 days) aiming to avoid IV crystalloids. IV fluids permitted only if >=1 criterion met on that day: plasma lactate >=4 mmol/L, MAP <50 mmHg, mottling score >2, or urine output <0.1 mL/kg/h for >=2 consecutive hours.",
+      "comparison": "Standard IV fluid therapy reflecting usual care with no protocol upper limits. Protocol violation in this arm defined as no IV fluids given on any single day in ICU.",
+      "blinding": "Open-label (clinicians and bedside staff not blinded); outcomes objective (mortality, life-support use); analyses prespecified.",
+      "sample_size_power": "1554 patients required for 80% power (beta=0.20, two-sided alpha=0.05) to detect a 7 percentage-point absolute mortality reduction (from 45% to 38%).",
+      "primary_outcome": "All-cause mortality at day 90.",
+      "secondary_outcomes": [
+        "Serious adverse events (composite, ICU)",
+        "Serious adverse reactions after IV crystalloids",
+        "Days alive without life support to day 90",
+        "Days alive and out of hospital to day 90"
+      ],
+      "follow_up": "Primary follow-up to day 90; prespecified 1-year follow-up for survival, health-related quality of life, and cognitive outcomes."
+    },
+    "results": {
+      "headline_bullets": [
+        "90-day mortality was virtually identical between restrictive and standard fluid groups (42.3% vs 42.1%).",
+        "Restrictive protocol achieved a median reduction of 2013 mL in resuscitation-type IV fluids in the ICU.",
+        "No significant differences in serious adverse events, serious adverse reactions, or days alive without life support."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death by day 90",
+          "group_a": "323/764 (42.3%)",
+          "group_b": "329/781 (42.1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.89–1.13",
+          "p_value": "0.96",
+          "note": "Adjusted absolute diff 0.1% (95% CI -4.7 to 4.9)"
+        },
+        {
+          "outcome": "Serious adverse events (composite, ICU)",
+          "group_a": "221/751 (29.4%)",
+          "group_b": "238/772 (30.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.77–1.15",
+          "p_value": "0.46",
+          "note": "Multiplicity-adjusted 99% CI; absolute diff -1.7% (99% CI -7.7 to 4.3)"
+        },
+        {
+          "outcome": "Serious adverse reactions (after IV crystalloids)",
+          "group_a": "31/755 (4.1%)",
+          "group_b": "32/776 (4.1%)",
+          "effect_measure": "RR",
+          "effect_value": "0.99",
+          "ci_95": "0.50–1.93",
+          "p_value": "0.95",
+          "note": "Multiplicity-adjusted 99% CI; absolute diff -0.1% (99% CI -2.8 to 2.6)"
+        },
+        {
+          "outcome": "Days alive without life support (to day 90)",
+          "group_a": "Median 77 (IQR 1–87)",
+          "group_b": "Median 77 (IQR 1–87)",
+          "effect_measure": "MD",
+          "effect_value": "0",
+          "ci_95": "-11 to 11",
+          "p_value": "0.84",
+          "note": "Analysed with site-adjusted van Elteren test"
+        },
+        {
+          "outcome": "Days alive and out of hospital (to day 90)",
+          "group_a": "Median 21 (IQR 0–69)",
+          "group_b": "Median 33 (IQR 0–70)",
+          "effect_measure": "MD",
+          "effect_value": "-12",
+          "ci_95": "-30 to 6",
+          "p_value": "0.84",
+          "note": "Interpreted cautiously due to skew and competing risks"
+        },
+        {
+          "outcome": "Cumulative ICU IV fluids ex. meds/nutrition (mL)",
+          "group_a": "Median 1798",
+          "group_b": "Median 3811",
+          "effect_measure": "MD",
+          "effect_value": "-2013",
+          "ci_95": "NR",
+          "p_value": "NR",
+          "note": "Protocol fluid separation achieved"
+        },
+        {
+          "outcome": "Cumulative all fluids in ICU (mL)",
+          "group_a": "Median 10433",
+          "group_b": "Median 12747",
+          "effect_measure": "MD",
+          "effect_value": "-2314",
+          "ci_95": "NR",
+          "p_value": "NR",
+          "note": "Includes non-protocolised fluids (nutrition/meds)"
+        },
+        {
+          "outcome": "Relative fluid balance in ICU (mL)",
+          "group_a": "Median 1645",
+          "group_b": "Median 2368",
+          "effect_measure": "MD",
+          "effect_value": "-723",
+          "ci_95": "NR",
+          "p_value": "NR",
+          "note": "Net fluid balance separation"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Respiratory support within prior 24h",
+          "group_a": "52.6% baseline",
+          "group_b": "48.6% baseline",
+          "effect_measure": "RR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_interaction": "0.03"
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events occurred in 221/751 (29.4%) restrictive vs 238/772 (30.8%) standard patients (adjusted RR 0.95; 99% CI 0.77 to 1.15; P=0.46).",
+      "Serious adverse reactions after IV crystalloids occurred in 31/755 (4.1%) restrictive vs 32/776 (4.1%) standard patients (adjusted RR 0.99; 99% CI 0.50 to 1.93; P=0.95)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central allocation stratified by site and haematologic malignancy/metastatic cancer; allocation concealment maintained."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design carries risk of co-intervention/clinician behavior bias; primary mortality outcome remains objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "90-day vital status obtained in 1545/1554 (99.4%); missing primary outcome in 6 restrictive and 3 standard patients; non-imputed ITT analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "ICU protocol discontinued in 80/770 (10.4%) restrictive vs 51/784 (6.5%) standard; protocol violations in 162/755 (21.5%) vs 101/776 (13.0%)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: median age 70 vs 70 years; SOFA 10 vs 10; lactate 3.8 vs 3.9 mmol/L; prior 24h IV fluids 3200 vs 3000 mL."
+        }
+      ],
+      "verdict": "Internal validity is strong due to centralized randomization and 99.4% follow-up, though open-label delivery and moderate protocol violations may have diluted effect separation toward the null."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ICU septic shock patients with severe illness (SOFA ~10) and high 90-day mortality (~42%), typical of contemporary European ICUs."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "High-resource ICUs with access to close hemodynamic monitoring and early vasopressors; intervention applied after initial >=1 L fluid resuscitation within 12h of shock."
+        }
+      ],
+      "verdict": "Good applicability to adult ICU septic shock in high-resource settings post-initial resuscitation, but limited for early ED fluid management or low-resource settings."
+    },
+    "strengths": [
+      "Large, international, pragmatic multicenter RCT",
+      "Objective primary endpoint with 99.4% complete follow-up",
+      "Prespecified protocol with rigorous multiplicity control for secondary outcomes",
+      "Clinically meaningful separation achieved in resuscitation IV fluid administration (-2013 mL)"
+    ],
+    "limitations": [
+      "Open-label design creating potential for co-intervention bias",
+      "Protocol violations (21.5% vs 13.0%) and discontinuations (10.4% vs 6.5%) diluted protocol separation",
+      "Tested fluid restriction after initial resuscitation, not early ED resuscitation",
+      "Modest net fluid balance separation (-723 mL) relative to total fluid exposure"
+    ],
+    "critical_appraisal": {
+      "summary": "CLASSIC provides high-quality evidence that restricting IV fluids after initial septic shock resuscitation is safe but does not improve 90-day survival.",
+      "strengths": [
+        "Near-complete follow-up and robust randomization",
+        "Clear fluid separation achieved safely without adverse events"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Protocol non-adherence rate diluted potential intervention effect"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In adult ICU patients with septic shock who had received initial resuscitation, restrictive IV fluid therapy did not result in fewer deaths at 90 days than standard IV fluid therapy.",
+    "clinical_bottom_line": {
+      "verdict": "Fluid restriction after initial septic shock resuscitation is safe and reduces fluid balance, but does not decrease 90-day mortality.",
+      "applies_to": "Adult ICU patients with septic shock who have received initial fluid resuscitation (>=1 L).",
+      "does_not_mean": "Does not mean fluid restriction should replace initial fluid resuscitation in early emergency department care.",
+      "implementation_caveats": [
+        "Requires explicit hypoperfusion triggers (lactate >=4, MAP <50, mottling >2, oliguria <0.1 mL/kg/h for >=2h) to guide fluid administration safely."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Achieved fluid separation",
+        "notes": "While resuscitation fluids differed by 2013 mL, total cumulative ICU fluids differed by 2314 mL and net balance by only 723 mL, raising questions on whether biological separation was sufficient to alter mortality."
+      },
+      {
+        "topic": "Power calculation assumptions",
+        "notes": "The prespecified 7% absolute mortality reduction target may have been overly optimistic, potentially missing smaller but clinically meaningful differences."
+      },
+      {
+        "topic": "Subgroup heterogeneity signal",
+        "notes": "Respiratory support subgroup heterogeneity (P=0.03) did not meet the prespecified multiplicity threshold (P<0.01) and should be viewed as hypothesis-generating."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CLOVERS",
+        "relation": "Evaluated restrictive vs liberal fluid strategy in early ED sepsis-induced hypotension, also demonstrating no mortality difference."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal fluid volume and timing during early pre-ICU emergency department resuscitation.",
+      "Effectiveness of fluid restriction in specific clinical phenotypes or low-resource settings lacking advanced monitoring."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1554",
+        "90-day mortality identical: 42.3% vs 42.1% (RR 1.00)",
+        "Resuscitation IV fluid difference: -2013 mL (1798 mL vs 3811 mL)"
+      ],
+      "one_line_takeaway": "Restricting IV fluids in ICU septic shock after initial resuscitation is safe and cuts fluid volume, but does not improve 90-day mortality."
+    }
+  },
+  "_source_id": "CLASSIC",
+  "_source_system": "Sepsis"
+}

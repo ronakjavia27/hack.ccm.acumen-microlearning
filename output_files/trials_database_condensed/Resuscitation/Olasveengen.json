@@ -1,0 +1,310 @@
+{
+  "id": "Olasveengen",
+  "trial_name": "Olasveengen — Intravenous Drug Administration During Out-of-Hospital Cardiac Arrest (2009)",
+  "specialty": "Resuscitation",
+  "subtopic": "Advanced Life Support — Pharmacotherapy during OHCA",
+  "year": 2009,
+  "journal": "JAMA",
+  "citation": "Olasveengen TM, Sunde K, Brunborg C, Thowsen J, Steen PA, Wik L. Intravenous drug administration during out-of-hospital cardiac arrest: a randomized trial. JAMA. 2009;302(20):2222-2229",
+  "doi": "https://doi.org/10.1001/jama.2009.1729",
+  "registration": "",
+  "trial_type": "Prospective, parallel-group, randomised, open-label, prehospital trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 851,
+  "result_category": "Neutral",
+  "one_liner": "In out-of-hospital cardiac arrest, IV drug administration increased ROSC and hospital admission but did not improve survival to discharge or favourable neurological outcome.",
+  "pico": {
+    "population": "Adults (>18 years) with non-traumatic out-of-hospital cardiac arrest in whom resuscitation was attempted",
+    "intervention": "Advanced life support with IV access and IV drug administration (epinephrine, atropine, amiodarone) during resuscitation",
+    "comparison": "Advanced life support without IV access or IV drug administration during resuscitation (IV access ≥5 min after ROSC)",
+    "outcome": "Survival to hospital discharge (primary)"
+  },
+  "keywords": [
+    "cardiac arrest",
+    "epinephrine",
+    "advanced life support",
+    "prehospital",
+    "randomised trial"
+  ],
+  "related_trials": [
+    "PARAMEDIC2",
+    "Jacobs et al. (2011) adrenaline RCT"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Advanced life support algorithms routinely included IV access and vasopressor/antiarrhythmic administration during CPR, despite limited randomised evidence for improved survival to hospital discharge. Physiological benefits (raising coronary/cerebral perfusion pressure) were counterbalanced by concerns about impaired microcirculation, increased myocardial oxygen demand, arrhythmogenesis, and potential worsening of neurological injury, as well as competition with high-quality CPR.",
+      "knowledge_gap": "Uncertainty whether IV drug administration, even if improving ROSC, translates into meaningful survival to discharge with good neurological outcome.",
+      "hypothesis": "The trial was powered assuming a doubling of survival in the no-IV group (projected 14% vs 7%), i.e., that withholding IV drug administration would improve survival. This reflected a hypothesis that routine IV drug use during resuscitation might be harmful or that the net benefit over a no-drug strategy was unlikely."
+    },
+    "methods": {
+      "design": "Prospective, parallel-group, randomised (sealed envelopes), open-label, prehospital trial",
+      "setting": "Single metropolitan EMS system, Oslo, Norway; paramedics and physician-staffed emergency units, transport to 2 university hospitals",
+      "population": {
+        "inclusion": [
+          "Adults (>18 years) with non-traumatic OHCA in whom resuscitation was attempted"
+        ],
+        "exclusion": [
+          "Traumatic aetiology",
+          "Arrest witnessed by ambulance crew",
+          "Resuscitation initiated/interrupted by a physician outside the resuscitation team",
+          "Suspected asthma/anaphylactic shock (added 2006)"
+        ]
+      },
+      "intervention": "ALS with IV access and IV drug administration (epinephrine, atropine, amiodarone) as per contemporaneous international guidelines; actual drugs: epinephrine 79%, atropine 46%, amiodarone 17%.",
+      "comparison": "ALS without access to IV drug administration during resuscitation; IV access deferred to ≥5 min after ROSC.",
+      "blinding": "Open-label (procedural intervention); primary outcome (survival) objective, but intermediate outcomes (hospital/ICU admission) susceptible to performance bias.",
+      "sample_size_power": "900 patients planned (91.4% power, α=0.05) to detect a doubling of survival (7%→14%); primary analysis included 851 after post-randomisation exclusions.",
+      "primary_outcome": "Survival to hospital discharge",
+      "secondary_outcomes": [
+        "ROSC",
+        "Hospital admission",
+        "ICU admission",
+        "Favourable neurological outcome (CPC 1–2) at discharge",
+        "1-year survival"
+      ],
+      "follow_up": "To hospital discharge and 1 year (national population registry)"
+    },
+    "results": {
+      "headline_bullets": [
+        "IV drug administration increased ROSC (40% vs 25%), hospital admission (43% vs 29%), and ICU admission (30% vs 20%).",
+        "No significant difference in survival to discharge (10.5% vs 9.2%; OR 1.16, P=0.61) or favourable neurological outcome (CPC 1–2: 9.8% vs 8.1%).",
+        "CPR quality metrics (hands-off ratio, compression rate) were similar, but mean CPR duration was longer in the IV group (22 vs 18 min).",
+        "In non-shockable arrests, ROSC strongly favoured the IV group (29% vs 11%), without a corresponding survival-to-discharge benefit."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Survival to hospital discharge (primary)",
+          "group_a": "44/418 (10.5%)",
+          "group_b": "40/433 (9.2%)",
+          "effect_measure": "OR",
+          "effect_value": "1.16",
+          "ci_95": "0.74–1.82",
+          "p_value": "0.61",
+          "note": "Adjusted OR 1.15 (95% CI 0.69–1.91), P=0.59"
+        },
+        {
+          "outcome": "Favourable neurological outcome (CPC 1–2) at discharge",
+          "group_a": "41/418 (9.8%)",
+          "group_b": "35/433 (8.1%)",
+          "effect_measure": "OR",
+          "effect_value": "1.24",
+          "ci_95": "0.77–1.98",
+          "p_value": "0.45",
+          "note": ""
+        },
+        {
+          "outcome": "Any ROSC during resuscitation",
+          "group_a": "165/418 (40%)",
+          "group_b": "107/433 (25%)",
+          "effect_measure": "OR",
+          "effect_value": "1.99",
+          "ci_95": "1.48–2.67",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Admitted to hospital",
+          "group_a": "178/418 (43%)",
+          "group_b": "126/433 (29%)",
+          "effect_measure": "OR",
+          "effect_value": "1.81",
+          "ci_95": "1.36–2.40",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Admitted to hospital with ROSC",
+          "group_a": "133/418 (32%)",
+          "group_b": "89/433 (21%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": "OR not reported"
+        },
+        {
+          "outcome": "Admitted to ICU",
+          "group_a": "125/418 (30%)",
+          "group_b": "88/433 (20%)",
+          "effect_measure": "OR",
+          "effect_value": "1.67",
+          "ci_95": "1.22–2.29",
+          "p_value": "0.002",
+          "note": "Among ICU admissions, therapeutic hypothermia: 90/125 (72%) vs 62/88 (70%)"
+        },
+        {
+          "outcome": "Alive at 1 year",
+          "group_a": "41/418 (10%)",
+          "group_b": "36/433 (8%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.53",
+          "note": "Follow‐up via national population registry"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Arrest rhythm: non-shockable (asystole/PEA)",
+          "group_a": "80/274 (29%) ROSC",
+          "group_b": "32/291 (11%) ROSC",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_interaction": "",
+          "note": "Markedly higher ROSC in IV group, but no corresponding survival-to-discharge benefit (numbers not reported)."
+        }
+      ]
+    },
+    "safety": [],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Allocation by sealed envelopes opened after confirming arrest. 95 eligible patients were not randomised (forgot to randomise, envelopes unavailable, perceived futility), introducing potential pre-randomisation selection bias."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label. Primary outcome (survival to discharge) is objective; hospital/ICU admission and duration of resuscitation could be influenced by clinician behaviour."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Modified ITT: 65/916 (7.1%) randomised patients excluded post-randomisation (24 IV, 41 no-IV) due to later identification of exclusion criteria. Imbalance could bias results (more exclusions from no-IV group)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "IV group: 74/442 did not have IV access established before end of resuscitation (42 ROSC before IV, 12 inability, 12 futility, 8 no explanation). No-IV group: 45/474 received IV drugs (27 rearrest after ROSC, 13 hospital admission, 5 breach). Per-protocol separation: 82% vs 10% exposure to IV drugs."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Groups broadly comparable for age, sex, aetiology, bystander CPR. Borderline differences in initial rhythm: asystole 53% vs 46% (P=0.06), PEA 15% vs 20% (P=0.06), which could influence absolute event rates."
+        },
+        {
+          "domain": "CPR quality and resuscitation intensity",
+          "notes": "CPR quality metrics (hands-off ratio, compression rate) similar. However, mean CPR duration longer in IV group (22 min, 95% CI 20–23) vs no-IV group (18 min, 95% CI 17–19; P<0.001), raising concern that differential persistence (‘resuscitation dose') inflated short-term outcomes."
+        },
+        {
+          "domain": "Outcome assessment",
+          "notes": "Survival endpoints objective; neurological outcome measured by CPC at discharge is a standard but relatively global assessment."
+        },
+        {
+          "domain": "Statistical rigour",
+          "notes": "Power calculation assumed a very large effect (doubling survival 7% →14%); study underpowered for small but potentially clinically meaningful differences. Observed absolute survival difference was small (1.3%)."
+        }
+      ],
+      "verdict": "Internal validity is moderate: randomisation and objective primary outcomes support causal inference, but unblinded delivery, post-randomisation exclusions, pre-randomisation non-enrolment, protocol non-adherence, and longer CPR in the IV arm introduce potential performance bias and dilute group separation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult non-traumatic OHCA in a single Scandinavian metropolitan EMS system, high bystander CPR rate (62–63%), physician-staffed emergency units – may not reflect paramedic-only or resource-limited settings."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Bundled pharmacotherapy (epinephrine, atropine, amiodarone). Atropine now removed from asystole/PEA algorithms; modern IO access not used. The fundamental lesson about ROSC–survival dissociation however remains relevant."
+        }
+      ],
+      "verdict": "Generalisability is moderate: reflects real-world prehospital practice but anchored in a specific EMS configuration and drug bundle that partially restricts transferability to current protocols."
+    },
+    "strengths": [
+      "Randomised evaluation of a difficult-to-study prehospital intervention.",
+      "Prospective capture of CPR-quality metrics, aiding interpretation of mechanistic confounding.",
+      "Patient-centred outcomes (survival to discharge, neurological status) plus 1-year follow-up.",
+      "Clear protocol distinction (82% vs 10% exposure to IV drugs in analysed cohort)."
+    ],
+    "limitations": [
+      "Unblinded design; hospital/ICU admission endpoints susceptible to behavioural/system influence.",
+      "Modified ITT with post-randomisation exclusions (65/916) and pre-randomisation non-enrolment (95 eligible).",
+      "Protocol non-adherence: 74/442 in IV arm never had IV access, 10% crossover in no-IV arm.",
+      "Bundled pharmacotherapy (epinephrine, atropine, amiodarone) limits attribution to any single drug.",
+      "Power assumptions optimistic (doubling survival); limited power for modest effects or neurological outcomes.",
+      "Resuscitation intensity different (longer CPR in IV group), confounding ROSC/hospital admission gains."
+    ],
+    "critical_appraisal": {
+      "summary": "Olasveengen provides robust evidence that IV drug administration improves short-term resuscitation metrics (ROSC, hospital admission) but fails to translate into improved survival to discharge or favourable neurological outcome, thereby challenging the clinical validity of ROSC as a surrogate endpoint in cardiac arrest trials.",
+      "strengths": [
+        "Randomised design in a real-world prehospital setting with prospective CPR-quality monitoring.",
+        "Patient-centred primary outcome and 1-year follow-up.",
+        "Clear separation of the intervention variable."
+      ],
+      "weaknesses": [
+        "Open-label with potential for differential resuscitation intensity and admission decisions.",
+        "Modified ITT and post-randomisation exclusions.",
+        "Bundle of drugs tested, limiting drug-specific inference.",
+        "Underpowered for small survival differences."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "IV drug administration during out-of-hospital cardiac arrest increased ROSC, hospital admission, and ICU admission but did not improve survival to hospital discharge or favourable neurological outcome, indicating that improvements in short-term endpoints do not guarantee meaningful survival benefit.",
+    "clinical_bottom_line": {
+      "verdict": "Routine IV drug administration (as a bundle including epinephrine, atropine, amiodarone) during OHCA does not improve survival to discharge or neurological outcome, despite increasing ROSC and admission rates. This trial supports a cautious approach to equating ROSC with benefit.",
+      "applies_to": "Adult non-traumatic OHCA patients in EMS systems with similar ALS protocols (physician-staffed, high bystander CPR).",
+      "does_not_mean": "That epinephrine and other drugs are completely ineffective; rather, improvements in intermediate endpoints should not be assumed to translate into patient-centred outcomes.",
+      "implementation_caveats": [
+        "The tested strategy included atropine and amiodarone; modern protocols using vasopressors alone may yield a different risk–benefit profile.",
+        "Unblinded design may have biased admission and ICU decisions, potentially inflating short-term outcomes without survival gain.",
+        "The trial was underpowered for small but clinically meaningful absolute survival differences."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Surrogate endpoints vs patient-centred outcomes",
+        "notes": "The trial demonstrated a clear dissociation between improved ROSC/hospital admission and unchanged survival to discharge, reinforcing that short-term resuscitation metrics do not guarantee meaningful survival."
+      },
+      {
+        "topic": "Bundled pharmacotherapy limits inference",
+        "notes": "The ‘IV drug administration’ strategy included multiple agents (including atropine, later removed from many adult algorithms), making it difficult to attribute benefit or harm to epinephrine alone and complicating translation to modern practice."
+      },
+      {
+        "topic": "Open-label delivery and resuscitation intensity",
+        "notes": "Longer CPR duration (22 vs 18 min) and possibly more defibrillation in the IV group suggest that part of the short-term signal may reflect differential persistence rather than pharmacologic effects alone."
+      },
+      {
+        "topic": "Later RCTs refine the signal",
+        "notes": "PARAMEDIC2 (epinephrine vs placebo) showed increased survival but with more severe neurological impairment among survivors, echoing the pattern of improved short-term outcomes with limited neurological benefit."
+      },
+      {
+        "topic": "Prior placebo-controlled adrenaline RCT consistency",
+        "notes": "A smaller double-blind RCT of adrenaline vs placebo had reported improved ROSC without definitive survival benefit, broadly consistent with Olasveengen’s ROSC–survival dissociation."
+      },
+      {
+        "topic": "Synthesis evidence",
+        "notes": "Systematic reviews and network meta-analyses support that vasopressors improve ROSC and short-term outcomes, with uncertain or small effects on survival with good neurological outcome, aligning with the trial’s findings."
+      },
+      {
+        "topic": "Guideline position",
+        "notes": "International consensus recommendations continue to support vasopressor use in adult cardiac arrest while acknowledging trade-offs in neurological outcome certainty, reflecting the broader evidence pattern to which Olasveengen contributed."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "PARAMEDIC2",
+        "relation": "Larger placebo-controlled RCT showing that epinephrine increased survival to discharge but with more severe neurological impairment, consistent with Olasveengen’s dissociation between ROSC and favourable neurological outcome."
+      },
+      {
+        "trial": "Jacobs et al. (2011) – adrenaline vs placebo RCT",
+        "relation": "Small double-blind trial demonstrating improved ROSC without a definitive survival benefit, providing early evidence of the ROSC–survival gap seen in Olasveengen."
+      }
+    ],
+    "unresolved_questions": [
+      "Whether a specific subgroup (e.g., non‑shockable rhythm) benefits from epinephrine alone, without atropine/amiodarone.",
+      "Optimal timing and dose of vasopressors in OHCA.",
+      "Effect of epinephrine on long‑term neurological function beyond CPC at discharge.",
+      "Impact of intraosseous access on outcomes compared with IV access.",
+      "How modern post‑arrest care (targeted temperature management, early PCI) modifies the effect of vasopressors."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n = 851 analysed",
+        "ROSC: 40% vs 25% (P<0.001)",
+        "Primary outcome (survival to discharge): 10.5% vs 9.2% (OR 1.16, P=0.61)",
+        "ICU admission: 30% vs 20%",
+        "Mean CPR duration: 22 vs 18 min"
+      ],
+      "one_line_takeaway": "IV drugs in OHCA increased ROSC but not survival, a landmark demonstration that short‑term endpoints can mislead cardiac arrest pharmacotherapy research."
+    }
+  },
+  "_source_id": "Olasveengen",
+  "_source_system": "Resuscitation"
+}

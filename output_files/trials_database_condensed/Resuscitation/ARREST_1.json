@@ -1,0 +1,291 @@
+{
+  "id": "ARREST",
+  "trial_name": "ARREST — Expedited Transfer to a Cardiac Arrest Centre for Non-ST-elevation OHCA (2023)",
+  "specialty": "Resuscitation",
+  "subtopic": "Post-Cardiac Arrest Care & Destination",
+  "year": 2023,
+  "journal": "The Lancet",
+  "citation": "Patterson T, Perkins GD, Perkins A, Clayton T, Evans R, Dodd M, et al.; ARREST trial collaborators. Expedited transfer to a cardiac arrest centre for non-ST-elevation out-of-hospital cardiac arrest (ARREST): a UK prospective, multicentre, parallel, randomised clinical trial. Lancet. 2023;402:1329-1337",
+  "doi": "https://doi.org/10.1016/S0140-6736(23)01351-X",
+  "registration": "",
+  "trial_type": "RCT — multicenter, open-label, pragmatic, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 862,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with ROSC after non-ST-elevation OHCA, expedited transport to a cardiac arrest centre did not reduce 30-day mortality or improve functional outcomes compared with standard destination to the nearest hospital.",
+  "pico": {
+    "population": "Adults (≥18 years) with ROSC after non-ST-elevation OHCA in an urban EMS system.",
+    "intervention": "Expedited transport to a designated cardiac arrest centre (CAC) with immediate access to coronary angiography/PCI and specialist post-arrest ICU care.",
+    "comparison": "Standard destination to the nearest acute hospital, with subsequent inter-hospital transfer or angiography at clinician discretion.",
+    "outcome": "30-day all-cause mortality (primary); 3-month mortality, modified Rankin Scale at discharge and 3 months, EQ-5D-5L at 3 months."
+  },
+  "keywords": [
+    "out-of-hospital cardiac arrest",
+    "cardiac arrest centre",
+    "destination triage",
+    "coronary angiography",
+    "prehospital randomisation",
+    "EMS"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Pre-existing evidence for CAC destination policies was largely observational, with substantial risk of confounding; international guidelines called for a pragmatic randomised evaluation for non-ST-elevation OHCA.",
+      "knowledge_gap": "Whether a system-level destination strategy of bypassing the nearest hospital to a CAC improves survival and functional outcomes after ROSC without ST-elevation.",
+      "hypothesis": "Expedited CAC transport would reduce 30-day all-cause mortality compared with standard destination to the nearest hospital."
+    },
+    "methods": {
+      "design": "Prospective, pragmatic, multicentre, parallel-group, open-label, randomised superiority trial with prehospital randomisation.",
+      "setting": "London Ambulance Service; one designated CAC and multiple standard acute hospitals.",
+      "population": {
+        "inclusion": [
+          "Adults ≥18 years",
+          "OHCA with ROSC",
+          "No ST-elevation on initial paramedic-obtained ECG"
+        ],
+        "exclusion": [
+          "ST-elevation meeting STEMI criteria",
+          "DNACPR or refusal of participation",
+          "Suspected pregnancy",
+          "Presumed non-cardiac aetiology (trauma, drowning, suicide, drug overdose)",
+          "Presumed significant trauma/injury"
+        ]
+      },
+      "intervention": "Expedited transport to a designated CAC with immediate coronary angiography/PCI availability and specialist post-arrest ICU management (organ support, temperature management, structured prognostication).",
+      "comparison": "Standard destination to the nearest acute hospital, with angiography/transfer at clinician discretion; inter-hospital transfer to the CAC permitted.",
+      "blinding": "Open-label (destination and subsequent care unblinded); primary outcome (all-cause mortality) is objective; secondary outcomes (mRS, EQ-5D-5L) susceptible to bias.",
+      "sample_size_power": "Planned 860 patients to detect a 10% absolute reduction in 30-day mortality (from 60% to 50%) with 80% power at α = 0.05, allowing ~10% loss to follow-up.",
+      "primary_outcome": "30-day all-cause mortality",
+      "secondary_outcomes": [
+        "3-month all-cause mortality",
+        "Modified Rankin Scale at discharge",
+        "Modified Rankin Scale at 3 months",
+        "EQ-5D-5L index at 3 months",
+        "Serious adverse events"
+      ],
+      "follow_up": "30 days (primary); 3 months (secondary)."
+    },
+    "results": {
+      "headline_bullets": [
+        "30-day all-cause mortality was 63% in both groups (RR for survival 1.00, 95% CI 0.90–1.11, p=0.96).",
+        "No improvement in neurological outcome (mRS) at discharge or 3 months, and EQ-5D-5L quality-of-life scores were similar.",
+        "CAC strategy increased coronary angiography (56% vs 37%) and shortened time to angiography (median 2.3 h vs 5.7 h), without translating into survival or functional benefit.",
+        "Contamination: 17.2% of standard-care patients were transferred to the CAC after initial arrival."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "30-day all-cause mortality",
+          "group_a": "258/411 (63%)",
+          "group_b": "258/412 (63%)",
+          "effect_measure": "RR (survival)",
+          "effect_value": "1.00",
+          "ci_95": "0.90 to 1.11",
+          "p_value": "0.96",
+          "note": "Adjusted OR 1.09, 95% CI 0.73–1.63; absolute risk difference –0.2% (95% CI –6.6 to 6.3)"
+        },
+        {
+          "outcome": "3-month all-cause mortality",
+          "group_a": "267/411 (65%)",
+          "group_b": "263/411 (64%)",
+          "effect_measure": "RR (survival)",
+          "effect_value": "1.02",
+          "ci_95": "0.92 to 1.12",
+          "p_value": "Not reported",
+          "note": "Risk difference 1.0% (95% CI –5.6 to 7.5)"
+        },
+        {
+          "outcome": "mRS at discharge (ordinal, mRS 0–6)",
+          "group_a": "n=413",
+          "group_b": "n=402",
+          "effect_measure": "OR",
+          "effect_value": "1.00",
+          "ci_95": "0.76 to 1.32",
+          "p_value": "0.99",
+          "note": "Includes death as mRS 6"
+        },
+        {
+          "outcome": "mRS at 3 months (ordinal, mRS 0–6)",
+          "group_a": "n=399",
+          "group_b": "n=390",
+          "effect_measure": "OR",
+          "effect_value": "0.98",
+          "ci_95": "0.73 to 1.31",
+          "p_value": "0.87",
+          "note": "Includes death as mRS 6"
+        },
+        {
+          "outcome": "Favourable mRS (0–3) at discharge",
+          "group_a": "130/413 (32%)",
+          "group_b": "130/402 (32%)",
+          "effect_measure": "RR",
+          "effect_value": "1.01",
+          "ci_95": "0.92 to 1.11",
+          "p_value": "0.79",
+          "note": "Risk difference 0.9% (95% CI –5.5 to 7.3)"
+        },
+        {
+          "outcome": "Favourable mRS (0–3) at 3 months",
+          "group_a": "119/399 (30%)",
+          "group_b": "119/390 (31%)",
+          "effect_measure": "RR",
+          "effect_value": "1.01",
+          "ci_95": "0.92 to 1.11",
+          "p_value": "0.83",
+          "note": "Risk difference 0.7% (95% CI –5.7 to 7.1)"
+        },
+        {
+          "outcome": "EQ-5D-5L index at 3 months (mean [SD])",
+          "group_a": "0.68 (0.32); n=97",
+          "group_b": "0.72 (0.25); n=92",
+          "effect_measure": "Mean difference",
+          "effect_value": "–0.04",
+          "ci_95": "–0.12 to 0.05",
+          "p_value": "Not reported",
+          "note": "Subset of survivors only"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Age <57 years",
+          "group_a": "55/134 (41.0%)",
+          "group_b": "90/156 (57.7%)",
+          "effect_measure": "RR (mortality)",
+          "effect_value": "0.71",
+          "ci_95": "0.55 to 0.93",
+          "p_interaction": "0.003"
+        },
+        {
+          "subgroup": "Age 57–71 years",
+          "group_a": "103/153 (67.3%)",
+          "group_b": "70/133 (52.6%)",
+          "effect_measure": "RR (mortality)",
+          "effect_value": "1.28",
+          "ci_95": "1.01 to 1.61",
+          "p_interaction": "0.003"
+        },
+        {
+          "subgroup": "Age ≥72 years",
+          "group_a": "99/121 (81.8%)",
+          "group_b": "93/121 (77.3%)",
+          "effect_measure": "RR (mortality)",
+          "effect_value": "1.06",
+          "ci_95": "0.92 to 1.23",
+          "p_interaction": "0.003"
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events unrelated to OHCA management: 8/414 (2%) in CAC arm vs 3/413 (1%) in standard arm; none related to OHCA management in either group."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Prehospital randomisation after ROSC and ECG confirmation of no ST-elevation; permuted blocks 4 and 6; allocation concealment up to point of randomisation."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label; differential co-interventions (angiography thresholds, ICU practices, WLST) possible; primary outcome objective (mortality)."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "862 randomised; 20 (CAC) and 19 (standard) withdrew or had unknown 30-day status, excluded from primary analysis; secondary outcomes had more missing data (mRS denominators smaller, EQ-5D-5L available in ~100 per arm)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "19 protocol deviations; 3 crossovers between destination strategies; contamination: 71/413 (17.2%) standard-care patients transferred to CAC, reducing separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: age 63.8 vs 63.2 years, male 69% vs 67%, witnessed arrest 80% in both, bystander CPR 80% in both, median collapse-to-ROSC 25 min in both."
+        }
+      ],
+      "verdict": "Moderate internal validity: randomised design and objective primary outcome support causal inference, but open-label care, post-randomisation exclusions, and significant contamination likely attenuated the destination effect."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Urban EMS system, high rates of witnessed arrest and bystander CPR (~80%); may not apply to systems with lower baseline chain-of-survival performance. Excluded STEMI. ~19% had final non-cardiac diagnosis."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires EMS triage capability and accessible CAC with 24/7 cath-lab and specialist ICU. In systems with longer transport times, the observed 7‑minute delay could be larger and potentially harmful. Incremental benefit likely smaller where standard hospitals already provide timely angiography and strong post‑arrest ICU care."
+        }
+      ],
+      "verdict": "Moderate generalisability: most applicable to mature urban EMS networks with mixed hospital capabilities and feasible bypass times; uncertain in rural/remote systems or those with markedly different baseline post-arrest infrastructure."
+    },
+    "strengths": [
+      "Pragmatic prehospital randomisation directly tested a system-level destination strategy with high policy relevance.",
+      "Large sample size (n=862) with objective, clinically meaningful primary endpoint (30-day all-cause mortality).",
+      "Real-world design captured transport time trade-offs, inter-hospital transfers, and variable hospital capabilities."
+    ],
+    "limitations": [
+      "Open-label design with potential for differential co-interventions and withdrawal-of-life-sustaining therapy decisions.",
+      "Post-randomisation withdrawals and unknown 30-day status reduced primary analysis set; secondary outcomes had substantial missing data (especially EQ-5D-5L).",
+      "Contamination reduced between-group contrast: 17.2% of standard-care patients transferred to CAC, and 37% received angiography.",
+      "Prehospital screening misclassified ~18–21% with non-cardiac final diagnosis, potentially diluting any coronary-capability benefit."
+    ],
+    "critical_appraisal": {
+      "summary": "This large, pragmatic, prehospital-randomised trial provides moderate-quality evidence that routine CAC bypass for non-ST-elevation OHCA does not reduce 30-day mortality or improve functional outcomes, with an open-label design and contaminating inter-hospital transfers likely attenuating the effect.",
+      "strengths": [
+        "Pragmatic prehospital randomisation with high policy relevance",
+        "Large sample and objective primary endpoint",
+        "Real-world transport and care delivery captured"
+      ],
+      "weaknesses": [
+        "Open-label care allows performance and detection bias",
+        "Attrition and missingness weaken secondary outcome inference",
+        "Contamination reduced exposure contrast"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "ARREST demonstrated that expedited transport to a cardiac arrest centre for adults with ROSC after non-ST-elevation OHCA did not improve 30-day survival or neurological outcomes. More and faster angiography at the CAC did not translate into survival or functional benefit. These results support selective, physiology-driven triage rather than universal bypass policies, especially when standard receiving hospitals already deliver strong post-arrest ICU care and timely coronary evaluation.",
+    "clinical_bottom_line": {
+      "verdict": "Does not change practice: routine destination to a CAC for all ROSC without STEMI is not supported. Selective transfer for patients with STEMI, shock, or refractory arrhythmia remains appropriate.",
+      "applies_to": "Adults with ROSC after non-ST-elevation OHCA in urban EMS systems with existing reasonable post-arrest care.",
+      "does_not_mean": "Do not transport to a CAC for indications such as STEMI, cardiogenic shock, or refractory VT/VF.",
+      "implementation_caveats": [
+        "May still be considered in younger patients (<57 years) based on a hypothesis-generating subgroup interaction.",
+        "Transport time trade-offs (median 7 min longer) must be weighed against potential marginal benefit.",
+        "If bypass is avoided, standard hospitals should have protocols for timely coronary angiography and structured neuroprognostication."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Universal cardiac arrest centre bypass policies",
+        "notes": "ARREST's null result challenges assumptions that diverting all ROSC patients to a CAC improves survival, and re-emphasises early chain-of-survival interventions over destination."
+      },
+      {
+        "topic": "Consistency with routine angiography trials",
+        "notes": "Findings align with RCTs showing no survival benefit of immediate coronary angiography in comatose OHCA survivors without ST elevation, supporting a selective invasive strategy."
+      },
+      {
+        "topic": "Age subgroup interaction",
+        "notes": "Prespecified analysis showed a significant interaction (p=0.003): patients <57 years had lower mortality with CAC (RR 0.71, 95% CI 0.55–0.93), while those aged 57–71 had higher mortality (RR 1.28, 95% CI 1.01–1.61), and ≥72 showed no difference. This is hypothesis-generating and not adjusted for multiplicity."
+      },
+      {
+        "topic": "Impact on international guidelines",
+        "notes": "Recent guidelines now recommend selective early coronary angiography based on ECG and clinical instability, recognising uncertainty about universal CAC destination for non-ST-elevation OHCA populations."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Is there a true benefit in younger patients (<57 years) or those with shock/refractory VF?",
+      "Would CAC bypass be beneficial in systems where standard hospitals lack timely angiography or specialist neuroprognostication?",
+      "Does the transport time delay (median 7 minutes longer, potentially greater in rural settings) offset any in-hospital advantage?",
+      "What is the role of CAC for patients with presumed cardiac cause but final non-cardiac diagnosis?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=862",
+        "30-day mortality 63% vs 63% (RR for survival 1.00, 95% CI 0.90–1.11, p=0.96)",
+        "Coronary angiography rate 56% vs 37%; time to angiography 2.3 h vs 5.7 h",
+        "Contamination: 17.2% transferred to CAC from standard arm"
+      ],
+      "one_line_takeaway": "Routine cardiac arrest centre bypass for ROSC after non-ST-elevation OHCA does not improve survival or neurological outcomes."
+    }
+  },
+  "_source_id": "ARREST",
+  "_source_system": "Resuscitation"
+}

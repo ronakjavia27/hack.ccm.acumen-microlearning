@@ -1,0 +1,282 @@
+{
+  "id": "Annane",
+  "trial_name": "Annane 2002 — Low-Dose Hydrocortisone and Fludrocortisone in Septic Shock",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Adrenal Disorders",
+  "year": 2002,
+  "journal": "JAMA",
+  "citation": "Annane D, Sébille V, Charpentier C, Bollaert P-E, François B, Korach J-M, et al. Effect of treatment with low doses of hydrocortisone and fludrocortisone on mortality in patients with septic shock. JAMA. 2002;288(7):862-871.",
+  "doi": "https://doi.org/10.1001/jama.288.7.862",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, placebo-controlled, parallel-group",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 300,
+  "result_category": "Positive",
+  "one_liner": "7-day low-dose hydrocortisone plus fludrocortisone reduced 28-day mortality and accelerated vasopressor withdrawal in corticotropin nonresponders with early, severe septic shock.",
+  "pico": {
+    "population": "Adult ICU patients with early catecholamine-dependent septic shock requiring mechanical ventilation",
+    "intervention": "Hydrocortisone 50 mg IV q6h (200 mg/day) plus fludrocortisone 50 µg enterally q24h for 7 days",
+    "comparison": "Matched IV placebo q6h plus matched enteral placebo q24h for 7 days",
+    "outcome": "28-day survival distribution in corticotropin nonresponders (serum cortisol increase <= 9 µg/dL after 250 µg corticotropin)"
+  },
+  "keywords": [
+    "hydrocortisone",
+    "fludrocortisone",
+    "septic shock",
+    "relative adrenal insufficiency",
+    "corticotropin test"
+  ],
+  "related_trials": [
+    "CORTICUS",
+    "ADRENAL",
+    "APROCCHSS"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Earlier high-dose corticosteroid strategies in sepsis failed to improve survival and raised safety concerns.",
+      "knowledge_gap": "Whether physiologic stress-dose hydrocortisone and mineralocorticoid replacement (fludrocortisone) accelerate shock reversal and improve survival in septic shock patients with relative adrenal insufficiency.",
+      "hypothesis": "7-day replacement therapy with hydrocortisone plus fludrocortisone improves 28-day survival distribution in early catecholamine-dependent septic shock patients with impaired adrenal responsiveness to corticotropin."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, double-blind, placebo-controlled, parallel-group trial in 19 adult ICUs in France; enrolment April 1995 to March 1999; randomisation stratified by centre (block size 4).",
+      "setting": "19 adult ICUs in France; 100% of patients mechanically ventilated at inclusion.",
+      "population": {
+        "inclusion": [
+          "Adults in ICU with suspected or proven infection and systemic inflammatory response",
+          "Hypotension and vasopressor dependence for >= 1 hour (dopamine >= 15 µg/kg/min, or epinephrine/norepinephrine > 0.2 µg/kg/min)",
+          "Temperature > 38.3 °C or < 35.6 °C and heart rate > 90/min",
+          "Arterial lactate > 2 mmol/L (added post-protocol amendment)",
+          "Mechanical ventilation required",
+          "Randomisation within 3 hours of shock onset (amended to <= 8 hours)"
+        ],
+        "exclusion": [
+          "Corticosteroid use within prior 6 months",
+          "Etomidate administration within prior 6 hours",
+          "Recent use of ketoconazole, rifampin, phenytoin, or phenobarbital"
+        ]
+      },
+      "intervention": "Hydrocortisone 50 mg IV every 6 hours (200 mg/day) plus fludrocortisone 50 µg enterally once daily for 7 days.",
+      "comparison": "Matched IV placebo every 6 hours plus matched enteral placebo once daily for 7 days.",
+      "blinding": "Double-blind (patients, clinicians, investigators, outcome assessors) using matched IV and enteral placebos in sequentially numbered boxes.",
+      "sample_size_power": "270 patients planned to detect a 20% absolute difference in 28-day mortality in corticotropin nonresponders (assumed 95% placebo nonresponder mortality, 40% nonresponder prevalence) with 90% power and one-sided alpha 0.05. Two interim analyses planned using O'Brien-Fleming stopping boundaries.",
+      "primary_outcome": "28-day survival distribution in corticotropin nonresponders (defined by a serum cortisol increase <= 9 µg/dL 30/60 minutes after 250 µg IV tetracosactrin).",
+      "secondary_outcomes": [
+        "28-day mortality rate",
+        "ICU mortality rate",
+        "Time to vasopressor withdrawal",
+        "Steroid-attributable adverse events"
+      ],
+      "follow_up": "28 days (primary endpoint), ICU discharge, hospital discharge, and 1 year."
+    },
+    "results": {
+      "headline_bullets": [
+        "28-day survival distribution significantly improved with corticosteroids in corticotropin nonresponders (53% vs 63% mortality; HR 0.67; P=0.02).",
+        "Vasopressor withdrawal was significantly faster with steroids in nonresponders (median 7 vs 10 days; HR 1.91; P=0.001).",
+        "No mortality benefit was observed among corticotropin responders (28-day mortality 61% vs 53%; P=0.96).",
+        "Predefined steroid-attributable adverse event rates were similar between groups (21% vs 22%; P=0.89)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "28-day survival distribution (primary, corticotropin nonresponders)",
+          "group_a": "60/114 (53%); median 24 days",
+          "group_b": "73/115 (63%); median 12 days",
+          "effect_measure": "HR",
+          "effect_value": "0.67",
+          "ci_95": "0.47–0.95",
+          "p_value": "0.02",
+          "note": "Pre-specified analysis in nonresponders (cortisol rise <= 9 µg/dL)"
+        },
+        {
+          "outcome": "28-day mortality (corticotropin nonresponders)",
+          "group_a": "60/114 (53%)",
+          "group_b": "73/115 (63%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.54",
+          "ci_95": "0.31–0.97",
+          "p_value": "0.04",
+          "note": "Unadjusted RR 0.83 (95% CI 0.66–1.04; P=0.09)"
+        },
+        {
+          "outcome": "ICU mortality (corticotropin nonresponders)",
+          "group_a": "66/114 (58%)",
+          "group_b": "81/115 (70%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.50",
+          "ci_95": "0.28–0.89",
+          "p_value": "0.02",
+          "note": "Unadjusted RR 0.82 (95% CI 0.67–0.99; P=0.04)"
+        },
+        {
+          "outcome": "28-day survival distribution (all patients)",
+          "group_a": "82/150 (55%); median 19.5 days",
+          "group_b": "91/149 (61%); median 13 days",
+          "effect_measure": "HR",
+          "effect_value": "0.71",
+          "ci_95": "0.53–0.97",
+          "p_value": "0.03",
+          "note": "Total n=299 analyzed"
+        },
+        {
+          "outcome": "28-day mortality (all patients)",
+          "group_a": "82/150 (55%)",
+          "group_b": "91/149 (61%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.65",
+          "ci_95": "0.39–1.07",
+          "p_value": "0.09",
+          "note": "Unadjusted RR 0.90 (95% CI 0.74–1.10; P=0.31)"
+        },
+        {
+          "outcome": "Time to vasopressor withdrawal (corticotropin nonresponders)",
+          "group_a": "Median 7 days; 65/114 (57%)",
+          "group_b": "Median 10 days; 46/115 (40%)",
+          "effect_measure": "HR",
+          "effect_value": "1.91",
+          "ci_95": "1.29–2.84",
+          "p_value": "0.001",
+          "note": "Withdrawn by day 28"
+        },
+        {
+          "outcome": "Time to vasopressor withdrawal (all patients)",
+          "group_a": "Median 7 days; 83/150 (55%)",
+          "group_b": "Median 9 days; 64/149 (43%)",
+          "effect_measure": "HR",
+          "effect_value": "1.54",
+          "ci_95": "1.10–2.16",
+          "p_value": "0.01",
+          "note": "Responders: log-rank P=0.49 (median 3 vs 3.5 days)"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Corticotropin Responders (28-day mortality)",
+          "group_a": "22/36 (61%)",
+          "group_b": "18/34 (53%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "0.97",
+          "ci_95": "0.32–2.99",
+          "p_interaction": "0.96"
+        }
+      ]
+    },
+    "safety": [
+      "Composite steroid-attributable adverse events: 32/150 (21%) in steroid group vs 33/149 (22%) in placebo group (P=0.89)",
+      "Superinfection: 12% in steroid group vs 13% in placebo group",
+      "Gastrointestinal bleeding: 7% in steroid group vs 5% in placebo group",
+      "Psychiatric disorders: 2% in steroid group vs 5% in placebo group",
+      "Wound infection: 0/150 (0%) in steroid group vs 7/149 (5%) in placebo group (P=0.007)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomization stratified by centre with block size of 4; sequentially numbered boxes preserved allocation concealment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double-blind using indistinguishable matched IV and enteral placebos."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "300 randomized; 1 post-randomization consent withdrawal excluded; 299 analyzed ITT. 1 patient died before drug administration but was included in analysis."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Near-complete study drug adherence (150/150 steroid group, 148/149 placebo group received study drug). Open-label crossover not reported."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: SAPS II 57±18 vs 60±18; LOD score 7.8±3.1 vs 7.9±2.7; arterial lactate 4.3±3.4 vs 4.6±3.0 mmol/L; time from shock to vasopressors 3.5±2.2 vs 3.7±2.2 h; time on vasopressors before study drug 4.1±3.0 vs 4.1±2.4 h; appropriate antibiotic administration 91% vs 95% (time to appropriate antibiotics 7.1±10.4 vs 6.0±7.3 h)."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong given double-blind placebo control, central concealed allocation, objective primary endpoints, and high protocol adherence."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High severity of illness ( universal mechanical ventilation, catecholamine dependence, high mortality), representing a severe septic shock phenotype."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Excluded recent steroid and etomidate use; conducted 1995–1999 prior to modern resuscitation bundles and low tidal volume ventilation."
+        }
+      ],
+      "verdict": "External validity is moderate: findings apply to high-acuity, vasopressor-dependent septic shock, though modern practice care bundles differ from the study era."
+    },
+    "strengths": [
+      "Rigorous double-blind, randomized, placebo-controlled design",
+      "Early intervention in severe, catecholamine-dependent shock",
+      "Pre-specified biological subgroup analysis based on corticotropin response",
+      "Objective survival and hemodynamics endpoints with 1-year follow-up"
+    ],
+    "limitations": [
+      "Primary inference relies on corticotropin nonresponse subgroup, which was unexpectedly prevalent (~76–77%)",
+      "Power calculation assumed a one-sided alpha of 0.05 and a very high placebo mortality (95%)",
+      "Small responder subgroup size limits precision for that cohort",
+      "Co-interventions and open-label steroid crossovers were not fully reported"
+    ],
+    "critical_appraisal": {
+      "summary": "Landmark trial demonstrating that low-dose hydrocortisone plus fludrocortisone reduces mortality and duration of vasopressor support in corticotropin nonresponders with severe septic shock.",
+      "strengths": [
+        "Concealed central allocation and complete blinding",
+        "Clear separation in time to vasopressor withdrawal",
+        "Complete 1-year mortality follow-up"
+      ],
+      "weaknesses": [
+        "One-sided power calculation assumption",
+        "Subgroup-dependent primary outcome conclusions",
+        "Conducted prior to modern sepsis bundle standardization"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "A 7-day treatment with low doses of hydrocortisone and fludrocortisone significantly reduces the risk of death in patients with septic shock and relative adrenal insufficiency without increasing adverse events.",
+    "clinical_bottom_line": {
+      "verdict": "Low-dose corticosteroids accelerate shock reversal and improve survival in severe septic shock.",
+      "applies_to": "Adult ICU patients with early, catecholamine-dependent septic shock requiring moderate-to-high dose vasopressors.",
+      "does_not_mean": "Corticotropin stimulation testing is required before initiating corticosteroid therapy in clinical practice.",
+      "implementation_caveats": [
+        "Current guidelines recommend IV hydrocortisone 200 mg/day for septic shock refractory to vasopressors without routine ACTH testing.",
+        "The addition of enteral fludrocortisone (50 µg daily) remains common when using intermittent hydrocortisone boluses, supported by subsequent trial data (APROCCHSS)."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Corticotropin testing as a gatekeeper",
+        "notes": "Annane 2002 suggested benefit was isolated to nonresponders, but subsequent trials (e.g., CORTICUS) showed ACTH response did not reliably predict clinical benefit, leading guidelines to abandon routine ACTH testing."
+      },
+      {
+        "topic": "Hydrocortisone alone vs combination with fludrocortisone",
+        "notes": "Whether enteral fludrocortisone adds meaningful mineralocorticoid effect beyond hydrocortisone's intrinsic mineralocorticoid activity remains actively debated across trials (ADRENAL vs APROCCHSS)."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "CORTICUS",
+        "relation": "Evaluated hydrocortisone alone in septic shock; found accelerated shock reversal but no survival benefit, and corticotropin response did not predict treatment effect."
+      },
+      {
+        "trial": "ADRENAL",
+        "relation": "Evaluated continuous hydrocortisone infusion in septic shock; found faster shock resolution and shorter ICU stay, but no difference in 90-day mortality."
+      },
+      {
+        "trial": "APROCCHSS",
+        "relation": "Evaluated hydrocortisone plus fludrocortisone in severe septic shock; demonstrated improved 90-day survival and increased vasopressor-free days, validating the combination strategy."
+      }
+    ],
+    "unresolved_questions": [
+      "Does fludrocortisone provide incremental benefit over hydrocortisone alone in septic shock?",
+      "Is hydrocortisone bolus administration equivalent to continuous infusion in preventing glycemic variability?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=300 (299 analysed)",
+        "28-day nonresponder mortality: 53% vs 63% (adjusted OR 0.54, P=0.04)",
+        "Vasopressor withdrawal in nonresponders: median 7 vs 10 days (HR 1.91, P=0.001)"
+      ],
+      "one_line_takeaway": "Stress-dose hydrocortisone (200 mg/day) plus fludrocortisone (50 µg/day) for 7 days accelerates vasopressor withdrawal and reduces mortality in severe septic shock."
+    }
+  },
+  "_source_id": "Annane",
+  "_source_system": "Endocrine"
+}

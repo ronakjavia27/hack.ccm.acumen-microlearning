@@ -1,0 +1,313 @@
+{
+  "id": "Bernard",
+  "trial_name": "Bernard Trial — Induced Hypothermia After OHCA Due to VF (2002)",
+  "specialty": "Cardiac Arrest",
+  "subtopic": "Temperature Management",
+  "year": 2002,
+  "journal": "N Engl J Med",
+  "citation": "Bernard SA, Gray TW, Buist MD, Jones BM, Silvester W, Gutteridge G, Smith K. Treatment of comatose survivors of out-of-hospital cardiac arrest with induced hypothermia. N Engl J Med. 2002;346(8):557-563.",
+  "doi": "https://doi.org/10.1056/NEJMoa003289",
+  "registration": "",
+  "trial_type": "RCT — multicentre, quasi-randomised (calendar day), unblinded",
+  "evidence_level": "Moderate-quality RCT",
+  "sample_size": 77,
+  "result_category": "Mixed",
+  "one_liner": "Induced hypothermia to 33°C for 12 hours increased favourable discharge outcome in comatose survivors of VF OHCA (49% vs 26%), providing early evidence that temperature manipulation could modify neurologic outcome.",
+  "pico": {
+    "population": "Comatose adult survivors of OHCA due to VF, excluding cardiogenic shock",
+    "intervention": "Induced hypothermia to 33°C (prehospital surface cooling, then ice packs/cooling blanket) for 12 hours",
+    "comparison": "Active normothermia targeting 37°C",
+    "outcome": "Favourable outcome at hospital discharge (home or rehabilitation)"
+  },
+  "keywords": [
+    "induced hypothermia",
+    "targeted temperature management",
+    "out-of-hospital cardiac arrest",
+    "ventricular fibrillation",
+    "comatose"
+  ],
+  "related_trials": [
+    "HACA",
+    "TTM",
+    "HYPERION",
+    "TTM2"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Neurologic injury after ROSC is a dominant cause of death and disability after OHCA. Prior neuroprotective strategies had not improved clinically meaningful outcomes.",
+      "knowledge_gap": "Feasibility of rapid cooling in emergency systems and safety concerns (arrhythmias, infection, coagulopathy, electrolyte disturbance) were uncertain.",
+      "hypothesis": "In comatose adult survivors of OHCA due to VF, early induced mild hypothermia (target 33°C) compared with active normothermia improves survival to hospital discharge with good neurologic function."
+    },
+    "methods": {
+      "design": "Prospective, multicentre, investigator-initiated, prehospital-to-ICU controlled trial. Allocation by calendar day (odd vs even day of admission).",
+      "setting": "4 hospitals in Melbourne, Australia; enrolled 1996–1999.",
+      "population": {
+        "inclusion": [
+          "Adults with OHCA of presumed cardiac cause",
+          "VF as initial rhythm at ambulance arrival",
+          "ROSC",
+          "Persistent coma (not responding to verbal commands) after ROSC"
+        ],
+        "exclusion": [
+          "Age <18 years (men) or <50 years (women)",
+          "Cardiogenic shock (SBP <90 mm Hg despite epinephrine infusion)",
+          "Suspected cause of coma other than cardiac arrest (drug overdose, head trauma, cerebrovascular accident)",
+          "Lack of an ICU bed at a participating institution"
+        ]
+      },
+      "intervention": "Induced hypothermia: paramedic-initiated surface cooling (clothes removed, water spray and fanning), then ED/ICU surface cooling (ice packs + cooling blanket) targeting bladder temperature 33°C within 2 hours of ROSC. Maintenance: target 33°C for 12 hours after hospital arrival. Sedation and neuromuscular blockade (midazolam and vecuronium) to prevent shivering. Active rewarming initiated 18 hours after arrival over ~6 hours using warmed air blanket.",
+      "comparison": "Active normothermia: standard ICU treatment targeting 37°C. Sedation and neuromuscular blockade. Passive rewarming if mild spontaneous hypothermia on admission.",
+      "blinding": "Unblinded; clinicians were aware of temperature assignment.",
+      "sample_size_power": "62 patients required to detect an increase in 'good outcome' from 14% to 50% with 80% power at 5% significance level.",
+      "primary_outcome": "Favourable outcome at hospital discharge (discharge to home or rehabilitation)",
+      "secondary_outcomes": [
+        "All-cause in-hospital mortality"
+      ],
+      "follow_up": "In-hospital follow-up to hospital discharge (no post-discharge follow-up reported)."
+    },
+    "results": {
+      "headline_bullets": [
+        "Favourable discharge outcome was higher with induced hypothermia (49% vs 26%; OR 2.65; 95% CI 1.02 to 6.88).",
+        "All-cause in-hospital mortality was numerically lower with hypothermia (51% vs 68%, P=0.145).",
+        "Large, sustained temperature separation was achieved between groups.",
+        "An interim analysis was performed after 62 eligible patients; enrolment continued to 84 eligible patients."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Favourable outcome at discharge (home or rehabilitation) — unadjusted",
+          "group_a": "21/43 (49%)",
+          "group_b": "9/34 (26%)",
+          "effect_measure": "OR",
+          "effect_value": "2.65",
+          "ci_95": "1.02 to 6.88",
+          "p_value": "0.046",
+          "note": "Absolute difference 23 percentage points (95% CI 13 to 43)"
+        },
+        {
+          "outcome": "Favourable outcome at discharge (home or rehabilitation) — adjusted for age, time to ROSC, bystander CPR",
+          "group_a": "21/43 (49%)",
+          "group_b": "9/34 (26%)",
+          "effect_measure": "Adjusted OR",
+          "effect_value": "5.25",
+          "ci_95": "1.47 to 18.76",
+          "p_value": "0.011",
+          "note": ""
+        },
+        {
+          "outcome": "All-cause in-hospital mortality",
+          "group_a": "22/43 (51%)",
+          "group_b": "23/34 (68%)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.145",
+          "note": "Death adjudicated as cerebral ischaemia (19 vs 17), acute MI (2 vs 4), recurrent cardiac arrest (1 vs 2)"
+        },
+        {
+          "outcome": "Core temperature at ICU admission (°C)",
+          "group_a": "33.3 ± 0.98",
+          "group_b": "36.0 ± 0.76",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Core temperature at 6 h (°C)",
+          "group_a": "32.7 ± 1.19",
+          "group_b": "37.1 ± 0.75",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Core temperature at 12 h (°C)",
+          "group_a": "33.1 ± 0.95",
+          "group_b": "37.2 ± 0.93",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "<0.001",
+          "note": ""
+        },
+        {
+          "outcome": "Cardiac index at ED admission (L/min/m²), PA catheter subset",
+          "group_a": "2.0 (1.2–4.4)",
+          "group_b": "2.6 (1.4–5.5)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.01",
+          "note": "Values reported in 32 hypothermia and 22 normothermia patients; medians (range)"
+        },
+        {
+          "outcome": "Systemic vascular resistance at ED admission (dyn·s·cm⁻⁵), PA catheter subset",
+          "group_a": "2213 (599–4645)",
+          "group_b": "1356 (481–2545)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.02",
+          "note": "Medians (range)"
+        },
+        {
+          "outcome": "Serum glucose at ICU admission (mmol/L)",
+          "group_a": "16.2 (7.4–26.8)",
+          "group_b": "10.5 (6.6–17.9)",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.002",
+          "note": "Medians (range); differences diminished by 18 h (10.5 vs 10.7; P=0.97) and 24 h (8.0 vs 7.5; P=0.92)"
+        },
+        {
+          "outcome": "Platelet count at 24 h (×10³/mm³)",
+          "group_a": "190 ± 63.3",
+          "group_b": "199 ± 54.2",
+          "effect_measure": "",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.82",
+          "note": ""
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No quantified excess of major complications (arrhythmias, infection, coagulopathy, electrolyte disturbance) was reported between groups in this small trial.",
+      "Hypothermia was associated with expected physiological effects: lower cardiac index, higher systemic vascular resistance, and early hyperglycaemia.",
+      "No signal for thrombocytopenia at 24 h was detected (platelet count 190 ± 63.3 vs 199 ± 54.2 ×10³/mm³; P=0.82)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Allocation was by odd vs even day of admission (not concealed), increasing risk of selection bias. Baseline imbalances in bystander CPR (49% vs 71%; P=0.05) and sex distribution (58% vs 79% male; P=0.05) were present."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Unblinded. Temperature assignment could influence co-interventions, neuroprognostication, and withdrawal-of-care decisions. Withdrawal of life-sustaining therapy required agreement of two physicians not directly involved in patient care, but could still be influenced by awareness of assignment."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "84 eligible patients; 7 excluded from reported analysis (5 transfers to non-participating centres; 2 refusal of consent), leaving 77 analysed. 72/77 were treated according to correct assignment. Protocol deviations: 4/43 in hypothermia arm did not undergo cooling; 1/34 in normothermia arm became moderately hypothermic during emergency angioplasty."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Cooling was initiated prehospital and target 33°C achieved within 2 hours of ROSC. Co-interventions (e.g., reperfusion strategies) were not protocolised; treatment rates were not reported."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Time from collapse to ROSC was similar (26.5 ± 12.9 min vs 25.0 ± 8.9 min; P=0.54). Bystander CPR and sex distribution differed significantly."
+        }
+      ],
+      "verdict": "Moderate internal validity: the intervention achieved clear physiological separation and the endpoint is clinically meaningful, but allocation by calendar day, lack of blinding, exclusions from analysis, and protocol deviations introduce bias risk and widen uncertainty around the effect estimate."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Restricted to OHCA with VF and presumed cardiac cause. Patients in cardiogenic shock were excluded. Women under 50 years were excluded (pregnancy possibility). Patients excluded if an ICU bed was unavailable. Early neurologic exam data from correspondence suggested more severe coma in the hypothermia arm (no motor response to pain 39/43 [91%] vs 26/34 [76%])."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Cooling method is broadly feasible but requires structured sedation, shivering control, monitoring, and controlled rewarming. Contemporary post-arrest care (coronary angiography pathways, sedation strategies, neuroprognostication and withdrawal practices) has evolved since 1996–1999. Generalisation to non-shockable rhythms and in-hospital cardiac arrest is uncertain."
+        }
+      ],
+      "verdict": "Generalisability is moderate for comatose survivors of VF OHCA managed in similarly resourced EMS/ICU systems, but limited for other arrest rhythms, patients with shock, and healthcare systems with different post-arrest pathways."
+    },
+    "strengths": [
+      "Pragmatic and early (prehospital) initiation of cooling with simple, scalable technology.",
+      "Clear separation of core temperature between groups at clinically relevant timepoints.",
+      "Functional endpoint at discharge prioritising neurologically intact survival.",
+      "Multicentre delivery with protocolised cooling and rewarming."
+    ],
+    "limitations": [
+      "Allocation by calendar day without concealment; unblinded design.",
+      "Small sample size and wide confidence intervals; powered for a very large effect.",
+      "Exclusions from analysis and protocol deviations (4 not cooled; 1 crossover).",
+      "Outcome potentially influenced by discharge practices and end-of-life decisions; no standardised long-term neurologic follow-up.",
+      "Highly selected population (VF only, shock excluded, younger women excluded)."
+    ],
+    "critical_appraisal": {
+      "summary": "A moderate-quality, quasi-randomised trial demonstrating proof-of-concept that induced hypothermia can improve neurologically favourable survival after VF OHCA, with wide confidence intervals and bias risks that subsequent, larger, blinded trials have helped clarify.",
+      "strengths": [
+        "Early, pragmatic intervention deployment across prehospital and ICU settings.",
+        "Clear target temperature separation achieved rapidly and sustained for the treatment period.",
+        "Clinically meaningful, patient-centred primary outcome (discharge to home or rehabilitation)."
+      ],
+      "weaknesses": [
+        "Quasi-random, unblinded design with baseline imbalances and risk of selection and performance bias.",
+        "Small sample with post-randomisation exclusions, making the unadjusted estimate fragile.",
+        "No long-term functional or quality-of-life data, and no standardised neuroprognostication protocol."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Induced hypothermia increased favourable discharge outcome (49% vs 26%) and provided early controlled clinical evidence that temperature manipulation could modify neurologic outcome after VF OHCA.",
+    "clinical_bottom_line": {
+      "verdict": "This early trial showed a signal for benefit from induced hypothermia, but later, larger trials (TTM, TTM2) did not confirm a universal advantage of 33°C over controlled normothermia. Modern practice emphasises active temperature control and fever prevention.",
+      "applies_to": "Historically, comatose survivors of VF OHCA. Contemporary guidance applies active temperature control broadly, but routine mandatory hypothermia to 33°C is no longer standard.",
+      "does_not_mean": "All post-arrest patients require mandatory deep hypothermia; the modern focus is on fever avoidance.",
+      "implementation_caveats": [
+        "Active temperature control requires structured sedation, shivering management, and monitoring.",
+        "Fever avoidance remains a core component of post-arrest care.",
+        "Local protocols should reflect current guideline emphasis on active temperature control rather than mandatory hypothermia."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite endpoint construction",
+        "notes": "Not applicable."
+      },
+      {
+        "topic": "Methodological design and bias",
+        "notes": "Allocation by calendar day and absence of blinding increase susceptibility to bias. Correspondence questioned whether baseline coma severity was adequately reported; published data suggested more severe coma in the hypothermia arm."
+      },
+      {
+        "topic": "Safety concerns",
+        "notes": "Editorial and correspondence emphasised clinically relevant risks (electrolyte disturbance, diuresis/fluid shifts, infection, arrhythmias, coagulopathy) requiring protocolised monitoring and replacement strategies."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "HACA",
+        "relation": "Published contemporaneously, also reported improved neurologic outcome with 32–34°C hypothermia, supporting early guideline endorsement."
+      },
+      {
+        "trial": "TTM",
+        "relation": "Compared 33°C vs 36°C and found no difference in mortality or neurologic outcome, raising the possibility that avoiding fever (rather than deeper hypothermia) accounted for benefit in earlier trials."
+      },
+      {
+        "trial": "HYPERION",
+        "relation": "Randomised non-shockable rhythms to 33°C vs 37°C; reported higher favourable neurologic outcome with 33°C, but the absolute effect was modest and vulnerability to bias and fragility remained a focus of debate."
+      },
+      {
+        "trial": "TTM2",
+        "relation": "Compared 33°C vs active normothermia with fever prevention; found no benefit of hypothermia and higher arrhythmia risk, accelerating a shift toward fever prevention as the central therapeutic target."
+      },
+      {
+        "trial": "Network meta-analyses and systematic reviews",
+        "relation": "Evidence synthesis incorporating later trials shows no consistent survival or neurologically favourable advantage of routine 32–34°C hypothermia compared with controlled normothermia/fever prevention."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal target temperature for specific subgroups (e.g., longer downtime, higher comorbidity burden).",
+      "Best method and speed of cooling and rewarming in the modern era of invasive cardiac devices and advanced critical care co-interventions.",
+      "Long-term cognitive and quality-of-life outcomes beyond crude disposition at hospital discharge."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=77 analysed",
+        "Favourable outcome at discharge: 49% vs 26% (OR 2.65; 95% CI 1.02–6.88)",
+        "All-cause in-hospital mortality: 51% vs 68% (P=0.145)",
+        "Target temperature: 33°C maintained for 12 hours"
+      ],
+      "one_line_takeaway": "This landmark trial provided the first controlled evidence that induced hypothermia could improve neurologic outcome after VF OHCA, but later, more rigorous trials shifted practice toward fever prevention rather than routine deep hypothermia."
+    }
+  },
+  "_source_id": "Bernard",
+  "_source_system": "Resuscitation"
+}

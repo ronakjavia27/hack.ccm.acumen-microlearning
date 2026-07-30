@@ -270,6 +270,8 @@ def process_trial(source_path, source_rel, model_flag):
     try:
         if model_flag == "together":
             result = call_deepseek_together(system_prompt, user_content)
+        elif model_flag == "gemini":
+            result = call_gemini(system_prompt, user_content)
         else:
             result = call_openrouter(system_prompt, user_content)
 

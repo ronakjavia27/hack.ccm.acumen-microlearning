@@ -1,0 +1,280 @@
+{
+  "id": "Prague_OOHCA_Study",
+  "trial_name": "Prague OOHCA Study — Intra-arrest Transport, ECPR, and Immediate Invasive Assessment in Refractory Out-of-Hospital Cardiac Arrest",
+  "specialty": "Cardiac Arrest & Resuscitation",
+  "subtopic": "Extracorporeal Organ Support",
+  "year": 2022,
+  "journal": "JAMA",
+  "citation": "Belohlavek J, Smalcova J, Rob D, Franek O, Smid O, Pokorna M, et al; for the Prague OHCA Study Group. Effect of intra-arrest transport, extracorporeal cardiopulmonary resuscitation, and immediate invasive assessment and treatment on functional neurologic outcome in refractory out-of-hospital cardiac arrest: a randomized clinical trial. JAMA. 2022;327(8):737-747.",
+  "doi": "https://doi.org/10.1001/jama.2022.1025",
+  "registration": "",
+  "trial_type": "RCT — single-center, open-label, parallel-group, with blinded outcome assessment",
+  "evidence_level": "Moderate-quality RCT (single-center, early terminated for futility)",
+  "sample_size": 256,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In refractory OOHCA, a bundle of intra-arrest transport, ECPR, and immediate invasive care increased 180-day favorable neurological survival by 9.5% but did not reach statistical significance; 30-day neurological recovery was significantly higher.",
+  "pico": {
+    "population": "Adults 18–65 years with witnessed, refractory OOHCA of presumed cardiac cause after ≥5 min of advanced life support without sustained ROSC, in a physician-staffed EMS system",
+    "intervention": "Prehospital mechanical CPR with immediate intra-arrest transport to a dedicated cardiac arrest center; in‑hospital ECPR for persistent arrest/refractory shock, immediate coronary angiography/PCI, and ICU post‑resuscitation care with TTM",
+    "comparison": "Standard on‑scene advanced life support, transport after sustained ROSC, and post‑resuscitation care (TTM and invasive evaluation after ROSC)",
+    "outcome": "Survival with favorable neurological outcome (CPC 1–2) at 180 days"
+  },
+  "keywords": [
+    "extracorporeal cardiopulmonary resuscitation",
+    "refractory cardiac arrest",
+    "out-of-hospital cardiac arrest",
+    "ECPR",
+    "mechanical CPR",
+    "hyperinvasive approach"
+  ],
+  "related_trials": [
+    "ARREST",
+    "INCEPTION"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Refractory OOHCA with ongoing ALS and no sustained ROSC carries extremely poor survival and neurological outcomes. ECPR offers physiological support during arrest to enable diagnosis and treatment of reversible causes, but prior evidence was from observational cohorts with confounding, and randomized data remain scarce, mostly in selected shockable-rhythm populations.",
+      "knowledge_gap": "No prior RCT tested a bundled system-level ‘hyperinvasive’ strategy (intra‑arrest transport + ECPR + immediate invasive assessment) against a standard on‑scene resuscitation strategy for refractory OOHCA.",
+      "hypothesis": "A hyperinvasive strategy improves 180‑day survival with favorable neurological outcome (CPC 1–2) compared with a conventional on‑scene strategy in patients with refractory OOHCA of presumed cardiac cause."
+    },
+    "methods": {
+      "design": "Randomized, single-center, parallel-group, investigator‑initiated trial with prehospital enrolment/randomization; open‑label delivery; blinded neurological outcome assessment; sequential monitoring with a DSMB",
+      "setting": "Prague metropolitan area: physician‑staffed EMS with direct access to a dedicated cardiac arrest center (catheterization lab + ICU)",
+      "population": {
+        "inclusion": [
+          "Age 18–65 years",
+          "Witnessed OOHCA of presumed cardiac cause",
+          "Ongoing resuscitation with no sustained ROSC after ≥5 minutes of advanced life support",
+          "Unconscious",
+          "ECPR team and ICU bed capacity available"
+        ],
+        "exclusion": [
+          "Suspected non‑cardiac cause (trauma, drowning, intoxication)",
+          "Unwitnessed collapse",
+          "Pregnancy",
+          "Early sustained ROSC",
+          "Severe comorbidity/advanced chronic organ failure",
+          "Pre‑arrest poor neurological status (CPC ≥3)",
+          "Known DNR/anticipated futility"
+        ]
+      },
+      "intervention": "Prehospital: mechanical CPR (LUCAS) with immediate intra‑arrest transport to the cardiac arrest center, avoiding prolonged on‑scene resuscitation. In‑hospital: immediate invasive assessment in the catheterization lab (coronary angiography ± PCI) and consideration of veno‑arterial ECPR for persistent arrest or refractory shock, followed by ICU care with TTM per contemporary practice.",
+      "comparison": "Conventional advanced life support delivered predominantly on scene; transport to hospital after sustained ROSC; subsequent post‑resuscitation care (TTM and invasive evaluation when clinically indicated after ROSC).",
+      "blinding": "Unblinded intervention delivery (logistically unavoidable); neurological outcome (CPC) assessed by a neurologist blinded to treatment allocation.",
+      "sample_size_power": "Planned 285 patients to detect a 15% absolute increase in favorable neurological survival (from 10% to 25%) with 90% power and two‑sided α = 0.05; sequential monitoring with DSMB stopping rules.",
+      "primary_outcome": "Survival with favorable neurological outcome (CPC 1–2) at 180 days",
+      "secondary_outcomes": [
+        "Neurological recovery within 30 days (CPC 1–2 at any time within 30 days)",
+        "Cardiac recovery within 30 days (no pharmacological/mechanical support ≥24 hours)",
+        "Survival to 180 days (any CPC)"
+      ],
+      "follow_up": "180 days (primary); 30 days (secondary); last follow‑up March 30, 2021"
+    },
+    "results": {
+      "headline_bullets": [
+        "Trial stopped early after 256 patients analyzed (futility boundary met); planned 285 patients.",
+        "Primary endpoint favored invasive strategy (31.5% vs 22.0%) but not statistically significant (OR 1.63, 95% CI 0.93–2.85, P=0.09).",
+        "30‑day neurological recovery significantly higher with invasive strategy (30.6% vs 18.2%, OR 1.99, P=0.02).",
+        "Large care‑pathway separation: hospital arrival 99% vs 66%, ECLS implanted 66% vs 8%, but major bleeding higher (31% vs 15%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Primary: 180‑day survival with CPC 1–2",
+          "group_a": "39/124 (31.5%)",
+          "group_b": "29/132 (22.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.63",
+          "ci_95": "0.93 to 2.85",
+          "p_value": "0.09",
+          "note": "Absolute difference 9.5% (95% CI −1.3 to 20.1)"
+        },
+        {
+          "outcome": "Neurological recovery within 30 days (CPC 1–2 at any time)",
+          "group_a": "38/124 (30.6%)",
+          "group_b": "24/132 (18.2%)",
+          "effect_measure": "OR",
+          "effect_value": "1.99",
+          "ci_95": "1.11 to 3.57",
+          "p_value": "0.02",
+          "note": "Absolute difference 12.4% (95% CI 1.9 to 22.7)"
+        },
+        {
+          "outcome": "Cardiac recovery within 30 days (no support ≥24 h)",
+          "group_a": "54/124 (43.5%)",
+          "group_b": "45/132 (34.1%)",
+          "effect_measure": "OR",
+          "effect_value": "1.49",
+          "ci_95": "0.91 to 2.47",
+          "p_value": "0.12",
+          "note": "Absolute difference 9.4% (95% CI −2.5 to 21.0)"
+        },
+        {
+          "outcome": "Survival to 180 days (any CPC) – post hoc",
+          "group_a": "39/124 (31.5%)",
+          "group_b": "31/132 (23.5%)",
+          "effect_measure": "log-rank test",
+          "effect_value": "",
+          "ci_95": "",
+          "p_value": "0.014",
+          "note": "Kaplan‑Meier analysis; HR not reported"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Major bleeding (TIMI major) more frequent in the invasive group: 36/116 (31%) vs 10/69 (15%) among patients with bleeding assessment available. TIMI major criteria included intracranial haemorrhage, fatal bleeding, or haemoglobin decrease ≥5 g/dL."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Web‑based 1:1 randomisation, concealed allocation, stratified by sex and age (≤45 vs >45), block size 8 (not disclosed to investigators)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open‑label treatment delivery; neurological outcome assessed by blinded neurologist."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "264 randomised; 8 post‑randomisation exclusions (7 consent not obtained, 1 after DSMB stop). Primary analysis complete‑case in 256 patients; crossover (20 patients) and ECPR in standard group (10 patients) may dilute effect."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Large treatment‑separation: ECLS 66% vs 8%, hospital arrival 99% vs 66%, TTM 95% vs 70%. Crossover accepted in 20 patients (11 standard→invasive, 9 invasive→standard)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well‑balanced: median time collapse‑randomisation 24 vs 26 min, bystander CPR 99% vs 98%, initial VF 58% vs 64%."
+        }
+      ],
+      "verdict": "Internal validity is moderate: randomization, concealed allocation, and blinded outcome assessment are robust, but open‑label delivery, post‑randomisation exclusions, crossovers, and early stopping reduce precision and may dilute true effects."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Highly selected: witnessed, presumed cardiac cause, age 18–65, very high bystander CPR (98–99%), single metropolitan physician‑staffed EMS system with a mature cardiac arrest center."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Requires rapid intra‑arrest transport, immediate cath‑lab access, and experienced ECPR team; generalisability limited in rural, paramedic‑only, or resource‑limited settings where similar timelines cannot be achieved."
+        }
+      ],
+      "verdict": "Generalisability is limited‑to‑moderate: findings are most transferable to comparable urban, organised ECPR‑capable cardiac arrest center systems."
+    },
+    "strengths": [
+      "Randomised evaluation of a time‑critical system‑of‑care intervention during active resuscitation (high pragmatic relevance).",
+      "Clinically meaningful primary endpoint at 180 days with blinded neurological assessment.",
+      "Detailed reporting of process measures (transport, ECLS, invasive diagnostics) enabling appraisal of treatment separation.",
+      "Prespecified sequential monitoring with DSMB oversight."
+    ],
+    "limitations": [
+      "Single‑center design in a highly organised EMS/cardiac arrest center network (system‑specific generalisability).",
+      "Early stopping reduced achieved sample size and precision of the primary effect estimate.",
+      "Open‑label delivery with crossovers and protocol deviations in a time‑critical context.",
+      "Bundled intervention prevents attribution of benefit/harm to any single component (transport vs ECPR vs invasive assessment vs co‑interventions)."
+    ],
+    "critical_appraisal": {
+      "summary": "A methodologically sound but single‑center RCT with early termination that leaves the primary outcome inconclusive; signal consistently favors the invasive bundle, supported by significant improvement in 30‑day neurologic recovery, but bleeding trade‑offs and dilution from crossovers temper confidence.",
+      "strengths": [
+        "Robust randomisation, concealment, and blinded endpoint adjudication.",
+        "High internal separation in achieved intervention vs control processes.",
+        "Long‑term functional outcome as primary endpoint."
+      ],
+      "weaknesses": [
+        "Reduced sample/power due to early stopping, yielding imprecise primary estimate.",
+        "Open‑label delivery with accepted crossovers.",
+        "Post‑randomisation exclusions and lost‑to‑consent challenges.",
+        "Bundle design hinders component attribution."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Among patients with refractory out‑of‑hospital cardiac arrest, a bundled hyperinvasive strategy (intra‑arrest transport, ECPR, immediate invasive assessment/treatment) did not significantly improve 180‑day survival with favorable neurologic outcome, but significantly improved 30‑day neurologic recovery.",
+    "clinical_bottom_line": {
+      "verdict": "The hyperinvasive bundle did not reach statistical significance for the primary outcome, but the direction and magnitude of effect (9.5% absolute increase in good outcome) combined with significant early neurological recovery support considering an ECPR‑enabled system for highly selected refractory OOHCA patients when feasible and timely.",
+      "applies_to": "Metropolitan regions with physician‑staffed EMS, dedicated cardiac arrest centers, and established ECPR teams; patients aged 18–65 with witnessed, presumed cardiac cause OOHCA refractory to ≥5 min ALS.",
+      "does_not_mean": "ECPR should be applied indiscriminately or without a comprehensive system that includes mechanical CPR, rapid transport, and immediate invasive diagnostics; it does not guarantee long‑term good outcome.",
+      "implementation_caveats": [
+        "Requires meticulous system coordination (EMS dispatch, transport logistics, cath‑lab availability).",
+        "Major bleeding is significantly higher; rigorous cannulation technique and anticoagulation protocols are critical.",
+        "The intervention is a bundle; maximizing benefit may depend on all components rather than ECPR alone.",
+        "Evidence remains limited in non‑shockable rhythms and prolonged low‑flow times beyond those in this trial."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Early stopping vs effect direction",
+        "notes": "The trial stopped for futility despite a point estimate favoring the invasive strategy; the wide confidence interval leaves persistent uncertainty about a clinically meaningful benefit."
+      },
+      {
+        "topic": "Post‑randomisation exclusions and consent dynamics",
+        "notes": "Excluding patients after randomisation due to delayed consent is unusual in emergency research; it challenges strict intention‑to‑treat inference."
+      },
+      {
+        "topic": "Protocol deviations and crossovers",
+        "notes": "Crossovers (including ECPR in standard arm) and deviations (intra‑arrest transport in standard arm without crossover approval) may have diluted the between‑group difference."
+      },
+      {
+        "topic": "Bundled intervention attribution",
+        "notes": "Because the bundle combined transport, ECPR, and immediate invasive assessment (plus differential mechanical CPR and intranasal cooling), it is impossible to determine which component drove observed effects."
+      },
+      {
+        "topic": "Correspondence focus",
+        "notes": "Follow‑up correspondence questioned enrolment fraction, baseline process differences, and interpretation of outcomes; authors clarified resuscitation timelines, selection logic, and crossover outcomes."
+      },
+      {
+        "topic": "Subsequent RCT evidence (INCEPTION trial)",
+        "notes": "The multicentre INCEPTION trial did not demonstrate a significant improvement in favorable neurological survival with early ECPR vs conventional resuscitation in refractory OOHCA."
+      },
+      {
+        "topic": "Pooled patient‑level evidence",
+        "notes": "A pooled individual patient data analysis of ARREST and Prague OHCA concluded that an ECPR‑facilitated strategy improved 180‑day survival and neurological outcomes compared with conventional CPR, with benefit emerging predominantly in the hospital phase."
+      },
+      {
+        "topic": "Long‑term follow‑up",
+        "notes": "Long‑term survival in the invasive arm was higher (34/123 [27.6%] vs 26/132 [19.7%]; log‑rank P=0.01) with similar severe neurological disability rates among survivors (CPC 3: 1/34 vs 1/26)."
+      },
+      {
+        "topic": "Meta‑analytic uncertainty",
+        "notes": "Updated meta‑analysis with trial sequential methods highlights persistent imprecision and sensitivity to trial inclusion in estimating ECPR benefit across arrest settings."
+      },
+      {
+        "topic": "Guideline position",
+        "notes": "Contemporary guidelines remain cautious and selective, supporting consideration of ECPR only within organised systems capable of rapid delivery and appropriate patient selection."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "ARREST",
+        "relation": "Single‑center pilot RCT that suggested benefit of an ECPR‑based strategy in refractory VF/VT OOHCA; pooled with Prague OHCA, it supported improved 180‑day survival with favorable neurologic outcome."
+      },
+      {
+        "trial": "INCEPTION",
+        "relation": "Multicenter RCT that found no significant difference in survival with favorable neurologic outcome with early ECPR vs conventional resuscitation in refractory OOHCA, highlighting heterogeneity across settings and patient selection."
+      },
+      {
+        "trial": "Meta‑analysis (various)",
+        "relation": "Multiple meta‑analyses, including one with trial sequential analysis, note clinical signal but persistent imprecision, and emphasise that effect estimates are sensitive to which trials are included."
+      }
+    ],
+    "unresolved_questions": [
+      "Which component(s) of the hyperinvasive bundle (transport, ECPR, invasive assessment) drive benefit?",
+      "What is the optimal timing and selection criteria for ECPR initiation (e.g., low‑flow time, rhythm, age cut‑offs)?",
+      "How do results translate to non‑shockable rhythms and extended low‑flow times?",
+      "Can the observed increase in major bleeding be mitigated without losing efficacy?",
+      "What is the cost‑effectiveness of implementing a regional hyperinvasive system?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=256 analyzed (planned 285, stopped early)",
+        "180‑day favorable neurological survival: 31.5% vs 22.0% (OR 1.63, 95% CI 0.93–2.85, P=0.09)",
+        "30‑day neurological recovery: 30.6% vs 18.2% (OR 1.99, P=0.02)",
+        "ECLS implanted: 66% vs 8%",
+        "Major bleeding: 31% vs 15%"
+      ],
+      "one_line_takeaway": "In refractory OOHCA, an ECPR‑enabled hyperinvasive bundle improves early neurologic recovery but fails to prove conclusive long‑term survival benefit; implementation requires an integrated system and careful bleeding risk management."
+    }
+  },
+  "_source_id": "Prague_OOHCA_Study",
+  "_source_system": "Resuscitation"
+}

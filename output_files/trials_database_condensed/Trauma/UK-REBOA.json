@@ -1,0 +1,291 @@
+{
+  "id": "UK-REBOA",
+  "trial_name": "UK-REBOA — Resuscitative Endovascular Balloon Occlusion of the Aorta in Trauma (2023)",
+  "specialty": "Trauma",
+  "subtopic": "Hemorrhage",
+  "year": 2023,
+  "journal": "JAMA",
+  "citation": "Jansen JO, Hudson J, Cochran C, et al; UK-REBOA Study Group. Emergency department resuscitative endovascular balloon occlusion of the aorta in trauma patients with exsanguinating hemorrhage: the UK-REBOA randomized clinical trial. JAMA. 2023;330(19):1862-1871",
+  "doi": "https://doi.org/10.1001/jama.2023.20850",
+  "registration": "",
+  "trial_type": "RCT — pragmatic, multicenter, open-label, Bayesian, group-sequential, registry-enabled, superiority",
+  "evidence_level": "Moderate-quality RCT (stopped early for harm)",
+  "sample_size": 90,
+  "result_category": "Negative/Neutral",
+  "one_liner": "An emergency department strategy incorporating REBOA for exsanguinating torso hemorrhage did not reduce 90-day mortality and significantly increased early mortality compared with standard care alone.",
+  "pico": {
+    "population": "Adult trauma patients (age >=16) with confirmed or suspected life-threatening torso hemorrhage judged amenable to adjunctive REBOA (zone I or III).",
+    "intervention": "ED treatment strategy including REBOA plus standard major trauma center care.",
+    "comparison": "Standard major trauma center care alone (including surgical/endovascular control or open aortic occlusion if indicated).",
+    "outcome": "90-day all-cause mortality."
+  },
+  "keywords": [
+    "REBOA",
+    "resuscitative endovascular balloon occlusion of the aorta",
+    "exsanguinating hemorrhage",
+    "non-compressible torso hemorrhage",
+    "trauma resuscitation"
+  ],
+  "related_trials": [
+    "EAST 2025 Guideline"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Hemorrhage is a leading cause of preventable early death after major trauma, with non-compressible torso hemorrhage being particularly lethal due to requiring operative or endovascular intervention.",
+      "knowledge_gap": "REBOA rapidly diffused into clinical practice despite conflicting observational evidence and substantial training or organizational demands, lacking randomized clinical trial evidence regarding its effectiveness and safety.",
+      "hypothesis": "An emergency department strategy including REBOA, in addition to standard care, reduces all-cause mortality compared with standard care alone in trauma patients with exsanguinating torso hemorrhage."
+    },
+    "methods": {
+      "design": "Pragmatic, multicenter (16 UK major trauma centers), open-label, Bayesian, group-sequential, registry-enabled randomized clinical trial with 1:1 allocation.",
+      "setting": "16 UK major trauma centers; emergency department enrollment with research without prior consent and deferred consent; conducted October 2017 to March 2022.",
+      "population": {
+        "inclusion": [
+          "Age >=16 years",
+          "Confirmed or suspected life-threatening torso hemorrhage judged amenable to adjunctive REBOA (zone I or III)"
+        ],
+        "exclusion": [
+          "Known or suspected pregnancy",
+          "Age <=15 years",
+          "Injuries deemed unsurvivable on clinical grounds"
+        ]
+      },
+      "intervention": "Strategy including REBOA plus standard major trauma center care (device choice not mandated; zone I or III at clinician discretion; partial REBOA permitted; delivered by trained clinicians with site implementation package).",
+      "comparison": "Standard major trauma center care alone (including intubation/ventilation as required, balanced blood product resuscitation, rapid surgical/endovascular hemorrhage control; open aortic occlusion by thoracotomy/laparotomy permitted if clinically indicated).",
+      "blinding": "Unblinded procedural strategy (blinding not feasible).",
+      "sample_size_power": "Planned n=120 (feasibility-constrained); Bayesian group-sequential design with interim analyses after 40 and 80 randomized participants and a prespecified stopping rule for harm/futility.",
+      "primary_outcome": "All-cause mortality at 90 days analyzed by intention-to-treat using Bayesian logistic regression with odds ratios (OR) and 95% credible intervals (CrI).",
+      "secondary_outcomes": [
+        "Mortality at 3 hours, 6 hours, 24 hours, in-hospital, and 6 months",
+        "Definitive hemorrhage control procedure rate and time to procedure",
+        "ICU-free days at 90 days",
+        "Hospital-free days at 90 days",
+        "Red blood cell and plasma transfusion requirement within 24 hours",
+        "Overall complications and serious adverse device events"
+      ],
+      "follow_up": "Primary endpoint at 90 days; key secondary endpoints at 3 hours, 6 hours, 24 hours, in-hospital, and 6 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "Stopped early after second interim analysis (80 participants) due to meeting prespecified stopping rule for harm; final n=90 randomized (46 REBOA, 44 standard care; 89 analyzed at 90 days).",
+        "90-day mortality was higher with REBOA strategy (54% vs 42%, OR 1.58, 95% CrI 0.72-3.52; posterior probability OR>1 was 86.9%).",
+        "Increased mortality with REBOA was statistically prominent at early timepoints: 3-hour mortality (24% vs 5%, OR 4.25) and 6-hour mortality (28% vs 9%, OR 3.14).",
+        "Only 19/46 (41%) in the REBOA strategy group underwent successful balloon inflation, with median time from ED arrival to inflation of 32 minutes."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at 90 days (primary)",
+          "group_a": "25/46 (54%)",
+          "group_b": "18/43 (42%)",
+          "effect_measure": "OR",
+          "effect_value": "1.58",
+          "ci_95": "0.72–3.52",
+          "p_value": "N/A",
+          "note": "Posterior probability OR>1: 86.9%; n=89 analyzed due to 1 consent withdrawal"
+        },
+        {
+          "outcome": "Death within 24 hours",
+          "group_a": "17/46 (37%)",
+          "group_b": "10/44 (23%)",
+          "effect_measure": "OR",
+          "effect_value": "1.85",
+          "ci_95": "0.79–4.46",
+          "p_value": "N/A",
+          "note": "Posterior probability OR>1: 91.8%"
+        },
+        {
+          "outcome": "Death within 6 hours",
+          "group_a": "13/46 (28%)",
+          "group_b": "4/44 (9%)",
+          "effect_measure": "OR",
+          "effect_value": "3.14",
+          "ci_95": "1.13–9.76",
+          "p_value": "N/A",
+          "note": "Posterior probability OR>1: 98.6%"
+        },
+        {
+          "outcome": "Death within 3 hours",
+          "group_a": "11/46 (24%)",
+          "group_b": "2/44 (5%)",
+          "effect_measure": "OR",
+          "effect_value": "4.25",
+          "ci_95": "1.33–15.99",
+          "p_value": "N/A",
+          "note": "Posterior probability OR>1: 99.3%"
+        },
+        {
+          "outcome": "Definitive hemorrhage control procedure",
+          "group_a": "14/46 (30%)",
+          "group_b": "19/44 (43%)",
+          "effect_measure": "OR",
+          "effect_value": "0.60",
+          "ci_95": "0.26–1.37",
+          "p_value": "N/A",
+          "note": "Median time to procedure: 83 min (IQR 56–156) vs 64 min (IQR 34–83)"
+        },
+        {
+          "outcome": "ICU-free days at 90 days",
+          "group_a": "Mean 35 (SD 40)",
+          "group_b": "Mean 40 (SD 37)",
+          "effect_measure": "MD",
+          "effect_value": "-4.79",
+          "ci_95": "-20.75–11.31",
+          "p_value": "N/A",
+          "note": "Deaths assigned 0 ICU-free days"
+        },
+        {
+          "outcome": "Hospital-free days at 90 days",
+          "group_a": "Mean 22 (SD 30)",
+          "group_b": "Mean 41 (SD 39)",
+          "effect_measure": "MD",
+          "effect_value": "-18.58",
+          "ci_95": "-32.86– -3.93",
+          "p_value": "N/A",
+          "note": "Deaths assigned 0 hospital-free days"
+        },
+        {
+          "outcome": "Red blood cells within 24 hours (units)",
+          "group_a": "Mean 10 (SD 9)",
+          "group_b": "Mean 11 (SD 9)",
+          "effect_measure": "IRR",
+          "effect_value": "0.92",
+          "ci_95": "0.66–1.29",
+          "p_value": "N/A",
+          "note": "Median 7 (IQR 4–12) vs 9 (IQR 4–17)"
+        },
+        {
+          "outcome": "Plasma within 24 hours (units)",
+          "group_a": "Mean 8 (SD 8)",
+          "group_b": "Mean 11 (SD 10)",
+          "effect_measure": "IRR",
+          "effect_value": "0.73",
+          "ci_95": "0.49–1.08",
+          "p_value": "N/A",
+          "note": "Median 6 (IQR 3–10) vs 7 (IQR 4–18)"
+        },
+        {
+          "outcome": "Overall complications",
+          "group_a": "6/46 (13%)",
+          "group_b": "10/43 (23%)",
+          "effect_measure": "OR",
+          "effect_value": "0.54",
+          "ci_95": "0.19–1.48",
+          "p_value": "N/A",
+          "note": "No serious adverse device events reported"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "No serious adverse device events reported.",
+      "Overall complications reported in 6/46 (13%) in REBOA arm vs 10/43 (23%) in standard care arm (OR 0.54, 95% CrI 0.19–1.48).",
+      "Bleeding deaths at 90 days were more frequent in the REBOA strategy group (8/25 [32%] vs 3/18 [17%]), with most occurring within 24 hours."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central web-based randomisation (1:1) using permuted blocks of 2 or 4; allocation concealment prior to randomisation plausible."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label strategy design; objective primary outcome limits detection bias, but clinical decisions and care-pathway timing could be influenced by arm allocation."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1 standard care participant withdrew consent at day 4; primary 90-day analysis included 89 participants analyzed by intention-to-treat."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Incomplete strategy delivery: only 19/46 (41%) in REBOA arm had balloon inflated (8/46 [17%] failed access, 17/46 [37%] improved without inflation). 2/44 (5%) in standard care arm crossed over to receive REBOA."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Median ISS was 41 (IQR 29–50) in both groups, but REBOA arm had lower SBP on arrival (median 84 vs 99 mm Hg) and higher head AIS distribution, posing residual confounding risks."
+        }
+      ],
+      "verdict": "Moderate internal validity due to randomized allocation and objective mortality outcomes, but limited by early stopping, small sample size, low intervention delivery rates, and baseline physiological imbalances."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Representative of UK major trauma systems (predominantly blunt trauma, high ISS, 9% requiring CPR on arrival in each arm)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Applies to health systems attempting ED-based REBOA rollout with low per-center volume and median arrival-to-inflation times around 30+ minutes; may not extrapolate to high-volume programs with faster occlusion times."
+        }
+      ],
+      "verdict": "Moderate external validity; directly applicable to broad health-system implementation in civilian trauma care, but less applicable to ultra-high-volume centers with rapid specialized intervention pathways."
+    },
+    "strengths": [
+      "First randomized clinical trial evaluating REBOA in trauma patients.",
+      "Pragmatic multi-center registry-enabled design across 16 major trauma centers.",
+      "Prespecified Bayesian interim monitoring rules for safety and futility.",
+      "Granular capture of early mortality timepoints (3, 6, and 24 hours) and system-level delivery constraints."
+    ],
+    "limitations": [
+      "Stopped early after 80 participants, yielding a small sample size (n=90) and wide credible intervals.",
+      "Incomplete delivery of intervention, with only 41% of REBOA-arm participants undergoing balloon inflation.",
+      "Delays in time to definitive hemorrhage control in the REBOA group (median 83 vs 64 minutes).",
+      "Baseline SBP imbalance with deeper hypotension in the REBOA strategy group.",
+      "Lack of standardization for device selection and operator procedural experience."
+    ],
+    "critical_appraisal": {
+      "summary": "UK-REBOA provides moderate-quality pragmatic RCT evidence that adding REBOA to standard ED care in a regional trauma system increases early mortality, primarily driven by procedural delays and low successful inflation rates.",
+      "strengths": [
+        "First randomized trial testing REBOA in trauma",
+        "Objective mortality endpoints evaluated at early timepoints",
+        "Rigorous prespecified Bayesian monitoring for harm"
+      ],
+      "weaknesses": [
+        "Small final sample size (n=90) due to early trial termination",
+        "Low intervention completion rate (41% balloon inflation)",
+        "Baseline hypotension imbalance unfavorable to REBOA group"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "In trauma patients with exsanguinating torso hemorrhage, an ED strategy including REBOA did not reduce 90-day mortality compared with standard care alone and showed a high posterior probability of increased early mortality.",
+    "clinical_bottom_line": {
+      "verdict": "REBOA should not be broadly deployed in emergency departments as part of standard trauma pathways.",
+      "applies_to": "Adult trauma patients presenting to emergency departments with non-compressible torso hemorrhage.",
+      "does_not_mean": "Does not mean REBOA is completely ineffective in highly experienced, ultra-high-volume centers capable of rapid catheter placement without delaying definitive surgery.",
+      "implementation_caveats": [
+        "Attempting REBOA significantly delayed time to definitive hemorrhage control (median 83 vs 64 minutes).",
+        "Catheter insertion failed in 17% and balloon inflation was actually required in only 41% of allocated cases.",
+        "System delays and distraction from definitive surgical haemostasis appear to outweigh potential endovascular benefits."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Device efficacy versus system implementation failure",
+        "notes": "Debate persists on whether observed harm was caused by REBOA itself or system-level delays (median ED arrival to inflation was 32 minutes) and operator learning curves across low-volume centers."
+      },
+      {
+        "topic": "Patient selection and strategy appropriateness",
+        "notes": "37% of patients in the REBOA arm stabilized without balloon inflation and 17% had failed access, highlighting the clinical challenge of rapidly selecting patients who truly benefit."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "EAST 2025 Guideline",
+        "relation": "A 2025 EAST practice management guideline systematic review integrated UK-REBOA data and issued conditional recommendations, reflecting ongoing controversy and emphasizing center volume and patient selection."
+      }
+    ],
+    "unresolved_questions": [
+      "Can REBOA demonstrate benefit in specialized trauma programs achieving median inflation times under 15 minutes?",
+      "Is there a specific physiological subgroup (e.g., non-compressible pelvic vs abdominal hemorrhage) where partial REBOA provides net survival benefit?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=90 (stopped early for harm at second interim look)",
+        "90-day mortality: 54% REBOA vs 42% Standard Care (OR 1.58)",
+        "3-hour mortality: 24% vs 5% (OR 4.25, 95% CrI 1.33–15.99)",
+        "Only 41% in REBOA arm had successful balloon inflation (median time 32 min)"
+      ],
+      "one_line_takeaway": "Attempting REBOA in standard emergency department trauma care increases early mortality and delays definitive surgical hemorrhage control."
+    }
+  },
+  "_source_id": "UK-REBOA",
+  "_source_system": "Trauma"
+}

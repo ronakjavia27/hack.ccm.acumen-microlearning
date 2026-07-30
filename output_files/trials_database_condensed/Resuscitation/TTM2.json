@@ -1,0 +1,307 @@
+{
+  "id": "TTM2",
+  "trial_name": "TTM2 — Hypothermia versus Normothermia after Out-of-Hospital Cardiac Arrest (2021)",
+  "specialty": "Resuscitation & Critical Care",
+  "subtopic": "Temperature Management",
+  "year": 2021,
+  "journal": "N Engl J Med",
+  "citation": "Dankiewicz J, Cronberg T, Lilja G, et al. Hypothermia versus Normothermia after Out-of-Hospital Cardiac Arrest. N Engl J Med. 2021;384(24):2283-2294.",
+  "doi": "https://doi.org/10.1056/NEJMoa2100591",
+  "registration": "",
+  "trial_type": "RCT — international, multicenter, open-label with blinded outcome assessment, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1900,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In unconscious adults after OHCA, targeted hypothermia at 33°C did not reduce 6-month mortality or poor functional outcome compared to targeted normothermia with early fever treatment, but increased hemodynamic arrhythmias.",
+  "pico": {
+    "population": "Unconscious adults (≥18 years, FOUR motor score <4) admitted to ICU after OHCA of presumed cardiac or unknown cause with sustained ROSC (≥20 minutes), enrolled within 180 minutes of ROSC.",
+    "intervention": "Targeted hypothermia at 33°C for 28 hours followed by controlled rewarming (~0.33°C/hour) to 40 hours, mandatory sedation (0–40 hours), and active fever prevention (36.5–37.7°C) up to 72 hours if remaining comatose.",
+    "comparison": "Targeted normothermia with active device cooling triggered if core temperature reached ≥37.8°C (device target 37.5°C), mandatory sedation (0–40 hours), and active fever prevention (36.5–37.7°C) up to 72 hours if remaining comatose.",
+    "outcome": "Death at 6 months (primary outcome); poor functional outcome (mRS 4–6) at 6 months; safety outcomes including arrhythmias, pneumonia, sepsis, bleeding, and device-related skin complications."
+  },
+  "keywords": [
+    "hypothermia",
+    "targeted temperature management",
+    "out-of-hospital cardiac arrest",
+    "normothermia",
+    "fever control",
+    "post-cardiac arrest care"
+  ],
+  "related_trials": [
+    "TTM",
+    "TAME",
+    "HACA",
+    "Bernard 2002"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Two early small 2002 RCTs reported improved survival and neurological outcomes with induced hypothermia (32–34°C) after witnessed shockable OHCA, leading to international adoption. The 2013 TTM trial found no difference between 33°C and 36°C, raising the hypothesis that clinical benefit stems from fever avoidance rather than active hypothermia.",
+      "knowledge_gap": "Uncertainty whether active cooling to 33°C provides any incremental clinical benefit over targeted normothermia with early treatment of fever in contemporary post-resuscitation care pathways.",
+      "hypothesis": "Active induced hypothermia to 33°C with controlled rewarming improves survival and functional outcome compared with targeted normothermia with early fever treatment in unconscious adults after OHCA."
+    },
+    "methods": {
+      "design": "International, multicenter, investigator-initiated, randomized, parallel-group, open-label trial with blinded outcome assessment.",
+      "setting": "ICUs across multiple international centers; screening yield: 4355 screened, 1900 randomized (common non-randomization reasons: >180 min from ROSC n=794, non-cardiac cause n=441, not unconscious n=248, care limitations n=237). Enrolled June 2017 to January 2020.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) admitted to ICU post-OHCA of presumed cardiac or unknown cause",
+          "Sustained ROSC (≥20 minutes without chest compressions)",
+          "Unconsciousness defined as inability to obey verbal commands (FOUR motor score <4)",
+          "Randomization within 180 minutes of sustained ROSC",
+          "Eligible for ICU care without limitations"
+        ],
+        "exclusion": [
+          "Unwitnessed arrest with initial asystole",
+          "Admission body temperature <30°C",
+          "ECMO prior to ROSC",
+          "Suspected or obvious pregnancy",
+          "Intracranial bleeding",
+          "Severe COPD requiring long-term home oxygen therapy"
+        ]
+      },
+      "intervention": "Hypothermia target 33°C. Intervention phase (0–40h) with mandatory sedation: Block A (28h) rapid cooling and maintenance at 33°C; Block B (12h) controlled rewarming at ~0.33°C/hour. Closed-loop intravascular or surface devices recommended; initial 4°C crystalloid ≤30 mL/kg permitted. If comatose after rewarming, maintained at 36.5–37.7°C until 72h post-randomization.",
+      "comparison": "Targeted normothermia. Device target 37.5°C with active device cooling triggered if recorded core temperature reached ≥37.8°C during first 40h. Antipyretics/conservative measures permitted. Same mandatory sedation framework (0–40h); if comatose, normothermic range (36.5–37.7°C) maintained until 72h post-randomization (plus 32h additional device fever control if device deployed).",
+      "blinding": "Open-label for temperature intervention to treating clinicians; 6-month functional outcomes assessed by blinded structured assessors; mortality is objective.",
+      "sample_size_power": "1862 patients required to detect a 7.5% absolute reduction in 180-day mortality (55% to 47.5%, RR 0.86) with 90% power at 2-sided 5% significance level; planned enrollment 1900.",
+      "primary_outcome": "All-cause mortality at 6 months (analyzed by intention-to-treat using generalized linear mixed modeling adjusted for site and TAME co-enrollment; Cox regression for survival).",
+      "secondary_outcomes": [
+        "Poor functional outcome at 6 months (mRS 4–6)",
+        "Modified Rankin Scale score at 6 months",
+        "Time-to-death",
+        "Arrhythmia causing hemodynamic compromise",
+        "Pneumonia",
+        "Sepsis",
+        "Bleeding",
+        "Device-related skin complications"
+      ],
+      "follow_up": "6 months for primary and functional outcomes."
+    },
+    "results": {
+      "headline_bullets": [
+        "Targeted hypothermia at 33°C did not reduce 6-month mortality compared with targeted normothermia (50% vs 48%; RR 1.04; P=0.37).",
+        "Poor functional outcome at 6 months (mRS 4–6) was identical between groups (55% vs 55%; RR 1.00).",
+        "Hypothermia significantly increased arrhythmias causing hemodynamic compromise (24% vs 17%; RR 1.45; P<0.001)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death at 6 months (primary outcome)",
+          "group_a": "465/925 (50%)",
+          "group_b": "446/925 (48%)",
+          "effect_measure": "RR",
+          "effect_value": "1.04",
+          "ci_95": "0.94–1.14",
+          "p_value": "0.37",
+          "note": "Primary outcome data missing for 11/1861 patients"
+        },
+        {
+          "outcome": "Modified Rankin Scale 4–6 at 6 months",
+          "group_a": "488/881 (55%)",
+          "group_b": "479/866 (55%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.92–1.09",
+          "p_value": "",
+          "note": "Structured mRS missing/unstructured in 82/1747 assessed patients"
+        },
+        {
+          "outcome": "Poor functional outcome at 6 months (trial-defined)",
+          "group_a": "495/918 (54%)",
+          "group_b": "493/911 (54%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.91–1.08",
+          "p_value": "",
+          "note": "Functional outcome unavailable in 21 patients (7 vs 14)"
+        },
+        {
+          "outcome": "Time-to-death",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "1.08",
+          "ci_95": "0.95–1.23",
+          "p_value": "",
+          "note": "Survival analysis reported as hazard ratio"
+        },
+        {
+          "outcome": "Arrhythmia causing haemodynamic compromise",
+          "group_a": "222/927 (24%)",
+          "group_b": "152/921 (17%)",
+          "effect_measure": "RR",
+          "effect_value": "1.45",
+          "ci_95": "1.21–1.75",
+          "p_value": "<0.001",
+          "note": "Key safety signal favouring normothermia"
+        },
+        {
+          "outcome": "Pneumonia",
+          "group_a": "330/927 (36%)",
+          "group_b": "322/921 (35%)",
+          "effect_measure": "RR",
+          "effect_value": "1.02",
+          "ci_95": "0.89–1.17",
+          "p_value": "0.75",
+          "note": "No clear between-group difference"
+        },
+        {
+          "outcome": "Sepsis",
+          "group_a": "99/926 (11%)",
+          "group_b": "83/922 (9%)",
+          "effect_measure": "RR",
+          "effect_value": "1.18",
+          "ci_95": "0.89–1.57",
+          "p_value": "0.25",
+          "note": "Directionally higher with hypothermia; imprecise"
+        },
+        {
+          "outcome": "Bleeding",
+          "group_a": "44/927 (5%)",
+          "group_b": "46/922 (5%)",
+          "effect_measure": "RR",
+          "effect_value": "0.95",
+          "ci_95": "0.64–1.41",
+          "p_value": "0.79",
+          "note": "No signal of excess bleeding"
+        },
+        {
+          "outcome": "Skin complications related to device",
+          "group_a": "10/927 (1%)",
+          "group_b": "5/922 (1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.99",
+          "ci_95": "0.69–5.74",
+          "p_value": "0.20",
+          "note": "Rare; estimates imprecise"
+        }
+      ],
+      "subgroup_table": []
+    },
+    "safety": [
+      "Arrhythmia causing hemodynamic compromise: 24% (222/927) in hypothermia vs 17% (152/921) in normothermia (RR 1.45; 95% CI 1.21–1.75; P<0.001).",
+      "Pneumonia: 36% (330/927) vs 35% (322/921) (RR 1.02; 95% CI 0.89–1.17; P=0.75).",
+      "Sepsis: 11% (99/926) vs 9% (83/922) (RR 1.18; 95% CI 0.89–1.57; P=0.25).",
+      "Bleeding: 5% (44/927) vs 5% (46/922) (RR 0.95; 95% CI 0.64–1.41; P=0.79).",
+      "Device-related skin complications: 1% (10/927) vs 1% (5/922) (RR 1.99; 95% CI 0.69–5.74; P=0.20)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "1:1 ratio, central allocation concealment maintained prior to assignment. Stratified by site and TAME trial co-enrollment. Low selection bias risk given ≤180 minute enrollment window and objective eligibility criteria."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design (unblinded care teams); mitigated by standardized mandatory sedation framework (0–40h) in both groups. 6-month functional outcomes were assessed by blinded investigators; mortality is objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Of 1900 randomized, 39 excluded post-randomization (37 lack of consent/withdrawn, 2 double randomizations), leaving 1861 in ITT population (925 hypothermia vs 936 normothermia). Primary outcome data missing in only 11/1861 patients."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Median time to reach 34°C was 3 hours (IQR 2–4). Neuromuscular blockade within 72h used in 66% (586/892) hypothermia vs 45% (395/879) normothermia. Acetaminophen within 72h used in 58% (515/892) vs 71% (621/879). Median time to extubation or death was 3.7 days (IQR 1.4–7.7) vs 3.2 days (IQR 1.2–6.6). Median ICU LOS was 4.0 vs 3.6 days; hospital LOS 6.9 vs 6.5 days."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: age 64±13 vs 63±14 years; male 80% vs 79%; bystander witnessed 91% vs 92%; bystander CPR 82% vs 78%; shockable rhythm 72% vs 75%; median time to ROSC 25 min in both; median time to randomization 136 vs 133 min; admission shock 28% vs 30%; lactate 5.9±4.4 vs 5.8±4.2 mmol/L."
+        }
+      ],
+      "verdict": "Internal validity is strong given rapid randomization, protocolized co-interventions and neuroprognostication at ≥96 hours, blinded functional assessments, and near-complete primary outcome follow-up, with main limitation being the open-label design."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Representative of adult ICU OHCA admissions in high-performing emergency systems (91–92% bystander witnessed, 78–82% bystander CPR, 72–75% shockable initial rhythm). Excludes unwitnessed asystole, pre-ROSC ECMO, intracranial hemorrhage, severe COPD on home O2, pregnancy, admission temp <30°C."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Directly applicable to ICUs with capacity for continuous core temperature monitoring, active cooling devices, and protocolized sedation/neuroprognostication. Compares 33°C to active fever prevention, not to unmonitored/unmanaged fever."
+        }
+      ],
+      "verdict": "Generalizability is high for adult OHCA patients admitted unconscious to ICUs capable of active fever control, but limited for in-hospital arrests, unwitnessed asystole, or low-resource settings lacking device-based temperature management."
+    },
+    "strengths": [
+      "Large pragmatic international trial evaluating contemporary post-cardiac arrest ICU care.",
+      "Active normothermia comparator with device-triggered cooling at ≥37.8°C isolates the specific effect of 33°C over active fever prevention.",
+      "Standardized 40-hour intervention protocol with mandatory sedation and delayed multimodal neuroprognostication at ≥96 hours to prevent self-fulfilling prophecy.",
+      "Blinded, structured assessment of patient-centered 6-month functional outcomes with near-zero primary outcome missingness."
+    ],
+    "limitations": [
+      "Open-label intervention introduces risk of performance bias, reflected in higher neuromuscular blockade and longer mechanical ventilation in the hypothermia group.",
+      "Post-randomization exclusion of 39 patients due to consent issues or double enrollment departs slightly from pure intention-to-treat principles.",
+      "Evaluated a single target hypothermia temperature (33°C) and single duration profile; does not address alternative targets or cooling durations.",
+      "Comparator embedded active device-activated fever control, limiting inferences regarding complete absence of temperature management."
+    ],
+    "critical_appraisal": {
+      "summary": "Definitive, high-quality pragmatic trial proving that routine induced hypothermia to 33°C provides no survival or functional benefit over active normothermia and fever control in unconscious OHCA survivors, while increasing hemodynamic arrhythmias.",
+      "strengths": [
+        "Large international sample size (n=1900)",
+        "Active comparator isolating fever prevention from hypothermia",
+        "Protocolized delayed neuroprognostication (≥96h)",
+        "Blinded functional outcome assessment"
+      ],
+      "weaknesses": [
+        "Open-label design",
+        "Post-randomization exclusions (n=39)",
+        "High proportion of witnessed shockable arrests limits generalizability to low-survival systems"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In patients who were unconscious after out-of-hospital cardiac arrest, therapeutic hypothermia did not lead to lower mortality at 6 months than targeted normothermia.",
+    "clinical_bottom_line": {
+      "verdict": "Routine therapeutic hypothermia at 33°C should be de-implemented in favor of targeted normothermia with active fever prevention (target ≤37.5°C, treat ≥37.8°C).",
+      "applies_to": "Adult patients admitted to the ICU unconscious following out-of-hospital cardiac arrest of presumed cardiac or unknown origin.",
+      "does_not_mean": "Temperature control is useless; active prevention and early treatment of fever remain an essential component of post-cardiac arrest care.",
+      "implementation_caveats": [
+        "Requires continuous core temperature monitoring and active antipyretics/device cooling when core temperature reaches ≥37.8°C.",
+        "Formal neuroprognostication must remain delayed until at least 96 hours post-arrest.",
+        "Anticipate higher rates of hemodynamic arrhythmias if hypothermia is used."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Active normothermia vs true unmanaged control",
+        "notes": "TTM2 evaluated 33°C versus active normothermia with device cooling at ≥37.8°C, not 'cooling versus no temperature control'. The result proves no incremental benefit of 33°C over active fever prevention."
+      },
+      {
+        "topic": "Post-randomisation exclusions",
+        "notes": "Excluding 39 patients post-randomization for consent or double randomization creates minor methodological tension with strict ITT principles, though unlikely to affect trial conclusions."
+      },
+      {
+        "topic": "Withdrawal of life-sustaining therapy bias",
+        "notes": "WLST decisions remain potential sources of bias in unblinded post-arrest trials; mitigated in TTM2 by strict protocolized neuroprognostication at ≥96 hours."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "TTM (2013)",
+        "relation": "Showed no outcome difference between 33°C and 36°C; TTM2 extended this by testing 33°C against targeted normothermia with active fever control."
+      },
+      {
+        "trial": "HACA / Bernard (2002)",
+        "relation": "Early landmark RCTs establishing 32–34°C hypothermia; TTM2 showed these findings do not hold up against modern post-resuscitation care and active fever prevention."
+      },
+      {
+        "trial": "TAME",
+        "relation": "Co-enrollment trial integrated with TTM2, used as a stratification variable in randomization."
+      }
+    ],
+    "unresolved_questions": [
+      "Whether specific ultra-high-risk sub-phenotypes derive benefit from 33°C hypothermia.",
+      "The role and optimal target of active temperature management in in-hospital cardiac arrest (IHCA) or primary non-shockable rhythms.",
+      "Optimal duration and method (pharmacologic vs device) of active fever control after resuscitation."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1900 (1861 analysed)",
+        "6-month mortality 50% vs 48% (RR 1.04, p=0.37)",
+        "Poor functional outcome mRS 4–6: 55% vs 55% (RR 1.00)",
+        "Hemodynamic arrhythmias 24% vs 17% (RR 1.45, p<0.001)"
+      ],
+      "one_line_takeaway": "Targeted hypothermia at 33°C does not improve 6-month survival or functional outcomes over active fever control (≤37.8°C) in OHCA, and increases hemodynamic arrhythmias."
+    }
+  },
+  "_source_id": "TTM2",
+  "_source_system": "Resuscitation"
+}

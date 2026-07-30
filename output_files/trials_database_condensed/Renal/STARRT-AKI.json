@@ -1,0 +1,322 @@
+{
+  "id": "STARRT-AKI",
+  "trial_name": "STARRT-AKI — Timing of Initiation of Renal-Replacement Therapy in Acute Kidney Injury",
+  "specialty": "Critical Care Medicine",
+  "subtopic": "Acute Kidney Injury",
+  "year": 2020,
+  "journal": "New England Journal of Medicine",
+  "citation": "STARRT-AKI Investigators. Timing of initiation of renal-replacement therapy in acute kidney injury. N Engl J Med. 2020;383(3):240-251.",
+  "doi": "https://doi.org/10.1056/NEJMoa2000741",
+  "registration": "",
+  "trial_type": "RCT — multicentre, international, pragmatic, allocation-concealed, open-label, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3019,
+  "result_category": "Negative/Neutral",
+  "one_liner": "Accelerated KRT initiation in severe ICU AKI without urgent indications did not lower 90-day mortality compared to standard watchful waiting, and increased adverse events and survivor dialysis dependence.",
+  "pico": {
+    "population": "Adult ICU patients (>=18 years) with severe AKI (KDIGO stage 2 or 3) and clinician-assessed equipoise for KRT initiation.",
+    "intervention": "Accelerated KRT strategy (initiation as soon as possible and within 12 hours of meeting eligibility criteria).",
+    "comparison": "Standard KRT strategy (watchful waiting; KRT deferred unless conventional urgent indications develop or AKI persists).",
+    "outcome": "90-day all-cause mortality."
+  },
+  "keywords": [
+    "acute kidney injury",
+    "kidney replacement therapy",
+    "dialysis timing",
+    "dialysis dependence",
+    "CRRT",
+    "KDIGO"
+  ],
+  "related_trials": [
+    "AKIKI",
+    "IDEAL-ICU",
+    "ELAIA"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "In critically ill patients with severe AKI, initiating kidney replacement therapy before classic indications is common but historically evidence-poor, with conflicting signals from earlier small trials.",
+      "knowledge_gap": "Uncertainty whether accelerated KRT improves patient-centred outcomes like mortality and renal recovery or merely increases exposure to KRT-related complications.",
+      "hypothesis": "Accelerated KRT initiation would reduce 90-day mortality by preventing metabolic and fluid complications of severe AKI."
+    },
+    "methods": {
+      "design": "Multicentre, international, pragmatic, randomised, allocation-concealed, open-label superiority trial.",
+      "setting": "168 hospital ICUs across 15 countries.",
+      "population": {
+        "inclusion": [
+          "Adults aged >=18 years in ICU",
+          "Severe AKI defined as KDIGO stage 2 or 3",
+          "Clinician declaration of equipoise regarding KRT timing"
+        ],
+        "exclusion": [
+          "Urgent indications for KRT (severe electrolyte/acid-base disturbance, fluid overload compromising oxygenation)",
+          "Scenarios where KRT timing was non-discretionary (imminent need, competing priorities, specific contraindications)"
+        ]
+      },
+      "intervention": "Accelerated strategy: initiate KRT ASAP and within 12 hours of eligibility. Modality, prescription, and anticoagulation were pragmatic (68.4% initial CRRT). Median time from randomisation to KRT was 1.6 hours (IQR 0.9–2.8); time from eligibility to KRT was 6.0 hours (IQR 4.0–8.8).",
+      "comparison": "Standard strategy: KRT discouraged unless conventional indications developed or AKI persisted. 61.8% received KRT. Median time from randomisation to KRT was 25.6 hours (IQR 18.7–47.1); time from eligibility to KRT was 31.8 hours (IQR 18.9–71.8).",
+      "blinding": "Open-label (unblinded delivery); primary mortality outcome is objective.",
+      "sample_size_power": "Planned n=2,866 to detect a 15% relative (6% absolute) reduction in 90-day mortality from 40% control mortality with 90% power (alpha=0.05). 3,019 randomised; 2,927 included in modified ITT primary analysis.",
+      "primary_outcome": "90-day all-cause mortality.",
+      "secondary_outcomes": [
+        "Receipt of KRT during index admission",
+        "Composite of death or KRT dependence at 90 days",
+        "KRT dependence at 90 days among survivors",
+        "Major adverse kidney events (MAKE) at 90 days",
+        "KRT-free days through 90 days",
+        "ICU length of stay among survivors",
+        "Rehospitalisation through 90 days",
+        "Adverse events and serious adverse events"
+      ],
+      "follow_up": "90 days post-randomisation."
+    },
+    "results": {
+      "headline_bullets": [
+        "90-day all-cause mortality was essentially identical between accelerated and standard strategies (43.9% vs 43.7%).",
+        "38.2% of standard-strategy patients never required KRT during their admission.",
+        "Accelerated initiation increased KRT dependence among survivors at 90 days (10.4% vs 6.0%) and increased adverse events (23.0% vs 16.5%)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Death at 90 days (primary)",
+          "group_a": "643/1465 (43.9%)",
+          "group_b": "639/1462 (43.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.93–1.09",
+          "p_value": "0.92",
+          "note": "No mortality benefit with accelerated initiation"
+        },
+        {
+          "outcome": "Received any KRT during index admission",
+          "group_a": "1418/1465 (96.8%)",
+          "group_b": "903/1462 (61.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.57",
+          "ci_95": "1.51–1.62",
+          "p_value": "NR",
+          "note": "38.2% of standard strategy patients avoided KRT"
+        },
+        {
+          "outcome": "Death or KRT dependence at 90 days",
+          "group_a": "728/1465 (49.7%)",
+          "group_b": "688/1462 (47.1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.05",
+          "ci_95": "0.99–1.12",
+          "p_value": "NR",
+          "note": "Composite outcome did not show benefit"
+        },
+        {
+          "outcome": "KRT dependence at 90 days (survivors)",
+          "group_a": "85/814 (10.4%)",
+          "group_b": "49/815 (6.0%)",
+          "effect_measure": "RR",
+          "effect_value": "1.74",
+          "ci_95": "1.24–2.43",
+          "p_value": "NR",
+          "note": "Worse renal recovery with accelerated strategy"
+        },
+        {
+          "outcome": "Major adverse kidney events (MAKE) at 90 days",
+          "group_a": "948/1465 (64.7%)",
+          "group_b": "899/1462 (61.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.05",
+          "ci_95": "0.99–1.10",
+          "p_value": "NR",
+          "note": "Did not favour accelerated strategy"
+        },
+        {
+          "outcome": "KRT-free days through 90 days (median, IQR)",
+          "group_a": "73 (0–84)",
+          "group_b": "74 (0–84)",
+          "effect_measure": "Difference",
+          "effect_value": "-0.48",
+          "ci_95": "-0.82 to -0.14",
+          "p_value": "NR",
+          "note": "Accelerated strategy reduced KRT-free days"
+        },
+        {
+          "outcome": "ICU length of stay in survivors (median days, IQR)",
+          "group_a": "9 (5–19)",
+          "group_b": "10 (5–21)",
+          "effect_measure": "Difference",
+          "effect_value": "-0.82",
+          "ci_95": "-1.87 to 0.23",
+          "p_value": "NR",
+          "note": "No significant ICU length of stay advantage"
+        },
+        {
+          "outcome": "Rehospitalisation through 90 days",
+          "group_a": "178/814 (21.9%)",
+          "group_b": "145/815 (17.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.23",
+          "ci_95": "1.02–1.49",
+          "p_value": "0.03",
+          "note": "Higher rehospitalisation rate in accelerated group survivors"
+        },
+        {
+          "outcome": "Any trial-defined adverse event",
+          "group_a": "346/1503 (23.0%)",
+          "group_b": "245/1489 (16.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.40",
+          "ci_95": "1.21–1.62",
+          "p_value": "<0.001",
+          "note": "Significant increase in complications with accelerated strategy"
+        },
+        {
+          "outcome": "Serious adverse events",
+          "group_a": "15/1503 (1.0%)",
+          "group_b": "8/1489 (0.5%)",
+          "effect_measure": "NR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.15",
+          "note": "Uncommon in both treatment groups"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Baseline KDIGO stage, sepsis, or surgical status",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "RR",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_interaction": "NR"
+        }
+      ]
+    },
+    "safety": [
+      "Any adverse event: 23.0% (346/1503) accelerated vs 16.5% (245/1489) standard (RR 1.40, 95% CI 1.21–1.62, P<0.001)",
+      "Hypotension: 8.7% accelerated vs 5.3% standard",
+      "Hypophosphataemia: 7.5% accelerated vs 4.2% standard",
+      "Serious adverse events: 1.0% (15/1503) accelerated vs 0.5% (8/1489) standard (P=0.15)"
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, web-based randomisation stratified by site using variable block sizes (2 and 4); allocation concealment maintained."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label due to nature of intervention; primary mortality outcome is objective, though open-label design permits co-intervention discretion."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "3,019 randomised; 2,927 analysed in modified ITT (3.0% excluded post-randomisation due to consent withdrawal or lost follow-up)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Strong separation in KRT exposure (96.8% vs 61.8%) and median time from eligibility to KRT (6.0 h vs 31.8 h)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced across groups (SAPS II 59.6 vs 59.5; SOFA 11.7 vs 11.9; mechanical ventilation 75.3% vs 78.5%; vasopressors 68.8% vs 72.0%; initial CRRT 68.4% vs 70.6%)."
+        }
+      ],
+      "verdict": "High internal validity with robust allocation, high protocol adherence, and substantial exposure separation."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Large, multinational cohort (168 ICUs across 15 countries) with severe AKI and high baseline acuity (~44% 90-day mortality)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Applies directly to ICU patients with severe AKI lacking immediate life-threatening indications; requires monitoring infrastructure to ensure safe delayed initiation."
+        }
+      ],
+      "verdict": "High generalisability to well-resourced ICUs managing severe AKI with close monitoring capacity."
+    },
+    "strengths": [
+      "Large sample size (n=3,019) across 168 ICUs in 15 countries",
+      "Pragmatic trial design reflecting real-world clinical practice",
+      "Substantial and distinct separation in timing and KRT exposure",
+      "Objective primary endpoint with low overall rate of post-randomisation loss",
+      "Careful adjudication of secondary kidney outcomes"
+    ],
+    "limitations": [
+      "Open-label design introduces potential co-intervention bias",
+      "Eligibility dependent on clinician-declared equipoise, introducing population heterogeneity",
+      "Secondary outcomes were not adjusted for multiple comparisons",
+      "Variable standard care monitoring and trigger criteria across participating sites"
+    ],
+    "critical_appraisal": {
+      "summary": "STARRT-AKI is a definitive, high-quality pragmatic trial showing that routine early KRT initiation for severe AKI provides no survival advantage while increasing physical harms and dialysis dependence.",
+      "strengths": [
+        "Rigorous allocation concealment and large multinational sample",
+        "Clear operational separation in KRT delivery and timing",
+        "Objective outcome measures with complete follow-up"
+      ],
+      "weaknesses": [
+        "Unblinded delivery of intervention",
+        "Equipoise entry requirement may introduce selection bias",
+        "Lack of multiplicity correction for secondary endpoints"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In critically ill patients with severe AKI, an accelerated KRT strategy did not significantly lower 90-day all-cause mortality compared with a standard strategy, but led to more adverse events.",
+    "clinical_bottom_line": {
+      "verdict": "Practice-changing: Routine accelerated KRT initiation should not be performed for severe AKI alone without conventional urgent triggers.",
+      "applies_to": "Adult ICU patients with severe AKI (KDIGO stage 2/3) without emergent metabolic or fluid indications.",
+      "does_not_mean": "Do not delay KRT when life-threatening hyperkalemia, severe refractory acidosis, or severe fluid overload are present.",
+      "implementation_caveats": [
+        "Watchful waiting requires continuous ICU monitoring to promptly rescue patients who develop urgent indications",
+        "38.2% of patients managed with watchful waiting avoid KRT entirely"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Equipoise selection bias",
+        "notes": "Requiring clinician-declared equipoise likely excluded patients at the extremes of immediate necessity or rapid recovery."
+      },
+      {
+        "topic": "Mechanism of impaired kidney recovery",
+        "notes": "Higher 90-day KRT dependence in accelerated survivors (10.4% vs 6.0%) may stem from dialysis-induced hypotension and ischemic renal injury, particularly in patients with baseline CKD."
+      },
+      {
+        "topic": "Utility of KDIGO stage timing triggers",
+        "notes": "Relying strictly on KDIGO AKI staging to trigger KRT is overly broad, as 38.2% of standard group patients recovered without KRT."
+      },
+      {
+        "topic": "Hyperkalemia deaths and timing overlap",
+        "notes": "Correspondence noted rare hyperkalemia deaths in standard group and timing overlap between late-accelerated and early-standard patients."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "AKIKI",
+        "relation": "Aligned with STARRT-AKI showing delayed KRT strategy avoids dialysis in many patients without increasing mortality."
+      },
+      {
+        "trial": "IDEAL-ICU",
+        "relation": "Supported STARRT-AKI findings by showing early KRT initiation in septic shock AKI provides no survival benefit."
+      },
+      {
+        "trial": "ELAIA",
+        "relation": "Single-center trial that previously suggested early KRT benefit; refuted by STARRT-AKI's pragmatic multinational design."
+      }
+    ],
+    "unresolved_questions": [
+      "How to prospectively identify patients with non-recovering persistent AKI who benefit from earlier KRT",
+      "Safety and outcomes of watchful waiting in non-ICU or low-resource settings with less intensive monitoring"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3,019",
+        "90-day mortality: 43.9% vs 43.7% (RR 1.00)",
+        "38.2% avoided KRT in standard strategy",
+        "90-day survivor KRT dependence: 10.4% vs 6.0% (RR 1.74)",
+        "Adverse events: 23.0% vs 16.5% (RR 1.40)"
+      ],
+      "one_line_takeaway": "Adopt monitored watchful waiting for severe ICU AKI without urgent indications to avoid unnecessary dialysis and reduce complications."
+    }
+  },
+  "_source_id": "STARRT-AKI",
+  "_source_system": "Renal"
+}

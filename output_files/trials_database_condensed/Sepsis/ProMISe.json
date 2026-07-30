@@ -1,0 +1,375 @@
+{
+  "id": "ProMISe",
+  "trial_name": "ProMISe — Trial of Early, Goal-Directed Resuscitation for Septic Shock (2015)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Septic Shock",
+  "year": 2015,
+  "journal": "New England Journal of Medicine",
+  "citation": "Mouncey PR, Osborn TM, Power GS, et al. Trial of early, goal-directed resuscitation for septic shock. N Engl J Med. 2015;372(14):1301-1311.",
+  "doi": "10.1056/NEJMoa1500896",
+  "registration": "ISRCTN56331908",
+  "trial_type": "Pragmatic, multicenter, open-label, 1:1 randomized controlled trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1260,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In UK emergency departments, a 6-hour protocolised early goal-directed therapy (EGDT) resuscitation bundle did not decrease 90-day mortality compared to clinician-led usual care.",
+  "pico": {
+    "population": "Adults presenting to the ED with early septic shock or severe sepsis with hyperlactatemia (SIRS >= 2 plus refractory hypotension or blood lactate >= 4 mmol/L).",
+    "intervention": "Protocolised 6-hour EGDT resuscitation bundle targeting CVP >= 8 mmHg, MAP >= 65 mmHg, and ScvO2 >= 70% with mandated central line placement and triggered blood transfusions/dobutamine.",
+    "comparison": "Usual resuscitation without mandated CVP/ScvO2 targets, transfusion algorithms, or dobutamine protocols.",
+    "outcome": "90-day all-cause mortality."
+  },
+  "keywords": [
+    "early goal-directed therapy",
+    "EGDT",
+    "septic shock",
+    "resuscitation",
+    "ScvO2",
+    "dobutamine",
+    "central venous catheter"
+  ],
+  "related_trials": [
+    "ProCESS",
+    "ARISE",
+    "Rivers 2001",
+    "PRISM"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "The single-center Rivers et al. (2001) trial reported a substantial mortality reduction in septic shock using a 6-hour early goal-directed therapy (EGDT) protocol targeting CVP, MAP, and ScvO2.",
+      "knowledge_gap": "By 2015, standard ED sepsis care routinely incorporated early antibiotics, lactate testing, and aggressive fluid/vasopressor resuscitation, creating uncertainty about whether mandated invasive EGDT provided incremental benefit.",
+      "hypothesis": "A protocolised 6-hour EGDT resuscitation strategy reduces 90-day all-cause mortality compared with clinician-led usual resuscitation in ED patients with early septic shock."
+    },
+    "methods": {
+      "design": "Pragmatic, open-label, parallel-group 1:1 RCT across 56 UK National Health Service (NHS) hospitals with a published prespecified statistical analysis plan.",
+      "setting": "56 UK NHS emergency departments with planned critical care admission capacity and no existing routine EGDT protocols; enrolment occurred between 2011 and 2014.",
+      "population": {
+        "inclusion": [
+          "Age >= 18 years",
+          "Suspected or confirmed infection",
+          ">= 2 SIRS criteria",
+          "Refractory hypotension (SBP < 90 mmHg after >= 1,000 mL fluid within 60 min) OR hyperlactatemia (blood lactate >= 4 mmol/L)"
+        ],
+        "exclusion": [
+          "Age < 18 years",
+          "> 6 hours since meeting eligibility criteria",
+          "Randomisation > 2 hours post eligibility",
+          "Transferred from another acute hospital",
+          "Already admitted to critical care during current admission",
+          "Immediate emergency surgery required",
+          "Comfort measures only / treatment limitation decisions",
+          "Contraindication to central venous catheterization or protocol components",
+          "Pregnancy"
+        ]
+      },
+      "intervention": "Protocolised 6-hour EGDT bundle delivered by trained clinical staff. Targeted hierarchical goals: CVP >= 8 mmHg (IV fluids), MAP >= 65 mmHg or SBP >= 90 mmHg (vasopressors/vasodilators), and ScvO2 >= 70% (packed red blood cell transfusion to hematocrit/hemoglobin targets and/or dobutamine infusion). Mandatory CVC placement.",
+      "comparison": "Usual resuscitation at clinician discretion without mandated CVP/ScvO2 targets, central venous line placement, transfusion triggers, or dobutamine algorithms.",
+      "blinding": "Open-label intervention (blinding not feasible); primary mortality outcome assessed objectively via national registry tracking.",
+      "sample_size_power": "1,260 patients (630 per arm) to detect an 8% absolute mortality reduction (40% to 32%) with 90% power at a two-sided 5% significance level.",
+      "primary_outcome": "All-cause mortality at 90 days post-randomisation.",
+      "secondary_outcomes": [
+        "28-day all-cause mortality",
+        "In-hospital mortality (death before acute hospital discharge)",
+        "Receipt of advanced cardiovascular support during index admission",
+        "SOFA score at 6 hours and 72 hours",
+        "Quality-adjusted life-years (QALYs) to 90 days",
+        "Total costs per patient to 90 days",
+        "Serious adverse events (SAEs)"
+      ],
+      "follow_up": "90 days for primary endpoint, quality of life, and healthcare resource utilization."
+    },
+    "results": {
+      "headline_bullets": [
+        "90-day mortality was virtually identical between EGDT and usual care (29.5% vs 29.2%, RR 1.01, P=0.90).",
+        "EGDT markedly increased procedural and pharmacological intensity, including dobutamine (18.1% vs 2.4%) and blood transfusions (8.8% vs 3.7%).",
+        "Organ dysfunction trajectories (SOFA scores at 6h and 72h) were equivalent between groups.",
+        "EGDT increased mean 90-day costs by £989 per patient without producing any QALY gain."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "90-day all-cause mortality (Primary)",
+          "group_a": "184/623 (29.5%)",
+          "group_b": "181/620 (29.2%)",
+          "effect_measure": "RR",
+          "effect_value": "1.01",
+          "ci_95": "0.85–1.20",
+          "p_value": "0.90",
+          "note": "Adjusted OR 0.95 (95% CI 0.74–1.24; P=0.73)"
+        },
+        {
+          "outcome": "28-day all-cause mortality",
+          "group_a": "155/625 (24.8%)",
+          "group_b": "152/621 (24.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.01",
+          "ci_95": "0.84–1.21",
+          "p_value": "0.96",
+          "note": "Adjusted OR 0.95 (95% CI 0.73–1.23; P=0.69)"
+        },
+        {
+          "outcome": "Death before acute hospital discharge",
+          "group_a": "160/625 (25.6%)",
+          "group_b": "154/625 (24.6%)",
+          "effect_measure": "RR",
+          "effect_value": "1.04",
+          "ci_95": "0.87–1.25",
+          "p_value": "0.68",
+          "note": "Adjusted OR 0.98 (95% CI 0.76–1.26; P=0.87)"
+        },
+        {
+          "outcome": "Advanced cardiovascular support (index admission)",
+          "group_a": "328/623 (52.6%)",
+          "group_b": "289/622 (46.5%)",
+          "effect_measure": "RR",
+          "effect_value": "1.13",
+          "ci_95": "1.03–1.24",
+          "p_value": "0.01",
+          "note": "Increased cardiovascular support in EGDT arm"
+        },
+        {
+          "outcome": "SOFA score at 6 hours (mean ± SD)",
+          "group_a": "6.7 ± 4.0",
+          "group_b": "6.8 ± 4.2",
+          "effect_measure": "MD",
+          "effect_value": "-0.10",
+          "ci_95": "-0.60 to 0.40",
+          "p_value": "0.72",
+          "note": "No difference in early organ dysfunction"
+        },
+        {
+          "outcome": "SOFA score at 72 hours (mean ± SD)",
+          "group_a": "6.0 ± 4.6",
+          "group_b": "5.8 ± 4.8",
+          "effect_measure": "MD",
+          "effect_value": "0.20",
+          "ci_95": "-0.40 to 0.80",
+          "p_value": "0.46",
+          "note": "No separation in later organ dysfunction"
+        },
+        {
+          "outcome": "QALYs to 90 days (mean ± SD)",
+          "group_a": "0.054 ± 0.048",
+          "group_b": "0.054 ± 0.048",
+          "effect_measure": "MD",
+          "effect_value": "-0.001",
+          "ci_95": "-0.006 to 0.005",
+          "p_value": "0.85",
+          "note": "No health utility gain"
+        },
+        {
+          "outcome": "Total costs to 90 days (£ mean ± SD)",
+          "group_a": "£12,414 ± 14,970",
+          "group_b": "£11,424 ± 15,727",
+          "effect_measure": "MD",
+          "effect_value": "£989",
+          "ci_95": "-£726 to £2,705",
+          "p_value": "0.26",
+          "note": "Higher mean costs per patient in EGDT group"
+        },
+        {
+          "outcome": "Central venous catheter insertion (0–6h)",
+          "group_a": "575/624 (92.1%)",
+          "group_b": "318/625 (50.9%)",
+          "effect_measure": "RR",
+          "effect_value": "1.81",
+          "ci_95": "1.70–1.92",
+          "p_value": "<0.001",
+          "note": "Process-of-care treatment separation"
+        },
+        {
+          "outcome": "Dobutamine infusion (0–6h)",
+          "group_a": "113/623 (18.1%)",
+          "group_b": "15/622 (2.4%)",
+          "effect_measure": "RR",
+          "effect_value": "7.50",
+          "ci_95": "4.43–12.70",
+          "p_value": "<0.001",
+          "note": "Triggered by ScvO2 algorithm"
+        },
+        {
+          "outcome": "Red-cell transfusion (0–6h)",
+          "group_a": "55/623 (8.8%)",
+          "group_b": "23/622 (3.7%)",
+          "effect_measure": "RR",
+          "effect_value": "2.39",
+          "ci_95": "1.49–3.83",
+          "p_value": "<0.001",
+          "note": "Triggered by ScvO2 algorithm"
+        },
+        {
+          "outcome": "Vasopressor infusion (0–6h)",
+          "group_a": "332/623 (53.3%)",
+          "group_b": "290/622 (46.6%)",
+          "effect_measure": "RR",
+          "effect_value": "1.14",
+          "ci_95": "1.03–1.26",
+          "p_value": "0.01",
+          "note": "Higher vasopressor use in EGDT"
+        },
+        {
+          "outcome": "IV fluids 0–6h (mean ± SD mL)",
+          "group_a": "2,226 ± 1,443",
+          "group_b": "2,022 ± 1,271",
+          "effect_measure": "MD",
+          "effect_value": "204",
+          "ci_95": "45 to 364",
+          "p_value": "0.01",
+          "note": "Modest increase in early fluid volume"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Age quartiles",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "Interaction",
+          "effect_value": "NS",
+          "ci_95": "NR",
+          "p_interaction": ">0.05"
+        },
+        {
+          "subgroup": "MEDS score quartiles",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "Interaction",
+          "effect_value": "NS",
+          "ci_95": "NR",
+          "p_interaction": ">0.05"
+        },
+        {
+          "subgroup": "SOFA score quartiles",
+          "group_a": "NR",
+          "group_b": "NR",
+          "effect_measure": "Interaction",
+          "effect_value": "NS",
+          "ci_95": "NR",
+          "p_interaction": ">0.05"
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events occurred in 30/625 (4.8%) in EGDT vs 26/623 (4.2%) in usual care (RR 1.16; 95% CI 0.69 to 1.93; P=0.58).",
+      "EGDT significantly increased procedural invasive risks (CVC insertion 92.1% vs 50.9%) and pharmacological risks (dobutamine 18.1% vs 2.4%; transfusion 8.8% vs 3.7%)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation with site stratification; allocation concealed until enrolment."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design carries potential risk for non-protocolised decisions, but primary outcome (mortality) is objective."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "Minimal loss post-randomisation (6/630 in EGDT, 11/630 in usual care withdrawn/excluded); primary ITT analysis intact."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Clear process separation; usual care included high background invasive line placement (50.9% CVC, 59.6% arterial lines)."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: mean age 66.4 vs 64.3; APACHE II 18.7 vs 18.0; median pre-randomisation fluids 2,000 mL in both groups."
+        }
+      ],
+      "verdict": "Internal validity is strong with robust outcome objectivity and minimal missing data."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult ED patients with early septic shock across 56 NHS hospitals; 90-day mortality (~29%) reflects contemporary high-income care."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Highly applicable to healthcare systems with mature sepsis pathways and rapid baseline antimicrobial/fluid delivery."
+        }
+      ],
+      "verdict": "High generalisability to emergency and critical care settings in modern high-income health systems."
+    },
+    "strengths": [
+      "Large pragmatic multicenter trial across 56 UK hospitals",
+      "Early randomisation (median 2.5 hours from ED arrival)",
+      "Clear process-of-care separation achieved between arms",
+      "Objective primary endpoint with prespecified analysis plan",
+      "Integrated health economics and quality-of-life evaluation"
+    ],
+    "limitations": [
+      "Open-label design unable to blind clinicians to intervention",
+      "Substantial baseline invasive monitoring in usual care (50.9% CVC use)",
+      "Lower baseline mortality than anticipated (29% actual vs 40% projected), reducing power for small effect sizes",
+      "Evaluated a rigid protocol combining static pressure and venous saturation triggers"
+    ],
+    "critical_appraisal": {
+      "summary": "A definitive pragmatic trial establishing that mandatory ScvO2-targeted EGDT provides no benefit over clinician-guided resuscitation when standard sepsis care is delivered promptly.",
+      "strengths": [
+        "Rigorous design and execution across a national network",
+        "Complete 90-day follow-up with robust economic data"
+      ],
+      "weaknesses": [
+        "Unblinded delivery",
+        "High baseline quality of usual care limiting contrast"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In patients presenting to the emergency department with early septic shock, protocolised early goal-directed therapy did not reduce 90-day all-cause mortality compared with usual resuscitation, while increasing resource use.",
+    "clinical_bottom_line": {
+      "verdict": "De-adopt routine ScvO2/CVP-driven protocolised EGDT; focus resuscitation on rapid sepsis identification, early antibiotics, IV fluids, and vasopressors.",
+      "applies_to": "Adult patients presenting to the emergency department with septic shock or severe sepsis with hyperlactatemia.",
+      "does_not_mean": "Does not mean early resuscitation is ineffective; it shows that rigid protocolised invasive targets add no benefit over timely standard care.",
+      "implementation_caveats": [
+        "Usual care in ProMISe delivered median 2,000 mL fluids prior to randomisation and rapid antimicrobial therapy.",
+        "Dynamic markers of organ perfusion should guide escalation rather than routine CVP/ScvO2 catheters."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Evolution of Standard Care",
+        "notes": "Since Rivers (2001), usual care evolved to integrate early fluids and antibiotics, eliminating the incremental benefit of mandated EGDT protocols."
+      },
+      {
+        "topic": "Invasive Protocol Harms and Efficiency",
+        "notes": "EGDT increased CVC placements, dobutamine infusions, and transfusions, increasing mean costs by £989 per patient without clinical gain."
+      },
+      {
+        "topic": "Flaws of Static Physiological Targets",
+        "notes": "Highlighted the clinical inadequacy of static CVP and ScvO2 measurements as targets for tissue perfusion."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "Rivers et al. (2001)",
+        "relation": "Original single-center RCT that established 6-hour EGDT bundle showing significant survival benefit, which ProMISe re-evaluated."
+      },
+      {
+        "trial": "ProCESS (2014)",
+        "relation": "US multicenter trial showing no mortality benefit with EGDT vs protocolised standard or usual care."
+      },
+      {
+        "trial": "ARISE (2014)",
+        "relation": "Australasian multicenter trial demonstrating equal 90-day survival between EGDT and usual resuscitation."
+      },
+      {
+        "trial": "PRISM (2017)",
+        "relation": "Individual patient data meta-analysis of ProCESS, ARISE, and ProMISe confirming no benefit of EGDT across all subgroups."
+      }
+    ],
+    "unresolved_questions": [
+      "Role of advanced hemodynamic monitoring in select refractory septic shock non-responders.",
+      "Optimal fluid titration algorithms based on dynamic measures of fluid responsiveness."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=1,260 across 56 UK hospitals",
+        "90-day mortality: 29.5% vs 29.2% (RR 1.01, P=0.90)",
+        "Dobutamine: 18.1% vs 2.4% (RR 7.50)",
+        "Transfusion: 8.8% vs 3.7% (RR 2.39)"
+      ],
+      "one_line_takeaway": "Mandated ScvO2/CVP-targeted EGDT increases invasive procedures and costs without improving survival in modern septic shock resuscitation."
+    }
+  },
+  "_source_id": "ProMISe",
+  "_source_system": "Sepsis"
+}

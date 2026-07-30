@@ -1,0 +1,330 @@
+{
+  "id": "REACT2",
+  "trial_name": "REACT-2 — Immediate Total-Body CT Scanning vs Conventional Imaging & Selective CT in Severe Trauma (2016)",
+  "specialty": "Trauma",
+  "subtopic": "Trauma Imaging",
+  "year": 2016,
+  "journal": "The Lancet",
+  "citation": "Sierink JC, Treskes K, Edwards MJR, Beuker BJA, den Hartog D, Hohmann J, et al; REACT-2 study group. Immediate total-body CT scanning versus conventional imaging and selective CT scanning in patients with severe trauma (REACT-2): a randomised controlled trial. Lancet. 2016;388(10045):673-683.",
+  "doi": "10.1016/S0140-6736(16)30932-1",
+  "registration": null,
+  "trial_type": "RCT — multicentre, randomised, controlled, parallel-group, open-label",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 1083,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adults with suspected severe trauma, immediate total-body CT shortened diagnostic process times but did not reduce in-hospital mortality compared to conventional imaging and selective CT.",
+  "pico": {
+    "population": "Adult trauma patients (≥18 years) with suspected severe injury based on compromised vital parameters (SBP <100 mmHg, HR >120 bpm, GCS <14, RR >30 or <10 bpm), clinical suspicion of major thoracic/abdominal/pelvic/fracture injury, or high-risk mechanisms.",
+    "intervention": "Immediate total-body CT (iTBCT) from head to pelvis performed as a standardized two-step protocol during initial resuscitation after primary survey.",
+    "comparison": "Standard work-up comprising conventional radiography and FAST followed by selective CT based on clinical criteria and physician judgment.",
+    "outcome": "Primary: In-hospital mortality. Key secondary: 24-hour and 30-day mortality, diagnostic process times, radiation exposure, 6-month readmissions, and hospital costs."
+  },
+  "keywords": [
+    "total-body CT",
+    "pan-scan",
+    "trauma imaging",
+    "in-hospital mortality",
+    "radiation exposure",
+    "polytrauma"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Whole-body CT ('pan-scan') became common in high-resource trauma centers driven by diagnostic completeness and the premise that earlier injury mapping improves triage to surgery, IR, or ICU. Pre-REACT-2 evidence was predominantly observational registry data with high risk of confounding by indication.",
+      "knowledge_gap": "Lack of high-quality randomized evidence evaluating whether routine immediate whole-body CT improves patient-centered endpoints (mortality) compared to selective CT, given potential harms including radiation, contrast exposure, resource strain, and workflow interruption.",
+      "hypothesis": "Immediate total-body CT reduces in-hospital mortality by accelerating diagnosis and definitive management without unacceptable harms."
+    },
+    "methods": {
+      "design": "Multicentre, randomised, controlled, parallel-group, open-label trial at 5 level-1 trauma centres (4 in Netherlands, 1 in Switzerland).",
+      "setting": "Emergency department trauma resuscitation room during initial evaluation immediately upon patient arrival.",
+      "population": {
+        "inclusion": [
+          "Non-pregnant adults age ≥18 years",
+          "Suspected severe injury based on vital sign compromise (SBP <100 mmHg, HR >120 bpm, GCS <14, RR >30 or <10/min)",
+          "Clinical suspicion of major thoracic, abdominal, or pelvic injury, or multiple long-bone fractures",
+          "High-risk trauma mechanisms (fall >3 m, ejection from vehicle, run over/crush)"
+        ],
+        "exclusion": [
+          "Age <18 years",
+          "Pregnancy",
+          "Inter-hospital transfer",
+          "Low-energy blunt trauma",
+          "Isolated penetrating injury",
+          "Requirement for immediate CPR or immediate emergency operative intervention with imminent death (too unstable to randomize)"
+        ]
+      },
+      "intervention": "Immediate total-body CT (iTBCT): standardized head-to-pelvis CT protocol (vertex to pubic symphysis; 64-slice scanners, IV contrast where appropriate) replacing standard sequence after initial primary survey.",
+      "comparison": "Standard work-up: conventional X-rays plus FAST sonography, followed by selective CT of specific regions based on pre-specified criteria and clinician judgment. Additional rescue imaging permitted in both arms.",
+      "blinding": "Open-label (unblinded to treating clinicians and patients; objective primary mortality endpoint).",
+      "sample_size_power": "539 patients per group needed to detect a 5% absolute mortality reduction (12% to 7%) with 80% power at two-sided 5% significance level.",
+      "primary_outcome": "In-hospital mortality (analysed in allocated groups).",
+      "secondary_outcomes": [
+        "24-hour mortality",
+        "30-day mortality",
+        "Time in trauma room",
+        "Time to end of imaging",
+        "Time to diagnosis",
+        "Radiation exposure in trauma room and total hospital admission",
+        "Serious adverse events related to CT",
+        "6-month readmission rate",
+        "Total 6-month hospital costs"
+      ],
+      "follow_up": "Index admission for primary endpoint; pre-specified secondary follow-up at 30 days and 6 months."
+    },
+    "results": {
+      "headline_bullets": [
+        "In-hospital mortality was identical between immediate total-body CT and standard selective work-up (16% vs 16%, P=0.92).",
+        "Immediate total-body CT significantly reduced diagnostic process times, including time to end of imaging (30 vs 37 min) and time to diagnosis (50 vs 58 min, both P<0.0001).",
+        "Radiation exposure was higher in the immediate total-body CT group during trauma room resuscitation (20.9 vs 20.6 mSv, P<0.0001).",
+        "Readmission within 6 months was unexpectedly higher in the iTBCT group (17% vs 11%, P=0.01), with no difference in overall 6-month costs."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "In-hospital mortality (primary)",
+          "group_a": "86/541 (16%)",
+          "group_b": "85/542 (16%)",
+          "effect_measure": "RR",
+          "effect_value": "1.01",
+          "ci_95": "0.76–1.34",
+          "p_value": "0.92",
+          "note": "Analysed in allocated groups"
+        },
+        {
+          "outcome": "24-hour mortality",
+          "group_a": "20/541 (4%)",
+          "group_b": "20/542 (4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.00",
+          "ci_95": "0.54–1.85",
+          "p_value": "0.98",
+          "note": "Early mortality endpoint"
+        },
+        {
+          "outcome": "30-day mortality (subset)",
+          "group_a": "69/487 (14%)",
+          "group_b": "65/497 (13%)",
+          "effect_measure": "RR",
+          "effect_value": "1.08",
+          "ci_95": "0.79–1.49",
+          "p_value": "0.65",
+          "note": "Excludes trauma-room deaths and protocol exclusions"
+        },
+        {
+          "outcome": "Time in trauma room (min), median (IQR)",
+          "group_a": "63 (50–79)",
+          "group_b": "72 (55–87)",
+          "effect_measure": "Median diff",
+          "effect_value": "-9.0",
+          "ci_95": "NR",
+          "p_value": "<0.0001",
+          "note": "Process metric"
+        },
+        {
+          "outcome": "Time to end of imaging (min), median (IQR)",
+          "group_a": "30 (23–38)",
+          "group_b": "37 (28–49)",
+          "effect_measure": "Median diff",
+          "effect_value": "-7.0",
+          "ci_95": "NR",
+          "p_value": "<0.0001",
+          "note": "Primary diagnostic sequence completion"
+        },
+        {
+          "outcome": "Time to diagnosis (min), median (IQR)",
+          "group_a": "50 (38–70)",
+          "group_b": "58 (43–78)",
+          "effect_measure": "Median diff",
+          "effect_value": "-8.0",
+          "ci_95": "NR",
+          "p_value": "<0.0001",
+          "note": "Diagnostic completion"
+        },
+        {
+          "outcome": "Trauma room radiation exposure (mSv), median (IQR)",
+          "group_a": "20.9 (20.6–20.9)",
+          "group_b": "20.6 (9.9–20.8)",
+          "effect_measure": "Median diff",
+          "effect_value": "0.3",
+          "ci_95": "NR",
+          "p_value": "<0.0001",
+          "note": "More patients in standard group received lower doses"
+        },
+        {
+          "outcome": "Total admission radiation exposure (mSv), median (IQR)",
+          "group_a": "21.0 (20.6–22.9)",
+          "group_b": "20.6 (9.9–22.8)",
+          "effect_measure": "Median diff",
+          "effect_value": "0.4",
+          "ci_95": "NR",
+          "p_value": "<0.0001",
+          "note": "Distributional shift toward higher early radiation"
+        },
+        {
+          "outcome": "Serious adverse events related to CT scanning",
+          "group_a": "3/541 (1%)",
+          "group_b": "1/542 (<1%)",
+          "effect_measure": "RR",
+          "effect_value": "3.01",
+          "ci_95": "0.31–28.8",
+          "p_value": "NR",
+          "note": "5 serious events overall, all resulted in death (1 in post-randomisation excluded patient)"
+        },
+        {
+          "outcome": "Readmission within 6 months",
+          "group_a": "90/541 (17%)",
+          "group_b": "57/542 (11%)",
+          "effect_measure": "RR",
+          "effect_value": "1.58",
+          "ci_95": "1.16–2.16",
+          "p_value": "0.01",
+          "note": "Higher readmissions in iTBCT group"
+        },
+        {
+          "outcome": "Total 6-month hospital costs (€), mean (95% CI)",
+          "group_a": "25,473 (23,589–27,357)",
+          "group_b": "26,014 (24,010–28,019)",
+          "effect_measure": "Mean diff",
+          "effect_value": "-541",
+          "ci_95": "NR",
+          "p_value": "0.44",
+          "note": "No significant overall economic difference"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Polytrauma subgroup in-hospital mortality",
+          "group_a": "81/362 (22%)",
+          "group_b": "82/331 (25%)",
+          "effect_measure": "RR",
+          "effect_value": "0.90",
+          "ci_95": "0.69–1.18",
+          "p_interaction": "0.46"
+        },
+        {
+          "subgroup": "Traumatic brain injury (TBI) subgroup in-hospital mortality",
+          "group_a": "68/178 (38%)",
+          "group_b": "66/151 (44%)",
+          "effect_measure": "RR",
+          "effect_value": "0.87",
+          "ci_95": "0.68–1.12",
+          "p_interaction": "0.31"
+        }
+      ]
+    },
+    "safety": [
+      "Serious adverse events related to CT scanning occurred in 3/541 (1%) in iTBCT vs 1/542 (<1%) in standard work-up.",
+      "Five serious adverse events were reported overall across the trial, all resulting in death (including 1 patient excluded post-randomisation).",
+      "Radiation exposure was significantly higher in the iTBCT group during trauma room evaluation (20.9 vs 20.6 mSv, P<0.0001) and total hospital stay (21.0 vs 20.6 mSv, P<0.0001)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "1:1 computerised randomisation (ALEA) following primary survey in the trauma resuscitation room across mature level-1 trauma centres."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label trial design; primary endpoint (in-hospital mortality) is objective, but workflow and process timing endpoints are susceptible to unblinded clinical performance effects."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "1403 patients randomised, but only 1083 (77% in each arm: 541 iTBCT, 542 selective CT) were included in primary analysis due to post-randomisation exclusions for consent or eligibility criteria."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Crossovers occurred (6 in iTBCT vs 18 in standard arm); protocol violation rate was ~9%. Post-hoc per-protocol sensitivity analysis excluding crossovers yielded identical conclusions."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well-balanced for median age (42 vs 45 years), male sex (76% vs 76%), median ISS (20 vs 19), and hypotension (7% vs 8%). Slight imbalance in polytrauma (67% vs 61%) and TBI (33% vs 28%)."
+        }
+      ],
+      "verdict": "Internal validity is moderate: causal inference for mortality is supported by randomisation and an objective endpoint, but constrained by 23% post-randomisation exclusions and an open-label design."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Predominantly blunt trauma cohort (98–99%) with high injury severity (median ISS ~20, high prevalence of polytrauma and TBI) in mature European level-1 trauma systems. Excluded isolated penetrating trauma."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Highly applicable to well-resourced level-1 trauma centers with immediate CT access adjacent to resuscitation bays; limited generalisability to low-resource settings, non-level-1 centers, or penetrating trauma populations."
+        }
+      ],
+      "verdict": "External validity is moderate: findings apply directly to high-resource blunt trauma systems but cannot be generalized to penetrating trauma or settings with constrained CT availability."
+    },
+    "strengths": [
+      "Pragmatic multicentre RCT conducted in real-world level-1 trauma resuscitation settings.",
+      "Objective, clinically relevant primary endpoint (in-hospital mortality).",
+      "Standardized, two-step total-body CT imaging protocol.",
+      "Comprehensive evaluation of process times, radiation exposure, 6-month readmission, and health economics."
+    ],
+    "limitations": [
+      "Open-label design permitting potential performance bias in process metrics.",
+      "Substantial post-randomisation exclusions (23% of randomised cohort) creating a modified ITT population.",
+      "Modest absolute time savings (8–9 minutes) that may be insufficient to impact survival.",
+      "Exclusion of isolated penetrating trauma and extremely unstable patients requiring immediate surgical intervention."
+    ],
+    "critical_appraisal": {
+      "summary": "A high-quality, pragmatic trial demonstrating that routine immediate total-body CT accelerates diagnostic workflow in blunt major trauma by several minutes but does not alter survival compared to selective CT, while increasing radiation exposure.",
+      "strengths": [
+        "Rigorous multicentre pragmatic design in mature trauma systems",
+        "Clear objective primary endpoint coupled with process and health economic data",
+        "Standardized CT imaging protocol across all participating centers"
+      ],
+      "weaknesses": [
+        "23% post-randomisation exclusion rate for consent/eligibility",
+        "Underpowered for subgroup mortality differences (polytrauma, TBI)",
+        "Open-label design for time-to-diagnosis process metrics"
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "Immediate total-body CT during initial trauma resuscitation does not reduce in-hospital mortality compared with standard conventional imaging and selective CT in patients with severe trauma.",
+    "clinical_bottom_line": {
+      "verdict": "Routine 'pan-scan for all' should not be the universal default; imaging should remain selective and guided by clinical evaluation, vital signs, and mechanism of injury.",
+      "applies_to": "Adult patients with suspected major blunt trauma presenting to high-resource emergency trauma centers.",
+      "does_not_mean": "Total-body CT should be avoided; it means CT should be applied selectively based on clinical indication rather than mandated universally.",
+      "implementation_caveats": [
+        "Time gains from CT are modest (8–9 min) and do not substitute for rapid definitive operative or interventional hemorrhage control.",
+        "Radiation exposure is higher with upfront whole-body scanning.",
+        "Unstable patients requiring immediate operative resuscitation should not be delayed for pan-scanning."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Time savings vs clinical impact",
+        "notes": "Debate over whether a median 8-minute diagnostic time saving is clinically meaningful unless it directly accelerates emergency surgery or angioembolization."
+      },
+      {
+        "topic": "Post-randomisation exclusions",
+        "notes": "Exclusion of 320 randomised patients (23%) due to consent and eligibility issues raised concerns regarding potential selection bias in the modified ITT cohort."
+      },
+      {
+        "topic": "RCT neutrality vs observational registry benefits",
+        "notes": "REACT-2 refuted earlier observational registry studies showing survival benefits for pan-scanning, demonstrating that registry findings were likely confounded by center volume and quality of care."
+      },
+      {
+        "topic": "Six-month readmission disparity",
+        "notes": "The statistically significant increase in 6-month readmissions in the iTBCT group (17% vs 11%, P=0.01) remains mechanistically unexplained."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Which specific clinical criteria or predictive rules best identify trauma subgroup populations that experience a true survival benefit from immediate whole-body CT?",
+      "What is the mechanism behind the increased 6-month readmission rate observed in the immediate total-body CT group?",
+      "Does immediate total-body CT offer survival or functional benefits in high-volume penetrating trauma cohorts?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "N=1,083 analysed (541 iTBCT vs 542 selective CT)",
+        "In-hospital mortality: 16% vs 16% (P=0.92)",
+        "Time to diagnosis: 50 min vs 58 min (P<0.0001)",
+        "6-month readmissions: 17% vs 11% (P=0.01)"
+      ],
+      "one_line_takeaway": "Routine immediate whole-body CT speeds up trauma diagnosis by 8 minutes but does not reduce mortality, supporting selective CT over universal pan-scanning."
+    }
+  },
+  "_source_id": "REACT2",
+  "_source_system": "Trauma"
+}

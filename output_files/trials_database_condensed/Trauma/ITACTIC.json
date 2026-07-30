@@ -1,0 +1,344 @@
+{
+  "id": "ITACTIC",
+  "trial_name": "ITACTIC — Viscoelastic Haemostatic Assay Augmented Protocols for Major Trauma Haemorrhage (2021)",
+  "specialty": "Trauma",
+  "subtopic": "Trauma Coagulopathy",
+  "year": 2021,
+  "journal": "Intensive Care Medicine",
+  "citation": "Baksaas-Aasen K, Gall LS, Stensballe J, et al. Viscoelastic haemostatic assay augmented protocols for major trauma haemorrhage (ITACTIC): a randomized, controlled trial. Intensive Care Med. 2021;47:49-59",
+  "doi": "10.1007/s00134-020-06266-1",
+  "registration": "",
+  "trial_type": "RCT — investigator-initiated, pragmatic, multicentre, international, parallel-group (1:1), open-label with blinded outcome assessors",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 396,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In adult trauma patients requiring massive hemorrhage protocol activation, VHA-guided goal-directed therapy did not improve 24-hour survival free of massive transfusion compared to CCT-guided therapy.",
+  "pico": {
+    "population": "Adult trauma patients with ongoing bleeding requiring local massive hemorrhage protocol activation and RBC transfusion, randomized within 3 hours of injury and within 1 hour of ED admission",
+    "intervention": "Viscoelastic haemostatic assay (VHA; ROTEM Sigma or TEG 6s) augmented goal-directed protocol plus standard MHP care, with repeated testing every 4 RBC units until haemostasis",
+    "comparison": "Conventional coagulation test (CCT; PT ratio/INR, fibrinogen, platelet count) augmented goal-directed protocol plus standard MHP care, repeated every 4 RBC units",
+    "outcome": "Proportion of patients alive and free of massive transfusion (>=10 RBC units) at 24 hours post-injury"
+  },
+  "keywords": [
+    "viscoelastic haemostatic assay",
+    "ROTEM",
+    "TEG",
+    "trauma-induced coagulopathy",
+    "massive transfusion protocol",
+    "fibrinogen concentrate"
+  ],
+  "related_trials": [
+    "European trauma bleeding guideline 2023"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Major trauma hemorrhage is a leading cause of preventable death and is strongly driven by trauma-induced coagulopathy. Contemporary damage control resuscitation improves survival, but conventional plasma-based coagulation tests (PT/INR, fibrinogen, platelets) have turnaround delays during active bleeding.",
+      "knowledge_gap": "Whether adding rapid point-of-care viscoelastic assays (ROTEM/TEG) to guide targeted haemostatic supplementation provides incremental clinical benefit over standardized CCT-guided algorithms in multicenter trauma systems.",
+      "hypothesis": "VHA-guided management enables earlier targeted haemostatic therapy, reduces massive transfusion, and improves survival compared to CCT-guided care."
+    },
+    "methods": {
+      "design": "Investigator-initiated, pragmatic, multicentre, international, open-label, parallel-group randomized controlled trial (1:1), stratified by centre using block randomisation",
+      "setting": "Emergency department trauma resuscitation across 7 European major trauma centres in Denmark, Germany, Norway, Spain, Switzerland, and the UK",
+      "population": {
+        "inclusion": [
+          "Adult trauma patients",
+          "Clinical signs of active bleeding triggering local massive hemorrhage protocol (MHP) activation",
+          "Red blood cell (RBC) transfusion initiated",
+          "Randomisation within 3 hours of injury and within 1 hour of ED admission"
+        ],
+        "exclusion": [
+          "No additional exclusion criteria beyond failing inclusion criteria",
+          "Patients withdrawing consent post-randomisation were excluded from final analysis"
+        ]
+      },
+      "intervention": "VHA-guided goal-directed algorithm (ROTEM Sigma or TEG 6s) plus standard MHP care. Baseline and repeat testing after every 4 RBC units until haemostasis. ROTEM triggers: FIBTEM CA5 <10 mm -> 4 g fibrinogen equiv; EXTEM-FIBTEM CA5 diff <30 mm -> 1 pool platelets; EXTEM CA5 >=40 mm and CT >80 s -> 4 units plasma; EXTEM LI30 <85% -> 1 g TXA. RapidTEG triggers: FF-TEG MA <20 mm -> 4 g fibrinogen equiv; RapidTEG-FF MA diff <45 mm -> 1 pool platelets; RapidTEG MA >65 mm and ACT >120 s -> 4 units plasma; LY30 >10% -> 1 g TXA.",
+      "comparison": "CCT-guided goal-directed algorithm plus standard MHP care. Baseline and repeat testing after every 4 RBC units until haemostasis. CCT triggers: Fibrinogen <2 g/L -> 4 g fibrinogen equiv; platelet count <100x10^9/L -> 1 pool platelets; INR >1.2 with fibrinogen >=2 g/L -> 4 units plasma.",
+      "blinding": "Open-label to treating clinicians; research personnel collecting safety and outcome data were blinded to allocation.",
+      "sample_size_power": "392 patients required to detect an increase in primary outcome from 72% to 85% (80% power, 2-sided alpha 0.05); sample target set to 196 per arm (392 total) to account for 15% post-randomisation attrition.",
+      "primary_outcome": "Alive and free of massive transfusion (defined as >=10 RBC units within 24 hours post-injury) at 24 hours.",
+      "secondary_outcomes": [
+        "Massive transfusion at 24 hours",
+        "Mortality at 6 hours, 24 hours, 28 days, and 90 days",
+        "Death from exsanguination",
+        "Death before haemostasis",
+        "Time to haemostasis",
+        "Symptomatic thromboembolic events",
+        "Multiple organ dysfunction syndrome (MODS)",
+        "28-day ventilator-free days",
+        "28-day ICU-free days",
+        "28-day mortality in severe TBI subgroup (AIS head 4-6)"
+      ],
+      "follow_up": "24 hours for primary endpoint; 28 days and 90 days for survival and functional recovery."
+    },
+    "results": {
+      "headline_bullets": [
+        "VHA-guided goal-directed therapy did not improve 24-hour survival free of massive transfusion (67% vs 64%, OR 1.15, p=0.509).",
+        "Overall mortality was non-significantly different at 6 hours, 24 hours, 28 days, and 90 days.",
+        "VHA guidance increased early pre-haemostasis fibrinogen delivery (median 4 g vs 0 g) without shortening median time to haemostasis (125 vs 122 min).",
+        "A prespecified subgroup with severe TBI showed reduced 28-day mortality with VHA (44% vs 74%, p=0.016 for interaction)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Alive and free of massive transfusion at 24 h (primary)",
+          "group_a": "135/201 (67%)",
+          "group_b": "125/195 (64%)",
+          "effect_measure": "OR",
+          "effect_value": "1.15",
+          "ci_95": "0.76–1.73",
+          "p_value": "0.509",
+          "note": "Massive transfusion defined as >=10 RBC units within 24 h after injury"
+        },
+        {
+          "outcome": "Massive transfusion at 24 h",
+          "group_a": "53/201 (26%)",
+          "group_b": "55/195 (28%)",
+          "effect_measure": "OR",
+          "effect_value": "0.91",
+          "ci_95": "0.59–1.42",
+          "p_value": "0.682",
+          "note": "Binary secondary endpoint"
+        },
+        {
+          "outcome": "Mortality at 6 h",
+          "group_a": "22/201 (11%)",
+          "group_b": "22/195 (11%)",
+          "effect_measure": "OR",
+          "effect_value": "0.97",
+          "ci_95": "0.52–1.80",
+          "p_value": "0.915",
+          "note": "Early mortality"
+        },
+        {
+          "outcome": "Mortality at 24 h",
+          "group_a": "29/201 (14%)",
+          "group_b": "33/195 (17%)",
+          "effect_measure": "OR",
+          "effect_value": "0.83",
+          "ci_95": "0.48–1.42",
+          "p_value": "0.495",
+          "note": "Many deaths occurred before haemostasis"
+        },
+        {
+          "outcome": "Mortality at 28 days",
+          "group_a": "50/201 (25%)",
+          "group_b": "55/194 (28%)",
+          "effect_measure": "OR",
+          "effect_value": "0.84",
+          "ci_95": "0.54–1.31",
+          "p_value": "0.435",
+          "note": "One CCT patient missing 28-day status (n=194)"
+        },
+        {
+          "outcome": "Mortality at 90 days",
+          "group_a": "53/179 (29%)",
+          "group_b": "56/177 (31%)",
+          "effect_measure": "OR",
+          "effect_value": "0.91",
+          "ci_95": "0.58–1.42",
+          "p_value": "0.678",
+          "note": "Substantial missingness (356 total patients analysed)"
+        },
+        {
+          "outcome": "Death from exsanguination",
+          "group_a": "13/51 (25%)",
+          "group_b": "17/56 (30%)",
+          "effect_measure": "OR",
+          "effect_value": "0.78",
+          "ci_95": "0.34–1.82",
+          "p_value": "0.576",
+          "note": "Among patients with known cause of death (51 VHA, 56 CCT)"
+        },
+        {
+          "outcome": "Died before haemostasis",
+          "group_a": "19/50 (38%)",
+          "group_b": "24/54 (44%)",
+          "effect_measure": "OR",
+          "effect_value": "0.77",
+          "ci_95": "0.35–1.67",
+          "p_value": "0.505",
+          "note": "Reported among deceased patients"
+        },
+        {
+          "outcome": "Time to haemostasis (minutes; median [IQR])",
+          "group_a": "125 (77–185)",
+          "group_b": "122 (80–185)",
+          "effect_measure": "Median diff",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.929",
+          "note": "Analysed in 176 VHA and 170 CCT patients"
+        },
+        {
+          "outcome": "Symptomatic thromboembolic event",
+          "group_a": "17/201 (9%)",
+          "group_b": "27/195 (14%)",
+          "effect_measure": "OR",
+          "effect_value": "0.57",
+          "ci_95": "0.31–1.08",
+          "p_value": "0.088",
+          "note": "Numerically lower in VHA arm"
+        },
+        {
+          "outcome": "Multiple organ dysfunction syndrome (MODS)",
+          "group_a": "141/164 (86%)",
+          "group_b": "134/159 (84%)",
+          "effect_measure": "OR",
+          "effect_value": "1.14",
+          "ci_95": "0.62–2.10",
+          "p_value": "0.668",
+          "note": "Assessed in patients with available data"
+        },
+        {
+          "outcome": "28-day ventilator-free days (median [IQR])",
+          "group_a": "17 (0–25)",
+          "group_b": "20 (0–26)",
+          "effect_measure": "Median diff",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.422",
+          "note": "Analysed in 198 VHA and 192 CCT patients"
+        },
+        {
+          "outcome": "28-day ICU-free days (median [IQR])",
+          "group_a": "13 (0–23)",
+          "group_b": "15 (0–23)",
+          "effect_measure": "Median diff",
+          "effect_value": "NR",
+          "ci_95": "NR",
+          "p_value": "0.691",
+          "note": "Analysed in 198 VHA and 192 CCT patients"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Severe TBI subgroup (AIS head 4–6) 28-day mortality",
+          "group_a": "17/39 (44%)",
+          "group_b": "25/34 (74%)",
+          "effect_measure": "OR",
+          "effect_value": "0.28",
+          "ci_95": "0.10–0.74",
+          "p_interaction": "0.016"
+        }
+      ]
+    },
+    "safety": [
+      "Symptomatic thromboembolic events occurred in 17/201 (9%) VHA vs 27/195 (14%) CCT patients (OR 0.57, 95% CI 0.31–1.08, p=0.088).",
+      "Multiple organ dysfunction syndrome (MODS) developed in 141/164 (86%) VHA vs 134/159 (84%) CCT patients (OR 1.14, 95% CI 0.62–2.10, p=0.668).",
+      "No excess safety signals or adverse event peaks were attributed to VHA-guided haemostatic product delivery."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central 1:1 allocation using site-stratified block randomisation with opaque sealed envelopes; baseline severity balanced (median ISS 26 vs 26, pre-baseline RBC 2 vs 2 units)."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Treating clinicians were unblinded due to testing nature, creating potential performance bias for transfusion decisions; outcome collectors were blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "411 randomized; 15 excluded post-consent withdrawal (8 CCT, 7 VHA), leaving ITT n=396 (195 CCT, 201 VHA). Per-protocol was 313/396 (79%) due to 83 exclusions (54 early haemostasis <1h, 16 death <1h, 8 wrong-arm, 5 entry criteria error)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "VHA group received more pre-haemostasis study intervention (67% vs 36%), faster time to intervention (61 vs 80 min), and higher pre-haemostasis fibrinogen (4 g vs 0 g median). 24h total RBC (6 vs 6 units) and plasma (6 vs 7 units) were similar. 8 patients received wrong-arm treatment."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Baseline coagulopathy was lower than anticipated (PTr >1.2 in 32% CCT vs 25% VHA). High background adherence to standard care in both arms (pre-baseline TXA 98% vs 94%)."
+        }
+      ],
+      "verdict": "Moderate internal validity owing to robust randomisation and baseline balance, limited by open-label clinical delivery, lower-than-expected baseline coagulopathy rates, and high per-protocol exclusion rates."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Broad adult trauma cohort triggering massive transfusion protocol and receiving RBCs in major European trauma centres; includes 18–20% severe TBI and baseline shock (median SBP 90–95 mmHg)."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in well-resourced European major trauma centres with established MHP pathways, routine early TXA, and VHA capacity; generalisability may be lower in non-tertiary or resource-constrained settings."
+        }
+      ],
+      "verdict": "Moderate-to-high external validity for mature, well-resourced trauma systems with established massive hemorrhage pathways and point-of-care testing availability."
+    },
+    "strengths": [
+      "Pragmatic, international, multicentre randomized design across 7 major trauma centres.",
+      "Standardised protocolised algorithms in both arms with repeat testing every 4 RBC units.",
+      "Primary composite outcome focused on early mortality and transfusion intensity.",
+      "High background adherence to contemporary standards including early tranexamic acid."
+    ],
+    "limitations": [
+      "Open-label design with clinician-dependent blood product transfusion decisions.",
+      "Lower baseline coagulopathy prevalence (25-32%) and event rates than assumed in power calculations.",
+      "Minimal separation between arms in total 24-hour RBC and plasma transfusion volumes.",
+      "Substantial missing data for 90-day mortality and health status outcomes.",
+      "Heterogeneity in VHA testing platforms (ROTEM vs TEG) and fibrinogen products (cryoprecipitate vs concentrate)."
+    ],
+    "critical_appraisal": {
+      "summary": "ITACTIC provides high-quality randomized evidence that routine implementation of VHA-guided algorithms does not improve 24-hour survival free of massive transfusion compared to standard lab-guided algorithms in high-performing trauma systems.",
+      "strengths": [
+        "Rigorous central randomization and allocation concealment",
+        "Clear algorithmic standardization across both study arms",
+        "High background quality of damage control resuscitation"
+      ],
+      "weaknesses": [
+        "Trial was underpowered due to lower-than-projected baseline coagulopathy rates",
+        "Open-label design creates potential performance bias for transfusion decisions",
+        "Substantial missingness for 90-day survival outcomes"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "In adult trauma patients with ongoing bleeding managed with massive hemorrhage protocols, VHA-guided goal-directed therapy did not improve the proportion of patients alive and free of massive transfusion at 24 hours compared with CCT-guided therapy.",
+    "clinical_bottom_line": {
+      "verdict": "Replacing standard laboratory-guided MHP algorithms with VHA-guided algorithms does not improve early survival or reduce massive transfusion in mature trauma resuscitation systems.",
+      "applies_to": "Adult trauma patients with active bleeding triggering massive hemorrhage protocol activation receiving RBC transfusions.",
+      "does_not_mean": "VHA testing has no clinical value; point-of-care testing may still benefit specific subgroups such as severe traumatic brain injury.",
+      "implementation_caveats": [
+        "VHA infrastructure requires substantial capital, training, and quality assurance investment.",
+        "VHA guidance increased early fibrinogen administration without accelerating haemostasis or reducing mortality.",
+        "System logistics and speed of product delivery from lab to bedside remain critical determinants of outcome."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Composite primary endpoint limitations",
+        "notes": "Combining survival and freedom from massive transfusion (<10 RBC units) introduces potential performance bias in an open-label trial where transfusion decisions are clinician-led."
+      },
+      {
+        "topic": "Patient selection and coagulopathy prevalence",
+        "notes": "Only 25-32% of patients had baseline PT ratio >1.2, suggesting sample dilution with non-coagulopathic patients unlikely to benefit from assay-guided supplementation."
+      },
+      {
+        "topic": "Implementation gap ('last mile')",
+        "notes": "Secondary analysis showed VHA increased goal-directed treatment probability (76% vs 47%, OR 3.73, p=0.002) and reduced time to treatment (68 vs 110 min, p=0.002), but only 20% achieved coagulopathy correction at 24 hours."
+      },
+      {
+        "topic": "Severe TBI subgroup signal",
+        "notes": "Significant 28-day mortality reduction in severe TBI (44% vs 74%, OR 0.28, p=0.016) is biologically plausible but statistically fragile due to small sample size (n=73) and subgroup multiplicity."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "European trauma bleeding guideline 2023",
+        "relation": "Recommends early/repeated coagulation monitoring (CCT and/or VHA) and goal-directed therapy (Grade 1B/1C), citing ITACTIC's neutral main trial result while supporting VHA use within structured pathways."
+      }
+    ],
+    "unresolved_questions": [
+      "Does VHA-guided resuscitation confer a true mortality benefit in targeted cohorts with documented severe coagulopathy or isolated severe TBI?",
+      "Can optimizing the sample-to-product delivery chain improve clinical outcomes independently of the coagulation assay platform used?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=396 (201 VHA vs 195 CCT)",
+        "Primary outcome 67% vs 64% (OR 1.15, p=0.509)",
+        "Severe TBI 28-day mortality 44% vs 74% (OR 0.28, p=0.016)"
+      ],
+      "one_line_takeaway": "VHA-guided resuscitation algorithms do not improve survival free of massive transfusion compared to standard laboratory-guided care in major trauma hemorrhage."
+    }
+  },
+  "_source_id": "ITACTIC",
+  "_source_system": "Trauma"
+}

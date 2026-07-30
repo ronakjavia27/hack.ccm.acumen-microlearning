@@ -1,0 +1,322 @@
+{
+  "id": "BLING_III",
+  "trial_name": "BLING III — Continuous vs Intermittent β-Lactam Antibiotic Infusions in Critically Ill Patients With Sepsis (2024)",
+  "specialty": "Sepsis & Septic Shock",
+  "subtopic": "Adjunctive Therapies",
+  "year": 2024,
+  "journal": "JAMA",
+  "citation": "Dulhunty JM, Brett SJ, De Waele JJ, et al; BLING III Study Investigators and the ANZICS Clinical Trials Group. Continuous vs intermittent β-lactam antibiotic infusions in critically ill patients with sepsis: the BLING III randomized clinical trial. JAMA. 2024;332(8):629-637.",
+  "doi": "10.1001/jama.2024.9779",
+  "registration": "",
+  "trial_type": "RCT — international, multicentre, pragmatic, phase 3, open-label, parallel-group randomised clinical trial (1:1)",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 7202,
+  "result_category": "Mixed",
+  "one_liner": "Continuous infusion of piperacillin-tazobactam or meropenem did not significantly reduce 90-day mortality in the primary unadjusted analysis (24.9% vs 26.8%, p=0.08) but significantly improved 14-day clinical cure.",
+  "pico": {
+    "population": "Adult ICU patients with sepsis prescribed piperacillin-tazobactam or meropenem with at least 1 organ dysfunction criterion.",
+    "intervention": "Continuous infusion of clinician-determined total 24-hour dose of piperacillin-tazobactam or meropenem for duration of treatment or until ICU discharge.",
+    "comparison": "Intermittent infusion (nominally over 30 minutes) of clinician-determined dose of piperacillin-tazobactam or meropenem.",
+    "outcome": "All-cause 90-day mortality."
+  },
+  "keywords": [
+    "piperacillin-tazobactam",
+    "meropenem",
+    "beta-lactam",
+    "continuous infusion",
+    "pharmacokinetics",
+    "sepsis"
+  ],
+  "related_trials": [
+    "MERCY"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Beta-lactam antibiotics exhibit time-dependent bacterial killing, requiring free-drug concentrations to remain above the minimum inhibitory concentration (MIC). Critical illness induces altered volume of distribution, augmented renal clearance, and organ dysfunction, leading to inadequate exposure with intermittent dosing.",
+      "knowledge_gap": "Prior RCTs and meta-analyses suggested potential benefits in clinical cure and mortality with continuous infusions but were limited by small sample sizes and methodological quality, leaving guidelines conditional.",
+      "hypothesis": "Continuous infusion of piperacillin-tazobactam or meropenem reduces all-cause 90-day mortality compared with intermittent infusion in critically ill adults with sepsis."
+    },
+    "methods": {
+      "design": "International, multicentre, pragmatic, phase 3, open-label, 1:1 parallel-group randomised trial.",
+      "setting": "104 adult ICUs in Australia, Belgium, France, Malaysia, New Zealand, Sweden, and the UK from 2018 to 2023.",
+      "population": {
+        "inclusion": [
+          "Adult ICU patients (age >=18 years) with suspected or documented infection",
+          "Expected ICU stay >=48 hours",
+          "Commenced on piperacillin-tazobactam or meropenem for current episode",
+          "At least 1 organ dysfunction criterion within preceding 24 hours (MAP <60 mmHg >=1h, vasopressors >4h, HFNO/CPAP/BiPAP/IMV >=1h, or serum creatinine >220 umol/L)"
+        ],
+        "exclusion": [
+          "Age <18 years",
+          "Receipt of piperacillin-tazobactam or meropenem for >24 hours for current episode",
+          "Pregnancy",
+          "Known allergy to study antibiotics or penicillin",
+          "Kidney replacement therapy at randomisation",
+          "Limitations of advanced life support over next 48 hours",
+          "Death imminent or inevitable",
+          "Prior enrolment in BLING III"
+        ]
+      },
+      "intervention": "Continuous infusion of clinician-determined total 24-hour dose of piperacillin-tazobactam or meropenem. Switching agents permitted with intermittent loading dose.",
+      "comparison": "Intermittent infusion (nominally over 30 minutes) of clinician-determined dose. Switching agents permitted.",
+      "blinding": "Open-label for treating clinicians and bedside staff; primary endpoint was objective (mortality).",
+      "sample_size_power": "7000 patients required for 90% power to detect 3.5% absolute reduction in 90-day mortality (27.5% to 24.0%) at 2-sided alpha 0.05, allowing 5% withdrawal.",
+      "primary_outcome": "All-cause mortality at 90 days after randomisation.",
+      "secondary_outcomes": [
+        "Clinical cure at day 14",
+        "New acquisition, colonisation, or infection with multidrug-resistant organisms or Clostridioides difficile at day 14",
+        "All-cause ICU mortality",
+        "All-cause hospital mortality",
+        "ICU-free days to day 90",
+        "Hospital-free days to day 90",
+        "Mechanical ventilation-free days to day 90",
+        "Kidney replacement therapy-free days to day 90"
+      ],
+      "follow_up": "Day 14 for clinical cure and resistant pathogens; Day 90 for primary mortality and organ-free days."
+    },
+    "results": {
+      "headline_bullets": [
+        "Unadjusted primary 90-day mortality was lower with continuous infusion (24.9% vs 26.8%) but did not reach statistical significance (OR 0.91, p=0.08).",
+        "Prespecified adjusted mortality model reached statistical significance (OR 0.89, p=0.04).",
+        "Clinical cure at day 14 was significantly higher with continuous infusion (55.7% vs 50.0%, OR 1.26, p<0.001).",
+        "No significant difference was observed in MDRO/C. difficile acquisition or adverse event rates."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at 90 days (primary unadjusted)",
+          "group_a": "864/3474 (24.9%)",
+          "group_b": "939/3507 (26.8%)",
+          "effect_measure": "OR",
+          "effect_value": "0.91",
+          "ci_95": "0.81–1.01",
+          "p_value": "0.08",
+          "note": "Absolute difference −1.9% (95% CI −4.9 to 1.1)"
+        },
+        {
+          "outcome": "All-cause mortality at 90 days (prespecified adjusted)",
+          "group_a": "864/3474 (24.9%)",
+          "group_b": "939/3507 (26.8%)",
+          "effect_measure": "OR",
+          "effect_value": "0.89",
+          "ci_95": "0.79–0.99",
+          "p_value": "0.04",
+          "note": "Adjusted for sex, APACHE II, admission source, and baseline beta-lactam; ARD −2.2% (95% CI −5.5 to 1.1)"
+        },
+        {
+          "outcome": "Clinical cure at day 14",
+          "group_a": "1930/3467 (55.7%)",
+          "group_b": "1744/3491 (50.0%)",
+          "effect_measure": "OR",
+          "effect_value": "1.26",
+          "ci_95": "1.15–1.38",
+          "p_value": "<0.001",
+          "note": "Absolute difference 5.7% (95% CI 2.4 to 9.1); Holm-Bonferroni adjusted"
+        },
+        {
+          "outcome": "New MDRO or C. difficile acquisition/colonisation/infection (day 14)",
+          "group_a": "253/3498 (7.2%)",
+          "group_b": "266/3533 (7.5%)",
+          "effect_measure": "OR",
+          "effect_value": "0.96",
+          "ci_95": "0.80–1.15",
+          "p_value": "0.65",
+          "note": "Absolute difference −0.3% (95% CI −1.9 to 1.4)"
+        },
+        {
+          "outcome": "New MDRO acquisition excluding C. difficile (day 14)",
+          "group_a": "215/3498 (6.1%)",
+          "group_b": "232/3533 (6.6%)",
+          "effect_measure": "OR",
+          "effect_value": "0.92",
+          "ci_95": "0.76–1.12",
+          "p_value": "0.41",
+          "note": "Secondary analysis"
+        },
+        {
+          "outcome": "All-cause ICU mortality",
+          "group_a": "595/3474 (17.1%)",
+          "group_b": "645/3507 (18.4%)",
+          "effect_measure": "OR",
+          "effect_value": "0.92",
+          "ci_95": "0.81–1.04",
+          "p_value": "0.35",
+          "note": "Absolute difference −1.3% (95% CI −4.0 to 1.4)"
+        },
+        {
+          "outcome": "All-cause hospital mortality",
+          "group_a": "808/3474 (23.3%)",
+          "group_b": "878/3507 (25.0%)",
+          "effect_measure": "OR",
+          "effect_value": "0.91",
+          "ci_95": "0.81–1.02",
+          "p_value": "0.27",
+          "note": "Absolute difference −1.8% (95% CI −4.8 to 1.2)"
+        },
+        {
+          "outcome": "Days alive and free of ICU (to day 90)",
+          "group_a": "Mean 59.4 (SD 33.9)",
+          "group_b": "Mean 57.8 (SD 34.2)",
+          "effect_measure": "MD",
+          "effect_value": "1.5 days",
+          "ci_95": "−0.1–3.0",
+          "p_value": "0.18",
+          "note": "Tertiary outcome; Holm-Bonferroni adjusted"
+        },
+        {
+          "outcome": "Days alive and free of hospital (to day 90)",
+          "group_a": "Mean 42.4 (SD 32.2)",
+          "group_b": "Mean 40.6 (SD 32.5)",
+          "effect_measure": "MD",
+          "effect_value": "1.8 days",
+          "ci_95": "0.3–3.3",
+          "p_value": "0.08",
+          "note": "Tertiary outcome; confidence interval excludes 0 despite adjusted P value"
+        },
+        {
+          "outcome": "Days alive and free of mechanical ventilation (to day 90)",
+          "group_a": "Mean 64.2 (SD 34.5)",
+          "group_b": "Mean 62.9 (SD 34.8)",
+          "effect_measure": "MD",
+          "effect_value": "1.2 days",
+          "ci_95": "−0.4–2.8",
+          "p_value": "0.28",
+          "note": "Tertiary outcome; Holm-Bonferroni adjusted"
+        },
+        {
+          "outcome": "Days alive and free of KRT (to day 90)",
+          "group_a": "Mean 71.2 (SD 32.8)",
+          "group_b": "Mean 70.2 (SD 33.1)",
+          "effect_measure": "MD",
+          "effect_value": "0.9 days",
+          "ci_95": "−0.6–2.4",
+          "p_value": "0.25",
+          "note": "Tertiary outcome; Holm-Bonferroni adjusted"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Prespecified subgroups (pulmonary/non-pulmonary, drug, age, sex, APACHE II)",
+          "group_a": "N/A",
+          "group_b": "N/A",
+          "effect_measure": "Interaction P",
+          "effect_value": ">=0.62",
+          "ci_95": "N/A",
+          "p_interaction": "0.62"
+        }
+      ]
+    },
+    "safety": [
+      "Any adverse event occurred in 10/3466 (0.3%) in continuous vs 6/3484 (0.2%) in intermittent group.",
+      "One serious adverse event occurred in the continuous infusion group assessed as possibly related."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Centralised encrypted web-based randomisation using minimisation algorithm stratified by study site."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design. Primary mortality endpoint was objective, but subjective endpoints like clinical cure could be prone to detection or performance bias."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "7202 randomised; 171 (2.4%) excluded post-randomisation due to lack of consent; 50 (0.7%) lost to follow-up for 90-day mortality."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Protocol deviations occurred in 31.9% vs 34.1%; incorrect administration method in 8.1% vs 4.8%; dosing/admin delays >1h in 15.3% vs 22.6%."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Well balanced: mean age 59.3 vs 59.6, APACHE II 19.6 vs 19.5, vasopressors 71.0% vs 70.3%, pulmonary source 59.0% vs 60.0%."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong with central randomisation and high mortality follow-up, though attenuated by open-label design and non-trivial protocol contamination."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "High generalisability to adult ICU sepsis patients with organ dysfunction receiving common broad-spectrum beta-lactams in developed healthcare systems."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "104 ICUs across 7 countries; requires appropriate IV access, infusion pumps, pharmacy stability considerations, and nursing workflows."
+        }
+      ],
+      "verdict": "External validity is good for general adult ICU sepsis populations, though limited for patients on dialysis at baseline or settings with severe operational constraints."
+    },
+    "strengths": [
+      "Largest randomised trial to date evaluating beta-lactam infusion strategies in ICU sepsis",
+      "Pragmatic multi-center international design across 104 ICUs in 7 countries",
+      "High complete follow-up for hard, patient-centred primary mortality outcome (99.3%)",
+      "Rigorous prespecified statistical plan including Holm-Bonferroni multiplicity adjustments"
+    ],
+    "limitations": [
+      "Open-label design creates potential bias for secondary clinician-assessed outcomes like clinical cure",
+      "Non-trivial protocol contamination and administration errors (8.1% vs 4.8%) biasing towards null",
+      "Exclusion of patients receiving baseline KRT or enrolled >24 hours after antibiotic initiation",
+      "Comparator was 30-minute intermittent infusion rather than modern extended 3-to-4-hour infusion"
+    ],
+    "critical_appraisal": {
+      "summary": "BLING III provides robust, large-scale evidence that continuous beta-lactam infusion improves clinical cure and trends toward lower 90-day mortality without increasing adverse events or resistance.",
+      "strengths": [
+        "Enormous sample size (>7000 patients) giving high precision",
+        "Pragmatic design evaluating common real-world regimens (pip-tazo and meropenem)"
+      ],
+      "weaknesses": [
+        "Open-label nature",
+        "High rates of protocol deviations and baseline continuous infusion exposure prior to randomisation"
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Among critically ill adults with sepsis, continuous infusion of beta-lactam antibiotics did not significantly reduce 90-day mortality compared with intermittent infusion, though clinical cure was increased.",
+    "clinical_bottom_line": {
+      "verdict": "Supports adopting continuous beta-lactam infusion as a preferred administration strategy where logistically feasible, given improved clinical cure and a consistent direction of mortality benefit.",
+      "applies_to": "Adult ICU patients with sepsis or septic shock starting piperacillin-tazobactam or meropenem.",
+      "does_not_mean": "Intermittent infusion is unsafe or ineffective if continuous pumps/lines are unavailable.",
+      "implementation_caveats": [
+        "Requires dedicated infusion lines or compatible co-administrations",
+        "Requires drug stability verification (especially meropenem multi-hour stability)",
+        "Must administer intermittent loading dose prior to starting continuous infusion"
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Primary vs Adjusted Mortality Significance",
+        "notes": "The primary unadjusted analysis did not achieve statistical significance (OR 0.91, p=0.08), whereas the prespecified adjusted model crossed threshold (OR 0.89, p=0.04), generating debate over interpretative hierarchy."
+      },
+      {
+        "topic": "Open-Label Bias in Clinical Cure",
+        "notes": "The 5.7% gain in clinical cure (OR 1.26) may be influenced by clinician awareness of group assignment when deciding antibiotic cessation or re-initiation."
+      },
+      {
+        "topic": "Intermittent vs Extended Infusion Comparator",
+        "notes": "Control arm used 30-minute intermittent infusions rather than 3-to-4-hour extended infusions now popular in many ICUs."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "MERCY",
+        "relation": "MERCY evaluated continuous vs intermittent meropenem in 607 ICU patients with sepsis/septic shock and found no difference in 28-day mortality or PDR/XDR resistance, but showed concordant non-significant trends favoring continuous infusion."
+      }
+    ],
+    "unresolved_questions": [
+      "Does continuous infusion offer distinct mortality advantages over extended (3-4 hour) intermittent infusion?",
+      "What is the impact of routine Therapeutic Drug Monitoring (TDM) combined with continuous infusion on clinical outcomes?",
+      "Are specific sub-populations (e.g., augmented renal clearance, high MIC pathogens) driving the clinical cure benefit?"
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=7202",
+        "Unadjusted 90-day mortality 24.9% vs 26.8% (OR 0.91, p=0.08)",
+        "Adjusted 90-day mortality OR 0.89 (p=0.04)",
+        "Clinical cure 55.7% vs 50.0% (OR 1.26, p<0.001)"
+      ],
+      "one_line_takeaway": "Continuous beta-lactam infusion improves 14-day clinical cure and trends toward reduced 90-day mortality in ICU sepsis without added toxicity."
+    }
+  },
+  "_source_id": "BLING_III",
+  "_source_system": "Sepsis"
+}

@@ -1,0 +1,308 @@
+{
+  "id": "TOMAHAWK",
+  "trial_name": "TOMAHAWK — Angiography after Out-of-Hospital Cardiac Arrest without ST-Segment Elevation (2021)",
+  "specialty": "Resuscitation & Post-Cardiac Arrest Care",
+  "subtopic": "Temperature Management",
+  "year": 2021,
+  "journal": "N Engl J Med",
+  "citation": "Desch S, Freund A, Akin I, Behnes M, Preusch MR, Zelniker TA, et al. Angiography after out-of-hospital cardiac arrest without ST-segment elevation. N Engl J Med. 2021;385:2544-2553",
+  "doi": "https://doi.org/10.1056/NEJMoa2101909",
+  "registration": "",
+  "trial_type": "RCT — investigator-initiated, prospective, randomised, multicentre, open-label, parallel-group strategy trial",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 554,
+  "result_category": "Negative/Neutral",
+  "one_liner": "In resuscitated OHCA without ST-segment elevation, routine immediate coronary angiography did not reduce 30-day mortality compared to delayed or selective angiography and showed a signal compatible with harm.",
+  "pico": {
+    "population": "Adults aged ≥30 years with resuscitated out-of-hospital cardiac arrest of possible coronary origin and ROSC, without ST-segment elevation or new LBBB.",
+    "intervention": "Immediate coronary angiography strategy with revascularisation (PCI/CABG) as indicated (protocol target coronary visualisation within 60 min).",
+    "comparison": "Initial intensive care assessment with delayed (≥24 hours) or selective angiography strategy.",
+    "outcome": "30-day all-cause mortality."
+  },
+  "keywords": [
+    "out-of-hospital cardiac arrest",
+    "OHCA",
+    "coronary angiography",
+    "PCI",
+    "targeted temperature management",
+    "non-STEMI"
+  ],
+  "related_trials": [
+    "COACT",
+    "PROCAT II",
+    "DISCO",
+    "PEARL"
+  ],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Acute coronary occlusion can precipitate out-of-hospital cardiac arrest (OHCA), yet post-ROSC ECG frequently lacks ST-segment elevation. Observational registries (including PROCAT II) suggested associations between early angiography/PCI and improved outcomes, but were vulnerable to confounding by indication and immortal-time bias.",
+      "knowledge_gap": "The COACT trial showed no survival advantage for immediate angiography in comatose OHCA with shockable rhythms without ST-elevation, leaving uncertainty for broader cohorts including nonshockable rhythms and heterogeneous causes.",
+      "hypothesis": "A strategy of immediate coronary angiography would reduce 30-day all-cause mortality versus initial intensive care assessment with delayed or selective angiography among resuscitated OHCA patients without ST-segment elevation."
+    },
+    "methods": {
+      "design": "Investigator-initiated, prospective, randomised, multicentre, open-label, parallel-group strategy trial.",
+      "setting": "31 enrolling sites across Germany and Denmark (cardiac ICU and general medical ICU settings).",
+      "population": {
+        "inclusion": [
+          "Adults aged ≥30 years",
+          "Documented resuscitated OHCA of possible coronary origin",
+          "Successful return of spontaneous circulation (ROSC)",
+          "No ST-segment elevation on post-resuscitation ECG"
+        ],
+        "exclusion": [
+          "ST-segment elevation or new left bundle branch block (LBBB)",
+          "In-hospital cardiac arrest",
+          "Obvious extracardiac cause (trauma, severe intracranial hemorrhage, intoxication, drowning)",
+          "Persistent hemodynamic or electrical instability requiring immediate angiography (cardiogenic shock or life-threatening arrhythmias felt due to acute ischemia)",
+          "Pregnancy",
+          "Enrolment in another interfering interventional trial"
+        ]
+      },
+      "intervention": "Immediate coronary angiography with revascularisation (PCI/CABG) as indicated by findings; protocol target coronary visualisation within 60 minutes of presentation.",
+      "comparison": "Initial intensive care assessment with delayed or selective angiography after ≥24 hours, or earlier if urgent criteria emerged (cardiogenic shock, refractory electrical instability, evolving ischemia, or new ST-elevation).",
+      "blinding": "Open-label treatment assignment; non-mortality outcomes adjudicated by a clinical events committee.",
+      "sample_size_power": "558 patients planned to detect an HR of 0.674 (30-day mortality 46% to 34%) with 90% power at 5% significance level; group-sequential design with one interim analysis after 109 deaths.",
+      "primary_outcome": "All-cause mortality at 30 days.",
+      "secondary_outcomes": [
+        "Composite of death or severe neurologic deficit (CPC 3–5) at 30 days",
+        "Severe neurologic deficit at 30 days among survivors with available CPC",
+        "Myocardial infarction (type 1–3) at 30 days",
+        "Moderate or severe bleeding (BARC 2–5)",
+        "Stroke at 30 days",
+        "Acute renal failure requiring renal-replacement therapy",
+        "Length of ICU stay"
+      ],
+      "follow_up": "30 days for primary endpoint (protocol planned additional follow-up to 12 months)."
+    },
+    "results": {
+      "headline_bullets": [
+        "554 participants randomised (530 analysed in primary mITT population: 265 immediate vs 265 delayed/selective).",
+        "Routine immediate angiography did not reduce 30-day all-cause mortality (54.0% vs 46.0%; HR 1.28, 95% CI 1.00–1.63, p=0.06).",
+        "Composite of death or severe neurologic deficit occurred more frequently with immediate angiography (64.3% vs 55.6%; RR 1.16, 95% CI 1.00–1.34).",
+        "Immediate angiography was associated with a statistically significant delay in initiating targeted temperature management (median 153 min vs 119 min)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "All-cause mortality at 30 days (primary)",
+          "group_a": "143/265 (54.0%)",
+          "group_b": "122/265 (46.0%)",
+          "effect_measure": "HR",
+          "effect_value": "1.28",
+          "ci_95": "1.00–1.63",
+          "p_value": "0.06",
+          "note": "Primary analysis mITT population; excluded 20 consent withdrawals requiring deletion and 4 protocol violations."
+        },
+        {
+          "outcome": "Composite: death or severe neurologic deficit at 30 days",
+          "group_a": "164/255 (64.3%)",
+          "group_b": "138/248 (55.6%)",
+          "effect_measure": "RR",
+          "effect_value": "1.16",
+          "ci_95": "1.00–1.34",
+          "p_value": "Not reported",
+          "note": "Severe neurologic deficit defined as CPC 3–5; denominators reflect available neurological status data."
+        },
+        {
+          "outcome": "Severe neurologic deficit at 30 days (among survivors)",
+          "group_a": "21/112 (18.8%)",
+          "group_b": "16/126 (12.7%)",
+          "effect_measure": "RR",
+          "effect_value": "1.48",
+          "ci_95": "0.82–2.67",
+          "p_value": "Not reported",
+          "note": "Evaluated among survivors with available CPC assessment."
+        },
+        {
+          "outcome": "Myocardial infarction (type 1–3) at 30 days",
+          "group_a": "0/248 (0.0%)",
+          "group_b": "2/250 (0.8%)",
+          "effect_measure": "RR",
+          "effect_value": "0.00",
+          "ci_95": "0.00–1.93",
+          "p_value": "Not reported",
+          "note": "Very low overall event rate."
+        },
+        {
+          "outcome": "Moderate or severe bleeding (BARC 2–5)",
+          "group_a": "12/260 (4.6%)",
+          "group_b": "8/232 (3.4%)",
+          "effect_measure": "RR",
+          "effect_value": "1.34",
+          "ci_95": "0.57–3.14",
+          "p_value": "Not reported",
+          "note": "Safety population (as treated)."
+        },
+        {
+          "outcome": "Stroke at 30 days",
+          "group_a": "4/258 (1.6%)",
+          "group_b": "5/242 (2.1%)",
+          "effect_measure": "RR",
+          "effect_value": "1.13",
+          "ci_95": "0.33–3.84",
+          "p_value": "Not reported",
+          "note": "Safety population (as treated)."
+        },
+        {
+          "outcome": "Acute renal failure requiring renal-replacement therapy",
+          "group_a": "49/259 (18.9%)",
+          "group_b": "38/241 (15.8%)",
+          "effect_measure": "RR",
+          "effect_value": "1.14",
+          "ci_95": "0.78–1.68",
+          "p_value": "Not reported",
+          "note": "Safety population (as treated)."
+        },
+        {
+          "outcome": "Length of ICU stay",
+          "group_a": "Median 7 d (IQR 3–11)",
+          "group_b": "Median 8 d (IQR 4–13)",
+          "effect_measure": "HLE",
+          "effect_value": "−1 d",
+          "ci_95": "−2 to 0",
+          "p_value": "Not reported",
+          "note": "Hodges–Lehmann estimate for between-group difference in medians."
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Nonshockable initial rhythm",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "1.64",
+          "ci_95": "1.06–2.54",
+          "p_interaction": "0.15"
+        },
+        {
+          "subgroup": "Shockable initial rhythm",
+          "group_a": "Not reported",
+          "group_b": "Not reported",
+          "effect_measure": "HR",
+          "effect_value": "1.14",
+          "ci_95": "0.84–1.53",
+          "p_interaction": "0.15"
+        }
+      ]
+    },
+    "safety": [
+      "Moderate or severe bleeding (BARC 2–5): 4.6% (12/260) in immediate vs 3.4% (8/232) in delayed/selective (RR 1.34; 95% CI 0.57–3.14).",
+      "Stroke at 30 days: 1.6% (4/258) in immediate vs 2.1% (5/242) in delayed/selective (RR 1.13; 95% CI 0.33–3.84).",
+      "Acute renal failure requiring renal-replacement therapy: 18.9% (49/259) in immediate vs 15.8% (38/241) in delayed/selective (RR 1.14; 95% CI 0.78–1.68)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central, web-based block randomisation with changing block sizes, stratified by site. Allocation concealment maintained."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Open-label design; co-interventions and care limitations could be influenced. Mortality objective; other events adjudicated blinded."
+        },
+        {
+          "domain": "Attrition / ITT vs per-protocol",
+          "notes": "554 randomised; 530 in mITT primary analysis. 24 excluded: 20 consent withdrawals requiring full data deletion (14 immediate vs 6 delayed) and 4 eligibility violations (2 in-hospital arrest, 2 STEMI)."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Angiography performed in 95.5% vs 62.2% (RR 1.54, 95% CI 1.41–1.67). Median time to angiography 2.9 h (IQR 2.2–3.9) vs 46.9 h (IQR 26.1–116.6). PCI performed in 22.6% vs 18.9% (RR 1.20, 95% CI 0.86–1.67). Thrombectomy in 8.3% vs 3.8% (RR 2.20, 95% CI 1.06–4.57). TTM used in 78.9% vs 82.3% (RR 0.96, 95% CI 0.88–1.05); time to TTM initiation median 153 min vs 119 min (HLE diff 33 min, 95% CI 21–50). Safety crossover: 7 immediate to delayed, 22 delayed to immediate."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Median age 69 vs 71; female 30.2% vs 29.1%. Initial shockable rhythm 53.3% vs 58.7%; collapse-to-ROSC 15 vs 15 min; lactate 4.6 vs 4.4 mmol/L; pH 7.26 vs 7.28. Modest prognostic imbalance in shockable rhythm favoring control arm."
+        }
+      ],
+      "verdict": "Internal validity is moderate-to-strong given central randomisation and objective primary endpoint, limited by open-label design and post-randomisation exclusions."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Includes both shockable (53–59%) and nonshockable rhythms. Excludes STEMI, new LBBB, and hemodynamically/electrically unstable patients."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "Conducted in European tertiary centers with 24/7 cath labs and ICU post-ROSC pathways. Results apply directly to clinically stable non-STEMI post-ROSC patients."
+        }
+      ],
+      "verdict": "Good generalisability for comatose post-ROSC OHCA patients without ST-elevation in tertiary centers, but inapplicable to unstable patients requiring emergent revascularisation."
+    },
+    "strengths": [
+      "Clinically important, pragmatic strategy question in a high-stakes OHCA cohort.",
+      "Multicentre design including both shockable and nonshockable initial rhythms.",
+      "Meaningful separation in angiography timing (median 2.9 h vs 46.9 h) with high procedural adherence.",
+      "Pre-specified statistical design with interim analysis and robust sensitivity analyses."
+    ],
+    "limitations": [
+      "Open-label design created potential for performance bias in post-ROSC co-interventions.",
+      "Modified ITT population due to post-randomisation consent withdrawals demanding full data deletion.",
+      "High angiography rate in delayed arm (62.2%) tested routine immediate vs selective strategy rather than PCI vs medical therapy.",
+      "Power calculation assumed a large 12% absolute mortality reduction (46% to 34%).",
+      "Excluded patients with cardiogenic shock or refractory electrical instability."
+    ],
+    "critical_appraisal": {
+      "summary": "High-quality pragmatic trial demonstrating that routine immediate angiography after non-STEMI OHCA provides no mortality benefit and may delay critical ICU interventions like targeted temperature management.",
+      "strengths": [
+        "Objective primary endpoint of 30-day mortality.",
+        "Clear strategy separation with multi-country ICU representation."
+      ],
+      "weaknesses": [
+        "Open-label administration leading to modest delays in post-ROSC bundle care in immediate group.",
+        "Post-randomisation exclusions from mandatory consent-withdrawal data deletions."
+      ],
+      "rating": "High"
+    },
+    "authors_conclusion": "Among resuscitated OHCA patients without ST-segment elevation, an immediate coronary angiography strategy did not provide a 30-day mortality benefit over delayed or selective angiography.",
+    "clinical_bottom_line": {
+      "verdict": "Do not routinely send stable post-ROSC OHCA patients without ST-elevation immediately to the cath lab; prioritize ICU stabilization and temperature management, reserving angiography for delayed or selective indication.",
+      "applies_to": "Comatose post-ROSC OHCA patients without ST-segment elevation or ongoing hemodynamic/electrical instability.",
+      "does_not_mean": "Does not mean angiography is withheld entirely; 62.2% in the delayed group received cath based on clinical selection.",
+      "implementation_caveats": [
+        "Immediate cath lab activation can delay core post-resuscitation bundles including targeted temperature management (median 33 min delay in trial).",
+        "Maintain rapid cath lab capability if patients develop cardiogenic shock, electrical storm, or secondary STEMI."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Near-significant harm signal",
+        "notes": "Primary outcome HR 1.28 (p=0.06) and composite endpoint RR 1.16 (95% CI 1.00–1.34) suggest potential harm from routine immediate cath, likely mediated by delays in critical ICU bundles."
+      },
+      {
+        "topic": "Control group angiography rate",
+        "notes": "62.2% of delayed group received cath (median 46.9 h), confirming this was a strategy comparison (immediate vs triage-driven) rather than invasive vs conservative management."
+      }
+    ],
+    "context_related_trials": [
+      {
+        "trial": "COACT",
+        "relation": "Found no survival benefit for immediate vs delayed angiography in comatose non-STEMI OHCA with shockable rhythms."
+      },
+      {
+        "trial": "PROCAT II",
+        "relation": "Observational registry suggesting benefit from early PCI, likely confounded by selection and immortal-time bias."
+      },
+      {
+        "trial": "DISCO",
+        "relation": "Pilot RCT in non-STEMI OHCA showing no benefit for immediate angiography, aligning with TOMAHAWK results."
+      },
+      {
+        "trial": "PEARL",
+        "relation": "Pilot RCT in non-STEMI OHCA underpowered but directionally aligned with neutral/harm findings for routine early cath."
+      }
+    ],
+    "unresolved_questions": [
+      "Optimal timing window for delayed angiography in clinically stable non-STEMI post-ROSC patients.",
+      "Precision biomarker or imaging tools to identify non-STEMI post-ROSC subgroups with hidden acute coronary occlusions."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=554 (530 analysed)",
+        "30-day mortality: 54.0% vs 46.0% (HR 1.28, 95% CI 1.00–1.63, p=0.06)",
+        "Angiography timing: 2.9 h vs 46.9 h; TTM delay: 153 min vs 119 min"
+      ],
+      "one_line_takeaway": "In post-ROSC OHCA without ST-elevation, prioritize ICU stabilization and TTM over routine immediate transfer to the cath lab."
+    }
+  },
+  "_source_id": "TOMAHAWK",
+  "_source_system": "Resuscitation"
+}

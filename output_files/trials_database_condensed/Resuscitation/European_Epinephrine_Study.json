@@ -1,0 +1,303 @@
+{
+  "id": "European_Epinephrine_Study",
+  "trial_name": "European Epinephrine Study",
+  "specialty": "Resuscitation",
+  "subtopic": "Hemodynamic Monitoring",
+  "year": 1998,
+  "journal": "New England Journal of Medicine",
+  "citation": "Gueugniaud PY, Mols P, Goldstein P, et al. A comparison of repeated high doses and repeated standard doses of epinephrine for cardiac arrest outside the hospital. N Engl J Med. 1998;339:1595-1601.",
+  "doi": "https://doi.org/10.1056/NEJM199811263392204",
+  "registration": "",
+  "trial_type": "RCT — multicenter, double-blind, superiority",
+  "evidence_level": "High-quality RCT",
+  "sample_size": 3327,
+  "result_category": "Mixed",
+  "one_liner": "High-dose epinephrine (5 mg every 3 min) increased ROSC and hospital admission but did not improve survival to discharge or 1‑year survival in adult out‑of‑hospital cardiac arrest.",
+  "pico": {
+    "population": "Adults (≥18 years) with non‑traumatic OHCA treated by mobile emergency teams; asystole/PEA or VF persisting after 3 shocks",
+    "intervention": "Repeated high‑dose epinephrine 5 mg IV/IO every 3 min, max 15 doses (cumulative max 75 mg)",
+    "comparison": "Repeated standard‑dose epinephrine 1 mg IV/IO every 3 min, max 15 doses",
+    "outcome": "Survival to hospital discharge (primary patient‑centred outcome) and neurological status at discharge"
+  },
+  "keywords": [
+    "epinephrine",
+    "cardiac arrest",
+    "high‑dose epinephrine",
+    "out‑of‑hospital cardiac arrest",
+    "vasopressor",
+    "resuscitation"
+  ],
+  "related_trials": [],
+  "sections": {
+    "background": {
+      "existing_knowledge": "Epinephrine was embedded in ALS algorithms to increase aortic diastolic and coronary perfusion pressure via α‑vasoconstriction. Experimental and small clinical studies suggested higher doses might augment perfusion pressures and improve ROSC, especially in prolonged arrests. Earlier trials of high‑dose epinephrine reported higher initial resuscitation rates without consistent improvement in survival to discharge, and many used only a single high dose rather than repeated dosing.",
+      "knowledge_gap": "Whether repeated high‑dose epinephrine (5 mg every 3 min) improves survival and neurological outcome compared with standard‑dose (1 mg) in a large, pragmatic prehospital trial.",
+      "hypothesis": "Repeated 5 mg epinephrine would improve ROSC and hospital admission, and translate into improved survival with good neurological outcome."
+    },
+    "methods": {
+      "design": "Prospective, multicentre, randomised, double‑blind, parallel‑group trial.",
+      "setting": "12 emergency medical systems in France and Belgium; prehospital, physician‑led mobile teams; enrolled September 1994 to September 1996.",
+      "population": {
+        "inclusion": [
+          "Adults (≥18 years) with non‑traumatic OHCA",
+          "Asystole or pulseless electrical activity, OR",
+          "Ventricular fibrillation persisting after three shocks"
+        ],
+        "exclusion": [
+          "Traumatic cardiac arrest",
+          "Obvious irreversible death (decapitation, rigor mortis, extensive burns)",
+          "Epinephrine given before enrolment",
+          "Age <18 years"
+        ]
+      },
+      "intervention": "High‑dose epinephrine: 5 mg per dose in 5 mL ampoules; administered IV (peripheral or central) or endotracheally; repeated every 3 min, max 15 doses (cumulative max 75 mg).",
+      "comparison": "Standard‑dose epinephrine: 1 mg per dose in identical 5 mL ampoules; same route and schedule, max 15 doses.",
+      "blinding": "Double‑blind: identical ampoules and packaging; clinicians and receiving hospitals unaware of assigned dose.",
+      "sample_size_power": "No power calculation reported.",
+      "primary_outcome": "Survival to hospital discharge.",
+      "secondary_outcomes": [
+        "Return of spontaneous circulation (ROSC)",
+        "Admission to hospital",
+        "Admission after a single epinephrine injection",
+        "Survival at 24 hours, 1 week, 1 month, 1 year",
+        "Neurological status at discharge (CPC)"
+      ],
+      "follow_up": "Survival assessed at 24 h, 1 week, 1 month, 1 year; neurological status at discharge."
+    },
+    "results": {
+      "headline_bullets": [
+        "High‑dose epinephrine increased ROSC (40.4% vs 36.4%, P=0.02) and hospital admission (26.5% vs 23.6%, P=0.05), but did not improve survival to discharge (2.3% vs 2.8%, P=0.34) or 1‑year survival (2.1% vs 2.6%, P=0.32).",
+        "Rhythm subgroup signals were discordant: in asystole, ROSC was 36.9% vs 32.2% (P=0.01) and admission 25.2% vs 20.3% (P=0.004); in coarse VF, ROSC was 55.9% vs 64.3% (P=0.19).",
+        "Potential harm signal: in‑hospital mortality during the first 24 h was 38.7% high‑dose vs 32.4% standard‑dose (P=0.06)."
+      ],
+      "outcomes_table": [
+        {
+          "outcome": "Return of spontaneous circulation (ROSC)",
+          "group_a": "677/1677 (40.4%)",
+          "group_b": "600/1650 (36.4%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+4.0%",
+          "ci_95": "0.7 to 7.3",
+          "p_value": "0.02",
+          "note": "Final analysis cohort (N=3327)"
+        },
+        {
+          "outcome": "Admission to hospital",
+          "group_a": "444/1677 (26.5%)",
+          "group_b": "390/1650 (23.6%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+2.9%",
+          "ci_95": "-0.1 to 5.9",
+          "p_value": "0.05",
+          "note": "Final analysis cohort"
+        },
+        {
+          "outcome": "Admission after a single epinephrine injection",
+          "group_a": "62/444 (14.0%)",
+          "group_b": "43/390 (11.0%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "+3.0%",
+          "ci_95": "-1.2 to 7.1",
+          "p_value": "0.16",
+          "note": "Conditional on admission"
+        },
+        {
+          "outcome": "Survival at 24 hours",
+          "group_a": "237/1677 (14.1%)",
+          "group_b": "229/1650 (13.9%)",
+          "effect_measure": "Not reported",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.89",
+          "note": "All patients (final analysis cohort)"
+        },
+        {
+          "outcome": "Survival to hospital discharge",
+          "group_a": "38/1677 (2.3%)",
+          "group_b": "46/1650 (2.8%)",
+          "effect_measure": "Risk difference",
+          "effect_value": "-0.5%",
+          "ci_95": "-1.5 to 0.6",
+          "p_value": "0.34",
+          "note": "Primary patient‑centred outcome"
+        },
+        {
+          "outcome": "Survival at 1 year",
+          "group_a": "35/1677 (2.1%)",
+          "group_b": "43/1650 (2.6%)",
+          "effect_measure": "Not reported",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.32",
+          "note": "All patients (final analysis cohort)"
+        },
+        {
+          "outcome": "Favourable neurological status at discharge (CPC 1–2)",
+          "group_a": "29/38 (76.3%)",
+          "group_b": "33/46 (71.7%)",
+          "effect_measure": "Not reported",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.64",
+          "note": "Among discharged survivors"
+        },
+        {
+          "outcome": "Discharge without neurological impairment (CPC 1)",
+          "group_a": "26/38 (68.4%)",
+          "group_b": "26/46 (56.5%)",
+          "effect_measure": "Not reported",
+          "effect_value": "—",
+          "ci_95": "—",
+          "p_value": "0.95",
+          "note": "Among discharged survivors"
+        }
+      ],
+      "subgroup_table": [
+        {
+          "subgroup": "Asystole – ROSC",
+          "group_a": "36.9%",
+          "group_b": "32.2%",
+          "effect_measure": "Risk difference",
+          "effect_value": "+4.7%",
+          "ci_95": "—",
+          "p_interaction": "Not reported",
+          "note": "P=0.01 for ROSC"
+        },
+        {
+          "subgroup": "Asystole – Admission",
+          "group_a": "25.2%",
+          "group_b": "20.3%",
+          "effect_measure": "Risk difference",
+          "effect_value": "+4.9%",
+          "ci_95": "—",
+          "p_interaction": "Not reported",
+          "note": "P=0.004"
+        },
+        {
+          "subgroup": "Coarse VF – ROSC",
+          "group_a": "55.9%",
+          "group_b": "64.3%",
+          "effect_measure": "Risk difference",
+          "effect_value": "-8.4%",
+          "ci_95": "—",
+          "p_interaction": "Not reported",
+          "note": "P=0.19"
+        }
+      ]
+    },
+    "safety": [
+      "In‑hospital mortality during the first 24 h: 38.7% high‑dose vs 32.4% standard‑dose (P=0.06).",
+      "No significant difference in overall survival to discharge or 1‑year survival.",
+      "Neurological outcomes among survivors were similar (CPC 1–2: 76.3% vs 71.7%, P=0.64)."
+    ],
+    "internal_validity": {
+      "domains": [
+        {
+          "domain": "Randomisation & allocation",
+          "notes": "Central randomisation; prepackaged study boxes with identical ampoules used sequentially; allocation concealment credible."
+        },
+        {
+          "domain": "Blinding / performance bias",
+          "notes": "Double‑blind with identical ampoules; clinicians and hospitals unaware of dosing; early outcomes objective; neurological outcome less standardised (CPC at discharge)."
+        },
+        {
+          "domain": "Attrition / ITT vs per‑protocol",
+          "notes": "3946 boxes assigned; 39 excluded for incorrect use. “True ITT” analysis included 3907 treated patients. Final analysis excluded 580 (trauma, ineligibility, missing data), leaving 3327. Large post‑randomisation exclusions risk attrition bias."
+        },
+        {
+          "domain": "Protocol adherence / crossover",
+          "notes": "Mean total epinephrine dose 29.0 mg vs 6.1 mg; mean number of doses similar (5.8 vs 6.1); route distribution similar. Good separation."
+        },
+        {
+          "domain": "Baseline balance",
+          "notes": "Witnessed arrest 46.8% vs 47.8%; bystander CPR 10.3% vs 9.3%; rhythm distribution similar. Age differed statistically (64.5 vs 66.7 years) but unlikely clinically meaningful."
+        }
+      ],
+      "verdict": "Internal validity is moderate: strong blinding and treatment separation, but substantial post‑randomisation exclusions, centre‑level heterogeneity (including non‑randomised CPR modality), and late drug delivery complicate causal inference for survival and neurological outcomes."
+    },
+    "external_validity": {
+      "domains": [
+        {
+          "domain": "Population representativeness",
+          "notes": "Adult OHCA in France/Belgium, high asystole (~75%), low bystander CPR (~10%), physician‑led mobile teams. Differs from paramedic‑led systems with earlier CPR/defibrillation."
+        },
+        {
+          "domain": "Applicability / setting",
+          "notes": "5 mg every 3 min is not contemporary practice; direct translation limited. The central message that ROSC/admission improvements do not guarantee survival remains broadly applicable."
+        }
+      ],
+      "verdict": "Generalisability is moderate for comparable European‑style advanced prehospital systems, but limited for modern systems with earlier CPR/defibrillation and for current guideline dosing; the core message about surrogate versus patient‑centred outcomes is widely applicable."
+    },
+    "strengths": [
+      "Large, multicentre, double‑blind, pragmatic prehospital RCT in adult OHCA.",
+      "Clear drug separation: mean total epinephrine dose 29.0 mg vs 6.1 mg.",
+      "Objective early outcomes with longer follow‑up to 1 year and neurological status at discharge."
+    ],
+    "limitations": [
+      "No reported power calculation; survival to discharge was very low (2–3%), limiting precision for patient‑centred outcomes.",
+      "Substantial post‑randomisation exclusions (580/3907) and missing data may bias effect estimates.",
+      "Low bystander CPR rate and delayed epinephrine (~20 min) may reduce relevance to modern systems.",
+      "Active compression–decompression CPR used in a sizeable minority without randomisation, complicating interaction analyses."
+    ],
+    "critical_appraisal": {
+      "summary": "A well‑blinded, multicentre trial with strong treatment separation that demonstrates improved ROSC and admission but no improvement in survival or neurological outcome; internal validity is limited by large post‑randomisation exclusions and centre‑level heterogeneity, while external validity is constrained by outdated dosing and clinical context.",
+      "strengths": [
+        "Double‑blind, pragmatic design with objective early endpoints.",
+        "Large sample size and clear drug separation.",
+        "Follow‑up to 1 year with neurological assessment."
+      ],
+      "weaknesses": [
+        "Large post‑randomisation exclusions (580/3907) and potential attrition bias.",
+        "No power calculation; very low event rate for survival.",
+        "Late drug delivery (~20 min) and low bystander CPR limit applicability to contemporary systems."
+      ],
+      "rating": "Moderate"
+    },
+    "authors_conclusion": "High‑dose epinephrine increased ROSC and admission but did not improve survival to discharge or 1‑year survival, and neurological outcomes were similar. The trial reinforces that surrogate endpoints can mislead when neurological survival is unchanged.",
+    "clinical_bottom_line": {
+      "verdict": "High‑dose epinephrine does not improve patient‑centred survival or neurological outcome and should not be used routinely; standard‑dose (1 mg) remains the recommended approach.",
+      "applies_to": "Adult OHCA patients in prehospital settings, particularly those with prolonged arrest and limited early CPR/defibrillation.",
+      "does_not_mean": "That epinephrine (standard‑dose) is ineffective; subsequent trials show it increases ROSC and may modestly improve survival, but the benefit of dose escalation is disproven.",
+      "implementation_caveats": [
+        "The tested regimen (5 mg every 3 min) is not current practice; the trial directly informs against any high‑dose strategy.",
+        "Timing of epinephrine matters; the trial’s late delivery (~20 min) may limit the observed benefit of any dose.",
+        "Systems with earlier CPR/defibrillation may have a more favourable risk–benefit profile for standard‑dose epinephrine."
+      ]
+    },
+    "controversies": [
+      {
+        "topic": "Adoption of high‑dose epinephrine based on surrogate endpoints",
+        "notes": "The trial showed that improved ROSC and admission did not translate into better survival, challenging the use of surrogate endpoints to guide vasopressor dosing."
+      },
+      {
+        "topic": "CPR modality interaction",
+        "notes": "Discharge survival appeared to differ by CPR type (standard ACLS: 1.7% vs 3.6% high‑dose vs standard; ACD‑ACLS: 3.1% vs 1.6%), but these were non‑randomised subgroup analyses and are hypothesis‑generating."
+      },
+      {
+        "topic": "Subsequent evidence and guideline recommendations",
+        "notes": "Later placebo‑controlled trials and meta‑analyses confirm that epinephrine increases ROSC but only modestly improves long‑term survival; current guidelines do not recommend high‑dose epinephrine."
+      },
+      {
+        "topic": "Time‑dependent harm of epinephrine",
+        "notes": "Observational data suggest that delayed prehospital epinephrine is associated with worse neurological outcomes, providing a plausible explanation for the lack of survival benefit."
+      }
+    ],
+    "context_related_trials": [],
+    "unresolved_questions": [
+      "Optimal timing of epinephrine administration in relation to CPR duration and rhythm.",
+      "Whether a more targeted dose‑escalation strategy (e.g., only after a certain number of standard doses) could be beneficial.",
+      "The role of epinephrine in systems with earlier bystander CPR and defibrillation."
+    ],
+    "quick_recall": {
+      "numbers_to_remember": [
+        "n=3327 (final analysis cohort)",
+        "ROSC: 40.4% vs 36.4% (risk difference +4.0%, 95% CI 0.7–7.3, P=0.02)",
+        "Survival to discharge: 2.3% vs 2.8% (risk difference −0.5%, P=0.34)",
+        "Mean total epinephrine dose: 29.0 mg vs 6.1 mg"
+      ],
+      "one_line_takeaway": "High‑dose epinephrine increases ROSC and admission but does not improve survival or neurological outcome; standard‑dose epinephrine remains the recommended approach."
+    }
+  },
+  "_source_id": "European_Epinephrine_Study",
+  "_source_system": "Resuscitation"
+}
