@@ -280,10 +280,10 @@ h1{font-size:28px;margin-bottom:4px;letter-spacing:-.02em}
 .form input:focus{border-color:#E8B778}
 .form .row{display:flex;gap:10px}
 .form .row input{flex:1}
-.pw-wrap{position:relative}
-.pw-wrap input{padding-right:48px}
-.pw-wrap .toggle{position:absolute;right:4px;top:4px;bottom:4px;background:none;border:none;color:#C4B18C;cursor:pointer;font-size:12px;padding:0 10px;border-radius:6px;line-height:1;display:flex;align-items:center}
-.pw-wrap .toggle:hover{background:rgba(255,255,255,0.06)}
+.pw-wrap{display:flex;gap:6px;align-items:center;margin-bottom:12px}
+.pw-wrap input{flex:1;margin-bottom:0}
+.pw-wrap .toggle{width:auto;padding:10px 14px;background:none;border:1px solid #3A3226;border-radius:8px;color:#C4B18C;cursor:pointer;font-size:12px;white-space:nowrap;flex-shrink:0;transition:.15s}
+.pw-wrap .toggle:hover{border-color:#E8B778;color:#F1E4CE}
 button{width:100%;padding:11px;background:#E8B778;color:#1F1B14;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:.15s}
 button:hover{background:#d4a55e}
 .error{color:#f55;font-size:13px;margin:8px 0;min-height:18px}
