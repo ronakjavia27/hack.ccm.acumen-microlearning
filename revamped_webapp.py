@@ -2876,7 +2876,7 @@ async def api_me(request: Request):
 
 @app.get("/favicon.ico")
 async def favicon():
-    return JSONResponse(status_code=204)
+    return Response(status_code=204)
 
 
 @app.get("/api/summary")
