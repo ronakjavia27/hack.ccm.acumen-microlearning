@@ -1,7 +1,11 @@
 import os
 import json
 import re
-from fastapi import FastAPI, Request
+import secrets
+import hashlib
+from datetime import datetime, timedelta
+from pathlib import Path
+from fastapi import FastAPI, Request, Response, Depends, HTTPException, Cookie
 from fastapi.responses import HTMLResponse, JSONResponse
 
 # =====================================================================
@@ -117,8 +121,203 @@ ESBICM_SPEC_COLORS = {
 app = FastAPI()
 
 # =====================================================================
-# DATA LOADERS
+# AUTHENTICATION
 # =====================================================================
+
+SESSION_COOKIE_NAME = "hackccm_sess"
+SESSION_MAX_AGE = 2592000  # 30 days
+COOKIE_SECURE = os.environ.get("VERCEL", "").lower() == "1"
+
+KV_URL = os.environ.get("KV_REST_API_URL")
+KV_TOKEN = os.environ.get("KV_REST_API_TOKEN")
+AUTH_KV_FILE = Path("data/auth_kv.json")
+
+# ---- Vercel KV helpers (with local file fallback) ----
+def _kv_get(key):
+    if KV_URL and KV_TOKEN:
+        import requests
+        try:
+            r = requests.get(f"{KV_URL}/get/{key}", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            if r.ok:
+                res = r.json().get("result")
+                if res is not None:
+                    if isinstance(res, dict):
+                        raw = res.get("value")
+                        return json.loads(raw) if raw and isinstance(raw, str) else raw
+                    if isinstance(res, str):
+                        return json.loads(res)
+                    return res
+            return None
+        except Exception:
+            return None
+    AUTH_KV_FILE.parent.mkdir(parents=True, exist_ok=True)
+    if AUTH_KV_FILE.exists():
+        return json.loads(AUTH_KV_FILE.read_text()).get(key)
+    return None
+
+def _kv_set(key, value, ttl=None):
+    if KV_URL and KV_TOKEN:
+        import requests
+        try:
+            url = f"{KV_URL}/set/{key}"
+            if ttl:
+                url += f"?EX={ttl}"
+            r = requests.post(url, json={"key": key, "value": json.dumps(value)}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            return r.ok
+        except Exception:
+            return False
+    AUTH_KV_FILE.parent.mkdir(parents=True, exist_ok=True)
+    data = json.loads(AUTH_KV_FILE.read_text()) if AUTH_KV_FILE.exists() else {}
+    data[key] = value
+    AUTH_KV_FILE.write_text(json.dumps(data, indent=2))
+    return True
+
+def _kv_delete(key):
+    if KV_URL and KV_TOKEN:
+        import requests
+        try:
+            r = requests.delete(f"{KV_URL}/del/{key}", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            return r.ok
+        except Exception:
+            return False
+    if AUTH_KV_FILE.exists():
+        data = json.loads(AUTH_KV_FILE.read_text())
+        data.pop(key, None)
+        AUTH_KV_FILE.write_text(json.dumps(data, indent=2))
+    return True
+
+def _kv_scan(pattern):
+    if KV_URL and KV_TOKEN:
+        import requests
+        try:
+            r = requests.get(f"{KV_URL}/scan/0?match={pattern}&count=200", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            if r.ok:
+                return r.json().get("result", [])
+            return []
+        except Exception:
+            return []
+    if AUTH_KV_FILE.exists():
+        data = json.loads(AUTH_KV_FILE.read_text())
+        pat = re.escape(pattern).replace(r"\*", ".*")
+        return [k for k in data if re.match(pat, k)]
+    return []
+
+# ---- Password hashing (stdlib only) ----
+def _hash_password(password):
+    salt = os.urandom(16)
+    h = hashlib.sha256(salt + password.encode("utf-8")).hexdigest()
+    return f"$sha256${salt.hex()}${h}"
+
+def _verify_password(password, pw_hash):
+    if not pw_hash or not pw_hash.startswith("$sha256$"):
+        return False
+    parts = pw_hash.split("$")
+    if len(parts) != 4:
+        return False
+    try:
+        salt = bytes.fromhex(parts[2])
+        h = hashlib.sha256(salt + password.encode("utf-8")).hexdigest()
+        return h == parts[3]
+    except (ValueError, IndexError):
+        return False
+
+def _session_id():
+    return secrets.token_urlsafe(32)
+
+# ---- Auth helpers ----
+FEATURE_FLAGS = ["papers", "guidelines", "pearls", "trials", "trials_detail", "condensed_trials", "search"]
+
+def _get_session_user(request):
+    sid = request.cookies.get(SESSION_COOKIE_NAME)
+    if not sid:
+        return None
+    sess = _kv_get(f"auth:session:{sid}")
+    if not sess:
+        return None
+    return _kv_get(f"auth:users:{sess.get('email')}")
+
+async def _require_user(request: Request, response: Response):
+    user = _get_session_user(request)
+    if not user:
+        response.delete_cookie(SESSION_COOKIE_NAME)
+        raise HTTPException(status_code=401, detail="Login required")
+    return user
+
+def _access_defaults():
+    d = _kv_get("auth:access_defaults")
+    if d is None:
+        d = {f: True for f in FEATURE_FLAGS}
+        _kv_set("auth:access_defaults", d)
+    return d
+
+def _user_has_feature(user, feature):
+    if user.get("is_admin"):
+        return True
+    defaults = _access_defaults()
+    overrides = user.get("features", {}) or {}
+    return {**defaults, **overrides}.get(feature, False)
+
+# ---- Landing page HTML ----
+LANDING_HTML = """<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hack.CCM — Critical Care Microlearning</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1F1B14;color:#F1E4CE;font-family:system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center}
+.card{background:#29241B;border:1px solid #3A3226;border-radius:16px;padding:48px 40px;width:440px;max-width:94vw}
+h1{font-size:28px;margin-bottom:4px;letter-spacing:-.02em}
+.sub{color:#C4B18C;font-size:14px;margin-bottom:28px}
+.tabs{display:flex;gap:0;margin-bottom:24px;border-bottom:1px solid #3A3226}
+.tab{padding:10px 20px;cursor:pointer;color:#C4B18C;font-size:14px;border-bottom:2px solid transparent;transition:.15s}
+.tab.active{color:#F1E4CE;border-bottom-color:#E8B778}
+.form{display:block}.form.hidden{display:none}
+.form input{width:100%;padding:10px 14px;background:#1F1B14;border:1px solid #3A3226;border-radius:8px;color:#F1E4CE;font-size:14px;margin-bottom:12px;outline:none;transition:.15s}
+.form input:focus{border-color:#E8B778}
+.form .row{display:flex;gap:10px}
+.form .row input{flex:1}
+.pw-wrap{position:relative}
+.pw-wrap .toggle{position:absolute;right:12px;top:10px;background:none;border:none;color:#C4B18C;cursor:pointer;font-size:12px}
+button{width:100%;padding:11px;background:#E8B778;color:#1F1B14;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:.15s}
+button:hover{background:#d4a55e}
+.error{color:#f55;font-size:13px;margin:8px 0;min-height:18px}
+.success{color:#4ade80;font-size:13px;margin:8px 0}
+.ecg{text-align:center;font-size:32px;margin-bottom:12px;opacity:.3;letter-spacing:4px}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="ecg">_~^~_~^~_</div>
+<h1>hack.CCM</h1>
+<div class="sub">Critical Care Microlearning</div>
+<div class="tabs"><div class="tab active" onclick="switchTab('login')" id="tabLogin">Sign In</div><div class="tab" onclick="switchTab('signup')" id="tabSignup">Create Account</div></div>
+<form class="form" id="loginForm">
+<input type="email" id="loginEmail" placeholder="Email" required>
+<div class="pw-wrap"><input type="password" id="loginPassword" placeholder="Password" required></div>
+<div class="error" id="loginError"></div>
+<button type="submit">Sign In</button>
+</form>
+<form class="form hidden" id="signupForm">
+<input type="email" id="signupEmail" placeholder="Email" required>
+<div class="pw-wrap"><input type="password" id="signupPassword" placeholder="Password (min 8 chars)" required><button type="button" class="toggle" id="pwToggle">Show</button></div>
+<div class="row"><input type="text" id="signupFirstName" placeholder="First name"><input type="text" id="signupLastName" placeholder="Last name"></div>
+<input type="text" id="signupWorkplace" placeholder="Workplace / Institution">
+<input type="text" id="signupCity" placeholder="City">
+<div class="error" id="signupError"></div>
+<div class="success" id="signupSuccess"></div>
+<button type="submit">Create Account</button>
+</form>
+</div>
+<script>
+function switchTab(t){document.querySelectorAll('.tab').forEach(el=>el.classList.toggle('active',el.id==='tab'+t.charAt(0).toUpperCase()+t.slice(1)));document.getElementById('loginForm').classList.toggle('hidden',t!=='login');document.getElementById('signupForm').classList.toggle('hidden',t!=='signup')}
+document.getElementById('pwToggle').onclick=function(){var p=document.getElementById('signupPassword');p.type=p.type==='password'?'text':'password';this.textContent=p.type==='password'?'Show':'Hide'}
+document.getElementById('loginForm').onsubmit=async function(e){e.preventDefault();var b=this.querySelector('button');b.disabled=true;var err=document.getElementById('loginError');err.textContent='';try{var r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('loginEmail').value,password:document.getElementById('loginPassword').value})});if(r.ok){window.location.reload();return}var d=await r.json();err.textContent=d.detail||'Invalid email or password'}catch(e){err.textContent='Network error'}b.disabled=false}
+document.getElementById('signupForm').onsubmit=async function(e){e.preventDefault();var b=this.querySelector('button');b.disabled=true;var err=document.getElementById('signupError');var ok=document.getElementById('signupSuccess');err.textContent='';ok.textContent='';var pw=document.getElementById('signupPassword').value;try{var r=await fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('signupEmail').value,password:pw,first_name:document.getElementById('signupFirstName').value,last_name:document.getElementById('signupLastName').value,workplace:document.getElementById('signupWorkplace').value,city:document.getElementById('signupCity').value})});if(r.ok){window.location.reload();return}var d=await r.json();err.textContent=d.detail||'Account creation failed'}catch(e){err.textContent='Network error'}b.disabled=false}
+</script>
+</body>
+</html>"""
+
+# ---- End auth ----
 
 def load_approved_ledger():
     if not os.path.exists(JSON_TRACKER_FILE):
@@ -236,6 +435,9 @@ SPEC_COLORS = {
 
 @app.get("/", response_class=HTMLResponse)
 async def render_dashboard(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        return HTMLResponse(content=LANDING_HTML)
     entries = load_approved_ledger()
 
     articles_list = []
@@ -2589,13 +2791,99 @@ document.addEventListener('keydown', function(e){{
 # API ENDPOINTS
 # =====================================================================
 
+@app.get("/api/debug")
+async def api_debug():
+    return {"kv_url_set": bool(KV_URL), "kv_token_set": bool(KV_TOKEN), "vercel": os.environ.get("VERCEL", "")}
+
+@app.post("/api/signup")
+async def api_signup(body: dict, response: Response):
+    try:
+        email = str(body.get("email", "")).strip().lower()
+        password = body.get("password", "")
+        if not email or "@" not in email:
+            raise HTTPException(400, "Valid email required")
+        if len(password) < 8:
+            raise HTTPException(400, "Password must be at least 8 characters")
+        if _kv_get(f"auth:users:{email}"):
+            raise HTTPException(409, "An account with this email already exists")
+        user = {
+            "email": email,
+            "first_name": str(body.get("first_name", "")).strip(),
+            "last_name": str(body.get("last_name", "")).strip(),
+            "workplace": str(body.get("workplace", "")).strip(),
+            "city": str(body.get("city", "")).strip(),
+            "password_hash": _hash_password(password),
+            "created_at": datetime.utcnow().isoformat(),
+            "features": {},
+        }
+        _kv_set(f"auth:users:{email}", user)
+        sid = _session_id()
+        _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
+        response.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+        return {"ok": True, "email": email}
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback
+        return JSONResponse(500, {"error": type(e).__name__, "detail": str(e), "traceback": traceback.format_exc()})
+
+@app.post("/api/login")
+async def api_login(body: dict, response: Response):
+    try:
+        email = str(body.get("email", "")).strip().lower()
+        password = body.get("password", "")
+        if not email or not password:
+            raise HTTPException(400, "Email and password required")
+        user = _kv_get(f"auth:users:{email}")
+        if not user or not isinstance(user, dict):
+            raise HTTPException(401, "Invalid email or password")
+        pwh = user.get("password_hash")
+        if not pwh:
+            raise HTTPException(401, "Invalid email or password")
+        if not _verify_password(password, pwh):
+            raise HTTPException(401, "Invalid email or password")
+        sid = _session_id()
+        _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
+        response.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+        return {"ok": True, "email": email}
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback
+        return JSONResponse(500, {"error": type(e).__name__, "detail": str(e), "traceback": traceback.format_exc()})
+
+@app.post("/api/logout")
+async def api_logout(request: Request, response: Response):
+    sid = request.cookies.get(SESSION_COOKIE_NAME)
+    if sid:
+        _kv_delete(f"auth:session:{sid}")
+    response.delete_cookie(SESSION_COOKIE_NAME)
+    return {"ok": True}
+
+@app.get("/api/me")
+async def api_me(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        return {"authenticated": False}
+    return {
+        "authenticated": True,
+        "email": user["email"],
+        "first_name": user.get("first_name", ""),
+        "last_name": user.get("last_name", ""),
+        "workplace": user.get("workplace", ""),
+        "city": user.get("city", ""),
+    }
+
 @app.get("/favicon.ico")
 async def favicon():
     return JSONResponse(status_code=204)
 
 
 @app.get("/api/summary")
-async def get_json_summary(file_name: str, system: str = "General", type: str = "Unclassified"):
+async def get_json_summary(request: Request, file_name: str, system: str = "General", type: str = "Unclassified"):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
     base_name = os.path.splitext(file_name)[0]
     clean_system = "".join(x for x in str(system) if x.isalnum() or x in "._- ").strip()
     clean_type = "".join(x for x in str(type) if x.isalnum() or x in "._- ").strip()
@@ -2633,7 +2921,10 @@ async def get_json_summary(file_name: str, system: str = "General", type: str = 
 
 
 @app.get("/api/search")
-async def search_summaries(q: str = ""):
+async def search_summaries(request: Request, q: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
     if not q.strip():
         return {"matches": []}
     query = q.strip().lower()
@@ -2657,7 +2948,10 @@ async def search_summaries(q: str = ""):
 
 
 @app.get("/api/pearls")
-async def get_pearls(q: str = "", system: str = "", type: str = "", page: int = 1, limit: int = 50):
+async def get_pearls(request: Request, q: str = "", system: str = "", type: str = "", page: int = 1, limit: int = 50):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
     pearls = load_pearls()
     filtered = []
     for p in pearls:
@@ -2675,7 +2969,10 @@ async def get_pearls(q: str = "", system: str = "", type: str = "", page: int = 
 
 
 @app.get("/api/trials/stats")
-async def get_trials_stats():
+async def get_trials_stats(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
     idx = load_trial_index()
     counts = {}
     for t in idx:
@@ -2686,6 +2983,7 @@ async def get_trials_stats():
 
 @app.get("/api/trials")
 async def get_trials(
+    request: Request,
     specialty: str = "",
     result_category: str = "",
     trial_type: str = "",
@@ -2693,6 +2991,9 @@ async def get_trials(
     page: int = 1,
     limit: int = 50
 ):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
     idx = load_trial_index()
     filtered = []
     for t in idx:
@@ -2717,7 +3018,10 @@ async def get_trials(
 
 
 @app.get("/api/trial/{slug}")
-async def get_trial(slug: str):
+async def get_trial(request: Request, slug: str):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
     idx = load_trial_index()
     match = None
     for t in idx:
@@ -2739,7 +3043,10 @@ async def get_trial(slug: str):
 
 
 @app.get("/api/condensed-trials")
-async def get_condensed_trials(system: str = ""):
+async def get_condensed_trials(request: Request, system: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
     idx = load_condensed_trial_index()
     if system:
         idx = [c for c in idx if c["system"] == system]
@@ -2747,7 +3054,10 @@ async def get_condensed_trials(system: str = ""):
 
 
 @app.get("/api/condensed-trial/{system}/{name}")
-async def get_condensed_trial(system: str, name: str):
+async def get_condensed_trial(request: Request, system: str, name: str):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
     from urllib.parse import unquote
     system = unquote(system)
     name = unquote(name)
