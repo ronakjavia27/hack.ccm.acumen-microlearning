@@ -305,3 +305,5 @@ async def google_auth_handler(body: dict, response: Response):
     except Exception as e:
         import traceback
         return JSONResponse(500, {"error": type(e).__name__, "detail": str(e), "traceback": traceback.format_exc()})
+
+# redeploy: 13:44:47
