@@ -194,9 +194,12 @@ def _kv_scan(pattern):
     if KV_URL and KV_TOKEN:
         import requests
         try:
-            r = requests.get(f"{KV_URL}/scan/0?match={pattern}&count=200", headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            r = requests.post(f"{KV_URL}/scan/0", json={"match": pattern, "count": 200}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
             if r.ok:
-                return r.json().get("result", [])
+                res = r.json().get("result")
+                if isinstance(res, list) and len(res) == 2 and isinstance(res[1], list):
+                    return res[1]
+                return []
             return []
         except Exception:
             return []
@@ -2847,6 +2850,10 @@ async def api_signup(body: dict, response: Response):
             "created_at": datetime.utcnow().isoformat(),
             "features": {},
         }
+        # First user becomes admin automatically
+        existing_users = _kv_scan("auth:users:*")
+        if not existing_users:
+            user["is_admin"] = True
         _kv_set(f"auth:users:{email}", user)
         sid = _session_id()
         _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
@@ -2903,6 +2910,8 @@ async def api_me(request: Request):
         "last_name": user.get("last_name", ""),
         "workplace": user.get("workplace", ""),
         "city": user.get("city", ""),
+        "is_admin": bool(user.get("is_admin")),
+        "features": user.get("features", {}),
     }
 
 @app.get("/favicon.ico")
