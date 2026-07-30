@@ -25,6 +25,18 @@ GOOGLE_CLIENT_SECRET = os.environ.get("OAUTH_CLIENT_SECRET", "")
 PRODUCTION_DOMAIN = "hackccm.vercel.app"
 ADMIN_EMAILS = set(os.environ.get("ADMIN_EMAILS", "").lower().split(",") if os.environ.get("ADMIN_EMAILS") else [])
 
+# Save the original dashboard HTML before we override LANDING_HTML
+ORIGINAL_DASHBOARD_HTML = revamped_webapp.LANDING_HTML
+
+# Middleware: if logged in and hitting /, serve dashboard instead of login page
+@app.middleware("http")
+async def auth_dashboard_middleware(request: Request, call_next):
+    if request.url.path == "/":
+        user = _get_session_user(request)
+        if user:
+            return HTMLResponse(content=ORIGINAL_DASHBOARD_HTML)
+    return await call_next(request)
+
 # =====================================================================
 # LANDING PAGE — add Google OAuth button
 # =====================================================================
