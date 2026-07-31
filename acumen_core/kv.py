@@ -59,11 +59,14 @@ def kv_get(key: str):
         return data.get(key)
 
 
-def kv_set(key: str, value):
+def kv_set(key: str, value, ttl=None):
     if _use_upstash():
         import requests
         try:
-            r = requests.post(f"{KV_URL}/set/{key}", json={"key": key, "value": json.dumps(value)}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
+            url = f"{KV_URL}/set/{key}"
+            if ttl:
+                url += f"?EX={int(ttl)}"
+            r = requests.post(url, json={"key": key, "value": json.dumps(value)}, headers={"Authorization": f"Bearer {KV_TOKEN}"}, timeout=5)
             return r.ok
         except Exception:
             return False
