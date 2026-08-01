@@ -4,16 +4,36 @@ import json
 import os
 import re
 
+# Load repo-level .env (KV keys) BEFORE reading env vars below, so local
+# uvicorn runs talk to the same Upstash KV as production by default.
+# Set KV_LOCAL=1 to force the local file backend regardless of .env.
+try:
+    from dotenv import load_dotenv
+    _env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env")
+    load_dotenv(dotenv_path=_env_path)
+except Exception:
+    pass
+
 _KV_FILE = os.path.join(os.path.dirname(__file__), "..", "local_kv.json")
 _KV_FILE = os.path.normpath(_KV_FILE)
 _lock = __import__("threading").Lock()
 
 KV_URL = os.environ.get("KV_REST_API_URL", "") or os.environ.get("KV_URL", "")
 KV_TOKEN = os.environ.get("KV_REST_API_TOKEN", "") or os.environ.get("KV_TOKEN", "")
+KV_LOCAL_ONLY = os.environ.get("KV_LOCAL", "").strip().lower() in ("1", "true", "yes")
 
 
 def _use_upstash():
-    return bool(KV_URL and KV_TOKEN)
+    return bool(KV_URL and KV_TOKEN) and not KV_LOCAL_ONLY
+
+
+def kv_backend():
+    """Diagnostic: which backend is active and why."""
+    if KV_LOCAL_ONLY:
+        return {"backend": "local", "reason": "KV_LOCAL=1 forced local file"}
+    if KV_URL and KV_TOKEN:
+        return {"backend": "upstash", "reason": "KV_URL/KV_TOKEN from env"}
+    return {"backend": "local", "reason": "KV_URL/KV_TOKEN not set"}
 
 
 def _load():

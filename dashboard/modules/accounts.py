@@ -17,6 +17,7 @@ FEATURE_FLAGS = [
     "trials_detail",
     "condensed_trials",
     "search",
+    "theory",
 ]
 
 FEATURE_LABELS = {
@@ -27,17 +28,25 @@ FEATURE_LABELS = {
     "trials_detail": "Trial Details",
     "condensed_trials": "Condensed Trials",
     "search": "Search",
+    "theory": "Theory",
+}
+
+DEFAULT_FEATURE_STATES = {
+    "condensed_trials": False,
+    "theory": False,
 }
 
 
 def list_users() -> List[Dict[str, Any]]:
+    from concurrent.futures import ThreadPoolExecutor
     keys = kv_scan("auth:users:*")
-    users = []
-    for key in keys:
-        user = kv_get(key)
-        if user:
-            user.pop("password_hash", None)
-            users.append(user)
+    if not keys:
+        return []
+    with ThreadPoolExecutor(max_workers=min(10, len(keys))) as pool:
+        users = list(pool.map(kv_get, keys))
+    users = [u for u in users if u]
+    for u in users:
+        u.pop("password_hash", None)
     users.sort(key=lambda u: u.get("created_at", ""), reverse=True)
     return users
 
@@ -82,10 +91,10 @@ def delete_user(email: str) -> bool:
 
 
 def get_defaults() -> Dict[str, bool]:
-    defaults = kv_get("auth:access_defaults")
-    if defaults is None:
-        defaults = {flag: True for flag in FEATURE_FLAGS}
-        kv_set("auth:access_defaults", defaults)
+    stored = kv_get("auth:access_defaults")
+    stored = stored if isinstance(stored, dict) else {}
+    defaults = {flag: stored.get(flag, DEFAULT_FEATURE_STATES.get(flag, True)) for flag in FEATURE_FLAGS}
+    kv_set("auth:access_defaults", defaults)
     return defaults
 
 

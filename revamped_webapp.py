@@ -154,15 +154,50 @@ def _verify_password(password, pw_hash):
 def _session_id():
     return secrets.token_urlsafe(32)
 
+# ---- Local dev: bypass login entirely ----
+# On Vercel (VERCEL=1) login is required. When running locally, auto-login
+# as the local admin account so the login page never blocks local use.
+LOCAL_DEV_MODE = os.environ.get("VERCEL", "").strip().lower() != "1"
+
+def _local_dev_login():
+    """Auto-create/resolve the local admin. Returns (user, session_id)."""
+    email = "admin@gmail.com"
+    user = _kv_get(f"auth:users:{email}")
+    if not user:
+        user = {
+            "email": email,
+            "first_name": "Admin",
+            "last_name": "",
+            "workplace": "",
+            "city": "",
+            "password_hash": _hash_password("admin@admin"),
+            "created_at": datetime.utcnow().isoformat(),
+            "features": {},
+            "is_admin": True,
+        }
+        _kv_set(f"auth:users:{email}", user)
+    sid = _session_id()
+    _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
+    return user, sid
+
 # ---- Auth helpers ----
-FEATURE_FLAGS = ["papers", "guidelines", "pearls", "trials", "trials_detail", "condensed_trials", "search"]
+FEATURE_FLAGS = ["papers", "guidelines", "pearls", "trials", "trials_detail", "condensed_trials", "search", "bookmarks", "theory"]
+
+DEFAULT_FEATURE_STATES = {
+    "condensed_trials": False,
+    "theory": False,
+}
 
 def _get_session_user(request):
     sid = request.cookies.get(SESSION_COOKIE_NAME)
     if not sid:
+        if LOCAL_DEV_MODE:
+            return _local_dev_login()[0]
         return None
     sess = _kv_get(f"auth:session:{sid}")
     if not sess:
+        if LOCAL_DEV_MODE:
+            return _local_dev_login()[0]
         return None
     return _kv_get(f"auth:users:{sess.get('email')}")
 
@@ -176,9 +211,9 @@ async def _require_user(request: Request, response: Response):
 def _access_defaults():
     d = _kv_get("auth:access_defaults")
     if d is None:
-        d = {f: True for f in FEATURE_FLAGS}
+        d = {}
         _kv_set("auth:access_defaults", d)
-    return d
+    return {f: d.get(f, DEFAULT_FEATURE_STATES.get(f, True)) for f in FEATURE_FLAGS}
 
 def _user_has_feature(user, feature):
     if user.get("is_admin"):
@@ -191,6 +226,63 @@ def _user_has_feature(user, feature):
 def _require_feature(user, feature):
     if not _user_has_feature(user, feature):
         raise HTTPException(status_code=403, detail=f"Feature '{feature}' is not enabled for this account")
+
+# ---- Per-user data (bookmarks now; history/notes/prefs later) ----
+BOOKMARKS_MAX_ITEMS = 1000
+BOOKMARK_KINDS = ("paper", "guideline", "pearl", "trial", "condensed", "flashcard")
+
+def _user_data(email, key, default=None):
+    data = _kv_get(f"user:{email}:{key}")
+    if data is None or not isinstance(data, dict):
+        return default if default is not None else {}
+    return data
+
+def _save_user_data(email, key, data):
+    if not isinstance(data, dict):
+        return False
+    return _kv_set(f"user:{email}:{key}", data)
+
+def _clean_tags(tags):
+    if not isinstance(tags, list):
+        return []
+    out = []
+    for t in tags[:20]:
+        s = str(t).strip().strip("#").strip()
+        if s and len(s) <= 40 and s not in out:
+            out.append(s)
+    return out
+
+def _bookmark_item(body, existing=None):
+    item = dict(existing or {})
+    kind = str(body.get("kind", item.get("kind", ""))).strip().lower()
+    ref = str(body.get("ref", item.get("ref", ""))).strip()
+    if kind not in BOOKMARK_KINDS:
+        raise HTTPException(400, f"Invalid bookmark kind '{kind}'")
+    if not ref or len(ref) > 300:
+        raise HTTPException(400, "Valid bookmark ref required")
+    if existing is None:
+        item.update({
+            "ref": ref,
+            "kind": kind,
+            "title": str(body.get("title", ""))[:300] or ref,
+            "system": str(body.get("system", ""))[:80],
+            "type": str(body.get("type", ""))[:40],
+            "locator": body.get("locator") if isinstance(body.get("locator"), dict) else {},
+            "added_at": datetime.utcnow().isoformat(),
+        })
+    else:
+        item["ref"] = ref
+        if body.get("title"):
+            item["title"] = str(body["title"])[:300]
+        if body.get("system") is not None:
+            item["system"] = str(body["system"])[:80]
+        if body.get("type") is not None:
+            item["type"] = str(body["type"])[:40]
+    if "folder" in body:
+        item["folder"] = body.get("folder") or None
+    if "tags" in body:
+        item["tags"] = _clean_tags(body.get("tags"))
+    return item
 
 # ---- Landing page HTML ----
 LANDING_HTML = """<!DOCTYPE html>
@@ -329,6 +421,45 @@ def load_trial_index():
     except (json.JSONDecodeError, Exception):
         return []
 
+def load_flashcard_decks():
+    """Load flashcard decks from output_files/flashcards_md/ (markdown-authored)."""
+    decks = []
+    base = os.path.join(OUTPUT_DIR, "flashcards_md")
+    if not os.path.isdir(base):
+        return decks
+    try:
+        for root, dirs, files in os.walk(base):
+            for fn in sorted(files):
+                if not fn.endswith(".json"):
+                    continue
+                path = os.path.join(root, fn)
+                try:
+                    with open(path, "r", encoding="utf-8") as f:
+                        deck = json.load(f)
+                    if not isinstance(deck, dict) or not isinstance(deck.get("cards"), list):
+                        continue
+                    deck["specialty"] = str(deck.get("specialty", "Other"))
+                    deck["title"] = str(deck.get("title", fn[:-5]))
+                    deck["cards"] = [
+                        {
+                            "subtopic": str(c.get("subtopic", "")),
+                            "content": str(c.get("content", "")),
+                            "id": str(c.get("id", "")),
+                            "status": str(c.get("status", "pending")),
+                            "tags": sorted({str(t) for t in (c.get("tags") or []) if isinstance(t, str) and str(t).strip()}),
+                        }
+                        for c in deck["cards"]
+                        if isinstance(c, dict)
+                    ]
+                    if deck["cards"]:
+                        deck["subtopics"] = sorted({t for c in deck["cards"] for t in c["tags"]})
+                        decks.append(deck)
+                except (json.JSONDecodeError, Exception):
+                    continue
+    except Exception:
+        return []
+    return decks
+
 def load_condensed_trial_index():
     if not os.path.exists(CONDENSED_TRIALS_DIR):
         return []
@@ -391,7 +522,7 @@ SPEC_COLORS = {
 }
 
 @app.get("/", response_class=HTMLResponse)
-async def render_dashboard(request: Request):
+async def render_dashboard(request: Request, response: Response):
     user = _get_session_user(request)
     if not user:
         return HTMLResponse(content=LANDING_HTML)
@@ -520,6 +651,33 @@ async def render_dashboard(request: Request):
     condensed_result_cats_js = json.dumps(condensed_result_cats)
     condensed_types_list_js = json.dumps(condensed_types_list)
 
+    # Theory flashcard decks (authored markdown -> JSON)
+    flashcard_decks = load_flashcard_decks() if _user_has_feature(user, "theory") else []
+    THEORY_SPEC_COLORS = {
+        "CVS": "#C6554B", "RS": "#3A7CA5", "Neuro": "#6B5B95",
+        "Renal and Acid Base": "#B08D57", "Liver GIT Nutrition": "#14B8A6",
+        "Infectious Diseases": "#4F8A6D", "Hematology Rheumatology Oncology": "#E11D48",
+        "Endocrine Miscellaneous": "#06B6D4", "Pregnancy Trauma": "#DC2626",
+        "Scoring Systems": "#6B7280", "Toxicology": "#7C3AED", "Sepsis": "#F97316",
+    }
+    theory_specs = sorted(set(d["specialty"] for d in flashcard_decks))
+    theory_spec_css = {}
+    for s in theory_specs:
+        color = THEORY_SPEC_COLORS.get(s, "#9333EA")
+        var_name = "--theory-spec-" + re.sub(r"[^a-zA-Z0-9]", "", s.lower())
+        theory_spec_css[var_name] = color
+    theory_spec_str = "; ".join(f"{k}:{v}" for k, v in theory_spec_css.items()) + ";"
+    theory_spec_vars_js = json.dumps({
+        s: "--theory-spec-" + re.sub(r"[^a-zA-Z0-9]", "", s.lower()) for s in theory_specs
+    })
+    flashcard_decks_js = json.dumps(flashcard_decks)
+    theory_subtopic_map = {}
+    for d in flashcard_decks:
+        for t in d.get("subtopics") or []:
+            theory_subtopic_map.setdefault(d["specialty"], set()).add(t)
+    theory_subtopic_map = {s: sorted(v) for s, v in theory_subtopic_map.items()}
+    theory_subtopic_map_js = json.dumps(theory_subtopic_map)
+
     # Compute resolved feature flags for the authenticated user
     user_features = {f: _user_has_feature(user, f) for f in FEATURE_FLAGS}
     user_features_js = json.dumps(user_features)
@@ -543,6 +701,7 @@ async def render_dashboard(request: Request):
     --font-mono:'JetBrains Mono',monospace;
     {spec_css_str}
     {trial_spec_str}
+    {theory_spec_str}
     --radius:10px;
     --shadow:0 1px 2px rgba(0,0,0,.12), 0 4px 16px rgba(0,0,0,.08);
   }}
@@ -884,6 +1043,77 @@ async def render_dashboard(request: Request):
   .trial-empty{{ text-align:center; padding:60px 20px; color:var(--ink-muted); }}
   .trial-empty .icon{{ font-size:2.5rem; display:block; margin-bottom:8px; }}
 
+  /* ===== BOOKMARKS ===== */
+  .bookmark-btn{{ cursor:pointer; transition:transform .15s; }}
+  .bookmark-btn:hover{{ transform:scale(1.1); }}
+  .bookmark-btn.active{{ color:var(--accent); border-color:var(--accent); }}
+  .bookmark-btn.active::after{{ content:''; position:absolute; top:-2px; right:-2px; width:8px; height:8px; border-radius:50%; background:var(--accent); }}
+  .bm-count{{ display:inline-flex; align-items:center; justify-content:center; min-width:18px; height:18px; padding:0 5px; margin-left:5px; border-radius:99px; background:var(--accent); color:var(--accent-ink); font-size:.66rem; font-family:var(--font-mono); font-weight:700; vertical-align:middle; }}
+  .bm-count.zero{{ display:none; }}
+  .bookmarks-folder-row{{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }}
+  .bookmarks-folder-pill{{ display:inline-flex; align-items:center; gap:6px; border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); padding:5px 12px; border-radius:99px; font-size:.76rem; cursor:pointer; font-family:var(--font-mono); }}
+  .bookmarks-folder-pill.active{{ border-color:var(--accent); color:var(--accent); }}
+  .bookmarks-folder-pill .fdot{{ width:8px; height:8px; border-radius:50%; }}
+  .bm-section-head{{ display:flex; align-items:center; gap:8px; margin:20px 0 8px; font-family:var(--font-display); font-size:.9rem; }}
+  .bm-section-head .bar{{ flex:1; height:1px; background:var(--border); }}
+  .bm-card{{ display:flex; flex-direction:column; gap:8px; background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius); padding:12px 14px; margin-bottom:8px; transition:border-color .15s; }}
+  .bm-card:hover{{ border-color:var(--accent); }}
+  .bm-card-top{{ display:flex; gap:10px; align-items:flex-start; cursor:pointer; text-align:left; background:none; border:none; padding:0; font:inherit; color:inherit; width:100%; }}
+  .bm-card-top .bm-title{{ font-weight:700; font-size:.9rem; line-height:1.35; }}
+  .bm-card-top .bm-meta{{ color:var(--ink-muted); font-size:.76rem; margin-top:3px; }}
+  .bm-card-actions{{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }}
+  .bm-card-actions select{{ padding:4px 6px; border-radius:6px; border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); font-size:.75rem; max-width:160px; }}
+  .bm-tags-input{{ flex:1; min-width:140px; padding:5px 9px; border-radius:6px; border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); font-size:.75rem; }}
+  .bm-tag{{ display:inline-flex; align-items:center; gap:4px; border:1px solid var(--border); border-radius:99px; padding:2px 8px; font-size:.68rem; font-family:var(--font-mono); color:var(--ink-muted); }}
+  .bm-del{{ background:none; border:none; color:var(--ink-muted); cursor:pointer; font-size:.95rem; padding:0 4px; }}
+  .bm-del:hover{{ color:#EF4444; }}
+  .bm-empty{{ text-align:center; padding:60px 20px; color:var(--ink-muted); }}
+  .bm-empty .icon{{ font-size:2.5rem; display:block; margin-bottom:8px; }}
+  .bm-new-folder{{ display:none; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px; padding:12px; background:var(--bg-sunk); border:1px dashed var(--border); border-radius:var(--radius); }}
+  .bm-new-folder.show{{ display:flex; }}
+  .bm-new-folder input{{ padding:6px 10px; border-radius:6px; border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); font-size:.82rem; min-width:160px; }}
+  .folder-swatch{{ width:22px; height:22px; border-radius:50%; cursor:pointer; border:2px solid transparent; flex-shrink:0; }}
+  .folder-swatch.active{{ border-color:var(--ink); }}
+  .bm-folder-edit{{ background:none; border:none; color:var(--ink-muted); cursor:pointer; font-size:.78rem; padding:0 3px; font-family:var(--font-mono); }}
+  .bm-folder-edit:hover{{ color:var(--ink); }}
+  .bm-folder-edit.del:hover{{ color:#EF4444; }}
+
+  /* ===== THEORY FLASHCARDS ===== */
+  .theory-stage{{ margin:14px 0; }}
+  .theory-card-wrap{{ perspective:1400px; margin:12px 0 14px; }}
+  .theory-card-inner{{ position:relative; width:100%; min-height:340px; transform-style:preserve-3d; transition:transform .45s ease; }}
+  .theory-card-inner.flip{{ cursor:pointer; }}
+  .theory-card-inner.flipped{{ transform:rotateY(180deg); }}
+  .theory-face{{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:22px 24px; overflow:auto; max-height:72vh; }}
+  .theory-face.back{{ transform:rotateY(180deg); }}
+  .theory-face .flip-hint{{ position:absolute; bottom:10px; right:16px; font-size:.68rem; font-family:var(--font-mono); color:var(--ink-muted); }}
+  .theory-card-flat{{ background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:22px 24px; max-height:72vh; overflow:auto; }}
+  .theory-card-content{{ font-size:.94rem; line-height:1.55; }}
+  .theory-card-content h1, .theory-card-content h2, .theory-card-content h3{{ font-size:1.02rem; margin:12px 0 6px; }}
+  .theory-card-content p{{ margin:8px 0; }}
+  .theory-card-content ul, .theory-card-content ol{{ margin:8px 0; padding-left:22px; }}
+  .theory-card-content table{{ border-collapse:collapse; width:100%; font-size:.85em; margin:12px 0; }}
+  .theory-card-content th, .theory-card-content td{{ border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }}
+  .theory-card-content th{{ background:var(--bg-sunk); font-weight:700; }}
+  .theory-card-content code{{ font-family:var(--font-mono); font-size:.86em; background:var(--bg-sunk); border-radius:4px; padding:1px 5px; }}
+  .theory-card-head{{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px; }}
+  .theory-card-progress{{ font-family:var(--font-mono); font-size:.76rem; color:var(--ink-muted); margin-left:auto; }}
+  .theory-mode-chip{{ border:1px solid var(--border); background:transparent; color:var(--ink-muted); padding:5px 12px; border-radius:99px; font-size:.74rem; cursor:pointer; }}
+  .theory-mode-chip.active{{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }}
+  .theory-dots{{ display:flex; gap:6px; flex-wrap:wrap; justify-content:center; margin-top:12px; }}
+  .theory-dot{{ width:9px; height:9px; border-radius:50%; border:1px solid var(--border); background:transparent; cursor:pointer; padding:0; }}
+  .theory-dot.active{{ background:var(--accent); border-color:var(--accent); }}
+  .theory-dot.saved{{ background:var(--ink-muted); border-color:var(--ink-muted); }}
+  .theory-dot.saved.active{{ background:var(--accent); border-color:var(--accent); }}
+  .theory-dot.muted{{ opacity:.28; cursor:not-allowed; }}
+  .theory-card-tags{{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin:4px 0 2px; min-height:26px; }}
+  .theory-tag-pill{{ font-size:.68rem; font-family:var(--font-mono); color:var(--ink-muted); border:1px dashed var(--border); border-radius:99px; padding:2px 9px; }}
+  .theory-tag-pill.hot{{ color:var(--accent); border-color:color-mix(in srgb, var(--accent) 45%, transparent); }}
+  .theory-tag-x{{ cursor:pointer; margin-left:4px; color:var(--ink-muted); }}
+  .theory-tag-x:hover{{ color:var(--accent); }}
+  .theory-deck-rows .doc-card{{ cursor:pointer; }}
+  .theory-saved-badge{{ font-size:.66rem; font-family:var(--font-mono); color:var(--accent); margin-left:6px; }}
+
 </style>
 </head>
 <body>
@@ -906,6 +1136,7 @@ async def render_dashboard(request: Request):
       <button data-view="theory">Theory</button>
       <button data-view="rrt">RRT</button>
       <button data-view="ai">AI Assistant</button>
+      <button data-view="bookmarks">&#128278; Bookmarks<span class="bm-count zero" id="bookmarksTopCount">0</span></button>
     </nav>
     <div class="header-actions">
       <button class="icon-btn" id="searchTrigger" aria-label="Search">&#128269;</button>
@@ -1067,11 +1298,28 @@ async def render_dashboard(request: Request):
       <p class="coming-soon-text">The Antibiotics Hub is under development. Check back soon.</p>
     </div>
   </section>
+  <!-- THEORY FLASHCARDS -->
   <section class="view" id="view-theory">
-    <div class="coming-soon">
-      <p class="coming-soon-icon">&#128679;</p>
-      <h2>Coming Soon</h2>
-      <p class="coming-soon-text">The Theory Library is under development. Check back soon.</p>
+    <div class="section-head" style="margin-top:0">
+      <h2>Theory &mdash; Flashcards</h2>
+      <button class="linklike" id="theoryStudyBackBtn" style="display:none" data-theory-back>&larr; All decks</button>
+    </div>
+    <div id="theoryBrowser">
+      <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 14px">Flashcards &mdash; study them card by card, flip them, save the ones worth revisiting.</p>
+      <div class="pearl-toolbar">
+        <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="theorySearch" placeholder="Search decks and cards&hellip;" autocomplete="off"></div>
+      </div>
+      <div class="pearl-toolbar" id="theoryChips"></div>
+      <div class="pearl-toolbar" id="theorySubtopicChips" style="flex-wrap:wrap"></div>
+      <p class="pearl-count" id="theoryCount"></p>
+      <div class="doc-list theory-deck-rows" id="theoryDeckList"></div>
+    </div>
+    <div id="theoryStudy" style="display:none">
+      <div class="theory-card-head" id="theoryStudyHead"></div>
+      <div class="theory-card-tags" id="theoryCardTags"></div>
+      <div class="theory-stage" id="theoryCardStage"></div>
+      <div class="reader-nav" id="theoryCardNav"></div>
+      <div class="theory-dots" id="theoryCardDots"></div>
     </div>
   </section>
   <section class="view" id="view-rrt">
@@ -1265,6 +1513,29 @@ async def render_dashboard(request: Request):
     <div class="trial-detail" id="trialDetailBody"></div>
   </section>
 
+  <!-- BOOKMARKS -->
+  <section class="view" id="view-bookmarks">
+    <div class="section-head" style="margin-top:0">
+      <h2>&#128278; Bookmarks</h2>
+      <span class="pearl-count" id="bookmarksCount"></span>
+    </div>
+    <div class="toolbar">
+      <div class="search-box" style="min-width:180px">
+        <span>&#128269;</span>
+        <input id="bookmarksSearch" placeholder="Filter by title or tag&hellip;" autocomplete="off">
+      </div>
+      <button class="btn" id="bookmarksNewFolderBtn">&#128193; New folder</button>
+    </div>
+    <div class="bm-new-folder" id="bookmarksNewFolderRow">
+      <input id="bookmarksNewFolderName" placeholder="Folder name" maxlength="60">
+      <div id="bookmarksNewFolderColors" style="display:flex;gap:6px;align-items:center"></div>
+      <button class="btn primary" id="bookmarksCreateFolderBtn">Create</button>
+      <button class="btn" id="bookmarksCancelFolderBtn">Cancel</button>
+    </div>
+    <div class="bookmarks-folder-row" id="bookmarksFoldersRow"></div>
+    <div id="bookmarksList"></div>
+  </section>
+
 </main>
 
 <!-- MOBILE FILTER SHEET -->
@@ -1287,6 +1558,7 @@ async def render_dashboard(request: Request):
   <button class="drawer-link" data-view="theory">&#129504; Theory Library</button>
   <button class="drawer-link" data-view="rrt">&#128680; RRT</button>
   <button class="drawer-link" data-view="ai">&#129302; AI Assistant</button>
+  <button class="drawer-link" data-view="bookmarks">&#128278; Bookmarks<span class="bm-count zero" id="bookmarksDrawerCount">0</span></button>
   <h4>Text size</h4>
   <div class="chip-row" id="fontChips">
     <button class="chip" data-font-px="14">XS</button>
@@ -1357,6 +1629,7 @@ async def render_dashboard(request: Request):
   <button class="nav-item" data-view="pearls"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128142;</span>Pearls</button>
   <button class="nav-item" data-view="trials"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#127942;</span>Trials</button>
   <button class="nav-item" data-view="theory"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#129504;</span>Theory</button>
+  <button class="nav-item" data-view="bookmarks"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128278;</span>Saved</button>
 </nav>
 
 <div class="toast" id="toast"></div>
@@ -1418,6 +1691,11 @@ const CONDENSED_SYSTEMS = {condensed_systems_js};
 const CONDENSED_RESULT_CATS = {condensed_result_cats_js};
 const CONDENSED_TYPES = {condensed_types_list_js};
 
+// Theory flashcard decks (markdown-authored)
+const allFlashcardDecks = {flashcard_decks_js};
+const THEORY_SPEC_VAR = {theory_spec_vars_js};
+const THEORY_SUBTOPIC_MAP = {theory_subtopic_map_js};
+
 // Feature flags (resolved server-side: defaults + per-user overrides)
 const USER_FEATURES = {user_features_js};
 const USER_IS_ADMIN = {user_is_admin_js};
@@ -1425,6 +1703,23 @@ const USER_IS_ADMIN = {user_is_admin_js};
 let _trialFilterState = {{ specialty: '', result_category: '', trial_type: '' }};
 let _currentTrialList = [];
 let _currentTrialIdx = -1;
+let _currentTrialSlug = '';
+let _currentCondensedRef = '';
+let _bookmarks = {{items: {{}}, folders: {{}}}};
+let _bookmarkMeta = {{}};
+let _bookmarksFolderFilter = null;
+let _bmNewFolderColor = '#E8B778';
+const BM_FOLDER_COLORS = ['#E8B778','#0C8A8B','#2DD4CF','#8B5CF6','#EF4444','#10B981','#D97706','#6B7280'];
+
+// Theory flashcard study state
+let _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }}));
+let _theorySavedOnly = false;
+let _theoryActiveSubtopic = null;
+let _currentDeck = null;
+let _currentCardIdx = 0;
+let _theoryCardOrder = [];
+let _theoryViewMode = 'single';
+let _theoryFlipped = false;
 
 // =====================================================================
 // STATE
@@ -1480,7 +1775,9 @@ function showView(name){{
     'papers': 'papers',
     'guidelines': 'guidelines',
     'pearls': 'pearls',
-    'search': 'search'
+    'search': 'search',
+    'bookmarks': 'bookmarks',
+    'theory': 'theory'
   }};
   var requiredFeature = featureMap[name];
   if (requiredFeature && !USER_IS_ADMIN && !USER_FEATURES[requiredFeature]) {{
@@ -1499,6 +1796,8 @@ function showView(name){{
   if(name==='trials') renderTrials();
   if(name==='trials-esbicm') renderESBICM();
   if(name==='trials-condensed') renderCondensedTrials();
+  if(name==='bookmarks') renderBookmarks();
+  if(name==='theory'){{ renderTheoryChips(); renderTheoryDecks(); }}
 }}
 
 // =====================================================================
@@ -1773,10 +2072,13 @@ function openReader(entry, kind){{
     var hasPrintablePaper = entry.file_name && baseDataset.some(function(d){{ return d.file_name === entry.file_name.replace(/\\.json$/, '.pdf'); }});
     var articleBtn = hasPrintablePaper ? '<button class="btn nav-btn" data-open-pearl-article="'+entry.id+'">&#128196; Open article</button>' : '';
     var navRow = (prevBtn||nextBtn||articleBtn) ? '<div class="reader-nav">'+articleBtn+prevBtn+nextBtn+'</div>' : '';
+    var pbmRef = 'pearl:'+entry.id;
+    registerBookmarkMeta(pbmRef, {{kind:'pearl', title: entry.pearl || entry.source_paper || 'Clinical pearl', system: entry.system || 'General', type: entry.type || 'Pearl', locator: {{id: entry.id}}}});
     body.innerHTML = ''+
       pillHTML(entry.system||'General', (entry.system||'General')+' &middot; Pearl')+
       '<h2 style="font-size:1.15rem;line-height:1.4">"'+escapeHtml(entry.pearl||'')+'"</h2>'+
       '<p class="meta">'+(entry.source_paper||'Clinical pearl')+' &middot; '+(entry.timestamp||'')+'</p>'+
+      '<div class="reader-actions">'+bookmarkBtnHTML(pbmRef)+'</div>'+
       navRow;
     document.body.classList.add('reader-open');
     pushReaderState();
@@ -1824,11 +2126,14 @@ function openReader(entry, kind){{
         pearlBoxHTML = '<div class="pearl-box"><strong>Key pearl &mdash;</strong> '+escapeHtml(data.key_pearls[0])+'</div>';
       }}
 
+      var bmKind = (entry.type||'').toLowerCase()==='guideline' ? 'guideline' : 'paper';
+      var bmRef = bmKind + ':' + (entry.file_name || '');
+      registerBookmarkMeta(bmRef, {{kind: bmKind, title: entry.title, system: entry.system || 'General', type: entry.type || 'Other', locator: {{file_name: entry.file_name || '', system: entry.system || 'General', type: entry.type || 'Other'}}}});
       body.innerHTML = ''+
         pillHTML(entry.system, entry.system+' &middot; '+entry.type)+
         '<h2>'+escapeHtml(entry.title)+'</h2>'+
         '<p class="meta">'+(authors!=='Unknown Authors'?'&mdash; '+escapeHtml(authors)+' &middot; ':'')+ (entry.journal||'')+'</p>'+
-        '<div class="reader-actions">'+doiHTML+'</div>'+
+        '<div class="reader-actions">'+doiHTML+bookmarkBtnHTML(bmRef)+'</div>'+
         pearlBoxHTML+
         collapsible+
         evidenceHTML;
@@ -2057,6 +2362,7 @@ function openTrialDetail(slug, list, idx){{
   showView('trial-detail');
   _currentTrialList = list || [];
   _currentTrialIdx = typeof idx === 'number' ? idx : -1;
+  _currentTrialSlug = slug || '';
 
   var body = document.getElementById('trialDetailBody');
   body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--ink-muted)">Loading&hellip;</div>';
@@ -2090,6 +2396,8 @@ function renderTrialDetailHTML(data, body){{
     if(doiUrl && doiUrl!=='#') html += ' &middot; <a href="'+doiUrl+'" target="_blank" rel="noopener" style="color:var(--accent)">&#128279; DOI</a>';
   }}
   html += '</div>';
+  registerBookmarkMeta('trial:'+_currentTrialSlug, {{kind: 'trial', title: data.trial_name || data.trial_title || '', system: data.specialty || 'General', type: data.trial_type || '', locator: {{slug: _currentTrialSlug}}}});
+  html += '<div class="reader-actions" style="margin-top:10px">'+bookmarkBtnHTML('trial:'+_currentTrialSlug)+'</div>';
 
   // Meta strip
   html += '<div class="trial-meta-strip">';
@@ -2274,6 +2582,7 @@ function renderCondensedSystem(name){{
 
 function openCondensedTrialDetail(system, name){{
   showView('condensed-detail');
+  _currentCondensedRef = 'condensed:' + system + ':' + name;
   var body = document.getElementById('condensedDetailBody');
   body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--ink-muted)">Loading&hellip;</div>';
   document.getElementById('condensedDetailBackBtn').onclick = function(){{ renderCondensedSystem(system); }};
@@ -2299,6 +2608,11 @@ function renderCondensedDetailHTML(data, body){{
     if(doiUrl && doiUrl!=='#') html += ' &middot; <a href="'+doiUrl+'" target="_blank" rel="noopener" style="color:var(--accent)">&#128279; DOI</a>';
   }}
   html += '</div>';
+  var cparts = String(_currentCondensedRef).split(':');
+  var cSys = cparts[1] || 'General';
+  var cName = cparts[2] || '';
+  registerBookmarkMeta(_currentCondensedRef, {{kind: 'condensed', title: data.trial_name || '', system: cSys, type: data.trial_type || '', locator: {{system: cSys, name: cName}}}});
+  html += '<div class="reader-actions" style="margin-top:10px">'+bookmarkBtnHTML(_currentCondensedRef)+'</div>';
 
   // Meta strip
   html += '<div class="trial-meta-strip">';
@@ -2442,6 +2756,459 @@ function renderCondensedDetailHTML(data, body){{
 }}
 
 // =====================================================================
+// THEORY FLASHCARDS
+// =====================================================================
+function _theorySpecVar(spec){{ return THEORY_SPEC_VAR[spec] || '--spec-other'; }}
+function _theoryPill(spec, label){{
+  var v = _theorySpecVar(spec);
+  return '<span class="pill" style="background:color-mix(in srgb, var('+v+') 18%, transparent); color:var('+v+')"><span class="dot" style="background:var('+v+')"></span>'+escapeHtml(label)+'</span>';
+}}
+function _bmEnabled(){{ return USER_IS_ADMIN || USER_FEATURES['bookmarks']; }}
+function _savedCardRefs(deckId){{
+  var prefix = 'flashcard:'+deckId+'/';
+  return Object.keys(_bookmarks.items || {{}}).filter(function(r){{ return r.indexOf(prefix)===0; }});
+}}
+function theoryCardRef(deckId, cardId){{ return 'flashcard:'+deckId+'/'+cardId; }}
+
+function renderTheoryChips(){{
+  var box = document.getElementById('theoryChips');
+  if(!box) return;
+  if(_theoryActiveSpecs.size!==1) _theoryActiveSubtopic = null;
+  var counts = {{}};
+  allFlashcardDecks.forEach(function(d){{ counts[d.specialty] = (counts[d.specialty]||0)+1; }});
+  var html = Object.keys(counts).sort().map(function(s){{
+    var active = _theoryActiveSpecs.has(s);
+    return '<button class="chip '+(active?'active':'')+'" data-theory-chip="'+escapeHtml(s)+'" style="--chip-color:var('+_theorySpecVar(s)+')"><span class="dot" style="background:var('+_theorySpecVar(s)+')"></span>'+escapeHtml(s)+' ('+counts[s]+')</button>';
+  }}).join('');
+  var savedCount = Object.keys(_bookmarks.items || {{}}).filter(function(r){{ return r.indexOf('flashcard:')===0; }}).length;
+  html += '<button class="chip'+( _theorySavedOnly?' active':'')+'" data-theory-saved-only style="--chip-color:var(--accent)">&#128278; Saved ('+savedCount+')</button>';
+  box.innerHTML = html + '<button class="chip" data-theory-chip-reset>Reset</button><button class="chip" data-theory-chip-uncheck>Uncheck all</button>';
+  renderTheorySubtopicChips();
+}}
+
+function renderTheorySubtopicChips(){{
+  var box = document.getElementById('theorySubtopicChips');
+  if(!box) return;
+  if(_theoryActiveSpecs.size!==1){{
+    box.innerHTML = '';
+    return;
+  }}
+  var spec = Array.from(_theoryActiveSpecs)[0];
+  var subs = THEORY_SUBTOPIC_MAP[spec] || [];
+  if(!subs.length){{
+    box.innerHTML = '';
+    return;
+  }}
+  var deckCounts = {{}};
+  allFlashcardDecks.forEach(function(d){{
+    if(d.specialty!==spec) return;
+    (d.subtopics||[]).forEach(function(t){{ deckCounts[t] = (deckCounts[t]||0)+1; }});
+  }});
+  var html = '<span class="pearl-count" style="margin:0 6px 0 0;flex:0 0 auto">Subtopic:</span>';
+  html += subs.map(function(t){{
+    var active = _theoryActiveSubtopic===t;
+    return '<button class="chip'+(active?' active':'')+'" data-theory-subtopic="'+escapeHtml(t)+'" style="--chip-color:var('+_theorySpecVar(spec)+')">'+escapeHtml(t)+(deckCounts[t]?' ('+deckCounts[t]+')':'')+'</button>';
+  }}).join('');
+  if(_theoryActiveSubtopic) html += '<button class="chip" data-theory-subtopic-clear style="--chip-color:var(--ink-muted)">&#10005; Clear</button>';
+  box.innerHTML = html;
+}}
+
+function renderTheoryDecks(){{
+  var q = (document.getElementById('theorySearch').value||'').toLowerCase().trim();
+  var list = document.getElementById('theoryDeckList');
+  var countEl = document.getElementById('theoryCount');
+  if(!allFlashcardDecks.length){{
+    list.innerHTML = '<div class="bm-empty"><span class="icon">&#129504;</span><p>No flashcard decks yet. Add markdown files under <span class="mono">flashcards_md/{{Specialty}}/</span> and run <span class="mono">flashcard_md_importer.py</span>.</p></div>';
+    if(countEl) countEl.textContent = '';
+    return;
+  }}
+  var filtered = allFlashcardDecks.filter(function(d){{
+    if(!_theoryActiveSpecs.has(d.specialty)) return false;
+    var savedRefs = _savedCardRefs(d.id);
+    if(_theorySavedOnly && !savedRefs.length) return false;
+    if(_theoryActiveSubtopic && (d.subtopics||[]).indexOf(_theoryActiveSubtopic)===-1) return false;
+    if(q){{
+      var hay = (d.title+' '+d.specialty+' '+d.subtopics.join(' ')+' '+d.cards.map(function(c){{ return c.subtopic+' '+c.content+' '+(c.tags||[]).join(' '); }}).join(' ')).toLowerCase();
+      if(hay.indexOf(q)===-1) return false;
+    }}
+    return true;
+  }});
+  var html = filtered.map(function(d){{
+    var savedRefs = _savedCardRefs(d.id);
+    var savedBadge = savedRefs.length ? '<span class="theory-saved-badge">&#128278; '+savedRefs.length+'</span>' : '';
+    var snip = (d.subtopics||[]).length ? (d.subtopics||[]).slice(0,4).join(' \u00B7 ') : d.cards.map(function(c){{ return c.subtopic; }}).slice(0,3).join(' \u00B7 ');
+    return '<button class="doc-card" data-theory-deck="'+escapeHtml(d.id)+'">'+
+      '<div class="doc-stripe" style="background:var('+_theorySpecVar(d.specialty)+')"></div>'+
+      '<div class="doc-inner">'+
+        '<div class="doc-top">'+_theoryPill(d.specialty, d.specialty)+'<span class="type-tag">'+d.cards.length+' card'+(d.cards.length===1?'':'s')+'</span>'+savedBadge+'</div>'+
+        '<p class="doc-title">'+escapeHtml(d.title)+'</p>'+
+        '<p class="doc-snippet">'+escapeHtml(snip)+'</p>'+
+      '</div>'+
+    '</button>';
+  }}).join('');
+  list.innerHTML = html || '<p style="color:var(--ink-muted);padding:20px 4px">No decks match these filters.</p>';
+  if(countEl) countEl.textContent = 'Showing '+filtered.length+' of '+allFlashcardDecks.length+' decks';
+}}
+
+function openTheoryDeck(deckId, cardIdx){{
+  var deck = allFlashcardDecks.find(function(d){{ return d.id===deckId; }});
+  if(!deck) return;
+  _currentDeck = deck;
+  _theoryCardOrder = _theoryActiveSubtopic
+    ? deck.cards.map(function(c, i){{ return (c.tags||[]).indexOf(_theoryActiveSubtopic)>-1 ? i : -1; }}).filter(function(i){{ return i>-1; }})
+    : deck.cards.map(function(c, i){{ return i; }});
+  if(!_theoryCardOrder.length) _theoryCardOrder = deck.cards.map(function(c, i){{ return i; }});
+  var start = (typeof cardIdx==='number' && cardIdx>=0 && cardIdx<deck.cards.length) ? cardIdx : _theoryCardOrder[0];
+  if(_theoryActiveSubtopic && _theoryCardOrder.indexOf(start)===-1) start = _theoryCardOrder[0];
+  _currentCardIdx = start;
+  _theoryFlipped = false;
+  document.getElementById('theoryBrowser').style.display = 'none';
+  document.getElementById('theoryStudy').style.display = 'block';
+  document.getElementById('theoryStudyBackBtn').style.display = '';
+  renderTheoryCard();
+}}
+
+function theoryBackToBrowser(){{
+  _currentDeck = null;
+  document.getElementById('theoryStudy').style.display = 'none';
+  document.getElementById('theoryBrowser').style.display = '';
+  document.getElementById('theoryStudyBackBtn').style.display = 'none';
+  renderTheoryDecks();
+}}
+
+function theoryNav(delta){{
+  if(!_currentDeck) return;
+  var pos = _theoryCardOrder.indexOf(_currentCardIdx);
+  var nextPos = pos + delta;
+  if(nextPos<0 || nextPos>=_theoryCardOrder.length) return;
+  _currentCardIdx = _theoryCardOrder[nextPos];
+  _theoryFlipped = false;
+  renderTheoryCard();
+}}
+
+function _theorySplitFrontBack(content){{
+  var m = content.split(/\\n\\s*(?:---|\\*\\*\\*)\\s*\\n/);
+  if(m.length>=3 && m[0].trim()) return {{front: m[0].trim(), back: m.slice(2).join('\\n').trim()}};
+  return null;
+}}
+
+function renderTheoryCard(){{
+  if(!_currentDeck) return;
+  var deck = _currentDeck;
+  var posIdx = _theoryCardOrder.indexOf(_currentCardIdx);
+  if(posIdx===-1) posIdx = 0;
+  var card = deck.cards[_currentCardIdx];
+  var total = _theoryCardOrder.length;
+  var filtered = !!_theoryActiveSubtopic;
+  var ref = theoryCardRef(deck.id, card.id);
+
+  registerBookmarkMeta(ref, {{kind:'flashcard', title: card.subtopic || deck.title, system: deck.specialty, type: 'Flashcard', locator: {{deck: deck.id, card: card.id, cardIdx: _currentCardIdx}}}});
+
+  var saveBtn = _bmEnabled() ? bookmarkBtnHTML(ref) : '';
+  var modeToggles = '<button class="theory-mode-chip'+( _theoryViewMode==='single'?' active':'')+'" data-theory-mode="single">Single face</button><button class="theory-mode-chip'+( _theoryViewMode==='flip'?' active':'')+'" data-theory-mode="flip">Flip card</button>';
+
+  document.getElementById('theoryStudyHead').innerHTML =
+    '<button class="btn nav-btn" data-theory-back style="flex:0 0 auto">&larr; Decks</button>'+
+    _theoryPill(deck.specialty, deck.title)+
+    '<span class="theory-card-progress">Card '+(posIdx+1)+' of '+total+(filtered?' (filtered)':'')+'</span>'+
+    saveBtn;
+
+  var tagRow = (card.tags||[]).length ? card.tags.map(function(t){{
+    return '<span class="theory-tag-pill'+(filtered && t===_theoryActiveSubtopic?' hot':'')+'">'+escapeHtml(t)+'</span>';
+  }}).join('') : '';
+  if(filtered) tagRow += '<button class="theory-tag-pill" data-theory-tag-clear title="Clear subtopic filter">'+escapeHtml(_theoryActiveSubtopic)+' <span class="theory-tag-x">&#10005;</span></button>';
+  document.getElementById('theoryCardTags').innerHTML = tagRow;
+
+  var stage = document.getElementById('theoryCardStage');
+  var contentHTML = marked.parse(card.content);
+  if(_theoryViewMode==='flip'){{
+    var split = _theorySplitFrontBack(card.content);
+    var front = split ? marked.parse(split.front) : '<h3>'+escapeHtml(card.subtopic)+'</h3>';
+    var back = split ? marked.parse(split.back) : contentHTML;
+    stage.innerHTML =
+      '<div class="theory-card-wrap"><div class="theory-card-inner flip'+( _theoryFlipped?' flipped':'')+'" id="theoryFlipInner">'+
+        '<div class="theory-face theory-card-content">'+front+'<span class="flip-hint">tap to flip \u21C5</span></div>'+
+        '<div class="theory-face back theory-card-content">'+back+'<span class="flip-hint">tap to flip \u21C5</span></div>'+
+      '</div></div>';
+  }} else {{
+    stage.innerHTML = '<div class="theory-card-flat theory-card-content">'+contentHTML+'</div>';
+  }}
+
+  var prevBtn = posIdx>0 ? '<button class="btn nav-btn" data-theory-nav="-1">&#9664; Previous</button>' : '';
+  var nextBtn = posIdx<total-1 ? '<button class="btn nav-btn" data-theory-nav="1">Next &#9654;</button>' : '';
+  document.getElementById('theoryCardNav').innerHTML = prevBtn + nextBtn + modeToggles;
+
+  document.getElementById('theoryCardDots').innerHTML = deck.cards.map(function(c, i){{
+    var saved = !!(_bookmarks.items && _bookmarks.items[theoryCardRef(deck.id, c.id)]);
+    var inOrder = filtered ? (c.tags||[]).indexOf(_theoryActiveSubtopic)>-1 : true;
+    return '<button class="theory-dot'+( i===_currentCardIdx?' active':'')+( saved?' saved':'')+( !inOrder?' muted':'')+'" data-theory-dot="'+i+'" title="Card '+(i+1)+'"'+( !inOrder?' disabled':'')+'></button>';
+  }}).join('');
+  window.scrollTo({{top:0, behavior:'instant'}});
+}}
+
+function theorySetViewMode(mode){{
+  _theoryViewMode = mode;
+  _theoryFlipped = false;
+  renderTheoryCard();
+}}
+
+// =====================================================================
+// BOOKMARKS
+// =====================================================================
+function registerBookmarkMeta(ref, meta){{ _bookmarkMeta[ref] = meta || {{}}; }}
+
+function bookmarkBtnHTML(ref, label){{
+  var active = !!(_bookmarks.items && _bookmarks.items[ref]);
+  return '<button class="icon-btn bookmark-btn'+(active?' active':'')+'" data-bookmark-toggle="'+escapeHtml(ref)+'" aria-label="'+(active?'Remove bookmark':'Add bookmark')+'" title="'+(active?'Remove bookmark':'Add bookmark')+'">'+(label||'&#128278;')+'</button>';
+}}
+
+function refreshBookmarkButtons(){{
+  document.querySelectorAll('[data-bookmark-toggle]').forEach(function(btn){{
+    var ref = btn.dataset.bookmarkToggle;
+    var active = !!(_bookmarks.items && _bookmarks.items[ref]);
+    btn.classList.toggle('active', active);
+    btn.title = active ? 'Remove bookmark' : 'Add bookmark';
+    btn.setAttribute('aria-label', active ? 'Remove bookmark' : 'Add bookmark');
+  }});
+}}
+
+function updateBookmarkCounts(){{
+  var n = Object.keys(_bookmarks.items || {{}}).length;
+  ['bookmarksTopCount','bookmarksDrawerCount'].forEach(function(id){{
+    var el = document.getElementById(id);
+    if(el){{ el.textContent = n; el.classList.toggle('zero', n===0); }}
+  }});
+  var c = document.getElementById('bookmarksCount');
+  if(c) c.textContent = n + ' saved';
+}}
+
+function loadBookmarks(){{
+  if(!USER_IS_ADMIN && !USER_FEATURES['bookmarks']) return;
+  fetch('/api/bookmarks').then(function(r){{ return r.json(); }}).then(function(data){{
+    if(data && data.items) _bookmarks = data;
+    else _bookmarks = {{items: {{}}, folders: {{}}}};
+    updateBookmarkCounts(); refreshBookmarkButtons();
+  }}).catch(function(){{}});
+}}
+
+function toggleBookmark(ref, btn){{
+  if(!_bookmarks.items) _bookmarks.items = {{}};
+  if(_bookmarks.items[ref]){{
+    fetch('/api/bookmarks?ref='+encodeURIComponent(ref), {{method:'DELETE'}}).then(function(r){{ return r.json(); }}).then(function(d){{
+      delete _bookmarks.items[ref];
+      updateBookmarkCounts(); refreshBookmarkButtons();
+      if(document.querySelector('.view.active').id==='view-bookmarks') renderBookmarks();
+      showToast('Bookmark removed');
+    }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+  }} else {{
+    var meta = _bookmarkMeta[ref] || {{}};
+    var payload = {{
+      ref: ref,
+      kind: meta.kind || 'paper',
+      title: meta.title || 'Untitled',
+      system: meta.system || 'General',
+      type: meta.type || '',
+      locator: meta.locator || {{}}
+    }};
+    fetch('/api/bookmarks', {{method:'POST', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify(payload)}}).then(function(r){{ return r.json(); }}).then(function(d){{
+      if(d && d.item) _bookmarks.items[ref] = d.item;
+      updateBookmarkCounts(); refreshBookmarkButtons();
+      if(document.querySelector('.view.active').id==='view-bookmarks') renderBookmarks();
+      showToast('Bookmark saved');
+    }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+  }}
+}}
+
+function removeBookmark(ref){{
+  if(!(_bookmarks.items && _bookmarks.items[ref])) return;
+  fetch('/api/bookmarks?ref='+encodeURIComponent(ref), {{method:'DELETE'}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    delete _bookmarks.items[ref];
+    updateBookmarkCounts(); refreshBookmarkButtons(); renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function setBookmarkFolder(ref, folder){{
+  fetch('/api/bookmarks', {{method:'PATCH', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{ref: ref, folder: folder || null}})}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(d && d.item) _bookmarks.items[ref] = d.item;
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function setBookmarkTags(ref, raw){{
+  var tags = String(raw||'').split(',').map(function(t){{ return t.trim(); }}).filter(function(t){{ return t; }}).slice(0,20);
+  fetch('/api/bookmarks', {{method:'PATCH', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{ref: ref, tags: tags}})}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(d && d.item) _bookmarks.items[ref] = d.item;
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function createBookmarkFolder(){{
+  var nameEl = document.getElementById('bookmarksNewFolderName');
+  var name = (nameEl.value||'').trim();
+  if(!name) return;
+  fetch('/api/bookmarks/folders', {{method:'POST', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{name: name, color: _bmNewFolderColor}})}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(d && d.id){{
+      if(!_bookmarks.folders) _bookmarks.folders = {{}};
+      _bookmarks.folders[d.id] = d.folder;
+    }}
+    nameEl.value = '';
+    document.getElementById('bookmarksNewFolderRow').classList.remove('show');
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function renameBookmarkFolder(fid){{
+  var f = _bookmarks.folders && _bookmarks.folders[fid];
+  if(!f) return;
+  var name = prompt('Folder name', f.name);
+  if(!name || !name.trim()) return;
+  fetch('/api/bookmarks/folders', {{method:'PATCH', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{id: fid, name: name.trim()}})}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(d && d.folder && _bookmarks.folders) _bookmarks.folders[fid] = d.folder;
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function deleteBookmarkFolder(fid){{
+  if(!confirm('Delete this folder? Bookmarks inside will move to Uncategorized.')) return;
+  fetch('/api/bookmarks/folders?ref='+encodeURIComponent(fid), {{method:'DELETE'}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(_bookmarks.folders && _bookmarks.folders[fid]) delete _bookmarks.folders[fid];
+    Object.keys(_bookmarks.items||{{}}).forEach(function(ref){{ if(_bookmarks.items[ref].folder===fid) _bookmarks.items[ref].folder = null; }});
+    if(_bookmarksFolderFilter===fid) _bookmarksFolderFilter = null;
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function openBookmark(ref){{
+  var bm = _bookmarks.items && _bookmarks.items[ref];
+  if(!bm) return;
+  if(bm.kind==='paper' || bm.kind==='guideline'){{
+    var loc = bm.locator || {{}};
+    var entry = {{id: ref, file_name: loc.file_name, system: loc.system || bm.system || 'General', type: loc.type || bm.type || 'Other', title: bm.title, authors: '', doi: '#', journal: '', date_added: '', year: '', subtopic: ''}};
+    var live = baseDataset.find(function(d){{ return d.file_name === loc.file_name; }});
+    if(live) entry = live;
+    openReader(entry, 'paper');
+    return;
+  }}
+  if(bm.kind==='pearl'){{
+    var loc = bm.locator || {{}};
+    var livePearl = allPearls.find(function(p){{ return String(p.id)===String(loc.id); }});
+    if(livePearl){{ openReader(livePearl, 'pearl'); }}
+    else {{
+      openReader({{id: loc.id, pearl: bm.title, source_paper: '', doi: '', author: '', system: bm.system || 'General', type: bm.type || 'Pearl', remarks: '', file_name: '', topic: '', timestamp: ''}}, 'pearl');
+    }}
+    return;
+  }}
+  if(bm.kind==='trial'){{
+    var slug = (bm.locator && bm.locator.slug) ? bm.locator.slug : String(ref).replace(/^trial:/,'');
+    openTrialDetail(slug, [], -1);
+    return;
+  }}
+  if(bm.kind==='condensed'){{
+    var loc = bm.locator || {{}};
+    openCondensedTrialDetail(loc.system || 'General', loc.name || '');
+    return;
+  }}
+  if(bm.kind==='flashcard'){{
+    var loc = bm.locator || {{}};
+    showView('theory');
+    openTheoryDeck(loc.deck || '', typeof loc.cardIdx==='number' ? loc.cardIdx : 0);
+    return;
+  }}
+}}
+
+function renderFolderSwatches(active){{
+  var row = document.getElementById('bookmarksNewFolderColors');
+  if(!row) return;
+  row.innerHTML = BM_FOLDER_COLORS.map(function(c){{
+    return '<button type="button" class="folder-swatch'+(c===active?' active':'')+'" data-bm-color="'+c+'" style="background:'+c+'" aria-label="Color '+c+'"></button>';
+  }}).join('');
+}}
+
+function bmCardHTML(bm){{
+  var kindLabel = {{paper:'Paper', guideline:'Guideline', pearl:'Pearl', trial:'Trial', condensed:'Condensed Trial'}}[bm.kind] || bm.kind;
+  var folderOpts = '<option value="">No folder</option>';
+  Object.keys(_bookmarks.folders||{{}}).forEach(function(fid){{
+    folderOpts += '<option value="'+escapeHtml(fid)+'"'+(bm.folder===fid?' selected':'')+'>'+escapeHtml(_bookmarks.folders[fid].name)+'</option>';
+  }});
+  var dispTitle = String(bm.title||bm.ref);
+  if(dispTitle.length>140) dispTitle = dispTitle.substring(0,140)+'&hellip;';
+  var tags = (bm.tags||[]).map(function(t){{ return '<span class="bm-tag">#'+escapeHtml(t)+'</span>'; }}).join('');
+  return '<div class="bm-card">'+
+    '<button class="bm-card-top" data-bookmark-open="'+escapeHtml(bm.ref)+'" role="button" tabindex="0">'+
+      '<div style="flex:1;min-width:0">'+
+        '<div style="margin-bottom:6px">'+pillHTML(bm.system||'General', (bm.system||'General')+' &middot; '+kindLabel)+'</div>'+
+        '<div class="bm-title">'+escapeHtml(dispTitle)+'</div>'+
+        '<div class="bm-meta">'+(bm.type?escapeHtml(bm.type):'')+(bm.added_at?' &middot; saved '+escapeHtml(String(bm.added_at).substring(0,10)):'')+'</div>'+
+      '</div>'+
+      '<span class="bm-del" style="font-size:1.1rem">&#8250;</span>'+
+    '</button>'+
+    '<div class="bm-card-actions">'+
+      '<select data-bookmark-folder="'+escapeHtml(bm.ref)+'" title="Move to folder">'+folderOpts+'</select>'+
+      '<input class="bm-tags-input" data-bookmark-tags="'+escapeHtml(bm.ref)+'" placeholder="Tags: sepsis, exam" value="'+escapeHtml((bm.tags||[]).join(', '))+'" autocomplete="off">'+
+      '<span style="flex:1"></span>'+
+      '<button class="bm-del" data-bookmark-del="'+escapeHtml(bm.ref)+'" title="Remove bookmark">&times;</button>'+
+    '</div>'+
+    (tags?'<div style="display:flex;gap:5px;flex-wrap:wrap">'+tags+'</div>':'')+
+  '</div>';
+}}
+
+function renderBookmarks(){{
+  var list = document.getElementById('bookmarksList');
+  var foldersRow = document.getElementById('bookmarksFoldersRow');
+  if(!list) return;
+  var items = _bookmarks.items || {{}};
+  var folders = _bookmarks.folders || {{}};
+  var refs = Object.keys(items);
+  var q = (document.getElementById('bookmarksSearch').value||'').toLowerCase().trim();
+
+  var fhtml = '';
+  if(Object.keys(folders).length){{
+    fhtml += '<button class="bookmarks-folder-pill'+( _bookmarksFolderFilter===null ? ' active':'')+'" data-bm-folder-all>All</button>';
+    Object.keys(folders).forEach(function(fid){{
+      var f = folders[fid];
+      fhtml += '<button class="bookmarks-folder-pill'+( _bookmarksFolderFilter===fid ? ' active':'')+'" data-bm-folder="'+escapeHtml(fid)+'">'+
+        '<span class="fdot" style="background:'+escapeHtml(f.color||'#E8B778')+'"></span>'+escapeHtml(f.name)+'</button>';
+      fhtml += '<button class="bm-folder-edit" data-bm-folder-rename="'+escapeHtml(fid)+'" title="Rename folder">&#9998;</button>';
+      fhtml += '<button class="bm-folder-edit del" data-bm-folder-del="'+escapeHtml(fid)+'" title="Delete folder">&times;</button>';
+    }});
+  }}
+  foldersRow.innerHTML = fhtml;
+
+  if(!refs.length){{
+    list.innerHTML = '<div class="bm-empty"><span class="icon">&#128278;</span><p>No bookmarks yet. Tap the &#128278; button on any paper, pearl, or trial to save it here.</p></div>';
+    return;
+  }}
+
+  var filtered = refs.filter(function(ref){{
+    var bm = items[ref];
+    if(_bookmarksFolderFilter !== null && bm.folder !== _bookmarksFolderFilter) return false;
+    if(!q) return true;
+    var hay = (bm.title||'')+' '+(bm.system||'')+' '+(bm.tags||[]).join(' ');
+    return hay.toLowerCase().indexOf(q) !== -1;
+  }});
+  if(!filtered.length){{
+    list.innerHTML = '<div class="bm-empty"><span class="icon">&#128270;</span><p>No bookmarks match your filters.</p></div>';
+    return;
+  }}
+
+  var groups = {{}};
+  var none = [];
+  filtered.forEach(function(ref){{ var g = items[ref].folder || null; if(g) (groups[g] = groups[g] || []).push(ref); else none.push(ref); }});
+  var order = Object.keys(groups).sort(function(a,b){{ return ((folders[a]||{{}}).name||'').localeCompare((folders[b]||{{}}).name||''); }});
+  if(none.length) order.unshift('');
+
+  var html = '';
+  order.forEach(function(g){{
+    var label = g ? (folders[g]||{{}}).name||'Folder' : 'Uncategorized';
+    var color = g ? (folders[g]||{{}}).color||'#E8B778' : 'var(--ink-muted)';
+    var groupRefs = g ? groups[g] : none;
+    html += '<div class="bm-section-head"><span class="dot" style="background:'+color+'"></span>'+escapeHtml(label)+' <span class="pearl-count">('+groupRefs.length+')</span><span class="bar"></span></div>';
+    groupRefs.forEach(function(ref){{ html += bmCardHTML(items[ref]); }});
+  }});
+  list.innerHTML = html;
+}}
+
+// =====================================================================
 // DISCLAIMER
 // =====================================================================
 function dismissDisclaimer(){{
@@ -2476,6 +3243,19 @@ document.getElementById('drawerLogout').addEventListener('click', function(){{ c
 document.getElementById('filterToggleBtn').addEventListener('click', openSheet);
 document.getElementById('guidelinesFilterToggleBtn').addEventListener('click', openSheet);
 document.getElementById('sheetBackdrop').addEventListener('click', closeSheet);
+document.getElementById('bookmarksSearch').addEventListener('input', renderBookmarks);
+document.getElementById('theorySearch').addEventListener('input', renderTheoryDecks);
+document.getElementById('bookmarksNewFolderBtn').addEventListener('click', function(){{
+  document.getElementById('bookmarksNewFolderRow').classList.add('show');
+  renderFolderSwatches(_bmNewFolderColor);
+  document.getElementById('bookmarksNewFolderName').focus();
+}});
+document.getElementById('bookmarksCancelFolderBtn').addEventListener('click', function(){{
+  document.getElementById('bookmarksNewFolderRow').classList.remove('show');
+  document.getElementById('bookmarksNewFolderName').value = '';
+}});
+document.getElementById('bookmarksCreateFolderBtn').addEventListener('click', createBookmarkFolder);
+document.getElementById('bookmarksNewFolderName').addEventListener('keydown', function(e){{ if(e.key==='Enter') createBookmarkFolder(); }});
 document.getElementById('papersSearch').addEventListener('input', renderPapers);
 document.getElementById('papersSort').addEventListener('change', renderPapers);
 document.getElementById('guidelinesSearch').addEventListener('input', renderGuidelines);
@@ -2740,22 +3520,104 @@ document.addEventListener('click', function(e){{
   if(e.target.matches('.trial-overlay-backdrop')){{
     e.target.style.display = 'none';
   }}
+
+  /* Bookmarks */
+  var bmToggle = e.target.closest('[data-bookmark-toggle]');
+  if(bmToggle){{ toggleBookmark(bmToggle.dataset.bookmarkToggle); return; }}
+
+  var bmOpen = e.target.closest('[data-bookmark-open]');
+  if(bmOpen){{ openBookmark(bmOpen.dataset.bookmarkOpen); return; }}
+
+  var bmDel = e.target.closest('[data-bookmark-del]');
+  if(bmDel){{ removeBookmark(bmDel.dataset.bookmarkDel); return; }}
+
+  var bmFolderAll = e.target.closest('[data-bm-folder-all]');
+  if(bmFolderAll){{ _bookmarksFolderFilter = null; renderBookmarks(); return; }}
+
+  var bmFolder = e.target.closest('[data-bm-folder]');
+  if(bmFolder){{ _bookmarksFolderFilter = bmFolder.dataset.bmFolder; renderBookmarks(); return; }}
+
+  var bmFolderRename = e.target.closest('[data-bm-folder-rename]');
+  if(bmFolderRename){{ renameBookmarkFolder(bmFolderRename.dataset.bmFolderRename); return; }}
+
+  var bmFolderDel = e.target.closest('[data-bm-folder-del]');
+  if(bmFolderDel){{ deleteBookmarkFolder(bmFolderDel.dataset.bmFolderDel); return; }}
+
+  var bmColor = e.target.closest('[data-bm-color]');
+  if(bmColor){{ _bmNewFolderColor = bmColor.dataset.bmColor; renderFolderSwatches(_bmNewFolderColor); return; }}
+
+  /* Theory flashcards */
+  var theoryBack = e.target.closest('[data-theory-back]');
+  if(theoryBack){{ theoryBackToBrowser(); return; }}
+
+  var theoryDeckBtn = e.target.closest('[data-theory-deck]');
+  if(theoryDeckBtn){{ openTheoryDeck(theoryDeckBtn.dataset.theoryDeck, 0); return; }}
+
+  var theoryChip = e.target.closest('[data-theory-chip]');
+  if(theoryChip){{
+    var s = theoryChip.dataset.theoryChip;
+    if(_theoryActiveSpecs.has(s)) _theoryActiveSpecs.delete(s); else _theoryActiveSpecs.add(s);
+    renderTheoryChips(); renderTheoryDecks(); return;
+  }}
+
+  var theoryReset = e.target.closest('[data-theory-chip-reset]');
+  if(theoryReset){{ _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }})); renderTheoryChips(); renderTheoryDecks(); return; }}
+
+  var theoryUncheck = e.target.closest('[data-theory-chip-uncheck]');
+  if(theoryUncheck){{ _theoryActiveSpecs = new Set(); renderTheoryChips(); renderTheoryDecks(); return; }}
+
+  var theorySavedOnly = e.target.closest('[data-theory-saved-only]');
+  if(theorySavedOnly){{ _theorySavedOnly = !_theorySavedOnly; renderTheoryChips(); renderTheoryDecks(); return; }}
+
+  var theorySub = e.target.closest('[data-theory-subtopic]');
+  if(theorySub){{
+    var t = theorySub.dataset.theorySubtopic;
+    _theoryActiveSubtopic = (_theoryActiveSubtopic===t) ? null : t;
+    renderTheorySubtopicChips(); renderTheoryDecks(); return;
+  }}
+
+  var theorySubClear = e.target.closest('[data-theory-subtopic-clear]');
+  if(theorySubClear){{ _theoryActiveSubtopic = null; renderTheorySubtopicChips(); renderTheoryDecks(); return; }}
+
+  var theoryTagClear = e.target.closest('[data-theory-tag-clear]');
+  if(theoryTagClear){{ _theoryActiveSubtopic = null; theoryBackToBrowser(); return; }}
+
+  var theoryNavBtn = e.target.closest('[data-theory-nav]');
+  if(theoryNavBtn){{ theoryNav(parseInt(theoryNavBtn.dataset.theoryNav,10)||0); return; }}
+
+  var theoryDot = e.target.closest('[data-theory-dot]');
+  if(theoryDot){{ _currentCardIdx = parseInt(theoryDot.dataset.theoryDot,10)||0; _theoryFlipped = false; renderTheoryCard(); return; }}
+
+  var theoryMode = e.target.closest('[data-theory-mode]');
+  if(theoryMode){{ theorySetViewMode(theoryMode.dataset.theoryMode); return; }}
+
+  var theoryFlipInner = e.target.closest('#theoryFlipInner');
+  if(theoryFlipInner){{ _theoryFlipped = !_theoryFlipped; theoryFlipInner.classList.toggle('flipped', _theoryFlipped); return; }}
 }});
 
 document.addEventListener('change', function(e){{
   var container = e.target.closest('#filterPanelDesktop, #filterSheetBody, #filterPanelGuidelines');
-  if(!container) return;
-  if(e.target.classList.contains('all-check')){{
-    container.querySelectorAll('[data-spec]').forEach(function(b){{ b.checked = e.target.checked; }});
+  if(container){{
+    if(e.target.classList.contains('all-check')){{
+      container.querySelectorAll('[data-spec]').forEach(function(b){{ b.checked = e.target.checked; }});
+    }}
+    SPECS.forEach(function(s){{ var el = container.querySelector('[data-spec="'+s.name+'"]'); if(el) filterState.specialties[s.name] = el.checked; }});
+    renderFilterCheckboxes();
   }}
-  SPECS.forEach(function(s){{ var el = container.querySelector('[data-spec="'+s.name+'"]'); if(el) filterState.specialties[s.name] = el.checked; }});
-  renderFilterCheckboxes();
+  var bmFolderSel = e.target.closest('[data-bookmark-folder]');
+  if(bmFolderSel){{ setBookmarkFolder(bmFolderSel.dataset.bookmarkFolder, e.target.value || null); return; }}
+  var bmTags = e.target.closest('[data-bookmark-tags]');
+  if(bmTags){{ setBookmarkTags(bmTags.dataset.bookmarkTags, e.target.value); return; }}
 }});
 
 document.addEventListener('keydown', function(e){{
   if(e.key==='Escape'){{ closeSearch(); closeDrawer(); closeSheet(); closeReader(); document.body.classList.remove('ai-open'); }}
   if((e.ctrlKey||e.metaKey)&&e.key==='k'){{ e.preventDefault(); openSearch(); }}
   if((e.key==='Enter'||e.key===' ')&&e.target.matches('[role="button"]')){{ e.preventDefault(); e.target.click(); }}
+  if(_currentDeck && document.getElementById('view-theory').classList.contains('active') && !e.target.matches('input,textarea,select')){{
+    if(e.key==='ArrowRight'){{ theoryNav(1); }}
+    if(e.key==='ArrowLeft'){{ theoryNav(-1); }}
+  }}
 }});
 
 // =====================================================================
@@ -2782,13 +3644,16 @@ document.addEventListener('keydown', function(e){{
       'trials-specialty': 'trials',
       'trials-detail': 'trials_detail',
       'condensed-system': 'condensed_trials',
-      'condensed-detail': 'trials_detail'
+      'condensed-detail': 'trials_detail',
+      'bookmarks': 'bookmarks',
+      'theory': 'theory'
     }};
     Object.keys(navFeatureMap).forEach(function(viewName) {{
       var feature = navFeatureMap[viewName];
       if (!USER_FEATURES[feature]) {{
-        var el = document.querySelector('[data-view="' + viewName + '"]');
-        if (el) el.style.display = 'none';
+        document.querySelectorAll('[data-view="' + viewName + '"]').forEach(function(el) {{
+          el.style.display = 'none';
+        }});
       }}
     }});
     // Hide search trigger if search feature is disabled
@@ -2799,12 +3664,17 @@ document.addEventListener('keydown', function(e){{
   }}
 
   renderFilterCheckboxes();
+  loadBookmarks();
   showView('home');
 }})();
 </script>
 </body>
 </html>"""
-    return HTMLResponse(content=html)
+    resp = HTMLResponse(content=html)
+    if LOCAL_DEV_MODE and not request.cookies.get(SESSION_COOKIE_NAME):
+        _, dev_sid = _local_dev_login()
+        resp.set_cookie(key=SESSION_COOKIE_NAME, value=dev_sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+    return resp
 
 # =====================================================================
 # API ENDPOINTS
@@ -2812,7 +3682,8 @@ document.addEventListener('keydown', function(e){{
 
 @app.get("/api/debug")
 async def api_debug():
-    return {"kv_url_set": bool(KV_URL), "kv_token_set": bool(KV_TOKEN), "vercel": os.environ.get("VERCEL", "")}
+    from acumen_core import kv as _kvmod
+    return {"kv_backend": _kvmod.kv_backend(), "vercel": os.environ.get("VERCEL", "")}
 
 @app.post("/api/signup")
 async def api_signup(body: dict, response: Response):
@@ -2898,6 +3769,145 @@ async def api_me(request: Request):
 @app.get("/favicon.ico")
 async def favicon():
     return Response(status_code=204)
+
+
+# =====================================================================
+# BOOKMARKS (per-user, stored in KV under user:{email}:bookmarks)
+# =====================================================================
+
+@app.get("/api/bookmarks")
+async def api_bookmarks_list(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    return _user_data(user["email"], "bookmarks")
+
+@app.post("/api/bookmarks")
+async def api_bookmarks_add(request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    data = _user_data(email, "bookmarks")
+    items = data.setdefault("items", {})
+    folders = data.setdefault("folders", {})
+    ref = str(body.get("ref", "")).strip()
+    if not ref or len(ref) > 300:
+        raise HTTPException(400, "Valid bookmark ref required")
+    existing = items.get(ref)
+    if existing is None and len(items) >= BOOKMARKS_MAX_ITEMS:
+        raise HTTPException(400, f"Bookmark limit reached ({BOOKMARKS_MAX_ITEMS})")
+    item = _bookmark_item(body, existing)
+    folder = item.get("folder")
+    if folder and folder not in folders:
+        item["folder"] = None
+    items[ref] = item
+    _save_user_data(email, "bookmarks", data)
+    return {"ok": True, "item": item}
+
+@app.patch("/api/bookmarks")
+async def api_bookmarks_update(request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    ref = str(body.get("ref", "")).strip()
+    if not ref:
+        raise HTTPException(400, "Bookmark ref required")
+    data = _user_data(email, "bookmarks")
+    items = data.setdefault("items", {})
+    existing = items.get(ref)
+    if existing is None:
+        raise HTTPException(404, "Bookmark not found")
+    item = _bookmark_item(body, existing)
+    folders = data.setdefault("folders", {})
+    if item.get("folder") and item["folder"] not in folders:
+        item["folder"] = None
+    items[ref] = item
+    _save_user_data(email, "bookmarks", data)
+    return {"ok": True, "item": item}
+
+@app.delete("/api/bookmarks")
+async def api_bookmarks_delete(request: Request, ref: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    data = _user_data(email, "bookmarks")
+    items = data.setdefault("items", {})
+    if ref in items:
+        del items[ref]
+        _save_user_data(email, "bookmarks", data)
+    return {"ok": True}
+
+@app.post("/api/bookmarks/folders")
+async def api_bookmarks_folder_add(request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    name = str(body.get("name", "")).strip()[:60]
+    if not name:
+        raise HTTPException(400, "Folder name required")
+    data = _user_data(email, "bookmarks")
+    folders = data.setdefault("folders", {})
+    if len(folders) >= 50:
+        raise HTTPException(400, "Folder limit reached (50)")
+    fid = "f" + secrets.token_hex(4)
+    folder = {
+        "name": name,
+        "color": str(body.get("color", ""))[:20] or "#E8B778",
+        "created_at": datetime.utcnow().isoformat(),
+    }
+    folders[fid] = folder
+    _save_user_data(email, "bookmarks", data)
+    return {"ok": True, "id": fid, "folder": folder}
+
+@app.patch("/api/bookmarks/folders")
+async def api_bookmarks_folder_update(request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    fid = str(body.get("id", "")).strip()
+    data = _user_data(email, "bookmarks")
+    folders = data.setdefault("folders", {})
+    folder = folders.get(fid)
+    if folder is None:
+        raise HTTPException(404, "Folder not found")
+    if body.get("name") is not None:
+        name = str(body["name"]).strip()[:60]
+        if not name:
+            raise HTTPException(400, "Folder name required")
+        folder["name"] = name
+    if body.get("color") is not None:
+        folder["color"] = str(body["color"])[:20] or "#E8B778"
+    _save_user_data(email, "bookmarks", data)
+    return {"ok": True, "folder": folder}
+
+@app.delete("/api/bookmarks/folders")
+async def api_bookmarks_folder_delete(request: Request, ref: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    data = _user_data(email, "bookmarks")
+    folders = data.setdefault("folders", {})
+    items = data.setdefault("items", {})
+    if ref in folders:
+        del folders[ref]
+        for item in items.values():
+            if item.get("folder") == ref:
+                item["folder"] = None
+        _save_user_data(email, "bookmarks", data)
+    return {"ok": True}
 
 
 @app.get("/api/summary")
