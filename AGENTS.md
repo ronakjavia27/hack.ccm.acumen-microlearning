@@ -14,7 +14,9 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | `generator.py` | PDF ingestion pipeline (Pass 1: summaries, Pass 2: pearls) |
 | `maintainer.py` | Health checks, schema validation, repairs, error reports |
 | `syncer.py` | Git sync, email dispatch, subscriber sync |
-| `flashcard_engine.py` | Generates study flashcards from theory notes |
+| `flashcard_engine.py` | Generates study flashcards from theory notes (LLM) |
+| `flashcard_md_importer.py` | Converts hand-written `flashcards_md/` markdown into JSON decks (Theory section source) |
+| `flashcard_generator.py` | LLM pipeline: ingests `flashcards_input/` md/txt/pdf/docx/html, refines to `flashcards_md/` decks, LLM-tags cards with subtopics vocab, tracks progress in `flashcards_ledger.json` |
 | `esbicm_parser.py` | Parses ESBICM trial PDF (~400 trials) into structured JSON |
 | `condense_trials.py` | Condenses scraped trial JSON into hack.CCM schema |
 | `backfill_markdown.py` | Backfill markdown for existing summaries |
@@ -34,6 +36,7 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | `tracking.py` | Atomic JSON save/load, Excel tracker, sent_summaries CRUD, pearl tracker, pending subtopics queue |
 | `errors.py` | Monthly error log `master_error_list_YYYY-MM.txt` (JSONL), error classification, priority levels (CRITICAL→LOW) |
 | `vocabulary.py` | Normalizes specialties & article types to controlled vocabulary (reads `specialties.txt`, `article_types.txt`) |
+| `flashcards.py` | Shared flashcard pipeline helpers — source parsing (md/txt/pdf/docx/html), LLM convert + tag prompts, subtopic normalization (`normalize_subtopic` with acronym matching), `flashcards_ledger.json` sha256 skip logic |
 | `subtopic_mapper.py` | Interactive CLI + batch LLM for assigning subtopics to pending papers |
 | `subtopics_config.py` | Loads `subtopics.json`, provides `get_subtopics_for_system()`, `is_valid_subtopic()`, `format_subtopics_for_prompt()` |
 | `subtopics.json` | 272 lines — full subtopic vocabulary per specialty (e.g. Cardiology→ACS, Shock, HF...) |
@@ -59,11 +62,17 @@ input_pdfs/
 ├── guidelines/      → Place clinical guidelines here
 └── other/           → Other PDFs
 
+flashcards_input/
+  {Specialty}/{topic}.md|txt|pdf|docx|html   — Raw study material for the flashcard generator
+
 output_files/
   {Specialty}/{Type}/{filename}.json        — Structured summaries
   esbicm_trials/                            — ESBICM trial data
   trials_database_condensed/                — Condensed trial JSON
-  flashcards/{Specialty}/{slug}.json        — Generated flashcards
+  flashcards/{Specialty}/{slug}.json        — Generated flashcards (flashcard_engine, admin-console only)
+  flashcards_md/{Specialty}/{slug}.json     — Authored markdown flashcards (Theory section source)
+
+flashcards_md/{Specialty}/{topic}.md        — Hand-written flashcard decks (source of truth for Theory)
 
 backups/                                    — Full repo snapshots
 quarantine/{date}/{category|errors}/        — Processed/failed PDFs
@@ -83,6 +92,7 @@ quarantine/{date}/{category|errors}/        — Processed/failed PDFs
 | `health_report.json` | Auto-generated health report |
 | `health_report.md` | Markdown version of health report |
 | `master_error_list_YYYY-MM.txt` | Monthly error logs (JSONL format, auto-rotated) |
+| `flashcards_ledger.json` | Flashcard generator progress (sha256 per input file → deck/md paths) |
 | `generator.log` | Audit log for each generator run |
 | `emails.csv` | Synced subscriber list (from Google Sheets) |
 | `.console_edits.log` | Dashboard edit audit trail |
@@ -208,6 +218,47 @@ OPENROUTER_MODEL        # Default: deepseek-ai/DeepSeek-V4-Pro
 --dry-run     Show what would be processed
 ```
 Scans `THEORY/processed/` for `.md` files, sends to OpenRouter, saves to `output_files/flashcards/`.
+
+### `flashcard_md_importer.py` — Markdown Flashcard Authoring
+```
+--spec CVS       Only convert one specialty folder
+--file "CVS/x.md"  Only convert one file
+--force          Overwrite existing decks
+--tag            LLM-tag cards with subtopics from subtopics.txt vocab (default: keep existing tags)
+--llm NAME       LLM provider for tagging: openrouter|together|gemini (default: openrouter)
+--openrouter | --together | --gemini   Explicit provider flags (same as --llm)
+--api-key KEY    Override API key -> direct OpenAI-compatible call
+--model NAME     Override model name (with --api-key, uses --base-url endpoint)
+--base-url URL   Override endpoint (default: https://openrouter.ai/api/v1)
+--dry-run        Preview only
+--verbose        Detailed logging
+```
+**Authoring convention** (source of truth: `flashcards_md/{Specialty}/{topic}.md`):
+- `# Title` (optional) → deck title; falls back to filename
+- Each `## Card title` heading → one flashcard; content until the next `## ` (tables, bullets, notes) → card body
+- Optional `---` divider inside a card → front/back faces for Flip mode
+- Converts to `output_files/flashcards_md/{Specialty}/{slug}.json` (same schema as `flashcard_engine`, admin CRUD compatible). Cards carry `id` (`{slug}-{i}`), `tags` (subtopic vocab), deck has `subtopics` (sorted tag union). Re-converts preserve existing tags by card id.
+
+### `flashcard_generator.py` — LLM Flashcard Generator
+```
+--dir PATH       Override input root (default: flashcards_input/)
+--spec CVS       Only process one specialty folder
+--file "CVS/x.md"  Only process one file
+--force          Re-run even if unchanged in the ledger
+--no-tag         Skip LLM subtopic tagging after conversion
+--tag-only       Only re-tag existing decks in output_files/flashcards_md/
+--llm NAME       Provider for conversion + tagging: openrouter|together|gemini (default: openrouter)
+--openrouter | --together | --gemini   Explicit provider flags (same as --llm)
+--api-key KEY    Override API key -> direct OpenAI-compatible call (convert + tag)
+--model NAME     Override model name (with --api-key, uses --base-url endpoint)
+--base-url URL   Override endpoint (default: https://openrouter.ai/api/v1)
+--max N          Cap at N files
+--dry-run        Preview only, no API calls
+--verbose        Detailed logging
+```
+Pipeline per file (`flashcards_input/{Spec}/{file}` md/txt/pdf/docx/html): parse source (`pypdf`, OCR fallback for short PDFs via `acumen_core.ocr`, python-docx, bs4) → chunk at 30K chars (`CHUNK_FLASHCARD`) → LLM refine/summarise into markdown deck (`## ` per card, `---` front/back optional) → write `flashcards_md/{Spec}/{slug}.md` → convert to JSON via importer (`convert_file`, tags when not `--no-tag`) → LLM-tag each card against the `subtopics.txt` vocabulary (via `THEORY_SPEC_TO_CANONICAL` system mapping, `normalize_subtopic` fuzzy+acronym match, 1-3 tags/card) → update `flashcards_ledger.json` (sha256 → skip unchanged). `--tag-only` walks `output_files/flashcards_md/` and tags decks missing tags. When `--api-key` or `--model` is set, both the convert and tag calls go directly to an OpenAI-compatible endpoint (`execute_openai_compat` in `acumen_core/llm.py`, base_url defaulting to OpenRouter) instead of the configured provider chain.
+
+**Portal Theory section** (`revamped_webapp.py`): loads decks via `load_flashcard_decks()` from `output_files/flashcards_md/` only. Features: specialty chips, search (incl. tags), subtopic chips when exactly one specialty active (filter decks + restrict card navigation; non-matching dots dimmed/disabled), deck list, card reader with Next/Prev + keyboard arrows, Single-face/Flip view toggle, per-card save via bookmarks API (kind `flashcard`, ref `flashcard:{deckId}/{cardId}`), "Saved only" filter, jump dots.
 
 ### `esbicm_parser.py` — ESBICM Trial Parsing
 ```

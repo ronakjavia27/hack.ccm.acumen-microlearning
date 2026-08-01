@@ -24,6 +24,7 @@ def slugify(text):
     return text.strip('-')
 
 FLASHCARDS_DIR = REPO_ROOT / "output_files" / "flashcards"
+FLASHCARDS_MD_DIR = REPO_ROOT / "output_files" / "flashcards_md"
 
 EDITABLE_FIELDS = ["title", "specialty", "status"]
 
@@ -49,38 +50,39 @@ Keep it dense, ICU-relevant, and actionable. Output ONLY valid JSON."""
 
 
 def _walk() -> List[Dict[str, Any]]:
-    """Walk FLASHCARDS_DIR recursively and return deck metadata."""
+    """Walk FLASHCARDS_DIR (and FLASHCARDS_MD_DIR) recursively and return deck metadata."""
     items = []
-    if not FLASHCARDS_DIR.is_dir():
-        return items
-    for f in sorted(FLASHCARDS_DIR.rglob("*.json")):
-        try:
-            data = read_json(f, default={})
-        except Exception:
+    for base, id_prefix in ((FLASHCARDS_DIR, ""), (FLASHCARDS_MD_DIR, "md:")):
+        if not base.is_dir():
             continue
-        if not isinstance(data, dict) or not data:
-            continue
-        rel = f.relative_to(FLASHCARDS_DIR)
-        deck_id = str(rel.with_suffix("")).replace("\\", "/").strip()
-        cards = data.get("cards", [])
-        total = len(cards)
-        preserved = sum(1 for c in cards if c.get("status") == "preserved")
-        discarded = sum(1 for c in cards if c.get("status") == "discarded")
-        pending = total - preserved - discarded
-        items.append({
-            "id": deck_id,
-            "title": data.get("title", rel.parent.name),
-            "specialty": data.get("specialty", rel.parent.name),
-            "card_count": total,
-            "preserved_count": preserved,
-            "discarded_count": discarded,
-            "pending_count": pending,
-            "status": data.get("status", "pending"),
-            "created_at": data.get("created_at", ""),
-            "updated_at": data.get("updated_at", ""),
-            "_source": str(f),
-            "_raw": data,
-        })
+        for f in sorted(base.rglob("*.json")):
+            try:
+                data = read_json(f, default={})
+            except Exception:
+                continue
+            if not isinstance(data, dict) or not data:
+                continue
+            rel = f.relative_to(base)
+            deck_id = id_prefix + str(rel.with_suffix("")).replace("\\", "/").strip()
+            cards = data.get("cards", [])
+            total = len(cards)
+            preserved = sum(1 for c in cards if c.get("status") == "preserved")
+            discarded = sum(1 for c in cards if c.get("status") == "discarded")
+            pending = total - preserved - discarded
+            items.append({
+                "id": deck_id,
+                "title": data.get("title", rel.parent.name),
+                "specialty": data.get("specialty", rel.parent.name),
+                "card_count": total,
+                "preserved_count": preserved,
+                "discarded_count": discarded,
+                "pending_count": pending,
+                "status": data.get("status", "pending"),
+                "created_at": data.get("created_at", ""),
+                "updated_at": data.get("updated_at", ""),
+                "_source": str(f),
+                "_raw": data,
+            })
     return items
 
 

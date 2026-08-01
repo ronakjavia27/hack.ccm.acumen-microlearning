@@ -121,6 +121,30 @@ FILE_STABILITY_WAIT = 1.5  # seconds to wait for file size to stabilize
 # FLASHCARD PATHS
 # =====================================================================
 FLASHCARDS_DIR = os.path.join(OUTPUT_DIR, "flashcards")
+FLASHCARDS_MD_DIR = os.path.join(PROJECT_DIR, "flashcards_md")
+FLASHCARDS_MD_OUT = os.path.join(OUTPUT_DIR, "flashcards_md")
+FLASHCARDS_INPUT_DIR = os.path.join(PROJECT_DIR, "flashcards_input")
+FLASHCARDS_LEDGER_FILE = os.path.join(PROJECT_DIR, "flashcards_ledger.json")
+
+# THEORY folder abbreviations -> canonical subtopic-vocab system(s)
+# (used by flashcard_generator tagging; composite dirs get union vocab)
+THEORY_SPEC_TO_CANONICAL = {
+    "CVS": ["Cardiology"],
+    "RS": ["Pulmonology"],
+    "Neuro": ["Neurology"],
+    "Renal and Acid Base": ["Nephrology"],
+    "Liver GIT Nutrition": ["Gastroenterology", "Hepatology", "Nutrition"],
+    "Infectious Diseases": ["Infectious Diseases"],
+    "Hematology Rheumatology Oncology": ["Hematology", "Rheumatology", "Oncology"],
+    "Endocrine Miscellaneous": ["Endocrinology", "Other"],
+    "Pregnancy Trauma": ["Obstetrics and Gynecology", "Trauma"],
+    "Scoring Systems": ["Multisystem", "Other"],
+    "Toxicology": ["Toxicology"],
+    "Sepsis": ["Sepsis"],
+}
+
+CHUNK_FLASHCARD = 30000  # chars per LLM convert call
+MAX_CARDS_PER_DECK = 25
 
 # =====================================================================
 # OPENROUTER CONFIG

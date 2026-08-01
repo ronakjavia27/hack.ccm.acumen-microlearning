@@ -603,6 +603,69 @@ def execute_with_openrouter_text(
     raise last_error or RuntimeError("OpenRouter text exhausted")
 
 
+def execute_openai_compat(
+    system_prompt,
+    user_content,
+    api_key=None,
+    model=None,
+    base_url=None,
+    temperature=0.2,
+    max_tokens=8192,
+    json_mode=True,
+    max_retries=None,
+    retry_delay=None,
+):
+    """
+    Execute via any OpenAI-compatible endpoint (OpenRouter, Together, local servers...)
+    with explicit api_key/model/base_url overrides. json_mode=True returns a parsed dict.
+
+    Falls back to config defaults when api_key/model/base_url are omitted.
+    """
+    from acumen_core.config import (
+        OPENROUTER_API_KEY,
+        OPENROUTER_MODEL,
+        OPENROUTER_BASE_URL,
+        MAX_RETRIES,
+        RETRY_DELAY,
+    )
+    key = api_key or OPENROUTER_API_KEY
+    if not key:
+        raise RuntimeError("No API key: pass --api-key or set OPENROUTER_API_KEY")
+    endpoint = base_url or OPENROUTER_BASE_URL
+    mdl = model or OPENROUTER_MODEL
+    max_retries = max_retries or MAX_RETRIES
+    retry_delay = retry_delay or RETRY_DELAY
+    last_error = None
+
+    from openai import OpenAI
+    client = OpenAI(api_key=key, base_url=endpoint)
+    for attempt in range(max_retries):
+        try:
+            print(f"    Compat[{mdl}]: {endpoint} (attempt {attempt + 1}/{max_retries})")
+            return call_openrouter_api(
+                client, mdl, system_prompt, user_content,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                json_mode=json_mode,
+            )
+        except json.JSONDecodeError as e:
+            last_error = e
+            print(f"    [X] JSON parse error: {e}")
+            break
+        except Exception as e:
+            last_error = e
+            if _is_retryable(e) and attempt < max_retries - 1:
+                wait = retry_delay * (attempt + 1)
+                print(f"    [!] {e}")
+                print(f"    Retrying in {wait}s...")
+                time.sleep(wait)
+            else:
+                print(f"    [X] Compat call failed: {e}")
+                break
+
+    raise last_error or RuntimeError("OpenAI-compat call exhausted")
+
+
 def chunk_text(text, chunk_size=None, overlap=None):
     """Split text at paragraph boundaries. Each chunk <= chunk_size with overlap."""
     chunk_size = chunk_size or CHUNK_SIZE
