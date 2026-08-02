@@ -52,7 +52,7 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | `modules/__init__.py` | Bootstrap — scans `*.json` files and registers CRUD specs per kind |
 | `modules/summaries.py` | Summary CRUD |
 | `modules/pearls.py` | Pearl CRUD |
-| `modules/flashcards.py` | Flashcard CRUD + card regeneration |
+| `modules/flashcards.py` | Flashcard CRUD + card regeneration. Scans `output_files/flashcards/` (engine, id `CVS/x`) + `output_files/flashcards_md/` (markdown, id `md:CVS/x`). Specialty change = reclassify: physically moves deck JSON + authored md + updates `flashcards_ledger.json`. Card LLM-edit writes back to the authored md. Delete removes JSON + ledger entry (source md kept). |
 | `modules/theory.py` | Theory note CRUD |
 
 ### Data Directories
@@ -69,10 +69,12 @@ output_files/
   {Specialty}/{Type}/{filename}.json        — Structured summaries
   esbicm_trials/                            — ESBICM trial data
   trials_database_condensed/                — Condensed trial JSON
-  flashcards/{Specialty}/{slug}.json        — Generated flashcards (flashcard_engine, admin-console only)
-  flashcards_md/{Specialty}/{slug}.json     — Authored markdown flashcards (Theory section source)
+  flashcards/{System}/{Subtopic}.json       — Unified flashcard store (system/subtopic files, UUID cards, explicit front/back)
+  flashcards_index.json                     — Derived flashcard index (v2) powering portal/global-search/console
+  flashcards_legacy/, flashcards_md_legacy/ — Archived pre-store tiered JSONs (from migrate_flashcards.py)
+  Theory MDs/                               — Theory Topics notes (any extension; markdown, first `# ` line = title)
 
-flashcards_md/{Specialty}/{topic}.md        — Hand-written flashcard decks (source of truth for Theory)
+flashcards_md/{Specialty}/{topic}.md        — Hand-written flashcard decks (authored source; imported into the unified store)
 
 backups/                                    — Full repo snapshots
 quarantine/{date}/{category|errors}/        — Processed/failed PDFs
@@ -119,6 +121,12 @@ BACKUP_GEMINI_API_KEY   # Gemini fallback
 TOGETHER_API_KEY        # Used with --llm together (also for pearl extraction)
 DEEPSEEK_API_KEY        # Fallback in execute_with_fallback chain
 OPENROUTER_MODEL        # Default: deepseek-ai/DeepSeek-V4-Pro
+QUESTION_LLM_MODEL      # Flashcard front-question model (default: deepseek/deepseek-chat-v3-0324 on OpenRouter)
+QUESTION_LLM_API_KEY    # Front-question key (defaults to OPENROUTER_API_KEY)
+QUESTION_LLM_BASE_URL   # Front-question endpoint (defaults to OpenRouter)
+FLASHCARD_LLM_API_KEY   # Dedicated cheap model for flashcard convert/tag/regenerate (defaults to OPENROUTER_API_KEY)
+FLASHCARD_LLM_MODEL     # e.g. deepseek/deepseek-chat-v3-0324 on OpenRouter
+FLASHCARD_LLM_BASE_URL  # Defaults to OpenRouter
 ```
 
 ### Model Selection
@@ -225,6 +233,7 @@ Scans `THEORY/processed/` for `.md` files, sends to OpenRouter, saves to `output
 --file "CVS/x.md"  Only convert one file
 --force          Overwrite existing decks
 --tag            LLM-tag cards with subtopics from subtopics.txt vocab (default: keep existing tags)
+--questions      LLM-generate a front question per card (writes '<question>\n\n---\n\n<body>' in the md; idempotent — skips cards with a divider — then re-converts keeping tags/status)
 --llm NAME       LLM provider for tagging: openrouter|together|gemini (default: openrouter)
 --openrouter | --together | --gemini   Explicit provider flags (same as --llm)
 --api-key KEY    Override API key -> direct OpenAI-compatible call
@@ -237,7 +246,8 @@ Scans `THEORY/processed/` for `.md` files, sends to OpenRouter, saves to `output
 - `# Title` (optional) → deck title; falls back to filename
 - Each `## Card title` heading → one flashcard; content until the next `## ` (tables, bullets, notes) → card body
 - Optional `---` divider inside a card → front/back faces for Flip mode
-- Converts to `output_files/flashcards_md/{Specialty}/{slug}.json` (same schema as `flashcard_engine`, admin CRUD compatible). Cards carry `id` (`{slug}-{i}`), `tags` (subtopic vocab), deck has `subtopics` (sorted tag union). Re-converts preserve existing tags by card id.
+- Converts to `output_files/flashcards_md/{Specialty}/{slug}.json` (same schema as `flashcard_engine`, admin CRUD compatible). Cards carry `id` (`{slug}-{i}`), `tags` (subtopic vocab), deck has `subtopics` (sorted tag union). Re-converts preserve existing tags/status by card id. Card ids use the filename slug (`slugify(filename)[:30]-{i}`) — `copy_to_portal` matches this scheme so reconverts keep console curation.
+- `--questions` runs through the QUESTION_LLM_* config — a deliberately different provider/model than every other pipeline. Default: OpenRouter `deepseek/deepseek-chat-v3-0324` (env `QUESTION_LLM_MODEL`/`QUESTION_LLM_API_KEY`/`QUESTION_LLM_BASE_URL`; CLI `--api-key/--model/--base-url` override). Front questions live in the authored md above the `---` divider; regenerate by deleting the divider and re-running.
 
 ### `flashcard_generator.py` — LLM Flashcard Generator
 ```
@@ -258,7 +268,7 @@ Scans `THEORY/processed/` for `.md` files, sends to OpenRouter, saves to `output
 ```
 Pipeline per file (`flashcards_input/{Spec}/{file}` md/txt/pdf/docx/html): parse source (`pypdf`, OCR fallback for short PDFs via `acumen_core.ocr`, python-docx, bs4) → chunk at 30K chars (`CHUNK_FLASHCARD`) → LLM refine/summarise into markdown deck (`## ` per card, `---` front/back optional) → write `flashcards_md/{Spec}/{slug}.md` → convert to JSON via importer (`convert_file`, tags when not `--no-tag`) → LLM-tag each card against the `subtopics.txt` vocabulary (via `THEORY_SPEC_TO_CANONICAL` system mapping, `normalize_subtopic` fuzzy+acronym match, 1-3 tags/card) → update `flashcards_ledger.json` (sha256 → skip unchanged). `--tag-only` walks `output_files/flashcards_md/` and tags decks missing tags. When `--api-key` or `--model` is set, both the convert and tag calls go directly to an OpenAI-compatible endpoint (`execute_openai_compat` in `acumen_core/llm.py`, base_url defaulting to OpenRouter) instead of the configured provider chain.
 
-**Portal Theory section** (`revamped_webapp.py`): loads decks via `load_flashcard_decks()` from `output_files/flashcards_md/` only. Features: specialty chips, search (incl. tags), subtopic chips when exactly one specialty active (filter decks + restrict card navigation; non-matching dots dimmed/disabled), deck list, card reader with Next/Prev + keyboard arrows, Single-face/Flip view toggle, per-card save via bookmarks API (kind `flashcard`, ref `flashcard:{deckId}/{cardId}`), "Saved only" filter, jump dots.
+**Portal Theory section** (`revamped_webapp.py`, run via `uvicorn revamped_webapp:app` — it has no `__main__` block): hero with two mode cards — **Theory Topics** (rendered markdown notes from `output_files/Theory MDs/`, any file extension; title from first `# ` line; loaded by `load_theory_notes()`) and **Flashcards** (unified store). Flashcards loads decks via `load_flashcard_decks()` from `output_files/flashcards/` subtopic files (deck id `System/Subtopic`; cards carry explicit `front`/`back`/`tags`, UUID ids, no `---` divider). Features: specialty chips, deck search (incl. front/back/tags), subtopic chips when exactly one specialty active (filter decks + restrict card navigation; non-matching dots dimmed/disabled), deck list, card reader with Next/Prev + keyboard arrows, Single-face/Flip view toggle, per-card save via bookmarks API (kind `flashcard`, ref `flashcard:{uuid}`; locator stores `{deck, card: uuid, cardIdx}`), "Saved only" filter, jump dots. Flip mode shows `front` on the front face and `back` on the back; browsers without `backface-visibility` support get a `.no-3d` display-swap fallback (faces never stack). Single-face mode shows the back only. Global search adds "Flashcards" and "Theory Topics" result groups with deep links (`data-theory-card` uuid / `data-theory-note`); URL deep links supported: `?theory=flashcards[&system=…&subtopic=…&card=<uuid>]` and `?theory=notes[&note=<id>]`. Console reader likewise shows the question as a small label above the answer.
 
 ### `esbicm_parser.py` — ESBICM Trial Parsing
 ```

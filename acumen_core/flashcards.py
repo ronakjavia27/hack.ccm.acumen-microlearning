@@ -12,8 +12,12 @@ import hashlib
 import json
 import os
 import re
+from datetime import datetime
+from uuid import uuid4
 
 from .config import (
+    FLASHCARDS_DIR,
+    FLASHCARDS_INDEX_FILE,
     FLASHCARDS_LEDGER_FILE,
     THEORY_SPEC_TO_CANONICAL,
     MAX_CARDS_PER_DECK,
@@ -219,8 +223,9 @@ def llm_convert_to_markdown(text, title, llm="openrouter", verbose=False, api_ke
     """Send source text to the LLM, return markdown deck text (or None on failure).
 
     When api_key or model is given, a direct OpenAI-compatible call is used
-    (base_url defaults to OpenRouter). Otherwise the provider chain is used."""
-    from .llm import execute_openai_compat, execute_with_fallback, execute_with_gemini, execute_with_openrouter_text
+    (base_url defaults to OpenRouter). Otherwise the default openrouter path
+    uses the dedicated flashcard model (FLASHCARD_LLM_*)."""
+    from .llm import execute_openai_compat, execute_with_fallback, execute_with_gemini
 
     user_prompt = (
         f"Source title: {title}\n\nSource content:\n{text}\n\n"
@@ -238,7 +243,7 @@ def llm_convert_to_markdown(text, title, llm="openrouter", verbose=False, api_ke
         elif llm == "together":
             result = execute_with_fallback(CONVERT_SYSTEM_PROMPT, user_prompt, "flashcards")
         else:
-            result = execute_with_openrouter_text(CONVERT_SYSTEM_PROMPT, user_prompt)
+            result = flashcard_llm(CONVERT_SYSTEM_PROMPT, user_prompt)
         return _extract_markdown(result) or None
     except Exception as e:
         if verbose:
@@ -288,36 +293,32 @@ def normalize_subtopic(system, candidate):
     return None
 
 
-def tag_deck_with_llm(deck, llm="openrouter", verbose=False, api_key=None, model=None, base_url=None):
-    """Tag every card in a deck dict with subtopics from the vocabulary.
-    Mutates deck['cards'][i]['tags'] in place. Returns True if tagging ran.
+def tag_cards_with_llm(cards, systems, llm="openrouter", verbose=False, api_key=None, model=None, base_url=None):
+    """Tag every card dict in `cards` (list) with subtopics from the vocabulary.
+    Mutates cards[i]['tags'] in place. systems = canonical system names for the vocab.
+    Returns the number of tagged cards.
 
     When api_key or model is given, a direct OpenAI-compatible call is used
-    (base_url defaults to OpenRouter). Otherwise the provider chain is used."""
-    systems = canonical_systems_for(deck.get("specialty"))
+    (base_url defaults to OpenRouter). Otherwise the dedicated flashcard model
+    (FLASHCARD_LLM_*) is used, unless llm == 'gemini'/'together' (provider chain)."""
+    from .llm import execute_openai_compat, execute_with_fallback, execute_with_gemini
     if not systems:
         if verbose:
-            print(f"    [~] No canonical systems for specialty '{deck.get('specialty')}' — skipping tags")
-        return False
+            print("    [~] No canonical systems — skipping tags")
+        return 0
     vocab = []
     for s in systems:
         for sub in get_subtopics_for_system(s) or []:
             if sub not in vocab:
                 vocab.append(sub)
-    if not vocab:
-        return False
-
-    from .llm import execute_openai_compat, execute_with_fallback, execute_with_gemini, execute_with_openrouter
-
-    cards = deck.get("cards") or []
-    if not cards:
-        return False
+    if not vocab or not cards:
+        return 0
 
     vocab_str = "\n".join(f"{i+1}. {v}" for i, v in enumerate(vocab))
     system_prompt = TAG_SYSTEM_PROMPT.format(vocab_str=vocab_str, systems=", ".join(systems))
     lines = []
     for i, c in enumerate(cards):
-        lines.append(f"[{i}] {c.get('subtopic', '')}\n{(c.get('content') or '')[:800]}")
+        lines.append(f"[{i}] {c.get('subtopic', '')}\n{(c.get('content') or c.get('back') or '')[:800]}")
     user_prompt = "Valid subtopics:\n" + vocab_str + "\n\nCards:\n\n" + "\n\n".join(lines)
 
     try:
@@ -332,11 +333,11 @@ def tag_deck_with_llm(deck, llm="openrouter", verbose=False, api_key=None, model
         elif llm == "together":
             result = execute_with_fallback(system_prompt, user_prompt, "flashcards")
         else:
-            result = execute_with_openrouter(system_prompt, user_prompt)
+            result = flashcard_llm(system_prompt, user_prompt, json_mode=True)
     except Exception as e:
         if verbose:
             print(f"    [X] LLM tagging failed: {e}")
-        return False
+        return 0
 
     mapping = {}
     if isinstance(result, dict):
@@ -385,7 +386,87 @@ def tag_deck_with_llm(deck, llm="openrouter", verbose=False, api_key=None, model
             tagged += 1
     if verbose:
         print(f"    [i] Tagged {tagged}/{len(cards)} cards")
-    return True
+    return tagged
+
+
+def tag_deck_with_llm(deck, llm="openrouter", verbose=False, api_key=None, model=None, base_url=None):
+    """Tag every card in a deck dict with subtopics from the vocabulary.
+    Mutates deck['cards'][i]['tags'] in place. Returns True if tagging ran."""
+    systems = canonical_systems_for(deck.get("specialty"))
+    cards = deck.get("cards") or []
+    if not systems or not cards:
+        return False
+    return tag_cards_with_llm(cards, systems, llm=llm, verbose=verbose,
+                              api_key=api_key, model=model, base_url=base_url) > 0
+
+
+# =====================================================================
+# FRONT QUESTION GENERATION (portal flip mode)
+# =====================================================================
+
+QUESTION_SYSTEM_PROMPT = (
+    "You write the front question of a medical flashcard. Given a deck "
+    "title, a card subtopic, and the card's answer content, produce ONE "
+    "short, crisp question (max ~15 words) a clinician would ask to recall "
+    "exactly that content. The question must be answerable by the card "
+    "content alone. Do not include the answer, numbering, quotes, markdown, "
+    "or any explanation. Output only the question text."
+)
+
+
+def generate_card_question(deck_title, subtopic, content, api_key=None, model=None, base_url=None, verbose=False):
+    """Generate a short flashcard front question.
+
+    Uses the QUESTION_LLM_* config — a deliberately different model/provider
+    than every other pipeline. api_key/model/base_url overrides point at an
+    OpenAI-compatible endpoint (default: OpenRouter + QUESTION_LLM_MODEL).
+    Returns the question string or None on failure."""
+    from .config import (
+        QUESTION_LLM_API_KEY,
+        QUESTION_LLM_MODEL,
+        QUESTION_LLM_BASE_URL,
+        TEMPERATURE_QUESTION,
+        MAX_TOKENS_QUESTION,
+    )
+    from .llm import execute_openai_compat
+
+    key = api_key or QUESTION_LLM_API_KEY
+    mdl = model or QUESTION_LLM_MODEL
+    endpoint = base_url or QUESTION_LLM_BASE_URL
+    if not key:
+        return None
+
+    snippet = (content or "").strip()
+    if len(snippet) > 1500:
+        snippet = snippet[:1500] + "..."
+    user_prompt = (
+        f"Deck title: {deck_title or ''}\n"
+        f"Card subtopic: {subtopic or ''}\n"
+        f"Card content:\n{snippet}"
+    )
+    try:
+        result = execute_openai_compat(
+            QUESTION_SYSTEM_PROMPT,
+            user_prompt,
+            api_key=key,
+            model=mdl,
+            base_url=endpoint,
+            temperature=TEMPERATURE_QUESTION,
+            max_tokens=MAX_TOKENS_QUESTION,
+            json_mode=False,
+        )
+    except Exception as e:
+        if verbose:
+            print(f"    [X] Question generation failed: {e}")
+        return None
+
+    if isinstance(result, dict):
+        text = str(result.get("question") or result.get("text") or result)
+    else:
+        text = str(result)
+    text = text.strip().strip('"\'')
+    text = re.sub(r"^(Question|Q)\s*[:\-]\s*", "", text, flags=re.I).strip()
+    return text or None
 
 
 # =====================================================================
@@ -413,3 +494,336 @@ def load_ledger():
 
 def save_ledger(ledger):
     save_json_atomic(FLASHCARDS_LEDGER_FILE, ledger)
+
+
+# =====================================================================
+# DEDICATED FLASHCARD LLM (FLASHCARD_LLM_* config)
+# =====================================================================
+
+def flashcard_llm(system_prompt, user_prompt, json_mode=False, verbose=False, max_tokens=None):
+    """Run an LLM call through the dedicated flashcard-processing model
+    (FLASHCARD_LLM_MODEL/FLASHCARD_LLM_API_KEY/FLASHCARD_LLM_BASE_URL).
+    This is the cheap convert/tag/regenerate layer — separate from the
+    QUESTION_LLM_* front-question model and from the main pipeline chain.
+    Returns parsed JSON when json_mode=True, else the text string, or None."""
+    from .config import (
+        FLASHCARD_LLM_API_KEY,
+        FLASHCARD_LLM_MODEL,
+        FLASHCARD_LLM_BASE_URL,
+        MAX_TOKENS_FLASHCARDS,
+        TEMPERATURE_FLASHCARDS,
+    )
+    from .llm import execute_openai_compat
+    key = FLASHCARD_LLM_API_KEY
+    if not key:
+        if verbose:
+            print("    [X] No FLASHCARD_LLM_API_KEY — cannot call flashcard LLM")
+        return None
+    try:
+        return execute_openai_compat(
+            system_prompt,
+            user_prompt,
+            api_key=key,
+            model=FLASHCARD_LLM_MODEL,
+            base_url=FLASHCARD_LLM_BASE_URL,
+            temperature=TEMPERATURE_FLASHCARDS,
+            max_tokens=max_tokens or MAX_TOKENS_FLASHCARDS,
+            json_mode=json_mode,
+        )
+    except Exception as e:
+        if verbose:
+            print(f"    [X] flashcard_llm call failed: {e}")
+        return None
+
+
+# =====================================================================
+# UNIFIED CARD SCHEMA + STORE (output_files/flashcards/{System}/{Subtopic}.json)
+# =====================================================================
+
+def slugify(text):
+    """Human-readable slug: lowercase, alphanumeric + hyphens."""
+    slug = re.sub(r"[^a-z0-9]+", "-", (text or "").lower()).strip("-")
+    return slug or "card"
+
+
+def build_card(front, back, system, subtopic, tags=None, source="llm", source_file=None,
+               data=None, slug_hint=None, card_id=None):
+    """Create a store-format card dict with a persistent UUID id."""
+    now = datetime.now().isoformat(timespec="seconds")
+    return {
+        "id": card_id or str(uuid4()),
+        "slug": slugify(slug_hint or front or back or subtopic or "card"),
+        "front": (front or "").strip(),
+        "back": (back or "").strip(),
+        "system": system,
+        "subtopic": subtopic,
+        "tags": tags or [],
+        "data": data or {},
+        "source": source,
+        "source_file": source_file,
+        "status": "active",
+        "edit_history": [],
+        "created_at": now,
+        "updated_at": now,
+    }
+
+
+def parse_card_content(content):
+    """Split raw card body on an optional '---' divider into (front, back).
+    No divider -> (None, content)."""
+    if not content:
+        return None, ""
+    m = re.search(r"\n---\s*\n", content)
+    if not m:
+        return None, content.strip()
+    front = content[:m.start()].strip()
+    back = content[m.end():].strip()
+    return (front or None), back
+
+
+def canonical_subtopic(system, candidate):
+    """Map a candidate subtopic to the controlled vocabulary for the system.
+    Falls back to the candidate (title-cased, trimmed)."""
+    norm = normalize_subtopic(system, candidate)
+    return norm or (candidate or "").strip()
+
+
+def _subtopic_slug(system, subtopic):
+    return slugify(subtopic or "General")[:60]
+
+
+def subtopic_file_path(system, subtopic):
+    return os.path.join(FLASHCARDS_DIR, system, _subtopic_slug(system, subtopic) + ".json")
+
+
+def load_subtopic_file(system, subtopic):
+    """Read one store file. Returns dict or None."""
+    path = subtopic_file_path(system, subtopic)
+    if not os.path.exists(path):
+        return None
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+        if not isinstance(data, dict):
+            return None
+        data.setdefault("id", f"{system}/{subtopic}")
+        data.setdefault("system", system)
+        data.setdefault("subtopic", subtopic)
+        data.setdefault("cards", [])
+        data["card_count"] = len(data["cards"])
+        return data
+    except (json.JSONDecodeError, OSError):
+        return None
+
+
+def write_subtopic_file(data):
+    """Atomically write one store file (canonical per (system, subtopic))."""
+    system = data.get("system") or "General"
+    subtopic = data.get("subtopic") or "General"
+    data["id"] = f"{system}/{subtopic}"
+    data["card_count"] = len(data.get("cards") or [])
+    data["updated_at"] = datetime.now().isoformat(timespec="seconds")
+    path = subtopic_file_path(system, subtopic)
+    os.makedirs(os.path.dirname(path), exist_ok=True)
+    save_json_atomic(path, data)
+    rebuild_flashcards_index()
+
+
+def _save_card(card):
+    """Persist a single card into its (system, subtopic) file. Rebuilds index."""
+    system = card.get("system") or "General"
+    subtopic = canonical_subtopic(system, card.get("subtopic"))
+    card["system"] = system
+    card["subtopic"] = subtopic
+    data = load_subtopic_file(system, subtopic)
+    if data is None:
+        data = {"id": f"{system}/{subtopic}", "system": system,
+                "subtopic": subtopic, "cards": [], "card_count": 0,
+                "created_at": datetime.now().isoformat(timespec="seconds")}
+    cards = data["cards"]
+    for i, c in enumerate(cards):
+        if c.get("id") == card.get("id"):
+            cards[i] = card
+            break
+    else:
+        cards.append(card)
+    write_subtopic_file(data)
+
+
+def upsert_card(card):
+    """Insert or update a store card (handles moves: old location card removed)."""
+    old_sys = card.pop("_old_system", None)
+    old_sub = card.pop("_old_subtopic", None)
+    if old_sys and old_sub and (old_sys != card.get("system") or old_sub != card.get("subtopic")):
+        remove_card_from(card.get("id"), old_sys, old_sub, rebuild=False)
+    card["updated_at"] = datetime.now().isoformat(timespec="seconds")
+    _save_card(card)
+
+
+def remove_card_from(card_id, system, subtopic, rebuild=True):
+    """Remove a card by id from a specific store file."""
+    data = load_subtopic_file(system, subtopic)
+    if data is None:
+        return False
+    before = len(data["cards"])
+    data["cards"] = [c for c in data["cards"] if c.get("id") != card_id]
+    if len(data["cards"]) == before:
+        return False
+    if data["cards"]:
+        write_subtopic_file(data)
+    else:
+        path = subtopic_file_path(system, subtopic)
+        try:
+            os.remove(path)
+        except OSError:
+            pass
+        if rebuild:
+            rebuild_flashcards_index()
+    return True
+
+
+def remove_card(card_id):
+    """Remove a card by id wherever it lives (via index lookup)."""
+    idx = load_flashcards_index()
+    loc = idx.get("card_locations", {}).get(card_id)
+    if loc:
+        return remove_card_from(card_id, loc["system"], loc["subtopic"])
+    return False
+
+
+def move_card(card_id, new_system, new_subtopic):
+    """Relocate a card to another (system, subtopic), updating its fields."""
+    idx = load_flashcards_index()
+    loc = idx.get("card_locations", {}).get(card_id)
+    if not loc:
+        return False
+    data = load_subtopic_file(loc["system"], loc["subtopic"])
+    card = next((c for c in (data or {}).get("cards", []) if c.get("id") == card_id), None)
+    if card is None:
+        return False
+    remove_card_from(card_id, loc["system"], loc["subtopic"], rebuild=False)
+    card["system"] = new_system
+    card["subtopic"] = canonical_subtopic(new_system, new_subtopic)
+    card["updated_at"] = datetime.now().isoformat(timespec="seconds")
+    card.setdefault("edit_history", []).append(
+        f"moved {loc['system']}/{loc['subtopic']} -> {card['system']}/{card['subtopic']} "
+        f"at {datetime.now().isoformat(timespec='seconds')}"
+    )
+    _save_card(card)
+    return True
+
+
+def find_card(card_id):
+    """Locate and return a card dict by UUID, or None."""
+    idx = load_flashcards_index()
+    loc = idx.get("card_locations", {}).get(card_id)
+    if not loc:
+        return None
+    data = load_subtopic_file(loc["system"], loc["subtopic"])
+    return next((c for c in (data or {}).get("cards", []) if c.get("id") == card_id), None)
+
+
+def rebuild_flashcards_index():
+    """Scan the store tree and rebuild the derived master index. Canonical
+    data lives in the per-subtopic files; this index is always regenerated."""
+    index = {
+        "version": 2,
+        "generated_at": datetime.now().isoformat(timespec="seconds"),
+        "total_cards": 0,
+        "systems": {},
+        "cards": {},
+        "card_locations": {},
+    }
+    if not os.path.isdir(FLASHCARDS_DIR):
+        save_json_atomic(FLASHCARDS_INDEX_FILE, index)
+        return index
+    for system in sorted(os.listdir(FLASHCARDS_DIR)):
+        sys_dir = os.path.join(FLASHCARDS_DIR, system)
+        if not os.path.isdir(sys_dir):
+            continue
+        index["systems"][system] = {}
+        for fname in sorted(os.listdir(sys_dir)):
+            if not fname.endswith(".json"):
+                continue
+            path = os.path.join(sys_dir, fname)
+            try:
+                with open(path, "r", encoding="utf-8") as f:
+                    data = json.load(f)
+            except (json.JSONDecodeError, OSError):
+                continue
+            subtopic = data.get("subtopic") or os.path.splitext(fname)[0]
+            cards = data.get("cards") or []
+            index["systems"][system][subtopic] = {"file": fname, "count": len(cards)}
+            index["total_cards"] += len(cards)
+            for c in cards:
+                cid = c.get("id")
+                if not cid:
+                    continue
+                index["cards"][cid] = {
+                    "slug": c.get("slug"),
+                    "front": (c.get("front") or "")[:300],
+                    "system": system,
+                    "subtopic": subtopic,
+                    "tags": c.get("tags") or [],
+                    "source": c.get("source"),
+                    "status": c.get("status"),
+                    "updated_at": c.get("updated_at"),
+                }
+                index["card_locations"][cid] = {"system": system, "subtopic": subtopic}
+        if not index["systems"][system]:
+            del index["systems"][system]
+    save_json_atomic(FLASHCARDS_INDEX_FILE, index)
+    return index
+
+
+def load_flashcards_index():
+    """Read the master index; regenerate if missing/outdated."""
+    try:
+        with open(FLASHCARDS_INDEX_FILE, "r", encoding="utf-8") as f:
+            idx = json.load(f)
+        if isinstance(idx, dict) and idx.get("version") == 2 and "card_locations" in idx:
+            return idx
+    except (json.JSONDecodeError, OSError):
+        pass
+    return rebuild_flashcards_index()
+
+
+def store_cards_all():
+    """Yield every (system, subtopic, card) in the store."""
+    idx = load_flashcards_index()
+    for cid, loc in idx.get("card_locations", {}).items():
+        data = load_subtopic_file(loc["system"], loc["subtopic"])
+        card = next((c for c in (data or {}).get("cards", []) if c.get("id") == cid), None)
+        if card is not None:
+            yield loc["system"], loc["subtopic"], card
+
+
+# =====================================================================
+# FRONT QUESTION GENERATION (store-aware batch)
+# =====================================================================
+
+def ensure_fronts(cards, verbose=False, api_key=None, model=None, base_url=None, persist=False):
+    """Batch-generate front questions for every card missing one (explicit
+    front/back cards keep their authored front). Uses the QUESTION_LLM_*
+    model — the deliberate separate provider. With persist=True, generated
+    fronts are written back to the store files immediately. Returns number generated."""
+    missing = [c for c in cards if not (c.get("front") or "").strip()]
+    if not missing:
+        return 0
+    generated = 0
+    for c in missing:
+        q = generate_card_question(
+            c.get("subtopic"), c.get("subtopic"), c.get("back"),
+            api_key=api_key, model=model, base_url=base_url, verbose=verbose,
+        )
+        if q:
+            c["front"] = q
+            c.setdefault("edit_history", []).append(
+                f"front auto-generated at {datetime.now().isoformat(timespec='seconds')}"
+            )
+            if persist:
+                _save_card(c)
+            generated += 1
+        if verbose:
+            print(f"    [i] front {'ok' if q else 'failed'} for card {c.get('id', '?')[:8]}")
+    return generated

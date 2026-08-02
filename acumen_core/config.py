@@ -120,11 +120,15 @@ FILE_STABILITY_WAIT = 1.5  # seconds to wait for file size to stabilize
 # =====================================================================
 # FLASHCARD PATHS
 # =====================================================================
-FLASHCARDS_DIR = os.path.join(OUTPUT_DIR, "flashcards")
-FLASHCARDS_MD_DIR = os.path.join(PROJECT_DIR, "flashcards_md")
-FLASHCARDS_MD_OUT = os.path.join(OUTPUT_DIR, "flashcards_md")
+FLASHCARDS_DIR = os.path.join(OUTPUT_DIR, "flashcards")           # unified store: {System}/{Subtopic}.json
+FLASHCARDS_MD_DIR = os.path.join(PROJECT_DIR, "flashcards_md")    # authored markdown (import source)
+FLASHCARDS_MD_OUT = os.path.join(OUTPUT_DIR, "flashcards_md")     # legacy md deck JSONs (archived post-migration)
 FLASHCARDS_INPUT_DIR = os.path.join(PROJECT_DIR, "flashcards_input")
 FLASHCARDS_LEDGER_FILE = os.path.join(PROJECT_DIR, "flashcards_ledger.json")
+FLASHCARDS_INDEX_FILE = os.path.join(OUTPUT_DIR, "flashcards_index.json")   # derived master index
+FLASHCARDS_LEGACY_DIR = os.path.join(OUTPUT_DIR, "flashcards_legacy")       # archived engine decks
+FLASHCARDS_MD_LEGACY_DIR = os.path.join(OUTPUT_DIR, "flashcards_md_legacy") # archived md deck JSONs
+THEORY_MDS_DIR = os.path.join(OUTPUT_DIR, "Theory MDs")                     # theory notes rendered by portal
 
 # THEORY folder abbreviations -> canonical subtopic-vocab system(s)
 # (used by flashcard_generator tagging; composite dirs get union vocab)
@@ -154,6 +158,22 @@ OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
 OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "deepseek-ai/DeepSeek-V4-Pro")
 TEMPERATURE_FLASHCARDS = 0.2
 MAX_TOKENS_FLASHCARDS = 8192
+
+# Dedicated flashcard-processing LLM (convert/tag/regenerate) — a cheap model so
+# the flashcard layer never burns the high-end default. Override in .env:
+#   FLASHCARD_LLM_MODEL="..."  FLASHCARD_LLM_API_KEY="..."  FLASHCARD_LLM_BASE_URL="..."
+FLASHCARD_LLM_MODEL = os.getenv("FLASHCARD_LLM_MODEL") or OPENROUTER_MODEL
+FLASHCARD_LLM_API_KEY = os.getenv("FLASHCARD_LLM_API_KEY") or OPENROUTER_API_KEY
+FLASHCARD_LLM_BASE_URL = os.getenv("FLASHCARD_LLM_BASE_URL") or OPENROUTER_BASE_URL
+
+# Flashcard front-question generator — deliberately a DIFFERENT provider/model
+# than every other pipeline. Override via .env:
+#   QUESTION_LLM_MODEL="..."  QUESTION_LLM_API_KEY="..."  QUESTION_LLM_BASE_URL="..."
+QUESTION_LLM_MODEL = os.getenv("QUESTION_LLM_MODEL", "deepseek/deepseek-chat-v3-0324")
+QUESTION_LLM_API_KEY = os.getenv("QUESTION_LLM_API_KEY") or OPENROUTER_API_KEY
+QUESTION_LLM_BASE_URL = os.getenv("QUESTION_LLM_BASE_URL") or OPENROUTER_BASE_URL
+TEMPERATURE_QUESTION = 0.2
+MAX_TOKENS_QUESTION = 256
 
 # =====================================================================
 # TRIAL CONDENSATION

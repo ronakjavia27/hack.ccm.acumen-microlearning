@@ -2,6 +2,10 @@
 
 ## SCAI Shock Stages (A–E)
 
+What are the clinical and hemodynamic features of SCAI shock Stage C?
+
+---
+
 | Stage | Title | Clinical Presentation | Hemodynamics | Biomarkers / Perfusion |
 | :--- | :--- | :--- | :--- | :--- |
 | **Stage A** | **At Risk** | Acute MI, acute decompensated heart failure; normal exam | Normal SBP and HR | Normal lactate, normal end-organ function |
@@ -11,6 +15,10 @@
 | **Stage E** | **Extremis** | Cardiac arrest, ongoing CPR, refractory collapse | Severe hypotension despite multiple pressors/MCS | Severe lactic acidosis (often > 10.0 mmol/L) |
 
 ## Key Takeaways
+
+What are the key features defining SCAI shock stages A through E?
+
+---
 
 **Core concept:** SCAI shock stages grade the severity of cardiogenic shock on a continuum — from at risk (A) to refractory arrest (E) — using clinical exam, hemodynamics, and perfusion markers.
 

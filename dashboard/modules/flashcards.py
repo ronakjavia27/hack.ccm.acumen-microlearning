@@ -1,7 +1,11 @@
-"""Flashcards content module.
+"""Flashcards content module (unified store).
 
-Each flashcard deck is a JSON file at output_files/flashcards/{specialty}/{slug}.json
-containing an array of structured study cards on subtopics within a clinical topic.
+Storage: output_files/flashcards/{System}/{Subtopic}.json — one file per
+(system, subtopic), each card a persistent-UUID record with explicit
+front/back. The master index (flashcards_index.json) is derived and rebuilt
+on every write. Console items = subtopic files; the reader UI keeps the
+deck/card view shape (id, subtopic, content with optional '---' divider)
+via a thin view bridge.
 """
 from __future__ import annotations
 
@@ -13,7 +17,8 @@ from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from . import ModuleSpec, ItemNotFound
-from ..storage import REPO_ROOT, read_json, write_json_atomic, audit
+from ..storage import REPO_ROOT, audit
+from acumen_core import flashcards as fc
 
 
 def slugify(text):
@@ -22,9 +27,6 @@ def slugify(text):
     text = re.sub(r'[\s_]+', '-', text)
     text = re.sub(r'-+', '-', text)
     return text.strip('-')
-
-FLASHCARDS_DIR = REPO_ROOT / "output_files" / "flashcards"
-FLASHCARDS_MD_DIR = REPO_ROOT / "output_files" / "flashcards_md"
 
 EDITABLE_FIELDS = ["title", "specialty", "status"]
 
@@ -35,7 +37,10 @@ User request: {edit_comment}
 Current card:
 {subtopic}: {content}
 
-Output a revised JSON object with "subtopic" and "content" fields. The content must follow this format:
+Output a revised JSON object with "subtopic", "front", and "back" fields.
+- "subtopic": a short label for the card
+- "front": a short crisp question (max ~15 words) the card answers
+- "back": dense ICU-relevant content following this format:
 **Core concept:** (1-2 lines)
 
 **Key parameters:** (thresholds, definitions, targets)
@@ -46,43 +51,69 @@ Output a revised JSON object with "subtopic" and "content" fields. The content m
 
 **Pitfalls:** (errors, nuances)
 
-Keep it dense, ICU-relevant, and actionable. Output ONLY valid JSON."""
+Output ONLY valid JSON."""
+
+
+def _view_card(card: Dict[str, Any]) -> Dict[str, Any]:
+    """Store card -> console view card (old deck shape + divider content)."""
+    front = (card.get("front") or "").strip()
+    back = (card.get("back") or "").strip()
+    content = f"{front}\n\n---\n\n{back}" if front else back
+    return {
+        "id": card.get("id"),
+        "subtopic": card.get("data", {}).get("original_subtopic") or card.get("subtopic") or "",
+        "content": content,
+        "front": front,
+        "back": back,
+        "status": card.get("status", "pending"),
+        "tags": card.get("tags") or [],
+        "source": card.get("source"),
+    }
+
+
+def _view_deck(system: str, subtopic: str, data: Dict[str, Any]) -> Dict[str, Any]:
+    cards = data.get("cards") or []
+    total = len(cards)
+    preserved = sum(1 for c in cards if c.get("status") == "preserved")
+    discarded = sum(1 for c in cards if c.get("status") == "discarded")
+    if total and preserved == total:
+        deck_status = "preserved"
+    elif total and discarded == total:
+        deck_status = "discarded"
+    else:
+        deck_status = "pending"
+    src_files = sorted({str(c.get("source_file")) for c in cards if c.get("source_file")})
+    deck_id = f"{system}/{subtopic}"
+    return {
+        "id": deck_id,
+        "title": subtopic,
+        "specialty": system,
+        "card_count": total,
+        "preserved_count": preserved,
+        "discarded_count": discarded,
+        "pending_count": total - preserved - discarded,
+        "status": deck_status,
+        "created_at": data.get("created_at", ""),
+        "updated_at": data.get("updated_at", ""),
+        "source": "store",
+        "md_path": src_files[0] if src_files else "",
+        "subtopics": sorted({t for c in cards for t in (c.get("tags") or []) if isinstance(t, str)}),
+        "_system": system,
+        "_subtopic": subtopic,
+        "_raw": data,
+    }
 
 
 def _walk() -> List[Dict[str, Any]]:
-    """Walk FLASHCARDS_DIR (and FLASHCARDS_MD_DIR) recursively and return deck metadata."""
+    """Walk the unified store and return one item per (system, subtopic) file."""
     items = []
-    for base, id_prefix in ((FLASHCARDS_DIR, ""), (FLASHCARDS_MD_DIR, "md:")):
-        if not base.is_dir():
-            continue
-        for f in sorted(base.rglob("*.json")):
-            try:
-                data = read_json(f, default={})
-            except Exception:
+    idx = fc.load_flashcards_index()
+    for system, subs in idx.get("systems", {}).items():
+        for subtopic, meta in subs.items():
+            data = fc.load_subtopic_file(system, subtopic)
+            if data is None:
                 continue
-            if not isinstance(data, dict) or not data:
-                continue
-            rel = f.relative_to(base)
-            deck_id = id_prefix + str(rel.with_suffix("")).replace("\\", "/").strip()
-            cards = data.get("cards", [])
-            total = len(cards)
-            preserved = sum(1 for c in cards if c.get("status") == "preserved")
-            discarded = sum(1 for c in cards if c.get("status") == "discarded")
-            pending = total - preserved - discarded
-            items.append({
-                "id": deck_id,
-                "title": data.get("title", rel.parent.name),
-                "specialty": data.get("specialty", rel.parent.name),
-                "card_count": total,
-                "preserved_count": preserved,
-                "discarded_count": discarded,
-                "pending_count": pending,
-                "status": data.get("status", "pending"),
-                "created_at": data.get("created_at", ""),
-                "updated_at": data.get("updated_at", ""),
-                "_source": str(f),
-                "_raw": data,
-            })
+            items.append(_view_deck(system, subtopic, data))
     return items
 
 
@@ -97,7 +128,7 @@ def list_items(filters: Optional[Dict[str, str]] = None) -> List[Dict[str, Any]]
     rows = _walk()
     f = filters or {}
     kw = f.get("q", "").lower().strip()
-    specialty = f.get("system", "")
+    specialty = f.get("system", "") or f.get("specialty", "")
     status = f.get("status", "")
     out = []
     for r in rows:
@@ -113,28 +144,60 @@ def list_items(filters: Optional[Dict[str, str]] = None) -> List[Dict[str, Any]]
             ]).lower()
             if kw not in hay:
                 continue
-        item = {k: v for k, v in r.items() if k not in ("_source", "_raw")}
-        out.append(item)
+        out.append(r)
     return out
 
 
 def get_item(item_id: str) -> Dict[str, Any]:
-    """Return the full deck content (not the list wrapper)."""
+    """Return the full subtopic file content (cards in console view shape)."""
     rows = _walk()
     r = _find(rows, item_id)
     if r is None:
         raise ItemNotFound(f"flashcards {item_id}")
-    deck = r.get("_raw", r)
-    deck["id"] = r["id"]
-    deck["_source"] = r["_source"]
-    # Ensure all cards have IDs
-    cards = deck.get("cards", [])
-    slug_base = slugify(deck.get("title", "card"))[:30]
-    for i, card in enumerate(cards):
-        if not card.get("id"):
-            card["id"] = f"{slug_base}-{i}"
-            card.setdefault("status", "pending")
+    deck = dict(r)
+    deck["cards"] = [_view_card(c) for c in r["_raw"].get("cards", [])]
+    deck["_raw"] = r["_raw"]
     return deck
+
+
+def _find_store_card(deck_view: Dict[str, Any], card_id: str) -> Optional[Dict[str, Any]]:
+    for c in deck_view["_raw"].get("cards", []):
+        if c.get("id") == card_id:
+            return c
+    return None
+
+
+def _save_card_view(card: Dict[str, Any]) -> None:
+    fc.upsert_card(card)
+
+
+def _rewrite_md_card(md_abs: Path, subtopic: str, back: str, front: str = "") -> bool:
+    """Rewrite the '## {subtopic}' section of a source markdown deck in place."""
+    if not md_abs or not md_abs.exists():
+        return False
+    try:
+        lines = md_abs.read_text(encoding="utf-8", errors="replace").split("\n")
+    except Exception:
+        return False
+    starts = [i for i, ln in enumerate(lines) if ln.strip().startswith("## ")]
+    target = None
+    for i in starts:
+        if lines[i].strip()[3:].strip().strip('"').lower() == str(subtopic).strip().strip('"').lower():
+            target = i
+            break
+    if target is None:
+        return False
+    end = starts[starts.index(target) + 1] if starts.index(target) + 1 < len(starts) else len(lines)
+    body = back
+    if front:
+        body = f"{front}\n\n---\n\n{back}"
+    new_sec = [f"## {subtopic}"] + (body.split("\n") if body else [])
+    lines[target:end] = new_sec
+    try:
+        md_abs.write_text("\n".join(lines), encoding="utf-8")
+    except Exception:
+        return False
+    return True
 
 
 def update_item(item_id: str, fields: Dict[str, Any]) -> Dict[str, Any]:
@@ -143,108 +206,63 @@ def update_item(item_id: str, fields: Dict[str, Any]) -> Dict[str, Any]:
     if r is None:
         raise ItemNotFound(f"flashcards {item_id}")
 
-    source = Path(r["_source"])
-    deck = dict(r["_raw"])
     dirty = False
-
-    # Ensure all cards have IDs (backward-compat with pre-ID cards)
-    cards = deck.get("cards", [])
-    slug_base = slugify(deck.get("title", "card"))[:30]
-    for i, card in enumerate(cards):
-        if not card.get("id"):
-            card["id"] = f"{slug_base}-{i}"
-            card.setdefault("status", "pending")
-            dirty = True
+    affected: List[Path] = []
+    cards = r["_raw"].get("cards", [])
 
     action = fields.get("action", "")
-
-    def _find_card(card_id):
-        for card in cards:
-            if card.get("id") == card_id:
-                return card
-        return None
-
-    if action == "preserve":
+    if action in ("preserve", "discard", "bulk-preserve", "bulk-discard"):
+        new_status = "preserved" if action.endswith("preserve") else "discarded"
         card_id = fields.get("card_id", "")
-        card = _find_card(card_id)
-        if card and card.get("status") != "preserved":
-            card["status"] = "preserved"
-            dirty = True
-
-    elif action == "discard":
-        card_id = fields.get("card_id", "")
-        card = _find_card(card_id)
-        if card and card.get("status") != "discarded":
-            card["status"] = "discarded"
-            dirty = True
-
-    elif action == "bulk-preserve":
-        for card in cards:
-            if card.get("status") != "discarded":
-                card["status"] = "preserved"
+        for c in cards:
+            if card_id and c.get("id") != card_id:
+                continue
+            if c.get("status") != new_status:
+                c["status"] = new_status
+                fc.upsert_card(c)
                 dirty = True
 
-    elif action == "bulk-discard":
-        for card in cards:
-            if card.get("status") != "preserved":
-                card["status"] = "discarded"
-                dirty = True
-
-    elif action == "edit":
-        card_id = fields.get("card_id", "")
-        edit_comment = fields.get("edit_comment", "")
-        if card_id and edit_comment:
-            card = _find_card(card_id)
-            if card:
-                revised = _regenerate_card(card, edit_comment)
-                if revised:
-                    card["subtopic"] = revised.get("subtopic", card["subtopic"])
-                    card["content"] = revised.get("content", card["content"])
-                    dirty = True
-                    history = deck.setdefault("edit_history", [])
-                    history.append({
-                        "card_id": card_id,
-                        "edit_comment": edit_comment,
-                        "timestamp": datetime.now().isoformat(),
-                    })
-
-    if "title" in fields and str(fields["title"]) != str(deck.get("title", "")):
-        deck["title"] = fields["title"]
+    if "specialty" in fields and str(fields["specialty"]).strip() and \
+            str(fields["specialty"]).strip() != r["specialty"]:
+        new_sys = str(fields["specialty"]).strip()
+        for c in cards:
+            fc.move_card(c.get("id"), new_sys, r["_subtopic"])
+        affected.append(Path("output_files", "flashcards", new_sys))
         dirty = True
 
-    if "specialty" in fields and str(fields["specialty"]) != str(deck.get("specialty", "")):
-        deck["specialty"] = fields["specialty"]
-        dirty = True
-
-    if "status" in fields and str(fields["status"]) != str(deck.get("status", "")):
-        deck["status"] = fields["status"]
+    if "title" in fields and str(fields["title"]).strip() and \
+            str(fields["title"]).strip() != r["title"]:
+        new_sub = fc.canonical_subtopic(r["specialty"], str(fields["title"]).strip())
+        for c in cards:
+            fc.move_card(c.get("id"), r["specialty"], new_sub)
+        affected.append(Path("output_files", "flashcards", r["specialty"]))
         dirty = True
 
     if not dirty:
         return {"id": item_id, "updated": False, "affected_paths": []}
 
-    deck["updated_at"] = datetime.now().isoformat()
-    write_json_atomic(source, deck)
-    audit("flashcards", item_id, "update", note=f"action={action}")
-    return {"id": item_id, "updated": True, "affected_paths": [str(source)]}
+    audit("flashcards", item_id, "update", note=f"action={action or 'reclassify'}")
+    return {"id": item_id, "updated": True,
+            "affected_paths": [str(p) for p in affected] or [fc.subtopic_file_path(r["specialty"], r["_subtopic"])]}
 
 
 def _regenerate_card(card: Dict[str, Any], edit_comment: str) -> Optional[Dict[str, Any]]:
-    """Send card + edit comment to LLM for revision."""
+    """Send store card + edit comment to the LLM for revision -> {subtopic, front, back}."""
     try:
-        from acumen_core.llm import execute_with_openrouter
-        subtopic = card.get("subtopic", "")
-        content = card.get("content", "")
+        from acumen_core.flashcards import flashcard_llm
+        subtopic = card.get("data", {}).get("original_subtopic") or card.get("subtopic", "")
+        content = card.get("back") or ""
         prompt = FLASHCARD_REGEN_PROMPT.format(
             edit_comment=edit_comment,
             subtopic=subtopic,
             content=content,
         )
-        result = execute_with_openrouter(
+        result = flashcard_llm(
             "You are a precise ICU study card editor. Output ONLY valid JSON.",
             prompt,
+            json_mode=True,
         )
-        if result and "subtopic" in result and "content" in result:
+        if result and "back" in result:
             return result
     except Exception as e:
         print(f"  [X] Card regeneration failed: {e}")
@@ -256,11 +274,18 @@ def delete_item(item_id: str) -> Dict[str, Any]:
     r = _find(rows, item_id)
     if r is None:
         raise ItemNotFound(f"flashcards {item_id}")
-    source = Path(r["_source"])
-    if source.exists():
-        source.unlink()
-    audit("flashcards", item_id, "delete", note=f"deleted {source}")
-    return {"id": item_id, "deleted": True, "affected_paths": []}
+    cards = r["_raw"].get("cards", [])
+    has_md = any(c.get("source") == "md" for c in cards)
+    path = fc.subtopic_file_path(r["specialty"], r["_subtopic"])
+    try:
+        if os.path.exists(path):
+            os.remove(path)
+            fc.rebuild_flashcards_index()
+    except OSError:
+        pass
+    audit("flashcards", item_id, "delete", note=f"deleted {path} (md kept={has_md})")
+    return {"id": item_id, "deleted": True, "affected_paths": [str(path)],
+            "md_kept": has_md, "ledger_removed": False}
 
 
 def bulk_set_status(ids: List[str], status: str) -> Dict[str, Any]:
@@ -270,19 +295,15 @@ def bulk_set_status(ids: List[str], status: str) -> Dict[str, Any]:
             r = _find(_walk(), deck_id)
             if r is None:
                 continue
-            source = Path(r["_source"])
-            deck = dict(r["_raw"])
-            if status == "preserve-all":
-                for card in deck.get("cards", []):
-                    card["status"] = "preserved"
-            elif status == "discard-all":
-                for card in deck.get("cards", []):
-                    card["status"] = "discarded"
-            else:
-                deck["status"] = status
-            deck["updated_at"] = datetime.now().isoformat()
-            write_json_atomic(source, deck)
-            touched += 1
+            for c in r["_raw"].get("cards", []):
+                if status == "preserve-all":
+                    c["status"] = "preserved"
+                elif status == "discard-all":
+                    c["status"] = "discarded"
+                else:
+                    continue
+                fc.upsert_card(c)
+                touched += 1
         except Exception:
             continue
     audit("flashcards", ",".join(ids), "bulk_status", note=status)
@@ -296,12 +317,14 @@ def bulk_delete(ids: List[str]) -> Dict[str, Any]:
             r = _find(_walk(), deck_id)
             if r is None:
                 continue
-            source = Path(r["_source"])
-            if source.exists():
-                source.unlink()
+            path = fc.subtopic_file_path(r["specialty"], r["_subtopic"])
+            if os.path.exists(path):
+                os.remove(path)
                 deleted += 1
         except Exception:
             continue
+    if deleted:
+        fc.rebuild_flashcards_index()
     audit("flashcards", ",".join(ids), "bulk_delete", note=f"deleted={deleted}")
     return {"deleted": deleted, "affected_paths": []}
 

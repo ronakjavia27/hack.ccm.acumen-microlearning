@@ -51,6 +51,7 @@ header.topbar{grid-column:1/-1;display:flex;flex-direction:column;background:var
 .btn:disabled{opacity:.4;cursor:not-allowed}
 .fc-reader-container{background:var(--bg-panel);border:1px solid var(--line);border-radius:var(--radius);padding:24px;margin-bottom:16px;max-width:900px}
 .fc-subtopic-label{font-family:var(--mono);font-size:11px;color:var(--phosphor);text-transform:uppercase;letter-spacing:.06em;margin-bottom:12px;padding-bottom:8px;border-bottom:1px solid var(--line-soft)}
+.fc-question-label{font-size:13px;font-style:italic;color:var(--accent);margin-bottom:8px}
 .fc-card-content{font-size:14px;line-height:1.7;white-space:pre-wrap}
 .fc-card-content strong{color:var(--text-primary);font-weight:600}
 .fc-card-content p{margin:6px 0}
@@ -142,6 +143,10 @@ td.check-col,th.check-col{width:30px}
 .status-btn.active-queued{background:#2a2010;border-color:#5a441f;color:var(--amber)}
 .status-btn.active-hidden{background:#1b1f26;border-color:#333a45;color:var(--text-primary)}
 .status-btn.active-removed{background:#2a1515;border-color:#5a2626;color:var(--red)}
+.status-btn.active-preserved{background:#0f2620;border-color:var(--phosphor-dim);color:var(--phosphor)}
+.status-btn.active-discarded{background:#2a1515;border-color:#5a2626;color:var(--red)}
+.status-btn.active-pending{background:#1b1f26;border-color:#333a45;color:var(--text-primary)}
+.fc-tag{display:inline-block;font-family:var(--mono);font-size:11px;color:var(--phosphor);background:rgba(0,255,166,.07);border:1px solid var(--phosphor-dim);border-radius:99px;padding:2px 10px;margin:2px 4px 2px 0}
 .toolbar{display:flex;gap:4px;margin-bottom:6px}
 .tb-btn{width:28px;height:28px;border:1px solid var(--line);background:var(--bg-void);color:var(--text-muted);border-radius:4px;font-size:12px;display:flex;align-items:center;justify-content:center}
 .tb-btn:hover{background:var(--bg-hover);color:var(--text-primary)}
@@ -290,6 +295,8 @@ td.check-col,th.check-col{width:30px}
       <button class="btn btn-sm btn-primary" onclick="flashcardPreserve()">&#10003; Preserve</button>
       <button class="btn btn-sm" onclick="flashcardDiscard()" style="color:var(--text-muted)">&#10005; Discard</button>
       <button class="btn btn-sm" onclick="flashcardEdit()">Edit</button>
+      <button class="btn btn-sm" onclick="flashcardSettings()">Settings</button>
+      <button class="btn btn-sm" onclick="flashcardDelete()" style="background:var(--red);color:#fff;border:none">Delete</button>
       <button class="btn btn-sm btn-ghost" onclick="flashcardExitReader()">Exit reader</button>
     </div>
   </div>
@@ -310,6 +317,7 @@ td.check-col,th.check-col{width:30px}
   <div id="fcReaderView" style="display:none">
     <div class="fc-reader-container">
       <div class="fc-subtopic-label" id="fcSubtopic"></div>
+      <div class="fc-question-label" id="fcQuestion" style="display:none"></div>
       <div class="fc-card-content" id="fcCardContent"></div>
     </div>
     <div class="fc-edit-area" id="fcEditArea" style="display:none">
@@ -796,6 +804,26 @@ function flashcardExitReader(){
   $('flashcardActions').style.display = 'none';
   renderFlashcards();
 }
+function flashcardSettings(){
+  if (state.fc.deck) openDrawer('flashcards', state.fc.deck.id);
+}
+async function flashcardDelete(){
+  const deck = state.fc.deck;
+  if (!deck) return;
+  if (!confirm('Delete this flashcard subtopic file and all its cards (authored markdown source is kept)? This cannot be undone.')) return;
+  try {
+    const result = await apiDelete('/flashcards/'+deck.id);
+    if (result.deleted) {
+      toast('Flashcard deck deleted.');
+      state.fc.deck = null;
+      state.fc.cardIndex = 0;
+      state.fc.editing = false;
+      await reloadSection();
+    } else {
+      toast('Delete failed — no change.', true);
+    }
+  } catch (e) { toast(e.message, true); }
+}
 function renderFlashcardReader(){
   const deck = state.fc.deck;
   if (!deck) return;
@@ -809,7 +837,11 @@ function renderFlashcardReader(){
   const discarded = cards.filter(c=>c.status==='discarded').length;
   $('fcProgress').textContent = (idx+1) + ' / ' + cards.length + '  (' + preserved + ' preserved, ' + discarded + ' discarded)';
   $('fcSubtopic').textContent = card.subtopic || 'Card ' + (idx+1);
-  $('fcCardContent').textContent = card.content || '';
+  const fcParts = (card.content||'').split(/\n\s*(?:---|\*\*\*)\s*\n/);
+  const fcFront = fcParts.length >= 3 ? fcParts[0].trim() : null;
+  $('fcQuestion').textContent = fcFront ? 'Q: ' + fcFront : '';
+  $('fcQuestion').style.display = fcFront ? '' : 'none';
+  $('fcCardContent').textContent = fcFront ? fcParts.slice(2).join('\n---\n') : (card.content || '');
   if (state.fc.editing) {
     $('fcEditArea').style.display = 'block';
   }
@@ -863,7 +895,9 @@ async function flashcardSubmitEdit(){
     const result = await apiPost('/flashcards/'+deck.id+'/regenerate-card', {card_id: card.id, edit_comment: comment});
     if (result.updated && result.card) {
       card.subtopic = result.card.subtopic;
-      card.content = result.card.content;
+      card.front = result.card.front || '';
+      card.back = result.card.back || '';
+      card.content = (card.front ? card.front + '\n\n---\n\n' : '') + card.back;
       toast('Card updated via LLM.');
       state.fc.editing = false;
       $('fcEditArea').style.display = 'none';
@@ -1113,7 +1147,27 @@ function renderDrawerContent(kind, item, content){
         </details>`;
       $('drawerFoot').innerHTML = footer;
     }
+  } else if (kind === 'flashcards') {
+    const cards = item.cards || [];
+    const nPres = cards.filter(c=>c.status==='preserved').length;
+    const nDisc = cards.filter(c=>c.status==='discarded').length;
+    const tags = (item.subtopics||[]).length
+      ? item.subtopics.map(t=>`<span class="fc-tag">${esc(t)}</span>`).join('')
+      : '<span style="color:var(--text-muted);font-size:12px">No subtopic tags — re-tag via flashcard_generator.py --tag-only</span>';
+    const srcNote = 'Unified store · <code>output_files/flashcards/</code> (edits persist; authored markdown kept when source is md)';
+    $('drawerBody').innerHTML = `<div class="field"><label>Title (subtopic)</label><input type="text" id="f_title" value="${esc(item.title)}"></div>
+      <div class="field"><label>Specialty (system — reclassify moves cards)</label><select id="f_specialty">${fcSpecialtyOptions(item.specialty)}</select></div>
+      <div class="field"><label>Cards</label><span style="color:var(--text-muted);font-size:12px">${cards.length} total · ${nPres} preserved · ${nDisc} discarded</span></div>
+      <div class="field"><label>Subtopics</label><div>${tags}</div></div>
+      <div class="note-inline">${srcNote}</div>`;
+    $('drawerFoot').innerHTML = footer;
   }
+}
+
+function fcSpecialtyOptions(current){
+  const specs = [...new Set((state.cache.flashcards||[]).map(d=>d.specialty).filter(Boolean))].sort();
+  if (current && !specs.includes(current)) specs.push(current);
+  return specs.map(s=>`<option ${s===current?'selected':''}>${esc(s)}</option>`).join('');
 }
 
 // ---- drawer save/push/exit ----
@@ -1134,6 +1188,10 @@ async function drawerSave(kind, id){
     if (kind === 'summaries' && (result.system_changed || result.subtopic_changed)) {
       const file_name = (state.cache.summaries.find(s=>s.id==id)||{}).file_name;
       if (file_name) await showCascadeModal(file_name, result.old, result.new, id);
+    }
+    // Reclassify moved the deck — exit the reader so the list refreshes to the new id
+    if (kind === 'flashcards' && state.fc.deck && fields.specialty && fields.specialty !== state.fc.deck.specialty) {
+      flashcardExitReader();
     }
     await reloadSection();
   } catch (e) { toast(e.message, true); }
@@ -1168,6 +1226,7 @@ async function drawerSaveExit(kind, id){
 async function drawerDelete(kind, id){
   const label = kind === 'summaries' ? 'this summary and ALL its pearls (linked by file_name)'
     : kind === 'pearls' ? 'this pearl'
+    : kind === 'flashcards' ? 'this flashcard subtopic file and all its cards (authored markdown source is kept)'
     : 'this theory document';
   if (!confirm(`Delete ${label}? This cannot be undone.`)) return;
   try {
@@ -1193,7 +1252,7 @@ function drawerStatus(kind, id, status){
 
 function collectDrawerFields(kind, id){
   const fields = {};
-  const ids = ['title','authors','journal','doi','system','type','subtopic','remarks','pearl'];
+  const ids = ['title','authors','journal','doi','system','type','subtopic','remarks','pearl','specialty'];
   ids.forEach(f=>{
     const el = $('f_'+f);
     if (el) fields[f] = el.value;
@@ -1205,6 +1264,10 @@ function collectDrawerFields(kind, id){
       if (kind === 'summaries') fields['show_on_web'] = st === 'published' ? 'Yes' : 'No';
       else fields['visibility'] = st;
     }
+  }
+  if (kind === 'flashcards') {
+    const statusKey = kind+':'+id+':status';
+    if (state.edits[statusKey]) fields['status'] = state.edits[statusKey];
   }
   if (kind === 'summaries') {
     const ce = $('f_content_original');

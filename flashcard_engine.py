@@ -141,15 +141,22 @@ Generate {card_count} high-yield study cards from this note following the specif
 
     try:
         if model_override:
-            from acumen_core.llm import call_openrouter_api, _get_openrouter_client
-            from acumen_core.config import TEMPERATURE_FLASHCARDS, MAX_TOKENS_FLASHCARDS
-            client = _get_openrouter_client()
-            raw = call_openrouter_api(client, model_override, system_prompt, user_prompt, temperature=TEMPERATURE_FLASHCARDS, max_tokens=MAX_TOKENS_FLASHCARDS, json_mode=False)
+            from acumen_core.llm import execute_openai_compat
+            from acumen_core.config import (
+                FLASHCARD_LLM_API_KEY,
+                FLASHCARD_LLM_BASE_URL,
+                TEMPERATURE_FLASHCARDS,
+                MAX_TOKENS_FLASHCARDS,
+            )
+            raw = execute_openai_compat(
+                system_prompt, user_prompt,
+                api_key=FLASHCARD_LLM_API_KEY, model=model_override,
+                base_url=FLASHCARD_LLM_BASE_URL, json_mode=False,
+                temperature=TEMPERATURE_FLASHCARDS, max_tokens=MAX_TOKENS_FLASHCARDS,
+            )
         else:
-            from acumen_core.llm import call_openrouter_api, _get_openrouter_client
-            from acumen_core.config import OPENROUTER_MODEL, TEMPERATURE_FLASHCARDS, MAX_TOKENS_FLASHCARDS
-            client = _get_openrouter_client()
-            raw = call_openrouter_api(client, OPENROUTER_MODEL, system_prompt, user_prompt, temperature=TEMPERATURE_FLASHCARDS, max_tokens=MAX_TOKENS_FLASHCARDS, json_mode=False)
+            from acumen_core.flashcards import flashcard_llm
+            raw = flashcard_llm(system_prompt, user_prompt)
     except Exception as e:
         print(f"  [X] LLM call failed: {e}")
         return None
@@ -179,31 +186,31 @@ Generate {card_count} high-yield study cards from this note following the specif
         print(f"  [X] Empty or invalid cards array")
         return None
 
-    # Assign stable IDs to each card (used by dashboard for preserve/discard/edit)
-    slug_base = slugify(title)[:30]
     for i, card in enumerate(cards):
-        card["id"] = card.get("id", f"{slug_base}-{i}")
         card.setdefault("status", "pending")
 
     return cards
 
 
 def process_file(md_path, force=False, model_override=None, dry_run=False, max_mode=False):
-    """Process a single .md file and generate its flashcard deck."""
-    rel_path = os.path.relpath(md_path, THEORY_DIR)
-    specialty = rel_path.split(os.sep)[0] if os.sep in rel_path else "Other"
+    """Process a single .md file and upsert its cards into the unified store."""
+    from acumen_core import flashcards as fc
+    from acumen_core.config import THEORY_SPEC_TO_CANONICAL
+    rel_path = os.path.relpath(md_path, THEORY_DIR).replace("\\", "/")
+    specialty = rel_path.split("/")[0] if "/" in rel_path else "Other"
     base_name = os.path.splitext(os.path.basename(md_path))[0]
     slug = slugify(base_name)
 
-    out_dir = os.path.join(FLASHCARDS_DIR, specialty)
-    out_path = os.path.join(out_dir, f"{slug}.json")
+    systems = THEORY_SPEC_TO_CANONICAL.get(specialty) or [specialty]
+    system = systems[0]
 
-    if not force and os.path.exists(out_path):
-        print(f"  [SKIP] {rel_path} — already exists (use --force to regenerate)")
+    existing = [c for _, _, c in fc.store_cards_all() if c.get("source_file") == rel_path]
+    if not force and existing:
+        print(f"  [SKIP] {rel_path} — already in store ({len(existing)} cards, use --force to regenerate)")
         return None
 
     if dry_run:
-        print(f"  [DRY-RUN] Would process: {rel_path} -> {out_path}")
+        print(f"  [DRY-RUN] Would process: {rel_path} -> store {system}")
         return None
 
     print(f"  [READ] {rel_path}")
@@ -225,24 +232,26 @@ def process_file(md_path, force=False, model_override=None, dry_run=False, max_m
     if cards is None:
         return None
 
-    deck = {
-        "id": slug,
-        "source_file": rel_path.replace("\\", "/"),
-        "specialty": specialty,
-        "title": title,
-        "cards": cards,
-        "status": "pending",
-        "edit_history": [],
-        "created_at": datetime.now().isoformat(),
-        "updated_at": datetime.now().isoformat(),
-    }
+    store_cards = []
+    for card in cards:
+        c = fc.build_card(
+            "", card.get("content") or "", system, "General",
+            tags=[], source="engine", source_file=rel_path,
+            slug_hint=card.get("subtopic") or title,
+            data={"original_subtopic": card.get("subtopic")},
+        )
+        store_cards.append(c)
 
-    os.makedirs(out_dir, exist_ok=True)
-    with open(out_path, "w", encoding="utf-8") as f:
-        json.dump(deck, f, indent=2, ensure_ascii=False)
+    fc.tag_cards_with_llm(store_cards, systems, verbose=True)
+    for c in store_cards:
+        if c["tags"]:
+            c["subtopic"] = fc.canonical_subtopic(system, c["tags"][0])
+        else:
+            c["subtopic"] = "General"
+        fc.upsert_card(c)
 
-    print(f"  [OK] {len(cards)} cards -> {os.path.relpath(out_path)}")
-    return deck
+    print(f"  [OK] {len(store_cards)} cards -> store {system}")
+    return {"title": title, "cards": store_cards}
 
 
 def main():
@@ -295,8 +304,11 @@ def main():
     failed = 0
 
     for md_path in md_files:
-        out_path = os.path.join(FLASHCARDS_DIR, os.path.relpath(md_path, THEORY_DIR).split(os.sep)[0], slugify(os.path.splitext(os.path.basename(md_path))[0]) + ".json")
-        if not args.force and os.path.exists(out_path):
+        rel_path = os.path.relpath(md_path, THEORY_DIR).replace("\\", "/")
+        specialty = rel_path.split("/")[0] if "/" in rel_path else "Other"
+        from acumen_core import flashcards as fc
+        existing = [c for _, _, c in fc.store_cards_all() if c.get("source_file") == rel_path]
+        if not args.force and existing:
             skipped += 1
             continue
         result = process_file(md_path, force=args.force, model_override=args.model, dry_run=False, max_mode=args.max)

@@ -228,8 +228,9 @@ def _require_feature(user, feature):
         raise HTTPException(status_code=403, detail=f"Feature '{feature}' is not enabled for this account")
 
 # ---- Per-user data (bookmarks now; history/notes/prefs later) ----
-BOOKMARKS_MAX_ITEMS = 1000
-BOOKMARK_KINDS = ("paper", "guideline", "pearl", "trial", "condensed", "flashcard")
+BOOKMARKS_MAX_ITEMS = 500
+BOOKMARKS_MAX_FOLDERS = 10
+BOOKMARK_KINDS = ("paper", "guideline", "pearl", "trial", "condensed", "flashcard", "note")
 
 def _user_data(email, key, default=None):
     data = _kv_get(f"user:{email}:{key}")
@@ -422,43 +423,67 @@ def load_trial_index():
         return []
 
 def load_flashcard_decks():
-    """Load flashcard decks from output_files/flashcards_md/ (markdown-authored)."""
-    decks = []
-    base = os.path.join(OUTPUT_DIR, "flashcards_md")
-    if not os.path.isdir(base):
-        return decks
+    """Load flashcard decks from the unified store (output_files/flashcards/).
+    One deck per (system, subtopic) file; cards carry explicit front/back."""
     try:
-        for root, dirs, files in os.walk(base):
-            for fn in sorted(files):
-                if not fn.endswith(".json"):
-                    continue
-                path = os.path.join(root, fn)
-                try:
-                    with open(path, "r", encoding="utf-8") as f:
-                        deck = json.load(f)
-                    if not isinstance(deck, dict) or not isinstance(deck.get("cards"), list):
-                        continue
-                    deck["specialty"] = str(deck.get("specialty", "Other"))
-                    deck["title"] = str(deck.get("title", fn[:-5]))
-                    deck["cards"] = [
-                        {
-                            "subtopic": str(c.get("subtopic", "")),
-                            "content": str(c.get("content", "")),
-                            "id": str(c.get("id", "")),
-                            "status": str(c.get("status", "pending")),
-                            "tags": sorted({str(t) for t in (c.get("tags") or []) if isinstance(t, str) and str(t).strip()}),
-                        }
-                        for c in deck["cards"]
-                        if isinstance(c, dict)
-                    ]
-                    if deck["cards"]:
-                        deck["subtopics"] = sorted({t for c in deck["cards"] for t in c["tags"]})
-                        decks.append(deck)
-                except (json.JSONDecodeError, Exception):
-                    continue
+        from acumen_core import flashcards as fc
     except Exception:
         return []
+    decks = []
+    try:
+        idx = fc.load_flashcards_index()
+    except Exception:
+        return []
+    for system in idx.get("systems", {}):
+        for subtopic in idx["systems"][system]:
+            data = fc.load_subtopic_file(system, subtopic)
+            if not data or not data.get("cards"):
+                continue
+            cards = []
+            for c in data["cards"]:
+                if not isinstance(c, dict):
+                    continue
+                cards.append({
+                    "id": str(c.get("id", "")),
+                    "subtopic": str((c.get("data") or {}).get("original_subtopic") or c.get("subtopic", "")),
+                    "front": str(c.get("front", "")),
+                    "back": str(c.get("back", "")),
+                    "status": str(c.get("status", "pending")),
+                    "tags": sorted({str(t) for t in (c.get("tags") or []) if isinstance(t, str) and str(t).strip()}),
+                })
+            if cards:
+                decks.append({
+                    "id": f"{system}/{subtopic}",
+                    "specialty": system,
+                    "title": subtopic,
+                    "cards": cards,
+                    "subtopics": sorted({t for c in cards for t in c["tags"]}),
+                })
     return decks
+
+
+def load_theory_notes():
+    """Load Theory Topics: every file under output_files/Theory MDs/ (any
+    extension) rendered as markdown by the portal."""
+    notes = []
+    base = os.path.join(OUTPUT_DIR, "Theory MDs")
+    if not os.path.isdir(base):
+        return notes
+    for fn in sorted(os.listdir(base)):
+        path = os.path.join(base, fn)
+        if not os.path.isfile(path):
+            continue
+        try:
+            with open(path, "r", encoding="utf-8", errors="replace") as f:
+                md = f.read()
+        except Exception:
+            continue
+        title = fn
+        m = re.search(r"^\s*#\s+(.+?)\s*$", md, re.M)
+        if m:
+            title = m.group(1).strip()
+        notes.append({"id": fn, "title": title, "md": md})
+    return notes
 
 def load_condensed_trial_index():
     if not os.path.exists(CONDENSED_TRIALS_DIR):
@@ -651,14 +676,16 @@ async def render_dashboard(request: Request, response: Response):
     condensed_result_cats_js = json.dumps(condensed_result_cats)
     condensed_types_list_js = json.dumps(condensed_types_list)
 
-    # Theory flashcard decks (authored markdown -> JSON)
+    # Theory flashcard decks (unified store) + Theory Topics (markdown notes)
     flashcard_decks = load_flashcard_decks() if _user_has_feature(user, "theory") else []
+    theory_notes = load_theory_notes() if _user_has_feature(user, "theory") else []
     THEORY_SPEC_COLORS = {
-        "CVS": "#C6554B", "RS": "#3A7CA5", "Neuro": "#6B5B95",
-        "Renal and Acid Base": "#B08D57", "Liver GIT Nutrition": "#14B8A6",
-        "Infectious Diseases": "#4F8A6D", "Hematology Rheumatology Oncology": "#E11D48",
-        "Endocrine Miscellaneous": "#06B6D4", "Pregnancy Trauma": "#DC2626",
-        "Scoring Systems": "#6B7280", "Toxicology": "#7C3AED", "Sepsis": "#F97316",
+        "Cardiology": "#C6554B", "Pulmonology": "#3A7CA5", "Neurology": "#6B5B95",
+        "Nephrology": "#B08D57", "Gastroenterology": "#14B8A6",
+        "Infectious Diseases": "#4F8A6D", "Hematology": "#E11D48",
+        "Endocrinology": "#06B6D4", "Trauma": "#DC2626", "Surgery": "#6B7280",
+        "Toxicology": "#7C3AED", "Sepsis": "#F97316", "General": "#9333EA",
+        "Other": "#9333EA",
     }
     theory_specs = sorted(set(d["specialty"] for d in flashcard_decks))
     theory_spec_css = {}
@@ -671,6 +698,8 @@ async def render_dashboard(request: Request, response: Response):
         s: "--theory-spec-" + re.sub(r"[^a-zA-Z0-9]", "", s.lower()) for s in theory_specs
     })
     flashcard_decks_js = json.dumps(flashcard_decks)
+    theory_notes_js = json.dumps(theory_notes)
+    theory_total_cards = sum(len(d["cards"]) for d in flashcard_decks)
     theory_subtopic_map = {}
     for d in flashcard_decks:
         for t in d.get("subtopics") or []:
@@ -682,6 +711,7 @@ async def render_dashboard(request: Request, response: Response):
     user_features = {f: _user_has_feature(user, f) for f in FEATURE_FLAGS}
     user_features_js = json.dumps(user_features)
     user_is_admin_js = "true" if user.get("is_admin") else "false"
+    insights_tag = '<script defer src="/_vercel/insights/script.js"></script>' if os.environ.get("VERCEL") else ''
 
     html = f"""<!DOCTYPE html>
 <html lang="en" data-theme="dim">
@@ -692,7 +722,7 @@ async def render_dashboard(request: Request, response: Response):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script defer src="/_vercel/insights/script.js"></script>
+{insights_tag}
 {ECG_SVG}
 <style>
   :root{{
@@ -1084,11 +1114,18 @@ async def render_dashboard(request: Request, response: Response):
   .theory-card-inner{{ position:relative; width:100%; min-height:340px; transform-style:preserve-3d; transition:transform .45s ease; }}
   .theory-card-inner.flip{{ cursor:pointer; }}
   .theory-card-inner.flipped{{ transform:rotateY(180deg); }}
-  .theory-face{{ position:absolute; inset:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:22px 24px; overflow:auto; max-height:72vh; }}
+  .theory-face{{ position:absolute; top:0; left:0; right:0; bottom:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:22px 24px; overflow:auto; max-height:72vh; }}
   .theory-face.back{{ transform:rotateY(180deg); }}
   .theory-face .flip-hint{{ position:absolute; bottom:10px; right:16px; font-size:.68rem; font-family:var(--font-mono); color:var(--ink-muted); }}
+  /* Fallback when the browser lacks backface-visibility 3D support: swap display instead of rotating */
+  .theory-card-wrap.no-3d{{ perspective:none; }}
+  .theory-card-wrap.no-3d .theory-card-inner{{ transform-style:flat; transform:none !important; }}
+  .theory-card-wrap.no-3d .theory-face{{ position:relative; top:auto; left:auto; right:auto; bottom:auto; transform:none !important; display:none; }}
+  .theory-card-wrap.no-3d .theory-face.front{{ display:block; }}
+  .theory-card-wrap.no-3d .theory-card-inner.flipped .theory-face.front{{ display:none; }}
+  .theory-card-wrap.no-3d .theory-card-inner.flipped .theory-face.back{{ display:block; }}
   .theory-card-flat{{ background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:22px 24px; max-height:72vh; overflow:auto; }}
-  .theory-card-content{{ font-size:.94rem; line-height:1.55; }}
+  .theory-card-content{{ font-size:var(--theory-card-fs, .94rem); line-height:1.55; }}
   .theory-card-content h1, .theory-card-content h2, .theory-card-content h3{{ font-size:1.02rem; margin:12px 0 6px; }}
   .theory-card-content p{{ margin:8px 0; }}
   .theory-card-content ul, .theory-card-content ol{{ margin:8px 0; padding-left:22px; }}
@@ -1113,6 +1150,34 @@ async def render_dashboard(request: Request, response: Response):
   .theory-tag-x:hover{{ color:var(--accent); }}
   .theory-deck-rows .doc-card{{ cursor:pointer; }}
   .theory-saved-badge{{ font-size:.66rem; font-family:var(--font-mono); color:var(--accent); margin-left:6px; }}
+
+  /* ===== THEORY TOPICS (markdown notes) ===== */
+  .theory-note{{ font-size:var(--theory-note-fs, var(--site-fs, 16px)); line-height:1.6; color:var(--ink); }}
+  .theory-note h1{{ font-size:1.5rem; margin:20px 0 10px; }}
+  .theory-note h2{{ font-size:1.3rem; margin:18px 0 8px; }}
+  .theory-note h3{{ font-size:1.12rem; margin:16px 0 8px; }}
+  .theory-note h4{{ font-size:1rem; margin:14px 0 6px; }}
+  .theory-note p{{ margin:10px 0; }}
+  .theory-note ul, .theory-note ol{{ margin:10px 0; padding-left:24px; }}
+  .theory-note li{{ margin:4px 0; }}
+  .theory-note code{{ font-family:var(--font-mono); font-size:.9em; background:var(--bg-sunk); border-radius:4px; padding:1px 5px; }}
+  .theory-note pre{{ background:var(--bg-sunk); border:1px solid var(--border); border-radius:10px; padding:12px 14px; overflow:auto; }}
+  .theory-note pre code{{ background:none; padding:0; }}
+  .theory-note blockquote{{ border-left:3px solid var(--accent); margin:12px 0; padding:4px 14px; color:var(--ink-muted); }}
+  .theory-note table{{ border-collapse:collapse; width:100%; font-size:.92em; margin:14px 0; }}
+  .theory-note th, .theory-note td{{ border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }}
+  .theory-note th{{ background:var(--bg-sunk); font-weight:700; }}
+  .theory-note hr{{ border:none; border-top:1px solid var(--border); margin:18px 0; }}
+  .theory-note a{{ color:var(--accent); }}
+  /* Flip-mode front question: big + centered (H2-scale) */
+  .theory-front-big{{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:100%; font-size:1.5rem; font-weight:600; line-height:1.4; gap:14px; }}
+  .theory-front-big p{{ margin:0; }}
+  .theory-front-big h1, .theory-front-big h2, .theory-front-big h3{{ font-size:1.6rem; margin:0; }}
+  /* Per-deck card list header */
+  .theory-card-list-head{{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px; }}
+  .theory-list-toggle{{ display:inline-flex; align-items:center; gap:8px; background:var(--bg-elev); border:1px solid var(--border); border-radius:99px; padding:6px 14px; cursor:pointer; font:inherit; font-size:.8rem; color:var(--ink); margin-left:auto; }}
+  .theory-list-toggle:hover{{ background:var(--bg-sunk); border-color:var(--accent); }}
+  .theory-list-toggle .theory-toggle-caret{{ color:var(--accent); font-size:.72rem; }}
 
 </style>
 </head>
@@ -1298,28 +1363,72 @@ async def render_dashboard(request: Request, response: Response):
       <p class="coming-soon-text">The Antibiotics Hub is under development. Check back soon.</p>
     </div>
   </section>
-  <!-- THEORY FLASHCARDS -->
+  <!-- THEORY: hero (notes + flashcards) -->
   <section class="view" id="view-theory">
-    <div class="section-head" style="margin-top:0">
-      <h2>Theory &mdash; Flashcards</h2>
-      <button class="linklike" id="theoryStudyBackBtn" style="display:none" data-theory-back>&larr; All decks</button>
-    </div>
-    <div id="theoryBrowser">
-      <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 14px">Flashcards &mdash; study them card by card, flip them, save the ones worth revisiting.</p>
-      <div class="pearl-toolbar">
-        <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="theorySearch" placeholder="Search decks and cards&hellip;" autocomplete="off"></div>
+    <div class="section-head" style="margin-top:0"><h2>Theory</h2></div>
+    <div class="hero" id="theoryHero">
+      <div class="card" data-theory-mode-view="notes" role="button" tabindex="0">
+        <div class="stripe" style="background:var(--accent)"></div>
+        <div class="card-body">
+          <div class="eyebrow">Long-form notes</div>
+          <h3>Theory Topics</h3>
+          <p>{len(theory_notes)} deep-dive notes, rendered from markdown &mdash; tap to read.</p>
+        </div>
       </div>
-      <div class="pearl-toolbar" id="theoryChips"></div>
-      <div class="pearl-toolbar" id="theorySubtopicChips" style="flex-wrap:wrap"></div>
-      <p class="pearl-count" id="theoryCount"></p>
-      <div class="doc-list theory-deck-rows" id="theoryDeckList"></div>
+      <div class="card" data-theory-mode-view="flashcards" role="button" tabindex="0">
+        <div class="stripe" style="background:var(--accent)"></div>
+        <div class="card-body">
+          <div class="eyebrow">Study cards</div>
+          <h3>Flashcards</h3>
+          <p>{theory_total_cards} cards across {len(theory_specs)} systems &mdash; flip, save, revise.</p>
+        </div>
+      </div>
     </div>
-    <div id="theoryStudy" style="display:none">
-      <div class="theory-card-head" id="theoryStudyHead"></div>
-      <div class="theory-card-tags" id="theoryCardTags"></div>
-      <div class="theory-stage" id="theoryCardStage"></div>
-      <div class="reader-nav" id="theoryCardNav"></div>
-      <div class="theory-dots" id="theoryCardDots"></div>
+
+    <!-- Theory Topics (markdown notes) -->
+    <div id="theoryNotesPane" style="display:none">
+      <div class="section-head" style="margin-top:0">
+        <h2>Theory Topics</h2>
+        <button class="linklike" id="theoryNotesBackBtn" data-theory-mode-view="hero">&larr; All theory</button>
+      </div>
+      <div class="pearl-toolbar">
+        <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="theoryNotesSearch" placeholder="Search notes&hellip;" autocomplete="off"></div>
+      </div>
+      <div class="pearl-toolbar" id="theoryNotesChips"></div>
+      <p class="pearl-count" id="theoryNotesCount"></p>
+      <div class="doc-list theory-deck-rows" id="theoryNotesList"></div>
+      <div id="theoryNoteReader" style="display:none"></div>
+    </div>
+
+    <!-- Flashcards -->
+    <div id="theoryFlashcardsPane" style="display:none">
+      <div class="section-head" style="margin-top:0">
+        <h2>Theory &mdash; Flashcards</h2>
+        <button class="linklike" data-theory-mode-view="hero">&larr; All theory</button>
+        <button class="linklike" id="theoryStudyBackBtn" style="display:none" data-theory-back>&larr; All decks</button>
+      </div>
+      <div id="theoryBrowser">
+        <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 14px">Flashcards &mdash; study them card by card, flip them, save the ones worth revisiting.</p>
+        <div class="pearl-toolbar">
+          <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="theorySearch" placeholder="Search decks and cards&hellip;" autocomplete="off"></div>
+        </div>
+        <div class="pearl-toolbar" id="theoryChips"></div>
+        <div class="pearl-toolbar" id="theorySubtopicChips" style="flex-wrap:wrap"></div>
+        <p class="pearl-count" id="theoryCount"></p>
+        <div class="doc-list theory-deck-rows" id="theoryDeckList"></div>
+      </div>
+      <div id="theoryCardList" style="display:none">
+        <div class="theory-card-list-head" id="theoryCardListHead"></div>
+        <p class="pearl-count" id="theoryCardListCount"></p>
+        <div class="doc-list" id="theoryCardListBody"></div>
+      </div>
+      <div id="theoryStudy" style="display:none">
+        <div class="theory-card-head" id="theoryStudyHead"></div>
+        <div class="theory-card-tags" id="theoryCardTags"></div>
+        <div class="theory-stage" id="theoryCardStage"></div>
+        <div class="reader-nav" id="theoryCardNav"></div>
+        <div class="theory-dots" id="theoryCardDots"></div>
+      </div>
     </div>
   </section>
   <section class="view" id="view-rrt">
@@ -1691,10 +1800,11 @@ const CONDENSED_SYSTEMS = {condensed_systems_js};
 const CONDENSED_RESULT_CATS = {condensed_result_cats_js};
 const CONDENSED_TYPES = {condensed_types_list_js};
 
-// Theory flashcard decks (markdown-authored)
+// Theory flashcard decks (unified store) + theory notes
 const allFlashcardDecks = {flashcard_decks_js};
 const THEORY_SPEC_VAR = {theory_spec_vars_js};
 const THEORY_SUBTOPIC_MAP = {theory_subtopic_map_js};
+const THEORY_NOTES = {theory_notes_js};
 
 // Feature flags (resolved server-side: defaults + per-user overrides)
 const USER_FEATURES = {user_features_js};
@@ -1712,14 +1822,24 @@ let _bmNewFolderColor = '#E8B778';
 const BM_FOLDER_COLORS = ['#E8B778','#0C8A8B','#2DD4CF','#8B5CF6','#EF4444','#10B981','#D97706','#6B7280'];
 
 // Theory flashcard study state
+let _theoryMode = null; // null = hero, 'notes' = Theory Topics, 'flashcards' = decks
 let _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }}));
 let _theorySavedOnly = false;
+let _notesSavedOnly = false;
 let _theoryActiveSubtopic = null;
 let _currentDeck = null;
 let _currentCardIdx = 0;
 let _theoryCardOrder = [];
 let _theoryViewMode = 'single';
 let _theoryFlipped = false;
+let _theoryEntry = null; // 'list' when the reader was opened from the per-deck card list
+let _theoryListCollapsed = false; // card list collapses into a dropdown when a card is open
+// True when the browser can do real 3D card flips (backface-visibility).
+// False -> the reader falls back to display-swapping (.no-3d) so faces never stack.
+let _css3d = (function(){{
+  try {{ return !!(window.CSS && window.CSS.supports && window.CSS.supports('backface-visibility','hidden')); }}
+  catch(e) {{ return false; }}
+}})();
 
 // =====================================================================
 // STATE
@@ -1797,7 +1917,11 @@ function showView(name){{
   if(name==='trials-esbicm') renderESBICM();
   if(name==='trials-condensed') renderCondensedTrials();
   if(name==='bookmarks') renderBookmarks();
-  if(name==='theory'){{ renderTheoryChips(); renderTheoryDecks(); }}
+  if(name==='theory'){{
+    var activeView = document.querySelector('.view.active');
+    if(activeView && activeView.id==='view-theory' && _theoryMode){{ renderTheoryPane(null); }}
+    else renderTheoryPane(_theoryMode);
+  }}
 }}
 
 // =====================================================================
@@ -2189,13 +2313,29 @@ function renderSearchResults(qRaw){{
         || (t.one_liner||'').toLowerCase().indexOf(q)!==-1
         || (t.specialty||'').toLowerCase().indexOf(q)!==-1;
   }}).slice(0,5);
-  var total = pMatches.length + plMatches.length + ctMatches.length + esMatches.length;
+  var fcMatches = [];
+  var theoryCardsSearched = 0;
+  allFlashcardDecks.forEach(function(d){{
+    d.cards.forEach(function(c){{
+      var hay = (c.subtopic+' '+(c.front||'')+' '+(c.back||'')+' '+(c.tags||[]).join(' ')+' '+d.specialty+' '+d.title).toLowerCase();
+      if(hay.indexOf(q)!==-1 && theoryCardsSearched<6){{
+        theoryCardsSearched++;
+        fcMatches.push({{cardId: c.id, deckId: d.id, label: (c.front||c.subtopic||c.id).substring(0,90), system: d.specialty}});
+      }}
+    }});
+  }});
+  var ntMatches = THEORY_NOTES.filter(function(n){{
+    return (n.title+' '+n.md).toLowerCase().indexOf(q)!==-1;
+  }}).slice(0,5);
+  var total = pMatches.length + plMatches.length + ctMatches.length + esMatches.length + fcMatches.length + ntMatches.length;
   if(!total){{ box.innerHTML = '<div class="search-empty">No results for &ldquo;'+qRaw+'&rdquo;.</div>'; return; }}
   var html = '';
   if(pMatches.length) html += '<div class="search-group-label">Papers &amp; guidelines ('+pMatches.length+')</div>' + pMatches.map(function(p){{ return '<button class="search-result" data-open-paper="'+p.id+'" data-close-search>'+escapeHtml(p.title)+'</button>'; }}).join('');
   if(plMatches.length) html += '<div class="search-group-label">Pearls ('+plMatches.length+')</div>' + plMatches.map(function(p){{ return '<button class="search-result" data-open-pearl="'+p.id+'" data-close-search>'+escapeHtml((p.pearl||'').substring(0,80))+'</button>'; }}).join('');
   if(ctMatches.length) html += '<div class="search-group-label">Core Critical Care Trials ('+ctMatches.length+')</div>' + ctMatches.map(function(t){{ return '<button class="search-result" data-open-condensed="'+t.system+'/'+t.name+'" data-close-search>'+escapeHtml(t.trial_name)+'</button>'; }}).join('');
   if(esMatches.length) html += '<div class="search-group-label">ESBICM Landmark Trials ('+esMatches.length+')</div>' + esMatches.map(function(t){{ return '<button class="search-result" data-open-trial="'+t.slug+'" data-close-search>'+escapeHtml(t.trial_name||'')+' &middot; '+escapeHtml(t.specialty||'')+'</button>'; }}).join('');
+  if(fcMatches.length) html += '<div class="search-group-label">Flashcards ('+fcMatches.length+')</div>' + fcMatches.map(function(f){{ return '<button class="search-result" data-theory-card="'+f.cardId+'" data-close-search>'+escapeHtml(f.label)+' &middot; '+escapeHtml(f.system)+'</button>'; }}).join('');
+  if(ntMatches.length) html += '<div class="search-group-label">Theory Topics ('+ntMatches.length+')</div>' + ntMatches.map(function(n){{ return '<button class="search-result" data-theory-note="'+escapeHtml(n.id)+'" data-close-search>'+escapeHtml(n.title)+'</button>'; }}).join('');
   box.innerHTML = html;
 }}
 
@@ -2765,10 +2905,120 @@ function _theoryPill(spec, label){{
 }}
 function _bmEnabled(){{ return USER_IS_ADMIN || USER_FEATURES['bookmarks']; }}
 function _savedCardRefs(deckId){{
-  var prefix = 'flashcard:'+deckId+'/';
-  return Object.keys(_bookmarks.items || {{}}).filter(function(r){{ return r.indexOf(prefix)===0; }});
+    // Bookmark refs are flashcard:<uuid>; match via the locator.deck stored on save
+  return Object.keys(_bookmarks.items || {{}}).filter(function(r){{
+    var it = _bookmarks.items[r];
+    return it && it.locator && it.locator.deck === deckId;
+  }});
 }}
-function theoryCardRef(deckId, cardId){{ return 'flashcard:'+deckId+'/'+cardId; }}
+function theoryCardRef(deckId, cardId){{ return 'flashcard:'+cardId; }}
+function theoryDeckFromCardId(cardId){{
+  for(var i=0;i<allFlashcardDecks.length;i++){{
+    for(var j=0;j<allFlashcardDecks[i].cards.length;j++){{
+      if(allFlashcardDecks[i].cards[j].id === cardId) return {{deck: allFlashcardDecks[i], idx: j}};
+    }}
+  }}
+  return null;
+}}
+
+// ---- Theory Topics (markdown notes) ----
+function renderTheoryNotes(){{
+  var q = (document.getElementById('theoryNotesSearch').value||'').toLowerCase().trim();
+  var list = document.getElementById('theoryNotesList');
+  var countEl = document.getElementById('theoryNotesCount');
+  var box = document.getElementById('theoryNotesChips');
+  if(box){{
+    var savedCount = Object.keys(_bookmarks.items || {{}}).filter(function(r){{ return r.indexOf('note:')===0; }}).length;
+    box.innerHTML = '<button class="chip'+( _notesSavedOnly?' active':'')+'" data-notes-saved-only style="--chip-color:var(--accent)">&#128278; Saved ('+savedCount+')</button>'+
+      (_notesSavedOnly ? '<button class="chip" data-notes-saved-clear style="--chip-color:var(--ink-muted)">&#10005; Clear</button>' : '');
+  }}
+  if(!THEORY_NOTES.length){{
+    list.innerHTML = '<div class="bm-empty"><span class="icon">&#128214;</span><p>No theory notes yet. Drop markdown files into <span class="mono">output_files/Theory MDs/</span>.</p></div>';
+    if(countEl) countEl.textContent = '';
+    return;
+  }}
+  var filtered = THEORY_NOTES.filter(function(n){{
+    if(_notesSavedOnly && !(_bookmarks.items && _bookmarks.items['note:'+n.id])) return false;
+    if(!q) return true;
+    return (n.title+' '+n.md).toLowerCase().indexOf(q)!==-1;
+  }});
+  list.innerHTML = filtered.map(function(n){{
+    var saved = !!(_bookmarks.items && _bookmarks.items['note:'+n.id]);
+    return '<button class="doc-card" data-theory-note="'+escapeHtml(n.id)+'">'+
+      '<div class="doc-stripe" style="background:var(--accent)"></div>'+
+      '<div class="doc-inner">'+
+        '<div class="doc-top"><span class="type-tag">Note</span>'+(saved?'<span class="theory-saved-badge">&#128278; saved</span>':'')+'</div>'+
+        '<p class="doc-title">'+escapeHtml(n.title)+'</p>'+
+        '<p class="doc-snippet">'+escapeHtml(n.md.replace(/\s+/g,' ').substring(0,110))+'</p>'+
+      '</div>'+
+    '</button>';
+  }}).join('');
+  if(countEl) countEl.textContent = filtered.length ? 'Showing '+filtered.length+' of '+THEORY_NOTES.length+' notes' : '';
+}}
+
+function _theoryMarkdownHTML(md){{
+  // Degrade footnote syntax: drop [^n] references and [^n]: definition lines
+  var out = String(md||'');
+  out = out.replace(/^\[\^[^\]]+\]:\s*.*$/gm, '');
+  out = out.replace(/\[\^[^\]]+\]/g, '');
+  try {{ return marked.parse(out); }} catch(e){{ return '<pre>'+escapeHtml(out)+'</pre>'; }}
+}}
+
+function openTheoryNote(noteId){{
+  var note = THEORY_NOTES.find(function(n){{ return n.id===noteId; }});
+  if(!note) return;
+  renderTheoryPane('notes');
+  document.getElementById('theoryNotesList').style.display = 'none';
+  document.getElementById('theoryNotesCount').style.display = 'none';
+  var ref = 'note:'+note.id;
+  registerBookmarkMeta(ref, {{kind:'note', title: note.title, system: 'Theory Topics', type: 'Note', locator: {{noteId: note.id}}}});
+  var saveBtn = _bmEnabled() ? bookmarkBtnHTML(ref) : '';
+  var reader = document.getElementById('theoryNoteReader');
+  reader.style.display = 'block';
+  reader.innerHTML =
+    '<div class="theory-card-head" style="margin-bottom:14px">'+
+      '<button class="btn nav-btn" data-theory-note-back>&larr; Notes</button>'+
+      '<button class="btn nav-btn" data-theory-mode-view="hero">&larr; All theory</button>'+
+      '<span style="flex:1"></span>'+
+      saveBtn+
+      theoryFontChipsHTML('notes')+
+    '</div>'+
+    '<article class="theory-note" id="theoryNoteArticle">'+_theoryMarkdownHTML(note.md)+'</article>';
+  applyTheoryFont('notes');
+  window.scrollTo({{top:0, behavior:'instant'}});
+}}
+
+function theoryNotesBack(){{
+  document.getElementById('theoryNoteReader').style.display = 'none';
+  document.getElementById('theoryNoteReader').innerHTML = '';
+  document.getElementById('theoryNotesList').style.display = '';
+  document.getElementById('theoryNotesCount').style.display = '';
+  renderTheoryNotes();
+}}
+
+function renderTheoryPane(mode){{
+  if(mode==='hero') mode = null;
+  _theoryMode = mode || null;
+  var hero = document.getElementById('theoryHero');
+  var notes = document.getElementById('theoryNotesPane');
+  var cards = document.getElementById('theoryFlashcardsPane');
+  if(!hero || !notes || !cards) return;
+  hero.style.display = _theoryMode ? 'none' : '';
+  notes.style.display = _theoryMode==='notes' ? '' : 'none';
+  cards.style.display = _theoryMode==='flashcards' ? '' : 'none';
+  if(_theoryMode==='notes'){{ renderTheoryNotes(); }}
+  if(_theoryMode==='flashcards'){{ renderTheoryChips(); renderTheoryDecks(); }}
+}}
+
+function theoryBackToHero(){{
+  _currentDeck = null;
+  _theoryEntry = null;
+  _theoryListCollapsed = false;
+  document.getElementById('theoryStudy').style.display = 'none';
+  document.getElementById('theoryCardList').style.display = 'none';
+  document.getElementById('theoryStudyBackBtn').style.display = 'none';
+  renderTheoryPane(null);
+}}
 
 function renderTheoryChips(){{
   var box = document.getElementById('theoryChips');
@@ -2828,7 +3078,7 @@ function renderTheoryDecks(){{
     if(_theorySavedOnly && !savedRefs.length) return false;
     if(_theoryActiveSubtopic && (d.subtopics||[]).indexOf(_theoryActiveSubtopic)===-1) return false;
     if(q){{
-      var hay = (d.title+' '+d.specialty+' '+d.subtopics.join(' ')+' '+d.cards.map(function(c){{ return c.subtopic+' '+c.content+' '+(c.tags||[]).join(' '); }}).join(' ')).toLowerCase();
+      var hay = (d.title+' '+d.specialty+' '+d.subtopics.join(' ')+' '+d.cards.map(function(c){{ return c.subtopic+' '+(c.front||'')+' '+(c.back||'')+' '+(c.tags||[]).join(' '); }}).join(' ')).toLowerCase();
       if(hay.indexOf(q)===-1) return false;
     }}
     return true;
@@ -2850,15 +3100,23 @@ function renderTheoryDecks(){{
   if(countEl) countEl.textContent = 'Showing '+filtered.length+' of '+allFlashcardDecks.length+' decks';
 }}
 
-function openTheoryDeck(deckId, cardIdx){{
+function openTheoryDeck(deckId, cardIdxOrId){{
   var deck = allFlashcardDecks.find(function(d){{ return d.id===deckId; }});
   if(!deck) return;
+  renderTheoryPane('flashcards');
   _currentDeck = deck;
   _theoryCardOrder = _theoryActiveSubtopic
     ? deck.cards.map(function(c, i){{ return (c.tags||[]).indexOf(_theoryActiveSubtopic)>-1 ? i : -1; }}).filter(function(i){{ return i>-1; }})
     : deck.cards.map(function(c, i){{ return i; }});
   if(!_theoryCardOrder.length) _theoryCardOrder = deck.cards.map(function(c, i){{ return i; }});
-  var start = (typeof cardIdx==='number' && cardIdx>=0 && cardIdx<deck.cards.length) ? cardIdx : _theoryCardOrder[0];
+  var start = 0;
+  if(typeof cardIdxOrId==='number') start = (cardIdxOrId>=0 && cardIdxOrId<deck.cards.length) ? cardIdxOrId : _theoryCardOrder[0];
+  else if(typeof cardIdxOrId==='string'){{
+    var byId = deck.cards.findIndex(function(c){{ return c.id===cardIdxOrId; }});
+    start = byId>-1 ? byId : _theoryCardOrder[0];
+  }} else {{
+    start = _theoryCardOrder[0];
+  }}
   if(_theoryActiveSubtopic && _theoryCardOrder.indexOf(start)===-1) start = _theoryCardOrder[0];
   _currentCardIdx = start;
   _theoryFlipped = false;
@@ -2870,10 +3128,105 @@ function openTheoryDeck(deckId, cardIdx){{
 
 function theoryBackToBrowser(){{
   _currentDeck = null;
+  _theoryEntry = null;
+  _theoryListCollapsed = false;
   document.getElementById('theoryStudy').style.display = 'none';
+  document.getElementById('theoryCardList').style.display = 'none';
   document.getElementById('theoryBrowser').style.display = '';
   document.getElementById('theoryStudyBackBtn').style.display = 'none';
   renderTheoryDecks();
+}}
+
+function theoryBackFromStudy(){{
+  if(_theoryEntry==='list'){{
+    _theoryEntry = null;
+    _theoryListCollapsed = false;
+    document.getElementById('theoryStudy').style.display = 'none';
+    document.getElementById('theoryCardList').style.display = 'block';
+    renderTheoryCardList();
+  }} else {{
+    theoryBackToBrowser();
+  }}
+}}
+
+function openTheoryCardList(deckId){{
+  var deck = allFlashcardDecks.find(function(d){{ return d.id===deckId; }});
+  if(!deck) return;
+  renderTheoryPane('flashcards');
+  _currentDeck = deck;
+  _theoryEntry = 'list';
+  _theoryListCollapsed = false;
+  document.getElementById('theoryBrowser').style.display = 'none';
+  document.getElementById('theoryStudy').style.display = 'none';
+  document.getElementById('theoryStudyBackBtn').style.display = 'none';
+  document.getElementById('theoryCardList').style.display = 'block';
+  renderTheoryCardList();
+}}
+
+function renderTheoryCardList(){{
+  var deck = _currentDeck;
+  if(!deck) return;
+  var filtered = _theoryActiveSubtopic
+    ? deck.cards.filter(function(c){{ return (c.tags||[]).indexOf(_theoryActiveSubtopic)>-1; }})
+    : deck.cards;
+  if(!filtered.length) filtered = deck.cards;
+  var collapsed = !!_theoryListCollapsed;
+  var toggleLabel = collapsed
+    ? filtered.length+' card'+(filtered.length===1?'':'s')+' &middot; show list'
+    : 'Collapse list';
+  var toggleCaret = collapsed ? '&#9660;' : '&#9650;';
+  document.getElementById('theoryCardListHead').innerHTML =
+    '<button class="btn nav-btn" data-theory-list-back style="flex:0 0 auto">&larr; Decks</button>'+
+    _theoryPill(deck.specialty, deck.title)+
+    '<button class="theory-list-toggle" data-theory-list-toggle title="'+(collapsed?'Show the card list':'Hide the card list')+'"><span class="theory-toggle-caret">'+toggleCaret+'</span><span>'+toggleLabel+'</span></button>';
+  var countEl = document.getElementById('theoryCardListCount');
+  countEl.style.display = collapsed ? 'none' : '';
+  countEl.textContent = filtered.length===deck.cards.length
+    ? 'Showing '+filtered.length+' card'+(filtered.length===1?'':'s')
+    : 'Showing '+filtered.length+' of '+deck.cards.length+' cards (filtered to '+escapeHtml(_theoryActiveSubtopic)+')';
+  var body = document.getElementById('theoryCardListBody');
+  body.style.display = collapsed ? 'none' : '';
+  body.innerHTML = filtered.map(function(c){{
+    var saved = !!(_bookmarks.items && _bookmarks.items[theoryCardRef(deck.id, c.id)]);
+    return '<button class="pearl-row" data-theory-card-open="'+c.id+'">'+
+      '<span class="dot" style="background:var('+_theorySpecVar(deck.specialty)+')"></span>'+
+      '<span class="txt">'+escapeHtml((c.front||c.subtopic||'Card').substring(0,160))+'<span class="src">'+(c.tags||[]).join(' \u00B7 ')+(saved?' \u00B7 saved':'')+'</span></span>'+
+    '</button>';
+  }}).join('') || '<p style="color:var(--ink-muted);padding:20px 4px">No cards match this subtopic.</p>';
+}}
+
+function theoryScrollToStudy(){{
+  var st = document.getElementById('theoryStudy');
+  if(st) st.scrollIntoView({{block:'start', behavior:'smooth'}});
+}}
+
+function theoryFontSize(scope){{
+  var k = 'hackccm_theoryFont_'+scope;
+  try {{
+    var v = parseFloat(localStorage.getItem(k)||'');
+    if(v && v>=0.7 && v<=2) return v;
+  }} catch(e){{}}
+  return scope==='cards' ? 0.94 : 1;
+}}
+
+function theoryFontChipsHTML(scope){{
+  var cur = theoryFontSize(scope);
+  var vals = scope==='cards' ? [0.85, 0.94, 1.15] : [0.85, 1, 1.2];
+  return vals.map(function(f){{
+    var label = f<0.94 ? 'A-' : (f>1.05 ? 'A+' : 'A');
+    return '<button class="theory-mode-chip'+(Math.abs(cur-f)<0.001?' active':'')+'" data-theory-font="'+scope+'" data-theory-font-val="'+f+'" title="Text size">'+label+'</button>';
+  }}).join('');
+}}
+
+function applyTheoryFont(scope){{
+  var v = theoryFontSize(scope);
+  if(scope==='notes'){{
+    var art = document.getElementById('theoryNoteArticle');
+    if(art) art.style.setProperty('--theory-note-fs', v+'rem');
+  }} else {{
+    var stage = document.getElementById('theoryCardStage');
+    if(stage) stage.style.setProperty('--theory-card-fs', v+'rem');
+  }}
 }}
 
 function theoryNav(delta){{
@@ -2884,12 +3237,6 @@ function theoryNav(delta){{
   _currentCardIdx = _theoryCardOrder[nextPos];
   _theoryFlipped = false;
   renderTheoryCard();
-}}
-
-function _theorySplitFrontBack(content){{
-  var m = content.split(/\\n\\s*(?:---|\\*\\*\\*)\\s*\\n/);
-  if(m.length>=3 && m[0].trim()) return {{front: m[0].trim(), back: m.slice(2).join('\\n').trim()}};
-  return null;
 }}
 
 function renderTheoryCard(){{
@@ -2920,23 +3267,23 @@ function renderTheoryCard(){{
   document.getElementById('theoryCardTags').innerHTML = tagRow;
 
   var stage = document.getElementById('theoryCardStage');
-  var contentHTML = marked.parse(card.content);
+  var frontHTML = (card.front||'').trim() ? marked.parse(card.front) : '<h3>'+escapeHtml(card.subtopic)+'</h3>';
+  var backHTML = marked.parse(card.back||'');
   if(_theoryViewMode==='flip'){{
-    var split = _theorySplitFrontBack(card.content);
-    var front = split ? marked.parse(split.front) : '<h3>'+escapeHtml(card.subtopic)+'</h3>';
-    var back = split ? marked.parse(split.back) : contentHTML;
     stage.innerHTML =
-      '<div class="theory-card-wrap"><div class="theory-card-inner flip'+( _theoryFlipped?' flipped':'')+'" id="theoryFlipInner">'+
-        '<div class="theory-face theory-card-content">'+front+'<span class="flip-hint">tap to flip \u21C5</span></div>'+
-        '<div class="theory-face back theory-card-content">'+back+'<span class="flip-hint">tap to flip \u21C5</span></div>'+
+      '<div class="theory-card-wrap'+( _css3d?'':' no-3d')+'"><div class="theory-card-inner flip'+( _theoryFlipped?' flipped':'')+'" id="theoryFlipInner">'+
+        '<div class="theory-face front theory-card-content"><div class="theory-front-big">'+frontHTML+'</div><span class="flip-hint">tap to flip \u21C5</span></div>'+
+        '<div class="theory-face back theory-card-content">'+backHTML+'<span class="flip-hint">tap to flip \u21C5</span></div>'+
       '</div></div>';
   }} else {{
-    stage.innerHTML = '<div class="theory-card-flat theory-card-content">'+contentHTML+'</div>';
+    // Single-face mode shows the answer only
+    stage.innerHTML = '<div class="theory-card-flat theory-card-content">'+backHTML+'</div>';
   }}
+  applyTheoryFont('cards');
 
   var prevBtn = posIdx>0 ? '<button class="btn nav-btn" data-theory-nav="-1">&#9664; Previous</button>' : '';
   var nextBtn = posIdx<total-1 ? '<button class="btn nav-btn" data-theory-nav="1">Next &#9654;</button>' : '';
-  document.getElementById('theoryCardNav').innerHTML = prevBtn + nextBtn + modeToggles;
+  document.getElementById('theoryCardNav').innerHTML = prevBtn + nextBtn + modeToggles + theoryFontChipsHTML('cards');
 
   document.getElementById('theoryCardDots').innerHTML = deck.cards.map(function(c, i){{
     var saved = !!(_bookmarks.items && _bookmarks.items[theoryCardRef(deck.id, c.id)]);
@@ -3111,7 +3458,19 @@ function openBookmark(ref){{
   if(bm.kind==='flashcard'){{
     var loc = bm.locator || {{}};
     showView('theory');
+    if(loc.card){{
+      var tRef = theoryDeckFromCardId(loc.card);
+      if(tRef){{ openTheoryDeck(tRef.deck.id, tRef.idx); return; }}
+    }}
     openTheoryDeck(loc.deck || '', typeof loc.cardIdx==='number' ? loc.cardIdx : 0);
+    return;
+  }}
+  if(bm.kind==='note'){{
+    var loc = bm.locator || {{}};
+    showView('theory');
+    if(loc.noteId){{ openTheoryNote(loc.noteId); return; }}
+    var nId = String(ref).replace(/^note:/,'');
+    if(nId) openTheoryNote(nId);
     return;
   }}
 }}
@@ -3125,7 +3484,7 @@ function renderFolderSwatches(active){{
 }}
 
 function bmCardHTML(bm){{
-  var kindLabel = {{paper:'Paper', guideline:'Guideline', pearl:'Pearl', trial:'Trial', condensed:'Condensed Trial'}}[bm.kind] || bm.kind;
+  var kindLabel = {{paper:'Paper', guideline:'Guideline', pearl:'Pearl', trial:'Trial', condensed:'Condensed Trial', flashcard:'Flashcard', note:'Theory Note'}}[bm.kind] || bm.kind;
   var folderOpts = '<option value="">No folder</option>';
   Object.keys(_bookmarks.folders||{{}}).forEach(function(fid){{
     folderOpts += '<option value="'+escapeHtml(fid)+'"'+(bm.folder===fid?' selected':'')+'>'+escapeHtml(_bookmarks.folders[fid].name)+'</option>';
@@ -3245,6 +3604,7 @@ document.getElementById('guidelinesFilterToggleBtn').addEventListener('click', o
 document.getElementById('sheetBackdrop').addEventListener('click', closeSheet);
 document.getElementById('bookmarksSearch').addEventListener('input', renderBookmarks);
 document.getElementById('theorySearch').addEventListener('input', renderTheoryDecks);
+document.getElementById('theoryNotesSearch').addEventListener('input', renderTheoryNotes);
 document.getElementById('bookmarksNewFolderBtn').addEventListener('click', function(){{
   document.getElementById('bookmarksNewFolderRow').classList.add('show');
   renderFolderSwatches(_bmNewFolderColor);
@@ -3547,11 +3907,69 @@ document.addEventListener('click', function(e){{
   if(bmColor){{ _bmNewFolderColor = bmColor.dataset.bmColor; renderFolderSwatches(_bmNewFolderColor); return; }}
 
   /* Theory flashcards */
+  var theoryModeBtn = e.target.closest('[data-theory-mode-view]');
+  if(theoryModeBtn){{
+    var tmode = theoryModeBtn.dataset.theoryModeView;
+    if(tmode==='hero') theoryBackToHero();
+    else renderTheoryPane(tmode);
+    return;
+  }}
+
+  var theoryFontBtn = e.target.closest('[data-theory-font]');
+  if(theoryFontBtn){{
+    var tscope = theoryFontBtn.dataset.theoryFont;
+    var tval = parseFloat(theoryFontBtn.dataset.theoryFontVal)||1;
+    try {{ localStorage.setItem('hackccm_theoryFont_'+tscope, String(tval)); }} catch(e){{}}
+    applyTheoryFont(tscope);
+    document.querySelectorAll('[data-theory-font="'+tscope+'"]').forEach(function(c){{
+      c.classList.toggle('active', c===theoryFontBtn);
+    }});
+    return;
+  }}
+
+  var theoryNoteBtn = e.target.closest('[data-theory-note]');
+  if(theoryNoteBtn){{
+    showView('theory');
+    openTheoryNote(theoryNoteBtn.dataset.theoryNote); return;
+  }}
+
+  var theoryNoteBack = e.target.closest('[data-theory-note-back]');
+  if(theoryNoteBack){{ theoryNotesBack(); return; }}
+
+  var theoryCardSearch = e.target.closest('[data-theory-card]');
+  if(theoryCardSearch){{
+    var tRef = theoryDeckFromCardId(theoryCardSearch.dataset.theoryCard);
+    if(tRef){{
+      showView('theory');
+      openTheoryDeck(tRef.deck.id, tRef.idx);
+    }}
+    return;
+  }}
+
   var theoryBack = e.target.closest('[data-theory-back]');
-  if(theoryBack){{ theoryBackToBrowser(); return; }}
+  if(theoryBack){{ theoryBackFromStudy(); return; }}
+
+  var theoryListBack = e.target.closest('[data-theory-list-back]');
+  if(theoryListBack){{ theoryBackToBrowser(); return; }}
+
+  var theoryCardOpen = e.target.closest('[data-theory-card-open]');
+  if(theoryCardOpen && _currentDeck){{
+    _theoryListCollapsed = true;
+    renderTheoryCardList();
+    openTheoryDeck(_currentDeck.id, theoryCardOpen.dataset.theoryCardOpen);
+    theoryScrollToStudy();
+    return;
+  }}
+
+  var theoryListToggle = e.target.closest('[data-theory-list-toggle]');
+  if(theoryListToggle){{
+    _theoryListCollapsed = !_theoryListCollapsed;
+    renderTheoryCardList();
+    return;
+  }}
 
   var theoryDeckBtn = e.target.closest('[data-theory-deck]');
-  if(theoryDeckBtn){{ openTheoryDeck(theoryDeckBtn.dataset.theoryDeck, 0); return; }}
+  if(theoryDeckBtn){{ openTheoryCardList(theoryDeckBtn.dataset.theoryDeck); return; }}
 
   var theoryChip = e.target.closest('[data-theory-chip]');
   if(theoryChip){{
@@ -3568,6 +3986,10 @@ document.addEventListener('click', function(e){{
 
   var theorySavedOnly = e.target.closest('[data-theory-saved-only]');
   if(theorySavedOnly){{ _theorySavedOnly = !_theorySavedOnly; renderTheoryChips(); renderTheoryDecks(); return; }}
+  var notesSavedOnly = e.target.closest('[data-notes-saved-only]');
+  if(notesSavedOnly){{ _notesSavedOnly = !_notesSavedOnly; renderTheoryNotes(); return; }}
+  var notesSavedClear = e.target.closest('[data-notes-saved-clear]');
+  if(notesSavedClear){{ _notesSavedOnly = false; renderTheoryNotes(); return; }}
 
   var theorySub = e.target.closest('[data-theory-subtopic]');
   if(theorySub){{
@@ -3666,11 +4088,44 @@ document.addEventListener('keydown', function(e){{
   renderFilterCheckboxes();
   loadBookmarks();
   showView('home');
+
+  // Deep links: ?theory=flashcards[&system=Cardiology&subtopic=X&card=<uuid>]
+  //            ?theory=notes[&note=<file>]
+  try {{
+    var params = new URLSearchParams(window.location.search);
+    var theoryMode = params.get('theory');
+    if(theoryMode){{
+      if(theoryMode==='notes'){{
+        var nid = params.get('note');
+        if(nid){{ showView('theory'); openTheoryNote(nid); }}
+        else {{ showView('theory'); renderTheoryPane('notes'); }}
+      }} else if(theoryMode==='flashcards'){{
+        showView('theory');
+        renderTheoryPane('flashcards');
+        var sys = params.get('system');
+        var sub = params.get('subtopic');
+        var cid = params.get('card');
+        if(cid){{
+          var tRef = theoryDeckFromCardId(cid);
+          if(tRef) openTheoryDeck(tRef.deck.id, tRef.idx);
+        }} else if(sub){{
+          var hit = allFlashcardDecks.find(function(d){{
+            return d.id.toLowerCase() === (sys+'/'+sub).toLowerCase();
+          }});
+          if(hit){{ _theoryActiveSpecs = new Set([sys]); _theoryActiveSubtopic = null; openTheoryDeck(hit.id, 0); }}
+        }} else if(sys){{
+          _theoryActiveSpecs = new Set([sys]);
+          renderTheoryChips(); renderTheoryDecks();
+        }}
+      }}
+    }}
+  }} catch(e){{}}
 }})();
 </script>
 </body>
 </html>"""
     resp = HTMLResponse(content=html)
+    resp.headers["Cache-Control"] = "no-store, max-age=0"
     if LOCAL_DEV_MODE and not request.cookies.get(SESSION_COOKIE_NAME):
         _, dev_sid = _local_dev_login()
         resp.set_cookie(key=SESSION_COOKIE_NAME, value=dev_sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
@@ -3856,8 +4311,8 @@ async def api_bookmarks_folder_add(request: Request, body: dict):
         raise HTTPException(400, "Folder name required")
     data = _user_data(email, "bookmarks")
     folders = data.setdefault("folders", {})
-    if len(folders) >= 50:
-        raise HTTPException(400, "Folder limit reached (50)")
+    if len(folders) >= BOOKMARKS_MAX_FOLDERS:
+        raise HTTPException(400, f"Folder limit reached ({BOOKMARKS_MAX_FOLDERS})")
     fid = "f" + secrets.token_hex(4)
     folder = {
         "name": name,

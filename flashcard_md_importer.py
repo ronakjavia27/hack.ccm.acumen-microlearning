@@ -19,22 +19,21 @@ Usage:
     python flashcard_md_importer.py --file "CVS/SCAI Shock Classification.md"
     python flashcard_md_importer.py --force         # overwrite existing decks
     python flashcard_md_importer.py --tag           # LLM-tag cards with subtopics vocab
+    python flashcard_md_importer.py --questions     # LLM front questions in the md (idempotent, separate model via QUESTION_LLM_*)
     python flashcard_md_importer.py --gemini        # explicit provider flags (same as --llm)
     python flashcard_md_importer.py --api-key sk-xxx --model my/model --base-url https://...  # custom OpenAI-compatible endpoint
     python flashcard_md_importer.py --dry-run       # preview only
 """
 
-import json
 import os
 import re
 import sys
 import argparse
-from datetime import datetime
+import tempfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from acumen_core.config import FLASHCARDS_MD_DIR, FLASHCARDS_MD_OUT
-from acumen_core.tracking import save_json_atomic
+from acumen_core.config import FLASHCARDS_MD_DIR
 
 
 def slugify(text):
@@ -87,23 +86,31 @@ def parse_markdown_deck(md_path):
     return title, cards
 
 
-def _load_existing_tags(out_path):
-    """Load {card_id: tags} from an existing deck JSON so re-converts keep tags."""
-    if not os.path.exists(out_path):
-        return {}
+def _load_existing_meta(source_file):
+    """Load {card_index: (tags, status)} from the store for a given source md
+    so re-converts keep console curation (tags, preserve/discard) by position.
+    The authored md is the source of truth, so card order is stable."""
+    from acumen_core import flashcards as fc
+    meta = {}
     try:
-        with open(out_path, "r", encoding="utf-8") as f:
-            old = json.load(f)
-        return {str(c.get("id", "")): c.get("tags") or [] for c in old.get("cards", []) if isinstance(c, dict)}
-    except (json.JSONDecodeError, Exception):
-        return {}
+        for system, subtopic, c in fc.store_cards_all():
+            if c.get("source_file") != source_file:
+                continue
+            idx = len(meta)
+            meta[idx] = (c.get("tags") or [], c.get("status") or "pending",
+                         c.get("edit_history") or [])
+    except Exception:
+        pass
+    return meta
 
 
 def convert_file(md_path, force=False, dry_run=False, verbose=False, tag=False, llm="openrouter",
                  api_key=None, model=None, base_url=None):
-    """Convert one markdown file into a JSON deck file."""
-    rel_path = os.path.relpath(md_path, FLASHCARDS_MD_DIR)
-    parts = rel_path.split(os.sep)
+    """Convert one markdown file into store cards (source 'md')."""
+    from acumen_core import flashcards as fc
+    from acumen_core.config import THEORY_SPEC_TO_CANONICAL
+    rel_path = os.path.relpath(md_path, FLASHCARDS_MD_DIR).replace("\\", "/")
+    parts = rel_path.split("/")
     specialty = parts[0] if len(parts) > 1 else "Other"
     stem = os.path.splitext(os.path.basename(md_path))[0]
 
@@ -114,44 +121,133 @@ def convert_file(md_path, force=False, dry_run=False, verbose=False, tag=False, 
         return False
 
     slug = slugify(stem)
-    slug_base = slug[:30]
-    out_path = os.path.join(FLASHCARDS_MD_OUT, specialty, f"{slug}.json")
-    old_tags = _load_existing_tags(out_path)
+    systems = THEORY_SPEC_TO_CANONICAL.get(specialty) or [specialty]
+    system = systems[0]
+    meta = _load_existing_meta(rel_path)
+    store_cards = []
     for i, card in enumerate(cards):
-        card["id"] = f"{slug_base}-{i}"
-        card["tags"] = old_tags.get(card["id"], [])
-
-    deck = {
-        "id": slug,
-        "source_file": rel_path,
-        "specialty": specialty,
-        "title": title,
-        "cards": cards,
-        "subtopics": sorted({t for c in cards for t in c["tags"]}),
-        "status": "pending",
-        "edit_history": [],
-        "created_at": datetime.now().isoformat(),
-        "updated_at": datetime.now().isoformat(),
-    }
-
-    if os.path.exists(out_path) and not force:
-        if verbose:
-            print(f"  [~] Already exists (use --force): {rel_path}")
-        return False
+        front, back = fc.parse_card_content(card["content"])
+        c = fc.build_card(
+            front or "", back or card["content"], system, "General",
+            tags=card.get("tags") or [], source="md", source_file=rel_path,
+            slug_hint=card["subtopic"],
+            data={"original_subtopic": card["subtopic"]},
+        )
+        old_tags, old_status, old_history = meta.get(i, ([], "pending", []))
+        c["tags"] = old_tags
+        c["status"] = old_status
+        c["edit_history"] = list(old_history or [])
+        store_cards.append(c)
 
     if dry_run:
-        print(f"  [o] Would write: {out_path} ({len(cards)} cards)")
+        print(f"  [o] Would store: {rel_path} -> {system} ({len(cards)} cards)")
         return True
 
-    os.makedirs(os.path.dirname(out_path), exist_ok=True)
     if tag:
-        from acumen_core.flashcards import tag_deck_with_llm
-        tag_deck_with_llm(deck, llm=llm, verbose=verbose,
-                          api_key=api_key, model=model, base_url=base_url)
-        deck["subtopics"] = sorted({t for c in deck["cards"] for t in c["tags"]})
-    save_json_atomic(out_path, deck)
-    print(f"  [+] {rel_path} -> {os.path.relpath(out_path, os.path.dirname(FLASHCARDS_MD_OUT))} ({len(cards)} cards)")
+        fc.tag_cards_with_llm(store_cards, systems, llm=llm, verbose=verbose,
+                              api_key=api_key, model=model, base_url=base_url)
+    for c in store_cards:
+        if c["tags"]:
+            c["subtopic"] = fc.canonical_subtopic(system, c["tags"][0])
+        else:
+            c["subtopic"] = "General"
+    for c in store_cards:
+        fc.upsert_card(c)
+    print(f"  [+] {rel_path} -> store {system} ({len(cards)} cards)")
     return True
+
+
+def _body_has_divider(body):
+    """True if the card body already contains a front/back divider."""
+    return bool(re.search(r"\n\s*(?:---|\*\*\*)\s*\n", "\n" + (body or "") + "\n"))
+
+
+def _write_atomic(path, text):
+    """Atomic UTF-8 write with LF line endings (preserves repo convention)."""
+    d = os.path.dirname(path) or "."
+    fd, tmp = tempfile.mkstemp(dir=d, prefix=".mdq-", suffix=".tmp")
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as f:
+            f.write(text)
+        os.replace(tmp, path)
+    except BaseException:
+        try:
+            os.unlink(tmp)
+        except OSError:
+            pass
+        raise
+
+
+def add_card_questions(md_path, dry_run=False, verbose=False, api_key=None, model=None, base_url=None):
+    """LLM-generate a front question per card and write it into the markdown
+    as '<question>\n\n---\n\n<body>' so portal flip mode has real fronts.
+
+    Uses the separate QUESTION_LLM_* config (a different provider/model than
+    every other pipeline; override via --api-key/--model/--base-url).
+    Idempotent: cards already containing a --- divider are skipped. The file
+    is rewritten in the authoring convention, then re-converted to JSON with
+    console curation (tags/status/edit_history) preserved.
+
+    Returns (updated_cards, total_cards)."""
+    from acumen_core.flashcards import generate_card_question
+
+    with open(md_path, "r", encoding="utf-8", errors="replace") as f:
+        lines = f.read().split("\n")
+
+    title, cards = parse_markdown_deck(md_path)
+    if not cards:
+        return 0, 0
+
+    updated = 0
+    for card in cards:
+        if _body_has_divider(card["content"]):
+            continue
+        if dry_run:
+            updated += 1
+            continue
+        question = generate_card_question(title, card["subtopic"], card["content"],
+                                          api_key=api_key, model=model, base_url=base_url,
+                                          verbose=verbose)
+        if not question:
+            if verbose:
+                print(f"    [~] No question for '{card['subtopic']}' (skipped)")
+            continue
+        card["content"] = f"{question}\n\n---\n\n{card['content']}"
+        updated += 1
+        if verbose:
+            print(f"    [i] Question: {question}")
+
+    if dry_run:
+        print(f"  [o] Would add questions to {os.path.relpath(md_path, FLASHCARDS_MD_DIR)}: {updated}/{len(cards)} cards")
+        return updated, len(cards)
+    if updated == 0:
+        if verbose:
+            print(f"  [~] No new questions for {os.path.relpath(md_path, FLASHCARDS_MD_DIR)} (already divided or LLM skipped)")
+        return 0, len(cards)
+
+    first_card_line = None
+    for i, line in enumerate(lines):
+        if line.strip().startswith("## "):
+            first_card_line = i
+            break
+    if first_card_line is None:
+        prefix = []
+        if not lines or not lines[0].lstrip().startswith("# "):
+            prefix = ["# " + title]
+    else:
+        prefix = lines[:first_card_line]
+
+    sections = []
+    for card in cards:
+        sections.append(f"## {card['subtopic']}")
+        sections.append("")
+        sections.append(card["content"])
+        sections.append("")
+
+    rebuilt = ("\n".join(ln.rstrip() for ln in prefix).rstrip() + "\n\n" + "\n".join(sections)).rstrip() + "\n"
+    _write_atomic(md_path, rebuilt)
+    print(f"  [+] Questions written: {os.path.relpath(md_path, FLASHCARDS_MD_DIR)} ({updated}/{len(cards)} cards)")
+    return updated, len(cards)
 
 
 def main():
@@ -160,6 +256,7 @@ def main():
     parser.add_argument("--file", help="Only convert one file (relative to flashcards_md/, e.g. CVS/x.md)")
     parser.add_argument("--force", action="store_true", help="Overwrite existing decks")
     parser.add_argument("--tag", action="store_true", help="LLM-tag cards with subtopics from subtopics.txt vocab")
+    parser.add_argument("--questions", action="store_true", help="LLM-generate front questions per card (writes '<question> --- <body>' in the md, idempotent)")
     provider = parser.add_mutually_exclusive_group()
     provider.add_argument("--llm", choices=["openrouter", "together", "gemini"], help="LLM provider for tagging (default: openrouter)")
     provider.add_argument("--openrouter", action="store_true", help="Use OpenRouter (same as --llm openrouter)")
@@ -211,6 +308,14 @@ def main():
     print(f"Converting {len(targets)} markdown file(s)...")
     converted = 0
     for t in targets:
+        if args.questions:
+            add_card_questions(t, dry_run=args.dry_run, verbose=args.verbose,
+                               api_key=args.api_key, model=args.model, base_url=args.base_url)
+            if args.dry_run:
+                continue
+            convert_file(t, force=True, verbose=args.verbose, tag=args.tag, llm=args.llm,
+                         api_key=args.api_key, model=args.model, base_url=args.base_url)
+            continue
         if convert_file(t, force=args.force, dry_run=args.dry_run, verbose=args.verbose,
                         tag=args.tag, llm=args.llm,
                         api_key=args.api_key, model=args.model, base_url=args.base_url):

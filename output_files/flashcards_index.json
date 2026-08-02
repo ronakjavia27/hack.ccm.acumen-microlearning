@@ -1,0 +1,1278 @@
+{
+  "version": 2,
+  "generated_at": "2026-08-02T10:01:58",
+  "total_cards": 75,
+  "systems": {
+    "Cardiology": {
+      "Acute Coronary Syndromes": {
+        "file": "acute-coronary-syndromes.json",
+        "count": 11
+      },
+      "Acute Heart Failure": {
+        "file": "acute-heart-failure.json",
+        "count": 11
+      },
+      "Aortic Diseases": {
+        "file": "aortic-diseases.json",
+        "count": 7
+      },
+      "Cardiac Arrest & Post-Cardiac Arrest Care": {
+        "file": "cardiac-arrest-post-cardiac-arrest-care.json",
+        "count": 7
+      },
+      "Cardiac Imaging": {
+        "file": "cardiac-imaging.json",
+        "count": 10
+      },
+      "Cardiogenic Shock": {
+        "file": "cardiogenic-shock.json",
+        "count": 6
+      },
+      "Chronic Heart Failure": {
+        "file": "chronic-heart-failure.json",
+        "count": 5
+      },
+      "General": {
+        "file": "general.json",
+        "count": 6
+      },
+      "Hemodynamic Monitoring": {
+        "file": "hemodynamic-monitoring.json",
+        "count": 10
+      },
+      "Pulmonary Hypertension": {
+        "file": "pulmonary-hypertension.json",
+        "count": 2
+      }
+    }
+  },
+  "cards": {
+    "f8bb0a97-4cca-4d35-ab6d-539d539b2851": {
+      "slug": "acs-classification-mi-types",
+      "front": "How does ACS classification by ECG and troponin guide management strategy?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    "37a0dc0a-f0cc-4314-9b78-9d9d7e754915": {
+      "slug": "stemi-ecg-criteria-lead-selection",
+      "front": "What are the ECG criteria for STEMI diagnosis requiring immediate reperfusion?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    "45e989b6-616d-4cbc-a22e-c56ff8117d85": {
+      "slug": "lbbb-pacing-sgarbossa-criteria",
+      "front": "What ECG criteria in LBBB or paced rhythm indicate STEMI requiring PCI?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    "85f68412-5186-404f-8e2b-494c608cada8": {
+      "slug": "troponin-kinetics-diagnosis",
+      "front": "When do cardiac troponin levels rise, peak, and persist in acute MI?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    "fdb22295-8d36-4308-9e87-ec6a92eb0fd5": {
+      "slug": "acs-pathophysiology-plaque-thrombosis",
+      "front": "What is the pathophysiology and management of acute coronary syndromes?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    "ca1226c6-57c7-47e6-90a7-21c268e39f7f": {
+      "slug": "atypical-st-elevation-differential",
+      "front": "What are the key ECG features distinguishing STEMI mimics?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    "e162f053-17dd-44f2-b66e-7a93a31667d6": {
+      "slug": "silent-atypical-acs-presentations",
+      "front": "What patient populations are at highest risk for silent myocardial infarction?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    "92bf794b-bc63-4a04-a93a-e5ad50dafcb1": {
+      "slug": "acs-classification-mi-types",
+      "front": "How is ACS classified and what defines the different MI types?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "md",
+      "status": "pending",
+      "updated_at": "2026-08-02T09:45:25"
+    },
+    "86bb147d-0468-4d57-a15b-a76317a48cb0": {
+      "slug": "stemi-ecg-criteria-lead-selection",
+      "front": "What are the ECG criteria for diagnosing STEMI requiring immediate reperfusion?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "md",
+      "status": "pending",
+      "updated_at": "2026-08-02T09:45:25"
+    },
+    "9060d756-cc83-4806-b193-a4c1955c2483": {
+      "slug": "lbbb-pacing-sgarbossa-criteria",
+      "front": "What are the Sgarbossa criteria for diagnosing MI in LBBB or paced rhythm?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "md",
+      "status": "pending",
+      "updated_at": "2026-08-02T09:45:25"
+    },
+    "a73f0030-b840-418e-ace5-a46e46023ffd": {
+      "slug": "acs-pathophysiology-plaque-thrombosis",
+      "front": "What are the three main pathophysiologic pathways in acute coronary syndrome?",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "source": "md",
+      "status": "pending",
+      "updated_at": "2026-08-02T09:45:25"
+    },
+    "9b9bd11f-f1d9-40d2-a462-af6cf65da420": {
+      "slug": "acute-decompensated-management",
+      "front": "What is the initial treatment for acute heart failure with volume overload?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:26:10"
+    },
+    "dd37c6a2-0dbc-4ec7-9d8f-aeace01b7529": {
+      "slug": "triggers-and-comorbidities",
+      "front": "What are common triggers and comorbidities in acute heart failure decompensation?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure",
+        "Cardiac Arrhythmias"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:26:10"
+    },
+    "72c49577-1500-4139-b295-2d9e6010befd": {
+      "slug": "decompensated-rhf-criteria",
+      "front": "What defines decompensated right heart failure clinically?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure",
+        "Cardiogenic Shock",
+        "Mechanical Circulatory Support"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:45"
+    },
+    "d94f02b7-5b49-4a32-bdfc-8d0e5dd0738a": {
+      "slug": "acute-rv-failure-etiologies",
+      "front": "What are the precipitants and management priorities in acute right heart syndrome?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure",
+        "Pulmonary Hypertension",
+        "Cardiogenic Shock"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:45"
+    },
+    "0705011b-8f6d-4a76-9a33-c681fd3e8641": {
+      "slug": "management-principles",
+      "front": "What are the key management principles for RV failure in acute heart failure?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure",
+        "Pulmonary Hypertension",
+        "Cardiogenic Shock"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:45"
+    },
+    "697d20d3-1f10-4f4e-9082-ab522af1a213": {
+      "slug": "crs-classification-phenotypes",
+      "front": "What are the five subtypes of cardiorenal syndrome?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure",
+        "Chronic Heart Failure"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:14"
+    },
+    "4df8c489-db53-4e00-9653-6015512a4c4a": {
+      "slug": "pathophysiology-hemodynamics",
+      "front": "What distinguishes cardiogenic congestion from hypovolemic prerenal causes in acute heart failure?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure",
+        "Hemodynamic Monitoring",
+        "Cardiogenic Shock"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:14"
+    },
+    "41a130c2-8522-4080-971e-dd0e1f5a8dfb": {
+      "slug": "diagnostic-approach-biomarkers",
+      "front": "What biomarkers and imaging are used to diagnose and subtype acute heart failure?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure",
+        "Cardiac Imaging"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:14"
+    },
+    "29ee0534-52a8-40bd-8629-a51cef055d39": {
+      "slug": "acute-crs-type-1-management",
+      "front": "What are the key management principles for acute heart failure?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure",
+        "Cardiogenic Shock"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:14"
+    },
+    "f4780126-ccef-4337-917c-dc1deab66a0b": {
+      "slug": "type-3-aki-renocardiac-management",
+      "front": "What are the key mechanisms and management steps for acute kidney injury-induced cardiac dysfunction?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:14"
+    },
+    "c8ecfe41-f00c-4339-a1fe-ecaaab4e16a6": {
+      "slug": "prognosis-scoring",
+      "front": "How does renal dysfunction in CRS affect mortality in acute heart failure?",
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure",
+      "tags": [
+        "Acute Heart Failure",
+        "Chronic Heart Failure"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:14"
+    },
+    "66fcc55a-3d09-4b00-a410-c19616396a87": {
+      "slug": "anatomical-classification",
+      "front": "What are the key differences between Stanford Type A and Type B aortic dissections?",
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases",
+      "tags": [
+        "Aortic Diseases"
+      ],
+      "source": "engine",
+      "status": "preserved",
+      "updated_at": "2026-08-02T09:45:54"
+    },
+    "1c125d30-8fe5-4ebf-8a99-39395af9df57": {
+      "slug": "pathophysiology-and-hemodynamics",
+      "front": "What is the pathophysiology and key complications of aortic dissection?",
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases",
+      "tags": [
+        "Aortic Diseases"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:45:54"
+    },
+    "41ae4747-4d22-4a2b-a2a2-7f55fa59e8e5": {
+      "slug": "diagnostic-risk-stratification",
+      "front": "What are the components and clinical implications of the Aortic Dissection Detection Risk Score (ADD-RS)?",
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases",
+      "tags": [
+        "Aortic Diseases"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:45:54"
+    },
+    "5d6dc19a-aaf7-47e1-9b69-b98305f49aab": {
+      "slug": "imaging-modalities",
+      "front": "What are the imaging modalities for diagnosing aortic diseases and their key parameters?",
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases",
+      "tags": [
+        "Aortic Diseases",
+        "Cardiac Imaging"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:45:54"
+    },
+    "04d9711d-c133-4e6a-8455-9cde826fcf08": {
+      "slug": "acute-medical-management",
+      "front": "What is the first-line treatment to reduce aortic wall stress in aortic dissection?",
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases",
+      "tags": [
+        "Aortic Diseases",
+        "Hypertensive Emergencies"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:45:54"
+    },
+    "de40d569-4b60-4a4a-8142-b88047317c2b": {
+      "slug": "type-a-vs-type-b-management",
+      "front": "What is the management difference between Type A and Type B aortic dissection?",
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases",
+      "tags": [
+        "Aortic Diseases"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:45:54"
+    },
+    "3b84f522-61de-43e6-9504-41a6b4baf75d": {
+      "slug": "complications-and-malperfusion",
+      "front": "What complications of aortic dissection indicate need for urgent intervention?",
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases",
+      "tags": [
+        "Aortic Diseases"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:45:54"
+    },
+    "1dd7f81c-a621-416e-9ea1-3b382f30fd76": {
+      "slug": "cpr-physiology-quality-targets",
+      "front": "What are the optimal compression depth and rate during CPR?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care",
+      "tags": [
+        "Cardiac Arrest & Post-Cardiac Arrest Care"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:31"
+    },
+    "e44461dd-563c-4638-ba4a-667e4470c89e": {
+      "slug": "aha-adult-arrest-algorithm-drugs",
+      "front": "What are the key differences in management between shockable and non-shockable cardiac arrest rhythms?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care",
+      "tags": [
+        "Cardiac Arrest & Post-Cardiac Arrest Care"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:31"
+    },
+    "0212e8e4-3ee5-48d9-ab1b-a69b0db7d4a1": {
+      "slug": "post-rosc-hemodynamic-respiratory-targets",
+      "front": "What are the key hemodynamic and oxygenation targets in post-cardiac arrest care?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care",
+      "tags": [
+        "Cardiac Arrest & Post-Cardiac Arrest Care",
+        "Acute Coronary Syndromes"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:31"
+    },
+    "84ceecfe-a9c3-4fae-aabf-631bcbff92e6": {
+      "slug": "targeted-temperature-management-ttm",
+      "front": "What are the key temperature management strategies for comatose post-cardiac arrest patients?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care",
+      "tags": [
+        "Cardiac Arrest & Post-Cardiac Arrest Care"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:31"
+    },
+    "fbba45c2-2cb9-486b-9dd4-ae05e36b4ee3": {
+      "slug": "prognosis-risk-scores",
+      "front": "What factors predict survival and guide termination of resuscitation in cardiac arrest?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care",
+      "tags": [
+        "Cardiac Arrest & Post-Cardiac Arrest Care",
+        "Mechanical Circulatory Support"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:31"
+    },
+    "31fcfb47-a720-44f7-9369-a0863d830dc8": {
+      "slug": "key-cardiac-arrest-trials",
+      "front": "What are the key findings from recent RCTs on TTM, ECMO, and adrenaline in cardiac arrest?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care",
+      "tags": [
+        "Cardiac Arrest & Post-Cardiac Arrest Care",
+        "Mechanical Circulatory Support"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:31"
+    },
+    "94db6500-cfe5-4cec-a67b-7bee6f9a5f1d": {
+      "slug": "advanced-therapies-special-situations",
+      "front": "When should VA-ECMO be considered in refractory cardiac arrest or post-ROSC shock?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care",
+      "tags": [
+        "Cardiac Arrest & Post-Cardiac Arrest Care",
+        "Mechanical Circulatory Support",
+        "Pericardial Diseases"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:31"
+    },
+    "f01ef9fb-acbb-4685-b7f4-19a5556d559e": {
+      "slug": "echocardiographic-diagnosis",
+      "front": "What echocardiographic parameters diagnose diastolic dysfunction and grade its severity?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:26:10"
+    },
+    "6eb1990f-5723-456c-b6d8-ee2c2bb29433": {
+      "slug": "pocus-in-shock-differentiation",
+      "front": "How does bedside echo/POCUS classify shock based on cardiac chamber size, contractility, and IVC findings?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging",
+        "Hemodynamic Monitoring",
+        "Cardiogenic Shock"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:07"
+    },
+    "05461605-3149-4abf-9a43-0644b4edf84b": {
+      "slug": "echocardiographic-diagnosis",
+      "front": "What are the key echocardiographic parameters for assessing RV size and function?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:45"
+    },
+    "20d275e7-b65c-486e-92c8-eca120a59b22": {
+      "slug": "rush-protocol-overview",
+      "front": "What is the RUSH protocol and its key components for evaluating undifferentiated shock?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging",
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:58"
+    },
+    "010ae582-7b33-4535-b024-42017ef33dfb": {
+      "slug": "pump-assessment-step-1",
+      "front": "What are the key echocardiographic findings and interventions for tamponade, PE, and shock states?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging",
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:58"
+    },
+    "00126937-68a3-40c1-8311-d84898586364": {
+      "slug": "tank-assessment-step-2",
+      "front": "What does the tank step assess in cardiac imaging?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging",
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:58"
+    },
+    "64b84e75-434a-4dc9-8955-3345d67b4e50": {
+      "slug": "pipes-assessment-step-3",
+      "front": "What does POCUS assess in arterial and venous systems for shock evaluation?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging",
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:58"
+    },
+    "80d37852-c018-4094-af5f-299e840b78ff": {
+      "slug": "shock-phenotype-by-rush",
+      "front": "What are the RUSH exam findings and corresponding interventions for each shock type?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging",
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:58"
+    },
+    "36afab44-cde0-48ce-9e4e-d5dabed18945": {
+      "slug": "blue-protocol-principles",
+      "front": "What does the BLUE protocol diagnose using pleural-line artifacts in acute respiratory failure?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:58"
+    },
+    "93034181-28bf-410e-802f-f5d18e37e209": {
+      "slug": "lung-artifacts-and-pathology",
+      "front": "What are the key ultrasound findings and their clinical implications in lung pathology?",
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging",
+      "tags": [
+        "Cardiac Imaging"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:28:58"
+    },
+    "470cfc87-c8a5-4aad-992e-4ceaef1a7d88": {
+      "slug": "shock-classification-etiologies",
+      "front": "What are the four main types of shock and their key hemodynamic features?",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock",
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:07"
+    },
+    "fe09ee57-91a8-4113-9e2a-949ce3c02c9b": {
+      "slug": "initial-evaluation-resuscitation",
+      "front": "What are the key signs and initial steps in managing suspected shock?",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock",
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:07"
+    },
+    "ded28b29-ed35-4883-b44d-888dada990ea": {
+      "slug": "phenotype-specific-management",
+      "front": "What are the key treatment principles for each type of shock?",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock",
+        "Mechanical Circulatory Support"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:07"
+    },
+    "25111677-5410-4241-a98b-31e11f2119bb": {
+      "slug": "stages-prognosis-of-shock",
+      "front": "What are the stages of cardiogenic shock and their key features?",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:07"
+    },
+    "9930b233-fd84-4946-93cf-51eacdb27773": {
+      "slug": "scai-shock-stages-a-e",
+      "front": "What are the clinical and hemodynamic features of SCAI shock Stage C?",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock"
+      ],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-02T09:30:33"
+    },
+    "91f27bfe-6456-41fb-b1b3-a525e60e8db5": {
+      "slug": "key-takeaways",
+      "front": "What are the key features defining SCAI shock stages A through E?",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock"
+      ],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-02T09:30:33"
+    },
+    "f99a4499-6ecc-472c-ae14-6014c65bf73b": {
+      "slug": "pathophysiology-hemodynamics",
+      "front": "What is the pathophysiology of HFpEF?",
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure",
+      "tags": [
+        "Chronic Heart Failure"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:26:10"
+    },
+    "8cacacb9-161c-4a7a-9c9d-93767e3bdc4a": {
+      "slug": "hfpff-score-and-rhc",
+      "front": "What is the HFPFF score used for in HFpEF diagnosis?",
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure",
+      "tags": [
+        "Chronic Heart Failure",
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:26:10"
+    },
+    "1115fe23-e35a-457d-b855-fbc554c53f5e": {
+      "slug": "guideline-directed-medical-therapy",
+      "front": "What is the first-line pharmacotherapy for chronic heart failure and when is MRA added?",
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure",
+      "tags": [
+        "Chronic Heart Failure"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:26:10"
+    },
+    "1ad95792-c748-4477-8301-3bff6de4de12": {
+      "slug": "special-etiologies-and-differentials",
+      "front": "What conditions must be excluded before diagnosing HFpEF?",
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure",
+      "tags": [
+        "Chronic Heart Failure"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:26:10"
+    },
+    "36e05438-dd08-42b1-8f8e-0dc9baf06fb9": {
+      "slug": "advanced-therapies-drug-evidence",
+      "front": "What interventions alter renal trajectory in chronic heart failure?",
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure",
+      "tags": [
+        "Chronic Heart Failure",
+        "Mechanical Circulatory Support"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:14"
+    },
+    "de1b6194-0355-42a1-8cd6-70e1870c8cd1": {
+      "slug": "pathophysiology-cellular-consequences",
+      "front": "What defines hemorrhagic shock and its key pathophysiological consequences?",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:36"
+    },
+    "494864af-0021-445e-962d-e1a45d5a589d": {
+      "slug": "atls-hemorrhage-classification",
+      "front": "What are the four classes of hemorrhage based on blood loss and physiologic compensation?",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:36"
+    },
+    "acbf248e-8e5e-4c6e-96b5-840efb16568f": {
+      "slug": "damage-control-resuscitation-mtp",
+      "front": "What is the optimal blood product ratio and crystalloid limit in massive transfusion protocol?",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:36"
+    },
+    "74259324-7721-44b4-a840-89a69ab4d539": {
+      "slug": "anticoagulant-reversal-antifibrinolytics",
+      "front": "What are the key reversal strategies for common anticoagulants and antiplatelets?",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:36"
+    },
+    "eeabaec1-3d3f-4797-bc30-a5c16a493215": {
+      "slug": "source-control-diagnostics",
+      "front": "What are the key steps and considerations for achieving definitive hemostasis in trauma?",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:36"
+    },
+    "51ca44e6-3c0b-48ca-ab2d-bbc0cd1b8aa7": {
+      "slug": "hemodynamic-metabolic-adjuncts",
+      "front": "What are the key principles and interventions for managing shock after volume resuscitation?",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:36"
+    },
+    "ca530129-2a7b-444c-b2c4-10ff202cb6a4": {
+      "slug": "shock-definition-pathophysiology",
+      "front": "What defines shock at the cellular level and its key pathophysiologic consequences?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring",
+        "Cardiogenic Shock"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:07"
+    },
+    "2bf86e97-fd31-4b95-a663-d26659e860a5": {
+      "slug": "hemodynamic-profiles-by-type",
+      "front": "What hemodynamic parameters differentiate the four types of shock?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring",
+        "Cardiogenic Shock"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:07"
+    },
+    "c1a6739d-06c1-419e-845e-aa6a2ba6a1af": {
+      "slug": "hemodynamic-monitoring",
+      "front": "When is cardiac catheterization indicated for hemodynamic assessment?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring",
+        "Pulmonary Hypertension"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:45"
+    },
+    "47c1c720-36ac-4326-8b76-6497bc31e21c": {
+      "slug": "cardiac-output-index-fundamentals",
+      "front": "What is the formula for cardiac output and its indexed form?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    "b1b8fade-4cf6-466b-923d-9f20d216b48e": {
+      "slug": "frank-starling-preload",
+      "front": "What determines stroke volume via sarcomere stretch-contraction coupling?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    "c1bf0136-8959-4c51-9e04-e6461cb2168d": {
+      "slug": "afterload-vascular-resistance",
+      "front": "What is afterload and how does it affect stroke volume?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    "adcd6af0-0512-4a1f-abd6-ccc9e4428b83": {
+      "slug": "contractility-inotropy",
+      "front": "What is contractility and how is it clinically estimated?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    "c442057a-dc8b-497a-9885-ed0727f391b5": {
+      "slug": "heart-rate-determinants",
+      "front": "What factors regulate heart rate and how do electrolytes affect it?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    "e2d9b8bb-4495-462f-bd97-01469e61490d": {
+      "slug": "pressure-volume-loop-physiology",
+      "front": "What are the phases and key points of the LV pressure-volume loop?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    "d13969fa-8170-44ce-b6ee-9202049abfb8": {
+      "slug": "heart-failure-phenotypes-on-starling-curve",
+      "front": "How does diastolic heart failure differ from systolic on the Frank-Starling curve?",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    "c7465e49-d7ba-44d2-8e3a-d69fd055561d": {
+      "slug": "rv-failure-pathophysiology",
+      "front": "What pathophysiological changes occur in the RV during acute vs. chronic pulmonary hypertension?",
+      "system": "Cardiology",
+      "subtopic": "Pulmonary Hypertension",
+      "tags": [
+        "Pulmonary Hypertension",
+        "Cardiogenic Shock",
+        "Acute Heart Failure"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:45"
+    },
+    "ea109d0e-aae8-4bab-bf77-67ea3f6641bf": {
+      "slug": "ph-classification",
+      "front": "What are the 5 WHO groups of pulmonary hypertension?",
+      "system": "Cardiology",
+      "subtopic": "Pulmonary Hypertension",
+      "tags": [
+        "Pulmonary Hypertension"
+      ],
+      "source": "engine",
+      "status": "active",
+      "updated_at": "2026-08-02T09:27:45"
+    }
+  },
+  "card_locations": {
+    "f8bb0a97-4cca-4d35-ab6d-539d539b2851": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "37a0dc0a-f0cc-4314-9b78-9d9d7e754915": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "45e989b6-616d-4cbc-a22e-c56ff8117d85": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "85f68412-5186-404f-8e2b-494c608cada8": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "fdb22295-8d36-4308-9e87-ec6a92eb0fd5": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "ca1226c6-57c7-47e6-90a7-21c268e39f7f": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "e162f053-17dd-44f2-b66e-7a93a31667d6": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "92bf794b-bc63-4a04-a93a-e5ad50dafcb1": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "86bb147d-0468-4d57-a15b-a76317a48cb0": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "9060d756-cc83-4806-b193-a4c1955c2483": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "a73f0030-b840-418e-ace5-a46e46023ffd": {
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes"
+    },
+    "9b9bd11f-f1d9-40d2-a462-af6cf65da420": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "dd37c6a2-0dbc-4ec7-9d8f-aeace01b7529": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "72c49577-1500-4139-b295-2d9e6010befd": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "d94f02b7-5b49-4a32-bdfc-8d0e5dd0738a": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "0705011b-8f6d-4a76-9a33-c681fd3e8641": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "697d20d3-1f10-4f4e-9082-ab522af1a213": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "4df8c489-db53-4e00-9653-6015512a4c4a": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "41a130c2-8522-4080-971e-dd0e1f5a8dfb": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "29ee0534-52a8-40bd-8629-a51cef055d39": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "f4780126-ccef-4337-917c-dc1deab66a0b": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "c8ecfe41-f00c-4339-a1fe-ecaaab4e16a6": {
+      "system": "Cardiology",
+      "subtopic": "Acute Heart Failure"
+    },
+    "66fcc55a-3d09-4b00-a410-c19616396a87": {
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases"
+    },
+    "1c125d30-8fe5-4ebf-8a99-39395af9df57": {
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases"
+    },
+    "41ae4747-4d22-4a2b-a2a2-7f55fa59e8e5": {
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases"
+    },
+    "5d6dc19a-aaf7-47e1-9b69-b98305f49aab": {
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases"
+    },
+    "04d9711d-c133-4e6a-8455-9cde826fcf08": {
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases"
+    },
+    "de40d569-4b60-4a4a-8142-b88047317c2b": {
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases"
+    },
+    "3b84f522-61de-43e6-9504-41a6b4baf75d": {
+      "system": "Cardiology",
+      "subtopic": "Aortic Diseases"
+    },
+    "1dd7f81c-a621-416e-9ea1-3b382f30fd76": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care"
+    },
+    "e44461dd-563c-4638-ba4a-667e4470c89e": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care"
+    },
+    "0212e8e4-3ee5-48d9-ab1b-a69b0db7d4a1": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care"
+    },
+    "84ceecfe-a9c3-4fae-aabf-631bcbff92e6": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care"
+    },
+    "fbba45c2-2cb9-486b-9dd4-ae05e36b4ee3": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care"
+    },
+    "31fcfb47-a720-44f7-9369-a0863d830dc8": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care"
+    },
+    "94db6500-cfe5-4cec-a67b-7bee6f9a5f1d": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care"
+    },
+    "f01ef9fb-acbb-4685-b7f4-19a5556d559e": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "6eb1990f-5723-456c-b6d8-ee2c2bb29433": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "05461605-3149-4abf-9a43-0644b4edf84b": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "20d275e7-b65c-486e-92c8-eca120a59b22": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "010ae582-7b33-4535-b024-42017ef33dfb": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "00126937-68a3-40c1-8311-d84898586364": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "64b84e75-434a-4dc9-8955-3345d67b4e50": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "80d37852-c018-4094-af5f-299e840b78ff": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "36afab44-cde0-48ce-9e4e-d5dabed18945": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "93034181-28bf-410e-802f-f5d18e37e209": {
+      "system": "Cardiology",
+      "subtopic": "Cardiac Imaging"
+    },
+    "470cfc87-c8a5-4aad-992e-4ceaef1a7d88": {
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock"
+    },
+    "fe09ee57-91a8-4113-9e2a-949ce3c02c9b": {
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock"
+    },
+    "ded28b29-ed35-4883-b44d-888dada990ea": {
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock"
+    },
+    "25111677-5410-4241-a98b-31e11f2119bb": {
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock"
+    },
+    "9930b233-fd84-4946-93cf-51eacdb27773": {
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock"
+    },
+    "91f27bfe-6456-41fb-b1b3-a525e60e8db5": {
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock"
+    },
+    "f99a4499-6ecc-472c-ae14-6014c65bf73b": {
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure"
+    },
+    "8cacacb9-161c-4a7a-9c9d-93767e3bdc4a": {
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure"
+    },
+    "1115fe23-e35a-457d-b855-fbc554c53f5e": {
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure"
+    },
+    "1ad95792-c748-4477-8301-3bff6de4de12": {
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure"
+    },
+    "36e05438-dd08-42b1-8f8e-0dc9baf06fb9": {
+      "system": "Cardiology",
+      "subtopic": "Chronic Heart Failure"
+    },
+    "de1b6194-0355-42a1-8cd6-70e1870c8cd1": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "494864af-0021-445e-962d-e1a45d5a589d": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "acbf248e-8e5e-4c6e-96b5-840efb16568f": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "74259324-7721-44b4-a840-89a69ab4d539": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "eeabaec1-3d3f-4797-bc30-a5c16a493215": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "51ca44e6-3c0b-48ca-ab2d-bbc0cd1b8aa7": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "ca530129-2a7b-444c-b2c4-10ff202cb6a4": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "2bf86e97-fd31-4b95-a663-d26659e860a5": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "c1a6739d-06c1-419e-845e-aa6a2ba6a1af": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "47c1c720-36ac-4326-8b76-6497bc31e21c": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "b1b8fade-4cf6-466b-923d-9f20d216b48e": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "c1bf0136-8959-4c51-9e04-e6461cb2168d": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "adcd6af0-0512-4a1f-abd6-ccc9e4428b83": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "c442057a-dc8b-497a-9885-ed0727f391b5": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "e2d9b8bb-4495-462f-bd97-01469e61490d": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "d13969fa-8170-44ce-b6ee-9202049abfb8": {
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring"
+    },
+    "c7465e49-d7ba-44d2-8e3a-d69fd055561d": {
+      "system": "Cardiology",
+      "subtopic": "Pulmonary Hypertension"
+    },
+    "ea109d0e-aae8-4bab-bf77-67ea3f6641bf": {
+      "system": "Cardiology",
+      "subtopic": "Pulmonary Hypertension"
+    }
+  }
+}

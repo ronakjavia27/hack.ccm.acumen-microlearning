@@ -1,0 +1,244 @@
+{
+  "id": "Cardiology/Acute Coronary Syndromes",
+  "system": "Cardiology",
+  "subtopic": "Acute Coronary Syndromes",
+  "cards": [
+    {
+      "id": "f8bb0a97-4cca-4d35-ab6d-539d539b2851",
+      "slug": "acs-classification-mi-types",
+      "front": "How does ACS classification by ECG and troponin guide management strategy?",
+      "back": "**Core concept:** ACS divides by ECG into STEMI and non-ST-elevation (NSTEMI/unstable angina). MI defined by troponin >99th percentile plus ischemia. Universal definition specifies Type 1 (plaque rupture) vs Type 2 (O2 mismatch, no angio needed).\n\n**Key parameters:** Troponin men >26 ng/L, women >16 ng/L. Type 2 commonest non-obstructive. Q-wave classification obsolete.\n\n**Clinical application:** Guides need for urgent reperfusion (STEMI) vs conservative/angiographic strategy (NSTEMI). Type 2 requires treating supply-demand cause.\n\n**Interventions:** Type 1: reperfusion. Type 2: correct anemia/sepsis/tachyarrhythmia. No routine coronary angio.\n\n**Pitfalls:** Assuming all MI need PCI; Type 2 mismatched O2 often non-obstructive. Troponin alone insufficient without ischemic symptom/ECG.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "ACS Classification & MI Types"
+      },
+      "source": "engine",
+      "source_file": "CVS/89.1 ACS - intro, PG, clinical features, diagnosis .md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:44:16"
+      ],
+      "created_at": "2026-08-02T09:43:43",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    {
+      "id": "37a0dc0a-f0cc-4314-9b78-9d9d7e754915",
+      "slug": "stemi-ecg-criteria-lead-selection",
+      "front": "What are the ECG criteria for STEMI diagnosis requiring immediate reperfusion?",
+      "back": "**Core concept:** STEMI mandates immediate reperfusion when ST elevation at J point in ≥2 contiguous leads meets sex/age thresholds without LVH/LBBB.\n\n**Key parameters:** Men <40: ≥2.5mm; ≥40: ≥2mm. Women V2-V5: ≥1.5mm; other: ≥1mm. ECG within 10 min of contact. Add V7-V9 (posterior), V3R-V5R (RV) if inconclusive.\n\n**Clinical application:** Identifies occluded artery territory; directs cath lab activation. Inferior + RV needs right leads to avoid misdiagnosis.\n\n**Interventions:** Immediate PCI/fibrinolysis. Posterior: posterior leads. RV: right precordial leads.\n\n**Pitfalls:** Missing posterior/RV MI with standard 12-lead. LBBB/new LBBB obscures ST; use Sgarbossa. PE mimics with RBBB.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "STEMI ECG Criteria & Lead Selection"
+      },
+      "source": "engine",
+      "source_file": "CVS/89.1 ACS - intro, PG, clinical features, diagnosis .md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:44:22"
+      ],
+      "created_at": "2026-08-02T09:43:43",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    {
+      "id": "45e989b6-616d-4cbc-a22e-c56ff8117d85",
+      "slug": "lbbb-pacing-sgarbossa-criteria",
+      "front": "What ECG criteria in LBBB or paced rhythm indicate STEMI requiring PCI?",
+      "back": "**Core concept:** New LBBB or paced rhythm with ischemic symptoms requires PCI if high-risk features present; Sgarbossa score identifies MI on disguised ECG.\n\n**Key parameters:** Sgarbossa ≥3 pts (conc ST↑ 1mm +QRS 5pt; conc ST↓ V1-3 3pt; discord ST↑≥5mm 2pt). Specificity 98%, sens 20%. PCI if shock, Sgarbossa≥3, or anterior akinesia.\n\n**Clinical application:** Decides immediate cath vs wait enzymes when prior ECG unavailable. Paced = LBBB pattern, apply same.\n\n**Interventions:** Meets criteria → immediate PCI. Unstable → cath anyway.\n\n**Pitfalls:** RBBB not infarct sign; consider PE. Waiting enzymes in new LBBB with instability delays therapy.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "LBBB, Pacing & Sgarbossa Criteria"
+      },
+      "source": "engine",
+      "source_file": "CVS/89.1 ACS - intro, PG, clinical features, diagnosis .md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:44:24"
+      ],
+      "created_at": "2026-08-02T09:43:43",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    {
+      "id": "85f68412-5186-404f-8e2b-494c608cada8",
+      "slug": "troponin-kinetics-diagnosis",
+      "front": "When do cardiac troponin levels rise, peak, and persist in acute MI?",
+      "back": "**Core concept:** Cardiac troponin I/T rise 2-4h, peak 1-2d, persist 7-14d; hs-troponin detects earlier and excludes MI if negative at 3h.\n\n**Key parameters:** Trop I not CKD (use T). T binds tropomyosin, I inhibitory. hs cutoff <14 ng/L; negative 3h excludes. MI = value >99th percentile + ischemia.\n\n**Clinical application:** Serial hs-troponin rules in/out ACS rapidly. Trop T preferred renal failure.\n\n**Interventions:** Repeat at 0/3h. Type 2: trend to confirm.\n\n**Pitfalls:** Single normal early troponin misses event. CKD false rise with I. NSTEMI 30% initial ECG normal—rely on enzymes.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "Troponin Kinetics & Diagnosis"
+      },
+      "source": "engine",
+      "source_file": "CVS/89.1 ACS - intro, PG, clinical features, diagnosis .md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:44:27"
+      ],
+      "created_at": "2026-08-02T09:43:43",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    {
+      "id": "fdb22295-8d36-4308-9e87-ec6a92eb0fd5",
+      "slug": "acs-pathophysiology-plaque-thrombosis",
+      "front": "What is the pathophysiology and management of acute coronary syndromes?",
+      "back": "**Core concept:** ACS mainly from plaque rupture → collagen exposure → platelet adhesion/activation → GpIIb/IIIa conformational change → aggregation → occlusion. Vasospasm and O2 mismatch are secondary.\n\n**Key parameters:** Three pathways: rupture/thrombus, coronary spasm (Prinzmetal, α1), supply-demand (tachy, fever, anemia, sepsis).\n\n**Clinical application:** Drives antiplatelet (aspirin, P2Y12) and anticoagulation. Type 2 targets precipitant.\n\n**Interventions:** Dual antiplatelet, statin, anticoag. Spasm: nitrates, CCB.\n\n**Pitfalls:** Overlooking O2 mismatch in ICU (ventilated, septic) as Type 2. Silent MI in DM/transplant—no pain cue.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "ACS Pathophysiology & Plaque Thrombosis"
+      },
+      "source": "engine",
+      "source_file": "CVS/89.1 ACS - intro, PG, clinical features, diagnosis .md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:44:29"
+      ],
+      "created_at": "2026-08-02T09:43:43",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    {
+      "id": "ca1226c6-57c7-47e6-90a7-21c268e39f7f",
+      "slug": "atypical-st-elevation-differential",
+      "front": "What are the key ECG features distinguishing STEMI mimics?",
+      "back": "**Core concept:** ST elevation mimics include pericarditis, PE, spasm, Brugada, Takotsubo, SAH, hypothermia, intoxication; distinguish to avoid inappropriate PCI.\n\n**Key parameters:** Pericarditis: concave, from S-not R, no reciprocal, multiterritory. PE: V1-3 ↑. Brugada: coved V1-3. Left main: ST↑≥2mm in ≥8 leads or aVR/V1.\n\n**Clinical application:** Prevents futile cath; directs cause-specific therapy (PE anticoag, pericarditis NSAID).\n\n**Interventions:** Left main/multivessel: urgent PCI. Mimics: treat underlying.\n\n**Pitfalls:** Early tall T waves mimic hyperK. Propofol infusion syndrome causes ST↑ in ICU.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "Atypical ST-Elevation Differential"
+      },
+      "source": "engine",
+      "source_file": "CVS/89.1 ACS - intro, PG, clinical features, diagnosis .md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:44:31"
+      ],
+      "created_at": "2026-08-02T09:43:43",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    {
+      "id": "e162f053-17dd-44f2-b66e-7a93a31667d6",
+      "slug": "silent-atypical-acs-presentations",
+      "front": "What patient populations are at highest risk for silent myocardial infarction?",
+      "back": "**Core concept:** 30% MI painless—silent ischemia in DM (autonomic neuropathy), ventilated ICU, elderly, post-transplant denervation.\n\n**Key parameters:** Only 10% chest pain = MI; 33% arrest risk within 1h of acute pain. NSTEMI often normal ECG.\n\n**Clinical application:** In ICU, screen troponin in ventilated/septic without pain. Transplant: no chest pain alarm.\n\n**Interventions:** Low threshold serial troponin, ECG in high-risk silent groups.\n\n**Pitfalls:** Attributing hemodynamic instability to sepsis alone; missed Type 2 MI. Analgosedation hides ischemia signs.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "Silent & Atypical ACS Presentations"
+      },
+      "source": "engine",
+      "source_file": "CVS/89.1 ACS - intro, PG, clinical features, diagnosis .md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:44:33"
+      ],
+      "created_at": "2026-08-02T09:43:43",
+      "updated_at": "2026-08-02T09:43:43"
+    },
+    {
+      "id": "92bf794b-bc63-4a04-a93a-e5ad50dafcb1",
+      "slug": "acs-classification-mi-types",
+      "front": "How is ACS classified and what defines the different MI types?",
+      "back": "**Core concept:** ACS divides by ECG into STEMI and non-ST-elevation (NSTEMI/unstable angina). MI defined by troponin >99th percentile plus ischemia. Universal definition specifies Type 1 (plaque rupture) vs Type 2 (O2 mismatch, no angio needed).\n\n**Key parameters:** Troponin men >26 ng/L, women >16 ng/L. Type 2 commonest non-obstructive. Q-wave classification obsolete.\n\n**Clinical application:** Guides need for urgent reperfusion (STEMI) vs conservative/angiographic strategy (NSTEMI). Type 2 requires treating supply-demand cause.\n\n**Interventions:** Type 1: reperfusion. Type 2: correct anemia/sepsis/tachyarrhythmia. No routine coronary angio.\n\n**Pitfalls:** Assuming all MI need PCI; Type 2 mismatched O2 often non-obstructive. Troponin alone insufficient without ischemic symptom/ECG.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "ACS Classification & MI Types"
+      },
+      "source": "md",
+      "source_file": "CVS/891-acs-intro-pg-clinical-features-diagnosis.md",
+      "status": "pending",
+      "edit_history": [],
+      "created_at": "2026-08-02T09:44:59",
+      "updated_at": "2026-08-02T09:45:25"
+    },
+    {
+      "id": "86bb147d-0468-4d57-a15b-a76317a48cb0",
+      "slug": "stemi-ecg-criteria-lead-selection",
+      "front": "What are the ECG criteria for diagnosing STEMI requiring immediate reperfusion?",
+      "back": "**Core concept:** STEMI mandates immediate reperfusion when ST elevation at J point in ≥2 contiguous leads meets sex/age thresholds without LVH/LBBB.\n\n**Key parameters:** Men <40: ≥2.5mm; ≥40: ≥2mm. Women V2-V5: ≥1.5mm; other: ≥1mm. ECG within 10 min of contact. Add V7-V9 (posterior), V3R-V5R (RV) if inconclusive.\n\n**Clinical application:** Identifies occluded artery territory; directs cath lab activation. Inferior + RV needs right leads to avoid misdiagnosis.\n\n**Interventions:** Immediate PCI/fibrinolysis. Posterior: posterior leads. RV: right precordial leads.\n\n**Pitfalls:** Missing posterior/RV MI with standard 12-lead. LBBB/new LBBB obscures ST; use Sgarbossa. PE mimics with RBBB.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "STEMI ECG Criteria & Lead Selection"
+      },
+      "source": "md",
+      "source_file": "CVS/891-acs-intro-pg-clinical-features-diagnosis.md",
+      "status": "pending",
+      "edit_history": [],
+      "created_at": "2026-08-02T09:44:59",
+      "updated_at": "2026-08-02T09:45:25"
+    },
+    {
+      "id": "9060d756-cc83-4806-b193-a4c1955c2483",
+      "slug": "lbbb-pacing-sgarbossa-criteria",
+      "front": "What are the Sgarbossa criteria for diagnosing MI in LBBB or paced rhythm?",
+      "back": "**Core concept:** New LBBB or paced rhythm with ischemic symptoms requires PCI if high-risk features present; Sgarbossa score identifies MI on disguised ECG.\n\n**Key parameters:** Sgarbossa ≥3 pts (conc ST↑ 1mm +QRS 5pt; conc ST↓ V1-3 3pt; discord ST↑≥5mm 2pt). Specificity 98%, sens 20%. PCI if shock, Sgarbossa≥3, or anterior akinesia.\n\n**Clinical application:** Decides immediate cath vs wait enzymes when prior ECG unavailable. Paced = LBBB pattern, apply same.\n\n**Interventions:** Meets criteria → immediate PCI. Unstable → cath anyway.\n\n**Pitfalls:** RBBB not infarct sign; consider PE. Waiting enzymes in new LBBB with instability delays therapy.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "LBBB, Pacing & Sgarbossa Criteria"
+      },
+      "source": "md",
+      "source_file": "CVS/891-acs-intro-pg-clinical-features-diagnosis.md",
+      "status": "pending",
+      "edit_history": [],
+      "created_at": "2026-08-02T09:44:59",
+      "updated_at": "2026-08-02T09:45:25"
+    },
+    {
+      "id": "a73f0030-b840-418e-ace5-a46e46023ffd",
+      "slug": "acs-pathophysiology-plaque-thrombosis",
+      "front": "What are the three main pathophysiologic pathways in acute coronary syndrome?",
+      "back": "**Core concept:** ACS mainly from plaque rupture → collagen exposure → platelet adhesion/activation → GpIIb/IIIa conformational change → aggregation → occlusion. Vasospasm and O2 mismatch are secondary.\n\n**Key parameters:** Three pathways: rupture/thrombus, coronary spasm (Prinzmetal, α1), supply-demand (tachy, fever, anemia, sepsis).\n\n**Clinical application:** Drives antiplatelet (aspirin, P2Y12) and anticoagulation. Type 2 targets precipitant.\n\n**Interventions:** Dual antiplatelet, statin, anticoag. Spasm: nitrates, CCB.\n\n**Pitfalls:** Overlooking O2 mismatch in ICU (ventilated, septic) as Type 2. Silent MI in DM/transplant—no pain cue.",
+      "system": "Cardiology",
+      "subtopic": "Acute Coronary Syndromes",
+      "tags": [
+        "Acute Coronary Syndromes"
+      ],
+      "data": {
+        "original_subtopic": "ACS Pathophysiology & Plaque Thrombosis"
+      },
+      "source": "md",
+      "source_file": "CVS/891-acs-intro-pg-clinical-features-diagnosis.md",
+      "status": "pending",
+      "edit_history": [],
+      "created_at": "2026-08-02T09:44:59",
+      "updated_at": "2026-08-02T09:45:25"
+    }
+  ],
+  "card_count": 11,
+  "created_at": "2026-08-02T09:43:43",
+  "updated_at": "2026-08-02T09:45:25"
+}

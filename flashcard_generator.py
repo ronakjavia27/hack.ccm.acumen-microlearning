@@ -26,7 +26,6 @@ Usage:
 """
 
 import argparse
-import json
 import os
 import re
 import sys
@@ -36,9 +35,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from acumen_core.config import (
     FLASHCARDS_INPUT_DIR,
-    FLASHCARDS_LEDGER_FILE,
     FLASHCARDS_MD_DIR,
-    FLASHCARDS_MD_OUT,
     CHUNK_FLASHCARD,
 )
 from acumen_core.flashcards import (
@@ -49,10 +46,8 @@ from acumen_core.flashcards import (
     parse_llm_markdown,
     parse_source_file,
     save_ledger,
-    tag_deck_with_llm,
 )
 from acumen_core.llm import chunk_text
-from acumen_core.tracking import save_json_atomic
 from flashcard_md_importer import convert_file, slugify
 
 
@@ -144,7 +139,6 @@ def process_file(path, args):
 
     ledger[rel] = {
         "sha256": sha,
-        "deck": f"{specialty}/{slug}.json",
         "md": f"{specialty}/{slug}.md",
         "title": title,
         "processed_at": datetime.now().isoformat(),
@@ -154,41 +148,31 @@ def process_file(path, args):
 
 
 def tag_existing_decks(args):
-    """Re-tag all existing JSON decks (or those missing tags) without regenerating."""
-    if not os.path.isdir(FLASHCARDS_MD_OUT):
-        print("[X] No decks found (output_files/flashcards_md missing).")
+    """Re-tag all store cards (or those missing tags) without regenerating."""
+    from acumen_core import flashcards as fc
+    cards = [c for _, _, c in fc.store_cards_all()]
+    if not cards:
+        print("[~] No store cards found.")
         return 0
-    decks = []
-    for root, dirs, files in os.walk(FLASHCARDS_MD_OUT):
-        for fn in sorted(files):
-            if fn.endswith(".json"):
-                decks.append(os.path.join(root, fn))
-    if not decks:
-        print("[~] No decks found.")
+    missing = [c for c in cards if not (c.get("tags") or [])]
+    targets = missing if not args.force else cards
+    if not targets:
+        print("[~] No untagged cards.")
         return 0
-    tagged = 0
-    for dp in decks:
-        try:
-            with open(dp, "r", encoding="utf-8") as f:
-                deck = json.load(f)
-        except (json.JSONDecodeError, Exception):
-            continue
-        rel = os.path.relpath(dp, FLASHCARDS_MD_OUT)
-        cards = deck.get("cards") or []
-        missing = [c for c in cards if not (c.get("tags") or [])]
-        if not args.force and not missing:
-            print(f"  [~] Already tagged: {rel}")
-            continue
-        print(f"  [+] Tagging: {rel}")
-        if args.dry_run:
-            continue
-        ok = tag_deck_with_llm(deck, llm=args.llm, verbose=args.verbose,
-                               api_key=args.api_key, model=args.model, base_url=args.base_url)
-        if ok:
-            save_json_atomic(dp, deck)
-            tagged += 1
-    print(f"Done: {tagged} deck(s) re-tagged.")
-    return tagged
+    print(f"  [+] Tagging {len(targets)} card(s)...")
+    if args.dry_run:
+        return len(targets)
+    for c in targets:
+        systems = [c.get("system") or "General"]
+        fc.tag_cards_with_llm([c], systems, llm=args.llm, verbose=args.verbose,
+                              api_key=args.api_key, model=args.model, base_url=args.base_url)
+        if c["tags"]:
+            c["subtopic"] = fc.canonical_subtopic(c["system"], c["tags"][0])
+        else:
+            c["subtopic"] = "General"
+        fc.upsert_card(c)
+    print(f"Done: {len(targets)} card(s) re-tagged.")
+    return len(targets)
 
 
 def collect_targets(args):

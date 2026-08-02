@@ -1,0 +1,233 @@
+{
+  "id": "Cardiology/Hemodynamic Monitoring",
+  "system": "Cardiology",
+  "subtopic": "Hemodynamic Monitoring",
+  "cards": [
+    {
+      "id": "ca530129-2a7b-444c-b2c4-10ff202cb6a4",
+      "slug": "shock-definition-pathophysiology",
+      "front": "What defines shock at the cellular level and its key pathophysiologic consequences?",
+      "back": "**Core concept:** Shock is cellular/tissue hypoxia from inadequate O2 delivery, increased consumption, or impaired utilization; triggers ion pump failure, endothelial dysfunction, inflammation, and lactate rise.\n\n**Key parameters:** BP = CO × SVR; CO = HR × SV (preload, contractility, afterload). Compensatory mechanisms fail at 20-30% effective arterial blood volume loss.\n\n**Clinical application:** Hypotension may be absent in normotensive shock; lactate guides prognosis and response. Recognize pre-shock (compensated) vs shock (organ dysfunction).\n\n**Interventions:** Reverse inciting cause; support BP and oxygenation early to prevent irreversible multiorgan failure.\n\n**Pitfalls:** Assuming normotension excludes shock; delaying therapy during compensated phase leads to refractory hypotension and AKI.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring",
+        "Cardiogenic Shock"
+      ],
+      "data": {
+        "original_subtopic": "Shock Definition & Pathophysiology"
+      },
+      "source": "engine",
+      "source_file": "CVS/102 Overview of Shock.md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:08"
+      ],
+      "created_at": "2026-08-02T09:27:07",
+      "updated_at": "2026-08-02T09:27:07"
+    },
+    {
+      "id": "2bf86e97-fd31-4b95-a663-d26659e860a5",
+      "slug": "hemodynamic-profiles-by-type",
+      "front": "What hemodynamic parameters differentiate the four types of shock?",
+      "back": "**Core concept:** Physiologic variables differentiate shock: PCWP (preload), Cardiac Index (pump), SVR (afterload), SvO2 (tissue perfusion).\n\n**Key parameters:** Hypovolemic: ↓PCWP, ↓CI, ↑SVR, SvO2 >65% early/<65% late. Cardiogenic: ↓PCWP, ↓CI, ↑SVR, SvO2<65%. Distributive: ↓PCWP early, ↑CI, ↓SVR, SvO2>65%. Obstructive: ↓PCWP, ↓CI, ↑SVR, SvO2<65%.\n\n**Clinical application:** PAC used when echo/POCUS inconclusive to target therapy.\n\n**Interventions:** Fluid vs vasopressor/inotrope chosen by profile.\n\n**Pitfalls:** Late-stage crossover (e.g., low SvO2 in all); relying on single variable without trending.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring",
+        "Cardiogenic Shock"
+      ],
+      "data": {
+        "original_subtopic": "Hemodynamic Profiles by Type"
+      },
+      "source": "engine",
+      "source_file": "CVS/102 Overview of Shock.md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:09"
+      ],
+      "created_at": "2026-08-02T09:27:07",
+      "updated_at": "2026-08-02T09:27:07"
+    },
+    {
+      "id": "c1a6739d-06c1-419e-845e-aa6a2ba6a1af",
+      "slug": "hemodynamic-monitoring",
+      "front": "When is cardiac catheterization indicated for hemodynamic assessment?",
+      "back": "**Core concept:** Cardiac cath quantifies RA/RV/PA pressures and CO when echo inconclusive or treatment-defining; PAC enables continuous assessment.\n\n**Key parameters:** RAP >10; mPAP >20 (PH); CI <2.2 decompensated; equalization suggests constriction/tamponade.\n\n**Clinical application:** Differentiates pre- vs post-capillary PH; guides vasoactive choice and MCS timing.\n\n**Interventions:** PAC-guided titration of inotropes/vasodilators; cath for CTEPH/PAH confirmation.\n\n**Pitfalls:** Cath not first-line in unstable acute RV failure; echo suffices unless invasive data changes management.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring",
+        "Pulmonary Hypertension"
+      ],
+      "data": {
+        "original_subtopic": "Hemodynamic Monitoring"
+      },
+      "source": "engine",
+      "source_file": "CVS/104 Acute RV failure .md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:12"
+      ],
+      "created_at": "2026-08-02T09:27:45",
+      "updated_at": "2026-08-02T09:27:45"
+    },
+    {
+      "id": "47c1c720-36ac-4326-8b76-6497bc31e21c",
+      "slug": "cardiac-output-index-fundamentals",
+      "front": "What is the formula for cardiac output and its indexed form?",
+      "back": "**Core concept:** Cardiac output (CO) = stroke volume (SV) × heart rate (HR); cardiac index (CI) normalizes CO to body surface area for inter-patient comparison.\n\n**Key parameters:** Normal CO 4–8 L/min; CI 2.5–4.5 L/min/m². Baseline ~70 mL SV × 70 bpm ≈ 5 L/min.\n\n**Clinical application:** Use CI in ICU to guide resuscitation targets rather than raw CO, especially in varied body sizes.\n\n**Interventions:** Monitor via PA catheter or echocardiography; target CI ≥2.2 in shock, ideally 2.5–4.5.\n\n**Pitfalls:** CO alone misleads in large/small patients; never interpret without BSA adjustment in indexed forms.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Cardiac Output & Index Fundamentals"
+      },
+      "source": "engine",
+      "source_file": "CVS/88 Cardiac output determinants.md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:14"
+      ],
+      "created_at": "2026-08-02T09:29:47",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    {
+      "id": "b1b8fade-4cf6-466b-923d-9f20d216b48e",
+      "slug": "frank-starling-preload",
+      "front": "What determines stroke volume via sarcomere stretch-contraction coupling?",
+      "back": "**Core concept:** Preload (end-diastolic wall tension) determines SV via sarcomere stretch–contraction coupling; depicted by Frank-Starling curve with optimal corridor.\n\n**Key parameters:** Preload surrogate: LVEDP (cath) or PCWP (PA catheter). SV rises with preload to peak then falls if overstretched.\n\n**Clinical application:** Volume responsiveness assessed by position on curve; give fluids if on ascending limb, diurese/nitrates if beyond peak.\n\n**Interventions:** Volume bolus if hypovolemic; loop diuretics or venous dilators if preload excessive.\n\n**Pitfalls:** PCWP/LVEDP insensitive at extremes; diastolic HF curve flattened—aggressive fluids worsen.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Frank-Starling & Preload"
+      },
+      "source": "engine",
+      "source_file": "CVS/88 Cardiac output determinants.md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:19"
+      ],
+      "created_at": "2026-08-02T09:29:47",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    {
+      "id": "c1bf0136-8959-4c51-9e04-e6461cb2168d",
+      "slug": "afterload-vascular-resistance",
+      "front": "What is afterload and how does it affect stroke volume?",
+      "back": "**Core concept:** Afterload = end-systolic wall tension (Laplace: T=Pr/2h); clinically surrogated by SVR (LV) and PVR (RV). Higher afterload reduces SV.\n\n**Key parameters:** SVR 900–1400 dyn·s·cm⁻⁵ (indexed 1700–2400); PVR <240; SVR=80×(MAP-CVP)/CO; PVR=80×(MPAP-PCWP)/CO.\n\n**Clinical application:** Vasopressors raise SVR but lower SV; vasodilators (NTG, SNP) improve SV in high-afterload states.\n\n**Interventions:** Norepi/vasopressin/angiotensin II ↑SVR; dobutamine/PDEi/levosimendan ↓PVR.\n\n**Pitfalls:** Excessive vasoconstriction drops CO; avoid pure α-agonists in low-SV cardiogenic shock without inotropy.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Afterload & Vascular Resistance"
+      },
+      "source": "engine",
+      "source_file": "CVS/88 Cardiac output determinants.md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:20"
+      ],
+      "created_at": "2026-08-02T09:29:47",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    {
+      "id": "adcd6af0-0512-4a1f-abd6-ccc9e4428b83",
+      "slug": "contractility-inotropy",
+      "front": "What is contractility and how is it clinically estimated?",
+      "back": "**Core concept:** Contractility (inotropy) is intrinsic myocardial force independent of preload/afterload; clinically estimated by ejection fraction.\n\n**Key parameters:** EF by echo; positive inotropy via β1 stimulation, PDE III inhibition, Ca²⁺ modulation.\n\n**Clinical application:** Low EF with low CO prompts inotrope use; distinguishes systolic from diastolic failure.\n\n**Interventions:** Dobutamine 2.5–20 mcg/kg/min; milrinone 0.125–0.75 mcg/kg/min; digoxin; levosimendan.\n\n**Pitfalls:** Inotropes raise O₂ demand/arrhythmia risk; do not use to compensate for untreated ischemia or volume deficit.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Contractility & Inotropy"
+      },
+      "source": "engine",
+      "source_file": "CVS/88 Cardiac output determinants.md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:22"
+      ],
+      "created_at": "2026-08-02T09:29:47",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    {
+      "id": "c442057a-dc8b-497a-9885-ed0727f391b5",
+      "slug": "heart-rate-determinants",
+      "front": "What factors regulate heart rate and how do electrolytes affect it?",
+      "back": "**Core concept:** HR set by autonomic tone (vagal ↓, sympathetic ↑ via β1), hormones (thyroxine, catecholamines), electrolytes, and fever.\n\n**Key parameters:** Na⁺/K⁺/Ca²⁺ perturbations alter HR; hypo-Na/K/Ca → ↑HR, hyper → ↓HR; thyroid excess ↑HR.\n\n**Clinical application:** Correct reversible causes of tachycardia/bradycardia before pharmacologic rate control in shock.\n\n**Interventions:** β-blockers for sympathetic excess; pacing for vagal/brady; replace K⁺/Ca²⁺.\n\n**Pitfalls:** Fever/temp-driven HR raises CO demand; bradycardia from hyperkalemia masks ischemia—treat emergently.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Heart Rate Determinants"
+      },
+      "source": "engine",
+      "source_file": "CVS/88 Cardiac output determinants.md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:24"
+      ],
+      "created_at": "2026-08-02T09:29:47",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    {
+      "id": "e2d9b8bb-4495-462f-bd97-01469e61490d",
+      "slug": "pressure-volume-loop-physiology",
+      "front": "What are the phases and key points of the LV pressure-volume loop?",
+      "back": "**Core concept:** LV pressure-volume loop maps cardiac cycle: isovolumic contraction (AB), ejection (BC), isovolumic relaxation (CD), filling (DA).\n\n**Key parameters:** Point D=end-diastole (preload), C=end-systole (afterload); loop area=stroke work.\n\n**Clinical application:** Loop shape identifies pathology—flattened diastolic filling, reduced ejection slope, increased end-systolic volume.\n\n**Interventions:** Echo/ventriculography to derive; guide volume/inotrope/afterload therapy by phase abnormalities.\n\n**Pitfalls:** Interpretation needs simultaneous pressure; isolated volume metrics miss contractile phase defects.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Pressure-Volume Loop Physiology"
+      },
+      "source": "engine",
+      "source_file": "CVS/88 Cardiac output determinants.md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:25"
+      ],
+      "created_at": "2026-08-02T09:29:47",
+      "updated_at": "2026-08-02T09:29:47"
+    },
+    {
+      "id": "d13969fa-8170-44ce-b6ee-9202049abfb8",
+      "slug": "heart-failure-phenotypes-on-starling-curve",
+      "front": "How does diastolic heart failure differ from systolic on the Frank-Starling curve?",
+      "back": "**Core concept:** Systolic and diastolic HF shift Frank-Starling curve downward/flatter vs normal; diastolic failure lower than systolic at given preload.\n\n**Key parameters:** Both exhibit reduced SV for same preload; diastolic HF marked by poor filling compliance.\n\n**Clinical application:** Diastolic failure intolerant of volume loads; systolic failure responds partially to inotropy.\n\n**Interventions:** Diastolic: diuretics, afterload reduction, rate control; systolic: inotropes, MCS if refractory.\n\n**Pitfalls:** Assuming volume responsiveness in HF; fluids worsen both—use loop diuretics and avoid PCWP >18 if possible.",
+      "system": "Cardiology",
+      "subtopic": "Hemodynamic Monitoring",
+      "tags": [
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Heart Failure Phenotypes on Starling Curve"
+      },
+      "source": "engine",
+      "source_file": "CVS/88 Cardiac output determinants.md",
+      "status": "active",
+      "edit_history": [
+        "front auto-generated at 2026-08-02T09:37:29"
+      ],
+      "created_at": "2026-08-02T09:29:47",
+      "updated_at": "2026-08-02T09:29:47"
+    }
+  ],
+  "card_count": 10,
+  "created_at": "2026-08-02T09:27:07",
+  "updated_at": "2026-08-02T09:37:29"
+}

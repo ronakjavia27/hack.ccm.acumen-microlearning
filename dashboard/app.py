@@ -5,6 +5,7 @@ Mounted at `/console` (prepend `/console` to all paths).
 from __future__ import annotations
 
 import json
+from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
@@ -242,9 +243,9 @@ async def api_accounts_delete(email: str):
     return {"deleted": True}
 
 
-@router.post("/api/flashcards/{item_id}/regenerate-card")
+@router.post("/api/flashcards/{item_id:path}/regenerate-card")
 async def api_flashcard_regenerate(item_id: str, body: Dict[str, Any]):
-    """Regenerate a single flashcard card with an edit comment."""
+    """Regenerate a single flashcard card with an edit comment (unified store)."""
     _ensure_bootstrap()
     try:
         spec = get_spec("flashcards")
@@ -255,33 +256,52 @@ async def api_flashcard_regenerate(item_id: str, body: Dict[str, Any]):
     edit_comment = body.get("edit_comment", "")
     if not card_id or not edit_comment:
         raise HTTPException(400, "card_id and edit_comment required")
-    source = Path(deck["_source"])
 
-    # Use the deck from get_item (cards already have IDs assigned)
-    from datetime import datetime
-    found = False
-    for card in deck.get("cards", []):
-        if card.get("id") == card_id:
-            from .modules.flashcards import _regenerate_card
-            revised = _regenerate_card(card, edit_comment)
-            if revised:
-                card["subtopic"] = revised.get("subtopic", card["subtopic"])
-                card["content"] = revised.get("content", card["content"])
-                history = deck.setdefault("edit_history", [])
-                history.append({
-                    "card_id": card_id,
-                    "edit_comment": edit_comment,
-                    "timestamp": datetime.now().isoformat(),
-                })
-                deck["updated_at"] = datetime.now().isoformat()
-                from ..storage import write_json_atomic
-                write_json_atomic(source, deck)
-                found = True
-                return {"updated": True, "card": card}
-            break
-    if not found:
-        raise HTTPException(404, f"card {card_id} not found or regeneration failed")
-    return {"updated": False}
+    from .modules.flashcards import _regenerate_card, _rewrite_md_card, _view_card, slugify
+    from acumen_core import flashcards as fc
+
+    card = fc.find_card(card_id)
+    if card is None:
+        raise HTTPException(404, f"card {card_id} not found")
+    revised = _regenerate_card(card, edit_comment)
+    if not revised:
+        raise HTTPException(400, "regeneration failed")
+    new_sub = revised.get("subtopic") or (card.get("data") or {}).get("original_subtopic") or card.get("subtopic", "")
+    new_front = revised.get("front") or card.get("front") or ""
+    new_back = revised.get("back") or card.get("back") or ""
+    card["subtopic"] = fc.canonical_subtopic(card.get("system"), new_sub)
+    card["data"]["original_subtopic"] = new_sub
+    card["front"] = new_front
+    card["back"] = new_back
+    card.setdefault("edit_history", []).append(
+        f"console regen '{edit_comment[:60]}' at {datetime.now().isoformat()}"
+    )
+    fc.upsert_card(card)
+    # Write the revised card back into the authored markdown, when mappable
+    src_file = card.get("source_file") or ""
+    if card.get("source") == "md" and src_file:
+        md_abs = REPO_ROOT / "flashcards_md" / src_file.replace("\\", "/")
+        _rewrite_md_card(md_abs, new_sub, new_back, new_front)
+    return {"updated": True, "card": _view_card(card)}
+
+
+@router.post("/api/flashcards/{item_id:path}/reclassify")
+async def api_flashcard_reclassify(item_id: str, body: Dict[str, Any]):
+    """Move every card of a subtopic file to another system/subtopic."""
+    _ensure_bootstrap()
+    try:
+        spec = get_spec("flashcards")
+        deck = spec.get_fn(item_id)
+    except ItemNotFound:
+        raise HTTPException(404, f"flashcards/{item_id} not found")
+    new_system = (body.get("system") or "").strip() or deck["_system"]
+    new_subtopic = (body.get("subtopic") or "").strip() or deck["_subtopic"]
+    from acumen_core import flashcards as fc
+    moved = 0
+    for c in deck["_raw"].get("cards", []):
+        if fc.move_card(c["id"], new_system, new_subtopic):
+            moved += 1
+    return {"updated": moved > 0, "moved": moved, "id": f"{new_system}/{new_subtopic}"}
 
 
 @router.get("/api/audit")
