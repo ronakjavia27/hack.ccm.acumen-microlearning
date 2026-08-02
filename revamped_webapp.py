@@ -1167,6 +1167,27 @@ async def render_dashboard(request: Request, response: Response):
   .theory-note table{{ border-collapse:collapse; width:100%; font-size:.92em; margin:14px 0; }}
   .theory-note th, .theory-note td{{ border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }}
   .theory-note th{{ background:var(--bg-sunk); font-weight:700; }}
+  .theory-table-wrap{{ position:relative; max-width:100%; overflow-x:auto; overflow-y:hidden; margin:14px 0; border:1px solid var(--border); border-radius:10px; background:var(--bg); -webkit-overflow-scrolling:touch; scrollbar-width:thin; }}
+  .theory-table-wrap table{{ width:100%; margin:0; }}
+  .theory-table-wrap th, .theory-table-wrap td{{ white-space:nowrap; }}
+  .theory-table-wrap::-webkit-scrollbar{{ height:8px; }}
+  .theory-table-wrap::-webkit-scrollbar-thumb{{ background:var(--border); border-radius:8px; }}
+  @media (hover:none){{
+    .theory-table-wrap{{ scrollbar-width:none; }}
+    .theory-table-wrap::-webkit-scrollbar{{ display:none; }}
+  }}
+  .theory-table-expand{{ display:inline-flex; align-items:center; gap:6px; margin:14px 0 0; padding:6px 14px; background:var(--bg-sunk); color:var(--ink); border:1px solid var(--border); border-radius:99px; font:inherit; font-size:.78rem; cursor:pointer; }}
+  .theory-table-expand:hover{{ border-color:var(--accent); color:var(--accent); }}
+  .theory-table-expand .tt-expand-icon{{ color:var(--accent); }}
+  /* Fullscreen table viewer */
+  .theory-table-overlay{{ position:fixed; inset:0; z-index:9999; background:var(--bg); display:flex; flex-direction:column; }}
+  .theory-table-overlay-bar{{ display:flex; align-items:center; gap:10px; padding:10px 14px; background:var(--bg-elev); border-bottom:1px solid var(--border); flex:0 0 auto; }}
+  .theory-table-overlay-title{{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:.85rem; color:var(--ink-muted); }}
+  .theory-table-overlay-scroll{{ flex:1; overflow:auto; padding:14px; -webkit-overflow-scrolling:touch; }}
+  .theory-table-overlay-scroll table{{ border-collapse:collapse; width:auto; font-size:.92em; background:var(--bg); }}
+  .theory-table-overlay-scroll th, .theory-table-overlay-scroll td{{ border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; white-space:nowrap; }}
+  .theory-table-overlay-scroll th{{ background:var(--bg-sunk); font-weight:700; position:sticky; top:0; }}
+  .theory-table-fit-inner{{ display:inline-block; max-width:100%; }}
   .theory-note hr{{ border:none; border-top:1px solid var(--border); margin:18px 0; }}
   .theory-note a{{ color:var(--accent); }}
   /* Flip-mode front question: big + centered (H2-scale) */
@@ -1772,6 +1793,16 @@ async def render_dashboard(request: Request, response: Response):
   </div>
 </div>
 
+<!-- THEORY TABLE FULL VIEW -->
+<div id="theoryTableOverlay" class="theory-table-overlay" style="display:none" role="dialog" aria-label="Table full view">
+  <div class="theory-table-overlay-bar">
+    <button class="btn nav-btn" data-theory-table-close style="flex:0 0 auto">&larr; Back</button>
+    <span class="theory-table-overlay-title" id="theoryTableOverlayTitle">Table</span>
+    <button class="btn nav-btn" data-theory-table-fit style="flex:0 0 auto">Fit width</button>
+  </div>
+  <div class="theory-table-overlay-scroll" id="theoryTableOverlayScroll"><div class="theory-table-fit-inner" id="theoryTableFitInner"></div></div>
+</div>
+
 <script>
 // =====================================================================
 // DATA (injected from Python)
@@ -1826,6 +1857,9 @@ let _theoryMode = null; // null = hero, 'notes' = Theory Topics, 'flashcards' = 
 let _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }}));
 let _theorySavedOnly = false;
 let _notesSavedOnly = false;
+let _currentTheoryNote = null;
+let _theoryTableOverlayOpen = false;
+let _theoryTableFitActive = false;
 let _theoryActiveSubtopic = null;
 let _currentDeck = null;
 let _currentCardIdx = 0;
@@ -2961,12 +2995,20 @@ function _theoryMarkdownHTML(md){{
   var out = String(md||'');
   out = out.replace(/^\[\^[^\]]+\]:\s*.*$/gm, '');
   out = out.replace(/\[\^[^\]]+\]/g, '');
-  try {{ return marked.parse(out); }} catch(e){{ return '<pre>'+escapeHtml(out)+'</pre>'; }}
+  try {{
+    var html = marked.parse(out);
+    html = html.replace(/<table>[\s\S]*?<\/table>/g, function(t){{
+      return '<button class="theory-table-expand" data-theory-table-open type="button"><span class="tt-expand-icon">&#8693;</span> Full view</button>'+
+             '<div class="theory-table-wrap" data-theory-table-open>'+t+'</div>';
+    }});
+    return html;
+  }} catch(e){{ return '<pre>'+escapeHtml(out)+'</pre>'; }}
 }}
 
 function openTheoryNote(noteId){{
   var note = THEORY_NOTES.find(function(n){{ return n.id===noteId; }});
   if(!note) return;
+  _currentTheoryNote = note;
   renderTheoryPane('notes');
   document.getElementById('theoryNotesList').style.display = 'none';
   document.getElementById('theoryNotesCount').style.display = 'none';
@@ -2995,6 +3037,95 @@ function theoryNotesBack(){{
   document.getElementById('theoryNotesCount').style.display = '';
   renderTheoryNotes();
 }}
+
+/* ---- Theory table full-view overlay ---- */
+function openTheoryTableOverlay(src){{
+  var table = null;
+  if(src){{
+    var wrap = (typeof src.closest==='function' && src.closest('.theory-table-wrap')) ||
+      (src.nextElementSibling && src.nextElementSibling.classList && src.nextElementSibling.classList.contains('theory-table-wrap') ? src.nextElementSibling : null);
+    if(wrap) table = wrap.querySelector('table');
+  }}
+  if(!table && src && src.tagName==='TABLE') table = src;
+  if(!table) return;
+  var title = (_currentTheoryNote && _currentTheoryNote.title) ? _currentTheoryNote.title : 'Table';
+  var inner = document.getElementById('theoryTableFitInner');
+  inner.innerHTML = '';
+  inner.appendChild(table.cloneNode(true));
+  document.getElementById('theoryTableOverlayTitle').textContent = title + ' \u00B7 Table';
+  var scrollEl = document.getElementById('theoryTableOverlayScroll');
+  scrollEl.scrollTop = 0; scrollEl.scrollLeft = 0;
+  _theoryTableFitActive = false;
+  scrollEl.classList.remove('fit');
+  inner.style.zoom = '';
+  var fitBtn = document.querySelector('[data-theory-table-fit]');
+  if(fitBtn) fitBtn.textContent = 'Fit width';
+  document.getElementById('theoryTableOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  _theoryTableOverlayOpen = true;
+  var ov = document.getElementById('theoryTableOverlay');
+  var fsReq = ov.requestFullscreen || ov.webkitRequestFullscreen;
+  if(fsReq){{
+    var p = fsReq.call(ov);
+    if(p && p.catch) p.catch(function(){{}});
+  }}
+}}
+
+function closeTheoryTableOverlay(){{
+  if(!_theoryTableOverlayOpen) return;
+  if(document.fullscreenElement || document.webkitFullscreenElement){{
+    var p = (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    if(p && p.catch) p.catch(finishCloseTheoryTableOverlay);
+    return;
+  }}
+  finishCloseTheoryTableOverlay();
+}}
+
+function finishCloseTheoryTableOverlay(){{
+  document.getElementById('theoryTableOverlay').style.display = 'none';
+  document.getElementById('theoryTableFitInner').innerHTML = '';
+  document.body.style.overflow = '';
+  _theoryTableOverlayOpen = false;
+  _theoryTableFitActive = false;
+}}
+
+function theoryTableToggleFit(){{
+  if(!_theoryTableOverlayOpen) return;
+  _theoryTableFitActive = !_theoryTableFitActive;
+  var scrollEl = document.getElementById('theoryTableOverlayScroll');
+  var inner = document.getElementById('theoryTableFitInner');
+  var btn = document.querySelector('[data-theory-table-fit]');
+  if(_theoryTableFitActive){{
+    scrollEl.classList.add('fit');
+    if(btn) btn.textContent = 'Fit: off';
+    theoryTableApplyFit();
+  }} else {{
+    scrollEl.classList.remove('fit');
+    inner.style.zoom = '';
+    if(btn) btn.textContent = 'Fit width';
+  }}
+}}
+
+function theoryTableApplyFit(){{
+  if(!_theoryTableFitActive) return;
+  var scrollEl = document.getElementById('theoryTableOverlayScroll');
+  var inner = document.getElementById('theoryTableFitInner');
+  var table = inner.querySelector('table');
+  if(!table) return;
+  var avail = scrollEl.clientWidth - 28;
+  var scale = Math.min(1, avail / (table.scrollWidth || 1));
+  inner.style.zoom = scale >= 1 ? '' : String(scale);
+}}
+
+document.addEventListener('fullscreenchange', function(){{
+  if(_theoryTableOverlayOpen && !document.fullscreenElement) finishCloseTheoryTableOverlay();
+}});
+document.addEventListener('webkitfullscreenchange', function(){{
+  if(_theoryTableOverlayOpen && !document.webkitFullscreenElement) finishCloseTheoryTableOverlay();
+}});
+window.addEventListener('resize', function(){{
+  if(_theoryTableOverlayOpen && _theoryTableFitActive) theoryTableApplyFit();
+}});
 
 function renderTheoryPane(mode){{
   if(mode==='hero') mode = null;
@@ -3936,6 +4067,13 @@ document.addEventListener('click', function(e){{
   var theoryNoteBack = e.target.closest('[data-theory-note-back]');
   if(theoryNoteBack){{ theoryNotesBack(); return; }}
 
+  var theoryTableOpen = e.target.closest('[data-theory-table-open]');
+  if(theoryTableOpen){{ openTheoryTableOverlay(theoryTableOpen); return; }}
+  var theoryTableClose = e.target.closest('[data-theory-table-close]');
+  if(theoryTableClose){{ closeTheoryTableOverlay(); return; }}
+  var theoryTableFit = e.target.closest('[data-theory-table-fit]');
+  if(theoryTableFit){{ theoryTableToggleFit(); return; }}
+
   var theoryCardSearch = e.target.closest('[data-theory-card]');
   if(theoryCardSearch){{
     var tRef = theoryDeckFromCardId(theoryCardSearch.dataset.theoryCard);
@@ -4033,7 +4171,7 @@ document.addEventListener('change', function(e){{
 }});
 
 document.addEventListener('keydown', function(e){{
-  if(e.key==='Escape'){{ closeSearch(); closeDrawer(); closeSheet(); closeReader(); document.body.classList.remove('ai-open'); }}
+  if(e.key==='Escape'){{ if(_theoryTableOverlayOpen){{ closeTheoryTableOverlay(); }} closeSearch(); closeDrawer(); closeSheet(); closeReader(); document.body.classList.remove('ai-open'); }}
   if((e.ctrlKey||e.metaKey)&&e.key==='k'){{ e.preventDefault(); openSearch(); }}
   if((e.key==='Enter'||e.key===' ')&&e.target.matches('[role="button"]')){{ e.preventDefault(); e.target.click(); }}
   if(_currentDeck && document.getElementById('view-theory').classList.contains('active') && !e.target.matches('input,textarea,select')){{
