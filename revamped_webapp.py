@@ -1125,6 +1125,8 @@ async def render_dashboard(request: Request, response: Response):
   .theory-card-wrap.no-3d .theory-card-inner.flipped .theory-face.front{{ display:none; }}
   .theory-card-wrap.no-3d .theory-card-inner.flipped .theory-face.back{{ display:block; }}
   .theory-card-flat{{ background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:22px 24px; max-height:72vh; overflow:auto; }}
+  .theory-card-question{{ margin:0 0 14px; font-size:1.06rem; font-weight:650; line-height:1.45; color:var(--ink); background:var(--bg-sunk); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:10px; padding:10px 14px; }}
+  .theory-card-question p{{ margin:0; }}
   .theory-card-content{{ font-size:var(--theory-card-fs, .94rem); line-height:1.55; }}
   .theory-card-content h1, .theory-card-content h2, .theory-card-content h3{{ font-size:1.02rem; margin:12px 0 6px; }}
   .theory-card-content p{{ margin:8px 0; }}
@@ -3638,8 +3640,18 @@ function renderTheoryCard(){{
         '<div class="theory-face back theory-card-content">'+backHTML+'<span class="flip-hint">tap to flip \u21C5</span></div>'+
       '</div></div>';
   }} else {{
-    // Single-face mode shows the answer only
-    stage.innerHTML = '<div class="theory-card-flat theory-card-content">'+backHTML+'</div>';
+    var frontText = (card.front||'').trim();
+    var qHTML;
+    if(!frontText){{
+      qHTML = '<h3 class="theory-card-question">'+escapeHtml(card.subtopic||deck.title)+'</h3>';
+    }} else {{
+      var qBody = marked.parse(frontText).trim().replace(/^<p>\s*/,'').replace(/\s*<\/p>$/,'');
+      var qBlock = /<(p|div|ul|ol|table|blockquote|h[1-6])\s*>/i.test(qBody);
+      qHTML = qBlock
+        ? '<div class="theory-card-question">'+qBody+'</div>'
+        : '<h3 class="theory-card-question">'+qBody+'</h3>';
+    }}
+    stage.innerHTML = qHTML + '<div class="theory-card-flat theory-card-content">'+backHTML+'</div>';
   }}
   applyTheoryFont('cards');
 
