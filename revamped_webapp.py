@@ -1876,7 +1876,6 @@ let _theoryViewMode = 'single';
 let _theoryFlipped = false;
 let _theoryListCollapsed = false; // card list collapses into a dropdown when a card is open
 let _theoryStudyFromList = false; // study was entered from the per-deck card list
-let _theorySkipCardScroll = false; // first render after opening a card from the list skips the hard scroll
 let _restoring = false; // true while restoring from history/deep links (no pushes)
 let _theorySearchTimers = {{}};
 // True when the browser can do real 3D card flips (backface-visibility).
@@ -3656,8 +3655,6 @@ function renderTheoryCard(){{
     return '<button class="theory-dot'+( pi===posIdx?' active':'')+( saved?' saved':'')+'" data-theory-dot="'+pi+'" title="Card '+(pi+1)+' of '+total+'"></button>';
   }}).join('');
   renderTheoryCrumbs();
-  if(!_theorySkipCardScroll) window.scrollTo({{top:0, behavior:'instant'}});
-  _theorySkipCardScroll = false;
 }}
 
 function theorySetViewMode(mode){{
@@ -4346,7 +4343,6 @@ document.addEventListener('click', function(e){{
   if(theoryCardOpen && _currentDeck){{
     _theoryListCollapsed = true;
     renderTheoryCardList();
-    _theorySkipCardScroll = true;
     openTheoryDeck(_currentDeck.id, theoryCardOpen.dataset.theoryCardOpen, true);
     _theoryStudyFromList = true;
     return;
