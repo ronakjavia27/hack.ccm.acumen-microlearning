@@ -121,17 +121,14 @@ FILE_STABILITY_WAIT = 1.5  # seconds to wait for file size to stabilize
 # FLASHCARD PATHS
 # =====================================================================
 FLASHCARDS_DIR = os.path.join(OUTPUT_DIR, "flashcards")           # unified store: {System}/{Subtopic}.json
-FLASHCARDS_MD_DIR = os.path.join(PROJECT_DIR, "flashcards_md")    # authored markdown (import source)
-FLASHCARDS_MD_OUT = os.path.join(OUTPUT_DIR, "flashcards_md")     # legacy md deck JSONs (archived post-migration)
-FLASHCARDS_INPUT_DIR = os.path.join(PROJECT_DIR, "flashcards_input")
+FLASHCARDS_INPUT_DIR = os.path.join(PROJECT_DIR, "flashcards_input")  # ONLY input: md = authored deck, other = raw material
 FLASHCARDS_LEDGER_FILE = os.path.join(PROJECT_DIR, "flashcards_ledger.json")
 FLASHCARDS_INDEX_FILE = os.path.join(OUTPUT_DIR, "flashcards_index.json")   # derived master index
-FLASHCARDS_LEGACY_DIR = os.path.join(OUTPUT_DIR, "flashcards_legacy")       # archived engine decks
-FLASHCARDS_MD_LEGACY_DIR = os.path.join(OUTPUT_DIR, "flashcards_md_legacy") # archived md deck JSONs
 THEORY_MDS_DIR = os.path.join(OUTPUT_DIR, "Theory MDs")                     # theory notes rendered by portal
+THEORY_PROCESSED_DIR = os.getenv("THEORY_PROCESSED_DIR", "C:/RONAK/AI Projects/ACUMEN/THEORY/processed")  # theory notes for flashcards.py theory
 
 # THEORY folder abbreviations -> canonical subtopic-vocab system(s)
-# (used by flashcard_generator tagging; composite dirs get union vocab)
+# (used by flashcards.py tagging; composite dirs get union vocab)
 THEORY_SPEC_TO_CANONICAL = {
     "CVS": ["Cardiology"],
     "RS": ["Pulmonology"],

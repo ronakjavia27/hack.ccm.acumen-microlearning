@@ -1153,7 +1153,7 @@ function renderDrawerContent(kind, item, content){
     const nDisc = cards.filter(c=>c.status==='discarded').length;
     const tags = (item.subtopics||[]).length
       ? item.subtopics.map(t=>`<span class="fc-tag">${esc(t)}</span>`).join('')
-      : '<span style="color:var(--text-muted);font-size:12px">No subtopic tags — re-tag via flashcard_generator.py --tag-only</span>';
+      : '<span style="color:var(--text-muted);font-size:12px">No subtopic tags — re-tag via flashcards.py tag</span>';
     const srcNote = 'Unified store · <code>output_files/flashcards/</code> (edits persist; authored markdown kept when source is md)';
     $('drawerBody').innerHTML = `<div class="field"><label>Title (subtopic)</label><input type="text" id="f_title" value="${esc(item.title)}"></div>
       <div class="field"><label>Specialty (system — reclassify moves cards)</label><select id="f_specialty">${fcSpecialtyOptions(item.specialty)}</select></div>

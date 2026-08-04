@@ -280,7 +280,8 @@ async def api_flashcard_regenerate(item_id: str, body: Dict[str, Any]):
     # Write the revised card back into the authored markdown, when mappable
     src_file = card.get("source_file") or ""
     if card.get("source") == "md" and src_file:
-        md_abs = REPO_ROOT / "flashcards_md" / src_file.replace("\\", "/")
+        from acumen_core.config import FLASHCARDS_INPUT_DIR
+        md_abs = Path(FLASHCARDS_INPUT_DIR) / src_file.replace("\\", "/")
         _rewrite_md_card(md_abs, new_sub, new_back, new_front)
     return {"updated": True, "card": _view_card(card)}
 

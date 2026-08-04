@@ -1,0 +1,841 @@
+{
+  "id": "apasl-aclf-critical-care-management-2026",
+  "doc_type": "guideline",
+  "title": "A global consensus on the critical care management of acute-on-chronic liver failure patients: the APASL ACLF Beijing Position Paper",
+  "issuing_bodies": [
+    "APASL",
+    "AARC"
+  ],
+  "year": 2026,
+  "doi": "10.1007/s12072-026-11116-1",
+  "specialty": [
+    "hepatology",
+    "multi_system",
+    "pharmacology"
+  ],
+  "tags": [
+    "aclf",
+    "critical care",
+    "cirrhosis",
+    "hepatorenal syndrome",
+    "sepsis",
+    "liver transplantation",
+    "artificial liver support",
+    "coagulopathy"
+  ],
+  "one_line_summary": "An APASL global consensus providing 104 evidence-based position statements for **critical** care management of acute-on-chronic liver failure, covering organ support, infection, hemodynamics, artificial liver support, and transplantation criteria.",
+  "key_pearls": [
+    "Resuscitation in ACLF septic shock should target a **MAP of 65–75 mmHg** and **lactate < 2 mmol/L** using balanced crystalloids or **5% albumin**.",
+    "First-line treatment for **HRS-AKI** is **terlipressin** combined with intravenous **albumin**; early initiation within **12–24 hours** reduces short-term **mortality**.",
+    "Conventional coagulation tests (**PT**, **INR**, **platelet count**) do not predict bleeding risk in ACLF; viscoelastic testing (**TEG**, **ROTEM**) should guide targeted transfusion.",
+    "Empirical broad-spectrum antibiotics should be de-escalated or discontinued at **24–48 hours** if cultures are negative and the patient is clinically improving.",
+    "For acute variceal bleeding with high-risk features, pre-emptive **PTFE-covered TIPS** within **72 hours** **significantly** reduces rebleeding and 42-day **mortality**.",
+    "**Critically** ill ACLF patients require **30–35 kcal/kg/day** energy intake and **1.2–1.5 g/kg/day** protein via enteral nutrition to prevent severe catabolism and sarcopenia."
+  ],
+  "consensus_method": "Modified Delphi method featuring open show-of-hands voting at the APASL Annual Conference in March 2025 (Beijing) followed by an anonymous online voting round with a predefined consensus threshold of >= 75% agreement.",
+  "search_period": "Up to April 2026",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Prognostic Models and Level of Care Stratification",
+      "narrative": "- Patients with ACLF present with high rates of multi-organ dysfunction requiring structured **critical** care.\n- Dynamic assessment using validated scores (**AARC**, **CLIF-C ACLF**, **NACSELD**, **MELD-Lactate**, **TPPM**, **COSSH-ACLF**) at days **0, 3, 7, and 14** predicts organ failure trajectories better than single baseline measurements.\n- High dependency units (**HDU**) serve as an effective intermediate level of care for patients not requiring invasive mechanical ventilation.",
+      "recommendations": [
+        {
+          "rec_id": "1",
+          "statement": "ACLF patients with advanced encephalopathy, severe GI bleeding, coagulopathy and sepsis, requiring vasopressors, mechanical ventilation, or renal replacement therapy (RRT) should be managed in the ICU.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "2",
+          "statement": "Prognostic models in ACLF like APASL AARC score, CLIF-C ACLF score, NACSELD ACLF Score, MELD-Lactate Score, TPPM score and COSSH-ACLF score are helpful for treatment decisions and ICU transfer.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "3",
+          "statement": "Dynamic assessment of prognostic models, i.e., serial assessment at days 0, 3, 7, and 14, and when clinically indicated, helps in accurately predicting the need for further organ support.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "18",
+          "statement": "HDU provides an intermediate level of care between general ward and the ICU. HDU care may be most suitable for ACLF patients who do not require mechanical ventilation.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Identification and Prevention of Multi-Organ Failure",
+      "narrative": "- Systemic inflammation drives the transition from pre-ACLF to full-blown organ failure.\n- Early treatment of acute precipitants (e.g., reactivation of **HBV**, alcohol abuse, **DILI**, bacterial infection, variceal bleeding) halts disease progression.\n- Specialized scores like **GIC** predict bacterial infection risk, while **ABILI** predicts **mortality** in HBV-ACLF with infection.\n- Non-selective beta-blockers (**NSBBs**) reduce portal pressure and systemic inflammation, but initiation in ACLF must be individualized.",
+      "recommendations": [
+        {
+          "rec_id": "4",
+          "statement": "Identification and prevention of risk factors for development of organ failure including avoiding use of nephrotoxic antibiotics and drugs is a **critical** part of management of ACLF patients. GIC score can be used to predict the risk of bacterial infections and ABILI score can be used to predict the risk of **mortality** in HBV-ACLF complicated with bacterial infections.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "5",
+          "statement": "Prompt treatment of precipitating factors like viral hepatitis, alcohol, drug-induced liver injury, infections, and GI bleeding can prevent the progression of ACLF and reduce the risk of organ failure.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "6",
+          "statement": "Optimizing hemodynamic stability by vasopressors, cautious use of albumin infusion, and judicious fluid management to maintain tissue perfusion and avoid volume overload is advised. Avoiding cumulative positive balance through excessive fluid resuscitation is encouraged to prevent pulmonary edema.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "7",
+          "statement": "Early non-invasive ventilation can prevent hypoxemia-related syndrome in hypoxemic patients.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "8",
+          "statement": "Empirical antibiotics based on local antibiogram should be initiated for suspected bacterial infections, such as spontaneous bacterial peritonitis (SBP), urinary tract infection (UTI), pneumonia.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "9",
+          "statement": "Adequate nutritional support is vital for preventing organ failure in ACLF. Enteral nutrition is preferred to maintain mucosal integrity and reduce the risk of bacterial translocation.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "10",
+          "statement": "Branched-chain amino acid (BCAA)-enriched formulas are preferred in malnourished patients. Avoiding fasting, providing small, frequent meals may prevent catabolism.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "11",
+          "statement": "Non-selective beta-blockers (NSBBs) such as propranolol and carvedilol reduce portal pressure, can prevent variceal bleeding, improve **survival**, and reduce the severity of systemic inflammation in a subgroup of patients. Decision to start NSBBs in patients with ACLF should be made on a case-by-case basis.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "12",
+          "statement": "Novel biomarkers, e.g., von Willebrand factor (vWF) and CLIF-SIG score may help to assess disease progression or response to treatment.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Ascites and Acute Portal Hypertension Syndrome",
+      "narrative": "- Severe hyperdynamic circulation and microcirculatory disturbances lead to high rates of paracentesis-induced circulatory dysfunction (**PICD**).\n- Intravenous **albumin** administration **significantly** lowers PICD incidence from **70% to 30%** even following modest volume paracentesis (**MVP**, 3–**5 L**).\n- Rapid development of ascites and variceal bleeding reflects severe acute portal hypertension in ACLF.",
+      "recommendations": [
+        {
+          "rec_id": "13",
+          "statement": "Acute portal hypertension syndrome may be recognized as a pathophysiological feature of ACLF, inducing rapid development of ascites, variceal bleeding, and other complications.",
+          "strength": "weak",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "14",
+          "statement": "Albumin should be given even after MVP, i.e., less than **5 L** of ascitic fluid to minimize the risk of PICD.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "15",
+          "statement": "Early diagnosis and prompt antibiotic therapy are crucial for managing SBP and preventing further complications.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "16",
+          "statement": "Early initiation of terlipressin within 12–24 h for AKI with albumin infusion helps in reducing short-term **mortality**.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "17",
+          "statement": "In patients with ACLF, ascites, and AKI stage 3, it is advisable to consider initiating early CRRT, in a case-by-case selection.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Infection Management, MDROs, and Antimicrobial Stewardship",
+      "narrative": "- Bacterial and fungal infections occur in up to **40%** of patients and drive extrahepatic organ failures.\n- High rates of antimicrobial resistance (**AMR**) necessitate local ecology surveillance and rapid diagnostic tools (**PCR**, **MALDI-TOF**).\n- Antibiotics do not reduce **mortality** in severe alcohol-associated hepatitis (**AH**) or uninfected patients; routine primary empirical prophylaxis is discouraged.",
+      "recommendations": [
+        {
+          "rec_id": "19",
+          "statement": "Patients with alcohol-associated ACLF are highly susceptible to bacterial and fungal infections, which are linked to the development of organ failures and increased **mortality**.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "20",
+          "statement": "Patients with alcohol-associated ACLF who are treated with steroid or other immunosuppressant therapies are particularly prone to developing infections, especially fungal infections.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "21",
+          "statement": "Antibiotics reduce infections but do not lower **mortality** in severe AH and ACLF.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "22",
+          "statement": "In hospitalized patients with acutely decompensated cirrhosis patients, empirical antibiotics do not prevent hospital-acquired infection.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "23",
+          "statement": "Antibiotics should be discontinued for hospitalized patients with ACLF if no infection is identified (guided by culture sensitivities at 24–48 h after commencement) and if the patient is showing improvement.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "24",
+          "statement": "Patients hospitalized with cirrhosis experience a high incidence of antimicrobial resistance (AMR), which justifies antimicrobial stewardship.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "28",
+          "statement": "Empirical antibiotic strategies must be adapted to the local ecology covering all potential pathogens in patients with ACLF or septic shock, including MDRO in case of nosocomial infection.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "29",
+          "statement": "Patients with severe infections probably benefit from strategies that optimize the pharmacokinetic/pharmacodynamic (PK/PD) of the antibiotics, especially continuous infusion in the case of beta-lactams and high-loading dose.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "30",
+          "statement": "Epidemiological surveillance programs (assessing potential MDRO carriers) could guide empirical antibiotic strategies.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Invasive Fungal Infection and Viral Sepsis",
+      "narrative": "- Invasive fungal infections (**IFI**), predominantly invasive candidiasis (**IC**, 70–90%) and invasive aspergillosis (**IA**, 10–20%), carry extremely high **mortality** and serve as major delisting criteria for LT.\n- Biomarkers such as **1,3-beta-D-glucan** (BDG) and **galactomannan** (GM) display high negative predictive values; two consecutive negative BDG results facilitate safe antifungal discontinuation.\n- Viral pathogens including **CMV**, **EBV**, **HSV**, and **SARS-CoV-2** can trigger bone marrow suppression and viral sepsis.",
+      "recommendations": [
+        {
+          "rec_id": "31",
+          "statement": "IFI is not uncommon in patients with ACLF and is associated with a high-risk of **mortality**. Any clinical and biochemical deterioration should prompt an evaluation for infection, including IFI.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "32",
+          "statement": "The diagnosis of IFI in ACLF can be classified as proven, probable, or possible, based on host factors, clinical features, and mycological evidence.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "33",
+          "statement": "Fungal biomarkers, including 1,3-beta-D-glucan and GM, can support the diagnosis of IFIs and have high negative predictive value.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "34",
+          "statement": "Echinocandins are the preferred antifungal agents for the treatment of invasive candidiasis.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "35",
+          "statement": "For IA, liposomal amphotericin B should be considered, as with lower hepatic toxicity, but potential nephrotoxicity. Voriconazole could be adopted with dosage adjustment based on MELD score.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "36",
+          "statement": "Viral infection (e.g., SARS-CoV-2) should be considered when unexplained fever, influenza-like illness, or signs suggestive of specific pathogens (such as cytopenia, ground-glass opacities, upper respiratory tract involvement) are present, particularly if accompanied by elevated lactate levels or worsening organ function.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "37",
+          "statement": "Viral sepsis in ACLF necessitates tailored strategies combining rapid virologic diagnosis, timely therapy, and holistic care.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Renal Failure, Vasopressors, and Renal Replacement Therapy",
+      "narrative": "- Acute kidney injury (**AKI**) is a frequent driver of **mortality** in ACLF.\n- Urinary **NGAL** at a cutoff of **> 220 mcg/g creatinine** accurately differentiates acute tubular necrosis (**ATN**) from hepatorenal syndrome (**HRS-AKI**).\n- Terlipressin with albumin is **superior** to noradrenaline or albumin alone; however, respiratory adverse events require caution in **Grade 3 ACLF** or severe baseline hypoxemia.\n- Continuous renal replacement therapy (**CRRT**) is preferred over intermittent hemodialysis due to hemodynamic instability.",
+      "recommendations": [
+        {
+          "rec_id": "25",
+          "statement": "**Critical** pillars in the management of AKI in ACLF include avoiding nephrotoxic agents, maintaining hemodynamic stability, and ensuring effective infection control.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "26",
+          "statement": "Prevention of AKI requires a multidisciplinary approach that integrates hemodynamic management, infection control, and judicious introduction of procedural interventions to address **critical** complications in ACLF.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "38",
+          "statement": "In patients with ACLF, a prompt diagnosis of HRS-AKI should be made after ruling out alternate causes of AKI.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "39",
+          "statement": "Terlipressin bolus or infusion combined with intravenous albumin is the first line of treatment for HRS-AKI and must be used with caution in patients with grade 3 ACLF or patients with known cardiac dysfunction or respiratory conditions.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "40",
+          "statement": "RRT should be initiated in patients with ACLF who have non-response to vasoconstrictors and in those with clear indications for RRT (advanced azotemia, metabolic acidosis, hyperkalemia, and volume overload non-responsive to diuretics).",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "41",
+          "statement": "CRRT is preferred over intermittent modes of RRT in patients with ACLF, especially in those with multi-organ failure and hemodynamic instability.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "42",
+          "statement": "NGAL may be used to identify patients with ATN who may require RRT in cases of terlipressin non-response.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Hepatic Encephalopathy and Cognitive Failure Management",
+      "narrative": "- Altered mental status in ACLF demands differentiation between hepatic encephalopathy (**HE**), septic encephalopathy, and intracranial hemorrhage.\n- Arterial/plasma ammonia levels **> 100 micromol/L** support HE risk stratification, while normal levels effectively exclude HE.\n- Low total and free thyroxine (**T4**) levels serve as novel predictive biomarkers for severe HE progression.\n- Rifaximin does not provide incremental **survival** benefit when patients are already receiving broad-spectrum systemic antibiotics.",
+      "recommendations": [
+        {
+          "rec_id": "43",
+          "statement": "A comprehensive differential diagnosis is vital for ACLF patients with altered mental status, as HE often coexists with or mimics other **critical** conditions, such as septic encephalopathy, intracranial hemorrhage, etc.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "44",
+          "statement": "Management of acute HE episodes should focus on preventing complications such as aspiration pneumonia, dehydration from excessive lactulose, timely advanced care planning for transplantation, and ensuring medication continuity upon discharge.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "45",
+          "statement": "Ammonia levels can help exclude HE when normal but are not definitively diagnostic when elevated, while recent evidence suggests low thyroxine levels may predict development of severe HE.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "46",
+          "statement": "ACLF patients with bacterial infection on broad-spectrum antibiotics do not acquire **survival** benefit from the addition of rifaximin.",
+          "strength": "weak",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Hemodynamics, Cardiac Evaluation, Shock Targets, and Lactate Kinetics",
+      "narrative": "- Cirrhotic cardiomyopathy and shock complicate circulatory management in ACLF.\n- Point-of-care ultrasound (**POCUS**) and echocardiography assist in volume assessment and early identification of cardiogenic shock using tools like the **SUSPECT CS** framework.\n- Resuscitation should target **MAP 65–75 mmHg** and **lactate < 2 mmol/L**; Plasmalyte and **5% albumin** are preferred resuscitation fluids.\n- Serial lactate monitoring targeting a **20% reduction every 2 hours** guides resuscitation and gauges infection control efficacy.",
+      "recommendations": [
+        {
+          "rec_id": "47",
+          "statement": "Thorough evaluation of the patient's medical history, especially any pre-existing cardiac conditions, and performance of routine cardiac tests, including cardiac biomarkers, ECG, and echocardiography, can quickly assess cardiac hemodynamics, and rule out dysfunction.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "48",
+          "statement": "Echocardiography and hemodynamic monitoring are used to assess cardiac function and volume status precisely. In complex cases, invasive monitoring can be considered to better guide volume and catecholamine administration.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "49",
+          "statement": "A multidisciplinary team approach involving cardiology, hepatology, and **critical** care should be employed to manage these complex patients. Technologies or tools like the 'SUSPECT CS' mnemonic is encouraged to aid clinicians rapidly identifying and diagnosing cardiogenic shock.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "50",
+          "statement": "Point-of-care ultrasonography (POCUS) should be used for assessment of shock and fluid management.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "51",
+          "statement": "Balanced crystalloids (e.g., Plasmalyte) is preferred for safety issues.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "52",
+          "statement": "A 5% albumin can be used when MAP < **60 mmHg** or lactate >= **2 mmol**/L or vasopressor 0.2–**0.3 mcg**/kg/min for hemodynamic recovery and for raising albumin if 2.5–**3.0 g**/dL.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "53",
+          "statement": "Target MAP should be maintained between 65 and **75 mmHg**, aiming for lactate < **2 mmol**/L.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "54",
+          "statement": "Serum lactate can be assessed, together with established prognostic models such as the AARC score to support severity stratification and short-term prognostic assessment in patients with ACLF.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "55",
+          "statement": "Serial lactate monitoring should be incorporated into the hemodynamic assessment of ACLF patients with shock or hypoperfusion to help guide fluid resuscitation and overall circulatory support.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "56",
+          "statement": "Changes in lactate levels can indicate treatment effectiveness in infection control in septic shock. Monitoring lactate helps identify patients who do not respond well to treatment, enabling timely adjustments to therapy.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Portal Hypertensive Bleeding and Coagulation Management",
+      "narrative": "- Coagulation failure is a distinct driver of **prognosis** in ACLF, classified as dysfunction (**INR 1.5–2.5**) or failure (**INR > 2.5**).\n- Conventional coagulation tests (**PT**, **INR**) reflect rebalanced or distorted static synthesis rather than clinical bleeding risk.\n- Viscoelastic tests (**TEG**, **ROTEM**, **Sonoclot**) capture dynamic clot initiation, strength, and lysis, enabling targeted blood component therapy and preventing volume overload (**TACO**) or lung injury (**TRALI**).\n- Pre-emptive **PTFE-covered TIPS** within **72 hours** (ideally < 24 h) improves 42-day and 1-year **survival** in high-risk variceal bleeding.",
+      "recommendations": [
+        {
+          "rec_id": "57",
+          "statement": "In patients with ACLF who develop acute variceal bleeding, early risk stratification and intensified monitoring should be considered because of the increased risk of rebleeding and **mortality**.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "58",
+          "statement": "Pre-emptive and salvage/rescue TIPS should be considered in ACLF and variceal bleeding in properly selected patients.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "59",
+          "statement": "Rescue TIPS is **recommended** for refractory variceal bleeding in ACLF, provided sepsis and multi-organ failure (ACLF-3) are excluded. Pre-emptive TIPS should be prioritized in ACLF patients with acute variceal bleeding and high-risk features (Child–Pugh C, or B > 7 + active bleeding, MELD >= 19) to reduce treatment failure and **mortality**.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "60",
+          "statement": "In patients with ACLF, HE or hyperbilirubinemia may not be considered an **absolute** contraindication to TIPS. Patient selection requires multidisciplinary evaluation, balancing bleeding severity, ACLF grade, and contraindications (e.g., uncontrolled infections).",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "61",
+          "statement": "Coagulation failure should be used as a landmark to define the natural history of ACLF.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "62",
+          "statement": "In patients with ACLF, coagulation abnormalities should be interpreted in the context of systemic inflammation, sepsis, and the overall hemostatic profile.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "63",
+          "statement": "Evidence of hypocoagulability in ACLF should prompt careful prognostic assessment and closer clinical monitoring, even in the absence of overt bleeding.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "64",
+          "statement": "Conventional coagulation assessments, including PT, APTT, INR, fibrinogen levels and bleeding time do not consistently predict the risk of bleeding in patients with ACLF.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "65",
+          "statement": "Viscoelastic tests such as TEG, Sonoclot and ROTEM provide a more physiological and dynamic evaluation of coagulation, thereby offering improved prediction of bleeding risk in ACLF.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "66",
+          "statement": "Viscoelastic tests should be strongly considered to guide blood transfusion strategies in ACLF.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "67",
+          "statement": "In managing non-variceal bleeding in ACLF patients, a targeted transfusion strategy based on viscoelastic testing can effectively correct coagulopathy, stop bleeding, and avoid transfusion-related complications.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Extracorporeal and Artificial Liver Support Systems",
+      "narrative": "- Plasma exchange (**PE**) and hemoperfusion/adsorption systems (**CytoSorb**, **DPMAS**, **DIALIVE**) **significantly** reduce total bilirubin, endotoxins, and systemic cytokines.\n- PE demonstrates short-term **survival** benefits in selected ACLF patients without severe shock, invasive ventilation, or active sepsis, serving as a bridging tool to LT.\n- High equipment and staffing requirements, potential bleeding/thrombosis risks, and lack of proven long-term **survival** in unselected populations remain major clinical challenges.",
+      "recommendations": [
+        {
+          "rec_id": "68",
+          "statement": "PE **significantly** reduces bilirubin, decreases systemic inflammation and improves coagulation function in patients with ACLF.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "69",
+          "statement": "PE improves the **survival** of carefully selected ACLF patients with no infection, shock, and ventilation.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "70",
+          "statement": "More clinical data are needed to determine the timing and treatment endpoints for ACLF patients undergoing PE.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "71",
+          "statement": "PE may act as a supportive treatment before LT.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "72",
+          "statement": "The choice of filter is crucial, as different materials and designs **significantly** impact therapeutic outcomes.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "73",
+          "statement": "ALSS (PP + PE, DPMAS + PE) may improve hyperbilirubinemia, endotoxemia, and encephalopathy and may be used as a bridge to transplantation in selected cases.",
+          "strength": "weak",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "74",
+          "statement": "ALSS (PP + PE, DPMAS + PE) requires **significant** resources and skilled personnel, is associated with potential complications, and has variable efficacy depending on the patient's condition and etiology.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "75",
+          "statement": "ALSS (PP + PE, DPMAS + PE) can mask true disease progression, raise ethical concerns regarding high-cost treatments with limited benefit, and may not improve long-term **prognosis**.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "topic": "Nutrition, Sarcopenia, Metabolic Comorbidities, and Gut Axis",
+      "narrative": "- Sarcopenia occurs in **37.5%** of cirrhosis patients and doubles **mortality** risk (**HR 2.3**).\n- Sarcopenic obesity is common in **MASLD-ACLF**; energy requirements must be calculated (**30–35 kcal/kg/day**) with high protein provision (**1.2–1.5 g/kg/day**).\n- Enteral nutrition via nasogastric tube with aspiration precautions is preferred over parenteral nutrition.\n- Fecal microbiota transplantation (**FMT**) shows promise for gut dysbiosis but carries severe risks of MDRO transmission and sepsis in immunocompromised ACLF patients.",
+      "recommendations": [
+        {
+          "rec_id": "27",
+          "statement": "In patients with ACLF and comorbidities, particularly obesity and DM, management should emphasize early identification and treatment of precipitating events, careful glycemic control, infection surveillance, and tailored nutritional and organ support, along with timely assessment for LT.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "76",
+          "statement": "Obesity and related metabolic dysfunction should be recognized as important comorbid factors in ACLF and should be considered in risk assessment, nutritional evaluation, and transplantation planning.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "77",
+          "statement": "Nutritional assessment with the Royal Free Hospital Nutrition Prioritizing Tool is helpful in ACLF.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "78",
+          "statement": "**Critically** ill ACLF patients should receive at least 30–35 kcal/kg/BW/day, with protein intake ranging from 1.2 to **1.5 g**/kg/day to prevent sarcopenia. Carbohydrates should constitute 45–50% of daily intake, with the remainder from lipids.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "79",
+          "statement": "Enteral nutrition is **recommended** to reduce **mortality** and infectious morbidity in ACLF patients. In patients with HE who are unable to maintain adequate oral intake, nasogastric feeding may be considered with appropriate aspiration precautions, including head-up positioning and close monitoring.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "80",
+          "statement": "Sarcopenia is common and associated with poorer long-term outcomes and may guide a decision-making in the management of patients with ACLF.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "81",
+          "statement": "Sarcopenia in cirrhosis is a risk factor for ACLF development in patients on the waiting list for LT.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "82",
+          "statement": "Sarcopenia is associated with high **mortality**, infection, and longer hospital stay among hospitalized ACLF patients and post-LT patients.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "83",
+          "statement": "Gut dysfunction should be systematically evaluated in patients with ACLF and considered in high-risk patients with decompensated cirrhosis, given its potential role in systemic inflammation and extrahepatic organ failure.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "84",
+          "statement": "Restoration of gut microbiota balance is a key therapeutic target, with current interventions such as rifaximin, probiotics, and FMT representing promising therapeutic options but requiring cautious application due to inconsistent evidence and potential risks. Further validation studies are needed.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "85",
+          "statement": "Long-term antibiotic prophylaxis and microbial modulation strategies must be carefully balanced against the risk of AMR, emphasizing the need for patient-specific approaches.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "topic": "Liver Transplantation Selection, Alcohol-ACLF, and Pre-LT Optimization",
+      "narrative": "- Liver transplantation (**LT**) is the definitive treatment for severe ACLF; candidates with **ACLF Grade III** should ideally be transplanted within **30 days** of listing.\n- Selection for LT in alcohol-related ACLF requires rigorous psychosocial evaluation, assessment of sobriety commitment, and ruling out uncontrolled infections or severe unmanageable cardiovascular disease.\n- Living donor liver transplantation (**LDLT**) and ex vivo machine perfusion for marginal grafts expand donor options in emergency settings.",
+      "recommendations": [
+        {
+          "rec_id": "86",
+          "statement": "In ACLF Grade III, the decision to transplant depends on the extent and reversibility of organ failure, the severity of ALI/ARDS, the dynamic changes in AARC score, the number and dose of vasopressors, and the presence or absence of sepsis.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "87",
+          "statement": "Given the urgency of ACLF Grade III patients' conditions, the transplant team must weigh the risks and benefits of proceeding with a less-than-perfect donor liver against the risk of further deterioration of the patient's condition.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "88",
+          "statement": "The patient's psychological status, adherence to post-transplant care, and social support system are also important considerations, as these factors can **significantly** impact the patient's postoperative recovery and quality of life.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "89",
+          "statement": "For alcohol-related ACLF grade III patients, a comprehensive evaluation is required. Severe comorbidities such as uncontrollable infections or severe cardiovascular diseases make transplantation too risky, necessitating a refusal.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "90",
+          "statement": "The shortage of donor livers and the poor quality of available donors can complicate decisions. If patients cannot quit alcohol before transplantation and have a high risk of relapse post-transplantation, warranting a refusal need to be fully considered.",
+          "strength": "strong",
+          "evidence_grade": "high"
+        },
+        {
+          "rec_id": "91",
+          "statement": "Poor psychological status, lack of family support, and inability to adhere to postoperative care requirements are **critical** considerations. If these factors are present, they **significantly** increase the risk of transplant failure, leading to a decision to refuse transplantation.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "92",
+          "statement": "LDLT if indicated and feasible should be considered for patients with ACLF.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "93",
+          "statement": "ACLF in the setting of AH should be differentiated and managed differently than ACLF in patients with underlying alcohol-associated cirrhosis without AH.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "94",
+          "statement": "Liver transplant for ACLF in the setting of alcohol-associated cirrhosis should not proceed in the setting of prior history of hepatic decompensation due to alcohol-use disorder, multiple failed rehabilitation attempts, impaired mental status precluding assessment of commitment to sobriety, lack of social support, polysubstance abuse, and severe sarcopenia.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "95",
+          "statement": "Liver transplant for ACLF in the setting of AH may not proceed in the setting of an advanced stage of ACLF until stabilized.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "96",
+          "statement": "Patients should ideally be transplanted within 30 days of listing or assessment of suitability for transplantation.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "97",
+          "statement": "Patients with ACLF should be prioritized on waitlists to ensure early access to liver grafts.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "98",
+          "statement": "Marginal grafts can be considered for use with machine perfusion depending on local expertise.",
+          "strength": "weak",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "99",
+          "statement": "An abbreviated process of evaluation for transplant suitability can be applied for **critically** ill patients under emergency transplantation, with limited examinations.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "100",
+          "statement": "Patients with non-response to treatment of AKI should have a low threshold for initiation of RRT as a bridge to transplant.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "101",
+          "statement": "Patients requiring prolonged RRT can be considered for simultaneous liver and kidney transplants.",
+          "strength": "weak",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "102",
+          "statement": "ALSS can be used to bridge patients to liver transplant, to prolong the time that they are suitable for transplant while awaiting a suitable donor.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "103",
+          "statement": "There should be a low threshold to evaluate for infections with routine examination of blood, body fluids, and imaging. These should be treated with empiric broad-spectrum antimicrobials till identification of the responsible species.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "104",
+          "statement": "Antibiotics should be initiated 24 h before and continued until 24–72 h post-transplantation.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Immediate Risk Stratification & Care Setting Allocation",
+      "action": "Calculate baseline prognostic scores (AARC, CLIF-C ACLF, MELD-Lactate). Immediately transfer patients to the ICU if they present with grade 3–4 hepatic encephalopathy, severe GI hemorrhage, shock requiring vasopressors, acute respiratory failure, or stage 3 AKI requiring RRT. Assign non-ventilated stable multi-organ cases to a High Dependency Unit (HDU)."
+    },
+    {
+      "step": 2,
+      "title": "Hemodynamic Resuscitation & Septic Shock Target Protocol",
+      "action": "Perform immediate blood/fluid cultures and initiate POCUS-guided fluid resuscitation with balanced crystalloids (Plasmalyte) or 5% albumin. Target MAP between 65 and **75 mmHg** and serum lactate < **2 mmol**/L. Avoid fluid overload and monitor lactate clearance every 2 hours (aiming for >= 20% decline)."
+    },
+    {
+      "step": 3,
+      "title": "Organ Failure Specific Therapies & Coagulopathy Support",
+      "action": "For AKI/HRS, start Terlipressin with Albumin early (within 12–24 hours). Administer Albumin even for modest volume paracentesis (MVP, 3–**5 L**). If non-variceal bleeding occurs, perform viscoelastic testing (TEG/ROTEM) to guide targeted blood product transfusion rather than relying on INR/PT."
+    },
+    {
+      "step": 4,
+      "title": "Antimicrobial Stewardship & Non-Biological Bridging",
+      "action": "Initiate local ecology-driven empirical antibiotics for suspected sepsis. Re-evaluate at 24–48 hours using rapid microbial identification (PCR/MALDI-TOF); de-escalate or stop antibiotics if cultures are negative and clinical status is improving. Screen for fungal markers (1,3-beta-D-glucan). Consider plasma exchange or ALSS as a bridge to liver transplantation in select non-septic candidates."
+    },
+    {
+      "step": 5,
+      "title": "Emergency Transplantation Evaluation",
+      "action": "For ACLF Grade III patients, initiate expedited pre-LT workup. Evaluate psychosocial criteria, alcohol abstinence compliance, and rule out uncontrollable active infections. Aim for definitive transplantation or LDLT within 30 days of waitlisting."
+    }
+  ],
+  "strengths_limitations": "- Strengths: Extensive global collaboration involving 109 international experts, systematic application of the GRADE framework across 104 position statements, and broad clinical coverage spanning diagnosis, organ support systems, and transplantation.\n- Limitations: Several position statements rely on moderate- to low-quality evidence or regional data, panel-related citation bias cannot be completely excluded, and direct patient/public involvement was not incorporated during consensus development.",
+  "drugs_doses": [
+    {
+      "drug": "Terlipressin",
+      "dose": "1 mg IV bolus every 4–6 hours (or continuous infusion up to 12 mg/day) for up to 14 days",
+      "indication": "Hepatorenal syndrome (HRS-AKI) in ACLF",
+      "adverse_effects": "Respiratory failure/pulmonary edema (especially in grade 3 ACLF), peripheral ischemia, cardiac arrhythmia, abdominal pain; closely monitor pulmonary function and oxygenation."
+    },
+    {
+      "drug": "Human Albumin",
+      "dose": "1.5 g/kg on day 1 followed by 1.0 g/kg on day 3 for SBP/HRS; 5% albumin IV for septic shock resuscitation when MAP < 60 mmHg or lactate >= 2 mmol/L",
+      "indication": "HRS-AKI, SBP, fluid resuscitation in septic shock, and prevention of PICD after paracentesis",
+      "adverse_effects": "Transfusion-associated circulatory overload (TACO), pulmonary edema."
+    },
+    {
+      "drug": "Propranolol",
+      "dose": "Individualized oral dosing titrated to resting heart rate 55–60 bpm",
+      "indication": "Primary/secondary prevention of variceal bleeding and portal hypertension",
+      "adverse_effects": "Hypotension, bradycardia, precipitation of AKI during severe sepsis; evaluate on a case-by-case basis in ACLF."
+    },
+    {
+      "drug": "Carvedilol",
+      "dose": "6.25 mg to 12.5 mg orally once daily",
+      "indication": "Prevention of variceal bleeding and reduction of portal pressure",
+      "adverse_effects": "Systemic arterial hypotension, heart block, worsening renal hypoperfusion."
+    },
+    {
+      "drug": "Echinocandins (e.g., Caspofungin, Micafungin, Anidulafungin)",
+      "dose": "Standard weight-based IV loading and daily maintenance doses per drug specification",
+      "indication": "First-line empirical/targeted treatment for invasive candidiasis / candidemia in ACLF",
+      "adverse_effects": "Infusion reactions, mild hepatotoxicity, histamine release."
+    },
+    {
+      "drug": "Voriconazole",
+      "dose": "Oral/IV weight-based dosing with adjustments tailored to baseline MELD score",
+      "indication": "Targeted treatment for invasive pulmonary aspergillosis (IA)",
+      "adverse_effects": "Hepatic toxicity, visual disturbances, neurotoxicity, skin photosensitivity; monitor serum drug trough levels."
+    },
+    {
+      "drug": "Liposomal Amphotericin B",
+      "dose": "3–5 mg/kg/day IV infusion",
+      "indication": "Invasive aspergillosis in ACLF (alternative to voriconazole with lower hepatic toxicity)",
+      "adverse_effects": "Nephrotoxicity, hypokalemia, infusion-related chills/fever."
+    },
+    {
+      "drug": "Ganciclovir",
+      "dose": "5 mg/kg IV every 12 hours (dose-adjusted for renal impairment)",
+      "indication": "Targeted treatment for cytomegalovirus (CMV) viremia/viral sepsis",
+      "adverse_effects": "Bone marrow suppression (neutropenia, anemia, thrombocytopenia), nephrotoxicity."
+    },
+    {
+      "drug": "Valganciclovir",
+      "dose": "900 mg orally every 12 hours (adjusted for renal function)",
+      "indication": "Targeted oral treatment/step-down for CMV infection in stable ACLF patients",
+      "adverse_effects": "Severe myelosuppression, diarrhea, nausea, headache."
+    },
+    {
+      "drug": "Rifaximin",
+      "dose": "550 mg orally twice daily",
+      "indication": "Prevention and treatment of recurrent hepatic encephalopathy",
+      "adverse_effects": "Nausea, abdominal pain; lacks additive survival benefit if the patient is already receiving systemic broad-spectrum antibiotics."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-03-30",
+  "article_subtype": "Guideline",
+  "subtopic": "Hepatology"
+}

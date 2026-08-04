@@ -1,0 +1,164 @@
+{
+  "id": "cccs-choosing-wisely-climate-conscious-critical-care-2026",
+  "doc_type": "guideline",
+  "title": "Choosing Wisely Canada climate-conscious recommendations for critical care medicine",
+  "issuing_bodies": [
+    "CCCS",
+    "CACCN",
+    "CSRT",
+    "CSHP",
+    "CPA"
+  ],
+  "year": 2026,
+  "doi": "10.1007/s12630-026-03148-w",
+  "specialty": [
+    "multi_system",
+    "pulmonology",
+    "pharmacology"
+  ],
+  "tags": [
+    "choosing wisely",
+    "climate change",
+    "sustainability",
+    "intensive care unit",
+    "deprescribing",
+    "waste reduction",
+    "infection control"
+  ],
+  "one_line_summary": "Seven evidence-based Choosing Wisely Canada recommendations providing pragmatic guidance for **critical** care clinicians to safely reduce the environmental footprint and supply waste of intensive care unit care.",
+  "key_pearls": [
+    "- Daily provision of **critical** care generates **88–178 kg of CO2-equivalents** and **1.1–13.7 kg of material waste** per patient.",
+    "- Disposable gloves carry the highest carbon and water footprint among single-use ICU items; routine glove use when hand hygiene is sufficient should be avoided.",
+    "- Routine changes of ventilator circuits or in-line suction catheters do not improve outcomes and may increase the risk of **ventilator-associated pneumonia**.",
+    "- Transitioning from IV to oral/enteral drug administration reduces greenhouse emissions **significantly**, with IV antibiotics generating **10–70 times higher CO2-equivalents** than enteral equivalents.",
+    "- Medication reconciliation prior to ICU discharge should explicitly target deprescribing ICU-specific therapies that are no longer indicated.",
+    "- Keeping surplus supply stock outside patient rooms prevents unnecessary disposal of clean items upon patient discharge or transfer."
+  ],
+  "consensus_method": "Three-stage structured anonymous voting process following scoping literature review and multidisciplinary consensus meetings",
+  "search_period": "November 2023 - May 2024",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Glove Use and Hand Hygiene",
+      "narrative": "- Gloves are indicated only when contact with bodily fluids or visibly soiled items is anticipated.\n- In ICU settings, disposable gloves account for **108 gloves per patient day**, representing the largest single-use carbon and water footprint hotspot.\n- Inappropriate glove use for low-risk procedures ranges from **16.7% to 92%** and leads to reduced hand hygiene adherence and increased cross-contamination.",
+      "recommendations": [
+        {
+          "rec_id": "R1",
+          "statement": "Do not use gloves when hand hygiene is sufficient.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Ventilator Circuit and In-Line Suction Maintenance",
+      "narrative": "- Scheduled routine changes of ventilator tubing or in-line suction catheters offer no clinical benefit in adult or pediatric populations.\n- Frequent circuit changes have been associated with an increased incidence of **ventilator-associated pneumonia (VAP)**.\n- Circuit and catheter replacement should occur only when equipment is visibly soiled or malfunctioning.",
+      "recommendations": [
+        {
+          "rec_id": "R2",
+          "statement": "Do not change ventilator tubing or in-line suction catheters unless they are visibly soiled.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "In-Room Supply Stocking",
+      "narrative": "- Unused single-use supplies kept inside patient rooms are frequently discarded upon transfer or discharge due to infection control protocols.\n- Discarding clean unused items creates substantial material waste and financial loss.\n- Restructuring workflows by maintaining supply carts outside rooms and utilizing small on-demand baskets markedly decreases supply waste.",
+      "recommendations": [
+        {
+          "rec_id": "R3",
+          "statement": "Do not bring surplus supplies or equipment into patient care rooms if they will require disposal after patient transfer/discharge.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Route of Medication Administration",
+      "narrative": "- IV drug delivery generates **10–70 times higher** CO2-equivalents for antibiotics, **8–66 times higher** for analgesics, **2 times higher** for **levetiracetam**, and **60 times higher** for **phosphate** compared to enteral routes.\n- IV therapy incurs additional waste from syringes, IV tubing, and fluid bags.\n- Enteral formulations of drugs such as **lansoprazole**, **acetaminophen**, **levetiracetam**, and **phosphate** demonstrate clinical efficacy or noninferiority compared to IV forms.",
+      "recommendations": [
+        {
+          "rec_id": "R4",
+          "statement": "Do not continue intravenous medications when an oral/enteral alternative is equally safe and effective.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Reusable versus Disposable Equipment",
+      "narrative": "- Reusable medical items generally demonstrate lower lifecycle carbon footprints than single-use alternatives.\n- Validated reusable options in **critical** care include **laryngoscopes**, **blood pressure cuffs**, **pulse oximeters**, **isolation gowns**, and **procedural instruments**.\n- Evidence does not demonstrate **superior** infection prevention with single-use devices over appropriately decontaminated reusable equipment.",
+      "recommendations": [
+        {
+          "rec_id": "R5",
+          "statement": "Do not use single-use/disposable items when a reusable option is available and less resource-intensive.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Infection Isolation Precautions",
+      "narrative": "- Patients under isolation precautions generate **significantly** higher volume of gown, glove, and single-use waste.\n- Isolation gowns and nonsterile gloves are key ICU **environmental hotspots** for greenhouse emissions and water consumption.\n- Empowering clinical staff to promptly discontinue unnecessary isolation precautions according to **Infection Prevention and Control (IPAC)** guidance safely reduces waste.",
+      "recommendations": [
+        {
+          "rec_id": "R6",
+          "statement": "Do not continue patient isolation precautions (e.g., shield, gown, gloves) after it is safe to discontinue such precautions in accordance with infection prevention and control practices.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Medication Reconciliation and ICU Deprescribing",
+      "narrative": "- Pharmaceuticals comprise nearly **25%** of overall healthcare emissions in developed nations.\n- ICU discharge transitions are prone to medication errors and inappropriate continuation of short-term ICU drugs.\n- Standardized checklists, pharmacist-led reconciliation, and clinician education effectively facilitate deprescribing at ICU transfer.",
+      "recommendations": [
+        {
+          "rec_id": "R7",
+          "statement": "Do not transfer a patient out of the intensive care unit without completing a medication reconciliation process and deprescribing intensive care unit-specific medications that are no longer indicated.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- Strengths: National multidisciplinary panel representing physicians, nurses, respiratory therapists, pharmacists, dietitians, and trainees; rigorous three-round consensus methodology informed by scoping literature reviews.\n- Limitations: Focuses exclusively on clinician-level decisions rather than hospital infrastructure, energy sourcing, or procurement; lacks patient/family and engineering representation; recommendations tailored to high-income country ICUs with potential regional variance in energy grids.",
+  "drugs_doses": [
+    {
+      "drug": "lansoprazole",
+      "dose": "Enteral (oral disintegrating tablet) vs IV",
+      "indication": "Gastric acid suppression / stress ulcer prophylaxis in critically ill patients",
+      "adverse_effects": "IV administration generates higher environmental footprint; enteral disintegrating tablet provides effective acid suppression"
+    },
+    {
+      "drug": "levetiracetam",
+      "dose": "Enteral vs IV administration",
+      "indication": "Seizure prophylaxis and treatment in critical care",
+      "adverse_effects": "IV route produces 2-fold higher CO2-equivalent emissions compared to oral/enteral administration"
+    },
+    {
+      "drug": "phosphate",
+      "dose": "Enteral vs IV replacement",
+      "indication": "Mild-to-moderate hypophosphatemia in critically ill patients",
+      "adverse_effects": "IV phosphate replacement generates 60-fold higher CO2-equivalents compared to enteral replacement"
+    },
+    {
+      "drug": "acetaminophen",
+      "dose": "Enteral vs IV administration",
+      "indication": "Analgesia and antipyresis in ICU patients",
+      "adverse_effects": "IV administration carries 8–66 times higher environmental footprint than enteral route"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-04-18",
+  "article_subtype": "Guideline",
+  "subtopic": "Multisystem"
+}

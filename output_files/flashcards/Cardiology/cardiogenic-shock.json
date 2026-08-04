@@ -108,11 +108,11 @@
         "original_subtopic": "SCAI Shock Stages (A–E)"
       },
       "source": "md",
-      "source_file": "CVS\\SCAI Shock Classification.md",
+      "source_file": "CVS/SCAI Shock Classification.md",
       "status": "active",
       "edit_history": [],
-      "created_at": "2026-08-02T09:30:33",
-      "updated_at": "2026-08-02T09:30:33"
+      "created_at": "2026-08-04T09:07:46",
+      "updated_at": "2026-08-04T09:07:46"
     },
     {
       "id": "91f27bfe-6456-41fb-b1b3-a525e60e8db5",
@@ -128,14 +128,106 @@
         "original_subtopic": "Key Takeaways"
       },
       "source": "md",
-      "source_file": "CVS\\SCAI Shock Classification.md",
+      "source_file": "CVS/SCAI Shock Classification.md",
       "status": "active",
       "edit_history": [],
-      "created_at": "2026-08-02T09:30:33",
-      "updated_at": "2026-08-02T09:30:33"
+      "created_at": "2026-08-04T09:07:46",
+      "updated_at": "2026-08-04T09:07:46"
+    },
+    {
+      "id": "80ead7c7-902a-405c-893a-7c5d4e3b6fc6",
+      "slug": "norepinephrine-dosing-shock",
+      "front": "What is the initial dose and titration for norepinephrine in cardiogenic shock?",
+      "back": "| Step | Dose | Titration | Max |\n|------|------|-----------|-----|\n| Initial | 0.02–0.05 mcg/kg/min (2–5 mcg/min fixed) | +0.02–0.05 mcg/kg/min every few min | 1–3 mcg/kg/min (refractory shock) |\n\n---",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock",
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Norepinephrine Dosing (Shock)"
+      },
+      "source": "md",
+      "source_file": "CVS/flashcards-data.md",
+      "status": "pending",
+      "edit_history": [
+        "front auto-generated at 2026-08-04T09:11:47"
+      ],
+      "created_at": "2026-08-04T09:09:07",
+      "updated_at": "2026-08-04T09:09:08"
+    },
+    {
+      "id": "9b4379b8-544b-4c25-9b1e-d67d2aa81ed9",
+      "slug": "epinephrine-phenylephrine-dosing-shock",
+      "front": "What are the initial, titration, and max doses for epinephrine and phenylephrine in cardiogenic shock?",
+      "back": "| Drug | Initial | Titration | Max |\n|------|---------|-----------|-----|\n| **Epinephrine** | 0.01–0.05 mcg/kg/min (1–5 mcg/min) | +0.01–0.05 mcg/kg/min | 0.5–1.0 mcg/kg/min |\n| **Phenylephrine** | 0.5–1.0 mcg/kg/min (40–100 mcg bolus) | +0.5 mcg/kg/min | 5–9 mcg/kg/min |\n\n---",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock",
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Epinephrine & Phenylephrine Dosing (Shock)"
+      },
+      "source": "md",
+      "source_file": "CVS/flashcards-data.md",
+      "status": "pending",
+      "edit_history": [
+        "front auto-generated at 2026-08-04T09:11:49"
+      ],
+      "created_at": "2026-08-04T09:09:07",
+      "updated_at": "2026-08-04T09:09:08"
+    },
+    {
+      "id": "4e765ce2-e8c8-4b08-b5f4-47097e267295",
+      "slug": "dopamine-dobutamine-milrinone-dosing-shock",
+      "front": "What are the initial, titration, therapeutic range, and max doses for dopamine, dobutamine, and milrinone in cardiogenic shock?",
+      "back": "| Drug | Initial | Titration | Therapeutic Range | Max |\n|------|---------|-----------|-------------------|-----|\n| **Dopamine** | 1–3 mcg/kg/min (renal) | +1 mcg/kg/min | 3–10 mcg/kg/min (inotropic) | 20–50 mcg/kg/min |\n| | | | 10–20 mcg/kg/min (vasopressor) | |\n| **Dobutamine** | 2.5 mcg/kg/min | +2.5 mcg/kg/min every 10–30 min | 2.5–20 mcg/kg/min | 40 mcg/kg/min |\n| **Milrinone** | Loading: 25–50 mcg/kg over 10–20 min (often omitted) | Adjust per CO, SVR, BP | 0.125–0.75 mcg/kg/min | – |\n\n---",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock",
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Dopamine, Dobutamine, Milrinone Dosing (Shock)"
+      },
+      "source": "md",
+      "source_file": "CVS/flashcards-data.md",
+      "status": "pending",
+      "edit_history": [
+        "front auto-generated at 2026-08-04T09:11:57"
+      ],
+      "created_at": "2026-08-04T09:09:07",
+      "updated_at": "2026-08-04T09:09:08"
+    },
+    {
+      "id": "a6993dd0-60fd-4d68-a966-c716dda86e3f",
+      "slug": "vasopressin-levosimendan-angiotensin-ii-dosing-shock",
+      "front": "What are the initial, titration, and max doses for vasopressin, levosimendan, and angiotensin II in cardiogenic shock?",
+      "back": "| Drug | Initial | Titration | Max |\n|------|---------|-----------|-----|\n| **Vasopressin** | 0.01–0.03 units/min (fixed) | – | 0.04 units/min (rarely >) |\n| **Levosimendan** | Loading: 6–12 mcg/kg over 10 min (often omitted) | – | 0.05–0.2 mcg/kg/min |\n| **Angiotensin II (Giapreza)** | 20 ng/kg/min (0.02 mcg/kg/min) | +15 ng/kg/min (0.015 mcg/kg/min) every 5 min | 40 ng/kg/min (0.04 mcg/kg/min) |",
+      "system": "Cardiology",
+      "subtopic": "Cardiogenic Shock",
+      "tags": [
+        "Cardiogenic Shock",
+        "Hemodynamic Monitoring"
+      ],
+      "data": {
+        "original_subtopic": "Vasopressin, Levosimendan, Angiotensin II Dosing (Shock)"
+      },
+      "source": "md",
+      "source_file": "CVS/flashcards-data.md",
+      "status": "pending",
+      "edit_history": [
+        "front auto-generated at 2026-08-04T09:12:00"
+      ],
+      "created_at": "2026-08-04T09:09:07",
+      "updated_at": "2026-08-04T09:09:08"
     }
   ],
-  "card_count": 6,
+  "card_count": 10,
   "created_at": "2026-08-02T09:27:07",
-  "updated_at": "2026-08-02T09:36:39"
+  "updated_at": "2026-08-04T09:12:00"
 }

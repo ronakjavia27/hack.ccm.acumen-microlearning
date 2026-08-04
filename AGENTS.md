@@ -14,9 +14,7 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | `generator.py` | PDF ingestion pipeline (Pass 1: summaries, Pass 2: pearls) |
 | `maintainer.py` | Health checks, schema validation, repairs, error reports |
 | `syncer.py` | Git sync, email dispatch, subscriber sync |
-| `flashcard_engine.py` | Generates study flashcards from theory notes (LLM) |
-| `flashcard_md_importer.py` | Converts hand-written `flashcards_md/` markdown into JSON decks (Theory section source) |
-| `flashcard_generator.py` | LLM pipeline: ingests `flashcards_input/` md/txt/pdf/docx/html, refines to `flashcards_md/` decks, LLM-tags cards with subtopics vocab, tracks progress in `flashcards_ledger.json` |
+| `flashcards.py` | Single script for ALL flashcard work: generate (md decks + raw files), watch, theory notes, tag, fronts, status |
 | `esbicm_parser.py` | Parses ESBICM trial PDF (~400 trials) into structured JSON |
 | `condense_trials.py` | Condenses scraped trial JSON into hack.CCM schema |
 | `backfill_markdown.py` | Backfill markdown for existing summaries |
@@ -36,7 +34,7 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | `tracking.py` | Atomic JSON save/load, Excel tracker, sent_summaries CRUD, pearl tracker, pending subtopics queue |
 | `errors.py` | Monthly error log `master_error_list_YYYY-MM.txt` (JSONL), error classification, priority levels (CRITICAL→LOW) |
 | `vocabulary.py` | Normalizes specialties & article types to controlled vocabulary (reads `specialties.txt`, `article_types.txt`) |
-| `flashcards.py` | Shared flashcard pipeline helpers — source parsing (md/txt/pdf/docx/html), LLM convert + tag prompts, subtopic normalization (`normalize_subtopic` with acronym matching), `flashcards_ledger.json` sha256 skip logic |
+| `flashcards.py` | Shared flashcard pipeline helpers — source parsing (md/txt/pdf/docx/html), authored-md deck import (`parse_markdown_deck`, `cards_from_markdown_deck` with position-matched UUID reuse), LLM convert + tag prompts, subtopic normalization (`normalize_subtopic` with acronym matching), `flashcards_ledger.json` sha256 skip logic, unified store CRUD (`upsert_card`, `remove_card`, `move_card`, `rebuild_flashcards_index`) |
 | `subtopic_mapper.py` | Interactive CLI + batch LLM for assigning subtopics to pending papers |
 | `subtopics_config.py` | Loads `subtopics.json`, provides `get_subtopics_for_system()`, `is_valid_subtopic()`, `format_subtopics_for_prompt()` |
 | `subtopics.json` | 272 lines — full subtopic vocabulary per specialty (e.g. Cardiology→ACS, Shock, HF...) |
@@ -52,7 +50,7 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | `modules/__init__.py` | Bootstrap — scans `*.json` files and registers CRUD specs per kind |
 | `modules/summaries.py` | Summary CRUD |
 | `modules/pearls.py` | Pearl CRUD |
-| `modules/flashcards.py` | Flashcard CRUD + card regeneration. Scans `output_files/flashcards/` (engine, id `CVS/x`) + `output_files/flashcards_md/` (markdown, id `md:CVS/x`). Specialty change = reclassify: physically moves deck JSON + authored md + updates `flashcards_ledger.json`. Card LLM-edit writes back to the authored md. Delete removes JSON + ledger entry (source md kept). |
+| `modules/flashcards.py` | Flashcard CRUD + card regeneration. Reads the unified store `output_files/flashcards/{System}/{Subtopic}.json` (deck id `System/Subtopic`). Specialty change = reclassify: moves every card's (system, subtopic) file. Card LLM-edit writes back to the authored md in `flashcards_input/` when the card is md-sourced. Delete removes the subtopic file (authored md kept). |
 | `modules/theory.py` | Theory note CRUD |
 
 ### Data Directories
@@ -63,7 +61,8 @@ input_pdfs/
 └── other/           → Other PDFs
 
 flashcards_input/
-  {Specialty}/{topic}.md|txt|pdf|docx|html   — Raw study material for the flashcard generator
+  {Specialty}/topic.md         — Hand-written flashcard deck (authored; imported as-is)
+  {Specialty}/topic.pdf|txt|docx|html   — Raw study material (LLM-converted straight to store)
 
 output_files/
   {Specialty}/{Type}/{filename}.json        — Structured summaries
@@ -71,10 +70,7 @@ output_files/
   trials_database_condensed/                — Condensed trial JSON
   flashcards/{System}/{Subtopic}.json       — Unified flashcard store (system/subtopic files, UUID cards, explicit front/back)
   flashcards_index.json                     — Derived flashcard index (v2) powering portal/global-search/console
-  flashcards_legacy/, flashcards_md_legacy/ — Archived pre-store tiered JSONs (from migrate_flashcards.py)
   Theory MDs/                               — Theory Topics notes (any extension; markdown, first `# ` line = title)
-
-flashcards_md/{Specialty}/{topic}.md        — Hand-written flashcard decks (authored source; imported into the unified store)
 
 backups/                                    — Full repo snapshots
 quarantine/{date}/{category|errors}/        — Processed/failed PDFs
@@ -217,56 +213,35 @@ FLASHCARD_LLM_BASE_URL  # Defaults to OpenRouter
 - Reads `sent_summaries.xlsx` column `email_pushed` to find pending articles
 - Supports interactive selection or `--send-all`
 
-### `flashcard_engine.py` — Flashcard Generation
+### `flashcards.py` — Single Flashcard Script (generate, watch, theory, tag, fronts, status)
 ```
---force       Re-generate all (default: skip existing)
---max         Generate more cards (10-15 per note, default ~6-8)
---limit N     Process only first N files
---model NAME  Override OpenRouter model
---dry-run     Show what would be processed
-```
-Scans `THEORY/processed/` for `.md` files, sends to OpenRouter, saves to `output_files/flashcards/`.
+python flashcards.py                # generate: process every new/changed file (default command)
+python flashcards.py watch          # keep watching flashcards_input/ for new/changed files
+python flashcards.py theory         # generate from theory notes (THEORY/processed, env THEORY_PROCESSED_DIR)
+python flashcards.py tag            # LLM re-tag store cards missing subtopic tags
+python flashcards.py fronts         # generate missing front questions (QUESTION_LLM_* model)
+python flashcards.py status         # pending input + store summary
 
-### `flashcard_md_importer.py` — Markdown Flashcard Authoring
-```
---spec CVS       Only convert one specialty folder
---file "CVS/x.md"  Only convert one file
---force          Overwrite existing decks
---tag            LLM-tag cards with subtopics from subtopics.txt vocab (default: keep existing tags)
---questions      LLM-generate a front question per card (writes '<question>\n\n---\n\n<body>' in the md; idempotent — skips cards with a divider — then re-converts keeping tags/status)
---llm NAME       LLM provider for tagging: openrouter|together|gemini (default: openrouter)
---openrouter | --together | --gemini   Explicit provider flags (same as --llm)
---api-key KEY    Override API key -> direct OpenAI-compatible call
---model NAME     Override model name (with --api-key, uses --base-url endpoint)
---base-url URL   Override endpoint (default: https://openrouter.ai/api/v1)
---dry-run        Preview only
---verbose        Detailed logging
-```
-**Authoring convention** (source of truth: `flashcards_md/{Specialty}/{topic}.md`):
-- `# Title` (optional) → deck title; falls back to filename
-- Each `## Card title` heading → one flashcard; content until the next `## ` (tables, bullets, notes) → card body
-- Optional `---` divider inside a card → front/back faces for Flip mode
-- Converts to `output_files/flashcards_md/{Specialty}/{slug}.json` (same schema as `flashcard_engine`, admin CRUD compatible). Cards carry `id` (`{slug}-{i}`), `tags` (subtopic vocab), deck has `subtopics` (sorted tag union). Re-converts preserve existing tags/status by card id. Card ids use the filename slug (`slugify(filename)[:30]-{i}`) — `copy_to_portal` matches this scheme so reconverts keep console curation.
-- `--questions` runs through the QUESTION_LLM_* config — a deliberately different provider/model than every other pipeline. Default: OpenRouter `deepseek/deepseek-chat-v3-0324` (env `QUESTION_LLM_MODEL`/`QUESTION_LLM_API_KEY`/`QUESTION_LLM_BASE_URL`; CLI `--api-key/--model/--base-url` override). Front questions live in the authored md above the `---` divider; regenerate by deleting the divider and re-running.
-
-### `flashcard_generator.py` — LLM Flashcard Generator
-```
---dir PATH       Override input root (default: flashcards_input/)
---spec CVS       Only process one specialty folder
+--spec CVS      Only process one specialty folder
 --file "CVS/x.md"  Only process one file
---force          Re-run even if unchanged in the ledger
---no-tag         Skip LLM subtopic tagging after conversion
---tag-only       Only re-tag existing decks in output_files/flashcards_md/
---llm NAME       Provider for conversion + tagging: openrouter|together|gemini (default: openrouter)
+--force         Re-run even if unchanged in the ledger
+--max N         Cap at N files (0 = unlimited)
+--no-tag        Skip LLM subtopic tagging
+--no-fronts     Skip front-question generation (raw sources)
+--llm NAME      Provider for convert/tag: openrouter|together|gemini (default: openrouter)
 --openrouter | --together | --gemini   Explicit provider flags (same as --llm)
---api-key KEY    Override API key -> direct OpenAI-compatible call (convert + tag)
---model NAME     Override model name (with --api-key, uses --base-url endpoint)
---base-url URL   Override endpoint (default: https://openrouter.ai/api/v1)
---max N          Cap at N files
---dry-run        Preview only, no API calls
---verbose        Detailed logging
+--api-key KEY   Override API key -> direct OpenAI-compatible call (convert + tag + fronts)
+--model NAME    Override model name (with --api-key, uses --base-url endpoint)
+--base-url URL  Override endpoint (default: https://openrouter.ai/api/v1)
+--dry-run       Preview only, no API calls
+--verbose       Detailed logging
 ```
-Pipeline per file (`flashcards_input/{Spec}/{file}` md/txt/pdf/docx/html): parse source (`pypdf`, OCR fallback for short PDFs via `acumen_core.ocr`, python-docx, bs4) → chunk at 30K chars (`CHUNK_FLASHCARD`) → LLM refine/summarise into markdown deck (`## ` per card, `---` front/back optional) → write `flashcards_md/{Spec}/{slug}.md` → convert to JSON via importer (`convert_file`, tags when not `--no-tag`) → LLM-tag each card against the `subtopics.txt` vocabulary (via `THEORY_SPEC_TO_CANONICAL` system mapping, `normalize_subtopic` fuzzy+acronym match, 1-3 tags/card) → update `flashcards_ledger.json` (sha256 → skip unchanged). `--tag-only` walks `output_files/flashcards_md/` and tags decks missing tags. When `--api-key` or `--model` is set, both the convert and tag calls go directly to an OpenAI-compatible endpoint (`execute_openai_compat` in `acumen_core/llm.py`, base_url defaulting to OpenRouter) instead of the configured provider chain.
+**One input folder, one output folder.** Input: `flashcards_input/{Specialty}/` — `.md` files are **authored decks** (imported as-is; `# Title` optional, each `## Card` → one card, optional `---` divider → front/back faces), everything else (pdf/txt/docx/html) is **raw material** (parsed via `acumen_core.flashcards.parse_source_file`, chunked at 30K chars `CHUNK_FLASHCARD`, LLM-refined straight into store cards — no intermediate markdown). Output: unified store `output_files/flashcards/{System}/{Subtopic}.json` + derived `flashcards_index.json`; progress in `flashcards_ledger.json` (sha256 → skip unchanged).
+
+- Raw sources: LLM convert (`llm_convert_to_markdown`, markdown `## ` cards) → store cards `source="engine"` → LLM-tag against the subtopics vocab (`THEORY_SPEC_TO_CANONICAL` system mapping, `normalize_subtopic` fuzzy+acronym match, 1-3 tags/card) → auto front questions (`ensure_fronts`, QUESTION_LLM_* model).
+- Authored md decks: imported via `acumen_core.flashcards.cards_from_markdown_deck` — re-imports match existing store cards by position and update in place (stable UUIDs, preserved tags/status/edit_history); md sections removed since last import get their store cards deleted.
+- `theory` mode walks `THEORY_PROCESSED_DIR` (default `C:/RONAK/AI Projects/ACUMEN/THEORY/processed`; override in `.env`) and skips notes already in the store by `source_file` unless `--force`.
+- When `--api-key` or `--model` is set, convert/tag/fronts calls go directly to an OpenAI-compatible endpoint (`execute_openai_compat` in `acumen_core/llm.py`, base_url defaulting to OpenRouter) instead of the configured provider chain.
 
 **Portal Theory section** (`revamped_webapp.py`, run via `uvicorn revamped_webapp:app` — it has no `__main__` block): hero with two mode cards — **Theory Topics** (rendered markdown notes from `output_files/Theory MDs/`, any file extension; title from first `# ` line; loaded by `load_theory_notes()`) and **Flashcards** (unified store). Flashcards loads decks via `load_flashcard_decks()` from `output_files/flashcards/` subtopic files (deck id `System/Subtopic`; cards carry explicit `front`/`back`/`tags`, UUID ids, no `---` divider). Features: specialty chips, deck search (incl. front/back/tags), subtopic chips when exactly one specialty active (filter decks + restrict card navigation; non-matching dots dimmed/disabled), deck list, card reader with Next/Prev + keyboard arrows, Single-face/Flip view toggle, per-card save via bookmarks API (kind `flashcard`, ref `flashcard:{uuid}`; locator stores `{deck, card: uuid, cardIdx}`), "Saved only" filter, jump dots. Flip mode shows `front` on the front face and `back` on the back; browsers without `backface-visibility` support get a `.no-3d` display-swap fallback (faces never stack). Single-face mode shows the back only. Global search adds "Flashcards" and "Theory Topics" result groups with deep links (`data-theory-card` uuid / `data-theory-note`); URL deep links supported: `?theory=flashcards[&system=…&subtopic=…&card=<uuid>]` and `?theory=notes[&note=<id>]`. Console reader likewise shows the question as a small label above the answer.
 

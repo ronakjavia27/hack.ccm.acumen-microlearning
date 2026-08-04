@@ -1,0 +1,132 @@
+{
+  "id": "new-insights-into-cardiac-intensive-care-2026",
+  "doc_type": "article",
+  "article_subtype": "Review",
+  "title": "New Insights into Cardiac Intensive Care",
+  "authors": "Cheng Chen et al.",
+  "journal": "Reviews in Cardiovascular Medicine",
+  "year": 2026,
+  "doi": "10.31083/RCM49773",
+  "specialty": [
+    "cardiology",
+    "multi_system"
+  ],
+  "tags": [
+    "cardiac intensive care",
+    "hemodynamic monitoring",
+    "mechanical circulatory support",
+    "artificial intelligence",
+    "cardiorenal syndrome",
+    "precision therapy"
+  ],
+  "one_line_summary": "A comprehensive review outlining recent developments in cardiac intensive care, including novel pathophysiological mechanisms, AI-assisted and microcirculation monitoring, mechanical circulatory support, precision pharmacotherapy, and multi-organ support strategies.",
+  "key_pearls": [
+    "- **Ferroptosis** (iron-dependent cell death via lipid peroxidation) and **mitochondrial dysfunction** are core drivers of myocardial injury, while **MSC-derived exosomes** delivering **GDF15** attenuate post-MI fibrosis via **FABP4** downregulation.",
+    "- High-flow percutaneous ventricular assist devices (**Impella 5.0/5.5**) demonstrate lower rates of device-related complications, such as hemolysis and renal impairment, compared with low-flow support systems.",
+    "- Genotype-guided antiplatelet therapy based on **CYP2C19** profiling **significantly** reduces major adverse cardiovascular and cerebrovascular events in **ACS** patients undergoing **PCI** without escalating bleeding risk.",
+    "- Next-generation inotropic agents like **omecamtiv mecarbil** (direct cardiac myosin activator) and **istaroxime** (**Na+/K+-ATPase** inhibitor and **SERCA2a** activator) improve cardiac contractility without increasing intracellular calcium or myocardial oxygen consumption.",
+    "- Novel renal injury biomarkers **NGAL** and **TIMP-2** enable early detection of subclinical acute kidney injury in **cardiorenal syndrome** prior to serum creatinine elevation.",
+    "- **Targeted temperature management (TTM)** maintaining normothermia or mild-to-moderate hypothermia (**32–36 °C**) attenuates excitotoxicity and neuroinflammation to optimize neurological outcomes after cardiac arrest."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": "Adult and pediatric patients in the cardiac intensive care unit (CICU) presenting with acute coronary syndrome, cardiogenic shock, cardiac arrest, cardiorenal syndrome, and acute heart failure.",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "New Insights into the Pathophysiological Mechanisms of Cardiac Critical Illness",
+      "content": "- **Mitochondrial Dysfunction and Ferroptosis**: Impaired oxidative phosphorylation and elevated **reactive oxygen species (ROS)** trigger myocardial cell death; iron-dependent **ferroptosis** accelerates lipid peroxidation and cardiac injury.\n- **Epigenetic Regulation**: Histone methyltransferase **EZH2** acts as a metabolic switch, suppressing cardioprotective genes via **H3K27** trimethylation while co-activating glycolysis under ischemic stress.\n- **Exosome Intercellular Communication**: Mesenchymal stem cell (**MSC**)-derived exosomes reprogram cardiac macrophages toward anti-inflammatory phenotypes and deliver **GDF15** to suppress **FABP4**-mediated fibrosis.\n- **Regulatory MicroRNAs**: **miR-183-5p** targets **FOXO1** to enhance BMSC migration and reduce myocardial edema; **miR-199a-3p** modulates the **EGR1/mTOR** axis governing autophagy and apoptosis.\n- **Cardiopulmonary-Vascular Coupling**: Glycocalyx breakdown and pericyte disintegration cause endothelial barrier dysfunction, capillary leakage, and interstitial water accumulation.\n- **Hemodynamic Modeling**: Patient-specific computational fluid dynamics and pressure-volume loop analyses clarify LV afterload shifts during **VA-ECMO** support.",
+      "section_pearls": [
+        "EZH2 modulates myocardial metabolic reprogramming from oxidative phosphorylation to glycolysis during ischemic stress.",
+        "Glycocalyx breakdown upsets capillary filtration and lymphatic evacuation, driving interstitial cardiac edema."
+      ]
+    },
+    {
+      "order": 2,
+      "heading": "Monitoring Technology Innovations and Clinical Applications",
+      "content": "- **Non-Invasive Wearables and Biosensors**: Miniaturized ultrasound transducers, bioimpedance rings, and microneedle arrays enable continuous non-invasive tracking of stroke volume, intracranial pressure, and interstitial glucose.\n- **Microcirculation and Perfusion Tools**: Pulsatility-based **electrical impedance tomography (EIT)** and sublingual microvascular microscopy provide direct bedside evaluation of ventilation-perfusion matching and microvascular flow.\n- **AI and Deep Learning in ECG Analysis**: Convolutional neural networks (**CNNs**) accurately detect complex arrhythmias and identify left ventricular systolic and diastolic dysfunction directly from raw ECG signals.\n- **AI-Driven Risk Prediction**: Multimodal AI fusion platforms integrating tabular EHR data, laboratory trends, and imaging predict **hyperkalemia** **mortality** risk and pediatric acute kidney injury/cardiac arrest.\n- **Clinical Decision Support**: AI-guided hemodynamic management within cardiac surgery recovery pathways shortens mechanical ventilation duration and ICU length of stay.",
+      "section_pearls": [
+        "AI-enhanced ECG analysis detects dangerous hyperkalemia even when concurrent serum lab values fall within normal limits.",
+        "Sublingual microcirculation microscopy uncovers tissue hypoperfusion uncaptured by systemic macrocirculatory blood pressure."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Optimization and Innovation of Treatment Strategies",
+      "content": "- **Percutaneous Ventricular Assist Devices (pVADs)**: High-flow **Impella 5.0/5.5** devices improve **survival** and reduce hemolysis compared to lower-flow variants in cardiogenic shock.\n- **Left Ventricular Unloading in VA-ECMO**: Concurrent interventional LV unloading reduces LV distension, mitigates afterload stress, and promotes myocardial recovery.\n- **Limitations in LV Unloading RCTs**: Efficacy trials suffer from population heterogeneity, non-standardized endpoints, and delayed unloading initiation (**>12 hours** post-cannulation).\n- **Advanced Biomaterials**: Synthetic-biological hybrid membranes enhance hemocompatibility and reduce thrombogenicity in continuous-flow MCS circuits.",
+      "section_pearls": [
+        "Initiating LV unloading >12 hours post-VA-ECMO cannulation offsets clinical benefits due to persistent LV distension and myocardial stunning.",
+        "High-flow pVADs lower device-related hemolysis and acute renal impairment."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Advances in Precision Pharmacotherapy",
+      "content": "- **CYP2C19 Genotype-Guided Antiplatelet Therapy**: Rapid point-of-care **CYP2C19** testing optimizes **P2Y12 inhibitor** selection, reducing MACCE events post-PCI without escalating bleeding risks.\n- **Direct Myosin Activation**: **Omecamtiv mecarbil** enhances cardiac systolic function by prolonging actomyosin cross-bridge attachment without elevating intracellular calcium or oxygen demand.\n- **Dual-Action Inotropes**: **Istaroxime** combines **Na+/K+-ATPase** inhibition with **SERCA2a** activation, providing positive inotropy and lusitropy with reduced arrhythmogenesis.\n- **Endogenous Inotropic Pathways**: **6-nitrodopamine** acts via **beta1-adrenoceptors** as a potent positive inotropic and chronotropic agent.\n- **Targeted Immunomodulation**: Nanomedicine platforms and cytokine inhibitors mitigate hyperinflammatory injury and adverse remodeling in myocarditis and post-MI ischemia.",
+      "section_pearls": [
+        "Omecamtiv mecarbil increases contractility by extending actomyosin cross-bridge attachment without raising myocardial oxygen consumption.",
+        "Istaroxime offers lusitropic and inotropic support with lower arrhythmogenic risk via SERCA2a activation."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Multi-Organ Function Support Strategies",
+      "content": "- **Cardiorenal Syndrome (CRS) Pathophysiology**: Reciprocal organ dysfunction driven by reduced renal perfusion, venous congestion, neurohormonal overload, and systemic inflammation.\n- **Early AKI Biomarkers**: **NGAL** and **TIMP-2** identify renal cell arrest and subclinical injury hours before serum creatinine rises.\n- **Continuous Renal Replacement Therapy (CRRT)**: Early, hemodynamically tailored CRRT optimizes fluid balance and cardiac decongestion; protocolized solute clearance balances blood flow rate and filter lifespan.\n- **SGLT2 Inhibitor Therapeutics**: **SGLT2i** (e.g., **empagliflozin**, **dapagliflozin**) improve tubuloglomerular feedback, reduce renal oxygen consumption, and lower HF hospitalizations.\n- **Neurocardiac Protection and TTM**: Targeted temperature management (**32–36 °C**) prevents ischemia-reperfusion injury and neuroinflammation post-cardiac arrest.\n- **Neuromonitoring Tools**: **Near-infrared spectroscopy (NIRS)** for cerebral oxygenation and somatosensory evoked potentials enable early neuroprognostication.",
+      "section_pearls": [
+        "NGAL and TIMP-2 serve as sensitive early indicators of subclinical AKI in cardiorenal syndrome.",
+        "SGLT2 inhibitors protect renal function by restoring tubuloglomerular feedback and decreasing renal oxygen demand."
+      ]
+    },
+    {
+      "order": 6,
+      "heading": "Prognosis Assessment and Cardiac Rehabilitation",
+      "content": "- **Dynamic AI Risk Stratification**: Machine learning models and **federated learning** incorporate continuous multimodal EHR data, biomarkers (e.g., **FcgammaRIIa**), and imaging features to dynamically update patient **prognosis**.\n- **Ultra-Early Mobilization**: Early physical mobilization in the CICU shortens hospital length of stay without compromising safety.\n- **Hybrid and Intensive Rehabilitation**: Combined center-based and tele-rehabilitation models incorporating stress management and psychological support improve functional capacity and participation across genders.",
+      "section_pearls": [
+        "Ultra-early mobilization within the CICU decreases hospital stay length safely.",
+        "Platelet FcgammaRIIa expression quantified by machine learning provides precise prognostic assessment for thrombotic and cardiovascular events."
+      ]
+    }
+  ],
+  "strengths_limitations": "- **Strengths**: Comprehensive synthesis of recent multi-disciplinary CICU literature (2020–2025); thorough integration of molecular mechanisms, mechanical support, pharmacotherapy, and AI applications.\n- **Limitations**: Heterogeneity in underlying primary trials evaluated; limited availability and regulatory approval of advanced AI and molecular therapies in low-resource settings; high costs and training requirements for bedside implementation.",
+  "drugs_doses": [
+    {
+      "drug": "Omecamtiv mecarbil",
+      "dose": "Dosage not specified in text (investigational/oral)",
+      "indication": "Inotropic support in acute and advanced heart failure",
+      "adverse_effects": "Lower risk of myocardial ischemia and arrhythmias compared to classic inotropes; requires monitoring of ventricular response."
+    },
+    {
+      "drug": "Istaroxime",
+      "dose": "Dosage not specified in text (IV infusion)",
+      "indication": "Acute heart failure presenting with systolic dysfunction and hypotension",
+      "adverse_effects": "Gastrointestinal distress, injection site pain; minimal arrhythmogenic activity."
+    },
+    {
+      "drug": "Empagliflozin",
+      "dose": "Dosage not specified in text (oral)",
+      "indication": "Acute myocardial infarction, heart failure, and cardiorenal syndrome",
+      "adverse_effects": "Genitourinary infections, volume depletion, ketoacidosis."
+    },
+    {
+      "drug": "Dapagliflozin",
+      "dose": "Dosage not specified in text (oral)",
+      "indication": "Acute heart failure management and renal protection in cardiorenal syndrome",
+      "adverse_effects": "Euvolemic ketoacidosis, urinary tract infections, acute volume reduction."
+    },
+    {
+      "drug": "Propofol",
+      "dose": "Dosage not specified in text (IV continuous infusion)",
+      "indication": "Sedation in critically ill CICU patients",
+      "adverse_effects": "Hypotension, myocardial depression, propofol infusion syndrome."
+    },
+    {
+      "drug": "P2Y12 inhibitors (e.g., Clopidogrel, Ticagrelor)",
+      "dose": "CYP2C19 genotype-guided dosing regimen",
+      "indication": "Acute coronary syndrome (ACS) undergoing percutaneous coronary intervention (PCI)",
+      "adverse_effects": "Bleeding, stent thrombosis (if hyporesponsive due to CYP2C19 loss-of-function alleles)."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-03-30",
+  "subtopic": "Cardiology"
+}

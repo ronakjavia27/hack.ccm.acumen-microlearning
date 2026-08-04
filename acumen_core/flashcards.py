@@ -389,17 +389,6 @@ def tag_cards_with_llm(cards, systems, llm="openrouter", verbose=False, api_key=
     return tagged
 
 
-def tag_deck_with_llm(deck, llm="openrouter", verbose=False, api_key=None, model=None, base_url=None):
-    """Tag every card in a deck dict with subtopics from the vocabulary.
-    Mutates deck['cards'][i]['tags'] in place. Returns True if tagging ran."""
-    systems = canonical_systems_for(deck.get("specialty"))
-    cards = deck.get("cards") or []
-    if not systems or not cards:
-        return False
-    return tag_cards_with_llm(cards, systems, llm=llm, verbose=verbose,
-                              api_key=api_key, model=model, base_url=base_url) > 0
-
-
 # =====================================================================
 # FRONT QUESTION GENERATION (portal flip mode)
 # =====================================================================
@@ -630,10 +619,18 @@ def write_subtopic_file(data):
 
 
 def _save_card(card):
-    """Persist a single card into its (system, subtopic) file. Rebuilds index."""
+    """Persist a single card into its (system, subtopic) file. Rebuilds index.
+
+    If the card already lives in a different (system, subtopic) file — e.g. its
+    subtopic was retagged — the old copy is removed first so every card exists
+    in exactly one location."""
     system = card.get("system") or "General"
     subtopic = canonical_subtopic(system, card.get("subtopic"))
     card["system"] = system
+    card["subtopic"] = subtopic
+    loc = load_flashcards_index().get("card_locations", {}).get(card.get("id"))
+    if loc and (loc["system"] != system or loc["subtopic"] != subtopic):
+        remove_card_from(card.get("id"), loc["system"], loc["subtopic"], rebuild=False)
     card["subtopic"] = subtopic
     data = load_subtopic_file(system, subtopic)
     if data is None:
@@ -827,3 +824,117 @@ def ensure_fronts(cards, verbose=False, api_key=None, model=None, base_url=None,
         if verbose:
             print(f"    [i] front {'ok' if q else 'failed'} for card {c.get('id', '?')[:8]}")
     return generated
+
+
+# =====================================================================
+# MARKDOWN DECK IMPORT (authored decks in flashcards_input/)
+# =====================================================================
+
+def parse_markdown_deck(md_path):
+    """Split an authored markdown deck into (title, [{subtopic, content}]).
+
+    Authoring convention:
+        # Deck Title (optional — falls back to filename)
+        ## Card title
+        ... markdown content (tables, bullets, notes) ...
+        ## Another card
+        ...
+        --- (optional divider inside a card -> front/back faces for flip mode)
+    """
+    with open(md_path, "r", encoding="utf-8", errors="replace") as f:
+        content = f.read()
+    lines = content.split("\n")
+
+    title = None
+    card_starts = []
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if not title and stripped.startswith("# ") and not stripped.startswith("## "):
+            title = stripped[2:].strip()
+        if stripped.startswith("## "):
+            card_starts.append((i, stripped[3:].strip()))
+
+    if not title:
+        name = os.path.splitext(os.path.basename(md_path))[0]
+        title = re.sub(r"^\d+\s*", "", name).strip()
+
+    if not card_starts:
+        body = "\n".join(lines)
+        body = re.sub(r"^#\s+.*$", "", body, count=1).strip()
+        card_starts = [(0, title)] if body.strip() else []
+
+    cards = []
+    for idx, (start_line, heading) in enumerate(card_starts):
+        end_line = card_starts[idx + 1][0] if idx + 1 < len(card_starts) else len(lines)
+        body = "\n".join(lines[start_line + 1:end_line]).strip()
+        if not body:
+            continue
+        cards.append({"subtopic": heading, "content": body})
+    return title, cards
+
+
+def load_import_meta(source_file):
+    """{card_index: existing store card} for a source md, so re-imports keep
+    console curation (tags/status/history) AND stable UUIDs by card position.
+    The authored md is the source of truth, so card order is stable."""
+    source_file = (source_file or "").replace("\\", "/")
+    meta = {}
+    try:
+        for _system, _subtopic, c in store_cards_all():
+            if (c.get("source_file") or "").replace("\\", "/") != source_file:
+                continue
+            idx = len(meta)
+            meta[idx] = c
+    except Exception:
+        pass
+    return meta
+
+
+def cards_from_markdown_deck(md_path, source_file, systems, tag=True, llm="openrouter",
+                             verbose=False, api_key=None, model=None, base_url=None):
+    """Convert an authored markdown deck into store cards (source 'md').
+
+    Existing store cards for the same source_file are matched by position and
+    updated in place (same UUID, preserved tags/status/edit_history). Returns
+    the list of store cards, or None if the deck has no card content."""
+    system = (systems or [None])[0]
+    if not system:
+        return None
+    title, cards = parse_markdown_deck(md_path)
+    if not cards:
+        return None
+
+    meta = load_import_meta(source_file)
+    store_cards = []
+    for i, card in enumerate(cards):
+        front, back = parse_card_content(card["content"])
+        old = meta.get(i)
+        c = build_card(
+            front or "", back or card["content"], system, "General",
+            tags=card.get("tags") or [], source="md", source_file=source_file,
+            slug_hint=card["subtopic"],
+            data={"original_subtopic": card["subtopic"]},
+            card_id=old.get("id") if old else None,
+        )
+        if old:
+            c["tags"] = old.get("tags") or []
+            c["status"] = old.get("status") or "pending"
+            c["edit_history"] = list(old.get("edit_history") or [])
+        store_cards.append(c)
+
+    if tag:
+        untagged = [c for c in store_cards if not (c.get("tags") or [])]
+        if untagged:
+            tag_cards_with_llm(untagged, systems, llm=llm, verbose=verbose,
+                               api_key=api_key, model=model, base_url=base_url)
+    for c in store_cards:
+        c["subtopic"] = canonical_subtopic(system, c["tags"][0]) if c["tags"] else "General"
+    for c in store_cards:
+        upsert_card(c)
+
+    # Drop store cards of this source whose md section was removed
+    new_ids = {c["id"] for c in store_cards}
+    for old in meta.values():
+        if old.get("id") not in new_ids and old.get("source") == "md":
+            remove_card(old.get("id"))
+    return store_cards
