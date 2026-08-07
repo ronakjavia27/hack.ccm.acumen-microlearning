@@ -28,16 +28,15 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 |------|---------|
 | `config.py` | Central config: paths, API keys, model names, extraction params, `SYSTEM_TO_SPECIALTY` mapping, `CONDENSATION_MODELS` |
 | `schema.py` | `EXTRACTION_SYSTEM_PROMPT`, ARTICLE/GUIDELINE JSON schemas, field validation sets (`ARTICLE_REQUIRED_FIELDS`, `VALID_SPECIALTY_VALUES`, etc.) |
-| `llm.py` | LLM client abstraction — Together AI, Gemini, OpenRouter, custom OpenAI-compat. Functions: `execute_with_fallback`, `execute_with_gemini`, `execute_with_openrouter`, `execute_pearl_extraction`, `chunk_text`, `merge_chunks_programmatically` |
+| `llm.py` | LLM client abstraction — OpenRouter + Gemini. Functions: `call_chat_api`, `call_gemini_api`, `call_openrouter_api`, `execute_with_fallback`, `execute_with_gemini`, `execute_pearl_extraction`, `classify_subtopic`, `chunk_text`, `merge_chunks_programmatically` |
 | `ocr.py` | OCR for scanned PDFs via PyMuPDF + pytesseract + Gemini Vision |
 | `markdown.py` | `apply_markdown_emphasis` — bolds clinical numbers/units/keywords |
-| `tracking.py` | Atomic JSON save/load, Excel tracker, sent_summaries CRUD, pearl tracker, pending subtopics queue |
+| `tracking.py` | Atomic JSON save/load, Excel tracker, sent_summaries CRUD, pearl tracker, subtopic mapping registry |
 | `errors.py` | Monthly error log `master_error_list_YYYY-MM.txt` (JSONL), error classification, priority levels (CRITICAL→LOW) |
 | `vocabulary.py` | Normalizes specialties & article types to controlled vocabulary (reads `specialties.txt`, `article_types.txt`) |
 | `flashcards.py` | Shared flashcard pipeline helpers — source parsing (md/txt/pdf/docx/html), authored-md deck import (`parse_markdown_deck`, `cards_from_markdown_deck` with position-matched UUID reuse), LLM convert + tag prompts, subtopic normalization (`normalize_subtopic` with acronym matching), `flashcards_ledger.json` sha256 skip logic, unified store CRUD (`upsert_card`, `remove_card`, `move_card`, `rebuild_flashcards_index`) |
-| `subtopic_mapper.py` | Interactive CLI + batch LLM for assigning subtopics to pending papers |
 | `subtopics_config.py` | Loads `subtopics.json`, provides `get_subtopics_for_system()`, `is_valid_subtopic()`, `format_subtopics_for_prompt()` |
-| `subtopics.json` | 272 lines — full subtopic vocabulary per specialty (e.g. Cardiology→ACS, Shock, HF...) |
+| `subtopics.json` | Full subtopic vocabulary per specialty — the SINGLE master vocab (also supplies the specialty list via its keys) |
 
 ### Dashboard: `dashboard/`
 | File | Purpose |
@@ -84,8 +83,7 @@ quarantine/{date}/{category|errors}/        — Processed/failed PDFs
 | `sent_summaries.xlsx` | Excel version of sent_summaries (dual-tracked) |
 | `pearls.json` | All extracted clinical pearls (~2000+) |
 | `pearls_processed.xlsx` | Pearl extraction tracker (which files have pearls) |
-| `pending_subtopics.json` | Queue of papers awaiting subtopic assignment |
-| `subtopic_mapping.json` | Registry of completed subtopic assignments |
+| `subtopic_mapping.json` | Registry of completed subtopic assignments (auto-filled by generator Pass 1.5) |
 | `pearl_updater_progress.json` | Batch pearl operation progress |
 | `health_report.json` | Auto-generated health report |
 | `health_report.md` | Markdown version of health report |
@@ -114,9 +112,9 @@ python main_app.py                     # Public dashboard → http://localhost:8
 OPENROUTER_API_KEY      # Used by default (--llm openrouter)
 PRIMARY_GEMINI_API_KEY  # Used with --llm gemini
 BACKUP_GEMINI_API_KEY   # Gemini fallback
-TOGETHER_API_KEY        # Used with --llm together (also for pearl extraction)
-DEEPSEEK_API_KEY        # Fallback in execute_with_fallback chain
 OPENROUTER_MODEL        # Default: deepseek-ai/DeepSeek-V4-Pro
+SUBTOPIC_LLM_MODEL      # Pass 1.5 subtopic classifier (OpenRouter) — default openai/gpt-oss-20b
+GEMINI_SUBTOPIC_MODEL   # Pass 1.5 subtopic classifier (Gemini) — default gemini-3.1-flash-lite
 QUESTION_LLM_MODEL      # Flashcard front-question model (default: inherits FLASHCARD_LLM_MODEL)
 QUESTION_LLM_API_KEY    # Front-question key (defaults to OPENROUTER_API_KEY)
 QUESTION_LLM_BASE_URL   # Front-question endpoint (defaults to OpenRouter)
@@ -128,14 +126,17 @@ FLASHCARD_LLM_BASE_URL  # Defaults to OpenRouter
 ### Model Selection
 | CLI Flag | Provider | Default Model |
 |----------|----------|---------------|
-| `--llm openrouter` (default) | OpenRouter | `OPENROUTER_MODEL` from `.env` |
-| `--llm together` | Together AI | `deepseek-ai/DeepSeek-V4-Pro` → fallback to same → fallback to Direct DeepSeek |
-| `--llm gemini` | Google Gemini | `gemini-2.5-flash` → fallback `gemini-2.5-flash` (backup key) |
-| `--llm other` | Custom OpenAI-compat | Provide `--api-key` and `--model` |
+| `--llm openrouter` (default) | OpenRouter | Pass 1 `OPENROUTER_SUMMARY_MODEL` (deepseek-ai/DeepSeek-V4-Pro) · Pass 1.5 `SUBTOPIC_LLM_MODEL` (openai/gpt-oss-20b) · Pass 2 `OPENROUTER_PEARLS_MODEL` (openai/gpt-oss-20b) |
+| `--llm gemini` | Google Gemini | Pass 1 `GEMINI_SUMMARY_MODEL` (gemini-3.6-flash) · Pass 1.5 `GEMINI_SUBTOPIC_MODEL` (gemini-3.1-flash-lite) · Pass 2 `GEMINI_PEARLS_MODEL` (gemini-3.6-flash) |
 
 ### Pearl Extraction (Pass 2)
-- Always uses Together AI: `openai/gpt-oss-20b` → fallback `openai/gpt-oss-120b`
+- OpenRouter: `openai/gpt-oss-20b` → fallback `openai/gpt-oss-120b`; Gemini: `gemini-3.6-flash`
 - Config: `TEMPERATURE_PEARLS=0.2`, `MAX_TOKENS_PEARLS=8192`, `PEARLS_MAX_PER_FILE=25`
+
+### Subtopic Classification (Pass 1.5)
+- Auto-assigned at generation time after Pass 1, before Pass 2 (see `classify_subtopic()` in `acumen_core/llm.py`)
+- OpenRouter: `SUBTOPIC_LLM_MODEL` (openai/gpt-oss-20b) · Gemini: `GEMINI_SUBTOPIC_MODEL` (gemini-3.1-flash-lite)
+- Config: `SUBTOPIC_TEMPERATURE=0.1`, `SUBTOPIC_MAX_TOKENS=256`; non-fatal (falls back to system name)
 
 ## Pipeline Scripts — Complete CLI Reference
 
@@ -153,14 +154,15 @@ FLASHCARD_LLM_BASE_URL  # Defaults to OpenRouter
 --status               Quick dashboard: pending PDFs, missing pearls, errors
 --reprocess FILE.pdf   Force re-process a single specific PDF file
 --extract-pearls X.json  Run Pass 2 only on one specific existing JSON
---llm {together,gemini,openrouter,other}  LLM provider for Pass 1
---api-key KEY          API key for --llm openrouter/other
---model NAME           Model name for --llm openrouter/other
+--llm {openrouter,gemini}  LLM provider for all passes (default: openrouter)
+--api-key KEY          API key (direct OpenAI-compatible call)
+--model NAME           Model name override
 --no-link              Skip the automatic incremental cross-linking step
 ```
 
-**Two-Pass Design:**
+**Two-and-a-half Pass Design:**
 - **Pass 1**: PDF text extraction → chunking → LLM extraction (per `EXTRACTION_SYSTEM_PROMPT`) → save to `output_files/{System}/{Type}/{file}.json`
+- **Pass 1.5**: Auto subtopic classification (see `classify_subtopic()` in `acumen_core/llm.py`) — openrouter→`SUBTOPIC_LLM_MODEL` (openai/gpt-oss-20b), gemini→`GEMINI_SUBTOPIC_MODEL` (gemini-3.1-flash-lite). Writes back into summary JSON + sent_summaries.json + subtopic_mapping.json.
 - **Pass 2**: Load JSON → build markdown → LLM pearl extraction → append to `pearls.json`
 
 **Key Config in generator.py:**
@@ -297,18 +299,24 @@ PDF in input_pdfs/
     ├─ Normalize specialty & type to controlled vocab
     ├─ Save to output_files/{System}/{Type}/{file}.json
     ├─ Log to sent_summaries.json + sent_summaries.xlsx
-    ├─ Queue to pending_subtopics.json
     └─ Move PDF to quarantine/
         │
-        ▼ Pass 2 (generator.py or maintainer.py)
-        ├─ Build markdown from JSON
-        ├─ LLM pearl extraction (openai/gpt-oss-20b)
-        └─ Append to pearls.json
+        ▼ Pass 1.5 (generator.py) — AUTO SUBTOPIC CLASSIFICATION
+        ├─ classify_subtopic() on the subtopics.json vocab
+        ├─ openrouter → SUBTOPIC_LLM_MODEL (openai/gpt-oss-20b)
+        │  gemini   → GEMINI_SUBTOPIC_MODEL (gemini-3.1-flash-lite)
+        ├─ Write subtopic into summary JSON + sent_summaries.json
+        └─ Append to subtopic_mapping.json (cumulative registry)
             │
-            ▼ Dashboard (main_app.py → Vercel)
-            ├─ Reads sent_summaries.json for articles
-            ├─ Reads pearls.json for pearls
-            └─ Reads esbicm_trials_index.json for trials
+            ▼ Pass 2 (generator.py or maintainer.py)
+            ├─ Build markdown from JSON
+            ├─ LLM pearl extraction (openai/gpt-oss-20b)
+            └─ Append to pearls.json
+                │
+                ▼ Dashboard (main_app.py → Vercel)
+                ├─ Reads sent_summaries.json for articles
+                ├─ Reads pearls.json for pearls
+                └─ Reads esbicm_trials_index.json for trials
 ```
 
 ## Key Conventions
@@ -319,8 +327,8 @@ PDF in input_pdfs/
 - **Type values**: Review, RCT, Meta-analysis, Guideline, Observational, Case Series, Trial, Other
 - **Dashboard specialties** in `main_app.py` `SPEC_COLORS` dict: 24 entries (slightly different from above)
 - **Sent summaries tracking**: dual-tracked in both JSON + Excel
-- **Subtopics**: assigned interactively via `subtopic_mapper.py` or batch LLM; stored in `subtopics.json` (master vocabulary) + `pending_subtopics.json` (queue) + `subtopic_mapping.json` (registry)
-- **LLM provider fallback order** for `--llm together`: Together Pro → Together Flash → Direct DeepSeek API
+- **Subtopics**: auto-assigned via LLM during generation (generator Pass 1.5 — see `classify_subtopic()` in `acumen_core/llm.py`); stored in `subtopics.json` (master vocabulary, its keys = the specialty list) + `subtopic_mapping.json` (auto-filled registry). Retired manual tools (`subtopic_mapper.py`, `bulk_subtopic_classifier.py`, `specialties.txt`/`subtopics.txt`, `pending_subtopics.json`) are quarantined under `quarantine/{date}/subtopic-mapping/`.
+- **LLM provider fallback**: OpenRouter pass chains try their primary then fallback model; Gemini chains primary key then backup key (no Together/DeepSeek remnants)
 - **File naming**: output file = `{basename}.json` (same stem as PDF). pearl `file_name` = `{basename}.json`
 - **Audit trail**: `generator.log`, `.console_edits.log`, `master_error_list_*.txt`
 

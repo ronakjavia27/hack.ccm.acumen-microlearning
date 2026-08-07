@@ -7,12 +7,16 @@ Processes medical PDFs into structured JSON summaries + clinical pearls.
 TWO PASSES (separate API calls for quality):
   PASS 1 - Full Schema Extraction (model from .env per provider)
            -> output_files/{system}/{type}/{filename}.json
+  PASS 1.5 - Auto Subtopic Classification (model from .env per provider)
+           -> subtopic written into summary JSON + sent_summaries.json + subtopic_mapping.json
   PASS 2 - Pearl Extraction (model from .env per provider)
            -> pearls.json
 
 PROVIDERS (--llm): openrouter (default) | gemini
-  --llm openrouter: Pass 1 uses OPENROUTER_SUMMARY_MODEL, Pass 2 uses OPENROUTER_PEARLS_MODEL
-  --llm gemini:     Pass 1 uses GEMINI_SUMMARY_MODEL, Pass 2 uses GEMINI_PEARLS_MODEL
+  --llm openrouter: Pass 1 uses OPENROUTER_SUMMARY_MODEL, Pass 2 uses OPENROUTER_PEARLS_MODEL,
+                    Pass 1.5 uses SUBTOPIC_LLM_MODEL (openai/gpt-oss-20b)
+  --llm gemini:     Pass 1 uses GEMINI_SUMMARY_MODEL, Pass 2 uses GEMINI_PEARLS_MODEL,
+                    Pass 1.5 uses GEMINI_SUBTOPIC_MODEL (gemini-3.1-flash-lite)
 
 MODES:
   --mode watch           Watch input folder for new PDFs, run both passes (default)
@@ -63,6 +67,7 @@ from acumen_core.config import (
     EXCEL_TRACKER_FILE, JSON_TRACKER_FILE, PEARLS_JSON, PEARLS_TRACKER,
     PEARLS_JSON_FIELDS, PROJECT_DIR,
     OPENROUTER_API_KEY, OPENROUTER_PEARLS_MODEL,
+    SUBTOPIC_LLM_MODEL, GEMINI_SUBTOPIC_MODEL,
     get_error_list_path,
 )
 from acumen_core.vocabulary import (
@@ -79,7 +84,7 @@ from acumen_core.markdown import enrich_payload_with_markdown
 from acumen_core.errors import write_error, read_current_month_errors
 from acumen_core.llm import (
     execute_with_fallback, execute_with_gemini,
-    execute_pearl_extraction, chunk_text,
+    execute_pearl_extraction, classify_subtopic, chunk_text,
     merge_chunks_programmatically,
 )
 from acumen_core.schema import EXTRACTION_SYSTEM_PROMPT
@@ -258,7 +263,7 @@ def save_extracted_json(payload, file_name, output_dir=None):
 
     payload = enrich_payload_with_markdown(payload)
 
-    # Set subtopic = system name as placeholder (to be refined later via subtopic_mapper)
+    # Set subtopic = system name as placeholder (refined by Pass 1.5 via classify_subtopic)
     subtopic = clean_system
     payload["subtopic"] = subtopic
 
@@ -434,15 +439,45 @@ def process_single_pdf(file_path, category, processed_history, ocr_enabled=False
         pass1_success = True
         print(f"  Pass 1: OK (system={clean_system}, type={clean_type})")
 
-        # Queue to pending_subtopics.json for later assignment
-        from acumen_core.tracking import append_pending_subtopic
-        paper_title = payload.get("title", payload.get("paper_name", file_name))
-        append_pending_subtopic(
-            title=paper_title,
-            system=clean_system,
-            type_val=clean_type,
-            file_name=file_name,
-        )
+        # ----- PASS 1.5: AUTO SUBTOPIC CLASSIFICATION -----
+        # LLM picks the exact subtopic from the vocab; runs after Pass 1,
+        # before Pass 2 so everything is decided at generation time.
+        from acumen_core.subtopics_config import get_subtopics_for_system
+        if get_subtopics_for_system(clean_system):
+            context_lines = []
+            title = payload.get("title") or payload.get("paper_name") or ""
+            one_line = payload.get("one_line_summary") or ""
+            if title:
+                context_lines.append(f"Title: {title}")
+            if one_line:
+                context_lines.append(f"One-line summary: {one_line}")
+            key_pearls = payload.get("key_pearls", [])
+            if key_pearls:
+                context_lines.append("Key pearls: " + " | ".join(str(p) for p in key_pearls[:5]))
+            context = "\n".join(context_lines) or title or file_name
+
+            subtopic = classify_subtopic(clean_system, context, llm=llm_choice)
+
+            if subtopic and subtopic != clean_system:
+                payload["subtopic"] = subtopic
+                log_meta["subtopic"] = subtopic
+                with open(json_path, "w", encoding="utf-8") as jf:
+                    json.dump(payload, jf, indent=2, ensure_ascii=False)
+                from acumen_core.tracking import update_entry_in_json, append_subtopic_mapping
+                update_entry_in_json(file_name, {"subtopic": subtopic})
+                paper_title = payload.get("title", payload.get("paper_name", file_name))
+                append_subtopic_mapping(
+                    title=paper_title,
+                    system=clean_system,
+                    type_val=clean_type,
+                    file_name=file_name,
+                    subtopic=subtopic,
+                )
+                print(f"  Pass 1.5: subtopic=({subtopic})")
+            else:
+                print(f"  Pass 1.5: subtopic=({subtopic}) [no vocab match, kept system name]")
+        else:
+            print(f"  Pass 1.5: no subtopic vocab for {clean_system} - skipped")
     except Exception as e:
         print(f"  [X] Failed to save/log Pass 1: {e}")
         write_error(file_name=file_name, stage="save", pass_number=1, error=e, action="log_only")
@@ -575,6 +610,7 @@ def run_summary_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, 
     print(f"  Pearls: DISABLED for this run")
     print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
     print(f"  LLM: {llm_choice}")
+    print(f"  Subtopic model: {GEMINI_SUBTOPIC_MODEL if llm_choice == 'gemini' else SUBTOPIC_LLM_MODEL}")
     if max_files > 0:
         print(f"  Max files: {max_files}")
     print()
@@ -747,6 +783,7 @@ def run_summary_pearls_mode(ocr_enabled=False, max_files=0, verbose=False, once=
     print(f"{'#'*60}")
     print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
     print(f"  LLM: {llm_choice}")
+    print(f"  Subtopic model: {GEMINI_SUBTOPIC_MODEL if llm_choice == 'gemini' else SUBTOPIC_LLM_MODEL}")
     if max_files > 0:
         print(f"  Max files (Pass 1): {max_files}")
     print()
@@ -876,6 +913,7 @@ def run_watch_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, dr
     print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
     print(f"  Pearls: {'enabled' if PEARLS_ENABLED else 'disabled'}")
     print(f"  LLM: {llm_choice}")
+    print(f"  Subtopic model: {GEMINI_SUBTOPIC_MODEL if llm_choice == 'gemini' else SUBTOPIC_LLM_MODEL}")
     if max_files > 0:
         print(f"  Max files: {max_files}")
     print(f"  Loop: {'once' if once else 'continuous'}")

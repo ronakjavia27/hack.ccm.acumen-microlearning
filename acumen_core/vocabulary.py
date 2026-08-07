@@ -4,6 +4,7 @@ vocabulary.py - Controlled vocabulary management for specialties and article typ
 
 import os
 from acumen_core.config import SPECIALTIES_FILE, ARTICLE_TYPES_FILE
+from acumen_core.subtopics_config import get_all_systems
 
 DEFAULT_SPECIALTIES = [
     "Cardiology", "Neurology", "Nephrology", "Pulmonology",
@@ -78,6 +79,10 @@ def normalize_type(payload, allowed_types):
 
 
 def get_allowed_specialties():
+    """Return specialties from subtopics.json keys (single master vocabulary)."""
+    systems = get_all_systems()
+    if systems:
+        return systems
     return load_allowed_vocabulary(SPECIALTIES_FILE, DEFAULT_SPECIALTIES)
 
 

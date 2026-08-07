@@ -230,8 +230,13 @@ CONDENSATION_MODELS = {
 GEMINI_CONDENSATION_MODEL = os.getenv("GEMINI_CONDENSATION_MODEL", "gemini-3.6-flash")
 CONDENSATION_TENCENT_MODEL = os.getenv("CONDENSATION_TENCENT_MODEL", "tencent/hy3:free")
 
-# Subtopic assignment/classification model (subtopic_mapper.py + bulk_subtopic_classifier.py)
+# Subtopic assignment/classification model (auto Pass 1.5 in generator.py)
+# OpenRouter path uses the cheap gpt-oss; Gemini path uses a flash-lite model.
+# Override via .env: SUBTOPIC_LLM_MODEL="..."  GEMINI_SUBTOPIC_MODEL="..."
 SUBTOPIC_LLM_MODEL = os.getenv("SUBTOPIC_LLM_MODEL", "openai/gpt-oss-20b")
+GEMINI_SUBTOPIC_MODEL = os.getenv("GEMINI_SUBTOPIC_MODEL", "gemini-3.1-flash-lite")
+SUBTOPIC_TEMPERATURE = 0.1
+SUBTOPIC_MAX_TOKENS = 256
 
 # Cross-linking cheap model: env override, else the subtopic model (fast gpt-oss).
 LINKING_LLM_MODEL = os.getenv("LINKING_LLM_MODEL") or SUBTOPIC_LLM_MODEL

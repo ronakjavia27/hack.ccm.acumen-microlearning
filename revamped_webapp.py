@@ -808,9 +808,16 @@ async def render_dashboard(request: Request, response: Response):
         "Infectious Diseases": "#4F8A6D", "Hematology": "#E11D48",
         "Endocrinology": "#06B6D4", "Trauma": "#DC2626", "Surgery": "#6B7280",
         "Toxicology": "#7C3AED", "Sepsis": "#F97316", "General": "#9333EA",
-        "Other": "#9333EA",
+        "Other": "#9333EA", "Hepatology": "#B45309", "Immunology": "#A855F7",
+        "Multisystem": "#0EA5E9", "Nutrition": "#84CC16",
+        "Obstetrics And Gynecology": "#DB2777", "Oncology": "#A78BFA",
+        "Cardiothoracic": "#0891B2", "Vascular": "#F59E0B",
+        "Rheumatology": "#0D9488",
     }
-    theory_specs = sorted(set(d["specialty"] for d in flashcard_decks))
+    theory_specs = sorted(
+        set(d["specialty"] for d in flashcard_decks)
+        | set(n.get("system") for n in theory_notes if n.get("system"))
+    )
     theory_spec_css = {}
     for s in theory_specs:
         color = THEORY_SPEC_COLORS.get(s, "#9333EA")
@@ -1311,6 +1318,26 @@ async def render_dashboard(request: Request, response: Response):
   .theory-tag-x:hover{{ color:var(--accent); }}
   .theory-deck-rows .doc-card{{ cursor:pointer; }}
   .theory-saved-badge{{ font-size:.66rem; font-family:var(--font-mono); color:var(--accent); margin-left:6px; }}
+
+  .notes-chip-wrap{{ display:flex; flex-direction:column; gap:4px; width:100%; }}
+  .notes-chip-row{{ display:flex; gap:6px; flex-wrap:wrap; align-items:center; }}
+  .notes-chip-sep{{ height:1px; background:var(--border); margin:2px 0; }}
+
+  .theory-note-head{{ display:flex; flex-direction:column; align-items:stretch; gap:10px; margin-bottom:14px; }}
+  .theory-note-head .notes-title-row{{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; }}
+  .theory-note-head .notes-actions-row{{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }}
+  .theory-note-head .notes-nav-row{{ display:flex; align-items:center; gap:8px; }}
+  .theory-note-head .notes-tools-row{{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }}
+  .theory-note-head .notes-font-row{{ display:flex; align-items:center; gap:8px; flex-wrap:wrap; }}
+  .notes-font-label{{ font-family:var(--font-mono); font-size:.68rem; color:var(--ink-muted); margin-right:2px; }}
+  .theory-note-head .size-chip-row{{ display:flex; gap:4px; }}
+  .theory-note-head .btn{{ margin-left:0; }}
+  .theory-note-head .pill{{ max-width:none; }}
+  @media (min-width:760px){{
+    .theory-note-head{{ flex-direction:row; align-items:center; flex-wrap:wrap; }}
+    .theory-note-head .notes-title-row{{ flex:1 1 100%; }}
+    .theory-note-head .notes-actions-row{{ margin-left:auto; }}
+  }}
 
   /* ===== THEORY TOPICS (markdown notes) ===== */
   .theory-note{{ font-size:var(--theory-note-fs, var(--site-fs, 16px)); line-height:1.6; color:var(--ink); }}
@@ -3531,21 +3558,27 @@ if(box){{
     var savedCount = Object.keys(_bookmarks.items || {{}}).filter(function(r){{ return r.indexOf('note:')===0; }}).length;
     var specSet = {{}}, subSet = {{}};
     THEORY_NOTES.forEach(function(n){{ specSet[n.system]=(specSet[n.system]||0)+1; subSet[n.system+'\u0001'+n.subtopic]=(subSet[n.system+'\u0001'+n.subtopic]||0)+1; }});
+    // Row 1: specialty chips — each pill is tinted in its encoded specialty colour
     var specChips = Object.keys(specSet).sort().map(function(s){{
-      return '<button class="chip'+( _notesActiveSpecs.has(s)?' active':'')+'" data-notes-spec="'+escapeHtml(s)+'" style="--chip-color:var(--accent)">'+escapeHtml(s)+' <span class="chip-count">'+specSet[s]+'</span></button>';
+      var v = _theorySpecVar(s);
+      return '<button class="chip'+( _notesActiveSpecs.has(s)?' active':'')+'" data-notes-spec="'+escapeHtml(s)+'" style="--chip-color:var('+v+')"><span class="dot" style="background:var('+v+')"></span>'+escapeHtml(s)+' <span class="chip-count">'+specSet[s]+'</span></button>';
     }}).join('');
-    var subChips = '';
+    var anyActive = _notesActiveSpecs.size>0 || _notesActiveSubtopic || _notesSavedOnly;
+    var specRow = '<div class="notes-chip-row">'+specChips+
+      '<button class="chip'+( _notesSavedOnly?' active':'')+'" data-notes-saved-only style="--chip-color:var(--accent)">&#128278; Saved ('+savedCount+')</button>'+
+      (anyActive ? '<button class="chip" data-notes-clear-all style="--chip-color:var(--ink-muted)">&#10005; Clear</button>' : '')+'</div>';
+    // Row 2: subtopic chips for the single active specialty — below a separator
+    var subRow = '';
     if(_notesActiveSpecs.size===1){{
       var onlySpec = Array.from(_notesActiveSpecs)[0];
-      subChips = Object.keys(subSet).filter(function(k){{ return k.indexOf(onlySpec+'\u0001')===0; }}).sort().map(function(k){{
+      var subChips = Object.keys(subSet).filter(function(k){{ return k.indexOf(onlySpec+'\u0001')===0; }}).sort().map(function(k){{
         var sub = k.split('\u0001')[1];
-        return '<button class="chip'+( _notesActiveSubtopic===sub?' active':'')+'" data-notes-sub="'+escapeHtml(sub)+'" style="--chip-color:var(--accent)">'+escapeHtml(sub)+' <span class="chip-count">'+subSet[k]+'</span></button>';
+        var v = _theorySpecVar(onlySpec);
+        return '<button class="chip'+( _notesActiveSubtopic===sub?' active':'')+'" data-notes-sub="'+escapeHtml(sub)+'" style="--chip-color:var('+v+')">'+escapeHtml(sub)+' <span class="chip-count">'+subSet[k]+'</span></button>';
       }}).join('');
+      if(subChips){{ subRow = '<div class="notes-chip-sep"></div><div class="notes-chip-row">'+subChips+'</div>'; }}
     }}
-    var anyActive = _notesActiveSpecs.size>0 || _notesActiveSubtopic || _notesSavedOnly;
-    box.innerHTML = specChips + subChips +
-      '<button class="chip'+( _notesSavedOnly?' active':'')+'" data-notes-saved-only style="--chip-color:var(--accent)">&#128278; Saved ('+savedCount+')</button>'+
-      (anyActive ? '<button class="chip" data-notes-clear-all style="--chip-color:var(--ink-muted)">&#10005; Clear</button>' : '');
+    box.innerHTML = '<div class="notes-chip-wrap">'+specRow+subRow+'</div>';
   }}
   if(!THEORY_NOTES.length){{
     list.innerHTML = '<div class="bm-empty"><span class="icon">&#128214;</span><p>No theory notes yet. Drop markdown files into <span class="mono">output_files/Theory MDs/</span>.</p></div>';
@@ -3602,15 +3635,18 @@ function openTheoryNote(noteId, fromReader){{
   var prevBtn = idx>0 ? '<button class="btn nav-btn" data-theory-note-nav="-1" title="Previous note">&#9664; Prev</button>' : '';
   var nextBtn = (idx>=0 && idx<order.length-1) ? '<button class="btn nav-btn" data-theory-note-nav="1" title="Next note">Next &#9654;</button>' : '';
   reader.innerHTML =
-    '<div class="theory-card-head" style="margin-bottom:14px">'+
-      _theoryPill(note.system||'General', note.title)+
-      (note.subtopic && note.subtopic!=='General' ? '<span class="theory-sub-tag" style="align-self:center">'+escapeHtml(note.subtopic)+'</span>' : '')+
-      prevBtn+nextBtn+
-      exportNoteBtnHTML(note)+
-      '<button class="related-btn" data-open-related="theory:'+escapeHtml(note.rel||'')+'" title="Related papers, guidelines, decks &amp; pearls">&#128279; Related</button>'+
-      '<span style="flex:1"></span>'+
-      saveBtn+
-      theoryFontChipsHTML('notes')+
+    '<div class="theory-card-head theory-note-head">'+
+      '<div class="notes-title-row">'+
+        _theoryPill(note.system||'General', note.title)+
+        (note.subtopic && note.subtopic!=='General' ? '<span class="theory-sub-tag">'+escapeHtml(note.subtopic)+'</span>' : '')+
+      '</div>'+
+      '<div class="notes-nav-row">'+prevBtn+nextBtn+'</div>'+
+      '<div class="notes-tools-row">'+
+        exportNoteBtnHTML(note)+
+        '<button class="related-btn" data-open-related="theory:'+escapeHtml(note.rel||'')+'" title="Related papers, guidelines, decks &amp; pearls">&#128279; Related</button>'+
+        saveBtn+
+      '</div>'+
+      '<div class="notes-font-row"><span class="notes-font-label">Text&nbsp;size</span>'+theoryFontChipsHTML('notes')+'</div>'+
     '</div>'+
     '<article class="theory-note" id="theoryNoteArticle">'+_theoryMarkdownHTML(note.md)+'</article>';
   applyTheoryFont('notes');
@@ -3946,15 +3982,20 @@ function theoryFontSize(scope){{
     var v = parseFloat(localStorage.getItem(k)||'');
     if(v && v>=0.7 && v<=2) return v;
   }} catch(e){{}}
-  return scope==='cards' ? 0.94 : 1;
+  return 1;
 }}
 
 function theoryFontChipsHTML(scope){{
   var cur = theoryFontSize(scope);
-  var vals = scope==='cards' ? [0.85, 0.94, 1.15] : [0.85, 1, 1.2];
-  return vals.map(function(f){{
-    var label = f<0.94 ? 'A-' : (f>1.05 ? 'A+' : 'A');
-    return '<button class="theory-mode-chip'+(Math.abs(cur-f)<0.001?' active':'')+'" data-theory-font="'+scope+'" data-theory-font-val="'+f+'" title="Text size">'+label+'</button>';
+  var sizes = [
+    {{v:0.85, px:11}},
+    {{v:0.925, px:12}},
+    {{v:1, px:13}},
+    {{v:1.1, px:14}},
+    {{v:1.25, px:15}},
+  ];
+  return sizes.map(function(s){{
+    return '<button class="size-chip'+(Math.abs(cur-s.v)<0.001?' active':'')+'" data-theory-font="'+scope+'" data-theory-font-val="'+s.v+'" style="font-size:'+s.px+'px" title="Text size">A</button>';
   }}).join('');
 }}
 
@@ -4065,12 +4106,12 @@ function bookmarkBtnHTML(ref, label){{
 
 function exportPaperBtnHTML(entry){{
   var qs = 'kind=paper&file_name='+encodeURIComponent(entry.file_name||'')+'&system='+encodeURIComponent(entry.system||'General')+'&type='+encodeURIComponent(entry.type||'Other');
-  return '<button class="btn nav-btn" data-export-paper="'+escapeHtml(qs)+'" title="Open a printable version of this summary in a new window">&#128196; Export / PDF</button>';
+  return '<button class="btn nav-btn" data-export-paper="'+escapeHtml(qs)+'" title="Open a printable version of this summary in a new window">&#128196; PDF</button>';
 }}
 
 function exportNoteBtnHTML(note){{
   var qs = 'kind=note&file_name='+encodeURIComponent(note.id||'')+'&title='+encodeURIComponent((note.title||'').substring(0,120));
-  return '<button class="btn nav-btn" data-export-note="'+escapeHtml(qs)+'" title="Open a printable version of this note in a new window">&#128196; Export / PDF</button>';
+  return '<button class="btn nav-btn" data-export-note="'+escapeHtml(qs)+'" title="Open a printable version of this note in a new window">&#128196; PDF </button>';
 }}
 
 function refreshBookmarkButtons(){{

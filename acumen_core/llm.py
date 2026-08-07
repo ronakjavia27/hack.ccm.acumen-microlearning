@@ -19,6 +19,10 @@ from acumen_core.config import (
     GEMINI_SUMMARY_MODEL,
     GEMINI_PEARLS_MODEL,
     GEMINI_VISION_MODEL,
+    SUBTOPIC_LLM_MODEL,
+    GEMINI_SUBTOPIC_MODEL,
+    SUBTOPIC_TEMPERATURE,
+    SUBTOPIC_MAX_TOKENS,
     TEMPERATURE_EXTRACTION,
     TEMPERATURE_PEARLS,
     MAX_TOKENS_EXTRACTION,
@@ -370,6 +374,123 @@ Output ONLY valid JSON. No preamble, no markdown fences, no commentary."""
                         break
 
     raise last_error or RuntimeError("Pearl extraction failed - no providers available")
+
+
+def classify_subtopic(system, context, llm="openrouter"):
+    """
+    Pass 1.5: Classify the exact subtopic for a summary's system.
+
+    Provider-aware:
+      llm="openrouter" (default) -> OpenRouter, SUBTOPIC_LLM_MODEL (openai/gpt-oss-20b)
+      llm="gemini"               -> Gemini, GEMINI_SUBTOPIC_MODEL (gemini-3.1-flash-lite)
+
+    context: paper title / one-line summary / key points used as classifier input.
+    Returns: exact subtopic string from the vocab, or system name if no vocab/failure.
+    """
+    from acumen_core.subtopics_config import get_subtopics_for_system, format_subtopics_for_prompt
+
+    valid_subtopics = get_subtopics_for_system(system)
+    if not valid_subtopics:
+        return system
+
+    vocab_listing = format_subtopics_for_prompt(system)
+    system_prompt = """You are a medical content librarian. Given the paper context and the target specialty, select the SINGLE most appropriate subtopic from the provided list.
+
+Rules:
+1. Choose exactly ONE subtopic from the list. Pick the closest match.
+2. If no listed subtopic fits, choose the closest general/summary option available.
+3. Return a JSON object: {"subtopic": "<exact subtopic string from list>"}
+4. Output ONLY valid JSON. No preamble, no markdown fences, no commentary."""
+
+    user_content = f"Target specialty: {system}\n\nValid subtopics for this specialty:\n{vocab_listing}\n\nPaper context:\n{context[:6000]}\n\nSelect the single best subtopic."
+
+    last_error = None
+
+    if llm == "gemini":
+        client = _get_gemini_client()
+        backup_client = _get_backup_gemini_client()
+        model = GEMINI_SUBTOPIC_MODEL
+        if client:
+            for attempt in range(MAX_RETRIES):
+                try:
+                    print(f"    Subtopic (Gemini): {model} (attempt {attempt + 1}/{MAX_RETRIES})")
+                    result = call_gemini_api(
+                        client, model, system_prompt, [user_content],
+                        temperature=SUBTOPIC_TEMPERATURE,
+                    )
+                    chosen = (result or {}).get("subtopic", "").strip()
+                    if chosen in valid_subtopics:
+                        return chosen
+                    print(f"    [X] Subtopic not in vocab: '{chosen}'")
+                    break
+                except json.JSONDecodeError as e:
+                    last_error = e
+                    print(f"    [X] Subtopic JSON parse error: {e}")
+                    break
+                except Exception as e:
+                    last_error = e
+                    if _is_retryable(e) and attempt < MAX_RETRIES - 1:
+                        time.sleep(RETRY_DELAY * (attempt + 1))
+                    else:
+                        print(f"    [X] Subtopic classify {model} failed: {e}")
+                        break
+        if backup_client:
+            for attempt in range(MAX_RETRIES):
+                try:
+                    print(f"    Subtopic (Gemini Backup): {model} (attempt {attempt + 1}/{MAX_RETRIES})")
+                    result = call_gemini_api(
+                        backup_client, model, system_prompt, [user_content],
+                        temperature=SUBTOPIC_TEMPERATURE,
+                    )
+                    chosen = (result or {}).get("subtopic", "").strip()
+                    if chosen in valid_subtopics:
+                        return chosen
+                    print(f"    [X] Subtopic not in vocab: '{chosen}'")
+                    break
+                except json.JSONDecodeError as e:
+                    last_error = e
+                    print(f"    [X] Subtopic JSON parse error: {e}")
+                    break
+                except Exception as e:
+                    last_error = e
+                    if _is_retryable(e) and attempt < MAX_RETRIES - 1:
+                        time.sleep(RETRY_DELAY * (attempt + 1))
+                    else:
+                        print(f"    [X] Subtopic classify {model} failed: {e}")
+                        break
+    else:
+        client = _get_openrouter_client()
+        if not client:
+            raise RuntimeError("OpenRouter client not available (check OPENROUTER_API_KEY)")
+        model = SUBTOPIC_LLM_MODEL
+        for attempt in range(MAX_RETRIES):
+            try:
+                print(f"    Subtopic: {model} (attempt {attempt + 1}/{MAX_RETRIES})")
+                result = call_openrouter_api(
+                    client, model, system_prompt, user_content,
+                    temperature=SUBTOPIC_TEMPERATURE,
+                    max_tokens=SUBTOPIC_MAX_TOKENS,
+                )
+                chosen = (result or {}).get("subtopic", "").strip()
+                if chosen in valid_subtopics:
+                    return chosen
+                print(f"    [X] Subtopic not in vocab: '{chosen}'")
+                break
+            except json.JSONDecodeError as e:
+                last_error = e
+                print(f"    [X] Subtopic JSON parse error: {e}")
+                break
+            except Exception as e:
+                last_error = e
+                if _is_retryable(e) and attempt < MAX_RETRIES - 1:
+                    time.sleep(RETRY_DELAY * (attempt + 1))
+                else:
+                    print(f"    [X] Subtopic classify {model} failed: {e}")
+                    break
+
+    if last_error:
+        print(f"    [~] Subtopic classification failed ({last_error}); using system name: {system}")
+    return system
 
 
 # =====================================================================

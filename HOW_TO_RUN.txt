@@ -27,30 +27,32 @@ THE THREE SCRIPTS
 WHAT IT DOES:
   Takes PDF files from input_pdfs/ and produces:
   - Structured JSON summaries (Pass 1 - uses OpenRouter with deepseek-ai/DeepSeek-V4-Pro by default)
-  - Clinical pearls / key takeaways (Pass 2 - uses Together AI)
+  - Auto-assigned subtopics (Pass 1.5 - openai/gpt-oss-20b on OpenRouter or gemini-3.1-flash-lite on Gemini)
+  - Clinical pearls / key takeaways (Pass 2 - openai/gpt-oss-20b)
   
   All output goes into output_files/ organized by specialty and type.
 
 MODES:
   --mode watch         (DEFAULT) Watch folder, process each PDF fully
-                       Runs Pass 1 (summary) + Pass 2 (pearls) per PDF
+                       Runs Pass 1 (summary) + Pass 1.5 (subtopic) + Pass 2 (pearls) per PDF
   
-  --mode summary       Only run Pass 1 (summaries). Skip pearls.
+  --mode summary       Only run Pass 1 + Pass 1.5 (summaries + subtopic). Skip pearls.
                        Use when you only want structured summaries.
   
   --mode pearls        Only run Pass 2 on files that are missing pearls.
                        Use to fill in pearls for already-summarized files.
   
   --mode summary_pearls
-                       Phase 1: Run Pass 1 on ANY pending PDF
+                       Phase 1: Run Pass 1 + Pass 1.5 on ANY pending PDF
                        Phase 2: Run Pass 2 on ALL files missing pearls
                        Use for a complete run from scratch.
 
-LLM PROVIDER (for Pass 1 extraction):
-  --llm openrouter      Use OpenRouter (DEFAULT, reads OPENROUTER_API_KEY from .env)
-  --llm together        Use Together AI (requires TOGETHER_API_KEY)
-  --llm gemini          Use Google Gemini (requires PRIMARY_GEMINI_API_KEY)
-  --llm other           Custom OpenAI-compatible API (also set --api-key and --model)
+LLM PROVIDER (for Pass 1/1.5/2 extraction):
+  --llm openrouter     Use OpenRouter (DEFAULT, reads OPENROUTER_API_KEY from .env).
+                       Pass 1 = OPENROUTER_SUMMARY_MODEL, Pass 1.5 = SUBTOPIC_LLM_MODEL
+                       (openai/gpt-oss-20b), Pass 2 = OPENROUTER_PEARLS_MODEL.
+  --llm gemini         Use Google Gemini (requires PRIMARY_GEMINI_API_KEY).
+                       Pass 1.5 = GEMINI_SUBTOPIC_MODEL (gemini-3.1-flash-lite).
 
 COMMON COMMANDS:
   python generator.py                              # Watch mode (default)
@@ -65,7 +67,6 @@ COMMON COMMANDS:
   python generator.py --verbose                    # Show detailed per-file output
   python generator.py --reprocess path/to/pdf      # Force re-process one PDF
   python generator.py --extract-pearls path.json   # Run pearls only on one JSON
-  python generator.py --llm together                # Use Together AI instead of OpenRouter
   python generator.py --llm gemini                  # Use Gemini instead
   python generator.py --llm openrouter --model anthropic/claude-3.5-sonnet  # Override OpenRouter model
 
@@ -87,9 +88,6 @@ EXAMPLES:
 
   # Use Gemini instead of OpenRouter for extraction:
   python generator.py --llm gemini
-
-  # Use Together AI (original default):
-  python generator.py --llm together
 
 ================================================================
 2. MAINTAINER.PY - REPOSITORY HEALTH & REPAIRS
@@ -138,12 +136,11 @@ WHAT IT DOES:
   - Sends email digests to subscribers
   - Syncs subscriber list from Google Forms/Sheets
 
-You run 
-		python -m acumen_core.subtopic_mapper → interactive prompt to assign proper subtopic
-Or 
-		python -m acumen_core.subtopic_mapper --batch-llm → auto-classify via LLM
-Then 
-		python maintainer.py --subtopics → syncs to both JSON files
+NOTE:
+  Subtopics are now AUTO-ASSIGNED at generation time (Pass 1.5 in generator.py).
+  The old manual subtopic_mapper.py / bulk_subtopic_classifier.py were retired
+  and quarantined. python maintainer.py --subtopics still syncs any existing
+  subtopic_mapping.json into the data files (safe no-op when empty).
 
 MODES:
   (no args)    Same as --mode all (git sync)
