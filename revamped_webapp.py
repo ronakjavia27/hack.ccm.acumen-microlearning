@@ -2116,11 +2116,10 @@ function pillHTML(spec, label){{
 
 function docCardHTML(p){{
   var v = SPEC_VAR[p.system] || '--spec-other';
-  var dateStr = p.date_added ? p.date_added.substring(0,10) : '';
   return '<button class="doc-card" data-open-paper="'+p.id+'">'+
     '<div class="doc-stripe" style="background:var('+v+')"></div>'+
     '<div class="doc-inner">'+
-      '<div class="doc-top">'+pillHTML(p.system, p.system)+'<span class="type-tag">'+p.type+' &middot; '+dateStr+'</span></div>'+
+      '<div class="doc-top">'+pillHTML(p.system, p.system)+'<span class="type-tag">'+p.type+'</span></div>'+
       '<p class="doc-title">'+p.title+'</p>'+
       '<p class="doc-snippet">'+(p.authors!=='Unknown Authors' ? '&mdash; '+p.authors : '')+'</p>'+
     '</div>'+
@@ -2426,7 +2425,7 @@ function renderPearls(){{
     var v = SPEC_VAR[p.system] || '--spec-other';
     return '<button class="pearl-row" data-open-pearl="'+p.id+'">'+
       '<span class="dot" style="background:var('+v+')"></span>'+
-      '<span class="txt">'+escapeHtml((p.pearl||'').substring(0,150))+(p.pearl&&p.pearl.length>150?'&hellip;':'')+'<span class="src">'+(p.system||'')+' &middot; '+(p.source_paper||'Clinical pearl')+' &middot; '+(p.timestamp||'')+'</span></span>'+
+      '<span class="txt">'+escapeHtml((p.pearl||'').substring(0,150))+(p.pearl&&p.pearl.length>150?'&hellip;':'')+'<span class="src">'+(p.system||'')+' &middot; '+(p.source_paper||'Clinical pearl')+'</span></span>'+
     '</button>';
   }}).join('') || noPearlsHTML;
   document.getElementById('pearlsCount').textContent = 'Showing '+shown.length+' of '+filtered.length+' pearls';
@@ -2456,7 +2455,7 @@ function openReader(entry, kind){{
     body.innerHTML = ''+
       pillHTML(entry.system||'General', (entry.system||'General')+' &middot; Pearl')+
       '<h2 style="font-size:1.15rem;line-height:1.4">"'+escapeHtml(entry.pearl||'')+'"</h2>'+
-      '<p class="meta">'+(entry.source_paper||'Clinical pearl')+' &middot; '+(entry.timestamp||'')+'</p>'+
+      '<p class="meta">'+(entry.source_paper||'Clinical pearl')+'</p>'+
       '<div class="reader-actions">'+bookmarkBtnHTML(pbmRef)+(entry.file_name?'<button class="related-btn" data-open-related="paper:'+escapeHtml(entry.file_name.replace(/\\.json$/i,'.pdf'))+'" title="Related papers, guidelines, theory notes, decks &amp; pearls">&#128279; Related</button>':'')+'</div>'+
       navRow;
     document.body.classList.add('reader-open');
@@ -4302,7 +4301,7 @@ function bmCardHTML(bm){{
       '<div style="flex:1;min-width:0">'+
         '<div style="margin-bottom:6px">'+pillHTML(bm.system||'General', (bm.system||'General')+' &middot; '+kindLabel)+'</div>'+
         '<div class="bm-title">'+escapeHtml(dispTitle)+'</div>'+
-        '<div class="bm-meta">'+(bm.type?escapeHtml(bm.type):'')+(bm.added_at?' &middot; saved '+escapeHtml(String(bm.added_at).substring(0,10)):'')+'</div>'+
+        '<div class="bm-meta">'+(bm.type?escapeHtml(bm.type):'')+'</div>'+
       '</div>'+
       '<span class="bm-del" style="font-size:1.1rem">&#8250;</span>'+
     '</button>'+
