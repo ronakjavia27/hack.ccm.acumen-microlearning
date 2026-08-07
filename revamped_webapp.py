@@ -1209,17 +1209,18 @@ async def render_dashboard(request: Request, response: Response):
   .related-overlay-backdrop.open{{ display:flex; }}
   .related-overlay-box{{ background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; max-width:640px; width:100%; max-height:84vh; display:flex; flex-direction:column; box-shadow:var(--shadow); overflow:hidden; }}
   .related-overlay-head{{ display:flex; align-items:center; gap:10px; padding:14px 18px; border-bottom:1px solid var(--border); flex:0 0 auto; }}
-  .related-overlay-title{{ flex:1; min-width:0; font-family:var(--font-display); font-size:.98rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
+  .related-overlay-title{{ flex:1; min-width:0; font-family:var(--font-display); font-size:.98rem; white-space:normal; overflow-wrap:anywhere; word-break:break-word; line-height:1.3; }}
   .related-reason-bar{{ display:flex; flex-wrap:wrap; gap:6px; padding:10px 18px 2px; flex:0 0 auto; }}
   .related-reason-chip{{ border:1px solid var(--border); background:transparent; color:var(--ink-muted); border-radius:999px; padding:3px 11px; font-size:.72rem; cursor:pointer; font-family:var(--font-body); }}
   .related-reason-chip.active{{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }}
   .related-scroll{{ flex:1; overflow-y:auto; padding:4px 12px 16px; }}
   .related-group-label{{ font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-muted); margin:14px 8px 6px; }}
-  .related-row{{ display:flex; align-items:center; gap:8px; width:100%; text-align:left; background:transparent; border:1px solid var(--border); border-radius:10px; padding:9px 12px; margin-bottom:6px; cursor:pointer; color:inherit; font-family:var(--font-body); font-size:.86rem; }}
+  .related-row{{ display:flex; flex-direction:column; align-items:stretch; gap:4px; width:100%; text-align:left; background:transparent; border:1px solid var(--border); border-radius:10px; padding:9px 12px; margin-bottom:6px; cursor:pointer; color:inherit; font-family:var(--font-body); font-size:.86rem; }}
   .related-row:hover{{ border-color:var(--accent); }}
-  .related-kind{{ font-size:.66rem; text-transform:uppercase; letter-spacing:.04em; padding:2px 7px; border-radius:999px; background:var(--bg-sunk); color:var(--ink-muted); flex:0 0 auto; }}
-  .related-reason{{ font-size:.7rem; color:var(--ink-muted); flex:0 0 auto; font-style:italic; }}
-  .related-title{{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
+  .related-row-top{{ display:flex; align-items:flex-start; gap:8px; min-width:0; }}
+  .related-kind{{ font-size:.66rem; text-transform:uppercase; letter-spacing:.04em; padding:2px 7px; border-radius:999px; background:var(--bg-sunk); color:var(--ink-muted); flex:0 0 auto; margin-top:1px; }}
+  .related-reason{{ font-size:.7rem; color:var(--ink-muted); font-style:italic; align-self:flex-start; }}
+  .related-title{{ flex:1; min-width:0; white-space:normal; overflow-wrap:anywhere; word-break:break-word; line-height:1.35; }}
   .related-empty{{ padding:26px 12px; text-align:center; color:var(--ink-muted); font-size:.88rem; }}
 
   .result-badge{{ font-size:.68rem; font-family:var(--font-mono); padding:2px 7px; border-radius:99px; border:1px solid; }}
@@ -2564,8 +2565,10 @@ function renderRelatedRows(){{
     items.forEach(function(it){{
       var kindLabel = it.e.kind==='guideline' ? 'Guideline' : (it.e.kind==='theory' ? 'Theory' : (it.e.kind==='flashcard_deck' ? 'Deck' : 'Paper'));
       html += '<button class="related-row" data-related-go="'+escapeHtml(it.e.id)+'">'+
-        '<span class="related-kind">'+kindLabel+'</span>'+
-        '<span class="related-title">'+escapeHtml(it.e.title||it.e.id)+'</span>'+
+        '<span class="related-row-top">'+
+          '<span class="related-kind">'+kindLabel+'</span>'+
+          '<span class="related-title">'+escapeHtml(it.e.title||it.e.id)+'</span>'+
+        '</span>'+
         '<span class="related-reason">'+escapeHtml(it.r.reason||'')+'</span>'+
       '</button>';
     }});
