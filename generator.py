@@ -5,10 +5,14 @@ generator.py - hack.CCM Unified Ingestion Pipeline
 Processes medical PDFs into structured JSON summaries + clinical pearls.
 
 TWO PASSES (separate API calls for quality):
-  PASS 1 - Full Schema Extraction (DeepSeek V4 Pro / fallback DeepSeek API)
+  PASS 1 - Full Schema Extraction (model from .env per provider)
            -> output_files/{system}/{type}/{filename}.json
-  PASS 2 - Pearl Extraction (openai/gpt-oss-20b -> fallback gpt-oss-120b)
+  PASS 2 - Pearl Extraction (model from .env per provider)
            -> pearls.json
+
+PROVIDERS (--llm): openrouter (default) | gemini
+  --llm openrouter: Pass 1 uses OPENROUTER_SUMMARY_MODEL, Pass 2 uses OPENROUTER_PEARLS_MODEL
+  --llm gemini:     Pass 1 uses GEMINI_SUMMARY_MODEL, Pass 2 uses GEMINI_PEARLS_MODEL
 
 MODES:
   --mode watch           Watch input folder for new PDFs, run both passes (default)
@@ -32,7 +36,7 @@ ERRORS:
   maintainer.py reads these to prioritize repairs.
 
 EXAMPLES:
-  python generator.py                                   # watch mode, openrouter (default)
+  python generator.py                                   # openrouter, deepseek-ai/DeepSeek-V4-Pro (default)
   python generator.py --mode summary                    # only summaries, no pearls
   python generator.py --mode pearls                     # only pearls for pending files
   python generator.py --mode summary_pearls             # both, sequential
@@ -42,6 +46,7 @@ EXAMPLES:
   python generator.py --status                          # quick dashboard
   python generator.py --reprocess input_pdfs/articles/paper.pdf
   python generator.py --extract-pearls output_files/Cardiology/Review/paper.json
+  python generator.py --llm gemini                       # use Gemini for both passes
 """
 
 import os
@@ -57,7 +62,7 @@ from acumen_core.config import (
     BASE_INPUT_DIR, SUB_DIRS, OUTPUT_DIR, QUARANTINE_BASE,
     EXCEL_TRACKER_FILE, JSON_TRACKER_FILE, PEARLS_JSON, PEARLS_TRACKER,
     PEARLS_JSON_FIELDS, PROJECT_DIR,
-    OPENROUTER_API_KEY, OPENROUTER_MODEL, OPENROUTER_BASE_URL,
+    OPENROUTER_API_KEY, OPENROUTER_PEARLS_MODEL,
     get_error_list_path,
 )
 from acumen_core.vocabulary import (
@@ -67,13 +72,13 @@ from acumen_core.vocabulary import (
 from acumen_core.tracking import (
     initialize_excel_tracker, log_transaction_to_excel, log_transaction_to_json,
     load_processed_files_from_json, load_all_entries_from_json,
-    load_pearl_tracker, update_pearl_tracker,
+    update_pearl_tracker,
     save_json_atomic, load_json_safe,
 )
 from acumen_core.markdown import enrich_payload_with_markdown
 from acumen_core.errors import write_error, read_current_month_errors
 from acumen_core.llm import (
-    execute_with_fallback, execute_with_gemini, execute_with_custom,
+    execute_with_fallback, execute_with_gemini,
     execute_pearl_extraction, chunk_text,
     merge_chunks_programmatically,
 )
@@ -190,7 +195,7 @@ def extract_text_from_pdf(file_path, ocr_enabled=False):
 
 
 def run_extraction_pass(file_path, category, ocr_enabled=False,
-                        llm_choice="together", custom_key="", custom_model=""):
+                        llm_choice="openrouter"):
     """PASS 1: Extract structured JSON from PDF. Returns (payload, error)."""
     file_name = os.path.basename(file_path)
     try:
@@ -209,13 +214,6 @@ def run_extraction_pass(file_path, category, ocr_enabled=False,
             if llm_choice == "gemini":
                 return execute_with_gemini(
                     system, user, cat,
-                    max_retries=MAX_RETRIES_OVERRIDE, retry_delay=RETRY_DELAY_OVERRIDE,
-                )
-            elif llm_choice in ("openrouter", "other"):
-                base_url = "https://openrouter.ai/api/v1" if llm_choice == "openrouter" else None
-                return execute_with_custom(
-                    custom_key, custom_model, system, user,
-                    base_url=base_url,
                     max_retries=MAX_RETRIES_OVERRIDE, retry_delay=RETRY_DELAY_OVERRIDE,
                 )
             else:
@@ -371,7 +369,7 @@ def append_pearls_to_json(new_pearls, source_paper, metadata, file_name):
     return len(rows_to_add)
 
 
-def run_pearl_extraction_pass(payload, file_name, metadata):
+def run_pearl_extraction_pass(payload, file_name, metadata, llm_choice="openrouter"):
     """PASS 2: Extract clinical pearls using separate cheaper model."""
     try:
         markdown_text = build_markdown_for_pearls(payload)
@@ -380,7 +378,7 @@ def run_pearl_extraction_pass(payload, file_name, metadata):
             return 0, None
 
         print(f"  Pass 2: Extracting pearls ({len(markdown_text)} chars)...")
-        pearls = execute_pearl_extraction(markdown_text, file_name)
+        pearls = execute_pearl_extraction(markdown_text, file_name, llm=llm_choice)
 
         if not pearls:
             print("  Pass 2: No pearls extracted")
@@ -394,8 +392,8 @@ def run_pearl_extraction_pass(payload, file_name, metadata):
 
     except Exception as e:
         write_error(file_name=file_name, stage="pearl_extraction", pass_number=2,
-                    error=e, provider="together", action="log_only",
-                    extra_fields={"pearl_model_primary": "openai/gpt-oss-20b"})
+                    error=e, provider=llm_choice, action="log_only",
+                    extra_fields={"pearl_model_primary": OPENROUTER_PEARLS_MODEL})
         return 0, str(e)
 
 
@@ -404,7 +402,7 @@ def run_pearl_extraction_pass(payload, file_name, metadata):
 # =====================================================================
 def process_single_pdf(file_path, category, processed_history, ocr_enabled=False,
                        verbose=False, run_pearls=True,
-                       llm_choice="together", custom_key="", custom_model=""):
+                       llm_choice="openrouter"):
     """Process one PDF through Pass 1 (and optionally Pass 2)."""
     file_name = os.path.basename(file_path)
     if file_name in processed_history:
@@ -421,8 +419,7 @@ def process_single_pdf(file_path, category, processed_history, ocr_enabled=False
 
     # ----- PASS 1 -----
     payload, err1 = run_extraction_pass(file_path, category, ocr_enabled,
-                                        llm_choice=llm_choice, custom_key=custom_key,
-                                        custom_model=custom_model)
+                                        llm_choice=llm_choice)
     if payload is None:
         print(f"  [X] Pass 1 failed: {err1}")
         if QUARANTINE_AFTER_FAILURE:
@@ -454,7 +451,7 @@ def process_single_pdf(file_path, category, processed_history, ocr_enabled=False
     # ----- PASS 2 (optional) -----
     pearl_err = None
     if run_pearls and PEARLS_ENABLED:
-        pearls_added, pearl_err = run_pearl_extraction_pass(payload, file_name, log_meta)
+        pearls_added, pearl_err = run_pearl_extraction_pass(payload, file_name, log_meta, llm_choice=llm_choice)
         if pearl_err:
             print(f"  [!] Pass 2 (pearls) failed: {pearl_err} - summary still saved")
     else:
@@ -490,36 +487,78 @@ def move_to_quarantine(file_path, category, error=False):
 # =====================================================================
 # SCAN: Files with summaries but no pearls
 # =====================================================================
+# Directories under output_files/ that hold non-summary JSONs (never pearl candidates)
+NON_SUMMARY_JSON_DIRS = ("esbicm_trials", "trials_database_condensed", "flashcards", "Theory MDs")
+
+
 def find_files_missing_pearls(verbose=False):
     """
-    Scan output_files/ for JSON summaries that don't have pearls yet.
-    Returns list of (json_path, file_name) tuples.
+    Find summaries that don't have pearls yet.
+
+    Candidates come ONLY from sent_summaries.json (the approved registry).
+    Trials, flashcards, theory, and any other JSON in output_files/ are
+    never pearl candidates.
+
+    Returns list of (json_path, file_name) tuples, where file_name is the
+    basename of the summary JSON on disk (e.g. paper.json).
     """
-    # Build set of file_names that already have pearls
-    existing_pearls = load_json_safe(PEARLS_JSON, [])
-    files_with_pearls = set(p.get("file_name", "") for p in existing_pearls if p.get("file_name"))
+    # Build the set of file_names that already have pearls.
+    # pearls.json is the source of truth for "documented pearls".
+    # Watch mode records PDF names (paper.pdf), pearls mode records JSON
+    # names (paper.json) - normalize every recorded name to both variants.
+    files_with_pearls = set()
+    for p in load_json_safe(PEARLS_JSON, []):
+        fn = (p.get("file_name") or "").strip()
+        if fn:
+            stem = os.path.splitext(fn)[0]
+            files_with_pearls.add(fn)
+            files_with_pearls.add(stem + ".json")
+            files_with_pearls.add(stem + ".pdf")
 
-    # Also check the pearls_processed.xlsx tracker
-    try:
-        tracked = load_pearl_tracker(PEARLS_TRACKER)
-        files_with_pearls.update(tracked)
-    except Exception:
-        pass
+    def _has_pearls(pdf_name):
+        if not SKIP_FILES_WITH_PEARLS:
+            return False
+        json_name = os.path.splitext(pdf_name)[0] + ".json"
+        return pdf_name in files_with_pearls or json_name in files_with_pearls
 
-    # Scan output_files/
+    # Locate a summary JSON on disk: try {system}/{type} first, then a
+    # filename-only walk that skips non-summary directories.
+    located_cache = {}
+
+    def _locate(json_name, system, type_val):
+        if json_name in located_cache:
+            return located_cache[json_name]
+        path = os.path.join(OUTPUT_DIR, system or "", type_val or "", json_name)
+        if os.path.exists(path):
+            located_cache[json_name] = path
+            return path
+        if os.path.exists(OUTPUT_DIR):
+            for root, dirs, files in os.walk(OUTPUT_DIR):
+                dirs[:] = [d for d in dirs if d not in NON_SUMMARY_JSON_DIRS]
+                if json_name in files:
+                    path = os.path.join(root, json_name)
+                    located_cache[json_name] = path
+                    return path
+        located_cache[json_name] = None
+        return None
+
     missing = []
-    if not os.path.exists(OUTPUT_DIR):
-        return missing
-    for root, dirs, files in os.walk(OUTPUT_DIR):
-        for fname in files:
-            if not fname.endswith(".json"):
-                continue
-            fpath = os.path.join(root, fname)
-            if SKIP_FILES_WITH_PEARLS and fname in files_with_pearls:
-                if verbose:
-                    print(f"    [has pearls] {fname}")
-                continue
-            missing.append((fpath, fname))
+    for entry in load_all_entries_from_json():
+        pdf_name = (entry.get("file_name") or "").strip()
+        if not pdf_name:
+            continue
+        if _has_pearls(pdf_name):
+            if verbose:
+                print(f"    [has pearls] {pdf_name}")
+            continue
+        json_name = os.path.splitext(pdf_name)[0] + ".json"
+        json_path = _locate(json_name, entry.get("system"), entry.get("type"))
+        if json_path is None:
+            if verbose:
+                print(f"    [missing on disk] {json_name} (in sent_summaries but not in output_files)")
+            append_to_log(f"pearls skip missing_on_disk file={json_name}")
+            continue
+        missing.append((json_path, json_name))
 
     return missing
 
@@ -535,7 +574,7 @@ def run_summary_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, 
     print(f"{'#'*60}")
     print(f"  Pearls: DISABLED for this run")
     print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
-    print(f"  LLM: {llm_choice}{f' [{custom_model}]' if llm_choice in ('openrouter', 'other') else ''}")
+    print(f"  LLM: {llm_choice}")
     if max_files > 0:
         print(f"  Max files: {max_files}")
     print()
@@ -606,9 +645,7 @@ def run_summary_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, 
 
 
 # =====================================================================
-# MODE: PEARLS ONLY (Pass 2 only, from existing JSONs)
-# =====================================================================
-def run_pearls_mode(max_files=0, verbose=False, dry_run=False):
+def run_pearls_mode(max_files=0, verbose=False, dry_run=False, llm_choice="openrouter"):
     """Run only Pass 2 on files with summaries but no pearls."""
     print(f"\n{'#'*60}")
     print(f"  hack.CCM Generator - PEARLS MODE (Pass 2 only)")
@@ -619,22 +656,23 @@ def run_pearls_mode(max_files=0, verbose=False, dry_run=False):
     missing = find_files_missing_pearls(verbose=verbose)
     print(f"  Found {len(missing)} files missing pearls")
 
-    # Also include previously failed pearl extractions if requested
+    # Also include previously failed pearl extractions if requested -
+    # but only for files in the sent_summaries registry (trials/theory
+    # failures are never retried). Such registry files have no pearls, so
+    # they are already listed in `missing` and retried below.
     if INCLUDE_PREVIOUSLY_FAILED:
         errors = read_current_month_errors()
         pearl_fails = [e for e in errors if e.get("stage") == "pearl_extraction"]
-        failed_files = set(e.get("file", "") for e in pearl_fails if e.get("file"))
-        # Add failed files not already in missing
-        existing_names = set(fn for _, fn in missing)
-        for fname in failed_files:
-            if fname and fname not in existing_names:
-                # Try to find the file on disk
-                for root, dirs, files in os.walk(OUTPUT_DIR):
-                    if fname in files:
-                        missing.append((os.path.join(root, fname), fname))
-                        existing_names.add(fname)
-                        break
-        print(f"  Including {len(failed_files)} previously failed files")
+        failed_files = {e.get("file", "") for e in pearl_fails if e.get("file")}
+        registry_names = set()
+        for entry in load_all_entries_from_json():
+            pdf_name = (entry.get("file_name") or "").strip()
+            if pdf_name:
+                registry_names.add(pdf_name)
+                registry_names.add(os.path.splitext(pdf_name)[0] + ".json")
+        registry_fails = [f for f in failed_files if f in registry_names]
+        print(f"  Previously failed pearl files: {len(failed_files)} "
+              f"({len(registry_fails)} in sent_summaries, retried below)")
 
     if max_files > 0:
         missing = missing[:max_files]
@@ -678,7 +716,7 @@ def run_pearls_mode(max_files=0, verbose=False, dry_run=False):
             "type": payload.get("article_subtype", payload.get("doc_type", "")),
             "subtopic": payload.get("subtopic", payload.get("system", "")),
         }
-        count, err = run_pearl_extraction_pass(payload, file_name, metadata)
+        count, err = run_pearl_extraction_pass(payload, file_name, metadata, llm_choice=llm_choice)
         total_pearls += count
         if err:
             error_count += 1
@@ -699,7 +737,7 @@ def run_pearls_mode(max_files=0, verbose=False, dry_run=False):
 # MODE: SUMMARY + PEARLS (both passes, sequential)
 # =====================================================================
 def run_summary_pearls_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, dry_run=False,
-                            llm_choice="together", custom_key="", custom_model=""):
+                            llm_choice="openrouter"):
     """
     Run Pass 1 on pending PDFs, then Pass 2 on ALL files missing pearls
     (both the newly generated ones and any pre-existing ones).
@@ -708,7 +746,7 @@ def run_summary_pearls_mode(ocr_enabled=False, max_files=0, verbose=False, once=
     print(f"  hack.CCM Generator - SUMMARY+PEARLS MODE (both passes)")
     print(f"{'#'*60}")
     print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
-    print(f"  LLM: {llm_choice}{f' [{custom_model}]' if llm_choice in ('openrouter', 'other') else ''}")
+    print(f"  LLM: {llm_choice}")
     if max_files > 0:
         print(f"  Max files (Pass 1): {max_files}")
     print()
@@ -763,7 +801,7 @@ def run_summary_pearls_mode(ocr_enabled=False, max_files=0, verbose=False, once=
                         processed, p1, p2 = process_single_pdf(
                             path, category, history_log, ocr_enabled, verbose,
                             run_pearls=False,
-                            llm_choice=llm_choice, custom_key=custom_key, custom_model=custom_model,
+                            llm_choice=llm_choice,
                         )
                         if processed:
                             total_p1 += 1
@@ -813,7 +851,7 @@ def run_summary_pearls_mode(ocr_enabled=False, max_files=0, verbose=False, once=
                 "type": payload.get("article_subtype", payload.get("doc_type", "")),
                 "subtopic": payload.get("subtopic", payload.get("system", "")),
             }
-            count, err = run_pearl_extraction_pass(payload, file_name, metadata)
+            count, err = run_pearl_extraction_pass(payload, file_name, metadata, llm_choice=llm_choice)
             total_pearls += count
 
     elapsed = (datetime.now() - start_time).total_seconds()
@@ -829,7 +867,7 @@ def run_summary_pearls_mode(ocr_enabled=False, max_files=0, verbose=False, once=
 # MODE: WATCH (default loop with both passes per file)
 # =====================================================================
 def run_watch_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, dry_run=False,
-                   llm_choice="together", custom_key="", custom_model=""):
+                   llm_choice="openrouter"):
     """Watch input folder, process PDFs with both passes."""
     print(f"\n{'#'*60}")
     print(f"  hack.CCM Generator - WATCH MODE (Pass 1 + Pass 2 per file)")
@@ -837,7 +875,7 @@ def run_watch_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, dr
     print(f"  Watching: {SUB_DIRS}")
     print(f"  OCR: {'enabled' if ocr_enabled else 'disabled'}")
     print(f"  Pearls: {'enabled' if PEARLS_ENABLED else 'disabled'}")
-    print(f"  LLM: {llm_choice}{f' [{custom_model}]' if llm_choice in ('openrouter', 'other') else ''}")
+    print(f"  LLM: {llm_choice}")
     if max_files > 0:
         print(f"  Max files: {max_files}")
     print(f"  Loop: {'once' if once else 'continuous'}")
@@ -886,7 +924,7 @@ def run_watch_mode(ocr_enabled=False, max_files=0, verbose=False, once=False, dr
                         processed, p1, p2 = process_single_pdf(
                             path, category, history_log, ocr_enabled, verbose,
                             run_pearls=True,
-                            llm_choice=llm_choice, custom_key=custom_key, custom_model=custom_model,
+                            llm_choice=llm_choice,
                         )
                         if processed:
                             total_processed += 1
@@ -955,13 +993,11 @@ def status_report():
 
     # API key status
     from acumen_core.config import (
-        TOGETHER_API_KEY, DEEPSEEK_API_KEY, PRIMARY_GEMINI_API_KEY,
+        PRIMARY_GEMINI_API_KEY,
     )
     print(f"\n  API KEY STATUS:")
     print(f"    OpenRouter: {'OK' if OPENROUTER_API_KEY else 'MISSING (default --llm)'}")
-    print(f"    Together:  {'OK' if TOGETHER_API_KEY else 'MISSING'}")
     print(f"    Gemini:    {'OK' if PRIMARY_GEMINI_API_KEY else 'MISSING'}")
-    print(f"    DeepSeek:  {'OK' if DEEPSEEK_API_KEY else 'MISSING (optional)'}")
 
     # Recent log entries
     if os.path.exists(GENERATOR_LOG_FILE):
@@ -1006,7 +1042,7 @@ def _dry_run_preview():
 # =====================================================================
 # REPROCESS SINGLE FILE
 # =====================================================================
-def reprocess_file(file_path, ocr_enabled=False, llm_choice="together", custom_key="", custom_model=""):
+def reprocess_file(file_path, ocr_enabled=False, llm_choice="openrouter"):
     """Force re-process a single specific PDF file (both passes)."""
     if not os.path.exists(file_path):
         print(f"  File not found: {file_path}")
@@ -1019,13 +1055,13 @@ def reprocess_file(file_path, ocr_enabled=False, llm_choice="together", custom_k
     initialize_system()
     dummy_history = set()
     process_single_pdf(file_path, category, dummy_history, ocr_enabled, verbose=True, run_pearls=True,
-                       llm_choice=llm_choice, custom_key=custom_key, custom_model=custom_model)
+                       llm_choice=llm_choice)
 
 
 # =====================================================================
 # EXTRACT PEARLS FROM ONE JSON
 # =====================================================================
-def extract_pearls_from_one_json(json_path):
+def extract_pearls_from_one_json(json_path, llm_choice="openrouter"):
     """Run only Pass 2 on one existing JSON file."""
     if not os.path.exists(json_path):
         print(f"  JSON not found: {json_path}")
@@ -1045,12 +1081,25 @@ def extract_pearls_from_one_json(json_path):
         "subtopic": payload.get("subtopic", payload.get("system", "")),
     }
     initialize_system()
-    run_pearl_extraction_pass(payload, file_name, metadata)
+    run_pearl_extraction_pass(payload, file_name, metadata, llm_choice=llm_choice)
 
 
 # =====================================================================
 # MAIN ENTRY POINT
 # =====================================================================
+def run_incremental_linking(args):
+    """After a pipeline batch, run the incremental cross-linker so new/updated
+    content is linked to the whole catalog automatically. Skipped with
+    --no-link, on --dry-run, or when another linker run already owns the lock."""
+    if getattr(args, "no_link", False) or getattr(args, "dry_run", False):
+        return
+    try:
+        from acumen_core.linker import main as linker_main
+        linker_main(["--verbose"] if getattr(args, "verbose", False) else [])
+    except Exception as exc:
+        print(f"  [link] cross-linking step skipped: {exc}")
+
+
 def main():
     parser = argparse.ArgumentParser(
         description="hack.CCM Unified Ingestion Pipeline",
@@ -1062,11 +1111,9 @@ MODES:
   --mode pearls          Only run Pass 2 on files missing pearls
   --mode summary_pearls  Run Pass 1 on pending PDFs, then Pass 2 on all missing
 
-LLM PROVIDER (for Pass 1 extraction):
-  --llm openrouter       Use OpenRouter (default, reads OPENROUTER_API_KEY + OPENROUTER_MODEL from .env)
-  --llm together         Use Together AI (requires TOGETHER_API_KEY)
-  --llm gemini           Use Google Gemini (requires PRIMARY_GEMINI_API_KEY)
-  --llm other            Custom OpenAI-compatible API (provide --api-key and --model)
+LLM PROVIDER (for both Pass 1 and Pass 2):
+  --llm openrouter       Use OpenRouter (default, models from .env: OPENROUTER_SUMMARY_MODEL, OPENROUTER_PEARLS_MODEL)
+  --llm gemini           Use Google Gemini (models from .env: GEMINI_SUMMARY_MODEL, GEMINI_PEARLS_MODEL)
 
 EXAMPLES:
   python generator.py                                   # openrouter, deepseek-ai/DeepSeek-V4-Pro (default)
@@ -1078,9 +1125,7 @@ EXAMPLES:
   python generator.py --status                          # quick dashboard
   python generator.py --reprocess input_pdfs/articles/paper.pdf
   python generator.py --extract-pearls output_files/Cardiology/Review/paper.json
-  python generator.py --llm together                     # use Together AI instead
-  python generator.py --llm gemini                       # use Gemini instead
-  python generator.py --llm openrouter --model anthropic/claude-3.5-sonnet  # override model
+  python generator.py --llm gemini                       # use Gemini for both passes
         """,
     )
     parser.add_argument("--mode", choices=["watch", "summary", "pearls", "summary_pearls"],
@@ -1094,12 +1139,10 @@ EXAMPLES:
     parser.add_argument("--reprocess", type=str, default=None, help="Force re-process a specific PDF")
     parser.add_argument("--extract-pearls", type=str, default=None,
                         help="Run Pass 2 only on one specific existing JSON file")
-    parser.add_argument("--llm", choices=["together", "gemini", "openrouter", "other"], default="openrouter",
-                        help="LLM provider for Pass 1 extraction (default: openrouter)")
-    parser.add_argument("--api-key", type=str, default="",
-                        help="API key for --llm openrouter/other (falls back to OPENROUTER_API_KEY from .env)")
-    parser.add_argument("--model", type=str, default=OPENROUTER_MODEL,
-                        help=f"Model name for --llm openrouter/other (default: {OPENROUTER_MODEL})")
+    parser.add_argument("--llm", choices=["openrouter", "gemini"], default="openrouter",
+                        help="LLM provider for both Pass 1 and Pass 2 (default: openrouter)")
+    parser.add_argument("--no-link", action="store_true",
+                        help="Skip the automatic incremental cross-linking step")
     args = parser.parse_args()
 
     # --- Status dashboard ---
@@ -1113,45 +1156,38 @@ EXAMPLES:
             print("  PEARLS_ENABLED is False. Set it to True in generator.py config.")
             return
         print("  Mode: Extract pearls from one JSON")
-        extract_pearls_from_one_json(args.extract_pearls)
+        extract_pearls_from_one_json(args.extract_pearls, llm_choice=args.llm)
         return
-
-    # --- Validate --llm openrouter/other: use config key if no --api-key, require model ---
-    if args.llm in ("openrouter", "other"):
-        api_key = args.api_key or OPENROUTER_API_KEY
-        if not api_key:
-            print("  [X] --llm openrouter/other requires an API key. Provide --api-key or set OPENROUTER_API_KEY in .env")
-            sys.exit(1)
-        if not args.model:
-            print(f"  [X] --llm openrouter/other requires a model. Provide --model or set OPENROUTER_MODEL in .env / config.py")
-            sys.exit(1)
-        # Patch resolved key back for downstream use
-        args.api_key = api_key
 
     # --- Re-process single PDF ---
     if args.reprocess:
         print("  Mode: Re-process single PDF")
-        reprocess_file(args.reprocess, ocr_enabled=args.ocr,
-                       llm_choice=args.llm, custom_key=args.api_key, custom_model=args.model)
+        reprocess_file(args.reprocess, ocr_enabled=args.ocr, llm_choice=args.llm)
         return
 
     # --- Mode dispatch ---
     ocr_enabled = args.ocr or OCR_ENABLED_DEFAULT
 
-    if args.mode == "watch":
-        run_watch_mode(ocr_enabled=ocr_enabled, max_files=args.max,
-                       verbose=args.verbose, once=args.once, dry_run=args.dry_run,
-                       llm_choice=args.llm, custom_key=args.api_key, custom_model=args.model)
-    elif args.mode == "summary":
-        run_summary_mode(ocr_enabled=ocr_enabled, max_files=args.max,
-                         verbose=args.verbose, once=args.once, dry_run=args.dry_run,
-                         llm_choice=args.llm, custom_key=args.api_key, custom_model=args.model)
-    elif args.mode == "pearls":
-        run_pearls_mode(max_files=args.max, verbose=args.verbose, dry_run=args.dry_run)
-    elif args.mode == "summary_pearls":
-        run_summary_pearls_mode(ocr_enabled=ocr_enabled, max_files=args.max,
-                                verbose=args.verbose, once=args.once, dry_run=args.dry_run,
-                                llm_choice=args.llm, custom_key=args.api_key, custom_model=args.model)
+    try:
+        if args.mode == "watch":
+            run_watch_mode(ocr_enabled=ocr_enabled, max_files=args.max,
+                           verbose=args.verbose, once=args.once, dry_run=args.dry_run,
+                           llm_choice=args.llm)
+        elif args.mode == "summary":
+            run_summary_mode(ocr_enabled=ocr_enabled, max_files=args.max,
+                             verbose=args.verbose, once=args.once, dry_run=args.dry_run,
+                             llm_choice=args.llm)
+        elif args.mode == "pearls":
+            run_pearls_mode(max_files=args.max, verbose=args.verbose, dry_run=args.dry_run,
+                            llm_choice=args.llm)
+        elif args.mode == "summary_pearls":
+            run_summary_pearls_mode(ocr_enabled=ocr_enabled, max_files=args.max,
+                                    verbose=args.verbose, once=args.once, dry_run=args.dry_run,
+                                    llm_choice=args.llm)
+    except KeyboardInterrupt:
+        print("\nGenerator interrupted.")
+    finally:
+        run_incremental_linking(args)
 
 
 if __name__ == "__main__":

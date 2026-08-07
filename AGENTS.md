@@ -117,7 +117,7 @@ BACKUP_GEMINI_API_KEY   # Gemini fallback
 TOGETHER_API_KEY        # Used with --llm together (also for pearl extraction)
 DEEPSEEK_API_KEY        # Fallback in execute_with_fallback chain
 OPENROUTER_MODEL        # Default: deepseek-ai/DeepSeek-V4-Pro
-QUESTION_LLM_MODEL      # Flashcard front-question model (default: deepseek/deepseek-chat-v3-0324 on OpenRouter)
+QUESTION_LLM_MODEL      # Flashcard front-question model (default: inherits FLASHCARD_LLM_MODEL)
 QUESTION_LLM_API_KEY    # Front-question key (defaults to OPENROUTER_API_KEY)
 QUESTION_LLM_BASE_URL   # Front-question endpoint (defaults to OpenRouter)
 FLASHCARD_LLM_API_KEY   # Dedicated cheap model for flashcard convert/tag/regenerate (defaults to OPENROUTER_API_KEY)
@@ -156,6 +156,7 @@ FLASHCARD_LLM_BASE_URL  # Defaults to OpenRouter
 --llm {together,gemini,openrouter,other}  LLM provider for Pass 1
 --api-key KEY          API key for --llm openrouter/other
 --model NAME           Model name for --llm openrouter/other
+--no-link              Skip the automatic incremental cross-linking step
 ```
 
 **Two-Pass Design:**
@@ -221,9 +222,11 @@ python flashcards.py theory         # generate from theory notes (THEORY/process
 python flashcards.py tag            # LLM re-tag store cards missing subtopic tags
 python flashcards.py fronts         # generate missing front questions (QUESTION_LLM_* model)
 python flashcards.py status         # pending input + store summary
+python flashcards.py --as-is --file CVS/deck.md   # verbatim '==='-separated markdown transport
 
 --spec CVS      Only process one specialty folder
 --file "CVS/x.md"  Only process one file
+--as-is         Verbatim '==='-separated markdown import (requires --file)
 --force         Re-run even if unchanged in the ledger
 --max N         Cap at N files (0 = unlimited)
 --no-tag        Skip LLM subtopic tagging
@@ -240,6 +243,7 @@ python flashcards.py status         # pending input + store summary
 
 - Raw sources: LLM convert (`llm_convert_to_markdown`, markdown `## ` cards) → store cards `source="engine"` → LLM-tag against the subtopics vocab (`THEORY_SPEC_TO_CANONICAL` system mapping, `normalize_subtopic` fuzzy+acronym match, 1-3 tags/card) → auto front questions (`ensure_fronts`, QUESTION_LLM_* model).
 - Authored md decks: imported via `acumen_core.flashcards.cards_from_markdown_deck` — re-imports match existing store cards by position and update in place (stable UUIDs, preserved tags/status/edit_history); md sections removed since last import get their store cards deleted.
+- `--as-is` transport: one `.md`/`.txt` file whose cards are separated by standalone `===` lines (3+ equals) → each block = one store card (`source="md"`), content kept **verbatim** (only `---` inside a block still splits front/back). Block heading (`#`/`##`/`###`) becomes the subtopic hint, else first non-empty line. A `===` directly under a heading/text line (no blank line) is a setext underline, not a separator. After transport, the normal LLM enrichment applies (subtopic tags + front questions, unless `--no-tag`/`--no-fronts`). Implemented by `parse_separator_deck` + shared `cards_from_parsed_deck` (same position-matched UUID reuse as authored decks).
 - `theory` mode walks `THEORY_PROCESSED_DIR` (default `C:/RONAK/AI Projects/ACUMEN/THEORY/processed`; override in `.env`) and skips notes already in the store by `source_file` unless `--force`.
 - When `--api-key` or `--model` is set, convert/tag/fronts calls go directly to an OpenAI-compatible endpoint (`execute_openai_compat` in `acumen_core/llm.py`, base_url defaulting to OpenRouter) instead of the configured provider chain.
 
@@ -260,6 +264,22 @@ Parses the ESBICM "Recent and Landmark Trials" PDF using PyMuPDF, outputs to `ou
 --max N                    Cap at N trials
 ```
 Reads raw scraped trials from `trials_database/`, condenses via LLM, saves to `output_files/trials_database_condensed/`.
+
+### `acumen_core/linker.py` — Cross-Linking (papers ↔ guidelines ↔ theory ↔ decks)
+```
+python acumen_core/linker.py                 # incremental (default: openrouter)
+--llm gemini                                 # Gemini provider chain
+--tag-only                                   # tags only, skip LLM edge pass
+--edges-only                                 # edge pass only for already-tagged entities
+--force                                      # recompute everything (ignore ledger)
+--max N                                      # cap at N entities (0 = unlimited)
+--dry-run                                    # preview only, no writes
+--api-key K --model M [--base-url U]         # direct OpenAI-compatible call
+--verbose                                    # detailed logging
+```
+Incremental cross-linker. For each entity (paper/guideline from `sent_summaries.json`, theory note from `output_files/Theory MDs/`, flashcard deck from the unified store) it: (1) LLM-assigns topic tags (hashtag backbone, matched to `subtopics.json` vocab), (2) builds a bounded candidate shortlist (same system / same subtopic / shared tags), (3) runs a cheap LLM edge pass picking top relations with a fixed reason label (`same topic | guideline recommendation | complementary | background theory | practice deck | shared concept`). Edges persist in `output_files/related_links.json`; progress in `links_ledger.json` (content sha256 → skip unchanged). Re-runs only touch NEW/CHANGED entities (matched against the full catalog: new files link to new + old), prune deleted ones, and checkpoint-save every 50 tags / 25 edges. Uses `LINKING_LLM_MODEL` (default `LINKING_LLM_MODEL=openai/gpt-oss-20b`, same as subtopic classification) through the flashcard key/endpoint; `linker.lock` is a single-writer lock so concurrent generator/linker runs can't corrupt `related_links.json`. Portal (`revamped_webapp.py`) embeds the merged forward+reverse index as `RELATED_INDEX`/`RELATED_CATALOG` and shows a **Related** button (paper/guideline reader, pearl reader, theory note header, deck header) opening a grouped modal — Papers & Guidelines / Theory Notes / Flashcard Decks / nested Pearls — with a reason-label filter (no timestamps shown). Core logic in `acumen_core/linking.py` (`entity_catalog`, `assign_tags`, `candidate_shortlist`, `llm_pick_edges`, `related_index`).
+
+**Auto-linking in generator.py**: every `generator.py` run (any mode; in watch-mode also on Ctrl-C exit) triggers an incremental cross-linking pass when it finishes, so new/updated content is automatically linked to the whole catalog — `--no-link` skips it, `--dry-run` never runs it. Since the ledger is content-hashed, a fully-linked catalog makes that pass a no-op.
 
 ## Data Flow Summary
 

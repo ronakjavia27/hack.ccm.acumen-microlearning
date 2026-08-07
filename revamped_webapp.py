@@ -1,6 +1,7 @@
 import os
 import json
 import re
+import html
 import secrets
 import hashlib
 from datetime import datetime, timedelta
@@ -464,26 +465,148 @@ def load_flashcard_decks():
 
 def load_theory_notes():
     """Load Theory Topics: every file under output_files/Theory MDs/ (any
-    extension) rendered as markdown by the portal."""
+    extension) rendered as markdown by the portal. Notes are organized into
+    {Specialty}/{Subtopic}/ subfolders (see classify_theory.py); a sidecar
+    theory_notes_meta.json provides clean titles + taxonomy overrides."""
     notes = []
     base = os.path.join(OUTPUT_DIR, "Theory MDs")
     if not os.path.isdir(base):
         return notes
-    for fn in sorted(os.listdir(base)):
-        path = os.path.join(base, fn)
-        if not os.path.isfile(path):
-            continue
+    meta = {}
+    meta_path = os.path.join(base, "theory_notes_meta.json")
+    if os.path.exists(meta_path):
         try:
-            with open(path, "r", encoding="utf-8", errors="replace") as f:
-                md = f.read()
+            with open(meta_path, "r", encoding="utf-8") as f:
+                meta = json.load(f)
         except Exception:
-            continue
-        title = fn
-        m = re.search(r"^\s*#\s+(.+?)\s*$", md, re.M)
-        if m:
-            title = m.group(1).strip()
-        notes.append({"id": fn, "title": title, "md": md})
+            meta = {}
+    for root, dirs, fnames in os.walk(base):
+        dirs[:] = [d for d in dirs if not d.startswith(".")]
+        if root == base:
+            fnames = [f for f in fnames if f != "theory_notes_meta.json"]
+        for fn in sorted(fnames):
+            path = os.path.join(root, fn)
+            if not os.path.isfile(path):
+                continue
+            try:
+                with open(path, "r", encoding="utf-8", errors="replace") as f:
+                    md_in = f.read()
+            except Exception:
+                continue
+            rel = os.path.relpath(path, base)
+            rel_slash = rel.replace(os.sep, "/")
+            m_entry = meta.get(rel_slash) or {}
+            # folder-derived taxonomy (ground truth = folder structure)
+            parts = rel.split(os.sep)
+            system = m_entry.get("system") or (parts[0] if len(parts) > 1 else "General")
+            subtopic = m_entry.get("subtopic") or (parts[1] if len(parts) > 1 else "General")
+            # title: manifest > first heading (any level, after any leading img) > cleaned filename
+            title = m_entry.get("title") or ""
+            if not title:
+                body_head = md_in
+                if body_head.startswith("<img") and "\n" in body_head:
+                    body_head = body_head.split("\n", 1)[1]
+                mm = re.search(r"^\s*#{1,6}\s+(.+?)\s*$", body_head, re.M)
+                title = mm.group(1).strip() if mm else ""
+            if not title:
+                title = os.path.splitext(fn)[0].replace("_", " ")
+            notes.append({
+                "id": fn,
+                "title": title,
+                "md": md_in,
+                "system": system,
+                "subtopic": subtopic,
+                "rel": rel_slash,
+            })
+    notes.sort(key=lambda n: (n.get("system") or "", n.get("subtopic") or "", n["title"].lower()))
     return notes
+
+def load_related_links():
+    """Load output_files/related_links.json (precomputed by acumen_core/linker.py).
+
+    Returns {catalog, index, generated_at, entity_count}:
+      catalog = [{id, kind, system, type, subtopic, title, tags}] for every
+                known entity — built from the full entity catalog so entries
+                that haven't been linked yet still resolve; stored tags from
+                the links file are merged in.
+      index   = {entity_id: [{to, kind, reason, weight}]} — forward + reverse
+                edges merged per entity so both directions resolve instantly."""
+    from acumen_core.linking import entity_catalog
+    path = os.path.join(OUTPUT_DIR, "related_links.json")
+    empty = {"catalog": [], "index": {}, "generated_at": "", "entity_count": 0}
+    if not os.path.exists(path):
+        return empty
+    try:
+        with open(path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except (json.JSONDecodeError, Exception):
+        return empty
+    entities = data.get("entities") or {}
+    if not isinstance(entities, dict):
+        return empty
+
+    # Full catalog: every known entity (complete even mid-run); merge stored tags
+    catalog = []
+    try:
+        base_catalog = entity_catalog()
+    except Exception:
+        base_catalog = []
+    if base_catalog:
+        for ent in base_catalog:
+            eid = ent["id"]
+            stored = entities.get(eid) or {}
+            catalog.append({
+                "id": eid,
+                "kind": stored.get("kind") or ent.get("kind", ""),
+                "system": stored.get("system") or ent.get("system", ""),
+                "type": stored.get("type") or ent.get("type", ""),
+                "subtopic": stored.get("subtopic") or ent.get("subtopic", ""),
+                "title": stored.get("title") or ent.get("title", "") or eid,
+                "tags": stored.get("tags") or [],
+            })
+    else:
+        for eid, ent in entities.items():
+            catalog.append({
+                "id": eid,
+                "kind": ent.get("kind", ""),
+                "system": ent.get("system", ""),
+                "type": ent.get("type", ""),
+                "subtopic": ent.get("subtopic", ""),
+                "title": ent.get("title", "") or eid,
+                "tags": ent.get("tags") or [],
+            })
+    catalog_ids = {c["id"] for c in catalog}
+
+    index = {}
+    for eid, ent in entities.items():
+        if eid not in catalog_ids:
+            continue
+        index.setdefault(eid, [])
+        for lb in ent.get("links") or []:
+            t = lb.get("to")
+            if not t or t == eid or t not in catalog_ids:
+                continue
+            edge = {
+                "to": t,
+                "kind": lb.get("kind", ""),
+                "reason": lb.get("reason", "same topic"),
+                "weight": lb.get("weight", 0.5),
+            }
+            index.setdefault(eid, []).append(edge)
+            index.setdefault(t, []).append(dict(edge, to=eid, kind=ent.get("kind", "")))
+    for eid, lst in index.items():
+        dedup = {}
+        for lb in lst:
+            cur = dedup.get(lb["to"])
+            if cur is None or (lb.get("weight") or 0) > (cur.get("weight") or 0):
+                dedup[lb["to"]] = lb
+        index[eid] = sorted(dedup.values(), key=lambda x: -(x.get("weight") or 0))
+    return {
+        "catalog": catalog,
+        "index": index,
+        "generated_at": data.get("generated_at", ""),
+        "entity_count": data.get("entity_count", 0),
+    }
 
 def load_condensed_trial_index():
     if not os.path.exists(CONDENSED_TRIALS_DIR):
@@ -707,6 +830,16 @@ async def render_dashboard(request: Request, response: Response):
     theory_subtopic_map = {s: sorted(v) for s, v in theory_subtopic_map.items()}
     theory_subtopic_map_js = json.dumps(theory_subtopic_map)
 
+    # Cross-linking data (papers ↔ guidelines ↔ theory ↔ decks) precomputed by acumen_core/linker.py
+    related_data = load_related_links()
+    related_catalog_js = json.dumps(related_data["catalog"])
+    related_index_js = json.dumps(related_data["index"])
+    related_meta_js = json.dumps({
+        "generated_at": related_data.get("generated_at", ""),
+        "entity_count": related_data.get("entity_count", 0),
+        "loaded": bool(related_data["catalog"]),
+    })
+
     # Compute resolved feature flags for the authenticated user
     user_features = {f: _user_has_feature(user, f) for f in FEATURE_FLAGS}
     user_features_js = json.dumps(user_features)
@@ -722,6 +855,9 @@ async def render_dashboard(request: Request, response: Response):
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
 {insights_tag}
 {ECG_SVG}
 <style>
@@ -837,6 +973,8 @@ async def render_dashboard(request: Request, response: Response):
   .doc-title{{ font-weight:700; font-size:.95rem; margin:0 0 4px; }}
   .doc-snippet{{ color:var(--ink-muted); font-size:.85rem; margin:0; }}
   .type-tag{{ font-size:.68rem; color:var(--ink-muted); font-family:var(--font-mono); }}
+  .theory-sub-tag{{ font-size:.66rem; font-family:var(--font-mono); color:var(--accent); background:var(--bg-sunk); border:1px solid var(--border); border-radius:99px; padding:1px 7px; }}
+  .chip-count{{ font-size:.66rem; opacity:.75; }}
 
   .divider{{ margin:34px 0 18px; }}
   .feature-grid{{ display:grid; grid-template-columns:1fr; gap:12px; }}
@@ -1063,6 +1201,26 @@ async def render_dashboard(request: Request, response: Response):
   .trial-overlay-box h2{{ font-size:1.1rem; margin-bottom:12px; }}
   .trial-overlay-box p{{ font-size:.88rem; color:var(--ink-muted); line-height:1.6; margin-bottom:12px; white-space:pre-wrap; }}
   .trial-overlay-box .btn{{ margin-top:8px; }}
+
+  /* Related content panel */
+  .related-btn{{ border:1px solid var(--border); background:transparent; color:var(--ink-muted); border-radius:6px; padding:5px 10px; font-size:.76rem; cursor:pointer; font-family:var(--font-body); white-space:nowrap; }}
+  .related-btn:hover{{ border-color:var(--accent); color:var(--accent); }}
+  .related-overlay-backdrop{{ position:fixed; inset:0; background:rgba(0,0,0,.55); z-index:96; display:none; align-items:center; justify-content:center; padding:20px; }}
+  .related-overlay-backdrop.open{{ display:flex; }}
+  .related-overlay-box{{ background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; max-width:640px; width:100%; max-height:84vh; display:flex; flex-direction:column; box-shadow:var(--shadow); overflow:hidden; }}
+  .related-overlay-head{{ display:flex; align-items:center; gap:10px; padding:14px 18px; border-bottom:1px solid var(--border); flex:0 0 auto; }}
+  .related-overlay-title{{ flex:1; min-width:0; font-family:var(--font-display); font-size:.98rem; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
+  .related-reason-bar{{ display:flex; flex-wrap:wrap; gap:6px; padding:10px 18px 2px; flex:0 0 auto; }}
+  .related-reason-chip{{ border:1px solid var(--border); background:transparent; color:var(--ink-muted); border-radius:999px; padding:3px 11px; font-size:.72rem; cursor:pointer; font-family:var(--font-body); }}
+  .related-reason-chip.active{{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }}
+  .related-scroll{{ flex:1; overflow-y:auto; padding:4px 12px 16px; }}
+  .related-group-label{{ font-size:.72rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-muted); margin:14px 8px 6px; }}
+  .related-row{{ display:flex; align-items:center; gap:8px; width:100%; text-align:left; background:transparent; border:1px solid var(--border); border-radius:10px; padding:9px 12px; margin-bottom:6px; cursor:pointer; color:inherit; font-family:var(--font-body); font-size:.86rem; }}
+  .related-row:hover{{ border-color:var(--accent); }}
+  .related-kind{{ font-size:.66rem; text-transform:uppercase; letter-spacing:.04em; padding:2px 7px; border-radius:999px; background:var(--bg-sunk); color:var(--ink-muted); flex:0 0 auto; }}
+  .related-reason{{ font-size:.7rem; color:var(--ink-muted); flex:0 0 auto; font-style:italic; }}
+  .related-title{{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
+  .related-empty{{ padding:26px 12px; text-align:center; color:var(--ink-muted); font-size:.88rem; }}
 
   .result-badge{{ font-size:.68rem; font-family:var(--font-mono); padding:2px 7px; border-radius:99px; border:1px solid; }}
   .result-badge.pos{{ color:#10B981; border-color:#10B981; background:rgba(16,185,129,.1); }}
@@ -1810,8 +1968,20 @@ async def render_dashboard(request: Request, response: Response):
     <span class="theory-table-overlay-title" id="theoryTableOverlayTitle">Table</span>
     <button class="btn nav-btn" data-theory-table-fit style="flex:0 0 auto">Fit width</button>
   </div>
-  <div class="theory-table-overlay-scroll" id="theoryTableOverlayScroll"><div class="theory-table-fit-inner" id="theoryTableFitInner"></div></div>
-</div>
+    <div class="theory-table-overlay-scroll" id="theoryTableOverlayScroll"><div class="theory-table-fit-inner" id="theoryTableFitInner"></div></div>
+  </div>
+
+  <div id="relatedOverlay" class="related-overlay-backdrop" role="dialog" aria-label="Related content">
+    <div class="related-overlay-box">
+      <div class="related-overlay-head">
+        <span class="related-overlay-title" id="relatedOverlayTitle">Related content</span>
+        <button class="overlay-close" id="relatedClose" title="Close">&times;</button>
+      </div>
+      <div id="relatedMeta" style="padding:0 18px 0"></div>
+      <div class="related-reason-bar" id="relatedReasonBar"></div>
+      <div class="related-scroll" id="relatedScroll"></div>
+    </div>
+  </div>
 
 <script>
 // =====================================================================
@@ -1847,6 +2017,12 @@ const THEORY_SPEC_VAR = {theory_spec_vars_js};
 const THEORY_SUBTOPIC_MAP = {theory_subtopic_map_js};
 const THEORY_NOTES = {theory_notes_js};
 
+// Cross-linking index (papers ↔ guidelines ↔ theory ↔ decks) precomputed by acumen_core/linker.py
+const RELATED_CATALOG = {related_catalog_js};
+const RELATED_INDEX = {related_index_js};
+const RELATED_META = {related_meta_js};
+const RELATED_REASONS = ['same topic','guideline recommendation','complementary','background theory','practice deck','shared concept'];
+
 // Feature flags (resolved server-side: defaults + per-user overrides)
 const USER_FEATURES = {user_features_js};
 const USER_IS_ADMIN = {user_is_admin_js};
@@ -1867,6 +2043,8 @@ let _theoryMode = null; // null = hero, 'notes' = Theory Topics, 'flashcards' = 
 let _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }}));
 let _theorySavedOnly = false;
 let _notesSavedOnly = false;
+let _notesActiveSpecs = new Set();
+let _notesActiveSubtopic = null;
 let _currentTheoryNote = null;
 let _theoryTableOverlayOpen = false;
 let _theoryTableFitActive = false;
@@ -2251,7 +2429,7 @@ function openReader(entry, kind){{
       pillHTML(entry.system||'General', (entry.system||'General')+' &middot; Pearl')+
       '<h2 style="font-size:1.15rem;line-height:1.4">"'+escapeHtml(entry.pearl||'')+'"</h2>'+
       '<p class="meta">'+(entry.source_paper||'Clinical pearl')+' &middot; '+(entry.timestamp||'')+'</p>'+
-      '<div class="reader-actions">'+bookmarkBtnHTML(pbmRef)+'</div>'+
+      '<div class="reader-actions">'+bookmarkBtnHTML(pbmRef)+(entry.file_name?'<button class="related-btn" data-open-related="paper:'+escapeHtml(entry.file_name.replace(/\\.json$/i,'.pdf'))+'" title="Related papers, guidelines, theory notes, decks &amp; pearls">&#128279; Related</button>':'')+'</div>'+
       navRow;
     document.body.classList.add('reader-open');
     pushReaderState();
@@ -2306,10 +2484,11 @@ function openReader(entry, kind){{
         pillHTML(entry.system, entry.system+' &middot; '+entry.type)+
         '<h2>'+escapeHtml(entry.title)+'</h2>'+
         '<p class="meta">'+(authors!=='Unknown Authors'?'&mdash; '+escapeHtml(authors)+' &middot; ':'')+ (entry.journal||'')+'</p>'+
-        '<div class="reader-actions">'+doiHTML+bookmarkBtnHTML(bmRef)+'</div>'+
+        '<div class="reader-actions">'+doiHTML+'<button class="related-btn" data-open-related="paper:'+escapeHtml(entry.file_name||'')+'" title="Related papers, guidelines, theory notes, decks &amp; pearls">&#128279; Related</button>'+bookmarkBtnHTML(bmRef)+exportPaperBtnHTML(entry)+'</div>'+
         pearlBoxHTML+
         collapsible+
         evidenceHTML;
+      katexify(body);
     }})
     .catch(function(){{
       body.innerHTML = '<div class="reader-loading"><p>&#10060; Network error.</p></div>';
@@ -2317,6 +2496,154 @@ function openReader(entry, kind){{
 }}
 
 function closeReader(){{ document.body.classList.remove('reader-open'); }}
+
+// =====================================================================
+// RELATED CONTENT PANEL (cross-linking)
+// =====================================================================
+var _relatedSourceId = null;
+var _relatedList = [];
+var _relatedActiveReason = '';
+
+function relatedEntityById(id){{
+  var e = RELATED_CATALOG.find(function(x){{ return x.id===id; }});
+  return e || {{id:id, kind:'', system:'', type:'', subtopic:'', title:id, tags:[]}};
+}}
+
+function openRelatedPanel(id){{
+  if(!RELATED_META.loaded){{
+    document.getElementById('relatedOverlayTitle').textContent = 'Related content';
+    document.getElementById('relatedMeta').textContent = '';
+    document.getElementById('relatedReasonBar').innerHTML = '';
+    document.getElementById('relatedScroll').innerHTML = '<div class="related-empty">No related links built yet &mdash; run <b>python acumen_core/linker.py</b> to generate the cross-link index.</div>';
+    document.getElementById('relatedOverlay').classList.add('open');
+    document.body.classList.add('related-open');
+    return;
+  }}
+  var source = relatedEntityById(id || '');
+  _relatedSourceId = id || '';
+  _relatedList = (RELATED_INDEX[id || ''] || []).slice();
+  document.getElementById('relatedOverlayTitle').textContent = source.title || 'Related content';
+  document.getElementById('relatedMeta').innerHTML = '<span style="color:var(--ink-muted);font-size:.72rem">Cross-linked by topic'+( _relatedList.length ? ' &middot; '+_relatedList.length+' items' : '')+'</span>';
+  renderRelatedReasonBar();
+  renderRelatedRows();
+  document.getElementById('relatedOverlay').classList.add('open');
+  document.body.classList.add('related-open');
+}}
+
+function renderRelatedReasonBar(){{
+  var counts = {{}};
+  _relatedList.forEach(function(l){{ var r = l.reason || 'same topic'; counts[r]=(counts[r]||0)+1; }});
+  var reasons = Object.keys(counts).sort();
+  var html = '<button class="related-reason-chip'+(''===_relatedActiveReason?' active':'')+'" data-related-reason="">All ('+_relatedList.length+')</button>';
+  reasons.forEach(function(r){{
+    html += '<button class="related-reason-chip'+(_relatedActiveReason===r?' active':'')+'" data-related-reason="'+escapeHtml(r)+'">'+escapeHtml(r)+' ('+counts[r]+')</button>';
+  }});
+  document.getElementById('relatedReasonBar').innerHTML = html;
+}}
+
+function renderRelatedRows(){{
+  var filtered = _relatedActiveReason ? _relatedList.filter(function(r){{ return (r.reason||'same topic')===_relatedActiveReason; }}) : _relatedList;
+  var el = document.getElementById('relatedScroll');
+  if(!filtered.length){{
+    el.innerHTML = '<div class="related-empty">'+( _relatedActiveReason ? 'No items with reason &ldquo;'+escapeHtml(_relatedActiveReason)+'&rdquo;.' : 'No related content for this item yet.')+'</div>';
+    return;
+  }}
+  var groups = {{ papers:[], theory:[], decks:[] }};
+  filtered.forEach(function(r){{
+    var e = relatedEntityById(r.to);
+    if(!e.kind) return;
+    if(e.kind==='paper'||e.kind==='guideline') groups.papers.push({{r:r, e:e}});
+    else if(e.kind==='theory') groups.theory.push({{r:r, e:e}});
+    else if(e.kind==='flashcard_deck') groups.decks.push({{r:r, e:e}});
+  }});
+  var html = '';
+  function addGroup(items, label){{
+    if(!items.length) return;
+    html += '<div class="related-group-label">'+label+'</div>';
+    items.sort(function(a,b){{ return (b.r.weight||0)-(a.r.weight||0); }});
+    items.forEach(function(it){{
+      var kindLabel = it.e.kind==='guideline' ? 'Guideline' : (it.e.kind==='theory' ? 'Theory' : (it.e.kind==='flashcard_deck' ? 'Deck' : 'Paper'));
+      html += '<button class="related-row" data-related-go="'+escapeHtml(it.e.id)+'">'+
+        '<span class="related-kind">'+kindLabel+'</span>'+
+        '<span class="related-title">'+escapeHtml(it.e.title||it.e.id)+'</span>'+
+        '<span class="related-reason">'+escapeHtml(it.r.reason||'')+'</span>'+
+      '</button>';
+    }});
+  }}
+  addGroup(groups.papers, 'Papers &amp; Guidelines');
+  addGroup(groups.theory, 'Theory Notes');
+  addGroup(groups.decks, 'Flashcard Decks');
+
+  // Pearls nested under related papers (pearl → parent paper is a free link)
+  var allFns = [];
+  var source = relatedEntityById(_relatedSourceId);
+  if(source && (source.kind==='paper'||source.kind==='guideline')) allFns.push(source.id.replace(/^paper:/,''));
+  groups.papers.forEach(function(it){{ allFns.push(it.e.id.replace(/^paper:/,'')); }});
+  var pearlN = [];
+  var seenPearls = {{}};
+  allFns.forEach(function(fn){{
+    if(!fn) return;
+    var paperPearls = allPearls.filter(function(p){{ return relatedPearlPaper(p)===fn; }});
+    if(!paperPearls.length) return;
+    var paper = baseDataset.find(function(d){{ return d.file_name===fn; }});
+    var pTitle = paper ? paper.title : fn;
+    paperPearls.slice(0,12).forEach(function(p){{
+      if(seenPearls[p.id]) return;
+      seenPearls[p.id] = true;
+      pearlN.push({{
+        pearl: p.pearl || '',
+        id: p.id,
+        source: pTitle
+      }});
+    }});
+  }});
+  if(pearlN.length){{
+    html += '<div class="related-group-label">Pearls</div>';
+    pearlN.slice(0,40).forEach(function(p){{
+      html += '<button class="related-row" data-related-pearl="'+escapeHtml(p.id)+'">'+
+        '<span class="related-kind">Pearl</span>'+
+        '<span class="related-title">'+escapeHtml((p.pearl||'').substring(0,140))+(p.pearl&&p.pearl.length>140?'&hellip;':'')+'</span>'+
+        '<span class="related-reason">'+escapeHtml(p.source.substring(0,28))+'</span>'+
+      '</button>';
+    }});
+  }}
+  el.innerHTML = html;
+}}
+
+function relatedPearlPaper(p){{
+  var fn = String(p.file_name || '').trim();
+  if(fn) return fn.replace(/\\.json$/i, '.pdf');
+  return '';
+}}
+
+function closeRelatedPanel(){{
+  document.getElementById('relatedOverlay').classList.remove('open');
+  document.body.classList.remove('related-open');
+  _relatedSourceId = null;
+  _relatedList = [];
+}}
+
+function relatedGoTo(id){{
+  var e = relatedEntityById(id);
+  closeRelatedPanel();
+  if(e.kind==='paper'||e.kind==='guideline'){{
+    var fn = id.replace(/^paper:/, '');
+    var target = baseDataset.find(function(d){{ return d.file_name===fn; }});
+    if(target) openReader(target, 'paper');
+    return;
+  }}
+  if(e.kind==='theory'){{
+    var rel = id.replace(/^theory:/, '');
+    var fn = rel.split('/').pop();
+    var note = THEORY_NOTES.find(function(n){{ return n.id===fn; }}) || THEORY_NOTES.find(function(n){{ return n.rel===rel; }});
+    if(note) openTheoryNote(note.id);
+    return;
+  }}
+  if(e.kind==='flashcard_deck'){{
+    openTheoryDeck(id.replace(/^deck:/, ''), 0);
+    return;
+  }}
+}}
 
 var _readerStatePushed = false;
 function pushReaderState(){{ _readerStatePushed = true; history.pushState(null, ''); }}
@@ -2634,6 +2961,7 @@ function renderTrialDetailHTML(data, body){{
   html += '</div>';
 
   body.innerHTML = html;
+  katexify(body);
 }}
 
 function preprocessTrialContent(text){{
@@ -2942,6 +3270,7 @@ function renderCondensedDetailHTML(data, body){{
   }});
 
   body.innerHTML = html;
+  katexify(body);
 }}
 
 // =====================================================================
@@ -2979,6 +3308,8 @@ function theoryReset(){{
   _currentTheoryNote = null;
   _theoryListCollapsed = false;
   _theoryStudyFromList = false;
+  _notesActiveSpecs = new Set();
+  _notesActiveSubtopic = null;
   var st = document.getElementById('theoryStudy'); if(st) st.style.display='none';
   var cl = document.getElementById('theoryCardList'); if(cl) cl.style.display='none';
   var br = document.getElementById('theoryBrowser'); if(br) br.style.display='';
@@ -3041,6 +3372,8 @@ function _theoryHistoryURL(){{
   if(_theoryMode==='notes'){{
     var q = [];
     q.push('theory=notes');
+    _notesActiveSpecs.forEach(function(s){{ q.push('nspec='+encodeURIComponent(s)); }});
+    if(_notesActiveSubtopic) q.push('nsub='+encodeURIComponent(_notesActiveSubtopic));
     if(_notesSavedOnly) q.push('saved=1');
     if(_currentTheoryNote) q.push('note='+encodeURIComponent(_currentTheoryNote.id));
     else {{
@@ -3093,6 +3426,8 @@ function _applyTheoryDeepLink(params){{
     var nq = params.get('q');
     if(nq!=null) document.getElementById('theoryNotesSearch').value = nq;
     _notesSavedOnly = params.get('saved')==='1';
+    _notesActiveSpecs = new Set((params.getAll('nspec')||[]).filter(Boolean));
+    _notesActiveSubtopic = params.get('nsub');
     var nid = params.get('note');
     renderTheoryPane('notes');
     if(nid) openTheoryNote(nid);
@@ -3143,12 +3478,31 @@ function _applyTheoryDeepLink(params){{
   }}
 }}
 
+function katexify(root){{
+  // Render LaTeX delimiters ($$...$$, \\\\(...\\\\), \\\\[...\\\\]) inside a container.
+  // Single-$ is intentionally NOT enabled (currency amounts appear in pearls/notes).
+  if(!root || typeof renderMathInElement !== 'function') return;
+  try {{
+    renderMathInElement(root, {{
+      delimiters:[
+        {{left:'$$', right:'$$', display:true}},
+        {{left:'\\\\(', right:'\\\\)', display:false}},
+        {{left:'\\\\[', right:'\\\\]', display:true}}
+      ],
+      throwOnError:false,
+      strict:'ignore'
+    }});
+  }} catch(e){{}}
+}}
+
 // ---- Theory Topics (markdown notes) ----
 function _theoryFilteredNotes(){{
   var q = (document.getElementById('theoryNotesSearch').value||'').toLowerCase().trim();
   return THEORY_NOTES.filter(function(n){{
     if(_notesSavedOnly && !(_bookmarks.items && _bookmarks.items['note:'+n.id])) return false;
-    if(!q) return true;
+    if(_notesActiveSpecs.size && !_notesActiveSpecs.has(n.system)) return false;
+    if(_notesActiveSubtopic && n.subtopic!==_notesActiveSubtopic) return false;
+if(!q) return true;
     return (n.title+' '+n.md).toLowerCase().indexOf(q)!==-1;
   }});
 }}
@@ -3170,10 +3524,25 @@ function renderTheoryNotes(){{
   var list = document.getElementById('theoryNotesList');
   var countEl = document.getElementById('theoryNotesCount');
   var box = document.getElementById('theoryNotesChips');
-  if(box){{
+if(box){{
     var savedCount = Object.keys(_bookmarks.items || {{}}).filter(function(r){{ return r.indexOf('note:')===0; }}).length;
-    box.innerHTML = '<button class="chip'+( _notesSavedOnly?' active':'')+'" data-notes-saved-only style="--chip-color:var(--accent)">&#128278; Saved ('+savedCount+')</button>'+
-      (_notesSavedOnly ? '<button class="chip" data-notes-saved-clear style="--chip-color:var(--ink-muted)">&#10005; Clear</button>' : '');
+    var specSet = {{}}, subSet = {{}};
+    THEORY_NOTES.forEach(function(n){{ specSet[n.system]=(specSet[n.system]||0)+1; subSet[n.system+'\u0001'+n.subtopic]=(subSet[n.system+'\u0001'+n.subtopic]||0)+1; }});
+    var specChips = Object.keys(specSet).sort().map(function(s){{
+      return '<button class="chip'+( _notesActiveSpecs.has(s)?' active':'')+'" data-notes-spec="'+escapeHtml(s)+'" style="--chip-color:var(--accent)">'+escapeHtml(s)+' <span class="chip-count">'+specSet[s]+'</span></button>';
+    }}).join('');
+    var subChips = '';
+    if(_notesActiveSpecs.size===1){{
+      var onlySpec = Array.from(_notesActiveSpecs)[0];
+      subChips = Object.keys(subSet).filter(function(k){{ return k.indexOf(onlySpec+'\u0001')===0; }}).sort().map(function(k){{
+        var sub = k.split('\u0001')[1];
+        return '<button class="chip'+( _notesActiveSubtopic===sub?' active':'')+'" data-notes-sub="'+escapeHtml(sub)+'" style="--chip-color:var(--accent)">'+escapeHtml(sub)+' <span class="chip-count">'+subSet[k]+'</span></button>';
+      }}).join('');
+    }}
+    var anyActive = _notesActiveSpecs.size>0 || _notesActiveSubtopic || _notesSavedOnly;
+    box.innerHTML = specChips + subChips +
+      '<button class="chip'+( _notesSavedOnly?' active':'')+'" data-notes-saved-only style="--chip-color:var(--accent)">&#128278; Saved ('+savedCount+')</button>'+
+      (anyActive ? '<button class="chip" data-notes-clear-all style="--chip-color:var(--ink-muted)">&#10005; Clear</button>' : '');
   }}
   if(!THEORY_NOTES.length){{
     list.innerHTML = '<div class="bm-empty"><span class="icon">&#128214;</span><p>No theory notes yet. Drop markdown files into <span class="mono">output_files/Theory MDs/</span>.</p></div>';
@@ -3186,7 +3555,7 @@ function renderTheoryNotes(){{
     return '<button class="doc-card" data-theory-note="'+escapeHtml(n.id)+'">'+
       '<div class="doc-stripe" style="background:var(--accent)"></div>'+
       '<div class="doc-inner">'+
-        '<div class="doc-top"><span class="type-tag">Note</span>'+(saved?'<span class="theory-saved-badge">&#128278; saved</span>':'')+'</div>'+
+        '<div class="doc-top"><span class="type-tag">'+escapeHtml(n.system||'Note')+'</span>'+(n.subtopic && n.subtopic!=='General' ? '<span class="theory-sub-tag">'+escapeHtml(n.subtopic)+'</span>':'')+(saved?'<span class="theory-saved-badge">&#128278; saved</span>':'')+'</div>'+
         '<p class="doc-title">'+escapeHtml(n.title)+'</p>'+
         '<p class="doc-snippet">'+escapeHtml(n.md.replace(/\s+/g,' ').substring(0,110))+'</p>'+
       '</div>'+
@@ -3231,14 +3600,18 @@ function openTheoryNote(noteId, fromReader){{
   var nextBtn = (idx>=0 && idx<order.length-1) ? '<button class="btn nav-btn" data-theory-note-nav="1" title="Next note">Next &#9654;</button>' : '';
   reader.innerHTML =
     '<div class="theory-card-head" style="margin-bottom:14px">'+
-      _theoryPill('General', note.title)+
+      _theoryPill(note.system||'General', note.title)+
+      (note.subtopic && note.subtopic!=='General' ? '<span class="theory-sub-tag" style="align-self:center">'+escapeHtml(note.subtopic)+'</span>' : '')+
       prevBtn+nextBtn+
+      exportNoteBtnHTML(note)+
+      '<button class="related-btn" data-open-related="theory:'+escapeHtml(note.rel||'')+'" title="Related papers, guidelines, decks &amp; pearls">&#128279; Related</button>'+
       '<span style="flex:1"></span>'+
       saveBtn+
       theoryFontChipsHTML('notes')+
     '</div>'+
     '<article class="theory-note" id="theoryNoteArticle">'+_theoryMarkdownHTML(note.md)+'</article>';
   applyTheoryFont('notes');
+  katexify(document.getElementById('theoryNoteArticle'));
   renderTheoryCrumbs();
   if(fromReader) _theoryReplace(); else _theoryPush();
   _focusCrumb();
@@ -3540,6 +3913,7 @@ function renderTheoryCardList(){{
   var toggleCaret = collapsed ? '&#9660;' : '&#9650;';
   document.getElementById('theoryCardListHead').innerHTML =
     _theoryPill(deck.specialty, deck.title)+
+    '<button class="related-btn" data-open-related="deck:'+escapeHtml(deck.id)+'" title="Related papers, guidelines, theory notes &amp; pearls">&#128279; Related</button>'+
     '<button class="theory-list-toggle" data-theory-list-toggle title="'+(collapsed?'Show the card list':'Hide the card list')+'"><span class="theory-toggle-caret">'+toggleCaret+'</span><span>'+toggleLabel+'</span></button>';
   var countEl = document.getElementById('theoryCardListCount');
   countEl.style.display = collapsed ? 'none' : '';
@@ -3653,6 +4027,7 @@ function renderTheoryCard(){{
     }}
     stage.innerHTML = qHTML + '<div class="theory-card-flat theory-card-content">'+backHTML+'</div>';
   }}
+  katexify(stage);
   applyTheoryFont('cards');
 
   var prevBtn = '<button class="btn nav-btn"'+(posIdx===0?' disabled':'')+' data-theory-nav="-1">&#9664; Previous</button>';
@@ -3683,6 +4058,16 @@ function registerBookmarkMeta(ref, meta){{ _bookmarkMeta[ref] = meta || {{}}; }}
 function bookmarkBtnHTML(ref, label){{
   var active = !!(_bookmarks.items && _bookmarks.items[ref]);
   return '<button class="icon-btn bookmark-btn'+(active?' active':'')+'" data-bookmark-toggle="'+escapeHtml(ref)+'" aria-label="'+(active?'Remove bookmark':'Add bookmark')+'" title="'+(active?'Remove bookmark':'Add bookmark')+'">'+(label||'&#128278;')+'</button>';
+}}
+
+function exportPaperBtnHTML(entry){{
+  var qs = 'kind=paper&file_name='+encodeURIComponent(entry.file_name||'')+'&system='+encodeURIComponent(entry.system||'General')+'&type='+encodeURIComponent(entry.type||'Other');
+  return '<button class="btn nav-btn" data-export-paper="'+escapeHtml(qs)+'" title="Open a printable version of this summary in a new window">&#128196; Export / PDF</button>';
+}}
+
+function exportNoteBtnHTML(note){{
+  var qs = 'kind=note&file_name='+encodeURIComponent(note.id||'')+'&title='+encodeURIComponent((note.title||'').substring(0,120));
+  return '<button class="btn nav-btn" data-export-note="'+escapeHtml(qs)+'" title="Open a printable version of this note in a new window">&#128196; Export / PDF</button>';
 }}
 
 function refreshBookmarkButtons(){{
@@ -3978,6 +4363,27 @@ document.getElementById('drawerLogout').addEventListener('click', function(){{ c
 document.getElementById('filterToggleBtn').addEventListener('click', openSheet);
 document.getElementById('guidelinesFilterToggleBtn').addEventListener('click', openSheet);
 document.getElementById('sheetBackdrop').addEventListener('click', closeSheet);
+
+// Related content panel controls
+document.getElementById('relatedClose').addEventListener('click', closeRelatedPanel);
+document.getElementById('relatedOverlay').addEventListener('click', function(e){{ if(e.target===e.currentTarget) closeRelatedPanel(); }});
+document.addEventListener('click', function(e){{
+  var openBtn = e.target.closest('[data-open-related]');
+  if(openBtn){{ openRelatedPanel(openBtn.getAttribute('data-open-related')); return; }}
+  var reasonChip = e.target.closest('[data-related-reason]');
+  if(reasonChip){{ _relatedActiveReason = reasonChip.getAttribute('data-related-reason'); renderRelatedReasonBar(); renderRelatedRows(); return; }}
+  var goBtn = e.target.closest('[data-related-go]');
+  if(goBtn){{ relatedGoTo(goBtn.getAttribute('data-related-go')); return; }}
+  var pearlBtn = e.target.closest('[data-related-pearl]');
+  if(pearlBtn){{
+    var pl = allPearls.find(function(p){{ return String(p.id)===pearlBtn.getAttribute('data-related-pearl'); }});
+    if(pl){{ closeRelatedPanel(); openReader(pl, 'pearl'); }}
+    return;
+  }}
+}});
+document.addEventListener('keydown', function(e){{
+  if(e.key==='Escape' && document.getElementById('relatedOverlay').classList.contains('open')) closeRelatedPanel();
+}});
 document.getElementById('bookmarksSearch').addEventListener('input', renderBookmarks);
 document.getElementById('theorySearch').addEventListener('input', function(){{
   clearTimeout(_theorySearchTimers.decks);
@@ -4328,6 +4734,11 @@ document.addEventListener('click', function(e){{
   var theoryNoteNavBtn = e.target.closest('[data-theory-note-nav]');
   if(theoryNoteNavBtn){{ theoryNoteNav(parseInt(theoryNoteNavBtn.dataset.theoryNoteNav,10)||0); return; }}
 
+  var exportNoteBtn = e.target.closest('[data-export-note]');
+  if(exportNoteBtn){{ window.open('/export/print?'+exportNoteBtn.dataset.exportNote, '_blank', 'noopener'); return; }}
+  var exportPaperBtn = e.target.closest('[data-export-paper]');
+  if(exportPaperBtn){{ window.open('/export/print?'+exportPaperBtn.dataset.exportPaper, '_blank', 'noopener'); return; }}
+
   var theoryTableOpen = e.target.closest('[data-theory-table-open]');
   if(theoryTableOpen){{ openTheoryTableOverlay(theoryTableOpen); return; }}
   var theoryTableClose = e.target.closest('[data-theory-table-close]');
@@ -4387,8 +4798,22 @@ document.addEventListener('click', function(e){{
   if(theorySavedOnly){{ _theorySavedOnly = !_theorySavedOnly; renderTheoryChips(); renderTheoryDecks(); _theoryReplace(); return; }}
   var notesSavedOnly = e.target.closest('[data-notes-saved-only]');
   if(notesSavedOnly){{ _notesSavedOnly = !_notesSavedOnly; renderTheoryNotes(); _theoryReplace(); return; }}
-  var notesSavedClear = e.target.closest('[data-notes-saved-clear]');
-  if(notesSavedClear){{ _notesSavedOnly = false; renderTheoryNotes(); _theoryReplace(); return; }}
+  var notesSpec = e.target.closest('[data-notes-spec]');
+  if(notesSpec){{
+    var s = notesSpec.getAttribute('data-notes-spec');
+    if(_notesActiveSpecs.has(s)) _notesActiveSpecs.delete(s);
+    else _notesActiveSpecs.add(s);
+    if(!_notesActiveSpecs.size) _notesActiveSubtopic = null;
+    else if(_notesActiveSpecs.size>1) _notesActiveSubtopic = null;
+    renderTheoryNotes(); _theoryReplace(); return;
+  }}
+  var notesSub = e.target.closest('[data-notes-sub]');
+  if(notesSub){{
+    _notesActiveSubtopic = (_notesActiveSubtopic===notesSub.getAttribute('data-notes-sub')) ? null : notesSub.getAttribute('data-notes-sub');
+    renderTheoryNotes(); _theoryReplace(); return;
+  }}
+  var notesClearAll = e.target.closest('[data-notes-clear-all]');
+  if(notesClearAll){{ _notesSavedOnly = false; _notesActiveSpecs = new Set(); _notesActiveSubtopic = null; renderTheoryNotes(); _theoryReplace(); return; }}
 
   var theorySub = e.target.closest('[data-theory-subtopic]');
   if(theorySub){{
@@ -4810,6 +5235,74 @@ async def get_json_summary(request: Request, file_name: str, system: str = "Gene
         return JSONResponse(status_code=500, content={"error": str(e)})
 
 
+@app.get("/export/print")
+async def export_print(request: Request, kind: str = "paper", file_name: str = "", title: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    feature = "theory" if kind == "note" else "papers"
+    _require_feature(user, feature)
+    the_title = ""
+    meta_html = ""
+    content = ""
+    kind_label = "Print Friendly"
+    try:
+        if kind == "note":
+            note = None
+            base = os.path.join(OUTPUT_DIR, "Theory MDs")
+            if os.path.isdir(base):
+                for root, dirs, files in os.walk(base):
+                    if file_name in files:
+                        try:
+                            with open(os.path.join(root, file_name), "r", encoding="utf-8", errors="replace") as f:
+                                note = {"md": f.read()}
+                        except Exception:
+                            pass
+                        break
+            if not note:
+                return JSONResponse(status_code=404, content={"error": f"Note not found: {file_name}"})
+            content = note["md"]
+            stem = os.path.splitext(file_name)[0].replace("_", " ")
+            m = re.search(r"^\s*#{1,6}\s+(.+?)\s*$", content, re.M)
+            t = m.group(1).strip() if m else stem
+            title_label = title or t
+            meta_html = f"<span>{html.escape(title or t)}</span>"
+            kind_label = "Theory Topic"
+        else:
+            base_name = os.path.splitext(file_name)[0]
+            clean_system = "".join(x for x in str(request.query_params.get("system", "General")) if x.isalnum() or x in "._- ").strip()
+            clean_type = "".join(x for x in str(request.query_params.get("type", "Other")) if x.isalnum() or x in "._- ").strip()
+            target = os.path.join(OUTPUT_DIR, clean_system, clean_type, f"{base_name}.json")
+            if not os.path.exists(target):
+                for root, dirs, files in os.walk(OUTPUT_DIR):
+                    if f"{base_name}.json" in files:
+                        target = os.path.join(root, f"{base_name}.json")
+                        break
+            if not os.path.exists(target):
+                return JSONResponse(status_code=404, content={"error": f"Summary not found: {base_name}.json"})
+            with open(target, "r", encoding="utf-8") as f:
+                payload = json.load(f)
+            content = payload.get("clinical_summary_markdown", "") or format_new_schema_as_markdown(payload)
+            title_label = payload.get("title") or base_name
+            authors = payload.get("primary_authors") or payload.get("authors") or ""
+            if not authors:
+                issuing = payload.get("issuing_bodies", [])
+                if issuing:
+                    authors = ", ".join(issuing)
+            meta = []
+            if authors:
+                meta.append(html.escape(authors))
+            if payload.get("journal"):
+                meta.append(html.escape(str(payload["journal"])))
+            if payload.get("year"):
+                meta.append(html.escape(str(payload["year"])))
+            meta_html = " &middot; ".join(meta)
+            kind_label = "Guideline" if str(payload.get("doc_type", "")).lower() == "guideline" else "Paper"
+        return HTMLResponse(content=render_printable(title_label, meta_html, content, kind_label))
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"error": str(e)})
+
+
 @app.get("/api/search")
 async def search_summaries(request: Request, q: str = ""):
     user = _get_session_user(request)
@@ -4989,6 +5482,84 @@ def bold_labels(text):
         r'**\1:**',
         text
     )
+
+
+def render_printable(title, meta_html, markdown, kind_label):
+    """Standalone, printable HTML page rendering markdown (with KaTeX math).
+    Used by /export/print — opens in a new window where the user saves as PDF."""
+    esc = html.escape
+    page_title = esc(title) if title else "hack.CCM Export"
+    html_out = f"""<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{page_title}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+  :root {{
+    --ink:#F1E4CE; --ink-muted:#C4B18C; --border:#3A3226; --accent:#E8B778;
+    --bg-sunk:#241F17; --radius:10px;
+  }}
+  * {{ box-sizing:border-box; }}
+  html, body {{ margin:0; padding:0; }}
+  body {{ background:#1F1B14; color:var(--ink); font-family:'Atkinson Hyperlegible',sans-serif; font-size:16px; line-height:1.5; }}
+  .toolbar {{ position:fixed; top:0; left:0; right:0; display:flex; align-items:center; gap:10px; padding:10px 18px; background:#14100B; border-bottom:1px solid var(--border); z-index:20; }}
+  .toolbar .tag {{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-muted); }}
+  .toolbar .btn {{ margin-left:auto; background:var(--accent); color:#1F1B14; border:none; font:inherit; font-weight:700; padding:8px 16px; border-radius:8px; cursor:pointer; }}
+  .doc {{ max-width:880px; margin:70px auto 60px; padding:0 22px; }}
+  h1.doc-title {{ font-family:'Space Grotesk',sans-serif; font-size:1.7rem; line-height:1.3; margin:10px 0 6px; }}
+  .meta {{ color:var(--ink-muted); font-size:.9rem; margin:0 0 22px; }}
+  .article h1, .article h2 {{ font-family:'Space Grotesk',sans-serif; }}
+  .article h1 {{ font-size:1.45rem; margin:24px 0 10px; }}
+  .article h2 {{ font-size:1.25rem; margin:22px 0 8px; }}
+  .article h3 {{ font-size:1.08rem; margin:18px 0 8px; }}
+  .article p {{ margin:10px 0; }}
+  .article ul, .article ol {{ margin:10px 0; padding-left:26px; }}
+  .article li {{ margin:4px 0; }}
+  .article code {{ font-family:'JetBrains Mono',monospace; font-size:.86em; background:var(--bg-sunk); border-radius:4px; padding:1px 5px; }}
+  .article pre {{ background:var(--bg-sunk); border:1px solid #3A3226; border-radius:10px; padding:12px 14px; overflow:auto; }}
+  .article blockquote {{ border-left:3px solid var(--accent); margin:12px 0; padding:4px 14px; color:var(--ink-muted); }}
+  .article table {{ border-collapse:collapse; width:100%; margin:14px 0; }}
+  .article th, .article td {{ border:1px solid #3A3226; padding:7px 10px; text-align:left; vertical-align:top; }}
+  .article th {{ background:var(--bg-sunk); font-weight:700; }}
+  .article a {{ color:var(--accent); }}
+  .article hr {{ border:none; border-top:1px solid #3A3226; margin:18px 0; }}
+  .katex-display {{ margin:14px 0; overflow-x:auto; overflow-y:hidden; }}
+  @media print {{
+    .toolbar {{ display:none; }}
+    body {{ background:#fff !important; color:#111 !important; }}
+    .doc {{ margin:0 auto; max-width:none; padding:0; }}
+    a {{ color:#111 !important; text-decoration:none; }}
+    .article table, .article th, .article td {{ border-color:#888; }}
+    .article code {{ background:#f0f0f0; }}
+  }}
+</style>
+</head>
+<body>
+<div class="toolbar"><span class="badge">hack.CCM &middot; {esc(kind_label or '')}</span><button class="btn" onclick="window.print()">&#128196; Print / Save as PDF</button></div>
+<div class="doc">
+  <h1>{page_title}</h1>
+  <div class="meta">{meta_html or ''}</div>
+  <article class="article" id="md-content"></article>
+</div>
+<script>
+  var RAW = {json.dumps(markdown or "", ensure_ascii=False)};
+  try {{ document.getElementById('md-content').innerHTML = marked.parse(RAW); }} catch(e){{ document.getElementById('md-content').textContent = RAW; }}
+  function renderMath(){{
+    try{{ if(window.renderMathInElement){{ renderMathInElement(document.getElementById('md-content'),{{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'\\\\(',right:'\\\\)',display:false}},{{left:'\\\\[',right:'\\\\]',display:true}}],throwOnError:false,strict:'ignore'}}); }} }}catch(e){{}}
+  }}
+  renderMath();
+  window.addEventListener('load', function(){{ setTimeout(function(){{ window.print(); }}, 600); }});
+</script>
+</body>
+</html>"""
+    return html_out
 
 
 def format_new_schema_as_markdown(payload):

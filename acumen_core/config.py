@@ -67,34 +67,30 @@ def get_all_error_list_paths():
 # =====================================================================
 # API KEYS (loaded from .env)
 # =====================================================================
-TOGETHER_API_KEY = os.getenv("TOGETHER_API_KEY")
-DEEPSEEK_API_KEY = os.getenv("DEEPSEEK_API_KEY")
 PRIMARY_GEMINI_API_KEY = os.getenv("PRIMARY_GEMINI_API_KEY")
 BACKUP_GEMINI_API_KEY = os.getenv("BACKUP_GEMINI_API_KEY")
 CONDENSATION_GEMINI_API_KEY = os.getenv("CONDENSATION_GEMINI_API_KEY")
 
 
 # =====================================================================
-# EXTRACTION MODELS - Main schema extraction (Pass 1)
+# PROVIDERS - OpenRouter + Gemini only (Together/DeepSeek removed)
+# --llm openrouter | gemini picks the model set for BOTH passes.
 # =====================================================================
-MODEL_TOGETHER_PRO = "deepseek-ai/DeepSeek-V4-Pro"
-MODEL_TOGETHER_FLASH = "deepseek-ai/DeepSeek-V4-Pro"
-MODEL_DEEPSEEK_DIRECT = "deepseek-v4-pro"
-MODEL_GEMINI_ARTICLES = "gemini-3.6-flash"
-MODEL_GEMINI_GUIDELINES = "gemini-3.6-flash"
-MODEL_GEMINI_BACKUP = "gemini-3.6-flash"
-MODEL_GEMINI_CONDENSATION = "gemini-3.6-flash"
 
-# =====================================================================
-# PEARL EXTRACTION MODELS - Pass 2 (separate call)
-# =====================================================================
-MODEL_PEARL_PRIMARY = "openai/gpt-oss-20b"
-MODEL_PEARL_FALLBACK = "openai/gpt-oss-120b"
+# --- Pass 1: Summary extraction models ---
+OPENROUTER_SUMMARY_MODEL = os.getenv("OPENROUTER_SUMMARY_MODEL", "deepseek-ai/DeepSeek-V4-Pro")
+OPENROUTER_SUMMARY_FALLBACK = os.getenv("OPENROUTER_SUMMARY_FALLBACK", "") or OPENROUTER_SUMMARY_MODEL
+GEMINI_SUMMARY_MODEL = os.getenv("GEMINI_SUMMARY_MODEL", "gemini-3.6-flash")
+
+# --- Pass 2: Pearl extraction models ---
+OPENROUTER_PEARLS_MODEL = os.getenv("OPENROUTER_PEARLS_MODEL", "openai/gpt-oss-20b")
+OPENROUTER_PEARLS_FALLBACK = os.getenv("OPENROUTER_PEARLS_FALLBACK", "openai/gpt-oss-120b")
+GEMINI_PEARLS_MODEL = os.getenv("GEMINI_PEARLS_MODEL", "gemini-3.6-flash")
 
 # =====================================================================
 # OCR / VISION MODELS
 # =====================================================================
-MODEL_VISION = "gemini-2.0-flash"
+GEMINI_VISION_MODEL = os.getenv("GEMINI_VISION_MODEL", "gemini-2.0-flash")
 
 # =====================================================================
 # EXTRACTION PARAMETERS
@@ -152,7 +148,8 @@ MAX_CARDS_PER_DECK = 25
 # =====================================================================
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY")
 OPENROUTER_BASE_URL = "https://openrouter.ai/api/v1"
-OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "deepseek-ai/DeepSeek-V4-Pro")
+# General-purpose OpenRouter model used by flashcards etc. (same as Pass 1 summary model)
+OPENROUTER_MODEL = os.getenv("OPENROUTER_MODEL", "") or OPENROUTER_SUMMARY_MODEL
 TEMPERATURE_FLASHCARDS = 0.2
 MAX_TOKENS_FLASHCARDS = 8192
 
@@ -166,7 +163,9 @@ FLASHCARD_LLM_BASE_URL = os.getenv("FLASHCARD_LLM_BASE_URL") or OPENROUTER_BASE_
 # Flashcard front-question generator — deliberately a DIFFERENT provider/model
 # than every other pipeline. Override via .env:
 #   QUESTION_LLM_MODEL="..."  QUESTION_LLM_API_KEY="..."  QUESTION_LLM_BASE_URL="..."
-QUESTION_LLM_MODEL = os.getenv("QUESTION_LLM_MODEL", "deepseek/deepseek-chat-v3-0324")
+# Defaults to the flashcard model so a single cheap FLASHCARD_LLM_MODEL covers
+# convert/tag/fronts unless a dedicated question model is set.
+QUESTION_LLM_MODEL = os.getenv("QUESTION_LLM_MODEL") or FLASHCARD_LLM_MODEL
 QUESTION_LLM_API_KEY = os.getenv("QUESTION_LLM_API_KEY") or OPENROUTER_API_KEY
 QUESTION_LLM_BASE_URL = os.getenv("QUESTION_LLM_BASE_URL") or OPENROUTER_BASE_URL
 TEMPERATURE_QUESTION = 0.2
@@ -181,6 +180,28 @@ CONDENSATION_PROMPT_FILE = os.path.join(PROJECT_DIR, "trial_condensation_prompt.
 TRIALS_DATABASE_DIR = os.path.join(PROJECT_DIR, "trials_database")
 TEMPERATURE_CONDENSATION = 0.1
 MAX_TOKENS_CONDENSATION = 16384
+
+# =====================================================================
+# CROSS-LINKING (linking.py / linker.py)
+# =====================================================================
+RELATED_LINKS_FILE = os.path.join(OUTPUT_DIR, "related_links.json")
+LINKS_LEDGER_FILE = os.path.join(PROJECT_DIR, "links_ledger.json")
+LINKER_LOG_FILE = os.path.join(PROJECT_DIR, "linker.log")
+# Linking uses a dedicated cheap model by default (openai/gpt-oss-20b, same as
+# subtopic classification). Override via .env: LINKING_LLM_MODEL="..."
+# NOTE: resolved after SUBTOPIC_LLM_MODEL below (config import order).
+LINKING_LLM_MODEL = None
+LINKING_TEMPERATURE = 0.1
+LINKING_MAX_TOKENS = 2048
+# Fixed reason labels for the LLM edge pass (UI reason filter uses these exact strings)
+RELATED_REASON_LABELS = [
+    "same topic",
+    "guideline recommendation",
+    "complementary",
+    "background theory",
+    "practice deck",
+    "shared concept",
+]
 
 SYSTEM_TO_SPECIALTY = {
     "Neuro": "Neurology",
@@ -201,11 +222,19 @@ SYSTEM_TO_SPECIALTY = {
 
 # Model aliases for condense_trials.py --model flag
 CONDENSATION_MODELS = {
-    "deepseek": "deepseek-ai/DeepSeek-V4-Pro",   # OpenRouter (.env OPENROUTER_MODEL)
-    "tencent": "tencent/hy3:free",                # OpenRouter (.env OPENROUTER_MODEL)
-    "together": "deepseek-ai/DeepSeek-V4-Pro",    # Together AI + DeepSeek Direct fallback
-    "gemini": "gemini-3.6-flash",                 # Gemini API (CONDENSATION_GEMINI_API_KEY)
+    "deepseek": os.getenv("CONDENSATION_DEEPSEEK_MODEL", "") or OPENROUTER_SUMMARY_MODEL,  # OpenRouter
+    "tencent": os.getenv("CONDENSATION_TENCENT_MODEL", "tencent/hy3:free"),               # OpenRouter
+    "gemini": os.getenv("GEMINI_CONDENSATION_MODEL", "gemini-3.6-flash"),                 # Gemini API
 }
+
+GEMINI_CONDENSATION_MODEL = os.getenv("GEMINI_CONDENSATION_MODEL", "gemini-3.6-flash")
+CONDENSATION_TENCENT_MODEL = os.getenv("CONDENSATION_TENCENT_MODEL", "tencent/hy3:free")
+
+# Subtopic assignment/classification model (subtopic_mapper.py + bulk_subtopic_classifier.py)
+SUBTOPIC_LLM_MODEL = os.getenv("SUBTOPIC_LLM_MODEL", "openai/gpt-oss-20b")
+
+# Cross-linking cheap model: env override, else the subtopic model (fast gpt-oss).
+LINKING_LLM_MODEL = os.getenv("LINKING_LLM_MODEL") or SUBTOPIC_LLM_MODEL
 
 PEARLS_JSON_FIELDS = [
     "id", "timestamp", "source_paper", "doi",
