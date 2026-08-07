@@ -27,6 +27,7 @@ Peripartum cardiomyopathy (PPCM) is an idiopathic heart failure that develops **
 - **Substance use**: tobacco, alcohol  
 
 ---
+===
 
 ## PPCM Differential Diagnosis
 
@@ -38,6 +39,7 @@ Peripartum cardiomyopathy (PPCM) is an idiopathic heart failure that develops **
 | **Non‑cardiac / pulmonary** | Pulmonary embolism; severe anemia; pneumonia/ARDS |
 
 ---
+===
 
 ## VTE Genetic Risk Factors
 
@@ -76,6 +78,7 @@ Peripartum cardiomyopathy (PPCM) is an idiopathic heart failure that develops **
 - **Certain medications** that alter coagulation  
 
 ---
+===
 
 ## Norepinephrine Dosing (Shock)
 
@@ -112,3 +115,5 @@ Peripartum cardiomyopathy (PPCM) is an idiopathic heart failure that develops **
 | **Vasopressin** | 0.01–0.03 units/min (fixed) | – | 0.04 units/min (rarely >) |
 | **Levosimendan** | Loading: 6–12 mcg/kg over 10 min (often omitted) | – | 0.05–0.2 mcg/kg/min |
 | **Angiotensin II (Giapreza)** | 20 ng/kg/min (0.02 mcg/kg/min) | +15 ng/kg/min (0.015 mcg/kg/min) every 5 min | 40 ng/kg/min (0.04 mcg/kg/min) |
+
+===

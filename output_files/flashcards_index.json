@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "generated_at": "2026-08-04T09:26:22",
+  "generated_at": "2026-08-04T13:48:17",
   "total_cards": 103,
   "systems": {
     "Cardiology": {
@@ -10,7 +10,7 @@
       },
       "Acute Heart Failure": {
         "file": "acute-heart-failure.json",
-        "count": 19
+        "count": 12
       },
       "Aortic Diseases": {
         "file": "aortic-diseases.json",
@@ -26,11 +26,15 @@
       },
       "Cardiogenic Shock": {
         "file": "cardiogenic-shock.json",
-        "count": 10
+        "count": 6
       },
       "Chronic Heart Failure": {
         "file": "chronic-heart-failure.json",
         "count": 5
+      },
+      "General": {
+        "file": "general.json",
+        "count": 11
       },
       "Hemodynamic Monitoring": {
         "file": "hemodynamic-monitoring.json",
@@ -514,7 +518,7 @@
     },
     "294204d0-d8f9-431e-adb4-6e4ad6670385": {
       "slug": "ppcm-definition",
-      "front": "What is the timing and key feature of peripartum cardiomyopathy?",
+      "front": "",
       "system": "Cardiology",
       "subtopic": "Acute Heart Failure",
       "tags": [
@@ -522,92 +526,7 @@
       ],
       "source": "md",
       "status": "pending",
-      "updated_at": "2026-08-04T09:09:07"
-    },
-    "9035fab0-b9e3-4050-a99d-d438f963c053": {
-      "slug": "ppcm-clinical-criteria",
-      "front": "What are the key diagnostic features of peripartum cardiomyopathy?",
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure",
-      "tags": [
-        "Acute Heart Failure"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:07"
-    },
-    "02123378-949a-4d89-bb38-b65fd52399b7": {
-      "slug": "ppcm-risk-factors",
-      "front": "What are the risk factors for acute heart failure in pregnancy?",
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure",
-      "tags": [
-        "Acute Heart Failure"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:07"
-    },
-    "d7c01c32-f1d8-43d8-bb7b-f15bec9a4588": {
-      "slug": "ppcm-differential-diagnosis",
-      "front": "What are the differential diagnoses for acute heart failure?",
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure",
-      "tags": [
-        "Acute Heart Failure",
-        "Acute Coronary Syndromes"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:07"
-    },
-    "0909f11b-2097-4c12-a8da-9cb428237b4d": {
-      "slug": "vte-genetic-risk-factors",
-      "front": "What are the inherited thrombophilias associated with acute heart failure?",
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure",
-      "tags": [
-        "Acute Heart Failure"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:07"
-    },
-    "48af9b5d-dc34-4bde-8916-2688419df1d0": {
-      "slug": "vte-medical-condition-risk-factors",
-      "front": "What are the major risk factors for venous thromboembolism (VTE)?",
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure",
-      "tags": [
-        "Acute Heart Failure"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:08"
-    },
-    "a7ba11f6-2bc5-49c9-9587-052342d61a25": {
-      "slug": "vte-lifestyle-situational-risk-factors",
-      "front": "What are risk factors for acute heart failure?",
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure",
-      "tags": [
-        "Acute Heart Failure"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:08"
-    },
-    "022042f3-57a1-4c2b-8907-4fda6f5963a6": {
-      "slug": "vte-inflammatory-other-factors",
-      "front": "What are non-cardiac causes of acute heart failure?",
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure",
-      "tags": [
-        "Acute Heart Failure"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:08"
+      "updated_at": "2026-08-04T13:48:02"
     },
     "66fcc55a-3d09-4b00-a410-c19616396a87": {
       "slug": "anatomical-classification",
@@ -986,58 +905,6 @@
       "status": "active",
       "updated_at": "2026-08-04T09:07:46"
     },
-    "80ead7c7-902a-405c-893a-7c5d4e3b6fc6": {
-      "slug": "norepinephrine-dosing-shock",
-      "front": "What is the initial dose and titration for norepinephrine in cardiogenic shock?",
-      "system": "Cardiology",
-      "subtopic": "Cardiogenic Shock",
-      "tags": [
-        "Cardiogenic Shock",
-        "Hemodynamic Monitoring"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:08"
-    },
-    "9b4379b8-544b-4c25-9b1e-d67d2aa81ed9": {
-      "slug": "epinephrine-phenylephrine-dosing-shock",
-      "front": "What are the initial, titration, and max doses for epinephrine and phenylephrine in cardiogenic shock?",
-      "system": "Cardiology",
-      "subtopic": "Cardiogenic Shock",
-      "tags": [
-        "Cardiogenic Shock",
-        "Hemodynamic Monitoring"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:08"
-    },
-    "4e765ce2-e8c8-4b08-b5f4-47097e267295": {
-      "slug": "dopamine-dobutamine-milrinone-dosing-shock",
-      "front": "What are the initial, titration, therapeutic range, and max doses for dopamine, dobutamine, and milrinone in cardiogenic shock?",
-      "system": "Cardiology",
-      "subtopic": "Cardiogenic Shock",
-      "tags": [
-        "Cardiogenic Shock",
-        "Hemodynamic Monitoring"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:08"
-    },
-    "a6993dd0-60fd-4d68-a966-c716dda86e3f": {
-      "slug": "vasopressin-levosimendan-angiotensin-ii-dosing-shock",
-      "front": "What are the initial, titration, and max doses for vasopressin, levosimendan, and angiotensin II in cardiogenic shock?",
-      "system": "Cardiology",
-      "subtopic": "Cardiogenic Shock",
-      "tags": [
-        "Cardiogenic Shock",
-        "Hemodynamic Monitoring"
-      ],
-      "source": "md",
-      "status": "pending",
-      "updated_at": "2026-08-04T09:09:08"
-    },
     "f99a4499-6ecc-472c-ae14-6014c65bf73b": {
       "slug": "pathophysiology-hemodynamics",
       "front": "What is the pathophysiology of HFpEF?",
@@ -1099,6 +966,116 @@
       "source": "engine",
       "status": "active",
       "updated_at": "2026-08-02T09:29:14"
+    },
+    "fdbb4a41-7627-4d2d-9dbb-76eaa68fc3eb": {
+      "slug": "ppcm-clinical-criteria",
+      "front": "",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "405ec557-6c99-4503-8e05-0e792f1be368": {
+      "slug": "ppcm-risk-factors",
+      "front": "- **Maternal age**: > 30–35 years  \n- **Parity**: multiparity or grand multiparity  \n- **Ethnicity**: higher incidence in African descent  \n- **Pregnancy complications**: pre‑eclampsia, eclampsia, gestational hypertension, long‑term beta‑agonist tocolysis  \n- **Multiple gestation**: twins or higher ",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "6f76ee2f-81a1-4e5b-b99a-dfb03eff02af": {
+      "slug": "ppcm-differential-diagnosis",
+      "front": "| Category | Differential Conditions |\n|----------|--------------------------|\n| **Pregnancy‑related** | Pre‑eclampsia / eclampsia; normal third‑trimester/postpartum physiologic changes |\n| **Pre‑existing/unmasked heart disease** | Dilated cardiomyopathy; valvular disease (e.g., mitral stenosis); co",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "b4a86c09-fc21-4712-81f1-313954d4bd1c": {
+      "slug": "vte-genetic-risk-factors",
+      "front": "",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "bec4a032-1106-425b-b3ca-894e4eb764be": {
+      "slug": "vte-medical-condition-risk-factors",
+      "front": "",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "cb71b3fd-eb9d-4020-982b-14d083e04898": {
+      "slug": "vte-lifestyle-situational-risk-factors",
+      "front": "",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "bdcf9630-88a4-4b2a-bb5b-581aab471ced": {
+      "slug": "vte-inflammatory-other-factors",
+      "front": "- **Autoimmune disorders**: lupus, inflammatory bowel disease  \n- **Dehydration** (↑ blood viscosity)  \n- **Certain medications** that alter coagulation",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "fc3a83b6-562b-4223-ae78-5d41ca8bc0ec": {
+      "slug": "norepinephrine-dosing-shock",
+      "front": "",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "bb43fabf-e7c0-439f-b79f-188f9300e208": {
+      "slug": "epinephrine-phenylephrine-dosing-shock",
+      "front": "",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "f5cc576b-3167-4cce-a508-7930adc20518": {
+      "slug": "dopamine-dobutamine-milrinone-dosing-shock",
+      "front": "",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
+    },
+    "5454764d-f273-4311-885d-07966209bb89": {
+      "slug": "vasopressin-levosimendan-angiotensin-ii-dosing-shock",
+      "front": "",
+      "system": "Cardiology",
+      "subtopic": "General",
+      "tags": [],
+      "source": "md",
+      "status": "active",
+      "updated_at": "2026-08-04T13:48:02"
     },
     "ca530129-2a7b-444c-b2c4-10ff202cb6a4": {
       "slug": "shock-definition-pathophysiology",
@@ -1479,34 +1456,6 @@
       "system": "Cardiology",
       "subtopic": "Acute Heart Failure"
     },
-    "9035fab0-b9e3-4050-a99d-d438f963c053": {
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure"
-    },
-    "02123378-949a-4d89-bb38-b65fd52399b7": {
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure"
-    },
-    "d7c01c32-f1d8-43d8-bb7b-f15bec9a4588": {
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure"
-    },
-    "0909f11b-2097-4c12-a8da-9cb428237b4d": {
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure"
-    },
-    "48af9b5d-dc34-4bde-8916-2688419df1d0": {
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure"
-    },
-    "a7ba11f6-2bc5-49c9-9587-052342d61a25": {
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure"
-    },
-    "022042f3-57a1-4c2b-8907-4fda6f5963a6": {
-      "system": "Cardiology",
-      "subtopic": "Acute Heart Failure"
-    },
     "66fcc55a-3d09-4b00-a410-c19616396a87": {
       "system": "Cardiology",
       "subtopic": "Aortic Diseases"
@@ -1627,22 +1576,6 @@
       "system": "Cardiology",
       "subtopic": "Cardiogenic Shock"
     },
-    "80ead7c7-902a-405c-893a-7c5d4e3b6fc6": {
-      "system": "Cardiology",
-      "subtopic": "Cardiogenic Shock"
-    },
-    "9b4379b8-544b-4c25-9b1e-d67d2aa81ed9": {
-      "system": "Cardiology",
-      "subtopic": "Cardiogenic Shock"
-    },
-    "4e765ce2-e8c8-4b08-b5f4-47097e267295": {
-      "system": "Cardiology",
-      "subtopic": "Cardiogenic Shock"
-    },
-    "a6993dd0-60fd-4d68-a966-c716dda86e3f": {
-      "system": "Cardiology",
-      "subtopic": "Cardiogenic Shock"
-    },
     "f99a4499-6ecc-472c-ae14-6014c65bf73b": {
       "system": "Cardiology",
       "subtopic": "Chronic Heart Failure"
@@ -1662,6 +1595,50 @@
     "36e05438-dd08-42b1-8f8e-0dc9baf06fb9": {
       "system": "Cardiology",
       "subtopic": "Chronic Heart Failure"
+    },
+    "fdbb4a41-7627-4d2d-9dbb-76eaa68fc3eb": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "405ec557-6c99-4503-8e05-0e792f1be368": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "6f76ee2f-81a1-4e5b-b99a-dfb03eff02af": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "b4a86c09-fc21-4712-81f1-313954d4bd1c": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "bec4a032-1106-425b-b3ca-894e4eb764be": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "cb71b3fd-eb9d-4020-982b-14d083e04898": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "bdcf9630-88a4-4b2a-bb5b-581aab471ced": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "fc3a83b6-562b-4223-ae78-5d41ca8bc0ec": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "bb43fabf-e7c0-439f-b79f-188f9300e208": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "f5cc576b-3167-4cce-a508-7930adc20518": {
+      "system": "Cardiology",
+      "subtopic": "General"
+    },
+    "5454764d-f273-4311-885d-07966209bb89": {
+      "system": "Cardiology",
+      "subtopic": "General"
     },
     "ca530129-2a7b-444c-b2c4-10ff202cb6a4": {
       "system": "Cardiology",

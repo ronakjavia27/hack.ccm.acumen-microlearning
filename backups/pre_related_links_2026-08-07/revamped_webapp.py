@@ -1,7 +1,12 @@
-﻿import os
+import os
 import json
 import re
-from fastapi import FastAPI, Request
+import html
+import secrets
+import hashlib
+from datetime import datetime, timedelta
+from pathlib import Path
+from fastapi import FastAPI, Request, Response, Depends, HTTPException, Cookie
 from fastapi.responses import HTMLResponse, JSONResponse
 
 # =====================================================================
@@ -12,7 +17,7 @@ FEEDBACK_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSd6xRmmimmVc0Sv4Ae
 SUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSffsrF8DPWaTa-03XisMqSU5Da_8QdE-JrINdDP5iRmvWAI8Q/viewform?usp=header"
 UNSUBSCRIBE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScz864mkLh5AqBYVzAh573hWu98NdmwwPC2vaU1lfBE3WHHHg/viewform?usp=header"
 
-DISCLAIMER_TEXT = """**Welcome to hack.CCM \U0001F9A9 ΓÇö Please Read Before You Explore**
+DISCLAIMER_TEXT = """**Welcome to hack.CCM \U0001F9A9 — Please Read Before You Explore**
 
 Welcome! This platform is a hobby passion project designed to make critical care education more structured, accessible, and easily retainable.
 
@@ -30,7 +35,7 @@ Double-check critical values and protocols. You are the clinician; this is just 
 **\U0001F50D Spotted a Discrepancy?**
 If you find any errors, outdated data, or weird AI quirks, please help us improve! Report it via our Feedback button below.
 
-The ultimate aim here is to format large information into quick, retainable reads. This does not replace the need to study original papers or guidelines in full detail. Adequate emphasis and credit have been given to the original authors and journals wherever possibleΓÇöI claim no personal ownership over this data.
+The ultimate aim here is to format large information into quick, retainable reads. This does not replace the need to study original papers or guidelines in full detail. Adequate emphasis and credit have been given to the original authors and journals wherever possible—I claim no personal ownership over this data.
 
 By clicking "Proceed" below, you acknowledge that you understand this tool's educational purpose and agree to use it responsibly."""
 
@@ -117,8 +122,253 @@ ESBICM_SPEC_COLORS = {
 app = FastAPI()
 
 # =====================================================================
-# DATA LOADERS
+# AUTHENTICATION
 # =====================================================================
+
+SESSION_COOKIE_NAME = "hackccm_sess"
+SESSION_MAX_AGE = 2592000  # 30 days
+COOKIE_SECURE = os.environ.get("VERCEL", "").lower() == "1"
+
+from acumen_core.kv import kv_get as _kv_get, kv_set as _kv_set, kv_delete as _kv_delete, kv_scan as _kv_scan
+
+# =====================================================================
+
+# ---- Password hashing (stdlib only) ----
+def _hash_password(password):
+    salt = os.urandom(16)
+    h = hashlib.sha256(salt + password.encode("utf-8")).hexdigest()
+    return f"$sha256${salt.hex()}${h}"
+
+def _verify_password(password, pw_hash):
+    if not pw_hash or not pw_hash.startswith("$sha256$"):
+        return False
+    parts = pw_hash.split("$")
+    if len(parts) != 4:
+        return False
+    try:
+        salt = bytes.fromhex(parts[2])
+        h = hashlib.sha256(salt + password.encode("utf-8")).hexdigest()
+        return h == parts[3]
+    except (ValueError, IndexError):
+        return False
+
+def _session_id():
+    return secrets.token_urlsafe(32)
+
+# ---- Local dev: bypass login entirely ----
+# On Vercel (VERCEL=1) login is required. When running locally, auto-login
+# as the local admin account so the login page never blocks local use.
+LOCAL_DEV_MODE = os.environ.get("VERCEL", "").strip().lower() != "1"
+
+def _local_dev_login():
+    """Auto-create/resolve the local admin. Returns (user, session_id)."""
+    email = "admin@gmail.com"
+    user = _kv_get(f"auth:users:{email}")
+    if not user:
+        user = {
+            "email": email,
+            "first_name": "Admin",
+            "last_name": "",
+            "workplace": "",
+            "city": "",
+            "password_hash": _hash_password("admin@admin"),
+            "created_at": datetime.utcnow().isoformat(),
+            "features": {},
+            "is_admin": True,
+        }
+        _kv_set(f"auth:users:{email}", user)
+    sid = _session_id()
+    _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
+    return user, sid
+
+# ---- Auth helpers ----
+FEATURE_FLAGS = ["papers", "guidelines", "pearls", "trials", "trials_detail", "condensed_trials", "search", "bookmarks", "theory"]
+
+DEFAULT_FEATURE_STATES = {
+    "condensed_trials": False,
+    "theory": False,
+}
+
+def _get_session_user(request):
+    sid = request.cookies.get(SESSION_COOKIE_NAME)
+    if not sid:
+        if LOCAL_DEV_MODE:
+            return _local_dev_login()[0]
+        return None
+    sess = _kv_get(f"auth:session:{sid}")
+    if not sess:
+        if LOCAL_DEV_MODE:
+            return _local_dev_login()[0]
+        return None
+    return _kv_get(f"auth:users:{sess.get('email')}")
+
+async def _require_user(request: Request, response: Response):
+    user = _get_session_user(request)
+    if not user:
+        response.delete_cookie(SESSION_COOKIE_NAME)
+        raise HTTPException(status_code=401, detail="Login required")
+    return user
+
+def _access_defaults():
+    d = _kv_get("auth:access_defaults")
+    if d is None:
+        d = {}
+        _kv_set("auth:access_defaults", d)
+    return {f: d.get(f, DEFAULT_FEATURE_STATES.get(f, True)) for f in FEATURE_FLAGS}
+
+def _user_has_feature(user, feature):
+    if user.get("is_admin"):
+        return True
+    defaults = _access_defaults()
+    overrides = user.get("features", {}) or {}
+    return {**defaults, **overrides}.get(feature, False)
+
+
+def _require_feature(user, feature):
+    if not _user_has_feature(user, feature):
+        raise HTTPException(status_code=403, detail=f"Feature '{feature}' is not enabled for this account")
+
+# ---- Per-user data (bookmarks now; history/notes/prefs later) ----
+BOOKMARKS_MAX_ITEMS = 500
+BOOKMARKS_MAX_FOLDERS = 10
+BOOKMARK_KINDS = ("paper", "guideline", "pearl", "trial", "condensed", "flashcard", "note")
+
+def _user_data(email, key, default=None):
+    data = _kv_get(f"user:{email}:{key}")
+    if data is None or not isinstance(data, dict):
+        return default if default is not None else {}
+    return data
+
+def _save_user_data(email, key, data):
+    if not isinstance(data, dict):
+        return False
+    return _kv_set(f"user:{email}:{key}", data)
+
+def _clean_tags(tags):
+    if not isinstance(tags, list):
+        return []
+    out = []
+    for t in tags[:20]:
+        s = str(t).strip().strip("#").strip()
+        if s and len(s) <= 40 and s not in out:
+            out.append(s)
+    return out
+
+def _bookmark_item(body, existing=None):
+    item = dict(existing or {})
+    kind = str(body.get("kind", item.get("kind", ""))).strip().lower()
+    ref = str(body.get("ref", item.get("ref", ""))).strip()
+    if kind not in BOOKMARK_KINDS:
+        raise HTTPException(400, f"Invalid bookmark kind '{kind}'")
+    if not ref or len(ref) > 300:
+        raise HTTPException(400, "Valid bookmark ref required")
+    if existing is None:
+        item.update({
+            "ref": ref,
+            "kind": kind,
+            "title": str(body.get("title", ""))[:300] or ref,
+            "system": str(body.get("system", ""))[:80],
+            "type": str(body.get("type", ""))[:40],
+            "locator": body.get("locator") if isinstance(body.get("locator"), dict) else {},
+            "added_at": datetime.utcnow().isoformat(),
+        })
+    else:
+        item["ref"] = ref
+        if body.get("title"):
+            item["title"] = str(body["title"])[:300]
+        if body.get("system") is not None:
+            item["system"] = str(body["system"])[:80]
+        if body.get("type") is not None:
+            item["type"] = str(body["type"])[:40]
+    if "folder" in body:
+        item["folder"] = body.get("folder") or None
+    if "tags" in body:
+        item["tags"] = _clean_tags(body.get("tags"))
+    return item
+
+# ---- Landing page HTML ----
+LANDING_HTML = """<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hack.CCM — Critical Care Microlearning</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:#1F1B14;color:#F1E4CE;font-family:system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center}
+.card{background:#29241B;border:1px solid #3A3226;border-radius:16px;padding:48px 40px;width:440px;max-width:94vw}
+h1{font-size:28px;margin-bottom:4px;letter-spacing:-.02em}
+.sub{color:#C4B18C;font-size:14px;margin-bottom:28px}
+.tabs{display:flex;gap:0;margin-bottom:24px;border-bottom:1px solid #3A3226}
+.tab{padding:10px 20px;cursor:pointer;color:#C4B18C;font-size:14px;border-bottom:2px solid transparent;transition:.15s}
+.tab.active{color:#F1E4CE;border-bottom-color:#E8B778}
+.form{display:block}.form.hidden{display:none}
+.form input{width:100%;padding:10px 14px;background:#1F1B14;border:1px solid #3A3226;border-radius:8px;color:#F1E4CE;font-size:14px;margin-bottom:12px;outline:none;transition:.15s}
+.form input:focus{border-color:#E8B778}
+.form .row{display:flex;gap:10px}
+.form .row input{flex:1}
+.pw-wrap{display:flex;gap:6px;align-items:center;margin-bottom:12px}
+.pw-wrap input{flex:1;margin-bottom:0}
+.pw-wrap .toggle{width:auto;padding:10px 14px;background:none;border:1px solid #3A3226;border-radius:8px;color:#C4B18C;cursor:pointer;font-size:12px;white-space:nowrap;flex-shrink:0;transition:.15s}
+.pw-wrap .toggle:hover{border-color:#E8B778;color:#F1E4CE}
+button{width:100%;padding:11px;background:#E8B778;color:#1F1B14;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:.15s}
+button:hover{background:#d4a55e}
+.error{color:#f55;font-size:13px;margin:8px 0;min-height:18px}
+.success{color:#4ade80;font-size:13px;margin:8px 0}
+.ecg{text-align:center;font-size:32px;margin-bottom:12px;opacity:.3;letter-spacing:4px}
+.legal{text-align:center;margin-top:20px;font-size:12px;color:#8A7F6A}
+.legal a{color:#8A7F6A;text-decoration:none;border-bottom:1px dotted #8A7F6A;cursor:pointer}
+.legal a:hover{color:#C4B18C}
+.overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:20px}
+.overlay-content{background:#29241B;border:1px solid #3A3226;border-radius:16px;padding:32px;max-width:560px;width:100%;max-height:80vh;overflow-y:auto;color:#F1E4CE;font-size:14px;line-height:1.6}
+.overlay-content h2{margin-bottom:16px;font-size:20px}
+.overlay-content strong{color:#E8B778}
+.overlay-close{float:right;background:none;border:none;color:#C4B18C;font-size:24px;cursor:pointer;line-height:1}
+</style>
+</head>
+<body>
+<div class="card">
+<div class="ecg">_~^~_~^~_</div>
+<h1>hack.CCM</h1>
+<div class="sub">Critical Care Microlearning</div>
+<div class="tabs"><div class="tab active" onclick="switchTab('login')" id="tabLogin">Sign In</div><div class="tab" onclick="switchTab('signup')" id="tabSignup">Create Account</div></div>
+<form class="form" id="loginForm">
+<input type="email" id="loginEmail" placeholder="Email" required>
+<div class="pw-wrap"><input type="password" id="loginPassword" placeholder="Password" required><button type="button" class="toggle" id="loginPwToggle">Show</button></div>
+<div class="error" id="loginError"></div>
+<button type="submit">Sign In</button>
+</form>
+<form class="form hidden" id="signupForm">
+<input type="email" id="signupEmail" placeholder="Email" required>
+<div class="pw-wrap"><input type="password" id="signupPassword" placeholder="Password (min 8 chars)" required><button type="button" class="toggle" id="pwToggle">Show</button></div>
+<div class="row"><input type="text" id="signupFirstName" placeholder="First name"><input type="text" id="signupLastName" placeholder="Last name"></div>
+<div class="row"><input type="text" id="signupWorkplace" placeholder="Workplace / Institution"><input type="text" id="signupCity" placeholder="City"></div>
+<div class="error" id="signupError"></div>
+<div class="success" id="signupSuccess"></div>
+<button type="submit">Create Account</button>
+</form>
+<div class="legal"><a id="landingDisclaimerLink">&#9888;&#65039; Disclaimer</a></div>
+</div>
+<div class="overlay" id="landingDisclaimerOverlay">
+<div class="overlay-content">
+<button class="overlay-close" id="landingDisclaimerClose">&times;</button>
+<div id="landingDisclaimerText"></div>
+</div>
+</div>
+<script>
+function switchTab(t){document.querySelectorAll('.tab').forEach(el=>el.classList.toggle('active',el.id==='tab'+t.charAt(0).toUpperCase()+t.slice(1)));document.getElementById('loginForm').classList.toggle('hidden',t!=='login');document.getElementById('signupForm').classList.toggle('hidden',t!=='signup')}
+document.getElementById('pwToggle').onclick=function(){var p=document.getElementById('signupPassword');p.type=p.type==='password'?'text':'password';this.textContent=p.type==='password'?'Show':'Hide'}
+document.getElementById('loginPwToggle').onclick=function(){var p=document.getElementById('loginPassword');p.type=p.type==='password'?'text':'password';this.textContent=p.type==='password'?'Show':'Hide'}
+var discText='**Welcome to hack.CCM \\u{1F9A9} \\u2014 Please Read Before You Explore**\\n\\nWelcome! This platform is a hobby passion project designed to make critical care education more structured, accessible, and easily retainable.\\n\\n**\\u26A0\\uFE0F For Education, Not Consultation**\\nThis is a tool for knowledge enhancement and personal study only. It is not a clinical decision-making tool. Always rely on official guidelines and your own institutional protocols for real-world patient care.\\n\\n**\\u{1F916} The AI Factor**\\nAs the saying goes, \\"To err is human; to hallucinate is AI.\\" While we have taken immense care to review the data and eliminate errors, AI-assisted formatting isn\\'t always flawless.\\n\\n**\\u{1F6D1} Use Responsibly**\\nDouble-check critical values and protocols. You are the clinician; this is just your study buddy.\\n\\n**\\u{1F50D} Spotted a Discrepancy?**\\nIf you find any errors, outdated data, or weird AI quirks, please help us improve! Report it via our Feedback button below.';
+function showLandingDisclaimer(){document.getElementById('landingDisclaimerText').innerHTML=discText.replace(/\\*\\*(.+?)\\*\\*/g,'<strong>$1</strong>').replace(/\\n\\n/g,'</p><p>').replace(/\\n/g,'<br>');document.getElementById('landingDisclaimerOverlay').style.display='flex'}
+document.getElementById('landingDisclaimerLink').addEventListener('click',showLandingDisclaimer);
+document.getElementById('landingDisclaimerClose').addEventListener('click',function(){document.getElementById('landingDisclaimerOverlay').style.display='none'});
+document.getElementById('landingDisclaimerOverlay').addEventListener('click',function(e){if(e.target===this)this.style.display='none'});
+document.getElementById('loginForm').onsubmit=async function(e){e.preventDefault();var b=this.querySelector('button');b.disabled=true;var err=document.getElementById('loginError');err.textContent='';try{var r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('loginEmail').value,password:document.getElementById('loginPassword').value})});if(r.ok){window.location.reload();return}var d=await r.json();err.textContent=d.detail||'Invalid email or password'}catch(e){err.textContent='Network error'}b.disabled=false}
+document.getElementById('signupForm').onsubmit=async function(e){e.preventDefault();var b=this.querySelector('button');b.disabled=true;var err=document.getElementById('signupError');var ok=document.getElementById('signupSuccess');err.textContent='';ok.textContent='';var pw=document.getElementById('signupPassword').value;try{var r=await fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('signupEmail').value,password:pw,first_name:document.getElementById('signupFirstName').value,last_name:document.getElementById('signupLastName').value,workplace:document.getElementById('signupWorkplace').value,city:document.getElementById('signupCity').value})});if(r.ok){window.location.reload();return}var d=await r.json();err.textContent=d.detail||'Account creation failed'}catch(e){err.textContent='Network error'}b.disabled=false}
+</script>
+</body>
+</html>"""
+
+# ---- End auth ----
 
 def load_approved_ledger():
     if not os.path.exists(JSON_TRACKER_FILE):
@@ -173,6 +423,103 @@ def load_trial_index():
     except (json.JSONDecodeError, Exception):
         return []
 
+def load_flashcard_decks():
+    """Load flashcard decks from the unified store (output_files/flashcards/).
+    One deck per (system, subtopic) file; cards carry explicit front/back."""
+    try:
+        from acumen_core import flashcards as fc
+    except Exception:
+        return []
+    decks = []
+    try:
+        idx = fc.load_flashcards_index()
+    except Exception:
+        return []
+    for system in idx.get("systems", {}):
+        for subtopic in idx["systems"][system]:
+            data = fc.load_subtopic_file(system, subtopic)
+            if not data or not data.get("cards"):
+                continue
+            cards = []
+            for c in data["cards"]:
+                if not isinstance(c, dict):
+                    continue
+                cards.append({
+                    "id": str(c.get("id", "")),
+                    "subtopic": str((c.get("data") or {}).get("original_subtopic") or c.get("subtopic", "")),
+                    "front": str(c.get("front", "")),
+                    "back": str(c.get("back", "")),
+                    "status": str(c.get("status", "pending")),
+                    "tags": sorted({str(t) for t in (c.get("tags") or []) if isinstance(t, str) and str(t).strip()}),
+                })
+            if cards:
+                decks.append({
+                    "id": f"{system}/{subtopic}",
+                    "specialty": system,
+                    "title": subtopic,
+                    "cards": cards,
+                    "subtopics": sorted({t for c in cards for t in c["tags"]}),
+                })
+    return decks
+
+
+def load_theory_notes():
+    """Load Theory Topics: every file under output_files/Theory MDs/ (any
+    extension) rendered as markdown by the portal. Notes are organized into
+    {Specialty}/{Subtopic}/ subfolders (see classify_theory.py); a sidecar
+    theory_notes_meta.json provides clean titles + taxonomy overrides."""
+    notes = []
+    base = os.path.join(OUTPUT_DIR, "Theory MDs")
+    if not os.path.isdir(base):
+        return notes
+    meta = {}
+    meta_path = os.path.join(base, "theory_notes_meta.json")
+    if os.path.exists(meta_path):
+        try:
+            with open(meta_path, "r", encoding="utf-8") as f:
+                meta = json.load(f)
+        except Exception:
+            meta = {}
+    for root, dirs, fnames in os.walk(base):
+        dirs[:] = [d for d in dirs if not d.startswith(".")]
+        if root == base:
+            fnames = [f for f in fnames if f != "theory_notes_meta.json"]
+        for fn in sorted(fnames):
+            path = os.path.join(root, fn)
+            if not os.path.isfile(path):
+                continue
+            try:
+                with open(path, "r", encoding="utf-8", errors="replace") as f:
+                    md_in = f.read()
+            except Exception:
+                continue
+            rel = os.path.relpath(path, base)
+            rel_slash = rel.replace(os.sep, "/")
+            m_entry = meta.get(rel_slash) or {}
+            # folder-derived taxonomy (ground truth = folder structure)
+            parts = rel.split(os.sep)
+            system = m_entry.get("system") or (parts[0] if len(parts) > 1 else "General")
+            subtopic = m_entry.get("subtopic") or (parts[1] if len(parts) > 1 else "General")
+            # title: manifest > first heading (any level, after any leading img) > cleaned filename
+            title = m_entry.get("title") or ""
+            if not title:
+                body_head = md_in
+                if body_head.startswith("<img") and "\n" in body_head:
+                    body_head = body_head.split("\n", 1)[1]
+                mm = re.search(r"^\s*#{1,6}\s+(.+?)\s*$", body_head, re.M)
+                title = mm.group(1).strip() if mm else ""
+            if not title:
+                title = os.path.splitext(fn)[0].replace("_", " ")
+            notes.append({
+                "id": fn,
+                "title": title,
+                "md": md_in,
+                "system": system,
+                "subtopic": subtopic,
+            })
+    notes.sort(key=lambda n: (n.get("system") or "", n.get("subtopic") or "", n["title"].lower()))
+    return notes
+
 def load_condensed_trial_index():
     if not os.path.exists(CONDENSED_TRIALS_DIR):
         return []
@@ -211,7 +558,7 @@ def load_condensed_trial(system, name):
         return json.load(f)
 
 # =====================================================================
-# SVG ΓÇö ECG motif (embedded)
+# SVG — ECG motif (embedded)
 # =====================================================================
 ECG_SVG = '''<svg width="0" height="0" style="position:absolute">
   <symbol id="ecg" viewBox="0 0 260 14">
@@ -235,7 +582,10 @@ SPEC_COLORS = {
 }
 
 @app.get("/", response_class=HTMLResponse)
-async def render_dashboard(request: Request):
+async def render_dashboard(request: Request, response: Response):
+    user = _get_session_user(request)
+    if not user:
+        return HTMLResponse(content=LANDING_HTML)
     entries = load_approved_ledger()
 
     articles_list = []
@@ -361,16 +711,56 @@ async def render_dashboard(request: Request):
     condensed_result_cats_js = json.dumps(condensed_result_cats)
     condensed_types_list_js = json.dumps(condensed_types_list)
 
+    # Theory flashcard decks (unified store) + Theory Topics (markdown notes)
+    flashcard_decks = load_flashcard_decks() if _user_has_feature(user, "theory") else []
+    theory_notes = load_theory_notes() if _user_has_feature(user, "theory") else []
+    THEORY_SPEC_COLORS = {
+        "Cardiology": "#C6554B", "Pulmonology": "#3A7CA5", "Neurology": "#6B5B95",
+        "Nephrology": "#B08D57", "Gastroenterology": "#14B8A6",
+        "Infectious Diseases": "#4F8A6D", "Hematology": "#E11D48",
+        "Endocrinology": "#06B6D4", "Trauma": "#DC2626", "Surgery": "#6B7280",
+        "Toxicology": "#7C3AED", "Sepsis": "#F97316", "General": "#9333EA",
+        "Other": "#9333EA",
+    }
+    theory_specs = sorted(set(d["specialty"] for d in flashcard_decks))
+    theory_spec_css = {}
+    for s in theory_specs:
+        color = THEORY_SPEC_COLORS.get(s, "#9333EA")
+        var_name = "--theory-spec-" + re.sub(r"[^a-zA-Z0-9]", "", s.lower())
+        theory_spec_css[var_name] = color
+    theory_spec_str = "; ".join(f"{k}:{v}" for k, v in theory_spec_css.items()) + ";"
+    theory_spec_vars_js = json.dumps({
+        s: "--theory-spec-" + re.sub(r"[^a-zA-Z0-9]", "", s.lower()) for s in theory_specs
+    })
+    flashcard_decks_js = json.dumps(flashcard_decks)
+    theory_notes_js = json.dumps(theory_notes)
+    theory_total_cards = sum(len(d["cards"]) for d in flashcard_decks)
+    theory_subtopic_map = {}
+    for d in flashcard_decks:
+        for t in d.get("subtopics") or []:
+            theory_subtopic_map.setdefault(d["specialty"], set()).add(t)
+    theory_subtopic_map = {s: sorted(v) for s, v in theory_subtopic_map.items()}
+    theory_subtopic_map_js = json.dumps(theory_subtopic_map)
+
+    # Compute resolved feature flags for the authenticated user
+    user_features = {f: _user_has_feature(user, f) for f in FEATURE_FLAGS}
+    user_features_js = json.dumps(user_features)
+    user_is_admin_js = "true" if user.get("is_admin") else "false"
+    insights_tag = '<script defer src="/_vercel/insights/script.js"></script>' if os.environ.get("VERCEL") else ''
+
     html = f"""<!DOCTYPE html>
 <html lang="en" data-theme="dim">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>hack.CCM ΓÇö Knowledge Portal</title>
+<title>hack.CCM — Knowledge Portal</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-<script defer src="/_vercel/insights/script.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+{insights_tag}
 {ECG_SVG}
 <style>
   :root{{
@@ -379,6 +769,7 @@ async def render_dashboard(request: Request):
     --font-mono:'JetBrains Mono',monospace;
     {spec_css_str}
     {trial_spec_str}
+    {theory_spec_str}
     --radius:10px;
     --shadow:0 1px 2px rgba(0,0,0,.12), 0 4px 16px rgba(0,0,0,.08);
   }}
@@ -484,6 +875,8 @@ async def render_dashboard(request: Request):
   .doc-title{{ font-weight:700; font-size:.95rem; margin:0 0 4px; }}
   .doc-snippet{{ color:var(--ink-muted); font-size:.85rem; margin:0; }}
   .type-tag{{ font-size:.68rem; color:var(--ink-muted); font-family:var(--font-mono); }}
+  .theory-sub-tag{{ font-size:.66rem; font-family:var(--font-mono); color:var(--accent); background:var(--bg-sunk); border:1px solid var(--border); border-radius:99px; padding:1px 7px; }}
+  .chip-count{{ font-size:.66rem; opacity:.75; }}
 
   .divider{{ margin:34px 0 18px; }}
   .feature-grid{{ display:grid; grid-template-columns:1fr; gap:12px; }}
@@ -720,6 +1113,145 @@ async def render_dashboard(request: Request):
   .trial-empty{{ text-align:center; padding:60px 20px; color:var(--ink-muted); }}
   .trial-empty .icon{{ font-size:2.5rem; display:block; margin-bottom:8px; }}
 
+  /* ===== BOOKMARKS ===== */
+  .bookmark-btn{{ cursor:pointer; transition:transform .15s; }}
+  .bookmark-btn:hover{{ transform:scale(1.1); }}
+  .bookmark-btn.active{{ color:var(--accent); border-color:var(--accent); }}
+  .bookmark-btn.active::after{{ content:''; position:absolute; top:-2px; right:-2px; width:8px; height:8px; border-radius:50%; background:var(--accent); }}
+  .bm-count{{ display:inline-flex; align-items:center; justify-content:center; min-width:18px; height:18px; padding:0 5px; margin-left:5px; border-radius:99px; background:var(--accent); color:var(--accent-ink); font-size:.66rem; font-family:var(--font-mono); font-weight:700; vertical-align:middle; }}
+  .bm-count.zero{{ display:none; }}
+  .bookmarks-folder-row{{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }}
+  .bookmarks-folder-pill{{ display:inline-flex; align-items:center; gap:6px; border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); padding:5px 12px; border-radius:99px; font-size:.76rem; cursor:pointer; font-family:var(--font-mono); }}
+  .bookmarks-folder-pill.active{{ border-color:var(--accent); color:var(--accent); }}
+  .bookmarks-folder-pill .fdot{{ width:8px; height:8px; border-radius:50%; }}
+  .bm-section-head{{ display:flex; align-items:center; gap:8px; margin:20px 0 8px; font-family:var(--font-display); font-size:.9rem; }}
+  .bm-section-head .bar{{ flex:1; height:1px; background:var(--border); }}
+  .bm-card{{ display:flex; flex-direction:column; gap:8px; background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius); padding:12px 14px; margin-bottom:8px; transition:border-color .15s; }}
+  .bm-card:hover{{ border-color:var(--accent); }}
+  .bm-card-top{{ display:flex; gap:10px; align-items:flex-start; cursor:pointer; text-align:left; background:none; border:none; padding:0; font:inherit; color:inherit; width:100%; }}
+  .bm-card-top .bm-title{{ font-weight:700; font-size:.9rem; line-height:1.35; }}
+  .bm-card-top .bm-meta{{ color:var(--ink-muted); font-size:.76rem; margin-top:3px; }}
+  .bm-card-actions{{ display:flex; gap:8px; flex-wrap:wrap; align-items:center; }}
+  .bm-card-actions select{{ padding:4px 6px; border-radius:6px; border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); font-size:.75rem; max-width:160px; }}
+  .bm-tags-input{{ flex:1; min-width:140px; padding:5px 9px; border-radius:6px; border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); font-size:.75rem; }}
+  .bm-tag{{ display:inline-flex; align-items:center; gap:4px; border:1px solid var(--border); border-radius:99px; padding:2px 8px; font-size:.68rem; font-family:var(--font-mono); color:var(--ink-muted); }}
+  .bm-del{{ background:none; border:none; color:var(--ink-muted); cursor:pointer; font-size:.95rem; padding:0 4px; }}
+  .bm-del:hover{{ color:#EF4444; }}
+  .bm-empty{{ text-align:center; padding:60px 20px; color:var(--ink-muted); }}
+  .bm-empty .icon{{ font-size:2.5rem; display:block; margin-bottom:8px; }}
+  .bm-new-folder{{ display:none; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:12px; padding:12px; background:var(--bg-sunk); border:1px dashed var(--border); border-radius:var(--radius); }}
+  .bm-new-folder.show{{ display:flex; }}
+  .bm-new-folder input{{ padding:6px 10px; border-radius:6px; border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); font-size:.82rem; min-width:160px; }}
+  .folder-swatch{{ width:22px; height:22px; border-radius:50%; cursor:pointer; border:2px solid transparent; flex-shrink:0; }}
+  .folder-swatch.active{{ border-color:var(--ink); }}
+  .bm-folder-edit{{ background:none; border:none; color:var(--ink-muted); cursor:pointer; font-size:.78rem; padding:0 3px; font-family:var(--font-mono); }}
+  .bm-folder-edit:hover{{ color:var(--ink); }}
+  .bm-folder-edit.del:hover{{ color:#EF4444; }}
+
+  /* ===== THEORY FLASHCARDS ===== */
+  .theory-stage{{ margin:14px 0; }}
+  .theory-card-wrap{{ perspective:1400px; margin:12px 0 14px; }}
+  .theory-card-inner{{ position:relative; width:100%; min-height:340px; transform-style:preserve-3d; transition:transform .45s ease; }}
+  .theory-card-inner.flip{{ cursor:pointer; }}
+  .theory-card-inner.flipped{{ transform:rotateY(180deg); }}
+  .theory-face{{ position:absolute; top:0; left:0; right:0; bottom:0; backface-visibility:hidden; -webkit-backface-visibility:hidden; background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:22px 24px; overflow:auto; max-height:72vh; }}
+  .theory-face.back{{ transform:rotateY(180deg); }}
+  .theory-face .flip-hint{{ position:absolute; bottom:10px; right:16px; font-size:.68rem; font-family:var(--font-mono); color:var(--ink-muted); }}
+  /* Fallback when the browser lacks backface-visibility 3D support: swap display instead of rotating */
+  .theory-card-wrap.no-3d{{ perspective:none; }}
+  .theory-card-wrap.no-3d .theory-card-inner{{ transform-style:flat; transform:none !important; }}
+  .theory-card-wrap.no-3d .theory-face{{ position:relative; top:auto; left:auto; right:auto; bottom:auto; transform:none !important; display:none; }}
+  .theory-card-wrap.no-3d .theory-face.front{{ display:block; }}
+  .theory-card-wrap.no-3d .theory-card-inner.flipped .theory-face.front{{ display:none; }}
+  .theory-card-wrap.no-3d .theory-card-inner.flipped .theory-face.back{{ display:block; }}
+  .theory-card-flat{{ background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; box-shadow:var(--shadow); padding:22px 24px; max-height:72vh; overflow:auto; }}
+  .theory-card-question{{ margin:0 0 14px; font-size:1.06rem; font-weight:650; line-height:1.45; color:var(--ink); background:var(--bg-sunk); border:1px solid var(--border); border-left:3px solid var(--accent); border-radius:10px; padding:10px 14px; }}
+  .theory-card-question p{{ margin:0; }}
+  .theory-card-content{{ font-size:var(--theory-card-fs, .94rem); line-height:1.55; }}
+  .theory-card-content h1, .theory-card-content h2, .theory-card-content h3{{ font-size:1.02rem; margin:12px 0 6px; }}
+  .theory-card-content p{{ margin:8px 0; }}
+  .theory-card-content ul, .theory-card-content ol{{ margin:8px 0; padding-left:22px; }}
+  .theory-card-content table{{ border-collapse:collapse; width:100%; font-size:.85em; margin:12px 0; }}
+  .theory-card-content th, .theory-card-content td{{ border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }}
+  .theory-card-content th{{ background:var(--bg-sunk); font-weight:700; }}
+  .theory-card-content code{{ font-family:var(--font-mono); font-size:.86em; background:var(--bg-sunk); border-radius:4px; padding:1px 5px; }}
+  .theory-card-head{{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px; }}
+  .theory-card-progress{{ font-family:var(--font-mono); font-size:.76rem; color:var(--ink-muted); margin-left:auto; }}
+  .theory-mode-chip{{ border:1px solid var(--border); background:transparent; color:var(--ink-muted); padding:5px 12px; border-radius:99px; font-size:.74rem; cursor:pointer; }}
+  .theory-mode-chip.active{{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }}
+  .theory-dots{{ display:flex; gap:6px; flex-wrap:wrap; justify-content:center; margin-top:12px; }}
+  .theory-dot{{ width:9px; height:9px; border-radius:50%; border:1px solid var(--border); background:transparent; cursor:pointer; padding:0; }}
+  .theory-dot.active{{ background:var(--accent); border-color:var(--accent); }}
+  .theory-dot.saved{{ background:var(--ink-muted); border-color:var(--ink-muted); }}
+  .theory-dot.saved.active{{ background:var(--accent); border-color:var(--accent); }}
+  .theory-dot.muted{{ opacity:.28; cursor:not-allowed; }}
+  .theory-card-tags{{ display:flex; align-items:center; gap:6px; flex-wrap:wrap; margin:4px 0 2px; min-height:26px; }}
+  .theory-tag-pill{{ font-size:.68rem; font-family:var(--font-mono); color:var(--ink-muted); border:1px dashed var(--border); border-radius:99px; padding:2px 9px; }}
+  .theory-tag-pill.hot{{ color:var(--accent); border-color:color-mix(in srgb, var(--accent) 45%, transparent); }}
+  .theory-tag-x{{ cursor:pointer; margin-left:4px; color:var(--ink-muted); }}
+  .theory-tag-x:hover{{ color:var(--accent); }}
+  .theory-deck-rows .doc-card{{ cursor:pointer; }}
+  .theory-saved-badge{{ font-size:.66rem; font-family:var(--font-mono); color:var(--accent); margin-left:6px; }}
+
+  /* ===== THEORY TOPICS (markdown notes) ===== */
+  .theory-note{{ font-size:var(--theory-note-fs, var(--site-fs, 16px)); line-height:1.6; color:var(--ink); }}
+  .theory-note h1{{ font-size:1.5rem; margin:20px 0 10px; }}
+  .theory-note h2{{ font-size:1.3rem; margin:18px 0 8px; }}
+  .theory-note h3{{ font-size:1.12rem; margin:16px 0 8px; }}
+  .theory-note h4{{ font-size:1rem; margin:14px 0 6px; }}
+  .theory-note p{{ margin:10px 0; }}
+  .theory-note ul, .theory-note ol{{ margin:10px 0; padding-left:24px; }}
+  .theory-note li{{ margin:4px 0; }}
+  .theory-note code{{ font-family:var(--font-mono); font-size:.9em; background:var(--bg-sunk); border-radius:4px; padding:1px 5px; }}
+  .theory-note pre{{ background:var(--bg-sunk); border:1px solid var(--border); border-radius:10px; padding:12px 14px; overflow:auto; }}
+  .theory-note pre code{{ background:none; padding:0; }}
+  .theory-note blockquote{{ border-left:3px solid var(--accent); margin:12px 0; padding:4px 14px; color:var(--ink-muted); }}
+  .theory-note table{{ border-collapse:collapse; width:100%; font-size:.92em; margin:14px 0; }}
+  .theory-note th, .theory-note td{{ border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; }}
+  .theory-note th{{ background:var(--bg-sunk); font-weight:700; }}
+  .theory-table-wrap{{ position:relative; max-width:100%; overflow-x:auto; overflow-y:hidden; margin:14px 0; border:1px solid var(--border); border-radius:10px; background:var(--bg); -webkit-overflow-scrolling:touch; scrollbar-width:thin; }}
+  .theory-table-wrap table{{ width:100%; margin:0; }}
+  .theory-table-wrap th, .theory-table-wrap td{{ white-space:nowrap; }}
+  .theory-table-wrap::-webkit-scrollbar{{ height:8px; }}
+  .theory-table-wrap::-webkit-scrollbar-thumb{{ background:var(--border); border-radius:8px; }}
+  @media (hover:none){{
+    .theory-table-wrap{{ scrollbar-width:none; }}
+    .theory-table-wrap::-webkit-scrollbar{{ display:none; }}
+  }}
+  .theory-table-expand{{ display:inline-flex; align-items:center; gap:6px; margin:14px 0 0; padding:6px 14px; background:var(--bg-sunk); color:var(--ink); border:1px solid var(--border); border-radius:99px; font:inherit; font-size:.78rem; cursor:pointer; }}
+  .theory-table-expand:hover{{ border-color:var(--accent); color:var(--accent); }}
+  .theory-table-expand .tt-expand-icon{{ color:var(--accent); }}
+  /* Fullscreen table viewer */
+  .theory-table-overlay{{ position:fixed; inset:0; z-index:9999; background:var(--bg); display:flex; flex-direction:column; }}
+  .theory-table-overlay-bar{{ display:flex; align-items:center; gap:10px; padding:10px 14px; background:var(--bg-elev); border-bottom:1px solid var(--border); flex:0 0 auto; }}
+  .theory-table-overlay-title{{ flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:.85rem; color:var(--ink-muted); }}
+  .theory-table-overlay-scroll{{ flex:1; overflow:auto; padding:14px; -webkit-overflow-scrolling:touch; }}
+  .theory-table-overlay-scroll table{{ border-collapse:collapse; width:auto; font-size:.92em; background:var(--bg); }}
+  .theory-table-overlay-scroll th, .theory-table-overlay-scroll td{{ border:1px solid var(--border); padding:7px 10px; text-align:left; vertical-align:top; white-space:nowrap; }}
+  .theory-table-overlay-scroll th{{ background:var(--bg-sunk); font-weight:700; position:sticky; top:0; }}
+  .theory-table-fit-inner{{ display:inline-block; max-width:100%; }}
+  .theory-note hr{{ border:none; border-top:1px solid var(--border); margin:18px 0; }}
+  .theory-note a{{ color:var(--accent); }}
+  /* Flip-mode front question: big + centered (H2-scale) */
+  .theory-front-big{{ display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; min-height:100%; font-size:1.5rem; font-weight:600; line-height:1.4; gap:14px; }}
+  .theory-front-big p{{ margin:0; }}
+  .theory-front-big h1, .theory-front-big h2, .theory-front-big h3{{ font-size:1.6rem; margin:0; }}
+  /* Per-deck card list header */
+  .theory-card-list-head{{ display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:6px; }}
+  .theory-list-toggle{{ display:inline-flex; align-items:center; gap:8px; background:var(--bg-elev); border:1px solid var(--border); border-radius:99px; padding:6px 14px; cursor:pointer; font:inherit; font-size:.8rem; color:var(--ink); margin-left:auto; }}
+  .theory-list-toggle:hover{{ background:var(--bg-sunk); border-color:var(--accent); }}
+  .theory-list-toggle .theory-toggle-caret{{ color:var(--accent); font-size:.72rem; }}
+  /* Breadcrumb navigation */
+  .theory-crumbs{{ display:flex; align-items:center; gap:4px; flex-wrap:wrap; margin:0 0 12px; padding:8px 12px; background:var(--bg-sunk); border:1px solid var(--border); border-radius:var(--radius); font-size:.8rem; }}
+  .crumb{{ background:none; border:none; color:var(--ink-muted); font:inherit; font-size:.8rem; cursor:pointer; padding:2px 6px; border-radius:6px; }}
+  .crumb:hover{{ color:var(--accent); background:var(--bg-elev); }}
+  .crumb-current{{ color:var(--ink); cursor:default; }}
+  .crumb-current:hover{{ color:var(--ink); background:none; }}
+  .crumb-title{{ max-width:240px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
+  .crumb-sep{{ color:var(--ink-muted); opacity:.5; }}
+  .btn.nav-btn:disabled{{ opacity:.35; cursor:not-allowed; }}
+  .theory-card-head .pill, .theory-card-list-head .pill, .theory-study-head .pill{{ max-width:300px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
+
 </style>
 </head>
 <body>
@@ -742,10 +1274,12 @@ async def render_dashboard(request: Request):
       <button data-view="theory">Theory</button>
       <button data-view="rrt">RRT</button>
       <button data-view="ai">AI Assistant</button>
+      <button data-view="bookmarks">&#128278; Bookmarks<span class="bm-count zero" id="bookmarksTopCount">0</span></button>
     </nav>
     <div class="header-actions">
       <button class="icon-btn" id="searchTrigger" aria-label="Search">&#128269;</button>
       <button class="icon-btn theme-btn" id="themeBtn" aria-label="Change theme">&#9712;</button>
+      <button class="icon-btn" id="headerLogout" aria-label="Sign out">&#128682;</button>
     </div>
   </div>
   <svg class="ecg-line ecg-sweep" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg>
@@ -902,11 +1436,70 @@ async def render_dashboard(request: Request):
       <p class="coming-soon-text">The Antibiotics Hub is under development. Check back soon.</p>
     </div>
   </section>
+  <!-- THEORY: hero (notes + flashcards) -->
   <section class="view" id="view-theory">
-    <div class="coming-soon">
-      <p class="coming-soon-icon">&#128679;</p>
-      <h2>Coming Soon</h2>
-      <p class="coming-soon-text">The Theory Library is under development. Check back soon.</p>
+    <div class="section-head" style="margin-top:0"><h2>Theory</h2></div>
+    <div class="theory-crumbs" id="theoryCrumbs" style="display:none"></div>
+    <div class="hero" id="theoryHero">
+      <div class="card" data-theory-mode-view="notes" role="button" tabindex="0">
+        <div class="stripe" style="background:var(--accent)"></div>
+        <div class="card-body">
+          <div class="eyebrow">Long-form notes</div>
+          <h3>Theory Topics</h3>
+          <p>{len(theory_notes)} deep-dive notes, rendered from markdown &mdash; tap to read.</p>
+        </div>
+      </div>
+      <div class="card" data-theory-mode-view="flashcards" role="button" tabindex="0">
+        <div class="stripe" style="background:var(--accent)"></div>
+        <div class="card-body">
+          <div class="eyebrow">Study cards</div>
+          <h3>Flashcards</h3>
+          <p>{theory_total_cards} cards across {len(theory_specs)} systems &mdash; flip, save, revise.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Theory Topics (markdown notes) -->
+    <div id="theoryNotesPane" style="display:none">
+      <div class="section-head" style="margin-top:0">
+        <h2>Theory Topics</h2>
+      </div>
+      <div class="pearl-toolbar" id="theoryNotesSearchRow">
+        <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="theoryNotesSearch" placeholder="Search notes&hellip;" autocomplete="off"></div>
+      </div>
+      <div class="pearl-toolbar" id="theoryNotesChips"></div>
+      <p class="pearl-count" id="theoryNotesCount"></p>
+      <div class="doc-list theory-deck-rows" id="theoryNotesList"></div>
+      <div id="theoryNoteReader" style="display:none"></div>
+    </div>
+
+    <!-- Flashcards -->
+    <div id="theoryFlashcardsPane" style="display:none">
+      <div class="section-head" style="margin-top:0">
+        <h2>Theory &mdash; Flashcards</h2>
+      </div>
+      <div id="theoryBrowser">
+        <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 14px">Flashcards &mdash; study them card by card, flip them, save the ones worth revisiting.</p>
+        <div class="pearl-toolbar">
+          <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="theorySearch" placeholder="Search decks and cards&hellip;" autocomplete="off"></div>
+        </div>
+        <div class="pearl-toolbar" id="theoryChips"></div>
+        <div class="pearl-toolbar" id="theorySubtopicChips" style="flex-wrap:wrap"></div>
+        <p class="pearl-count" id="theoryCount"></p>
+        <div class="doc-list theory-deck-rows" id="theoryDeckList"></div>
+      </div>
+      <div id="theoryCardList" style="display:none">
+        <div class="theory-card-list-head" id="theoryCardListHead"></div>
+        <p class="pearl-count" id="theoryCardListCount"></p>
+        <div class="doc-list" id="theoryCardListBody"></div>
+      </div>
+      <div id="theoryStudy" style="display:none">
+        <div class="theory-card-head" id="theoryStudyHead"></div>
+        <div class="theory-card-tags" id="theoryCardTags"></div>
+        <div class="theory-stage" id="theoryCardStage"></div>
+        <div class="reader-nav" id="theoryCardNav"></div>
+        <div class="theory-dots" id="theoryCardDots"></div>
+      </div>
     </div>
   </section>
   <section class="view" id="view-rrt">
@@ -957,7 +1550,7 @@ async def render_dashboard(request: Request):
   <section class="view" id="view-trials">
     <div class="section-head" style="margin-top:0"><h2>Trials</h2></div>
 
-    <!-- ESBICM hero card ΓÇö click opens the ESBICM dashboard directly -->
+    <!-- ESBICM hero card — click opens the ESBICM dashboard directly -->
     <div class="trials-hero-card" style="cursor:pointer">
       <div data-view="trials-esbicm" role="button" tabindex="0">
         <span class="trophy">&#127942;</span>
@@ -972,6 +1565,7 @@ async def render_dashboard(request: Request):
     </div>
 
     <!-- Core Critical Care Trials hero card -->
+    {'' if not _user_has_feature(user, 'condensed_trials') else '''
     <div class="trials-hero-card trials-hero-condensed" style="cursor:pointer;margin-top:16px">
       <div data-view="trials-condensed" role="button" tabindex="0">
         <span class="trophy">&#128221;</span>
@@ -980,6 +1574,7 @@ async def render_dashboard(request: Request):
         <p class="sub" style="margin-top:4px">{len(condensed_index)} trials &mdash; tap to explore</p>
       </div>
     </div>
+    '''}
   </section>
 
   <!-- ESBICM MAIN (specialty grid + filter) -->
@@ -1098,6 +1693,29 @@ async def render_dashboard(request: Request):
     <div class="trial-detail" id="trialDetailBody"></div>
   </section>
 
+  <!-- BOOKMARKS -->
+  <section class="view" id="view-bookmarks">
+    <div class="section-head" style="margin-top:0">
+      <h2>&#128278; Bookmarks</h2>
+      <span class="pearl-count" id="bookmarksCount"></span>
+    </div>
+    <div class="toolbar">
+      <div class="search-box" style="min-width:180px">
+        <span>&#128269;</span>
+        <input id="bookmarksSearch" placeholder="Filter by title or tag&hellip;" autocomplete="off">
+      </div>
+      <button class="btn" id="bookmarksNewFolderBtn">&#128193; New folder</button>
+    </div>
+    <div class="bm-new-folder" id="bookmarksNewFolderRow">
+      <input id="bookmarksNewFolderName" placeholder="Folder name" maxlength="60">
+      <div id="bookmarksNewFolderColors" style="display:flex;gap:6px;align-items:center"></div>
+      <button class="btn primary" id="bookmarksCreateFolderBtn">Create</button>
+      <button class="btn" id="bookmarksCancelFolderBtn">Cancel</button>
+    </div>
+    <div class="bookmarks-folder-row" id="bookmarksFoldersRow"></div>
+    <div id="bookmarksList"></div>
+  </section>
+
 </main>
 
 <!-- MOBILE FILTER SHEET -->
@@ -1120,6 +1738,7 @@ async def render_dashboard(request: Request):
   <button class="drawer-link" data-view="theory">&#129504; Theory Library</button>
   <button class="drawer-link" data-view="rrt">&#128680; RRT</button>
   <button class="drawer-link" data-view="ai">&#129302; AI Assistant</button>
+  <button class="drawer-link" data-view="bookmarks">&#128278; Bookmarks<span class="bm-count zero" id="bookmarksDrawerCount">0</span></button>
   <h4>Text size</h4>
   <div class="chip-row" id="fontChips">
     <button class="chip" data-font-px="14">XS</button>
@@ -1140,6 +1759,7 @@ async def render_dashboard(request: Request):
   <button class="drawer-link" data-view="feedback">&#128172; Feedback</button>
   <button class="drawer-link" data-view="about">&#8505;&#65039; About us</button>
   <button class="drawer-link" data-open-disclaimer>&#9888;&#65039; Disclaimer</button>
+  <button class="drawer-link" id="drawerLogout">&#128682; Sign Out</button>
 </nav>
 
 <!-- GLOBAL SEARCH -->
@@ -1189,6 +1809,7 @@ async def render_dashboard(request: Request):
   <button class="nav-item" data-view="pearls"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128142;</span>Pearls</button>
   <button class="nav-item" data-view="trials"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#127942;</span>Trials</button>
   <button class="nav-item" data-view="theory"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#129504;</span>Theory</button>
+  <button class="nav-item" data-view="bookmarks"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128278;</span>Saved</button>
 </nav>
 
 <div class="toast" id="toast"></div>
@@ -1222,6 +1843,16 @@ async def render_dashboard(request: Request):
   </div>
 </div>
 
+<!-- THEORY TABLE FULL VIEW -->
+<div id="theoryTableOverlay" class="theory-table-overlay" style="display:none" role="dialog" aria-label="Table full view">
+  <div class="theory-table-overlay-bar">
+    <button class="btn nav-btn" data-theory-table-close style="flex:0 0 auto">&larr; Back</button>
+    <span class="theory-table-overlay-title" id="theoryTableOverlayTitle">Table</span>
+    <button class="btn nav-btn" data-theory-table-fit style="flex:0 0 auto">Fit width</button>
+  </div>
+  <div class="theory-table-overlay-scroll" id="theoryTableOverlayScroll"><div class="theory-table-fit-inner" id="theoryTableFitInner"></div></div>
+</div>
+
 <script>
 // =====================================================================
 // DATA (injected from Python)
@@ -1250,9 +1881,53 @@ const CONDENSED_SYSTEMS = {condensed_systems_js};
 const CONDENSED_RESULT_CATS = {condensed_result_cats_js};
 const CONDENSED_TYPES = {condensed_types_list_js};
 
+// Theory flashcard decks (unified store) + theory notes
+const allFlashcardDecks = {flashcard_decks_js};
+const THEORY_SPEC_VAR = {theory_spec_vars_js};
+const THEORY_SUBTOPIC_MAP = {theory_subtopic_map_js};
+const THEORY_NOTES = {theory_notes_js};
+
+// Feature flags (resolved server-side: defaults + per-user overrides)
+const USER_FEATURES = {user_features_js};
+const USER_IS_ADMIN = {user_is_admin_js};
+
 let _trialFilterState = {{ specialty: '', result_category: '', trial_type: '' }};
 let _currentTrialList = [];
 let _currentTrialIdx = -1;
+let _currentTrialSlug = '';
+let _currentCondensedRef = '';
+let _bookmarks = {{items: {{}}, folders: {{}}}};
+let _bookmarkMeta = {{}};
+let _bookmarksFolderFilter = null;
+let _bmNewFolderColor = '#E8B778';
+const BM_FOLDER_COLORS = ['#E8B778','#0C8A8B','#2DD4CF','#8B5CF6','#EF4444','#10B981','#D97706','#6B7280'];
+
+// Theory flashcard study state
+let _theoryMode = null; // null = hero, 'notes' = Theory Topics, 'flashcards' = decks
+let _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }}));
+let _theorySavedOnly = false;
+let _notesSavedOnly = false;
+let _notesActiveSpecs = new Set();
+let _notesActiveSubtopic = null;
+let _currentTheoryNote = null;
+let _theoryTableOverlayOpen = false;
+let _theoryTableFitActive = false;
+let _theoryActiveSubtopic = null;
+let _currentDeck = null;
+let _currentCardIdx = 0;
+let _theoryCardOrder = [];
+let _theoryViewMode = 'single';
+let _theoryFlipped = false;
+let _theoryListCollapsed = false; // card list collapses into a dropdown when a card is open
+let _theoryStudyFromList = false; // study was entered from the per-deck card list
+let _restoring = false; // true while restoring from history/deep links (no pushes)
+let _theorySearchTimers = {{}};
+// True when the browser can do real 3D card flips (backface-visibility).
+// False -> the reader falls back to display-swapping (.no-3d) so faces never stack.
+let _css3d = (function(){{
+  try {{ return !!(window.CSS && window.CSS.supports && window.CSS.supports('backface-visibility','hidden')); }}
+  catch(e) {{ return false; }}
+}})();
 
 // =====================================================================
 // STATE
@@ -1296,6 +1971,26 @@ function emptyStateHTML(label){{
 // VIEW SWITCHING
 // =====================================================================
 function showView(name){{
+  // Feature flag check: block views that the user doesn't have access to
+  var featureMap = {{
+    'trials': 'trials',
+    'trials-esbicm': 'trials',
+    'trials-condensed': 'condensed_trials',
+    'trials-specialty': 'trials',
+    'trials-detail': 'trials_detail',
+    'condensed-system': 'condensed_trials',
+    'condensed-detail': 'trials_detail',
+    'papers': 'papers',
+    'guidelines': 'guidelines',
+    'pearls': 'pearls',
+    'search': 'search',
+    'bookmarks': 'bookmarks',
+    'theory': 'theory'
+  }};
+  var requiredFeature = featureMap[name];
+  if (requiredFeature && !USER_IS_ADMIN && !USER_FEATURES[requiredFeature]) {{
+    return;
+  }}
   document.querySelectorAll('.view').forEach(function(v){{ v.classList.remove('active'); }});
   var target = document.getElementById('view-'+name);
   (target || document.getElementById('view-home')).classList.add('active');
@@ -1309,6 +2004,15 @@ function showView(name){{
   if(name==='trials') renderTrials();
   if(name==='trials-esbicm') renderESBICM();
   if(name==='trials-condensed') renderCondensedTrials();
+  if(name==='bookmarks') renderBookmarks();
+  if(name==='theory'){{
+    var activeView = document.querySelector('.view.active');
+    if(activeView && activeView.id==='view-theory'){{
+      if(_theoryMode) theoryBackToHero();
+    }} else {{
+      renderTheoryPane(_theoryMode);
+    }}
+  }}
 }}
 
 // =====================================================================
@@ -1583,10 +2287,13 @@ function openReader(entry, kind){{
     var hasPrintablePaper = entry.file_name && baseDataset.some(function(d){{ return d.file_name === entry.file_name.replace(/\\.json$/, '.pdf'); }});
     var articleBtn = hasPrintablePaper ? '<button class="btn nav-btn" data-open-pearl-article="'+entry.id+'">&#128196; Open article</button>' : '';
     var navRow = (prevBtn||nextBtn||articleBtn) ? '<div class="reader-nav">'+articleBtn+prevBtn+nextBtn+'</div>' : '';
+    var pbmRef = 'pearl:'+entry.id;
+    registerBookmarkMeta(pbmRef, {{kind:'pearl', title: entry.pearl || entry.source_paper || 'Clinical pearl', system: entry.system || 'General', type: entry.type || 'Pearl', locator: {{id: entry.id}}}});
     body.innerHTML = ''+
       pillHTML(entry.system||'General', (entry.system||'General')+' &middot; Pearl')+
       '<h2 style="font-size:1.15rem;line-height:1.4">"'+escapeHtml(entry.pearl||'')+'"</h2>'+
       '<p class="meta">'+(entry.source_paper||'Clinical pearl')+' &middot; '+(entry.timestamp||'')+'</p>'+
+      '<div class="reader-actions">'+bookmarkBtnHTML(pbmRef)+'</div>'+
       navRow;
     document.body.classList.add('reader-open');
     pushReaderState();
@@ -1634,14 +2341,18 @@ function openReader(entry, kind){{
         pearlBoxHTML = '<div class="pearl-box"><strong>Key pearl &mdash;</strong> '+escapeHtml(data.key_pearls[0])+'</div>';
       }}
 
+      var bmKind = (entry.type||'').toLowerCase()==='guideline' ? 'guideline' : 'paper';
+      var bmRef = bmKind + ':' + (entry.file_name || '');
+      registerBookmarkMeta(bmRef, {{kind: bmKind, title: entry.title, system: entry.system || 'General', type: entry.type || 'Other', locator: {{file_name: entry.file_name || '', system: entry.system || 'General', type: entry.type || 'Other'}}}});
       body.innerHTML = ''+
         pillHTML(entry.system, entry.system+' &middot; '+entry.type)+
         '<h2>'+escapeHtml(entry.title)+'</h2>'+
         '<p class="meta">'+(authors!=='Unknown Authors'?'&mdash; '+escapeHtml(authors)+' &middot; ':'')+ (entry.journal||'')+'</p>'+
-        '<div class="reader-actions">'+doiHTML+'</div>'+
+        '<div class="reader-actions">'+doiHTML+bookmarkBtnHTML(bmRef)+exportPaperBtnHTML(entry)+'</div>'+
         pearlBoxHTML+
         collapsible+
         evidenceHTML;
+      katexify(body);
     }})
     .catch(function(){{
       body.innerHTML = '<div class="reader-loading"><p>&#10060; Network error.</p></div>';
@@ -1694,13 +2405,29 @@ function renderSearchResults(qRaw){{
         || (t.one_liner||'').toLowerCase().indexOf(q)!==-1
         || (t.specialty||'').toLowerCase().indexOf(q)!==-1;
   }}).slice(0,5);
-  var total = pMatches.length + plMatches.length + ctMatches.length + esMatches.length;
+  var fcMatches = [];
+  var theoryCardsSearched = 0;
+  allFlashcardDecks.forEach(function(d){{
+    d.cards.forEach(function(c){{
+      var hay = (c.subtopic+' '+(c.front||'')+' '+(c.back||'')+' '+(c.tags||[]).join(' ')+' '+d.specialty+' '+d.title).toLowerCase();
+      if(hay.indexOf(q)!==-1 && theoryCardsSearched<6){{
+        theoryCardsSearched++;
+        fcMatches.push({{cardId: c.id, deckId: d.id, label: (c.front||c.subtopic||c.id).substring(0,90), system: d.specialty}});
+      }}
+    }});
+  }});
+  var ntMatches = THEORY_NOTES.filter(function(n){{
+    return (n.title+' '+n.md).toLowerCase().indexOf(q)!==-1;
+  }}).slice(0,5);
+  var total = pMatches.length + plMatches.length + ctMatches.length + esMatches.length + fcMatches.length + ntMatches.length;
   if(!total){{ box.innerHTML = '<div class="search-empty">No results for &ldquo;'+qRaw+'&rdquo;.</div>'; return; }}
   var html = '';
   if(pMatches.length) html += '<div class="search-group-label">Papers &amp; guidelines ('+pMatches.length+')</div>' + pMatches.map(function(p){{ return '<button class="search-result" data-open-paper="'+p.id+'" data-close-search>'+escapeHtml(p.title)+'</button>'; }}).join('');
   if(plMatches.length) html += '<div class="search-group-label">Pearls ('+plMatches.length+')</div>' + plMatches.map(function(p){{ return '<button class="search-result" data-open-pearl="'+p.id+'" data-close-search>'+escapeHtml((p.pearl||'').substring(0,80))+'</button>'; }}).join('');
   if(ctMatches.length) html += '<div class="search-group-label">Core Critical Care Trials ('+ctMatches.length+')</div>' + ctMatches.map(function(t){{ return '<button class="search-result" data-open-condensed="'+t.system+'/'+t.name+'" data-close-search>'+escapeHtml(t.trial_name)+'</button>'; }}).join('');
   if(esMatches.length) html += '<div class="search-group-label">ESBICM Landmark Trials ('+esMatches.length+')</div>' + esMatches.map(function(t){{ return '<button class="search-result" data-open-trial="'+t.slug+'" data-close-search>'+escapeHtml(t.trial_name||'')+' &middot; '+escapeHtml(t.specialty||'')+'</button>'; }}).join('');
+  if(fcMatches.length) html += '<div class="search-group-label">Flashcards ('+fcMatches.length+')</div>' + fcMatches.map(function(f){{ return '<button class="search-result" data-theory-card="'+f.cardId+'" data-close-search>'+escapeHtml(f.label)+' &middot; '+escapeHtml(f.system)+'</button>'; }}).join('');
+  if(ntMatches.length) html += '<div class="search-group-label">Theory Topics ('+ntMatches.length+')</div>' + ntMatches.map(function(n){{ return '<button class="search-result" data-theory-note="'+escapeHtml(n.id)+'" data-close-search>'+escapeHtml(n.title)+'</button>'; }}).join('');
   box.innerHTML = html;
 }}
 
@@ -1867,6 +2594,7 @@ function openTrialDetail(slug, list, idx){{
   showView('trial-detail');
   _currentTrialList = list || [];
   _currentTrialIdx = typeof idx === 'number' ? idx : -1;
+  _currentTrialSlug = slug || '';
 
   var body = document.getElementById('trialDetailBody');
   body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--ink-muted)">Loading&hellip;</div>';
@@ -1900,6 +2628,8 @@ function renderTrialDetailHTML(data, body){{
     if(doiUrl && doiUrl!=='#') html += ' &middot; <a href="'+doiUrl+'" target="_blank" rel="noopener" style="color:var(--accent)">&#128279; DOI</a>';
   }}
   html += '</div>';
+  registerBookmarkMeta('trial:'+_currentTrialSlug, {{kind: 'trial', title: data.trial_name || data.trial_title || '', system: data.specialty || 'General', type: data.trial_type || '', locator: {{slug: _currentTrialSlug}}}});
+  html += '<div class="reader-actions" style="margin-top:10px">'+bookmarkBtnHTML('trial:'+_currentTrialSlug)+'</div>';
 
   // Meta strip
   html += '<div class="trial-meta-strip">';
@@ -1947,6 +2677,7 @@ function renderTrialDetailHTML(data, body){{
   html += '</div>';
 
   body.innerHTML = html;
+  katexify(body);
 }}
 
 function preprocessTrialContent(text){{
@@ -2084,6 +2815,7 @@ function renderCondensedSystem(name){{
 
 function openCondensedTrialDetail(system, name){{
   showView('condensed-detail');
+  _currentCondensedRef = 'condensed:' + system + ':' + name;
   var body = document.getElementById('condensedDetailBody');
   body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--ink-muted)">Loading&hellip;</div>';
   document.getElementById('condensedDetailBackBtn').onclick = function(){{ renderCondensedSystem(system); }};
@@ -2109,6 +2841,11 @@ function renderCondensedDetailHTML(data, body){{
     if(doiUrl && doiUrl!=='#') html += ' &middot; <a href="'+doiUrl+'" target="_blank" rel="noopener" style="color:var(--accent)">&#128279; DOI</a>';
   }}
   html += '</div>';
+  var cparts = String(_currentCondensedRef).split(':');
+  var cSys = cparts[1] || 'General';
+  var cName = cparts[2] || '';
+  registerBookmarkMeta(_currentCondensedRef, {{kind: 'condensed', title: data.trial_name || '', system: cSys, type: data.trial_type || '', locator: {{system: cSys, name: cName}}}});
+  html += '<div class="reader-actions" style="margin-top:10px">'+bookmarkBtnHTML(_currentCondensedRef)+'</div>';
 
   // Meta strip
   html += '<div class="trial-meta-strip">';
@@ -2249,6 +2986,1060 @@ function renderCondensedDetailHTML(data, body){{
   }});
 
   body.innerHTML = html;
+  katexify(body);
+}}
+
+// =====================================================================
+// THEORY FLASHCARDS
+// =====================================================================
+function _theorySpecVar(spec){{ return THEORY_SPEC_VAR[spec] || '--spec-other'; }}
+function _theoryPill(spec, label){{
+  var v = _theorySpecVar(spec);
+  return '<span class="pill" style="background:color-mix(in srgb, var('+v+') 18%, transparent); color:var('+v+')"><span class="dot" style="background:var('+v+')"></span>'+escapeHtml(label)+'</span>';
+}}
+function _bmEnabled(){{ return USER_IS_ADMIN || USER_FEATURES['bookmarks']; }}
+function _savedCardRefs(deckId){{
+    // Bookmark refs are flashcard:<uuid>; match via the locator.deck stored on save
+  return Object.keys(_bookmarks.items || {{}}).filter(function(r){{
+    var it = _bookmarks.items[r];
+    return it && it.locator && it.locator.deck === deckId;
+  }});
+}}
+function theoryCardRef(deckId, cardId){{ return 'flashcard:'+cardId; }}
+function theoryDeckFromCardId(cardId){{
+  for(var i=0;i<allFlashcardDecks.length;i++){{
+    for(var j=0;j<allFlashcardDecks[i].cards.length;j++){{
+      if(allFlashcardDecks[i].cards[j].id === cardId) return {{deck: allFlashcardDecks[i], idx: j}};
+    }}
+  }}
+  return null;
+}}
+
+// ---- Theory navigation helpers ----
+function _theoryViewActive(){{ return !!(document.getElementById('view-theory') && document.getElementById('view-theory').classList.contains('active')); }}
+function _theoryStudyVisible(){{ var el = document.getElementById('theoryStudy'); return !!(el && el.style.display!=='none'); }}
+
+function theoryReset(){{
+  _currentDeck = null;
+  _currentTheoryNote = null;
+  _theoryListCollapsed = false;
+  _theoryStudyFromList = false;
+  _notesActiveSpecs = new Set();
+  _notesActiveSubtopic = null;
+  var st = document.getElementById('theoryStudy'); if(st) st.style.display='none';
+  var cl = document.getElementById('theoryCardList'); if(cl) cl.style.display='none';
+  var br = document.getElementById('theoryBrowser'); if(br) br.style.display='';
+  var rd = document.getElementById('theoryNoteReader'); if(rd){{ rd.style.display='none'; rd.innerHTML=''; }}
+  var nl = document.getElementById('theoryNotesList'); if(nl) nl.style.display='';
+  var nc = document.getElementById('theoryNotesCount'); if(nc) nc.style.display='';
+  var sr = document.getElementById('theoryNotesSearchRow'); if(sr) sr.style.display='';
+  var sc = document.getElementById('theoryNotesChips'); if(sc) sc.style.display='';
+}}
+
+function _focusCrumb(){{
+  var bar = document.getElementById('theoryCrumbs');
+  if(!bar) return;
+  var t = bar.querySelector('button.crumb-current') || bar.querySelector('button[data-crumb]');
+  if(t && t.focus){{ try{{ t.focus({{preventScroll:true}}); }} catch(e){{ t.focus(); }} }}
+}}
+
+function renderTheoryCrumbs(){{
+  var bar = document.getElementById('theoryCrumbs');
+  if(!bar) return;
+  if(!_theoryMode){{ bar.style.display='none'; bar.innerHTML=''; return; }}
+  var parts = ['<button class="crumb" data-crumb="0" title="Back to all theory">All theory</button>'];
+  if(_theoryMode==='notes'){{
+    parts.push('<span class="crumb-sep">&#8250;</span><button class="crumb'+( _currentTheoryNote?'':' crumb-current')+'" data-crumb="1" title="Back to notes list">Theory Topics</button>');
+    if(_currentTheoryNote){{
+      parts.push('<span class="crumb-sep">&#8250;</span><span class="crumb crumb-current crumb-title" title="'+escapeHtml(_currentTheoryNote.title)+'">'+escapeHtml(_currentTheoryNote.title)+'</span>');
+    }}
+  }} else {{
+    parts.push('<span class="crumb-sep">&#8250;</span><button class="crumb'+( _currentDeck?'':' crumb-current')+'" data-crumb="1" title="Back to all decks">Flashcards</button>');
+    if(_currentDeck){{
+      var studying = _theoryStudyVisible();
+      parts.push('<span class="crumb-sep">&#8250;</span><button class="crumb'+( studying?'':' crumb-current')+'" data-crumb="2" title="Card list">'+escapeHtml(_currentDeck.title)+'</button>');
+      if(studying){{
+        var posIdx = _theoryCardOrder.indexOf(_currentCardIdx); if(posIdx===-1) posIdx = 0;
+        parts.push('<span class="crumb-sep">&#8250;</span><span class="crumb crumb-current">Card '+(posIdx+1)+' of '+_theoryCardOrder.length+'</span>');
+      }}
+    }}
+  }}
+  bar.innerHTML = parts.join('');
+  bar.style.display = 'flex';
+}}
+
+function theoryGoTo(level){{
+  if(_theoryMode==='notes'){{
+    if(_currentTheoryNote && level<=1){{ theoryNotesBack(); return; }}
+    if(level<=0){{ theoryBackToHero(); }}
+    return;
+  }}
+  if(level<=0){{ theoryBackToHero(); return; }}
+  if(level===1){{ theoryBackToBrowser(); return; }}
+  if(level===2 && _currentDeck && _theoryStudyVisible()){{ theoryStudyToList(); }}
+}}
+
+function theoryStepBackFromStudy(){{
+  if(_theoryStudyFromList && _currentDeck) theoryStudyToList();
+  else theoryBackToBrowser();
+}}
+
+function _theoryHistoryURL(){{
+  if(_theoryMode==='notes'){{
+    var q = [];
+    q.push('theory=notes');
+    _notesActiveSpecs.forEach(function(s){{ q.push('nspec='+encodeURIComponent(s)); }});
+    if(_notesActiveSubtopic) q.push('nsub='+encodeURIComponent(_notesActiveSubtopic));
+    if(_notesSavedOnly) q.push('saved=1');
+    if(_currentTheoryNote) q.push('note='+encodeURIComponent(_currentTheoryNote.id));
+    else {{
+      var nq = (document.getElementById('theoryNotesSearch').value||'').trim();
+      if(nq) q.push('q='+encodeURIComponent(nq));
+    }}
+    return window.location.pathname+'?'+q.join('&');
+  }}
+  if(_theoryMode==='flashcards'){{
+    var q = ['theory=flashcards'];
+    if(_theorySavedOnly) q.push('saved=1');
+    if(_currentDeck){{
+      q.push('system='+encodeURIComponent(_currentDeck.specialty));
+      if(_theoryActiveSubtopic) q.push('subtopic='+encodeURIComponent(_theoryActiveSubtopic));
+      if(_theoryStudyVisible()){{
+        var cur = _currentDeck.cards[_currentCardIdx];
+        if(cur && cur.id) q.push('card='+encodeURIComponent(cur.id));
+      }} else {{
+        q.push('list=1');
+        q.push('deck='+encodeURIComponent(_currentDeck.id));
+      }}
+    }} else {{
+      if(_theoryActiveSpecs.size===1) q.push('system='+encodeURIComponent(Array.from(_theoryActiveSpecs)[0]));
+      if(_theoryActiveSubtopic) q.push('subtopic='+encodeURIComponent(_theoryActiveSubtopic));
+      var dq = (document.getElementById('theorySearch').value||'').trim();
+      if(dq) q.push('q='+encodeURIComponent(dq));
+    }}
+    return window.location.pathname+'?'+q.join('&');
+  }}
+  return null;
+}}
+
+function _theoryPush(){{
+  if(_restoring) return;
+  var u = _theoryHistoryURL();
+  history.pushState({{t:1}}, '', u || window.location.pathname);
+}}
+
+function _theoryReplace(){{
+  if(_restoring) return;
+  var u = _theoryHistoryURL();
+  history.replaceState({{t:1}}, '', u || window.location.pathname);
+}}
+
+function _applyTheoryDeepLink(params){{
+  theoryReset();
+  var theoryMode = params.get('theory');
+  if(!theoryMode){{ renderTheoryPane(null); return; }}
+  if(theoryMode==='notes'){{
+    var nq = params.get('q');
+    if(nq!=null) document.getElementById('theoryNotesSearch').value = nq;
+    _notesSavedOnly = params.get('saved')==='1';
+    _notesActiveSpecs = new Set((params.getAll('nspec')||[]).filter(Boolean));
+    _notesActiveSubtopic = params.get('nsub');
+    var nid = params.get('note');
+    renderTheoryPane('notes');
+    if(nid) openTheoryNote(nid);
+    return;
+  }}
+  if(theoryMode==='flashcards'){{
+    var sys = params.get('system');
+    var sub = params.get('subtopic');
+    var cid = params.get('card');
+    var dck = params.get('deck');
+    var dq = params.get('q');
+    if(dq!=null) document.getElementById('theorySearch').value = dq;
+    _theorySavedOnly = params.get('saved')==='1';
+    _theoryActiveSubtopic = sub || null;
+    _theoryActiveSpecs = sys
+      ? new Set([sys])
+      : new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }}));
+    renderTheoryPane('flashcards');
+    if(dck){{
+      var dhit = allFlashcardDecks.find(function(d){{ return d.id===dck; }});
+      if(dhit){{
+        if(params.get('list')==='1') openTheoryCardList(dhit.id);
+        else openTheoryDeck(dhit.id, 0);
+      }}
+      return;
+    }}
+    if(params.get('list')==='1' && sys && sub){{
+      var lhit = allFlashcardDecks.find(function(d){{
+        return d.id.toLowerCase() === (sys+'/'+sub).toLowerCase();
+      }});
+      if(lhit) openTheoryCardList(lhit.id);
+      return;
+    }}
+    if(cid){{
+      var tRef = theoryDeckFromCardId(cid);
+      if(tRef){{
+        _theoryActiveSpecs.add(tRef.deck.specialty);
+        openTheoryDeck(tRef.deck.id, tRef.idx);
+      }}
+      return;
+    }}
+    if(sub && sys){{
+      var hit = allFlashcardDecks.find(function(d){{
+        return d.id.toLowerCase() === (sys+'/'+sub).toLowerCase();
+      }});
+      if(hit) openTheoryDeck(hit.id, 0);
+    }}
+  }}
+}}
+
+function katexify(root){{
+  // Render LaTeX delimiters ($$...$$, \\\\(...\\\\), \\\\[...\\\\]) inside a container.
+  // Single-$ is intentionally NOT enabled (currency amounts appear in pearls/notes).
+  if(!root || typeof renderMathInElement !== 'function') return;
+  try {{
+    renderMathInElement(root, {{
+      delimiters:[
+        {{left:'$$', right:'$$', display:true}},
+        {{left:'\\\\(', right:'\\\\)', display:false}},
+        {{left:'\\\\[', right:'\\\\]', display:true}}
+      ],
+      throwOnError:false,
+      strict:'ignore'
+    }});
+  }} catch(e){{}}
+}}
+
+// ---- Theory Topics (markdown notes) ----
+function _theoryFilteredNotes(){{
+  var q = (document.getElementById('theoryNotesSearch').value||'').toLowerCase().trim();
+  return THEORY_NOTES.filter(function(n){{
+    if(_notesSavedOnly && !(_bookmarks.items && _bookmarks.items['note:'+n.id])) return false;
+    if(_notesActiveSpecs.size && !_notesActiveSpecs.has(n.system)) return false;
+    if(_notesActiveSubtopic && n.subtopic!==_notesActiveSubtopic) return false;
+if(!q) return true;
+    return (n.title+' '+n.md).toLowerCase().indexOf(q)!==-1;
+  }});
+}}
+
+function theoryNoteNav(delta){{
+  if(!_currentTheoryNote) return;
+  var order = _theoryFilteredNotes();
+  var idx = -1;
+  for(var i=0;i<order.length;i++){{
+    if(order[i].id===_currentTheoryNote.id){{ idx=i; break; }}
+  }}
+  var ni = idx+delta;
+  if(ni<0 || ni>=order.length) return;
+  openTheoryNote(order[ni].id, true);
+}}
+
+function renderTheoryNotes(){{
+  var q = (document.getElementById('theoryNotesSearch').value||'').toLowerCase().trim();
+  var list = document.getElementById('theoryNotesList');
+  var countEl = document.getElementById('theoryNotesCount');
+  var box = document.getElementById('theoryNotesChips');
+if(box){{
+    var savedCount = Object.keys(_bookmarks.items || {{}}).filter(function(r){{ return r.indexOf('note:')===0; }}).length;
+    var specSet = {{}}, subSet = {{}};
+    THEORY_NOTES.forEach(function(n){{ specSet[n.system]=(specSet[n.system]||0)+1; subSet[n.system+'\u0001'+n.subtopic]=(subSet[n.system+'\u0001'+n.subtopic]||0)+1; }});
+    var specChips = Object.keys(specSet).sort().map(function(s){{
+      return '<button class="chip'+( _notesActiveSpecs.has(s)?' active':'')+'" data-notes-spec="'+escapeHtml(s)+'" style="--chip-color:var(--accent)">'+escapeHtml(s)+' <span class="chip-count">'+specSet[s]+'</span></button>';
+    }}).join('');
+    var subChips = '';
+    if(_notesActiveSpecs.size===1){{
+      var onlySpec = Array.from(_notesActiveSpecs)[0];
+      subChips = Object.keys(subSet).filter(function(k){{ return k.indexOf(onlySpec+'\u0001')===0; }}).sort().map(function(k){{
+        var sub = k.split('\u0001')[1];
+        return '<button class="chip'+( _notesActiveSubtopic===sub?' active':'')+'" data-notes-sub="'+escapeHtml(sub)+'" style="--chip-color:var(--accent)">'+escapeHtml(sub)+' <span class="chip-count">'+subSet[k]+'</span></button>';
+      }}).join('');
+    }}
+    var anyActive = _notesActiveSpecs.size>0 || _notesActiveSubtopic || _notesSavedOnly;
+    box.innerHTML = specChips + subChips +
+      '<button class="chip'+( _notesSavedOnly?' active':'')+'" data-notes-saved-only style="--chip-color:var(--accent)">&#128278; Saved ('+savedCount+')</button>'+
+      (anyActive ? '<button class="chip" data-notes-clear-all style="--chip-color:var(--ink-muted)">&#10005; Clear</button>' : '');
+  }}
+  if(!THEORY_NOTES.length){{
+    list.innerHTML = '<div class="bm-empty"><span class="icon">&#128214;</span><p>No theory notes yet. Drop markdown files into <span class="mono">output_files/Theory MDs/</span>.</p></div>';
+    if(countEl) countEl.textContent = '';
+    return;
+  }}
+  var filtered = _theoryFilteredNotes();
+  list.innerHTML = filtered.map(function(n){{
+    var saved = !!(_bookmarks.items && _bookmarks.items['note:'+n.id]);
+    return '<button class="doc-card" data-theory-note="'+escapeHtml(n.id)+'">'+
+      '<div class="doc-stripe" style="background:var(--accent)"></div>'+
+      '<div class="doc-inner">'+
+        '<div class="doc-top"><span class="type-tag">'+escapeHtml(n.system||'Note')+'</span>'+(n.subtopic && n.subtopic!=='General' ? '<span class="theory-sub-tag">'+escapeHtml(n.subtopic)+'</span>':'')+(saved?'<span class="theory-saved-badge">&#128278; saved</span>':'')+'</div>'+
+        '<p class="doc-title">'+escapeHtml(n.title)+'</p>'+
+        '<p class="doc-snippet">'+escapeHtml(n.md.replace(/\s+/g,' ').substring(0,110))+'</p>'+
+      '</div>'+
+    '</button>';
+  }}).join('');
+  if(countEl) countEl.textContent = filtered.length ? 'Showing '+filtered.length+' of '+THEORY_NOTES.length+' notes' : '';
+}}
+
+function _theoryMarkdownHTML(md){{
+  // Degrade footnote syntax: drop [^n] references and [^n]: definition lines
+  var out = String(md||'');
+  out = out.replace(/^\[\^[^\]]+\]:\s*.*$/gm, '');
+  out = out.replace(/\[\^[^\]]+\]/g, '');
+  try {{
+    var html = marked.parse(out);
+    html = html.replace(/<table>[\s\S]*?<\/table>/g, function(t){{
+      return '<button class="theory-table-expand" data-theory-table-open type="button"><span class="tt-expand-icon">&#8693;</span> Full view</button>'+
+             '<div class="theory-table-wrap" data-theory-table-open>'+t+'</div>';
+    }});
+    return html;
+  }} catch(e){{ return '<pre>'+escapeHtml(out)+'</pre>'; }}
+}}
+
+function openTheoryNote(noteId, fromReader){{
+  var note = THEORY_NOTES.find(function(n){{ return n.id===noteId; }});
+  if(!note) return;
+  _currentTheoryNote = note;
+  renderTheoryPane('notes');
+  document.getElementById('theoryNotesSearchRow').style.display = 'none';
+  document.getElementById('theoryNotesChips').style.display = 'none';
+  document.getElementById('theoryNotesList').style.display = 'none';
+  document.getElementById('theoryNotesCount').style.display = 'none';
+  var ref = 'note:'+note.id;
+  registerBookmarkMeta(ref, {{kind:'note', title: note.title, system: 'Theory Topics', type: 'Note', locator: {{noteId: note.id}}}});
+  var saveBtn = _bmEnabled() ? bookmarkBtnHTML(ref) : '';
+  var reader = document.getElementById('theoryNoteReader');
+  reader.style.display = 'block';
+  var order = _theoryFilteredNotes();
+  var idx = -1;
+  for(var i=0;i<order.length;i++){{ if(order[i].id===note.id){{ idx=i; break; }} }}
+  var prevBtn = idx>0 ? '<button class="btn nav-btn" data-theory-note-nav="-1" title="Previous note">&#9664; Prev</button>' : '';
+  var nextBtn = (idx>=0 && idx<order.length-1) ? '<button class="btn nav-btn" data-theory-note-nav="1" title="Next note">Next &#9654;</button>' : '';
+  reader.innerHTML =
+    '<div class="theory-card-head" style="margin-bottom:14px">'+
+      _theoryPill(note.system||'General', note.title)+
+      (note.subtopic && note.subtopic!=='General' ? '<span class="theory-sub-tag" style="align-self:center">'+escapeHtml(note.subtopic)+'</span>' : '')+
+      prevBtn+nextBtn+
+      exportNoteBtnHTML(note)+
+      '<span style="flex:1"></span>'+
+      saveBtn+
+      theoryFontChipsHTML('notes')+
+    '</div>'+
+    '<article class="theory-note" id="theoryNoteArticle">'+_theoryMarkdownHTML(note.md)+'</article>';
+  applyTheoryFont('notes');
+  katexify(document.getElementById('theoryNoteArticle'));
+  renderTheoryCrumbs();
+  if(fromReader) _theoryReplace(); else _theoryPush();
+  _focusCrumb();
+  window.scrollTo({{top:0, behavior:'instant'}});
+}}
+
+function theoryNotesBack(){{
+  document.getElementById('theoryNoteReader').style.display = 'none';
+  document.getElementById('theoryNoteReader').innerHTML = '';
+  document.getElementById('theoryNotesList').style.display = '';
+  document.getElementById('theoryNotesCount').style.display = '';
+  document.getElementById('theoryNotesSearchRow').style.display = '';
+  document.getElementById('theoryNotesChips').style.display = '';
+  _currentTheoryNote = null;
+  renderTheoryNotes();
+  renderTheoryCrumbs();
+  _theoryPush();
+  _focusCrumb();
+  window.scrollTo({{top:0, behavior:'instant'}});
+}}
+
+/* ---- Theory table full-view overlay ---- */
+function openTheoryTableOverlay(src){{
+  var table = null;
+  if(src){{
+    var wrap = (typeof src.closest==='function' && src.closest('.theory-table-wrap')) ||
+      (src.nextElementSibling && src.nextElementSibling.classList && src.nextElementSibling.classList.contains('theory-table-wrap') ? src.nextElementSibling : null);
+    if(wrap) table = wrap.querySelector('table');
+  }}
+  if(!table && src && src.tagName==='TABLE') table = src;
+  if(!table) return;
+  var title = (_currentTheoryNote && _currentTheoryNote.title) ? _currentTheoryNote.title : 'Table';
+  var inner = document.getElementById('theoryTableFitInner');
+  inner.innerHTML = '';
+  inner.appendChild(table.cloneNode(true));
+  document.getElementById('theoryTableOverlayTitle').textContent = title + ' \u00B7 Table';
+  var scrollEl = document.getElementById('theoryTableOverlayScroll');
+  scrollEl.scrollTop = 0; scrollEl.scrollLeft = 0;
+  _theoryTableFitActive = false;
+  scrollEl.classList.remove('fit');
+  inner.style.zoom = '';
+  var fitBtn = document.querySelector('[data-theory-table-fit]');
+  if(fitBtn) fitBtn.textContent = 'Fit width';
+  document.getElementById('theoryTableOverlay').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  _theoryTableOverlayOpen = true;
+  var ov = document.getElementById('theoryTableOverlay');
+  var fsReq = ov.requestFullscreen || ov.webkitRequestFullscreen;
+  if(fsReq){{
+    var p = fsReq.call(ov);
+    if(p && p.catch) p.catch(function(){{}});
+  }}
+}}
+
+function closeTheoryTableOverlay(){{
+  if(!_theoryTableOverlayOpen) return;
+  if(document.fullscreenElement || document.webkitFullscreenElement){{
+    var p = (document.exitFullscreen || document.webkitExitFullscreen).call(document);
+    if(p && p.catch) p.catch(finishCloseTheoryTableOverlay);
+    return;
+  }}
+  finishCloseTheoryTableOverlay();
+}}
+
+function finishCloseTheoryTableOverlay(){{
+  document.getElementById('theoryTableOverlay').style.display = 'none';
+  document.getElementById('theoryTableFitInner').innerHTML = '';
+  document.body.style.overflow = '';
+  _theoryTableOverlayOpen = false;
+  _theoryTableFitActive = false;
+}}
+
+function theoryTableToggleFit(){{
+  if(!_theoryTableOverlayOpen) return;
+  _theoryTableFitActive = !_theoryTableFitActive;
+  var scrollEl = document.getElementById('theoryTableOverlayScroll');
+  var inner = document.getElementById('theoryTableFitInner');
+  var btn = document.querySelector('[data-theory-table-fit]');
+  if(_theoryTableFitActive){{
+    scrollEl.classList.add('fit');
+    if(btn) btn.textContent = 'Fit: off';
+    theoryTableApplyFit();
+  }} else {{
+    scrollEl.classList.remove('fit');
+    inner.style.zoom = '';
+    if(btn) btn.textContent = 'Fit width';
+  }}
+}}
+
+function theoryTableApplyFit(){{
+  if(!_theoryTableFitActive) return;
+  var scrollEl = document.getElementById('theoryTableOverlayScroll');
+  var inner = document.getElementById('theoryTableFitInner');
+  var table = inner.querySelector('table');
+  if(!table) return;
+  var avail = scrollEl.clientWidth - 28;
+  var scale = Math.min(1, avail / (table.scrollWidth || 1));
+  inner.style.zoom = scale >= 1 ? '' : String(scale);
+}}
+
+document.addEventListener('fullscreenchange', function(){{
+  if(_theoryTableOverlayOpen && !document.fullscreenElement) finishCloseTheoryTableOverlay();
+}});
+document.addEventListener('webkitfullscreenchange', function(){{
+  if(_theoryTableOverlayOpen && !document.webkitFullscreenElement) finishCloseTheoryTableOverlay();
+}});
+window.addEventListener('resize', function(){{
+  if(_theoryTableOverlayOpen && _theoryTableFitActive) theoryTableApplyFit();
+}});
+
+function renderTheoryPane(mode){{
+  if(mode==='hero') mode = null;
+  _theoryMode = mode || null;
+  var hero = document.getElementById('theoryHero');
+  var notes = document.getElementById('theoryNotesPane');
+  var cards = document.getElementById('theoryFlashcardsPane');
+  if(!hero || !notes || !cards) return;
+  hero.style.display = _theoryMode ? 'none' : '';
+  notes.style.display = _theoryMode==='notes' ? '' : 'none';
+  cards.style.display = _theoryMode==='flashcards' ? '' : 'none';
+  if(_theoryMode==='notes'){{ renderTheoryNotes(); }}
+  if(_theoryMode==='flashcards'){{ renderTheoryChips(); renderTheoryDecks(); }}
+  renderTheoryCrumbs();
+}}
+
+function theoryBackToHero(){{
+  theoryReset();
+  renderTheoryPane(null);
+  renderTheoryCrumbs();
+  _theoryPush();
+  window.scrollTo({{top:0, behavior:'instant'}});
+}}
+
+function renderTheoryChips(){{
+  var box = document.getElementById('theoryChips');
+  if(!box) return;
+  if(_theoryActiveSpecs.size!==1) _theoryActiveSubtopic = null;
+  var counts = {{}};
+  allFlashcardDecks.forEach(function(d){{ counts[d.specialty] = (counts[d.specialty]||0)+1; }});
+  var html = Object.keys(counts).sort().map(function(s){{
+    var active = _theoryActiveSpecs.has(s);
+    return '<button class="chip '+(active?'active':'')+'" data-theory-chip="'+escapeHtml(s)+'" style="--chip-color:var('+_theorySpecVar(s)+')"><span class="dot" style="background:var('+_theorySpecVar(s)+')"></span>'+escapeHtml(s)+' ('+counts[s]+')</button>';
+  }}).join('');
+  var savedCount = Object.keys(_bookmarks.items || {{}}).filter(function(r){{ return r.indexOf('flashcard:')===0; }}).length;
+  html += '<button class="chip'+( _theorySavedOnly?' active':'')+'" data-theory-saved-only style="--chip-color:var(--accent)">&#128278; Saved ('+savedCount+')</button>';
+  box.innerHTML = html + '<button class="chip" data-theory-chip-reset>Reset</button><button class="chip" data-theory-chip-uncheck>Uncheck all</button>';
+  renderTheorySubtopicChips();
+}}
+
+function renderTheorySubtopicChips(){{
+  var box = document.getElementById('theorySubtopicChips');
+  if(!box) return;
+  if(_theoryActiveSpecs.size!==1){{
+    box.innerHTML = '';
+    return;
+  }}
+  var spec = Array.from(_theoryActiveSpecs)[0];
+  var subs = THEORY_SUBTOPIC_MAP[spec] || [];
+  if(!subs.length){{
+    box.innerHTML = '';
+    return;
+  }}
+  var deckCounts = {{}};
+  allFlashcardDecks.forEach(function(d){{
+    if(d.specialty!==spec) return;
+    (d.subtopics||[]).forEach(function(t){{ deckCounts[t] = (deckCounts[t]||0)+1; }});
+  }});
+  var html = '<span class="pearl-count" style="margin:0 6px 0 0;flex:0 0 auto">Subtopic:</span>';
+  html += subs.map(function(t){{
+    var active = _theoryActiveSubtopic===t;
+    return '<button class="chip'+(active?' active':'')+'" data-theory-subtopic="'+escapeHtml(t)+'" style="--chip-color:var('+_theorySpecVar(spec)+')">'+escapeHtml(t)+(deckCounts[t]?' ('+deckCounts[t]+')':'')+'</button>';
+  }}).join('');
+  if(_theoryActiveSubtopic) html += '<button class="chip" data-theory-subtopic-clear style="--chip-color:var(--ink-muted)">&#10005; Clear</button>';
+  box.innerHTML = html;
+}}
+
+function renderTheoryDecks(){{
+  var q = (document.getElementById('theorySearch').value||'').toLowerCase().trim();
+  var list = document.getElementById('theoryDeckList');
+  var countEl = document.getElementById('theoryCount');
+  if(!allFlashcardDecks.length){{
+    list.innerHTML = '<div class="bm-empty"><span class="icon">&#129504;</span><p>No flashcard decks yet. Drop files under <span class="mono">flashcards_input/{{Specialty}}/</span> (md = authored deck, pdf/txt/docx/html = raw material) and run <span class="mono">python flashcards.py</span>.</p></div>';
+    if(countEl) countEl.textContent = '';
+    return;
+  }}
+  var filtered = allFlashcardDecks.filter(function(d){{
+    if(!_theoryActiveSpecs.has(d.specialty)) return false;
+    var savedRefs = _savedCardRefs(d.id);
+    if(_theorySavedOnly && !savedRefs.length) return false;
+    if(_theoryActiveSubtopic && (d.subtopics||[]).indexOf(_theoryActiveSubtopic)===-1) return false;
+    if(q){{
+      var hay = (d.title+' '+d.specialty+' '+d.subtopics.join(' ')+' '+d.cards.map(function(c){{ return c.subtopic+' '+(c.front||'')+' '+(c.back||'')+' '+(c.tags||[]).join(' '); }}).join(' ')).toLowerCase();
+      if(hay.indexOf(q)===-1) return false;
+    }}
+    return true;
+  }});
+  var html = filtered.map(function(d){{
+    var savedRefs = _savedCardRefs(d.id);
+    var savedBadge = savedRefs.length ? '<span class="theory-saved-badge">&#128278; '+savedRefs.length+'</span>' : '';
+    var snip = (d.subtopics||[]).length ? (d.subtopics||[]).slice(0,4).join(' \u00B7 ') : d.cards.map(function(c){{ return c.subtopic; }}).slice(0,3).join(' \u00B7 ');
+    return '<button class="doc-card" data-theory-deck="'+escapeHtml(d.id)+'">'+
+      '<div class="doc-stripe" style="background:var('+_theorySpecVar(d.specialty)+')"></div>'+
+      '<div class="doc-inner">'+
+        '<div class="doc-top">'+_theoryPill(d.specialty, d.specialty)+'<span class="type-tag">'+d.cards.length+' card'+(d.cards.length===1?'':'s')+'</span>'+savedBadge+'</div>'+
+        '<p class="doc-title">'+escapeHtml(d.title)+'</p>'+
+        '<p class="doc-snippet">'+escapeHtml(snip)+'</p>'+
+      '</div>'+
+    '</button>';
+  }}).join('');
+  list.innerHTML = html || '<p style="color:var(--ink-muted);padding:20px 4px">No decks match these filters.</p>';
+  if(countEl) countEl.textContent = 'Showing '+filtered.length+' of '+allFlashcardDecks.length+' decks';
+}}
+
+function openTheoryDeck(deckId, cardIdxOrId, smooth){{
+  var deck = allFlashcardDecks.find(function(d){{ return d.id===deckId; }});
+  if(!deck) return;
+  _currentDeck = deck;
+  _theoryStudyFromList = false;
+  _theoryListCollapsed = false;
+  _theoryActiveSpecs.add(deck.specialty);
+  renderTheoryPane('flashcards');
+  _theoryCardOrder = _theoryActiveSubtopic
+    ? deck.cards.map(function(c, i){{ return (c.tags||[]).indexOf(_theoryActiveSubtopic)>-1 ? i : -1; }}).filter(function(i){{ return i>-1; }})
+    : deck.cards.map(function(c, i){{ return i; }});
+  if(!_theoryCardOrder.length) _theoryCardOrder = deck.cards.map(function(c, i){{ return i; }});
+  var start = 0;
+  if(typeof cardIdxOrId==='number') start = (cardIdxOrId>=0 && cardIdxOrId<deck.cards.length) ? cardIdxOrId : _theoryCardOrder[0];
+  else if(typeof cardIdxOrId==='string'){{
+    var byId = deck.cards.findIndex(function(c){{ return c.id===cardIdxOrId; }});
+    start = byId>-1 ? byId : _theoryCardOrder[0];
+  }} else {{
+    start = _theoryCardOrder[0];
+  }}
+  if(_theoryActiveSubtopic && _theoryCardOrder.indexOf(start)===-1) start = _theoryCardOrder[0];
+  _currentCardIdx = start;
+  _theoryFlipped = false;
+  document.getElementById('theoryBrowser').style.display = 'none';
+  document.getElementById('theoryStudy').style.display = 'block';
+  renderTheoryCard();
+  if(smooth) theoryScrollToStudy();
+  _theoryPush();
+  _focusCrumb();
+}}
+
+function theoryBackToBrowser(){{
+  _currentDeck = null;
+  _theoryListCollapsed = false;
+  _theoryStudyFromList = false;
+  document.getElementById('theoryStudy').style.display = 'none';
+  document.getElementById('theoryCardList').style.display = 'none';
+  document.getElementById('theoryBrowser').style.display = '';
+  renderTheoryDecks();
+  renderTheoryCrumbs();
+  _theoryPush();
+  _focusCrumb();
+  window.scrollTo({{top:0, behavior:'instant'}});
+}}
+
+function theoryStudyToList(){{
+  if(!_currentDeck) return;
+  _theoryListCollapsed = false;
+  renderTheoryCardList();
+  document.getElementById('theoryStudy').style.display = 'none';
+  document.getElementById('theoryCardList').style.display = 'block';
+  renderTheoryCrumbs();
+  _theoryPush();
+  _focusCrumb();
+  window.scrollTo({{top:0, behavior:'instant'}});
+}}
+
+function openTheoryCardList(deckId){{
+  var deck = allFlashcardDecks.find(function(d){{ return d.id===deckId; }});
+  if(!deck) return;
+  renderTheoryPane('flashcards');
+  _currentDeck = deck;
+  _theoryStudyFromList = false;
+  _theoryListCollapsed = false;
+  _theoryActiveSpecs.add(deck.specialty);
+  document.getElementById('theoryBrowser').style.display = 'none';
+  document.getElementById('theoryStudy').style.display = 'none';
+  document.getElementById('theoryCardList').style.display = 'block';
+  renderTheoryCardList();
+  renderTheoryCrumbs();
+  _theoryPush();
+  _focusCrumb();
+}}
+
+function renderTheoryCardList(){{
+  var deck = _currentDeck;
+  if(!deck) return;
+  var filtered = _theoryActiveSubtopic
+    ? deck.cards.filter(function(c){{ return (c.tags||[]).indexOf(_theoryActiveSubtopic)>-1; }})
+    : deck.cards;
+  if(!filtered.length) filtered = deck.cards;
+  var collapsed = !!_theoryListCollapsed;
+  var toggleLabel = collapsed
+    ? filtered.length+' card'+(filtered.length===1?'':'s')+' &middot; show list'
+    : 'Collapse list';
+  var toggleCaret = collapsed ? '&#9660;' : '&#9650;';
+  document.getElementById('theoryCardListHead').innerHTML =
+    _theoryPill(deck.specialty, deck.title)+
+    '<button class="theory-list-toggle" data-theory-list-toggle title="'+(collapsed?'Show the card list':'Hide the card list')+'"><span class="theory-toggle-caret">'+toggleCaret+'</span><span>'+toggleLabel+'</span></button>';
+  var countEl = document.getElementById('theoryCardListCount');
+  countEl.style.display = collapsed ? 'none' : '';
+  countEl.textContent = filtered.length===deck.cards.length
+    ? 'Showing '+filtered.length+' card'+(filtered.length===1?'':'s')
+    : 'Showing '+filtered.length+' of '+deck.cards.length+' cards (filtered to '+escapeHtml(_theoryActiveSubtopic)+')';
+  var body = document.getElementById('theoryCardListBody');
+  body.style.display = collapsed ? 'none' : '';
+  body.innerHTML = filtered.map(function(c){{
+    var saved = !!(_bookmarks.items && _bookmarks.items[theoryCardRef(deck.id, c.id)]);
+    return '<button class="pearl-row" data-theory-card-open="'+c.id+'">'+
+      '<span class="dot" style="background:var('+_theorySpecVar(deck.specialty)+')"></span>'+
+      '<span class="txt">'+escapeHtml((c.front||c.subtopic||'Card').substring(0,160))+'<span class="src">'+(c.tags||[]).join(' \u00B7 ')+(saved?' \u00B7 saved':'')+'</span></span>'+
+    '</button>';
+  }}).join('') || '<p style="color:var(--ink-muted);padding:20px 4px">No cards match this subtopic.</p>';
+  renderTheoryCrumbs();
+}}
+
+function theoryScrollToStudy(){{
+  var st = document.getElementById('theoryStudy');
+  if(st) st.scrollIntoView({{block:'start', behavior:'smooth'}});
+}}
+
+function theoryFontSize(scope){{
+  var k = 'hackccm_theoryFont_'+scope;
+  try {{
+    var v = parseFloat(localStorage.getItem(k)||'');
+    if(v && v>=0.7 && v<=2) return v;
+  }} catch(e){{}}
+  return scope==='cards' ? 0.94 : 1;
+}}
+
+function theoryFontChipsHTML(scope){{
+  var cur = theoryFontSize(scope);
+  var vals = scope==='cards' ? [0.85, 0.94, 1.15] : [0.85, 1, 1.2];
+  return vals.map(function(f){{
+    var label = f<0.94 ? 'A-' : (f>1.05 ? 'A+' : 'A');
+    return '<button class="theory-mode-chip'+(Math.abs(cur-f)<0.001?' active':'')+'" data-theory-font="'+scope+'" data-theory-font-val="'+f+'" title="Text size">'+label+'</button>';
+  }}).join('');
+}}
+
+function applyTheoryFont(scope){{
+  var v = theoryFontSize(scope);
+  if(scope==='notes'){{
+    var art = document.getElementById('theoryNoteArticle');
+    if(art) art.style.setProperty('--theory-note-fs', v+'rem');
+  }} else {{
+    var stage = document.getElementById('theoryCardStage');
+    if(stage) stage.style.setProperty('--theory-card-fs', v+'rem');
+  }}
+}}
+
+function theoryNav(delta){{
+  if(!_currentDeck) return;
+  var pos = _theoryCardOrder.indexOf(_currentCardIdx);
+  var nextPos = pos + delta;
+  if(nextPos<0 || nextPos>=_theoryCardOrder.length) return;
+  _currentCardIdx = _theoryCardOrder[nextPos];
+  _theoryFlipped = false;
+  renderTheoryCard();
+  _theoryReplace();
+}}
+
+function renderTheoryCard(){{
+  if(!_currentDeck) return;
+  var deck = _currentDeck;
+  var posIdx = _theoryCardOrder.indexOf(_currentCardIdx);
+  if(posIdx===-1) posIdx = 0;
+  var card = deck.cards[_currentCardIdx];
+  var total = _theoryCardOrder.length;
+  var filtered = !!_theoryActiveSubtopic;
+  var ref = theoryCardRef(deck.id, card.id);
+
+  registerBookmarkMeta(ref, {{kind:'flashcard', title: card.subtopic || deck.title, system: deck.specialty, type: 'Flashcard', locator: {{deck: deck.id, card: card.id, cardIdx: _currentCardIdx}}}});
+
+  var saveBtn = _bmEnabled() ? bookmarkBtnHTML(ref) : '';
+  var modeToggles = '<button class="theory-mode-chip'+( _theoryViewMode==='single'?' active':'')+'" data-theory-mode="single">Single face</button><button class="theory-mode-chip'+( _theoryViewMode==='flip'?' active':'')+'" data-theory-mode="flip">Flip card</button>';
+
+  document.getElementById('theoryStudyHead').innerHTML =
+    _theoryPill(deck.specialty, deck.title)+
+    '<span class="theory-card-progress">Card '+(posIdx+1)+' of '+total+(filtered?' (filtered)':'')+'</span>'+
+    '<button class="btn nav-btn" data-theory-list-open title="Show the card list">List &#9776;</button>'+
+    saveBtn;
+
+  var tagRow = (card.tags||[]).length ? card.tags.map(function(t){{
+    return '<span class="theory-tag-pill'+(filtered && t===_theoryActiveSubtopic?' hot':'')+'">'+escapeHtml(t)+'</span>';
+  }}).join('') : '';
+  if(filtered) tagRow += '<button class="theory-tag-pill" data-theory-tag-clear title="Clear subtopic filter">'+escapeHtml(_theoryActiveSubtopic)+' <span class="theory-tag-x">&#10005;</span></button>';
+  document.getElementById('theoryCardTags').innerHTML = tagRow;
+
+  var stage = document.getElementById('theoryCardStage');
+  var frontHTML = (card.front||'').trim() ? marked.parse(card.front) : '<h3>'+escapeHtml(card.subtopic)+'</h3>';
+  var backHTML = marked.parse(card.back||'');
+  if(_theoryViewMode==='flip'){{
+    stage.innerHTML =
+      '<div class="theory-card-wrap'+( _css3d?'':' no-3d')+'"><div class="theory-card-inner flip'+( _theoryFlipped?' flipped':'')+'" id="theoryFlipInner">'+
+        '<div class="theory-face front theory-card-content"><div class="theory-front-big">'+frontHTML+'</div><span class="flip-hint">tap to flip \u21C5</span></div>'+
+        '<div class="theory-face back theory-card-content">'+backHTML+'<span class="flip-hint">tap to flip \u21C5</span></div>'+
+      '</div></div>';
+  }} else {{
+    var frontText = (card.front||'').trim();
+    var qHTML;
+    if(!frontText){{
+      qHTML = '<h3 class="theory-card-question">'+escapeHtml(card.subtopic||deck.title)+'</h3>';
+    }} else {{
+      var qBody = marked.parse(frontText).trim().replace(/^<p>\s*/,'').replace(/\s*<\/p>$/,'');
+      var qBlock = /<(p|div|ul|ol|table|blockquote|h[1-6])\s*>/i.test(qBody);
+      qHTML = qBlock
+        ? '<div class="theory-card-question">'+qBody+'</div>'
+        : '<h3 class="theory-card-question">'+qBody+'</h3>';
+    }}
+    stage.innerHTML = qHTML + '<div class="theory-card-flat theory-card-content">'+backHTML+'</div>';
+  }}
+  katexify(stage);
+  applyTheoryFont('cards');
+
+  var prevBtn = '<button class="btn nav-btn"'+(posIdx===0?' disabled':'')+' data-theory-nav="-1">&#9664; Previous</button>';
+  var nextBtn = posIdx<total-1
+    ? '<button class="btn nav-btn" data-theory-nav="1">Next &#9654;</button>'
+    : '<button class="btn nav-btn" data-theory-done>Done &#10004;</button>';
+  document.getElementById('theoryCardNav').innerHTML = prevBtn + nextBtn + modeToggles + theoryFontChipsHTML('cards');
+
+  document.getElementById('theoryCardDots').innerHTML = _theoryCardOrder.map(function(ci, pi){{
+    var c = deck.cards[ci];
+    var saved = !!(_bookmarks.items && _bookmarks.items[theoryCardRef(deck.id, c.id)]);
+    return '<button class="theory-dot'+( pi===posIdx?' active':'')+( saved?' saved':'')+'" data-theory-dot="'+pi+'" title="Card '+(pi+1)+' of '+total+'"></button>';
+  }}).join('');
+  renderTheoryCrumbs();
+}}
+
+function theorySetViewMode(mode){{
+  _theoryViewMode = mode;
+  _theoryFlipped = false;
+  renderTheoryCard();
+}}
+
+// =====================================================================
+// BOOKMARKS
+// =====================================================================
+function registerBookmarkMeta(ref, meta){{ _bookmarkMeta[ref] = meta || {{}}; }}
+
+function bookmarkBtnHTML(ref, label){{
+  var active = !!(_bookmarks.items && _bookmarks.items[ref]);
+  return '<button class="icon-btn bookmark-btn'+(active?' active':'')+'" data-bookmark-toggle="'+escapeHtml(ref)+'" aria-label="'+(active?'Remove bookmark':'Add bookmark')+'" title="'+(active?'Remove bookmark':'Add bookmark')+'">'+(label||'&#128278;')+'</button>';
+}}
+
+function exportPaperBtnHTML(entry){{
+  var qs = 'kind=paper&file_name='+encodeURIComponent(entry.file_name||'')+'&system='+encodeURIComponent(entry.system||'General')+'&type='+encodeURIComponent(entry.type||'Other');
+  return '<button class="btn nav-btn" data-export-paper="'+escapeHtml(qs)+'" title="Open a printable version of this summary in a new window">&#128196; Export / PDF</button>';
+}}
+
+function exportNoteBtnHTML(note){{
+  var qs = 'kind=note&file_name='+encodeURIComponent(note.id||'')+'&title='+encodeURIComponent((note.title||'').substring(0,120));
+  return '<button class="btn nav-btn" data-export-note="'+escapeHtml(qs)+'" title="Open a printable version of this note in a new window">&#128196; Export / PDF</button>';
+}}
+
+function refreshBookmarkButtons(){{
+  document.querySelectorAll('[data-bookmark-toggle]').forEach(function(btn){{
+    var ref = btn.dataset.bookmarkToggle;
+    var active = !!(_bookmarks.items && _bookmarks.items[ref]);
+    btn.classList.toggle('active', active);
+    btn.title = active ? 'Remove bookmark' : 'Add bookmark';
+    btn.setAttribute('aria-label', active ? 'Remove bookmark' : 'Add bookmark');
+  }});
+}}
+
+function updateBookmarkCounts(){{
+  var n = Object.keys(_bookmarks.items || {{}}).length;
+  ['bookmarksTopCount','bookmarksDrawerCount'].forEach(function(id){{
+    var el = document.getElementById(id);
+    if(el){{ el.textContent = n; el.classList.toggle('zero', n===0); }}
+  }});
+  var c = document.getElementById('bookmarksCount');
+  if(c) c.textContent = n + ' saved';
+}}
+
+function loadBookmarks(){{
+  if(!USER_IS_ADMIN && !USER_FEATURES['bookmarks']) return;
+  fetch('/api/bookmarks').then(function(r){{ return r.json(); }}).then(function(data){{
+    if(data && data.items) _bookmarks = data;
+    else _bookmarks = {{items: {{}}, folders: {{}}}};
+    updateBookmarkCounts(); refreshBookmarkButtons();
+  }}).catch(function(){{}});
+}}
+
+function toggleBookmark(ref, btn){{
+  if(!_bookmarks.items) _bookmarks.items = {{}};
+  if(_bookmarks.items[ref]){{
+    fetch('/api/bookmarks?ref='+encodeURIComponent(ref), {{method:'DELETE'}}).then(function(r){{ return r.json(); }}).then(function(d){{
+      delete _bookmarks.items[ref];
+      updateBookmarkCounts(); refreshBookmarkButtons();
+      if(document.querySelector('.view.active').id==='view-bookmarks') renderBookmarks();
+      showToast('Bookmark removed');
+    }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+  }} else {{
+    var meta = _bookmarkMeta[ref] || {{}};
+    var payload = {{
+      ref: ref,
+      kind: meta.kind || 'paper',
+      title: meta.title || 'Untitled',
+      system: meta.system || 'General',
+      type: meta.type || '',
+      locator: meta.locator || {{}}
+    }};
+    fetch('/api/bookmarks', {{method:'POST', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify(payload)}}).then(function(r){{ return r.json(); }}).then(function(d){{
+      if(d && d.item) _bookmarks.items[ref] = d.item;
+      updateBookmarkCounts(); refreshBookmarkButtons();
+      if(document.querySelector('.view.active').id==='view-bookmarks') renderBookmarks();
+      showToast('Bookmark saved');
+    }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+  }}
+}}
+
+function removeBookmark(ref){{
+  if(!(_bookmarks.items && _bookmarks.items[ref])) return;
+  fetch('/api/bookmarks?ref='+encodeURIComponent(ref), {{method:'DELETE'}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    delete _bookmarks.items[ref];
+    updateBookmarkCounts(); refreshBookmarkButtons(); renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function setBookmarkFolder(ref, folder){{
+  fetch('/api/bookmarks', {{method:'PATCH', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{ref: ref, folder: folder || null}})}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(d && d.item) _bookmarks.items[ref] = d.item;
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function setBookmarkTags(ref, raw){{
+  var tags = String(raw||'').split(',').map(function(t){{ return t.trim(); }}).filter(function(t){{ return t; }}).slice(0,20);
+  fetch('/api/bookmarks', {{method:'PATCH', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{ref: ref, tags: tags}})}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(d && d.item) _bookmarks.items[ref] = d.item;
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function createBookmarkFolder(){{
+  var nameEl = document.getElementById('bookmarksNewFolderName');
+  var name = (nameEl.value||'').trim();
+  if(!name) return;
+  fetch('/api/bookmarks/folders', {{method:'POST', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{name: name, color: _bmNewFolderColor}})}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(d && d.id){{
+      if(!_bookmarks.folders) _bookmarks.folders = {{}};
+      _bookmarks.folders[d.id] = d.folder;
+    }}
+    nameEl.value = '';
+    document.getElementById('bookmarksNewFolderRow').classList.remove('show');
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function renameBookmarkFolder(fid){{
+  var f = _bookmarks.folders && _bookmarks.folders[fid];
+  if(!f) return;
+  var name = prompt('Folder name', f.name);
+  if(!name || !name.trim()) return;
+  fetch('/api/bookmarks/folders', {{method:'PATCH', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{id: fid, name: name.trim()}})}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(d && d.folder && _bookmarks.folders) _bookmarks.folders[fid] = d.folder;
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function deleteBookmarkFolder(fid){{
+  if(!confirm('Delete this folder? Bookmarks inside will move to Uncategorized.')) return;
+  fetch('/api/bookmarks/folders?ref='+encodeURIComponent(fid), {{method:'DELETE'}}).then(function(r){{ return r.json(); }}).then(function(d){{
+    if(_bookmarks.folders && _bookmarks.folders[fid]) delete _bookmarks.folders[fid];
+    Object.keys(_bookmarks.items||{{}}).forEach(function(ref){{ if(_bookmarks.items[ref].folder===fid) _bookmarks.items[ref].folder = null; }});
+    if(_bookmarksFolderFilter===fid) _bookmarksFolderFilter = null;
+    renderBookmarks();
+  }}).catch(function(){{ showToast('Failed &mdash; try again'); }});
+}}
+
+function openBookmark(ref){{
+  var bm = _bookmarks.items && _bookmarks.items[ref];
+  if(!bm) return;
+  if(bm.kind==='paper' || bm.kind==='guideline'){{
+    var loc = bm.locator || {{}};
+    var entry = {{id: ref, file_name: loc.file_name, system: loc.system || bm.system || 'General', type: loc.type || bm.type || 'Other', title: bm.title, authors: '', doi: '#', journal: '', date_added: '', year: '', subtopic: ''}};
+    var live = baseDataset.find(function(d){{ return d.file_name === loc.file_name; }});
+    if(live) entry = live;
+    openReader(entry, 'paper');
+    return;
+  }}
+  if(bm.kind==='pearl'){{
+    var loc = bm.locator || {{}};
+    var livePearl = allPearls.find(function(p){{ return String(p.id)===String(loc.id); }});
+    if(livePearl){{ openReader(livePearl, 'pearl'); }}
+    else {{
+      openReader({{id: loc.id, pearl: bm.title, source_paper: '', doi: '', author: '', system: bm.system || 'General', type: bm.type || 'Pearl', remarks: '', file_name: '', topic: '', timestamp: ''}}, 'pearl');
+    }}
+    return;
+  }}
+  if(bm.kind==='trial'){{
+    var slug = (bm.locator && bm.locator.slug) ? bm.locator.slug : String(ref).replace(/^trial:/,'');
+    openTrialDetail(slug, [], -1);
+    return;
+  }}
+  if(bm.kind==='condensed'){{
+    var loc = bm.locator || {{}};
+    openCondensedTrialDetail(loc.system || 'General', loc.name || '');
+    return;
+  }}
+  if(bm.kind==='flashcard'){{
+    var loc = bm.locator || {{}};
+    if(!_theoryViewActive()) showView('theory');
+    if(loc.card){{
+      var tRef = theoryDeckFromCardId(loc.card);
+      if(tRef){{ openTheoryDeck(tRef.deck.id, tRef.idx); return; }}
+    }}
+    openTheoryDeck(loc.deck || '', typeof loc.cardIdx==='number' ? loc.cardIdx : 0);
+    return;
+  }}
+  if(bm.kind==='note'){{
+    var loc = bm.locator || {{}};
+    if(!_theoryViewActive()) showView('theory');
+    if(loc.noteId){{ openTheoryNote(loc.noteId); return; }}
+    var nId = String(ref).replace(/^note:/,'');
+    if(nId) openTheoryNote(nId);
+    return;
+  }}
+}}
+
+function renderFolderSwatches(active){{
+  var row = document.getElementById('bookmarksNewFolderColors');
+  if(!row) return;
+  row.innerHTML = BM_FOLDER_COLORS.map(function(c){{
+    return '<button type="button" class="folder-swatch'+(c===active?' active':'')+'" data-bm-color="'+c+'" style="background:'+c+'" aria-label="Color '+c+'"></button>';
+  }}).join('');
+}}
+
+function bmCardHTML(bm){{
+  var kindLabel = {{paper:'Paper', guideline:'Guideline', pearl:'Pearl', trial:'Trial', condensed:'Condensed Trial', flashcard:'Flashcard', note:'Theory Note'}}[bm.kind] || bm.kind;
+  var folderOpts = '<option value="">No folder</option>';
+  Object.keys(_bookmarks.folders||{{}}).forEach(function(fid){{
+    folderOpts += '<option value="'+escapeHtml(fid)+'"'+(bm.folder===fid?' selected':'')+'>'+escapeHtml(_bookmarks.folders[fid].name)+'</option>';
+  }});
+  var dispTitle = String(bm.title||bm.ref);
+  if(dispTitle.length>140) dispTitle = dispTitle.substring(0,140)+'&hellip;';
+  var tags = (bm.tags||[]).map(function(t){{ return '<span class="bm-tag">#'+escapeHtml(t)+'</span>'; }}).join('');
+  return '<div class="bm-card">'+
+    '<button class="bm-card-top" data-bookmark-open="'+escapeHtml(bm.ref)+'" role="button" tabindex="0">'+
+      '<div style="flex:1;min-width:0">'+
+        '<div style="margin-bottom:6px">'+pillHTML(bm.system||'General', (bm.system||'General')+' &middot; '+kindLabel)+'</div>'+
+        '<div class="bm-title">'+escapeHtml(dispTitle)+'</div>'+
+        '<div class="bm-meta">'+(bm.type?escapeHtml(bm.type):'')+(bm.added_at?' &middot; saved '+escapeHtml(String(bm.added_at).substring(0,10)):'')+'</div>'+
+      '</div>'+
+      '<span class="bm-del" style="font-size:1.1rem">&#8250;</span>'+
+    '</button>'+
+    '<div class="bm-card-actions">'+
+      '<select data-bookmark-folder="'+escapeHtml(bm.ref)+'" title="Move to folder">'+folderOpts+'</select>'+
+      '<input class="bm-tags-input" data-bookmark-tags="'+escapeHtml(bm.ref)+'" placeholder="Tags: sepsis, exam" value="'+escapeHtml((bm.tags||[]).join(', '))+'" autocomplete="off">'+
+      '<span style="flex:1"></span>'+
+      '<button class="bm-del" data-bookmark-del="'+escapeHtml(bm.ref)+'" title="Remove bookmark">&times;</button>'+
+    '</div>'+
+    (tags?'<div style="display:flex;gap:5px;flex-wrap:wrap">'+tags+'</div>':'')+
+  '</div>';
+}}
+
+function renderBookmarks(){{
+  var list = document.getElementById('bookmarksList');
+  var foldersRow = document.getElementById('bookmarksFoldersRow');
+  if(!list) return;
+  var items = _bookmarks.items || {{}};
+  var folders = _bookmarks.folders || {{}};
+  var refs = Object.keys(items);
+  var q = (document.getElementById('bookmarksSearch').value||'').toLowerCase().trim();
+
+  var fhtml = '';
+  if(Object.keys(folders).length){{
+    fhtml += '<button class="bookmarks-folder-pill'+( _bookmarksFolderFilter===null ? ' active':'')+'" data-bm-folder-all>All</button>';
+    Object.keys(folders).forEach(function(fid){{
+      var f = folders[fid];
+      fhtml += '<button class="bookmarks-folder-pill'+( _bookmarksFolderFilter===fid ? ' active':'')+'" data-bm-folder="'+escapeHtml(fid)+'">'+
+        '<span class="fdot" style="background:'+escapeHtml(f.color||'#E8B778')+'"></span>'+escapeHtml(f.name)+'</button>';
+      fhtml += '<button class="bm-folder-edit" data-bm-folder-rename="'+escapeHtml(fid)+'" title="Rename folder">&#9998;</button>';
+      fhtml += '<button class="bm-folder-edit del" data-bm-folder-del="'+escapeHtml(fid)+'" title="Delete folder">&times;</button>';
+    }});
+  }}
+  foldersRow.innerHTML = fhtml;
+
+  if(!refs.length){{
+    list.innerHTML = '<div class="bm-empty"><span class="icon">&#128278;</span><p>No bookmarks yet. Tap the &#128278; button on any paper, pearl, or trial to save it here.</p></div>';
+    return;
+  }}
+
+  var filtered = refs.filter(function(ref){{
+    var bm = items[ref];
+    if(_bookmarksFolderFilter !== null && bm.folder !== _bookmarksFolderFilter) return false;
+    if(!q) return true;
+    var hay = (bm.title||'')+' '+(bm.system||'')+' '+(bm.tags||[]).join(' ');
+    return hay.toLowerCase().indexOf(q) !== -1;
+  }});
+  if(!filtered.length){{
+    list.innerHTML = '<div class="bm-empty"><span class="icon">&#128270;</span><p>No bookmarks match your filters.</p></div>';
+    return;
+  }}
+
+  var groups = {{}};
+  var none = [];
+  filtered.forEach(function(ref){{ var g = items[ref].folder || null; if(g) (groups[g] = groups[g] || []).push(ref); else none.push(ref); }});
+  var order = Object.keys(groups).sort(function(a,b){{ return ((folders[a]||{{}}).name||'').localeCompare((folders[b]||{{}}).name||''); }});
+  if(none.length) order.unshift('');
+
+  var html = '';
+  order.forEach(function(g){{
+    var label = g ? (folders[g]||{{}}).name||'Folder' : 'Uncategorized';
+    var color = g ? (folders[g]||{{}}).color||'#E8B778' : 'var(--ink-muted)';
+    var groupRefs = g ? groups[g] : none;
+    html += '<div class="bm-section-head"><span class="dot" style="background:'+color+'"></span>'+escapeHtml(label)+' <span class="pearl-count">('+groupRefs.length+')</span><span class="bar"></span></div>';
+    groupRefs.forEach(function(ref){{ html += bmCardHTML(items[ref]); }});
+  }});
+  list.innerHTML = html;
 }}
 
 // =====================================================================
@@ -2280,9 +4071,38 @@ document.getElementById('themeBtn').addEventListener('click', function(){{
   var cur = document.documentElement.getAttribute('data-theme');
   setTheme(THEMES[(THEMES.indexOf(cur)+1) % THEMES.length]);
 }});
+function doLogout(){{ fetch('/api/logout',{{method:'POST'}}).then(function(){{ window.location.reload(); }}); }}
+document.getElementById('headerLogout').addEventListener('click', doLogout);
+document.getElementById('drawerLogout').addEventListener('click', function(){{ closeDrawer(); doLogout(); }});
 document.getElementById('filterToggleBtn').addEventListener('click', openSheet);
 document.getElementById('guidelinesFilterToggleBtn').addEventListener('click', openSheet);
 document.getElementById('sheetBackdrop').addEventListener('click', closeSheet);
+document.getElementById('bookmarksSearch').addEventListener('input', renderBookmarks);
+document.getElementById('theorySearch').addEventListener('input', function(){{
+  clearTimeout(_theorySearchTimers.decks);
+  _theorySearchTimers.decks = setTimeout(function(){{
+    renderTheoryDecks();
+    _theoryReplace();
+  }}, 200);
+}});
+document.getElementById('theoryNotesSearch').addEventListener('input', function(){{
+  clearTimeout(_theorySearchTimers.notes);
+  _theorySearchTimers.notes = setTimeout(function(){{
+    renderTheoryNotes();
+    _theoryReplace();
+  }}, 200);
+}});
+document.getElementById('bookmarksNewFolderBtn').addEventListener('click', function(){{
+  document.getElementById('bookmarksNewFolderRow').classList.add('show');
+  renderFolderSwatches(_bmNewFolderColor);
+  document.getElementById('bookmarksNewFolderName').focus();
+}});
+document.getElementById('bookmarksCancelFolderBtn').addEventListener('click', function(){{
+  document.getElementById('bookmarksNewFolderRow').classList.remove('show');
+  document.getElementById('bookmarksNewFolderName').value = '';
+}});
+document.getElementById('bookmarksCreateFolderBtn').addEventListener('click', createBookmarkFolder);
+document.getElementById('bookmarksNewFolderName').addEventListener('keydown', function(e){{ if(e.key==='Enter') createBookmarkFolder(); }});
 document.getElementById('papersSearch').addEventListener('input', renderPapers);
 document.getElementById('papersSort').addEventListener('change', renderPapers);
 document.getElementById('guidelinesSearch').addEventListener('input', renderGuidelines);
@@ -2331,11 +4151,11 @@ window.addEventListener('popstate', function(e){{
 }});
 document.getElementById('aiFab').addEventListener('click', function(){{ document.body.classList.toggle('ai-open'); }});
 document.getElementById('subscribeBtn').addEventListener('click', function(){{
-  showToast('Coming soon ΓÇö redirecting to Google Form for now.');
+  showToast('Coming soon — redirecting to Google Form for now.');
   window.open('{SUBSCRIBE_FORM_URL}', '_blank');
 }});
 document.getElementById('unsubscribeBtn').addEventListener('click', function(){{
-  showToast('Coming soon ΓÇö redirecting to Google Form for now.');
+  showToast('Coming soon — redirecting to Google Form for now.');
   window.open('{UNSUBSCRIBE_FORM_URL}', '_blank');
 }});
 document.getElementById('feedbackBtn').addEventListener('click', function(){{
@@ -2547,22 +4367,220 @@ document.addEventListener('click', function(e){{
   if(e.target.matches('.trial-overlay-backdrop')){{
     e.target.style.display = 'none';
   }}
+
+  /* Bookmarks */
+  var bmToggle = e.target.closest('[data-bookmark-toggle]');
+  if(bmToggle){{ toggleBookmark(bmToggle.dataset.bookmarkToggle); return; }}
+
+  var bmOpen = e.target.closest('[data-bookmark-open]');
+  if(bmOpen){{ openBookmark(bmOpen.dataset.bookmarkOpen); return; }}
+
+  var bmDel = e.target.closest('[data-bookmark-del]');
+  if(bmDel){{ removeBookmark(bmDel.dataset.bookmarkDel); return; }}
+
+  var bmFolderAll = e.target.closest('[data-bm-folder-all]');
+  if(bmFolderAll){{ _bookmarksFolderFilter = null; renderBookmarks(); return; }}
+
+  var bmFolder = e.target.closest('[data-bm-folder]');
+  if(bmFolder){{ _bookmarksFolderFilter = bmFolder.dataset.bmFolder; renderBookmarks(); return; }}
+
+  var bmFolderRename = e.target.closest('[data-bm-folder-rename]');
+  if(bmFolderRename){{ renameBookmarkFolder(bmFolderRename.dataset.bmFolderRename); return; }}
+
+  var bmFolderDel = e.target.closest('[data-bm-folder-del]');
+  if(bmFolderDel){{ deleteBookmarkFolder(bmFolderDel.dataset.bmFolderDel); return; }}
+
+  var bmColor = e.target.closest('[data-bm-color]');
+  if(bmColor){{ _bmNewFolderColor = bmColor.dataset.bmColor; renderFolderSwatches(_bmNewFolderColor); return; }}
+
+  /* Theory flashcards */
+  var theoryModeBtn = e.target.closest('[data-theory-mode-view]');
+  if(theoryModeBtn){{
+    var tmode = theoryModeBtn.dataset.theoryModeView;
+    renderTheoryPane(tmode);
+    _theoryPush();
+    _focusCrumb();
+    return;
+  }}
+
+  var theoryCrumb = e.target.closest('[data-crumb]');
+  if(theoryCrumb){{ theoryGoTo(parseInt(theoryCrumb.dataset.crumb,10)||0); return; }}
+
+  var theoryFontBtn = e.target.closest('[data-theory-font]');
+  if(theoryFontBtn){{
+    var tscope = theoryFontBtn.dataset.theoryFont;
+    var tval = parseFloat(theoryFontBtn.dataset.theoryFontVal)||1;
+    try {{ localStorage.setItem('hackccm_theoryFont_'+tscope, String(tval)); }} catch(e){{}}
+    applyTheoryFont(tscope);
+    document.querySelectorAll('[data-theory-font="'+tscope+'"]').forEach(function(c){{
+      c.classList.toggle('active', c===theoryFontBtn);
+    }});
+    return;
+  }}
+
+  var theoryNoteBtn = e.target.closest('[data-theory-note]');
+  if(theoryNoteBtn){{
+    if(!_theoryViewActive()) showView('theory');
+    openTheoryNote(theoryNoteBtn.dataset.theoryNote); return;
+  }}
+
+  var theoryNoteNavBtn = e.target.closest('[data-theory-note-nav]');
+  if(theoryNoteNavBtn){{ theoryNoteNav(parseInt(theoryNoteNavBtn.dataset.theoryNoteNav,10)||0); return; }}
+
+  var exportNoteBtn = e.target.closest('[data-export-note]');
+  if(exportNoteBtn){{ window.open('/export/print?'+exportNoteBtn.dataset.exportNote, '_blank', 'noopener'); return; }}
+  var exportPaperBtn = e.target.closest('[data-export-paper]');
+  if(exportPaperBtn){{ window.open('/export/print?'+exportPaperBtn.dataset.exportPaper, '_blank', 'noopener'); return; }}
+
+  var theoryTableOpen = e.target.closest('[data-theory-table-open]');
+  if(theoryTableOpen){{ openTheoryTableOverlay(theoryTableOpen); return; }}
+  var theoryTableClose = e.target.closest('[data-theory-table-close]');
+  if(theoryTableClose){{ closeTheoryTableOverlay(); return; }}
+  var theoryTableFit = e.target.closest('[data-theory-table-fit]');
+  if(theoryTableFit){{ theoryTableToggleFit(); return; }}
+
+  var theoryCardSearch = e.target.closest('[data-theory-card]');
+  if(theoryCardSearch){{
+    var tRef = theoryDeckFromCardId(theoryCardSearch.dataset.theoryCard);
+    if(tRef){{
+      if(!_theoryViewActive()) showView('theory');
+      openTheoryDeck(tRef.deck.id, tRef.idx);
+    }}
+    return;
+  }}
+
+  var theoryListOpen = e.target.closest('[data-theory-list-open]');
+  if(theoryListOpen && _currentDeck){{ openTheoryCardList(_currentDeck.id); return; }}
+
+  var theoryDone = e.target.closest('[data-theory-done]');
+  if(theoryDone){{ theoryStepBackFromStudy(); return; }}
+
+  var theoryCardOpen = e.target.closest('[data-theory-card-open]');
+  if(theoryCardOpen && _currentDeck){{
+    _theoryListCollapsed = true;
+    renderTheoryCardList();
+    openTheoryDeck(_currentDeck.id, theoryCardOpen.dataset.theoryCardOpen, true);
+    _theoryStudyFromList = true;
+    return;
+  }}
+
+  var theoryListToggle = e.target.closest('[data-theory-list-toggle]');
+  if(theoryListToggle){{
+    _theoryListCollapsed = !_theoryListCollapsed;
+    renderTheoryCardList();
+    return;
+  }}
+
+  var theoryDeckBtn = e.target.closest('[data-theory-deck]');
+  if(theoryDeckBtn){{ openTheoryDeck(theoryDeckBtn.dataset.theoryDeck, 0); return; }}
+
+  var theoryChip = e.target.closest('[data-theory-chip]');
+  if(theoryChip){{
+    var s = theoryChip.dataset.theoryChip;
+    if(_theoryActiveSpecs.has(s)) _theoryActiveSpecs.delete(s); else _theoryActiveSpecs.add(s);
+    renderTheoryChips(); renderTheoryDecks(); _theoryReplace(); return;
+  }}
+
+  var theoryReset = e.target.closest('[data-theory-chip-reset]');
+  if(theoryReset){{ _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }})); renderTheoryChips(); renderTheoryDecks(); _theoryReplace(); return; }}
+
+  var theoryUncheck = e.target.closest('[data-theory-chip-uncheck]');
+  if(theoryUncheck){{ _theoryActiveSpecs = new Set(); renderTheoryChips(); renderTheoryDecks(); _theoryReplace(); return; }}
+
+  var theorySavedOnly = e.target.closest('[data-theory-saved-only]');
+  if(theorySavedOnly){{ _theorySavedOnly = !_theorySavedOnly; renderTheoryChips(); renderTheoryDecks(); _theoryReplace(); return; }}
+  var notesSavedOnly = e.target.closest('[data-notes-saved-only]');
+  if(notesSavedOnly){{ _notesSavedOnly = !_notesSavedOnly; renderTheoryNotes(); _theoryReplace(); return; }}
+  var notesSpec = e.target.closest('[data-notes-spec]');
+  if(notesSpec){{
+    var s = notesSpec.getAttribute('data-notes-spec');
+    if(_notesActiveSpecs.has(s)) _notesActiveSpecs.delete(s);
+    else _notesActiveSpecs.add(s);
+    if(!_notesActiveSpecs.size) _notesActiveSubtopic = null;
+    else if(_notesActiveSpecs.size>1) _notesActiveSubtopic = null;
+    renderTheoryNotes(); _theoryReplace(); return;
+  }}
+  var notesSub = e.target.closest('[data-notes-sub]');
+  if(notesSub){{
+    _notesActiveSubtopic = (_notesActiveSubtopic===notesSub.getAttribute('data-notes-sub')) ? null : notesSub.getAttribute('data-notes-sub');
+    renderTheoryNotes(); _theoryReplace(); return;
+  }}
+  var notesClearAll = e.target.closest('[data-notes-clear-all]');
+  if(notesClearAll){{ _notesSavedOnly = false; _notesActiveSpecs = new Set(); _notesActiveSubtopic = null; renderTheoryNotes(); _theoryReplace(); return; }}
+
+  var theorySub = e.target.closest('[data-theory-subtopic]');
+  if(theorySub){{
+    var t = theorySub.dataset.theorySubtopic;
+    _theoryActiveSubtopic = (_theoryActiveSubtopic===t) ? null : t;
+    renderTheorySubtopicChips(); renderTheoryDecks(); _theoryReplace(); return;
+  }}
+
+  var theorySubClear = e.target.closest('[data-theory-subtopic-clear]');
+  if(theorySubClear){{ _theoryActiveSubtopic = null; renderTheorySubtopicChips(); renderTheoryDecks(); _theoryReplace(); return; }}
+
+  var theoryTagClear = e.target.closest('[data-theory-tag-clear]');
+  if(theoryTagClear && _currentDeck){{
+    _theoryActiveSubtopic = null;
+    _theoryCardOrder = _currentDeck.cards.map(function(c, i){{ return i; }});
+    if(_theoryCardOrder.indexOf(_currentCardIdx)===-1) _currentCardIdx = 0;
+    _theoryFlipped = false;
+    renderTheoryChips();
+    renderTheoryCard();
+    _theoryReplace();
+    return;
+  }}
+
+  var theoryNavBtn = e.target.closest('[data-theory-nav]');
+  if(theoryNavBtn){{ theoryNav(parseInt(theoryNavBtn.dataset.theoryNav,10)||0); return; }}
+
+  var theoryDot = e.target.closest('[data-theory-dot]');
+  if(theoryDot){{
+    var tpos = parseInt(theoryDot.dataset.theoryDot,10)||0;
+    if(_theoryCardOrder[tpos]!=null){{
+      _currentCardIdx = _theoryCardOrder[tpos];
+      _theoryFlipped = false;
+      renderTheoryCard();
+      _theoryReplace();
+    }}
+    return;
+  }}
+
+  var theoryMode = e.target.closest('[data-theory-mode]');
+  if(theoryMode){{ theorySetViewMode(theoryMode.dataset.theoryMode); return; }}
+
+  var theoryFlipInner = e.target.closest('#theoryFlipInner');
+  if(theoryFlipInner){{ _theoryFlipped = !_theoryFlipped; theoryFlipInner.classList.toggle('flipped', _theoryFlipped); return; }}
 }});
 
 document.addEventListener('change', function(e){{
   var container = e.target.closest('#filterPanelDesktop, #filterSheetBody, #filterPanelGuidelines');
-  if(!container) return;
-  if(e.target.classList.contains('all-check')){{
-    container.querySelectorAll('[data-spec]').forEach(function(b){{ b.checked = e.target.checked; }});
+  if(container){{
+    if(e.target.classList.contains('all-check')){{
+      container.querySelectorAll('[data-spec]').forEach(function(b){{ b.checked = e.target.checked; }});
+    }}
+    SPECS.forEach(function(s){{ var el = container.querySelector('[data-spec="'+s.name+'"]'); if(el) filterState.specialties[s.name] = el.checked; }});
+    renderFilterCheckboxes();
   }}
-  SPECS.forEach(function(s){{ var el = container.querySelector('[data-spec="'+s.name+'"]'); if(el) filterState.specialties[s.name] = el.checked; }});
-  renderFilterCheckboxes();
+  var bmFolderSel = e.target.closest('[data-bookmark-folder]');
+  if(bmFolderSel){{ setBookmarkFolder(bmFolderSel.dataset.bookmarkFolder, e.target.value || null); return; }}
+  var bmTags = e.target.closest('[data-bookmark-tags]');
+  if(bmTags){{ setBookmarkTags(bmTags.dataset.bookmarkTags, e.target.value); return; }}
 }});
 
 document.addEventListener('keydown', function(e){{
-  if(e.key==='Escape'){{ closeSearch(); closeDrawer(); closeSheet(); closeReader(); document.body.classList.remove('ai-open'); }}
+  if(e.key==='Escape'){{
+    if(_theoryTableOverlayOpen){{ closeTheoryTableOverlay(); }}
+    else if(_theoryStudyVisible()){{ theoryStepBackFromStudy(); }}
+    else if(document.getElementById('theoryCardList') && document.getElementById('theoryCardList').style.display!=='none'){{ theoryBackToBrowser(); }}
+    else if(document.getElementById('theoryNoteReader') && document.getElementById('theoryNoteReader').style.display!=='none'){{ theoryNotesBack(); }}
+    closeSearch(); closeDrawer(); closeSheet(); closeReader(); document.body.classList.remove('ai-open');
+  }}
   if((e.ctrlKey||e.metaKey)&&e.key==='k'){{ e.preventDefault(); openSearch(); }}
   if((e.key==='Enter'||e.key===' ')&&e.target.matches('[role="button"]')){{ e.preventDefault(); e.target.click(); }}
+  if(_theoryStudyVisible() && !e.target.matches('input,textarea,select')){{
+    if(e.key==='ArrowRight'){{ theoryNav(1); }}
+    if(e.key==='ArrowLeft'){{ theoryNav(-1); }}
+  }}
 }});
 
 // =====================================================================
@@ -2577,25 +4595,303 @@ document.addEventListener('keydown', function(e){{
     if(savedFont) setSiteFontSize(+savedFont); else setSiteFontSize(16);
   }} catch(e){{ setTheme('dim'); setSiteFontSize(16); }}
 
+  // Hide nav/drawer links for disabled features (admins see all)
+  if (!USER_IS_ADMIN) {{
+    var navFeatureMap = {{
+      'papers': 'papers',
+      'guidelines': 'guidelines',
+      'pearls': 'pearls',
+      'trials': 'trials',
+      'trials-esbicm': 'trials',
+      'trials-condensed': 'condensed_trials',
+      'trials-specialty': 'trials',
+      'trials-detail': 'trials_detail',
+      'condensed-system': 'condensed_trials',
+      'condensed-detail': 'trials_detail',
+      'bookmarks': 'bookmarks',
+      'theory': 'theory'
+    }};
+    Object.keys(navFeatureMap).forEach(function(viewName) {{
+      var feature = navFeatureMap[viewName];
+      if (!USER_FEATURES[feature]) {{
+        document.querySelectorAll('[data-view="' + viewName + '"]').forEach(function(el) {{
+          el.style.display = 'none';
+        }});
+      }}
+    }});
+    // Hide search trigger if search feature is disabled
+    if (!USER_FEATURES['search']) {{
+      var searchEl = document.getElementById('searchTrigger');
+      if (searchEl) searchEl.style.display = 'none';
+    }}
+  }}
+
   renderFilterCheckboxes();
+  loadBookmarks();
   showView('home');
+
+  // Deep links + browser history:
+  //   ?theory=flashcards[&system=S&subtopic=T&card=<uuid>][&q=..][&saved=1]
+  //   ?theory=notes[&note=<file>][&q=..][&saved=1]
+  _restoring = true;
+  try {{ _applyTheoryDeepLink(new URLSearchParams(window.location.search)); }} catch(e){{}}
+  _restoring = false;
+  window.addEventListener('popstate', function(){{
+    _restoring = true;
+    try {{ _applyTheoryDeepLink(new URLSearchParams(window.location.search)); }} catch(e){{}}
+    _restoring = false;
+  }});
 }})();
 </script>
 </body>
 </html>"""
-    return HTMLResponse(content=html)
+    resp = HTMLResponse(content=html)
+    resp.headers["Cache-Control"] = "no-store, max-age=0"
+    if LOCAL_DEV_MODE and not request.cookies.get(SESSION_COOKIE_NAME):
+        _, dev_sid = _local_dev_login()
+        resp.set_cookie(key=SESSION_COOKIE_NAME, value=dev_sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+    return resp
 
 # =====================================================================
 # API ENDPOINTS
 # =====================================================================
 
+@app.get("/api/debug")
+async def api_debug():
+    from acumen_core import kv as _kvmod
+    return {"kv_backend": _kvmod.kv_backend(), "vercel": os.environ.get("VERCEL", "")}
+
+@app.post("/api/signup")
+async def api_signup(body: dict, response: Response):
+    try:
+        email = str(body.get("email", "")).strip().lower()
+        password = body.get("password", "")
+        if not email or "@" not in email:
+            raise HTTPException(400, "Valid email required")
+        if len(password) < 8:
+            raise HTTPException(400, "Password must be at least 8 characters")
+        if _kv_get(f"auth:users:{email}"):
+            raise HTTPException(409, "An account with this email already exists")
+        user = {
+            "email": email,
+            "first_name": str(body.get("first_name", "")).strip(),
+            "last_name": str(body.get("last_name", "")).strip(),
+            "workplace": str(body.get("workplace", "")).strip(),
+            "city": str(body.get("city", "")).strip(),
+            "password_hash": _hash_password(password),
+            "created_at": datetime.utcnow().isoformat(),
+            "features": {},
+        }
+        _kv_set(f"auth:users:{email}", user)
+        sid = _session_id()
+        _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
+        response.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+        return {"ok": True, "email": email}
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback
+        return JSONResponse(500, {"error": type(e).__name__, "detail": str(e), "traceback": traceback.format_exc()})
+
+@app.post("/api/login")
+async def api_login(body: dict, response: Response):
+    try:
+        email = str(body.get("email", "")).strip().lower()
+        password = body.get("password", "")
+        if not email or not password:
+            raise HTTPException(400, "Email and password required")
+        user = _kv_get(f"auth:users:{email}")
+        if not user or not isinstance(user, dict):
+            raise HTTPException(401, "Invalid email or password")
+        pwh = user.get("password_hash")
+        if not pwh:
+            raise HTTPException(401, "Invalid email or password")
+        if not _verify_password(password, pwh):
+            raise HTTPException(401, "Invalid email or password")
+        sid = _session_id()
+        _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
+        response.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+        return {"ok": True, "email": email}
+    except HTTPException:
+        raise
+    except Exception as e:
+        import traceback
+        return JSONResponse(500, {"error": type(e).__name__, "detail": str(e), "traceback": traceback.format_exc()})
+
+@app.post("/api/logout")
+async def api_logout(request: Request, response: Response):
+    sid = request.cookies.get(SESSION_COOKIE_NAME)
+    if sid:
+        _kv_delete(f"auth:session:{sid}")
+    response.delete_cookie(SESSION_COOKIE_NAME)
+    return {"ok": True}
+
+@app.get("/api/me")
+async def api_me(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        return {"authenticated": False}
+    return {
+        "authenticated": True,
+        "email": user["email"],
+        "first_name": user.get("first_name", ""),
+        "last_name": user.get("last_name", ""),
+        "workplace": user.get("workplace", ""),
+        "city": user.get("city", ""),
+        "is_admin": bool(user.get("is_admin")),
+        "features": user.get("features", {}),
+    }
+
 @app.get("/favicon.ico")
 async def favicon():
-    return JSONResponse(status_code=204)
+    return Response(status_code=204)
+
+
+# =====================================================================
+# BOOKMARKS (per-user, stored in KV under user:{email}:bookmarks)
+# =====================================================================
+
+@app.get("/api/bookmarks")
+async def api_bookmarks_list(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    return _user_data(user["email"], "bookmarks")
+
+@app.post("/api/bookmarks")
+async def api_bookmarks_add(request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    data = _user_data(email, "bookmarks")
+    items = data.setdefault("items", {})
+    folders = data.setdefault("folders", {})
+    ref = str(body.get("ref", "")).strip()
+    if not ref or len(ref) > 300:
+        raise HTTPException(400, "Valid bookmark ref required")
+    existing = items.get(ref)
+    if existing is None and len(items) >= BOOKMARKS_MAX_ITEMS:
+        raise HTTPException(400, f"Bookmark limit reached ({BOOKMARKS_MAX_ITEMS})")
+    item = _bookmark_item(body, existing)
+    folder = item.get("folder")
+    if folder and folder not in folders:
+        item["folder"] = None
+    items[ref] = item
+    _save_user_data(email, "bookmarks", data)
+    return {"ok": True, "item": item}
+
+@app.patch("/api/bookmarks")
+async def api_bookmarks_update(request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    ref = str(body.get("ref", "")).strip()
+    if not ref:
+        raise HTTPException(400, "Bookmark ref required")
+    data = _user_data(email, "bookmarks")
+    items = data.setdefault("items", {})
+    existing = items.get(ref)
+    if existing is None:
+        raise HTTPException(404, "Bookmark not found")
+    item = _bookmark_item(body, existing)
+    folders = data.setdefault("folders", {})
+    if item.get("folder") and item["folder"] not in folders:
+        item["folder"] = None
+    items[ref] = item
+    _save_user_data(email, "bookmarks", data)
+    return {"ok": True, "item": item}
+
+@app.delete("/api/bookmarks")
+async def api_bookmarks_delete(request: Request, ref: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    data = _user_data(email, "bookmarks")
+    items = data.setdefault("items", {})
+    if ref in items:
+        del items[ref]
+        _save_user_data(email, "bookmarks", data)
+    return {"ok": True}
+
+@app.post("/api/bookmarks/folders")
+async def api_bookmarks_folder_add(request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    name = str(body.get("name", "")).strip()[:60]
+    if not name:
+        raise HTTPException(400, "Folder name required")
+    data = _user_data(email, "bookmarks")
+    folders = data.setdefault("folders", {})
+    if len(folders) >= BOOKMARKS_MAX_FOLDERS:
+        raise HTTPException(400, f"Folder limit reached ({BOOKMARKS_MAX_FOLDERS})")
+    fid = "f" + secrets.token_hex(4)
+    folder = {
+        "name": name,
+        "color": str(body.get("color", ""))[:20] or "#E8B778",
+        "created_at": datetime.utcnow().isoformat(),
+    }
+    folders[fid] = folder
+    _save_user_data(email, "bookmarks", data)
+    return {"ok": True, "id": fid, "folder": folder}
+
+@app.patch("/api/bookmarks/folders")
+async def api_bookmarks_folder_update(request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    fid = str(body.get("id", "")).strip()
+    data = _user_data(email, "bookmarks")
+    folders = data.setdefault("folders", {})
+    folder = folders.get(fid)
+    if folder is None:
+        raise HTTPException(404, "Folder not found")
+    if body.get("name") is not None:
+        name = str(body["name"]).strip()[:60]
+        if not name:
+            raise HTTPException(400, "Folder name required")
+        folder["name"] = name
+    if body.get("color") is not None:
+        folder["color"] = str(body["color"])[:20] or "#E8B778"
+    _save_user_data(email, "bookmarks", data)
+    return {"ok": True, "folder": folder}
+
+@app.delete("/api/bookmarks/folders")
+async def api_bookmarks_folder_delete(request: Request, ref: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "bookmarks")
+    email = user["email"]
+    data = _user_data(email, "bookmarks")
+    folders = data.setdefault("folders", {})
+    items = data.setdefault("items", {})
+    if ref in folders:
+        del folders[ref]
+        for item in items.values():
+            if item.get("folder") == ref:
+                item["folder"] = None
+        _save_user_data(email, "bookmarks", data)
+    return {"ok": True}
 
 
 @app.get("/api/summary")
-async def get_json_summary(file_name: str, system: str = "General", type: str = "Unclassified"):
+async def get_json_summary(request: Request, file_name: str, system: str = "General", type: str = "Unclassified"):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "papers")
     base_name = os.path.splitext(file_name)[0]
     clean_system = "".join(x for x in str(system) if x.isalnum() or x in "._- ").strip()
     clean_type = "".join(x for x in str(type) if x.isalnum() or x in "._- ").strip()
@@ -2632,8 +4928,80 @@ async def get_json_summary(file_name: str, system: str = "General", type: str = 
         return JSONResponse(status_code=500, content={"error": str(e)})
 
 
+@app.get("/export/print")
+async def export_print(request: Request, kind: str = "paper", file_name: str = "", title: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    feature = "theory" if kind == "note" else "papers"
+    _require_feature(user, feature)
+    the_title = ""
+    meta_html = ""
+    content = ""
+    kind_label = "Print Friendly"
+    try:
+        if kind == "note":
+            note = None
+            base = os.path.join(OUTPUT_DIR, "Theory MDs")
+            if os.path.isdir(base):
+                for root, dirs, files in os.walk(base):
+                    if file_name in files:
+                        try:
+                            with open(os.path.join(root, file_name), "r", encoding="utf-8", errors="replace") as f:
+                                note = {"md": f.read()}
+                        except Exception:
+                            pass
+                        break
+            if not note:
+                return JSONResponse(status_code=404, content={"error": f"Note not found: {file_name}"})
+            content = note["md"]
+            stem = os.path.splitext(file_name)[0].replace("_", " ")
+            m = re.search(r"^\s*#{1,6}\s+(.+?)\s*$", content, re.M)
+            t = m.group(1).strip() if m else stem
+            title_label = title or t
+            meta_html = f"<span>{html.escape(title or t)}</span>"
+            kind_label = "Theory Topic"
+        else:
+            base_name = os.path.splitext(file_name)[0]
+            clean_system = "".join(x for x in str(request.query_params.get("system", "General")) if x.isalnum() or x in "._- ").strip()
+            clean_type = "".join(x for x in str(request.query_params.get("type", "Other")) if x.isalnum() or x in "._- ").strip()
+            target = os.path.join(OUTPUT_DIR, clean_system, clean_type, f"{base_name}.json")
+            if not os.path.exists(target):
+                for root, dirs, files in os.walk(OUTPUT_DIR):
+                    if f"{base_name}.json" in files:
+                        target = os.path.join(root, f"{base_name}.json")
+                        break
+            if not os.path.exists(target):
+                return JSONResponse(status_code=404, content={"error": f"Summary not found: {base_name}.json"})
+            with open(target, "r", encoding="utf-8") as f:
+                payload = json.load(f)
+            content = payload.get("clinical_summary_markdown", "") or format_new_schema_as_markdown(payload)
+            title_label = payload.get("title") or base_name
+            authors = payload.get("primary_authors") or payload.get("authors") or ""
+            if not authors:
+                issuing = payload.get("issuing_bodies", [])
+                if issuing:
+                    authors = ", ".join(issuing)
+            meta = []
+            if authors:
+                meta.append(html.escape(authors))
+            if payload.get("journal"):
+                meta.append(html.escape(str(payload["journal"])))
+            if payload.get("year"):
+                meta.append(html.escape(str(payload["year"])))
+            meta_html = " &middot; ".join(meta)
+            kind_label = "Guideline" if str(payload.get("doc_type", "")).lower() == "guideline" else "Paper"
+        return HTMLResponse(content=render_printable(title_label, meta_html, content, kind_label))
+    except Exception as e:
+        return JSONResponse(status_code=500, content={"error": str(e)})
+
+
 @app.get("/api/search")
-async def search_summaries(q: str = ""):
+async def search_summaries(request: Request, q: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "search")
     if not q.strip():
         return {"matches": []}
     query = q.strip().lower()
@@ -2657,7 +5025,11 @@ async def search_summaries(q: str = ""):
 
 
 @app.get("/api/pearls")
-async def get_pearls(q: str = "", system: str = "", type: str = "", page: int = 1, limit: int = 50):
+async def get_pearls(request: Request, q: str = "", system: str = "", type: str = "", page: int = 1, limit: int = 50):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "pearls")
     pearls = load_pearls()
     filtered = []
     for p in pearls:
@@ -2675,7 +5047,11 @@ async def get_pearls(q: str = "", system: str = "", type: str = "", page: int = 
 
 
 @app.get("/api/trials/stats")
-async def get_trials_stats():
+async def get_trials_stats(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "trials")
     idx = load_trial_index()
     counts = {}
     for t in idx:
@@ -2686,6 +5062,7 @@ async def get_trials_stats():
 
 @app.get("/api/trials")
 async def get_trials(
+    request: Request,
     specialty: str = "",
     result_category: str = "",
     trial_type: str = "",
@@ -2693,6 +5070,10 @@ async def get_trials(
     page: int = 1,
     limit: int = 50
 ):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "trials")
     idx = load_trial_index()
     filtered = []
     for t in idx:
@@ -2717,7 +5098,11 @@ async def get_trials(
 
 
 @app.get("/api/trial/{slug}")
-async def get_trial(slug: str):
+async def get_trial(request: Request, slug: str):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "trials")
     idx = load_trial_index()
     match = None
     for t in idx:
@@ -2739,7 +5124,11 @@ async def get_trial(slug: str):
 
 
 @app.get("/api/condensed-trials")
-async def get_condensed_trials(system: str = ""):
+async def get_condensed_trials(request: Request, system: str = ""):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "condensed_trials")
     idx = load_condensed_trial_index()
     if system:
         idx = [c for c in idx if c["system"] == system]
@@ -2747,7 +5136,11 @@ async def get_condensed_trials(system: str = ""):
 
 
 @app.get("/api/condensed-trial/{system}/{name}")
-async def get_condensed_trial(system: str, name: str):
+async def get_condensed_trial(request: Request, system: str, name: str):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_feature(user, "condensed_trials")
     from urllib.parse import unquote
     system = unquote(system)
     name = unquote(name)
@@ -2782,6 +5175,84 @@ def bold_labels(text):
         r'**\1:**',
         text
     )
+
+
+def render_printable(title, meta_html, markdown, kind_label):
+    """Standalone, printable HTML page rendering markdown (with KaTeX math).
+    Used by /export/print — opens in a new window where the user saves as PDF."""
+    esc = html.escape
+    page_title = esc(title) if title else "hack.CCM Export"
+    html_out = f"""<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{page_title}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+<style>
+  :root {{
+    --ink:#F1E4CE; --ink-muted:#C4B18C; --border:#3A3226; --accent:#E8B778;
+    --bg-sunk:#241F17; --radius:10px;
+  }}
+  * {{ box-sizing:border-box; }}
+  html, body {{ margin:0; padding:0; }}
+  body {{ background:#1F1B14; color:var(--ink); font-family:'Atkinson Hyperlegible',sans-serif; font-size:16px; line-height:1.5; }}
+  .toolbar {{ position:fixed; top:0; left:0; right:0; display:flex; align-items:center; gap:10px; padding:10px 18px; background:#14100B; border-bottom:1px solid var(--border); z-index:20; }}
+  .toolbar .tag {{ font-size:.72rem; letter-spacing:.08em; text-transform:uppercase; color:var(--ink-muted); }}
+  .toolbar .btn {{ margin-left:auto; background:var(--accent); color:#1F1B14; border:none; font:inherit; font-weight:700; padding:8px 16px; border-radius:8px; cursor:pointer; }}
+  .doc {{ max-width:880px; margin:70px auto 60px; padding:0 22px; }}
+  h1.doc-title {{ font-family:'Space Grotesk',sans-serif; font-size:1.7rem; line-height:1.3; margin:10px 0 6px; }}
+  .meta {{ color:var(--ink-muted); font-size:.9rem; margin:0 0 22px; }}
+  .article h1, .article h2 {{ font-family:'Space Grotesk',sans-serif; }}
+  .article h1 {{ font-size:1.45rem; margin:24px 0 10px; }}
+  .article h2 {{ font-size:1.25rem; margin:22px 0 8px; }}
+  .article h3 {{ font-size:1.08rem; margin:18px 0 8px; }}
+  .article p {{ margin:10px 0; }}
+  .article ul, .article ol {{ margin:10px 0; padding-left:26px; }}
+  .article li {{ margin:4px 0; }}
+  .article code {{ font-family:'JetBrains Mono',monospace; font-size:.86em; background:var(--bg-sunk); border-radius:4px; padding:1px 5px; }}
+  .article pre {{ background:var(--bg-sunk); border:1px solid #3A3226; border-radius:10px; padding:12px 14px; overflow:auto; }}
+  .article blockquote {{ border-left:3px solid var(--accent); margin:12px 0; padding:4px 14px; color:var(--ink-muted); }}
+  .article table {{ border-collapse:collapse; width:100%; margin:14px 0; }}
+  .article th, .article td {{ border:1px solid #3A3226; padding:7px 10px; text-align:left; vertical-align:top; }}
+  .article th {{ background:var(--bg-sunk); font-weight:700; }}
+  .article a {{ color:var(--accent); }}
+  .article hr {{ border:none; border-top:1px solid #3A3226; margin:18px 0; }}
+  .katex-display {{ margin:14px 0; overflow-x:auto; overflow-y:hidden; }}
+  @media print {{
+    .toolbar {{ display:none; }}
+    body {{ background:#fff !important; color:#111 !important; }}
+    .doc {{ margin:0 auto; max-width:none; padding:0; }}
+    a {{ color:#111 !important; text-decoration:none; }}
+    .article table, .article th, .article td {{ border-color:#888; }}
+    .article code {{ background:#f0f0f0; }}
+  }}
+</style>
+</head>
+<body>
+<div class="toolbar"><span class="badge">hack.CCM &middot; {esc(kind_label or '')}</span><button class="btn" onclick="window.print()">&#128196; Print / Save as PDF</button></div>
+<div class="doc">
+  <h1>{page_title}</h1>
+  <div class="meta">{meta_html or ''}</div>
+  <article class="article" id="md-content"></article>
+</div>
+<script>
+  var RAW = {json.dumps(markdown or "", ensure_ascii=False)};
+  try {{ document.getElementById('md-content').innerHTML = marked.parse(RAW); }} catch(e){{ document.getElementById('md-content').textContent = RAW; }}
+  function renderMath(){{
+    try{{ if(window.renderMathInElement){{ renderMathInElement(document.getElementById('md-content'),{{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'\\\\(',right:'\\\\)',display:false}},{{left:'\\\\[',right:'\\\\]',display:true}}],throwOnError:false,strict:'ignore'}}); }} }}catch(e){{}}
+  }}
+  renderMath();
+  window.addEventListener('load', function(){{ setTimeout(function(){{ window.print(); }}, 600); }});
+</script>
+</body>
+</html>"""
+    return html_out
 
 
 def format_new_schema_as_markdown(payload):
@@ -2907,7 +5378,7 @@ def extract_search_text(payload):
     for kw in payload.get("keywords", []):
         text_parts.append(kw)
 
-    # Trial sections (condensed ΓÇö object with named keys like background, methods, results)
+    # Trial sections (condensed — object with named keys like background, methods, results)
     trial_sec = payload.get("sections", {})
     if isinstance(trial_sec, dict):
         for sec_key, sec_val in trial_sec.items():

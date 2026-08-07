@@ -20,7 +20,7 @@ from datetime import datetime
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from acumen_core.config import TOGETHER_API_KEY, SUBTOPIC_MAPPING_FILE
+from acumen_core.config import SUBTOPIC_LLM_MODEL, SUBTOPIC_MAPPING_FILE
 from acumen_core.tracking import (
     load_all_entries_from_json, save_subtopic_mapping, load_subtopic_mapping,
 )
@@ -28,16 +28,7 @@ from acumen_core.subtopics_config import (
     get_subtopics_for_system, get_all_systems, format_subtopics_for_prompt,
     subtopics_exist,
 )
-
-
-def _get_together_client():
-    if not TOGETHER_API_KEY:
-        return None
-    try:
-        from together import Together
-        return Together(api_key=TOGETHER_API_KEY, timeout=120)
-    except Exception:
-        return None
+from acumen_core.llm import call_chat_api, _get_openrouter_client
 
 
 def call_llm_classify(titles, system):
@@ -66,18 +57,16 @@ Return a JSON object with a "classifications" key containing an array of objects
     titles_text = "\n".join(f"- {t}" for t in titles)
     user_content = f"Classify these {len(titles)} paper titles into subtopics for {system}:\n\n{titles_text}"
 
-    client = _get_together_client()
+    client = _get_openrouter_client()
     if not client:
-        print(f"    [X] No Together AI client available")
+        print(f"    [X] No OpenRouter client available")
         return []
 
-    model = "openai/gpt-oss-20b"
-    print(f"    Calling {model} for {len(titles)} titles ({system})...")
+    print(f"    Calling {SUBTOPIC_LLM_MODEL} for {len(titles)} titles ({system})...")
 
     try:
-        from acumen_core.llm import call_chat_api
         result = call_chat_api(
-            client, model, system_prompt, user_content,
+            client, SUBTOPIC_LLM_MODEL, system_prompt, user_content,
             temperature=0.1, max_tokens=4096,
         )
         if isinstance(result, dict):

@@ -1,6 +1,6 @@
 """
 llm.py - Unified LLM execution with provider fallback and chunking.
-Supports: Together AI, Direct DeepSeek API, Gemini.
+Supports: OpenRouter, Gemini.
 """
 
 import os
@@ -10,19 +10,15 @@ import time
 from copy import deepcopy
 
 from acumen_core.config import (
-    TOGETHER_API_KEY,
-    DEEPSEEK_API_KEY,
     PRIMARY_GEMINI_API_KEY,
     BACKUP_GEMINI_API_KEY,
-    MODEL_TOGETHER_PRO,
-    MODEL_TOGETHER_FLASH,
-    MODEL_DEEPSEEK_DIRECT,
-    MODEL_GEMINI_ARTICLES,
-    MODEL_GEMINI_GUIDELINES,
-    MODEL_GEMINI_BACKUP,
-    MODEL_PEARL_PRIMARY,
-    MODEL_PEARL_FALLBACK,
-    MODEL_VISION,
+    OPENROUTER_SUMMARY_MODEL,
+    OPENROUTER_SUMMARY_FALLBACK,
+    OPENROUTER_PEARLS_MODEL,
+    OPENROUTER_PEARLS_FALLBACK,
+    GEMINI_SUMMARY_MODEL,
+    GEMINI_PEARLS_MODEL,
+    GEMINI_VISION_MODEL,
     TEMPERATURE_EXTRACTION,
     TEMPERATURE_PEARLS,
     MAX_TOKENS_EXTRACTION,
@@ -32,28 +28,6 @@ from acumen_core.config import (
     CHUNK_SIZE,
     CHUNK_OVERLAP,
 )
-
-
-def _get_together_client():
-    """Get Together AI client."""
-    if not TOGETHER_API_KEY:
-        return None
-    try:
-        from together import Together
-        return Together(api_key=TOGETHER_API_KEY, timeout=300)
-    except Exception:
-        return None
-
-
-def _get_deepseek_client():
-    """Get direct DeepSeek API client."""
-    if not DEEPSEEK_API_KEY:
-        return None
-    try:
-        from openai import OpenAI
-        return OpenAI(api_key=DEEPSEEK_API_KEY, base_url="https://api.deepseek.com")
-    except Exception:
-        return None
 
 
 def _get_gemini_client():
@@ -79,19 +53,11 @@ def _get_backup_gemini_client():
 
 
 # =====================================================================
-# PROVIDER DETECTION HELPER
-# =====================================================================
-def _is_together(client):
-    """Check if client is a Together AI client."""
-    return "together" in str(type(client)).lower() or hasattr(client, "_client_config")
-
-
-# =====================================================================
 # CORE API CALL
 # =====================================================================
 def call_chat_api(client, model, system_prompt, user_content, temperature=0.3, max_tokens=16384):
     """
-    Unified chat API call supporting Together AI and OpenAI-compatible (DeepSeek).
+    Unified chat API call for OpenAI-compatible (OpenRouter) endpoints.
     Returns parsed dict (if JSON mode) or str (if text mode).
     """
     messages = [
@@ -106,8 +72,6 @@ def call_chat_api(client, model, system_prompt, user_content, temperature=0.3, m
         "temperature": temperature,
         "max_tokens": max_tokens,
     }
-    if _is_together(client):
-        kwargs["reasoning"] = {"enabled": False}
 
     response = client.chat.completions.create(**kwargs)
     raw = response.choices[0].message.content
@@ -153,7 +117,7 @@ def call_gemini_vision(image, prompt):
         from google import genai
         client = genai.Client(api_key=api_key)
         response = client.models.generate_content(
-            model=MODEL_VISION,
+            model=GEMINI_VISION_MODEL,
             contents=[prompt, image],
         )
         return response.text.strip()
@@ -181,7 +145,7 @@ def _is_retryable(error):
 
 
 # =====================================================================
-# EXECUTION WITH FALLBACK - Generic
+# EXECUTION WITH FALLBACK - OpenRouter (Pass 1 summary extraction)
 # =====================================================================
 def execute_with_fallback(
     system_prompt,
@@ -191,50 +155,25 @@ def execute_with_fallback(
     retry_delay=None,
 ):
     """
-    Try Together AI Pro -> Together AI Flash -> Direct DeepSeek API.
+    Pass 1 summary extraction via OpenRouter (primary -> fallback model).
     Returns parsed JSON dict.
     """
+    from acumen_core.config import OPENROUTER_API_KEY, OPENROUTER_BASE_URL
     max_retries = max_retries or MAX_RETRIES
     retry_delay = retry_delay or RETRY_DELAY
     last_error = None
 
-    together_client = _get_together_client()
-    deepseek_client = _get_deepseek_client()
-    models_tog = [MODEL_TOGETHER_PRO, MODEL_TOGETHER_FLASH]
+    client = _get_openrouter_client()
+    if not client:
+        raise RuntimeError("OpenRouter client not available (check OPENROUTER_API_KEY)")
 
-    # Phase 1: Together AI models
-    if together_client:
-        for model in models_tog:
-            for attempt in range(max_retries):
-                try:
-                    print(f"    Together AI: {model} (attempt {attempt + 1}/{max_retries})")
-                    return call_chat_api(
-                        together_client, model, system_prompt, user_content,
-                        temperature=TEMPERATURE_EXTRACTION,
-                        max_tokens=MAX_TOKENS_EXTRACTION,
-                    )
-                except json.JSONDecodeError as e:
-                    last_error = e
-                    print(f"    [X] JSON parse error: {e}")
-                    break
-                except Exception as e:
-                    last_error = e
-                    if _is_retryable(e) and attempt < max_retries - 1:
-                        wait = retry_delay * (attempt + 1)
-                        print(f"    [!] {e}")
-                        print(f"    Retrying in {wait}s...")
-                        time.sleep(wait)
-                    else:
-                        print(f"    [X] {model} failed: {e}")
-                        break
-
-    # Phase 2: Direct DeepSeek API
-    if deepseek_client:
+    models = [OPENROUTER_SUMMARY_MODEL, OPENROUTER_SUMMARY_FALLBACK]
+    for model in models:
         for attempt in range(max_retries):
             try:
-                print(f"    Direct DeepSeek: {MODEL_DEEPSEEK_DIRECT} (attempt {attempt + 1}/{max_retries})")
-                return call_chat_api(
-                    deepseek_client, MODEL_DEEPSEEK_DIRECT, system_prompt, user_content,
+                print(f"    OpenRouter: {model} (attempt {attempt + 1}/{max_retries})")
+                return call_openrouter_api(
+                    client, model, system_prompt, user_content,
                     temperature=TEMPERATURE_EXTRACTION,
                     max_tokens=MAX_TOKENS_EXTRACTION,
                 )
@@ -246,26 +185,14 @@ def execute_with_fallback(
                 last_error = e
                 if _is_retryable(e) and attempt < max_retries - 1:
                     wait = retry_delay * (attempt + 1)
+                    print(f"    [!] {e}")
+                    print(f"    Retrying in {wait}s...")
                     time.sleep(wait)
                 else:
-                    print(f"    [X] DeepSeek failed: {e}")
+                    print(f"    [X] OpenRouter {model} failed: {e}")
                     break
 
-    raise last_error or RuntimeError("All models exhausted")
-
-
-def _get_openai_compatible_client(api_key, base_url=None):
-    """Get OpenAI-compatible client for custom provider."""
-    if not api_key:
-        return None
-    try:
-        from openai import OpenAI
-        kwargs = {"api_key": api_key}
-        if base_url:
-            kwargs["base_url"] = base_url
-        return OpenAI(**kwargs)
-    except Exception:
-        return None
+    raise last_error or RuntimeError("OpenRouter models exhausted")
 
 
 def execute_with_gemini(
@@ -277,7 +204,7 @@ def execute_with_gemini(
 ):
     """
     Gemini-only extraction with retry and backup fallback.
-    Uses MODEL_GEMINI_ARTICLES primary, MODEL_GEMINI_BACKUP fallback.
+    Uses GEMINI_SUMMARY_MODEL primary, backup key retries same model.
     Returns parsed JSON dict.
     """
     max_retries = max_retries or MAX_RETRIES
@@ -286,12 +213,11 @@ def execute_with_gemini(
 
     primary_client = _get_gemini_client()
     backup_client = _get_backup_gemini_client()
-    models = [MODEL_GEMINI_ARTICLES, MODEL_GEMINI_BACKUP]
+    model = GEMINI_SUMMARY_MODEL
 
     if primary_client:
         for attempt in range(max_retries):
             try:
-                model = MODEL_GEMINI_ARTICLES
                 print(f"    Gemini: {model} (attempt {attempt + 1}/{max_retries})")
                 return call_gemini_api(
                     primary_client, model, system_prompt, [user_content],
@@ -316,7 +242,6 @@ def execute_with_gemini(
     if backup_client:
         for attempt in range(max_retries):
             try:
-                model = models[1] if len(models) > 1 else MODEL_GEMINI_BACKUP
                 print(f"    Gemini Backup: {model} (attempt {attempt + 1}/{max_retries})")
                 return call_gemini_api(
                     backup_client, model, system_prompt, [user_content],
@@ -338,58 +263,13 @@ def execute_with_gemini(
     raise last_error or RuntimeError("Gemini models exhausted")
 
 
-def execute_with_custom(
-    api_key,
-    model,
-    system_prompt,
-    user_content,
-    base_url=None,
-    max_retries=None,
-    retry_delay=None,
-):
+def execute_pearl_extraction(markdown_text, file_name="", llm="openrouter"):
     """
-    Custom OpenAI-compatible provider extraction with retries.
-    Returns parsed JSON dict.
-    """
-    max_retries = max_retries or MAX_RETRIES
-    retry_delay = retry_delay or RETRY_DELAY
-    last_error = None
+    Separate Pass 2: Extract clinical pearls.
 
-    client = _get_openai_compatible_client(api_key, base_url)
-    if not client:
-        raise RuntimeError("Failed to create custom API client (check --api-key)")
-
-    base_url_str = base_url or "(default)"
-    for attempt in range(max_retries):
-        try:
-            print(f"    Custom: {model} @ {base_url_str} (attempt {attempt + 1}/{max_retries})")
-            return call_chat_api(
-                client, model, system_prompt, user_content,
-                temperature=TEMPERATURE_EXTRACTION,
-                max_tokens=MAX_TOKENS_EXTRACTION,
-            )
-        except json.JSONDecodeError as e:
-            last_error = e
-            print(f"    [X] JSON parse error: {e}")
-            break
-        except Exception as e:
-            last_error = e
-            if _is_retryable(e) and attempt < max_retries - 1:
-                wait = retry_delay * (attempt + 1)
-                print(f"    [!] {e}")
-                print(f"    Retrying in {wait}s...")
-                time.sleep(wait)
-            else:
-                print(f"    [X] Custom API failed: {e}")
-                break
-
-    raise last_error or RuntimeError("Custom API exhausted")
-
-
-def execute_pearl_extraction(markdown_text, file_name=""):
-    """
-    Separate Pass 2: Extract clinical pearls using cheaper model.
-    Primary: openai/gpt-oss-20b, Fallback: openai/gpt-oss-120b.
+    Provider-aware:
+      llm="openrouter" (default) -> OpenRouter, [OPENROUTER_PEARLS_MODEL, OPENROUTER_PEARLS_FALLBACK]
+      llm="gemini"               -> Gemini, GEMINI_PEARLS_MODEL
     Returns list of pearl dicts.
     """
     pearl_system_prompt = """You are an expert critical care clinician and medical educator. Extract high-yield, evidence-based clinical pearls from the summarized medical text provided. Each pearl must meet these criteria:
@@ -410,18 +290,67 @@ Example:
 Output ONLY valid JSON. No preamble, no markdown fences, no commentary."""
 
     user_content = f"Extract clinical pearls from this summary:\n\n{markdown_text[:8000]}"
-
-    together_client = _get_together_client()
-    models = [MODEL_PEARL_PRIMARY, MODEL_PEARL_FALLBACK]
     last_error = None
 
-    if together_client:
+    if llm == "gemini":
+        client = _get_gemini_client()
+        backup_client = _get_backup_gemini_client()
+        model = GEMINI_PEARLS_MODEL
+        if client:
+            for attempt in range(MAX_RETRIES):
+                try:
+                    print(f"    Pearls (Gemini): {model} (attempt {attempt + 1}/{MAX_RETRIES})")
+                    result = call_gemini_api(
+                        client, model, pearl_system_prompt, [user_content],
+                        temperature=TEMPERATURE_PEARLS,
+                    )
+                    if result and isinstance(result, dict) and "pearls" in result:
+                        return result["pearls"]
+                    return result if isinstance(result, list) else []
+                except json.JSONDecodeError as e:
+                    last_error = e
+                    print(f"    [X] Pearl JSON parse error: {e}")
+                    break
+                except Exception as e:
+                    last_error = e
+                    if _is_retryable(e) and attempt < MAX_RETRIES - 1:
+                        time.sleep(RETRY_DELAY * (attempt + 1))
+                    else:
+                        print(f"    [X] Pearl extraction {model} failed: {e}")
+                        break
+        if backup_client:
+            for attempt in range(MAX_RETRIES):
+                try:
+                    print(f"    Pearls (Gemini Backup): {model} (attempt {attempt + 1}/{MAX_RETRIES})")
+                    result = call_gemini_api(
+                        backup_client, model, pearl_system_prompt, [user_content],
+                        temperature=TEMPERATURE_PEARLS,
+                    )
+                    if result and isinstance(result, dict) and "pearls" in result:
+                        return result["pearls"]
+                    return result if isinstance(result, list) else []
+                except json.JSONDecodeError as e:
+                    last_error = e
+                    print(f"    [X] Pearl JSON parse error: {e}")
+                    break
+                except Exception as e:
+                    last_error = e
+                    if _is_retryable(e) and attempt < MAX_RETRIES - 1:
+                        time.sleep(RETRY_DELAY * (attempt + 1))
+                    else:
+                        print(f"    [X] Pearl extraction {model} failed: {e}")
+                        break
+    else:
+        client = _get_openrouter_client()
+        if not client:
+            raise RuntimeError("OpenRouter client not available (check OPENROUTER_API_KEY)")
+        models = [OPENROUTER_PEARLS_MODEL, OPENROUTER_PEARLS_FALLBACK]
         for model in models:
             for attempt in range(MAX_RETRIES):
                 try:
                     print(f"    Pearls: {model} (attempt {attempt + 1}/{MAX_RETRIES})")
-                    result = call_chat_api(
-                        together_client, model, pearl_system_prompt, user_content,
+                    result = call_openrouter_api(
+                        client, model, pearl_system_prompt, user_content,
                         temperature=TEMPERATURE_PEARLS,
                         max_tokens=MAX_TOKENS_PEARLS,
                     )

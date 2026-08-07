@@ -81,8 +81,6 @@ AUTO_BACKUP_BEFORE_REPAIR = True       # save backup before modifying files
 
 # --- Reprocess pearls ---
 REPROCESS_PEARL_MAX = 50              # max files to re-extract pearls for in one run
-REPROCESS_PEARL_MODEL_PRIMARY = "openai/gpt-oss-20b"
-REPROCESS_PEARL_MODEL_FALLBACK = "openai/gpt-oss-120b"
 
 # --- Error priority thresholds ---
 REPEATED_FAILURE_THRESHOLD = 3        # files with >= N failures -> HIGH priority reprocess

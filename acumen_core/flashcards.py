@@ -225,7 +225,7 @@ def llm_convert_to_markdown(text, title, llm="openrouter", verbose=False, api_ke
     When api_key or model is given, a direct OpenAI-compatible call is used
     (base_url defaults to OpenRouter). Otherwise the default openrouter path
     uses the dedicated flashcard model (FLASHCARD_LLM_*)."""
-    from .llm import execute_openai_compat, execute_with_fallback, execute_with_gemini
+    from .llm import execute_openai_compat, execute_with_gemini
 
     user_prompt = (
         f"Source title: {title}\n\nSource content:\n{text}\n\n"
@@ -240,8 +240,6 @@ def llm_convert_to_markdown(text, title, llm="openrouter", verbose=False, api_ke
             )
         elif llm == "gemini":
             result = execute_with_gemini(CONVERT_SYSTEM_PROMPT, user_prompt, "flashcards")
-        elif llm == "together":
-            result = execute_with_fallback(CONVERT_SYSTEM_PROMPT, user_prompt, "flashcards")
         else:
             result = flashcard_llm(CONVERT_SYSTEM_PROMPT, user_prompt)
         return _extract_markdown(result) or None
@@ -300,8 +298,8 @@ def tag_cards_with_llm(cards, systems, llm="openrouter", verbose=False, api_key=
 
     When api_key or model is given, a direct OpenAI-compatible call is used
     (base_url defaults to OpenRouter). Otherwise the dedicated flashcard model
-    (FLASHCARD_LLM_*) is used, unless llm == 'gemini'/'together' (provider chain)."""
-    from .llm import execute_openai_compat, execute_with_fallback, execute_with_gemini
+    (FLASHCARD_LLM_*) is used, unless llm == 'gemini' (provider chain)."""
+    from .llm import execute_openai_compat, execute_with_gemini
     if not systems:
         if verbose:
             print("    [~] No canonical systems — skipping tags")
@@ -330,8 +328,6 @@ def tag_cards_with_llm(cards, systems, llm="openrouter", verbose=False, api_key=
             )
         elif llm == "gemini":
             result = execute_with_gemini(system_prompt, user_prompt, "flashcards")
-        elif llm == "together":
-            result = execute_with_fallback(system_prompt, user_prompt, "flashcards")
         else:
             result = flashcard_llm(system_prompt, user_prompt, json_mode=True)
     except Exception as e:
@@ -873,6 +869,71 @@ def parse_markdown_deck(md_path):
     return title, cards
 
 
+def parse_separator_deck(md_path):
+    """Split a '==='-separated markdown data file into (title, [{subtopic, content}]).
+
+    Raises ValueError if the file contains no '===' separators (it is not an
+    as-is transport file — run without --as-is to use the normal deck import).
+    """
+    with open(md_path, "r", encoding="utf-8", errors="replace") as f:
+        lines = f.read().split("\n")
+
+    title = None
+    separators = []
+    headings = 0
+    prev_blank = True
+    for i, line in enumerate(lines):
+        stripped = line.strip()
+        if not title and stripped.startswith("# ") and not stripped.startswith("## "):
+            title = stripped[2:].strip()
+        if re.match(r"^#{1,6}\s+", stripped):
+            headings += 1
+        is_sep = bool(re.match(r"^={3,}\s*$", stripped)) and (prev_blank or i == 0)
+        if is_sep:
+            separators.append(i)
+        prev_blank = stripped == "" or is_sep
+
+    if not title:
+        name = os.path.splitext(os.path.basename(md_path))[0]
+        title = re.sub(r"^\d+\s*", "", name).strip()
+
+    if not separators:
+        raise ValueError("no '===' separators found — not an as-is file (run without --as-is for ## decks)")
+    if headings > len(separators):
+        raise ValueError(
+            f"file looks like a '## '-structured deck ({headings} headings vs "
+            f"{len(separators)} '===' separators) — run without --as-is for authored decks"
+        )
+
+    cards = []
+    start = 0
+    for sep in separators + [len(lines)]:
+        card = _separator_block(lines[start:sep], title)
+        if card:
+            cards.append(card)
+        start = sep + 1
+    return title, cards
+
+
+def _separator_block(block, title):
+    """One '==='-delimited block -> {subtopic, content}, or None if empty."""
+    text = "\n".join(block).strip()
+    if not text:
+        return None
+    block_lines = text.split("\n")
+    first = block_lines[0].strip()
+    m = re.match(r"^#{1,6}\s+(.*)$", first)
+    if m and m.group(1).strip():
+        subtopic = m.group(1).strip()
+        body = "\n".join(block_lines[1:]).strip()
+    else:
+        subtopic = first[:60] or title
+        body = text
+    if not body:
+        return None
+    return {"subtopic": subtopic, "content": body}
+
+
 def load_import_meta(source_file):
     """{card_index: existing store card} for a source md, so re-imports keep
     console curation (tags/status/history) AND stable UUIDs by card position.
@@ -890,18 +951,17 @@ def load_import_meta(source_file):
     return meta
 
 
-def cards_from_markdown_deck(md_path, source_file, systems, tag=True, llm="openrouter",
-                             verbose=False, api_key=None, model=None, base_url=None):
-    """Convert an authored markdown deck into store cards (source 'md').
+def cards_from_parsed_deck(title, cards, source_file, systems, tag=True, fronts=False,
+                           llm="openrouter", verbose=False, api_key=None, model=None, base_url=None):
+    """Convert parsed markdown cards (list of {subtopic, content}) into store
+    cards (source 'md'). Shared by the authored-deck and --as-is paths.
 
     Existing store cards for the same source_file are matched by position and
-    updated in place (same UUID, preserved tags/status/edit_history). Returns
-    the list of store cards, or None if the deck has no card content."""
+    updated in place (same UUID, preserved tags/status/edit_history). With
+    fronts=True, missing front questions are LLM-generated after import.
+    Returns the list of store cards, or None if the deck has no card content."""
     system = (systems or [None])[0]
-    if not system:
-        return None
-    title, cards = parse_markdown_deck(md_path)
-    if not cards:
+    if not system or not cards:
         return None
 
     meta = load_import_meta(source_file)
@@ -931,6 +991,9 @@ def cards_from_markdown_deck(md_path, source_file, systems, tag=True, llm="openr
         c["subtopic"] = canonical_subtopic(system, c["tags"][0]) if c["tags"] else "General"
     for c in store_cards:
         upsert_card(c)
+    if fronts:
+        ensure_fronts(store_cards, verbose=verbose, persist=True,
+                      api_key=api_key, model=model, base_url=base_url)
 
     # Drop store cards of this source whose md section was removed
     new_ids = {c["id"] for c in store_cards}
@@ -938,3 +1001,13 @@ def cards_from_markdown_deck(md_path, source_file, systems, tag=True, llm="openr
         if old.get("id") not in new_ids and old.get("source") == "md":
             remove_card(old.get("id"))
     return store_cards
+
+
+def cards_from_markdown_deck(md_path, source_file, systems, tag=True, llm="openrouter",
+                             verbose=False, api_key=None, model=None, base_url=None):
+    """Convert an authored markdown deck (## -separated) into store cards (source 'md')."""
+    title, cards = parse_markdown_deck(md_path)
+    return cards_from_parsed_deck(
+        title, cards, source_file, systems, tag=tag, fronts=False,
+        llm=llm, verbose=verbose, api_key=api_key, model=model, base_url=base_url,
+    )

@@ -15,7 +15,7 @@ Commands:
     python flashcards.py --dry-run       # preview only, no API calls (with any command)
 
 Common flags: --spec CVS, --file CVS/x.pdf, --force, --max N, --no-tag, --no-fronts,
---llm {openrouter,together,gemini}, --openrouter/--together/--gemini,
+--llm {openrouter,gemini}, --openrouter/--gemini,
 --api-key KEY --model NAME --base-url URL (custom OpenAI-compatible endpoint), --verbose
 """
 import argparse
@@ -46,10 +46,9 @@ MAX_RAW_CARDS = 60
 
 def add_provider_args(parser):
     provider = parser.add_mutually_exclusive_group()
-    provider.add_argument("--llm", choices=["openrouter", "together", "gemini"],
+    provider.add_argument("--llm", choices=["openrouter", "gemini"],
                           help="LLM provider (default: openrouter)")
     provider.add_argument("--openrouter", action="store_true", help="Use OpenRouter (same as --llm openrouter)")
-    provider.add_argument("--together", action="store_true", help="Use Together AI (same as --llm together)")
     provider.add_argument("--gemini", action="store_true", help="Use Google Gemini (same as --llm gemini)")
     parser.add_argument("--api-key", help="Override API key for an OpenAI-compatible endpoint")
     parser.add_argument("--model", help="Override model name (e.g. deepseek/deepseek-chat-v3-0324)")
@@ -59,8 +58,6 @@ def add_provider_args(parser):
 def resolve_llm(args):
     if args.llm is not None:
         return args.llm
-    if args.together:
-        return "together"
     if args.gemini:
         return "gemini"
     return "openrouter"
@@ -143,6 +140,26 @@ def import_md_deck(path, systems, args):
     return store_cards
 
 
+def import_markdown_as_is(path, systems, args):
+    """--as-is: transport '==='-separated markdown blocks verbatim into the
+    store (each block = one card), then LLM-enrich (tags + fronts)."""
+    rel = os.path.relpath(path, FLASHCARDS_INPUT_DIR).replace("\\", "/")
+    title, cards = fc.parse_separator_deck(path)
+    if not cards:
+        print(f"  [X] No markdown flashcards found in: {rel}")
+        return None
+    store_cards = fc.cards_from_parsed_deck(
+        title, cards, rel, systems,
+        tag=not args.no_tag, fronts=not args.no_fronts,
+        llm=args.llm, verbose=args.verbose,
+        api_key=args.api_key, model=args.model, base_url=args.base_url,
+    )
+    if store_cards is None:
+        return None
+    print(f"  [OK] {rel} -> store {systems[0]} ({len(store_cards)} cards, as-is)")
+    return store_cards
+
+
 def process_file(path, args, root=FLASHCARDS_INPUT_DIR, source="input"):
     """Process one file (md deck or raw source) with ledger skip-if-unchanged."""
     rel = os.path.relpath(path, root).replace("\\", "/")
@@ -163,7 +180,12 @@ def process_file(path, args, root=FLASHCARDS_INPUT_DIR, source="input"):
 
     ext = os.path.splitext(path)[1].lower()
     try:
-        if ext in (".md",):
+        if getattr(args, "as_is", False):
+            if ext not in (".md", ".txt"):
+                print(f"  [X] --as-is requires a .md/.txt markdown file: {rel}")
+                return False
+            store_cards = import_markdown_as_is(path, systems, args)
+        elif ext in (".md",):
             store_cards = import_md_deck(path, systems, args)
         else:
             title, text = fc.parse_source_file(path)
@@ -395,6 +417,8 @@ def main():
     parser.add_argument("--no-tag", action="store_true", help="Skip LLM subtopic tagging")
     parser.add_argument("--no-fronts", action="store_true", help="Skip front-question generation (raw sources)")
     parser.add_argument("--verbose", action="store_true", help="Detailed logging")
+    parser.add_argument("--as-is", action="store_true",
+                        help="Import one '==='-separated markdown file verbatim (requires --file)")
     add_provider_args(parser)
 
     sub = parser.add_subparsers(dest="command")
@@ -415,6 +439,9 @@ def main():
         p.add_argument("--no-tag", action="store_true", help="Skip LLM subtopic tagging")
         p.add_argument("--no-fronts", action="store_true", help="Skip front-question generation (raw sources)")
         p.add_argument("--verbose", action="store_true", help="Detailed logging")
+        if name == "generate":
+            p.add_argument("--as-is", action="store_true",
+                           help="Import one '==='-separated markdown file verbatim (requires --file)")
         add_provider_args(p)
         p.set_defaults(func=func)
 
@@ -423,6 +450,19 @@ def main():
         args.func = cmd_generate
         args.command = "generate"
     args.llm = resolve_llm(args)
+
+    if args.as_is:
+        if not args.file:
+            print("[X] --as-is requires --file (e.g. --as-is --file CVS/deck.md)")
+            sys.exit(1)
+        path = os.path.join(FLASHCARDS_INPUT_DIR, args.file)
+        ext = os.path.splitext(path)[1].lower()
+        if not os.path.isfile(path):
+            print(f"[X] --as-is file not found: {path}")
+            sys.exit(1)
+        if ext not in (".md", ".txt"):
+            print("[X] --as-is requires a .md/.txt markdown file.")
+            sys.exit(1)
 
     if not args.dry_run and args.command in ("generate", "watch", "theory", "tag", "fronts"):
         from acumen_core.config import FLASHCARD_LLM_API_KEY, OPENROUTER_API_KEY

@@ -36,15 +36,10 @@ def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
 
-def _get_together_client():
-    from acumen_core.config import TOGETHER_API_KEY
-    if not TOGETHER_API_KEY:
-        return None
-    try:
-        from together import Together
-        return Together(api_key=TOGETHER_API_KEY, timeout=120)
-    except Exception:
-        return None
+from acumen_core.config import (
+    SUBTOPIC_LLM_MODEL,
+)
+from acumen_core.llm import call_chat_api, _get_openrouter_client
 
 
 def call_llm_for_entry(title, system):
@@ -64,14 +59,13 @@ def call_llm_for_entry(title, system):
 
     user_content = "Title: %s" % title
 
-    client = _get_together_client()
+    client = _get_openrouter_client()
     if not client:
         return None
 
     try:
-        from acumen_core.llm import call_chat_api
         result = call_chat_api(
-            client, "openai/gpt-oss-20b", system_prompt, user_content,
+            client, SUBTOPIC_LLM_MODEL, system_prompt, user_content,
             temperature=0.1, max_tokens=256,
         )
         if isinstance(result, dict):
