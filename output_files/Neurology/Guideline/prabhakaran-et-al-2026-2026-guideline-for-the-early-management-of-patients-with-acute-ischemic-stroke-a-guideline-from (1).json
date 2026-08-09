@@ -1,0 +1,518 @@
+{
+  "id": "aha-asa-acute-ischemic-stroke-guideline-2026",
+  "doc_type": "guideline",
+  "title": "2026 Guideline for the Early Management of Patients With Acute Ischemic Stroke: A Guideline From the American Heart Association/American Stroke Association",
+  "issuing_bodies": [
+    "AHA",
+    "ASA"
+  ],
+  "year": 2026,
+  "doi": "10.1161/STR.0000000000000513",
+  "specialty": [
+    "neurology",
+    "cardiology"
+  ],
+  "tags": [
+    "acute ischemic stroke",
+    "thrombolysis",
+    "endovascular thrombectomy",
+    "tenecteplase",
+    "alteplase",
+    "pediatric stroke",
+    "dvt prophylaxis",
+    "poststroke depression",
+    "rehabilitation",
+    "brain swelling",
+    "decompressive hemicraniectomy",
+    "seizures"
+  ],
+  "one_line_summary": "This updated 2026 AHA/ASA guideline provides comprehensive evidence-based recommendations for the acute evaluation, hyperacute treatment, and early in-hospital management of adult and pediatric patients with acute ischemic stroke.",
+  "key_pearls": [
+    "Either intravenous **tenecteplase** (**0.25 mg/kg**, maximum **25 mg**) or **alteplase** (**0.9 mg/kg**, maximum **90 mg**) is strongly **recommended** for acute ischemic stroke within **4.5 hours** of symptom onset.",
+    "**Endovascular thrombectomy (EVT)** is strongly **recommended** within **6 hours** for anterior circulation proximal LVO with **ASPECTS 3–10** and **NIHSS ≥ 6**, and extended up to **24 hours** in selected patients with salvageable tissue or large core.",
+    "**EVT** within **24 hours** is strongly **recommended** for acute **basilar artery occlusion** presenting with **NIHSS ≥ 10** and **PC-ASPECTS ≥ 6**.",
+    "Intensive systolic blood pressure lowering to **<140 mm Hg** is not **recommended** post-thrombolysis and is **harmful** within **72 hours** after successful EVT recanalization.",
+    "Dual antiplatelet therapy (**DAPT**) with **aspirin** and **clopidogrel** for **21 days** is indicated for minor noncardioembolic stroke (**NIHSS ≤ 3**) or high-risk TIA (**ABCD2 ≥ 4**) presenting within **24 hours**.",
+    "For pediatric AIS (**≥6 years**), **EVT** is **recommended** within **6 to 24 hours** for LVO stroke with salvageable tissue when performed by experienced pediatric neurointerventionalists.",
+    "- **Intermittent pneumatic compression (IPC)** is **recommended** over routine care alone to prevent **DVT** in immobile patients with acute ischemic stroke (**risk difference -3.6%**).",
+    "- Elastic compression stockings cause **significant** harm, including **skin breakdown** and **ulceration**, and should be avoided for **DVT** prophylaxis.",
+    "- Routine administration of **prophylactic antibiotics** or placement of **indwelling bladder catheters** does not improve functional outcomes and increases catheter-associated **UTIs**.",
+    "- **Decompressive craniectomy** with dural expansion within **48 hours** reduces **12-month mortality** by **50%** in patients **<=60 years** with unilateral **MCA** infarction and malignant edema.",
+    "- High-dose, very early mobilization within **24 hours** of stroke onset reduces favorable **3-month outcomes** (*adjusted OR 0.73*) and is not **recommended**.",
+    "- **SSRIs** (such as **fluoxetine**) fail to improve motor recovery or functional status in non-depressed patients and increase the risk of **bone fractures**, **falls**, and **seizures**.",
+    "- Prophylactic **antiseizure medication** is not **recommended** for preventing poststroke seizures or improving functional recovery in acute ischemic stroke."
+  ],
+  "consensus_method": "Modified Delphi process",
+  "search_period": "September 2024 to March 2025",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Prehospital Management and Stroke Systems of Care",
+      "narrative": "- Prehospital triage protocols and advance notification to the receiving hospital **significantly** decrease door-to-imaging and door-to-needle times (**COR 1, LOE B-NR**).\n- Mobile stroke units (**MSUs**) increase early thrombolytic treatment rates within the *golden hour* and improve 90-day functional outcomes (**COR 1, LOE A**).\n- Direct transport to distant **thrombectomy-capable stroke centers (TSCs)** does not improve 3-month outcomes compared to local stroke center transport in well-coordinated systems (**COR 3: No Benefit, LOE B-R**).\n- Prehospital administration of transdermal **glyceryl trinitrate** or intensive BP lowering (**SBP 130–140 mm Hg**) shows no functional benefit and may cause harm (**COR 3**).",
+      "recommendations": [
+        {
+          "rec_id": "2.3.3",
+          "statement": "In patients with suspected stroke transported by ambulance, prehospital personnel should provide advance notification to the receiving hospital to reduce in-hospital evaluation times and **mortality**.",
+          "strength": "strong",
+          "evidence_grade": "B-NR"
+        },
+        {
+          "rec_id": "2.4.4",
+          "statement": "In areas with well-coordinated stroke systems of care and local hospitals proficient in thrombolysis and transfer, direct transport of suspected LVO to a distant TSC compared to a local stroke center does not improve 3-month clinical outcomes.",
+          "strength": null,
+          "evidence_grade": "B-R"
+        },
+        {
+          "rec_id": "2.5.1",
+          "statement": "In patients with suspected AIS, the use of MSUs over conventional EMS where available is **recommended** to ensure the fastest achievable onset-to-treatment time and improve functional outcomes.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Emergency Evaluation and Diagnostic Imaging",
+      "narrative": "- Noncontrast CT (**NCCT**) or **MRI** is required immediately to exclude intracranial hemorrhage prior to initiating reperfusion therapy (**COR 1, LOE A**).\n- **CTA** or **CTP** should not be delayed to obtain serum creatinine levels (**COR 1, LOE B-NR**).\n- Extended time window thrombolysis (**4.5–9 hours** or wake-up stroke) requires imaging selection using **MRI DWI-FLAIR mismatch** (**COR 2a, LOE B-R**) or **CT/MR perfusion mismatch** (**COR 2a, LOE B-R**).\n- Emergent **MRI/MRA** (or **CT/CTA** if MRI unavailable) is **recommended** in pediatric AIS to identify LVO and rule out mimics (**COR 2a, LOE C-LD**).",
+      "recommendations": [
+        {
+          "rec_id": "3.2.1",
+          "statement": "In patients with suspected AIS, emergent brain imaging with NCCT or MRI is **recommended** on initial evaluation to assess ischemic burden and exclude intracranial hemorrhage before initiating reperfusion interventions.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "3.2.3",
+          "statement": "In patients with suspected AIS and LVO, emergent vascular imaging with contrast-enhanced CTA and/or CTP should not be delayed to obtain serum creatinine concentration.",
+          "strength": "strong",
+          "evidence_grade": "B-NR"
+        },
+        {
+          "rec_id": "3.2.6",
+          "statement": "In patients with suspected AIS who awaken from symptoms or have unknown time of onset >4.5 hours from LKN, MRI DWI-FLAIR mismatch selection can be useful to determine eligibility for extended window IVT.",
+          "strength": "conditional",
+          "evidence_grade": "B-R"
+        },
+        {
+          "rec_id": "3.2.8",
+          "statement": "In patients with suspected AIS and LVO presenting within 24 hours of last known well, emergent brain and vascular imaging of cervical and intracranial vessels should be performed as rapidly as possible for EVT selection.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "General Supportive Early Care and Blood Pressure Management",
+      "narrative": "- Hypoxia (**SpO2 <94%**) must be corrected with supplemental oxygen; routine oxygen in nonhypoxic patients provides no benefit (**COR 3: No Benefit, LOE B-R**).\n- Pre-thrombolysis BP must be lowered to **SBP <185 mm Hg** and **DBP <110 mm Hg** (**COR 1, LOE B-NR**).\n- Post-IVT SBP must be maintained at **<180/105 mm Hg** for at least 24 hours; intensive reduction to **<140 mm Hg** provides no functional benefit (**COR 3: No Benefit, LOE B-R**).\n- Following successful EVT recanalization (**mTICI 2b/2c/3**), intensive SBP lowering to **<140 mm Hg** within 72 hours is **harmful** (**COR 3: Harm, LOE A**).\n- Intensive insulin therapy targeting glucose **80–130 mg/dL** provides no benefit and increases severe hypoglycemia risk (**COR 3: No Benefit, LOE A**).",
+      "recommendations": [
+        {
+          "rec_id": "4.3.5",
+          "statement": "Patients with AIS who have elevated BP and are otherwise eligible for treatment with IVT should have their SBP lowered to <185 mm Hg and DBP <110 mm Hg before IVT therapy is initiated.",
+          "strength": "strong",
+          "evidence_grade": "B-NR"
+        },
+        {
+          "rec_id": "4.3.8",
+          "statement": "In patients with mild to moderate severity AIS who have been treated with IVT, intensive SBP reduction (target <140 mm Hg compared with <180 mm Hg) is not **recommended**.",
+          "strength": null,
+          "evidence_grade": "B-R"
+        },
+        {
+          "rec_id": "4.3.10",
+          "statement": "In patients with AIS with LVO of the anterior circulation successfully recanalized by EVT (mTICI 2b, 2c, or 3), intensive SBP reduction target of <140 mm Hg for the first 72 hours is harmful and not **recommended**.",
+          "strength": null,
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.5.3",
+          "statement": "In hospitalized patients with AIS with hyperglycemia, treatment with IV insulin to achieve blood glucose levels in the range of 80 to **130 mg**/dL is not **recommended**.",
+          "strength": null,
+          "evidence_grade": "A"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Intravenous Thrombolysis Decision-Making and Agent Selection",
+      "narrative": "- Single bolus IV **tenecteplase** (**0.25 mg/kg**, max **25 mg**) is noninferior to **alteplase** (**0.9 mg/kg**, max **90 mg**) within **4.5 hours** (**COR 1, LOE A**).\n- **Tenecteplase 0.4 mg/kg** is not **recommended** due to lack of incremental benefit and potential harm (**COR 3: No Benefit, LOE A**).\n- Thrombolysis is not **recommended** for mild, non-disabling stroke deficits (**COR 3: No Benefit, LOE B-R**).\n- IVT should not be delayed for routine laboratory results or screening for cerebral microbleeds (**COR 1, LOE B-NR**).\n- Pediatric IVT with **alteplase** (**0.9 mg/kg**) may be considered in patients aged **28 days to 18 years** with disabling deficits within **4.5 hours** (**COR 2b, LOE C-LD**).",
+      "recommendations": [
+        {
+          "rec_id": "4.6.1.1",
+          "statement": "In adult patients with AIS with disabling deficits eligible for IVT, treatment should be initiated as quickly as possible.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.6.2.1",
+          "statement": "In adult patients with AIS presenting within 4.5 hours of symptom onset eligible for IVT, tenecteplase at a dose of **0.25 mg**/kg (max **25 mg**) or alteplase at **0.9 mg**/kg (max **90 mg**) is **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.6.2.2",
+          "statement": "In adult patients with AIS eligible for IVT within 4.5 hours, tenecteplase at a dose of **0.4 mg**/kg body weight is not **recommended**.",
+          "strength": null,
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.6.1.8",
+          "statement": "In eligible adult patients with AIS presenting with mild non-disabling deficits within 4.5 hours of symptom onset, IVT is not **recommended**.",
+          "strength": null,
+          "evidence_grade": "B-R"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Endovascular Thrombectomy in Adults and Children",
+      "narrative": "- **EVT** within **6 hours** is strongly **recommended** for anterior circulation LVO (ICA/M1) with **NIHSS ≥ 6**, **prestroke mRS 0–1**, and **ASPECTS 3–10** (**COR 1, LOE A**).\n- **EVT** between **6 and 24 hours** is strongly **recommended** for anterior LVO with **ASPECTS ≥ 6** (**COR 1, LOE A**) and for selected cases with **ASPECTS 3–5** (**COR 1, LOE A**).\n- **Basilar artery occlusion** presenting within **24 hours** with **NIHSS ≥ 10** and **PC-ASPECTS ≥ 6** benefits **significantly** from **EVT** (**COR 1, LOE A**).\n- In patients eligible for both IVT and EVT, IVT should be administered immediately without delay or observation (**COR 1, LOE A**).\n- In pediatric AIS (**≥6 years**) with LVO, **EVT** is **recommended** within **6 to 24 hours** if salvageable tissue is present (**COR 2a, LOE B-NR**).",
+      "recommendations": [
+        {
+          "rec_id": "4.7.2.1",
+          "statement": "In patients with AIS from anterior circulation proximal LVO (ICA or M1) presenting within 6 hours, with NIHSS ≥6, prestroke mRS 0 to 1, and ASPECTS 3 to 10, EVT is **recommended** to improve outcomes and reduce **mortality**.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.7.2.2",
+          "statement": "In patients with AIS from anterior circulation proximal LVO presenting between 6 and 24 hours, with NIHSS ≥6, prestroke mRS 0 to 1, and ASPECTS ≥6, EVT is **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.7.2.3",
+          "statement": "In selected patients with AIS from anterior circulation proximal LVO presenting between 6 and 24 hours, with age <80 years, NIHSS ≥6, prestroke mRS 0 to 1, and ASPECTS 3 to 5, EVT is **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.7.3.1",
+          "statement": "In patients with AIS with basilar artery occlusion, baseline mRS 0 to 1, NIHSS ≥10, and PC-ASPECTS ≥6, EVT within 24 hours is **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.7.5.1",
+          "statement": "In pediatric patients ≥6 years with AIS due to LVO within 6 hours of symptom onset, EVT can be effective if performed by experienced neurointerventionalists.",
+          "strength": "conditional",
+          "evidence_grade": "B-NR"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Antiplatelet and Anticoagulation Therapies",
+      "narrative": "- Oral **aspirin** (**160–325 mg**) is **recommended** within **48 hours** of stroke onset (**COR 1, LOE A**).\n- Early **DAPT** (**aspirin** + **clopidogrel** with **300–600 mg** loading dose) for **21 days** followed by single antiplatelet therapy is indicated for minor noncardioembolic AIS (**NIHSS ≤ 3**) or high-risk TIA (**ABCD2 ≥ 4**) initiated within **24 hours** (**COR 1, LOE A**).\n- **DAPT** with **ticagrelor** and **aspirin** for **21 days** is reasonable in **CYP2C19 loss-of-function allele** carriers (**COR 2b, LOE B-R**).\n- Early oral anticoagulation (**DOACs**) within **48 hours to 4 days** in mild/moderate AIS with **atrial fibrillation** is safe and reasonable (**COR 2a, LOE A**).\n- Triple antiplatelet therapy or routine urgent anticoagulation in acute stroke provides no benefit and causes harm (**COR 3**).",
+      "recommendations": [
+        {
+          "rec_id": "4.8.1",
+          "statement": "In patients with AIS, administration of aspirin is **recommended** within 48 hours after stroke onset to reduce risk of death and dependency.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.8.12",
+          "statement": "In patients with minor noncardioembolic AIS (NIHSS ≤3) or high-risk TIA (ABCD2 ≥4) who did not receive IVT, DAPT (aspirin and clopidogrel) should be initiated within 24 hours and continued for 21 days.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "4.9.1",
+          "statement": "In carefully selected patients with AIS with atrial fibrillation, a strategy of early oral anticoagulation poststroke is low risk and reasonable compared with delayed anticoagulation.",
+          "strength": "conditional",
+          "evidence_grade": "A"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Deep Vein Thrombosis Prophylaxis",
+      "narrative": "- In patients with **AIS** and impaired mobility without contraindications, **IPC** reduces **DVT** risk based on the **CLOTS-3 trial** (**8.5%** vs **12.1%**; *risk difference -3.6%* [**95% CI -1.4% to -5.8%**]).\n- Pharmacological prophylaxis with **UFH** or **LMWH** reduces **DVT** (*OR 0.21*) and **symptomatic PE** (*OR 0.69*), but increases **ICH** (*OR 1.68*) and **extracranial hemorrhage** (*OR 1.65*) without net **survival** benefit.\n- Head-to-head trials (**PREVAIL**, **PROTECT**) show **LMWH** reduces **DVT** compared to **UFH**, but increases **extracranial hemorrhage** without overall disability or **mortality** reduction.\n- Elastic compression stockings (**GPCs**) cause harm including **skin breakdown** (**5%** vs **1%**) without reducing proximal **DVT** rates.",
+      "recommendations": [
+        {
+          "rec_id": "5.4-1",
+          "statement": "In patients with AIS who have impaired mobility and do not have contraindications to intermittent pneumatic compression (IPC), IPC in addition to routine care is **recommended** over routine care alone to reduce the risk of deep vein thrombosis (DVT).",
+          "strength": "strong",
+          "evidence_grade": "B-R"
+        },
+        {
+          "rec_id": "5.4-2",
+          "statement": "In patients with AIS who have impaired mobility, either prophylactic-dose subcutaneous heparin (UFH or LMWH) is reasonable to reduce the risk of VTE.",
+          "strength": "conditional",
+          "evidence_grade": "B-R"
+        },
+        {
+          "rec_id": "5.4-3",
+          "statement": "In patients with AIS who have impaired mobility, the benefit of prophylactic-dose subcutaneous heparin (UFH or LMWH) over no prophylactic-dose heparin is not well established to increase overall **survival**.",
+          "strength": "weak",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "5.4-4",
+          "statement": "In patients with AIS who have impaired mobility and who are selected for prophylactic anticoagulation, the benefit of prophylactic-dose LMWH over prophylactic-dose UFH to prevent DVT is uncertain.",
+          "strength": "weak",
+          "evidence_grade": "B-R"
+        },
+        {
+          "rec_id": "5.4-5",
+          "statement": "In patients with AIS who have impaired mobility, elastic compression stockings cause harm, including skin breakdown, ulceration, and tissue necrosis, compared with usual care.",
+          "strength": "strong",
+          "evidence_grade": "B-R"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Depression",
+      "narrative": "- Poststroke depression (**PSD**) affects **31%** of **AIS** patients and increases disability and **mortality**.\n- **PHQ-9** has higher diagnostic accuracy within the first **2 months** post-stroke, whereas **HDS** is **superior** in the chronic phase (**>2 months**).\n- Antidepressant treatment (especially **paroxetine** or other **SSRIs**) improves depressive symptoms but reduces overall drug tolerability.\n- Combination therapy of **acupuncture** or low-frequency (**<=10 Hz**) **rTMS** with **antidepressants** **significantly** reduces **HDS** depression scores compared to **antidepressants** alone.",
+      "recommendations": [
+        {
+          "rec_id": "5.5-1",
+          "statement": "In patients with AIS, administration of a structured depression inventory is **recommended** to routinely screen for poststroke depression (PSD), although the optimal timing of screening is uncertain.",
+          "strength": "strong",
+          "evidence_grade": "B-NR"
+        },
+        {
+          "rec_id": "5.5-2",
+          "statement": "In patients diagnosed with PSD, treatment with antidepressants and/or nonpharmacological interventions (ie, psychotherapy, noninvasive brain stimulation, acupuncture) is **recommended** to improve depressive symptoms.",
+          "strength": "strong",
+          "evidence_grade": "B-R"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Other In-Hospital Management Considerations",
+      "narrative": "- Prophylactic antibiotic trials (**PASS**, **STROKE-INF**, **PRECIOUS**) demonstrated a reduction in overall systemic infections and **UTIs** (*OR 0.34*), but failed to improve functional outcomes (**mRS score at 90 days**).\n- Indwelling bladder catheters and urinary incontinence are independent risk factors for poor **3-month outcome**; early catheter removal or avoidance is **recommended** to prevent catheter-associated **UTIs**.\n- Referral to palliative care is appropriate to align patient-centered preferences during **prognosis** formation and care goals.",
+      "recommendations": [
+        {
+          "rec_id": "5.6-1",
+          "statement": "For select patients with AIS and their families, referral to palliative care resources is reasonable as appropriate.",
+          "strength": "conditional",
+          "evidence_grade": "C-EO"
+        },
+        {
+          "rec_id": "5.6-2",
+          "statement": "In patients with AIS, routine use of prophylactic antibiotics has not been shown to be beneficial in improving functional outcomes.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "5.6-3",
+          "statement": "In patients with AIS, routine placement of indwelling bladder catheters should not be performed because of the associated risk of catheter-associated urinary tract infections (UTIs).",
+          "strength": "strong",
+          "evidence_grade": "C-LD"
+        }
+      ]
+    },
+    {
+      "order": 10,
+      "topic": "Rehabilitation",
+      "narrative": "- Early multidisciplinary inpatient stroke unit care initiated within **3 days** improves activities of daily living and independent home living.\n- **SSRIs** (**fluoxetine**) in large clinical trials (**FOCUS**, **AFFINITY**, **EFFECTS**) failed to improve motor recovery or functional independence (*standardized mean difference -0.0* [**95% CI -0.05 to 0.05**]) and **significantly** increased **bone fractures**, **falls** (**3%** vs **1%**), and **seizures** (**2%** vs **<1%**).\n- The **AVERT trial** showed high-dose, very early mobilization within **24 hours** led to lower odds of favorable outcome (**mRS 0-2**) at **3 months** (**46%** vs **50%**; *adjusted OR 0.73* [**95% CI 0.59-0.90**]; *P=0.004*).",
+      "recommendations": [
+        {
+          "rec_id": "5.7-1",
+          "statement": "In patients with AIS, in-hospital, formal, interdisciplinary assessment and provision of rehabilitation at a level appropriate for the individual patient is **recommended** to improve functional recovery.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "5.7-2",
+          "statement": "In patients with AIS, SSRIs are not effective for improving motor recovery or functional status.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "5.7-3",
+          "statement": "In patients with AIS, high-dose, very early mobilization within 24 hours of stroke onset is not **recommended** to improve the odds of a favorable outcome at 3 months and may be harmful.",
+          "strength": "strong",
+          "evidence_grade": "B-R"
+        }
+      ]
+    },
+    {
+      "order": 11,
+      "topic": "Brain Swelling (General Recommendations)",
+      "narrative": "- Severe brain swelling secondary to large cerebral or cerebellar infarction occurs predominantly within the first **48 hours** (**70%** of neurological deterioration cases).\n- Early interfacility transfer within **48 hours** to tertiary centers with neurosurgical and neurocritical care expertise is **essential** to allow timely surgical decompression.\n- Shared decision-making regarding **prognosis**, potential persistent morbidity, and care limitations should occur early with family or next of kin.",
+      "recommendations": [
+        {
+          "rec_id": "6.1-1",
+          "statement": "In patients with large cerebral or cerebellar infarctions at high risk for developing brain swelling and herniation, an early discussion of care options and possible outcomes should take place with patients (if feasible) and family or next of kin to ascertain patient-centered preferences in shared decision-making, especially during **prognosis** formation and when considering interventions or limitations in care.",
+          "strength": "strong",
+          "evidence_grade": "C-EO"
+        },
+        {
+          "rec_id": "6.1-2",
+          "statement": "In patients with large cerebral or cerebellar infarctions, close monitoring of the patient for signs of neurological worsening during the first days after stroke is **recommended** to rapidly evaluate the need for potential interventions.",
+          "strength": "strong",
+          "evidence_grade": "C-EO"
+        },
+        {
+          "rec_id": "6.1-3",
+          "statement": "In patients with large cerebral or cerebellar infarctions who are at increased risk for malignant brain swelling, early transfer to an institution with appropriate neurosurgical and **critical** care expertise is **recommended** to ensure timely treatment.",
+          "strength": "strong",
+          "evidence_grade": "C-LD"
+        }
+      ]
+    },
+    {
+      "order": 12,
+      "topic": "Brain Swelling (Medical Management)",
+      "narrative": "- Osmotic agents (**mannitol** or **hypertonic saline**) effectively lower **intracranial pressure** and serve as a bridge to definitive surgical intervention.\n- The **CHARM trial** demonstrated that **IV glibenclamide** did not improve **90-day mRS score** (*cOR 1.17*; *P=0.42*) or **90-day mortality** (*HR 1.20*; *P=0.30*) in patients **18 to 85 years** with large hemispheric infarction.\n- **Barbiturates**, **hypothermia**, and **corticosteroids** lack efficacy for poststroke cerebral edema and cause severe adverse effects including **pneumonia**, **hypotension**, and infectious complications.",
+      "recommendations": [
+        {
+          "rec_id": "6.2-1",
+          "statement": "In patients with large cerebral or cerebellar infarctions and neurological decline from brain swelling, the use of osmotic therapy as a bridge to a surgical intervention is reasonable to improve functional outcome and reduce **mortality**.",
+          "strength": "conditional",
+          "evidence_grade": "C-LD"
+        },
+        {
+          "rec_id": "6.2-2",
+          "statement": "In patients with large hemispheric infarction 18 to 70 years of age, the use of IV glibenclamide does not result in improved functional outcome and is not **recommended**.",
+          "strength": "strong",
+          "evidence_grade": "B-R"
+        },
+        {
+          "rec_id": "6.2-3",
+          "statement": "In patients with large cerebral or cerebellar infarctions and brain swelling, hypothermia, barbiturates, or corticosteroids should not be administered to treat brain swelling due to the lack of evidence of efficacy and potential of increased adverse effects.",
+          "strength": "strong",
+          "evidence_grade": "C-LD"
+        }
+      ]
+    },
+    {
+      "order": 13,
+      "topic": "Supratentorial Infarction (Surgical Management)",
+      "narrative": "- Pooled RCTs (**DECIMAL**, **DESTINY**, **HAMLET**) show **decompressive hemicraniectomy** within **48 hours** in patients **<=60 years** with malignant **MCA** infarction reduces **12-month mortality** (***absolute** risk reduction 50%* [**95% CI 34%-66%**]) and increases moderate disability or better (**mRS 2-3**: **43%** vs **21%**).\n- In patients **>60 years** (**DESTINY II**), surgery within **48 hours** reduces **mortality** (**42%** vs **76%**), but functional independence (**mRS <=2**) at **12 months** is rare (**0%**).\n- Prior administration of **IV tPA** does not increase surgical complications, **mortality**, or **ICH** rates during subsequent decompressive hemicraniectomy.\n- Decreased level of consciousness is a key clinical trigger for surgical selection, and open dural closure with expansion reduces procedure duration and complication rates without increasing **CSF leaks**.",
+      "recommendations": [
+        {
+          "rec_id": "6.3-1",
+          "statement": "In patients with large territorial cerebral infarctions at high risk for developing brain swelling and herniation, decreased level of consciousness attributed to brain swelling is a reasonable trigger for decompressive hemicraniectomy selection.",
+          "strength": "conditional",
+          "evidence_grade": "B-NR"
+        },
+        {
+          "rec_id": "6.3-2",
+          "statement": "In patients <=60 years of age with unilateral MCA infarctions who deteriorate neurologically within 48 hours from brain swelling despite medical therapy, decompressive craniectomy with dural expansion is beneficial to reduce **mortality** and improve functional outcome.",
+          "strength": "strong",
+          "evidence_grade": "A"
+        },
+        {
+          "rec_id": "6.3-3",
+          "statement": "In patients >60 years of age with unilateral MCA infarctions who deteriorate neurologically within 48 hours from brain swelling despite medical therapy, decompressive craniectomy with dural expansion may be considered to reduce **mortality**.",
+          "strength": "weak",
+          "evidence_grade": "B-R"
+        },
+        {
+          "rec_id": "6.3-4",
+          "statement": "In patients with AIS who received IV tPA thrombolysis and develop malignant cerebral edema despite medical therapy, early decompressive craniectomy within 48 hours may still be considered without additional safety concerns.",
+          "strength": "weak",
+          "evidence_grade": "B-NR"
+        }
+      ]
+    },
+    {
+      "order": 14,
+      "topic": "Cerebellar Infarction (Surgical Management)",
+      "narrative": "- Acute cerebellar swelling causes **fourth ventricle** compression, **obstructive hydrocephalus**, and direct **brainstem compression**.\n- Emergency **ventriculostomy** relieves obstructive hydrocephalus as an initial step; conservative **CSF** drainage minimizes upward herniation risk.\n- Decompressive suboccipital craniectomy with dural expansion is indicated for brainstem compression or cerebellar infarct volume **>=35 mL**.\n- Surgical **necrosectomy** (resection of ischemic necrotic cerebellar tissue) provides higher rates of favorable functional outcomes compared to suboccipital craniectomy alone (**65.3%** vs **27.9%**; *P<0.001*).",
+      "recommendations": [
+        {
+          "rec_id": "6.4-1",
+          "statement": "In patients with cerebellar infarction and obstructive hydrocephalus, ventriculostomy is **recommended** to improve neurological function and decrease **mortality**. Concomitant or subsequent decompressive craniectomy may or may not be necessary on the basis of factors such as the size of the infarction, neurological condition, degree of brainstem compression, and effectiveness of medical management.",
+          "strength": "strong",
+          "evidence_grade": "C-LD"
+        },
+        {
+          "rec_id": "6.4-2",
+          "statement": "In patients with cerebellar infarction causing neurological deterioration from brainstem compression or volumes >=**35 mL**, decompressive suboccipital craniectomy with dural expansion should be performed to improve outcomes and decrease **mortality**.",
+          "strength": "strong",
+          "evidence_grade": "B-NR"
+        }
+      ]
+    },
+    {
+      "order": 15,
+      "topic": "Seizures",
+      "narrative": "- Unprovoked poststroke seizures occur secondary to cortical involvement, stroke severity, or early acute seizures, increasing **mortality** and disability.\n- Initiate **antiseizure medication** following an unprovoked poststroke seizure, tailoring drug choice and duration to patient drug interactions and adverse effect profiles.\n- Routine prophylactic administration of **antiseizure medications** (**levetiracetam** or **diazepam**) does not prevent poststroke seizures or improve **3-month functional recovery**.",
+      "recommendations": [
+        {
+          "rec_id": "6.5-1",
+          "statement": "In adult patients with an unprovoked seizure after AIS, management that includes antiseizure medication is **recommended** on the basis of specific patient characteristics to reduce the risk of seizure recurrence.",
+          "strength": "strong",
+          "evidence_grade": "C-LD"
+        },
+        {
+          "rec_id": "6.5-2",
+          "statement": "In adult patients with AIS, prophylactic treatment with antiseizure medication is not **recommended** to prevent seizures or improve functional outcome.",
+          "strength": "strong",
+          "evidence_grade": "C-LD"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Prehospital Identification & Triage",
+      "action": "EMS personnel apply standardized prehospital stroke scales (e.g., CPSS, RACE) to identify acute stroke and suspected LVO, verify point-of-care glucose, and transmit immediate pre-notification to the target stroke center."
+    },
+    {
+      "step": 2,
+      "title": "Hyperacute Evaluation & Neuroimaging",
+      "action": "Execute urgent clinical assessment (NIHSS) and obtain emergent head NCCT or MRI within 25 minutes of arrival. If LVO is suspected or patient is in the 6-24 hour window, immediately acquire noninvasive vascular imaging (CTA/CTP or MRA/MRP) without awaiting serum creatinine."
+    },
+    {
+      "step": 3,
+      "title": "Hemodynamic & Metabolic Optimization",
+      "action": "If IVT is indicated, treat blood pressure to SBP <185 mm Hg and DBP <110 mm Hg using short-acting IV antihypertensives. Correct blood glucose <**60 mg**/dL immediately and treat severe hyperglycemia to 140-**180 mg**/dL while avoiding intensive insulin protocols (target 80-**130 mg**/dL)."
+    },
+    {
+      "step": 4,
+      "title": "Reperfusion Delivery",
+      "action": "Administer IV tenecteplase **0.25 mg**/kg (max **25 mg**) single bolus or alteplase **0.9 mg**/kg (max **90 mg**) over 60 minutes for eligible patients with disabling deficits within 4.5 hours. If LVO is present, immediately transport to angiography suite for EVT without observing for post-IVT clinical response."
+    },
+    {
+      "step": 5,
+      "title": "Post-Reperfusion & In-Hospital Management",
+      "action": "Maintain SBP <180/105 mm Hg for 24 hours post-reperfusion (avoiding SBP <140 mm Hg after successful EVT). Perform formal dysphagia screening prior to oral intake, initiate aspirin within 48 hours (or DAPT for 21 days in minor AIS/high-risk TIA), apply intermittent pneumatic compression, and start enteral nutrition within 7 days."
+    }
+  ],
+  "strengths_limitations": "- Strengths: Extensive incorporation of high-quality randomized controlled trial data, inclusion of pediatric-specific acute management guidelines, and clear modular structure with explicit Class of Recommendation / Level of Evidence ratings.\n- Limitations: Regional concentration of certain trial cohorts (e.g., Asian populations in basilar EVT and alternative thrombolytic trials), lack of randomized pediatric interventional trials, and limited generalizability of specific prehospital destination strategies in non-standardized health systems.\n- Strengths: Derived from extensive multi-center randomized controlled trial evidence (**CLOTS 3**, **DESTINY II**, **AVERT**, **CHARM**) and high-quality individual patient meta-analyses.\n- Limitations: Gaps remain in optimal timing/tool selection for poststroke depression screening in aphasia, dosing frequency of **UFH**, real-world applicability of late hemicraniectomy, and pediatric stroke management protocols.",
+  "drugs_doses": [
+    {
+      "drug": "tenecteplase",
+      "dose": "0.25 mg/kg body weight IV single bolus over 5-10 seconds (maximum dose 25 mg)",
+      "indication": "Acute ischemic stroke presenting within 4.5 hours of symptom onset in eligible patients",
+      "adverse_effects": "Symptomatic intracerebral hemorrhage, orolingual angioedema, systemic bleeding"
+    },
+    {
+      "drug": "alteplase",
+      "dose": "0.9 mg/kg IV (maximum 90 mg), administered as 10% bolus over 1 minute and remaining 90% infused over 60 minutes",
+      "indication": "Acute ischemic stroke presenting within 4.5 hours of symptom onset in eligible patients",
+      "adverse_effects": "Symptomatic intracerebral hemorrhage, orolingual angioedema, gastrointestinal hemorrhage"
+    },
+    {
+      "drug": "aspirin",
+      "dose": "160 mg to 325 mg orally once daily initial dose (or 75-100 mg daily for maintenance)",
+      "indication": "Acute ischemic stroke within 48 hours of onset and early secondary prevention",
+      "adverse_effects": "Gastrointestinal bleeding, dyspepsia, systemic hemorrhage"
+    },
+    {
+      "drug": "clopidogrel",
+      "dose": "300 mg to 600 mg oral loading dose, followed by 75 mg orally once daily for 21 days (combined with aspirin)",
+      "indication": "Dual antiplatelet therapy for minor acute ischemic stroke (NIHSS ≤3) or high-risk TIA (ABCD2 ≥4) within 24 hours",
+      "adverse_effects": "Bleeding, rash, gastrointestinal distress"
+    },
+    {
+      "drug": "ticagrelor",
+      "dose": "180 mg oral loading dose, followed by 90 mg orally twice daily for 21-30 days (combined with aspirin)",
+      "indication": "Dual antiplatelet therapy in CYP2C19 loss-of-function allele carriers or minor AIS (NIHSS ≤5) / high-risk TIA",
+      "adverse_effects": "Major bleeding, dyspnea, ventricular pauses"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-08-08",
+  "article_subtype": "Guideline",
+  "subtopic": "Acute Ischemic Stroke"
+}

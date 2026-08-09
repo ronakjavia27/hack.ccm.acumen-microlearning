@@ -8,8 +8,8 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 ### Root Entry Points
 | File | Purpose |
 |------|---------|
-| `main_app.py` | Public dashboard (Vercel-deployed, serves `/`) |
-| `revamped_webapp.py` | Identical to main_app.py (old backup) — same content, separate deployment |
+| `revamped_webapp.py` | THE public knowledge portal (serves `/`, auth-gated) — single FastAPI app, JS/CSS inline in one giant HTML f-string |
+| `webapp_google.py` | Vercel entrypoint (see `vercel.json`) — wraps `revamped_webapp` and adds the Google OAuth landing page |
 | `dashboard_app.py` | Admin console at `/console` (port 8878) — wraps `dashboard/` |
 | `generator.py` | PDF ingestion pipeline (Pass 1: summaries, Pass 2: pearls) |
 | `maintainer.py` | Health checks, schema validation, repairs, error reports |
@@ -102,7 +102,9 @@ cp .env.example .env   # fill in API keys
 python generator.py                    # Watch mode (default: openrouter)
 python maintainer.py                   # Health report
 python dashboard_app.py                # Admin console → http://localhost:8878/console
-python main_app.py                     # Public dashboard → http://localhost:8000
+python revamped_webapp.py               # Local: serves at http://localhost:8000 (see note below)
+# Run locally with: uvicorn revamped_webapp:app --port 8000  (no __main__ block).
+# On Vercel the entrypoint is webapp_google.py (wraps revamped_webapp + Google OAuth).
 ```
 
 ## Configuration (`.env` + `acumen_core/config.py`)
@@ -199,8 +201,8 @@ FLASHCARD_LLM_BASE_URL  # Defaults to OpenRouter
 ### `syncer.py` — Git & Email
 ```
 --mode all              Git add -A, commit, push (default)
---mode data             Git all except main_app.py
---mode web              Git main_app.py only
+--mode data             Git all except web app files
+--mode web              Git web app files only (revamped_webapp.py + webapp_google.py + vercel.json)
 --mode pearls           Git pearls.json + sent_summaries.json
 --mode email            Dispatch pending emails
 --mode subscribers      Sync Google Sheets → emails.csv
@@ -313,7 +315,7 @@ PDF in input_pdfs/
             ├─ LLM pearl extraction (openai/gpt-oss-20b)
             └─ Append to pearls.json
                 │
-                ▼ Dashboard (main_app.py → Vercel)
+                ▼ Dashboard (revamped_webapp.py → webapp_google.py → Vercel)
                 ├─ Reads sent_summaries.json for articles
                 ├─ Reads pearls.json for pearls
                 └─ Reads esbicm_trials_index.json for trials
@@ -325,7 +327,7 @@ PDF in input_pdfs/
 - **Error logging**: monthly rotation to `master_error_list_YYYY-MM.txt` (JSONL)
 - **Specialties** (23): Cardiology, Pulmonology, Infectious Diseases, Neurology, Nephrology, Gastroenterology, Hematology, Hepatology, Immunology, Sepsis, Trauma, Endocrinology, General, Multisystem, Nutrition, Obstetrics And Gynecology, Rheumatology, Toxicology, Oncology, Surgery, Cardiothoracic, Vascular, Other
 - **Type values**: Review, RCT, Meta-analysis, Guideline, Observational, Case Series, Trial, Other
-- **Dashboard specialties** in `main_app.py` `SPEC_COLORS` dict: 24 entries (slightly different from above)
+- **Dashboard specialties** in `revamped_webapp.py` `SPEC_COLORS` dict: 24 entries (slightly different from above)
 - **Sent summaries tracking**: dual-tracked in both JSON + Excel
 - **Subtopics**: auto-assigned via LLM during generation (generator Pass 1.5 — see `classify_subtopic()` in `acumen_core/llm.py`); stored in `subtopics.json` (master vocabulary, its keys = the specialty list) + `subtopic_mapping.json` (auto-filled registry). Retired manual tools (`subtopic_mapper.py`, `bulk_subtopic_classifier.py`, `specialties.txt`/`subtopics.txt`, `pending_subtopics.json`) are quarantined under `quarantine/{date}/subtopic-mapping/`.
 - **LLM provider fallback**: OpenRouter pass chains try their primary then fallback model; Gemini chains primary key then backup key (no Together/DeepSeek remnants)
@@ -339,7 +341,7 @@ PyMuPDF, pdf2image, pytesseract, fastapi, uvicorn, requests, beautifulsoup4
 ```
 
 ## Vercel Deployment
-- `main_app.py` is deployed to Vercel (see `vercel.json`)
+- Entrypoint: `webapp_google.py` (see `vercel.json`) — imports `revamped_webapp.app` and adds Google OAuth landing
 - URL: `hack-ccm-acumen-microlearning.vercel.app`
 - Serves the public knowledge portal with papers, guidelines, pearls, and trials views
 

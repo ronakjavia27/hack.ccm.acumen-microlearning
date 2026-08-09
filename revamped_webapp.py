@@ -1082,6 +1082,20 @@ async def render_dashboard(request: Request, response: Response):
   .disclaimer-box h2{{ font-size:1.1rem; margin-bottom:12px; }}
   .disclaimer-box p{{ font-size:.88rem; color:var(--ink-muted); line-height:1.6; margin-bottom:12px; white-space:pre-wrap; }}
 
+  /* serendipity modal */
+  .modal{{ position:fixed; inset:0; z-index:95; display:flex; align-items:center; justify-content:center; padding:20px; }}
+  .modal-backdrop{{ position:absolute; inset:0; background:rgba(0,0,0,.55); }}
+  .modal-content{{ position:relative; background:var(--bg-elev); border:1px solid var(--border); border-radius:14px; max-width:480px; width:100%; padding:24px; box-shadow:var(--shadow); max-height:80vh; overflow-y:auto; }}
+  .modal-content h3{{ font-size:1.1rem; margin-bottom:12px; }}
+  .serendipity-field{{ margin-bottom:16px; }}
+  .serendipity-field label{{ display:block; font-weight:600; margin-bottom:8px; }}
+  .serendipity-options{{ display:flex; gap:16px; flex-wrap:wrap; }}
+  .serendipity-options label{{ display:flex; align-items:center; gap:6px; cursor:pointer; }}
+  .serendipity-spec-grid{{ display:grid; grid-template-columns:repeat(auto-fill, minmax(140px, 1fr)); gap:8px; max-height:200px; overflow-y:auto; padding:8px; background:var(--bg-sunk); border-radius:8px; border:1px solid var(--border); }}
+  .serendipity-spec-grid label{{ display:flex; align-items:center; gap:6px; cursor:pointer; font-size:.85rem; }}
+  .serendipity-progress{{ font-size:.8rem; color:var(--ink-muted); margin-right:12px; }}
+  body.modal-open{{ overflow:hidden; }}
+
   .content-grid, .doc-list{{ align-content:start; }}
   .doc-list > *{{ align-self:start; }}
 
@@ -1546,6 +1560,20 @@ async def render_dashboard(request: Request, response: Response):
       </div>
       <button class="collapse-btn" data-target="specPanelGuidelines">&#9650; Collapse</button>
     </div>
+    <div class="spec-panel" id="specPanelTheory">
+      <div class="spec-panel-head" role="button" tabindex="0">
+        <span>&#128214;</span><span id="specPanelTheoryTitle">Theory</span><span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="spec-panel-body" id="specPanelTheoryBody"></div>
+      <button class="collapse-btn" data-target="specPanelTheory">&#9650; Collapse</button>
+    </div>
+    <div class="spec-panel" id="specPanelFlashcards">
+      <div class="spec-panel-head" role="button" tabindex="0">
+        <span>&#128218;</span><span id="specPanelFlashcardsTitle">Flashcards</span><span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="spec-panel-body" id="specPanelFlashcardsBody"></div>
+      <button class="collapse-btn" data-target="specPanelFlashcards">&#9650; Collapse</button>
+    </div>
     <div class="spec-panel" id="specPanelPearls">
       <div class="spec-panel-head" role="button" tabindex="0">
         <span>&#128142;</span><span id="specPanelPearlsTitle">Pearls</span><span class="toggle-icon">&#9660;</span>
@@ -1558,7 +1586,10 @@ async def render_dashboard(request: Request, response: Response):
   <!-- PEARLS -->
   <section class="view" id="view-pearls">
     <div class="section-head" style="margin-top:0"><h2>Pearls</h2></div>
-    <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 14px">Dense rows, quick specialty chips, and paged loading &mdash; built for a library in the thousands, not dozens.</p>
+    <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 14px">Densely packed, bite sized knowledge</p>
+    <div class="pearl-toolbar" style="margin-bottom:8px">
+      <button class="btn primary" id="serendipityBtn" type="button"><span>&#10024;</span> Serendipity Mode</button>
+    </div>
     <div class="pearl-toolbar">
       <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="pearlsSearch" placeholder="Search pearl text&hellip;"></div>
       <select id="pearlsSort" class="btn">
@@ -2011,6 +2042,42 @@ async def render_dashboard(request: Request, response: Response):
     </div>
   </div>
 
+<!-- SERENDIPITY MODE MODAL -->
+<div id="serendipityModal" class="modal" style="display:none" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" onclick="closeSerendipityModal()"></div>
+  <div class="modal-content serendipity-modal">
+    <h3>&#10024; Serendipity Mode</h3>
+    <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 16px">Spin up a random streak of pearls from your chosen specialties.</p>
+
+    <div class="serendipity-field">
+      <label>How many pearls?</label>
+      <div class="serendipity-options">
+        <label><input type="radio" name="serendipityCount" value="10" checked> 10</label>
+        <label><input type="radio" name="serendipityCount" value="25"> 25</label>
+        <label><input type="radio" name="serendipityCount" value="50"> 50</label>
+        <label><input type="radio" name="serendipityCount" value="100"> 100</label>
+      </div>
+    </div>
+
+    <div class="serendipity-field">
+      <label>Specialties <span id="serendipitySpecCount">(0 selected)</span></label>
+      <div id="serendipitySpecialties" class="serendipity-spec-grid"></div>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button class="btn btn-sm btn-ghost" onclick="selectAllSerendipitySpecialties()">Select All</button>
+        <button class="btn btn-sm btn-ghost" onclick="clearAllSerendipitySpecialties()">Clear All</button>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:20px">
+      <button class="btn btn-ghost" onclick="closeSerendipityModal()">Cancel</button>
+      <button class="btn primary" onclick="startSerendipity()">Start Serendipity</button>
+    </div>
+    <div style="margin-top:12px;text-align:center">
+      <button class="btn btn-ghost btn-sm" onclick="resetSerendipityHistory()">Reset History</button>
+    </div>
+  </div>
+</div>
+
 <script>
 // =====================================================================
 // DATA (injected from Python)
@@ -2152,7 +2219,7 @@ function showView(name){{
   }};
   var requiredFeature = featureMap[name];
   if (requiredFeature && !USER_IS_ADMIN && !USER_FEATURES[requiredFeature]) {{
-    return;
+    return false;
   }}
   document.querySelectorAll('.view').forEach(function(v){{ v.classList.remove('active'); }});
   var target = document.getElementById('view-'+name);
@@ -2176,6 +2243,7 @@ function showView(name){{
       renderTheoryPane(_theoryMode);
     }}
   }}
+  return true;
 }}
 
 // =====================================================================
@@ -2190,6 +2258,13 @@ function getDailyIndex(){{
 var _pearlOfDay = null;
 var _currentPearlList = [];
 var _currentPearlIndex = -1;
+
+// Serendipity Mode state
+var _serendipityPearls = [];
+var _serendipityIndex = -1;
+var _serendipityHistory = [];
+var _serendipityMode = false;
+
 var _readerHistoryStack = [];
 function renderHomeHero(){{
   if (!baseDataset.length) {{ document.getElementById('homeHero').innerHTML = ''; return; }}
@@ -2223,12 +2298,11 @@ function renderHomeHero(){{
 function renderHomeStats(){{
   var papersCount = baseDataset.filter(function(a){{ return a.type.toLowerCase()!=='guideline'; }}).length;
   var guidelinesCount = baseDataset.filter(function(a){{ return a.type.toLowerCase()==='guideline'; }}).length;
-  var specsCount = new Set(baseDataset.map(function(a){{ return a.system; }})).size;
   document.getElementById('homeStats').innerHTML =
     '<div class="stat-item"><b>'+papersCount+'</b>papers</div>'+
     '<div class="stat-item"><b>'+guidelinesCount+'</b>guidelines</div>'+
     '<div class="stat-item"><b>'+allPearls.length+'</b>pearls</div>'+
-    '<div class="stat-item"><b>'+specsCount+'</b>specialties</div>';
+    '<div class="stat-item"><b>'+THEORY_NOTES.length+'</b>theory topics</div>';
 }}
 
 function renderHomeSpecGrid(){{
@@ -2237,11 +2311,9 @@ function renderHomeSpecGrid(){{
   var sortedSpecs = Object.keys(specCounts).sort();
   document.getElementById('homeSpecGrid').innerHTML = sortedSpecs.map(function(s){{
     var v = SPEC_VAR[s] || '--spec-other';
-    var count = specCounts[s];
-    return '<button class="spec-tile" data-spec-jump="'+s+'" style="--tile-color:var('+v+')">'+
+    return '<button class="spec-tile" data-spec-jump="'+s+'" style="--tile-color:var('+v+');border-left:3px solid var('+v+')">'+
       '<span class="dot" style="background:var('+v+')"></span>'+
       '<div style="font-weight:700;font-size:.88rem">'+s+'</div>'+
-      '<div class="count">'+count+' articles</div>'+
     '</button>';
   }}).join('');
 }}
@@ -2253,6 +2325,7 @@ function renderHomeRecent(){{
 
 function jumpToSpecialty(name){{
   activeSubtopic = null;
+  navPushState('specialty');
   showView('specialty');
   renderSpecialty(name);
 }}
@@ -2336,12 +2409,16 @@ function renderSpecialty(name){{
   var papersInSpec = baseDataset.filter(function(p){{ return p.system===name && p.type.toLowerCase()!=='guideline'; }});
   var guidelinesInSpec = baseDataset.filter(function(p){{ return p.system===name && p.type.toLowerCase()==='guideline'; }});
   var pearlsInSpec = allPearls.filter(function(p){{ return p.system===name; }});
+  var theoryInSpec = THEORY_NOTES.filter(function(n){{ return n.system===name; }});
+  var decksInSpec = allFlashcardDecks.filter(function(d){{ return d.specialty===name; }});
 
   /* apply subtopic filter */
   if(activeSubtopic){{
     papersInSpec = papersInSpec.filter(function(p){{ return (p.subtopic||p.system)===activeSubtopic; }});
     guidelinesInSpec = guidelinesInSpec.filter(function(p){{ return (p.subtopic||p.system)===activeSubtopic; }});
     pearlsInSpec = pearlsInSpec.filter(function(p){{ return (p.subtopic||p.system)===activeSubtopic; }});
+    theoryInSpec = theoryInSpec.filter(function(n){{ return (n.subtopic||'General')===activeSubtopic; }});
+    decksInSpec = decksInSpec.filter(function(d){{ return d.id===name+'/'+activeSubtopic || (d.subtopics||[]).indexOf(activeSubtopic)>=0; }});
   }}
 
   /* apply sort */
@@ -2366,6 +2443,35 @@ function renderSpecialty(name){{
   document.getElementById('specPanelGuidelinesBody').innerHTML = guidelinesInSpec.map(docCardHTML).join('') || emptyStateHTML('guidelines');
   document.getElementById('specPanelGuidelines').classList.remove('open');
 
+  document.getElementById('specPanelTheory').style.display = THEORY_NOTES.length ? '' : 'none';
+  document.getElementById('specPanelTheoryTitle').innerHTML = 'Theory ('+theoryInSpec.length+')';
+  document.getElementById('specPanelTheoryBody').innerHTML = theoryInSpec.map(function(n){{
+    return '<button class="doc-card" data-theory-note="'+escapeHtml(n.id)+'">'+
+      '<div class="doc-stripe" style="background:var(--accent)"></div>'+
+      '<div class="doc-inner">'+
+        '<div class="doc-top"><span class="type-tag">'+escapeHtml(n.system||'Note')+'</span>'+(n.subtopic && n.subtopic!=='General' ? '<span class="theory-sub-tag">'+escapeHtml(n.subtopic)+'</span>':'')+'</div>'+
+        '<p class="doc-title">'+escapeHtml(n.title)+'</p>'+
+        '<p class="doc-snippet">'+escapeHtml(String(n.md||'').replace(/\\s+/g,' ').substring(0,110))+'</p>'+
+      '</div>'+
+    '</button>';
+  }}).join('') || '<p style="color:var(--ink-muted);padding:11px 4px">No theory notes for this specialty yet.</p>';
+  document.getElementById('specPanelTheory').classList.remove('open');
+
+  document.getElementById('specPanelFlashcards').style.display = allFlashcardDecks.length ? '' : 'none';
+  document.getElementById('specPanelFlashcardsTitle').innerHTML = 'Flashcards ('+decksInSpec.length+')';
+  document.getElementById('specPanelFlashcardsBody').innerHTML = decksInSpec.map(function(d){{
+    var snip = (d.subtopics||[]).length ? (d.subtopics||[]).slice(0,4).join(' \u00B7 ') : d.cards.map(function(c){{ return c.subtopic; }}).slice(0,3).join(' \u00B7 ');
+    return '<button class="doc-card" data-theory-deck="'+escapeHtml(d.id)+'">'+
+      '<div class="doc-stripe" style="background:var('+_theorySpecVar(d.specialty)+')"></div>'+
+      '<div class="doc-inner">'+
+        '<div class="doc-top">'+_theoryPill(d.specialty, d.specialty)+'<span class="type-tag">'+d.cards.length+' card'+(d.cards.length===1?'':'s')+'</span></div>'+
+        '<p class="doc-title">'+escapeHtml(d.title)+'</p>'+
+        '<p class="doc-snippet">'+escapeHtml(snip)+'</p>'+
+      '</div>'+
+    '</button>';
+  }}).join('') || '<p style="color:var(--ink-muted);padding:11px 4px">No flashcard decks for this specialty yet.</p>';
+  document.getElementById('specPanelFlashcards').classList.remove('open');
+
   document.getElementById('specPanelPearlsTitle').innerHTML = 'Pearls ('+pearlsInSpec.length+')';
   var specV = SPEC_VAR[name] || '--spec-other';
   document.getElementById('specPanelPearlsBody').innerHTML = pearlsInSpec.map(function(p){{
@@ -2386,8 +2492,10 @@ function renderSpecialtySubtopicChips(name){{
     var paperCount = baseDataset.filter(function(p){{ return p.system===name && (p.subtopic||p.system)===st && p.type.toLowerCase()!=='guideline'; }}).length;
     var guidelineCount = baseDataset.filter(function(p){{ return p.system===name && (p.subtopic||p.system)===st && p.type.toLowerCase()==='guideline'; }}).length;
     var pearlCount = allPearls.filter(function(p){{ return p.system===name && (p.subtopic||p.system)===st; }}).length;
+    var theoryCount = THEORY_NOTES.filter(function(n){{ return n.system===name && (n.subtopic||'General')===st; }}).length;
+    var deckCount = allFlashcardDecks.filter(function(d){{ return d.specialty===name && (d.id===name+'/'+st || (d.subtopics||[]).indexOf(st)>=0); }}).length;
     var active = activeSubtopic===st ? ' active' : '';
-    chipsHTML += '<button class="subtopic-chip'+active+'" data-subtopic="'+st+'">'+st+' <span style="opacity:.6">'+paperCount+'p '+guidelineCount+'g '+pearlCount+'&#9679;</span></button>';
+    chipsHTML += '<button class="subtopic-chip'+active+'" data-subtopic="'+st+'">'+st+' <span style="opacity:.6">'+paperCount+'p '+guidelineCount+'g '+(theoryCount?theoryCount+'t ':'')+(deckCount?deckCount+'f ':'')+pearlCount+'&#9679;</span></button>';
   }});
   document.getElementById('specSubtopicChips').innerHTML = chipsHTML;
 }}
@@ -2433,40 +2541,143 @@ function renderPearls(){{
 }}
 
 // =====================================================================
+// SERENDIPITY MODE
+// =====================================================================
+function loadSerendipityHistory() {{
+  try {{
+    var stored = localStorage.getItem('hackccm_serendipity_history');
+    if (stored) _serendipityHistory = JSON.parse(stored);
+  }} catch (e) {{ _serendipityHistory = []; }}
+}}
+
+function saveSerendipityHistory() {{
+  try {{
+    localStorage.setItem('hackccm_serendipity_history', JSON.stringify(_serendipityHistory));
+  }} catch (e) {{}}
+}}
+
+function openSerendipityModal() {{
+  var specs = SPECS.map(function(s) {{
+    var count = allPearls.filter(function(p) {{ return p.system === s.name; }}).length;
+    return '<label><input type="checkbox" value="' + s.name + '"> ' + s.name + ' (' + count + ')</label>';
+  }}).join('');
+  document.getElementById('serendipitySpecialties').innerHTML = specs;
+  updateSerendipitySpecCount();
+  document.getElementById('serendipityModal').style.display = 'flex';
+  document.body.classList.add('modal-open');
+}}
+
+function closeSerendipityModal() {{
+  document.getElementById('serendipityModal').style.display = 'none';
+  document.body.classList.remove('modal-open');
+}}
+
+function updateSerendipitySpecCount() {{
+  var checked = document.querySelectorAll('#serendipitySpecialties input:checked').length;
+  document.getElementById('serendipitySpecCount').textContent = '(' + checked + ' selected)';
+}}
+
+function selectAllSerendipitySpecialties() {{
+  document.querySelectorAll('#serendipitySpecialties input').forEach(function(cb) {{ cb.checked = true; }});
+  updateSerendipitySpecCount();
+}}
+
+function clearAllSerendipitySpecialties() {{
+  document.querySelectorAll('#serendipitySpecialties input').forEach(function(cb) {{ cb.checked = false; }});
+  updateSerendipitySpecCount();
+}}
+
+function resetSerendipityHistory() {{
+  if (confirm('Clear serendipity history? This will allow previously shown pearls to appear again.')) {{
+    _serendipityHistory = [];
+    saveSerendipityHistory();
+    showToast('History reset');
+  }}
+}}
+
+function startSerendipity() {{
+  var count = parseInt(document.querySelector('input[name="serendipityCount"]:checked').value, 10);
+  var specialties = Array.from(document.querySelectorAll('#serendipitySpecialties input:checked')).map(function(cb) {{ return cb.value; }});
+
+  if (specialties.length === 0) {{
+    showToast('Select at least one specialty');
+    return;
+  }}
+
+  var pool = allPearls.filter(function(p) {{
+    return specialties.includes(p.system) && !_serendipityHistory.includes(String(p.id));
+  }});
+
+  if (pool.length === 0) {{
+    showToast('No new pearls available for selected specialties');
+    return;
+  }}
+
+  pool.sort(function() {{ return Math.random() - 0.5; }});
+  _serendipityPearls = pool.slice(0, count);
+  _serendipityIndex = 0;
+  _serendipityMode = true;
+
+  _serendipityPearls.forEach(function(p) {{ _serendipityHistory.push(String(p.id)); }});
+  saveSerendipityHistory();
+
+  closeSerendipityModal();
+  openReader(_serendipityPearls[0], 'pearl');
+}}
+
+function navigateSerendipity(direction) {{
+  if (!_serendipityMode || _serendipityPearls.length === 0) return;
+  var step = direction === 'next' ? 1 : -1;
+  var targetIdx = _serendipityIndex + step;
+  if (targetIdx >= 0 && targetIdx < _serendipityPearls.length) {{
+    _serendipityIndex = targetIdx;
+    openReader(_serendipityPearls[_serendipityIndex], 'pearl');
+  }}
+}}
+
+// =====================================================================
 // READER
 // =====================================================================
 function openReader(entry, kind){{
   if (!entry) return;
+  navPushState('reader');
   var v = SPEC_VAR[entry.system] || '--spec-other';
   var body = document.getElementById('readerBody');
   body.scrollTop = 0;
   document.getElementById('readerProgress').style.width = '0%';
 
-  if(kind==='pearl'){{
+if(kind==='pearl'){{
     _currentPearlIndex = _currentPearlList.findIndex(function(p){{ return String(p.id)===String(entry.id); }});
     var idx = _currentPearlIndex;
-    var prevBtn = idx>0 ? '<button class="btn nav-btn" data-pearl-nav="prev">&#9664; Previous</button>' : '';
-    var nextBtn = idx>=0 && idx<_currentPearlList.length-1 ? '<button class="btn nav-btn" data-pearl-nav="next">Next &#9654;</button>' : '';
-    var hasPrintablePaper = entry.file_name && baseDataset.some(function(d){{ return d.file_name === entry.file_name.replace(/\\.json$/, '.pdf'); }});
-    var articleBtn = hasPrintablePaper ? '<button class="btn nav-btn" data-open-pearl-article="'+entry.id+'">&#128196; Open article</button>' : '';
-    var navRow = (prevBtn||nextBtn||articleBtn) ? '<div class="reader-nav">'+articleBtn+prevBtn+nextBtn+'</div>' : '';
+    var isSerendipity = _serendipityMode && _serendipityPearls.length > 0;
+    var prevBtn, nextBtn, navRow;
+    if (isSerendipity) {{
+      prevBtn = _serendipityIndex > 0 ? '<button class="btn nav-btn" data-serendipity-nav="prev">&#9664; Previous</button>' : '';
+      nextBtn = _serendipityIndex < _serendipityPearls.length - 1 ? '<button class="btn nav-btn" data-serendipity-nav="next">Next &#9654;</button>' : '';
+      var progress = '<span class="serendipity-progress">Pearl ' + (_serendipityIndex + 1) + ' of ' + _serendipityPearls.length + '</span>';
+      navRow = (prevBtn||nextBtn) ? '<div class="reader-nav">' + progress + prevBtn + nextBtn + '</div>' : '';
+    }} else {{
+      prevBtn = idx>0 ? '<button class="btn nav-btn" data-pearl-nav="prev">&#9664; Previous</button>' : '';
+      nextBtn = idx>=0 && idx<_currentPearlList.length-1 ? '<button class="btn nav-btn" data-pearl-nav="next">Next &#9654;</button>' : '';
+      var hasPrintablePaper = entry.file_name && baseDataset.some(function(d){{ return d.file_name === entry.file_name.replace(/\\.json$/, '.pdf'); }});
+      var articleBtn = hasPrintablePaper ? '<button class="btn nav-btn" data-open-pearl-article="'+entry.id+'">&#128196; Open article</button>' : '';
+      navRow = (prevBtn||nextBtn||articleBtn) ? '<div class="reader-nav">'+articleBtn+prevBtn+nextBtn+'</div>' : '';
+    }}
     var pbmRef = 'pearl:'+entry.id;
     registerBookmarkMeta(pbmRef, {{kind:'pearl', title: entry.pearl || entry.source_paper || 'Clinical pearl', system: entry.system || 'General', type: entry.type || 'Pearl', locator: {{id: entry.id}}}});
     body.innerHTML = ''+
       pillHTML(entry.system||'General', (entry.system||'General')+' &middot; Pearl')+
       '<h2 style="font-size:1.15rem;line-height:1.4">"'+escapeHtml(entry.pearl||'')+'"</h2>'+
       '<p class="meta">'+(entry.source_paper||'Clinical pearl')+'</p>'+
-      '<div class="reader-actions">'+bookmarkBtnHTML(pbmRef)+(entry.file_name?'<button class="related-btn" data-open-related="paper:'+escapeHtml(entry.file_name.replace(/\\.json$/i,'.pdf'))+'" title="Related papers, guidelines, theory notes, decks &amp; pearls">&#128279; Related</button>':'')+'</div>'+
+      '<div class="reader-actions">'+bookmarkBtnHTML(pbmRef)+(entry.file_name?'<button class="related-btn" data-open-related="paper:'+escapeHtml(entry.file_name.replace(/\\.json$/i,'.pdf'))+'" title="Related papers, guidelines, theory notes, decks & pearls">&#128279; Related</button>':'')+'</div>'+
       navRow;
     document.body.classList.add('reader-open');
-    pushReaderState();
     return;
   }}
 
   // Paper
   body.innerHTML = '<div class="reader-loading"><p>&#128270; Loading summary&hellip;</p></div>';
   document.body.classList.add('reader-open');
-  pushReaderState();
 
   var file_name = encodeURIComponent(entry.file_name || '');
   var system = encodeURIComponent(entry.system || 'General');
@@ -2674,9 +2885,6 @@ function relatedGoTo(id){{
   }}
 }}
 
-var _readerStatePushed = false;
-function pushReaderState(){{ _readerStatePushed = true; history.pushState(null, ''); }}
-
 function makeCollapsible(html){{
   var parts = html.split(/(<h2[^>]*>[\\s\\S]*?<\\/h2>)/i);
   if(parts.length<2) return html;
@@ -2868,6 +3076,7 @@ function renderTrialCard(t, idx){{
 }}
 
 function renderTrialsSpecialty(name){{
+  navPushState('trials-specialty');
   showView('trials-specialty');
   document.getElementById('trialsSpecTitle').textContent = name;
   var dot = document.getElementById('trialsSpecDot');
@@ -2883,7 +3092,7 @@ function renderTrialsSpecialty(name){{
   document.getElementById('trialsSubtopicChips').innerHTML = chipHtml;
 
   // Back button
-  document.getElementById('trialsSpecBackBtn').onclick = function(){{ showView('trials-esbicm'); }};
+  document.getElementById('trialsSpecBackBtn').onclick = function(){{ history.back(); }};
 
   _filterTrialsBySpecialty(name, '');
 }}
@@ -2904,6 +3113,7 @@ function _filterTrialsBySpecialty(name, subtopic){{
 }}
 
 function openTrialDetail(slug, list, idx){{
+  navPushState('trial-detail');
   showView('trial-detail');
   _currentTrialList = list || [];
   _currentTrialIdx = typeof idx === 'number' ? idx : -1;
@@ -3101,6 +3311,7 @@ function clearCondensedFilters(){{
 }}
 
 function renderCondensedSystem(name){{
+  navPushState('condensed-system');
   showView('condensed-system');
   document.getElementById('condensedSysTitle').textContent = name;
   var trials = CONDENSED_INDEX.filter(function(t){{ return t.system === name; }}).sort(function(a,b){{ return (b.year||0) - (a.year||0); }});
@@ -3127,11 +3338,12 @@ function renderCondensedSystem(name){{
 }}
 
 function openCondensedTrialDetail(system, name){{
+  navPushState('condensed-detail');
   showView('condensed-detail');
   _currentCondensedRef = 'condensed:' + system + ':' + name;
   var body = document.getElementById('condensedDetailBody');
   body.innerHTML = '<div style="text-align:center;padding:40px;color:var(--ink-muted)">Loading&hellip;</div>';
-  document.getElementById('condensedDetailBackBtn').onclick = function(){{ renderCondensedSystem(system); }};
+  document.getElementById('condensedDetailBackBtn').onclick = function(){{ history.back(); }};
   fetch('/api/condensed-trial/'+encodeURIComponent(system)+'/'+encodeURIComponent(name))
     .then(function(r){{ return r.json(); }})
     .then(function(data){{
@@ -4460,15 +4672,16 @@ document.getElementById('guidelinesSort').addEventListener('change', renderGuide
 document.getElementById('pearlsSearch').addEventListener('input', function(){{ pearlsShown = pearlsPageSize; renderPearls(); }});
 document.getElementById('pearlsSort').addEventListener('change', renderPearls);
 document.getElementById('loadMorePearls').addEventListener('click', function(){{ pearlsShown += pearlsPageSize; renderPearls(); }});
+document.getElementById('serendipityBtn').addEventListener('click', openSerendipityModal);
 document.getElementById('closeReader').addEventListener('click', function(){{
   if(_readerHistoryStack.length>0){{
     var prev = _readerHistoryStack.pop();
     openReader(prev.entry, prev.kind);
   }} else {{
-    closeReader();
+    history.back();
   }}
 }});
-document.getElementById('readerBackdrop').addEventListener('click', closeReader);
+document.getElementById('readerBackdrop').addEventListener('click', function(){{ if(_readerHistoryStack.length>0){{ _readerHistoryStack = []; }} history.back(); }});
 document.getElementById('readerBody').addEventListener('scroll', function(){{
   var pct = this.scrollTop / (this.scrollHeight - this.clientHeight) * 100;
   document.getElementById('readerProgress').style.width = Math.min(100, Math.max(0, pct)) + '%';
@@ -4485,19 +4698,33 @@ document.getElementById('specGuidelinesSort').addEventListener('change', functio
 window.addEventListener('scroll', function(){{
   document.getElementById('scrollTopBtn').classList.toggle('visible', window.scrollY>400);
 }});
+// =====================================================================
+// GLOBAL BACK NAVIGATOR
+// Browser back/forward restores the previous view (or closes an overlay).
+// Every user-gesture navigation records one history entry via navPushState;
+// 'reader' is an overlay marker whose restore just re-shows the view below.
+// =====================================================================
+function navPushState(v){{
+  var cur = history.state;
+  if(cur && cur.v===v){{ history.replaceState({{v:v}}, ''); }}
+  else {{ history.pushState({{v:v}}, ''); }}
+}}
+function closeAllOverlays(){{
+  closeReader(); closeRelatedPanel(); closeDrawer(); closeSheet(); closeSearch();
+  document.body.classList.remove('ai-open');
+}}
 window.addEventListener('popstate', function(e){{
-  if(document.body.classList.contains('reader-open')){{
-    if(_readerHistoryStack.length>0){{
-      var prev = _readerHistoryStack.pop();
-      openReader(prev.entry, prev.kind);
-    }} else {{
-      closeReader();
-    }}
+  var s = e.state || {{}};
+  if(s.t===1){{
+    _restoring = true;
+    try {{ _applyTheoryDeepLink(new URLSearchParams(window.location.search)); }} catch(err){{}}
+    _restoring = false;
     return;
   }}
-  if(document.body.classList.contains('drawer-open')){{ closeDrawer(); return; }}
-  if(document.body.classList.contains('sheet-open')){{ closeSheet(); return; }}
-  if(document.body.classList.contains('search-open')){{ closeSearch(); return; }}
+  closeAllOverlays();
+  var v = s.v;
+  if(v===undefined){{ showView('home'); return; }}
+  showView(v);
 }});
 document.getElementById('aiFab').addEventListener('click', function(){{ document.body.classList.toggle('ai-open'); }});
 document.getElementById('subscribeBtn').addEventListener('click', function(){{
@@ -4524,7 +4751,7 @@ var condClearBtn = document.getElementById('condensedClearBtn');
 if(condClearBtn) condClearBtn.addEventListener('click', clearCondensedFilters);
 // Trial detail back button
 var trialDetailBack = document.getElementById('trialDetailBackBtn');
-if(trialDetailBack) trialDetailBack.addEventListener('click', function(){{ showView('trials-esbicm'); }});
+if(trialDetailBack) trialDetailBack.addEventListener('click', function(){{ history.back(); }});
 
 // =====================================================================
 // DELEGATED EVENT HANDLING (for dynamically rendered elements)
@@ -4554,7 +4781,7 @@ document.addEventListener('click', function(e){{
   }}
 
   var navBtn = e.target.closest('[data-view]');
-  if(navBtn){{ showView(navBtn.dataset.view); return; }}
+  if(navBtn){{ if(showView(navBtn.dataset.view)) navPushState(navBtn.dataset.view); return; }}
 
   var specTile = e.target.closest('[data-spec-jump]');
   if(specTile){{ jumpToSpecialty(specTile.dataset.specJump); return; }}
@@ -4598,6 +4825,13 @@ document.addEventListener('click', function(e){{
       _readerHistoryStack = [];
       openReader(_currentPearlList[targetIdx], 'pearl');
     }}
+    return;
+  }}
+
+  /* Serendipity Mode navigation (prev/next) */
+  var serendipityNav = e.target.closest('[data-serendipity-nav]');
+  if(serendipityNav){{
+    navigateSerendipity(serendipityNav.dataset.serendipityNav);
     return;
   }}
 
@@ -4978,6 +5212,7 @@ document.addEventListener('keydown', function(e){{
 
   renderFilterCheckboxes();
   loadBookmarks();
+  loadSerendipityHistory();
   showView('home');
 
   // Deep links + browser history:
@@ -4986,11 +5221,6 @@ document.addEventListener('keydown', function(e){{
   _restoring = true;
   try {{ _applyTheoryDeepLink(new URLSearchParams(window.location.search)); }} catch(e){{}}
   _restoring = false;
-  window.addEventListener('popstate', function(){{
-    _restoring = true;
-    try {{ _applyTheoryDeepLink(new URLSearchParams(window.location.search)); }} catch(e){{}}
-    _restoring = false;
-  }});
 }})();
 </script>
 </body>

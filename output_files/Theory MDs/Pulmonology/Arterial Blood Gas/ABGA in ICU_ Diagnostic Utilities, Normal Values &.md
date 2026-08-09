@@ -1,4 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 ## ABGA in ICU: Diagnostic Utilities, Normal Values \& Compensation Formulas
 
@@ -372,7 +371,7 @@ $$
 
 ***
 
-This framework covers the **high-yield differentials and management priorities** for metabolic acidosis with hypokalemia in ICU and exam settings. Would you like a one-page algorithm or MCQs to test retention?
+
 <span style="display:none">[^2_14][^2_15]</span>
 
 <div align="center">⁂</div>

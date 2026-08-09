@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-07T16:58:39",
-  "entity_count": 287,
+  "generated_at": "2026-08-09T19:08:35",
+  "entity_count": 306,
   "entities": {
     "deck:Cardiology/Acute Coronary Syndromes": {
       "tags": [
@@ -13338,6 +13338,857 @@
           "reason": "complementary",
           "weight": 0.65,
           "updated_at": "2026-08-07T16:50:27"
+        }
+      ]
+    },
+    "paper:prabhakaran-et-al-2026-2026-guideline-for-the-early-management-of-patients-with-acute-ischemic-stroke-a-guideline-from (1).pdf": {
+      "tags": [
+        "Acute Ischemic Stroke",
+        "Thrombolysis",
+        "Endovascular Thrombectomy"
+      ],
+      "kind": "guideline",
+      "system": "Neurology",
+      "type": "Guideline",
+      "subtopic": "Acute Ischemic Stroke",
+      "title": "2026 Guideline for the Early Management of Patients With Acute Ischemic Stroke: A Guideline From the American Heart Association/American Stroke Association",
+      "links": [
+        {
+          "to": "paper:Endovascular_Thrombectomy_in_Medium_and_Distal_Vessel_Occlusions.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.99,
+          "updated_at": "2026-08-09T19:05:25"
+        },
+        {
+          "to": "theory:Neurology/Acute Ischemic Stroke/What are changes in recent stroke guidelines 2026.md",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.95,
+          "updated_at": "2026-08-09T19:05:25"
+        },
+        {
+          "to": "theory:Neurology/Antiplatelet Therapy/Antiplatelet Therapy after stroke.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:05:25"
+        }
+      ]
+    },
+    "theory:ASPECTS.md": {
+      "tags": [
+        "General",
+        "ASPECTS",
+        "Stroke imaging"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "ASPECTS",
+      "links": [
+        {
+          "to": "theory:Transcranial Doppler (TCD) in the ICU – Exam‑Style",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-09T19:05:29"
+        },
+        {
+          "to": "theory:Absolute and Relative Contraindications to Stroke",
+          "kind": "theory",
+          "reason": "guideline recommendation",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:05:29"
+        }
+      ]
+    },
+    "theory:Absolute and Relative Contraindications to Stroke": {
+      "tags": [],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Absolute and Relative Contraindications to Stroke",
+      "links": [
+        {
+          "to": "theory:ASPECTS.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:05:40"
+        },
+        {
+          "to": "theory:Transcranial Doppler (TCD) in the ICU – Exam‑Style",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:05:40"
+        },
+        {
+          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-09T19:05:40"
+        }
+      ]
+    },
+    "theory:Cardiothoracic/Extracorporeal Membrane Oxygenation/VV ECMO Troubleshooting_ A Structured Clinical Not.md": {
+      "tags": [
+        "Cardiothoracic",
+        "Extracorporeal Membrane Oxygenation"
+      ],
+      "kind": "theory",
+      "system": "Cardiothoracic",
+      "type": "Theory",
+      "subtopic": "Extracorporeal Membrane Oxygenation",
+      "title": "VV ECMO Troubleshooting  A Structured Clinical Not",
+      "links": []
+    },
+    "theory:General/Advance Directives/Advance Medical Directive (AMD) in ICU – Exam‑Orie.md": {
+      "tags": [],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "Advance Directives",
+      "title": "Advance Medical Directive (AMD) in ICU – Exam‑Orie",
+      "links": [
+        {
+          "to": "theory:ASPECTS.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T19:05:42"
+        },
+        {
+          "to": "theory:Absolute and Relative Contraindications to Stroke",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T19:05:42"
+        },
+        {
+          "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T19:05:42"
+        },
+        {
+          "to": "theory:General/Clinical Trial Ethics/Ethical considerations of conducting a clinical tr.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T19:05:42"
+        },
+        {
+          "to": "paper:PIIS103673142600041X.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T19:05:42"
+        }
+      ]
+    },
+    "theory:General/Clinical Trial Ethics/Ethical considerations of conducting a clinical tr.md": {
+      "tags": [
+        "General",
+        "Clinical Trial Ethics"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "Clinical Trial Ethics",
+      "title": "Ethical considerations of conducting a clinical tr",
+      "links": [
+        {
+          "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:05:55"
+        },
+        {
+          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:05:55"
+        },
+        {
+          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:05:55"
+        }
+      ]
+    },
+    "theory:NAVA – Exam-Oriented, Clinically Useful Notes.md": {
+      "tags": [
+        "General",
+        "NAVA",
+        "EAdi"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "NAVA – Exam-Oriented, Clinically Useful Notes",
+      "links": [
+        {
+          "to": "theory:ASPECTS.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:05:58"
+        },
+        {
+          "to": "theory:Patient–Ventilator Asynchrony (PVA)_ Diagnosis and",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:05:58"
+        },
+        {
+          "to": "theory:Transcranial Doppler (TCD) in the ICU – Exam‑Style",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:05:58"
+        },
+        {
+          "to": "theory:Absolute and Relative Contraindications to Stroke",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:05:58"
+        },
+        {
+          "to": "paper:PIIS103673142600041X.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:05:58"
+        }
+      ]
+    },
+    "theory:Neurology/Continuous EEG Monitoring/Continuous EEG (cEEG) Monitoring in ICU.md": {
+      "tags": [
+        "Continuous EEG Monitoring",
+        "Neurocritical Care Monitoring",
+        "Status Epilepticus",
+        "Disorders of Consciousness"
+      ],
+      "kind": "theory",
+      "system": "Neurology",
+      "type": "Theory",
+      "subtopic": "Continuous EEG Monitoring",
+      "title": "Continuous EEG (cEEG) Monitoring in ICU",
+      "links": [
+        {
+          "to": "paper:pathophysiology_and_prognostic_significance_of.5.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-09T19:06:09"
+        },
+        {
+          "to": "paper:rhythmic_and_periodic_patterns_and_seizures_in.6.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-09T19:06:09"
+        },
+        {
+          "to": "paper:Scan documents20260803_081511.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:06:09"
+        },
+        {
+          "to": "paper:role_of_neurophysiologic_testing_in.4.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:06:09"
+        },
+        {
+          "to": "paper:fmed-13-1775538.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:06:09"
+        },
+        {
+          "to": "paper:Ketamine for status epilepticus.pdf",
+          "kind": "paper",
+          "reason": "guideline recommendation",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:06:09"
+        }
+      ]
+    },
+    "theory:Neurology/ICU-Acquired Weakness/Critical Care Neuromyopathy (ICU-Acquired Weakness.md": {
+      "tags": [
+        "ICU-Acquired Weakness",
+        "Neurology"
+      ],
+      "kind": "theory",
+      "system": "Neurology",
+      "type": "Theory",
+      "subtopic": "ICU-Acquired Weakness",
+      "title": "Critical Care Neuromyopathy (ICU-Acquired Weakness",
+      "links": [
+        {
+          "to": "paper:Neurological complications in Critical illness.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:06:26"
+        },
+        {
+          "to": "theory:General/ICU-acquired weakness/Sarcopenia in the ICU_ An Exam-Style Detailed Note.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.7,
+          "updated_at": "2026-08-09T19:06:26"
+        },
+        {
+          "to": "paper:s12028-026-02551-x.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-09T19:06:26"
+        },
+        {
+          "to": "paper:fnmol-19-1840888.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-09T19:06:26"
+        }
+      ]
+    },
+    "theory:Patient–Ventilator Asynchrony (PVA)_ Diagnosis and": {
+      "tags": [
+        "General",
+        "Patient–Ventilator Asynchrony",
+        "Mechanical Ventilation"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Patient–Ventilator Asynchrony (PVA)  Diagnosis and",
+      "links": [
+        {
+          "to": "theory:NAVA – Exam-Oriented, Clinically Useful Notes.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-09T19:06:45"
+        },
+        {
+          "to": "theory:Pulmonology/Advanced Ventilation Modes/Exam-Oriented Notes_ NAVA, P0.1, SmartCare.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-09T19:06:45"
+        },
+        {
+          "to": "theory:Pulmonology/Closed-Loop Ventilation/INTELLiVENT-ASV_ Exam-Oriented Notes.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-09T19:06:45"
+        },
+        {
+          "to": "paper:advances_in_achieving_lung_and.7.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-09T19:06:45"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-09T19:06:45"
+        },
+        {
+          "to": "paper:000549732.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.6,
+          "updated_at": "2026-08-09T19:06:45"
+        }
+      ]
+    },
+    "theory:Pulmonology/ARDS/New Global Definition of ARDS (2023).md": {
+      "tags": [
+        "ARDS",
+        "Acute Respiratory Failure",
+        "Mechanical Ventilation"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "ARDS",
+      "title": "New Global Definition of ARDS (2023)",
+      "links": [
+        {
+          "to": "paper:s00134-026-08496-1.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:06:56"
+        },
+        {
+          "to": "paper:000549732.pdf",
+          "kind": "guideline",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:06:56"
+        },
+        {
+          "to": "paper:PIIS0007091225009353.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:06:56"
+        },
+        {
+          "to": "paper:jcm-14-02067.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:06:56"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:06:56"
+        }
+      ]
+    },
+    "theory:Pulmonology/Advanced Ventilation Modes/Exam-Oriented Notes_ NAVA, P0.1, SmartCare.md": {
+      "tags": [
+        "Advanced Ventilation Modes",
+        "Mechanical Ventilation",
+        "Weaning & Liberation from Ventilation",
+        "Noninvasive Respiratory Support"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "Advanced Ventilation Modes",
+      "title": "Exam-Oriented Notes  NAVA, P0.1, SmartCare",
+      "links": [
+        {
+          "to": "theory:Pulmonology/Diaphragm Ultrasound/Ultrasound in Critical Care_ Diaphragm and Airway.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:07"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:07"
+        },
+        {
+          "to": "paper:jcm-15-03779.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:07"
+        },
+        {
+          "to": "theory:Pulmonology/Closed-Loop Ventilation/INTELLiVENT-ASV_ Exam-Oriented Notes.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:07"
+        },
+        {
+          "to": "theory:Pulmonology/PEEP Titration Methods/Methods of PEEP Titration.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:07"
+        }
+      ]
+    },
+    "theory:Pulmonology/Closed-Loop Ventilation/INTELLiVENT-ASV_ Exam-Oriented Notes.md": {
+      "tags": [
+        "Closed-Loop Ventilation",
+        "Mechanical Ventilation",
+        "Adaptive Support Ventilation"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "Closed-Loop Ventilation",
+      "title": "INTELLiVENT-ASV  Exam-Oriented Notes",
+      "links": [
+        {
+          "to": "paper:advances_in_achieving_lung_and.7.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:17"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:17"
+        },
+        {
+          "to": "theory:Pulmonology/Advanced Ventilation Modes/Exam-Oriented Notes_ NAVA, P0.1, SmartCare.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:17"
+        },
+        {
+          "to": "theory:Pulmonology/PEEP Titration Methods/Methods of PEEP Titration.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:17"
+        },
+        {
+          "to": "paper:PIIS0007091225009353.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:17"
+        },
+        {
+          "to": "paper:000549732.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:17"
+        }
+      ]
+    },
+    "theory:Pulmonology/Diaphragm Ultrasound/Ultrasound in Critical Care_ Diaphragm and Airway.md": {
+      "tags": [
+        "Diaphragm Ultrasound",
+        "Mechanical Ventilation",
+        "Weaning & Liberation from Ventilation",
+        "Pulmonology"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "Diaphragm Ultrasound",
+      "title": "Ultrasound in Critical Care  Diaphragm and Airway",
+      "links": [
+        {
+          "to": "paper:neurolint-18-00085-v2.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:29"
+        },
+        {
+          "to": "theory:Pulmonology/Advanced Ventilation Modes/Exam-Oriented Notes_ NAVA, P0.1, SmartCare.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:29"
+        },
+        {
+          "to": "theory:Pulmonology/Respiratory Physiotherapy/Respiratory Physiotherapy in the ICU_ A Comprehens.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:29"
+        },
+        {
+          "to": "paper:advances_in_achieving_lung_and.7.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:29"
+        },
+        {
+          "to": "paper:000549732.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:29"
+        },
+        {
+          "to": "paper:1-s2.0-S0735675726003402.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:29"
+        }
+      ]
+    },
+    "theory:Pulmonology/ECMO/Proning on ECMO and Awake ECMO_ Exam-Oriented Note.md": {
+      "tags": [
+        "ECMO",
+        "ARDS"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "ECMO",
+      "title": "Proning on ECMO and Awake ECMO  Exam-Oriented Note",
+      "links": [
+        {
+          "to": "paper:000549732.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:38"
+        },
+        {
+          "to": "paper:advances_in_achieving_lung_and.7.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:38"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:38"
+        },
+        {
+          "to": "paper:jcm-15-03779.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:38"
+        },
+        {
+          "to": "paper:s00134-026-08503-5.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:38"
+        },
+        {
+          "to": "paper:s00134-026-08543-x.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:38"
+        }
+      ]
+    },
+    "theory:Pulmonology/Nebulization on Ventilator/Optimising Nebulization Therapy on Ventilator.md": {
+      "tags": [
+        "Nebulization on Ventilator",
+        "Mechanical Ventilation",
+        "Ventilator Settings",
+        "Drug Delivery"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "Nebulization on Ventilator",
+      "title": "Optimising Nebulization Therapy on Ventilator",
+      "links": [
+        {
+          "to": "paper:jcm-14-02067.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-09T19:07:45"
+        },
+        {
+          "to": "paper:s00134-026-08496-1.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-09T19:07:45"
+        },
+        {
+          "to": "paper:advances_in_achieving_lung_and.7.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-09T19:07:45"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-09T19:07:45"
+        },
+        {
+          "to": "paper:s11926-026-01223-1.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-09T19:07:45"
+        }
+      ]
+    },
+    "theory:Pulmonology/PEEP Titration Methods/Methods of PEEP Titration.md": {
+      "tags": [
+        "PEEP Titration Methods",
+        "Mechanical Ventilation",
+        "ARDS"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "PEEP Titration Methods",
+      "title": "Methods of PEEP Titration",
+      "links": [
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:52"
+        },
+        {
+          "to": "paper:PIIS0007091225009353.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:52"
+        },
+        {
+          "to": "paper:jcm-15-03779.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:52"
+        },
+        {
+          "to": "paper:s00134-026-08503-5.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:52"
+        },
+        {
+          "to": "paper:000549732.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:07:52"
+        },
+        {
+          "to": "paper:jcm-15-04345.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:07:52"
+        }
+      ]
+    },
+    "theory:Pulmonology/Refractory Hypoxemia/Refractory Hypoxemia in ARDS_ Exam-Oriented Approa.md": {
+      "tags": [
+        "Refractory Hypoxemia",
+        "ARDS"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "Refractory Hypoxemia",
+      "title": "Refractory Hypoxemia in ARDS  Exam-Oriented Approa",
+      "links": [
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:08:22"
+        },
+        {
+          "to": "paper:000549732.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:08:22"
+        },
+        {
+          "to": "paper:ICM_26_Internationalevidence-basedrecommendationsforpoint-of-carelungultrasound.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:08:22"
+        },
+        {
+          "to": "theory:Pulmonology/PEEP Titration Methods/Methods of PEEP Titration.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:08:22"
+        },
+        {
+          "to": "paper:PIIS0007091225009353.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:08:22"
+        },
+        {
+          "to": "paper:s00134-026-08543-x.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-09T19:08:22"
+        }
+      ]
+    },
+    "theory:Transcranial Doppler (TCD) in the ICU – Exam‑Style": {
+      "tags": [
+        "General",
+        "Transcranial Doppler",
+        "ICU"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Transcranial Doppler (TCD) in the ICU – Exam‑Style",
+      "links": [
+        {
+          "to": "theory:ASPECTS.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-09T19:08:35"
+        },
+        {
+          "to": "theory:Absolute and Relative Contraindications to Stroke",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-09T19:08:35"
+        },
+        {
+          "to": "theory:NAVA – Exam-Oriented, Clinically Useful Notes.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-09T19:08:35"
         }
       ]
     }

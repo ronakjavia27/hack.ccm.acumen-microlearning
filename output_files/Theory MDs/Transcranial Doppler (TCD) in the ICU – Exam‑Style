@@ -1,0 +1,329 @@
+
+## Transcranial Doppler (TCD) in the ICU
+
+Transcranial Doppler (TCD) is a non‑invasive bedside ultrasound technique that measures blood flow velocity in the large intracranial arteries. In the ICU, it is used to assess cerebral hemodynamics, estimate intracranial pressure trends, detect vasospasm after subarachnoid hemorrhage, and support brain death evaluation. [^1_1][^1_3][^1_9]
+
+***
+
+## 1. Basics and Physics
+
+- **Principle:** Uses the **Doppler effect** – frequency shift of ultrasound waves reflected from moving red blood cells is proportional to **flow velocity**. [^1_10]
+- **What it measures:**
+    - **Flow velocity** (cm/s) in basal cerebral arteries
+    - **Waveform morphology** (pulsatility, resistance)
+    - **Derived indices** (PI, RI, MFV, etc.)
+- **What it does NOT measure directly:**
+    - Cerebral blood flow (CBF) in mL/100 g/min
+    - Absolute intracranial pressure (ICP)
+    - Focal parenchymal pathology (needs CT/MRI)
+- **Key advantage in ICU:** Bedside, repeatable, real‑time, no radiation, useful when CT/MRI not feasible. [^1_1][^1_4][^1_10]
+
+***
+
+## 2. Acoustic Windows and Insonation
+
+TCD uses **acoustic windows** where skull bone is thin enough for ultrasound penetration.
+
+### Major windows
+
+1. **Transtemporal window** (most important in ICU)
+    - Location: Above zygomatic arch, between eye and ear (temporal bone)
+    - Vessels:
+        - **MCA** (Middle Cerebral Artery) – main target
+        - **ACA** (Anterior Cerebral Artery)
+        - **PCA** (Posterior Cerebral Artery)
+        - Terminal **ICA** (Internal Carotid Artery)
+    - Probe orientation and angulation determine which vessel is insonated. [^1_3][^1_6]
+2. **Transorbital window**
+    - Location: Through closed eyelid with gel, probe directed posteriorly
+    - Vessels:
+        - **Ophthalmic artery (OA)**
+        - Distal **ICA** (cavernous/supraclinoid segment)
+    - Use **low power** to protect eye. [^1_3]
+3. **Transforaminal (suboccipital) window**
+    - Location: Below occiput, posterior to foramen magnum
+    - Vessels:
+        - **Vertebral arteries (VA)**
+        - **Basilar artery (BA)**
+    - Patient head neutral or slightly flexed. [^1_3][^1_6]
+4. **Transmandibular / submandibular window**
+    - Location: Below angle of mandible
+    - Vessels:
+        - Distal **extracranial ICA**
+    - Less commonly used in routine ICU TCD. [^1_3]
+
+***
+
+## 3. How to Perform TCD in ICU (Step‑by‑Step)
+
+### Patient and machine setup
+
+- Position: **Supine**, head of bed **30–45°** if possible (or as clinically tolerated). [^1_3][^1_6]
+- Probe: **1–5 MHz phased array** or dedicated TCD probe.
+- Mode:
+    - **Pulsed‑wave Doppler** for velocities and indices.
+    - **Color Doppler** (TCCD) if available to visualize vessels.
+- Settings:
+    - Low Nyquist limit for color (~20 cm/s) to enhance low‑velocity flow detection. [^1_6]
+    - Sample gate (gate size) ~4–8 mm for large vessels.
+    - Optimize gain, depth, and angle.
+
+
+### General approach
+
+1. **Transtemporal window – MCA (core skill)**
+    - Place probe on temporal bone, marker toward patient’s nose/anterior.
+    - Identify midline structures (third ventricle, cerebral peduncles) in B‑mode if using TCCD.
+    - Use color box over lateral aspect to see MCA as flow **toward** the probe (red).
+    - Place pulse‑wave gate on MCA:
+        - **Depth:** ~35–65 mm (adults), typically 50–55 mm for M1 segment.
+        - **M1 segment:** proximal MCA, depth ~50–60 mm.
+        - **M2 segment:** more distal, shallower depth.
+    - Record **spectral Doppler waveform**:
+        - Obtain at least **2–3 cardiac cycles** with stable waveform.
+        - Measure **peak systolic velocity (PSV)**, **end‑diastolic velocity (EDV)**, calculate **mean flow velocity (MFV)**. [^1_2][^1_3][^1_6]
+2. **ACA and PCA (same transtemporal window)**
+    - **ACA:** angle probe anteriorly; flow usually **away** from probe (blue), depth ~60–75 mm.
+    - **PCA:** angle posteriorly; flow direction variable, depth ~55–70 mm.
+    - Confirm by direction, depth, and response to small probe movements.
+3. **Transorbital window – Ophthalmic artery and ICA**
+    - Use minimal power, closed eyelid, ample gel.
+    - Depth ~40–60 mm.
+    - OA flow direction helps infer ICA stenosis/occlusion (reversal in severe ICA disease).
+4. **Transforaminal window – VA and BA**
+    - Place probe midline or slightly paramedian below occiput.
+    - Depth:
+        - VA: ~60–80 mm
+        - BA: ~80–100+ mm
+    - Flow direction and symmetry help detect vertebrobasilar stenosis or occlusion.
+5. **Documentation**
+    - For each vessel:
+        - Side (R/L), vessel name, depth, direction of flow.
+        - PSV, EDV, MFV, PI, RI.
+        - Waveform description (sharp/blunted, high/low resistance).
+    - Store abnormal waveforms and highest velocities at each site. [^1_2][^1_3]
+
+***
+
+## 4. Normal Doppler Waveform and Indices
+
+### Normal MCA waveform
+
+- **Low‑resistance pattern:**
+    - Rapid systolic upstroke.
+    - Continuous forward diastolic flow.
+    - Clear systolic peak and diastolic component.
+
+
+### Key Doppler indices
+
+Let:
+
+- PSV = Peak Systolic Velocity
+- EDV = End‑Diastolic Velocity
+- MFV = Mean Flow Velocity (time‑averaged maximum velocity)
+
+1. **Mean Flow Velocity (MFV)**
+
+$$
+MFV = \frac{PSV + 2 \times EDV}{3}
+$$
+    - Most commonly used parameter for vasospasm, stenosis, hyperemia. [^1_10]
+2. **Pulsatility Index (PI) – Gosling**
+
+$$
+PI = \frac{PSV - EDV}{MFV}
+$$
+    - Reflects **distal vascular resistance** and **intracranial compliance**.
+    - ↑ PI → increased resistance / decreased compliance (e.g., raised ICP, distal vasoconstriction). [^1_1][^1_10]
+3. **Resistive Index (RI) – Pourcelot**
+
+$$
+RI = \frac{PSV - EDV}{PSV}
+$$
+    - Also reflects distal resistance; less commonly used than PI in neurocritical care but still relevant.
+4. **Systolic/Diastolic ratio (S/D)**
+
+$$
+S/D = \frac{PSV}{EDV}
+$$
+    - Increased in high‑resistance states.
+
+**Typical adult MCA values (approximate, machine and population dependent):**
+
+- MFV: ~55–70 cm/s
+- PI: ~0.6–1.1
+- RI: ~0.5–0.7
+(Exact “normal” ranges vary with age, CO₂, hematocrit, and machine.)
+
+***
+
+## 5. Indications in the ICU
+
+### Core ICU indications
+
+1. **Aneurysmal Subarachnoid Hemorrhage (aSAH) – Vasospasm / DCI monitoring**
+    - Serial TCD to detect **elevated MCA velocities** suggestive of vasospasm.
+    - MFV > 120 cm/s suggests vasospasm; > 200 cm/s suggests severe vasospasm.
+    - **Lindegaard ratio** (MCA MFV / extracranial ICA MFV):
+        - > 3: vasospasm likely
+        - > 6: severe vasospasm
+    - Helps guide timing of angiography and therapy. [^1_1][^1_5][^1_10]
+2. **Intracranial Pressure (ICP) and Compliance Estimation**
+    - Elevated ICP → increased downstream resistance → **higher PI**, lower EDV, blunted diastolic flow.
+    - PI > 1.2–1.4 often correlates with raised ICP; very high PI with low EDV suggests poor compliance.
+    - Trending PI and waveform can help detect ICP crises when invasive monitoring is absent or questionable. [^1_1][^1_9][^1_10]
+3. **Brain Death / Cerebral Circulatory Arrest**
+    - TCD patterns supporting cerebral circulatory arrest:
+        - **Oscillating flow** (to‑and‑fro)
+        - **Short systolic spikes** with no/retrograde diastolic flow
+        - Eventually **absence of signal** in bilateral MCAs and other intracranial vessels.
+    - Used as an ancillary test in some protocols (must follow local legal/clinical criteria). [^1_1][^1_5][^1_10]
+4. **Acute Ischemic Stroke / Large Vessel Occlusion**
+    - Detect:
+        - **Focal high velocities** (stenosis)
+        - **Absent/reduced flow** (occlusion)
+        - Collateral flow patterns.
+    - Can monitor recanalization after thrombolysis/thrombectomy. [^1_1][^1_9]
+5. **Traumatic Brain Injury (TBI)**
+    - Monitor:
+        - Vasospasm (especially basal cistern SAH with TBI)
+        - ICP trends via PI and waveform
+        - Hyperemia vs. ischemia patterns.
+    - Helps guide CPP targets and hyperventilation decisions. [^1_1][^1_10]
+6. **Sickle Cell Disease (mainly pediatrics, but relevant for ICU)**
+    - Screen for intracranial stenosis:
+        - MCA MFV > 200 cm/s → high risk of stroke.
+    - Guides transfusion and hydroxyurea strategies. [^1_1][^1_3]
+7. **Cardiac and Carotid Surgery / ECMO / Shock States**
+    - Monitor cerebral perfusion during:
+        - Carotid endarterectomy/stenting
+        - Cardiac surgery with hypothermia/CPB
+        - ECMO cannulation and flow changes
+    - Detect **microemboli** (high‑intensity transient signals – HITS). [^1_1][^1_10]
+8. **Right‑to‑Left Shunt Detection**
+    - Bubble study with TCD:
+        - IV agitated saline → microbubbles appear in MCA as HITS.
+    - Useful in unexplained stroke/TBI with suspected PFO or pulmonary shunt. [^1_1][^1_6]
+
+***
+
+## 6. TCD in Specific ICU Scenarios – Key Points
+
+### A. Vasospasm after SAH
+
+- **Timing:** Usually days 3–14 post‑bleed (peak ~day 7).
+- **TCD findings:**
+    - Progressive rise in MFV in MCA/ACA/VA/BA.
+    - MCA MFV > 120 cm/s → vasospasm; > 200 cm/s → severe.
+    - Lindegaard ratio > 3 supports true vasospasm vs hyperemia.
+- **Use:**
+    - Daily or twice‑daily TCD in high‑risk aSAH.
+    - Trigger for CTA/DSA and escalation of therapy (BP augmentation, endovascular treatment). [^1_1][^1_5][^1_10]
+
+
+### B. Raised ICP / Poor Compliance
+
+- **Pathophysiology:**
+Raised ICP → decreased cerebral perfusion pressure (CPP) → increased distal resistance → decreased diastolic flow → higher PI.
+- **TCD clues:**
+    - **PI ↑**, EDV ↓, diastolic flow blunted.
+    - Severe: **short systolic spikes**, oscillating flow, then no flow.
+- **Clinical integration:**
+    - Trend PI and waveform alongside ICP/CPP if monitored.
+    - Sudden PI increase or diastolic flow loss → suspect ICP crisis, herniation risk. [^1_1][^1_9][^1_10]
+
+
+### C. Brain Death Confirmation
+
+- **Typical evolution:**
+
+1. High PI, low EDV (high resistance).
+2. **Oscillating / to‑and‑fro** flow.
+3. **Short systolic spikes** with no diastolic flow.
+4. **No detectable intracranial flow** (with adequate windows).
+- **Requirements:**
+    - Bilateral examination of MCA, ACA, VA/BA where possible.
+    - Stable hemodynamics, no severe hypotension or vasoconstrictor confounders.
+    - Must follow institutional and legal criteria for brain death. [^1_1][^1_5][^1_10]
+
+
+### D. Stroke / Large Vessel Disease
+
+- **Stenosis:**
+    - Focal segmental velocity elevation (> 120–140 cm/s depending on vessel).
+    - Turbulent spectral broadening.
+- **Occlusion:**
+    - Absent or markedly reduced flow in expected vessel.
+    - Collateral flow patterns (e.g., reversed OA flow in ICA occlusion).
+- **Monitoring:**
+    - Pre/post thrombolysis or thrombectomy to assess recanalization and re‑occlusion. [^1_1][^1_9][^1_10]
+
+***
+
+## 7. Limitations and Pitfalls
+
+- **Operator dependence:**
+    - Requires good knowledge of cerebrovascular anatomy and insonation angles.
+    - Inexperienced operators may misidentify vessels or misinterpret velocities. [^1_10]
+- **Acoustic window failure:**
+    - Up to 10–20% of adults (especially elderly, females, certain ethnicities) have poor/absent temporal windows.
+    - May limit or preclude adequate TCD. [^1_10]
+- **Indirect measure:**
+    - Measures **velocity**, not flow or ICP directly.
+    - Velocity changes can be due to:
+        - Vessel diameter changes (vasospasm, stenosis)
+        - Systemic factors (CO₂, MAP, hematocrit, cardiac output)
+        - Global vs focal pathology. [^1_10]
+- **Confounding factors:**
+    - **PaCO₂:** Hypercapnia → vasodilation → ↑ velocity; hypocapnia → ↓ velocity.
+    - **Hematocrit:** Anemia → higher velocities for same flow.
+    - **Blood pressure, cardiac output, arrhythmias.**
+    - **Skull thickness and anatomical variants.**
+- **Limited spatial resolution:**
+    - Primarily large basal arteries; small distal vessels and superficial AVMs often not assessable. [^1_10]
+- **Brain death:**
+    - Must ensure adequate systemic perfusion; severe hypotension or high‑dose vasopressors can mimic circulatory arrest patterns.
+
+***
+
+## 8. Quick Exam‑Oriented Summary
+
+- **What TCD does:** Bedside Doppler of intracranial arteries → velocities + waveform + indices (MFV, PI, RI). [^1_1][^1_10]
+- **Main windows:** Transtemporal (MCA/ACA/PCA/ICA), transorbital (OA/ICA), transforaminal (VA/BA). [^1_3][^1_6]
+- **Key indices:**
+    - MFV = (PSV + 2×EDV)/3
+    - PI = (PSV − EDV)/MFV
+    - RI = (PSV − EDV)/PSV
+- **Core ICU uses:**
+    - Vasospasm after SAH (MFV, Lindegaard ratio).
+    - ICP/compliance trends (PI, diastolic flow).
+    - Brain death (oscillating flow → spikes → no flow).
+    - Stroke/LVO, TBI, sickle cell, peri‑operative monitoring, shunt detection. [^1_1][^1_3][^1_5][^1_9][^1_10]
+- **Limitations:** Operator dependent, poor windows in some, indirect measure, affected by CO₂, Hb, MAP, cannot replace CT/MRI or invasive ICP when available. [^1_10]
+
+
+<span style="display:none">[^1_7][^1_8]</span>
+
+<div align="center">⁂</div>
+
+[^1_1]: https://pmc.ncbi.nlm.nih.gov/articles/PMC5769900/
+
+[^1_2]: https://www.youtube.com/watch?v=OCro275BVWo
+
+[^1_3]: https://pmc.ncbi.nlm.nih.gov/articles/PMC8052112/
+
+[^1_4]: https://www.mdpi.com/2077-0383/15/4/1630
+
+[^1_5]: https://pmc.ncbi.nlm.nih.gov/articles/PMC7001253/
+
+[^1_6]: https://pmc.ncbi.nlm.nih.gov/articles/PMC5640565/
+
+[^1_7]: https://link.springer.com/article/10.1186/s13054-020-2750-9
+
+[^1_8]: https://pmc.ncbi.nlm.nih.gov/articles/PMC12941693/
+
+[^1_9]: https://www.ait-journal.com/Transcranial-sonography-practical-use-in-the-intensive-care-unit,196613,0,2.html
+
+[^1_10]: https://ejns.springeropen.com/articles/10.1186/s41984-021-00114-0
+

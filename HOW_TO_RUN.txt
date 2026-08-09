@@ -145,8 +145,8 @@ NOTE:
 MODES:
   (no args)    Same as --mode all (git sync)
   --mode all           Git add -A, commit, push (DEFAULT)
-  --mode data          Git all files EXCEPT main_app.py
-  --mode web           Git ONLY main_app.py
+  --mode data          Git all files EXCEPT web app files
+  --mode web           Git ONLY web app files (revamped_webapp.py + webapp_google.py + vercel.json)
   --mode pearls        Git ONLY pearls.json + sent_summaries.json
   --mode email         Send pending emails to subscribers
   --mode subscribers   Sync Google Sheets -> emails.csv
@@ -197,7 +197,7 @@ ACUMEN =  DASHBOARD
 WHAT IT IS:
   A FastAPI web dashboard and admin console for managing the
   hack.CCM content repository. Mounted at /console alongside
-  the existing FastAPI app (main_app.py).
+  the existing FastAPI app (revamped_webapp.py, wrapped by webapp_google.py).
 
 MODULES (content types):
   - Summaries   (sent_summaries.json ledger + output_files/*.json)

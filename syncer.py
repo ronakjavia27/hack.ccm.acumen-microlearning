@@ -10,8 +10,8 @@ Default mode is git sync (`--mode all`). Email/subscribers require explicit flag
 USAGE (single commands or combine):
     python syncer.py                              # Git add -A, commit, push (default)
     python syncer.py --mode all                   # Git add -A, commit, push
-    python syncer.py --mode data                  # Git all except main_app.py
-    python syncer.py --mode web                   # Git main_app.py only
+    python syncer.py --mode data                  # Git all except web app files
+    python syncer.py --mode web                   # Git web app files only (revamped_webapp.py + webapp_google.py + vercel.json)
     python syncer.py --mode pearls                # Git pearls.json + sent_summaries.json
     python syncer.py --mode email                 # Dispatch pending emails
     python syncer.py --mode subscribers           # Sync Google Sheets -> emails.csv
@@ -173,8 +173,8 @@ def git_sync(mode="all", verbose=False, skip_verify=False, dry_run=False):
     if dry_run:
         print("  [Dry-run] Would stage, commit, and push.")
         by_mode = {
-            "web": ["main_app.py"],
-            "data": ["all except main_app.py"],
+            "web": ["revamped_webapp.py", "webapp_google.py", "vercel.json"],
+            "data": ["all except web app files"],
             "pearls": ["pearls.json", "sent_summaries.json"],
             "all": ["all (respecting .gitignore)"],
         }
@@ -186,12 +186,16 @@ def git_sync(mode="all", verbose=False, skip_verify=False, dry_run=False):
 
     # Stage based on mode
     if mode == "web":
-        print("  Staging main_app.py only...")
-        run_git("add", "main_app.py")
+        print("  Staging web app files only...")
+        run_git("add", "revamped_webapp.py")
+        run_git("add", "webapp_google.py")
+        run_git("add", "vercel.json")
     elif mode == "data":
-        print("  Staging all files except main_app.py...")
+        print("  Staging all files except web app files...")
         run_git("add", "-A")
-        run_git("reset", "main_app.py")
+        run_git("reset", "revamped_webapp.py")
+        run_git("reset", "webapp_google.py")
+        run_git("reset", "vercel.json")
     elif mode == "pearls":
         print("  Staging pearls.json + sent_summaries.json...")
         run_git("add", "pearls.json")
@@ -618,8 +622,8 @@ def main():
         epilog="""
 Examples:
   python syncer.py --mode all                   # Git add -A, commit, push
-  python syncer.py --mode data                  # Git all except main_app.py
-  python syncer.py --mode web                   # Git main_app.py only
+  python syncer.py --mode data                  # Git all except web app files
+  python syncer.py --mode web                   # Git web app files only (revamped_webapp.py + webapp_google.py + vercel.json)
   python syncer.py --mode pearls                # Git pearls.json + sent_summaries.json
   python syncer.py --mode email                  # Dispatch pending emails
   python syncer.py --mode subscribers            # Sync Google Sheets -> emails.csv
