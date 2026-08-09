@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-09T19:08:35",
-  "entity_count": 306,
+  "generated_at": "2026-08-09T20:36:14",
+  "entity_count": 308,
   "entities": {
     "deck:Cardiology/Acute Coronary Syndromes": {
       "tags": [
@@ -14189,6 +14189,89 @@
           "reason": "complementary",
           "weight": 0.95,
           "updated_at": "2026-08-09T19:08:35"
+        }
+      ]
+    },
+    "paper:acute-liver-failure-guidelines.pdf": {
+      "tags": [
+        "Endoscopy in Critical Care",
+        "Acute Liver Failure",
+        "Liver Transplantation"
+      ],
+      "kind": "guideline",
+      "system": "Gastroenterology",
+      "type": "Guideline",
+      "subtopic": "Endoscopy in Critical Care",
+      "title": "Acute Liver Failure Guidelines",
+      "links": [
+        {
+          "to": "paper:UEG Journal - 2026 - Cárdenas‐Jaén - AEG‐AESPANC‐OPGE‐SIED‐SPG Ibero‐Latin American Guidelines on Acute Pancreatitis .pdf",
+          "kind": "guideline",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T20:36:12"
+        },
+        {
+          "to": "paper:AGA_Clinical_Practice_Update_on_Management_of_Clostridioides_difficile.pdf",
+          "kind": "guideline",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T20:36:12"
+        },
+        {
+          "to": "paper:american-college-of-gastroenterology-guidelines-management.pdf",
+          "kind": "guideline",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T20:36:12"
+        },
+        {
+          "to": "paper:association_between_acute_gastrointestinal_injury.7.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T20:36:12"
+        },
+        {
+          "to": "paper:evidence_based,_cost_effective_management_of_lower.1388.pdf",
+          "kind": "guideline",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T20:36:12"
+        }
+      ]
+    },
+    "paper:dgag054.pdf": {
+      "tags": [
+        "Thyroid Emergencies",
+        "Thyroid Storm"
+      ],
+      "kind": "paper",
+      "system": "Endocrinology",
+      "type": "Other",
+      "subtopic": "Thyroid Emergencies",
+      "title": "Approach to the patient with thyroid storm",
+      "links": [
+        {
+          "to": "paper:s12245-025-01078-w_1.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T20:36:14"
+        },
+        {
+          "to": "paper:fendo-15-1473151.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T20:36:14"
+        },
+        {
+          "to": "paper:1-s2.0-S0025712526000179-main.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-09T20:36:14"
         }
       ]
     }

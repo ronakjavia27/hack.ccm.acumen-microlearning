@@ -9,6 +9,9 @@ from pathlib import Path
 from fastapi import FastAPI, Request, Response, Depends, HTTPException, Cookie
 from fastapi.responses import HTMLResponse, JSONResponse
 
+# Import vocabulary normalization
+from acumen_core.vocabulary import get_allowed_specialties, build_specialty_map
+
 # =====================================================================
 # CONFIGURATION
 # =====================================================================
@@ -752,22 +755,31 @@ async def render_dashboard(request: Request, response: Response):
         raw_subtopic_map[sys].add(st)
     subtopic_map = {k: sorted(v) for k, v in raw_subtopic_map.items()}
 
-    # Build CSS variable mapping for specialties
+    # Build CSS variable mapping for specialties using canonical vocabulary
+    allowed_specialties = get_allowed_specialties()
+    spec_map = build_specialty_map(allowed_specialties)
+
+    def canonical_specialty(name):
+        """Normalize specialty name to canonical form."""
+        return spec_map.get(name.lower(), name)
+
     spec_css_vars = {}
     spec_css_vars_js = {}
     for s in systems_set:
-        color = SPEC_COLORS.get(s, "#6B7280")
-        var_name = "--spec-" + re.sub(r"[^a-zA-Z0-9]", "", s.lower())
+        canon = canonical_specialty(s)
+        color = SPEC_COLORS.get(canon, "#6B7280")
+        var_name = "--spec-" + re.sub(r"[^a-zA-Z0-9]", "", canon.lower())
         spec_css_vars[var_name] = color
-        spec_css_vars_js[s] = var_name
+        spec_css_vars_js[canon] = var_name
 
     # Additional colors for specialties not in data but in color map
     for s, c in SPEC_COLORS.items():
-        var_name = "--spec-" + re.sub(r"[^a-zA-Z0-9]", "", s.lower())
+        canon = canonical_specialty(s)
+        var_name = "--spec-" + re.sub(r"[^a-zA-Z0-9]", "", canon.lower())
         if var_name not in spec_css_vars:
             spec_css_vars[var_name] = c
-        if s not in spec_css_vars_js:
-            spec_css_vars_js[s] = var_name
+        if canon not in spec_css_vars_js:
+            spec_css_vars_js[canon] = var_name
 
     spec_css_str = "; ".join(f"{k}:{v}" for k, v in spec_css_vars.items()) + ";"
 
@@ -945,6 +957,9 @@ async def render_dashboard(request: Request, response: Response):
   .btn{{ border:1px solid var(--border); background:var(--bg-elev); color:var(--ink); padding:8px 13px; border-radius:8px; font-size:.86rem; font-weight:600; cursor:pointer; }}
   .btn:hover{{ background:var(--bg-sunk); }}
   .btn.primary{{ background:var(--accent); color:var(--accent-ink); border-color:var(--accent); }}
+  .serendipity-btn{{ width:100%; padding:16px 20px; font-size:1.1rem; font-weight:700; border-radius:12px; display:flex; align-items:center; justify-content:center; gap:10px; }}
+  .serendipity-btn span{{ font-size:1.3em; }}
+  @media (min-width:600px){{ .serendipity-btn{{ width:auto; min-width:280px; }} }}
   .search-box{{ flex:1; min-width:160px; display:flex; align-items:center; gap:8px; border:1px solid var(--border); background:var(--bg-elev); border-radius:8px; padding:2px 12px; color:var(--ink-muted); }}
   .search-box input{{ background:transparent; border:none; outline:none; color:var(--ink); font-family:inherit; font-size:.9rem; width:100%; padding:9px 2px; }}
   input::placeholder, .search-box input::placeholder{{ color:var(--ink-muted); opacity:.7; }}
@@ -1588,7 +1603,7 @@ async def render_dashboard(request: Request, response: Response):
     <div class="section-head" style="margin-top:0"><h2>Pearls</h2></div>
     <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 14px">Densely packed, bite sized knowledge</p>
     <div class="pearl-toolbar" style="margin-bottom:8px">
-      <button class="btn primary" id="serendipityBtn" type="button"><span>&#10024;</span> Serendipity Mode</button>
+      <button class="btn primary serendipity-btn" id="serendipityBtn" type="button"><span>&#10024;</span> Serendipity Mode</button>
     </div>
     <div class="pearl-toolbar">
       <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="pearlsSearch" placeholder="Search pearl text&hellip;"></div>
@@ -2086,6 +2101,45 @@ const SPEC_VAR = {spec_vars_js};
 const SPECS = {spec_labels_js}.map(function(n){{ return {{name:n, var:SPEC_VAR[n]}}; }});
 const TYPES = {type_list_js};
 
+// Specialty normalization (matches Python build_specialty_map)
+const SPEC_MAP = {{
+  "cardiology": "Cardiology",
+  "neurology": "Neurology",
+  "nephrology": "Nephrology",
+  "pulmonology": "Pulmonology",
+  "gastroenterology": "Gastroenterology",
+  "infectious diseases": "Infectious Diseases",
+  "rheumatology": "Rheumatology",
+  "immunology": "Immunology",
+  "sepsis": "Sepsis",
+  "toxicology": "Toxicology",
+  "hepatology": "Hepatology",
+  "oncology": "Oncology",
+  "hematology": "Hematology",
+  "other": "Other",
+  "multisystem": "Multisystem",
+  "nutrition": "Nutrition",
+  "trauma": "Trauma",
+  "surgery": "Surgery",
+  "endocrinology": "Endocrinology",
+  "obstetrics and gynecology": "Obstetrics And Gynecology",
+  "obstetrics & gynecology": "Obstetrics And Gynecology",
+  "obgyn": "Obstetrics And Gynecology",
+  "cardio": "Cardiology",
+  "cardiovascular": "Cardiology",
+  "neuro": "Neurology",
+  "nephro": "Nephrology",
+  "pulmo": "Pulmonology",
+  "gi": "Gastroenterology",
+  "heme": "Hematology",
+  "onc": "Oncology"
+}};
+function normalizeSpec(name) {{
+  if (!name) return 'Other';
+  var key = String(name).toLowerCase().replace(/[_\-]/g, ' ').replace(/&/g, 'and').trim();
+  return SPEC_MAP[key] || name;
+}}
+
 const baseDataset = {json.dumps(articles_list)};
 const allPearls = {json.dumps(pearls)};
 const SUBTOPIC_MAP = {json.dumps(subtopic_map)};
@@ -2135,7 +2189,7 @@ const BM_FOLDER_COLORS = ['#E8B778','#0C8A8B','#2DD4CF','#8B5CF6','#EF4444','#10
 
 // Theory flashcard study state
 let _theoryMode = null; // null = hero, 'notes' = Theory Topics, 'flashcards' = decks
-let _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }}));
+let _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return normalizeSpec(d.specialty); }}));
 let _theorySavedOnly = false;
 let _notesSavedOnly = false;
 let _notesActiveSpecs = new Set();
@@ -2182,11 +2236,12 @@ function pillHTML(spec, label){{
 }}
 
 function docCardHTML(p){{
-  var v = SPEC_VAR[p.system] || '--spec-other';
+  var sysNorm = normalizeSpec(p.system);
+  var v = SPEC_VAR[sysNorm] || '--spec-other';
   return '<button class="doc-card" data-open-paper="'+p.id+'">'+
     '<div class="doc-stripe" style="background:var('+v+')"></div>'+
     '<div class="doc-inner">'+
-      '<div class="doc-top">'+pillHTML(p.system, p.system)+'<span class="type-tag">'+p.type+'</span></div>'+
+      '<div class="doc-top">'+pillHTML(sysNorm, sysNorm)+'<span class="type-tag">'+p.type+'</span></div>'+
       '<p class="doc-title">'+p.title+'</p>'+
       '<p class="doc-snippet">'+(p.authors!=='Unknown Authors' ? '&mdash; '+p.authors : '')+'</p>'+
     '</div>'+
@@ -2372,7 +2427,7 @@ function renderPapers(){{
     var sortVal = document.getElementById('papersSort').value;
     var articles = baseDataset.filter(function(p){{ return p.type.toLowerCase()!=='guideline'; }});
     var filtered = articles.filter(function(p){{
-      return filterState.specialties[p.system] && (q==='' || p.title.toLowerCase().indexOf(q)!==-1);
+      return filterState.specialties[normalizeSpec(p.system)] && (q==='' || p.title.toLowerCase().indexOf(q)!==-1);
     }});
     if(sortVal==='newest'){{
       filtered = [].concat(filtered).sort(function(a,b){{ return (b.date_added||'').localeCompare(a.date_added||''); }});
@@ -2387,7 +2442,7 @@ function renderGuidelines(){{
     var q = (document.getElementById('guidelinesSearch').value || '').toLowerCase().trim();
     var sortVal = document.getElementById('guidelinesSort').value;
     var filtered = baseDataset.filter(function(p){{
-      return p.type.toLowerCase()==='guideline' && filterState.specialties[p.system] && (q==='' || p.title.toLowerCase().indexOf(q)!==-1);
+      return p.type.toLowerCase()==='guideline' && filterState.specialties[normalizeSpec(p.system)] && (q==='' || p.title.toLowerCase().indexOf(q)!==-1);
     }});
     if(sortVal==='newest'){{
       filtered = [].concat(filtered).sort(function(a,b){{ return (b.date_added||'').localeCompare(a.date_added||''); }});
@@ -2406,11 +2461,11 @@ function renderSpecialty(name){{
   document.getElementById('specViewDot').style.background = 'var('+v+')';
   document.getElementById('specViewTitle').textContent = name;
 
-  var papersInSpec = baseDataset.filter(function(p){{ return p.system===name && p.type.toLowerCase()!=='guideline'; }});
-  var guidelinesInSpec = baseDataset.filter(function(p){{ return p.system===name && p.type.toLowerCase()==='guideline'; }});
-  var pearlsInSpec = allPearls.filter(function(p){{ return p.system===name; }});
-  var theoryInSpec = THEORY_NOTES.filter(function(n){{ return n.system===name; }});
-  var decksInSpec = allFlashcardDecks.filter(function(d){{ return d.specialty===name; }});
+  var papersInSpec = baseDataset.filter(function(p){{ return normalizeSpec(p.system)===name && p.type.toLowerCase()!=='guideline'; }});
+  var guidelinesInSpec = baseDataset.filter(function(p){{ return normalizeSpec(p.system)===name && p.type.toLowerCase()==='guideline'; }});
+  var pearlsInSpec = allPearls.filter(function(p){{ return normalizeSpec(p.system)===name; }});
+  var theoryInSpec = THEORY_NOTES.filter(function(n){{ return normalizeSpec(n.system)===name; }});
+  var decksInSpec = allFlashcardDecks.filter(function(d){{ return normalizeSpec(d.specialty)===name; }});
 
   /* apply subtopic filter */
   if(activeSubtopic){{
@@ -2489,11 +2544,11 @@ function renderSpecialtySubtopicChips(name){{
   var subtopics = SUBTOPIC_MAP[name] || [];
   var chipsHTML = '<button class="subtopic-chip-clear" data-subtopic-clear>Clear all</button>';
   subtopics.forEach(function(st){{
-    var paperCount = baseDataset.filter(function(p){{ return p.system===name && (p.subtopic||p.system)===st && p.type.toLowerCase()!=='guideline'; }}).length;
-    var guidelineCount = baseDataset.filter(function(p){{ return p.system===name && (p.subtopic||p.system)===st && p.type.toLowerCase()==='guideline'; }}).length;
-    var pearlCount = allPearls.filter(function(p){{ return p.system===name && (p.subtopic||p.system)===st; }}).length;
-    var theoryCount = THEORY_NOTES.filter(function(n){{ return n.system===name && (n.subtopic||'General')===st; }}).length;
-    var deckCount = allFlashcardDecks.filter(function(d){{ return d.specialty===name && (d.id===name+'/'+st || (d.subtopics||[]).indexOf(st)>=0); }}).length;
+    var paperCount = baseDataset.filter(function(p){{ return normalizeSpec(p.system)===name && (p.subtopic||p.system)===st && p.type.toLowerCase()!=='guideline'; }}).length;
+    var guidelineCount = baseDataset.filter(function(p){{ return normalizeSpec(p.system)===name && (p.subtopic||p.system)===st && p.type.toLowerCase()==='guideline'; }}).length;
+    var pearlCount = allPearls.filter(function(p){{ return normalizeSpec(p.system)===name && (p.subtopic||p.system)===st; }}).length;
+    var theoryCount = THEORY_NOTES.filter(function(n){{ return normalizeSpec(n.system)===name && (n.subtopic||'General')===st; }}).length;
+    var deckCount = allFlashcardDecks.filter(function(d){{ return normalizeSpec(d.specialty)===name && (d.id===name+'/'+st || (d.subtopics||[]).indexOf(st)>=0); }}).length;
     var active = activeSubtopic===st ? ' active' : '';
     chipsHTML += '<button class="subtopic-chip'+active+'" data-subtopic="'+st+'">'+st+' <span style="opacity:.6">'+paperCount+'p '+guidelineCount+'g '+(theoryCount?theoryCount+'t ':'')+(deckCount?deckCount+'f ':'')+pearlCount+'&#9679;</span></button>';
   }});
@@ -2505,7 +2560,7 @@ function renderSpecialtySubtopicChips(name){{
 // =====================================================================
 function renderPearlChips(){{
   var pearlCounts = {{}};
-  allPearls.forEach(function(p){{ var sys=p.system||'Other'; pearlCounts[sys]=(pearlCounts[sys]||0)+1; }});
+  allPearls.forEach(function(p){{ var sys=normalizeSpec(p.system||'Other'); pearlCounts[sys]=(pearlCounts[sys]||0)+1; }});
   var chipsHTML = SPECS.map(function(s){{
     var count = pearlCounts[s.name]||0;
     var active = activePearlSpecs.has(s.name);
@@ -2518,7 +2573,7 @@ function renderPearls(){{
   var q = (document.getElementById('pearlsSearch').value || '').toLowerCase().trim();
   var sortVal = document.getElementById('pearlsSort').value;
   var filtered = allPearls.filter(function(p){{
-    return activePearlSpecs.has(p.system) && (q==='' || (p.pearl||'').toLowerCase().indexOf(q)!==-1);
+    return activePearlSpecs.has(normalizeSpec(p.system)) && (q==='' || (p.pearl||'').toLowerCase().indexOf(q)!==-1);
   }});
   if(sortVal==='newest') {{
     filtered = [].concat(filtered).sort(function(a,b){{ return parseInt(b.id||0) - parseInt(a.id||0); }});
@@ -2530,10 +2585,11 @@ function renderPearls(){{
   var noPearlsHTML = emptyStateHTML('pearls');
   if(activePearlSpecs.size===0){{ noPearlsHTML = '<p style="color:var(--ink-muted);text-align:center;padding:20px">Select a specialty above to see pearls.</p>'; }}
   document.getElementById('pearlsList').innerHTML = shown.map(function(p){{
-    var v = SPEC_VAR[p.system] || '--spec-other';
+    var sysNorm = normalizeSpec(p.system);
+    var v = SPEC_VAR[sysNorm] || '--spec-other';
     return '<button class="pearl-row" data-open-pearl="'+p.id+'">'+
       '<span class="dot" style="background:var('+v+')"></span>'+
-      '<span class="txt">'+escapeHtml((p.pearl||'').substring(0,150))+(p.pearl&&p.pearl.length>150?'&hellip;':'')+'<span class="src">'+(p.system||'')+' &middot; '+(p.source_paper||'Clinical pearl')+'</span></span>'+
+      '<span class="txt">'+escapeHtml((p.pearl||'').substring(0,150))+(p.pearl&&p.pearl.length>150?'&hellip;':'')+'<span class="src">'+sysNorm+' &middot; '+(p.source_paper||'Clinical pearl')+'</span></span>'+
     '</button>';
   }}).join('') || noPearlsHTML;
   document.getElementById('pearlsCount').textContent = 'Showing '+shown.length+' of '+filtered.length+' pearls';
@@ -2558,7 +2614,7 @@ function saveSerendipityHistory() {{
 
 function openSerendipityModal() {{
   var specs = SPECS.map(function(s) {{
-    var count = allPearls.filter(function(p) {{ return p.system === s.name; }}).length;
+    var count = allPearls.filter(function(p) {{ return normalizeSpec(p.system) === s.name; }}).length;
     return '<label><input type="checkbox" value="' + s.name + '"> ' + s.name + ' (' + count + ')</label>';
   }}).join('');
   document.getElementById('serendipitySpecialties').innerHTML = specs;
@@ -2605,7 +2661,7 @@ function startSerendipity() {{
   }}
 
   var pool = allPearls.filter(function(p) {{
-    return specialties.includes(p.system) && !_serendipityHistory.includes(String(p.id));
+    return specialties.includes(normalizeSpec(p.system)) && !_serendipityHistory.includes(String(p.id));
   }});
 
   if (pool.length === 0) {{
@@ -2641,7 +2697,8 @@ function navigateSerendipity(direction) {{
 function openReader(entry, kind){{
   if (!entry) return;
   navPushState('reader');
-  var v = SPEC_VAR[entry.system] || '--spec-other';
+  var entrySysNorm = normalizeSpec(entry.system);
+  var v = SPEC_VAR[entrySysNorm] || '--spec-other';
   var body = document.getElementById('readerBody');
   body.scrollTop = 0;
   document.getElementById('readerProgress').style.width = '0%';
@@ -2666,7 +2723,7 @@ if(kind==='pearl'){{
     var pbmRef = 'pearl:'+entry.id;
     registerBookmarkMeta(pbmRef, {{kind:'pearl', title: entry.pearl || entry.source_paper || 'Clinical pearl', system: entry.system || 'General', type: entry.type || 'Pearl', locator: {{id: entry.id}}}});
     body.innerHTML = ''+
-      pillHTML(entry.system||'General', (entry.system||'General')+' &middot; Pearl')+
+      pillHTML(entrySysNorm||'General', (entrySysNorm||'General')+' &middot; Pearl')+
       '<h2 style="font-size:1.15rem;line-height:1.4">"'+escapeHtml(entry.pearl||'')+'"</h2>'+
       '<p class="meta">'+(entry.source_paper||'Clinical pearl')+'</p>'+
       '<div class="reader-actions">'+bookmarkBtnHTML(pbmRef)+(entry.file_name?'<button class="related-btn" data-open-related="paper:'+escapeHtml(entry.file_name.replace(/\\.json$/i,'.pdf'))+'" title="Related papers, guidelines, theory notes, decks & pearls">&#128279; Related</button>':'')+'</div>'+
@@ -3517,7 +3574,7 @@ function renderCondensedDetailHTML(data, body){{
 // =====================================================================
 // THEORY FLASHCARDS
 // =====================================================================
-function _theorySpecVar(spec){{ return THEORY_SPEC_VAR[spec] || '--spec-other'; }}
+function _theorySpecVar(spec){{ return THEORY_SPEC_VAR[normalizeSpec(spec)] || '--spec-other'; }}
 function _theoryPill(spec, label){{
   var v = _theorySpecVar(spec);
   return '<span class="pill" style="background:color-mix(in srgb, var('+v+') 18%, transparent); color:var('+v+')"><span class="dot" style="background:var('+v+')"></span>'+escapeHtml(label)+'</span>';
@@ -3684,8 +3741,8 @@ function _applyTheoryDeepLink(params){{
     _theorySavedOnly = params.get('saved')==='1';
     _theoryActiveSubtopic = sub || null;
     _theoryActiveSpecs = sys
-      ? new Set([sys])
-      : new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }}));
+      ? new Set([normalizeSpec(sys)])
+      : new Set(allFlashcardDecks.map(function(d){{ return normalizeSpec(d.specialty); }}));
     renderTheoryPane('flashcards');
     if(dck){{
       var dhit = allFlashcardDecks.find(function(d){{ return d.id===dck; }});
@@ -3741,7 +3798,7 @@ function _theoryFilteredNotes(){{
   var q = (document.getElementById('theoryNotesSearch').value||'').toLowerCase().trim();
   return THEORY_NOTES.filter(function(n){{
     if(_notesSavedOnly && !(_bookmarks.items && _bookmarks.items['note:'+n.id])) return false;
-    if(_notesActiveSpecs.size && !_notesActiveSpecs.has(n.system)) return false;
+    if(_notesActiveSpecs.size && !_notesActiveSpecs.has(normalizeSpec(n.system))) return false;
     if(_notesActiveSubtopic && n.subtopic!==_notesActiveSubtopic) return false;
 if(!q) return true;
     return (n.title+' '+n.md).toLowerCase().indexOf(q)!==-1;
@@ -3768,7 +3825,7 @@ function renderTheoryNotes(){{
 if(box){{
     var savedCount = Object.keys(_bookmarks.items || {{}}).filter(function(r){{ return r.indexOf('note:')===0; }}).length;
     var specSet = {{}}, subSet = {{}};
-    THEORY_NOTES.forEach(function(n){{ specSet[n.system]=(specSet[n.system]||0)+1; subSet[n.system+'\u0001'+n.subtopic]=(subSet[n.system+'\u0001'+n.subtopic]||0)+1; }});
+    THEORY_NOTES.forEach(function(n){{ var sys=normalizeSpec(n.system); specSet[sys]=(specSet[sys]||0)+1; subSet[sys+'\u0001'+n.subtopic]=(subSet[sys+'\u0001'+n.subtopic]||0)+1; }});
     // Row 1: specialty chips — each pill is tinted in its encoded specialty colour
     var specChips = Object.keys(specSet).sort().map(function(s){{
       var v = _theorySpecVar(s);
@@ -4000,7 +4057,7 @@ function renderTheoryChips(){{
   if(!box) return;
   if(_theoryActiveSpecs.size!==1) _theoryActiveSubtopic = null;
   var counts = {{}};
-  allFlashcardDecks.forEach(function(d){{ counts[d.specialty] = (counts[d.specialty]||0)+1; }});
+  allFlashcardDecks.forEach(function(d){{ var sys=normalizeSpec(d.specialty); counts[sys] = (counts[sys]||0)+1; }});
   var html = Object.keys(counts).sort().map(function(s){{
     var active = _theoryActiveSpecs.has(s);
     return '<button class="chip '+(active?'active':'')+'" data-theory-chip="'+escapeHtml(s)+'" style="--chip-color:var('+_theorySpecVar(s)+')"><span class="dot" style="background:var('+_theorySpecVar(s)+')"></span>'+escapeHtml(s)+' ('+counts[s]+')</button>';
@@ -4026,7 +4083,7 @@ function renderTheorySubtopicChips(){{
   }}
   var deckCounts = {{}};
   allFlashcardDecks.forEach(function(d){{
-    if(d.specialty!==spec) return;
+    if(normalizeSpec(d.specialty)!==spec) return;
     (d.subtopics||[]).forEach(function(t){{ deckCounts[t] = (deckCounts[t]||0)+1; }});
   }});
   var html = '<span class="pearl-count" style="margin:0 6px 0 0;flex:0 0 auto">Subtopic:</span>';
@@ -4048,7 +4105,7 @@ function renderTheoryDecks(){{
     return;
   }}
   var filtered = allFlashcardDecks.filter(function(d){{
-    if(!_theoryActiveSpecs.has(d.specialty)) return false;
+    if(!_theoryActiveSpecs.has(normalizeSpec(d.specialty))) return false;
     var savedRefs = _savedCardRefs(d.id);
     if(_theorySavedOnly && !savedRefs.length) return false;
     if(_theoryActiveSubtopic && (d.subtopics||[]).indexOf(_theoryActiveSubtopic)===-1) return false;
@@ -5066,7 +5123,7 @@ document.addEventListener('click', function(e){{
   }}
 
   var theoryReset = e.target.closest('[data-theory-chip-reset]');
-  if(theoryReset){{ _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return d.specialty; }})); renderTheoryChips(); renderTheoryDecks(); _theoryReplace(); return; }}
+  if(theoryReset){{ _theoryActiveSpecs = new Set(allFlashcardDecks.map(function(d){{ return normalizeSpec(d.specialty); }})); renderTheoryChips(); renderTheoryDecks(); _theoryReplace(); return; }}
 
   var theoryUncheck = e.target.closest('[data-theory-chip-uncheck]');
   if(theoryUncheck){{ _theoryActiveSpecs = new Set(); renderTheoryChips(); renderTheoryDecks(); _theoryReplace(); return; }}

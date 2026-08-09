@@ -1,0 +1,254 @@
+{
+  "id": "acg-acute-liver-failure-guidelines-2023",
+  "doc_type": "guideline",
+  "title": "Acute Liver Failure Guidelines",
+  "issuing_bodies": [
+    "ACG"
+  ],
+  "year": 2023,
+  "doi": "10.14309/ajg.0000000000002340",
+  "specialty": [
+    "gastroenterology",
+    "hepatology",
+    "toxicology"
+  ],
+  "tags": [
+    "acute liver failure",
+    "hepatic encephalopathy",
+    "coagulopathy",
+    "acetaminophen toxicity",
+    "liver transplantation",
+    "n-acetylcysteine",
+    "critical care"
+  ],
+  "one_line_summary": "Official 2023 ACG guidelines providing evidence-based recommendations and consensus management for the diagnosis, system-specific **critical** care, etiology-directed therapy, and liver transplantation triage in acute liver failure.",
+  "key_pearls": [
+    "**Acute liver failure (ALF)** is defined by illness duration **<26 weeks**, presence of **coagulopathy (INR ≥1.5)**, and any degree of **hepatic encephalopathy (HE)** in patients without preexisting liver disease.",
+    "In patients with ALF and **grade 2 or higher HE**, early **continuous renal replacement therapy (CRRT)** is suggested to control **hyperammonemia** and lower intracranial pressure, even in the absence of traditional renal replacement therapy indications.",
+    "Routine prophylactic correction of **coagulopathy (INR)** with plasma or platelets is **recommended against** in non-bleeding patients, as **INR** does not accurately reflect true bleeding risk.",
+    "**Norepinephrine** is **recommended** as the first-line vasopressor for fluid-refractory hypotension, with **vasopressin** suggested as a secondary adjunct.",
+    "Intravenous **N-acetylcysteine (NAC)** should be administered immediately for **acetaminophen (APAP)** toxicity and is suggested for **non-APAP ALF** presenting with early-grade encephalopathy.",
+    "A **MELD score >25** or meeting **King's College Criteria (KCC)** signifies a high risk of poor transplant-free **survival** and should prompt immediate transfer and evaluation for **liver transplantation (LT)**.",
+    "For **Amanita** mushroom poisoning, **IV silibinin** (or **IV penicillin G** if unavailable) combined with early **activated charcoal** (within **4 hours**) is **recommended**."
+  ],
+  "consensus_method": "GRADE system with PICO question formulation and comprehensive electronic literature review",
+  "search_period": "Through January 2022",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "System-Specific Management: Central Nervous System and Encephalopathy",
+      "narrative": "- Progression to **grade 2 hepatic encephalopathy (HE)** mandates immediate ICU transfer for frequent neurological checks.\n- Endotracheal intubation for airway protection is **mandatory** for **grade 3 or 4 HE**.\n- High serum **ammonia** (>**150 µmol/L**) directly correlates with cerebral edema (*CE*) and intracranial hypertension (*ICH*).\n- **Continuous renal replacement therapy (CRRT)** effectively lowers **serum ammonia**, reducing **ICH** and improving **21-day transplant-free survival**.\n- Evidence is inconclusive regarding routine use of **lactulose**, **rifaximin**, routine **intracranial pressure (ICP) monitoring**, or therapeutic **hypothermia**.",
+      "recommendations": [
+        {
+          "rec_id": "R1",
+          "statement": "In patients with ALF and grade 2 or higher encephalopathy, we suggest early CRRT for management of hyperammonemia even in the absence of conventional RRT indications.",
+          "strength": "conditional",
+          "evidence_grade": "very_low"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "System-Specific Management: Coagulopathy and Hemostasis",
+      "narrative": "- Standard **INR** does not reflect actual bleeding risk in ALF due to simultaneous reductions in procoagulant and anticoagulant proteins (*rebalanced hemostasis*).\n- Clinically **significant** bleeding is rare, accounting for death in only **~5%** of ALF cases.\n- Routine correction of **coagulopathy** with fresh frozen plasma or platelets carries risks of volume overload, thrombosis, and **TRALI** without clear clinical benefit.\n- **Viscoelastic testing (VET)**, such as *TEG* or *ROTEM*, provides a **superior** overall functional assessment of clot kinetics.",
+      "recommendations": [
+        {
+          "rec_id": "R2",
+          "statement": "In patients with ALF, in the absence of active bleeding or impending high-risk procedure, we recommend against routine correction of coagulopathy.",
+          "strength": "conditional",
+          "evidence_grade": "very_low"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "System-Specific Management: Infection Prevention and Surveillance",
+      "narrative": "- Bacterial and fungal infections are highly prevalent in ALF, but classic signs like **fever** and **leukocytosis** are absent in **~30%** of infected patients.\n- Serum **procalcitonin** reflects systemic cellular inflammation rather than confirmed bacterial infection in ALF.\n- Routine **prophylactic antimicrobials** fail to decrease bloodstream infection rates or **21-day mortality**.\n- Regular surveillance blood, urine, and sputum cultures should be drawn routinely.",
+      "recommendations": [
+        {
+          "rec_id": "R3",
+          "statement": "In patients with ALF, we recommend against the routine use of prophylactic antimicrobial agents, given no improvement in either rate of bloodstream infection or 21-day **mortality**.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "System-Specific Management: Hemodynamics and Renal Failure",
+      "narrative": "- Hemodynamics in ALF resemble septic shock, characterized by profound vasodilation, high cardiac output, and low systemic vascular resistance.\n- Initial therapy requires **intravenous fluid resuscitation** to restore effective circulating volume.\n- **Norepinephrine** is the first-line vasopressor to target a cerebral perfusion pressure of **60–80 mmHg**.\n- **Vasopressin** can be added as a second-line agent for refractory shock.\n- **Acute kidney injury (AKI)** occurs in up to **70%** of ALF cases; **CRRT** is preferred over intermittent hemodialysis due to **superior** hemodynamic stability and lower risk of rapid osmolar shifts.",
+      "recommendations": [
+        {
+          "rec_id": "R4",
+          "statement": "In patients with ALF, we recommend norepinephrine as the first-line vasopressor for hypotension refractory to fluid resuscitation.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        },
+        {
+          "rec_id": "R5",
+          "statement": "In patients with ALF with hypotension not responsive to norepinephrine, we suggest adding vasopressin as a secondary agent.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Etiology-Specific Management: Acetaminophen Toxicity",
+      "narrative": "- **Acetaminophen (APAP)** overdose (>**10–15 g**) is the leading cause of ALF in Western countries, causing **NAPQI** accumulation and acute centrilobular necrosis.\n- Single-dose **activated charcoal (1–2 g/kg)** should be administered if presentation is within **4 hours** of ingestion.\n- **N-acetylcysteine (NAC)** acts as a glutathione precursor and reactive oxygen species scavenger; prompt administration is lifesaving.\n- Extended **IV NAC** protocols should be continued beyond standard **20-hour** regimens until **INR <1.5**, transaminases mark clear recovery, and **APAP** levels are undetectable.",
+      "recommendations": [
+        {
+          "rec_id": "R6",
+          "statement": "In patients with suspected APAP toxicity, we recommend early administration of N-acetylcysteine.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Etiology-Specific Management: Non-Acetaminophen Drug-Induced Liver Injury",
+      "narrative": "- Idiosyncratic **DILI** (from antimicrobials or herbal/dietary supplements) carries a low transplant-free **survival** (**23.5%–38.7%**).\n- Immediate discontinuation of all suspected offending agents is **essential**.\n- **Intravenous NAC** administration in non-APAP ALF presenting with early-grade encephalopathy (**grades 1–2**) **significantly** improves **21-day transplant-free survival** (**52% vs 30%**).",
+      "recommendations": [
+        {
+          "rec_id": "R7",
+          "statement": "In patients with non-APAP ALF, we suggest the initiation of intravenous NAC.",
+          "strength": "strong",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Etiology-Specific Management: Viral Hepatitis and Mushroom Poisoning",
+      "narrative": "- **Hepatitis B virus (HBV)** reactivation carries up to **75%** **mortality** without transplantation; nucleos(t)ide analogs (**entecavir** or **tenofovir**) **significantly** reduce viral load and improve outcomes.\n- Empiric **IV acyclovir** should be started immediately for suspected **Herpes simplex virus (HSV)** or **Varicella zoster virus (VZV)** hepatitis presenting with fever and hypertransaminasemia.\n- **Amanita phalloides** mushroom poisoning leads to severe gastrointestinal symptoms at **6–12 hours** and ALF at **4–7 days**.\n- **Escudie criteria** accurately predict **28-day mortality** in mushroom poisoning, allowing transplant evaluation before encephalopathy develops.\n- **IV silibinin dihemisuccinate** acts as an α-amanitin transport inhibitor and is first-line; **IV penicillin G** is used if silibinin is unavailable.",
+      "recommendations": [
+        {
+          "rec_id": "R8",
+          "statement": "In patients with ALF due to reactivation of HBV, we recommend starting antiviral therapy.",
+          "strength": "strong",
+          "evidence_grade": "low"
+        },
+        {
+          "rec_id": "R9",
+          "statement": "In patients with ALF due to mushroom poisoning, we recommend initiation of IV silibinin as soon as possible. IV penicillin G may be used if IV silibinin is unavailable.",
+          "strength": "conditional",
+          "evidence_grade": "very_low"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Prognostic Models and Liver Transplantation Evaluation",
+      "narrative": "- Validated prognostic tools include **King's College Criteria (KCC)** and **MELD score**.\n- A **MELD score >25** or meeting **KCC** identifies high risk for hospital **mortality** and should prompt urgent listing for **liver transplantation (LT)**.\n- Confirmed **brain death** is the only **absolute** contraindication to LT; active sepsis and severe multiorgan failure are relative contraindications.\n- Urgent candidates are listed under **Status 1A priority**; **living donor LT (LDLT)** or **ABO-incompatible (ABO-I)** grafts may be considered in specialized centers when deceased donor organs are unavailable.",
+      "recommendations": [
+        {
+          "rec_id": "R10",
+          "statement": "In patients with ALF, we recommend using either the KCC criteria or MELD score for prognostication. Patients meeting the KCC criteria or presenting with MELD >25 are at high risk of poor outcomes.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Initial Clinical Differentiation and Workup",
+      "action": "Confirm diagnosis (**INR ≥1.5**, **HE**, **no prior cirrhosis**, illness duration **<26 weeks**). Send diagnostic panel: CBC, CMP, lactate, blood gas, INR, fibrinogen, acetaminophen level, toxicology screen, viral serologies (**HAV**, **HBV**, **HCV**, **HEV**, **HSV**, **CMV**, **EBV**), ANA, IgG, ceruloplasmin, and baseline CT head."
+    },
+    {
+      "step": 2,
+      "title": "Triage, Referral, and ICU Admission",
+      "action": "Transfer any patient with **grade 2 or higher HE** directly to the ICU. Immediately establish contact with a regional liver transplant center for patients meeting **King's College Criteria** or presenting with **MELD >25**."
+    },
+    {
+      "step": 3,
+      "title": "Neurological Protection and Metabolic Stabilization",
+      "action": "Electively intubate patients progressing to **grade 3 or 4 HE**. Initiate early **CRRT** for serum **ammonia >150 µmol/L** regardless of acute kidney injury status. Maintain serum sodium at **145–150 mmol/L** using **3% hypertonic saline** boluses or continuous infusions."
+    },
+    {
+      "step": 4,
+      "title": "Etiology-Specific Rapid Therapy Initiation",
+      "action": "Administer **IV N-acetylcysteine** immediately for suspected APAP ingestion or early-stage non-APAP ALF. Administer **activated charcoal** if ingestion was **<4 hours**. Give **IV acyclovir** for suspected HSV, **entecavir/tenofovir** for HBV reactivation, **IV silibinin** for mushroom poisoning, and arrange emergency delivery for **AFLP/HELLP syndrome**."
+    },
+    {
+      "step": 5,
+      "title": "Hemodynamic and Coagulation Management",
+      "action": "Resuscitate with crystalloids; initiate **norepinephrine** as first-line vasopressor to maintain CPP **60–80 mmHg** (add **vasopressin** if refractory). Avoid routine prophylactic correction of **INR** or **platelets** unless active bleeding is present or high-risk invasive procedures are planned."
+    }
+  ],
+  "strengths_limitations": "- **Strengths**: Comprehensive, multi-system guideline utilizing standardized **GRADE** methodology to evaluate literature across all major ALF etiologies.\n- **Limitations**: Scarcity of prospective randomized controlled trials in ALF due to disease rarity, forcing reliance on low/very low quality evidence and expert opinion for several **critical** management steps.",
+  "drugs_doses": [
+    {
+      "drug": "N-acetylcysteine",
+      "dose": "IV protocol: 150 mg/kg loading dose over 1 hr, followed by 50 mg/kg over 4 hr, then 100 mg/kg over 16 hr. Extended protocol: continue 100 mg/kg/24 hr until INR <1.5 and transaminases improve.",
+      "indication": "Acetaminophen toxicity and early-grade non-acetaminophen acute liver failure",
+      "adverse_effects": "Anaphylactoid reactions, rash, nausea, vomiting"
+    },
+    {
+      "drug": "Silibinin dihemisuccinate",
+      "dose": "IV 20–50 mg/kg/day for 48–96 hours (or 5 mg/kg IV over 1 hr, then 20 mg/kg/day for 6 days)",
+      "indication": "Amatoxin / Amanita mushroom poisoning",
+      "adverse_effects": "Flushing, gastrointestinal distress, sweating"
+    },
+    {
+      "drug": "Penicillin G",
+      "dose": "IV continuous infusion 1,000,000 IU/kg on day 1, then 1,500,000 IU/kg/day on days 2 and 3",
+      "indication": "Mushroom poisoning (second-line option if IV silibinin is unavailable)",
+      "adverse_effects": "Hypersensitivity reactions, hyperkalemia, neurotoxicity"
+    },
+    {
+      "drug": "Activated charcoal",
+      "dose": "Oral/NG 1–2 g/kg single dose (or 50 g q4h / 25 g q2h for amatoxin ingestion) within 4 hours of ingestion",
+      "indication": "Acute toxic ingestions (acetaminophen or toxic mushrooms)",
+      "adverse_effects": "Aspiration pneumonitis, vomiting, bowel obstruction"
+    },
+    {
+      "drug": "Norepinephrine",
+      "dose": "Continuous IV infusion titrated to maintain target MAP and CPP of 60–80 mmHg",
+      "indication": "First-line vasopressor for fluid-refractory shock in acute liver failure",
+      "adverse_effects": "Peripheral ischemia, cardiac arrhythmias, tissue necrosis"
+    },
+    {
+      "drug": "Vasopressin",
+      "dose": "Continuous IV infusion (typically 0.03 units/min) as secondary vasopressor adjunct",
+      "indication": "Refractory vasoplegic hypotension not responding to norepinephrine",
+      "adverse_effects": "Splanchnic vasoconstriction, hyponatremia, peripheral ischemia"
+    },
+    {
+      "drug": "Acyclovir",
+      "dose": "IV dosing weight-based (typically 10 mg/kg IV q8h)",
+      "indication": "Empiric or confirmed Herpes simplex virus (HSV) or Varicella zoster virus (VZV) hepatitis",
+      "adverse_effects": "Acute kidney injury (crystal nephropathy), neurotoxicity, phlebitis"
+    },
+    {
+      "drug": "Entecavir",
+      "dose": "Oral 0.5 mg to 1 mg daily",
+      "indication": "Acute liver failure due to Hepatitis B virus (HBV) reactivation",
+      "adverse_effects": "Lactic acidosis, headache, fatigue"
+    },
+    {
+      "drug": "Tenofovir disoproxil fumarate",
+      "dose": "Oral 300 mg daily",
+      "indication": "Acute liver failure due to Hepatitis B virus (HBV) reactivation",
+      "adverse_effects": "Renal toxicity, Fanconi syndrome, decreased bone mineral density"
+    },
+    {
+      "drug": "Prednisone / Methylprednisolone",
+      "dose": "IV/Oral prednisone 0.5–1 mg/kg/day (or up to 60 mg/day) or IV methylprednisolone equivalent",
+      "indication": "Acute severe autoimmune hepatitis (AS-AIH) or drug hypersensitivity-associated DILI",
+      "adverse_effects": "Infection risk, hyperglycemia, fluid retention, psychiatric disturbances"
+    },
+    {
+      "drug": "Heparin",
+      "dose": "Continuous IV infusion titrated to therapeutic aPTT or anti-Xa levels",
+      "indication": "Acute Budd-Chiari syndrome presenting as acute liver failure",
+      "adverse_effects": "Bleeding, heparin-induced thrombocytopenia (HIT)"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2023-07-01",
+  "article_subtype": "Guideline",
+  "subtopic": "Endoscopy in Critical Care"
+}
