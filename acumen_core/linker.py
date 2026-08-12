@@ -10,8 +10,9 @@ Incremental design:
     entities are pruned every run.
 
 Usage:
-  python acumen_core/linker.py                # incremental (default: openrouter)
-  python acumen_core/linker.py --llm gemini   # Gemini provider chain
+  python acumen_core/linker.py                # interactive: choose [G]emini or [O]penRouter
+  python acumen_core/linker.py --llm gemini   # Gemini provider chain (no prompt)
+  python acumen_core/linker.py --no-prompt    # skip the G/O prompt (default: openrouter)
   python acumen_core/linker.py --tag-only     # skip the LLM edge pass (tags only)
   python acumen_core/linker.py --force        # recompute everything
   python acumen_core/linker.py --dry-run      # preview only, no writes
@@ -19,11 +20,8 @@ Usage:
   python acumen_core/linker.py --api-key K --model M [--base-url U]  # direct OpenAI-compat
 
 Flags:
-  --tag-only     assign tags but skip LLM edge picking (cheap)
-  --edges-only   only run the edge pass on entities already tagged
-  --force        recompute tags+edges for every entity
-  --dry-run      preview what would change, no API calls or writes
-  --verbose      detailed logging
+  --llm gemini|openrouter  pick the provider explicitly (default: interactive G/O prompt)
+  --no-prompt              don't ask; use openrouter (gemini-3.1-flash-lite on --llm gemini)
 """
 
 import argparse
@@ -100,9 +98,11 @@ def _print(*args, **kwargs):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Incremental cross-linking of clinical content")
-    ap.add_argument("--llm", default="openrouter",
-                    choices=["openrouter", "together", "gemini"],
-                    help="Provider for the cheap tag/edge calls (default: openrouter)")
+    ap.add_argument("--llm", default=None, choices=["openrouter", "gemini"],
+                    help="Provider for the cheap tag/edge calls. Interactive runs "
+                         "choose first instead (G=gemini, O=openrouter).")
+    ap.add_argument("--no-prompt", action="store_true",
+                    help="skip the interactive provider choice (use the default)")
     ap.add_argument("--api-key", default="", help="override API key (direct OpenAI-compatible call)")
     ap.add_argument("--model", default="", help="override model (with --api-key)")
     ap.add_argument("--base-url", default="", help="override endpoint (default: OpenRouter)")
@@ -116,12 +116,45 @@ def main(argv=None):
 
     from acumen_core import linking as li
 
+    if args.llm is None and not args.no_prompt and not args.dry_run \
+            and not (args.api_key or args.model) and sys.stdin.isatty():
+        args.llm = _prompt_provider()
+
+    try:
+        from acumen_core.config import GEMINI_LINKING_MODEL, LINKING_LLM_MODEL
+        if args.api_key or args.model:
+            provider_note = f"direct API ({args.model or LINKING_LLM_MODEL})"
+        elif (args.llm or "openrouter") == "gemini":
+            provider_note = f"gemini ({GEMINI_LINKING_MODEL})"
+        else:
+            provider_note = f"openrouter ({LINKING_LLM_MODEL})"
+        _print(f"Linking provider: {provider_note}")
+    except ImportError:
+        pass
+
     if not _acquire_lock():
         return
     try:
         _run_linking(args, li)
     finally:
         _release_lock()
+
+
+def _prompt_provider():
+    """Inline G/O choice for interactive runs. Returns 'gemini' or 'openrouter'."""
+    for attempt in range(2):
+        try:
+            ans = input("Linking provider - [G]emini (gemini-3.1-flash-lite) or "
+                        "[O]penRouter (gpt-oss-20b)? [O]: ").strip().lower()
+        except EOFError:
+            return "openrouter"
+        if ans in ("g", "gemini"):
+            return "gemini"
+        if ans in ("o", "openrouter", ""):
+            return "openrouter"
+        if attempt == 0:
+            _print("  please answer G or O (Enter defaults to O)...")
+    return "openrouter"
 
 
 def _run_linking(args, li):

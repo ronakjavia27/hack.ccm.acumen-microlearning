@@ -240,6 +240,9 @@ SUBTOPIC_MAX_TOKENS = 256
 
 # Cross-linking cheap model: env override, else the subtopic model (fast gpt-oss).
 LINKING_LLM_MODEL = os.getenv("LINKING_LLM_MODEL") or SUBTOPIC_LLM_MODEL
+# Cross-linking Gemini model: env override, else the subtopic flash-lite model.
+# Used when the linker runs with the Gemini provider (G/O prompt).
+GEMINI_LINKING_MODEL = os.getenv("GEMINI_LINKING_MODEL") or GEMINI_SUBTOPIC_MODEL
 
 PEARLS_JSON_FIELDS = [
     "id", "timestamp", "source_paper", "doi",

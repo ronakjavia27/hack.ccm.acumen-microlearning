@@ -21,6 +21,7 @@ from acumen_core.config import (
     GEMINI_VISION_MODEL,
     SUBTOPIC_LLM_MODEL,
     GEMINI_SUBTOPIC_MODEL,
+    GEMINI_LINKING_MODEL,
     SUBTOPIC_TEMPERATURE,
     SUBTOPIC_MAX_TOKENS,
     TEMPERATURE_EXTRACTION,
@@ -209,6 +210,8 @@ def execute_with_gemini(
     """
     Gemini-only extraction with retry and backup fallback.
     Uses GEMINI_SUMMARY_MODEL primary, backup key retries same model.
+    category_tag "linking" uses the dedicated GEMINI_LINKING_MODEL
+    (gemini-3.1-flash-lite by default).
     Returns parsed JSON dict.
     """
     max_retries = max_retries or MAX_RETRIES
@@ -217,7 +220,7 @@ def execute_with_gemini(
 
     primary_client = _get_gemini_client()
     backup_client = _get_backup_gemini_client()
-    model = GEMINI_SUMMARY_MODEL
+    model = GEMINI_LINKING_MODEL if category_tag == "linking" else GEMINI_SUMMARY_MODEL
 
     if primary_client:
         for attempt in range(max_retries):

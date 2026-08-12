@@ -1,0 +1,144 @@
+{
+  "id": "tan-ards-review-2026",
+  "doc_type": "article",
+  "article_subtype": "Review",
+  "title": "The Acute Respiratory Distress Syndrome (ARDS): epidemiology, etiology, molecular mechanisms, diagnosis and therapeutic strategies",
+  "authors": "Defei Tan et al.",
+  "journal": "Molecular Biomedicine",
+  "year": 2026,
+  "doi": "10.1186/s43556-026-00532-2",
+  "specialty": [
+    "pulmonology",
+    "multi_system",
+    "pharmacology"
+  ],
+  "tags": [
+    "ards",
+    "mechanical ventilation",
+    "phenotyping",
+    "biomarkers",
+    "mesenchymal stromal cells",
+    "corticosteroids",
+    "prone positioning",
+    "immunothrombosis"
+  ],
+  "one_line_summary": "A comprehensive review detailing ARDS epidemiology, molecular mechanisms of alveolar-capillary barrier disruption, updated 2023 global diagnostic criteria, biomarker-guided subphenotyping, and evolving supportive and targeted therapies.",
+  "key_pearls": [
+    "The **2023 Global Definition of ARDS** expands diagnostic inclusivity by incorporating **high-flow nasal oxygen (HFNO)** at **>= 30 L/min**, **SpO2/FiO2** ratio thresholds (when **SpO2 <= 97%**), **lung ultrasound (LUS)**, and non-intubated patients.",
+    "ARDS subphenotyping consistently distinguishes a **hyperinflammatory** phenotype (characterized by higher shock, organ dysfunction, and elevated **IL-6**, **IL-8**, **TNF-alpha**, and **ferritin**) from a **hypoinflammatory** phenotype, with differential responses to **PEEP**, fluid strategies, and **simvastatin**.",
+    "**Lung-protective ventilation** targeting low tidal volumes (**4–8 mL/kg** predicted body weight) and plateau pressure **< 30 cm H2O** remains standard of care, with increasing emphasis on minimizing **driving pressure (Delta P)**.",
+    "**Prone positioning** for at least **16 hours/day** in moderate-to-severe ARDS (**PaO2/FiO2 < 150 mmHg**) **significantly** reduces **28-day** and **90-day mortality**, although its routine benefit during **VV-ECMO** remains unproven (*PRONECMO trial*).",
+    "Systemic **corticosteroids** (e.g., **dexamethasone**, **hydrocortisone**) initiated early (**< 24 hours**) reduce **mortality** and duration of mechanical ventilation in moderate-to-severe ARDS, but efficacy varies by inflammatory phenotype and time of initiation.",
+    "Novel targeted cell therapies, including **mesenchymal stromal cells (MSCs)** and **extracellular vesicles (EVs)**, demonstrate safety and immunomodulatory activity in early trials, but clinical efficacy is hindered by patient heterogeneity and microenvironmental licensing factors."
+  ],
+  "evidence_level": "review",
+  "sample_size": null,
+  "population": null,
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Epidemiology, Etiology, and Host Susceptibility",
+      "content": "- ARDS incidence ranges globally from **3.65 to 78.9 cases per 100,000 person-years**, affecting **10.4%** of intensive care unit (*ICU*) admissions according to the *LUNG-SAFE* study.\n- Direct lung injury triggers include **bacterial, fungal, and viral pneumonia** (**30%–60%** without identified pathogen), drug-induced pneumonitis (**immune checkpoint inhibitors**, **tyrosine kinase inhibitors**), and inhalation injury.\n- Indirect lung injury causes encompass systemic **sepsis**, severe **trauma** (**~6%** of cases), **pancreatitis** (**~3%**), and **transfusion-related acute lung injury (TRALI)** (**3–8 cases per million** transfused units).\n- Host factors modifying risk include older age, male sex, racial disparities, ambient air pollution, e-cigarette exposure, and underlying malignancies (**higher 90-day mortality**).\n- Trauma exemplifies the *triple hit* model: initial systemic inflammation (*first hit*), mechanical ventilation or transfusion (*second hit*), and gut-lung axis dysbiosis via tissue injury (*third hit*).",
+      "section_pearls": [
+        "Infection is the leading cause of ARDS, yet **30%–60%** of cases remain pathogen-unidentified, emphasizing the role for rapid metagenomic sequencing.",
+        "Obesity exhibits a complex *obesity paradox* in ARDS: survival advantage in sepsis-induced ARDS versus increased mortality risk in COVID-19 ARDS."
+      ]
+    },
+    {
+      "order": 2,
+      "heading": "Molecular Mechanisms and Pathophysiology",
+      "content": "- Disruption of the alveolar-capillary barrier involves **type II alveolar epithelial cell (AEC II)** necrosis, reduced surfactant synthesis, impaired fluid clearance, and glycocalyx degradation.\n- Disrupted epithelial and endothelial barriers expose **P-selectin** and **E-selectin**, recruiting neutrophils that generate **neutrophil extracellular traps (NETs)**, reactive oxygen species (*ROS*), and leukotrienes.\n- **Immunothrombosis** is triggered via complement components **C3a** and **C5a**, tissue factor (*TF*) upregulation, and histone-mediated suppression of thrombomodulin-dependent protein C activation.\n- Elevated **plasminogen activator inhibitor-1 (PAI-1)** levels suppress local fibrinolysis, leading to microvascular occlusion, increased dead-space ventilation, and pulmonary hypertension.\n- **Cell-free hemoglobin (CFH)** released from intratracheal RBC lysis drives persistent alveolar oxidative stress and independently predicts **mortality** in severe sepsis-induced ARDS.",
+      "section_pearls": [
+        "NETs promote necroptosis in epithelial cells and initiate intrinsic coagulation via factor XII activation while inactivating thrombomodulin and TFPI.",
+        "Macrophage signaling pathways, such as the **PTEN/YAP** and **Jagged1-Notch1/Foxo1/TXNIP/NLRP3** axes, dynamically modulate alveolar inflammatory cascades."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Diagnostic Evolution and Clinical Assessment",
+      "content": "- Diagnostic standards evolved from the 1967 description to the 1988 *Lung Injury Score*, 1994 *AECC definition* (introducing *ALI*), and 2012 *Berlin definition* (requiring **PEEP >= 5 cm H2O** and **PaO2/FiO2** tiers).\n- The **2023 Global Definition** introduces key modifications: incorporation of **lung ultrasound (LUS)**, inclusion of **HFNO >= 30 L/min**, usage of **SpO2/FiO2** (when **SpO2 <= 97%**), creation of a non-intubated ARDS category, and application of the *Kigali modification* for resource-limited settings.\n- Limitations of pulse oximetry-based diagnosis include skin pigmentation bias, severe peripheral hypoperfusion, and risk of reduced diagnostic specificity.\n- Quantitative **LUS-ARDS scores** evaluate B-lines and lung consolidations at the bedside with high diagnostic accuracy, though operator dependency remains a barrier.\n- Deep learning models (*UNet Transformer / UNETR*, *XGBoost*) enable automated CT segmentation and extraction of bilateral infiltrates from radiology reports to accelerate detection.",
+      "section_pearls": [
+        "The 2023 Global Definition allows ARDS diagnosis without arterial blood gas analysis or invasive mechanical ventilation.",
+        "Pulse oximetry thresholds (**SpO2/FiO2**) require validation in shock states due to potential loss of diagnostic specificity."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Biomarker-Guided Phenotyping and Endotypes",
+      "content": "- Unbiased clustering of clinical and plasma biomarker data identifies two distinct subphenotypes: **hyperinflammatory** (elevated **IL-6**, **IL-8**, **TNF-alpha**, **sRAGE**, **PAI-1**, lower serum bicarbonate, higher vasopressor requirement) and **hypoinflammatory**.\n- Predictive enrichment secondary analyses reveal that the hyperinflammatory subphenotype experiences reduced **mortality** with **simvastatin** (**80 mg/day**), higher **PEEP**, and conservative fluid management.\n- Glucocorticoid therapy exhibits divergent responses: benefit in hyperinflammatory phenotypes versus potential harm or lack of benefit in hypoinflammatory subgroups (*ESCAPe* / *HARP-2* analyses).\n- Proteomic analysis classifies three distinct trajectories: **C1** (innate immune activation, metabolic reprogramming), **C2** (immunosuppression), and **C3** (intermediate/resolving state).\n- Longitudinal dynamic phenotyping demonstrates that hyperinflammatory phenotypes exhibit temporal instability over **30 days**, requiring real-time point-of-care biomarker tracking.",
+      "section_pearls": [
+        "Hyperinflammatory ARDS patients demonstrate significantly higher 28-day mortality and differential response to statins, PEEP, and fluid restriction.",
+        "Point-of-care platforms (e.g., *FilmArray*, *PHIND*) are currently enabling real-time bed-side subphenotype assignment in clinical trials."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Evidence-Based Supportive Care Strategies",
+      "content": "- **Low tidal volume ventilation** (**4–8 mL/kg** predicted body weight) with plateau pressure **< 30 cm H2O** remains a core intervention (*ARDSNet trial*).\n- **Driving pressure (Delta P = Pplat - PEEP)** is a stronger predictor of **mortality** than tidal volume alone; personalized titration can be guided by electrical impedance tomography (*EIT*) or transpulmonary pressure.\n- High-pressure or prolonged recruitment maneuvers are strongly **recommended** **against** by both **ATS** and **ESICM** guidelines due to hemodynamic collapse and barotrauma risks.\n- **Prone positioning** for **>= 16 hours/day** in moderate-to-severe ARDS (**PaO2/FiO2 < 150 mmHg**) reduces **mortality** (*PROSEVA trial*).\n- **Conservative fluid management** increases ventilator-free days (**2.5-day increase**) and ICU discharge rates without altering overall 60-day **mortality** (*FACTT trial*).\n- **High-flow nasal oxygen (HFNO)** is **recommended** over conventional oxygen therapy in non-intubated AHRF to reduce intubation rates (*FLORALI trial*).",
+      "section_pearls": [
+        "Prone positioning improves ventilation-perfusion matching along the dependent-nondependent axis while decreasing regional stress and strain.",
+        "The *PRONECMO trial* showed that routine prone positioning during **VV-ECMO** did not significantly shorten time to successful ECMO weaning."
+      ]
+    },
+    {
+      "order": 6,
+      "heading": "Pharmacological, Immunomodulatory, and Cell-Targeted Therapies",
+      "content": "- **Corticosteroids** (**dexamethasone 20 mg/day** or **hydrocortisone 200 mg/day**) initiated early (**< 24 hours**) reduce **mortality** and ventilator days in moderate-to-severe ARDS (*DEXA-ARDS*, *CAPE COD*), but carry risks of hyperglycemia and secondary infections.\n- **Neuromuscular blocking agents (NMBAs)** like **cisatracurium** show conditional benefit when administered within **48 hours** in severe ARDS (**PaO2/FiO2 <= 100 mmHg**), specifically in patients with high respiratory system elastance (*Ers*).\n- Targeted immunomodulation with **anakinra** (**IL-1RA**) demonstrates improved organ function in sepsis/ARDS patients with **macrophage activation-like syndrome (MALS)** (serum ferritin **> 1000 ng/mL**) or elevated *sUPAR* (*SAVE-MORE*, *ImmunoSep*).\n- **Mesenchymal stromal cell (MSC)** therapy (umbilical cord or bone marrow-derived) is safe across early phase II trials (*REALIST-COVID*, *STAT*), but failed to **significantly** improve primary clinical endpoints such as oxygenation index or 60-day ventilator-free days.\n- Emerging preclinical agents target specific cellular pathways: **ribociclib** (*PDE4/cAMP-PKA*), **palbociclib** (*PI3K*), **UH15-38** (*RIPK3 necroptosis blocker*), **bigelovin** (*NLRP3 inhibitor*), and **dipyridamole** (*HMOX1-mediated ferroptosis inhibitor*).",
+      "section_pearls": [
+        "Interleukin-1 receptor blockade (*anakinra*) requires predictive enrichment via ferritin or sUPAR levels to isolate responsive hyperinflammatory cohorts.",
+        "MSC efficacy is critically dependent on local pulmonary microenvironmental signals (*MSC licensing*) and can be blunted by concomitant high-dose corticosteroid administration."
+      ]
+    },
+    {
+      "order": 7,
+      "heading": "Precision Medicine Framework and Innovative Trial Designs",
+      "content": "- Transitioning from standard randomized trials to **adaptive platform trials** (e.g., *PANTHER trial*) enables concurrent evaluation of multiple interventions under a single master protocol using predictive enrichment.\n- Longitudinal care must incorporate the **ABCDEF bundle** (*Assess pain, Spontaneous awakening/breathing trials, Choice of analgesia/sedation, Delirium management, Early mobility, Family engagement*) to attenuate post-intensive care syndrome (*PICS*).\n- Midazolam-**equivalent** cumulative dose during acute ARDS care serves as an independent predictor of long-term physical functional decline up to **5 years** post-discharge.",
+      "section_pearls": [
+        "ARDS trial designs are shifting from evaluating population average treatment effects to mechanism-based predictive enrichment in treatable trait endotypes.",
+        "Long-term post-ARDS morbidity encompasses persistent physical, cognitive, and psychological impairments lasting up to 5 years after discharge."
+      ]
+    }
+  ],
+  "strengths_limitations": "- Strengths: Provides a comprehensive, state-of-the-art synthesis of ARDS spanning basic molecular pathobiology, 2023 diagnostic criteria updates, multi-omics phenotyping, and advanced clinical trial methodologies.\n- Limitations: Many discussed molecular targets and cell therapies remain in preclinical stages; subphenotype definitions rely primarily on retrospective secondary analyses requiring prospective validation in enriched platform trials.",
+  "drugs_doses": [
+    {
+      "drug": "Dexamethasone",
+      "dose": "20 mg IV daily for 5 days, then 10 mg IV daily for 5 days (or 6 mg IV daily for 10 days in COVID-19)",
+      "indication": "Early moderate-to-severe ARDS and COVID-19 associated hypoxemic respiratory failure",
+      "adverse_effects": "Hyperglycemia, secondary infections, hypernatremia, neuromuscular weakness"
+    },
+    {
+      "drug": "Hydrocortisone",
+      "dose": "200 mg/day continuous IV infusion for 4 to 14 days",
+      "indication": "Severe community-acquired pneumonia and septic shock associated ARDS",
+      "adverse_effects": "Hyperglycemia, secondary fungal/bacterial infections, fluid retention"
+    },
+    {
+      "drug": "Simvastatin",
+      "dose": "80 mg PO daily",
+      "indication": "Hyperinflammatory ARDS subphenotype (predictive enrichment strategy)",
+      "adverse_effects": "Myopathy, rhabdomyolysis, elevated liver transaminases"
+    },
+    {
+      "drug": "Cisatracurium",
+      "dose": "37.5 mg/h continuous IV infusion for up to 48 hours",
+      "indication": "Early (< 48 hours) severe ARDS with PaO2/FiO2 <= 100 mmHg",
+      "adverse_effects": "ICU-acquired muscle weakness, prolonged paralysis, flushing"
+    },
+    {
+      "drug": "Anakinra",
+      "dose": "100 mg IV q6h or sUPAR-guided dosing protocol",
+      "indication": "Hyperinflammatory ARDS with Macrophage Activation-Like Syndrome (MALS) / elevated ferritin",
+      "adverse_effects": "Neutropenia, severe secondary infections, transaminitis"
+    },
+    {
+      "drug": "Tocilizumab",
+      "dose": "8 mg/kg IV single infusion (max 800 mg), repeatable once after 12-24 hours",
+      "indication": "COVID-19 associated ARDS with elevated IL-6 or systemic hyperinflammation",
+      "adverse_effects": "Elevated liver enzymes, severe bacterial or fungal opportunistic infections, GI perforation"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-03-30",
+  "subtopic": "ARDS"
+}

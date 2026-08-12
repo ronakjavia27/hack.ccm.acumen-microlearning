@@ -1128,12 +1128,18 @@ def extract_pearls_from_one_json(json_path, llm_choice="openrouter"):
 def run_incremental_linking(args):
     """After a pipeline batch, run the incremental cross-linker so new/updated
     content is linked to the whole catalog automatically. Skipped with
-    --no-link, on --dry-run, or when another linker run already owns the lock."""
+    --no-link, on --dry-run, or when another linker run already owns the lock.
+    Never prompts: the generator's own --llm choice is forwarded to the linker."""
     if getattr(args, "no_link", False) or getattr(args, "dry_run", False):
         return
     try:
         from acumen_core.linker import main as linker_main
-        linker_main(["--verbose"] if getattr(args, "verbose", False) else [])
+        linker_args = ["--no-prompt"]
+        if getattr(args, "llm", "openrouter") == "gemini":
+            linker_args += ["--llm", "gemini"]
+        if getattr(args, "verbose", False):
+            linker_args.append("--verbose")
+        linker_main(linker_args)
     except Exception as exc:
         print(f"  [link] cross-linking step skipped: {exc}")
 

@@ -1,12 +1,10 @@
 {
   "version": 1,
-  "generated_at": "2026-08-09T20:36:14",
-  "entity_count": 308,
+  "generated_at": "2026-08-12T09:47:27",
+  "entity_count": 329,
   "entities": {
     "deck:Cardiology/Acute Coronary Syndromes": {
-      "tags": [
-        "Acute Coronary Syndromes"
-      ],
+      "tags": [],
       "kind": "flashcard_deck",
       "system": "Cardiology",
       "type": "Flashcards",
@@ -16,37 +14,37 @@
         {
           "to": "paper:kumbhani-et-al-2026-antiplatelet-therapy-in-the-management-of-atherosclerotic-cardiovascular-disease-2026-acc.pdf",
           "kind": "guideline",
-          "reason": "same topic",
+          "reason": "guideline recommendation",
           "weight": 0.85,
-          "updated_at": "2026-08-07T14:52:17"
-        },
-        {
-          "to": "paper:jcm-15-05250.pdf",
-          "kind": "paper",
-          "reason": "same topic",
-          "weight": 0.85,
-          "updated_at": "2026-08-07T14:52:17"
-        },
-        {
-          "to": "paper:ruel-et-al-2026-secondary-prevention-after-coronary-artery-bypass-graft-surgery-2026-update-a-scientific-statement-from.pdf",
-          "kind": "guideline",
-          "reason": "same topic",
-          "weight": 0.85,
-          "updated_at": "2026-08-07T14:52:17"
+          "updated_at": "2026-08-12T09:47:25"
         },
         {
           "to": "paper:1-s2.0-S2772963X26002577-main.pdf",
           "kind": "paper",
-          "reason": "same topic",
+          "reason": "complementary",
           "weight": 0.85,
-          "updated_at": "2026-08-07T14:52:17"
+          "updated_at": "2026-08-12T09:47:25"
         },
         {
-          "to": "paper:Acute cardiovascular complications of sympathomimetic recreational drug use.pdf",
+          "to": "paper:zuaf159.pdf",
           "kind": "paper",
-          "reason": "same topic",
+          "reason": "complementary",
           "weight": 0.65,
-          "updated_at": "2026-08-07T14:52:17"
+          "updated_at": "2026-08-12T09:47:25"
+        },
+        {
+          "to": "paper:ruel-et-al-2026-secondary-prevention-after-coronary-artery-bypass-graft-surgery-2026-update-a-scientific-statement-from.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:47:25"
+        },
+        {
+          "to": "paper:3.5flash_1-s2.0-S1875213626000513.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:47:25"
         }
       ]
     },
@@ -13376,65 +13374,6 @@
         }
       ]
     },
-    "theory:ASPECTS.md": {
-      "tags": [
-        "General",
-        "ASPECTS",
-        "Stroke imaging"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "ASPECTS",
-      "links": [
-        {
-          "to": "theory:Transcranial Doppler (TCD) in the ICU – Exam‑Style",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-09T19:05:29"
-        },
-        {
-          "to": "theory:Absolute and Relative Contraindications to Stroke",
-          "kind": "theory",
-          "reason": "guideline recommendation",
-          "weight": 0.85,
-          "updated_at": "2026-08-09T19:05:29"
-        }
-      ]
-    },
-    "theory:Absolute and Relative Contraindications to Stroke": {
-      "tags": [],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Absolute and Relative Contraindications to Stroke",
-      "links": [
-        {
-          "to": "theory:ASPECTS.md",
-          "kind": "theory",
-          "reason": "same topic",
-          "weight": 0.85,
-          "updated_at": "2026-08-09T19:05:40"
-        },
-        {
-          "to": "theory:Transcranial Doppler (TCD) in the ICU – Exam‑Style",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.85,
-          "updated_at": "2026-08-09T19:05:40"
-        },
-        {
-          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.65,
-          "updated_at": "2026-08-09T19:05:40"
-        }
-      ]
-    },
     "theory:Cardiothoracic/Extracorporeal Membrane Oxygenation/VV ECMO Troubleshooting_ A Structured Clinical Not.md": {
       "tags": [
         "Cardiothoracic",
@@ -13455,20 +13394,6 @@
       "subtopic": "Advance Directives",
       "title": "Advance Medical Directive (AMD) in ICU – Exam‑Orie",
       "links": [
-        {
-          "to": "theory:ASPECTS.md",
-          "kind": "theory",
-          "reason": "shared concept",
-          "weight": 0.55,
-          "updated_at": "2026-08-09T19:05:42"
-        },
-        {
-          "to": "theory:Absolute and Relative Contraindications to Stroke",
-          "kind": "theory",
-          "reason": "shared concept",
-          "weight": 0.55,
-          "updated_at": "2026-08-09T19:05:42"
-        },
         {
           "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
           "kind": "theory",
@@ -13523,55 +13448,6 @@
           "reason": "complementary",
           "weight": 0.75,
           "updated_at": "2026-08-09T19:05:55"
-        }
-      ]
-    },
-    "theory:NAVA – Exam-Oriented, Clinically Useful Notes.md": {
-      "tags": [
-        "General",
-        "NAVA",
-        "EAdi"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "NAVA – Exam-Oriented, Clinically Useful Notes",
-      "links": [
-        {
-          "to": "theory:ASPECTS.md",
-          "kind": "theory",
-          "reason": "same topic",
-          "weight": 0.85,
-          "updated_at": "2026-08-09T19:05:58"
-        },
-        {
-          "to": "theory:Patient–Ventilator Asynchrony (PVA)_ Diagnosis and",
-          "kind": "theory",
-          "reason": "same topic",
-          "weight": 0.85,
-          "updated_at": "2026-08-09T19:05:58"
-        },
-        {
-          "to": "theory:Transcranial Doppler (TCD) in the ICU – Exam‑Style",
-          "kind": "theory",
-          "reason": "same topic",
-          "weight": 0.85,
-          "updated_at": "2026-08-09T19:05:58"
-        },
-        {
-          "to": "theory:Absolute and Relative Contraindications to Stroke",
-          "kind": "theory",
-          "reason": "same topic",
-          "weight": 0.75,
-          "updated_at": "2026-08-09T19:05:58"
-        },
-        {
-          "to": "paper:PIIS103673142600041X.pdf",
-          "kind": "paper",
-          "reason": "same topic",
-          "weight": 0.75,
-          "updated_at": "2026-08-09T19:05:58"
         }
       ]
     },
@@ -13670,62 +13546,6 @@
           "reason": "complementary",
           "weight": 0.65,
           "updated_at": "2026-08-09T19:06:26"
-        }
-      ]
-    },
-    "theory:Patient–Ventilator Asynchrony (PVA)_ Diagnosis and": {
-      "tags": [
-        "General",
-        "Patient–Ventilator Asynchrony",
-        "Mechanical Ventilation"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Patient–Ventilator Asynchrony (PVA)  Diagnosis and",
-      "links": [
-        {
-          "to": "theory:NAVA – Exam-Oriented, Clinically Useful Notes.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-09T19:06:45"
-        },
-        {
-          "to": "theory:Pulmonology/Advanced Ventilation Modes/Exam-Oriented Notes_ NAVA, P0.1, SmartCare.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-09T19:06:45"
-        },
-        {
-          "to": "theory:Pulmonology/Closed-Loop Ventilation/INTELLiVENT-ASV_ Exam-Oriented Notes.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-09T19:06:45"
-        },
-        {
-          "to": "paper:advances_in_achieving_lung_and.7.pdf",
-          "kind": "paper",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-09T19:06:45"
-        },
-        {
-          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
-          "kind": "paper",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-09T19:06:45"
-        },
-        {
-          "to": "paper:000549732.pdf",
-          "kind": "guideline",
-          "reason": "guideline recommendation",
-          "weight": 0.6,
-          "updated_at": "2026-08-09T19:06:45"
         }
       ]
     },
@@ -14157,41 +13977,6 @@
         }
       ]
     },
-    "theory:Transcranial Doppler (TCD) in the ICU – Exam‑Style": {
-      "tags": [
-        "General",
-        "Transcranial Doppler",
-        "ICU"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Transcranial Doppler (TCD) in the ICU – Exam‑Style",
-      "links": [
-        {
-          "to": "theory:ASPECTS.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-09T19:08:35"
-        },
-        {
-          "to": "theory:Absolute and Relative Contraindications to Stroke",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.85,
-          "updated_at": "2026-08-09T19:08:35"
-        },
-        {
-          "to": "theory:NAVA – Exam-Oriented, Clinically Useful Notes.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-09T19:08:35"
-        }
-      ]
-    },
     "paper:acute-liver-failure-guidelines.pdf": {
       "tags": [
         "Endoscopy in Critical Care",
@@ -14272,6 +14057,1202 @@
           "reason": "shared concept",
           "weight": 0.55,
           "updated_at": "2026-08-09T20:36:14"
+        }
+      ]
+    },
+    "paper:1-s2.0-S0363018826001477-main.pdf": {
+      "tags": [],
+      "kind": "paper",
+      "system": "Trauma",
+      "type": "Other",
+      "subtopic": "Chest Trauma",
+      "title": "CT Evaluation of intraparenchymal chest tube placement and other malpositions: A pictorial review",
+      "links": [
+        {
+          "to": "paper:s00508-026-02771-3.pdf",
+          "kind": "guideline",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:33:33"
+        },
+        {
+          "to": "paper:e001913.full.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-12T09:33:33"
+        },
+        {
+          "to": "paper:s00330-026-12440-8.pdf",
+          "kind": "guideline",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-12T09:33:33"
+        },
+        {
+          "to": "paper:e001369.full.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-12T09:33:33"
+        },
+        {
+          "to": "paper:Traumatic Vasospasm.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-12T09:33:33"
+        }
+      ]
+    },
+    "paper:1-s2.0-S2352556825000931-main.pdf": {
+      "tags": [
+        "Pharmacology",
+        "Quality & Safety"
+      ],
+      "kind": "paper",
+      "system": "Other",
+      "type": "Other",
+      "subtopic": "Pharmacology",
+      "title": "Optimization of antimicrobial therapy in critically ill patients, what clinicians and searchers must know",
+      "links": [
+        {
+          "to": "paper:fphar-17-1786482.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:33:57"
+        },
+        {
+          "to": "paper:s44254-026-00177-y.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:33:57"
+        },
+        {
+          "to": "paper:JTCCM.2026.8(2).e00005.00005.Siyao Zeng.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:33:57"
+        }
+      ]
+    },
+    "paper:JTCCM.2026.8(2).e00005.00005.Siyao Zeng.pdf": {
+      "tags": [
+        "Pharmacology",
+        "Biomarkers",
+        "Clinical Scores",
+        "Quality & Safety",
+        "Sepsis",
+        "ARDS"
+      ],
+      "kind": "paper",
+      "system": "Other",
+      "type": "Other",
+      "subtopic": "Pharmacology",
+      "title": "Clinical Prospects of Ulinastatin in the ICU: Opportunities and Challenges—A Mini Review",
+      "links": [
+        {
+          "to": "paper:1-s2.0-S2352556825000931-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:34:16"
+        },
+        {
+          "to": "paper:s44254-026-00177-y.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:34:16"
+        },
+        {
+          "to": "theory:Sepsis/Biomarkers/Biomarkers of Sepsis_ Old and New.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.7,
+          "updated_at": "2026-08-12T09:34:16"
+        },
+        {
+          "to": "paper:jcm-14-02067.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:34:16"
+        },
+        {
+          "to": "paper:fmed-13-1857404_1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:34:16"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:34:16"
+        }
+      ]
+    },
+    "paper:PIIS0168827826027510.pdf": {
+      "tags": [
+        "Acute Liver Failure",
+        "Liver Transplantation",
+        "Autoimmune Liver Disease"
+      ],
+      "kind": "paper",
+      "system": "Hepatology",
+      "type": "Other",
+      "subtopic": "Acute Liver Failure",
+      "title": "Corticosteroid Therapy for Drug-induced Liver Injury: Mind the Gap!",
+      "links": [
+        {
+          "to": "paper:Liver biopsy and acute hepatology in intensive care unit patients.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:34:31"
+        },
+        {
+          "to": "paper:acute-liver-failure-guidelines.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.7,
+          "updated_at": "2026-08-12T09:34:31"
+        },
+        {
+          "to": "paper:s12072-026-11116-1.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:34:31"
+        }
+      ]
+    },
+    "paper:PIIS153878362600276X.pdf": {
+      "tags": [
+        "Thrombosis",
+        "Anticoagulation",
+        "Bleeding Disorders",
+        "Obesity",
+        "Psychiatric inpatient care"
+      ],
+      "kind": "paper",
+      "system": "Hematology",
+      "type": "Other",
+      "subtopic": "Thrombosis",
+      "title": "Controversies in thromboprophylaxis: a focus on nonsurgical patients",
+      "links": [
+        {
+          "to": "paper:jcm-13-07572.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-12T09:34:36"
+        },
+        {
+          "to": "paper:Sickle cell emergencies.pdf",
+          "kind": "guideline",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-12T09:34:36"
+        },
+        {
+          "to": "paper:blood_bld-2023-022899-c-main.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-12T09:34:36"
+        },
+        {
+          "to": "paper:PIIS0959804926007057.pdf",
+          "kind": "guideline",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-12T09:34:36"
+        },
+        {
+          "to": "paper:PIIS0007091226002734.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.55,
+          "updated_at": "2026-08-12T09:34:36"
+        }
+      ]
+    },
+    "paper:PIIS1538783626003260.pdf": {
+      "tags": [
+        "Trauma Coagulopathy",
+        "Damage Control Resuscitation",
+        "Hemorrhage",
+        "Polytrauma",
+        "Traumatic DIC",
+        "Viscoelastic Testing"
+      ],
+      "kind": "paper",
+      "system": "Trauma",
+      "type": "Other",
+      "subtopic": "Trauma Coagulopathy",
+      "title": "Traumatic disseminated intravascular coagulation: a narrative review of modern concepts in pathophysiology, diagnosis, and management",
+      "links": [
+        {
+          "to": "paper:s40140-026-00715-1.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:34:43"
+        },
+        {
+          "to": "paper:e001369.full.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:34:43"
+        },
+        {
+          "to": "paper:s00330-026-12440-8.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:34:43"
+        }
+      ]
+    },
+    "paper:a-focused-update-to-the-clinical-practice-guidelines-for-the.pdf": {
+      "tags": [
+        "Mechanical Ventilation",
+        "Sedation",
+        "Delirium"
+      ],
+      "kind": "guideline",
+      "system": "Pulmonology",
+      "type": "Guideline",
+      "subtopic": "Mechanical Ventilation",
+      "title": "A Focused Update to the Clinical Practice Guidelines for the Prevention and Management of Pain, Anxiety, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU",
+      "links": [
+        {
+          "to": "paper:Usual-care mobilisation of adult patients inthe intensive care unit.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:09"
+        },
+        {
+          "to": "theory:Pulmonology/Respiratory Physiotherapy/Respiratory Physiotherapy in the ICU_ A Comprehens.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:09"
+        },
+        {
+          "to": "theory:Pulmonology/Patient Ventilator Asynchrony/Patient–Ventilator Asynchrony (PVA)_ Diagnosis and",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:09"
+        },
+        {
+          "to": "paper:jcm-15-06019.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:09"
+        }
+      ]
+    },
+    "paper:brainsci-16-00813.pdf": {
+      "tags": [
+        "Disorders of Consciousness",
+        "Traumatic Brain Injury",
+        "Neuromodulation"
+      ],
+      "kind": "paper",
+      "system": "Neurology",
+      "type": "Other",
+      "subtopic": "Disorders of Consciousness",
+      "title": "Neuromodulation to Promote Recovery Following Traumatic Brain Injury: A Narrative Review of Current Pharmacologic and Non-Pharmacologic Approaches",
+      "links": [
+        {
+          "to": "paper:current_management_of_traumatic_intracranial.1.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:32"
+        },
+        {
+          "to": "paper:s12028-026-02551-x.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:32"
+        },
+        {
+          "to": "theory:Neurology/Continuous EEG Monitoring/Continuous EEG (cEEG) Monitoring in ICU.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:32"
+        },
+        {
+          "to": "theory:Neurology/ICU-Acquired Weakness/Critical Care Neuromyopathy (ICU-Acquired Weakness.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:35:32"
+        }
+      ]
+    },
+    "paper:fmicb-17-1886655.pdf": {
+      "tags": [
+        "Gastrointestinal Infections",
+        "Sepsis",
+        "Gut Dysbiosis"
+      ],
+      "kind": "paper",
+      "system": "Gastroenterology",
+      "type": "Review",
+      "subtopic": "Gastrointestinal Infections",
+      "title": "Gut microbiota dysbiosis in sepsis and sepsis-associated organ injury: mechanisms, gut-organ axes, and therapeutic strategies",
+      "links": [
+        {
+          "to": "paper:the-leaky-gut-and-microbiome-in-critical-illness-emerging.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:42"
+        },
+        {
+          "to": "paper:fcimb-16-1823125.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:35:42"
+        },
+        {
+          "to": "theory:Sepsis/Biomarkers/Biomarkers of Sepsis_ Old and New.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:35:42"
+        },
+        {
+          "to": "paper:NEJMra2506111.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:35:42"
+        }
+      ]
+    },
+    "paper:japi-74-6-78.pdf": {
+      "tags": [
+        "Acute Kidney Injury",
+        "Renal Replacement Therapy",
+        "Chronic Kidney Disease",
+        "Snakebite Envenomation"
+      ],
+      "kind": "guideline",
+      "system": "Nephrology",
+      "type": "Guideline",
+      "subtopic": "Acute Kidney Injury",
+      "title": "Clinical Practice Recommendations: Snakebite-envenomation-associated Acute Kidney Injury",
+      "links": [
+        {
+          "to": "paper:WJN-15-118309.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:35:44"
+        },
+        {
+          "to": "paper:ijccm-26-S13.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:35:44"
+        },
+        {
+          "to": "theory:Nephrology/AKI Care Bundle/AKI Care Bundle — Structured Elaboration for ICU P.md",
+          "kind": "theory",
+          "reason": "practice deck",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:44"
+        },
+        {
+          "to": "theory:Nephrology/CRRT Anticoagulation/Anticoagulation During CRRT_ Exam-Style Notes.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:44"
+        },
+        {
+          "to": "paper:s13054-026-06066-x.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:44"
+        },
+        {
+          "to": "theory:Nephrology/AKI Definition and Staging/Acute Kidney Injury (AKI) in ICU.md",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:35:44"
+        }
+      ]
+    },
+    "paper:jcm-15-06019.pdf": {
+      "tags": [
+        "Acute Respiratory Failure",
+        "ARDS",
+        "Mechanical Ventilation",
+        "Weaning & Liberation from Ventilation",
+        "Noninvasive Respiratory Support"
+      ],
+      "kind": "paper",
+      "system": "Pulmonology",
+      "type": "Other",
+      "subtopic": "Weaning & Liberation from Ventilation",
+      "title": "Liberation from Mechanical Ventilation in Acute Hypoxemic Respiratory Failure or Adult Respiratory Distress Syndrome: A Review",
+      "links": [
+        {
+          "to": "paper:000549732.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:35:49"
+        },
+        {
+          "to": "theory:Pulmonology/Advanced Ventilation Modes/Exam-Oriented Notes_ NAVA, P0.1, SmartCare.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:35:49"
+        },
+        {
+          "to": "paper:Noninvasive_Respiratory_Support_for_Adult_Patients_with_Acute_Respiratory.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:35:49"
+        },
+        {
+          "to": "paper:1-s2.0-S0964339726001588-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:35:49"
+        },
+        {
+          "to": "paper:neurolint-18-00085-v2.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:35:49"
+        },
+        {
+          "to": "theory:Pulmonology/Diaphragm Ultrasound/Ultrasound in Critical Care_ Diaphragm and Airway.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:35:49"
+        }
+      ]
+    },
+    "paper:peverelli-et-al-2026-large-vessel-vasculitis-revisited-mechanistic-insights-and-advances-in-diagnosis-and-management.pdf": {
+      "tags": [
+        "Aortic Diseases",
+        "Cardiac Imaging",
+        "Giant Cell Arteritis",
+        "Takayasu Arteritis"
+      ],
+      "kind": "paper",
+      "system": "Cardiology",
+      "type": "Other",
+      "subtopic": "Aortic Diseases",
+      "title": "Large Vessel Vasculitis Revisited: Mechanistic Insights and Advances in Diagnosis and Management",
+      "links": [
+        {
+          "to": "deck:Cardiology/Aortic Diseases",
+          "kind": "flashcard_deck",
+          "reason": "background theory",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:36:10"
+        },
+        {
+          "to": "deck:Cardiology/Cardiac Imaging",
+          "kind": "flashcard_deck",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:36:10"
+        },
+        {
+          "to": "paper:PIIS3050661126001280.pdf",
+          "kind": "paper",
+          "reason": "background theory",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:36:10"
+        }
+      ]
+    },
+    "paper:s40140-026-00715-1.pdf": {
+      "tags": [
+        "Trauma Coagulopathy",
+        "Traumatic Brain Injury",
+        "Damage Control Resuscitation",
+        "Polytrauma",
+        "hypothermia",
+        "temperature management"
+      ],
+      "kind": "paper",
+      "system": "Trauma",
+      "type": "Other",
+      "subtopic": "Trauma Coagulopathy",
+      "title": "Temperature Management in Trauma Patients",
+      "links": [
+        {
+          "to": "paper:PIIS1538783626003260.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:36:16"
+        },
+        {
+          "to": "paper:Traumatic Vasospasm.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:36:16"
+        },
+        {
+          "to": "paper:current_management_of_traumatic_intracranial.1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:36:16"
+        },
+        {
+          "to": "paper:bmj-2025-084675.full_1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:36:16"
+        }
+      ]
+    },
+    "paper:s43556-026-00532-2.pdf": {
+      "tags": [
+        "ARDS",
+        "Acute Respiratory Failure",
+        "Mechanical Ventilation",
+        "ECMO"
+      ],
+      "kind": "paper",
+      "system": "Pulmonology",
+      "type": "Review",
+      "subtopic": "ARDS",
+      "title": "The Acute Respiratory Distress Syndrome (ARDS): epidemiology, etiology, molecular mechanisms, diagnosis and therapeutic strategies",
+      "links": [
+        {
+          "to": "theory:Pulmonology/ARDS/New Global Definition of ARDS (2023).md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:36:24"
+        },
+        {
+          "to": "paper:PIIS0007091225009353.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:36:24"
+        },
+        {
+          "to": "paper:jcm-14-02067.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:36:24"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:36:24"
+        },
+        {
+          "to": "paper:s00134-026-08543-x.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:36:24"
+        },
+        {
+          "to": "paper:Systemic_corticosteroids_for_severe_community_acquired_pneumonia.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:36:24"
+        }
+      ]
+    },
+    "paper:sfag232.pdf": {
+      "tags": [
+        "Acute Kidney Injury",
+        "Cardiorenal Syndrome",
+        "Venous Congestion",
+        "Fluid Overload"
+      ],
+      "kind": "paper",
+      "system": "Nephrology",
+      "type": "Other",
+      "subtopic": "Acute Kidney Injury",
+      "title": "Drowning the kidneys: from fluid overload to physiology-guided fluid management in onco-hematology",
+      "links": [
+        {
+          "to": "paper:Renal_congestion_in_Critically_Ill_a_neglected_mechanism_of_AKI.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:36:42"
+        },
+        {
+          "to": "paper:ijccm-26-S13.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:36:42"
+        },
+        {
+          "to": "paper:s13054-026-06144-0.pdf",
+          "kind": "paper",
+          "reason": "practice deck",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:36:42"
+        },
+        {
+          "to": "theory:Nephrology/AKI Care Bundle/AKI Care Bundle — Structured Elaboration for ICU P.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:36:42"
+        },
+        {
+          "to": "paper:1-s2.0-S211058202600110X-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:36:42"
+        },
+        {
+          "to": "theory:Nephrology/AKI Definition and Staging/Acute Kidney Injury (AKI) in ICU.md",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:36:42"
+        }
+      ]
+    },
+    "theory:Approach to Sudden Onset Sensorimotor Ascending We": {
+      "tags": [
+        "General",
+        "Guillain-Barré syndrome",
+        "spinal cord compression"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Approach to Sudden Onset Sensorimotor Ascending We",
+      "links": [
+        {
+          "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:36:44"
+        },
+        {
+          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:36:44"
+        },
+        {
+          "to": "theory:General/ICU-acquired weakness/Sarcopenia in the ICU_ An Exam-Style Detailed Note.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:36:44"
+        }
+      ]
+    },
+    "theory:CSF Examination Results in Meningitis and Encephal": {
+      "tags": [
+        "General",
+        "CSF analysis",
+        "meningitis"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "CSF Examination Results in Meningitis and Encephal",
+      "links": [
+        {
+          "to": "theory:Approach to Sudden Onset Sensorimotor Ascending We",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:37:22"
+        },
+        {
+          "to": "theory:Disorders of Consciousness_ Features and Differenc",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:37:22"
+        },
+        {
+          "to": "theory:Invasive Intracranial Pressure (ICP) Monitoring in",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:37:22"
+        }
+      ]
+    },
+    "theory:Differential Diagnosis of Colonic Distension in IC": {
+      "tags": [
+        "General",
+        "colonic distension",
+        "mechanical obstruction"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Differential Diagnosis of Colonic Distension in IC",
+      "links": [
+        {
+          "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:37:46"
+        },
+        {
+          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:37:46"
+        },
+        {
+          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:37:46"
+        }
+      ]
+    },
+    "theory:Disorders of Consciousness_ Features and Differenc": {
+      "tags": [
+        "General",
+        "Disorders of Consciousness",
+        "Coma"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Disorders of Consciousness  Features and Differenc",
+      "links": [
+        {
+          "to": "theory:Neurology/Continuous EEG Monitoring/Continuous EEG (cEEG) Monitoring in ICU.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:37:59"
+        },
+        {
+          "to": "paper:brainsci-16-00813.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:37:59"
+        },
+        {
+          "to": "paper:pathophysiology_and_prognostic_significance_of.5.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:37:59"
+        },
+        {
+          "to": "paper:rhythmic_and_periodic_patterns_and_seizures_in.6.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:37:59"
+        },
+        {
+          "to": "paper:role_of_neurophysiologic_testing_in.4.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:37:59"
+        },
+        {
+          "to": "paper:fmed-13-1775538.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-12T09:37:59"
+        }
+      ]
+    },
+    "theory:Invasive Intracranial Pressure (ICP) Monitoring in": {
+      "tags": [
+        "General",
+        "Intracranial pressure monitoring",
+        "External ventricular drainage"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Invasive Intracranial Pressure (ICP) Monitoring in",
+      "links": [
+        {
+          "to": "theory:CSF Examination Results in Meningitis and Encephal",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:38:15"
+        },
+        {
+          "to": "theory:Disorders of Consciousness_ Features and Differenc",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:38:15"
+        },
+        {
+          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:38:15"
+        },
+        {
+          "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:38:15"
+        }
+      ]
+    },
+    "theory:Neurology/Stroke Imaging/ASPECTS.md": {
+      "tags": [
+        "Stroke Imaging",
+        "Acute Ischemic Stroke"
+      ],
+      "kind": "theory",
+      "system": "Neurology",
+      "type": "Theory",
+      "subtopic": "Stroke Imaging",
+      "title": "ASPECTS",
+      "links": [
+        {
+          "to": "paper:prabhakaran-et-al-2026-2026-guideline-for-the-early-management-of-patients-with-acute-ischemic-stroke-a-guideline-from (1).pdf",
+          "kind": "guideline",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:17"
+        },
+        {
+          "to": "paper:prabhakaran-et-al-2026-2026-guideline-for-the-early-management-of-patients-with-acute-ischemic-stroke-a-guideline-from.pdf",
+          "kind": "guideline",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:17"
+        },
+        {
+          "to": "paper:a-narrative-review-of-neuroprotective-effects-of-albumin-the.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:17"
+        },
+        {
+          "to": "theory:Neurology/Antiplatelet Therapy/Antiplatelet Therapy after stroke.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:17"
+        },
+        {
+          "to": "paper:Endovascular_Thrombectomy_in_Medium_and_Distal_Vessel_Occlusions.pdf",
+          "kind": "guideline",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:17"
+        }
+      ]
+    },
+    "theory:Neurology/Thrombolysis Contraindications/Absolute and Relative Contraindications to Stroke": {
+      "tags": [],
+      "kind": "theory",
+      "system": "Neurology",
+      "type": "Theory",
+      "subtopic": "Thrombolysis Contraindications",
+      "title": "Absolute and Relative Contraindications to Stroke",
+      "links": [
+        {
+          "to": "paper:prabhakaran-et-al-2026-2026-guideline-for-the-early-management-of-patients-with-acute-ischemic-stroke-a-guideline-from (1).pdf",
+          "kind": "guideline",
+          "reason": "same topic",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:39"
+        },
+        {
+          "to": "paper:prabhakaran-et-al-2026-2026-guideline-for-the-early-management-of-patients-with-acute-ischemic-stroke-a-guideline-from.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:39"
+        },
+        {
+          "to": "theory:Neurology/Stroke Imaging/ASPECTS.md",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:39"
+        },
+        {
+          "to": "theory:Neurology/Antiplatelet Therapy/Antiplatelet Therapy after stroke.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:39"
+        },
+        {
+          "to": "paper:Endovascular_Thrombectomy_in_Medium_and_Distal_Vessel_Occlusions.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.65,
+          "updated_at": "2026-08-12T09:38:39"
+        }
+      ]
+    },
+    "theory:Neurology/Transcranial Doppler/Transcranial Doppler (TCD) in the ICU – Exam‑Style": {
+      "tags": [
+        "Transcranial Doppler",
+        "Neurocritical Care Monitoring",
+        "Subarachnoid Hemorrhage",
+        "Raised Intracranial Pressure",
+        "Brain Death"
+      ],
+      "kind": "theory",
+      "system": "Neurology",
+      "type": "Theory",
+      "subtopic": "Transcranial Doppler",
+      "title": "Transcranial Doppler (TCD) in the ICU – Exam‑Style",
+      "links": [
+        {
+          "to": "paper:s12028-023-01752-y (1).pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-12T09:38:46"
+        },
+        {
+          "to": "paper:s12028-026-02565-5.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:38:46"
+        },
+        {
+          "to": "paper:s13054-026-05993-z.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:38:46"
+        },
+        {
+          "to": "paper:1-s2.0-S2772529426002183-main.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:38:46"
+        }
+      ]
+    },
+    "theory:Pulmonology/Neurally Adjusted Ventilatory Assist/NAVA – Exam-Oriented, Clinically Useful Notes.md": {
+      "tags": [
+        "Neurally Adjusted Ventilatory Assist",
+        "Mechanical Ventilation"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "Neurally Adjusted Ventilatory Assist",
+      "title": "NAVA – Exam-Oriented, Clinically Useful Notes",
+      "links": [
+        {
+          "to": "theory:Pulmonology/Advanced Ventilation Modes/Exam-Oriented Notes_ NAVA, P0.1, SmartCare.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:14"
+        },
+        {
+          "to": "theory:Pulmonology/Patient Ventilator Asynchrony/Patient–Ventilator Asynchrony (PVA)_ Diagnosis and",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:14"
+        },
+        {
+          "to": "theory:Pulmonology/Closed-Loop Ventilation/INTELLiVENT-ASV_ Exam-Oriented Notes.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:14"
+        },
+        {
+          "to": "paper:advances_in_achieving_lung_and.7.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:14"
+        },
+        {
+          "to": "theory:Pulmonology/PEEP Titration Methods/Methods of PEEP Titration.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:14"
+        }
+      ]
+    },
+    "theory:Pulmonology/Patient Ventilator Asynchrony/Patient–Ventilator Asynchrony (PVA)_ Diagnosis and": {
+      "tags": [
+        "Patient Ventilator Asynchrony",
+        "Mechanical Ventilation"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "Patient Ventilator Asynchrony",
+      "title": "Patient–Ventilator Asynchrony (PVA)  Diagnosis and",
+      "links": [
+        {
+          "to": "paper:a-focused-update-to-the-clinical-practice-guidelines-for-the.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:24"
+        },
+        {
+          "to": "paper:advances_in_achieving_lung_and.7.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:24"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:24"
+        },
+        {
+          "to": "paper:jcm-15-03779.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:24"
+        },
+        {
+          "to": "theory:Pulmonology/Advanced Ventilation Modes/Exam-Oriented Notes_ NAVA, P0.1, SmartCare.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:24"
+        },
+        {
+          "to": "theory:Pulmonology/Closed-Loop Ventilation/INTELLiVENT-ASV_ Exam-Oriented Notes.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:39:24"
+        }
+      ]
+    },
+    "paper:Scan documents20260811_074422 (1).pdf": {
+      "tags": [
+        "Raised Intracranial Pressure",
+        "Neurocritical Care Monitoring"
+      ],
+      "kind": "paper",
+      "system": "Neurology",
+      "type": "Other",
+      "subtopic": "Raised Intracranial Pressure",
+      "title": "Intracranial pressure physiology, monitoring and individualized management in the acute brain injured patient",
+      "links": [
+        {
+          "to": "paper:current_management_of_traumatic_intracranial.1.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:45:42"
+        },
+        {
+          "to": "paper:1-s2.0-S2772529426002183-main.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.99,
+          "updated_at": "2026-08-12T09:45:42"
+        },
+        {
+          "to": "paper:s12028-023-01752-y (1).pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:45:42"
+        },
+        {
+          "to": "theory:Neurology/Transcranial Doppler/Transcranial Doppler (TCD) in the ICU – Exam‑Style",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-12T09:45:42"
+        },
+        {
+          "to": "paper:s13054-026-05993-z.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:45:42"
+        },
+        {
+          "to": "paper:s12028-026-02565-5.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-12T09:45:42"
         }
       ]
     }

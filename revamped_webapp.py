@@ -231,6 +231,11 @@ def _require_feature(user, feature):
     if not _user_has_feature(user, feature):
         raise HTTPException(status_code=403, detail=f"Feature '{feature}' is not enabled for this account")
 
+
+def _require_admin(user):
+    if not user or not user.get("is_admin"):
+        raise HTTPException(status_code=403, detail="Admin access required")
+
 # ---- Per-user data (bookmarks now; history/notes/prefs later) ----
 BOOKMARKS_MAX_ITEMS = 500
 BOOKMARKS_MAX_FOLDERS = 10
@@ -520,6 +525,7 @@ def load_theory_notes():
                 "system": system,
                 "subtopic": subtopic,
                 "rel": rel_slash,
+                "date_added": datetime.fromtimestamp(os.path.getmtime(path)).strftime("%Y-%m-%d"),
             })
     notes.sort(key=lambda n: (n.get("system") or "", n.get("subtopic") or "", n["title"].lower()))
     return notes
@@ -863,6 +869,7 @@ async def render_dashboard(request: Request, response: Response):
     user_features = {f: _user_has_feature(user, f) for f in FEATURE_FLAGS}
     user_features_js = json.dumps(user_features)
     user_is_admin_js = "true" if user.get("is_admin") else "false"
+    admin_feature_flags_js = json.dumps(FEATURE_FLAGS)
     insights_tag = '<script defer src="/_vercel/insights/script.js"></script>' if os.environ.get("VERCEL") else ''
 
     html = f"""<!DOCTYPE html>
@@ -930,6 +937,12 @@ async def render_dashboard(request: Request, response: Response):
   .section-head a, .section-head button.linklike{{ font-size:.82rem; color:var(--accent); text-decoration:none; font-weight:600; background:none; border:none; cursor:pointer; padding:0; }}
 
   .hero{{ display:grid; grid-template-columns:1fr; gap:14px; margin-bottom:20px; }}
+  .whatsnew-btn{{ display:flex; align-items:center; gap:10px; width:100%; background:transparent; border:1px solid var(--border); border-radius:var(--radius); color:var(--ink); font-family:var(--font-body); font-size:.95rem; font-weight:600; padding:14px 18px; cursor:pointer; margin-bottom:14px; transition:border-color .18s, background .18s; text-align:left; }}
+  .whatsnew-btn:hover{{ border-color:var(--accent); background:var(--bg-elev); }}
+  .whatsnew-btn .wn-icon{{ font-size:1.05rem; }}
+  .whatsnew-btn .wn-arrow{{ margin-left:auto; color:var(--accent); font-size:1.15rem; transition:transform .18s; }}
+  .whatsnew-btn:hover .wn-arrow{{ transform:translateX(3px); }}
+  .wn-new{{ margin-left:auto; flex-shrink:0; font-size:.62rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--accent); border:1px solid var(--accent); border-radius:99px; padding:2px 7px; }}
   @media (min-width:720px){{ .hero{{ grid-template-columns:1fr 1fr; }} }}
   .card{{ background:var(--bg-elev); border:1px solid var(--border); border-radius:var(--radius); box-shadow:var(--shadow); overflow:hidden; }}
   .card-body{{ padding:16px; }}
@@ -1201,6 +1214,14 @@ async def render_dashboard(request: Request, response: Response):
   .trial-credits-bar .trophy{{ font-size:1.1rem; }}
   .trial-credits-bar .spacer{{ flex:1; }}
   .icon-btn-sm{{ background:none; border:1px solid var(--border); border-radius:6px; cursor:pointer; padding:4px 8px; font-size:.78rem; color:var(--ink-muted); display:inline-flex; align-items:center; gap:4px; font-family:inherit; }}
+  .feat-badge{{ display:inline-flex; padding:2px 8px; border-radius:10px; font-size:10px; cursor:pointer; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.02em; border:1px solid var(--border); }}
+  .feat-on{{ background:rgba(46,160,67,.15); color:#2EA043; border-color:rgba(46,160,67,.4); }}
+  .feat-off{{ background:transparent; color:var(--ink-muted); }}
+  .admin-toggle{{ display:inline-flex; padding:3px 10px; border-radius:10px; font-size:10.5px; cursor:pointer; font-family:var(--font-mono); text-transform:uppercase; letter-spacing:.03em; border:1px solid var(--border); transition:all .15s; }}
+  .admin-on{{ background:rgba(232,183,120,.15); color:#E8B778; border-color:rgba(232,183,120,.45); }}
+  .admin-off{{ background:transparent; color:var(--ink-muted); }}
+  .users-table th{{ font-weight:600; }}
+  .users-table tr:hover{{ background:var(--bg-sunk); }}
   .icon-btn-sm:hover{{ background:var(--bg-elev); color:var(--ink); }}
 
   .trial-detail h1{{ font-size:1.3rem; margin-bottom:4px; }}
@@ -1465,14 +1486,12 @@ async def render_dashboard(request: Request, response: Response):
   <!-- HOME -->
   <section class="view active" id="view-home">
     <p class="eyebrow">Today on the unit</p>
+    <button class="whatsnew-btn" id="whatsNewBtn" role="button" aria-label="See what's new"><span class="wn-icon">&#10024;</span> What's New here?? <span class="wn-arrow">&#8250;</span></button>
     <div class="hero" id="homeHero"></div>
     <div class="stats-strip" id="homeStats"></div>
 
     <div class="section-head"><h2>Browse by specialty</h2></div>
     <div class="spec-grid" id="homeSpecGrid"></div>
-
-    <div class="section-head"><h2>Recently added</h2><button class="linklike" data-view="papers">View all papers &rarr;</button></div>
-    <div class="doc-list" id="homeRecent"></div>
 
     <div class="divider"><svg class="ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg></div>
     <p class="eyebrow">Building out next</p>
@@ -1908,6 +1927,49 @@ async def render_dashboard(request: Request, response: Response):
     <div id="bookmarksList"></div>
   </section>
 
+  <!-- USERS (admin only) -->
+  <section class="view" id="view-users">
+    <p class="eyebrow">Administration</p>
+    <h2>Users</h2>
+    <p style="color:var(--ink-muted);max-width:56ch">Registered accounts &mdash; manage admin status and per-feature access.</p>
+
+    <div class="users-defaults-panel" style="margin-top:14px;border:1px solid var(--border);border-radius:10px;padding:14px;background:var(--bg-elev)">
+      <strong>Global access defaults</strong>
+      <p style="color:var(--ink-muted);font-size:.85rem;margin:4px 0 10px">Apply to all users; per-user overrides extend or restrict.</p>
+      <div id="usersDefaultsGrid" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:10px">
+        <button class="btn primary" id="usersSaveDefaultsBtn" type="button">Save defaults</button>
+        <span id="usersDefaultsStatus" style="color:var(--ink-muted);font-size:.8rem"></span>
+      </div>
+    </div>
+
+    <div class="toolbar" style="margin-top:14px">
+      <div class="search-box" style="min-width:200px">
+        <span>&#128269;</span>
+        <input id="usersSearch" placeholder="Search by email or name&hellip;" autocomplete="off">
+      </div>
+      <span id="usersCount" style="color:var(--ink-muted);font-size:.85rem"></span>
+    </div>
+    <div class="table-wrap" style="margin-top:10px;overflow-x:auto">
+      <table class="users-table" style="width:100%;border-collapse:collapse;font-size:.88rem">
+        <thead>
+          <tr style="text-align:left;color:var(--ink-muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em">
+            <th style="padding:8px 10px">Email</th>
+            <th style="padding:8px 10px">Name</th>
+            <th style="padding:8px 10px">Workplace</th>
+            <th style="padding:8px 10px">City</th>
+            <th style="padding:8px 10px">Joined</th>
+            <th style="padding:8px 10px">Admin</th>
+            <th style="padding:8px 10px">Features</th>
+            <th style="padding:8px 10px">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody"></tbody>
+      </table>
+      <p id="usersEmpty" style="color:var(--ink-muted);padding:18px 4px">No users found.</p>
+    </div>
+  </section>
+
 </main>
 
 <!-- MOBILE FILTER SHEET -->
@@ -1946,6 +2008,7 @@ async def render_dashboard(request: Request, response: Response):
     <button class="chip" data-theme-choice="dark">Dark</button>
   </div>
   <h4>Account &amp; feedback</h4>
+  {'' if not user.get('is_admin') else '<button class="drawer-link" data-view="users">&#128101; Users</button>'}
   <button class="drawer-link" data-view="subscribe">&#9993;&#65039; Subscribe</button>
   <button class="drawer-link" data-view="unsubscribe">&#9995; Unsubscribe</button>
   <button class="drawer-link" data-view="feedback">&#128172; Feedback</button>
@@ -2017,6 +2080,20 @@ async def render_dashboard(request: Request, response: Response):
   </div>
 </div>
 
+<!-- SHARE / FEEDBACK POPUP -->
+<div id="sharePopup" class="modal" style="display:none" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" id="sharePopupBackdrop"></div>
+  <div class="modal-content" style="max-width:420px;text-align:center">
+    <h3>&#128172; Are you finding this useful?</h3>
+    <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 18px">Help us improve hack.CCM &mdash; share it with friends or tell us what you think.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <button class="btn primary" id="sharePopupShare" style="padding:12px">&#128279; Share with friends</button>
+      <button class="btn" id="sharePopupFeedback" style="padding:12px">&#128172; Share feedback</button>
+      <button class="btn btn-ghost" id="sharePopupLater" style="padding:10px">Maybe later</button>
+    </div>
+  </div>
+</div>
+
 <!-- TRIAL CREDITS OVERLAY -->
 <div id="trialCreditsOverlay" class="trial-overlay-backdrop" style="display:none">
   <div class="trial-overlay-box">
@@ -2054,6 +2131,17 @@ async def render_dashboard(request: Request, response: Response):
       <div id="relatedMeta" style="padding:0 18px 0"></div>
       <div class="related-reason-bar" id="relatedReasonBar"></div>
       <div class="related-scroll" id="relatedScroll"></div>
+    </div>
+  </div>
+
+  <div id="whatsNewOverlay" class="related-overlay-backdrop" role="dialog" aria-label="What's New">
+    <div class="related-overlay-box">
+      <div class="related-overlay-head">
+        <span class="related-overlay-title" id="whatsNewOverlayTitle">&#10024; What's New here??</span>
+        <button class="overlay-close" id="whatsNewClose" title="Close">&times;</button>
+      </div>
+      <div id="whatsNewMeta" style="padding:0 18px 0;color:var(--ink-muted);font-size:.72rem"></div>
+      <div class="related-scroll" id="whatsNewScroll"></div>
     </div>
   </div>
 
@@ -2136,7 +2224,7 @@ const SPEC_MAP = {{
 }};
 function normalizeSpec(name) {{
   if (!name) return 'Other';
-  var key = String(name).toLowerCase().replace(/[_\-]/g, ' ').replace(/&/g, 'and').trim();
+  var key = String(name).toLowerCase().replace(/[_\\-]/g, ' ').replace(/&/g, 'and').trim();
   return SPEC_MAP[key] || name;
 }}
 
@@ -2175,6 +2263,7 @@ const RELATED_REASONS = ['same topic','guideline recommendation','complementary'
 // Feature flags (resolved server-side: defaults + per-user overrides)
 const USER_FEATURES = {user_features_js};
 const USER_IS_ADMIN = {user_is_admin_js};
+const ADMIN_FEATURE_FLAGS = {admin_feature_flags_js};
 
 let _trialFilterState = {{ specialty: '', result_category: '', trial_type: '' }};
 let _currentTrialList = [];
@@ -2256,6 +2345,7 @@ function emptyStateHTML(label){{
 // VIEW SWITCHING
 // =====================================================================
 function showView(name){{
+  if(name==='users' && !USER_IS_ADMIN) return false;
   // Feature flag check: block views that the user doesn't have access to
   var featureMap = {{
     'trials': 'trials',
@@ -2282,7 +2372,7 @@ function showView(name){{
   document.querySelectorAll('[data-view]').forEach(function(el){{ el.classList.toggle('active', el.dataset.view===name); }});
   window.scrollTo({{top:0, behavior:'instant'}});
   closeDrawer(); closeSheet();
-  if(name==='home'){{ renderHomeHero(); renderHomeStats(); renderHomeSpecGrid(); renderHomeRecent(); }}
+  if(name==='home'){{ renderHomeHero(); renderHomeStats(); renderHomeSpecGrid(); }}
   if(name==='papers') renderPapers();
   if(name==='guidelines') renderGuidelines();
   if(name==='pearls'){{ renderPearlChips(); renderPearls(); }}
@@ -2290,6 +2380,7 @@ function showView(name){{
   if(name==='trials-esbicm') renderESBICM();
   if(name==='trials-condensed') renderCondensedTrials();
   if(name==='bookmarks') renderBookmarks();
+  if(name==='users'){{ loadUsers(); }}
   if(name==='theory'){{
     var activeView = document.querySelector('.view.active');
     if(activeView && activeView.id==='view-theory'){{
@@ -2360,6 +2451,61 @@ function renderHomeStats(){{
     '<div class="stat-item"><b>'+THEORY_NOTES.length+'</b>theory topics</div>';
 }}
 
+// =====================================================================
+// WHAT'S NEW OVERLAY
+// =====================================================================
+var _WHATSNEW_DAYS = 14;
+function _wnIsNew(d){{
+  if(!d) return false;
+  var t = new Date(d);
+  if(isNaN(t.getTime())) return false;
+  return (Date.now() - t.getTime()) / 86400000 <= _WHATSNEW_DAYS;
+}}
+function _wnDateStr(d){{ return d ? String(d).substring(0,10) : ''; }}
+
+function openWhatsNew(){{
+  var papers = [].concat(baseDataset).sort(function(a,b){{ return (b.date_added||'').localeCompare(a.date_added||''); }}).slice(0,12);
+  var notes = [].concat(THEORY_NOTES).sort(function(a,b){{ return (b.date_added||'').localeCompare(a.date_added||''); }}).slice(0,8);
+  var html = '';
+  if(papers.length){{
+    html += '<div class="related-group-label">Papers &amp; Guidelines</div>';
+    html += papers.map(function(p){{
+      var v = SPEC_VAR[p.system] || '--spec-other';
+      var kind = p.type.toLowerCase()==='guideline' ? 'Guideline' : 'Paper';
+      return '<button class="related-row" data-open-paper="'+p.id+'">'+
+        '<span class="related-row-top">'+
+          '<span class="related-kind">'+kind+'</span>'+
+          '<span class="related-title">'+escapeHtml(p.title)+'</span>'+
+          (_wnIsNew(p.date_added)?'<span class="wn-new">New</span>':'')+
+        '</span>'+
+        '<span class="related-reason"><span class="dot" style="background:var('+v+');display:inline-block;vertical-align:middle"></span> '+escapeHtml(p.system)+' &middot; '+escapeHtml(_wnDateStr(p.date_added))+'</span>'+
+      '</button>';
+    }}).join('');
+  }}
+  if(notes.length){{
+    html += '<div class="related-group-label">Theory Topics</div>';
+    html += notes.map(function(n){{
+      return '<button class="related-row" data-theory-note="'+escapeHtml(n.id)+'">'+
+        '<span class="related-row-top">'+
+          '<span class="related-kind">Theory</span>'+
+          '<span class="related-title">'+escapeHtml(n.title)+'</span>'+
+          (_wnIsNew(n.date_added)?'<span class="wn-new">New</span>':'')+
+        '</span>'+
+        '<span class="related-reason">'+escapeHtml(n.system||'General')+' &middot; '+escapeHtml(n.subtopic||'General')+' &middot; '+escapeHtml(_wnDateStr(n.date_added))+'</span>'+
+      '</button>';
+    }}).join('');
+  }}
+  document.getElementById('whatsNewScroll').innerHTML = html || '<div class="related-empty"><span class="icon">&#10024;</span><p>Nothing new yet &mdash; check back soon.</p></div>';
+  document.getElementById('whatsNewMeta').textContent = 'Most recent additions — newest first';
+  document.getElementById('whatsNewOverlay').classList.add('open');
+  document.body.classList.add('whatsnew-open');
+}}
+
+function closeWhatsNew(){{
+  document.getElementById('whatsNewOverlay').classList.remove('open');
+  document.body.classList.remove('whatsnew-open');
+}}
+
 function renderHomeSpecGrid(){{
   var specCounts = {{}};
   baseDataset.forEach(function(a){{ specCounts[a.system] = (specCounts[a.system]||0)+1; }});
@@ -2371,11 +2517,6 @@ function renderHomeSpecGrid(){{
       '<div style="font-weight:700;font-size:.88rem">'+s+'</div>'+
     '</button>';
   }}).join('');
-}}
-
-function renderHomeRecent(){{
-  var recent = [].concat(baseDataset).sort(function(a,b){{ return (b.date_added||'').localeCompare(a.date_added||''); }});
-  document.getElementById('homeRecent').innerHTML = recent.slice(0,3).map(docCardHTML).join('');
 }}
 
 function jumpToSpecialty(name){{
@@ -3861,7 +4002,7 @@ if(box){{
       '<div class="doc-inner">'+
         '<div class="doc-top"><span class="type-tag">'+escapeHtml(n.system||'Note')+'</span>'+(n.subtopic && n.subtopic!=='General' ? '<span class="theory-sub-tag">'+escapeHtml(n.subtopic)+'</span>':'')+(saved?'<span class="theory-saved-badge">&#128278; saved</span>':'')+'</div>'+
         '<p class="doc-title">'+escapeHtml(n.title)+'</p>'+
-        '<p class="doc-snippet">'+escapeHtml(n.md.replace(/\s+/g,' ').substring(0,110))+'</p>'+
+        '<p class="doc-snippet">'+escapeHtml(n.md.replace(/\\s+/g,' ').substring(0,110))+'</p>'+
       '</div>'+
     '</button>';
   }}).join('');
@@ -3871,11 +4012,11 @@ if(box){{
 function _theoryMarkdownHTML(md){{
   // Degrade footnote syntax: drop [^n] references and [^n]: definition lines
   var out = String(md||'');
-  out = out.replace(/^\[\^[^\]]+\]:\s*.*$/gm, '');
-  out = out.replace(/\[\^[^\]]+\]/g, '');
+  out = out.replace(/^\\[\\^[^\\]]+\\]:\\s*.*$/gm, '');
+  out = out.replace(/\\[\\^[^\\]]+\\]/g, '');
   try {{
     var html = marked.parse(out);
-    html = html.replace(/<table>[\s\S]*?<\/table>/g, function(t){{
+    html = html.replace(/<table>[\\s\\S]*?<\\/table>/g, function(t){{
       return '<button class="theory-table-expand" data-theory-table-open type="button"><span class="tt-expand-icon">&#8693;</span> Full view</button>'+
              '<div class="theory-table-wrap" data-theory-table-open>'+t+'</div>';
     }});
@@ -4331,8 +4472,8 @@ function renderTheoryCard(){{
     if(!frontText){{
       qHTML = '<h3 class="theory-card-question">'+escapeHtml(card.subtopic||deck.title)+'</h3>';
     }} else {{
-      var qBody = marked.parse(frontText).trim().replace(/^<p>\s*/,'').replace(/\s*<\/p>$/,'');
-      var qBlock = /<(p|div|ul|ol|table|blockquote|h[1-6])\s*>/i.test(qBody);
+      var qBody = marked.parse(frontText).trim().replace(/^<p>\\s*/,'').replace(/\\s*<\\/p>$/,'');
+      var qBlock = /<(p|div|ul|ol|table|blockquote|h[1-6])\\s*>/i.test(qBody);
       qHTML = qBlock
         ? '<div class="theory-card-question">'+qBody+'</div>'
         : '<h3 class="theory-card-question">'+qBody+'</h3>';
@@ -4641,18 +4782,213 @@ function renderBookmarks(){{
 }}
 
 // =====================================================================
+// USERS (admin management)
+// =====================================================================
+var _usersCache = {{ users: [], defaults: {{}} }};
+function _usersErr(msg){{
+  var tbody = document.getElementById('usersTableBody');
+  var empty = document.getElementById('usersEmpty');
+  if(tbody) tbody.innerHTML = '';
+  if(empty){{ empty.style.display = 'block'; empty.textContent = msg; }}
+}}
+function loadUsers(){{
+  if(!USER_IS_ADMIN) return;
+  Promise.all([
+    fetch('/api/admin/users').then(function(r){{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }}),
+    fetch('/api/admin/users/defaults').then(function(r){{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }})
+  ]).then(function(res){{
+    _usersCache.users = res[0] || [];
+    _usersCache.defaults = res[1] || {{}};
+    renderUsers();
+  }}).catch(function(e){{ _usersErr('Failed to load users: '+e.message); }});
+}}
+function _usersFlagLabel(k){{ return String(k).replace(/_/g,' '); }}
+function renderUsers(){{
+  var grid = document.getElementById('usersDefaultsGrid');
+  if(grid && !grid.dataset.built){{
+    grid.dataset.built = '1';
+    var defs = _usersCache.defaults;
+    grid.innerHTML = ADMIN_FEATURE_FLAGS.map(function(k){{
+      var on = defs[k] === true || (defs[k] === undefined && k!=='condensed_trials' && k!=='theory');
+      return '<label style="display:flex;align-items:center;gap:6px;font-size:13px;cursor:pointer;border:1px solid var(--border);padding:4px 10px;border-radius:6px">'+
+        '<input type="checkbox" data-def="'+k+'" '+(on?'checked':'')+'> '+_usersFlagLabel(k)+'</label>';
+    }}).join('');
+  }}
+  var users = _usersCache.users;
+  var q = (document.getElementById('usersSearch').value||'').toLowerCase().trim();
+  var filtered = q ? users.filter(function(u){{
+    return (u.email||'').toLowerCase().includes(q) || (u.first_name||'').toLowerCase().includes(q) || (u.last_name||'').toLowerCase().includes(q) || (u.workplace||'').toLowerCase().includes(q);
+  }}) : users;
+  var countEl = document.getElementById('usersCount');
+  if(countEl) countEl.textContent = filtered.length + ' of ' + users.length + ' users';
+  var empty = document.getElementById('usersEmpty');
+  var tbody = document.getElementById('usersTableBody');
+  if(empty){{ empty.style.display = filtered.length ? 'none' : 'block'; empty.textContent = 'No users found.'; }}
+  if(!tbody) return;
+  tbody.innerHTML = '';
+  var defs = _usersCache.defaults;
+  filtered.forEach(function(u){{
+    var feats = u.features || {{}};
+    var tr = document.createElement('tr');
+    tr.style.borderTop = '1px solid var(--border)';
+    if(u.is_admin) tr.style.background = 'color-mix(in srgb, var(--accent) 6%, transparent)';
+    var joined = u.created_at ? String(u.created_at).substring(0,10) : '—';
+    var email = String(u.email||'');
+    var featHtml = ADMIN_FEATURE_FLAGS.map(function(k){{
+      var enabled = feats[k] === true || (feats[k] === undefined && defs[k] === true);
+      return '<span class="feat-badge '+(enabled?'feat-on':'feat-off')+'" data-flag="'+k+'" data-email="'+encodeURIComponent(email)+'">'+_usersFlagLabel(k)+'</span>';
+    }}).join(' ');
+    tr.innerHTML = '<td style="padding:8px 10px"><strong>'+escapeHtml(email)+'</strong></td>'+
+      '<td style="padding:8px 10px">'+escapeHtml((u.first_name||'')+' '+(u.last_name||''))+'</td>'+
+      '<td style="padding:8px 10px">'+escapeHtml(u.workplace||'—')+'</td>'+
+      '<td style="padding:8px 10px">'+escapeHtml(u.city||'—')+'</td>'+
+      '<td style="padding:8px 10px">'+joined+'</td>'+
+      '<td style="padding:8px 10px"><span class="admin-toggle '+(u.is_admin?'admin-on':'admin-off')+'" data-email="'+encodeURIComponent(email)+'">'+(u.is_admin?'&#9889; Admin':'Set admin')+'</span></td>'+
+      '<td style="padding:8px 10px;display:flex;flex-wrap:wrap;gap:4px">'+featHtml+'</td>'+
+      '<td style="padding:8px 10px"><button class="icon-btn-sm" data-del-email="'+encodeURIComponent(email)+'" title="Delete user" style="color:var(--danger,#e5484d)">&#128465;</button></td>';
+    tbody.appendChild(tr);
+  }});
+}}
+document.getElementById('usersSearch').addEventListener('input', renderUsers);
+document.addEventListener('click', function(e){{
+  if(e.target.classList.contains('admin-toggle')){{
+    var email = decodeURIComponent(e.target.dataset.email);
+    var user = _usersCache.users.find(function(u){{ return String(u.email)===email; }});
+    if(!user) return;
+    var newVal = !user.is_admin;
+    fetch('/api/admin/users/'+encodeURIComponent(email), {{method:'PUT', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{is_admin: newVal}})}})
+      .then(function(r){{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }})
+      .then(function(){{
+        user.is_admin = newVal;
+        renderUsers();
+      }}).catch(function(err){{ alert('Failed: '+err.message); }});
+    return;
+  }}
+  if(e.target.classList.contains('feat-badge')){{
+    var email2 = decodeURIComponent(e.target.dataset.email);
+    var flag = e.target.dataset.flag;
+    var user2 = _usersCache.users.find(function(u){{ return String(u.email)===email2; }});
+    if(!user2) return;
+    var features = user2.features || {{}};
+    features[flag] = !(features[flag] === true);
+    user2.features = features;
+    fetch('/api/admin/users/'+encodeURIComponent(email2), {{method:'PUT', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify({{features: features}})}})
+      .then(function(r){{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }})
+      .then(function(){{
+        renderUsers();
+      }}).catch(function(err){{ alert('Failed: '+err.message); }});
+    return;
+  }}
+  if(e.target.dataset.delEmail !== undefined){{
+    var email3 = decodeURIComponent(e.target.dataset.delEmail);
+    if(!confirm('Delete user '+email3+'? This also removes their sessions.')) return;
+    fetch('/api/admin/users/'+encodeURIComponent(email3), {{method:'DELETE'}})
+      .then(function(r){{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }})
+      .then(function(){{
+        _usersCache.users = _usersCache.users.filter(function(u){{ return String(u.email)!==email3; }});
+        renderUsers();
+      }}).catch(function(err){{ alert('Failed: '+err.message); }});
+    return;
+  }}
+  if(e.target.id === 'usersSaveDefaultsBtn'){{
+    var updated = {{}};
+    document.querySelectorAll('[data-def]').forEach(function(cb){{ updated[cb.dataset.def] = cb.checked; }});
+    fetch('/api/admin/users/defaults', {{method:'PUT', headers:{{'Content-Type':'application/json'}}, body: JSON.stringify(updated)}})
+      .then(function(r){{ if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); }})
+      .then(function(d){{
+        _usersCache.defaults = d;
+        var st = document.getElementById('usersDefaultsStatus');
+        if(st) st.textContent = 'Saved at ' + new Date().toLocaleTimeString();
+      }}).catch(function(err){{ alert('Failed: '+err.message); }});
+    return;
+  }}
+}});
+
+// =====================================================================
 // DISCLAIMER
 // =====================================================================
 function dismissDisclaimer(){{
   document.getElementById('disclaimerOverlay').style.display='none';
-  try {{ sessionStorage.setItem('hackccm_disclaimer','1'); }} catch(e){{}}
+  try {{ localStorage.setItem('hackccm_disclaimer', String(Date.now())); }} catch(e){{}}
 }}
-if(showDisclaimer && !(function(){{ try {{ return sessionStorage.getItem('hackccm_disclaimer'); }} catch(e){{ return null; }} }})()){{
-  var md = `{DISCLAIMER_TEXT.replace('`','\\`').replace('$','\\$')}`;
-  var html = md.replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
-  document.getElementById('disclaimerText').innerHTML = '<h2>\u26A0\uFE0F Disclaimer</h2><p>'+html+'</p>';
-  document.getElementById('disclaimerOverlay').style.display='flex';
+(function(){{
+  var last = null;
+  try {{ last = parseInt(localStorage.getItem('hackccm_disclaimer'), 10) || null; }} catch(e){{}}
+  var weekMs = 7 * 24 * 60 * 60 * 1000;
+  if(showDisclaimer && (!last || Date.now() - last > weekMs)){{
+    var md = `{DISCLAIMER_TEXT.replace('`','\\`').replace('$','\\$')}`;
+    var html = md.replace(/\\*\\*(.+?)\\*\\*/g, '<strong>$1</strong>').replace(/\\n\\n/g, '</p><p>').replace(/\\n/g, '<br>');
+    document.getElementById('disclaimerText').innerHTML = '<h2>\u26A0\uFE0F Disclaimer</h2><p>'+html+'</p>';
+    document.getElementById('disclaimerOverlay').style.display='flex';
+  }}
+}})();
+
+// =====================================================================
+// SHARE POPUP (grow the platform: ask once per session, weekly cooldown)
+// =====================================================================
+var sharePopupShown = false;
+var sharePopupAttempts = 0;
+try {{ sharePopupAttempts = parseInt(sessionStorage.getItem('hackccm_share_attempts'), 10) || 0; }} catch(e){{}}
+function openSharePopup(){{
+  var pop = document.getElementById('sharePopup');
+  if(pop) pop.style.display='flex';
+  sharePopupShown = true;
+  sharePopupAttempts += 1;
+  try {{ sessionStorage.setItem('hackccm_share_attempts', String(sharePopupAttempts)); }} catch(e){{}}
 }}
+function closeSharePopup(){{
+  var pop = document.getElementById('sharePopup');
+  if(pop) pop.style.display='none';
+}}
+function maybeShowSharePopup(){{
+  if(sharePopupShown) return;
+  var dis = document.getElementById('disclaimerOverlay');
+  if(dis && dis.style.display === 'flex') return;
+  var last = null;
+  try {{ last = parseInt(localStorage.getItem('hackccm_share'), 10) || null; }} catch(e){{}}
+  var weekMs = 7 * 24 * 60 * 60 * 1000;
+  if(last && Date.now() - last < weekMs) return;
+  if(sharePopupAttempts >= 4) return;
+  openSharePopup();
+}}
+function shareCurrentPage(){{
+  var url = window.location.href;
+  var recordAsked = function(){{
+    try {{ localStorage.setItem('hackccm_share', String(Date.now())); }} catch(e){{}}
+  }};
+  if(navigator.share){{
+    navigator.share({{ title: document.title, url: url }}).then(recordAsked).catch(function(){{}});
+  }} else {{
+    var done = function(){{
+      recordAsked();
+      closeSharePopup();
+    }};
+    if(navigator.clipboard && navigator.clipboard.writeText){{
+      navigator.clipboard.writeText(url).then(done).catch(function(){{ alert('Copy failed - share manually: '+url); }});
+    }} else {{
+      var ta = document.createElement('textarea');
+      ta.value = url;
+      document.body.appendChild(ta);
+      ta.select();
+      try {{ document.execCommand('copy'); }} catch(e){{}}
+      document.body.removeChild(ta);
+      done();
+    }}
+  }}
+}}
+var sharePopupShareBtn = document.getElementById('sharePopupShare');
+if(sharePopupShareBtn) sharePopupShareBtn.addEventListener('click', shareCurrentPage);
+var sharePopupFeedbackBtn = document.getElementById('sharePopupFeedback');
+if(sharePopupFeedbackBtn) sharePopupFeedbackBtn.addEventListener('click', function(){{ closeSharePopup(); window.open('{FEEDBACK_FORM_URL}', '_blank'); }});
+var sharePopupLaterBtn = document.getElementById('sharePopupLater');
+if(sharePopupLaterBtn) sharePopupLaterBtn.addEventListener('click', function(){{
+  closeSharePopup();
+  try {{ localStorage.setItem('hackccm_share', String(Date.now())); }} catch(e){{}}
+}});
+var sharePopupBackdrop = document.getElementById('sharePopupBackdrop');
+if(sharePopupBackdrop) sharePopupBackdrop.addEventListener('click', closeSharePopup);
+setTimeout(function(){{ maybeShowSharePopup(); }}, 45000);
+setInterval(function(){{ maybeShowSharePopup(); }}, 60000);
 
 // =====================================================================
 // EVENT WIRING (direct listeners for static elements)
@@ -4767,7 +5103,7 @@ function navPushState(v){{
   else {{ history.pushState({{v:v}}, ''); }}
 }}
 function closeAllOverlays(){{
-  closeReader(); closeRelatedPanel(); closeDrawer(); closeSheet(); closeSearch();
+  closeReader(); closeRelatedPanel(); closeDrawer(); closeSheet(); closeSearch(); closeWhatsNew();
   document.body.classList.remove('ai-open');
 }}
 window.addEventListener('popstate', function(e){{
@@ -4809,6 +5145,15 @@ if(condClearBtn) condClearBtn.addEventListener('click', clearCondensedFilters);
 // Trial detail back button
 var trialDetailBack = document.getElementById('trialDetailBackBtn');
 if(trialDetailBack) trialDetailBack.addEventListener('click', function(){{ history.back(); }});
+
+// What's New overlay
+var whatsNewBtn = document.getElementById('whatsNewBtn');
+if(whatsNewBtn) whatsNewBtn.addEventListener('click', openWhatsNew);
+var whatsNewOverlayEl = document.getElementById('whatsNewOverlay');
+if(whatsNewOverlayEl) whatsNewOverlayEl.addEventListener('click', function(e){{
+  if(e.target === whatsNewOverlayEl || e.target.closest('#whatsNewClose')){{ closeWhatsNew(); return; }}
+  if(e.target.closest('[data-open-paper],[data-open-pearl],[data-theory-note],[data-theory-deck]')){{ closeWhatsNew(); }}
+}});
 
 // =====================================================================
 // DELEGATED EVENT HANDLING (for dynamically rendered elements)
@@ -5378,6 +5723,106 @@ async def api_me(request: Request):
         "is_admin": bool(user.get("is_admin")),
         "features": user.get("features", {}),
     }
+
+# =====================================================================
+# ADMIN — USER MANAGEMENT (admins only; mirrors dashboard Accounts tab)
+# =====================================================================
+
+def _admin_users_list():
+    from concurrent.futures import ThreadPoolExecutor
+    keys = _kv_scan("auth:users:*") or []
+    if not keys:
+        return []
+    with ThreadPoolExecutor(max_workers=min(10, len(keys))) as pool:
+        users = [u for u in pool.map(_kv_get, keys) if u]
+    for u in users:
+        u.pop("password_hash", None)
+    users.sort(key=lambda u: u.get("created_at", ""), reverse=True)
+    return users
+
+def _admin_user_get(email: str):
+    user = _kv_get(f"auth:users:{email}")
+    if user:
+        user.pop("password_hash", None)
+    return user
+
+def _admin_user_update(email: str, body: dict):
+    user = _kv_get(f"auth:users:{email}")
+    if not user:
+        return None
+    features = body.get("features")
+    if features is not None and isinstance(features, dict):
+        user["features"] = {k: bool(v) for k, v in features.items() if k in FEATURE_FLAGS}
+    for field in ("first_name", "last_name", "workplace", "city"):
+        if field in body:
+            user[field] = str(body[field]).strip()
+    if "is_admin" in body:
+        user["is_admin"] = bool(body["is_admin"])
+    _kv_set(f"auth:users:{email}", user)
+    user.pop("password_hash", None)
+    return user
+
+def _admin_user_delete(email: str) -> bool:
+    user = _kv_get(f"auth:users:{email}")
+    if not user:
+        return False
+    _kv_delete(f"auth:users:{email}")
+    session_keys = _kv_scan("auth:session:*") or []
+    for sk in session_keys:
+        sess = _kv_get(sk)
+        if sess and sess.get("email") == email:
+            _kv_delete(sk)
+    return True
+
+def _admin_save_defaults(body: dict):
+    clean = {k: bool(v) for k, v in body.items() if k in FEATURE_FLAGS}
+    _kv_set("auth:access_defaults", clean)
+    return {f: clean.get(f, DEFAULT_FEATURE_STATES.get(f, True)) for f in FEATURE_FLAGS}
+
+@app.get("/api/admin/users")
+async def api_admin_users_list(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_admin(user)
+    return _admin_users_list()
+
+@app.get("/api/admin/users/defaults")
+async def api_admin_users_defaults(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_admin(user)
+    return _access_defaults()
+
+@app.put("/api/admin/users/defaults")
+async def api_admin_users_defaults_update(request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_admin(user)
+    return _admin_save_defaults(body)
+
+@app.put("/api/admin/users/{email:path}")
+async def api_admin_users_update(email: str, request: Request, body: dict):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_admin(user)
+    result = _admin_user_update(email, body)
+    if not result:
+        raise HTTPException(status_code=404, detail="User not found")
+    return result
+
+@app.delete("/api/admin/users/{email:path}")
+async def api_admin_users_delete(email: str, request: Request):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_admin(user)
+    if not _admin_user_delete(email):
+        raise HTTPException(status_code=404, detail="User not found")
+    return {"ok": True}
 
 @app.get("/favicon.ico")
 async def favicon():

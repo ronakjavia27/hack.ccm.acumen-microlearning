@@ -1,0 +1,146 @@
+{
+  "id": "sccm-padis-focused-update-2025",
+  "doc_type": "guideline",
+  "title": "A Focused Update to the Clinical Practice Guidelines for the Prevention and Management of Pain, Anxiety, Agitation/Sedation, Delirium, Immobility, and Sleep Disruption in Adult Patients in the ICU",
+  "issuing_bodies": [
+    "SCCM"
+  ],
+  "year": 2025,
+  "doi": "10.1097/CCM.0000000000006574",
+  "specialty": [
+    "pulmonology",
+    "pharmacology",
+    "rehabilitation"
+  ],
+  "tags": [
+    "anxiety",
+    "agitation",
+    "sedation",
+    "delirium",
+    "immobility",
+    "sleep disruption",
+    "dexmedetomidine",
+    "melatonin"
+  ],
+  "one_line_summary": "Updated 2025 SCCM practice guidelines providing evidence-based recommendations on managing anxiety, agitation/sedation, delirium, immobility, and sleep disruption in **critically** ill adult ICU patients using the GRADE framework.",
+  "key_pearls": [
+    "Suggest using **dexmedetomidine** over **propofol** for sedation in mechanically ventilated adults when light sedation and delirium reduction are top priorities (*conditional recommendation*, moderate certainty).",
+    "Suggest providing **enhanced mobilization/rehabilitation** over usual care in adult ICU patients to reduce **ICU-acquired weakness** (*RR 0.77*) and mechanical ventilation duration (*conditional recommendation*, moderate certainty).",
+    "Suggest administering **melatonin** over no melatonin to adult ICU patients to reduce delirium prevalence (*RR 0.70*) and improve perceived sleep quality (*conditional recommendation*, low certainty).",
+    "There is **insufficient evidence** to issue a recommendation for or against using **benzodiazepines** to treat anxiety in adult ICU patients.",
+    "Unable to issue a recommendation for or against **antipsychotics** over usual care for treating established delirium in adult ICU patients due to low-certainty evidence."
+  ],
+  "consensus_method": "GRADE evidence-to-decision framework with interprofessional subpanels; required >=70% voting response rate and >=80% agreement for consensus.",
+  "search_period": "Inception to April 2024",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Benzodiazepines for Anxiety",
+      "narrative": "- Anxiety is one of the most distressing symptoms self-reported by adult ICU patients during stay and post-discharge.\n- A systematic search identified no randomized trials comparing **benzodiazepines** to no benzodiazepines for treating ICU anxiety.\n- Severe anxiety affects **>25%** of intubated patients **6 hours** after discontinuation of **midazolam** or **propofol**.\n- Pragmatic anxiety evaluation tools include the **Faces Anxiety Scale**, **Visual Analogue Scale (VAS)**, and **Numeric Rating Scale (NRS)**.\n- Continuation of chronic baseline **benzodiazepines** should be considered to avoid precipitating acute withdrawal upon ICU admission.",
+      "recommendations": [
+        {
+          "rec_id": "R1",
+          "statement": "There is insufficient evidence to make a recommendation on the use of **benzodiazepines** to treat anxiety in adult patients admitted to the ICU.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Dexmedetomidine for Sedation",
+      "narrative": "- Pooled data from **29 RCTs** (**N = 3,087**) evaluated **dexmedetomidine** vs **propofol** in mechanically ventilated adults targetted to light sedation.\n- **Dexmedetomidine** reduced delirium prevalence (*RR 0.55*, 95% CI 0.37-0.81; ARR **15 fewer per 100**; moderate certainty) and reduced delirium duration (*MD -**25.58 hr***, low certainty).\n- Reduced need for supplemental analgesics (*RR 0.71*, 95% CI 0.52-0.99; moderate certainty) and slightly reduced ICU length of stay (*MD -0.19 days*, low certainty).\n- Increased risk of **bradycardia** (*RR 1.65*, 95% CI 1.28-2.12; ARI **6 more per 100**; moderate certainty), with no **significant** difference in **hypotension** (*RR 1.07*) or **mortality** (*RR 0.98*).",
+      "recommendations": [
+        {
+          "rec_id": "R2",
+          "statement": "We suggest using **dexmedetomidine** over **propofol** for sedation in mechanically ventilated adult patients admitted to the ICU where light sedation and/or a reduction in delirium are of highest priorities.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Antipsychotics for Delirium",
+      "narrative": "- Pooled analysis of **8 RCTs** (**N = 1,869**) evaluated **antipsychotics** (**haloperidol**, **quetiapine**, **ziprasidone**) vs placebo or no antipsychotic for established delirium.\n- **Antipsychotics** slightly increased delirium-free days (*MD 1.25 days*, low certainty) and trended toward reduced 28-day **mortality** (*RR 0.87*, 95% CI 0.75-1.01; low certainty).\n- Showed no clear effect on duration of invasive mechanical ventilation (moderate certainty), ICU length of stay (very low certainty), or hospital length of stay (low certainty).\n- Showed a potential slight increase in **arrhythmia** risk (*RR 1.57*, low certainty), with minimal impact on **QT interval prolongation** or **extrapyramidal symptoms**.",
+      "recommendations": [
+        {
+          "rec_id": "R3",
+          "statement": "We are unable to issue a recommendation for or against the use of **antipsychotics** over usual care for the treatment of delirium in adult patients admitted to the ICU.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Enhanced Mobilization for Immobility",
+      "narrative": "- Meta-analysis of **58 RCTs** (**N = 8,038**) evaluated **enhanced mobilization/rehabilitation** vs usual care.\n- **Significantly** reduced the development of **ICU-acquired weakness** (*RR 0.77*, 95% CI 0.64-0.93; ARR **9 fewer per 100**; high certainty).\n- Reduced mechanical ventilation duration (*MD -1.1 days*), delirium duration (*MD -1.34 days*), ICU length of stay (*MD -1.01 days*), and hospital length of stay (*MD -1.16 days*).\n- Improved functional recovery, quality of life, and rate of direct discharge home (*RR 1.15*).\n- Showed a minor increase in **arrhythmias** (*RR 2.27*), with no difference in **accidental line removal** (*RR 1.28*), **unplanned extubation** (*RR 0.93*), or **hypotension** (*RR 1.32*).",
+      "recommendations": [
+        {
+          "rec_id": "R4",
+          "statement": "We suggest providing **enhanced mobilization/rehabilitation** over usual care mobilization/rehabilitation to adult patients admitted to the ICU.",
+          "strength": "conditional",
+          "evidence_grade": "moderate"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Melatonin for Patient Outcomes",
+      "narrative": "- Evidence synthesis of **30 RCTs** (**N = 3,739**) evaluated **melatonin** (or **ramelteon**) vs placebo/no melatonin.\n- **Melatonin** reduced delirium prevalence (*RR 0.70*, 95% CI 0.57-0.87; low certainty) without altering delirium duration (*MD -0.16 days*).\n- Improved self-reported perceived sleep quality (low certainty), though total nocturnal sleep duration was unchanged (*MD **0.04 hr***).\n- Slightly reduced ICU length of stay (*MD -0.5 days*, low certainty) with low incidence of adverse effects.",
+      "recommendations": [
+        {
+          "rec_id": "R5",
+          "statement": "We suggest administering **melatonin** over no melatonin in adult patients admitted to the ICU.",
+          "strength": "conditional",
+          "evidence_grade": "low"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [],
+  "strengths_limitations": "- **Strengths**: Applied rigorous GRADE methodology, involved a multidisciplinary panel including ICU survivors, and conducted comprehensive systematic reviews across five electronic databases.\n- **Limitations**: Scarcity of high-certainty evidence across topics, substantial heterogeneity in interventions (e.g., mobilization protocols and melatonin dosing), and lack of standardized ICU anxiety measurement tools.",
+  "drugs_doses": [
+    {
+      "drug": "Dexmedetomidine",
+      "dose": "IV continuous infusion, titrated for light sedation target",
+      "indication": "Sedation in mechanically ventilated adult ICU patients requiring light sedation or delirium reduction",
+      "adverse_effects": "Bradycardia (RR 1.65), hypotension"
+    },
+    {
+      "drug": "Propofol",
+      "dose": "IV continuous infusion, titrated to sedation target",
+      "indication": "Sedation in mechanically ventilated adult ICU patients",
+      "adverse_effects": "Hypotension, bradycardia, respiratory depression"
+    },
+    {
+      "drug": "Melatonin",
+      "dose": "Oral/enteral administration, variable dosing and nocturnal schedules",
+      "indication": "Delirium prevention and sleep quality enhancement in adult ICU patients",
+      "adverse_effects": "Low overall risk of adverse events; regulatory variation by country"
+    },
+    {
+      "drug": "Ramelteon",
+      "dose": "Oral/enteral administration",
+      "indication": "Melatonin receptor agonist alternative for ICU sleep disruption and delirium prevention",
+      "adverse_effects": "Drowsiness, fatigue, dizziness"
+    },
+    {
+      "drug": "Haloperidol",
+      "dose": "IV/oral administration, variable dosing",
+      "indication": "Treatment of established delirium in critically ill adults",
+      "adverse_effects": "Arrhythmias (RR 1.57), QTc prolongation, extrapyramidal symptoms"
+    },
+    {
+      "drug": "Midazolam",
+      "dose": "IV bolus or continuous infusion",
+      "indication": "Sedation or acute anxiety management in ICU",
+      "adverse_effects": "Withdrawal anxiety, prolonged sedation, delirium, respiratory depression"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2025-02-22",
+  "article_subtype": "Guideline",
+  "subtopic": "Mechanical Ventilation"
+}
