@@ -1,4 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 ## Acute Kidney Injury (AKI) in ICU
 
@@ -354,7 +353,6 @@ Result: **functional shunting**, periglomerular maldistribution, and regional hy
 
 ***
 
-If you’d like, I can next convert this into a one‑page rapid‑revision table (definitions, biomarkers with cutoffs, and a prevention checklist) or a flow‑algorithm for “ICU patient at risk of AKI – what to do in first 24 h”.
 <span style="display:none">[^1_14][^1_15]</span>
 
 <div align="center">⁂</div>

@@ -1,6 +1,5 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
-## Anticoagulation During CRRT: Exam-Style Notes
+## Anticoagulation During CRRT:
 
 Anticoagulation during continuous renal replacement therapy (CRRT) aims to maintain extracorporeal circuit patency while minimizing bleeding risk, filter clotting, and metabolic complications. Regional citrate anticoagulation (RCA) is now first-line in most guidelines, with unfractionated heparin (UFH) as the main alternative when citrate is contraindicated. [^1_1][^1_2][^1_3]
 
@@ -185,7 +184,6 @@ Start CRRT → Assess bleeding risk
 
 ***
 
-Would you like me to create a one-page PDF summary (with tables and algorithm) for quick revision or teaching?
 
 <div align="center">⁂</div>
 

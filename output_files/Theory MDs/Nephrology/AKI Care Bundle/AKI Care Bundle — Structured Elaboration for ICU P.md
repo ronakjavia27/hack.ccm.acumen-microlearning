@@ -1,4 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 ## AKI Care Bundle — Structured Elaboration for ICU Practice
 
@@ -265,7 +264,6 @@ Adapt thresholds and naming to local policy, but keep the core logic intact.
 
 ***
 
-If you tell me your typical ICU setting (tertiary vs district, availability of CRRT, nephrology coverage), I can help you convert this into a one‑page, locally implementable AKI care bundle checklist and order set.
 <span style="display:none">[^1_10]</span>
 
 <div align="center">⁂</div>

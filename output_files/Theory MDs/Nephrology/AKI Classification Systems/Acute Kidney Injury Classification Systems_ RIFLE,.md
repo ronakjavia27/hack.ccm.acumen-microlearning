@@ -1,4 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 ## Acute Kidney Injury Classification Systems: RIFLE, AKIN, and KDIGO
 
@@ -194,7 +193,6 @@ Step 7: Consider RRT if Stage 3 + life-threatening complications
 
 ***
 
-If you'd like, I can create a **flowchart/diagram** of the KDIGO staging algorithm or a **one-page revision table** for quick exam recall.
 
 <div align="center">⁂</div>
 

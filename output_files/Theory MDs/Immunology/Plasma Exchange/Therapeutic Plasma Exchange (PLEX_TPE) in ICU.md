@@ -1,4 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 ## Therapeutic Plasma Exchange (PLEX/TPE) in ICU
 
@@ -157,7 +156,6 @@
 
 ***
 
-If you want, I can convert this into a one-page printable table/algorithm (flowchart: “When to call for PLEX in ICU?”) tailored for your exam/teaching use.
 <span style="display:none">[^1_12][^1_13][^1_14][^1_15]</span>
 
 <div align="center">⁂</div>

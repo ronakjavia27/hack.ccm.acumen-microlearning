@@ -1,4 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 # Factors associated with increased thromboembolism and bleeding risks in patients with aki or ckd
 
@@ -66,7 +65,6 @@ In patients with acute kidney injury (AKI) and chronic kidney disease (CKD), bot
 - **Anticoagulant selection in CKD**: DOACs and LMWH require dose adjustment or avoidance at low eGFR; warfarin remains usable but requires close INR monitoring due to narrow therapeutic window and drug–drug interactions. [^1_14][^1_7][^1_8]
 - **Dual therapy (anticoagulant + antiplatelet) is high-risk**: Reserve for clear indications (e.g., recent ACS/stent) and minimize duration; bleeding risk is markedly amplified in CKD. [^1_7][^1_8]
 
-If you'd like, I can generate a one-page algorithm for VTE prophylaxis vs therapeutic anticoagulation in AKI/CKD stratified by eGFR, albuminuria, and bleeding risk factors for ICU use.
 <span style="display:none">[^1_15]</span>
 
 <div align="center">⁂</div>

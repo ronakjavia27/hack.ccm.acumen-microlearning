@@ -1,4 +1,3 @@
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 
 ## Nutrition in Chronic Kidney Disease (CKD)
 
@@ -331,7 +330,6 @@ Monitor: Weight, albumin, K⁺, PO₄³⁻, bicarbonate, dietary intake
 
 ***
 
-This framework integrates **KDIGO 2024**, **KDOQI**, and **UK Kidney Association** guidelines with exam-focused high-yield points. Use the tables and mnemonics for rapid revision. [^1_1][^1_6][^1_8][^1_12][^1_9]
 <span style="display:none">[^1_15]</span>
 
 <div align="center">⁂</div>
