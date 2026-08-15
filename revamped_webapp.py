@@ -518,6 +518,8 @@ def load_theory_notes():
                 title = mm.group(1).strip() if mm else ""
             if not title:
                 title = os.path.splitext(fn)[0].replace("_", " ")
+            processed_at = m_entry.get("processed_at") or ""
+            date_added = processed_at[:10] if processed_at else datetime.fromtimestamp(os.path.getmtime(path)).strftime("%Y-%m-%d")
             notes.append({
                 "id": fn,
                 "title": title,
@@ -525,7 +527,7 @@ def load_theory_notes():
                 "system": system,
                 "subtopic": subtopic,
                 "rel": rel_slash,
-                "date_added": datetime.fromtimestamp(os.path.getmtime(path)).strftime("%Y-%m-%d"),
+                "date_added": date_added,
             })
     notes.sort(key=lambda n: (n.get("system") or "", n.get("subtopic") or "", n["title"].lower()))
     return notes
@@ -2141,6 +2143,7 @@ async def render_dashboard(request: Request, response: Response):
         <button class="overlay-close" id="whatsNewClose" title="Close">&times;</button>
       </div>
       <div id="whatsNewMeta" style="padding:0 18px 0;color:var(--ink-muted);font-size:.72rem"></div>
+      <div class="chip-row" id="whatsNewChips" style="padding:6px 18px 2px"></div>
       <div class="related-scroll" id="whatsNewScroll"></div>
     </div>
   </div>
@@ -2463,27 +2466,67 @@ function _wnIsNew(d){{
 }}
 function _wnDateStr(d){{ return d ? String(d).substring(0,10) : ''; }}
 
-function openWhatsNew(){{
-  var papers = [].concat(baseDataset).sort(function(a,b){{ return (b.date_added||'').localeCompare(a.date_added||''); }}).slice(0,12);
-  var notes = [].concat(THEORY_NOTES).sort(function(a,b){{ return (b.date_added||'').localeCompare(a.date_added||''); }}).slice(0,8);
+var _wnFilter = 'all';
+function _wnLatest(arr, n){{
+  return [].concat(arr).sort(function(a,b){{ return (b.date_added||'').localeCompare(a.date_added||''); }}).slice(0,n);
+}}
+function _wnPapers(){{
+  return [].concat(baseDataset).filter(function(a){{ return (a.type||'').toLowerCase()!=='guideline'; }});
+}}
+function _wnGuidelines(){{
+  return [].concat(baseDataset).filter(function(a){{ return (a.type||'').toLowerCase()==='guideline'; }});
+}}
+function renderWhatsNewChips(){{
+  var capped = {{
+    papers: _wnLatest(_wnPapers(), 12).length,
+    guidelines: _wnLatest(_wnGuidelines(), 12).length,
+    theory: _wnLatest(THEORY_NOTES, 8).length
+  }};
+  var counts = {{
+    all: capped.papers + capped.guidelines + capped.theory,
+    papers: capped.papers,
+    guidelines: capped.guidelines,
+    theory: capped.theory
+  }};
+  var defs = [
+    ['all','All',counts.all],
+    ['papers','Papers',counts.papers],
+    ['guidelines','Guidelines',counts.guidelines],
+    ['theory','Theory',counts.theory]
+  ];
+  var box = document.getElementById('whatsNewChips');
+  if(!box) return;
+  box.innerHTML = defs.map(function(d){{
+    return '<button class="chip'+( _wnFilter===d[0]?' active':'')+'" data-wn-filter="'+d[0]+'" style="--chip-color:var(--accent)">'+d[1]+' <span class="chip-count">'+d[2]+'</span></button>';
+  }}).join('');
+}}
+function _wnRow(p, kind){{
+  var v = SPEC_VAR[p.system] || '--spec-other';
+  return '<button class="related-row" data-open-paper="'+p.id+'">'+
+    '<span class="related-row-top">'+
+      '<span class="related-kind">'+kind+'</span>'+
+      '<span class="related-title">'+escapeHtml(p.title)+'</span>'+
+      (_wnIsNew(p.date_added)?'<span class="wn-new">New</span>':'')+
+    '</span>'+
+    '<span class="related-reason"><span class="dot" style="background:var('+v+');display:inline-block;vertical-align:middle"></span> '+escapeHtml(p.system)+' &middot; '+escapeHtml(_wnDateStr(p.date_added))+'</span>'+
+  '</button>';
+}}
+function renderWhatsNew(){{
+  var papers = [], guidelines = [], notes = [];
+  if(_wnFilter==='all' || _wnFilter==='papers') papers = _wnLatest(_wnPapers(), 12);
+  if(_wnFilter==='all' || _wnFilter==='guidelines') guidelines = _wnLatest(_wnGuidelines(), 12);
+  if(_wnFilter==='all' || _wnFilter==='theory') notes = _wnLatest(THEORY_NOTES, 8);
   var html = '';
   if(papers.length){{
-    html += '<div class="related-group-label">Papers &amp; Guidelines</div>';
-    html += papers.map(function(p){{
-      var v = SPEC_VAR[p.system] || '--spec-other';
-      var kind = p.type.toLowerCase()==='guideline' ? 'Guideline' : 'Paper';
-      return '<button class="related-row" data-open-paper="'+p.id+'">'+
-        '<span class="related-row-top">'+
-          '<span class="related-kind">'+kind+'</span>'+
-          '<span class="related-title">'+escapeHtml(p.title)+'</span>'+
-          (_wnIsNew(p.date_added)?'<span class="wn-new">New</span>':'')+
-        '</span>'+
-        '<span class="related-reason"><span class="dot" style="background:var('+v+');display:inline-block;vertical-align:middle"></span> '+escapeHtml(p.system)+' &middot; '+escapeHtml(_wnDateStr(p.date_added))+'</span>'+
-      '</button>';
-    }}).join('');
+    html += '<div class="related-group-label">'+(_wnFilter==='all'?'Latest Papers':'Papers')+'</div>';
+    html += papers.map(function(p){{ return _wnRow(p, 'Paper'); }}).join('');
+  }}
+  if(guidelines.length){{
+    html += '<div class="related-group-label">'+(_wnFilter==='all'?'Latest Guidelines':'Guidelines')+'</div>';
+    html += guidelines.map(function(p){{ return _wnRow(p, 'Guideline'); }}).join('');
   }}
   if(notes.length){{
-    html += '<div class="related-group-label">Theory Topics</div>';
+    html += '<div class="related-group-label">Latest Theory Topics</div>';
     html += notes.map(function(n){{
       return '<button class="related-row" data-theory-note="'+escapeHtml(n.id)+'">'+
         '<span class="related-row-top">'+
@@ -2495,8 +2538,16 @@ function openWhatsNew(){{
       '</button>';
     }}).join('');
   }}
-  document.getElementById('whatsNewScroll').innerHTML = html || '<div class="related-empty"><span class="icon">&#10024;</span><p>Nothing new yet &mdash; check back soon.</p></div>';
+  var emptyText = '<div class="related-empty"><span class="icon">&#10024;</span><p>Nothing new here yet &mdash; check back soon.</p></div>';
+  if(_wnFilter==='papers') emptyText = '<div class="related-empty"><span class="icon">&#10024;</span><p>No new papers yet &mdash; check back soon.</p></div>';
+  if(_wnFilter==='guidelines') emptyText = '<div class="related-empty"><span class="icon">&#10024;</span><p>No new guidelines yet &mdash; check back soon.</p></div>';
+  if(_wnFilter==='theory') emptyText = '<div class="related-empty"><span class="icon">&#10024;</span><p>No new theory topics yet &mdash; check back soon.</p></div>';
+  document.getElementById('whatsNewScroll').innerHTML = html || emptyText;
   document.getElementById('whatsNewMeta').textContent = 'Most recent additions — newest first';
+}}
+function openWhatsNew(){{
+  renderWhatsNewChips();
+  renderWhatsNew();
   document.getElementById('whatsNewOverlay').classList.add('open');
   document.body.classList.add('whatsnew-open');
 }}
@@ -5152,6 +5203,8 @@ if(whatsNewBtn) whatsNewBtn.addEventListener('click', openWhatsNew);
 var whatsNewOverlayEl = document.getElementById('whatsNewOverlay');
 if(whatsNewOverlayEl) whatsNewOverlayEl.addEventListener('click', function(e){{
   if(e.target === whatsNewOverlayEl || e.target.closest('#whatsNewClose')){{ closeWhatsNew(); return; }}
+  var wnChip = e.target.closest('[data-wn-filter]');
+  if(wnChip){{ _wnFilter = wnChip.dataset.wnFilter; renderWhatsNewChips(); renderWhatsNew(); return; }}
   if(e.target.closest('[data-open-paper],[data-open-pearl],[data-theory-note],[data-theory-deck]')){{ closeWhatsNew(); }}
 }});
 

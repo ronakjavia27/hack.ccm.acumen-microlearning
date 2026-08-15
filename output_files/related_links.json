@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-14T15:56:40",
-  "entity_count": 335,
+  "generated_at": "2026-08-15T21:16:38",
+  "entity_count": 347,
   "entities": {
     "deck:Cardiology/Acute Coronary Syndromes": {
       "tags": [],
@@ -14758,209 +14758,6 @@
         }
       ]
     },
-    "theory:Approach to Sudden Onset Sensorimotor Ascending We": {
-      "tags": [
-        "General",
-        "Guillain-Barré syndrome",
-        "spinal cord compression"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Approach to Sudden Onset Sensorimotor Ascending We",
-      "links": [
-        {
-          "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.75,
-          "updated_at": "2026-08-12T09:36:44"
-        },
-        {
-          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.75,
-          "updated_at": "2026-08-12T09:36:44"
-        },
-        {
-          "to": "theory:General/ICU-acquired weakness/Sarcopenia in the ICU_ An Exam-Style Detailed Note.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.65,
-          "updated_at": "2026-08-12T09:36:44"
-        }
-      ]
-    },
-    "theory:CSF Examination Results in Meningitis and Encephal": {
-      "tags": [
-        "General",
-        "CSF analysis",
-        "meningitis"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "CSF Examination Results in Meningitis and Encephal",
-      "links": [
-        {
-          "to": "theory:Approach to Sudden Onset Sensorimotor Ascending We",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-12T09:37:22"
-        },
-        {
-          "to": "theory:Disorders of Consciousness_ Features and Differenc",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-12T09:37:22"
-        },
-        {
-          "to": "theory:Invasive Intracranial Pressure (ICP) Monitoring in",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-12T09:37:22"
-        }
-      ]
-    },
-    "theory:Differential Diagnosis of Colonic Distension in IC": {
-      "tags": [
-        "General",
-        "colonic distension",
-        "mechanical obstruction"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Differential Diagnosis of Colonic Distension in IC",
-      "links": [
-        {
-          "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.75,
-          "updated_at": "2026-08-12T09:37:46"
-        },
-        {
-          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.75,
-          "updated_at": "2026-08-12T09:37:46"
-        },
-        {
-          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.75,
-          "updated_at": "2026-08-12T09:37:46"
-        }
-      ]
-    },
-    "theory:Disorders of Consciousness_ Features and Differenc": {
-      "tags": [
-        "General",
-        "Disorders of Consciousness",
-        "Coma"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Disorders of Consciousness  Features and Differenc",
-      "links": [
-        {
-          "to": "theory:Neurology/Continuous EEG Monitoring/Continuous EEG (cEEG) Monitoring in ICU.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-12T09:37:59"
-        },
-        {
-          "to": "paper:brainsci-16-00813.pdf",
-          "kind": "paper",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-12T09:37:59"
-        },
-        {
-          "to": "paper:pathophysiology_and_prognostic_significance_of.5.pdf",
-          "kind": "paper",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-12T09:37:59"
-        },
-        {
-          "to": "paper:rhythmic_and_periodic_patterns_and_seizures_in.6.pdf",
-          "kind": "paper",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-12T09:37:59"
-        },
-        {
-          "to": "paper:role_of_neurophysiologic_testing_in.4.pdf",
-          "kind": "paper",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-12T09:37:59"
-        },
-        {
-          "to": "paper:fmed-13-1775538.pdf",
-          "kind": "paper",
-          "reason": "complementary",
-          "weight": 0.6,
-          "updated_at": "2026-08-12T09:37:59"
-        }
-      ]
-    },
-    "theory:Invasive Intracranial Pressure (ICP) Monitoring in": {
-      "tags": [
-        "General",
-        "Intracranial pressure monitoring",
-        "External ventricular drainage"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Invasive Intracranial Pressure (ICP) Monitoring in",
-      "links": [
-        {
-          "to": "theory:CSF Examination Results in Meningitis and Encephal",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-12T09:38:15"
-        },
-        {
-          "to": "theory:Disorders of Consciousness_ Features and Differenc",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-12T09:38:15"
-        },
-        {
-          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
-          "kind": "theory",
-          "reason": "shared concept",
-          "weight": 0.75,
-          "updated_at": "2026-08-12T09:38:15"
-        },
-        {
-          "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
-          "kind": "theory",
-          "reason": "background theory",
-          "weight": 0.75,
-          "updated_at": "2026-08-12T09:38:15"
-        }
-      ]
-    },
     "theory:Neurology/Stroke Imaging/ASPECTS.md": {
       "tags": [
         "Stroke Imaging",
@@ -15517,6 +15314,803 @@
           "reason": "guideline recommendation",
           "weight": 0.95,
           "updated_at": "2026-08-14T15:56:40"
+        }
+      ]
+    },
+    "theory:Cardiothoracic/VA ECMO Weaning/VA ECMO Weaning_ Principles, Complications, Failur.md": {
+      "tags": [
+        "Cardiothoracic",
+        "VA ECMO Weaning",
+        "Mechanical Circulatory Support",
+        "Myocardial Recovery"
+      ],
+      "kind": "theory",
+      "system": "Cardiothoracic",
+      "type": "Theory",
+      "subtopic": "VA ECMO Weaning",
+      "title": "VA ECMO Weaning  Principles, Complications, Failur",
+      "links": [
+        {
+          "to": "paper:ethical_challenges_of_extracorporeal_membrane.5.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:15:48"
+        },
+        {
+          "to": "paper:3.5flash_1-s2.0-S1875213626000513.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:15:48"
+        },
+        {
+          "to": "theory:Cardiology/Mechanical Circulatory Support/Mechanical Circulatory Devices in Critical Care.md",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:15:48"
+        },
+        {
+          "to": "paper:jcm-15-04453.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:15:48"
+        },
+        {
+          "to": "paper:medicina-62-01070 (1).pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:15:48"
+        },
+        {
+          "to": "paper:1-s2.0-S2667100X26000320-main.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:15:48"
+        }
+      ]
+    },
+    "theory:Enhanced Recovery After Surgery (ERAS).md": {
+      "tags": [
+        "General",
+        "Perioperative care",
+        "Surgical stress response"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Enhanced Recovery After Surgery (ERAS)",
+      "links": [
+        {
+          "to": "theory:General/Abdominal Compartment Syndrome/Intra-abdominal hypertension (IAH).md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:15:50"
+        },
+        {
+          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
+          "kind": "theory",
+          "reason": "guideline recommendation",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:15:50"
+        },
+        {
+          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:15:50"
+        },
+        {
+          "to": "theory:General/ICU-acquired weakness/Sarcopenia in the ICU_ An Exam-Style Detailed Note.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:15:50"
+        }
+      ]
+    },
+    "theory:Gastroenterology/Acute Colonic Distension/Differential Diagnosis of Colonic Distension in IC.MD": {
+      "tags": [
+        "Acute Colonic Distension",
+        "Acute Abdomen",
+        "Endoscopy in Critical Care",
+        "Motility Disorders",
+        "Mechanical obstruction",
+        "Ogilvie syndrome"
+      ],
+      "kind": "theory",
+      "system": "Gastroenterology",
+      "type": "Theory",
+      "subtopic": "Acute Colonic Distension",
+      "title": "Differential Diagnosis of Colonic Distension in IC",
+      "links": [
+        {
+          "to": "paper:association_between_acute_gastrointestinal_injury.7.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:15:53"
+        },
+        {
+          "to": "paper:NEJMra2506111.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:15:53"
+        },
+        {
+          "to": "paper:the-leaky-gut-and-microbiome-in-critical-illness-emerging.pdf",
+          "kind": "paper",
+          "reason": "background theory",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:15:53"
+        },
+        {
+          "to": "paper:AGA_Clinical_Practice_Update_on_Management_of_Clostridioides_difficile.pdf",
+          "kind": "guideline",
+          "reason": "shared concept",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:15:53"
+        }
+      ]
+    },
+    "theory:General/Abdominal Compartment Syndrome/Intra-abdominal hypertension (IAH).md": {
+      "tags": [
+        "General",
+        "Abdominal Compartment Syndrome",
+        "Intra-abdominal hypertension",
+        "Organ dysfunction"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "Abdominal Compartment Syndrome",
+      "title": "Intra-abdominal hypertension (IAH)",
+      "links": [
+        {
+          "to": "theory:Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:15:55"
+        },
+        {
+          "to": "theory:Transesophageal Echo in Critical Care.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:15:55"
+        },
+        {
+          "to": "theory:General/ICU-acquired weakness/Sarcopenia in the ICU_ An Exam-Style Detailed Note.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:15:55"
+        }
+      ]
+    },
+    "theory:Infectious Diseases/Meningitis CSF Patterns/CSF Examination Results in Meningitis and Encephal.MD": {
+      "tags": [
+        "CNS Infections",
+        "Meningitis CSF Patterns",
+        "Infectious Diseases",
+        "Viral Infections",
+        "CSF analysis",
+        "diagnostic workup"
+      ],
+      "kind": "theory",
+      "system": "Infectious Diseases",
+      "type": "Theory",
+      "subtopic": "Meningitis CSF Patterns",
+      "title": "CSF Examination Results in Meningitis and Encephal",
+      "links": [
+        {
+          "to": "paper:WHO practical manual on meningitis diagnosis.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:15:57"
+        },
+        {
+          "to": "paper:s10571-026-01669-y.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:15:57"
+        },
+        {
+          "to": "paper:1-s2.0-S2667100X26001246-main.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:15:57"
+        },
+        {
+          "to": "paper:mLife - 2026 - Fang - Emerging role of metagenomic next‐generation sequencing in infectious disease diagnostics  Clinical.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:15:57"
+        },
+        {
+          "to": "paper:ofag333.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:15:57"
+        },
+        {
+          "to": "paper:s11908-026-00886-2.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:15:57"
+        }
+      ]
+    },
+    "theory:Neurology/Acute Neuromuscular Weakness/Approach to Sudden Onset Sensorimotor Ascending We.MD": {
+      "tags": [
+        "Acute Neuromuscular Weakness",
+        "Neuromuscular Disorders",
+        "Spine & Spinal Cord Emergencies",
+        "Neurology",
+        "Guillain-Barre Syndrome",
+        "Respiratory Failure"
+      ],
+      "kind": "theory",
+      "system": "Neurology",
+      "type": "Theory",
+      "subtopic": "Acute Neuromuscular Weakness",
+      "title": "Approach to Sudden Onset Sensorimotor Ascending We",
+      "links": [
+        {
+          "to": "theory:Neurology/ICU-Acquired Weakness/Critical Care Neuromyopathy (ICU-Acquired Weakness.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:16:02"
+        },
+        {
+          "to": "paper:Neurological complications in Critical illness.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:02"
+        },
+        {
+          "to": "paper:s00134-026-08490-7.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:02"
+        },
+        {
+          "to": "theory:Neurology/Continuous EEG Monitoring/Continuous EEG (cEEG) Monitoring in ICU.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:02"
+        }
+      ]
+    },
+    "theory:Neurology/Disorders of Consciousness/Disorders of Consciousness_ Features and Differenc.MD": {
+      "tags": [
+        "Disorders of Consciousness",
+        "Neurocritical Care Monitoring",
+        "Neurology",
+        "Coma"
+      ],
+      "kind": "theory",
+      "system": "Neurology",
+      "type": "Theory",
+      "subtopic": "Disorders of Consciousness",
+      "title": "Disorders of Consciousness  Features and Differenc",
+      "links": [
+        {
+          "to": "paper:brainsci-16-00813.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-15T21:16:05"
+        },
+        {
+          "to": "theory:Neurology/Continuous EEG Monitoring/Continuous EEG (cEEG) Monitoring in ICU.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:05"
+        },
+        {
+          "to": "paper:rhythmic_and_periodic_patterns_and_seizures_in.6.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:05"
+        },
+        {
+          "to": "paper:role_of_neurophysiologic_testing_in.4.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:05"
+        }
+      ]
+    },
+    "theory:Neurology/ICP Management/Hyperosmolar Therapy in TBI_ Mannitol vs Hypertoni": {
+      "tags": [
+        "Neurology",
+        "ICP Management",
+        "Raised Intracranial Pressure",
+        "Neurocritical Care Monitoring",
+        "Traumatic Brain Injury",
+        "Hyperosmolar Therapy"
+      ],
+      "kind": "theory",
+      "system": "Neurology",
+      "type": "Theory",
+      "subtopic": "ICP Management",
+      "title": "Hyperosmolar Therapy in TBI  Mannitol vs Hypertoni",
+      "links": [
+        {
+          "to": "theory:Neurology/ICP Monitoring/Invasive Intracranial Pressure (ICP) Monitoring in.MD",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.99,
+          "updated_at": "2026-08-15T21:16:07"
+        },
+        {
+          "to": "paper:current_management_of_traumatic_intracranial.1.pdf",
+          "kind": "paper",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-15T21:16:07"
+        },
+        {
+          "to": "paper:Scan documents20260811_074422 (1).pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:07"
+        },
+        {
+          "to": "paper:1-s2.0-S2772529426002183-main.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:07"
+        },
+        {
+          "to": "theory:Neurology/Transcranial Doppler/Transcranial Doppler (TCD) in the ICU – Exam‑Style",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:07"
+        }
+      ]
+    },
+    "theory:Neurology/ICP Monitoring/Invasive Intracranial Pressure (ICP) Monitoring in.MD": {
+      "tags": [
+        "Neurology",
+        "Neurocritical Care Monitoring",
+        "Raised Intracranial Pressure",
+        "ICP Monitoring",
+        "Traumatic Brain Injury"
+      ],
+      "kind": "theory",
+      "system": "Neurology",
+      "type": "Theory",
+      "subtopic": "ICP Monitoring",
+      "title": "Invasive Intracranial Pressure (ICP) Monitoring in",
+      "links": [
+        {
+          "to": "paper:current_management_of_traumatic_intracranial.1.pdf",
+          "kind": "paper",
+          "reason": "guideline recommendation",
+          "weight": 0.99,
+          "updated_at": "2026-08-15T21:16:09"
+        },
+        {
+          "to": "paper:s12028-023-01752-y (1).pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:09"
+        },
+        {
+          "to": "paper:Scan documents20260811_074422 (1).pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:09"
+        },
+        {
+          "to": "paper:1-s2.0-S2772529426002183-main.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:09"
+        },
+        {
+          "to": "theory:Neurology/Transcranial Doppler/Transcranial Doppler (TCD) in the ICU – Exam‑Style",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:09"
+        },
+        {
+          "to": "paper:s13054-026-05993-z.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:16:09"
+        }
+      ]
+    },
+    "theory:Obstetrics And Gynecology/Pregnancy Associated AKI/PrAKI (Pregnancy-associated Acute Kidney Injury).md": {
+      "tags": [
+        "Pregnancy Associated AKI",
+        "Hypertensive Disorders of Pregnancy",
+        "Obstetric Hemorrhage",
+        "Maternal Sepsis",
+        "HELLP Syndrome",
+        "Obstetric Critical Care"
+      ],
+      "kind": "theory",
+      "system": "Obstetrics And Gynecology",
+      "type": "Theory",
+      "subtopic": "Pregnancy Associated AKI",
+      "title": "PrAKI (Pregnancy-associated Acute Kidney Injury)",
+      "links": [
+        {
+          "to": "paper:Approach-to-investigation-and-management-of-proteinuria-i_2025_Clinical-Medi.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:12"
+        },
+        {
+          "to": "paper:fmed-13-1823590.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:12"
+        },
+        {
+          "to": "paper:1759-7390-87-5-54060.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:12"
+        },
+        {
+          "to": "theory:Obstetrics And Gynecology/Thrombotic Microangiopathy in Pregnancy/Microangiopathic Anemia and Thrombotic Microangiop.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:12"
+        },
+        {
+          "to": "theory:Obstetrics And Gynecology/Maternal and Fetal Monitoring/Monitoring in Pregnancy in ICU During Critical Ill.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:12"
+        }
+      ]
+    },
+    "theory:Pulmonology/Postoperative Respiratory Failure/Perioperative Respiratory Failure and Complication.md": {
+      "tags": [
+        "Postoperative Respiratory Failure",
+        "Acute Respiratory Failure",
+        "Mechanical Ventilation",
+        "Noninvasive Respiratory Support",
+        "Atelectasis",
+        "Perioperative Medicine"
+      ],
+      "kind": "theory",
+      "system": "Pulmonology",
+      "type": "Theory",
+      "subtopic": "Postoperative Respiratory Failure",
+      "title": "Perioperative Respiratory Failure and Complication",
+      "links": [
+        {
+          "to": "paper:s11926-026-01223-1.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:16:14"
+        },
+        {
+          "to": "paper:Noninvasive_Respiratory_Support_for_Adult_Patients_with_Acute_Respiratory.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-15T21:16:14"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582025020199-main.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:14"
+        },
+        {
+          "to": "theory:Pulmonology/ARDS/New Global Definition of ARDS (2023).md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:14"
+        },
+        {
+          "to": "paper:advances_in_achieving_lung_and.7.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:16:14"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:16:14"
+        }
+      ]
+    },
+    "theory:Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat": {
+      "tags": [
+        "General",
+        "Septic cardiomyopathy",
+        "Sepsis"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat",
+      "links": [
+        {
+          "to": "paper:usefulness-of-bedside-point-of-care-ultrasounds-in-intensive.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:16:16"
+        },
+        {
+          "to": "theory:Transesophageal Echo in Critical Care.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-15T21:16:16"
+        },
+        {
+          "to": "theory:Sepsis/Biomarkers/Biomarkers of Sepsis_ Old and New.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:16:16"
+        },
+        {
+          "to": "theory:Nephrology/AKI Care Bundle/AKI Care Bundle — Structured Elaboration for ICU P.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:16:16"
+        },
+        {
+          "to": "paper:fcimb-16-1823125.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.6,
+          "updated_at": "2026-08-15T21:16:16"
+        }
+      ]
+    },
+    "theory:Transesophageal Echo in Critical Care.md": {
+      "tags": [
+        "General",
+        "Transesophageal echocardiography",
+        "Critical care"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Transesophageal Echo in Critical Care",
+      "links": [
+        {
+          "to": "theory:Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-15T21:16:18"
+        },
+        {
+          "to": "deck:Cardiology/General",
+          "kind": "flashcard_deck",
+          "reason": "shared concept",
+          "weight": 0.7,
+          "updated_at": "2026-08-15T21:16:18"
+        }
+      ]
+    },
+    "theory:Trauma/Pelvic Trauma/Management of Pelvic Trauma in ER and ICU.md": {
+      "tags": [
+        "Pelvic Trauma",
+        "Hemorrhage",
+        "Damage Control Resuscitation",
+        "Trauma Imaging",
+        "Pelvic Ring Fracture"
+      ],
+      "kind": "theory",
+      "system": "Trauma",
+      "type": "Theory",
+      "subtopic": "Pelvic Trauma",
+      "title": "Management of Pelvic Trauma in ER and ICU",
+      "links": [
+        {
+          "to": "paper:s00330-026-12440-8.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-15T21:16:21"
+        },
+        {
+          "to": "theory:Trauma/Trauma Induced Coagulopathy/TIC.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:16:21"
+        },
+        {
+          "to": "paper:s40140-026-00715-1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:16:21"
+        },
+        {
+          "to": "theory:Trauma/eFAST Ultrasound/Role of POCUS in Trauma_ A Comprehensive Overview.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:21"
+        }
+      ]
+    },
+    "theory:Trauma/Trauma Induced Coagulopathy/TIC.md": {
+      "tags": [
+        "Trauma Induced Coagulopathy",
+        "Trauma Coagulopathy",
+        "Hemorrhage",
+        "Trauma",
+        "Endothelial activation",
+        "Hyperfibrinolysis"
+      ],
+      "kind": "theory",
+      "system": "Trauma",
+      "type": "Theory",
+      "subtopic": "Trauma Induced Coagulopathy",
+      "title": "TIC",
+      "links": [
+        {
+          "to": "paper:PIIS1538783626003260.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-15T21:16:24"
+        },
+        {
+          "to": "paper:s40140-026-00715-1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:16:24"
+        },
+        {
+          "to": "paper:prophylaxis_of_venous_thromboembolism_in_trauma_.2.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:24"
+        }
+      ]
+    },
+    "theory:Trauma/Trauma Patient Transfer/Transfer of a Trauma Patient – Short Note.md": {
+      "tags": [
+        "Trauma Patient Transfer",
+        "Trauma",
+        "Polytrauma",
+        "Damage Control Resuscitation",
+        "Interhospital transport",
+        "Stabilization"
+      ],
+      "kind": "theory",
+      "system": "Trauma",
+      "type": "Theory",
+      "subtopic": "Trauma Patient Transfer",
+      "title": "Transfer of a Trauma Patient – Short Note",
+      "links": [
+        {
+          "to": "theory:Trauma/Pelvic Trauma/Management of Pelvic Trauma in ER and ICU.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-15T21:16:26"
+        },
+        {
+          "to": "paper:s00330-026-12440-8.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:26"
+        },
+        {
+          "to": "theory:Trauma/eFAST Ultrasound/Role of POCUS in Trauma_ A Comprehensive Overview.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:26"
+        },
+        {
+          "to": "theory:Trauma/Spinal Cord Injury/Traumatic Spinal Cord Injury_ ICU Diagnosis, Scori.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:26"
+        }
+      ]
+    },
+    "theory:Trauma/eFAST Ultrasound/Role of POCUS in Trauma_ A Comprehensive Overview.md": {
+      "tags": [],
+      "kind": "theory",
+      "system": "Trauma",
+      "type": "Theory",
+      "subtopic": "eFAST Ultrasound",
+      "title": "Role of POCUS in Trauma  A Comprehensive Overview",
+      "links": [
+        {
+          "to": "paper:s00330-026-12440-8.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:38"
+        },
+        {
+          "to": "theory:Trauma/Pelvic Trauma/Management of Pelvic Trauma in ER and ICU.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:38"
+        },
+        {
+          "to": "paper:s00508-026-02771-3.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:38"
+        },
+        {
+          "to": "paper:s40140-026-00715-1.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:38"
+        },
+        {
+          "to": "theory:Trauma/Trauma Patient Transfer/Transfer of a Trauma Patient – Short Note.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-15T21:16:38"
         }
       ]
     }
