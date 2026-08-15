@@ -1,0 +1,118 @@
+{
+  "id": "troubleshooting-ionized-hypocalcemia-ckrt-rca-2026",
+  "doc_type": "article",
+  "article_subtype": "Other",
+  "title": "Troubleshooting Ionized Hypocalcemia in Patients on Continuous KRT with Regional Citrate Anticoagulation",
+  "authors": "Lenar Yessayan et al.",
+  "journal": "Kidney360",
+  "year": 2026,
+  "doi": "10.34067/KID.0000001053",
+  "specialty": [
+    "nephrology",
+    "pharmacology"
+  ],
+  "tags": [
+    "crrt",
+    "ckrt",
+    "regional citrate anticoagulation",
+    "ionized hypocalcemia",
+    "citrate toxicity",
+    "tca/ica ratio",
+    "calcium loss"
+  ],
+  "one_line_summary": "Provides a practical diagnostic and kinetic framework for evaluating and troubleshooting acute ionized hypocalcemia caused by systemic citrate accumulation or net calcium loss during continuous kidney replacement therapy with regional citrate anticoagulation.",
+  "key_pearls": [
+    "A **total calcium to ionized calcium (tCa/iCa) ratio >= 2.5** (both measured in **mmol/L**) indicates **significant** systemic citrate accumulation, roughly corresponding to a systemic plasma citrate level **>= 2 mmol/L**.",
+    "Acute ionized hypocalcemia during **CKRT-RCA** arises from two distinct mechanisms: systemic citrate accumulation (exceeding metabolic capacity) or net plasma calcium loss (effluent losses/tissue sequestration exceeding replacement).",
+    "In patients with absent hepatic citrate metabolism (e.g., **shock liver**, **severe hyperlactatemia**, **cirrhosis**), systemic citrate toxicity can be attenuated by increasing single-pass filter extraction ($E_{cit}$) to **>= 70%** by decreasing blood flow ($Q_b$) and increasing effluent rate ($Q_{eff}$) to achieve $Q_{eff}/Q_b >= 2/3$.",
+    "Accidental connection of the calcium replacement infusion into the access (intake) line instead of the return line presents with persistent systemic hypocalcemia, escalating calcium replacement requirements, and a characteristic circuit **iCa >0.5 mmol/L**.",
+    "Non-CKRT causes of net calcium loss during RCA include rapid tissue sequestration from **acute pancreatitis**, **rhabdomyolysis**, **tumor lysis syndrome**, post-parathyroidectomy **hungry bone syndrome**, and recent **denosumab** therapy.",
+    "Replacing effluent calcium losses requires approximately **1.6 to 2.0 mmol** of elemental calcium per liter of effluent in patients without severe citrate accumulation."
+  ],
+  "evidence_level": "narrative_review",
+  "sample_size": null,
+  "population": null,
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Mechanism of Action of Citrate and Circuit Dosing",
+      "content": "- Citrate chelates ionized calcium (**iCa**) in the access line, disrupting the coagulation cascade to prevent circuit clotting.\n- Filter clearance removes a portion of citrate-calcium complexes into the effluent, while the remaining post-filter citrate enters systemic circulation and is metabolized to bicarbonate in the **liver**, **skeletal muscle**, and **kidneys**.\n- The starting citrate dose ranges from **3 to 6 mmol/L** of blood entering the circuit, titrated by nursing to maintain post-filter circuit **iCa <0.4 mmol/L**.\n- Initial citrate infusion rate ($L/h$) is calculated as: $Citrate\\ rate = (Citrate\\ dose \\times Q_b) / [Citrate]_{sol}$, where $Q_b$ is blood flow ($L/h$) and $[Citrate]_{sol}$ is the formulation concentration ($mmol/L$).\n- Common commercial formulations include **ACDA** (**113 mmol/L** total citrate), **Trisodium Citrate 4%** (**136 mmol/L** citrate), and **Prismocitrate 18/0** (**18 mmol/L** citrate).",
+      "section_pearls": [
+        "Circuit **iCa** target is **<0.4 mmol/L** to ensure effective regional anticoagulation.",
+        "Commercially available citrate solutions differ substantially in sodium, citrate, and dextrose concentrations."
+      ]
+    },
+    {
+      "order": 2,
+      "heading": "Systemic Citrate Accumulation: Diagnosis and Mechanics",
+      "content": "- Systemic citrate accumulation occurs when post-filter citrate return exceeds metabolic clearance, leading to accumulation of citrate-calcium complexes, falling systemic **iCa**, rising total calcium (**tCa**) from replacement, and an elevated **tCa/iCa ratio >= 2.5**.\n- A **tCa/iCa ratio >= 2.5** reflects systemic plasma citrate levels **>= 2 mmol/L** and correlates with increased **mortality**.\n- **Albumin lock**: Very high serum albumin levels (**>6 g/dL**) can elevate **tCa/iCa ratio** to **2.5-3.0** without true citrate accumulation due to increased albumin-bound calcium; conversely, in hypoalbuminemia, a ratio **>= 2.5** unequivocally confirms citrate accumulation.\n- Severe citrate toxicity manifests clinically as refractory **hypotension**, **cardiac arrhythmias**, **ionized hypomagnesemia**, and **seizures**.",
+      "section_pearls": [
+        "A **tCa/iCa ratio >= 2.5** is the primary diagnostic marker for systemic citrate accumulation.",
+        "Hyperalbuminemia (**>6 g/dL**) can cause a false-positive **tCa/iCa ratio >= 2.5** via increased albumin binding rather than citrate excess."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Causes and Management of Systemic Citrate Accumulation",
+      "content": "- **Circuit setup errors**: Inadvertent placement of citrate bags on replacement/dialysate scales or connecting citrate lines to the circuit return line bypasses first-pass filter extraction, causing massive direct citrate administration (e.g., up to **136 mmol/h**).\n- **Impaired citrate metabolism**: Primary physiological drivers include **septic shock**, **cardiogenic shock** with elevated lactate, **shock liver** (elevated AST/ALT), and **advanced cirrhosis** (elevated INR).\n- **Kinetic manipulation to lower citrate load**: Single-pass filter citrate extraction ($E_{cit}$) must be increased to **>= 70%** in patients with absent hepatic clearance.\n- Increasing $E_{cit}$ is achieved by reducing blood flow ($Q_b$) to **100 mL/min** and increasing effluent rate ($Q_{eff}$) until $Q_{eff}/Q_b >= 2/3$, dropping post-filter citrate return to **<2 mmol/L** without stopping anticoagulation.\n- Independent dual-provider checks after circuit setup or reconnection are **critical** to prevent line placement mix-ups.",
+      "section_pearls": [
+        "Target a single-pass filter citrate extraction ratio ($E_{cit}$) **>= 70%** when operating RCA in patients with severely impaired hepatic clearance.",
+        "Always trace citrate and calcium infusion lines to their connection points when hypocalcemia or citrate accumulation occurs."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Net Calcium Loss: Inadequate Supplementation and Delivery Errors",
+      "content": "- Net calcium loss causes concurrent drops in both systemic **tCa** and **iCa** with a normal **tCa/iCa ratio <2.5**.\n- Effluent calcium losses average **1.6 to 2.0 mmol** per liter of effluent in standard operating conditions.\n- Required calcium infusion rate ($mL/h$) is estimated by: $[tCa]_{Eff} \\times Q_{Eff} / [Ca^{2+}]_{sol}$.\n- **Compounding/dispensing errors**: Using solutions with reduced calcium molarity or accidentally infusing plain normal saline instead of calcium solution causes rapid systemic calcium depletion of **1.6-2.0 mmol/h** per liter of effluent.\n- **Access line misconnection**: Infusing calcium into the circuit access line instead of the return line produces low systemic **iCa**, high calcium requirement, and an elevated circuit **iCa >0.5 mmol/L**.\n- **Pump programming errors**: Entering replacement rates in **mg/h** instead of **mL/h** on external pumps can reduce delivered calcium to **5%** of the intended dose.",
+      "section_pearls": [
+        "Elevated circuit **iCa >0.5 mmol/L** combined with refractory systemic hypocalcemia strongly suggests calcium replacement is erroneously infusing into the circuit access line.",
+        "Programming external calcium pumps in mg/h instead of mL/h causes severe under-dosing."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Net Calcium Loss: Tissue Deposition and Specific Etiologies",
+      "content": "- Tissue calcium sequestration occurs independently of the CKRT circuit in conditions such as **acute pancreatitis** (free fatty acid saponification), **rhabdomyolysis**, and **tumor lysis syndrome** (calcium-phosphate precipitation).\n- **Hungry bone syndrome**: Post-parathyroidectomy shifts bone kinetics toward osteoblast mineralization, causing rapid calcium deposition into bone matrix.\n- **Denosumab exposure**: Antiresorptive therapy in end-stage kidney disease/dialysis patients creates a high risk of prolonged severe hypocalcemia, with a 12-week cumulative incidence of **41%** in dialysis-dependent women >65 years.\n- **Severe hyperphosphatemia management**: Avoid aggressive acute intravenous calcium titration in hyperphosphatemic hypocalcemic patients at CRRT initiation to prevent metastatic tissue calcification; allow systemic phosphate levels to clear over **24 to 48 hours** using phosphate-free CKRT solutions.",
+      "section_pearls": [
+        "Denosumab carries a **41%** 12-week incidence of severe hypocalcemia in female dialysis patients aged >65 years.",
+        "Avoid aggressive calcium replacement in severe hyperphosphatemia to prevent vascular and tissue metastatic calcification."
+      ]
+    }
+  ],
+  "strengths_limitations": "- Strengths: Provides rigorous quantitative kinetic equations for calculating citrate extraction and calcium replacement rates; includes a comprehensive diagnostic algorithm for troubleshooting bedside protocol failures.\n- Limitations: Focuses on physiological models and kinetic estimations rather than randomized comparative protocol trial data; relies on local institutional availability of specific citrate formulations and kinetic modeling.",
+  "drugs_doses": [
+    {
+      "drug": "trisodium citrate",
+      "dose": "Initial dose 3-6 mmol/L of blood entering circuit; titrated to circuit iCa <0.4 mmol/L",
+      "indication": "Regional citrate anticoagulation (RCA) during CKRT",
+      "adverse_effects": "Systemic citrate accumulation, acute ionized hypocalcemia, ionized hypomagnesemia, metabolic alkalosis"
+    },
+    {
+      "drug": "acid citrate dextrose A",
+      "dose": "Infused pre-filter into access line at 3-5 mmol citrate per liter of blood; solution contains 113 mmol/L total citrate",
+      "indication": "Regional citrate anticoagulation during CKRT",
+      "adverse_effects": "Citrate toxicity, systemic hypocalcemia, hypernatremia, hyperglycemia"
+    },
+    {
+      "drug": "calcium chloride",
+      "dose": "Infused into circuit return line or central vein; initial rate tailored to replace 1.6-2.0 mmol Ca per liter of effluent; prepared using 10% solution (6.8 mmol Ca per 10 mL ampule)",
+      "indication": "Systemic calcium replacement during CKRT-RCA",
+      "adverse_effects": "Hypercalcemia, tissue necrosis on extravasation, severe hypocalcemia if delivery pump misprogrammed"
+    },
+    {
+      "drug": "calcium gluconate",
+      "dose": "Infused into circuit return line or central vein; prepared using 10% solution (2.2 mmol Ca per 10 mL ampule)",
+      "indication": "Systemic calcium replacement during CKRT-RCA",
+      "adverse_effects": "Hypercalcemia, inadequate replacement if under-dosed due to lower molar calcium density compared to calcium chloride"
+    },
+    {
+      "drug": "denosumab",
+      "dose": "60 mg subcutaneously every 6 months (per standard clinical dosing)",
+      "indication": "Osteoporosis treatment in patients with renal impairment or on dialysis",
+      "adverse_effects": "Severe, prolonged, refractory systemic hypocalcemia"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-03-30",
+  "subtopic": "Renal Replacement Therapy"
+}

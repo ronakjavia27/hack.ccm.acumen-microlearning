@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-12T09:47:27",
-  "entity_count": 329,
+  "generated_at": "2026-08-14T15:56:40",
+  "entity_count": 335,
   "entities": {
     "deck:Cardiology/Acute Coronary Syndromes": {
       "tags": [],
@@ -15253,6 +15253,270 @@
           "reason": "same topic",
           "weight": 0.75,
           "updated_at": "2026-08-12T09:45:42"
+        }
+      ]
+    },
+    "paper:1786588708154.pdf": {
+      "tags": [
+        "Fungal Infections",
+        "Endemic Mycoses",
+        "Antifungal Agents"
+      ],
+      "kind": "paper",
+      "system": "Infectious Diseases",
+      "type": "Review",
+      "subtopic": "Fungal Infections",
+      "title": "Novel antifungal agents for treating endemic mycoses: hope on the horizon?",
+      "links": [
+        {
+          "to": "paper:MYC-68-e70132.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-14T15:56:21"
+        },
+        {
+          "to": "paper:mLife - 2026 - Fang - Emerging role of metagenomic next‐generation sequencing in infectious disease diagnostics  Clinical.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-14T15:56:21"
+        }
+      ]
+    },
+    "paper:Eur J Clin Investigation - 2026 - Golino - Acute Myocarditis  From Pathophysiology to Risk‐Stratified Management A Clinical.pdf": {
+      "tags": [
+        "Cardiac Imaging",
+        "Acute Heart Failure",
+        "Cardiogenic Shock",
+        "Myocarditis",
+        "Immunosuppressive Therapy"
+      ],
+      "kind": "paper",
+      "system": "Cardiology",
+      "type": "Other",
+      "subtopic": "Cardiac Imaging",
+      "title": "Acute Myocarditis: From Pathophysiology to Risk-Stratified Management—A Clinical Review",
+      "links": [
+        {
+          "to": "paper:zuaf057.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.99,
+          "updated_at": "2026-08-14T15:56:23"
+        },
+        {
+          "to": "paper:s10741-026-10654-y.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-14T15:56:23"
+        },
+        {
+          "to": "paper:3.5flash_1-s2.0-S1875213626000513.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:23"
+        },
+        {
+          "to": "paper:peverelli-et-al-2026-large-vessel-vasculitis-revisited-mechanistic-insights-and-advances-in-diagnosis-and-management.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:23"
+        },
+        {
+          "to": "paper:2153-8174-27-7-49773.pdf",
+          "kind": "paper",
+          "reason": "background theory",
+          "weight": 0.85,
+          "updated_at": "2026-08-14T15:56:23"
+        }
+      ]
+    },
+    "paper:batchelor-et-al-2026-the-postcardiac-arrest-inflammatory-response-mechanisms-and-therapeutic-targets.pdf": {
+      "tags": [
+        "Cardiac Arrest & Post-Cardiac Arrest Care",
+        "Hemodynamic Monitoring",
+        "Systemic Inflammation",
+        "Postcardiac Arrest Syndrome"
+      ],
+      "kind": "paper",
+      "system": "Cardiology",
+      "type": "Other",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care",
+      "title": "The Postcardiac Arrest Inflammatory Response: Mechanisms and Therapeutic Targets",
+      "links": [
+        {
+          "to": "deck:Cardiology/Cardiac Arrest & Post-Cardiac Arrest Care",
+          "kind": "flashcard_deck",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-14T15:56:26"
+        },
+        {
+          "to": "paper:acc-003425.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:26"
+        },
+        {
+          "to": "deck:Cardiology/Cardiogenic Shock",
+          "kind": "flashcard_deck",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:26"
+        },
+        {
+          "to": "paper:diagnostic_and_prognostic_value_of_the_venous.875.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:26"
+        },
+        {
+          "to": "deck:Cardiology/Hemodynamic Monitoring",
+          "kind": "flashcard_deck",
+          "reason": "background theory",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:26"
+        },
+        {
+          "to": "paper:jcm-15-05811-v2.pdf",
+          "kind": "paper",
+          "reason": "background theory",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:26"
+        }
+      ]
+    },
+    "paper:fcvm-13-1846208.pdf": {
+      "tags": [
+        "Acute Coronary Syndromes",
+        "Anticoagulant reversal",
+        "Major hemorrhage"
+      ],
+      "kind": "paper",
+      "system": "Cardiology",
+      "type": "Other",
+      "subtopic": "Acute Coronary Syndromes",
+      "title": "From empirical hemostasis to precision reversal: clinical challenges, technological innovations, and individualized strategies in anticoagulant-associated bleeding",
+      "links": [
+        {
+          "to": "paper:jcm-15-05729.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:29"
+        },
+        {
+          "to": "paper:kumbhani-et-al-2026-antiplatelet-therapy-in-the-management-of-atherosclerotic-cardiovascular-disease-2026-acc.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-14T15:56:29"
+        },
+        {
+          "to": "paper:1-s2.0-S1053077026000546-main.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.65,
+          "updated_at": "2026-08-14T15:56:29"
+        },
+        {
+          "to": "paper:acc-003425.pdf",
+          "kind": "paper",
+          "reason": "background theory",
+          "weight": 0.65,
+          "updated_at": "2026-08-14T15:56:29"
+        }
+      ]
+    },
+    "paper:troubleshooting-ionized-hypocalcemia-in-patients-on.pdf": {
+      "tags": [
+        "Renal Replacement Therapy",
+        "Electrolyte Disorders",
+        "Acute Kidney Injury",
+        "Regional Citrate Anticoagulation",
+        "Ionized Hypocalcemia"
+      ],
+      "kind": "paper",
+      "system": "Nephrology",
+      "type": "Other",
+      "subtopic": "Renal Replacement Therapy",
+      "title": "Troubleshooting Ionized Hypocalcemia in Patients on Continuous KRT with Regional Citrate Anticoagulation",
+      "links": [
+        {
+          "to": "paper:s13054-026-06066-x.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-14T15:56:37"
+        },
+        {
+          "to": "theory:Nephrology/CRRT Anticoagulation/Anticoagulation During CRRT_ Exam-Style Notes.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:37"
+        },
+        {
+          "to": "paper:Nephrology - 2025 - Bangera - The Kidney and Extracorporeal Therapies in Acute‐on‐Chronic Liver Failure  What the.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-14T15:56:37"
+        },
+        {
+          "to": "paper:WJN-15-118309.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-14T15:56:37"
+        }
+      ]
+    },
+    "paper:zuae014.pdf": {
+      "tags": [
+        "Acute Coronary Syndromes",
+        "Periprocedural myocardial injury",
+        "Myocardial infarction"
+      ],
+      "kind": "paper",
+      "system": "Cardiology",
+      "type": "Other",
+      "subtopic": "Acute Coronary Syndromes",
+      "title": "Periprocedural myocardial infarction and injury",
+      "links": [
+        {
+          "to": "deck:Cardiology/Acute Coronary Syndromes",
+          "kind": "flashcard_deck",
+          "reason": "shared concept",
+          "weight": 0.85,
+          "updated_at": "2026-08-14T15:56:40"
+        },
+        {
+          "to": "paper:jcm-15-05729.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-14T15:56:40"
+        },
+        {
+          "to": "paper:1-s2.0-S1053077026000546-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-14T15:56:40"
+        },
+        {
+          "to": "paper:kumbhani-et-al-2026-antiplatelet-therapy-in-the-management-of-atherosclerotic-cardiovascular-disease-2026-acc.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-14T15:56:40"
         }
       ]
     }
