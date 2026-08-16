@@ -148,12 +148,17 @@ def summaries_entities():
 
 
 def theory_entities():
-    """Theory notes under output_files/Theory MDs/{System}/{Subtopic}/."""
+    """Theory notes under output_files/Theory MDs/{System}/{Subtopic}/.
+
+    The reserved BOOKS/ subfolder (chaptered books) is skipped — books are
+    excluded from cross-linking.
+    """
     if not os.path.isdir(THEORY_MDS_DIR):
         return []
     out = []
     for root, dirs, fnames in os.walk(THEORY_MDS_DIR):
         dirs[:] = [d for d in dirs if not d.startswith(".")]
+        dirs[:] = [d for d in dirs if d.upper() != "BOOKS"]
         for fn in sorted(fnames):
             if fn == "theory_notes_meta.json":
                 continue

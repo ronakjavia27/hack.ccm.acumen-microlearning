@@ -149,6 +149,8 @@ def scan_notes(theory_dir):
     out = []
     for root, dirs, files in os.walk(theory_dir):
         dirs[:] = [d for d in dirs if not d.startswith(".")]
+        # Reserved BOOKS/ subfolder holds chaptered books — never classify them
+        dirs[:] = [d for d in dirs if d.upper() != "BOOKS"]
         if root == theory_dir:
             files = [f for f in files if f != "theory_notes_meta.json"]
         for fn in sorted(files):

@@ -121,6 +121,8 @@ FLASHCARDS_INPUT_DIR = os.path.join(PROJECT_DIR, "flashcards_input")  # ONLY inp
 FLASHCARDS_LEDGER_FILE = os.path.join(PROJECT_DIR, "flashcards_ledger.json")
 FLASHCARDS_INDEX_FILE = os.path.join(OUTPUT_DIR, "flashcards_index.json")   # derived master index
 THEORY_MDS_DIR = os.path.join(OUTPUT_DIR, "Theory MDs")                     # theory notes rendered by portal
+THEORY_BOOKS_DIR = os.path.join(THEORY_MDS_DIR, "BOOKS")                     # chaptered "book" notes live here (excluded from classification)
+THEORY_BOOKS_FOLDER = "BOOKS"                                                # reserved subfolder name for chaptered books
 THEORY_PROCESSED_DIR = os.getenv("THEORY_PROCESSED_DIR", "C:/RONAK/AI Projects/ACUMEN/THEORY/processed")  # theory notes for flashcards.py theory
 
 # THEORY folder abbreviations -> canonical subtopic-vocab system(s)

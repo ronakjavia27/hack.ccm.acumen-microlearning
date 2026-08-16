@@ -86,14 +86,16 @@ RV assessment is **challenging** due to its complex geometry (triangular inlet, 
 
 ### **Core RV Functional Parameters** (Applicable to Both TTE and TEE)
 
-| Parameter | Normal Value | Mild Dysfunction | Moderate Dysfunction | Severe Dysfunction | Measurement View | Notes |
-| :-- | :-- | :-- | :-- | :-- | :-- | :-- |
-| **TAPSE** (mm) | ≥17 | 14–17 | 10–13 | <10 | A4C (TTE) / ME 4-chamber (TEE) | Longitudinal function; angle-dependent; load-sensitive |
-| **RV S′** (cm/s) | >9.5 | 9–11 | 6–8 | <6 | TDI at lateral tricuspid annulus (A4C/ME 4-chamber) | Less load-dependent than TAPSE; correlates with RVEF |
-| **RV FAC** (%) | ≥35 (men ≥30, women ≥35) | 34–37 | 30–33 | <30 | A4C (TTE) / ME 4-chamber or TG SAX (TEE) | Global systolic function; requires good endocardial definition |
-| **RV Free Wall Strain** (%) | >−20 (more negative = better) | −18 to −21 | −14 to −17 | >−14 | A4C (TTE) / ME 4-chamber (TEE) | Sensitive to early RV dysfunction; afterload-sensitive |
-| **3D RVEF** (%) | >50 | 45–50 | 35–45 | <35 | 3D echo (TTE/TEE) | Gold standard if available; requires good image quality |
-| **TAPSE/PASP** (mm/mmHg) | >0.55 | 0.41–0.55 | 0.30–0.40 | <0.30 | A4C + TR jet (TTE/TEE) | RV-PA coupling; prognostic in PH, PE, ARDS |
+
+| Parameter               | Normal Value (TTE)            | Normal Value (TEE)            | Mild Dysfunction | Moderate Dysfunction | Severe Dysfunction | Measurement View                                                                | Key Caveats                                                                                                                                                  |
+| ----------------------- | ----------------------------- | ----------------------------- | ---------------- | -------------------- | ------------------ | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| TAPSE (mm)              | ≥17 (TTE)                     | ≥16 (TEE; ME 4-chamber)       | 14–16            | 10–13                | <10                | TTE: A4C (lateral annulus)TEE: ME 4-chamber (lateral annulus) or TG RV inflow   | TTE and TEE values are NOT interchangeable; TEE may underestimate TAPSE by 1–2 mm pubmed.ncbi.nlm.nih+1; angle-dependent; load-sensitive                     |
+| RV S′ (cm/s)            | >9.5 (TTE)                    | >10–11 (TEE; higher than TTE) | 8–9.5            | 6–8                  | <6                 | TTE: A4C (lateral tricuspid annulus TDI)TEE: ME 4-chamber (lateral annulus TDI) | TEE S′ is systematically HIGHER than TTE (by ~2–3 cm/s) due to different annular segments imaged; poor interchangeability (CCC 0.07–0.33) pmc.ncbi.nlm.nih+3 |
+| RV FAC (%)              | ≥35 (men ≥30, women ≥35)      | ≥35 (similar to TTE)          | 30–34            | 25–29                | <25                | TTE: A4CTEE: ME 4-chamber or TG mid-papillary SAX                               | Best agreement between TTE and TEE (CCC 0.76–0.85); less angle-dependent; requires good endocardial definition pubmed.ncbi.nlm.nih+2                         |
+| RV Free Wall Strain (%) | <−20 (more negative = better) | <−20 (similar to TTE)         | −18 to −20       | −14 to −17           | >−14               | TTE: A4C (RV free wall)TEE: ME 4-chamber (RV free wall)                         | Good interchangeability between TTE and TEE; most accurate echo parameter for RV systolic function (AUC 0.69–0.78 vs MRI) link.springer+2                    |
+| 3D RVEF (%)             | >50 (TTE)                     | >45–50 (TEE)                  | 45–50            | 35–45                | <35                | TTE: 3D RV-focused A4CTEE: 3D ME 4-chamber or TG SAX                            | Gold standard if available; TTE and TEE values are similar but not perfectly interchangeable; requires good image quality link.springer                      |
+| TAPSE/PASP (mm/mmHg)    | >0.55                         | >0.55 (similar to TTE)        | 0.41–0.55        | 0.30–0.40            | <0.30              | TTE: A4C + TR jetTEE: ME 4-chamber + TR jet (ME RV inflow-outflow)              | RV-PA coupling index; prognostic in PH, PE, ARDS; TTE and TEE values are interchangeable if PASP measured accurately pmc.ncbi.nlm.nih+1                      |
+| RIMP (RV MPI)           | <0.43 (TTE)                   | <0.50 (TEE; higher cutoff)    | 0.43–0.50        | 0.51–0.60            | >0.60              | TTE: A4C (TDI or Doppler)TEE: ME 4-chamber or TG RV inflow                      | TEE and TTE values are NOT interchangeable; TEE RIMP tends to be higher; moderate agreement (CCC 0.45) pmc.ncbi.nlm.nih+1                                    |
 
 [^1_13][^1_16][^1_17][^1_18][^1_19][^1_14][^1_20][^1_21][^1_22]
 

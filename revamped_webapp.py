@@ -504,8 +504,12 @@ def load_theory_notes():
             rel = os.path.relpath(path, base)
             rel_slash = rel.replace(os.sep, "/")
             m_entry = meta.get(rel_slash) or {}
-            # folder-derived taxonomy (ground truth = folder structure)
+            # folder-derived taxonomy (ground truth = folder structure).
+            # The reserved BOOKS/ subfolder holds chaptered books — treat it as
+            # flat root so books don't show up as a "BOOKS" specialty.
             parts = rel.split(os.sep)
+            if len(parts) > 1 and parts[0].upper() == "BOOKS":
+                parts = parts[1:]
             system = m_entry.get("system") or (parts[0] if len(parts) > 1 else "General")
             subtopic = m_entry.get("subtopic") or (parts[1] if len(parts) > 1 else "General")
             # title: manifest > first heading (any level, after any leading img) > cleaned filename
@@ -520,6 +524,11 @@ def load_theory_notes():
                 title = os.path.splitext(fn)[0].replace("_", " ")
             processed_at = m_entry.get("processed_at") or ""
             date_added = processed_at[:10] if processed_at else datetime.fromtimestamp(os.path.getmtime(path)).strftime("%Y-%m-%d")
+            # book detection: a note is a chaptered "book" when it contains
+            # "## Chapter N:" headings (structural — future chaptered notes
+            # automatically get the Books hero card + chapter reader)
+            chapter_count = len(re.findall(r"^\s*##\s+Chapter\s+\d+", md_in, re.M))
+            section_count = len(re.findall(r"^\s*#\s+(?:SECTION\s+\d+|MASTER\s+VIVA)", md_in, re.M))
             notes.append({
                 "id": fn,
                 "title": title,
@@ -528,6 +537,9 @@ def load_theory_notes():
                 "subtopic": subtopic,
                 "rel": rel_slash,
                 "date_added": date_added,
+                "book": bool(chapter_count),
+                "chapter_count": chapter_count,
+                "section_count": section_count,
             })
     notes.sort(key=lambda n: (n.get("system") or "", n.get("subtopic") or "", n["title"].lower()))
     return notes
@@ -850,6 +862,23 @@ async def render_dashboard(request: Request, response: Response):
     flashcard_decks_js = json.dumps(flashcard_decks)
     theory_notes_js = json.dumps(theory_notes)
     theory_total_cards = sum(len(d["cards"]) for d in flashcard_decks)
+    theory_books = [n for n in theory_notes if n.get("book")]
+    theory_books_js = json.dumps(theory_books)
+    if theory_books:
+        theory_total_chapters = sum(n.get("chapter_count", 0) for n in theory_books)
+        theory_total_sections = sum(n.get("section_count", 0) for n in theory_books)
+        theory_book_card_html = (
+            '<div class="card" data-theory-mode-view="book" role="button" tabindex="0">'
+            '<div class="stripe" style="background:var(--accent)"></div>'
+            '<div class="card-body">'
+            '<div class="eyebrow">Chaptered books</div>'
+            '<h3>Chaptered Books</h3>'
+            f'<p>{len(theory_books)} book{"s" if len(theory_books) != 1 else ""}, '
+            f'{theory_total_sections} sections, {theory_total_chapters} chapters &mdash; read section by section.</p>'
+            '</div></div>'
+        )
+    else:
+        theory_book_card_html = ""
     theory_subtopic_map = {}
     for d in flashcard_decks:
         for t in d.get("subtopics") or []:
@@ -1391,6 +1420,27 @@ async def render_dashboard(request: Request, response: Response):
     .theory-note-head .notes-actions-row{{ margin-left:auto; }}
   }}
 
+  /* ===== CHAPTERED BOOKS ===== */
+  .book-bar-label{{ font-family:var(--font-mono); font-size:.76rem; color:var(--ink-muted); flex:1; min-width:120px; }}
+  .book-section-list{{ display:flex; flex-direction:column; gap:8px; }}
+  .book-section-row{{ display:flex; align-items:center; gap:12px; background:var(--bg-elev); border:1px solid var(--border); border-radius:12px; padding:13px 15px; cursor:pointer; text-align:left; font:inherit; color:inherit; transition:border-color .15s; }}
+  .book-section-row:hover{{ border-color:var(--accent); }}
+  .book-section-num{{ flex:0 0 auto; width:28px; height:28px; border-radius:50%; background:color-mix(in srgb, var(--accent) 16%, transparent); color:var(--accent); display:flex; align-items:center; justify-content:center; font-family:var(--font-mono); font-weight:700; font-size:.82rem; }}
+  .book-section-title{{ flex:1; font-weight:650; font-size:.9rem; line-height:1.35; }}
+  .book-section-count{{ flex:0 0 auto; font-family:var(--font-mono); font-size:.72rem; color:var(--ink-muted); white-space:nowrap; }}
+  .book-chapter-list{{ display:flex; flex-direction:column; gap:6px; }}
+  .book-chapter-row{{ display:flex; align-items:center; gap:12px; background:var(--bg-elev); border:1px solid var(--border); border-radius:10px; padding:10px 14px; cursor:pointer; text-align:left; font:inherit; color:inherit; transition:border-color .15s; }}
+  .book-chapter-row:hover{{ border-color:var(--accent); }}
+  .book-chapter-row.recap{{ border-style:dashed; background:var(--bg-sunk); }}
+  .book-chapter-num{{ flex:0 0 auto; min-width:34px; text-align:center; font-family:var(--font-mono); font-size:.74rem; color:var(--accent); font-weight:700; }}
+  .book-chapter-title{{ flex:1; font-size:.86rem; line-height:1.4; }}
+  .book-chapter-tag{{ flex:0 0 auto; font-family:var(--font-mono); font-size:.64rem; color:var(--ink-muted); border:1px dashed var(--border); border-radius:99px; padding:1px 8px; }}
+  .book-choice{{ display:grid; gap:10px; }}
+  .book-chapter-title-lg{{ font-weight:700; font-size:.95rem; line-height:1.4; }}
+  .book-pills-row{{ display:flex; gap:6px; flex-wrap:wrap; }}
+  .book-pill{{ border:1px solid var(--border); background:var(--bg-sunk); color:var(--ink); padding:4px 11px; border-radius:99px; font-size:.72rem; cursor:pointer; font-family:var(--font-mono); }}
+  .book-pill:hover{{ border-color:var(--accent); color:var(--accent); }}
+
   /* ===== THEORY TOPICS (markdown notes) ===== */
   .theory-note{{ font-size:var(--theory-note-fs, var(--site-fs, 16px)); line-height:1.6; color:var(--ink); }}
   .theory-note h1{{ font-size:1.5rem; margin:20px 0 10px; }}
@@ -1670,6 +1720,7 @@ async def render_dashboard(request: Request, response: Response):
           <p>{theory_total_cards} cards across {len(theory_specs)} systems &mdash; flip, save, revise.</p>
         </div>
       </div>
+      {theory_book_card_html}
     </div>
 
     <!-- Theory Topics (markdown notes) -->
@@ -1684,6 +1735,17 @@ async def render_dashboard(request: Request, response: Response):
       <p class="pearl-count" id="theoryNotesCount"></p>
       <div class="doc-list theory-deck-rows" id="theoryNotesList"></div>
       <div id="theoryNoteReader" style="display:none"></div>
+    </div>
+
+    <!-- Chaptered Books -->
+    <div id="theoryBookPane" style="display:none">
+      <div class="section-head" style="margin-top:0">
+        <h2>Theory &mdash; Chaptered Books</h2>
+      </div>
+      <div class="pearl-toolbar" id="theoryBookToolbar"></div>
+      <p class="pearl-count" id="theoryBookCount"></p>
+      <div id="theoryBookBrowser"></div>
+      <div id="theoryBookReader" style="display:none"></div>
     </div>
 
     <!-- Flashcards -->
@@ -2256,6 +2318,7 @@ const allFlashcardDecks = {flashcard_decks_js};
 const THEORY_SPEC_VAR = {theory_spec_vars_js};
 const THEORY_SUBTOPIC_MAP = {theory_subtopic_map_js};
 const THEORY_NOTES = {theory_notes_js};
+const THEORY_BOOKS = {theory_books_js};
 
 // Cross-linking index (papers ↔ guidelines ↔ theory ↔ decks) precomputed by acumen_core/linker.py
 const RELATED_CATALOG = {related_catalog_js};
@@ -3796,6 +3859,10 @@ function _theoryStudyVisible(){{ var el = document.getElementById('theoryStudy')
 function theoryReset(){{
   _currentDeck = null;
   _currentTheoryNote = null;
+  _bookCurrent = null;
+  _bookParsed = null;
+  _bookSectionIdx = -1;
+  _bookChapterFlatIdx = -1;
   _theoryListCollapsed = false;
   _theoryStudyFromList = false;
   _notesActiveSpecs = new Set();
@@ -3808,6 +3875,10 @@ function theoryReset(){{
   var nc = document.getElementById('theoryNotesCount'); if(nc) nc.style.display='';
   var sr = document.getElementById('theoryNotesSearchRow'); if(sr) sr.style.display='';
   var sc = document.getElementById('theoryNotesChips'); if(sc) sc.style.display='';
+  var bkrd = document.getElementById('theoryBookReader'); if(bkrd){{ bkrd.style.display='none'; bkrd.innerHTML=''; }}
+  var bkb = document.getElementById('theoryBookBrowser'); if(bkb) bkb.style.display='';
+  var bkt = document.getElementById('theoryBookToolbar'); if(bkt) bkt.innerHTML='';
+  var bkc = document.getElementById('theoryBookCount'); if(bkc) bkc.textContent='';
 }}
 
 function _focusCrumb(){{
@@ -3826,6 +3897,19 @@ function renderTheoryCrumbs(){{
     parts.push('<span class="crumb-sep">&#8250;</span><button class="crumb'+( _currentTheoryNote?'':' crumb-current')+'" data-crumb="1" title="Back to notes list">Theory Topics</button>');
     if(_currentTheoryNote){{
       parts.push('<span class="crumb-sep">&#8250;</span><span class="crumb crumb-current crumb-title" title="'+escapeHtml(_currentTheoryNote.title)+'">'+escapeHtml(_currentTheoryNote.title)+'</span>');
+    }}
+  }} else if(_theoryMode==='book'){{
+    parts.push('<span class="crumb-sep">&#8250;</span><button class="crumb'+( _bookCurrent?'':' crumb-current')+'" data-crumb="1" title="Back to all books">Chaptered Books</button>');
+    if(_bookCurrent && _bookParsed){{
+      parts.push('<span class="crumb-sep">&#8250;</span><button class="crumb'+( _bookSectionIdx>=0?'':' crumb-current')+'" data-crumb="2" title="Back to sections">'+escapeHtml(_bookParsed.title)+'</button>');
+      if(_bookSectionIdx>=0){{
+        var bsec = _bookParsed.sections[_bookSectionIdx];
+        parts.push('<span class="crumb-sep">&#8250;</span><button class="crumb'+( _bookChapterFlatIdx>=0?'':' crumb-current')+'" data-crumb="3" title="Back to chapters">'+escapeHtml(bsec.title)+'</button>');
+        if(_bookChapterFlatIdx>=0){{
+          var bch = _bookParsed.flat[_bookChapterFlatIdx];
+          parts.push('<span class="crumb-sep">&#8250;</span><span class="crumb crumb-current crumb-title" title="'+escapeHtml(bch.title)+'">'+escapeHtml(bch.title)+'</span>');
+        }}
+      }}
     }}
   }} else {{
     parts.push('<span class="crumb-sep">&#8250;</span><button class="crumb'+( _currentDeck?'':' crumb-current')+'" data-crumb="1" title="Back to all decks">Flashcards</button>');
@@ -3846,6 +3930,17 @@ function theoryGoTo(level){{
   if(_theoryMode==='notes'){{
     if(_currentTheoryNote && level<=1){{ theoryNotesBack(); return; }}
     if(level<=0){{ theoryBackToHero(); }}
+    return;
+  }}
+  if(_theoryMode==='book'){{
+    if(level<=0){{ theoryBackToHero(); return; }}
+    if(level===1){{
+      if(_bookSectionIdx>=0){{ _bookSectionIdx=-1; _bookChapterFlatIdx=-1; renderTheoryBookBrowser(); }}
+      else if(_bookCurrent){{ theoryBookBack('all'); }}
+      return;
+    }}
+    if(level===2 && _bookSectionIdx>=0){{ _bookSectionIdx=-1; _bookChapterFlatIdx=-1; renderTheoryBookBrowser(); return; }}
+    if(level===3 && _bookChapterFlatIdx>=0){{ _bookChapterFlatIdx=-1; renderTheoryBookBrowser(); return; }}
     return;
   }}
   if(level<=0){{ theoryBackToHero(); return; }}
@@ -3893,6 +3988,18 @@ function _theoryHistoryURL(){{
     }}
     return window.location.pathname+'?'+q.join('&');
   }}
+  if(_theoryMode==='book'){{
+    var q = ['theory=book'];
+    if(_bookCurrent) q.push('book='+encodeURIComponent(_bookCurrent.id));
+    if(_bookParsed && _bookSectionIdx>=0){{
+      q.push('section='+(_bookSectionIdx+1));
+      if(_bookChapterFlatIdx>=0){{
+        var bf = _bookParsed.flat[_bookChapterFlatIdx];
+        if(bf) q.push('chapter='+(bf.ci+1));
+      }}
+    }}
+    return window.location.pathname+'?'+q.join('&');
+  }}
   return null;
 }}
 
@@ -3912,6 +4019,8 @@ function _applyTheoryDeepLink(params){{
   theoryReset();
   var theoryMode = params.get('theory');
   if(!theoryMode){{ renderTheoryPane(null); return; }}
+  // Deep links open the Theory view itself (cold load lands on home otherwise)
+  if(!_theoryViewActive()) showView('theory');
   if(theoryMode==='notes'){{
     var nq = params.get('q');
     if(nq!=null) document.getElementById('theoryNotesSearch').value = nq;
@@ -3966,19 +4075,52 @@ function _applyTheoryDeepLink(params){{
       if(hit) openTheoryDeck(hit.id, 0);
     }}
   }}
+  if(theoryMode==='book'){{
+    var bid = params.get('book');
+    var book = null;
+    if(bid){{
+      for(var bi=0;bi<THEORY_BOOKS.length;bi++){{ if(THEORY_BOOKS[bi].id===bid){{ book=THEORY_BOOKS[bi]; break; }} }}
+    }}
+    if(!book && THEORY_BOOKS.length) book = THEORY_BOOKS[0];
+    renderTheoryPane('book');
+    if(!book) return;
+    _bookCurrent = book;
+    _bookParsed = _parseBook(book);
+    _bookSectionIdx = -1;
+    _bookChapterFlatIdx = -1;
+    var secN = parseInt(params.get('section')||'', 10);
+    if(secN && secN>=1 && secN<=_bookParsed.sections.length){{
+      _bookSectionIdx = secN-1;
+      var chN = parseInt(params.get('chapter')||'', 10);
+      var chs = _bookParsed.sections[_bookSectionIdx].chapters.length;
+      if(chN && chN>=1 && chN<=chs){{
+        _bookChapterFlatIdx = _bookFlatBase(_bookSectionIdx) + chN - 1;
+        renderTheoryBookReader();
+      }} else {{
+        renderTheoryBookBrowser();
+      }}
+    }} else {{
+      renderTheoryBookBrowser();
+    }}
+  }}
 }}
 
-function katexify(root){{
+function katexify(root, allowSingle){{
   // Render LaTeX delimiters ($$...$$, \\\\(...\\\\), \\\\[...\\\\]) inside a container.
-  // Single-$ is intentionally NOT enabled (currency amounts appear in pearls/notes).
+  // Single-$ is off by default (currency amounts appear in pearls/notes) — turn it on
+  // for theory notes, whose markdown uses inline $...$ math.
   if(!root || typeof renderMathInElement !== 'function') return;
+  var delims = [
+    {{left:'$$', right:'$$', display:true}},
+    {{left:'\\\\(', right:'\\\\)', display:false}},
+    {{left:'\\\\[', right:'\\\\]', display:true}}
+  ];
+  // (KaTeX matches delimiters in order — $$ must stay FIRST or single-$ eats the
+  // opening pair of every $$...$$ display block and leaves it empty.)
+  if(allowSingle) delims.push({{left:'$', right:'$', display:false}});
   try {{
     renderMathInElement(root, {{
-      delimiters:[
-        {{left:'$$', right:'$$', display:true}},
-        {{left:'\\\\(', right:'\\\\)', display:false}},
-        {{left:'\\\\[', right:'\\\\]', display:true}}
-      ],
+      delimiters: delims,
       throwOnError:false,
       strict:'ignore'
     }});
@@ -4110,7 +4252,7 @@ function openTheoryNote(noteId, fromReader){{
     '</div>'+
     '<article class="theory-note" id="theoryNoteArticle">'+_theoryMarkdownHTML(note.md)+'</article>';
   applyTheoryFont('notes');
-  katexify(document.getElementById('theoryNoteArticle'));
+  katexify(document.getElementById('theoryNoteArticle'), true);
   renderTheoryCrumbs();
   if(fromReader) _theoryReplace(); else _theoryPush();
   _focusCrumb();
@@ -4126,6 +4268,231 @@ function theoryNotesBack(){{
   document.getElementById('theoryNotesChips').style.display = '';
   _currentTheoryNote = null;
   renderTheoryNotes();
+  renderTheoryCrumbs();
+  _theoryPush();
+  _focusCrumb();
+  window.scrollTo({{top:0, behavior:'instant'}});
+}}
+
+/* ---- Chaptered Books ---- */
+var _bookCurrent = null;
+var _bookParsed = null;
+var _bookSectionIdx = -1;
+var _bookChapterFlatIdx = -1;
+
+function _parseBook(note){{
+  // Slice a chaptered note into sections + chapters. Everything before the
+  // first "# SECTION N" / "# MASTER VIVA" heading (title, subtitle, TOC) is
+  // skipped; "##" lines become chapters; "### Section Recap" becomes a recap
+  // pseudo-chapter so the recap gets its own row + reader page.
+  var sections = [];
+  var lines = (note.md || '').split('\\n');
+  var started = false, curSec = null, curCh = null;
+  for(var i=0;i<lines.length;i++){{
+    var l = lines[i];
+    var secM = l.match(/^\\s*#\\s+(SECTION\\s+\\d+\\s*:.*|MASTER VIVA.*)$/);
+    if(secM){{
+      started = true;
+      curSec = {{title: secM[1].trim(), chapters: []}};
+      sections.push(curSec);
+      curCh = null;
+      continue;
+    }}
+    if(!started) continue;
+    var recM = l.match(/^\\s*###\\s+(Section Recap.*)$/);
+    if(recM && curSec){{
+      curCh = {{title: recM[1].trim(), recap: true, md: []}};
+      curSec.chapters.push(curCh);
+      continue;
+    }}
+    var chM = l.match(/^\\s*##\\s+(.+?)\\s*$/);
+    if(chM && curSec){{
+      curCh = {{title: chM[1].trim(), recap: false, md: []}};
+      curSec.chapters.push(curCh);
+      continue;
+    }}
+    if(curCh) curCh.md.push(l);
+  }}
+  var flat = [];
+  sections.forEach(function(sec, si){{
+    sec.chapters.forEach(function(ch, ci){{
+      ch.md = ch.md.join('\\n');
+      flat.push({{si: si, ci: ci, title: ch.title, recap: ch.recap, md: ch.md}});
+    }});
+  }});
+  return {{id: note.id, title: note.title, system: note.system, subtopic: note.subtopic, sections: sections, flat: flat}};
+}}
+
+function openTheoryBook(id){{
+  var b = null;
+  for(var i=0;i<THEORY_BOOKS.length;i++){{ if(THEORY_BOOKS[i].id===id){{ b=THEORY_BOOKS[i]; break; }} }}
+  if(!b) return;
+  _bookCurrent = b;
+  _bookParsed = _parseBook(b);
+  _bookSectionIdx = -1;
+  _bookChapterFlatIdx = -1;
+  renderTheoryBookBrowser();
+}}
+
+function theoryBookBack(level){{
+  if(level==='all'){{
+    _bookCurrent = null;
+    _bookParsed = null;
+    _bookSectionIdx = -1;
+    _bookChapterFlatIdx = -1;
+  }} else {{
+    _bookSectionIdx = -1;
+    _bookChapterFlatIdx = -1;
+  }}
+  renderTheoryBookBrowser();
+}}
+
+function theoryBookOpenSection(si){{
+  if(!_bookParsed || si<0 || si>=_bookParsed.sections.length) return;
+  _bookSectionIdx = si;
+  _bookChapterFlatIdx = -1;
+  renderTheoryBookBrowser();
+}}
+
+function theoryBookOpenChapter(fi){{
+  if(!_bookParsed || fi<0 || fi>=_bookParsed.flat.length) return;
+  _bookChapterFlatIdx = fi;
+  renderTheoryBookReader();
+}}
+
+function theoryBookNav(delta){{
+  if(!_bookParsed) return;
+  var n = _bookChapterFlatIdx + delta;
+  if(n<0 || n>=_bookParsed.flat.length) return;
+  _bookChapterFlatIdx = n;
+  renderTheoryBookReader();
+}}
+
+function renderTheoryBookPane(){{
+  if(!THEORY_BOOKS.length) return;
+  if(!_bookCurrent) _bookCurrent = THEORY_BOOKS[0];
+  if(!_bookParsed || _bookParsed.id!==_bookCurrent.id) _bookParsed = _parseBook(_bookCurrent);
+  if(_bookChapterFlatIdx>=0) renderTheoryBookReader();
+  else renderTheoryBookBrowser();
+}}
+
+function renderTheoryBookBrowser(){{
+  var browser = document.getElementById('theoryBookBrowser');
+  var reader = document.getElementById('theoryBookReader');
+  if(reader){{ reader.style.display='none'; reader.innerHTML=''; }}
+  if(browser) browser.style.display = '';
+  var toolbar = document.getElementById('theoryBookToolbar');
+  var countEl = document.getElementById('theoryBookCount');
+  var html = '';
+  if(THEORY_BOOKS.length>1 && !_bookCurrent){{
+    if(toolbar) toolbar.innerHTML = '';
+    if(countEl) countEl.textContent = THEORY_BOOKS.length+' chaptered book'+(THEORY_BOOKS.length===1?'':'s');
+    html = '<div class="book-choice">'+THEORY_BOOKS.map(function(b){{
+      return '<button class="doc-card" data-book-open="'+escapeHtml(b.id)+'">'+
+        '<div class="doc-stripe" style="background:var(--accent)"></div>'+
+        '<div class="doc-inner">'+
+          '<div class="doc-top"><span class="type-tag">Book</span></div>'+
+          '<p class="doc-title">'+escapeHtml(b.title)+'</p>'+
+          '<p class="doc-snippet">'+b.section_count+' sections &middot; '+b.chapter_count+' chapters</p>'+
+        '</div></button>';
+    }}).join('')+'</div>';
+  }} else {{
+    if(!_bookCurrent) _bookCurrent = THEORY_BOOKS[0];
+    if(!_bookParsed || _bookParsed.id!==_bookCurrent.id) _bookParsed = _parseBook(_bookCurrent);
+    if(toolbar){{
+      var backBtn = THEORY_BOOKS.length>1
+        ? '<button class="btn" data-book-back="all" title="Back to all books">&#9664; All books</button>'
+        : '<button class="btn" data-book-back="all" title="Back to book sections">&#9664; Sections</button>';
+      toolbar.innerHTML = backBtn + '<span class="book-bar-label">&#128214; '+escapeHtml(_bookParsed.title)+'</span>';
+    }}
+    if(_bookSectionIdx<0){{
+      // Section list
+      if(countEl) countEl.textContent = _bookParsed.sections.length+' sections &middot; '+_bookParsed.flat.length+' chapters';
+      html = '<div class="book-section-list">'+_bookParsed.sections.map(function(sec, si){{
+        var n = sec.chapters.length;
+        return '<button class="book-section-row" data-book-section="'+si+'">'+
+          '<span class="book-section-num">'+(si+1)+'</span>'+
+          '<span class="book-section-title">'+escapeHtml(sec.title)+'</span>'+
+          '<span class="book-section-count">'+n+' chapter'+(n===1?'':'s')+'</span>'+
+        '</button>';
+      }}).join('')+'</div>';
+    }} else {{
+      // Chapter list for the active section
+      var sec = _bookParsed.sections[_bookSectionIdx];
+      if(countEl) countEl.textContent = sec.chapters.length+' chapter'+(sec.chapters.length===1?'':'s');
+      html = '<div class="book-chapter-list">'+sec.chapters.map(function(ch, ci){{
+        return '<button class="book-chapter-row'+(ch.recap?' recap':'')+'" data-book-chapter="'+(_bookFlatBase(_bookSectionIdx)+ci)+'">'+
+          '<span class="book-chapter-num">'+(ch.recap?'&#128203;':(ci+1))+'</span>'+
+          '<span class="book-chapter-title">'+escapeHtml(ch.title)+'</span>'+
+          (ch.recap?'<span class="book-chapter-tag">recap</span>':'')+
+        '</button>';
+      }}).join('')+'</div>';
+    }}
+  }}
+  if(browser) browser.innerHTML = html;
+  renderTheoryCrumbs();
+  _theoryPush();
+  _focusCrumb();
+  window.scrollTo({{top:0, behavior:'instant'}});
+}}
+
+function _bookFlatBase(si){{
+  var base = 0;
+  for(var k=0;k<si;k++) base += _bookParsed.sections[k].chapters.length;
+  return base;
+}}
+
+function _buildBookPills(){{
+  var wrap = document.getElementById('theoryBookPills');
+  if(!wrap) return;
+  var art = document.getElementById('theoryBookArticle');
+  var h3s = art ? art.querySelectorAll('h3') : [];
+  if(!h3s.length){{ wrap.innerHTML=''; return; }}
+  var defs = [
+    {{re:/definition & mathematical/i, label:'Definition'}},
+    {{re:/key concepts/i, label:'Key Concepts'}},
+    {{re:/schematic/i, label:'Schematic'}},
+    {{re:/landmark icu/i, label:'ICU Anchor'}},
+    {{re:/advantages vs/i, label:'Pitfalls'}},
+    {{re:/exam summary/i, label:'Exam Box'}}
+  ];
+  var pills = [];
+  for(var i=0;i<defs.length;i++){{
+    for(var j=0;j<h3s.length;j++){{
+      if(defs[i].re.test(h3s[j].textContent||'')){{ pills.push('<button class="book-pill" data-book-pill="'+j+'">'+defs[i].label+'</button>'); break; }}
+    }}
+  }}
+  wrap.innerHTML = pills.length>=3 ? pills.join('') : '';
+}}
+
+function renderTheoryBookReader(){{
+  if(!_bookParsed || _bookChapterFlatIdx<0 || _bookChapterFlatIdx>=_bookParsed.flat.length) return;
+  var ch = _bookParsed.flat[_bookChapterFlatIdx];
+  var browser = document.getElementById('theoryBookBrowser');
+  var reader = document.getElementById('theoryBookReader');
+  var toolbar = document.getElementById('theoryBookToolbar');
+  var countEl = document.getElementById('theoryBookCount');
+  if(browser) browser.style.display = 'none';
+  if(toolbar) toolbar.innerHTML = '';
+  if(countEl) countEl.textContent = '';
+  if(!reader) return;
+  var prevBtn = _bookChapterFlatIdx>0 ? '<button class="btn nav-btn" data-book-nav="-1" title="Previous chapter">&#9664; Prev</button>' : '';
+  var nextBtn = _bookChapterFlatIdx<_bookParsed.flat.length-1 ? '<button class="btn nav-btn" data-book-nav="1" title="Next chapter">Next &#9654;</button>' : '';
+  reader.style.display = 'block';
+  reader.innerHTML =
+    '<div class="theory-card-head theory-note-head">'+
+      '<div class="notes-title-row">'+
+        '<span class="pill" style="background:color-mix(in srgb, var(--accent) 18%, transparent); color:var(--accent)"><span class="dot" style="background:var(--accent)"></span>Chapter '+(ch.si+1)+'.'+(ch.ci+1)+'</span>'+
+        '<span class="book-chapter-title-lg">'+escapeHtml(ch.title)+'</span>'+
+      '</div>'+
+      '<div class="notes-nav-row">'+prevBtn+nextBtn+'</div>'+
+      '<div class="notes-font-row"><span class="notes-font-label">Text&nbsp;size</span>'+theoryFontChipsHTML('book')+'</div>'+
+      '<div class="book-pills-row" id="theoryBookPills"></div>'+
+    '</div>'+
+    '<article class="theory-note" id="theoryBookArticle">'+_theoryMarkdownHTML(ch.md)+'</article>';
+  applyTheoryFont('book');
+  katexify(document.getElementById('theoryBookArticle'), true);
+  _buildBookPills();
   renderTheoryCrumbs();
   _theoryPush();
   _focusCrumb();
@@ -4227,12 +4594,15 @@ function renderTheoryPane(mode){{
   var hero = document.getElementById('theoryHero');
   var notes = document.getElementById('theoryNotesPane');
   var cards = document.getElementById('theoryFlashcardsPane');
-  if(!hero || !notes || !cards) return;
+  var book = document.getElementById('theoryBookPane');
+  if(!hero || !notes || !cards || !book) return;
   hero.style.display = _theoryMode ? 'none' : '';
   notes.style.display = _theoryMode==='notes' ? '' : 'none';
   cards.style.display = _theoryMode==='flashcards' ? '' : 'none';
+  book.style.display = _theoryMode==='book' ? '' : 'none';
   if(_theoryMode==='notes'){{ renderTheoryNotes(); }}
   if(_theoryMode==='flashcards'){{ renderTheoryChips(); renderTheoryDecks(); }}
+  if(_theoryMode==='book'){{ renderTheoryBookPane(); }}
   renderTheoryCrumbs();
 }}
 
@@ -4464,6 +4834,9 @@ function applyTheoryFont(scope){{
   if(scope==='notes'){{
     var art = document.getElementById('theoryNoteArticle');
     if(art) art.style.setProperty('--theory-note-fs', v+'rem');
+  }} else if(scope==='book'){{
+    var bart = document.getElementById('theoryBookArticle');
+    if(bart) bart.style.setProperty('--theory-note-fs', v+'rem');
   }} else {{
     var stage = document.getElementById('theoryCardStage');
     if(stage) stage.style.setProperty('--theory-card-fs', v+'rem');
@@ -5466,6 +5839,26 @@ document.addEventListener('click', function(e){{
   var theoryNoteNavBtn = e.target.closest('[data-theory-note-nav]');
   if(theoryNoteNavBtn){{ theoryNoteNav(parseInt(theoryNoteNavBtn.dataset.theoryNoteNav,10)||0); return; }}
 
+  var bookOpen = e.target.closest('[data-book-open]');
+  if(bookOpen){{ if(!_theoryViewActive()) showView('theory'); openTheoryBook(bookOpen.dataset.bookOpen); return; }}
+  var bookBack = e.target.closest('[data-book-back]');
+  if(bookBack){{ theoryBookBack(bookBack.dataset.bookBack); return; }}
+  var bookSection = e.target.closest('[data-book-section]');
+  if(bookSection){{ theoryBookOpenSection(parseInt(bookSection.dataset.bookSection,10)); return; }}
+  var bookChapter = e.target.closest('[data-book-chapter]');
+  if(bookChapter){{ theoryBookOpenChapter(parseInt(bookChapter.dataset.bookChapter,10)); return; }}
+  var bookNav = e.target.closest('[data-book-nav]');
+  if(bookNav){{ theoryBookNav(parseInt(bookNav.dataset.bookNav,10)||0); return; }}
+  var bookPill = e.target.closest('[data-book-pill]');
+  if(bookPill){{
+    var bArt = document.getElementById('theoryBookArticle');
+    if(bArt){{
+      var bH3 = bArt.querySelectorAll('h3')[parseInt(bookPill.dataset.bookPill,10)||0];
+      if(bH3) bH3.scrollIntoView({{behavior:'smooth', block:'start'}});
+    }}
+    return;
+  }}
+
   var exportNoteBtn = e.target.closest('[data-export-note]');
   if(exportNoteBtn){{ window.open('/export/print?'+exportNoteBtn.dataset.exportNote, '_blank', 'noopener'); return; }}
   var exportPaperBtn = e.target.closest('[data-export-paper]');
@@ -6380,7 +6773,7 @@ def render_printable(title, meta_html, markdown, kind_label):
   var RAW = {json.dumps(markdown or "", ensure_ascii=False)};
   try {{ document.getElementById('md-content').innerHTML = marked.parse(RAW); }} catch(e){{ document.getElementById('md-content').textContent = RAW; }}
   function renderMath(){{
-    try{{ if(window.renderMathInElement){{ renderMathInElement(document.getElementById('md-content'),{{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'\\\\(',right:'\\\\)',display:false}},{{left:'\\\\[',right:'\\\\]',display:true}}],throwOnError:false,strict:'ignore'}}); }} }}catch(e){{}}
+    try{{ if(window.renderMathInElement){{ renderMathInElement(document.getElementById('md-content'),{{delimiters:[{{left:'$$',right:'$$',display:true}},{{left:'\\\\(',right:'\\\\)',display:false}},{{left:'\\\\[',right:'\\\\]',display:true}},{{left:'$',right:'$',display:false}}],throwOnError:false,strict:'ignore'}}); }} }}catch(e){{}}
   }}
   renderMath();
   window.addEventListener('load', function(){{ setTimeout(function(){{ window.print(); }}, 600); }});

@@ -1,0 +1,271 @@
+<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
+
+# Contrast and compare TEG and ROTEM and it's modes usage pros cons physiological mechanisms etc
+
+**TEG (thromboelastography) and ROTEM (rotational thromboelastometry) are whole-blood viscoelastic haemostatic assays (VHAs) that provide a dynamic, bedside picture of clot initiation, propagation, strength, and breakdown.** They are conceptually similar but are **not numerically interchangeable** because their mechanics, activators, reagents, analytical algorithms, and reference intervals differ. [^1_1][^1_2]
+
+## Core principle
+
+Both assays analyse approximately 300 microlitres of citrated or fresh whole blood at 37 degrees C under low-shear conditions. A pin and cup oscillate relative to each other; as fibrin forms and the platelet-fibrin clot strengthens, motion is increasingly transmitted to the sensor, generating a time-amplitude trace. Subsequent loss of amplitude reflects clot retraction and/or fibrinolysis. [^1_3][^1_2][^1_4]
+
+### What the trace represents
+
+| Trace phase | Dominant biology | Main determinants | Clinical question |
+| :-- | :-- | :-- | :-- |
+| **Initiation** | Initial thrombin generation and fibrin formation | Coagulation factor activity, anticoagulant effect, heparin, DOACs, severe hypothermia/acidosis | “Is there delayed enzymatic clot initiation?” |
+| **Propagation** | Thrombin burst, fibrin polymerisation, platelet recruitment | Fibrinogen concentration/function, platelets, factor XIII, thrombin generation | “Can the clot build promptly?” |
+| **Maximum strength** | Stable platelet-fibrin clot | Platelet number/function plus fibrinogen; factor XIII contributes | “Is the clot mechanically adequate?” |
+| **Lysis** | Clot breakdown | Plasmin activity, plasminogen activators/inhibitors, clot retraction | “Is pathological fibrinolysis present?” |
+
+⚠ **Physiological nuance:** VHA amplitude is an *ex vivo mechanical clot-strength signal*, not a direct measurement of any single factor, platelet count, or in-vivo haemostatic competence. It does not adequately assess endothelial function, physiological shear-dependent primary haemostasis, or the contribution of vWF in the microcirculation. [^1_5][^1_2]
+
+## Mechanical distinction
+
+| Feature | TEG | ROTEM |
+| :-- | :-- | :-- |
+| Full name | Thromboelastography | Rotational thromboelastometry |
+| Moving component | **Cup oscillates**; the pin is relatively stationary | **Pin oscillates**; the cup is stationary |
+| Signal | Torque transmitted from cup through forming clot to pin | Torque resistance experienced by rotating pin within forming clot |
+| Practical implication | Same biological principle, different engineering and reagents | Same biological principle, different engineering and reagents |
+| Interchangeability | TEG values cannot be substituted directly for ROTEM thresholds | ROTEM values cannot be substituted directly for TEG thresholds |
+
+In TEG, the cup rotates through a small arc and the developing clot couples the cup to the suspended pin. In ROTEM, the pin rotates in a fixed cup and increasingly encounters resistance as the clot becomes viscoelastically stronger. [^1_6][^1_5][^1_7]
+
+## Parameter crosswalk
+
+| Haemostatic domain | TEG parameter | ROTEM parameter | Meaning |
+| :-- | :-- | :-- | :-- |
+| Clot initiation | **R time**; rapid TEG often reports **ACT** | **CT** (clotting time) | Time to a 2-mm amplitude: enzymatic initiation of coagulation |
+| Early propagation | **K time** | **CFT** (clot formation time) | Time from 2 to 20-mm amplitude; shorter is faster propagation |
+| Propagation rate | **Alpha angle** | **Alpha angle** | Slope of clot growth; reflects fibrin build-up and platelet-fibrin interaction |
+| Global clot strength | **MA** (maximum amplitude) | **MCF** (maximum clot firmness) | Ultimate clot strength, chiefly platelet-fibrin interaction |
+| Early strength | G; early amplitude measures in some platforms | A5, A10, A20 | Early amplitudes can support faster treatment decisions |
+| Fibrinolysis | LY30; CL30 | LI30, ML, CLI | Degree of amplitude reduction after maximum clot strength |
+
+TEG R time and ROTEM CT both mark the time to 2-mm amplitude, while TEG MA and ROTEM MCF describe maximum clot strength. The common labels conceal important assay-specific differences; treatment cutoffs must therefore be locally validated for the exact platform, reagent, sample type, and clinical context. [^1_1][^1_8]
+
+### A useful conversion concept
+
+- **Long R / long CT**: delayed clot initiation, usually factor deficiency, anticoagulant effect, dilution, or residual heparin.
+- **Long K or CFT / low alpha angle**: slow clot propagation, especially functional fibrinogen deficiency; thrombocytopenia may also contribute.
+- **Low MA / MCF**: weak clot, caused by low fibrinogen, platelet deficit/dysfunction, or both.
+- **High LY30 or high maximum lysis (ML)**: excessive clot breakdown, i.e., hyperfibrinolysis.
+- **Short R/CT, steep alpha angle, high MA/MCF**: hypercoagulable phenotype—but do not prescribe antithrombotic therapy from this result alone. [^1_5][^1_8]
+
+
+## TEG assays and uses
+
+| TEG assay / mode | Main reagent principle | What it helps answer | Typical ICU/perioperative use |
+| :-- | :-- | :-- | :-- |
+| **Kaolin TEG (CK-TEG)** | Contact activation, predominantly intrinsic-pathway activation | Is global enzymatic initiation and clot strength abnormal? | Baseline global assessment; post-cardiac surgery bleeding |
+| **Rapid TEG (rTEG)** | Tissue factor plus kaolin | Is clinically relevant coagulopathy present *quickly*? | Trauma / massive haemorrhage; early result prioritised |
+| **Heparinase TEG (CKH / hTEG)** | Heparinase neutralises heparin in vitro | Is a prolonged R due to residual heparin? | Post-CPB bleeding; ECMO; suspected heparin effect |
+| **Functional fibrinogen TEG** | Platelet GPIIb/IIIa inhibition isolates fibrin-based clot contribution | Is clot weakness due predominantly to fibrinogen? | Fibrinogen-directed replacement; separating platelet versus fibrin deficit |
+| **Platelet Mapping** | AA and ADP agonist channels assess aspirin/P2Y12-related platelet response | Is there pharmacologic platelet inhibition? | Selected antiplatelet-exposed patients; not a stand-alone bleeding predictor |
+
+Rapid TEG uses tissue factor plus kaolin to shorten time to actionable information, whereas heparinase TEG helps distinguish true factor-related delay from residual heparin effect. Functional-fibrinogen TEG suppresses platelet contribution to estimate the fibrin component of clot strength. [^1_9]
+
+⚠ **Platelet Mapping trap:** platelet function assays may demonstrate pharmacodynamic inhibition, but this does **not** reliably establish that bleeding is caused by antiplatelet therapy or that platelet transfusion will improve outcome. The 2023 European trauma guideline recommends against routine point-of-care platelet-function monitoring in trauma patients with suspected platelet dysfunction or prior antiplatelet exposure. [^1_10]
+
+## ROTEM assays and uses
+
+| ROTEM assay / mode | Main reagent principle | Main information | Clinical application |
+| :-- | :-- | :-- | :-- |
+| **EXTEM** | Tissue factor activation | Extrinsic activation, global clot propagation/strength, fibrinolysis | First-line bleeding screen in trauma, obstetrics, liver transplantation, cardiac surgery |
+| **INTEM** | Ellagic-acid contact activation | Intrinsic/contact activation pathway | Identifying intrinsic-pathway delay; comparison with HEPTEM |
+| **HEPTEM** | INTEM plus heparinase | Heparin-neutralised intrinsic assay | Residual heparin after CPB; distinguishing heparin effect from factor deficiency |
+| **FIBTEM** | EXTEM plus platelet inhibition using cytochalasin D | Functional fibrinogen contribution to clot firmness | Early recognition of hypofibrinogenaemia; guide fibrinogen concentrate or cryoprecipitate |
+| **APTEM** | EXTEM plus antifibrinolytic (aprotinin) | Whether lysis is suppressible by antifibrinolytic effect | Confirmation of hyperfibrinolysis; interpret alongside clinical context |
+| **NATEM** | Minimal/non-specific activation | Global native clotting tendency | Less useful for immediate major-haemorrhage decisions because it is slower and less standardised |
+
+EXTEM evaluates tissue-factor-initiated coagulation, INTEM evaluates contact/intrinsic activation, and FIBTEM uses platelet inhibition to isolate the fibrinogen-dependent component of clot strength. [^1_9]
+
+### The high-yield ROTEM comparisons
+
+| Pattern | Interpretation | Bedside inference |
+| :-- | :-- | :-- |
+| **EXTEM CT prolonged; HEPTEM CT normalises** | Heparin effect | Consider residual heparin, heparin contamination, or anticoagulation rather than empiric plasma |
+| **EXTEM A5/MCF low and FIBTEM A5/MCF low** | Functional fibrinogen deficit | Replace fibrinogen, subject to local protocol and clinical bleeding |
+| **EXTEM MCF low but FIBTEM preserved** | Platelet contribution is inadequate | Thrombocytopenia/platelet dysfunction is more likely |
+| **EXTEM ML high; APTEM corrects lysis** | Hyperfibrinolysis | Supports a fibrinolytic mechanism; urgently integrate with timing, bleeding severity, and TXA strategy |
+| **EXTEM CT prolonged with adequate FIBTEM** | Enzymatic factor deficiency or anticoagulant effect | Consider anticoagulant reversal or factor replacement based on cause |
+
+💡 **Clinical logic:** first identify whether the problem is **initiation**, **fibrinogen**, **platelets**, or **lysis**. Giving FFP for every abnormal VHA trace is physiologically imprecise and risks volume overload, dilution, and unnecessary allogeneic exposure.
+
+## TEG versus ROTEM
+
+| Domain | TEG | ROTEM | Practical conclusion |
+| :-- | :-- | :-- | :-- |
+| Underlying measurement | Whole-blood viscoelastic clot dynamics | Whole-blood viscoelastic clot dynamics | Broadly comparable biological information |
+| Initiation assays | Kaolin, rapid TEG, heparinase | EXTEM, INTEM, HEPTEM | Reagent panels are different |
+| Fibrinogen isolation | Functional fibrinogen TEG | FIBTEM | Both help differentiate fibrinogen from platelet contribution |
+| Antifibrinolysis confirmation | Lysis indices; platform-specific interpretation | APTEM versus EXTEM is a useful paired comparison | ROTEM has a distinct built-in confirmatory assay concept |
+| Platelet pharmacology | Platelet Mapping is a recognised TEG-specific application | Dedicated platelet testing may be separate depending on system | Neither should replace clinical judgement |
+| Early amplitudes | Increasingly available in newer systems | A5/A10 widely embedded in ROTEM algorithms | Early amplitudes are useful when minutes matter |
+| Evidence base | Strongest in cardiac surgery, liver transplantation, trauma | Strongest in cardiac surgery, liver transplantation, trauma | Choice should be driven by local expertise and validated protocol |
+| Numerical agreement | Different R/K/MA values | Different CT/CFT/MCF values | **Never apply a ROTEM threshold to TEG, or vice versa** |
+
+Although both technologies often identify the same broad coagulopathic phenotype, results differ materially because their activators and analytical approaches differ. Studies comparing devices show broadly similar directional response to hypo- and hypercoagulability, but absolute values are different. [^1_1][^1_11]
+
+## Clinical uses
+
+### Major trauma and damage-control resuscitation
+
+Use a rapid VHA early in a patient with life-threatening haemorrhage, alongside haemoglobin, platelet count, PT/INR, Clauss fibrinogen, ionised calcium, temperature, acid-base status, and definitive haemorrhage control. The European trauma guideline recommends early, repeated haemostatic monitoring with conventional tests and/or a viscoelastic method, and recommends goal-directed resuscitation using conventional values and/or VHA results. [^1_12]
+
+**Practical framework in bleeding trauma**
+
+1. **Control bleeding and correct physiology first:** surgery/interventional radiology, warming, calcium, perfusion, and avoidance of excessive crystalloid.
+2. **Give TXA promptly when indicated:** do not wait for VHA results in the bleeding or at-risk trauma patient. [^1_12]
+3. **Low fibrin-based clot strength:** give fibrinogen concentrate or cryoprecipitate according to local algorithm; the guideline supports replacement when major bleeding coexists with functional fibrinogen deficit or Clauss fibrinogen no greater than 1.5 g/L. [^1_12]
+4. **Prolonged initiation:** investigate factor deficiency, warfarin/DOAC exposure, and heparin; choose PCC, plasma, or specific reversal according to the cause rather than the trace alone.
+5. **Low global strength with preserved fibrin component:** consider platelet replacement if there is significant ongoing bleeding and the clinical context supports platelet deficiency/dysfunction.
+6. **Pathological lysis:** treat in the context of timing and cause; do not delay indicated early trauma TXA solely to document hyperfibrinolysis. [^1_12]
+
+### Cardiac surgery and CPB
+
+Post-CPB bleeding is an ideal VHA setting because several rapidly reversible mechanisms coexist: residual heparin, haemodilution, consumption, platelet dysfunction, hypofibrinogenaemia, and surgical bleeding. A paired intrinsic/heparinase strategy—**INTEM versus HEPTEM** or **kaolin TEG versus heparinase TEG**—is particularly useful for identifying residual heparin. [^1_9]
+
+In adult cardiac surgery, guideline-based, VHA-guided algorithms are recommended to reduce transfusions in bleeding patients, whereas routine VHA or platelet-function testing solely to predict bleeding is not recommended. [^1_13][^1_14]
+
+### Liver disease and transplantation
+
+VHA is useful for dynamic assessment during liver transplantation and major procedural bleeding, especially for detecting low fibrinogen contribution and hyperfibrinolysis. However, cirrhosis represents “rebalanced haemostasis,” so a prolonged PT/INR or abnormal VHA does not automatically prove bleeding risk or justify prophylactic correction in a non-bleeding patient.
+
+### Obstetric haemorrhage
+
+In postpartum haemorrhage, ROTEM FIBTEM or functional-fibrinogen TEG can detect clinically important functional fibrinogen deficiency faster than conventional laboratory fibrinogen assays in many institutions. Its most useful role is **early, targeted fibrinogen replacement during active severe bleeding**, not indiscriminate testing after routine delivery.
+
+### ECMO and anticoagulated ICU patients
+
+VHAs may help recognise a gross heparin effect, fibrinogen depletion, platelet-fibrin clot weakness, or hyperfibrinolysis in active bleeding. They should **not** be used as the sole monitor of unfractionated heparin during ECMO: integrate anti-Xa or aPTT/ACT, circuit assessment, platelet count, fibrinogen, antithrombin where applicable, and clinical thrombosis/bleeding phenotype.
+
+## Advantages
+
+- **Whole-blood assessment:** retains cellular components, particularly platelet-fibrin interaction, unlike PT/INR and aPTT, which are platelet-poor plasma assays. [^1_5][^1_2]
+- **Dynamic information:** characterises initiation, propagation, strength, and lysis rather than only time to first fibrin formation. [^1_2]
+- **Fast, point-of-care actionability:** early amplitudes can inform directed haemostatic treatment within minutes of test initiation. [^1_5]
+- **Mechanism-directed replacement:** can distinguish a fibrinogen-predominant deficit from a platelet-predominant deficit through platelet-inhibited channels. [^1_2][^1_9]
+- **Lysis detection:** can identify hyperfibrinolysis, a feature not reliably detected by conventional PT/aPTT-based testing. [^1_7]
+- **Potential blood conservation:** algorithm-driven perioperative use is associated with reduced transfusion exposure in cardiac-surgical bleeding pathways. [^1_13][^1_15]
+
+
+## Limitations and pitfalls
+
+| Limitation | Why it matters clinically |
+| :-- | :-- |
+| **Low shear assay** | Under-represents vWF-dependent platelet adhesion and shear-mediated primary haemostasis; a normal VHA does not exclude qualitative platelet dysfunction or vWD |
+| **Poor sensitivity to aspirin/P2Y12 effect in standard channels** | Standard MA/MCF is not a reliable antiplatelet drug assay |
+| **Not a direct thrombin-generation assay** | A “normal” trace does not equal normal in-vivo haemostatic balance |
+| **Assay variability** | Results depend on device, reagent, sample type, delay to analysis, temperature, and local reference intervals |
+| **Inter-operator and precision concerns** | Quality assurance, staff training, and predefined algorithms are mandatory; reported coefficients of variation can be substantial. [^1_5] |
+| **Non-interchangeable cutoffs** | TEG and ROTEM values—and even assays within the same family—cannot simply be translated |
+| **Hypercoagulability overinterpretation** | A high MA/MCF is a risk marker/phenotype, not by itself an indication for therapeutic anticoagulation |
+| **Surgical bleeding remains surgical** | A normal VHA in brisk bleeding should prompt urgent search for a mechanical source, not escalating pro-haemostatic products |
+
+⚠ **Most important trap:** VHA-guided transfusion is beneficial only when embedded in a **time-critical, multidisciplinary major-haemorrhage algorithm** with staff trained to act on results. A test without a protocol can add delay and produce inappropriate product administration.
+
+## A bedside interpretation algorithm
+
+```text
+Actively bleeding patient
+        |
+        v
+Run VHA + platelet count + Clauss fibrinogen + PT/INR/aPTT
+        |
+        +--> Delayed initiation (R/CT prolonged)
+        |      --> Check heparin/DOAC/warfarin, dilution, factor consumption
+        |      --> Use paired heparinase test where relevant
+        |
+        +--> Weak fibrin signal (functional fibrinogen/FIBTEM low)
+        |      --> Fibrinogen concentrate or cryoprecipitate per local protocol
+        |
+        +--> Global strength low, fibrin signal relatively preserved
+        |      --> Platelet deficit/dysfunction likely; assess platelet count/context
+        |
+        +--> Excess lysis (LY30 high / ML high)
+        |      --> Treat hyperfibrinolytic phenotype; integrate TXA timing and cause
+        |
+        +--> VHA near-normal but bleeding continues
+               --> Find mechanical/surgical source; consider drugs, vWD,
+                   qualitative platelet dysfunction, hypothermia, acidosis
+```
+
+
+## Which should an ICU choose?
+
+Choose **one platform**, develop institution-specific reference ranges and thresholds, train the entire team, and validate a simple action-oriented algorithm against your available blood products and turnaround times. The evidence supports VHA-guided management in selected actively bleeding populations, but it does **not** establish that one brand is universally superior or that VHA should replace conventional tests in every ICU patient. [^1_16][^1_12][^1_14]
+
+## Topic Pearls
+
+- **TEG and ROTEM are dynamic whole-blood clot assays; PT/INR and aPTT are plasma-based initiation tests.** [^1_5][^1_2]
+- **TEG cup rotates; ROTEM pin rotates—but the clinically important distinction is their assay-specific reagents and thresholds.** [^1_6][^1_7]
+- **R/CT = initiation; K/CFT and alpha = propagation; MA/MCF = clot strength; LY30/ML = fibrinolysis.** [^1_8]
+- **Functional fibrinogen TEG and FIBTEM isolate fibrin-based clot strength, helping separate fibrinogen deficit from platelet-related weakness.** [^1_9]
+- **Use paired heparinase assays after CPB or during heparin exposure to distinguish residual heparin from true factor deficiency.** [^1_9]
+- **Do not use TEG and ROTEM numerical cutoffs interchangeably.** [^1_1][^1_11]
+- **In major trauma, give indicated TXA early; do not wait for a VHA result.** [^1_12]
+<span style="display:none">[^1_17][^1_18][^1_19][^1_20][^1_21][^1_22][^1_23][^1_24][^1_25][^1_26][^1_27][^1_28][^1_29][^1_30]</span>
+
+<div align="center">⁂</div>
+
+[^1_1]: https://pmc.ncbi.nlm.nih.gov/articles/PMC3424963/
+
+[^1_2]: https://onlinelibrary.wiley.com/doi/10.1002/ajh.23599
+
+[^1_3]: https://www.anaestheasier.com/teg-and-rotem/
+
+[^1_4]: https://www.emra.org/emresident/article/teg-and-rotem
+
+[^1_5]: https://litfl.com/thromboelastogram-teg/
+
+[^1_6]: https://derangedphysiology.com/main/required-reading/haematology-and-oncology/Chapter-107/viscoelastic-tests-clotting-function-teg-and-rotem
+
+[^1_7]: https://journals.lww.com/shockjournal/fulltext/2021/12001/the_role_of_teg_and_rotem_in_damage_control.11.aspx
+
+[^1_8]: https://pmc.ncbi.nlm.nih.gov/articles/PMC8465234/
+
+[^1_9]: https://www.sciencedirect.com/science/article/pii/S1538783622016117
+
+[^1_10]: https://www.ifimp.at/wp-content/uploads/2023/10/Spahn-ETTG-2023-04-26.pdf
+
+[^1_11]: https://pubmed.ncbi.nlm.nih.gov/20010092/
+
+[^1_12]: https://ccforum.biomedcentral.com/articles/10.1186/s13054-023-04327-7
+
+[^1_13]: https://sms.carm.es/ricsmur/bitstream/handle/123456789/24779/10.1093icvtsivae170.pdf?sequence=1\&isAllowed=y
+
+[^1_14]: https://www.sciencedirect.com/science/article/pii/S1053077024007894
+
+[^1_15]: https://pdfs.semanticscholar.org/a7b8/99b5181869a79f45006c85b2475137ffcda0.pdf
+
+[^1_16]: https://nacblood.ca/sites/default/files/2025-11/2025-11-06 NAC Endorsement with Caveats - EU Trauma Guidelines.pdf
+
+[^1_17]: https://pmc.ncbi.nlm.nih.gov/articles/PMC12345383/
+
+[^1_18]: https://pmc.ncbi.nlm.nih.gov/articles/PMC4206701/
+
+[^1_19]: https://pubmed.ncbi.nlm.nih.gov/31630507/
+
+[^1_20]: https://pubmed.ncbi.nlm.nih.gov/31004574/
+
+[^1_21]: https://pedsanesthesia.org/wp-content/uploads/2023/02/Week-128-Coagulopathy.pdf
+
+[^1_22]: https://pubmed.ncbi.nlm.nih.gov/36859355/
+
+[^1_23]: https://hemosonics.com/publication/rossaint-r-afshari-a-bouillon-b-et-al-the-european-guideline-on-management-of-major-bleeding-and-coagulopathy-following-trauma-sixth-edition-crit-care-20232780/
+
+[^1_24]: https://pmc.ncbi.nlm.nih.gov/articles/PMC4828865/
+
+[^1_25]: https://www.zora.uzh.ch/entities/publication/c3d34a85-4fa1-4069-9aa1-a221c8c42256
+
+[^1_26]: https://pmc.ncbi.nlm.nih.gov/articles/PMC12786857/
+
+[^1_27]: https://www.eacts.org/clinical-practice-guideline/2024-eacts-eactaic-guidelines-on-patient-blood-management-in-adult-cardiac-surgery-in-collaboration-with-ebcp/
+
+[^1_28]: https://www.scribd.com/document/964690492/2023-EU-guideline-Supplementary
+
+[^1_29]: https://ecommons.aku.edu/eastafrica_fhs_mc_anaesth/70/
+
+[^1_30]: https://research.utwente.nl/en/publications/2024-eactseactaic-guidelines-on-patient-blood-management-in-adult/
+
