@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "generated_at": "2026-08-15T21:16:38",
-  "entity_count": 347,
+  "generated_at": "2026-08-21T21:19:06",
+  "entity_count": 366,
   "entities": {
     "deck:Cardiology/Acute Coronary Syndromes": {
       "tags": [],
@@ -15374,48 +15374,6 @@
         }
       ]
     },
-    "theory:Enhanced Recovery After Surgery (ERAS).md": {
-      "tags": [
-        "General",
-        "Perioperative care",
-        "Surgical stress response"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Enhanced Recovery After Surgery (ERAS)",
-      "links": [
-        {
-          "to": "theory:General/Abdominal Compartment Syndrome/Intra-abdominal hypertension (IAH).md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.75,
-          "updated_at": "2026-08-15T21:15:50"
-        },
-        {
-          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
-          "kind": "theory",
-          "reason": "guideline recommendation",
-          "weight": 0.75,
-          "updated_at": "2026-08-15T21:15:50"
-        },
-        {
-          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.75,
-          "updated_at": "2026-08-15T21:15:50"
-        },
-        {
-          "to": "theory:General/ICU-acquired weakness/Sarcopenia in the ICU_ An Exam-Style Detailed Note.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.65,
-          "updated_at": "2026-08-15T21:15:50"
-        }
-      ]
-    },
     "theory:Gastroenterology/Acute Colonic Distension/Differential Diagnosis of Colonic Distension in IC.MD": {
       "tags": [
         "Acute Colonic Distension",
@@ -15474,20 +15432,6 @@
       "subtopic": "Abdominal Compartment Syndrome",
       "title": "Intra-abdominal hypertension (IAH)",
       "links": [
-        {
-          "to": "theory:Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.75,
-          "updated_at": "2026-08-15T21:15:55"
-        },
-        {
-          "to": "theory:Transesophageal Echo in Critical Care.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.75,
-          "updated_at": "2026-08-15T21:15:55"
-        },
         {
           "to": "theory:General/ICU-acquired weakness/Sarcopenia in the ICU_ An Exam-Style Detailed Note.md",
           "kind": "theory",
@@ -15865,83 +15809,6 @@
         }
       ]
     },
-    "theory:Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat": {
-      "tags": [
-        "General",
-        "Septic cardiomyopathy",
-        "Sepsis"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat",
-      "links": [
-        {
-          "to": "paper:usefulness-of-bedside-point-of-care-ultrasounds-in-intensive.pdf",
-          "kind": "guideline",
-          "reason": "guideline recommendation",
-          "weight": 0.6,
-          "updated_at": "2026-08-15T21:16:16"
-        },
-        {
-          "to": "theory:Transesophageal Echo in Critical Care.md",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-15T21:16:16"
-        },
-        {
-          "to": "theory:Sepsis/Biomarkers/Biomarkers of Sepsis_ Old and New.md",
-          "kind": "theory",
-          "reason": "shared concept",
-          "weight": 0.6,
-          "updated_at": "2026-08-15T21:16:16"
-        },
-        {
-          "to": "theory:Nephrology/AKI Care Bundle/AKI Care Bundle — Structured Elaboration for ICU P.md",
-          "kind": "theory",
-          "reason": "shared concept",
-          "weight": 0.6,
-          "updated_at": "2026-08-15T21:16:16"
-        },
-        {
-          "to": "paper:fcimb-16-1823125.pdf",
-          "kind": "paper",
-          "reason": "shared concept",
-          "weight": 0.6,
-          "updated_at": "2026-08-15T21:16:16"
-        }
-      ]
-    },
-    "theory:Transesophageal Echo in Critical Care.md": {
-      "tags": [
-        "General",
-        "Transesophageal echocardiography",
-        "Critical care"
-      ],
-      "kind": "theory",
-      "system": "General",
-      "type": "Theory",
-      "subtopic": "General",
-      "title": "Transesophageal Echo in Critical Care",
-      "links": [
-        {
-          "to": "theory:Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat",
-          "kind": "theory",
-          "reason": "complementary",
-          "weight": 0.95,
-          "updated_at": "2026-08-15T21:16:18"
-        },
-        {
-          "to": "deck:Cardiology/General",
-          "kind": "flashcard_deck",
-          "reason": "shared concept",
-          "weight": 0.7,
-          "updated_at": "2026-08-15T21:16:18"
-        }
-      ]
-    },
     "theory:Trauma/Pelvic Trauma/Management of Pelvic Trauma in ER and ICU.md": {
       "tags": [
         "Pelvic Trauma",
@@ -16111,6 +15978,1082 @@
           "reason": "complementary",
           "weight": 0.65,
           "updated_at": "2026-08-15T21:16:38"
+        }
+      ]
+    },
+    "paper:1-s2.0-S2110582026001627-main.pdf": {
+      "tags": [
+        "Mechanical Ventilation",
+        "Weaning & Liberation from Ventilation",
+        "Point-of-care ultrasound",
+        "Venous congestion"
+      ],
+      "kind": "paper",
+      "system": "Pulmonology",
+      "type": "Other",
+      "subtopic": "Mechanical Ventilation",
+      "title": "Venous congestion in critical care: combining VExUS, lung ultrasound, and echocardiography",
+      "links": [
+        {
+          "to": "theory:Pulmonology/Diaphragm Ultrasound/Ultrasound in Critical Care_ Diaphragm and Airway.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:16:59"
+        },
+        {
+          "to": "paper:jcm-14-02067.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:16:59"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:16:59"
+        },
+        {
+          "to": "paper:s12871-026-03910-z_reference.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:16:59"
+        },
+        {
+          "to": "paper:s00134-026-08503-5.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:16:59"
+        },
+        {
+          "to": "paper:s13054-026-06015-8.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:16:59"
+        }
+      ]
+    },
+    "paper:1-s2.0-S2352556825001365-main.pdf": {
+      "tags": [
+        "Raised Intracranial Pressure",
+        "Neurocritical Care Monitoring",
+        "Traumatic Brain Injury",
+        "Multimodal Neuromonitoring"
+      ],
+      "kind": "paper",
+      "system": "Neurology",
+      "type": "Review",
+      "subtopic": "Raised Intracranial Pressure",
+      "title": "Early management of adult severe traumatic brain injury: What researchers and clinicians must know",
+      "links": [
+        {
+          "to": "paper:current_management_of_traumatic_intracranial.1.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.99,
+          "updated_at": "2026-08-21T21:17:03"
+        },
+        {
+          "to": "paper:Scan documents20260811_074422 (1).pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.99,
+          "updated_at": "2026-08-21T21:17:03"
+        },
+        {
+          "to": "paper:1-s2.0-S2772529426002183-main.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.99,
+          "updated_at": "2026-08-21T21:17:03"
+        },
+        {
+          "to": "theory:Neurology/ICP Management/Hyperosmolar Therapy in TBI_ Mannitol vs Hypertoni",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:03"
+        },
+        {
+          "to": "theory:Neurology/ICP Monitoring/Invasive Intracranial Pressure (ICP) Monitoring in.MD",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:03"
+        },
+        {
+          "to": "paper:s13054-026-05993-z.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:03"
+        }
+      ]
+    },
+    "paper:DOC-20260817-WA0002.pdf": {
+      "tags": [
+        "Acute Kidney Injury",
+        "Renal Replacement Therapy",
+        "Fluid Balance",
+        "Ultrafiltration Rate"
+      ],
+      "kind": "paper",
+      "system": "Nephrology",
+      "type": "Other",
+      "subtopic": "Renal Replacement Therapy",
+      "title": "Net Ultrafiltration Rate and Mortality in Critically Ill Patients: A Multicenter Cohort Study With Analysis of Fluid Balance Changes",
+      "links": [
+        {
+          "to": "paper:ijccm-26-S13.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:08"
+        },
+        {
+          "to": "paper:s13054-026-06144-0.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:08"
+        },
+        {
+          "to": "paper:sfag232.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:08"
+        },
+        {
+          "to": "paper:Renal_congestion_in_Critically_Ill_a_neglected_mechanism_of_AKI.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:08"
+        },
+        {
+          "to": "theory:Nephrology/AKI Care Bundle/AKI Care Bundle — Structured Elaboration for ICU P.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:08"
+        }
+      ]
+    },
+    "paper:Definition of Refractory Shock.pdf": {
+      "tags": [
+        "Hemodynamic Monitoring",
+        "Refractory Septic Shock",
+        "Norepinephrine Base Equivalent"
+      ],
+      "kind": "guideline",
+      "system": "Multisystem",
+      "type": "Guideline",
+      "subtopic": "Hemodynamic Monitoring",
+      "title": "Clinical criteria for the definition of refractory septic shock: a joint Delphi consensus from the Society of Critical Care Medicine (SCCM) and European Society of Intensive Care Medicine (ESICM)",
+      "links": [
+        {
+          "to": "paper:xavier-monnet-esicm-guidelines-on-circulatory-shock (1).pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:11"
+        },
+        {
+          "to": "paper:s40138-026-00361-1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:11"
+        },
+        {
+          "to": "paper:s44156-026-00129-z.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.8,
+          "updated_at": "2026-08-21T21:17:11"
+        },
+        {
+          "to": "paper:acc-003425.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.8,
+          "updated_at": "2026-08-21T21:17:11"
+        },
+        {
+          "to": "paper:s13054-026-06197-1.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:11"
+        }
+      ]
+    },
+    "paper:Haemorrhage-Control.pdf": {
+      "tags": [
+        "Polytrauma",
+        "Damage Control Resuscitation",
+        "Hemorrhage",
+        "Trauma Coagulopathy",
+        "Tranexamic acid",
+        "Anticoagulant reversal"
+      ],
+      "kind": "guideline",
+      "system": "Trauma",
+      "type": "Guideline",
+      "subtopic": "Trauma Coagulopathy",
+      "title": "The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition",
+      "links": [
+        {
+          "to": "paper:PIIS1538783626003260.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.99,
+          "updated_at": "2026-08-21T21:17:14"
+        },
+        {
+          "to": "paper:s40140-026-00715-1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.99,
+          "updated_at": "2026-08-21T21:17:14"
+        },
+        {
+          "to": "theory:Trauma/Damage Control Strategies/Damage Control Resuscitation and Damage Control Su",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:14"
+        },
+        {
+          "to": "theory:Trauma/Trauma Induced Coagulopathy/TIC.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:14"
+        },
+        {
+          "to": "paper:fcvm-13-1846208.pdf",
+          "kind": "paper",
+          "reason": "guideline recommendation",
+          "weight": 0.6,
+          "updated_at": "2026-08-21T21:17:14"
+        }
+      ]
+    },
+    "paper:PIIS0300957223002125.pdf": {
+      "tags": [
+        "Cardiac Arrest & Post-Cardiac Arrest Care",
+        "Oxygen therapy",
+        "Hyperoxemia"
+      ],
+      "kind": "paper",
+      "system": "Cardiology",
+      "type": "Other",
+      "subtopic": "Cardiac Arrest & Post-Cardiac Arrest Care",
+      "title": "Oxygen targets after cardiac arrest: A narrative review",
+      "links": [
+        {
+          "to": "deck:Cardiology/Cardiac Arrest & Post-Cardiac Arrest Care",
+          "kind": "flashcard_deck",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:17"
+        },
+        {
+          "to": "paper:batchelor-et-al-2026-the-postcardiac-arrest-inflammatory-response-mechanisms-and-therapeutic-targets.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:17"
+        },
+        {
+          "to": "paper:2153-8174-27-7-49773.pdf",
+          "kind": "paper",
+          "reason": "background theory",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:17"
+        },
+        {
+          "to": "paper:acc-003425.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.65,
+          "updated_at": "2026-08-21T21:17:17"
+        },
+        {
+          "to": "paper:jcm-15-04227.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.65,
+          "updated_at": "2026-08-21T21:17:17"
+        }
+      ]
+    },
+    "paper:ajrccm_211_6_932.pdf": {
+      "tags": [
+        "Mechanical Ventilation",
+        "Acute Respiratory Failure",
+        "Intracranial Pressure",
+        "Neurocritical Care"
+      ],
+      "kind": "paper",
+      "system": "Pulmonology",
+      "type": "Other",
+      "subtopic": "Mechanical Ventilation",
+      "title": "Mechanical Ventilation in Patients with Acute Brain Injuries: A Pathophysiology-based Approach",
+      "links": [
+        {
+          "to": "paper:1-s2.0-S2110582026000658-main.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:20"
+        },
+        {
+          "to": "paper:PIIS0007091225009353.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:20"
+        },
+        {
+          "to": "paper:1-s2.0-S0735675726003402.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:20"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026001627-main.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:20"
+        },
+        {
+          "to": "paper:jcm-14-02067.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:20"
+        }
+      ]
+    },
+    "paper:s00134-026-08420-7.pdf": {
+      "tags": [
+        "Raised Intracranial Pressure",
+        "Neurocritical Care Monitoring",
+        "Non-invasive ICP monitoring",
+        "Point-of-care ultrasound"
+      ],
+      "kind": "paper",
+      "system": "Neurology",
+      "type": "Other",
+      "subtopic": "Raised Intracranial Pressure",
+      "title": "Non-invasive intracranial pressure estimation in the intensive care unit: narrative review of methods and clinical applications",
+      "links": [
+        {
+          "to": "paper:Scan documents20260811_074422 (1).pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.99,
+          "updated_at": "2026-08-21T21:17:24"
+        },
+        {
+          "to": "theory:Neurology/ICP Monitoring/Invasive Intracranial Pressure (ICP) Monitoring in.MD",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:24"
+        },
+        {
+          "to": "theory:Neurology/Transcranial Doppler/Transcranial Doppler (TCD) in the ICU – Exam‑Style",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:24"
+        },
+        {
+          "to": "paper:current_management_of_traumatic_intracranial.1.pdf",
+          "kind": "paper",
+          "reason": "guideline recommendation",
+          "weight": 0.99,
+          "updated_at": "2026-08-21T21:17:24"
+        },
+        {
+          "to": "paper:s12028-023-01752-y (1).pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:24"
+        }
+      ]
+    },
+    "paper:s40138-026-00361-1.pdf": {
+      "tags": [
+        "Hemodynamic Monitoring",
+        "Sepsis",
+        "Fluid Resuscitation"
+      ],
+      "kind": "paper",
+      "system": "Multisystem",
+      "type": "Other",
+      "subtopic": "Hemodynamic Monitoring",
+      "title": "When to Restrict Fluids and Initiate De-Resuscitation in Sepsis and Septic Shock: A Step-by-Step Reference Guide",
+      "links": [
+        {
+          "to": "paper:ESICM FLUID 3.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:26"
+        },
+        {
+          "to": "paper:PIIS2058534926000387.pdf",
+          "kind": "paper",
+          "reason": "background theory",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:26"
+        },
+        {
+          "to": "paper:jcm-15-04227.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.8,
+          "updated_at": "2026-08-21T21:17:26"
+        },
+        {
+          "to": "theory:Multisystem/Hemodynamic Coherence/Hemodynamic Coherence and Personalized Hemodynamic.md",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:26"
+        },
+        {
+          "to": "paper:1-s2.0-S211058202600110X-main.pdf",
+          "kind": "paper",
+          "reason": "same topic",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:26"
+        },
+        {
+          "to": "paper:s13054-026-06197-1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:26"
+        }
+      ]
+    },
+    "paper:s44156-026-00129-z.pdf": {
+      "tags": [
+        "Cardiogenic Shock",
+        "Cardiac Imaging",
+        "Hemodynamic Monitoring",
+        "Point of Care Ultrasound"
+      ],
+      "kind": "paper",
+      "system": "Cardiology",
+      "type": "Review",
+      "subtopic": "Hemodynamic Monitoring",
+      "title": "A structured 5-question approach for echocardiographic evaluation of undifferentiated shock",
+      "links": [
+        {
+          "to": "paper:3.5flash_1-s2.0-S1875213626000513.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:35"
+        },
+        {
+          "to": "paper:Left ventricular outflow tract obstruction in critically ill patients.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:35"
+        },
+        {
+          "to": "paper:usefulness-of-bedside-point-of-care-ultrasounds-in-intensive.pdf",
+          "kind": "guideline",
+          "reason": "shared concept",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:35"
+        },
+        {
+          "to": "paper:xavier-monnet-esicm-guidelines-on-circulatory-shock (1).pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.8,
+          "updated_at": "2026-08-21T21:17:35"
+        },
+        {
+          "to": "paper:medicina-62-01070 (1).pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:35"
+        },
+        {
+          "to": "deck:Cardiology/Cardiac Imaging",
+          "kind": "flashcard_deck",
+          "reason": "shared concept",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:35"
+        }
+      ]
+    },
+    "theory:AMR-Gram-Negative-ICU-Management.md": {
+      "tags": [
+        "General",
+        "Antimicrobial Resistance",
+        "Gram-negative infections",
+        "Critical care"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "AMR-Gram-Negative-ICU-Management",
+      "links": [
+        {
+          "to": "paper:s12072-026-11116-1.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-21T21:17:38"
+        },
+        {
+          "to": "theory:General/Abdominal Compartment Syndrome/Intra-abdominal hypertension (IAH).md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:38"
+        },
+        {
+          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:38"
+        },
+        {
+          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:38"
+        },
+        {
+          "to": "theory:Section-3-Diagnostic-Testing-Probability.md",
+          "kind": "theory",
+          "reason": "background theory",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:38"
+        }
+      ]
+    },
+    "theory:Approach to Toxidromes in the ER and ICU.md": {
+      "tags": [
+        "General",
+        "Toxidromes",
+        "Poisoning"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Approach to Toxidromes in the ER and ICU",
+      "links": [
+        {
+          "to": "theory:Section-3-Diagnostic-Testing-Probability.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:46"
+        },
+        {
+          "to": "theory:General/ICU Documentation/Documentation in Critical Care and ICU_ Purpose, P.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:46"
+        },
+        {
+          "to": "theory:General/Medicolegal Risk Management/Medicolegal Risk Assessments and Management in Int.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:46"
+        },
+        {
+          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:46"
+        }
+      ]
+    },
+    "theory:Cardiology/Transesophageal Echocardiography/Transesophageal Echo in Critical Care.md": {
+      "tags": [
+        "Transesophageal Echocardiography",
+        "Cardiac Imaging",
+        "Hemodynamic Monitoring",
+        "Critical Care"
+      ],
+      "kind": "theory",
+      "system": "Cardiology",
+      "type": "Theory",
+      "subtopic": "Transesophageal Echocardiography",
+      "title": "Transesophageal Echo in Critical Care",
+      "links": [
+        {
+          "to": "paper:s44156-026-00129-z.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:49"
+        },
+        {
+          "to": "paper:usefulness-of-bedside-point-of-care-ultrasounds-in-intensive.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:17:49"
+        },
+        {
+          "to": "paper:jcm-15-04227.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:49"
+        },
+        {
+          "to": "deck:Cardiology/Hemodynamic Monitoring",
+          "kind": "flashcard_deck",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:49"
+        },
+        {
+          "to": "theory:Cardiology/Mechanical Circulatory Support/Mechanical Circulatory Devices in Critical Care.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:49"
+        }
+      ]
+    },
+    "theory:Hematology/Viscoelastic Testing/Contrast and compare TEG and ROTEM and it's modes": {
+      "tags": [
+        "Viscoelastic Testing",
+        "Coagulation Disorders",
+        "Bleeding Disorders",
+        "Massive Transfusion",
+        "Hemostasis"
+      ],
+      "kind": "theory",
+      "system": "Hematology",
+      "type": "Theory",
+      "subtopic": "Viscoelastic Testing",
+      "title": "Contrast and compare TEG and ROTEM and it's modes",
+      "links": [
+        {
+          "to": "paper:PIIS1538783626003260.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.6,
+          "updated_at": "2026-08-21T21:17:52"
+        },
+        {
+          "to": "paper:PIIS0007091226002734.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-21T21:17:52"
+        },
+        {
+          "to": "paper:s00134-026-08491-6_1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-21T21:17:52"
+        },
+        {
+          "to": "paper:jcm-13-07572.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:17:52"
+        }
+      ]
+    },
+    "theory:Section-1-Hypothesis-Testing-Errors-Significance (1).md": {
+      "tags": [
+        "General",
+        "p-value",
+        "hypothesis testing"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Section-1-Hypothesis-Testing-Errors-Significance (1)",
+      "links": [
+        {
+          "to": "theory:Section-2-Tests-of-Significance-Variable-Modeling.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:55"
+        },
+        {
+          "to": "theory:Section-3-Diagnostic-Testing-Probability.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:55"
+        },
+        {
+          "to": "theory:Section-4-Clinical-Trial-Design-Epidemiology.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:55"
+        },
+        {
+          "to": "theory:Section-5-Survival-Analysis-Effect-Sizes-Time-to-Event.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:55"
+        }
+      ]
+    },
+    "theory:Section-2-Tests-of-Significance-Variable-Modeling.md": {
+      "tags": [
+        "General",
+        "Biostatistics",
+        "Statistical testing"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Section-2-Tests-of-Significance-Variable-Modeling",
+      "links": [
+        {
+          "to": "theory:Section-1-Hypothesis-Testing-Errors-Significance (1).md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:57"
+        },
+        {
+          "to": "theory:Section-3-Diagnostic-Testing-Probability.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:57"
+        },
+        {
+          "to": "theory:Section-4-Clinical-Trial-Design-Epidemiology.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:57"
+        },
+        {
+          "to": "theory:Section-5-Survival-Analysis-Effect-Sizes-Time-to-Event.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:17:57"
+        }
+      ]
+    },
+    "theory:Section-3-Diagnostic-Testing-Probability.md": {
+      "tags": [
+        "General",
+        "Diagnostic testing",
+        "Evidence-based medicine"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Section-3-Diagnostic-Testing-Probability",
+      "links": [
+        {
+          "to": "theory:Section-1-Hypothesis-Testing-Errors-Significance (1).md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:05"
+        },
+        {
+          "to": "theory:Section-2-Tests-of-Significance-Variable-Modeling.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:05"
+        },
+        {
+          "to": "theory:Section-4-Clinical-Trial-Design-Epidemiology.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:05"
+        },
+        {
+          "to": "theory:Section-5-Survival-Analysis-Effect-Sizes-Time-to-Event.md",
+          "kind": "theory",
+          "reason": "same topic",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:05"
+        }
+      ]
+    },
+    "theory:Section-4-Clinical-Trial-Design-Epidemiology.md": {
+      "tags": [
+        "General",
+        "Clinical Trial Design",
+        "Randomized Controlled Trial"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Section-4-Clinical-Trial-Design-Epidemiology",
+      "links": [
+        {
+          "to": "theory:Section-1-Hypothesis-Testing-Errors-Significance (1).md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:08"
+        },
+        {
+          "to": "theory:Section-2-Tests-of-Significance-Variable-Modeling.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:08"
+        },
+        {
+          "to": "theory:Section-3-Diagnostic-Testing-Probability.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:08"
+        },
+        {
+          "to": "theory:Section-5-Survival-Analysis-Effect-Sizes-Time-to-Event.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:08"
+        },
+        {
+          "to": "theory:General/Clinical Trial Ethics/Ethical considerations of conducting a clinical tr.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:18:08"
+        },
+        {
+          "to": "theory:General/Adverse Event Reporting/Serious Adverse Event (SAE) Reporting & Root Cause,md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:18:08"
+        }
+      ]
+    },
+    "theory:Section-5-Survival-Analysis-Effect-Sizes-Time-to-Event.md": {
+      "tags": [
+        "General",
+        "Survival Analysis",
+        "Effect Size"
+      ],
+      "kind": "theory",
+      "system": "General",
+      "type": "Theory",
+      "subtopic": "General",
+      "title": "Section-5-Survival-Analysis-Effect-Sizes-Time-to-Event",
+      "links": [
+        {
+          "to": "theory:Section-1-Hypothesis-Testing-Errors-Significance (1).md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:14"
+        },
+        {
+          "to": "theory:Section-2-Tests-of-Significance-Variable-Modeling.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:14"
+        },
+        {
+          "to": "theory:Section-3-Diagnostic-Testing-Probability.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:14"
+        },
+        {
+          "to": "theory:Section-4-Clinical-Trial-Design-Epidemiology.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:14"
+        }
+      ]
+    },
+    "theory:Sepsis/Sepsis-Induced Cardiac Dysfunction/Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat": {
+      "tags": [
+        "Sepsis",
+        "Septic Shock",
+        "Sepsis-Induced Cardiac Dysfunction",
+        "Biomarkers",
+        "Myocardial depression",
+        "Echocardiography"
+      ],
+      "kind": "theory",
+      "system": "Sepsis",
+      "type": "Theory",
+      "subtopic": "Sepsis-Induced Cardiac Dysfunction",
+      "title": "Septic Cardiomyopathy (Sepsis-Induced Cardiomyopat",
+      "links": [
+        {
+          "to": "paper:life-16-00913_1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:18:17"
+        },
+        {
+          "to": "paper:s15010-026-02852-5_1.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:18:17"
+        },
+        {
+          "to": "paper:s44254-026-00177-y.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.7,
+          "updated_at": "2026-08-21T21:18:17"
+        },
+        {
+          "to": "paper:1-s2.0-S2110582026001238-main.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.6,
+          "updated_at": "2026-08-21T21:18:17"
+        },
+        {
+          "to": "paper:s13054-026-06201-8.pdf",
+          "kind": "paper",
+          "reason": "shared concept",
+          "weight": 0.6,
+          "updated_at": "2026-08-21T21:18:17"
+        },
+        {
+          "to": "paper:s40138-026-00361-1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.6,
+          "updated_at": "2026-08-21T21:18:17"
+        }
+      ]
+    },
+    "theory:Surgery/Perioperative Care Pathways/Enhanced Recovery After Surgery (ERAS).md": {
+      "tags": [
+        "Enhanced Recovery",
+        "Perioperative Care Pathways",
+        "Surgery",
+        "Surgical Nutrition"
+      ],
+      "kind": "theory",
+      "system": "Surgery",
+      "type": "Theory",
+      "subtopic": "Perioperative Care Pathways",
+      "title": "Enhanced Recovery After Surgery (ERAS)",
+      "links": [
+        {
+          "to": "paper:howard-quijano-et-al-2026-perioperative-anemia-and-patient-blood-management-in-cardiac-surgery-a-scientific-statement.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.65,
+          "updated_at": "2026-08-21T21:18:19"
+        },
+        {
+          "to": "paper:source-control-in-intra-abdominal-infections-what-you-need.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.65,
+          "updated_at": "2026-08-21T21:18:19"
+        }
+      ]
+    },
+    "theory:Trauma/Damage Control Strategies/Damage Control Resuscitation and Damage Control Su": {
+      "tags": [
+        "Damage Control Resuscitation",
+        "Damage Control Strategies",
+        "Hemorrhage",
+        "Trauma Coagulopathy",
+        "Lethal Triad"
+      ],
+      "kind": "theory",
+      "system": "Trauma",
+      "type": "Theory",
+      "subtopic": "Damage Control Strategies",
+      "title": "Damage Control Resuscitation and Damage Control Su",
+      "links": [
+        {
+          "to": "paper:Haemorrhage-Control.pdf",
+          "kind": "guideline",
+          "reason": "guideline recommendation",
+          "weight": 0.95,
+          "updated_at": "2026-08-21T21:18:22"
+        },
+        {
+          "to": "theory:Trauma/Trauma Induced Coagulopathy/TIC.md",
+          "kind": "theory",
+          "reason": "shared concept",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:18:22"
+        },
+        {
+          "to": "paper:s40140-026-00715-1.pdf",
+          "kind": "paper",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:18:22"
+        },
+        {
+          "to": "paper:s00330-026-12440-8.pdf",
+          "kind": "guideline",
+          "reason": "complementary",
+          "weight": 0.75,
+          "updated_at": "2026-08-21T21:18:22"
+        },
+        {
+          "to": "theory:Trauma/Pelvic Trauma/Management of Pelvic Trauma in ER and ICU.md",
+          "kind": "theory",
+          "reason": "complementary",
+          "weight": 0.85,
+          "updated_at": "2026-08-21T21:18:22"
         }
       ]
     }

@@ -1,0 +1,105 @@
+{
+  "id": "non-invasive-intracranial-pressure-estimation-in-the-intensive-care-unit-narrative-review-of-methods-and-clinical-applications-2026",
+  "doc_type": "article",
+  "article_subtype": "Other",
+  "title": "Non-invasive intracranial pressure estimation in the intensive care unit: narrative review of methods and clinical applications",
+  "authors": "Edoardo Picetti et al.",
+  "journal": "Intensive Care Medicine",
+  "year": 2026,
+  "doi": "10.1007/s00134-026-08420-7",
+  "specialty": [
+    "neurology",
+    "multi_system"
+  ],
+  "tags": [
+    "intracranial pressure",
+    "transcranial doppler",
+    "optic nerve sheath diameter",
+    "pupillometry",
+    "brain4care",
+    "neurocritical care",
+    "brain ultrasound"
+  ],
+  "one_line_summary": "Non-invasive intracranial pressure estimation modalities complement invasive monitoring by providing bedside screening, risk stratification, and physiological monitoring across neurocritical, general ICU, emergency, and low-resource settings.",
+  "key_pearls": [
+    "Non-invasive intracranial pressure (**nICP**) estimators cannot replace invasive probes due to lack of zeroing/calibration, exhibiting *95% limits of agreement* of **±7–15 mmHg** for TCD and **±7–10 mmHg** for ONSD.",
+    "A Transcranial Doppler pulsatility index (**PI**) **≥ 1.4** or **> 1.5** (in the absence of arterial hypotension and hypocapnia) with end-diastolic velocity (**EDV**) **≤ 20 cm/s** strongly indicates intracranial hypertension (**IH**).",
+    "An optic nerve sheath diameter (**ONSD**) threshold of **≥ 5.8–6.0 mm** (measured 3 mm retrobulbar) yields an *83% sensitivity and specificity* for identifying elevated ICP.",
+    "Automated pupillometry with a Neurological Pupil Index (**NPi**) **< 3** reflects midbrain compression from uncal herniation, while **NPi ≤ 2** within 6 hours post-cardiac arrest strongly predicts poor neurological outcome.",
+    "Cranial microdeformation analysis (*brain4care*) provides continuous compliance assessment, where a **P2/P1 ratio ≥ 1.4** and time-to-peak **TTP ≥ 0.3** identify **IH** with **90% specificity**.",
+    "The **B-ICONIC** consensus recommends combining at least two complementary **nICP** modalities alongside clinical examination and imaging rather than relying on a single technique."
+  ],
+  "evidence_level": "narrative_review",
+  "sample_size": null,
+  "population": "Critically ill adult and pediatric patients with acute brain injury or at risk of secondary brain injury from intracranial hypertension",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction and Principles of nICP Monitoring",
+      "content": "- Intracranial hypertension (**IH**) post-acute brain injury (**ABI**) drives secondary brain damage, requiring continuous physiology-driven intracranial pressure (**ICP**) surveillance.\n- Direct invasive methods (**intraparenchymal probes** and **external ventricular drains [EVD]**) remain the gold standard with an accuracy of **±2 mmHg** in the **0–20 mmHg** range.\n- **nICP** estimators serve primarily as high *negative predictive value (NPV)* screening tools to rule out **IH**, guide patient selection for invasive probes, and monitor patients with contraindications (e.g., severe coagulopathy).\n- High sensitivity and specificity are mutually exclusive; highly sensitive screening risks over-placement of invasive probes, whereas high specificity risks missing elevated ICP.\n- The **B-ICONIC** consensus highlights that no single **nICP** technique is sufficient; integrating at least two distinct modalities with clinical and radiological parameters is **recommended**.",
+      "section_pearls": [
+        "Invasive ICP monitors require accuracy within **±2 mmHg** (**0–20 mmHg**), which no current non-invasive tool can match.",
+        "nICP tools excel as high negative predictive value rule-out instruments rather than single-point numerical proxies."
+      ]
+    },
+    {
+      "order": 2,
+      "heading": "Transcranial Doppler Ultrasound Methods",
+      "content": "- Transcranial Doppler (**TCD**) measures blood flow velocity in basal cerebral arteries (primarily the middle cerebral artery [**MCA**]).\n- Elevated **ICP** reduces cerebral perfusion pressure (**CPP**) and increases **critical** closing pressure (**CrCP**), preferentially reducing end-diastolic flow velocity (**EDV** or **FVd**) and increasing the pulsatility index (**PI**).\n- **PI** is calculated as **(PSV - EDV) / MV**; an optimal cut-off value of **1.28** yields a *sensitivity and specificity* of **0.74**.\n- Empirical formulas derive non-invasive CPP (**nCPP = MAP * [FVd / FVm] + 14**) and non-invasive ICP (**nICP = MAP - nCPP**); a threshold of **nICP > **19.6 mmHg**** or **> **25 mmHg**** signals **IH** (*sensitivity 0.70, specificity 0.70*).\n- *95% limits of agreement* for TCD-derived ICP range from **±7 mmHg** to **±15 mmHg**, with mean **absolute** errors around **9.5 mmHg** (reduced to **3.9 mmHg** using domain-adversarial neural networks).\n- Confounders altering **PI** independently of true ICP include mean arterial pressure (**MAP**), heart rate, **PaCO2/ETCO2**, arterial stiffness, cerebral vasospasm, and sedative administration.\n- Severe **IH** progressing toward cerebral circulatory arrest demonstrates characteristic TCD stages: reverberating flow, systolic spikes, and total disappearance of flow signal.",
+      "section_pearls": [
+        "A **PI > 1.5** without hypotension or hypocapnia strongly indicates elevated ICP.",
+        "TCD empirical formulas demonstrate 95% limits of agreement of **±7–15 mmHg**."
+      ]
+    },
+    {
+      "order": 3,
+      "heading": "Optic Nerve Sheath Diameter Ultrasonography",
+      "content": "- The optic nerve sheath (**ONS**) is continuous with the intracranial subarachnoid space; the trabeculated 3 mm retrobulbar region expands dynamically as **ICP** rises.\n- **ONSD** values **< 5.2 mm** are considered normal, **5.2–5.8 mm** represent a grey zone requiring repeat testing/multimodal correlation, and **> 5.8–6.0 mm** indicate **IH**.\n- An optimal **ONSD** threshold of **5.9 mm** yields a *sensitivity* of **0.83** and *specificity* of **0.83** (*95% limits of agreement* range **±7–10 mmHg**).\n- Standardized acquisition via the **CLOSED** protocol (*Color Doppler, Low power, Optic disk clarity, Safety/short duration, Elevate frequency, Dual measurements*) eliminates technical artifacts.\n- Internal sheath diameter (**ONSDint**, subarachnoid space only) differs from external sheath diameter (**ONSDext**, including dura) by approximately **22%**, necessitating clear definition in serial tracking.\n- Acoustic exposure must follow the *ALARA* principle to protect the lens and retina; measurements must be consistent across repeats (*< 10% inter-measurement difference*).",
+      "section_pearls": [
+        "Retrobulbar **ONSD ≥ 6.0 mm** reliably identifies intracranial hypertension.",
+        "Internal versus external ONSD measurements introduce an approximate **22%** size discrepancy."
+      ]
+    },
+    {
+      "order": 4,
+      "heading": "Automated Quantitative Pupillometry",
+      "content": "- Quantitative pupillometry measures pupillary light reflex (**PLR**) parameters: pupil size, percentage constriction (**%C**), constriction velocity (**CV**), maximum constriction velocity (**MCV**), dilation velocity (**DV**), and latency.\n- The Neurological Pupil Index (**NPi**) and Quantitative Pupillometry Index (**QPi**) scale reactivity from **0 to 5**; an **NPi < 3** is considered abnormal.\n- An optimal **NPi** cut-off value of **3.96** yields a *sensitivity* of **0.68** and *specificity* of **0.68** for detecting **IH**.\n- **NPi** drops precede transtentorial/uncal herniation and midbrain compression, but show weak correlation with **absolute** numerical **ICP** in the absence of brainstem displacement.\n- In post-cardiac arrest hypoxic-ischemic encephalopathy (**HIE**), an **NPi ≤ 2** within **6 hours** post-resuscitation strongly predicts poor 90-day neurological outcomes with high specificity at **72 hours**.",
+      "section_pearls": [
+        "An **NPi < 3** signals midbrain/oculomotor nerve compression requiring immediate evaluation.",
+        "Post-cardiac arrest **NPi ≤ 2** within **6 hours** strongly predicts poor neurological recovery."
+      ]
+    },
+    {
+      "order": 5,
+      "heading": "Cranial Microdeformation and Non-invasive Compliance Methods",
+      "content": "- The *brain4care* (**B4C**) system uses a wearable cranial extensometer to detect beat-to-beat micrometric skull expansion (**< 0.2 µm** resolution) corresponding to intracranial pressure waveform (**ICPW**) morphology.\n- Key pulse wave morphology parameters include the tidal-to-percussion peak ratio (**P2/P1 ratio**) and normalized time-to-peak (**nTTP**).\n- A **P2/P1 ratio ≤ 0.8** rules out **IH** (**ICP > 20 mmHg**) with a *sensitivity* of **0.92** and *specificity* of **0.19**.\n- A **P2/P1 ratio ≥ 1.4** combined with an **nTTP ≥ 0.30** confirms depleted intracranial compliance and **IH** with a *specificity* of **0.90** (*sensitivity 0.11–0.16*).\n- Integrated machine learning models processing cranial expansion waveforms estimate **absolute** **ICP** with mean errors near **3 mmHg**.\n- Other secondary **nICP** modalities include optic coherence tomography (**OCT/OCTA**) for optic disc swelling, tympanic membrane displacement (**TMD**), acoustic ultrasound time-of-flight (**TOF**), two-depth ophthalmic artery Doppler, and CT/MRI-derived elastance indices.",
+      "section_pearls": [
+        "Cranial pulse wave **P2/P1 ratio ≤ 0.8** reliably rules out ICP **> 20 mmHg** (*sensitivity 0.92*).",
+        "A **P2/P1 ratio ≥ 1.4** and **nTTP ≥ 0.3** indicate severely exhausted intracranial compliance (*specificity 0.90*)."
+      ]
+    },
+    {
+      "order": 6,
+      "heading": "Clinical Applications across Neuro-ICU and General ICU Settings",
+      "content": "- **Neuro-ICU Application**: **nICP** refines patient selection for invasive monitors in severe **TBI** or **SAH** (where only ~33% develop sustained **IH**), provides interim surveillance during active coagulopathy/anticoagulation, and assists decision-making in moderate **TBI**.\n- **Post-Cardiac Arrest**: Ischemia-reperfusion edema causes **IH**; **TCD PI ≥ 1.49** and elevated **ONSD** correlate with post-resuscitation **IH** and poor neurological recovery.\n- **Acute Liver Failure (ALF)**: Cerebral edema affects ~**30%** of **ALF** cases where invasive probes carry high bleeding risks; pediatric **ONSD > 4.55–4.6 mm** accurately identifies raised **ICP** and failure to drop below **4.6 mm** at **24 hours** predicts **mortality**.\n- **Acute Respiratory Failure & ARDS**: High positive end-expiratory pressure (**PEEP**) causing alveolar overdistension raises intrathoracic pressure and **ICP**; **TCD** guides individual PEEP titration and **30° head-up reverse-Trendelenburg** prone positioning to prevent spikes in **PI** and **nICP**.\n- **Sepsis**: An **ONSD > 5.2 mm** and impaired cerebral autoregulation on **TCD** predict sepsis-associated encephalopathy (**SAE**).",
+      "section_pearls": [
+        "In acute liver failure, **nICP** provides critical surveillance when invasive probes are contraindicated due to coagulopathy.",
+        "In ARDS with brain injury, 30° head-up positioning during prone positioning prevents deleterious ICP elevations."
+      ]
+    },
+    {
+      "order": 7,
+      "heading": "Pre-hospital, Emergency, Low-Resource, and Austere Environments",
+      "content": "- Classical Cushing's reflex signs (*hypertension, bradycardia, irregular respiration*) have poor sensitivity for early **IH** in pre-hospital settings.\n- Automated pupillometry and cranial extensometry enable rapid, hands-free assessment within **1 minute** during transport or emergency department triage.\n- In low- and middle-income countries (**LMICs**) lacking neurosurgical facilities, validated imaging and clinical protocols (**ICE**, **CREVICE**, **BOOTStraP**) combined with serial **nICP** ultrasound improve care without invasive monitors.\n- In military combat casualty and austere care, Joint Trauma System (**JTS**) clinical practice guidelines incorporate automated pupillometry (**NPi < 3**) for **TBI** field triage.",
+      "section_pearls": [
+        "Automated pupillometry (**NPi < 3**) is formally integrated into military deployed CPGs for combat TBI triage.",
+        "Non-invasive tools facilitate structured protocols (CREVICE/ICE) in low-resource environments lacking neurosurgery."
+      ]
+    }
+  ],
+  "strengths_limitations": "- Strengths: Non-invasive, safe, portable bedside evaluation that enables rapid screening, risk stratification, and longitudinal tracking across diverse clinical environments (ICU, ED, LMICs, combat).\n- Limitations: Lack of continuous calibration and zeroing prevents direct replacement of invasive probes; methods display broad 95% limits of agreement (±7–**15 mmHg**), **notable** operator dependency, and an inability to quantify cumulative temporal ICP pressure-time burden (\"ICP dose\").",
+  "drugs_doses": [],
+  "related_ids": [],
+  "added_date": "2026-03-30",
+  "subtopic": "Raised Intracranial Pressure"
+}

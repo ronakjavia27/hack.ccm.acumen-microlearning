@@ -1,0 +1,71 @@
+{
+  "id": "monai-net-ultrafiltration-rate-and-mortality-in-critically-ill-patients-2026",
+  "doc_type": "article",
+  "article_subtype": "Other",
+  "title": "Net Ultrafiltration Rate and Mortality in Critically Ill Patients: A Multicenter Cohort Study With Analysis of Fluid Balance Changes",
+  "authors": "Monai NC et al.",
+  "journal": "Critical Care Medicine",
+  "year": 2026,
+  "doi": "10.1097/CCM.0000000000007289",
+  "specialty": [
+    "nephrology",
+    "multi_system"
+  ],
+  "tags": [
+    "crrt",
+    "net ultrafiltration",
+    "fluid balance",
+    "acute kidney injury",
+    "critical care",
+    "mortality"
+  ],
+  "one_line_summary": "In **critically** ill adults on CRRT, net ultrafiltration rate was not independently associated with 28-day **mortality**; **survival** benefits of higher ultrafiltration were largely mediated by achieving a more negative overall fluid balance.",
+  "key_pearls": [
+    "Net ultrafiltration (**NUF**) rate is not independently associated with **28-day mortality** after adjusting for total fluid balance changes.",
+    "Achieving a strongly negative fluid balance (**< -1.5 L/day** or **< -62.5 mL/h**) is independently protective against **mortality** (**OR 0.41**, *p* < 0.001).",
+    "A positive fluid balance change (**> 0.5 L/day** or **> 20.83 mL/h**) independently doubles **28-day mortality** risk (**OR 2.05**, *p* = 0.004).",
+    "Causal mediation analysis shows that up to **89%** of the apparent **survival** benefit associated with higher NUF rates is mediated through achieving a negative fluid balance rather than mechanical NUF intensity alone.",
+    "Patients receiving zero net ultrafiltration during CRRT had the highest crude 28-day **mortality** at **79%**, likely reflecting severe hemodynamic instability, refractory shock, or clinical inability to tolerate fluid removal."
+  ],
+  "evidence_level": "observational",
+  "sample_size": 973,
+  "population": "Adult critically ill ICU patients receiving CRRT for at least 24 hours across two European university medical centers (Bern, Switzerland and Amsterdam, Netherlands).",
+  "sections": [
+    {
+      "order": 1,
+      "heading": "Introduction and Study Rationale",
+      "content": "- **Acute kidney injury (AKI)** occurs in up to **50%** of ICU admissions, with approximately **one-third** requiring renal replacement therapy.\n- Fluid accumulation syndrome (**FAS**; cumulative positive fluid balance exceeding **5–10%** of body weight) develops in up to **two-thirds** of AKI patients and correlates with prolonged mechanical ventilation, increased length of stay, and elevated **mortality**.\n- Prior literature on **net ultrafiltration (NUF)** intensity shows conflicting results: some studies suggest a U-shaped relationship with excess harm at low (< **1.01 mL/kg/h**) or high (> **1.75 mL/kg/h**) rates, whereas others suggest benefits up to **3.1 mL/kg/h**.\n- Most existing studies lacked comprehensive total fluid balance tracking, leaving unresolved whether NUF rate acts directly on outcomes or indirectly via net fluid balance.",
+      "section_pearls": []
+    },
+    {
+      "order": 2,
+      "heading": "Study Design and Patient Cohorts",
+      "content": "- Multicenter retrospective observational study comprising **973 patients** and **6,914 CRRT treatment days** from University Hospital Bern (**HiRID**, *n* = 495) and Amsterdam UMC (**AmsterdamUMCDb**, *n* = 478).\n- Inclusion criteria: adult ICU patients (age **≥ 18 years**) undergoing their first continuous renal replacement therapy (**CRRT**) session lasting at least **24 hours**.\n- Primary exposure 1: hourly **NUF rate** categorized as zero (**0 mL/kg/h**; 12%), low (**0.01–1.00 mL/kg/h**; 62%), moderate (**1.01–1.75 mL/kg/h**; 19%), and high (**> 1.75 mL/kg/h**; 7.6%).\n- Primary exposure 2: hourly **fluid balance change** categorized as negative (**< -62.5 mL/h** / **< -1.5 L/day**; 37%), moderate negative (**-62.5 to -20.84 mL/h** / **-1.5 to -0.51 L/day**; 23%), neutral (**-20.83 to 20.83 mL/h** / **-0.5 to 0.5 L/day**; 18%), and positive (**> 20.83 mL/h** / **> 0.5 L/day**; 22%).\n- CRRT modalities differed **significantly**: Bern exclusively utilized continuous venovenous hemodiafiltration (**CVVHDF**; 100%), whereas Amsterdam utilized continuous venovenous hemofiltration (**CVVH**; 79%) and high-volume CVVH (**HVCVVH**; 21%).",
+      "section_pearls": []
+    },
+    {
+      "order": 3,
+      "heading": "Primary Outcomes and Multivariable Models",
+      "content": "- Crude **28-day mortality** was **38.7%** overall (**43.2%** in HiRID vs. **34.1%** in AmsterdamUMCDb), with the highest **mortality** in the **zero NUF** group (**79%**).\n- In univariable and isolated exposure models, lower NUF rates were associated with higher **mortality** (low vs moderate **OR 2.24**, *p* < 0.001; zero vs moderate **OR 10.68**, *p* < 0.001).\n- When fluid balance was added to the multivariable model, NUF rate was no longer **significantly** predictive (low NUF **OR 1.26**, *p* = 0.280).\n- Fluid balance remained an independent predictor of **28-day mortality**: negative fluid balance was protective (**OR 0.41**, 95% CI 0.26–0.66, *p* < 0.001), while positive fluid balance **significantly** increased **mortality** (**OR 2.05**, 95% CI 1.26–3.36, *p* = 0.004) compared to neutral balance.\n- Landmark analyses at **48 hours** (*n* = 705) and **72 hours** (*n* = 664) post-CRRT initiation confirmed no independent association between early NUF and subsequent **mortality**, while positive fluid balance at **72 hours** independently predicted death (**HR 1.57**, 95% CI 1.04–2.37, *p* = 0.032).",
+      "section_pearls": []
+    },
+    {
+      "order": 4,
+      "heading": "Mediation and Subgroup Findings",
+      "content": "- Spearman correlation between NUF rate and fluid balance was ***r* = -0.72** (*p* < 0.001) with low multicollinearity (**GVIF < 2.0**).\n- Causal mediation analysis established that up to **89%** of the observed total **survival** effect of NUF was mediated through fluid balance change (average causal mediation effect **OR 0.77–0.88** across comparisons).\n- Average direct effects (**ADE**) of NUF on **mortality** were nonsignificant across all comparisons except when comparing against the **zero NUF** group (**ADE OR 0.71**, 95% CI 0.61–0.82, *p* < 0.001).\n- Spline curves and partial dependence plots showed no evidence of a U- or J-shaped harm curve at high NUF rates in the general cohort, though subgroup analysis revealed potential U-shaped associations in specific unstable subsets: patients with **lactate increase ≥ 4 mmol/L** and patients with **new-onset anuria**.",
+      "section_pearls": []
+    }
+  ],
+  "strengths_limitations": "- **Strengths:** Large multicenter European cohort (973 patients, 6,914 CRRT days) with high-resolution hourly physiologic and fluid data; robust statistical methodology combining multivariable logistic regression, causal mediation, random forest modeling, and landmark **survival** analyses across two CRRT modalities (CVVH and CVVHDF).\n- **Limitations:** Retrospective observational design susceptible to unmeasured confounding and indication bias; body weight was based on admission weight rather than daily weights; potential inaccuracies in manual fluid balance recording; underpowered to evaluate extreme high-intensity NUF (> **1.75 mL**/kg/h, *n* = 74) or specific small subgroups (e.g., lactate ≥ **4 mmol**/L, ESKD).",
+  "drugs_doses": [
+    {
+      "drug": "Noradrenaline (Norepinephrine)",
+      "dose": "Median 0.1 µg/kg/min (IQR 0.0–0.3 µg/kg/min) at CRRT start; analyzed threshold increase ≥ 0.1 µg/kg/min",
+      "indication": "Vasopressor support for hemodynamic instability and distributive shock during CRRT",
+      "adverse_effects": "Tachycardia, peripheral ischemia, excessive vasoconstriction, organ hypoperfusion"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-03-31",
+  "subtopic": "Renal Replacement Therapy"
+}

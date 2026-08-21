@@ -1,0 +1,164 @@
+{
+  "id": "sccm-esicm-refractory-septic-shock-definition-2026",
+  "doc_type": "guideline",
+  "title": "Clinical criteria for the definition of refractory septic shock: a joint Delphi consensus from the Society of Critical Care Medicine (SCCM) and European Society of Intensive Care Medicine (ESICM)",
+  "issuing_bodies": [
+    "SCCM",
+    "ESICM"
+  ],
+  "year": 2026,
+  "doi": "10.1007/s00134-026-08344-2",
+  "specialty": [
+    "multi_system",
+    "pharmacology"
+  ],
+  "tags": [
+    "septic shock",
+    "refractory septic shock",
+    "delphi consensus",
+    "norepinephrine base equivalent",
+    "capillary refill time",
+    "lactate",
+    "critical care ultrasonography"
+  ],
+  "one_line_summary": "Joint SCCM/ESICM Delphi consensus defines refractory septic shock by fluid unresponsiveness, persistent hyperlactatemia or prolonged capillary refill time, vasopressor requirement over **0.5 mcg**/kg/min NEE, and **critical** care ultrasound evaluation.",
+  "key_pearls": [
+    "**Refractory septic shock** is defined by persistent **hyperlactatemia** and/or prolonged **capillary refill time (CRT)** in fluid-unresponsive septic shock requiring **norepinephrine base equivalent (NEE) > 0.5 µg/kg/min**.",
+    "Assessment of **fluid responsiveness** is **mandatory** prior to declaring shock refractory; additional fluid boluses should be withheld if fluid unresponsiveness is established.",
+    "**Critical care ultrasonography (CCUS)** is the sole required diagnostic modality to rule out alternative or mixed shock etiologies (e.g., cardiogenic or obstructive shock).",
+    "Vasopressor exposure must be standardized using **norepinephrine base equivalent dose (NEE)** to account for varied salt formulations and multi-agent regimens.",
+    "Specific **blood pressure/MAP** targets, **ScvO2** thresholds, and **urine output** were explicitly excluded from diagnostic criteria due to lack of specificity and poor correlation with immediate resuscitation response."
+  ],
+  "consensus_method": "5-round Delphi survey process conducted with 56 international multidisciplinary experts; consensus defined as >= 75% agreement or disagreement.",
+  "search_period": "August 2024 to April 2025",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Need for Consensus Definition and Core Domains",
+      "narrative": "- Standardized consensus criteria are required to align clinical management, harmonize clinical trial enrolment, facilitate provider communication, and enable robust guideline development.\n- Diagnostic criteria for refractory septic shock incorporate four key clinical domains: markers of **tissue perfusion**, markers of **organ dysfunction**, **optimal fluid resuscitation/volume status**, and **vasoactive therapy exposure**.",
+      "recommendations": [
+        {
+          "rec_id": "Statement 1",
+          "statement": "A comprehensive consensus definition for refractory septic shock is needed to standardize clinical care, research, provider communication, and guideline development.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "Statement 2",
+          "statement": "Broad domain criteria for defining refractory septic shock must include markers of tissue perfusion, organ dysfunction, fluid resuscitation status, and vasoactive drug dosage.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Markers of Tissue Perfusion and Excluded Parameters",
+      "narrative": "- Persistent impairment of tissue perfusion despite blood pressure restoration indicates microvascular dysfunction and hemodynamic incoherence.\n- **Serum lactate concentration** (**94.6% agreement**) and **capillary refill time (CRT)** (**76.8% agreement**) are validated surrogate markers of tissue perfusion that must be included in the criteria.\n- **Central venous oxygen saturation (ScvO2)** (**76.8% agreement to exclude**) and **urine output** (**78.6% agreement to exclude**) should not be used as defining criteria due to multifactorial confounding and delayed physiological response.",
+      "recommendations": [
+        {
+          "rec_id": "Statement 3",
+          "statement": "Serum lactate concentration and capillary refill time (CRT) should be utilized as key tissue perfusion markers to define refractory septic shock.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "Statement 4",
+          "statement": "Central venous oxygen saturation (ScvO2) and urine output should be excluded from the clinical definition criteria for refractory septic shock.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Fluid Resuscitation and Fluid Responsiveness",
+      "narrative": "- Initial resuscitation requires crystalloids (up to **30 mL/kg** based on clinical context), but ongoing fluid administration without assessing fluid responsiveness risks fluid overload.\n- Refractory septic shock can only be declared when additional fluid administration yields no therapeutic benefit (**fluid unresponsiveness**) (**92.9% agreement**).",
+      "recommendations": [
+        {
+          "rec_id": "Statement 5",
+          "statement": "Following initial fluid resuscitation, additional fluid challenges must be guided by formal assessment of fluid responsiveness status prior to declaring refractory septic shock.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Vasoactive Therapy and Threshold Dosing",
+      "narrative": "- Total vasopressor intensity serves as a key surrogate for severe vasoplegia and cardiovascular failure.\n- Vasopressor dosing must be quantified using **norepinephrine base equivalent dose (NEE)** (**83.9% agreement**) to standardise variation across salt formulations (**base vs. tartrate**) and secondary vasopressors.\n- A minimum threshold NEE of **> 0.5 µg/kg/min** (**75.0% agreement**) is required to define refractory shock, distinguishing refractoriness from the simple decision to initiate a second-line vasopressor.",
+      "recommendations": [
+        {
+          "rec_id": "Statement 6",
+          "statement": "Vasopressor exposure in refractory septic shock should be standardized and reported using Norepinephrine Base **Equivalent** Dose (NEE).",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        },
+        {
+          "rec_id": "Statement 7",
+          "statement": "A threshold vasopressor requirement of Norepinephrine Base **Equivalent** Dose (NEE) > 0.5 µg/kg/min is required to define refractory septic shock.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Diagnostic Modalities and Echocardiography",
+      "narrative": "- Patients with non-resolving shock require diagnostic evaluation to rule out non-septic or mixed shock mechanisms.\n- **Critical care ultrasonography (CCUS)** (**92.9% agreement**) is the sole diagnostic modality **recommended** to evaluate cardiac dysfunction, hypovolemia, acute cor pulmonale, or obstructive shock etiologies.",
+      "recommendations": [
+        {
+          "rec_id": "Statement 8",
+          "statement": "**Critical** care ultrasonography (CCUS) should be performed to assess for alternative or concurrent causes of shock (e.g., cardiogenic or obstructive shock) before confirming refractory septic shock.",
+          "strength": "strong",
+          "evidence_grade": "expert_opinion"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Initial Septic Shock Resuscitation",
+      "action": "Confirm septic shock diagnosis according to Sepsis-3 criteria. Initiate standard initial fluid resuscitation (up to **30 mL/kg** IV crystalloids) and start first-line vasopressor therapy with **norepinephrine**."
+    },
+    {
+      "step": 2,
+      "title": "Fluid Responsiveness Re-evaluation",
+      "action": "Perform dynamic measures of fluid responsiveness (e.g., passive leg raise, pulse pressure variation). Cease further fluid boluses if the patient is determined to be **fluid unresponsive**."
+    },
+    {
+      "step": 3,
+      "title": "Vasopressor Exposure Calculation",
+      "action": "Calculate the total vasopressor requirement as **Norepinephrine Base Equivalent Dose (NEE)**. Confirm that the required dosage is **> 0.5 µg/kg/min**."
+    },
+    {
+      "step": 4,
+      "title": "Tissue Hypoperfusion Assessment",
+      "action": "Assess for persistent signs of tissue hypoperfusion despite macrovascular stabilization, documented by elevated **serum lactate** and/or prolonged **capillary refill time (CRT)**."
+    },
+    {
+      "step": 5,
+      "title": "Bedside Critical Care Ultrasonography (CCUS)",
+      "action": "Perform bedside **CCUS** (including focused cardiac POCUS and lung ultrasound) to rule out cardiogenic dysfunction, pulmonary embolism, cardiac tamponade, or unaddressed volume depletion."
+    },
+    {
+      "step": 6,
+      "title": "Diagnosis Confirmation",
+      "action": "Establish the diagnosis of **refractory septic shock** if the patient is fluid unresponsive, requires **NEE > 0.5 µg/kg/min**, exhibits persistent hyperlactatemia and/or prolonged CRT, and mixed shock etiologies are evaluated via CCUS."
+    }
+  ],
+  "strengths_limitations": "- **Strengths**: Developed through a rigorous international 5-round Delphi process across **56 multidisciplinary experts** from **22 countries**, establishing clear, actionable clinical threshold parameters (**NEE > 0.5 µg/kg/min**, **CRT**, **lactate**, **CCUS**).\n- **Limitations**: Inability to reach consensus on a specific time duration threshold for shock before declaring refractoriness, reliance on expert opinion for threshold cutoffs due to limited RCT evidence, and potential feasibility constraints for CCUS in low-resource settings.",
+  "drugs_doses": [
+    {
+      "drug": "norepinephrine",
+      "dose": "> 0.5 µg/kg/min (base equivalent), continuous IV infusion",
+      "indication": "Threshold dosage defining refractory septic shock",
+      "adverse effects": "Severe peripheral/splanchnic vasoconstriction, tissue ischemia, arrhythmias, myocardial ischemia; monitor central lines, blood pressure, and organ perfusion."
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-03-30",
+  "article_subtype": "Guideline",
+  "subtopic": "Hemodynamic Monitoring"
+}

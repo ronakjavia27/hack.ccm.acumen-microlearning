@@ -1,0 +1,649 @@
+{
+  "id": "esaic-esicm-major-bleeding-coagulopathy-trauma-2023",
+  "doc_type": "guideline",
+  "title": "The European guideline on management of major bleeding and coagulopathy following trauma: sixth edition",
+  "issuing_bodies": [
+    "ESAIC",
+    "ESICM",
+    "ESS",
+    "ESTES",
+    "EuSEM",
+    "NATA"
+  ],
+  "year": 2023,
+  "doi": "10.1186/s13054-023-04327-7",
+  "specialty": [
+    "trauma",
+    "surgery",
+    "pharmacology"
+  ],
+  "tags": [
+    "traumatic coagulopathy",
+    "major bleeding",
+    "haemostasis",
+    "tranexamic acid",
+    "damage control surgery",
+    "viscoelastic testing",
+    "massive transfusion"
+  ],
+  "one_line_summary": "Evidence-based European clinical practice guidelines recommending structured diagnostic, resuscitative, surgical, and goal-directed haemostatic strategies for the management of major post-traumatic bleeding and coagulopathy.",
+  "key_pearls": [
+    "- Administer **tranexamic acid (TXA)** as soon as possible and within **3 hours** of injury at a loading dose of **1 g** IV over **10 min**, followed by **1 g** over **8 h**, without waiting for viscoelastic test results.",
+    "- Practice restricted volume replacement targeting a systolic blood pressure of **80–90 mmHg** (MAP **50–60 mmHg**) until major bleeding is stopped; in severe TBI (GCS **<= 8**), maintain MAP **>= 80 mmHg**.",
+    "- Initiate early coagulation support with either **fibrinogen concentrate** / **cryoprecipitate** and **pRBC**, or **FFP** in a ratio of at least **1:2** alongside a high platelet ratio while awaiting lab/VEM results.",
+    "- Target a plasma **Clauss fibrinogen level > 1.5 g/L** or viscoelastic evidence of fibrin deficit using an initial dose of **3–4 g** fibrinogen concentrate or **15–20 units** cryoprecipitate.",
+    "- Avoid routine platelet transfusion in bleeding trauma patients on antiplatelet agents; maintain platelet count **> 50 x 10^9/L** in ongoing bleeding and **> 100 x 10^9/L** in severe TBI.",
+    "- Reverse direct oral anticoagulants in life-threatening bleeding: use **andexanet alfa** for apixaban/rivaroxaban (or **4-factor PCC 25–50 U/kg** if unavailable or for edoxaban), and **idarucizumab 5 g** for dabigatran.",
+    "- Reverse vitamin K antagonists urgently using **4-factor prothrombin complex concentrate (PCC 25–50 U/kg)** combined with **5–10 mg IV phytomenadione (vitamin K1)**."
+  ],
+  "consensus_method": "Structured evidence-based consensus approach using PICO queries, GRADE system recommendations, Cochrane risk-of-bias tools, and live expert panel voting.",
+  "search_period": "01 Jan 2018 to 02 Dec 2021 for existing topics; 01 Jan 2001 to 02 Dec 2021 for new topics",
+  "recommendation_blocks": [
+    {
+      "order": 1,
+      "topic": "Initial Resuscitation and Prevention of Further Bleeding",
+      "narrative": "- Regionalized trauma systems with level I trauma centers **significantly** reduce **mortality** and preventable deaths in bleeding trauma patients.\n- Minimizing pre-hospital scene time and door-to-intervention time improves **survival**, as every additional minute of scene time increases **mortality** by **1-2%** in penetrating trauma.\n- External hemorrhage from open extremity injuries should be managed with local compression or tourniquets left until surgical control, minimizing placement duration to prevent nerve paralysis and ischemia.\n- Advanced airway control should be achieved rapidly in patients with GCS **<= 8**, hypoventilation, or hypoxemia; avoid hyperoxia (PaO2 well above normal) and hypocapnia unless cerebral herniation is imminent.\n- Evidence for pre-hospital blood product usage remains inconclusive across major RCTs (PAMPer, COMBAT, RePHILL), though post hoc benefits are seen in transport times **> 20 min**.",
+      "recommendations": [
+        {
+          "rec_id": "R1.1",
+          "statement": "We recommend that severely injured patients be transported directly to an appropriate trauma facility.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R1.2",
+          "statement": "We recommend that the time elapsed between injury and bleeding control be minimised.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R2.1",
+          "statement": "We recommend local compression of open wounds to limit life-threatening bleeding.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R2.2",
+          "statement": "We recommend adjunct tourniquet use to stop life-threatening bleeding from open extremity injuries in the pre-surgical setting.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R3.1",
+          "statement": "We recommend that endotracheal intubation or alternative airway management be performed without delay in the presence of airway obstruction, altered consciousness [Glasgow Coma Scale (GCS) <= 8], hypoventilation or hypoxaemia.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R3.2",
+          "statement": "We recommend the avoidance of hypoxaemia.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R3.3",
+          "statement": "We suggest the avoidance of hyperoxaemia, except in the presence of imminent exsanguination.",
+          "strength": "conditional",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": "R3.4",
+          "statement": "We recommend normoventilation of trauma patients.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R3.5",
+          "statement": "We suggest hyperventilation as a life-saving measure in the presence of signs of cerebral herniation.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R4.1",
+          "statement": "No clear recommendation or suggestion in favour or against the use of pre-hospital blood products can be provided at this time.",
+          "strength": null,
+          "evidence_grade": null
+        }
+      ]
+    },
+    {
+      "order": 2,
+      "topic": "Diagnosis and Monitoring of Bleeding",
+      "narrative": "- Shock index (SI) **>= 0.8–0.9** and narrowed pulse pressure (**< 30–40 mmHg**) independently predict massive transfusion requirements, intervention, and **mortality**.\n- Patients presenting in severe hypovolemic shock in extremis with obvious or suspected bleeding sources require direct surgical or interventional bleeding control without diagnostic delay.\n- Point-of-care ultrasound (POCUS/FAST) is **recommended** during primary survey; negative FAST does not rule out intra-abdominal hemorrhage (sensitivity **0.74**, specificity **0.96**).\n- Immediate contrast-enhanced whole-body CT (WBCT) reduces emergency room time and lowers exsanguination **mortality** in patients meeting criteria (SBP **< 100 mmHg**, exterior blood loss **>= 500 mL**, GCS **<= 13**).\n- Repeated **Hb/Hct** measurements are necessary as initial normal values may mask occult early bleeding due to lack of fluid shifts.\n- Blood **lactate** and **base deficit** serve as reliable surrogates for anaerobic metabolism, shock severity, and tissue hypoperfusion monitoring.\n- Early and repeated coagulation testing using standard laboratory assays (PT/INR, Clauss fibrinogen, platelets) and/or viscoelastic measures (TEG/ROTEM) guides goal-directed resuscitation.",
+      "recommendations": [
+        {
+          "rec_id": "R5.1",
+          "statement": "We recommend that the physician clinically assess the extent of traumatic haemorrhage using a combination of patient physiology, anatomical injury pattern, mechanism of injury and the patient response to initial resuscitation.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R5.2",
+          "statement": "We recommend that the shock index (SI) and/or pulse pressure (PP) be used to assess the degree of hypovolaemic shock and transfusion requirements.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R6.1",
+          "statement": "We recommend that patients with an obvious bleeding source and those presenting with haemorrhagic shock in extremis and a suspected source of bleeding undergo an immediate bleeding control procedure.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R7.1",
+          "statement": "We recommend that patients with an unidentified source of bleeding, but without a need for immediate bleeding control, undergo immediate further investigation to determine the bleeding source.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R8.1",
+          "statement": "We suggest the use of pre-hospital ultrasonography (PHUS) for the detection of haemo-/pneumothorax, haemopericardium and/or free abdominal fluid in patients with thoracoabdominal injuries, if feasible without delaying transport.",
+          "strength": "conditional",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": "R8.2",
+          "statement": "We recommend the use of point-of-care ultrasonography (POCUS), including FAST, in patients with thoracoabdominal injuries.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R8.3",
+          "statement": "We recommend early imaging using contrast-enhanced whole-body CT (WBCT) for the detection and identification of the type of injury and the potential source of bleeding.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R9.1",
+          "statement": "We recommend the use of repeated Hb and/or Hct measurements as a laboratory marker for bleeding, as an initial value in the normal range may mask early-phase bleeding.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R10.1",
+          "statement": "We recommend blood lactate as a sensitive test to estimate and monitor the extent of bleeding and tissue hypoperfusion; in the absence of lactate measurements, base deficit may represent a suitable alternative.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R11.1",
+          "statement": "We recommend the early and repeated monitoring of haemostasis, using either a traditional laboratory determination such as prothrombin time (PT)/international normalised ratio (INR), Clauss fibrinogen level and platelet count and/or point-of-care (POC) PT/INR and/or a viscoelastic method.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R12.1",
+          "statement": "We recommend that the routine use of POC platelet function devices for platelet function monitoring in trauma patients on antiplatelet therapy or with suspected platelet dysfunction be avoided.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        }
+      ]
+    },
+    {
+      "order": 3,
+      "topic": "Tissue Oxygenation, Volume, Fluids and Temperature",
+      "narrative": "- Restricted volume replacement and permissive hypotension targeting SBP **80–90 mmHg** (MAP **50–60 mmHg**) reduces **mortality**, transfusion requirements, and organ failure in non-TBI bleeding patients.\n- In severe TBI (GCS **<= 8**), permissive hypotension is strictly **contraindicated**; maintain MAP **>= 80 mmHg** to ensure cerebral perfusion pressure.\n- Vasopressors (**noradrenaline**) should be administered transiently if restricted volume resuscitation fails to achieve target blood pressure in severe hypovolemia (SBP **< 80 mmHg**).\n- Initiate fluid replacement with **0.9% sodium chloride** or **balanced crystalloids**; avoid hypotonic solutions (e.g., Ringer's lactate) in severe head injury to prevent cerebral edema.\n- Target hemoglobin levels are **70–90 g/L** during active resuscitation; restrictive transfusion triggers (**< 70 g/L**) are safe and beneficial across **critical** care populations including TBI.\n- Intraoperative cell salvage (ICS) reduces allogeneic red blood cell consumption in massive abdominal, pelvic, or thoracic bleeding.\n- Actively prevent and correct hypothermia to maintain core temperature **36–37 °C**; hypothermia (**< 35 °C**) impairs coagulation factor cascades and increases **mortality**.",
+      "recommendations": [
+        {
+          "rec_id": "R13.1",
+          "statement": "In the initial phase following trauma, we recommend the use of a restricted volume replacement strategy with a target systolic blood pressure of 80–**90 mmHg** (mean arterial pressure 50–**60 mmHg**) until major bleeding has been stopped without clinical evidence of brain injury.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R13.2",
+          "statement": "In patients with severe TBI (GCS <= 8), we recommend that a mean arterial pressure >= **80 mmHg** be maintained.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R14.1",
+          "statement": "If a restricted volume replacement strategy does not achieve the target blood pressure, we recommend the administration of noradrenaline in addition to fluids to maintain target arterial pressure.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R14.2",
+          "statement": "We recommend infusion of dobutamine in the presence of myocardial dysfunction.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R15.1",
+          "statement": "We recommend that fluid therapy using a 0.9% sodium chloride or balanced crystalloid solution be initiated in the hypotensive bleeding trauma patient.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R15.2",
+          "statement": "We recommend that hypotonic solutions such as Ringer's lactate be avoided in patients with severe head trauma.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R15.3",
+          "statement": "We recommend that the use of colloids be restricted due to the adverse effects on haemostasis.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R16.1",
+          "statement": "If erythrocyte transfusion is necessary, we recommend a target haemoglobin of 70–**90 g**/L.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R17.1",
+          "statement": "We suggest that cell salvage be considered in the presence of severe bleeding from an abdominal, pelvic or thoracic cavity.",
+          "strength": "conditional",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": "R18.1",
+          "statement": "We recommend early application of measures to reduce heat loss and warm the hypothermic patient to achieve and maintain normothermia.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        }
+      ]
+    },
+    {
+      "order": 4,
+      "topic": "Rapid Control of Bleeding",
+      "narrative": "- Damage control surgery (abbreviated procedures, packing, temporary abdominal closure) is **mandatory** in patients presenting with the 'lethal triad' (hypothermia, acidosis, coagulopathy), severe shock, or complex anatomical injuries.\n- Non-invasive pelvic binders should be applied pre-hospital for suspected pelvic fractures; unstable pelvic ring disruptions require early surgical closure, pelvic packing, or angioembolisation.\n- REBOA may be considered in non-compressible life-threatening hemorrhage as a temporary bridge to definitive hemostasis, though evidence regarding **survival** benefit remains limited.\n- Topical hemostatic agents (collagen, gelatin-thrombin matrix, oxidized cellulose, fibrin sealants) serve as effective adjuncts for parenchymal, venous, or moderate arterial bleeding.",
+      "recommendations": [
+        {
+          "rec_id": "R19.1",
+          "statement": "We recommend damage control surgery in the severely injured patient presenting with haemorrhagic shock, signs of ongoing bleeding, coagulopathy and/or combined abdominal vascular and pancreatic injuries.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R19.2",
+          "statement": "Other factors that should trigger a damage control approach are hypothermia, acidosis, inaccessible major anatomic injury, a need for time-consuming procedures.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R19.3",
+          "statement": "We recommend primary definitive surgical management in the absence of any of the factors above.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R20.1",
+          "statement": "We recommend the adjunct use of a pelvic binder in the pre-hospital setting to limit life-threatening bleeding in the presence of a suspected pelvic fracture.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R20.2",
+          "statement": "We recommend that patients with pelvic ring disruption in haemorrhagic shock undergo pelvic ring closure and stabilisation as early as possible.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R21.1",
+          "statement": "We recommend temporary extra-peritoneal packing when bleeding is ongoing and/or when angioembolisation cannot be achieved in a timely manner. Extra-peritoneal packing can be combined with open abdominal surgery when necessary.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R21.2",
+          "statement": "We suggest that REBOA be considered in patients with noncompressible life-threatening traumatic haemorrhage to bridge the gap between haemodynamic collapse and haemorrhage control.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R22.1",
+          "statement": "We recommend the use of topical haemostatic agents in combination with other surgical measures or with packing for venous or moderate arterial bleeding associated with parenchymal injuries.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        }
+      ]
+    },
+    {
+      "order": 5,
+      "topic": "Initial Management of Bleeding and Coagulopathy",
+      "narrative": "- Administer **tranexamic acid (TXA)** as early as possible (en route or within **3 hours** of injury) at a **1 g** loading dose over **10 min**, followed by a **1 g** IV infusion over **8 h**; do not delay for viscoelastic testing.\n- Early empirical fixed-ratio transfusion protocols should utilize **FFP:pRBC** ratios between **1:1** and **1:2**, plus early high platelet ratios (**1:1** relative to pRBC).\n- Coagulation factor concentrate (CFC)-based primary resuscitation using **fibrinogen concentrate** (**2–4 g**) or **cryoprecipitate** with pRBC provides an effective alternative to plasma-based protocols.",
+      "recommendations": [
+        {
+          "rec_id": "R23.1",
+          "statement": "We recommend that tranexamic acid (TXA) be administered to the trauma patient who is bleeding or at risk of **significant** bleeding as soon as possible, if feasible en route to the hospital, and within 3 h after injury at a loading dose of **1 g** infused over **10 min**, followed by an i.v. infusion of **1 g** over 8 h.",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R23.2",
+          "statement": "We recommend that the administration of TXA not await results from a viscoelastic assessment.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R24.1",
+          "statement": "We recommend that monitoring and measures to support coagulation be initiated immediately upon hospital admission.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R25.1",
+          "statement": "In the initial management of patients with expected massive haemorrhage, we recommend one of two strategies: fibrinogen concentrate/cryoprecipitate and pRBC OR FFP/pathogen-inactivated FFP in a ratio of at least 1:2.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R25.2",
+          "statement": "In addition, we suggest a high platelet/pRBC ratio.",
+          "strength": "conditional",
+          "evidence_grade": "2B"
+        }
+      ]
+    },
+    {
+      "order": 6,
+      "topic": "Further Goal-Directed Coagulation Management",
+      "narrative": "- Resuscitation should transition rapidly to goal-directed therapy guided by standard laboratory parameters or viscoelastic monitoring (TEG/ROTEM).\n- Avoid using FFP to correct hypofibrinogenemia if fibrinogen concentrate/cryoprecipitate is available.\n- Maintain plasma **Clauss fibrinogen > 1.5 g/L** (or VEM functional fibrinogen deficit) using an initial dose of **3–4 g** fibrinogen concentrate or **15–20 units** cryoprecipitate.\n- Administer **4-factor PCC** (**25–50 U/kg**) if EXTEM clotting time is prolonged despite normal fibrinogen levels.\n- Maintain platelet counts **> 50 x 10^9/L** in major bleeding and **> 100 x 10^9/L** in severe TBI using **4–8 units** of platelets or **1 apheresis pack**.\n- Maintain ionized calcium levels in normal range (**1.1–1.3 mmol/L**) using **calcium chloride** (**10 mL 10% solution**), especially during massive transfusion.\n- **rFVIIa** is not **recommended** as first-line therapy; off-label use should only be considered in refractory major bleeding where pH **>= 7.2**, platelets **>= 100 x 10^9/L**, and fibrinogen **>= 1.5 g/L** are achieved.",
+      "recommendations": [
+        {
+          "rec_id": "R26.1",
+          "statement": "We recommend that resuscitation measures be continued using a goal-directed strategy, guided by standard laboratory coagulation values and/or VEM.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R27.1",
+          "statement": "If a FFP-based coagulation resuscitation strategy is used, we recommend that further use of FFP be guided by standard laboratory coagulation screening parameters (PT and/or APTT > 1.5 times normal and/or viscoelastic evidence of a coagulation factor deficiency).",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R27.2",
+          "statement": "We recommend that the use of FFP be avoided for the correction of hypofibrinogenemia if fibrinogen concentrate and/or cryoprecipitate are available.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R28.1",
+          "statement": "If a CFC-based strategy is used, we recommend treatment with factor concentrates based on standard laboratory coagulation parameters and/or viscoelastic evidence of a functional coagulation factor deficiency.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R28.2",
+          "statement": "Provided that fibrinogen levels are normal, we suggest that prothrombin complex concentrate (PCC) is administered to the bleeding patient based on evidence of delayed coagulation initiation using VEM.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R28.3",
+          "statement": "We suggest that monitoring of FXIII be included in coagulation support algorithms and that FXIII be supplemented in bleeding patients with a functional FXIII deficiency.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R29.1",
+          "statement": "We recommend treatment with fibrinogen concentrate or cryoprecipitate if major bleeding is accompanied by hypofibrinogenemia (viscoelastic signs of a functional fibrinogen deficit or a plasma Clauss fibrinogen level <= **1.5 g**/L).",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R29.2",
+          "statement": "We suggest an initial fibrinogen supplementation of 3–**4 g** (**equivalent** to 15–20 single donor units of cryoprecipitate or 3–**4 g** fibrinogen concentrate). Repeat doses should be guided by VEM and laboratory assessment.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R30.1",
+          "statement": "We suggest that platelets be administered to maintain a platelet count above 50 x 10^9/L in trauma patients with ongoing bleeding and above 100 x 10^9/L in patients with TBI.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R30.2",
+          "statement": "If administered, we suggest an initial dose of four to eight single platelet units or one aphaeresis pack.",
+          "strength": "conditional",
+          "evidence_grade": "2B"
+        },
+        {
+          "rec_id": "R31.1",
+          "statement": "We recommend that ionised calcium levels be monitored and maintained within the normal range following major trauma and especially during massive transfusion.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R31.2",
+          "statement": "We recommend the administration of calcium chloride to correct hypocalcaemia.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R32.1",
+          "statement": "We do not recommend the use of recombinant activated coagulation factor VII (rFVIIa) as first-line treatment.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R32.2",
+          "statement": "We suggest that the off-label use of rFVIIa be considered only if major bleeding and traumatic coagulopathy persist despite all other attempts to control bleeding, systemic homeostasis and best-practice use of conventional haemostatic measures.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        }
+      ]
+    },
+    {
+      "order": 7,
+      "topic": "Management of Antithrombotic Agents",
+      "narrative": "- Urgently reverse vitamin K antagonists (VKAs) with **4-factor PCC (25–50 U/kg)** based on weight/INR and co-administer **5–10 mg IV phytomenadione (vitamin K1)**.\n- Measure plasma direct oral FXa inhibitor levels using specific calibrated anti-Xa assays (or LMWH-calibrated assays as a surrogate where **0.35 U/mL** corresponds to **30 ug/L**).\n- For life-threatening bleeding under apixaban or rivaroxaban, reverse with **andexanet alfa**; if unavailable, administer **4-factor PCC (25–50 U/kg)**.\n- Measure dabigatran levels via diluted thrombin time; in life-threatening bleeding, administer **idarucizumab 5 g IV**.\n- Avoid routine platelet transfusions in patients with ongoing bleeding who were taking antiplatelet agents (APAs).",
+      "recommendations": [
+        {
+          "rec_id": "R33.1",
+          "statement": "In the bleeding trauma patient, we recommend the emergency reversal of vitamin K-dependent oral anticoagulants with the early use of both PCC and 5–**10 mg** i.v. phytomenadione (vitamin K1).",
+          "strength": "strong",
+          "evidence_grade": "1A"
+        },
+        {
+          "rec_id": "R34.1",
+          "statement": "We suggest the measurement of plasma levels of oral direct antifactor Xa agents such as apixaban, edoxaban or rivaroxaban in patients treated or suspected of being treated with one of these agents.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R34.2",
+          "statement": "We suggest that measurement of anti-Xa activity be calibrated for the specific agent. If not possible or available, we suggest low molecular weight heparin (LMWH)-calibrated anti-Xa assays as a reliable alternative.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R34.3",
+          "statement": "If bleeding is life-threatening in the presence of an apixaban or rivaroxaban effect, especially in patients with TBI, we suggest reversal with andexanet alfa.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R34.4",
+          "statement": "If andexanet alfa is not available, or in patients receiving edoxaban, we suggest the administration of PCC (25–**50 U**/kg).",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R35.1",
+          "statement": "We suggest the measurement of dabigatran plasma levels using diluted thrombin time in patients treated or suspected of being treated with dabigatran.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R35.2",
+          "statement": "If measurement is not possible or available, we suggest measurement of the standard thrombin time to allow a qualitative estimation of the presence of dabigatran.",
+          "strength": "conditional",
+          "evidence_grade": "2C"
+        },
+        {
+          "rec_id": "R35.3",
+          "statement": "If bleeding is life-threatening in those receiving dabigatran, we recommend treatment with idarucizumab (i.v. **5 g**).",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R36.1",
+          "statement": "We recommend that routine platelet transfusion be avoided in patients with ongoing bleeding who have been treated with APAs.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        }
+      ]
+    },
+    {
+      "order": 8,
+      "topic": "Thromboprophylaxis",
+      "narrative": "- Initiate early mechanical thromboprophylaxis with intermittent pneumatic compression (IPC) while the patient is immobile and at bleeding risk.\n- Combine pharmacological prophylaxis (LMWH, or UFH in renal impairment) with IPC within **24 hours** after surgical/medical bleeding control.\n- Do not use graduated compression stockings or routine prophylactic **inferior** vena cava (IVC) filters.",
+      "recommendations": [
+        {
+          "rec_id": "R37.1",
+          "statement": "We recommend early initiation of mechanical thromboprophylaxis with intermittent pneumatic compression (IPC) while the patient is immobile and has a bleeding risk.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R37.2",
+          "statement": "We recommend combined pharmacological and IPC thromboprophylaxis within 24 h after bleeding has been controlled and until the patient is mobile.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R37.3",
+          "statement": "We do not recommend the use of graduated compression stockings for thromboprophylaxis.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        },
+        {
+          "rec_id": "R37.4",
+          "statement": "We do not recommend the routine use of **inferior** vena cava filters as thromboprophylaxis.",
+          "strength": "strong",
+          "evidence_grade": "1C"
+        }
+      ]
+    },
+    {
+      "order": 9,
+      "topic": "Guideline Implementation and Quality Control",
+      "narrative": "- Institutions caring for trauma patients must establish local evidence-based clinical practice guidelines and major hemorrhage protocols.\n- Clinical quality and safety management systems should incorporate audits and parameters evaluating key measures of bleeding control, time to interventions, TXA administration, and **mortality** outcomes.",
+      "recommendations": [
+        {
+          "rec_id": "R38.1",
+          "statement": "We recommend the local implementation of evidence-based guidelines for management of the bleeding trauma patient.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        },
+        {
+          "rec_id": "R39.1",
+          "statement": "We recommend that local clinical quality and safety management systems include parameters to assess key measures of bleeding control and outcome.",
+          "strength": "strong",
+          "evidence_grade": "1B"
+        }
+      ]
+    }
+  ],
+  "bedside_protocol": [
+    {
+      "step": 1,
+      "title": "Initial Transport & Local Bleeding Control",
+      "action": "Transport directly to an appropriate trauma center. Minimize scene time. Apply local wound compression or adjunct tourniquets for open limb hemorrhage without delay."
+    },
+    {
+      "step": 2,
+      "title": "Airway & Resuscitative Targets",
+      "action": "Perform endotracheal intubation if GCS **<= 8**, hypoventilation, or hypoxemia is present. Maintain normoventilation. Practice restricted volume replacement targeting SBP **80–90 mmHg** (MAP **50–60 mmHg**) without TBI, or MAP **>= 80 mmHg** in severe TBI."
+    },
+    {
+      "step": 3,
+      "title": "Immediate Diagnostics & Antifibrinolytic Therapy",
+      "action": "Administer **tranexamic acid (TXA) 1 g** IV over **10 min**, then **1 g** IV over 8 h within 3 hours. Perform POCUS/FAST, contrast WBCT, and serial **Hb/Hct**, **lactate/base deficit**, and baseline coagulation/VEM monitoring."
+    },
+    {
+      "step": 4,
+      "title": "Direct Hemostasis & Damage Control Procedures",
+      "action": "Perform immediate damage control surgery for ongoing shock or coagulopathy. Apply pelvic binders and perform pelvic packing or angioembolisation for unstable pelvic fractures. Consider REBOA or intraoperative cell salvage where appropriate."
+    },
+    {
+      "step": 5,
+      "title": "Goal-Directed Coagulation & Antidote Resuscitation",
+      "action": "Initiate empiric fixed ratios (**1:1** to **1:2** FFP:pRBC plus platelets) or CFCs. Replace fibrinogen (**3–4 g**) for Clauss **<= 1.5 g/L**. Reversals: VKAs (**4-factor PCC 25–50 U/kg** + **vitamin K1 5–10 mg**), FXa inhibitors (**andexanet alfa** or **PCC**), dabigatran (**idarucizumab 5 g**). Correct **ionized calcium** with **calcium chloride**."
+    },
+    {
+      "step": 6,
+      "title": "Thromboprophylaxis & Quality Assurance",
+      "action": "Apply IPC early upon admission while immobile. Initiate pharmacological thromboprophylaxis (LMWH) within **24 hours** after bleeding control. Monitor institution quality metrics."
+    }
+  ],
+  "strengths_limitations": "- Strengths: Rigorous multidisciplinary PICO-driven GRADE methodology across six major European professional societies; covers complete chronological timeline from pre-hospital care to intensive care; integrates modern diagnostic modalities (WBCT, VEM) and specific DOAC antidotes.\n- Limitations: Limited proportion of recommendations supported by high-quality randomized controlled trial evidence (predominantly GRADE 1C/2C); does not address pediatric trauma specifics; resource requirements (e.g., andexanet alfa, VEM) may not be uniformly available in all settings.",
+  "drugs_doses": [
+    {
+      "drug": "Tranexamic acid (TXA)",
+      "dose": "**1 g** IV loading dose over 10 min, followed by **1 g** IV infusion over 8 h",
+      "indication": "Trauma patient with ongoing bleeding or at risk of significant bleeding within 3 h of injury",
+      "adverse_effects": "Low risk of vascular occlusive events; monitor administration time (do not delay for lab results)"
+    },
+    {
+      "drug": "Noradrenaline (Norepinephrine)",
+      "dose": "Titrated IV infusion to target SBP **80–90 mmHg** (or MAP **>= 80 mmHg** in severe TBI)",
+      "indication": "Severe trauma-induced hypotension uncorrected by restricted volume replacement",
+      "adverse_effects": "Excessive vasoconstriction and organ hypoperfusion if inappropriately dosed"
+    },
+    {
+      "drug": "Dobutamine",
+      "dose": "IV infusion titrated to effect",
+      "indication": "Myocardial dysfunction in the bleeding trauma patient",
+      "adverse_effects": "Tachycardia, dysrhythmias, hypotension"
+    },
+    {
+      "drug": "Fibrinogen concentrate",
+      "dose": "Initial **3–4 g** IV (equivalent to **15–20 units** cryoprecipitate), repeat guided by lab/VEM",
+      "indication": "Major bleeding accompanied by hypofibrinogenemia (Clauss fibrinogen **<= 1.5 g/L** or VEM deficit)",
+      "adverse_effects": "Potential thromboembolic complications"
+    },
+    {
+      "drug": "Prothrombin Complex Concentrate (4-factor PCC)",
+      "dose": "**25–50 U/kg** IV based on body weight, INR, or indication",
+      "indication": "Emergency reversal of VKAs, FXa inhibitors (when andexanet alfa is unavailable), or delayed EXTEM clotting time on VEM",
+      "adverse_effects": "Prothrombotic state and delayed thrombotic complications; monitor coagulation parameters"
+    },
+    {
+      "drug": "Phytomenadione (Vitamin K1)",
+      "dose": "**5–10 mg** IV",
+      "indication": "Emergency reversal of vitamin K-dependent oral anticoagulants (co-administered with 4-factor PCC)",
+      "adverse_effects": "Rare non-IgE anaphylactic reactions (3 per 100,000); doses > 10 mg prevent re-warfarinization"
+    },
+    {
+      "drug": "Andexanet alfa",
+      "dose": "Low dose (**400 mg** IV bolus over 15 min + **480 mg** over 2 h) or high dose (**800 mg** IV bolus over 30 min + **960 mg** over 2 h)",
+      "indication": "Life-threatening bleeding in patients under apixaban or rivaroxaban effect, especially TBI",
+      "adverse_effects": "Ischemic stroke, cardiac arrest, arterial and venous thromboembolic events"
+    },
+    {
+      "drug": "Idarucizumab",
+      "dose": "**5 g** IV (given as two consecutive **2.5 g** infusions)",
+      "indication": "Life-threatening bleeding in patients receiving dabigatran",
+      "adverse_effects": "Hypersensitivity, thromboembolic risk due to underlying disease reversal"
+    },
+    {
+      "drug": "Calcium chloride",
+      "dose": "**10 mL** of 10% solution (**270 mg** elemental calcium) IV",
+      "indication": "Correction of hypocalcemia (ionized calcium **< 0.9–1.1 mmol/L**) during major trauma resuscitation",
+      "adverse_effects": "Tissue necrosis with extravasation, cardiac dysrhythmias if pushed too rapidly"
+    },
+    {
+      "drug": "Recombinant activated coagulation factor VII (rFVIIa)",
+      "dose": "Off-label bolus dosing (typically **90 mcg/kg** IV)",
+      "indication": "Refractory major bleeding/coagulopathy when all conventional surgical, blood product, and hemostatic measures fail",
+      "adverse_effects": "Arterial thrombotic events; ineffective if pH **< 7.2** or platelets **< 100 x 10^9/L**"
+    },
+    {
+      "drug": "Low molecular weight heparin (LMWH)",
+      "dose": "Weight-adjusted or standard prophylactic subQ dosing",
+      "indication": "Pharmacological venous thromboembolism prophylaxis started within 24 h of bleeding control",
+      "adverse_effects": "Bleeding, heparin-induced thrombocytopenia; adjust/monitor in renal failure"
+    }
+  ],
+  "related_ids": [],
+  "added_date": "2026-03-30",
+  "article_subtype": "Guideline",
+  "subtopic": "Trauma Coagulopathy"
+}
