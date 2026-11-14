@@ -54,7 +54,7 @@ def client(portal, monkeypatch):
 def dev_client(portal, monkeypatch):
     """Client behaving like `uvicorn revamped_webapp:app` locally (auto-login as admin)."""
     monkeypatch.setattr(portal, "LOCAL_DEV_MODE", True)
-    return TestClient(portal.app)
+    return TestClient(portal.app, base_url="http://localhost", client=("127.0.0.1", 50000))
 
 
 @pytest.fixture

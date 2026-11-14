@@ -4,6 +4,8 @@ import re
 import html
 import secrets
 import hashlib
+import hmac
+import logging
 from datetime import datetime, timezone
 from pathlib import Path
 from fastapi import FastAPI, Request, Response, Depends, HTTPException, Cookie
@@ -125,6 +127,7 @@ ESBICM_SPEC_COLORS = {
 }
 
 app = FastAPI()
+log = logging.getLogger("hackccm")
 
 # =====================================================================
 # AUTHENTICATION
@@ -139,23 +142,36 @@ from acumen_core.kv import kv_get as _kv_get, kv_set as _kv_set, kv_delete as _k
 # =====================================================================
 
 # ---- Password hashing (stdlib only) ----
+# scrypt (memory-hard) with a per-password salt. Hashes written by older versions
+# ("$sha256$salt$hash") still verify and are upgraded on the user's next successful login.
+SCRYPT_N, SCRYPT_R, SCRYPT_P = 2 ** 14, 8, 1
+PASSWORD_MAX_LEN = 1024
+
 def _hash_password(password):
     salt = os.urandom(16)
-    h = hashlib.sha256(salt + password.encode("utf-8")).hexdigest()
-    return f"$sha256${salt.hex()}${h}"
+    h = hashlib.scrypt(password.encode("utf-8"), salt=salt, n=SCRYPT_N, r=SCRYPT_R, p=SCRYPT_P, dklen=32)
+    return f"$scrypt${SCRYPT_N}${SCRYPT_R}${SCRYPT_P}${salt.hex()}${h.hex()}"
 
 def _verify_password(password, pw_hash):
-    if not pw_hash or not pw_hash.startswith("$sha256$"):
+    if not isinstance(pw_hash, str) or not isinstance(password, str) or len(password) > PASSWORD_MAX_LEN:
         return False
     parts = pw_hash.split("$")
-    if len(parts) != 4:
-        return False
     try:
-        salt = bytes.fromhex(parts[2])
-        h = hashlib.sha256(salt + password.encode("utf-8")).hexdigest()
-        return h == parts[3]
-    except (ValueError, IndexError):
+        if len(parts) == 7 and parts[1] == "scrypt":
+            n, r, p = int(parts[2]), int(parts[3]), int(parts[4])
+            salt, expected = bytes.fromhex(parts[5]), bytes.fromhex(parts[6])
+            h = hashlib.scrypt(password.encode("utf-8"), salt=salt, n=n, r=r, p=p, dklen=len(expected))
+            return hmac.compare_digest(h, expected)
+        if len(parts) == 4 and parts[1] == "sha256":  # legacy format
+            salt = bytes.fromhex(parts[2])
+            h = hashlib.sha256(salt + password.encode("utf-8")).hexdigest()
+            return hmac.compare_digest(h.encode(), parts[3].encode())
+    except (ValueError, IndexError, OverflowError, MemoryError):
         return False
+    return False
+
+def _needs_rehash(pw_hash):
+    return not (isinstance(pw_hash, str) and pw_hash.startswith(f"$scrypt${SCRYPT_N}${SCRYPT_R}${SCRYPT_P}$"))
 
 def _session_id():
     return secrets.token_urlsafe(32)
@@ -164,30 +180,67 @@ def _now_iso():
     """UTC timestamp as a naive ISO string (the format already stored in KV)."""
     return datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
 
-# ---- Local dev: bypass login entirely ----
-# On Vercel (VERCEL=1) login is required. When running locally, auto-login
-# as the local admin account so the login page never blocks local use.
-LOCAL_DEV_MODE = os.environ.get("VERCEL", "").strip().lower() != "1"
+# ---- Local dev: bypass login ----
+# On Vercel (VERCEL=1) login is always required. For a developer running the portal on their
+# own machine, requests auto-login as a local admin so the login page never blocks local use.
+# That shortcut is deliberately narrow: it needs the local KV file (never Upstash/production),
+# a request made through localhost, and no reverse-proxy headers, so a Docker/VPS deployment
+# or a run pointed at production KV can never hand out the admin account. LOCAL_DEV=0 turns it off.
+LOCAL_DEV_MODE = (
+    os.environ.get("VERCEL", "").strip().lower() != "1"
+    and os.environ.get("LOCAL_DEV", "").strip().lower() not in ("0", "false", "no", "off")
+)
+_LOOPBACK_HOSTS = ("127.0.0.1", "::1", "localhost")
+_PROXY_HEADERS = ("x-forwarded-for", "x-forwarded-host", "x-real-ip", "forwarded", "x-vercel-id")
+DEFAULT_ADMIN_EMAIL = "admin@gmail.com"
+_RETIRED_DEFAULT_PASSWORD = "admin@admin"  # older versions created the local admin with this password
 
-def _local_dev_login():
-    """Auto-create/resolve the local admin. Returns (user, session_id)."""
-    email = "admin@gmail.com"
-    user = _kv_get(f"auth:users:{email}")
-    if not user:
+def _dev_login_allowed(request):
+    if not LOCAL_DEV_MODE:
+        return False
+    from acumen_core import kv as _kvmod
+    if _kvmod.kv_backend()["backend"] != "local":
+        return False
+    client = request.client.host if request.client else ""
+    if client not in _LOOPBACK_HOSTS or request.url.hostname not in _LOOPBACK_HOSTS:
+        return False
+    return not any(h in request.headers for h in _PROXY_HEADERS)
+
+def _retire_default_admin_password(user):
+    """Older versions gave the local admin the password 'admin@admin'. If an account still has it
+    (e.g. it was created in a shared KV), replace it with an unguessable one. True if replaced."""
+    if user.get("email") == DEFAULT_ADMIN_EMAIL and _verify_password(_RETIRED_DEFAULT_PASSWORD, user.get("password_hash")):
+        user["password_hash"] = _hash_password(secrets.token_urlsafe(32))
+        _kv_set(f"auth:users:{DEFAULT_ADMIN_EMAIL}", user)
+        log.warning("Disabled the default password of %s", DEFAULT_ADMIN_EMAIL)
+        return True
+    return False
+
+def _dev_admin_user():
+    """The local admin account (created on first use, with a random password nobody knows)."""
+    user = _kv_get(f"auth:users:{DEFAULT_ADMIN_EMAIL}")
+    if not isinstance(user, dict) or not user:
         user = {
-            "email": email,
+            "email": DEFAULT_ADMIN_EMAIL,
             "first_name": "Admin",
             "last_name": "",
             "workplace": "",
             "city": "",
-            "password_hash": _hash_password("admin@admin"),
+            "password_hash": _hash_password(secrets.token_urlsafe(32)),
             "created_at": _now_iso(),
             "features": {},
             "is_admin": True,
         }
-        _kv_set(f"auth:users:{email}", user)
+        _kv_set(f"auth:users:{DEFAULT_ADMIN_EMAIL}", user)
+    else:
+        _retire_default_admin_password(user)
+    return user
+
+def _local_dev_login():
+    """Local admin plus a fresh session for it. Returns (user, session_id)."""
+    user = _dev_admin_user()
     sid = _session_id()
-    _kv_set(f"auth:session:{sid}", {"email": email, "created_at": _now_iso()}, ttl=SESSION_MAX_AGE)
+    _kv_set(f"auth:session:{sid}", {"email": DEFAULT_ADMIN_EMAIL, "created_at": _now_iso()}, ttl=SESSION_MAX_AGE)
     return user, sid
 
 # ---- Auth helpers ----
@@ -201,14 +254,10 @@ DEFAULT_FEATURE_STATES = {
 def _get_session_user(request):
     sid = request.cookies.get(SESSION_COOKIE_NAME)
     if not sid:
-        if LOCAL_DEV_MODE:
-            return _local_dev_login()[0]
-        return None
+        return _dev_admin_user() if _dev_login_allowed(request) else None
     sess = _kv_get(f"auth:session:{sid}")
     if not sess:
-        if LOCAL_DEV_MODE:
-            return _local_dev_login()[0]
-        return None
+        return _dev_admin_user() if _dev_login_allowed(request) else None
     return _kv_get(f"auth:users:{sess.get('email')}")
 
 async def _require_user(request: Request, response: Response):
@@ -931,7 +980,7 @@ async def render_dashboard(request: Request, response: Response):
     )
     resp = HTMLResponse(content=html)
     resp.headers["Cache-Control"] = "no-store, max-age=0"
-    if LOCAL_DEV_MODE and not request.cookies.get(SESSION_COOKIE_NAME):
+    if _dev_login_allowed(request) and not request.cookies.get(SESSION_COOKIE_NAME):
         _, dev_sid = _local_dev_login()
         resp.set_cookie(key=SESSION_COOKIE_NAME, value=dev_sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
     return resp
@@ -941,7 +990,11 @@ async def render_dashboard(request: Request, response: Response):
 # =====================================================================
 
 @app.get("/api/debug")
-async def api_debug():
+async def api_debug(request: Request):
+    user = _get_session_user(request)
+    if not user:
+        raise HTTPException(status_code=401, detail="Login required")
+    _require_admin(user)
     from acumen_core import kv as _kvmod
     return {"kv_backend": _kvmod.kv_backend(), "vercel": os.environ.get("VERCEL", "")}
 
@@ -952,8 +1005,10 @@ async def api_signup(body: dict, response: Response):
         password = body.get("password", "")
         if not email or "@" not in email:
             raise HTTPException(400, "Valid email required")
-        if len(password) < 8:
+        if not isinstance(password, str) or len(password) < 8:
             raise HTTPException(400, "Password must be at least 8 characters")
+        if len(password) > PASSWORD_MAX_LEN:
+            raise HTTPException(400, f"Password must be at most {PASSWORD_MAX_LEN} characters")
         if _kv_get(f"auth:users:{email}"):
             raise HTTPException(409, "An account with this email already exists")
         user = {
@@ -973,16 +1028,16 @@ async def api_signup(body: dict, response: Response):
         return {"ok": True, "email": email}
     except HTTPException:
         raise
-    except Exception as e:
-        import traceback
-        return JSONResponse(500, {"error": type(e).__name__, "detail": str(e), "traceback": traceback.format_exc()})
+    except Exception:
+        log.exception("signup failed")
+        return JSONResponse(status_code=500, content={"detail": "Something went wrong. Please try again."})
 
 @app.post("/api/login")
 async def api_login(body: dict, response: Response):
     try:
         email = str(body.get("email", "")).strip().lower()
         password = body.get("password", "")
-        if not email or not password:
+        if not email or not password or not isinstance(password, str):
             raise HTTPException(400, "Email and password required")
         user = _kv_get(f"auth:users:{email}")
         if not user or not isinstance(user, dict):
@@ -990,17 +1045,22 @@ async def api_login(body: dict, response: Response):
         pwh = user.get("password_hash")
         if not pwh:
             raise HTTPException(401, "Invalid email or password")
+        if _retire_default_admin_password(user):
+            raise HTTPException(401, "Invalid email or password")
         if not _verify_password(password, pwh):
             raise HTTPException(401, "Invalid email or password")
+        if _needs_rehash(pwh):  # upgrade an older hash now that we hold the plaintext
+            user["password_hash"] = _hash_password(password)
+            _kv_set(f"auth:users:{email}", user)
         sid = _session_id()
         _kv_set(f"auth:session:{sid}", {"email": email, "created_at": _now_iso()}, ttl=SESSION_MAX_AGE)
         response.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
         return {"ok": True, "email": email}
     except HTTPException:
         raise
-    except Exception as e:
-        import traceback
-        return JSONResponse(500, {"error": type(e).__name__, "detail": str(e), "traceback": traceback.format_exc()})
+    except Exception:
+        log.exception("login failed")
+        return JSONResponse(status_code=500, content={"detail": "Something went wrong. Please try again."})
 
 @app.post("/api/logout")
 async def api_logout(request: Request, response: Response):

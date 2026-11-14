@@ -38,10 +38,11 @@ def test_login(client):
 
 def test_password_hash_roundtrip(portal):
     h = portal._hash_password("s3cret-pass")
-    assert re.fullmatch(r"\$sha256\$[0-9a-f]{32}\$[0-9a-f]{64}", h)
+    assert re.fullmatch(r"\$scrypt\$16384\$8\$1\$[0-9a-f]{32}\$[0-9a-f]{64}", h)
     assert portal._verify_password("s3cret-pass", h)
     assert not portal._verify_password("other", h)
     assert not portal._verify_password("s3cret-pass", "")
+    assert portal._hash_password("s3cret-pass") != h  # fresh salt every time
 
 
 def test_protected_api_requires_login(client):
