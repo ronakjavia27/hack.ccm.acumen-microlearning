@@ -76,11 +76,12 @@ LOCAL_EMAILS_FILE = os.path.join(PROJECT_DIR, "emails.csv")
 # Everything the deployed portal needs; `--mode web` stages exactly these, `--mode data` leaves them out.
 WEB_APP_PATHS = ["revamped_webapp.py", "webapp_google.py", "vercel.json", "webapp"]
 
-# --- Email SMTP (hardcoded credentials) ---
-HARDCODED_SMTP_USER = "ronakjavia27@gmail.com"
-HARDCODED_SMTP_PASS = "yioonbrhnnlhfhmz"
-HARDCODED_SMTP_HOST = "smtp.gmail.com"
-HARDCODED_SMTP_PORT = 587
+# --- Email SMTP (set in .env; never commit credentials) ---
+# For Gmail use an app password (Google Account -> Security -> App passwords), not the account password.
+SMTP_USER = os.environ.get("SMTP_USER", "").strip()
+SMTP_PASS = os.environ.get("SMTP_PASS", "")
+SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com").strip()
+SMTP_PORT = int(os.environ.get("SMTP_PORT", "587") or 587)
 
 # --- Email visual colors ---
 COLOR_BG = "#FDFBF7"
@@ -325,23 +326,27 @@ def convert_markdown_to_html(markdown_text, doi_url=None):
     """
 
 
+def smtp_configured():
+    return bool(SMTP_USER and SMTP_PASS and "@" in SMTP_USER)
+
+
 def send_email(subject, html_content, recipient):
     """Send one email via SMTP."""
-    if not HARDCODED_SMTP_USER or not HARDCODED_SMTP_PASS or "@" not in HARDCODED_SMTP_USER:
-        print("  [X] SMTP credentials missing")
+    if not smtp_configured():
+        print("  [X] SMTP credentials missing: set SMTP_USER and SMTP_PASS in .env")
         return False
 
     msg = EmailMessage()
     msg["Subject"] = subject
-    msg["From"] = f"{EMAIL_SUBJECT_PREFIX} <{HARDCODED_SMTP_USER}>"
+    msg["From"] = f"{EMAIL_SUBJECT_PREFIX} <{SMTP_USER}>"
     msg["To"] = recipient
     msg.set_content("Please switch to an HTML-supported client to view this brief.")
     msg.add_alternative(html_content, subtype="html")
 
     try:
-        with smtplib.SMTP(HARDCODED_SMTP_HOST, HARDCODED_SMTP_PORT, timeout=15) as server:
+        with smtplib.SMTP(SMTP_HOST, SMTP_PORT, timeout=15) as server:
             server.starttls()
-            server.login(HARDCODED_SMTP_USER, HARDCODED_SMTP_PASS)
+            server.login(SMTP_USER, SMTP_PASS)
             server.send_message(msg)
         return True
     except Exception as e:
@@ -352,6 +357,10 @@ def send_email(subject, html_content, recipient):
 def dispatch_emails(dry_run=False, verbose=False, send_all=False):
     """Dispatch pending emails (where email_pushed != 'Yes')."""
     print("\n  [EMAIL] Dispatching pending articles...")
+
+    if not dry_run and not smtp_configured():
+        print("  [X] SMTP credentials missing: set SMTP_USER and SMTP_PASS in .env")
+        return 0
 
     if not os.path.exists(EXCEL_TRACKER_FILE):
         print(f"  [X] Excel tracker not found: {EXCEL_TRACKER_FILE}")
