@@ -8,7 +8,7 @@ import hmac
 import logging
 from datetime import datetime, timezone
 from pathlib import Path
-from fastapi import FastAPI, Request, Response, Depends, HTTPException, Cookie
+from fastapi import FastAPI, Request, Response, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 from fastapi.staticfiles import StaticFiles
 from jinja2 import Environment, FileSystemLoader, StrictUndefined
@@ -350,23 +350,16 @@ def _bookmark_item(body, existing=None):
     return item
 
 # ---- Landing page HTML ----
-# Shown on the sign-in page, before login. This is a shorter, older copy of DISCLAIMER_TEXT
-# (it was hardcoded inside the landing page script); kept verbatim until the wording is reviewed.
-LANDING_DISCLAIMER_TEXT = """**Welcome to hack.CCM 🦩 — Please Read Before You Explore**
+def _landing_disclaimer(text):
+    """The sign-in page shows the portal's disclaimer, minus its closing 'click Proceed' paragraph
+    (there is no Proceed button before login)."""
+    paragraphs = text.rstrip().split("\n\n")
+    if paragraphs and paragraphs[-1].lstrip().startswith('By clicking "Proceed"'):
+        paragraphs = paragraphs[:-1]
+    return "\n\n".join(paragraphs)
 
-Welcome! This platform is a hobby passion project designed to make critical care education more structured, accessible, and easily retainable.
 
-**⚠️ For Education, Not Consultation**
-This is a tool for knowledge enhancement and personal study only. It is not a clinical decision-making tool. Always rely on official guidelines and your own institutional protocols for real-world patient care.
-
-**🤖 The AI Factor**
-As the saying goes, "To err is human; to hallucinate is AI." While we have taken immense care to review the data and eliminate errors, AI-assisted formatting isn't always flawless.
-
-**🛑 Use Responsibly**
-Double-check critical values and protocols. You are the clinician; this is just your study buddy.
-
-**🔍 Spotted a Discrepancy?**
-If you find any errors, outdated data, or weird AI quirks, please help us improve! Report it via our Feedback button below."""
+LANDING_DISCLAIMER_TEXT = _landing_disclaimer(DISCLAIMER_TEXT)
 
 
 def _render_landing(request):
@@ -782,20 +775,6 @@ async def render_dashboard(request: Request, response: Response):
             })
 
     pearls = load_pearls()
-    pearl_systems = sorted(set(
-        p["system"] for p in pearls if isinstance(p.get("system"), str) and p["system"].strip()
-    ))
-    pearl_types = sorted(set(
-        p["type"] for p in pearls if isinstance(p.get("type"), str) and p["type"].strip()
-    ))
-
-    papers_only = [a for a in articles_list if a["type"].lower() != "guideline"]
-    guidelines_only = [a for a in articles_list if a["type"].lower() == "guideline"]
-    papers_count = len(papers_only)
-    guidelines_count = len(guidelines_only)
-    specialties_list = sorted(systems_set)
-    pearl_count = len(pearls)
-
     trial_index = load_trial_index()
     trial_specialties = sorted(set(t["specialty"] for t in trial_index))
     condensed_index = load_condensed_trial_index()
@@ -837,7 +816,7 @@ async def render_dashboard(request: Request, response: Response):
 
     spec_css_vars = {}
     spec_css_vars_js = {}
-    for s in systems_set:
+    for s in sorted(systems_set):
         canon = canonical_specialty(s)
         color = SPEC_COLORS.get(canon, "#6B7280")
         var_name = "--spec-" + re.sub(r"[^a-zA-Z0-9]", "", canon.lower())
@@ -919,7 +898,7 @@ async def render_dashboard(request: Request, response: Response):
 
     boot = {
         "spec_vars": spec_css_vars_js,
-        "spec_labels": list(spec_css_vars_js.keys()),
+        "spec_labels": sorted(spec_css_vars_js),
         "type_list": type_list,
         "articles": articles_list,
         "pearls": pearls,
@@ -1379,7 +1358,6 @@ async def export_print(request: Request, kind: str = "paper", file_name: str = "
         raise HTTPException(status_code=401, detail="Login required")
     feature = "theory" if kind == "note" else "papers"
     _require_feature(user, feature)
-    the_title = ""
     meta_html = ""
     content = ""
     kind_label = "Print Friendly"

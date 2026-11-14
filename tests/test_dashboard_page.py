@@ -123,3 +123,46 @@ def test_content_apis(user_client):
     assert r.status_code == 200
     assert c.get("/api/trials", params={"limit": 3}).status_code == 200
     assert c.get("/api/condensed-trials").status_code == 403  # feature is off by default
+
+
+def test_specialty_order_is_alphabetical(user_client):
+    labels = boot_of(user_client.get("/").text)["spec_labels"]
+    assert labels == sorted(labels) and len(labels) > 5
+
+
+def test_page_is_identical_across_processes_with_different_hash_seeds():
+    """The specialty chips used to be ordered by iterating a Python set, so a restart reshuffled them."""
+    import hashlib
+    import os
+    import subprocess
+    import sys
+    import textwrap
+
+    code = textwrap.dedent("""
+        import hashlib, os, sys, tempfile
+        sys.path.insert(0, ".")
+        os.environ["KV_LOCAL"] = "1"; os.environ.pop("VERCEL", None)
+        from acumen_core import kv
+        kv._KV_FILE = os.path.join(tempfile.mkdtemp(), "kv.json")
+        import revamped_webapp as rw
+        from fastapi.testclient import TestClient
+        c = TestClient(rw.app, base_url="http://localhost", client=("127.0.0.1", 1))
+        html = c.get("/").text
+        sys.stdout.write(hashlib.sha1(html.encode()).hexdigest())
+    """)
+    digests = set()
+    for seed in ("1", "2", "3"):
+        env = {**os.environ, "PYTHONHASHSEED": seed, "KV_LOCAL": "1"}
+        env.pop("VERCEL", None)
+        out = subprocess.run([sys.executable, "-W", "ignore", "-c", code], env=env, capture_output=True, text=True, check=True)
+        digests.add(out.stdout.strip()[-40:])
+    assert len(digests) == 1, digests
+
+
+def test_filter_option_values_are_html_escaped(user_client, portal, monkeypatch):
+    nasty = 'Weird & <b>"x"</b>'
+    monkeypatch.setattr(portal, "load_trial_index", lambda: [
+        {"specialty": nasty, "result_category": nasty, "trial_type": nasty, "subtopic": "General", "slug": "s", "title": "t"}])
+    html = user_client.get("/").text
+    assert "<b>" not in html.split('id="view-trials-esbicm"')[1].split("</section>")[0]
+    assert 'value="Weird &amp; &lt;b&gt;&#34;x&#34;&lt;/b&gt;"' in html

@@ -52,6 +52,20 @@ def test_landing_config_roundtrips_disclaimer_exactly(client, portal):
     assert cfg["disclaimer_text"].startswith("**Welcome to hack.CCM")
 
 
+def test_landing_disclaimer_is_the_portal_disclaimer_minus_the_proceed_line(portal):
+    """One source of truth: the sign-in page used to carry an older, shorter copy that left out
+    the AI-summarisation paragraph."""
+    full = portal.DISCLAIMER_TEXT.rstrip().split("\n\n")
+    landing = portal.LANDING_DISCLAIMER_TEXT.split("\n\n")
+    assert landing == full[:-1] and full[-1].startswith('By clicking "Proceed"')
+    assert "Proceed" not in portal.LANDING_DISCLAIMER_TEXT
+    assert "we use AI to condense" in portal.LANDING_DISCLAIMER_TEXT
+
+
+def test_landing_disclaimer_helper_leaves_text_without_a_proceed_line_alone(portal):
+    assert portal._landing_disclaimer("one\n\ntwo\n") == "one\n\ntwo"
+
+
 def test_landing_config_cannot_break_out_of_script_tag(client, portal, monkeypatch):
     monkeypatch.setattr(portal, "LANDING_DISCLAIMER_TEXT", "</script><img src=x onerror=alert(1)> & <!--")
     html = client.get("/").text

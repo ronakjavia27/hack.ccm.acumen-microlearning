@@ -371,21 +371,21 @@
         <label>Specialty</label>
         <select id="trialFilterSpecialty">
           <option value="">All Specialties</option>
-          {% for s in trial_specialties %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
+          {% for s in trial_specialties %}<option value="{{ s|e }}">{{ s|e }}</option>{% endfor %}
         </select>
       </div>
       <div class="trials-filter-group">
         <label>Result</label>
         <select id="trialFilterResult">
           <option value="">All Results</option>
-          {% for c in trial_result_cats %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+          {% for c in trial_result_cats %}<option value="{{ c|e }}">{{ c|e }}</option>{% endfor %}
         </select>
       </div>
       <div class="trials-filter-group">
         <label>Trial Type</label>
         <select id="trialFilterType">
           <option value="">All Types</option>
-          {% for t in trial_types_list %}<option value="{{ t }}">{{ t }}</option>{% endfor %}
+          {% for t in trial_types_list %}<option value="{{ t|e }}">{{ t|e }}</option>{% endfor %}
         </select>
       </div>
       <div class="trials-filter-actions">
@@ -420,21 +420,21 @@
         <label>Specialty</label>
         <select id="condensedFilterSpecialty">
           <option value="">All Specialties</option>
-          {% for s in condensed_systems %}<option value="{{ s }}">{{ s }}</option>{% endfor %}
+          {% for s in condensed_systems %}<option value="{{ s|e }}">{{ s|e }}</option>{% endfor %}
         </select>
       </div>
       <div class="trials-filter-group">
         <label>Result</label>
         <select id="condensedFilterResult">
           <option value="">All Results</option>
-          {% for c in condensed_result_cats %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+          {% for c in condensed_result_cats %}<option value="{{ c|e }}">{{ c|e }}</option>{% endfor %}
         </select>
       </div>
       <div class="trials-filter-group">
         <label>Trial Type</label>
         <select id="condensedFilterType">
           <option value="">All Types</option>
-          {% for t in condensed_types_list %}<option value="{{ t }}">{{ t }}</option>{% endfor %}
+          {% for t in condensed_types_list %}<option value="{{ t|e }}">{{ t|e }}</option>{% endfor %}
         </select>
       </div>
       <div class="trials-filter-actions">
