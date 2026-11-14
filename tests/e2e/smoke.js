@@ -20,9 +20,10 @@ const VIEWS = ['home', 'papers', 'guidelines', 'pearls', 'trials', 'trials-esbic
   await page.goto(BASE + '/', { waitUntil: 'domcontentloaded' });
   await page.waitForTimeout(1500);
 
+  // The home view shows a random "pearl of the day", so its text length is not comparable between runs.
   const fingerprint = () => page.evaluate(() => ({
     nodes: document.querySelectorAll('*').length,
-    textLen: document.body.innerText.length,
+    textLen: (document.querySelector('.view.active') || {}).id === 'view-home' ? null : document.body.innerText.length,
     activeView: (document.querySelector('.view.active') || {}).id || null,
     searchResultKids: (document.getElementById('searchResults') || { children: [] }).children.length,
   }));

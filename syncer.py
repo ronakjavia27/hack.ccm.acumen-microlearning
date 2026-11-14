@@ -11,7 +11,7 @@ USAGE (single commands or combine):
     python syncer.py                              # Git add -A, commit, push (default)
     python syncer.py --mode all                   # Git add -A, commit, push
     python syncer.py --mode data                  # Git all except web app files
-    python syncer.py --mode web                   # Git web app files only (revamped_webapp.py + webapp_google.py + vercel.json)
+    python syncer.py --mode web                   # Git web app files only (revamped_webapp.py + webapp_google.py + vercel.json + webapp/)
     python syncer.py --mode pearls                # Git pearls.json + sent_summaries.json
     python syncer.py --mode email                 # Dispatch pending emails
     python syncer.py --mode subscribers           # Sync Google Sheets -> emails.csv
@@ -72,6 +72,9 @@ UNSUBSCRIBE_SHEET_ID = "1oD0oR7lW7mhDBRWuNPH5Z3fjtbwwZS8kHQT9qOj1dQA"
 SUBSCRIBE_CSV_URL = f"https://docs.google.com/spreadsheets/d/{SUBSCRIBE_SHEET_ID}/export?format=csv"
 UNSUBSCRIBE_CSV_URL = f"https://docs.google.com/spreadsheets/d/{UNSUBSCRIBE_SHEET_ID}/export?format=csv"
 LOCAL_EMAILS_FILE = os.path.join(PROJECT_DIR, "emails.csv")
+
+# Everything the deployed portal needs; `--mode web` stages exactly these, `--mode data` leaves them out.
+WEB_APP_PATHS = ["revamped_webapp.py", "webapp_google.py", "vercel.json", "webapp"]
 
 # --- Email SMTP (hardcoded credentials) ---
 HARDCODED_SMTP_USER = "ronakjavia27@gmail.com"
@@ -173,7 +176,7 @@ def git_sync(mode="all", verbose=False, skip_verify=False, dry_run=False):
     if dry_run:
         print("  [Dry-run] Would stage, commit, and push.")
         by_mode = {
-            "web": ["revamped_webapp.py", "webapp_google.py", "vercel.json"],
+            "web": WEB_APP_PATHS,
             "data": ["all except web app files"],
             "pearls": ["pearls.json", "sent_summaries.json"],
             "all": ["all (respecting .gitignore)"],
@@ -187,15 +190,13 @@ def git_sync(mode="all", verbose=False, skip_verify=False, dry_run=False):
     # Stage based on mode
     if mode == "web":
         print("  Staging web app files only...")
-        run_git("add", "revamped_webapp.py")
-        run_git("add", "webapp_google.py")
-        run_git("add", "vercel.json")
+        for path in WEB_APP_PATHS:
+            run_git("add", path)
     elif mode == "data":
         print("  Staging all files except web app files...")
         run_git("add", "-A")
-        run_git("reset", "revamped_webapp.py")
-        run_git("reset", "webapp_google.py")
-        run_git("reset", "vercel.json")
+        for path in WEB_APP_PATHS:
+            run_git("reset", path)
     elif mode == "pearls":
         print("  Staging pearls.json + sent_summaries.json...")
         run_git("add", "pearls.json")
@@ -623,7 +624,7 @@ def main():
 Examples:
   python syncer.py --mode all                   # Git add -A, commit, push
   python syncer.py --mode data                  # Git all except web app files
-  python syncer.py --mode web                   # Git web app files only (revamped_webapp.py + webapp_google.py + vercel.json)
+  python syncer.py --mode web                   # Git web app files only (revamped_webapp.py + webapp_google.py + vercel.json + webapp/)
   python syncer.py --mode pearls                # Git pearls.json + sent_summaries.json
   python syncer.py --mode email                  # Dispatch pending emails
   python syncer.py --mode subscribers            # Sync Google Sheets -> emails.csv
