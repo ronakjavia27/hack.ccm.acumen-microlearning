@@ -27,6 +27,15 @@ def _isolated_kv(tmp_path, monkeypatch):
     monkeypatch.setattr(kv, "_KV_FILE", str(tmp_path / "kv.json"))
 
 
+@pytest.fixture(autouse=True)
+def _google_auth_off(monkeypatch):
+    """Importing webapp_google (done by some tests) switches Google sign-in on for the shared app;
+    start every test from the plain portal."""
+    import revamped_webapp
+
+    monkeypatch.setattr(revamped_webapp.app.state, "google_auth", None, raising=False)
+
+
 @pytest.fixture
 def portal():
     import revamped_webapp

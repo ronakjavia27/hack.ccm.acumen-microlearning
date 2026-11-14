@@ -297,86 +297,36 @@ def _bookmark_item(body, existing=None):
     return item
 
 # ---- Landing page HTML ----
-LANDING_HTML = """<!DOCTYPE html>
-<html lang="en">
-<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>hack.CCM — Critical Care Microlearning</title>
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#1F1B14;color:#F1E4CE;font-family:system-ui,sans-serif;display:flex;min-height:100vh;align-items:center;justify-content:center}
-.card{background:#29241B;border:1px solid #3A3226;border-radius:16px;padding:48px 40px;width:440px;max-width:94vw}
-h1{font-size:28px;margin-bottom:4px;letter-spacing:-.02em}
-.sub{color:#C4B18C;font-size:14px;margin-bottom:28px}
-.tabs{display:flex;gap:0;margin-bottom:24px;border-bottom:1px solid #3A3226}
-.tab{padding:10px 20px;cursor:pointer;color:#C4B18C;font-size:14px;border-bottom:2px solid transparent;transition:.15s}
-.tab.active{color:#F1E4CE;border-bottom-color:#E8B778}
-.form{display:block}.form.hidden{display:none}
-.form input{width:100%;padding:10px 14px;background:#1F1B14;border:1px solid #3A3226;border-radius:8px;color:#F1E4CE;font-size:14px;margin-bottom:12px;outline:none;transition:.15s}
-.form input:focus{border-color:#E8B778}
-.form .row{display:flex;gap:10px}
-.form .row input{flex:1}
-.pw-wrap{display:flex;gap:6px;align-items:center;margin-bottom:12px}
-.pw-wrap input{flex:1;margin-bottom:0}
-.pw-wrap .toggle{width:auto;padding:10px 14px;background:none;border:1px solid #3A3226;border-radius:8px;color:#C4B18C;cursor:pointer;font-size:12px;white-space:nowrap;flex-shrink:0;transition:.15s}
-.pw-wrap .toggle:hover{border-color:#E8B778;color:#F1E4CE}
-button{width:100%;padding:11px;background:#E8B778;color:#1F1B14;border:none;border-radius:8px;font-size:15px;font-weight:600;cursor:pointer;transition:.15s}
-button:hover{background:#d4a55e}
-.error{color:#f55;font-size:13px;margin:8px 0;min-height:18px}
-.success{color:#4ade80;font-size:13px;margin:8px 0}
-.ecg{text-align:center;font-size:32px;margin-bottom:12px;opacity:.3;letter-spacing:4px}
-.legal{text-align:center;margin-top:20px;font-size:12px;color:#8A7F6A}
-.legal a{color:#8A7F6A;text-decoration:none;border-bottom:1px dotted #8A7F6A;cursor:pointer}
-.legal a:hover{color:#C4B18C}
-.overlay{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.7);align-items:center;justify-content:center;padding:20px}
-.overlay-content{background:#29241B;border:1px solid #3A3226;border-radius:16px;padding:32px;max-width:560px;width:100%;max-height:80vh;overflow-y:auto;color:#F1E4CE;font-size:14px;line-height:1.6}
-.overlay-content h2{margin-bottom:16px;font-size:20px}
-.overlay-content strong{color:#E8B778}
-.overlay-close{float:right;background:none;border:none;color:#C4B18C;font-size:24px;cursor:pointer;line-height:1}
-</style>
-</head>
-<body>
-<div class="card">
-<div class="ecg">_~^~_~^~_</div>
-<h1>hack.CCM</h1>
-<div class="sub">Critical Care Microlearning</div>
-<div class="tabs"><div class="tab active" onclick="switchTab('login')" id="tabLogin">Sign In</div><div class="tab" onclick="switchTab('signup')" id="tabSignup">Create Account</div></div>
-<form class="form" id="loginForm">
-<input type="email" id="loginEmail" placeholder="Email" required>
-<div class="pw-wrap"><input type="password" id="loginPassword" placeholder="Password" required><button type="button" class="toggle" id="loginPwToggle">Show</button></div>
-<div class="error" id="loginError"></div>
-<button type="submit">Sign In</button>
-</form>
-<form class="form hidden" id="signupForm">
-<input type="email" id="signupEmail" placeholder="Email" required>
-<div class="pw-wrap"><input type="password" id="signupPassword" placeholder="Password (min 8 chars)" required><button type="button" class="toggle" id="pwToggle">Show</button></div>
-<div class="row"><input type="text" id="signupFirstName" placeholder="First name"><input type="text" id="signupLastName" placeholder="Last name"></div>
-<div class="row"><input type="text" id="signupWorkplace" placeholder="Workplace / Institution"><input type="text" id="signupCity" placeholder="City"></div>
-<div class="error" id="signupError"></div>
-<div class="success" id="signupSuccess"></div>
-<button type="submit">Create Account</button>
-</form>
-<div class="legal"><a id="landingDisclaimerLink">&#9888;&#65039; Disclaimer</a></div>
-</div>
-<div class="overlay" id="landingDisclaimerOverlay">
-<div class="overlay-content">
-<button class="overlay-close" id="landingDisclaimerClose">&times;</button>
-<div id="landingDisclaimerText"></div>
-</div>
-</div>
-<script>
-function switchTab(t){document.querySelectorAll('.tab').forEach(el=>el.classList.toggle('active',el.id==='tab'+t.charAt(0).toUpperCase()+t.slice(1)));document.getElementById('loginForm').classList.toggle('hidden',t!=='login');document.getElementById('signupForm').classList.toggle('hidden',t!=='signup')}
-document.getElementById('pwToggle').onclick=function(){var p=document.getElementById('signupPassword');p.type=p.type==='password'?'text':'password';this.textContent=p.type==='password'?'Show':'Hide'}
-document.getElementById('loginPwToggle').onclick=function(){var p=document.getElementById('loginPassword');p.type=p.type==='password'?'text':'password';this.textContent=p.type==='password'?'Show':'Hide'}
-var discText='**Welcome to hack.CCM \\u{1F9A9} \\u2014 Please Read Before You Explore**\\n\\nWelcome! This platform is a hobby passion project designed to make critical care education more structured, accessible, and easily retainable.\\n\\n**\\u26A0\\uFE0F For Education, Not Consultation**\\nThis is a tool for knowledge enhancement and personal study only. It is not a clinical decision-making tool. Always rely on official guidelines and your own institutional protocols for real-world patient care.\\n\\n**\\u{1F916} The AI Factor**\\nAs the saying goes, \\"To err is human; to hallucinate is AI.\\" While we have taken immense care to review the data and eliminate errors, AI-assisted formatting isn\\'t always flawless.\\n\\n**\\u{1F6D1} Use Responsibly**\\nDouble-check critical values and protocols. You are the clinician; this is just your study buddy.\\n\\n**\\u{1F50D} Spotted a Discrepancy?**\\nIf you find any errors, outdated data, or weird AI quirks, please help us improve! Report it via our Feedback button below.';
-function showLandingDisclaimer(){document.getElementById('landingDisclaimerText').innerHTML=discText.replace(/\\*\\*(.+?)\\*\\*/g,'<strong>$1</strong>').replace(/\\n\\n/g,'</p><p>').replace(/\\n/g,'<br>');document.getElementById('landingDisclaimerOverlay').style.display='flex'}
-document.getElementById('landingDisclaimerLink').addEventListener('click',showLandingDisclaimer);
-document.getElementById('landingDisclaimerClose').addEventListener('click',function(){document.getElementById('landingDisclaimerOverlay').style.display='none'});
-document.getElementById('landingDisclaimerOverlay').addEventListener('click',function(e){if(e.target===this)this.style.display='none'});
-document.getElementById('loginForm').onsubmit=async function(e){e.preventDefault();var b=this.querySelector('button');b.disabled=true;var err=document.getElementById('loginError');err.textContent='';try{var r=await fetch('/api/login',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('loginEmail').value,password:document.getElementById('loginPassword').value})});if(r.ok){window.location.reload();return}var d=await r.json();err.textContent=d.detail||'Invalid email or password'}catch(e){err.textContent='Network error'}b.disabled=false}
-document.getElementById('signupForm').onsubmit=async function(e){e.preventDefault();var b=this.querySelector('button');b.disabled=true;var err=document.getElementById('signupError');var ok=document.getElementById('signupSuccess');err.textContent='';ok.textContent='';var pw=document.getElementById('signupPassword').value;try{var r=await fetch('/api/signup',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:document.getElementById('signupEmail').value,password:pw,first_name:document.getElementById('signupFirstName').value,last_name:document.getElementById('signupLastName').value,workplace:document.getElementById('signupWorkplace').value,city:document.getElementById('signupCity').value})});if(r.ok){window.location.reload();return}var d=await r.json();err.textContent=d.detail||'Account creation failed'}catch(e){err.textContent='Network error'}b.disabled=false}
-</script>
-</body>
-</html>"""
+# Shown on the sign-in page, before login. This is a shorter, older copy of DISCLAIMER_TEXT
+# (it was hardcoded inside the landing page script); kept verbatim until the wording is reviewed.
+LANDING_DISCLAIMER_TEXT = """**Welcome to hack.CCM 🦩 — Please Read Before You Explore**
+
+Welcome! This platform is a hobby passion project designed to make critical care education more structured, accessible, and easily retainable.
+
+**⚠️ For Education, Not Consultation**
+This is a tool for knowledge enhancement and personal study only. It is not a clinical decision-making tool. Always rely on official guidelines and your own institutional protocols for real-world patient care.
+
+**🤖 The AI Factor**
+As the saying goes, "To err is human; to hallucinate is AI." While we have taken immense care to review the data and eliminate errors, AI-assisted formatting isn't always flawless.
+
+**🛑 Use Responsibly**
+Double-check critical values and protocols. You are the clinician; this is just your study buddy.
+
+**🔍 Spotted a Discrepancy?**
+If you find any errors, outdated data, or weird AI quirks, please help us improve! Report it via our Feedback button below."""
+
+
+def _render_landing(request):
+    """Sign-in page. webapp_google sets app.state.google_auth to switch on the Google section."""
+    google = getattr(request.app.state, "google_auth", None)
+    return _render_template(
+        "landing.html",
+        google=bool(google),
+        css_url=_asset_url("css/landing.css"),
+        js_url=_asset_url("js/landing.js"),
+        google_js_url=_asset_url("js/google_signin.js"),
+        config_json=_script_json({"disclaimer_text": LANDING_DISCLAIMER_TEXT, "google": google}),
+    )
 
 # ---- End auth ----
 
@@ -745,7 +695,7 @@ app.mount("/static", _AssetFiles(directory=str(WEBAPP_DIR / "static")), name="st
 async def render_dashboard(request: Request, response: Response):
     user = _get_session_user(request)
     if not user:
-        return HTMLResponse(content=LANDING_HTML)
+        return HTMLResponse(content=_render_landing(request))
     entries = load_approved_ledger()
 
     articles_list = []
