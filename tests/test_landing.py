@@ -2,8 +2,7 @@
 import json
 import re
 
-GOOGLE = {"client_id": "test-client", "production_domain": "hackccm.vercel.app",
-          "cookie_name": "hackccm_sess", "session_max_age": 2592000}
+GOOGLE = {"client_id": "test-client", "production_domain": "hackccm.vercel.app"}
 
 
 def config_of(html):
@@ -65,4 +64,9 @@ def test_no_landing_monkeypatch_left(portal):
     import webapp_google
 
     assert not hasattr(portal, "LANDING_HTML") and not hasattr(webapp_google, "GOOGLE_LANDING_HTML")
-    assert webapp_google.app.state.google_auth["cookie_name"] == portal.SESSION_COOKIE_NAME
+
+
+def test_google_script_never_touches_the_session_cookie(client):
+    """The server sets the HttpOnly session cookie; the page must not read, write or accept one."""
+    js = client.get("/static/js/google_signin.js").text
+    assert "document.cookie" not in js and "hackccm_sess" not in js and "sidParam" not in js

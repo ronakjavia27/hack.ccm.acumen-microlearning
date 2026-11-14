@@ -1,6 +1,8 @@
-import os, sys, json, secrets
-from datetime import datetime
-from fastapi import FastAPI, Request, Response, HTTPException
+import logging
+import os, sys, secrets
+from html import escape as _esc
+from urllib.parse import urlsplit, urlunsplit
+from fastapi import Request, Response, HTTPException
 from fastapi.responses import HTMLResponse, JSONResponse
 
 # Import the existing app (all routes + auth helpers register on import)
@@ -18,6 +20,9 @@ _get_session_user = revamped_webapp._get_session_user
 SESSION_COOKIE_NAME = revamped_webapp.SESSION_COOKIE_NAME
 SESSION_MAX_AGE = revamped_webapp.SESSION_MAX_AGE
 COOKIE_SECURE = revamped_webapp.COOKIE_SECURE
+_now_iso = revamped_webapp._now_iso
+
+log = logging.getLogger("hackccm.google")
 
 GOOGLE_CLIENT_ID = os.environ.get("OAUTH_CLIENT_ID", "")
 GOOGLE_CLIENT_SECRET = os.environ.get("OAUTH_CLIENT_SECRET", "")
@@ -30,9 +35,89 @@ PRODUCTION_DOMAIN = "hackccm.vercel.app"
 app.state.google_auth = {
     "client_id": GOOGLE_CLIENT_ID,
     "production_domain": PRODUCTION_DOMAIN,
-    "cookie_name": SESSION_COOKIE_NAME,
-    "session_max_age": SESSION_MAX_AGE,
 }
+
+# =====================================================================
+# GOOGLE OAUTH — shared helpers
+# =====================================================================
+
+GOOGLE_ISSUERS = ("accounts.google.com", "https://accounts.google.com")
+OAUTH_STATE_COOKIE = "hackccm_oauth_state"
+
+
+def _safe_redirect(target):
+    """Where to send the user after sign-in. Only places on this site are allowed (a path, or a
+    URL on PRODUCTION_DOMAIN, reduced to its path); anything else falls back to "/"."""
+    t = str(target or "").strip()
+    if not t or any(ord(c) < 32 for c in t) or "\\" in t:
+        return "/"
+    if t.startswith("/") and not t.startswith("//"):
+        return t
+    parts = urlsplit(t)
+    if parts.scheme in ("http", "https") and parts.hostname == PRODUCTION_DOMAIN:
+        return urlunsplit(("", "", parts.path or "/", parts.query, parts.fragment))
+    return "/"
+
+
+def _verify_google_id_token(id_token):
+    """Check an ID token with Google's tokeninfo endpoint (signature + expiry) and make sure it
+    was issued to *this* app. Returns (claims, email) or raises HTTPException(401)."""
+    import requests as http
+    resp = http.get("https://oauth2.googleapis.com/tokeninfo", params={"id_token": id_token}, timeout=10)
+    if not resp.ok:
+        raise HTTPException(401, "Invalid Google credential")
+    info = resp.json()
+    if not GOOGLE_CLIENT_ID or info.get("aud") != GOOGLE_CLIENT_ID:
+        raise HTTPException(401, "Google credential was not issued for this app")
+    if info.get("iss") not in GOOGLE_ISSUERS:
+        raise HTTPException(401, "Invalid Google credential issuer")
+    email = str(info.get("email", "")).strip().lower()
+    if not email or str(info.get("email_verified")).lower() != "true":
+        raise HTTPException(401, "Email not verified")
+    return info, email
+
+
+def _google_sign_in(info, email):
+    """Create or refresh the account for a verified Google identity and open a session."""
+    given_name = str(info.get("given_name", "") or "")
+    family_name = str(info.get("family_name", "") or "")
+    full_name = str(info.get("name", "") or "")
+    now = _now_iso()
+    existing = _kv_get(f"auth:users:{email}")
+    if existing and isinstance(existing, dict):
+        existing["google_uid"] = info.get("sub", "")
+        existing["auth_provider"] = "google"
+        # a verified Google email takes over any password account registered with it, so a
+        # password set by someone who pre-registered the address stops working
+        existing.pop("password_hash", None)
+        existing["first_name"] = existing.get("first_name") or given_name or full_name
+        existing["last_name"] = existing.get("last_name") or family_name
+        existing["last_login"] = now
+        user = existing
+    else:
+        user = {
+            "email": email,
+            "google_uid": info.get("sub", ""),
+            "auth_provider": "google",
+            "first_name": given_name or full_name,
+            "last_name": family_name,
+            "created_at": now,
+            "last_login": now,
+            "features": {},
+        }
+    _kv_set(f"auth:users:{email}", user)
+    sid = _session_id()
+    _kv_set(f"auth:session:{sid}", {"email": email, "created_at": now}, ttl=SESSION_MAX_AGE)
+    return sid
+
+
+def _set_session_cookie(response, sid):
+    response.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+
+
+def _oauth_error_page(title, detail=None):
+    detail_html = f"<p style='color:#f55;margin:12px 0'>{_esc(str(detail))}</p>" if detail is not None else ""
+    return HTMLResponse(f"<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>{title}</h2>{detail_html}<a href='/' style='color:#E8B778'>Back to home</a></div></body></html>")
 
 # =====================================================================
 # GOOGLE OAUTH — redirect page (served from production domain)
@@ -45,8 +130,7 @@ async def google_auth_redirect(request: Request, redirect: str = ""):
     has_client = bool(GOOGLE_CLIENT_ID)
 
     state = secrets.token_urlsafe(16)
-    if redirect:
-        _kv_set(f"auth:oauth:state:{state}", {"redirect": redirect, "created_at": datetime.utcnow().isoformat()}, ttl=600)
+    _kv_set(f"auth:oauth:state:{state}", {"redirect": _safe_redirect(redirect), "created_at": _now_iso()}, ttl=600)
 
     if not is_production or not has_client:
         if not is_production:
@@ -141,8 +225,7 @@ function handleCredentialResponse(response) {{
     if (!r.ok) return r.json().then(function(d) {{ throw new Error(d.detail || 'Auth failed'); }});
     return r.json();
   }}).then(function(data) {{
-    if (data.sid) {{
-      document.cookie = '{SESSION_COOKIE_NAME}=' + data.sid + ';path=/;max-age={SESSION_MAX_AGE}';
+    if (data.ok) {{
       window.location.href = data.redirect || '/';
     }}
   }}).catch(function(err) {{
@@ -165,7 +248,10 @@ try {{
 </script>
 </body>
 </html>"""
-    return HTMLResponse(content=html)
+    page = HTMLResponse(content=html)
+    # the callback only accepts a state that this browser was given
+    page.set_cookie(key=OAUTH_STATE_COOKIE, value=state, max_age=600, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+    return page
 
 # =====================================================================
 # GOOGLE OAUTH — credential handler
@@ -177,51 +263,9 @@ async def google_auth_handler(body: dict, response: Response):
         credential = body.get("credential", "")
         if not credential:
             raise HTTPException(400, "Missing credential")
-
-        import requests as http
-        verify = http.get(f"https://oauth2.googleapis.com/tokeninfo?id_token={credential}", timeout=10)
-        if not verify.ok:
-            raise HTTPException(401, "Invalid Google credential")
-
-        info = verify.json()
-        email = str(info.get("email", "")).strip().lower()
-        if not email or not info.get("email_verified"):
-            raise HTTPException(401, "Email not verified")
-
-        google_uid = info.get("sub", "")
-        given_name = str(info.get("given_name", "") or "")
-        family_name = str(info.get("family_name", "") or "")
-        full_name = str(info.get("name", "") or "")
-
-        now = datetime.utcnow().isoformat()
-
-        # Check if user exists by email — overwrite with Google data
-        existing = _kv_get(f"auth:users:{email}")
-        if existing and isinstance(existing, dict):
-            existing["google_uid"] = google_uid
-            existing["auth_provider"] = "google"
-            existing.pop("password_hash", None)
-            existing["first_name"] = existing.get("first_name") or given_name or full_name
-            existing["last_name"] = existing.get("last_name") or family_name
-            existing["last_login"] = now
-            user = existing
-        else:
-            user = {
-                "email": email,
-                "google_uid": google_uid,
-                "auth_provider": "google",
-                "first_name": given_name or full_name,
-                "last_name": family_name,
-                "created_at": now,
-                "last_login": now,
-                "features": {},
-            }
-
-        _kv_set(f"auth:users:{email}", user)
-
-        sid = _session_id()
-        _kv_set(f"auth:session:{sid}", {"email": email, "created_at": now}, ttl=SESSION_MAX_AGE)
-        response.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+        info, email = _verify_google_id_token(credential)
+        sid = _google_sign_in(info, email)
+        _set_session_cookie(response, sid)
 
         # Resolve redirect from state
         state_key = body.get("state", "")
@@ -229,15 +273,15 @@ async def google_auth_handler(body: dict, response: Response):
         if state_key:
             state_data = _kv_get(f"auth:oauth:state:{state_key}")
             if state_data and isinstance(state_data, dict):
-                redirect_to = state_data.get("redirect", "")
+                redirect_to = _safe_redirect(state_data.get("redirect"))
             _kv_delete(f"auth:oauth:state:{state_key}")
 
-        return {"ok": True, "sid": sid, "redirect": redirect_to}
+        return {"ok": True, "redirect": redirect_to}
     except HTTPException:
         raise
-    except Exception as e:
-        import traceback
-        return JSONResponse(500, {"error": type(e).__name__, "detail": str(e), "traceback": traceback.format_exc()})
+    except Exception:
+        log.exception("Google sign-in failed")
+        return JSONResponse(status_code=500, content={"detail": "Sign-in failed. Please try again."})
 
 # =====================================================================
 # GOOGLE OAUTH — server-side redirect callback
@@ -246,13 +290,16 @@ async def google_auth_handler(body: dict, response: Response):
 @app.get("/api/auth/google/callback")
 async def google_oauth_callback(request: Request, code: str = "", state: str = "", error: str = ""):
     if error or not code:
-        return HTMLResponse(f"<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Sign-in cancelled or failed</h2><p style='color:#f55;margin:12px 0'>{error or 'No authorization code received'}</p><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>")
+        return _oauth_error_page("Sign-in cancelled or failed", error or "No authorization code received")
 
-    # Verify state
-    state_data = _kv_get(f"auth:oauth:state:{state}")
-    if not state_data or not isinstance(state_data, dict):
-        return HTMLResponse("<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Invalid or expired state</h2><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=403)
-    redirect_to = state_data.get("redirect", "/")
+    # The state must exist server-side AND have been issued to this browser (cookie set when the
+    # flow started); otherwise someone could log a victim into the attacker's account.
+    cookie_state = request.cookies.get(OAUTH_STATE_COOKIE, "")
+    state_data = _kv_get(f"auth:oauth:state:{state}") if state else None
+    if (not state or not cookie_state or not isinstance(state_data, dict)
+            or not secrets.compare_digest(cookie_state.encode(), state.encode())):
+        return _oauth_error_page("Invalid or expired state")
+    redirect_to = _safe_redirect(state_data.get("redirect"))
     _kv_delete(f"auth:oauth:state:{state}")
 
     # Exchange code for tokens
@@ -265,59 +312,20 @@ async def google_oauth_callback(request: Request, code: str = "", state: str = "
         "grant_type": "authorization_code",
     }, timeout=10)
     if not token_resp.ok:
-        return HTMLResponse(f"<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Token exchange failed</h2><p style='color:#f55;margin:12px 0'>{token_resp.status_code}</p><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=502)
+        return _oauth_error_page("Token exchange failed", token_resp.status_code)
 
-    tokens = token_resp.json()
-    id_token = tokens.get("id_token", "")
+    id_token = token_resp.json().get("id_token", "")
     if not id_token:
-        return HTMLResponse("<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>No ID token received</h2><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=502)
+        return _oauth_error_page("No ID token received")
 
-    # Verify the ID token via Google's tokeninfo endpoint
-    verify = http.get(f"https://oauth2.googleapis.com/tokeninfo?id_token={id_token}", timeout=10)
-    if not verify.ok:
-        return HTMLResponse("<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Token verification failed</h2><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=502)
+    try:
+        info, email = _verify_google_id_token(id_token)
+    except HTTPException as exc:
+        return _oauth_error_page("Email not verified" if "verified" in str(exc.detail) else "Token verification failed")
 
-    info = verify.json()
-    email = str(info.get("email", "")).strip().lower()
-    if not email or not info.get("email_verified"):
-        return HTMLResponse("<html><body style='background:#1F1B14;color:#F1E4CE;font-family:sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh'><div style='text-align:center'><h2>Email not verified</h2><a href='/' style='color:#E8B778'>Back to home</a></div></body></html>", status_code=403)
-
-    google_uid = info.get("sub", "")
-    given_name = str(info.get("given_name", "") or "")
-    family_name = str(info.get("family_name", "") or "")
-    now = datetime.utcnow().isoformat()
-
-    existing = _kv_get(f"auth:users:{email}")
-    if existing and isinstance(existing, dict):
-        existing["google_uid"] = google_uid
-        existing["auth_provider"] = "google"
-        existing.pop("password_hash", None)
-        existing["first_name"] = existing.get("first_name") or given_name or family_name
-        existing["last_name"] = existing.get("last_name") or family_name
-        existing["last_login"] = now
-        user = existing
-    else:
-        user = {
-            "email": email,
-            "google_uid": google_uid,
-            "auth_provider": "google",
-            "first_name": given_name or info.get("name", ""),
-            "last_name": family_name,
-            "created_at": now,
-            "last_login": now,
-            "features": {},
-        }
-
-    _kv_set(f"auth:users:{email}", user)
-
-    sid = _session_id()
-    _kv_set(f"auth:session:{sid}", {"email": email, "created_at": now}, ttl=SESSION_MAX_AGE)
-
-    # Redirect back with session cookie
-    sep = "&" if "?" in redirect_to else "?"
-    redirect_url = f"{redirect_to}{sep}hackccm_sess={sid}"
+    sid = _google_sign_in(info, email)
     resp = HTMLResponse(status_code=302)
-    resp.headers["Location"] = redirect_url
-    resp.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
+    resp.headers["Location"] = redirect_to
+    _set_session_cookie(resp, sid)
+    resp.delete_cookie(OAUTH_STATE_COOKIE)
     return resp
-

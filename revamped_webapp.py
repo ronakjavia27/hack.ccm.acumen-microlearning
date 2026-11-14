@@ -4,7 +4,7 @@ import re
 import html
 import secrets
 import hashlib
-from datetime import datetime, timedelta
+from datetime import datetime, timezone
 from pathlib import Path
 from fastapi import FastAPI, Request, Response, Depends, HTTPException, Cookie
 from fastapi.responses import HTMLResponse, JSONResponse
@@ -160,6 +160,10 @@ def _verify_password(password, pw_hash):
 def _session_id():
     return secrets.token_urlsafe(32)
 
+def _now_iso():
+    """UTC timestamp as a naive ISO string (the format already stored in KV)."""
+    return datetime.now(timezone.utc).replace(tzinfo=None).isoformat()
+
 # ---- Local dev: bypass login entirely ----
 # On Vercel (VERCEL=1) login is required. When running locally, auto-login
 # as the local admin account so the login page never blocks local use.
@@ -177,13 +181,13 @@ def _local_dev_login():
             "workplace": "",
             "city": "",
             "password_hash": _hash_password("admin@admin"),
-            "created_at": datetime.utcnow().isoformat(),
+            "created_at": _now_iso(),
             "features": {},
             "is_admin": True,
         }
         _kv_set(f"auth:users:{email}", user)
     sid = _session_id()
-    _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
+    _kv_set(f"auth:session:{sid}", {"email": email, "created_at": _now_iso()}, ttl=SESSION_MAX_AGE)
     return user, sid
 
 # ---- Auth helpers ----
@@ -280,7 +284,7 @@ def _bookmark_item(body, existing=None):
             "system": str(body.get("system", ""))[:80],
             "type": str(body.get("type", ""))[:40],
             "locator": body.get("locator") if isinstance(body.get("locator"), dict) else {},
-            "added_at": datetime.utcnow().isoformat(),
+            "added_at": _now_iso(),
         })
     else:
         item["ref"] = ref
@@ -959,12 +963,12 @@ async def api_signup(body: dict, response: Response):
             "workplace": str(body.get("workplace", "")).strip(),
             "city": str(body.get("city", "")).strip(),
             "password_hash": _hash_password(password),
-            "created_at": datetime.utcnow().isoformat(),
+            "created_at": _now_iso(),
             "features": {},
         }
         _kv_set(f"auth:users:{email}", user)
         sid = _session_id()
-        _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
+        _kv_set(f"auth:session:{sid}", {"email": email, "created_at": _now_iso()}, ttl=SESSION_MAX_AGE)
         response.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
         return {"ok": True, "email": email}
     except HTTPException:
@@ -989,7 +993,7 @@ async def api_login(body: dict, response: Response):
         if not _verify_password(password, pwh):
             raise HTTPException(401, "Invalid email or password")
         sid = _session_id()
-        _kv_set(f"auth:session:{sid}", {"email": email, "created_at": datetime.utcnow().isoformat()}, ttl=SESSION_MAX_AGE)
+        _kv_set(f"auth:session:{sid}", {"email": email, "created_at": _now_iso()}, ttl=SESSION_MAX_AGE)
         response.set_cookie(key=SESSION_COOKIE_NAME, value=sid, max_age=SESSION_MAX_AGE, httponly=True, samesite="lax", secure=COOKIE_SECURE)
         return {"ok": True, "email": email}
     except HTTPException:
@@ -1218,7 +1222,7 @@ async def api_bookmarks_folder_add(request: Request, body: dict):
     folder = {
         "name": name,
         "color": str(body.get("color", ""))[:20] or "#E8B778",
-        "created_at": datetime.utcnow().isoformat(),
+        "created_at": _now_iso(),
     }
     folders[fid] = folder
     _save_user_data(email, "bookmarks", data)
