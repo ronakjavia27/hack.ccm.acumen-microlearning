@@ -1,10 +1,12 @@
 """Readers for the content files the portal serves (ledger, pearls, trials, flashcards, theory notes, related links)."""
+import functools
 import json
 import logging
 import os
 import re
 from datetime import datetime
 
+from acumen_core.config import FLASHCARDS_DIR, FLASHCARDS_INDEX_FILE, THEORY_MDS_DIR
 from webapp.config import (
     CONDENSED_TRIALS_DIR,
     ESBICM_INDEX_PATH,
@@ -16,8 +18,73 @@ from webapp.config import (
 log = logging.getLogger("hackccm")
 
 
-# ---- End auth ----
+# ---- Caching ----
+# The content files only change when the pipeline runs or a deploy ships, yet every request used to
+# re-read and re-parse them (about 120 ms of a 160 ms dashboard render). Each loader is cached
+# against a signature (path, mtime, size) of the files it reads, so an edit on disk is picked up on
+# the next request and nothing is ever served stale. Cached values are shared between requests:
+# callers must not modify them (they build new lists; tests/test_loader_cache.py guards this).
 
+def _file_signature(paths):
+    """(path, mtime_ns, size) for every file under the given files/directories; None for a missing path."""
+    sig = []
+
+    def visit(path):
+        try:
+            with os.scandir(path) as it:
+                entries = list(it)
+        except OSError:
+            return
+        for entry in entries:
+            try:
+                if entry.is_dir(follow_symlinks=False):
+                    visit(entry.path)
+                else:
+                    st = entry.stat()
+                    sig.append((entry.path, st.st_mtime_ns, st.st_size))
+            except OSError:
+                sig.append((entry.path, None, None))
+
+    for path in paths:
+        try:
+            if os.path.isdir(path):
+                visit(path)
+            else:
+                st = os.stat(path)
+                sig.append((path, st.st_mtime_ns, st.st_size))
+        except OSError:
+            sig.append((path, None, None))
+    return tuple(sorted(sig, key=lambda x: x[0]))
+
+
+def _cached_by_files(depends_on):
+    """Cache a zero-argument loader until any file in depends_on() changes.
+
+    A result is only stored if the files did not change while it was being computed, so a file that is
+    being rewritten mid-read can never leave a half-read value in the cache."""
+    def decorator(loader):
+        state = {"sig": None, "value": None}
+
+        @functools.wraps(loader)
+        def wrapper():
+            sig = _file_signature(depends_on())
+            if state["sig"] is not None and state["sig"] == sig:
+                return state["value"]
+            value = loader()
+            if _file_signature(depends_on()) == sig:
+                state["sig"], state["value"] = sig, value
+            return value
+
+        def cache_clear():
+            state["sig"], state["value"] = None, None
+
+        wrapper.cache_clear = cache_clear
+        wrapper.uncached = loader
+        return wrapper
+    return decorator
+
+
+@_cached_by_files(lambda: [JSON_TRACKER_FILE])
 def load_approved_ledger():
     if not os.path.exists(JSON_TRACKER_FILE):
         return []
@@ -28,6 +95,7 @@ def load_approved_ledger():
         return []
 
 
+@_cached_by_files(lambda: [PEARLS_JSON, "sent_summaries.json"])
 def load_pearls():
     if not os.path.exists(PEARLS_JSON):
         return []
@@ -64,6 +132,7 @@ def load_pearls():
         return []
 
 
+@_cached_by_files(lambda: [ESBICM_INDEX_PATH])
 def load_trial_index():
     if not os.path.exists(ESBICM_INDEX_PATH):
         return []
@@ -74,6 +143,7 @@ def load_trial_index():
         return []
 
 
+@_cached_by_files(lambda: [FLASHCARDS_INDEX_FILE, FLASHCARDS_DIR])
 def load_flashcard_decks():
     """Load flashcard decks from the unified store (output_files/flashcards/).
     One deck per (system, subtopic) file; cards carry explicit front/back."""
@@ -114,6 +184,7 @@ def load_flashcard_decks():
     return decks
 
 
+@_cached_by_files(lambda: [os.path.join(OUTPUT_DIR, "Theory MDs")])
 def load_theory_notes():
     """Load Theory Topics: every file under output_files/Theory MDs/ (any
     extension) rendered as markdown by the portal. Notes are organized into
@@ -180,6 +251,7 @@ def load_theory_notes():
     return notes
 
 
+@_cached_by_files(lambda: [os.path.join(OUTPUT_DIR, "related_links.json"), JSON_TRACKER_FILE, THEORY_MDS_DIR, FLASHCARDS_INDEX_FILE, FLASHCARDS_DIR])
 def load_related_links():
     """Load output_files/related_links.json (precomputed by acumen_core/linker.py).
 
@@ -207,7 +279,7 @@ def load_related_links():
     # Full catalog: every known entity (complete even mid-run); merge stored tags
     catalog = []
     try:
-        base_catalog = entity_catalog()
+        base_catalog = entity_catalog(with_excerpt=False)  # the portal never uses the excerpts
     except Exception:
         base_catalog = []
     if base_catalog:
@@ -268,6 +340,7 @@ def load_related_links():
     }
 
 
+@_cached_by_files(lambda: [CONDENSED_TRIALS_DIR])
 def load_condensed_trial_index():
     if not os.path.exists(CONDENSED_TRIALS_DIR):
         return []

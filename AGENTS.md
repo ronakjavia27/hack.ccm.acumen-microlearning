@@ -36,6 +36,7 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | `errors.py` | Monthly error log `master_error_list_YYYY-MM.txt` (JSONL), error classification, priority levels (CRITICAL→LOW) |
 | `vocabulary.py` | Normalizes specialties & article types to controlled vocabulary (reads `specialties.txt`, `article_types.txt`) |
 | `flashcards.py` | Shared flashcard pipeline helpers — source parsing (md/txt/pdf/docx/html), authored-md deck import (`parse_markdown_deck`, `cards_from_markdown_deck` with position-matched UUID reuse), LLM convert + tag prompts, subtopic normalization (`normalize_subtopic` with acronym matching), `flashcards_ledger.json` sha256 skip logic, unified store CRUD (`upsert_card`, `remove_card`, `move_card`, `rebuild_flashcards_index`) |
+| `features.py` | Per-user feature flags (`FEATURE_FLAGS`, `FEATURE_LABELS`, `DEFAULT_FEATURE_STATES`, `resolve_defaults`, `clean_flags`) — the ONE definition shared by the portal and the console (a flag known to only one of them used to be erased when the other saved a user) |
 | `subtopics_config.py` | Loads `subtopics.json`, provides `get_subtopics_for_system()`, `is_valid_subtopic()`, `format_subtopics_for_prompt()` |
 | `subtopics.json` | Full subtopic vocabulary per specialty — the SINGLE master vocab (also supplies the specialty list via its keys) |
 
@@ -58,8 +59,9 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 |------|---------|
 | `app.py` | `create_app(google=False)` — mounts `/static`, includes the routers below; `google=True` adds Google sign-in |
 | `config.py` | Content paths, form links, disclaimer/credits texts, `SPEC_COLORS`, `WEBAPP_DIR` |
+| `boot.py` | `build_dashboard_page(user)` → the `#boot` JSON payload + template context for the dashboard (small, tested helpers per section: articles, specialty colours, trials, theory) |
 | `auth.py` | Sessions + the single HttpOnly session cookie (`set_session_cookie`), scrypt password hashing (legacy sha256 hashes upgrade on login), feature flags, local-dev auto-login rules |
-| `loaders.py` | Readers for ledger, pearls, trials, condensed trials, flashcard decks, theory notes, related links |
+| `loaders.py` | Readers for ledger, pearls, trials, condensed trials, flashcard decks, theory notes, related links — each cached against a (path, mtime, size) signature of the files it reads, so edits on disk show up on the next request (`.cache_clear()`, `.uncached()` for tests) |
 | `render.py` | Markdown/print rendering and text extraction for summaries |
 | `templating.py` | Jinja env, `asset_url()` (content-hashed `/static/...?v=`), `script_json()` (`</script>`-safe JSON), `AssetFiles` |
 | `routers/pages.py` | `/` (sign-in page, or the dashboard with its `#boot` JSON block), `/favicon.ico` |
@@ -71,11 +73,11 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | `templates/` | `dashboard.html`, `landing.html` (Jinja shells) |
 | `static/css`, `static/js` | `app.css`/`app.js` (portal; data arrives via the `#boot` JSON block), `landing.css`/`landing.js`/`google_signin.js` |
 
-Conventions: add an endpoint to the router for its feature and include new routers in `ROUTERS` in `app.py`; a route that a more general route would match (`/x/defaults` vs `/x/{name:path}`) must come first within its router. Call loaders as `loaders.load_*()` and KV as `kv.kv_get(...)` (module-qualified, so tests can patch them). Never put credentials in code (a test scans for it): SMTP (`SMTP_USER`/`SMTP_PASS`), KV (`KV_REST_API_URL`/`KV_REST_API_TOKEN`) and Google (`OAUTH_CLIENT_ID`/`OAUTH_CLIENT_SECRET`) come from `.env` (see `.env.example`). `LOCAL_DEV=0` disables the local auto-login.
+Conventions: add an endpoint to the router for its feature and include new routers in `ROUTERS` in `app.py`; a route that a more general route would match (`/x/defaults` vs `/x/{name:path}`) must come first within its router. Call loaders as `loaders.load_*()` and KV as `kv.kv_get(...)` (module-qualified, so tests can patch them). Loader results are cached and shared between requests: never modify them in place (build new lists; `tests/test_loader_cache.py` fails if a request corrupts the cache). A new loader needs `@_cached_by_files(lambda: [<every file/dir it reads>])`. `acumen_core.linking.entity_catalog(with_excerpt=False)` is the cheap catalog the portal uses (no content files read); the LLM linker keeps the default. Never put credentials in code (a test scans for it): SMTP (`SMTP_USER`/`SMTP_PASS`), KV (`KV_REST_API_URL`/`KV_REST_API_TOKEN`) and Google (`OAUTH_CLIENT_ID`/`OAUTH_CLIENT_SECRET`) come from `.env` (see `.env.example`). `LOCAL_DEV=0` disables the local auto-login.
 
 ### Testing
 ```
-python -m pytest tests -q                       # ~110 tests; no network, throwaway KV file
+python -m pytest tests -q                       # ~170 tests; no network, throwaway KV file
 node tests/e2e/smoke.js http://localhost:8000   # browser fingerprint of the portal (Playwright); diff two builds
 node tests/e2e/landing.js http://127.0.0.1:8000 8000   # sign-in page flow (server needs VERCEL=1 + OAUTH_CLIENT_ID)
 ```
@@ -384,3 +386,4 @@ PyMuPDF, pdf2image, pytesseract, fastapi, uvicorn, requests, beautifulsoup4
 - Git push from UI via async `PushWorker`
 - Backup/restore system
 - Audit log viewer
+- Accounts tab: feature toggles come from `acumen_core/features.py` (same flags as the portal, including Bookmarks)

@@ -9,6 +9,7 @@ from datetime import datetime, timezone
 from fastapi import HTTPException, Request, Response
 
 from acumen_core import kv
+from acumen_core.features import resolve_defaults
 
 log = logging.getLogger("hackccm")
 
@@ -91,14 +92,28 @@ def dev_login_allowed(request):
     return not any(h in request.headers for h in _PROXY_HEADERS)
 
 
+# Stored hashes already checked against the retired default password. Verifying costs an scrypt run
+# (~40 ms), and the local dev admin is looked up on every cookie-less request, so each distinct hash
+# is only checked once per process. A different hash (e.g. someone resets the password to the
+# default) is not in the set and is checked again.
+_not_default_hashes = set()
+
+
 def retire_default_admin_password(user):
     """Older versions gave the local admin the password 'admin@admin'. If an account still has it
     (e.g. it was created in a shared KV), replace it with an unguessable one. True if replaced."""
-    if user.get("email") == DEFAULT_ADMIN_EMAIL and verify_password(_RETIRED_DEFAULT_PASSWORD, user.get("password_hash")):
+    if user.get("email") != DEFAULT_ADMIN_EMAIL:
+        return False
+    stored = user.get("password_hash")
+    if isinstance(stored, str) and stored in _not_default_hashes:
+        return False
+    if verify_password(_RETIRED_DEFAULT_PASSWORD, stored):
         user["password_hash"] = hash_password(secrets.token_urlsafe(32))
         kv.kv_set(f"auth:users:{DEFAULT_ADMIN_EMAIL}", user)
         log.warning("Disabled the default password of %s", DEFAULT_ADMIN_EMAIL)
         return True
+    if isinstance(stored, str):
+        _not_default_hashes.add(stored)
     return False
 
 
@@ -132,15 +147,6 @@ def local_dev_login():
 
 
 # ---- Auth helpers ----
-FEATURE_FLAGS = ["papers", "guidelines", "pearls", "trials", "trials_detail", "condensed_trials", "search", "bookmarks", "theory"]
-
-
-DEFAULT_FEATURE_STATES = {
-    "condensed_trials": False,
-    "theory": False,
-}
-
-
 def get_session_user(request):
     sid = request.cookies.get(SESSION_COOKIE_NAME)
     if not sid:
@@ -164,7 +170,7 @@ def access_defaults():
     if d is None:
         d = {}
         kv.kv_set("auth:access_defaults", d)
-    return {f: d.get(f, DEFAULT_FEATURE_STATES.get(f, True)) for f in FEATURE_FLAGS}
+    return resolve_defaults(d)
 
 
 def user_has_feature(user, feature):

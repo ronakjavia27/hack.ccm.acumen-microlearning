@@ -4,9 +4,8 @@ import os
 from fastapi import APIRouter, HTTPException, Request
 
 from acumen_core import kv
+from acumen_core.features import clean_flags, resolve_defaults
 from webapp.auth import (
-    DEFAULT_FEATURE_STATES,
-    FEATURE_FLAGS,
     access_defaults,
     get_session_user,
     require_admin,
@@ -51,7 +50,7 @@ def _admin_user_update(email: str, body: dict):
         return None
     features = body.get("features")
     if features is not None and isinstance(features, dict):
-        user["features"] = {k: bool(v) for k, v in features.items() if k in FEATURE_FLAGS}
+        user["features"] = clean_flags(features)
     for field in ("first_name", "last_name", "workplace", "city"):
         if field in body:
             user[field] = str(body[field]).strip()
@@ -76,9 +75,9 @@ def _admin_user_delete(email: str) -> bool:
 
 
 def _admin_save_defaults(body: dict):
-    clean = {k: bool(v) for k, v in body.items() if k in FEATURE_FLAGS}
+    clean = clean_flags(body)
     kv.kv_set("auth:access_defaults", clean)
-    return {f: clean.get(f, DEFAULT_FEATURE_STATES.get(f, True)) for f in FEATURE_FLAGS}
+    return resolve_defaults(clean)
 
 
 @router.get("/api/admin/users")

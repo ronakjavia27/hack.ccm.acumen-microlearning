@@ -150,6 +150,35 @@ def test_dev_admin_lookup_retires_default_password(dev_client):
     assert not auth.verify_password(LEGACY_DEFAULT, stored_hash("admin@gmail.com"))
 
 
+def test_default_password_check_runs_once_per_stored_hash(dev_client, monkeypatch):
+    """The dev admin is looked up on every cookie-less request; an scrypt run each time cost ~40 ms."""
+    dev_client.get("/api/me")  # creates the account
+    auth._not_default_hashes.clear()
+    runs = []
+    real = auth.verify_password
+    monkeypatch.setattr(auth, "verify_password", lambda *a, **k: runs.append(1) or real(*a, **k))
+    for _ in range(5):
+        assert dev_client.get("/api/me").json()["is_admin"] is True
+    assert len(runs) == 1
+
+
+def test_a_hash_reset_to_the_default_is_still_caught_after_clean_checks(dev_client):
+    dev_client.get("/api/me")
+    dev_client.get("/api/me")  # the current (clean) hash is now remembered
+    put_user("admin@gmail.com", legacy_hash(LEGACY_DEFAULT), is_admin=True)  # someone restores the old password
+    dev_client.get("/api/me")
+    assert not auth.verify_password(LEGACY_DEFAULT, stored_hash("admin@gmail.com"))
+
+
+def test_other_accounts_never_trigger_the_default_password_check(client, monkeypatch):
+    client.post("/api/signup", json={"email": "someone@example.com", "password": "longenough1"})
+    runs = []
+    real = auth.verify_password
+    monkeypatch.setattr(auth, "verify_password", lambda *a, **k: runs.append(1) or real(*a, **k))
+    assert auth.retire_default_admin_password({"email": "someone@example.com", "password_hash": legacy_hash(LEGACY_DEFAULT)}) is False
+    assert runs == []
+
+
 # ---------- /api/debug ----------
 
 def test_debug_endpoint_is_admin_only(app, user_client, dev_client):

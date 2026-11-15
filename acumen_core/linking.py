@@ -107,8 +107,11 @@ def _summary_payload_path(system, type_val, file_name):
 # ENTITY CATALOG
 # =====================================================================
 
-def summaries_entities():
-    """Papers + guidelines from sent_summaries.json (best-effort payload text)."""
+def summaries_entities(with_excerpt=True):
+    """Papers + guidelines from sent_summaries.json (best-effort payload text).
+
+    with_excerpt=False skips reading each summary payload (the excerpt is only needed by the LLM
+    linker); every other field is unchanged."""
     if not os.path.exists(JSON_TRACKER_FILE):
         return []
     try:
@@ -126,13 +129,13 @@ def summaries_entities():
         title = str(e.get("title", "")).strip()
         excerpt = ""
         p = _summary_payload_path(system, type_val, fn)
-        if os.path.isfile(p):
+        if with_excerpt and os.path.isfile(p):
             try:
                 with open(p, "r", encoding="utf-8") as f:
                     excerpt = _collect_text(json.load(f))
             except (json.JSONDecodeError, OSError):
                 excerpt = ""
-        if not excerpt:
+        if with_excerpt and not excerpt:
             excerpt = f"{title} {e.get('authors', '')} {e.get('journal', '')}".strip()
         out.append({
             "id": paper_id(fn),
@@ -142,16 +145,17 @@ def summaries_entities():
             "subtopic": str(e.get("subtopic", "")).strip() or system,
             "title": title,
             "file_name": fn,
-            "excerpt": (excerpt or title)[:4000],
+            "excerpt": (excerpt or title)[:4000] if with_excerpt else "",
         })
     return out
 
 
-def theory_entities():
+def theory_entities(with_excerpt=True):
     """Theory notes under output_files/Theory MDs/{System}/{Subtopic}/.
 
     The reserved BOOKS/ subfolder (chaptered books) is skipped — books are
-    excluded from cross-linking.
+    excluded from cross-linking. with_excerpt=False does not read the notes (an unreadable note is
+    then listed instead of skipped); the excerpt is only needed by the LLM linker.
     """
     if not os.path.isdir(THEORY_MDS_DIR):
         return []
@@ -167,11 +171,13 @@ def theory_entities():
                 continue
             rel = os.path.relpath(path, THEORY_MDS_DIR)
             rel_slash = rel.replace(os.sep, "/")
-            try:
-                with open(path, "r", encoding="utf-8", errors="replace") as f:
-                    md = f.read()
-            except OSError:
-                continue
+            md = ""
+            if with_excerpt:
+                try:
+                    with open(path, "r", encoding="utf-8", errors="replace") as f:
+                        md = f.read()
+                except OSError:
+                    continue
             parts = rel.split(os.sep)
             system = parts[0] if len(parts) > 1 else "General"
             subtopic = parts[1] if len(parts) > 1 else "General"
@@ -190,7 +196,7 @@ def theory_entities():
     return out
 
 
-def deck_entities():
+def deck_entities(with_excerpt=True):
     """Flashcard decks from the unified store (deck-level granularity)."""
     try:
         idx = load_flashcards_index()
@@ -204,7 +210,7 @@ def deck_entities():
             if not cards:
                 continue
             backs = []
-            for c in cards:
+            for c in cards if with_excerpt else ():
                 b = (c.get("back") or "").strip()
                 if b:
                     backs.append(b[:600])
@@ -219,14 +225,17 @@ def deck_entities():
                 "subtopic": subtopic,
                 "title": title,
                 "file_name": f"{system}/{subtopic}",
-                "excerpt": (f"Deck: {system} / {subtopic}\n" + "\n\n".join(backs))[:4000],
+                "excerpt": (f"Deck: {system} / {subtopic}\n" + "\n\n".join(backs))[:4000] if with_excerpt else "",
             })
     return out
 
 
-def entity_catalog():
-    """Full catalog: papers + guidelines + theory notes + flashcard decks."""
-    catalog = summaries_entities() + theory_entities() + deck_entities()
+def entity_catalog(with_excerpt=True):
+    """Full catalog: papers + guidelines + theory notes + flashcard decks.
+
+    with_excerpt=False leaves the (large) excerpt text empty and avoids reading the content files;
+    use it when only ids/titles/systems are needed, as the portal does."""
+    catalog = summaries_entities(with_excerpt) + theory_entities(with_excerpt) + deck_entities(with_excerpt)
     return catalog
 
 

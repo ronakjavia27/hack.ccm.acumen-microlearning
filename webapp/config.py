@@ -131,3 +131,18 @@ SPEC_COLORS = {
     "Toxicology": "#7C3AED", "Oncology": "#059669", "Surgery": "#D97706",
     "Cardiothoracic": "#C6554B", "Vascular": "#0891B2", "Other": "#9333EA",
 }
+
+
+# Colours of the theory (flashcards / notes) specialty chips.
+THEORY_SPEC_COLORS = {
+    "Cardiology": "#C6554B", "Pulmonology": "#3A7CA5", "Neurology": "#6B5B95",
+    "Nephrology": "#B08D57", "Gastroenterology": "#14B8A6",
+    "Infectious Diseases": "#4F8A6D", "Hematology": "#E11D48",
+    "Endocrinology": "#06B6D4", "Trauma": "#DC2626", "Surgery": "#6B7280",
+    "Toxicology": "#7C3AED", "Sepsis": "#F97316", "General": "#9333EA",
+    "Other": "#9333EA", "Hepatology": "#B45309", "Immunology": "#A855F7",
+    "Multisystem": "#0EA5E9", "Nutrition": "#84CC16",
+    "Obstetrics And Gynecology": "#DB2777", "Oncology": "#A78BFA",
+    "Cardiothoracic": "#0891B2", "Vascular": "#F59E0B",
+    "Rheumatology": "#0D9488",
+}
