@@ -6,6 +6,9 @@ import pytest
 import requests
 from fastapi.testclient import TestClient
 
+from webapp import auth
+from webapp.routers import auth_google
+
 CLIENT_ID = "our-client-id.apps.googleusercontent.com"
 PROD = "hackccm.vercel.app"
 
@@ -27,11 +30,9 @@ def claims(**over):
 
 @pytest.fixture
 def wg(monkeypatch):
-    import webapp_google
-
-    monkeypatch.setattr(webapp_google, "GOOGLE_CLIENT_ID", CLIENT_ID)
-    monkeypatch.setattr(webapp_google, "GOOGLE_CLIENT_SECRET", "secret")
-    return webapp_google
+    monkeypatch.setattr(auth_google, "GOOGLE_CLIENT_ID", CLIENT_ID)
+    monkeypatch.setattr(auth_google, "GOOGLE_CLIENT_SECRET", "secret")
+    return auth_google
 
 
 @pytest.fixture
@@ -56,9 +57,9 @@ def tokeninfo(monkeypatch):
 
 
 @pytest.fixture
-def prod(wg, portal, monkeypatch):
-    monkeypatch.setattr(portal, "LOCAL_DEV_MODE", False)
-    return TestClient(wg.app, base_url=f"https://{PROD}", follow_redirects=False)
+def prod(wg, google_app, monkeypatch):
+    monkeypatch.setattr(auth, "LOCAL_DEV_MODE", False)
+    return TestClient(google_app, base_url=f"https://{PROD}", follow_redirects=False)
 
 
 # ---------- credential (popup) flow ----------
@@ -205,8 +206,8 @@ def test_token_exchange_failure_page_shows_status_only(prod, tokeninfo):
     assert "Token exchange failed" in r.text and "400" in r.text
 
 
-def test_not_on_production_host_shows_explanation(wg, portal, monkeypatch):
-    monkeypatch.setattr(portal, "LOCAL_DEV_MODE", False)
-    c = TestClient(wg.app)  # testserver host
+def test_not_on_production_host_shows_explanation(wg, google_app, monkeypatch):
+    monkeypatch.setattr(auth, "LOCAL_DEV_MODE", False)
+    c = TestClient(google_app)  # testserver host
     r = c.get("/api/auth/google")
     assert "only available on" in r.text and not c.cookies.get("hackccm_oauth_state")

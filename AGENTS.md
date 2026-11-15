@@ -8,8 +8,9 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 ### Root Entry Points
 | File | Purpose |
 |------|---------|
-| `revamped_webapp.py` | THE public knowledge portal (serves `/`, auth-gated) — single FastAPI app, JS/CSS inline in one giant HTML f-string |
-| `webapp_google.py` | Vercel entrypoint (see `vercel.json`) — wraps `revamped_webapp` and adds the Google OAuth landing page |
+| `webapp/` | THE public knowledge portal (serves `/`, auth-gated) — FastAPI app package, see **Portal package** below |
+| `revamped_webapp.py` | Thin entrypoint: `app = create_app()` — the portal without Google sign-in (`uvicorn revamped_webapp:app`) |
+| `webapp_google.py` | Vercel entrypoint (see `vercel.json`): `app = create_app(google=True)` — adds Google sign-in |
 | `dashboard_app.py` | Admin console at `/console` (port 8878) — wraps `dashboard/` |
 | `generator.py` | PDF ingestion pipeline (Pass 1: summaries, Pass 2: pearls) |
 | `maintainer.py` | Health checks, schema validation, repairs, error reports |
@@ -51,6 +52,34 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | `modules/pearls.py` | Pearl CRUD |
 | `modules/flashcards.py` | Flashcard CRUD + card regeneration. Reads the unified store `output_files/flashcards/{System}/{Subtopic}.json` (deck id `System/Subtopic`). Specialty change = reclassify: moves every card's (system, subtopic) file. Card LLM-edit writes back to the authored md in `flashcards_input/` when the card is md-sourced. Delete removes the subtopic file (authored md kept). |
 | `modules/theory.py` | Theory note CRUD |
+
+### Portal package: `webapp/`
+| Path | Purpose |
+|------|---------|
+| `app.py` | `create_app(google=False)` — mounts `/static`, includes the routers below; `google=True` adds Google sign-in |
+| `config.py` | Content paths, form links, disclaimer/credits texts, `SPEC_COLORS`, `WEBAPP_DIR` |
+| `auth.py` | Sessions + the single HttpOnly session cookie (`set_session_cookie`), scrypt password hashing (legacy sha256 hashes upgrade on login), feature flags, local-dev auto-login rules |
+| `loaders.py` | Readers for ledger, pearls, trials, condensed trials, flashcard decks, theory notes, related links |
+| `render.py` | Markdown/print rendering and text extraction for summaries |
+| `templating.py` | Jinja env, `asset_url()` (content-hashed `/static/...?v=`), `script_json()` (`</script>`-safe JSON), `AssetFiles` |
+| `routers/pages.py` | `/` (sign-in page, or the dashboard with its `#boot` JSON block), `/favicon.ico` |
+| `routers/auth.py` | `/api/signup`, `/api/login`, `/api/logout`, `/api/me` |
+| `routers/admin.py` | `/api/admin/users*` and `/api/debug` (admin only) |
+| `routers/bookmarks.py` | `/api/bookmarks*` |
+| `routers/papers.py`, `export.py`, `search.py`, `pearls.py`, `trials.py` | `/api/summary`, `/export/print`, `/api/search`, `/api/pearls`, `/api/trials*`, `/api/condensed-trial*` |
+| `routers/auth_google.py` | Google sign-in (audience-checked ID tokens, same-site redirects only, state bound to a cookie) |
+| `templates/` | `dashboard.html`, `landing.html` (Jinja shells) |
+| `static/css`, `static/js` | `app.css`/`app.js` (portal; data arrives via the `#boot` JSON block), `landing.css`/`landing.js`/`google_signin.js` |
+
+Conventions: add an endpoint to the router for its feature and include new routers in `ROUTERS` in `app.py`; a route that a more general route would match (`/x/defaults` vs `/x/{name:path}`) must come first within its router. Call loaders as `loaders.load_*()` and KV as `kv.kv_get(...)` (module-qualified, so tests can patch them). Never put credentials in code (a test scans for it): SMTP (`SMTP_USER`/`SMTP_PASS`), KV (`KV_REST_API_URL`/`KV_REST_API_TOKEN`) and Google (`OAUTH_CLIENT_ID`/`OAUTH_CLIENT_SECRET`) come from `.env` (see `.env.example`). `LOCAL_DEV=0` disables the local auto-login.
+
+### Testing
+```
+python -m pytest tests -q                       # ~110 tests; no network, throwaway KV file
+node tests/e2e/smoke.js http://localhost:8000   # browser fingerprint of the portal (Playwright); diff two builds
+node tests/e2e/landing.js http://127.0.0.1:8000 8000   # sign-in page flow (server needs VERCEL=1 + OAUTH_CLIENT_ID)
+```
+`tests/expected_routes.json` is the contract for the set of routes (order is not part of it; `test_no_route_is_shadowed_by_an_earlier_one` guards ordering).
 
 ### Data Directories
 ```
@@ -102,9 +131,9 @@ cp .env.example .env   # fill in API keys
 python generator.py                    # Watch mode (default: openrouter)
 python maintainer.py                   # Health report
 python dashboard_app.py                # Admin console → http://localhost:8878/console
-python revamped_webapp.py               # Local: serves at http://localhost:8000 (see note below)
-# Run locally with: uvicorn revamped_webapp:app --port 8000  (no __main__ block).
-# On Vercel the entrypoint is webapp_google.py (wraps revamped_webapp + Google OAuth).
+uvicorn revamped_webapp:app --port 8000   # Portal locally at http://localhost:8000 (auto-login as admin, local KV only)
+# On Vercel the entrypoint is webapp_google.py (the same app + Google sign-in).
+python -m pytest tests -q                 # Test suite (see Testing)
 ```
 
 ## Configuration (`.env` + `acumen_core/config.py`)
@@ -202,7 +231,7 @@ FLASHCARD_LLM_BASE_URL  # Defaults to OpenRouter
 ```
 --mode all              Git add -A, commit, push (default)
 --mode data             Git all except web app files
---mode web              Git web app files only (revamped_webapp.py + webapp_google.py + vercel.json)
+--mode web              Git web app files only (webapp/ + revamped_webapp.py + webapp_google.py + vercel.json)
 --mode pearls           Git pearls.json + sent_summaries.json
 --mode email            Dispatch pending emails
 --mode subscribers      Sync Google Sheets → emails.csv
@@ -251,7 +280,7 @@ python flashcards.py --as-is --file CVS/deck.md   # verbatim '==='-separated mar
 - `theory` mode walks `THEORY_PROCESSED_DIR` (default `C:/RONAK/AI Projects/ACUMEN/THEORY/processed`; override in `.env`) and skips notes already in the store by `source_file` unless `--force`.
 - When `--api-key` or `--model` is set, convert/tag/fronts calls go directly to an OpenAI-compatible endpoint (`execute_openai_compat` in `acumen_core/llm.py`, base_url defaulting to OpenRouter) instead of the configured provider chain.
 
-**Portal Theory section** (`revamped_webapp.py`, run via `uvicorn revamped_webapp:app` — it has no `__main__` block): hero with two mode cards — **Theory Topics** (rendered markdown notes from `output_files/Theory MDs/`, any file extension; title from first `# ` line; loaded by `load_theory_notes()`) and **Flashcards** (unified store). Flashcards loads decks via `load_flashcard_decks()` from `output_files/flashcards/` subtopic files (deck id `System/Subtopic`; cards carry explicit `front`/`back`/`tags`, UUID ids, no `---` divider). Features: specialty chips, deck search (incl. front/back/tags), subtopic chips when exactly one specialty active (filter decks + restrict card navigation; non-matching dots dimmed/disabled), deck list, card reader with Next/Prev + keyboard arrows, Single-face/Flip view toggle, per-card save via bookmarks API (kind `flashcard`, ref `flashcard:{uuid}`; locator stores `{deck, card: uuid, cardIdx}`), "Saved only" filter, jump dots. Flip mode shows `front` on the front face and `back` on the back; browsers without `backface-visibility` support get a `.no-3d` display-swap fallback (faces never stack). Single-face mode shows the back only. Global search adds "Flashcards" and "Theory Topics" result groups with deep links (`data-theory-card` uuid / `data-theory-note`); URL deep links supported: `?theory=flashcards[&system=…&subtopic=…&card=<uuid>]` and `?theory=notes[&note=<id>]`. Console reader likewise shows the question as a small label above the answer.
+**Portal Theory section** (`webapp/routers/pages.py` + `webapp/static/js/app.js`, data from `webapp/loaders.py`; run via `uvicorn revamped_webapp:app`): hero with two mode cards — **Theory Topics** (rendered markdown notes from `output_files/Theory MDs/`, any file extension; title from first `# ` line; loaded by `load_theory_notes()`) and **Flashcards** (unified store). Flashcards loads decks via `load_flashcard_decks()` from `output_files/flashcards/` subtopic files (deck id `System/Subtopic`; cards carry explicit `front`/`back`/`tags`, UUID ids, no `---` divider). Features: specialty chips, deck search (incl. front/back/tags), subtopic chips when exactly one specialty active (filter decks + restrict card navigation; non-matching dots dimmed/disabled), deck list, card reader with Next/Prev + keyboard arrows, Single-face/Flip view toggle, per-card save via bookmarks API (kind `flashcard`, ref `flashcard:{uuid}`; locator stores `{deck, card: uuid, cardIdx}`), "Saved only" filter, jump dots. Flip mode shows `front` on the front face and `back` on the back; browsers without `backface-visibility` support get a `.no-3d` display-swap fallback (faces never stack). Single-face mode shows the back only. Global search adds "Flashcards" and "Theory Topics" result groups with deep links (`data-theory-card` uuid / `data-theory-note`); URL deep links supported: `?theory=flashcards[&system=…&subtopic=…&card=<uuid>]` and `?theory=notes[&note=<id>]`. Console reader likewise shows the question as a small label above the answer.
 
 ### `esbicm_parser.py` — ESBICM Trial Parsing
 ```
@@ -316,7 +345,7 @@ PDF in input_pdfs/
             ├─ LLM pearl extraction (openai/gpt-oss-20b)
             └─ Append to pearls.json
                 │
-                ▼ Dashboard (revamped_webapp.py → webapp_google.py → Vercel)
+                ▼ Dashboard (webapp/ package → webapp_google.py → Vercel)
                 ├─ Reads sent_summaries.json for articles
                 ├─ Reads pearls.json for pearls
                 └─ Reads esbicm_trials_index.json for trials
@@ -328,7 +357,7 @@ PDF in input_pdfs/
 - **Error logging**: monthly rotation to `master_error_list_YYYY-MM.txt` (JSONL)
 - **Specialties** (23): Cardiology, Pulmonology, Infectious Diseases, Neurology, Nephrology, Gastroenterology, Hematology, Hepatology, Immunology, Sepsis, Trauma, Endocrinology, General, Multisystem, Nutrition, Obstetrics And Gynecology, Rheumatology, Toxicology, Oncology, Surgery, Cardiothoracic, Vascular, Other
 - **Type values**: Review, RCT, Meta-analysis, Guideline, Observational, Case Series, Trial, Other
-- **Dashboard specialties** in `revamped_webapp.py` `SPEC_COLORS` dict: 24 entries (slightly different from above)
+- **Dashboard specialties** in `webapp/config.py` `SPEC_COLORS` dict: 24 entries (slightly different from above)
 - **Sent summaries tracking**: dual-tracked in both JSON + Excel
 - **Subtopics**: auto-assigned via LLM during generation (generator Pass 1.5 — see `classify_subtopic()` in `acumen_core/llm.py`); stored in `subtopics.json` (master vocabulary, its keys = the specialty list) + `subtopic_mapping.json` (auto-filled registry). Retired manual tools (`subtopic_mapper.py`, `bulk_subtopic_classifier.py`, `specialties.txt`/`subtopics.txt`, `pending_subtopics.json`) are quarantined under `quarantine/{date}/subtopic-mapping/`.
 - **LLM provider fallback**: OpenRouter pass chains try their primary then fallback model; Gemini chains primary key then backup key (no Together/DeepSeek remnants)
@@ -342,7 +371,8 @@ PyMuPDF, pdf2image, pytesseract, fastapi, uvicorn, requests, beautifulsoup4
 ```
 
 ## Vercel Deployment
-- Entrypoint: `webapp_google.py` (see `vercel.json`) — imports `revamped_webapp.app` and adds Google OAuth landing
+- Entrypoint: `webapp_google.py` (see `vercel.json`) — `create_app(google=True)` from the `webapp/` package
+- `.vercelignore` keeps `backups/`, `tests/` etc. out of the function bundle; the portal reads `output_files/`, `pearls.json`, `sent_summaries.json`, `acumen_core/`, `webapp/`
 - URL: `hack-ccm-acumen-microlearning.vercel.app`
 - Serves the public knowledge portal with papers, guidelines, pearls, and trials views
 

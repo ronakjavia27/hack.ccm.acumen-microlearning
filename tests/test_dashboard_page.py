@@ -2,6 +2,9 @@
 import json
 import re
 
+from conftest import LOCALHOST
+from webapp import loaders, templating
+
 BOOT_KEYS = {
     "spec_vars", "spec_labels", "type_list", "articles", "pearls", "subtopic_map", "show_disclaimer",
     "trial_index", "trial_spec_labels", "trial_spec_vars", "trial_spec_counts", "trial_subtopic_map",
@@ -51,9 +54,9 @@ def test_boot_payload(user_client):
     assert boot["flashcard_decks"] == [] and boot["theory_notes"] == []  # theory feature off for this user
 
 
-def test_boot_json_cannot_break_out_of_its_script_tag(user_client, portal, monkeypatch):
+def test_boot_json_cannot_break_out_of_its_script_tag(user_client, monkeypatch):
     evil = "</script><img src=x onerror=alert(1)> & <!--"
-    monkeypatch.setattr(portal, "load_pearls", lambda: [{"system": "Sepsis", "type": "Review", "text": evil}])
+    monkeypatch.setattr(loaders, "load_pearls", lambda: [{"system": "Sepsis", "type": "Review", "text": evil}])
     html = user_client.get("/").text
     boot_block = re.search(r'<script id="boot" type="application/json">(.*?)</script>', html, re.S).group(1)
     assert "</script" not in boot_block and "<img" not in boot_block and "<!--" not in boot_block
@@ -81,14 +84,14 @@ def test_static_assets_served_with_cache_headers(user_client):
     assert user_client.get("/static/js/missing.js").status_code == 404
 
 
-def test_asset_version_changes_with_content(portal, tmp_path, monkeypatch):
+def test_asset_version_changes_with_content(tmp_path, monkeypatch):
     (tmp_path / "static" / "css").mkdir(parents=True)
     f = tmp_path / "static" / "css" / "x.css"
     f.write_text("a{}")
-    monkeypatch.setattr(portal, "WEBAPP_DIR", tmp_path)
-    first = portal._asset_url("css/x.css")
+    monkeypatch.setattr(templating, "WEBAPP_DIR", tmp_path)
+    first = templating.asset_url("css/x.css")
     f.write_text("b{color:red}")
-    assert portal._asset_url("css/x.css") != first
+    assert templating.asset_url("css/x.css") != first
 
 
 def test_dev_admin_sees_admin_ui(dev_client):
@@ -144,9 +147,9 @@ def test_page_is_identical_across_processes_with_different_hash_seeds():
         os.environ["KV_LOCAL"] = "1"; os.environ.pop("VERCEL", None)
         from acumen_core import kv
         kv._KV_FILE = os.path.join(tempfile.mkdtemp(), "kv.json")
-        import revamped_webapp as rw
+        from webapp.app import create_app
         from fastapi.testclient import TestClient
-        c = TestClient(rw.app, base_url="http://localhost", client=("127.0.0.1", 1))
+        c = TestClient(create_app(), base_url="http://localhost", client=("127.0.0.1", 1))
         html = c.get("/").text
         sys.stdout.write(hashlib.sha1(html.encode()).hexdigest())
     """)
@@ -159,9 +162,9 @@ def test_page_is_identical_across_processes_with_different_hash_seeds():
     assert len(digests) == 1, digests
 
 
-def test_filter_option_values_are_html_escaped(user_client, portal, monkeypatch):
+def test_filter_option_values_are_html_escaped(user_client, monkeypatch):
     nasty = 'Weird & <b>"x"</b>'
-    monkeypatch.setattr(portal, "load_trial_index", lambda: [
+    monkeypatch.setattr(loaders, "load_trial_index", lambda: [
         {"specialty": nasty, "result_category": nasty, "trial_type": nasty, "subtopic": "General", "slug": "s", "title": "t"}])
     html = user_client.get("/").text
     assert "<b>" not in html.split('id="view-trials-esbicm"')[1].split("</section>")[0]

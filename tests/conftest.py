@@ -19,6 +19,11 @@ os.environ["KV_LOCAL"] = "1"
 
 from fastapi.testclient import TestClient  # noqa: E402
 
+from webapp import auth  # noqa: E402
+from webapp.app import create_app  # noqa: E402
+
+LOCALHOST = {"base_url": "http://localhost", "client": ("127.0.0.1", 50000)}
+
 
 @pytest.fixture(autouse=True)
 def _isolated_kv(tmp_path, monkeypatch):
@@ -27,34 +32,30 @@ def _isolated_kv(tmp_path, monkeypatch):
     monkeypatch.setattr(kv, "_KV_FILE", str(tmp_path / "kv.json"))
 
 
-@pytest.fixture(autouse=True)
-def _google_auth_off(monkeypatch):
-    """Importing webapp_google (done by some tests) switches Google sign-in on for the shared app;
-    start every test from the plain portal."""
-    import revamped_webapp
-
-    monkeypatch.setattr(revamped_webapp.app.state, "google_auth", None, raising=False)
+@pytest.fixture
+def app():
+    """The portal without Google sign-in (what `uvicorn revamped_webapp:app` serves)."""
+    return create_app()
 
 
 @pytest.fixture
-def portal():
-    import revamped_webapp
-
-    return revamped_webapp
+def google_app():
+    """The portal as deployed on Vercel (webapp_google): adds Google sign-in."""
+    return create_app(google=True)
 
 
 @pytest.fixture
-def client(portal, monkeypatch):
+def client(app, monkeypatch):
     """Client that must really log in (local-dev auto-login disabled)."""
-    monkeypatch.setattr(portal, "LOCAL_DEV_MODE", False)
-    return TestClient(portal.app)
+    monkeypatch.setattr(auth, "LOCAL_DEV_MODE", False)
+    return TestClient(app)
 
 
 @pytest.fixture
-def dev_client(portal, monkeypatch):
+def dev_client(app, monkeypatch):
     """Client behaving like `uvicorn revamped_webapp:app` locally (auto-login as admin)."""
-    monkeypatch.setattr(portal, "LOCAL_DEV_MODE", True)
-    return TestClient(portal.app, base_url="http://localhost", client=("127.0.0.1", 50000))
+    monkeypatch.setattr(auth, "LOCAL_DEV_MODE", True)
+    return TestClient(app, **LOCALHOST)
 
 
 @pytest.fixture

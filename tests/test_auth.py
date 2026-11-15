@@ -1,5 +1,7 @@
 import re
 
+from webapp import auth
+
 
 def test_me_anonymous(client):
     assert client.get("/api/me").json() == {"authenticated": False}
@@ -36,13 +38,13 @@ def test_login(client):
     assert client.get("/api/me").json()["authenticated"] is True
 
 
-def test_password_hash_roundtrip(portal):
-    h = portal._hash_password("s3cret-pass")
+def test_password_hash_roundtrip():
+    h = auth.hash_password("s3cret-pass")
     assert re.fullmatch(r"\$scrypt\$16384\$8\$1\$[0-9a-f]{32}\$[0-9a-f]{64}", h)
-    assert portal._verify_password("s3cret-pass", h)
-    assert not portal._verify_password("other", h)
-    assert not portal._verify_password("s3cret-pass", "")
-    assert portal._hash_password("s3cret-pass") != h  # fresh salt every time
+    assert auth.verify_password("s3cret-pass", h)
+    assert not auth.verify_password("other", h)
+    assert not auth.verify_password("s3cret-pass", "")
+    assert auth.hash_password("s3cret-pass") != h  # fresh salt every time
 
 
 def test_protected_api_requires_login(client):

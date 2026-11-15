@@ -28,7 +28,7 @@ def test_bookmark_validation(user_client):
     assert c.patch("/api/bookmarks", json={"ref": "missing"}).status_code == 404
 
 
-def test_bookmarks_are_per_user(portal, client):
+def test_bookmarks_are_per_user(client):
     client.post("/api/signup", json={"email": "one@x.co", "password": "longenough1"})
     client.post("/api/bookmarks", json={"ref": "paper:1", "kind": "paper", "title": "T"})
     client.cookies.clear()
