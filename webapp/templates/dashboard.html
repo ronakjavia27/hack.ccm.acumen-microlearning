@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dim">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>hack.CCM — Knowledge Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"></script>
+{{ insights_tag }}
+{{ ecg_svg }}
+<style id="spec-vars">
+  :root{
+    {{ spec_css_str }}
+    {{ trial_spec_str }}
+    {{ theory_spec_str }}
+  }
+</style>
+<link rel="stylesheet" href="{{ css_url }}">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <symbol id="ecg" viewBox="0 0 260 14"><path d="M0 7 L95 7 L104 1 L112 13 L120 3 L128 7 L260 7"/></symbol>
+</svg>
+
+<header>
+  <div class="header-row">
+    <button class="icon-btn" id="hamburgerBtn" aria-label="Open menu">&#9776;</button>
+    <div class="wordmark" id="logo" role="button" tabindex="0" aria-label="Go to homepage">hack<span>.CCM</span></div>
+    <nav class="top-nav" aria-label="Primary">
+      <button data-view="home" class="active">Home</button>
+      <button data-view="papers">Papers</button>
+      <button data-view="guidelines">Guidelines</button>
+      <button data-view="pearls">Pearls</button>
+      <button data-view="trials">Trials</button>
+      <button data-view="antibiotics">Antibiotics</button>
+      <button data-view="theory">Theory</button>
+      <button data-view="rrt">RRT</button>
+      <button data-view="ai">AI Assistant</button>
+      <button data-view="bookmarks">&#128278; Bookmarks<span class="bm-count zero" id="bookmarksTopCount">0</span></button>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-btn" id="searchTrigger" aria-label="Search">&#128269;</button>
+      <button class="icon-btn theme-btn" id="themeBtn" aria-label="Change theme">&#9712;</button>
+      <button class="icon-btn" id="headerLogout" aria-label="Sign out">&#128682;</button>
+    </div>
+  </div>
+  <svg class="ecg-line ecg-sweep" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section class="view active" id="view-home">
+    <p class="eyebrow">Today on the unit</p>
+    <button class="whatsnew-btn" id="whatsNewBtn" role="button" aria-label="See what's new"><span class="wn-icon">&#10024;</span> What's New here?? <span class="wn-arrow">&#8250;</span></button>
+    <div class="hero" id="homeHero"></div>
+    <div class="stats-strip" id="homeStats"></div>
+
+    <div class="section-head"><h2>Browse by specialty</h2></div>
+    <div class="spec-grid" id="homeSpecGrid"></div>
+
+    <div class="divider"><svg class="ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg></div>
+    <p class="eyebrow">Building out next</p>
+    <div class="feature-grid">
+      <div class="card feature-card" data-view="antibiotics" role="button" tabindex="0">
+        <span class="badge">Antibiotics Hub</span>
+        <h3>Quick-reference drug table</h3>
+        <p>Searchable, filterable by class, sorted narrow&rarr;broad spectrum.</p>
+        <table class="mini-table">
+          <tr><td>Meropenem</td><td>1g q8h</td><td>CrCl-adj</td></tr>
+          <tr><td>Pip-Tazo</td><td>4.5g q6h ext.</td><td>CrCl-adj</td></tr>
+        </table>
+      </div>
+      <div class="card feature-card" data-view="theory" role="button" tabindex="0">
+        <span class="badge">Theory Library</span>
+        <h3>Structured CCM curriculum</h3>
+        <p>Core topics with read/unread tracking and read-time badges.</p>
+        <p style="margin-top:10px"><span class="badge" style="color:var(--accent);border-color:var(--accent)">Quick Read &middot; 5 min</span> &nbsp; <span class="badge">Deep Dive</span></p>
+      </div>
+      <div class="card feature-card" data-view="ai" role="button" tabindex="0">
+        <span class="badge">AI Assistant</span>
+        <h3>Ask, cited to source</h3>
+        <p>&ldquo;Summarize this pearl&rdquo; or &ldquo;compare with the ESC guideline&rdquo; &mdash; answers link back to the repository.</p>
+      </div>
+    </div>
+
+    <div class="subscribe-banner">
+      <div><strong>Get the daily pearl by email.</strong><div style="color:var(--ink-muted);font-size:.85rem">One email a day, unsubscribe any time.</div></div>
+      <button class="btn primary" data-view="subscribe" type="button">Subscribe</button>
+    </div>
+  </section>
+
+  <!-- PAPERS -->
+  <section class="view" id="view-papers">
+    <div class="section-head" style="margin-top:0"><h2>Papers</h2></div>
+    <div class="toolbar">
+      <button class="btn" id="filterToggleBtn" type="button">Filters</button>
+      <div class="search-box"><span>&#128269;</span><input id="papersSearch" placeholder="Search papers by title&hellip;"></div>
+      <select id="papersSort" class="btn" style="margin-left:4px;font-size:.82rem">
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+      </select>
+    </div>
+    <p class="pearl-count" id="papersCount"></p>
+    <div class="content-grid">
+      <aside class="filter-panel" id="filterPanelDesktop"></aside>
+      <section class="doc-list" id="papersList" aria-label="Filtered papers"></section>
+    </div>
+  </section>
+
+  <!-- GUIDELINES -->
+  <section class="view" id="view-guidelines">
+    <div class="section-head" style="margin-top:0"><h2>Guidelines</h2></div>
+    <div class="toolbar">
+      <button class="btn" id="guidelinesFilterToggleBtn" type="button">Filters</button>
+      <div class="search-box"><span>&#128269;</span><input id="guidelinesSearch" placeholder="Search guidelines by title&hellip;"></div>
+      <select id="guidelinesSort" class="btn" style="margin-left:4px;font-size:.82rem">
+        <option value="newest">Newest</option>
+        <option value="oldest">Oldest</option>
+      </select>
+    </div>
+    <p class="pearl-count" id="guidelinesCount"></p>
+    <div class="content-grid">
+      <aside class="filter-panel" id="filterPanelGuidelines"></aside>
+      <section class="doc-list" id="guidelinesList" aria-label="Filtered guidelines"></section>
+    </div>
+  </section>
+
+  <!-- SPECIALTY VIEW -->
+  <section class="view" id="view-specialty">
+    <div class="spec-view-head"><span class="dot" id="specViewDot"></span><h2 id="specViewTitle"></h2></div>
+    <div class="subtopic-chip-row" id="specSubtopicChips"></div>
+    <div class="spec-panel" id="specPanelPapers">
+      <div class="spec-panel-head" role="button" tabindex="0">
+        <span>&#128196;</span><span id="specPanelPapersTitle">Papers</span><span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="spec-panel-body">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:8px">
+          <select id="specPapersSort" class="btn" style="font-size:.8rem">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+        <div id="specPanelPapersBody"></div>
+      </div>
+      <button class="collapse-btn" data-target="specPanelPapers">&#9650; Collapse</button>
+    </div>
+    <div class="spec-panel" id="specPanelGuidelines">
+      <div class="spec-panel-head" role="button" tabindex="0">
+        <span>&#128203;</span><span id="specPanelGuidelinesTitle">Guidelines</span><span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="spec-panel-body">
+        <div style="display:flex;justify-content:flex-end;margin-bottom:8px">
+          <select id="specGuidelinesSort" class="btn" style="font-size:.8rem">
+            <option value="newest">Newest</option>
+            <option value="oldest">Oldest</option>
+          </select>
+        </div>
+        <div id="specPanelGuidelinesBody"></div>
+      </div>
+      <button class="collapse-btn" data-target="specPanelGuidelines">&#9650; Collapse</button>
+    </div>
+    <div class="spec-panel" id="specPanelTheory">
+      <div class="spec-panel-head" role="button" tabindex="0">
+        <span>&#128214;</span><span id="specPanelTheoryTitle">Theory</span><span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="spec-panel-body" id="specPanelTheoryBody"></div>
+      <button class="collapse-btn" data-target="specPanelTheory">&#9650; Collapse</button>
+    </div>
+    <div class="spec-panel" id="specPanelFlashcards">
+      <div class="spec-panel-head" role="button" tabindex="0">
+        <span>&#128218;</span><span id="specPanelFlashcardsTitle">Flashcards</span><span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="spec-panel-body" id="specPanelFlashcardsBody"></div>
+      <button class="collapse-btn" data-target="specPanelFlashcards">&#9650; Collapse</button>
+    </div>
+    <div class="spec-panel" id="specPanelPearls">
+      <div class="spec-panel-head" role="button" tabindex="0">
+        <span>&#128142;</span><span id="specPanelPearlsTitle">Pearls</span><span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="spec-panel-body" id="specPanelPearlsBody"></div>
+      <button class="collapse-btn" data-target="specPanelPearls">&#9650; Collapse</button>
+    </div>
+  </section>
+
+  <!-- PEARLS -->
+  <section class="view" id="view-pearls">
+    <div class="section-head" style="margin-top:0"><h2>Pearls</h2></div>
+    <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 14px">Densely packed, bite sized knowledge</p>
+    <div class="pearl-toolbar" style="margin-bottom:8px">
+      <button class="btn primary serendipity-btn" id="serendipityBtn" type="button"><span>&#10024;</span> Serendipity Mode</button>
+    </div>
+    <div class="pearl-toolbar">
+      <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="pearlsSearch" placeholder="Search pearl text&hellip;"></div>
+      <select id="pearlsSort" class="btn">
+        <option value="newest">Newest first</option>
+        <option value="oldest">Oldest first</option>
+      </select>
+    </div>
+    <div class="pearl-toolbar" id="pearlChips"></div>
+    <p class="pearl-count" id="pearlsCount"></p>
+    <div id="pearlsList"></div>
+    <div style="text-align:center;margin-top:14px">
+      <button class="btn" id="loadMorePearls" type="button">Load more</button>
+    </div>
+  </section>
+
+  <!-- STUB VIEWS -->
+  <section class="view" id="view-antibiotics">
+    <div class="coming-soon">
+      <p class="coming-soon-icon">&#128679;</p>
+      <h2>Coming Soon</h2>
+      <p class="coming-soon-text">The Antibiotics Hub is under development. Check back soon.</p>
+    </div>
+  </section>
+  <!-- THEORY: hero (notes + flashcards) -->
+  <section class="view" id="view-theory">
+    <div class="section-head" style="margin-top:0"><h2>Theory</h2></div>
+    <div class="theory-crumbs" id="theoryCrumbs" style="display:none"></div>
+    <div class="hero" id="theoryHero">
+      <div class="card" data-theory-mode-view="notes" role="button" tabindex="0">
+        <div class="stripe" style="background:var(--accent)"></div>
+        <div class="card-body">
+          <div class="eyebrow">Long-form notes</div>
+          <h3>Theory Topics</h3>
+          <p>{{ theory_notes|length }} deep-dive notes, rendered from markdown &mdash; tap to read.</p>
+        </div>
+      </div>
+      <div class="card" data-theory-mode-view="flashcards" role="button" tabindex="0">
+        <div class="stripe" style="background:var(--accent)"></div>
+        <div class="card-body">
+          <div class="eyebrow">Study cards</div>
+          <h3>Flashcards</h3>
+          <p>{{ theory_total_cards }} cards across {{ theory_specs|length }} systems &mdash; flip, save, revise.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Theory Topics (markdown notes) -->
+    <div id="theoryNotesPane" style="display:none">
+      <div class="section-head" style="margin-top:0">
+        <h2>Theory Topics</h2>
+      </div>
+      <div class="pearl-toolbar" id="theoryNotesSearchRow">
+        <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="theoryNotesSearch" placeholder="Search notes&hellip;" autocomplete="off"></div>
+      </div>
+      <div class="pearl-toolbar" id="theoryNotesChips"></div>
+      <p class="pearl-count" id="theoryNotesCount"></p>
+      <div class="doc-list theory-deck-rows" id="theoryNotesList"></div>
+      <div id="theoryNoteReader" style="display:none"></div>
+    </div>
+
+    <!-- Flashcards -->
+    <div id="theoryFlashcardsPane" style="display:none">
+      <div class="section-head" style="margin-top:0">
+        <h2>Theory &mdash; Flashcards</h2>
+      </div>
+      <div id="theoryBrowser">
+        <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 14px">Flashcards &mdash; study them card by card, flip them, save the ones worth revisiting.</p>
+        <div class="pearl-toolbar">
+          <div class="search-box" style="flex:1;min-width:180px"><span>&#128269;</span><input id="theorySearch" placeholder="Search decks and cards&hellip;" autocomplete="off"></div>
+        </div>
+        <div class="pearl-toolbar" id="theoryChips"></div>
+        <div class="pearl-toolbar" id="theorySubtopicChips" style="flex-wrap:wrap"></div>
+        <p class="pearl-count" id="theoryCount"></p>
+        <div class="doc-list theory-deck-rows" id="theoryDeckList"></div>
+      </div>
+      <div id="theoryCardList" style="display:none">
+        <div class="theory-card-list-head" id="theoryCardListHead"></div>
+        <p class="pearl-count" id="theoryCardListCount"></p>
+        <div class="doc-list" id="theoryCardListBody"></div>
+      </div>
+      <div id="theoryStudy" style="display:none">
+        <div class="theory-card-head" id="theoryStudyHead"></div>
+        <div class="theory-card-tags" id="theoryCardTags"></div>
+        <div class="theory-stage" id="theoryCardStage"></div>
+        <div class="reader-nav" id="theoryCardNav"></div>
+        <div class="theory-dots" id="theoryCardDots"></div>
+      </div>
+    </div>
+  </section>
+  <section class="view" id="view-rrt">
+    <div class="coming-soon">
+      <p class="coming-soon-icon">&#128679;</p>
+      <h2>Coming Soon</h2>
+      <p class="coming-soon-text">The RRT section is under development. Check back soon.</p>
+    </div>
+  </section>
+  <section class="view" id="view-ai">
+    <div class="coming-soon">
+      <p class="coming-soon-icon">&#128679;</p>
+      <h2>Coming Soon</h2>
+      <p class="coming-soon-text">The AI Assistant page is under development. Check back soon.</p>
+    </div>
+  </section>
+  <section class="view" id="view-subscribe">
+    <p class="eyebrow">Stay updated</p>
+    <h2>Subscribe to the daily pearl</h2>
+    <p style="color:var(--ink-muted);max-width:52ch">Coming soon &mdash; this feature is presently not active. Click the button below to access the Google Form.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;max-width:420px">
+      <button class="btn primary" id="subscribeBtn" type="button">Subscribe via Google Form</button>
+    </div>
+  </section>
+  <section class="view" id="view-unsubscribe">
+    <p class="eyebrow">Manage email</p>
+    <h2>Unsubscribe</h2>
+    <p style="color:var(--ink-muted);max-width:52ch">Coming soon &mdash; this feature is presently not active. Click the button below to access the Google Form.</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;max-width:420px">
+      <button class="btn" id="unsubscribeBtn" type="button">Unsubscribe via Google Form</button>
+    </div>
+  </section>
+  <section class="view" id="view-feedback">
+    <p class="eyebrow">We&rsquo;re listening</p>
+    <h2>Feedback</h2>
+    <p style="color:var(--ink-muted);max-width:52ch">Bug reports, feature requests, or a pearl that felt wrong &mdash; all of it helps.</p>
+    <div style="margin-top:14px">
+      <button class="btn primary" id="feedbackBtn" type="button">&#128172; Send feedback via Google Form</button>
+    </div>
+  </section>
+  <section class="view" id="view-about">
+    <p class="eyebrow">About</p>
+    <h2>hack.CCM</h2>
+    <p style="color:var(--ink-muted);max-width:56ch">A critical care education portal built by and for ICU clinicians &mdash; summarized papers, guidelines, and pearls, kept short enough to read between patients. Companion content also runs on Instagram as HACK-CCM.</p>
+  </section>
+
+  <!-- TRIALS MAIN VIEW -->
+  <section class="view" id="view-trials">
+    <div class="section-head" style="margin-top:0"><h2>Trials</h2></div>
+
+    <!-- ESBICM hero card — click opens the ESBICM dashboard directly -->
+    <div class="trials-hero-card" style="cursor:pointer">
+      <div data-view="trials-esbicm" role="button" tabindex="0">
+        <span class="trophy">&#127942;</span>
+        <h3>Recent Landmark Trials in Critical Care</h3>
+        <p class="sub">Sourced from ESBICM</p>
+        <p class="sub" style="margin-top:4px">{{ trial_index|length }} trials across {{ trial_specialties|length }} specialties &mdash; tap to explore</p>
+      </div>
+      <div style="display:flex;gap:8px;justify-content:center;margin-top:14px">
+        <button class="icon-btn-sm" onclick="event.stopPropagation();openTrialOverlay('trialCreditsOverlay','credits')">&#127942; Credits</button>
+        <button class="icon-btn-sm" onclick="event.stopPropagation();openTrialOverlay('trialDisclaimerOverlay','disclaimer')">&#8505;&#65039;</button>
+      </div>
+    </div>
+
+    <!-- Core Critical Care Trials hero card -->
+    {% if can_see_condensed %}
+    <div class="trials-hero-card trials-hero-condensed" style="cursor:pointer;margin-top:16px">
+      <div data-view="trials-condensed" role="button" tabindex="0">
+        <span class="trophy">&#128221;</span>
+        <h3>Core Critical Care Trials</h3>
+        <p class="sub">Summaries with PICO, outcomes &amp; critical appraisal</p>
+        <p class="sub" style="margin-top:4px">{{ condensed_index|length }} trials &mdash; tap to explore</p>
+      </div>
+    </div>
+    {% endif %}
+  </section>
+
+  <!-- ESBICM MAIN (specialty grid + filter) -->
+  <section class="view" id="view-trials-esbicm">
+    <div class="trials-back-header">
+      <button class="trials-back-btn" data-view="trials">&larr; Back</button>
+      <h2>ESBICM Landmark Trials</h2>
+    </div>
+
+    <div class="trials-filter-bar">
+      <div class="trials-filter-group">
+        <label>Specialty</label>
+        <select id="trialFilterSpecialty">
+          <option value="">All Specialties</option>
+          {% for s in trial_specialties %}<option value="{{ s|e }}">{{ s|e }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="trials-filter-group">
+        <label>Result</label>
+        <select id="trialFilterResult">
+          <option value="">All Results</option>
+          {% for c in trial_result_cats %}<option value="{{ c|e }}">{{ c|e }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="trials-filter-group">
+        <label>Trial Type</label>
+        <select id="trialFilterType">
+          <option value="">All Types</option>
+          {% for t in trial_types_list %}<option value="{{ t|e }}">{{ t|e }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="trials-filter-actions">
+        <button class="btn" id="trialFilterBtn">Filter</button>
+        <button class="btn" id="trialClearBtn">Clear</button>
+      </div>
+    </div>
+
+    <div id="trialsEsbicmResults"></div>
+  </section>
+
+  <!-- ESBICM SPECIALTY VIEW -->
+  <section class="view" id="view-trials-specialty">
+    <div class="trials-back-header">
+      <button class="trials-back-btn" id="trialsSpecBackBtn">&larr; Back</button>
+      <span class="dot" id="trialsSpecDot" style="width:14px;height:14px"></span>
+      <h2 id="trialsSpecTitle"></h2>
+    </div>
+    <div class="subtopic-chip-row" id="trialsSubtopicChips"></div>
+    <div id="trialsSpecList"></div>
+  </section>
+
+  <!-- CONDENSED TRIALS MAIN (system grid + filter) -->
+  <section class="view" id="view-trials-condensed">
+    <div class="trials-back-header">
+      <button class="trials-back-btn" data-view="trials">&larr; Back</button>
+      <h2>Core Critical Care Trials</h2>
+    </div>
+
+    <div class="trials-filter-bar">
+      <div class="trials-filter-group">
+        <label>Specialty</label>
+        <select id="condensedFilterSpecialty">
+          <option value="">All Specialties</option>
+          {% for s in condensed_systems %}<option value="{{ s|e }}">{{ s|e }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="trials-filter-group">
+        <label>Result</label>
+        <select id="condensedFilterResult">
+          <option value="">All Results</option>
+          {% for c in condensed_result_cats %}<option value="{{ c|e }}">{{ c|e }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="trials-filter-group">
+        <label>Trial Type</label>
+        <select id="condensedFilterType">
+          <option value="">All Types</option>
+          {% for t in condensed_types_list %}<option value="{{ t|e }}">{{ t|e }}</option>{% endfor %}
+        </select>
+      </div>
+      <div class="trials-filter-actions">
+        <button class="btn" id="condensedFilterBtn">Filter</button>
+        <button class="btn" id="condensedClearBtn">Clear</button>
+      </div>
+    </div>
+
+    <div id="condensedTrialsContent"></div>
+  </section>
+
+  <!-- CONDENSED TRIALS SYSTEM VIEW -->
+  <section class="view" id="view-condensed-system">
+    <div class="trials-back-header">
+      <button class="trials-back-btn" data-view="trials-condensed">&larr; Back</button>
+      <h2 id="condensedSysTitle"></h2>
+    </div>
+    <div id="condensedSysList"></div>
+  </section>
+
+  <!-- CONDENSED TRIAL DETAIL -->
+  <section class="view" id="view-condensed-detail">
+    <div class="trials-back-header">
+      <button class="trials-back-btn" id="condensedDetailBackBtn">&larr; Back</button>
+      <div style="flex:1"></div>
+    </div>
+    <div class="trial-detail" id="condensedDetailBody"></div>
+  </section>
+
+  <!-- TRIAL DETAIL FULL PAGE -->
+  <section class="view" id="view-trial-detail">
+    <div class="trials-back-header">
+      <button class="trials-back-btn" id="trialDetailBackBtn">&larr; Back</button>
+      <div style="flex:1"></div>
+      <button class="trials-back-btn" id="trialDetailPrevBtn" data-trial-prev style="display:none">&larr; Prev</button>
+      <button class="trials-back-btn" id="trialDetailNextBtn" data-trial-next style="display:none">Next &rarr;</button>
+    </div>
+    <div class="trial-detail" id="trialDetailBody"></div>
+  </section>
+
+  <!-- BOOKMARKS -->
+  <section class="view" id="view-bookmarks">
+    <div class="section-head" style="margin-top:0">
+      <h2>&#128278; Bookmarks</h2>
+      <span class="pearl-count" id="bookmarksCount"></span>
+    </div>
+    <div class="toolbar">
+      <div class="search-box" style="min-width:180px">
+        <span>&#128269;</span>
+        <input id="bookmarksSearch" placeholder="Filter by title or tag&hellip;" autocomplete="off">
+      </div>
+      <button class="btn" id="bookmarksNewFolderBtn">&#128193; New folder</button>
+    </div>
+    <div class="bm-new-folder" id="bookmarksNewFolderRow">
+      <input id="bookmarksNewFolderName" placeholder="Folder name" maxlength="60">
+      <div id="bookmarksNewFolderColors" style="display:flex;gap:6px;align-items:center"></div>
+      <button class="btn primary" id="bookmarksCreateFolderBtn">Create</button>
+      <button class="btn" id="bookmarksCancelFolderBtn">Cancel</button>
+    </div>
+    <div class="bookmarks-folder-row" id="bookmarksFoldersRow"></div>
+    <div id="bookmarksList"></div>
+  </section>
+
+  <!-- USERS (admin only) -->
+  <section class="view" id="view-users">
+    <p class="eyebrow">Administration</p>
+    <h2>Users</h2>
+    <p style="color:var(--ink-muted);max-width:56ch">Registered accounts &mdash; manage admin status and per-feature access.</p>
+
+    <div class="users-defaults-panel" style="margin-top:14px;border:1px solid var(--border);border-radius:10px;padding:14px;background:var(--bg-elev)">
+      <strong>Global access defaults</strong>
+      <p style="color:var(--ink-muted);font-size:.85rem;margin:4px 0 10px">Apply to all users; per-user overrides extend or restrict.</p>
+      <div id="usersDefaultsGrid" style="display:flex;flex-wrap:wrap;gap:8px"></div>
+      <div style="margin-top:10px;display:flex;align-items:center;gap:10px">
+        <button class="btn primary" id="usersSaveDefaultsBtn" type="button">Save defaults</button>
+        <span id="usersDefaultsStatus" style="color:var(--ink-muted);font-size:.8rem"></span>
+      </div>
+    </div>
+
+    <div class="toolbar" style="margin-top:14px">
+      <div class="search-box" style="min-width:200px">
+        <span>&#128269;</span>
+        <input id="usersSearch" placeholder="Search by email or name&hellip;" autocomplete="off">
+      </div>
+      <span id="usersCount" style="color:var(--ink-muted);font-size:.85rem"></span>
+    </div>
+    <div class="table-wrap" style="margin-top:10px;overflow-x:auto">
+      <table class="users-table" style="width:100%;border-collapse:collapse;font-size:.88rem">
+        <thead>
+          <tr style="text-align:left;color:var(--ink-muted);font-size:.72rem;text-transform:uppercase;letter-spacing:.06em">
+            <th style="padding:8px 10px">Email</th>
+            <th style="padding:8px 10px">Name</th>
+            <th style="padding:8px 10px">Workplace</th>
+            <th style="padding:8px 10px">City</th>
+            <th style="padding:8px 10px">Joined</th>
+            <th style="padding:8px 10px">Admin</th>
+            <th style="padding:8px 10px">Features</th>
+            <th style="padding:8px 10px">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="usersTableBody"></tbody>
+      </table>
+      <p id="usersEmpty" style="color:var(--ink-muted);padding:18px 4px">No users found.</p>
+    </div>
+  </section>
+
+</main>
+
+<!-- MOBILE FILTER SHEET -->
+<div class="sheet-backdrop" id="sheetBackdrop"></div>
+<div class="sheet" id="filterSheet" role="dialog" aria-label="Filters">
+  <div class="sheet-handle"></div>
+  <div id="filterSheetBody"></div>
+</div>
+
+<!-- HAMBURGER DRAWER -->
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<nav class="drawer" id="drawer" aria-label="Site menu">
+  <h4>Navigate</h4>
+  <button class="drawer-link" data-view="home">&#127968; Home</button>
+  <button class="drawer-link" data-view="papers">&#128196; Papers</button>
+  <button class="drawer-link" data-view="guidelines">&#128203; Guidelines</button>
+  <button class="drawer-link" data-view="pearls">&#128142; Pearls</button>
+  <button class="drawer-link" data-view="trials">&#127942; Trials</button>
+  <button class="drawer-link" data-view="antibiotics">&#128137; Antibiotics</button>
+  <button class="drawer-link" data-view="theory">&#129504; Theory Library</button>
+  <button class="drawer-link" data-view="rrt">&#128680; RRT</button>
+  <button class="drawer-link" data-view="ai">&#129302; AI Assistant</button>
+  <button class="drawer-link" data-view="bookmarks">&#128278; Bookmarks<span class="bm-count zero" id="bookmarksDrawerCount">0</span></button>
+  <h4>Text size</h4>
+  <div class="chip-row" id="fontChips">
+    <button class="chip" data-font-px="14">XS</button>
+    <button class="chip" data-font-px="15">S</button>
+    <button class="chip active" data-font-px="16">M</button>
+    <button class="chip" data-font-px="17">L</button>
+    <button class="chip" data-font-px="18">XL</button>
+  </div>
+  <h4>Theme</h4>
+  <div class="chip-row" id="themeChips">
+    <button class="chip" data-theme-choice="light">Light</button>
+    <button class="chip active" data-theme-choice="dim">Dim</button>
+    <button class="chip" data-theme-choice="dark">Dark</button>
+  </div>
+  <h4>Account &amp; feedback</h4>
+  {% if user.get('is_admin') %}<button class="drawer-link" data-view="users">&#128101; Users</button>{% endif %}
+  <button class="drawer-link" data-view="subscribe">&#9993;&#65039; Subscribe</button>
+  <button class="drawer-link" data-view="unsubscribe">&#9995; Unsubscribe</button>
+  <button class="drawer-link" data-view="feedback">&#128172; Feedback</button>
+  <button class="drawer-link" data-view="about">&#8505;&#65039; About us</button>
+  <button class="drawer-link" data-open-disclaimer>&#9888;&#65039; Disclaimer</button>
+  <button class="drawer-link" id="drawerLogout">&#128682; Sign Out</button>
+</nav>
+
+<!-- GLOBAL SEARCH -->
+<div class="search-overlay-backdrop" id="searchBackdrop"></div>
+<div class="search-overlay" id="searchOverlay" role="dialog" aria-label="Global search">
+  <div class="search-input-row">
+    <span>&#128269;</span>
+    <input id="globalSearchInput" placeholder="Search papers, pearls, antibiotics&hellip;" autocomplete="off">
+    <button class="icon-btn" id="closeSearchBtn" aria-label="Close search">&#10005;</button>
+  </div>
+  <div class="search-results" id="searchResults"></div>
+</div>
+
+<!-- READING PANEL -->
+<div class="reader-backdrop" id="readerBackdrop"></div>
+<div class="reader" id="reader" role="dialog" aria-label="Reading view">
+  <div class="reader-head">
+    <div class="reader-progress" id="readerProgress"></div>
+    <div class="reader-top">
+      <button class="icon-btn" id="closeReader" aria-label="Close">&#8592;</button>
+      <div class="size-chip-row" id="readerFontChips">
+        <button class="size-chip" data-reader-font="0.85" style="font-size:11px" aria-label="Extra small text">A</button>
+        <button class="size-chip" data-reader-font="0.925" style="font-size:12px" aria-label="Small text">A</button>
+        <button class="size-chip active" data-reader-font="1" style="font-size:13px" aria-label="Medium text">A</button>
+        <button class="size-chip" data-reader-font="1.1" style="font-size:14px" aria-label="Large text">A</button>
+        <button class="size-chip" data-reader-font="1.25" style="font-size:15px" aria-label="Extra large text">A</button>
+      </div>
+      <button class="icon-btn" aria-label="Read aloud" style="margin-left:auto">&#128266;</button>
+    </div>
+  </div>
+  <div class="reader-body" id="readerBody"></div>
+</div>
+
+<!-- AI ASSISTANT FAB -->
+<button id="scrollTopBtn" aria-label="Scroll to top">&#9650;</button>
+<button class="ai-fab" id="aiFab" aria-label="Open AI assistant">&#129302;</button>
+<div class="ai-panel" id="aiPanel">
+  <p class="eyebrow" style="margin-bottom:8px">AI Assistant</p>
+  <div class="ai-msg">Explain the 0/1-hr troponin pearl in simpler terms.<span class="ai-source">&rarr; sourced from RAPID-TnT summary</span></div>
+  <div class="ai-msg">One undetectable troponin, taken 3+ hours after pain started, is usually enough to rule out a heart attack &mdash; no need to wait for a repeat draw.</div>
+</div>
+
+<!-- BOTTOM NAV -->
+<nav class="bottom-nav" aria-label="Primary mobile">
+  <button class="nav-item" data-view="papers"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128196;</span>Papers</button>
+  <button class="nav-item" data-view="guidelines"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128203;</span>Guidelines</button>
+  <button class="nav-item" data-view="pearls"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128142;</span>Pearls</button>
+  <button class="nav-item" data-view="trials"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#127942;</span>Trials</button>
+  <button class="nav-item" data-view="theory"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#129504;</span>Theory</button>
+  <button class="nav-item" data-view="bookmarks"><svg class="notch ecg-line" viewBox="0 0 260 14" preserveAspectRatio="none"><use href="#ecg"/></svg><span class="glyph">&#128278;</span>Saved</button>
+</nav>
+
+<div class="toast" id="toast"></div>
+
+<!-- DISCLAIMER -->
+<div id="disclaimerOverlay" class="disclaimer-backdrop" style="display:none">
+  <div class="disclaimer-box">
+    <div id="disclaimerText"></div>
+    <div style="display:flex;gap:10px;margin-top:18px;flex-wrap:wrap">
+      <button class="btn primary" onclick="dismissDisclaimer()" style="flex:1;padding:12px;border-radius:8px;border:none;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:.9rem;">Proceed to Dashboard</button>
+      <button class="btn" onclick="window.open('{{ feedback_form_url }}','_blank')" style="flex:1;padding:12px;border-radius:8px;font-size:.85rem;">🔍 Report Issue</button>
+    </div>
+  </div>
+</div>
+
+<!-- SHARE / FEEDBACK POPUP -->
+<div id="sharePopup" class="modal" style="display:none" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" id="sharePopupBackdrop"></div>
+  <div class="modal-content" style="max-width:420px;text-align:center">
+    <h3>&#128172; Are you finding this useful?</h3>
+    <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 18px">Help us improve hack.CCM &mdash; share it with friends or tell us what you think.</p>
+    <div style="display:flex;flex-direction:column;gap:10px">
+      <button class="btn primary" id="sharePopupShare" style="padding:12px">&#128279; Share with friends</button>
+      <button class="btn" id="sharePopupFeedback" style="padding:12px">&#128172; Share feedback</button>
+      <button class="btn btn-ghost" id="sharePopupLater" style="padding:10px">Maybe later</button>
+    </div>
+  </div>
+</div>
+
+<!-- TRIAL CREDITS OVERLAY -->
+<div id="trialCreditsOverlay" class="trial-overlay-backdrop" style="display:none">
+  <div class="trial-overlay-box">
+    <h2>&#127942; Credits</h2>
+    <div id="trialCreditsText"></div>
+    <button class="btn" onclick="closeTrialOverlay('trialCreditsOverlay')" style="margin-top:14px">Close</button>
+  </div>
+</div>
+
+<!-- TRIAL DISCLAIMER OVERLAY -->
+<div id="trialDisclaimerOverlay" class="trial-overlay-backdrop" style="display:none">
+  <div class="trial-overlay-box">
+    <h2>&#9888;&#65039; Disclaimer</h2>
+    <div id="trialDisclaimerText"></div>
+    <button class="btn" onclick="closeTrialOverlay('trialDisclaimerOverlay')" style="margin-top:14px">Close</button>
+  </div>
+</div>
+
+<!-- THEORY TABLE FULL VIEW -->
+<div id="theoryTableOverlay" class="theory-table-overlay" style="display:none" role="dialog" aria-label="Table full view">
+  <div class="theory-table-overlay-bar">
+    <button class="btn nav-btn" data-theory-table-close style="flex:0 0 auto">&larr; Back</button>
+    <span class="theory-table-overlay-title" id="theoryTableOverlayTitle">Table</span>
+    <button class="btn nav-btn" data-theory-table-fit style="flex:0 0 auto">Fit width</button>
+  </div>
+    <div class="theory-table-overlay-scroll" id="theoryTableOverlayScroll"><div class="theory-table-fit-inner" id="theoryTableFitInner"></div></div>
+  </div>
+
+  <div id="relatedOverlay" class="related-overlay-backdrop" role="dialog" aria-label="Related content">
+    <div class="related-overlay-box">
+      <div class="related-overlay-head">
+        <span class="related-overlay-title" id="relatedOverlayTitle">Related content</span>
+        <button class="overlay-close" id="relatedClose" title="Close">&times;</button>
+      </div>
+      <div id="relatedMeta" style="padding:0 18px 0"></div>
+      <div class="related-reason-bar" id="relatedReasonBar"></div>
+      <div class="related-scroll" id="relatedScroll"></div>
+    </div>
+  </div>
+
+  <div id="whatsNewOverlay" class="related-overlay-backdrop" role="dialog" aria-label="What's New">
+    <div class="related-overlay-box">
+      <div class="related-overlay-head">
+        <span class="related-overlay-title" id="whatsNewOverlayTitle">&#10024; What's New here??</span>
+        <button class="overlay-close" id="whatsNewClose" title="Close">&times;</button>
+      </div>
+      <div id="whatsNewMeta" style="padding:0 18px 0;color:var(--ink-muted);font-size:.72rem"></div>
+      <div class="chip-row" id="whatsNewChips" style="padding:6px 18px 2px"></div>
+      <div class="related-scroll" id="whatsNewScroll"></div>
+    </div>
+  </div>
+
+<!-- SERENDIPITY MODE MODAL -->
+<div id="serendipityModal" class="modal" style="display:none" role="dialog" aria-modal="true">
+  <div class="modal-backdrop" onclick="closeSerendipityModal()"></div>
+  <div class="modal-content serendipity-modal">
+    <h3>&#10024; Serendipity Mode</h3>
+    <p style="color:var(--ink-muted);font-size:.85rem;margin:0 0 16px">Spin up a random streak of pearls from your chosen specialties.</p>
+
+    <div class="serendipity-field">
+      <label>How many pearls?</label>
+      <div class="serendipity-options">
+        <label><input type="radio" name="serendipityCount" value="10" checked> 10</label>
+        <label><input type="radio" name="serendipityCount" value="25"> 25</label>
+        <label><input type="radio" name="serendipityCount" value="50"> 50</label>
+        <label><input type="radio" name="serendipityCount" value="100"> 100</label>
+      </div>
+    </div>
+
+    <div class="serendipity-field">
+      <label>Specialties <span id="serendipitySpecCount">(0 selected)</span></label>
+      <div id="serendipitySpecialties" class="serendipity-spec-grid"></div>
+      <div style="display:flex;gap:8px;margin-top:8px">
+        <button class="btn btn-sm btn-ghost" onclick="selectAllSerendipitySpecialties()">Select All</button>
+        <button class="btn btn-sm btn-ghost" onclick="clearAllSerendipitySpecialties()">Clear All</button>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:20px">
+      <button class="btn btn-ghost" onclick="closeSerendipityModal()">Cancel</button>
+      <button class="btn primary" onclick="startSerendipity()">Start Serendipity</button>
+    </div>
+    <div style="margin-top:12px;text-align:center">
+      <button class="btn btn-ghost btn-sm" onclick="resetSerendipityHistory()">Reset History</button>
+    </div>
+  </div>
+</div>
+
+<script id="boot" type="application/json">{{ boot_json }}</script>
+<script src="{{ js_url }}"></script>
+</body>
+</html>

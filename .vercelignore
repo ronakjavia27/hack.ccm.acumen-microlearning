@@ -1,0 +1,9 @@
+# Not needed by the deployed portal (it reads output_files/, sent_summaries.json, pearls.json and acumen_core/).
+# backups/ alone is ~95 MB and counts against the function bundle size limit.
+backups/
+quarantine/
+input_pdfs/
+tests/
+node_modules/
+old_output_files/
+*.log

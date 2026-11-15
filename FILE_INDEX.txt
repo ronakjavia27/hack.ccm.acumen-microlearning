@@ -82,7 +82,7 @@ package-lock.json
   - Purpose: Auto-generated Node.js lockfile.
 
 vercel.json
-  - Purpose: Vercel deployment config. Routes all traffic to webapp_google.py (wraps revamped_webapp.py).
+  - Purpose: Vercel deployment config. Routes all traffic to webapp_google.py (create_app(google=True) from the webapp/ package).
 
 Dockerfile
   - Purpose: Docker image definition for containerized deployment.
@@ -252,13 +252,12 @@ main_app.py
   - Purpose: FastAPI web app serving approved summaries and pearls as an
     HTML portal. Reads from sent_summaries.json + pearls.json. Features:
     specialty/article-type filtering, search, feedback/subscribe forms.
-  - Deployment: Deleted. revamped_webapp.py (via webapp_google.py) is the Vercel entrypoint.
+  - Deployment: Deleted. webapp_google.py (the webapp/ package + Google sign-in) is the Vercel entrypoint.
   - Usage: uvicorn revamped_webapp:app  OR  vercel dev
 
 revamped_webapp.py
-  - Purpose: Refactored version of the FastAPI microlearning portal. Reads
-    JSON data sources (sent_summaries.json + pearls.json) with improved
-    data loading and HTML rendering.
+  - Purpose: Entrypoint of the portal without Google sign-in: app = create_app().
+    The portal itself lives in the webapp/ package (routers, templates, static files).
   - Usage: uvicorn revamped_webapp:app
 
 web_app.py
