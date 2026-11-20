@@ -1,0 +1,64 @@
+[
+  {
+    "id": "sample-ccm-sepsis-001", "subject": "ccm", "system": "Sepsis", "subtopic": "Fluid resuscitation",
+    "kind": "mcq_single", "difficulty": 2, "tier": "free", "status": "sample",
+    "stem": "Per the Surviving Sepsis Campaign, what initial crystalloid volume is suggested within the first 3 hours for sepsis-induced hypoperfusion or septic shock?",
+    "options": ["10 mL/kg", "20 mL/kg", "30 mL/kg", "50 mL/kg"],
+    "answer": [2],
+    "explanation": "SSC 2021 suggests at least 30 mL/kg IV crystalloid within the first 3 hours, then reassess with dynamic measures.",
+    "tags": ["SSC 2021"]
+  },
+  {
+    "id": "sample-ccm-resp-001", "subject": "ccm", "system": "Pulmonology", "subtopic": "ARDS",
+    "kind": "mcq_single", "difficulty": 3, "tier": "free", "status": "sample",
+    "stem": "Under the Berlin definition, moderate ARDS corresponds to a PaO2/FiO2 ratio of (with PEEP ≥5 cmH2O):",
+    "options": ["≤100 mmHg", ">100 to ≤200 mmHg", ">200 to ≤300 mmHg", ">300 mmHg"],
+    "answer": [1],
+    "explanation": "Berlin: mild 200–300, moderate 100–200, severe ≤100 mmHg, each with PEEP/CPAP ≥5 cmH2O.",
+    "tags": ["Berlin definition"]
+  },
+  {
+    "id": "sample-ccm-resp-002", "subject": "ccm", "system": "Pulmonology", "subtopic": "ARDS",
+    "kind": "written_short", "difficulty": 3, "tier": "free", "status": "sample",
+    "stem": "List the four components of the Berlin definition of ARDS.",
+    "rubric": [
+      {"point": "Timing within 1 week of a known insult", "keywords": ["1 week", "one week", "7 days", "timing"], "marks": 1},
+      {"point": "Bilateral opacities on chest imaging", "keywords": ["bilateral"], "marks": 1},
+      {"point": "Not fully explained by cardiac failure / fluid overload", "keywords": ["cardiac", "fluid overload", "hydrostatic"], "marks": 1},
+      {"point": "Oxygenation (P/F ratio) with PEEP ≥5", "keywords": ["p/f", "pao2/fio2", "oxygenation", "peep"], "marks": 1}
+    ],
+    "explanation": "Timing, imaging, origin of oedema, oxygenation."
+  },
+  {
+    "id": "sample-micro-bact-001", "subject": "microbiology", "system": "Infectious Diseases", "subtopic": "Bacteriology",
+    "kind": "mcq_single", "difficulty": 2, "tier": "free", "status": "sample",
+    "stem": "Gram-negative intracellular diplococci in the CSF of a young adult with fever and a petechial rash most likely indicate:",
+    "options": ["Streptococcus pneumoniae", "Neisseria meningitidis", "Haemophilus influenzae", "Listeria monocytogenes"],
+    "answer": [1],
+    "explanation": "N. meningitidis is a Gram-negative diplococcus; petechial/purpuric rash is classic for meningococcaemia."
+  },
+  {
+    "id": "sample-micro-amr-001", "subject": "microbiology", "system": "Infectious Diseases", "subtopic": "Antimicrobials",
+    "kind": "mcq_multi", "difficulty": 3, "tier": "free", "status": "sample",
+    "stem": "Which of the following are carbapenems? (select all that apply)",
+    "options": ["Meropenem", "Aztreonam", "Imipenem", "Ertapenem"],
+    "answer": [0, 2, 3],
+    "explanation": "Aztreonam is a monobactam; the others are carbapenems."
+  },
+  {
+    "id": "sample-med-cvs-001", "subject": "medicine", "system": "Cardiology", "subtopic": "Heart failure",
+    "kind": "mcq_single", "difficulty": 2, "tier": "free", "status": "sample",
+    "stem": "Heart failure with reduced ejection fraction (HFrEF) is defined by an LVEF of:",
+    "options": ["≤40%", "41–49%", "≥50%", "≤30% only"],
+    "answer": [0],
+    "explanation": "Universal definition: HFrEF ≤40%, HFmrEF 41–49%, HFpEF ≥50%."
+  },
+  {
+    "id": "sample-med-renal-001", "subject": "medicine", "system": "Nephrology", "subtopic": "Electrolytes",
+    "kind": "mcq_single", "difficulty": 3, "tier": "free", "status": "sample",
+    "stem": "In chronic hyponatraemia, the usual maximum correction limit to reduce the risk of osmotic demyelination is:",
+    "options": ["4 mmol/L per 24 h", "8–10 mmol/L per 24 h", "15 mmol/L per 24 h", "20 mmol/L per 24 h"],
+    "answer": [1],
+    "explanation": "Commonly cited limit is 8–10 mmol/L in 24 h (lower, ~8, in high-risk patients)."
+  }
+]

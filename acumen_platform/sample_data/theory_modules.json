@@ -1,0 +1,30 @@
+[
+  {
+    "id": "sample-ccm-shock-approach",
+    "status": "sample",
+    "subject": "ccm",
+    "system": "Sepsis",
+    "title": "Undifferentiated shock at the bedside (template)",
+    "summary": "Template showing the practical-theory format: case → decision points → bedside how-to → pitfalls.",
+    "tier": "free",
+    "est_minutes": 12,
+    "learning_objectives": ["Classify shock from bedside findings", "Pick a first vasopressor and MAP target"],
+    "case": {
+      "vignette": "A 58-year-old presents with fever, BP 78/40 mmHg, HR 124, warm peripheries, lactate 4.6 mmol/L.",
+      "vitals": {"BP": "78/40", "HR": 124, "SpO2": "94% RA", "Temp": "39.1 °C"}
+    },
+    "sections": [
+      {"kind": "decision_point", "prompt": "What is the most likely shock type?",
+       "options": [
+         {"text": "Distributive", "correct": true, "feedback": "Warm peripheries + fever + high lactate → septic (distributive)."},
+         {"text": "Cardiogenic", "correct": false, "feedback": "Cold, clammy, raised JVP and pulmonary oedema would point here."},
+         {"text": "Obstructive", "correct": false, "feedback": "Look for tamponade, tension pneumothorax, massive PE."}
+       ]},
+      {"kind": "concept", "title": "Why it matters", "body_md": "_Content to be written._"},
+      {"kind": "bedside", "title": "How to do it", "body_md": "_Steps: POCUS RUSH exam, fluid responsiveness, line placement — to be written._", "video_refs": ["sample-usg-rush"]},
+      {"kind": "pitfall", "title": "Common mistakes", "body_md": "_To be written._"},
+      {"kind": "checklist", "title": "First hour checklist", "items": ["Cultures before antibiotics", "Antibiotics within 1 h", "Crystalloid bolus", "Norepinephrine if MAP < 65 despite fluids"]}
+    ],
+    "linked": {"questions": ["sample-ccm-sepsis-001"], "flashcard_decks": [], "papers": []}
+  }
+]

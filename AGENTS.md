@@ -286,6 +286,24 @@ Incremental cross-linker. For each entity (paper/guideline from `sent_summaries.
 
 **Auto-linking in generator.py**: every `generator.py` run (any mode; in watch-mode also on Ctrl-C exit) triggers an incremental cross-linking pass when it finishes, so new/updated content is automatically linked to the whole catalog — `--no-link` skips it, `--dry-run` never runs it, and the generator forwards its own `--llm gemini` choice to the linker (no prompt, never blocks). Since the ledger is content-hashed, a fully-linked catalog makes that pass a no-op.
 
+## v2 Learning Platform (skeleton) — `acumen_platform/`
+Revamp in progress; plan and roadmap in `docs/revamp/PLAN.md`. Mounted onto `revamped_webapp.app` at the bottom of `revamped_webapp.py` via `acumen_platform.router.mount(app, get_user=_get_session_user)` (same login/session/admin flag). **Off on Vercel unless `PLATFORM_V2=1`**, on locally; demo content from `acumen_platform/sample_data/` only when `PLATFORM_SAMPLE_DATA=1` (default locally).
+Subjects: `medicine`, `microbiology`, `ccm` (`config.SUBJECTS`, mapped onto the existing organ-system vocab).
+| File | Purpose |
+|------|---------|
+| `config.py` | Subjects, tiers (`free`/`pro`/`institution`) + quotas — the paywall lives here; env keys (SMTP, WhatsApp, STT/TTS, Razorpay/Stripe, `CRON_SECRET`, `REALTIME_SERVICE_URL`) |
+| `store.py` | ALL v2 persistence (`store.get/put/list/update`, keys `v2:<domain>:…`) over `acumen_core.kv`; swap point for Postgres. `MemoryBackend` for tests |
+| `entitlements.py` | `tier_of`, `require(user, capability)` → 402, `consume(user, "<metric>_per_<day|week|month>")` quotas, `set_subscription` |
+| `srs.py` | SM-2 scheduler (grades 1-4), per-user deck `v2:srs:<email>`; refs `flashcard:<uuid>` / `q:<id>` / `pearl:<id>` |
+| `exams.py` | Personalised builder (weak/unseen/review blueprint), sessions, MCQ + written (rubric) grading, mastery EMA, auto-enrol misses into SRS |
+| `live.py` / `proctoring.py` | Scheduled live exams (server-enforced deadline) / client-event integrity scoring (no video stored) |
+| `doubts.py` / `deid.py` | De-identified clinical forum (PHI gate + attestation + moderation) / PHI scanner-redactor |
+| `content.py` | Loaders: `output_files/question_bank/`, `output_files/theory_modules/`, `output_files/videos/catalog.json`, existing flashcard store |
+| `notify/` | Email + WhatsApp (template-only) digests, prefs, cron runner (dry-run default) |
+| `voice.py` / `billing.py` | STT/TTS provider protocols / plans, checkout stub, HMAC-verified Razorpay webhook |
+| `router.py` | `/api/v2/*` endpoints + `/learn` preview page (`static/learn.html`) |
+Tests: `python -m pytest tests/test_platform_v2.py -q`.
+
 ## Data Flow Summary
 
 ```

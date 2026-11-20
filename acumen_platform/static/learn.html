@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hack.CCM — Learn (v2 preview)</title>
+<style>
+:root{--bg:#1F1B14;--card:#29241B;--line:#3A3226;--ink:#F1E4CE;--mute:#C4B18C;--acc:#E8B778;--ok:#7fd18b;--bad:#f07a6a}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,sans-serif}
+header{display:flex;align-items:center;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+header h1{font-size:18px}header .tier{margin-left:auto;font-size:13px;color:var(--mute)}
+select,input,textarea,button{font:inherit;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 10px}
+button{cursor:pointer}button.pri{background:var(--acc);color:var(--bg);border-color:var(--acc);font-weight:600}
+button:disabled{opacity:.5;cursor:default}
+nav{display:flex;gap:4px;padding:8px 20px;border-bottom:1px solid var(--line);overflow-x:auto}
+nav a{padding:8px 14px;border-radius:8px;color:var(--mute);text-decoration:none;white-space:nowrap}
+nav a.on{background:var(--card);color:var(--ink)}
+main{max-width:920px;margin:0 auto;padding:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin-bottom:12px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.mute{color:var(--mute);font-size:13px}.ok{color:var(--ok)}.bad{color:var(--bad)}
+.opt{display:block;width:100%;text-align:left;margin:6px 0}.opt.sel{border-color:var(--acc)}
+.opt.right{border-color:var(--ok)}.opt.wrong{border-color:var(--bad)}
+.lock::after{content:" 🔒 Pro";color:var(--acc);font-size:12px}
+.pill{display:inline-block;font-size:12px;padding:2px 8px;border:1px solid var(--line);border-radius:99px;color:var(--mute);margin-right:4px}
+mark{background:#6b2d24;color:var(--ink);border-radius:3px;padding:0 2px}
+textarea{width:100%;min-height:110px}
+h2{font-size:17px;margin-bottom:10px}h3{font-size:15px;margin-bottom:6px}
+.banner{background:#3a2f1c;border:1px dashed var(--acc);padding:8px 12px;border-radius:8px;font-size:13px;margin-bottom:14px}
+</style>
+</head>
+<body>
+<header>
+  <h1>hack.CCM · Learn</h1>
+  <select id="subject"></select>
+  <span class="tier" id="tier">…</span>
+  <a href="/" class="mute">← portal</a>
+</header>
+<nav id="nav"></nav>
+<main id="main"></main>
+<script>
+const TABS = [
+  ["today","Today (SRS)"],["exams","Exams"],["theory","Theory"],["doubts","Clinical doubts"],
+  ["videos","Videos"],["live","Live exams"],["alerts","Alerts"],["plan","Plan"]];
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const state = {tab: location.hash.slice(1) || "today", subject: localStorage.v2subject || "ccm", plan: null};
+
+async function api(path, opts = {}) {
+  const r = await fetch("/api/v2" + path, {headers: {"Content-Type": "application/json"}, credentials: "same-origin", ...opts,
+    body: opts.body && typeof opts.body !== "string" ? JSON.stringify(opts.body) : opts.body});
+  let data = null; try { data = await r.json(); } catch (e) {}
+  if (!r.ok) { const d = data && data.detail; throw {status: r.status, detail: d}; }
+  return data;
+}
+function errBox(e) {
+  if (e.status === 402) return `<div class="card">🔒 This needs an upgrade (${esc(JSON.stringify(e.detail))}). <a href="#plan">See plans</a></div>`;
+  if (e.status === 501) return `<div class="card mute">🚧 Not built yet: ${esc(e.detail)}</div>`;
+  return `<div class="card bad">Error ${e.status}: ${esc(JSON.stringify(e.detail))}</div>`;
+}
+function render(html) { $("#main").innerHTML = `<div class="banner">v2 preview skeleton — sample content only. Real content and integrations are pending.</div>` + html; }
+
+async function boot() {
+  const subs = await api("/subjects");
+  $("#subject").innerHTML = subs.map(s => `<option value="${s.key}">${esc(s.label)}</option>`).join("");
+  $("#subject").value = state.subject;
+  $("#subject").onchange = e => { state.subject = localStorage.v2subject = e.target.value; go(state.tab); };
+  state.plan = await api("/me/plan");
+  $("#tier").textContent = "Plan: " + state.plan.label;
+  $("#nav").innerHTML = TABS.map(([k, l]) => `<a href="#${k}" data-k="${k}">${l}</a>`).join("");
+  window.onhashchange = () => go(location.hash.slice(1) || "today");
+  go(state.tab);
+}
+function go(tab) {
+  state.tab = tab;
+  document.querySelectorAll("nav a").forEach(a => a.classList.toggle("on", a.dataset.k === tab));
+  (VIEWS[tab] || VIEWS.today)().catch(e => render(errBox(e)));
+}
+
+const VIEWS = {
+  async today() {
+    const [st, q] = await Promise.all([api("/srs/stats"), api(`/srs/queue?subject=${state.subject}&limit=1`)]);
+    let html = `<h2>Spaced repetition</h2><p class="mute">${st.due_now} due · ${st.total} in deck · ${st.mature} mature</p>`;
+    if (!q.length) {
+      html += `<div class="card">Nothing due. Missed exam questions are added automatically; you can also add a flashcard deck:
+        <div class="row" style="margin-top:8px"><input id="deckSys" placeholder="System e.g. Cardiology"><input id="deckSub" placeholder="Subtopic (optional)">
+        <button class="pri" id="addDeck">Add deck</button></div><p class="mute" id="deckMsg"></p></div>`;
+      render(html);
+      $("#addDeck").onclick = async () => {
+        const r = await api(`/srs/enroll/deck?system=${encodeURIComponent($("#deckSys").value)}&subtopic=${encodeURIComponent($("#deckSub").value)}&subject=${state.subject}`, {method: "POST"});
+        $("#deckMsg").textContent = `Added ${r.added} of ${r.deck_size} cards.`;
+      };
+      return;
+    }
+    const {state: s, content: c} = q[0];
+    const front = c ? (c.kind === "flashcard" ? c.front : c.stem) : s.ref;
+    const back = c ? (c.kind === "flashcard" ? c.back : `${(c.options || []).filter((_, i) => (c.answer || []).includes(i)).join(", ")}<br><span class="mute">${esc(c.explanation)}</span>`) : "(content missing)";
+    html += `<div class="card"><span class="pill">${esc(s.phase)}</span><span class="pill">${esc(s.system)}</span>
+      <h3 style="margin-top:8px">${esc(front)}</h3><div id="back" style="display:none;margin-top:10px">${c && c.kind === "flashcard" ? esc(back) : back}</div>
+      <div class="row" style="margin-top:12px" id="srsBtns"><button class="pri" id="reveal">Show answer</button></div></div>`;
+    render(html);
+    $("#reveal").onclick = () => {
+      $("#back").style.display = "block";
+      $("#srsBtns").innerHTML = [["1","Again"],["2","Hard"],["3","Good"],["4","Easy"]].map(([g, l]) => `<button data-g="${g}">${l}</button>`).join("");
+      $("#srsBtns").querySelectorAll("button").forEach(b => b.onclick = async () => { await api("/srs/review", {method: "POST", body: {ref: s.ref, grade: +b.dataset.g}}); VIEWS.today(); });
+    };
+  },
+
+  async exams() {
+    const hist = await api("/exams/history");
+    render(`<h2>Personalised exam</h2><div class="card"><div class="row">
+      <label>Questions <input id="n" type="number" value="5" min="1" max="200" style="width:80px"></label>
+      <select id="mode"><option value="personalised">Personalised (weak areas)</option><option value="practice">Practice (instant feedback)</option><option value="mock">Timed mock</option></select>
+      <label>Minutes <input id="min" type="number" placeholder="—" style="width:80px"></label>
+      <button class="pri" id="start">Start</button></div>
+      <p class="mute" style="margin-top:6px">Quota: ${esc(JSON.stringify(state.plan.quotas.personalised_exams_per_week))}</p></div>
+      <h3>History</h3>${hist.map(h => `<div class="card row"><span class="pill">${h.mode}</span>${esc(h.subject)} · ${h.n} Qs · ${h.status}
+        <b style="margin-left:auto">${h.score_pct ?? "—"}%</b></div>`).join("") || `<p class="mute">No exams yet.</p>`}`);
+    $("#start").onclick = async () => {
+      try {
+        const sess = await api("/exams/personalised", {method: "POST", body: {subject: state.subject, n: +$("#n").value, mode: $("#mode").value, minutes: +$("#min").value || null}});
+        runExam(sess);
+      } catch (e) { render(errBox(e)); }
+    };
+  },
+
+  async theory() {
+    const mods = await api(`/theory/modules?subject=${state.subject}`);
+    render(`<h2>Practical theory</h2><p class="mute">Case-first modules: vignette → decisions → bedside how-to → pitfalls → checklist.</p>` +
+      (mods.map(m => `<div class="card"><h3 class="${m.locked ? "lock" : ""}">${esc(m.title)}</h3><p class="mute">${esc(m.summary)} · ${m.est_minutes || "?"} min</p>
+        <button data-id="${m.id}" ${m.locked ? "disabled" : ""}>Open</button></div>`).join("") || `<p class="mute">No modules for this subject yet.</p>`));
+    document.querySelectorAll("[data-id]").forEach(b => b.onclick = () => openModule(b.dataset.id));
+  },
+
+  async doubts() {
+    const list = await api(`/doubts?subject=${state.subject}`);
+    render(`<h2>Clinical doubts</h2><p class="mute">De-identified cases only. Identifiers are detected as you type; posts are moderated.</p>
+      <div class="card"><input id="dt" placeholder="Title" style="width:100%;margin-bottom:8px"><textarea id="db" placeholder="Describe the case without names, dates, IDs, phone numbers, addresses…"></textarea>
+      <div id="deid" class="mute" style="margin:6px 0"></div>
+      <label class="mute"><input type="checkbox" id="att"> I confirm this contains no patient identifiers.</label>
+      <div class="row" style="margin-top:8px"><button class="pri" id="post">Post doubt</button><span id="postMsg" class="mute"></span></div></div>
+      ${list.map(d => `<div class="card"><span class="pill">${d.status}</span><span class="pill">${esc(d.handle)}</span><h3>${esc(d.title)}</h3><p class="mute">${esc(d.body)}</p><p class="mute">${d.n_replies} replies · score ${d.score}</p></div>`).join("") || `<p class="mute">No doubts yet.</p>`}`);
+    let t; const check = () => { clearTimeout(t); t = setTimeout(async () => {
+      const txt = $("#dt").value + "\n" + $("#db").value; if (!txt.trim()) return ($("#deid").innerHTML = "");
+      const r = await api("/doubts/check", {method: "POST", body: {text: txt}});
+      $("#deid").innerHTML = r.findings.length ? r.findings.map(f => `<mark>${esc(f.text)}</mark> <span class="${f.severity === "high" ? "bad" : ""}">${f.kind} (${f.severity})</span>`).join(" · ") : `<span class="ok">No identifiers detected.</span>`;
+    }, 350); };
+    $("#dt").oninput = $("#db").oninput = check;
+    $("#post").onclick = async () => {
+      try { await api("/doubts", {method: "POST", body: {title: $("#dt").value, body: $("#db").value, subject: state.subject, attest_deidentified: $("#att").checked}}); VIEWS.doubts(); }
+      catch (e) { $("#postMsg").innerHTML = e.status === 422 ? `<span class="bad">${esc((e.detail && (e.detail.message || e.detail.error)) || "rejected")}</span>` : errBox(e); }
+    };
+  },
+
+  async videos() {
+    const vids = await api(`/videos?subject=${state.subject}`);
+    render(`<h2>Imaging tutorials</h2><p class="mute">Echo · USG/POCUS · CXR. Hosted on a video CDN; metadata lives in output_files/videos/catalog.json.</p>` +
+      (vids.map(v => `<div class="card row"><span class="pill">${v.modality}</span><span class="${v.locked ? "lock" : ""}">${esc(v.title)}</span><span class="mute" style="margin-left:auto">${v.level}</span></div>`).join("") || `<p class="mute">No videos for this subject yet.</p>`));
+  },
+
+  async live() {
+    const rows = await api("/live");
+    render(`<h2>Live exams</h2><p class="mute">Scheduled cohort exams with server-enforced timing; proctored ones need camera permission.</p>` +
+      (rows.map(r => `<div class="card row"><span class="pill">${r.status}</span>${esc(r.title)} · ${new Date(r.starts_at).toLocaleString()} · ${r.duration_min} min ${r.proctored ? "· 🎥 proctored" : ""}
+        <button style="margin-left:auto" data-join="${r.id}" ${r.status !== "running" ? "disabled" : ""}>Join</button></div>`).join("") || `<p class="mute">No live exams scheduled.</p>`));
+    document.querySelectorAll("[data-join]").forEach(b => b.onclick = async () => {
+      try { const sess = await api(`/live/${b.dataset.join}/join`, {method: "POST"}); runExam(sess); } catch (e) { render(errBox(e)); }
+    });
+  },
+
+  async alerts() {
+    const p = await api("/notify/prefs");
+    render(`<h2>Email & WhatsApp</h2><div class="card">
+      <label><input type="checkbox" id="em" ${p.email ? "checked" : ""}> Email digest</label><br>
+      <label class="${state.plan.limits.push_whatsapp ? "" : "lock"}"><input type="checkbox" id="wa" ${p.whatsapp ? "checked" : ""}> WhatsApp digest</label>
+      <input id="ph" placeholder="+91…" value="${esc(p.phone)}"><br>
+      <label>Cadence <select id="cad">${["daily","weekly","off"].map(c => `<option ${p.cadence === c ? "selected" : ""}>${c}</option>`).join("")}</select></label>
+      <label>Hour <input id="hr" type="number" min="0" max="23" value="${p.hour_local}" style="width:70px"></label>
+      <div class="row" style="margin-top:10px"><button class="pri" id="save">Save</button><span id="msg" class="mute"></span></div></div>`);
+    $("#save").onclick = async () => {
+      try { await api("/notify/prefs", {method: "PUT", body: {email: $("#em").checked, whatsapp: $("#wa").checked, phone: $("#ph").value, cadence: $("#cad").value, hour_local: +$("#hr").value}}); $("#msg").textContent = "Saved."; }
+      catch (e) { $("#msg").innerHTML = errBox(e); }
+    };
+  },
+
+  async plan() {
+    const plans = await api("/billing/plans");
+    render(`<h2>Plans</h2>` + plans.map(p => `<div class="card"><h3>${esc(p.label)} ${state.plan.tier === p.tier ? "<span class='pill'>current</span>" : ""}</h3>
+      <p class="mute">${p.price_inr_month === 0 ? "Free" : p.price_inr_month == null ? "Price TBD" : "₹" + p.price_inr_month + "/month"}</p>
+      <p class="mute">${Object.entries(p.limits).map(([k, v]) => `${k.replaceAll("_", " ")}: <b>${v === null ? "∞" : v === true ? "✓" : v === false ? "—" : v}</b>`).join(" · ")}</p></div>`).join(""));
+  },
+};
+
+async function openModule(id) {
+  const m = await api(`/theory/modules/${id}`);
+  render(`<h2>${esc(m.title)}</h2><div class="card"><h3>Case</h3><p>${esc(m.case && m.case.vignette)}</p></div>` +
+    m.sections.map((s, i) => s.kind === "decision_point"
+      ? `<div class="card"><h3>🧭 ${esc(s.prompt)}</h3>${s.options.map((o, j) => `<button class="opt" data-s="${i}" data-o="${j}">${esc(o.text)}</button>`).join("")}<p class="mute" id="fb${i}"></p></div>`
+      : s.kind === "checklist" ? `<div class="card"><h3>✅ ${esc(s.title)}</h3><ul style="margin-left:18px">${s.items.map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>`
+      : `<div class="card"><h3>${esc(s.title)}</h3><p class="mute">${esc(s.body_md)}</p></div>`).join(""));
+  document.querySelectorAll(".opt[data-s]").forEach(b => b.onclick = () => {
+    const o = m.sections[+b.dataset.s].options[+b.dataset.o];
+    b.classList.add(o.correct ? "right" : "wrong"); $("#fb" + b.dataset.s).textContent = o.feedback;
+  });
+}
+
+function runExam(sess) {
+  let i = 0; const answers = {};
+  const proctor = sess.proctored ? startProctor(sess.id) : null;
+  const show = () => {
+    const q = sess.questions[i];
+    const multi = q.kind === "mcq_multi", written = !q.options;
+    render(`<h2>${esc(sess.mode)} exam · ${i + 1}/${sess.questions.length}</h2>${sess.deadline ? `<p class="mute">Ends ${new Date(sess.deadline).toLocaleTimeString()}</p>` : ""}
+      <div class="card"><span class="pill">${esc(q.system)}</span><span class="pill">${esc(q.kind)}</span><h3 style="margin-top:8px">${esc(q.stem)}</h3>
+      ${written ? `<textarea id="wa">${esc(answers[q.id] || "")}</textarea><p class="mute">Tip: browser dictation works here (voice-to-text).</p>`
+        : q.options.map((o, j) => `<button class="opt ${(answers[q.id] || []).includes(j) ? "sel" : ""}" data-j="${j}">${esc(o)}</button>`).join("")}
+      <p id="fb" class="mute"></p>
+      <div class="row" style="margin-top:10px"><button id="prev" ${i ? "" : "disabled"}>Prev</button><button id="next">${i < sess.questions.length - 1 ? "Next" : "Review"}</button>
+      <button class="pri" id="sub" style="margin-left:auto">Submit exam</button></div></div>`);
+    const save = async () => {
+      if (written) answers[q.id] = $("#wa").value;
+      if (answers[q.id] === undefined) return;
+      const r = await api(`/exams/${sess.id}/answer`, {method: "POST", body: {qid: q.id, answer: answers[q.id]}});
+      if (r.feedback) $("#fb").innerHTML = `${r.feedback.score >= 1 ? "<span class=ok>Correct</span>" : "<span class=bad>Not quite</span>"} — ${esc(r.feedback.explanation)}`;
+    };
+    document.querySelectorAll(".opt").forEach(b => b.onclick = async () => {
+      const j = +b.dataset.j; let a = answers[q.id] || [];
+      a = multi ? (a.includes(j) ? a.filter(x => x !== j) : [...a, j]) : [j];
+      answers[q.id] = a; document.querySelectorAll(".opt").forEach(x => x.classList.toggle("sel", a.includes(+x.dataset.j)));
+      await save();
+    });
+    $("#prev").onclick = async () => { await save(); i--; show(); };
+    $("#next").onclick = async () => { await save(); if (i < sess.questions.length - 1) { i++; show(); } };
+    $("#sub").onclick = async () => {
+      await save(); if (proctor) proctor.stop();
+      const r = await api(`/exams/${sess.id}/submit`, {method: "POST"});
+      render(`<h2>Result: ${r.score_pct ?? "—"}%</h2><p class="mute">${r.answered}/${r.n} answered. Missed questions were added to your spaced-repetition queue.</p>` +
+        r.items.map(it => `<div class="card"><span class="${it.score >= 1 ? "ok" : "bad"}">${Math.round(it.score * 100)}%</span> <span class="pill">${it.status}</span> ${esc(it.qid)}
+          <p class="mute">${esc(it.explanation)} ${it.note ? "· " + esc(it.note) : ""}</p></div>`).join("") + `<button onclick="go('exams')">Back to exams</button>`);
+    };
+  };
+  show();
+}
+
+// Client-side proctoring signals (camera/face detection hook point: MediaPipe — TODO).
+function startProctor(examId) {
+  const buf = []; const push = (type, detail = "") => buf.push({type, detail, at: new Date().toISOString()});
+  const onVis = () => document.hidden && push("tab_hidden");
+  const onBlur = () => push("window_blur");
+  const onPaste = () => push("paste");
+  const onFs = () => !document.fullscreenElement && push("fullscreen_exit");
+  document.addEventListener("visibilitychange", onVis); window.addEventListener("blur", onBlur);
+  document.addEventListener("paste", onPaste); document.addEventListener("fullscreenchange", onFs);
+  document.documentElement.requestFullscreen && document.documentElement.requestFullscreen().catch(() => push("fullscreen_exit", "denied"));
+  const flush = () => buf.length && api(`/proctor/${examId}/events`, {method: "POST", body: {events: buf.splice(0)}}).catch(() => {});
+  const timer = setInterval(flush, 10000);
+  return {stop() { clearInterval(timer); flush(); document.removeEventListener("visibilitychange", onVis); window.removeEventListener("blur", onBlur);
+    document.removeEventListener("paste", onPaste); document.removeEventListener("fullscreenchange", onFs); document.fullscreenElement && document.exitFullscreen(); }};
+}
+
+boot().catch(e => render(errBox(e)));
+</script>
+</body>
+</html>

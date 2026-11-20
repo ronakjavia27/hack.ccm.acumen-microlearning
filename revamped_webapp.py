@@ -6566,3 +6566,14 @@ def extract_metadata(payload):
     if not journal:
         journal = "Unknown Journal"
     return title, system, article_type, journal
+
+
+# =====================================================================
+# v2 LEARNING PLATFORM (skeleton) — /api/v2/* + /learn
+# Off on Vercel unless PLATFORM_V2=1; on locally. See docs/revamp/PLAN.md.
+# =====================================================================
+try:
+    from acumen_platform.router import mount as _mount_platform_v2
+    _mount_platform_v2(app, get_user=_get_session_user)
+except Exception as _e:  # never let the preview break the live portal
+    print(f"[platform-v2] not mounted: {_e}")
