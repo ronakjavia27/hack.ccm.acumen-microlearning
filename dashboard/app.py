@@ -21,6 +21,11 @@ from .modules.accounts import list_users, get_user, update_user, delete_user, ge
 
 router = APIRouter(prefix="/console")
 
+# Content Studio (/console/studio, /console/api/studio/*) — must be registered
+# before the generic /api/{kind}/... catch-all routes below.
+from .studio_api import router as _studio_router
+router.include_router(_studio_router)
+
 
 @router.get("/api/subtopics")
 async def api_subtopics():

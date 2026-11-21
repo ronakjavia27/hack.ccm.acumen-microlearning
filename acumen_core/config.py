@@ -259,3 +259,30 @@ EXCEL_HEADERS = [
     "Journal Name", "DOI", "Year", "System", "Type of Article", "MD Generated",
     "Email Pushed", "Summary Saved Date", "Email Pushed Date", "Parsing Notes", "show_on_web"
 ]
+
+# =====================================================================
+# CONTENT STUDIO (studio.py) — uploaded questions → answer + flashcards + MCQs
+# See docs/studio/DESIGN.md
+# =====================================================================
+STUDIO_INPUT_DIR = os.path.join(PROJECT_DIR, "studio_input")            # {Medicine|Microbiology|CCM}/*.txt|md|docx|pdf|csv
+STUDIO_DIR = os.path.join(PROJECT_DIR, "studio")
+STUDIO_ITEMS_DIR = os.path.join(STUDIO_DIR, "items")                    # {subject}/{item_id}.json
+STUDIO_LEDGER_FILE = os.path.join(STUDIO_DIR, "ledger.json")            # input file sha256 → item ids
+QUESTION_BANK_DIR = os.path.join(OUTPUT_DIR, "question_bank")           # read by acumen_platform/content.py
+STUDIO_DRAFT_MODEL = os.getenv("STUDIO_DRAFT_MODEL") or OPENROUTER_MODEL
+STUDIO_VERIFY_MODEL = os.getenv("STUDIO_VERIFY_MODEL") or "openai/gpt-oss-120b"
+STUDIO_API_KEY = os.getenv("STUDIO_API_KEY") or OPENROUTER_API_KEY
+STUDIO_BASE_URL = os.getenv("STUDIO_BASE_URL") or OPENROUTER_BASE_URL
+STUDIO_AUDIENCE = os.getenv("STUDIO_AUDIENCE") or (
+    "postgraduate residents and fellows preparing for MD/DNB Medicine, Microbiology and "
+    "Critical Care (IDCCM / EDIC-level) theory and viva examinations")
+STUDIO_MAX_REVISIONS = int(os.getenv("STUDIO_MAX_REVISIONS", "1"))
+STUDIO_REVIEWER = os.getenv("STUDIO_REVIEWER", "editor")
+STUDIO_CONTEXT_K = int(os.getenv("STUDIO_CONTEXT_K", "6"))
+STUDIO_MAX_TOKENS = int(os.getenv("STUDIO_MAX_TOKENS", "12000"))
+# Subject folder names accepted under studio_input/ → subject key (matches acumen_platform SUBJECTS)
+STUDIO_SUBJECT_FOLDERS = {
+    "medicine": "medicine", "med": "medicine", "general medicine": "medicine",
+    "microbiology": "microbiology", "micro": "microbiology",
+    "ccm": "ccm", "critical care": "ccm", "critical care medicine": "ccm", "icu": "ccm",
+}

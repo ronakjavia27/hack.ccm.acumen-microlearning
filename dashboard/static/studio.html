@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>hack.CCM Console — Studio</title>
+<style>
+:root{--bg:#F4F5F7;--panel:#fff;--raised:#FAFBFC;--hover:#EEF0F3;--line:#D1D5DB;--soft:#E5E7EB;--ink:#111827;--mute:#6B7280;--faint:#9CA3AF;
+--green:#059669;--green-bg:#ECFDF5;--amber:#D97706;--amber-bg:#FFFBEB;--red:#DC2626;--red-bg:#FEF2F2;--blue:#2563EB;--mono:ui-monospace,SFMono-Regular,Menlo,monospace;--r:6px}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:14px/1.5 -apple-system,'Segoe UI',sans-serif;height:100vh;overflow:hidden}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer;background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:5px 10px}
+button:hover{background:var(--hover)}button.pri{background:var(--ink);color:#fff;border-color:var(--ink)}
+button.ok{background:var(--green);color:#fff;border-color:var(--green)}button.bad{color:var(--red);border-color:#fca5a5}
+button:disabled{opacity:.45;cursor:default}
+input,select,textarea{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:5px 8px}
+header{display:flex;gap:12px;align-items:center;padding:10px 16px;background:var(--panel);border-bottom:1px solid var(--line);flex-wrap:wrap}
+header b{font-family:var(--mono)}header .sp{flex:1}
+#wrap{display:grid;grid-template-columns:420px 1fr;height:calc(100vh - 54px)}
+#left{border-right:1px solid var(--line);display:flex;flex-direction:column;min-height:0;background:var(--panel)}
+#filters{padding:10px;border-bottom:1px solid var(--soft);display:flex;gap:6px;flex-wrap:wrap}
+#list{overflow-y:auto;flex:1}
+.row{padding:9px 12px;border-bottom:1px solid var(--soft);cursor:pointer}.row:hover{background:var(--hover)}.row.on{background:#EEF2FF}
+.row .q{font-size:13px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.meta{font-size:11.5px;color:var(--mute);font-family:var(--mono)}
+.dot{display:inline-block;width:9px;height:9px;border-radius:50%;margin-right:5px;vertical-align:middle;background:var(--faint)}
+.dot.green{background:var(--green)}.dot.amber{background:var(--amber)}.dot.red{background:var(--red)}
+.chip{display:inline-block;font:11px var(--mono);padding:1px 6px;border:1px solid var(--line);border-radius:99px;color:var(--mute);margin-right:3px}
+#right{overflow-y:auto;padding:16px 22px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:14px;margin-bottom:12px}
+.card h3{font-size:13px;text-transform:uppercase;letter-spacing:.05em;color:var(--mute);margin-bottom:8px}
+.reasons li{margin-left:18px;font-size:13px}
+.tri{padding:8px 12px;border-radius:var(--r);margin-bottom:12px;font-size:13px}
+.tri.green{background:var(--green-bg);color:var(--green)}.tri.amber{background:var(--amber-bg);color:#92400e}.tri.red{background:var(--red-bg);color:#991b1b}
+.md h1{font-size:19px;margin:8px 0}.md h2{font-size:16px;margin:12px 0 6px}.md h3{font-size:14px;margin:10px 0 4px;text-transform:none;color:var(--ink);letter-spacing:0}
+.md p{margin:6px 0}.md ul,.md ol{margin:6px 0 6px 22px}.md table{border-collapse:collapse;margin:8px 0;font-size:13px}
+.md td,.md th{border:1px solid var(--line);padding:4px 8px;text-align:left}.md code{font-family:var(--mono);background:var(--hover);padding:0 3px;border-radius:3px}
+.md blockquote{border-left:3px solid var(--line);padding-left:10px;color:var(--mute)}
+.claim{font-size:13px;padding:5px 0;border-bottom:1px dashed var(--soft)}
+.v-supported{color:var(--green)}.v-outdated,.v-unverifiable{color:var(--amber)}.v-incorrect{color:var(--red);font-weight:600}
+.item{display:flex;gap:10px;padding:8px 0;border-bottom:1px solid var(--soft);font-size:13px}.item:last-child{border:0}
+.item .body{flex:1}.opt{margin-left:14px}.opt.key{color:var(--green);font-weight:600}
+.actions{position:sticky;bottom:0;background:var(--bg);padding:10px 0;display:flex;gap:8px;flex-wrap:wrap;border-top:1px solid var(--line)}
+textarea{width:100%}.mute{color:var(--mute);font-size:12.5px}
+.tabs{display:flex;gap:4px;margin-bottom:10px;flex-wrap:wrap}.tabs button.on{background:var(--ink);color:#fff}
+#toast{position:fixed;bottom:16px;right:16px;background:var(--ink);color:#fff;padding:8px 14px;border-radius:var(--r);display:none;max-width:420px}
+dialog{border:1px solid var(--line);border-radius:10px;padding:16px;width:min(900px,94vw)}dialog::backdrop{background:rgba(0,0,0,.25)}
+</style>
+</head>
+<body>
+<header>
+  <b>hack.CCM · Studio</b><a href="/console" class="mute">← console</a>
+  <span id="models" class="meta"></span>
+  <span class="sp"></span>
+  <span id="counts" class="meta"></span>
+  <label class="mute">Reviewer <input id="by" style="width:140px"></label>
+  <button onclick="openPaste()">+ Add questions</button>
+  <button onclick="ingestFolder()">Scan studio_input/</button>
+  <button onclick="genQueued()">Generate queued</button>
+  <button class="ok" onclick="approveGreen()">Approve all green</button>
+  <button class="pri" onclick="publishApproved()">Publish approved</button>
+</header>
+<div id="wrap">
+  <div id="left">
+    <div id="filters">
+      <select id="fStatus"><option value="">all statuses</option><option>queued</option><option>generated</option><option>revision_requested</option><option>approved</option><option>published</option><option>rejected</option><option>error</option></select>
+      <select id="fTriage"><option value="">all lights</option><option>red</option><option>amber</option><option>green</option></select>
+      <select id="fSubject"><option value="">all subjects</option><option>medicine</option><option>microbiology</option><option>ccm</option></select>
+      <input id="fQ" placeholder="search…" style="flex:1;min-width:100px">
+    </div>
+    <div id="list"></div>
+  </div>
+  <div id="right"><p class="mute">Select a question on the left.</p></div>
+</div>
+<dialog id="paste">
+  <h3 style="margin-bottom:8px">Add questions</h3>
+  <p class="mute">One question per numbered line, bullet or paragraph. MCQs: options as a)…d) and optional "Ans: b". Marks like "(10 marks)" are detected. Tick CSV for spreadsheet exports.</p>
+  <div style="display:flex;gap:8px;margin:8px 0"><select id="pSubject"><option>ccm</option><option>medicine</option><option>microbiology</option></select>
+    <input id="pLabel" placeholder="source label, e.g. IDCCM 2024 Paper 1" style="flex:1"><label class="mute"><input type="checkbox" id="pCsv"> CSV</label></div>
+  <textarea id="pText" rows="14" placeholder="1. Discuss the management of ARDS. (10 marks)&#10;2. Short note: procalcitonin (5)"></textarea>
+  <div style="display:flex;gap:8px;margin-top:8px"><button class="pri" onclick="submitPaste()">Add to queue</button><button onclick="paste.close()">Cancel</button></div>
+</dialog>
+<dialog id="editor">
+  <h3 style="margin-bottom:8px">Edit package (saved as a new human version — approve afterwards)</h3>
+  <p class="mute">Answer markdown:</p><textarea id="eAnswer" rows="14"></textarea>
+  <p class="mute" style="margin-top:8px">Flashcards / MCQs / key points / rubric (JSON):</p><textarea id="eRest" rows="12" style="font-family:var(--mono);font-size:12px"></textarea>
+  <input id="eNote" placeholder="what you changed (optional)" style="width:100%;margin-top:8px">
+  <div style="display:flex;gap:8px;margin-top:8px"><button class="pri" onclick="saveEdit()">Save version</button><button onclick="editor.close()">Cancel</button></div>
+</dialog>
+<div id="toast"></div>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const S = {sel: null, item: null, tab: "answer"};
+$("#by").value = localStorage.studioBy || "";
+$("#by").onchange = e => localStorage.studioBy = e.target.value;
+const by = () => $("#by").value.trim();
+
+async function api(path, opts = {}) {
+  const r = await fetch("/console/api/studio" + path, {headers: {"Content-Type": "application/json"}, ...opts,
+    body: opts.body ? JSON.stringify(opts.body) : undefined});
+  const data = await r.json().catch(() => null);
+  if (!r.ok) throw new Error((data && data.detail) || r.statusText);
+  return data;
+}
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.style.display = "block"; clearTimeout(t._h); t._h = setTimeout(() => t.style.display = "none", 4000); }
+async function guarded(fn) { try { await fn(); } catch (e) { toast("⚠ " + e.message); } }
+
+// --- tiny safe markdown (escape first) ---
+function md(src) {
+  const lines = esc(src || "").split("\n"); let html = "", list = null, table = [];
+  const inline = s => s.replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*([^*]+)\*\*/g, "<b>$1</b>").replace(/(^|\W)\*([^*\n]+)\*(?=\W|$)/g, "$1<i>$2</i>").replace(/(^|\W)_([^_\n]+)_(?=\W|$)/g, "$1<i>$2</i>");
+  const closeList = () => { if (list) { html += `</${list}>`; list = null; } };
+  const flushTable = () => { if (!table.length) return; const rows = table.filter(r => !/^\|?\s*:?-{2,}/.test(r));
+    html += "<table>" + rows.map((r, i) => "<tr>" + r.replace(/^\||\|$/g, "").split("|").map(c => i ? `<td>${inline(c.trim())}</td>` : `<th>${inline(c.trim())}</th>`).join("") + "</tr>").join("") + "</table>"; table = []; };
+  for (const l of lines) {
+    if (/^\s*\|.*\|\s*$/.test(l)) { closeList(); table.push(l.trim()); continue; } else flushTable();
+    let m;
+    if ((m = l.match(/^(#{1,4})\s+(.*)/))) { closeList(); html += `<h${m[1].length}>${inline(m[2])}</h${m[1].length}>`; }
+    else if ((m = l.match(/^\s*[-*•]\s+(.*)/))) { if (list !== "ul") { closeList(); html += "<ul>"; list = "ul"; } html += `<li>${inline(m[1])}</li>`; }
+    else if ((m = l.match(/^\s*\d+[.)]\s+(.*)/))) { if (list !== "ol") { closeList(); html += "<ol>"; list = "ol"; } html += `<li>${inline(m[1])}</li>`; }
+    else if ((m = l.match(/^&gt;\s?(.*)/))) { closeList(); html += `<blockquote>${inline(m[1])}</blockquote>`; }
+    else if (/^\s*-{3,}\s*$/.test(l)) { closeList(); html += "<hr>"; }
+    else if (l.trim()) { closeList(); html += `<p>${inline(l)}</p>`; }
+    else closeList();
+  }
+  closeList(); flushTable(); return html;
+}
+
+async function loadSummary() {
+  const s = await api("/summary");
+  $("#models").textContent = `draft: ${s.models.draft} · verify: ${s.models.verify}${s.api_key ? "" : " · ⚠ no API key"}`;
+  const c = s.counts; $("#counts").textContent = `${s.total} items · queued ${c.queued || 0} · 🔴 ${c["generated:red"] || 0} 🟠 ${c["generated:amber"] || 0} 🟢 ${c["generated:green"] || 0} · approved ${c.approved || 0} · published ${c.published || 0}`;
+  if (!$("#by").value) $("#by").value = s.reviewer;
+}
+async function loadList() {
+  const p = new URLSearchParams({status: $("#fStatus").value, triage: $("#fTriage").value, subject: $("#fSubject").value, q: $("#fQ").value});
+  const rows = await api("/items?" + p);
+  $("#list").innerHTML = rows.map(r => `<div class="row ${r.id === S.sel ? "on" : ""}" data-id="${r.id}">
+    <div class="q"><span class="dot ${r.triage || ""}"></span>${esc(r.question)}</div>
+    <div class="meta">${r.subject} · ${r.qtype}${r.marks ? " " + r.marks + "m" : ""} · <b>${r.status}</b>${r.busy ? " · ⏳" : ""} · ${r.n_cards}c/${r.n_mcqs}q${r.n_sources > 1 ? ` · asked ×${r.n_sources}` : ""}</div>
+    ${r.reasons.length ? `<div class="meta" style="color:var(--mute)">${esc(r.reasons[0])}</div>` : ""}${r.error ? `<div class="meta" style="color:var(--red)">${esc(r.error)}</div>` : ""}</div>`).join("") || `<p class="mute" style="padding:12px">No items. Add questions or drop files in studio_input/.</p>`;
+  document.querySelectorAll(".row").forEach(el => el.onclick = () => select(el.dataset.id));
+}
+["#fStatus", "#fTriage", "#fSubject"].forEach(s => $(s).onchange = loadList);
+$("#fQ").oninput = () => { clearTimeout(S.qh); S.qh = setTimeout(loadList, 250); };
+
+async function select(id) { S.sel = id; S.item = await api("/items/" + id); renderItem(); loadList(); }
+const cur = it => (it.versions || []).find(v => v.v === it.current) || null;
+
+function renderItem() {
+  const it = S.item, v = cur(it), pkg = (v && v.package) || {};
+  const ver = (v && v.verification) || null, blind = (v && v.blind) || null;
+  const checks = {}; ((ver && ver.claim_checks) || []).forEach(c => checks[c.i] = c);
+  const blindBy = {}; ((blind && blind.answers) || []).forEach(a => blindBy[a.i] = a);
+  const reviewed = (it.review && !it.review.stale && it.review.version === it.current) ? it.review.parts : null;
+  const key = it.id + ":" + it.current;
+  if (S.partsFor !== key) {  // selections persist across tab switches; reset only when the item/version changes
+    S.parts = reviewed ? JSON.parse(JSON.stringify(reviewed)) : {answer: true, flashcards: (pkg.flashcards || []).map((_, i) => i), mcqs: (pkg.mcqs || []).map((_, i) => i)};
+    S.partsFor = key;
+  }
+  const parts = S.parts;
+  const cardOn = i => parts.flashcards.includes(i), mcqOn = i => parts.mcqs.includes(i);
+  const issuesFor = w => ((ver && ver.issues) || []).filter(x => x.where === w);
+  const lintFor = w => ((v && v.lint) || []).filter(x => x.where === w);
+  const flag = arr => arr.map(x => `<div class="meta" style="color:${x.severity === "major" || x.severity === "error" ? "var(--red)" : "var(--amber)"}">⚑ ${esc(x.problem || x.msg)}${x.fix ? " → " + esc(x.fix) : ""}</div>`).join("");
+
+  const tabs = {
+    answer: () => `<div class="md">${md(pkg.answer_md)}</div>${flag(issuesFor("answer").concat(lintFor("answer")))}
+      ${pkg.key_points && pkg.key_points.length ? `<h3 style="margin-top:12px">Key points</h3><ul style="margin-left:18px">${pkg.key_points.map(k => `<li>${esc(k)}</li>`).join("")}</ul>` : ""}
+      ${it.options ? `<h3 style="margin-top:12px">Uploaded MCQ</h3>${it.options.map((o, i) => `<div class="opt ${(pkg.mcq_key || []).includes(i) ? "key" : ""}">${String.fromCharCode(65 + i)}. ${esc(o)} ${(it.given_key || []).includes(i) ? "<span class='chip'>upload key</span>" : ""}${(pkg.mcq_key || []).includes(i) ? "<span class='chip'>model key</span>" : ""}</div>`).join("")}` : ""}
+      <label style="display:block;margin-top:10px"><input type="checkbox" id="pAnswer" ${parts.answer ? "checked" : ""}> publish this answer (theory note + written question)</label>`,
+    claims: () => (pkg.claims || []).map((c, i) => { const ck = checks[i] || {}; return `<div class="claim"><span class="v-${ck.verdict || ""}">${ck.verdict ? ck.verdict.toUpperCase() : "—"}</span>
+      ${c.high_stakes ? "<span class='chip'>high-stakes</span>" : ""}<span class="chip">${esc(c.basis)}</span><span class="chip">${esc(c.confidence)}</span> ${esc(c.text)}
+      ${ck.comment ? `<div class="meta">${esc(ck.comment)}${ck.fix ? " → <b>" + esc(ck.fix) + "</b>" : ""}</div>` : ""}</div>`; }).join("") || "<p class='mute'>No claims.</p>",
+    flashcards: () => (pkg.flashcards || []).map((c, i) => `<div class="item"><input type="checkbox" class="pCard" value="${i}" ${cardOn(i) ? "checked" : ""}>
+      <div class="body"><b>${esc(c.front)}</b><div class="md">${md(c.back)}</div>${flag(issuesFor("flashcard:" + i).concat(lintFor("flashcard:" + i)))}</div></div>`).join("") || "<p class='mute'>No flashcards.</p>",
+    mcqs: () => (pkg.mcqs || []).map((m, i) => { const b = blindBy[i]; const mismatch = b && JSON.stringify((b.chosen || []).slice().sort()) !== JSON.stringify((m.answer || []).slice().sort());
+      return `<div class="item"><input type="checkbox" class="pMcq" value="${i}" ${mcqOn(i) ? "checked" : ""}><div class="body"><b>${esc(m.stem)}</b> <span class="chip">d${m.difficulty}</span>
+      ${m.options.map((o, j) => `<div class="opt ${(m.answer || []).includes(j) ? "key" : ""}">${String.fromCharCode(65 + j)}. ${esc(o)}</div>`).join("")}
+      <div class="meta">${b ? (mismatch ? `<span style="color:var(--red)">✗ blind solver chose ${(b.chosen || []).map(x => String.fromCharCode(65 + x)).join(",")}</span>` : `<span style="color:var(--green)">✓ blind solver agreed (${esc(b.confidence)})</span>`) + (b.ambiguous ? " · ambiguous: " + esc(b.note) : "") : "not blind-solved"}</div>
+      <div class="mute">${esc(m.explanation)}</div>${flag(issuesFor("mcq:" + i).concat(lintFor("mcq:" + i)))}</div></div>`; }).join("") || "<p class='mute'>No MCQs.</p>",
+    review: () => `${ver ? `<p><b>Verifier score ${ver.overall}</b> · coverage ${(ver.coverage || {}).score ?? "—"} — ${esc(ver.summary)}</p>
+      ${((ver.coverage || {}).missing || []).length ? `<p class="mute">Missing: ${ver.coverage.missing.map(esc).join("; ")}</p>` : ""}
+      ${(ver.issues || []).map(x => `<div class="claim"><span class="chip">${x.severity}</span><span class="chip">${esc(x.where)}</span>${esc(x.problem)}<div class="meta">→ ${esc(x.fix)}</div></div>`).join("")}` : "<p class='mute'>Not independently verified (human edit or verifier failure). Use Re-verify.</p>"}
+      ${(pkg.uncertainties || []).length ? `<h3 style="margin-top:12px">Author model's uncertainties</h3><ul style="margin-left:18px">${pkg.uncertainties.map(u => `<li>${esc(u)}</li>`).join("")}</ul>` : ""}
+      <h3 style="margin-top:12px">Rubric</h3>${(pkg.rubric || []).map(r => `<div class="claim">${esc(r.point)} <span class="chip">${r.marks}m</span> <span class="meta">${(r.keywords || []).map(esc).join(", ")}</span></div>`).join("") || "<p class='mute'>—</p>"}`,
+    sources: () => `<h3>Library hints used</h3>${((v && v.context) || []).map(c => `<div class="claim"><span class="chip">${esc(c.kind)}</span>${esc(c.title)} <span class="meta">${esc(c.id)} · bm25 ${c.score}</span></div>`).join("") || "<p class='mute'>None (answer from general knowledge).</p>"}
+      <h3 style="margin-top:12px">Uploaded in</h3>${(it.sources || []).map(s => `<div class="meta">${esc(s.file)} #${s.index} ${esc(s.label)}</div>`).join("")}
+      <h3 style="margin-top:12px">Versions</h3>${(it.versions || []).map(x => `<div class="meta">v${x.v} · ${x.origin}${x.edited_by ? " by " + esc(x.edited_by) : ""} · ${x.triage} · ${x.at}${x.revisions ? ` · ${x.revisions} auto-revision` : ""}${x.editor_note ? " · note: " + esc(x.editor_note) : ""}</div>`).join("")}
+      <h3 style="margin-top:12px">History</h3>${(it.history || []).slice().reverse().map(h => `<div class="meta">${h.at} · ${esc(h.event)} · ${esc(h.by)} ${esc(h.note)}</div>`).join("")}
+      ${it.published ? `<h3 style="margin-top:12px">Published</h3><div class="meta">v${it.published.version} at ${it.published.at}<br>theory: ${esc(it.published.theory_rel || "—")}<br>${it.published.flashcard_ids.length} cards · questions: ${it.published.question_ids.map(esc).join(", ")}</div>` : ""}`,
+  };
+  const names = {answer: "Answer", claims: `Claims (${(pkg.claims || []).length})`, flashcards: `Flashcards (${(pkg.flashcards || []).length})`, mcqs: `MCQs (${(pkg.mcqs || []).length})`, review: "Verification", sources: "Sources & history"};
+  const canApprove = v && ["generated", "approved", "published"].includes(it.status) && !it.busy;
+  $("#right").innerHTML = `
+    <div class="meta">${it.id} · ${it.subject} · ${esc(it.system || "")} / ${esc(it.subtopic || "")} · ${it.qtype}${it.marks ? " · " + it.marks + " marks" : ""} · <b>${it.status}</b> · v${it.current ?? "—"}${it.busy ? " · ⏳ generating" : ""}</div>
+    <h2 style="font-size:17px;margin:6px 0 10px">${esc(it.question)}</h2>
+    ${v ? `<div class="tri ${v.triage}"><b>${v.triage.toUpperCase()}</b>${v.reasons && v.reasons.length ? `<ul class="reasons">${v.reasons.map(r => `<li>${esc(r)}</li>`).join("")}</ul>` : " — no issues found by the verifier, blind solver or lint."}</div>` : `<p class="mute">${it.status === "error" ? "Error: " + esc(it.error) : "Not generated yet."}</p>`}
+    ${it.review && !it.review.stale ? `<p class="meta">✔ approved v${it.review.version} by ${esc(it.review.by)} at ${it.review.at}</p>` : it.review && it.review.stale ? `<p class="meta" style="color:var(--amber)">Earlier approval is stale (content changed) — re-approve.</p>` : ""}
+    ${v ? `<div class="tabs">${Object.keys(tabs).map(k => `<button class="${S.tab === k ? "on" : ""}" data-tab="${k}">${names[k]}</button>`).join("")}</div><div class="card" id="tabBody">${tabs[S.tab]()}</div>` : ""}
+    <div class="actions">
+      ${canApprove ? `<button class="ok" id="aApprove">Approve selected</button>` : ""}
+      ${it.status === "approved" || (it.status === "published" && it.review && !it.review.stale && it.review.version !== (it.published || {}).version) ? `<button class="pri" id="aPublish">Publish</button>` : ""}
+      ${v && !it.busy ? `<button id="aRevise">Request changes…</button><button id="aEdit">Edit</button><button id="aReverify">Re-verify</button>` : ""}
+      ${["queued", "error", "rejected"].includes(it.status) ? `<button id="aGen">Generate now</button>` : ""}
+      ${["error", "rejected"].includes(it.status) ? `<button id="aRequeue">Re-queue</button>` : ""}
+      ${it.status !== "rejected" ? `<button class="bad" id="aReject">Reject${it.published ? " & unpublish" : ""}</button>` : ""}
+    </div>`;
+  document.querySelectorAll("[data-tab]").forEach(b => b.onclick = () => { collectParts(); S.tab = b.dataset.tab; renderItem(); });
+  const on = (id, fn) => { const el = $("#" + id); if (el) el.onclick = () => guarded(fn); };
+  on("aApprove", async () => { collectParts(); await api(`/items/${it.id}/approve`, {method: "POST", body: {by: by(), parts: S.parts}}); toast("Approved"); refresh(); });
+  on("aPublish", async () => { const r = await api(`/items/${it.id}/publish`, {method: "POST"}); toast(`Published: ${r.flashcard_ids.length} cards, ${r.question_ids.length} questions`); refresh(); });
+  on("aReject", async () => { const note = prompt("Reason for rejecting?"); if (note === null) return; await api(`/items/${it.id}/reject`, {method: "POST", body: {by: by(), note}}); refresh(); });
+  on("aRevise", async () => { const note = prompt("What should change? (sent to the drafting model with the current version)"); if (!note) return; const j = await api(`/items/${it.id}/revise`, {method: "POST", body: {by: by(), note}}); watch(j); });
+  on("aReverify", async () => watch(await api(`/items/${it.id}/reverify`, {method: "POST"})));
+  on("aGen", async () => watch(await api(`/generate`, {method: "POST", body: {ids: [it.id]}})));
+  on("aRequeue", async () => { await api(`/items/${it.id}/requeue`, {method: "POST", body: {by: by()}}); refresh(); });
+  on("aEdit", async () => { $("#eAnswer").value = pkg.answer_md || ""; const {answer_md, ...rest} = pkg; $("#eRest").value = JSON.stringify(rest, null, 2); $("#eNote").value = ""; editor.showModal(); });
+}
+function collectParts() {
+  if (!S.parts) return;
+  if ($("#pAnswer")) S.parts.answer = $("#pAnswer").checked;
+  if (document.querySelector(".pCard")) S.parts.flashcards = [...document.querySelectorAll(".pCard")].filter(x => x.checked).map(x => +x.value);
+  if (document.querySelector(".pMcq")) S.parts.mcqs = [...document.querySelectorAll(".pMcq")].filter(x => x.checked).map(x => +x.value);
+}
+async function saveEdit() {
+  await guarded(async () => {
+    const rest = JSON.parse($("#eRest").value || "{}");
+    await api(`/items/${S.item.id}/edit`, {method: "PUT", body: {by: by(), note: $("#eNote").value, package: {...rest, answer_md: $("#eAnswer").value}}});
+    editor.close(); toast("Saved as a new version — review and approve"); refresh();
+  });
+}
+async function watch(job) {
+  toast(`Running ${job.kind} on ${job.total} item(s)…`); refresh();
+  const t = setInterval(async () => { const j = await api(`/jobs/${job.id}`); if (j.status === "done") { clearInterval(t); toast(`${job.kind} done: ${j.results.map(r => r.triage || r.status || r.error || r.skipped).join(", ")}`); refresh(); } else loadList(); }, 3000);
+}
+async function refresh() { await Promise.all([loadSummary(), loadList()]); if (S.sel) { S.item = await api("/items/" + S.sel); renderItem(); } }
+function openPaste() { paste.showModal(); }
+async function submitPaste() { await guarded(async () => { const r = await api("/ingest-text", {method: "POST", body: {subject: $("#pSubject").value, text: $("#pText").value, label: $("#pLabel").value || "pasted", csv: $("#pCsv").checked}}); paste.close(); $("#pText").value = ""; toast(`${r.new.length} new, ${r.merged.length} already known`); refresh(); }); }
+async function ingestFolder() { await guarded(async () => { const r = await fetch("/console/api/studio/ingest-folder", {method: "POST"}).then(x => x.json()); toast(`${r.new.length} new, ${r.merged.length} known, ${r.skipped_files.length} files unchanged`); refresh(); }); }
+async function genQueued() { await guarded(async () => watch(await api("/generate", {method: "POST", body: {subject: $("#fSubject").value}}))); }
+async function approveGreen() { if (!by()) return toast("Enter your reviewer name first"); if (!confirm("Approve every GREEN item as " + by() + "?")) return; await guarded(async () => { const r = await api("/approve-green", {method: "POST", body: {by: by()}}); toast(`Approved ${r.approved.length}`); refresh(); }); }
+async function publishApproved() { if (!confirm("Publish every approved item into the portal stores?")) return; await guarded(async () => { const r = await api("/publish-approved", {method: "POST"}); toast(`Published ${r.published.length}, failed ${r.failed.length}. Push from the console to deploy.`); refresh(); }); }
+refresh();
+</script>
+</body>
+</html>

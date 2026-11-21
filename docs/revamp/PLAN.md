@@ -63,7 +63,7 @@ Legend: ✅ working in skeleton · 🟡 interface/stub · ⬜ not started
 - **Inputs:** mastery per `subject|system|subtopic` (EMA of correctness), seen history, difficulty fit.
 - **Modes:** practice (instant feedback), personalised, timed mock.
 - **Free:** 2 personalised per week, ≤20 questions. **Pro:** unlimited, ≤200 questions.
-- **Biggest gap: there is no question bank yet.** Plan: (a) LLM-draft MCQs from existing summaries/pearls with a new `questions.py` pipeline that mirrors `flashcards.py` (ledger, sha256 skip); (b) faculty review in the console (`draft → published`); (c) store each question with `refs` back to its source paper/pearl so every explanation cites evidence.
+- **Question bank:** filled by the **Content Studio** (`studio.py`, `docs/studio/DESIGN.md`). Uploaded questions go through draft → independent verify → human review, and are published as written questions (with rubric) plus derived MCQs into `output_files/question_bank/{subject}/studio.json`.
 
 ### 3.3 Practical-oriented theory 🟡
 - **Module format** (`output_files/theory_modules/{Subject}/*.json`): case vignette → **decision points** (options with feedback) → concept → **bedside how-to** (links to videos) → pitfalls → checklist → linked questions/decks/papers.
