@@ -371,7 +371,9 @@ PyMuPDF, pdf2image, pytesseract, fastapi, uvicorn, requests, beautifulsoup4
 
 ## Console Dashboard
 - `dashboard_app.py` → `http://localhost:8878/console`
-- Single-page vanilla JS app (`dashboard/static/dashboard.html`)
+- Mobile-first vanilla ES-module SPA (no build step): `dashboard/static/index.html` + `css/{tokens,app}.css` + `js/{app,api,ui,store,list}.js` + `js/views/{overview,content,mcqs,system}.js`. Design tokens match the learner portal (`redefined_ui.py`), light/dark. Desktop = left rail, mobile (<860px) = bottom tab bar + bottom-sheet editors. Installable PWA (`manifest.webmanifest`, `sw.js`). Previous single-file UI kept at `/console/classic` (`dashboard.html`) until parity is confirmed.
+- **MCQ Review** (`dashboard/modules/mcqs.py`, kind `mcqs`): triage queue over `output_files/mcqs/` (override `MCQ_DIR`) — approve/reject/edit (validated like `mcq_generator.validate`), undo, bulk-approve per subtopic, swipe/keyboard shortcuts, and `POST /console/api/mcqs/generate` (+ `GET .../generate/{job}`) which runs `mcq_generator.py`. `GET /console/api/mcqs/stats`.
+- **Tailscale/mobile hosting**: `python dashboard_app.py --host <tailscale-ip> --no-reload` (or `tailscale serve`). Set `CONSOLE_TOKEN` in `.env` to require a shared secret (`/console?token=…` sets a cookie; API also accepts `X-Console-Token`); unset = open (as before). `THEORY_VALIDATED_DIR` overrides the theory module's Windows default path.
 - CRUD for summaries, pearls, flashcards, theory
 - Cascade reclassification when summary system/subtopic changes
 - Git push from UI via async `PushWorker`

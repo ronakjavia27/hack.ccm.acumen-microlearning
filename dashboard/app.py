@@ -9,8 +9,11 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from fastapi import APIRouter, HTTPException, Query, Request
-from fastapi.responses import HTMLResponse, JSONResponse
+import hmac
+import os
+
+from fastapi import APIRouter, Depends, HTTPException, Query, Request
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse, Response
 
 from .modules import bootstrap, all_kinds, get_spec, ItemNotFound, list_specs
 from .modules.summaries import get_content as summaries_get_content
@@ -19,10 +22,30 @@ from . import backup as backup_mod
 from .cascade import cascade_summary_update, cascade_preview
 from .modules.accounts import list_users, get_user, update_user, delete_user, get_defaults, save_defaults, FEATURE_FLAGS, FEATURE_LABELS
 
+STATIC_DIR = Path(__file__).parent / "static"
+NO_CACHE = {"Cache-Control": "no-cache, must-revalidate"}
+
+
+def require_token(request: Request) -> None:
+    """Optional shared-secret gate. Active only when CONSOLE_TOKEN is set.
+
+    Accepts `X-Console-Token` header, `console_token` cookie, or `?token=` (which
+    login sets as a cookie). Designed for tailnet-hosted use from a phone.
+    """
+    token = os.getenv("CONSOLE_TOKEN", "")
+    if not token:
+        return
+    given = (request.headers.get("x-console-token")
+             or request.cookies.get("console_token")
+             or request.query_params.get("token") or "")
+    if not hmac.compare_digest(given.encode(), token.encode()):
+        raise HTTPException(401, "Console token required")
+
+
 router = APIRouter(prefix="/console")
 
 
-@router.get("/api/subtopics")
+@router.get("/api/subtopics", dependencies=[Depends(require_token)])
 async def api_subtopics():
     """Return the master system→subtopic vocabulary from acumen_core/subtopics.json."""
     path = REPO_ROOT / "acumen_core" / "subtopics.json"
@@ -30,7 +53,7 @@ async def api_subtopics():
     return data
 
 
-@router.post("/api/summaries/{item_id}/cascade-preview")
+@router.post("/api/summaries/{item_id}/cascade-preview", dependencies=[Depends(require_token)])
 async def api_cascade_preview(item_id: str, body: Dict[str, Any]):
     _ensure_bootstrap()
     try:
@@ -50,7 +73,7 @@ async def api_cascade_preview(item_id: str, body: Dict[str, Any]):
     return result
 
 
-@router.post("/api/update-pearls-bulk")
+@router.post("/api/update-pearls-bulk", dependencies=[Depends(require_token)])
 async def api_update_pearls_bulk(body: Dict[str, Any]):
     """Bulk-update pearls by file_name. Used after cascade confirmation."""
     from .cascade import cascade_apply
@@ -76,20 +99,98 @@ def _ensure_bootstrap():
 # =========================================================================
 # Dashboard HTML
 # =========================================================================
+LOGIN_HTML = """<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1">
+<title>hack.CCM Console</title><body style="font-family:system-ui;display:grid;place-items:center;min-height:100vh;margin:0;background:#0B1016;color:#e7edf3">
+<form method=get action=/console style="display:grid;gap:12px;width:min(320px,90vw)"><h2 style="margin:0">hack.CCM Console</h2>
+<input name=token type=password placeholder="Console token" autofocus style="padding:14px;border-radius:10px;border:1px solid #334;background:#141c26;color:inherit;font-size:16px">
+<button style="padding:14px;border-radius:10px;border:0;background:#2DD4BF;color:#04201c;font-weight:700;font-size:16px">Unlock</button></form>"""
+
+
+def _token_ok(request: Request) -> bool:
+    try:
+        require_token(request)
+        return True
+    except HTTPException:
+        return False
+
+
 @router.get("", response_class=HTMLResponse, include_in_schema=False)
 @router.get("/", response_class=HTMLResponse, include_in_schema=False)
-async def dashboard_index():
+async def dashboard_index(request: Request):
     _ensure_bootstrap()
-    html_path = Path(__file__).parent / "static" / "dashboard.html"
+    if not _token_ok(request):
+        return HTMLResponse(LOGIN_HTML, status_code=401, headers=NO_CACHE)
+    html_path = STATIC_DIR / "index.html"
     if not html_path.exists():
-        return HTMLResponse("<h1>dashboard.html not built yet</h1>", status_code=404)
-    return HTMLResponse(html_path.read_text(encoding="utf-8"))
+        return HTMLResponse("<h1>console index.html missing</h1>", status_code=404)
+    resp = HTMLResponse(html_path.read_text(encoding="utf-8"), headers=NO_CACHE)
+    tok = request.query_params.get("token")
+    if tok and os.getenv("CONSOLE_TOKEN"):
+        resp.set_cookie("console_token", tok, httponly=True, samesite="lax", max_age=60 * 60 * 24 * 90)
+    return resp
+
+
+@router.get("/classic", response_class=HTMLResponse, include_in_schema=False)
+async def dashboard_classic(request: Request):
+    """Previous single-file console, kept until the rebuild reaches parity."""
+    _ensure_bootstrap()
+    if not _token_ok(request):
+        return HTMLResponse(LOGIN_HTML, status_code=401, headers=NO_CACHE)
+    return HTMLResponse((STATIC_DIR / "dashboard.html").read_text(encoding="utf-8"), headers=NO_CACHE)
+
+
+@router.get("/static/{path:path}", include_in_schema=False)
+async def dashboard_static(path: str):
+    base = STATIC_DIR.resolve()
+    f = (base / path).resolve()
+    if base not in f.parents or not f.is_file():
+        raise HTTPException(404, "not found")
+    return FileResponse(f, headers=NO_CACHE)
+
+
+@router.get("/manifest.webmanifest", include_in_schema=False)
+async def dashboard_manifest():
+    return FileResponse(STATIC_DIR / "manifest.webmanifest", media_type="application/manifest+json", headers=NO_CACHE)
+
+
+@router.get("/sw.js", include_in_schema=False)
+async def dashboard_sw():
+    return FileResponse(STATIC_DIR / "sw.js", media_type="application/javascript", headers=NO_CACHE)
+
+
+@router.get("/api/health")
+async def api_health():
+    return {"ok": True, "auth_required": bool(os.getenv("CONSOLE_TOKEN"))}
+
+
+@router.get("/api/mcqs/stats", dependencies=[Depends(require_token)])
+async def api_mcq_stats():
+    from .modules import mcqs
+    return mcqs.stats()
+
+
+@router.post("/api/mcqs/generate", dependencies=[Depends(require_token)])
+async def api_mcq_generate(body: Dict[str, Any]):
+    from .modules import mcqs
+    try:
+        return mcqs.start_generate(body or {})
+    except RuntimeError as e:
+        raise HTTPException(409, str(e))
+
+
+@router.get("/api/mcqs/generate/{job_id}", dependencies=[Depends(require_token)])
+async def api_mcq_generate_status(job_id: str):
+    from .modules import mcqs
+    try:
+        return mcqs.job_status(job_id)
+    except ItemNotFound:
+        raise HTTPException(404, "job not found")
 
 
 # =========================================================================
 # Fixed-name API endpoints (MUST come before /api/{kind})
 # =========================================================================
-@router.get("/api/info")
+@router.get("/api/info", dependencies=[Depends(require_token)])
 async def api_info():
     _ensure_bootstrap()
     from acumen_core.kv import _use_upstash, kv_scan, kv_get, KV_URL, KV_TOKEN
@@ -127,13 +228,13 @@ async def api_info():
     }
 
 
-@router.get("/api/modules")
+@router.get("/api/modules", dependencies=[Depends(require_token)])
 async def api_modules():
     _ensure_bootstrap()
     return list_specs()
 
 
-@router.post("/api/push")
+@router.post("/api/push", dependencies=[Depends(require_token)])
 async def api_push(body: Dict[str, Any]):
     _ensure_bootstrap()
     kind = body.get("kind", "unknown")
@@ -146,7 +247,7 @@ async def api_push(body: Dict[str, Any]):
     return {"job_id": job_id}
 
 
-@router.get("/api/push/{job_id}")
+@router.get("/api/push/{job_id}", dependencies=[Depends(require_token)])
 async def api_push_status(job_id: str):
     s = PUSH.status(job_id)
     if s is None:
@@ -154,7 +255,7 @@ async def api_push_status(job_id: str):
     return s
 
 
-@router.post("/api/push-all")
+@router.post("/api/push-all", dependencies=[Depends(require_token)])
 async def api_push_all(body: Dict[str, Any]):
     paths = body.get("all_paths", [])
     if not paths:
@@ -164,12 +265,12 @@ async def api_push_all(body: Dict[str, Any]):
     return {"job_id": job_id}
 
 
-@router.get("/api/backup")
+@router.get("/api/backup", dependencies=[Depends(require_token)])
 async def api_backup_list():
     return backup_mod.list_backups()
 
 
-@router.post("/api/backup")
+@router.post("/api/backup", dependencies=[Depends(require_token)])
 async def api_backup_create(body: Dict[str, Any]):
     label = body.get("label", "dashboard")
     try:
@@ -179,7 +280,7 @@ async def api_backup_create(body: Dict[str, Any]):
         raise HTTPException(500, f"Backup failed: {e}")
 
 
-@router.post("/api/backup/restore")
+@router.post("/api/backup/restore", dependencies=[Depends(require_token)])
 async def api_backup_restore(body: Dict[str, Any]):
     result = backup_mod.restore_backup(
         body.get("from"), body.get("to"), body.get("force", False),
@@ -189,7 +290,7 @@ async def api_backup_restore(body: Dict[str, Any]):
     return result
 
 
-@router.get("/api/backup/verify/{name}")
+@router.get("/api/backup/verify/{name}", dependencies=[Depends(require_token)])
 async def api_backup_verify(name: str):
     return backup_mod.verify_backup(name)
 
@@ -197,17 +298,17 @@ async def api_backup_verify(name: str):
 # =========================================================================
 # ACCOUNTS (user management + feature flags)
 # =========================================================================
-@router.get("/api/accounts/defaults")
+@router.get("/api/accounts/defaults", dependencies=[Depends(require_token)])
 async def api_accounts_defaults():
     return get_defaults()
 
 
-@router.put("/api/accounts/defaults")
+@router.put("/api/accounts/defaults", dependencies=[Depends(require_token)])
 async def api_accounts_defaults_update(body: Dict[str, Any]):
     return save_defaults(body)
 
 
-@router.get("/api/accounts/features/definitions")
+@router.get("/api/accounts/features/definitions", dependencies=[Depends(require_token)])
 async def api_accounts_feature_defs():
     return {
         "flags": FEATURE_FLAGS,
@@ -215,12 +316,12 @@ async def api_accounts_feature_defs():
     }
 
 
-@router.get("/api/accounts")
+@router.get("/api/accounts", dependencies=[Depends(require_token)])
 async def api_accounts_list():
     return list_users()
 
 
-@router.get("/api/accounts/{email:path}")
+@router.get("/api/accounts/{email:path}", dependencies=[Depends(require_token)])
 async def api_accounts_get(email: str):
     user = get_user(email)
     if not user:
@@ -228,7 +329,7 @@ async def api_accounts_get(email: str):
     return user
 
 
-@router.put("/api/accounts/{email:path}")
+@router.put("/api/accounts/{email:path}", dependencies=[Depends(require_token)])
 async def api_accounts_update(email: str, body: Dict[str, Any]):
     result = update_user(email, body)
     if not result:
@@ -236,14 +337,14 @@ async def api_accounts_update(email: str, body: Dict[str, Any]):
     return result
 
 
-@router.delete("/api/accounts/{email:path}")
+@router.delete("/api/accounts/{email:path}", dependencies=[Depends(require_token)])
 async def api_accounts_delete(email: str):
     if not delete_user(email):
         raise HTTPException(status_code=404, detail="User not found")
     return {"deleted": True}
 
 
-@router.post("/api/flashcards/{item_id:path}/regenerate-card")
+@router.post("/api/flashcards/{item_id:path}/regenerate-card", dependencies=[Depends(require_token)])
 async def api_flashcard_regenerate(item_id: str, body: Dict[str, Any]):
     """Regenerate a single flashcard card with an edit comment (unified store)."""
     _ensure_bootstrap()
@@ -286,7 +387,7 @@ async def api_flashcard_regenerate(item_id: str, body: Dict[str, Any]):
     return {"updated": True, "card": _view_card(card)}
 
 
-@router.post("/api/flashcards/{item_id:path}/reclassify")
+@router.post("/api/flashcards/{item_id:path}/reclassify", dependencies=[Depends(require_token)])
 async def api_flashcard_reclassify(item_id: str, body: Dict[str, Any]):
     """Move every card of a subtopic file to another system/subtopic."""
     _ensure_bootstrap()
@@ -305,7 +406,7 @@ async def api_flashcard_reclassify(item_id: str, body: Dict[str, Any]):
     return {"updated": moved > 0, "moved": moved, "id": f"{new_system}/{new_subtopic}"}
 
 
-@router.get("/api/audit")
+@router.get("/api/audit", dependencies=[Depends(require_token)])
 async def api_audit(n: int = Query(200)):
     return audit_tail(n)
 
@@ -313,7 +414,7 @@ async def api_audit(n: int = Query(200)):
 # =========================================================================
 # Generic CRUD (parameterized — must come after fixed routes above)
 # =========================================================================
-@router.get("/api/{kind}")
+@router.get("/api/{kind}", dependencies=[Depends(require_token)])
 async def api_list(
     kind: str,
     q: str = Query(""),
@@ -338,7 +439,7 @@ async def api_list(
     return spec.list_fn(filters or None)
 
 
-@router.get("/api/summaries/{item_id}/content")
+@router.get("/api/summaries/{item_id}/content", dependencies=[Depends(require_token)])
 async def api_summary_content(item_id: str):
     _ensure_bootstrap()
     try:
@@ -346,7 +447,7 @@ async def api_summary_content(item_id: str):
     except ItemNotFound:
         raise HTTPException(404, f"summary {item_id} not found")
 
-@router.post("/api/{kind}/bulk-status")
+@router.post("/api/{kind}/bulk-status", dependencies=[Depends(require_token)])
 async def api_bulk_status(kind: str, body: Dict[str, Any]):
     _ensure_bootstrap()
     try:
@@ -357,12 +458,15 @@ async def api_bulk_status(kind: str, body: Dict[str, Any]):
     status = body.get("status", "")
     if not ids or not status:
         raise HTTPException(400, "ids and status required")
-    result = spec.bulk_status_fn(ids, status)
+    try:
+        result = spec.bulk_status_fn(ids, status)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
     audit(kind, "bulk", f"bulk set {len(ids)} items to {status}")
     return result
 
 
-@router.post("/api/{kind}/bulk-delete")
+@router.post("/api/{kind}/bulk-delete", dependencies=[Depends(require_token)])
 async def api_bulk_delete(kind: str, body: Dict[str, Any]):
     _ensure_bootstrap()
     try:
@@ -377,7 +481,7 @@ async def api_bulk_delete(kind: str, body: Dict[str, Any]):
     return result
 
 
-@router.delete("/api/{kind}/{item_id:path}")
+@router.delete("/api/{kind}/{item_id:path}", dependencies=[Depends(require_token)])
 async def api_delete(kind: str, item_id: str):
     _ensure_bootstrap()
     try:
@@ -395,7 +499,7 @@ async def api_delete(kind: str, item_id: str):
         LOCKS.release(kind, item_id)
 
 
-@router.get("/api/{kind}/{item_id:path}")
+@router.get("/api/{kind}/{item_id:path}", dependencies=[Depends(require_token)])
 async def api_get(kind: str, item_id: str):
     _ensure_bootstrap()
     try:
@@ -408,7 +512,7 @@ async def api_get(kind: str, item_id: str):
         raise HTTPException(404, f"{kind}/{item_id} not found")
 
 
-@router.put("/api/{kind}/{item_id:path}")
+@router.put("/api/{kind}/{item_id:path}", dependencies=[Depends(require_token)])
 async def api_update(kind: str, item_id: str, body: Dict[str, Any]):
     _ensure_bootstrap()
     try:
@@ -419,6 +523,8 @@ async def api_update(kind: str, item_id: str, body: Dict[str, Any]):
     try:
         result = spec.update_fn(item_id, body)
         return result
+    except ValueError as e:
+        raise HTTPException(400, str(e))
     except ItemNotFound:
         raise HTTPException(404, f"{kind}/{item_id} not found")
     finally:

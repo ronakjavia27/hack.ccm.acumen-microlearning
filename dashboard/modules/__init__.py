@@ -80,7 +80,9 @@ def bootstrap() -> None:
     from .pearls import SPEC as pearls_spec
     from .theory import SPEC as theory_spec
     from .flashcards import SPEC as flashcards_spec
+    from .mcqs import SPEC as mcqs_spec
     register(summaries_spec)
     register(pearls_spec)
     register(theory_spec)
     register(flashcards_spec)
+    register(mcqs_spec)

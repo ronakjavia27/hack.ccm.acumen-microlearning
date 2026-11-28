@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>hack.CCM Console</title>
+<meta name="theme-color" content="#0F766E">
+<link rel="manifest" href="/console/manifest.webmanifest">
+<link rel="icon" href="/console/static/icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/console/static/icon.svg">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<script>(function(){var t=localStorage.getItem('hc2-theme');if(!t){t=matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'}document.documentElement.dataset.theme=t})();</script>
+<link rel="stylesheet" href="/console/static/css/tokens.css">
+<link rel="stylesheet" href="/console/static/css/app.css">
+</head>
+<body>
+<div id="app">
+  <header class="topbar">
+    <div class="brand"><i></i>hack.CCM <small>Console</small></div>
+    <div class="search"><input id="gsearch" type="search" placeholder="Search everything…" autocomplete="off"><div id="gresults" class="search-results hide"></div></div>
+    <div class="spacer"></div>
+    <button class="btn icon-btn badge-dot" id="pushBtn" title="Push saved changes to git" data-n="0">⬆</button>
+    <button class="btn icon-btn" id="themeBtn" title="Toggle theme">☾</button>
+  </header>
+  <nav class="rail" id="rail"></nav>
+  <main id="view"></main>
+</div>
+<nav class="tabbar" id="tabbar"></nav>
+<div class="scrim" id="scrim"></div>
+<aside class="sheet" id="sheet" role="dialog" aria-modal="true"><header><h2 id="sheetTitle"></h2><button class="btn icon-btn ghost" id="sheetClose" aria-label="Close">✕</button></header><div class="body" id="sheetBody"></div><footer id="sheetFoot"></footer></aside>
+<div class="toasts" id="toasts"></div>
+<script type="module" src="/console/static/js/app.js"></script>
+</body>
+</html>

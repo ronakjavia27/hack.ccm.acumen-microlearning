@@ -6,13 +6,14 @@
 """
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
 from . import ModuleSpec, ItemNotFound
 from ..storage import REPO_ROOT, read_json, write_json_atomic, audit
 
-VALIDATED_DIR = Path("C:/RONAK/AI Projects/ACUMEN/THEORY/validated")
+VALIDATED_DIR = Path(os.getenv("THEORY_VALIDATED_DIR") or "C:/RONAK/AI Projects/ACUMEN/THEORY/validated")
 
 
 def _walk() -> List[Dict[str, Any]]:
