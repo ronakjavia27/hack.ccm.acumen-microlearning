@@ -30,5 +30,18 @@
         "repo": "santifer/career-ops"
       }
     }
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/scripts/sync_graph.sh\" --quiet",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
   }
 }

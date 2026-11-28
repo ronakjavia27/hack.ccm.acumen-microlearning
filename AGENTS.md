@@ -3,6 +3,14 @@
 ## Overview
 AI-powered clinical microlearning platform. Ingests medical PDFs, extracts structured summaries and clinical pearls via LLMs, and serves them through a FastAPI web dashboard.
 
+## Shared memory (read first, every chat)
+| File | Purpose |
+|------|---------|
+| `CLAUDE.md` | Permanent rules: multi-chat sync protocol, architecture/safety/design/coding rules, graphify usage |
+| `PROJECT_STATUS.md` | Live state: completed, in progress (claimed files), bugs, recent changes, next priorities — **update before ending a chat** |
+| `docs/ARCHITECTURE.md` | Technical map: files, data stores/KV keys, APIs, flows, dependencies |
+| `graphify-out/` | Auto-updating code graph (`GRAPH_REPORT.md`, `graph.json`); kept fresh by the SessionStart hook + git hooks via `scripts/sync_graph.sh` |
+
 ## Project Structure
 
 ### Root Entry Points

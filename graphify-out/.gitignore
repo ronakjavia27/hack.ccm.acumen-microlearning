@@ -1,1 +1,7 @@
 cache/
+# volatile / machine-local — would cause cross-chat merge conflicts
+.graphify_root
+.graphify_build_state.json
+.graphify_labels.pending.json
+manifest.json
+20*/
