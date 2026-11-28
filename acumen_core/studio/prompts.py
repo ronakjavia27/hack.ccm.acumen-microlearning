@@ -131,7 +131,7 @@ Return ONE JSON object:
   "overall": 0-100,
   "claim_checks": [{{"i": <claim index>, "verdict": "supported | outdated | incorrect | unverifiable",
                     "comment": "why", "fix": "corrected statement if not supported"}}],
-  "issues": [{{"where": "answer | rubric | flashcard:<i> | mcq:<i>", "severity": "major | minor",
+  "issues": [{{"where": "answer | theory | rubric | qna:<i> | flashcard:<i> | mcq:<i>", "severity": "major | minor",
               "problem": "...", "fix": "..."}}],
   "coverage": {{"score": 0-100, "missing": ["key points an examiner expects that are absent"]}},
   "summary": "one or two sentences"
@@ -193,3 +193,115 @@ def revise_user(item: dict, package: dict, problems: List[str], context: List[di
         "PROBLEMS TO FIX:\n- " + "\n- ".join(problems),
         _ctx_block(context),
     ])
+
+
+# =====================================================================
+# NOTES MODE — the author's note becomes the theory section
+# =====================================================================
+
+POLISH_SYSTEM = f"""You are a copy-editor for clinical teaching notes written for {config.STUDIO_AUDIENCE}.
+The author wrote this note. It will be published as the THEORY section nearly verbatim.
+
+POLISH RULES — strict
+- Keep the author's wording, content, order and emphasis. Do NOT add new facts, remove facts, or "correct" content.
+- Only fix: markdown structure (headings, bullet levels, tables), obvious typos, inconsistent abbreviations,
+  broken formatting from copy/paste. Make it scan well on a phone.
+- If something looks factually wrong, outdated or unsafe, LEAVE IT in theory_md and report it in `uncertainties`
+  (quote the text, say why, give the current standard). The author decides.
+- List every non-formatting change you made in `edits` ("typo: 'pulmonory' → 'pulmonary'").
+
+Return ONE JSON object:
+{{
+  "title": "note title (≤ 10 words)",
+  "system": "organ system / specialty, e.g. Pulmonology, Infectious Diseases, Sepsis",
+  "subtopic": "specific subtopic",
+  "theory_md": "the polished note in markdown, starting with '# <title>'",
+  "edits": ["each change that is more than formatting"],
+  "key_points": ["6–12 one-line must-know points, taken from the note"],
+  "claims": [{{"text": "atomic checkable statement from the note", "basis": "note", "confidence": "high | medium | low",
+              "high_stakes": true}}],
+  "uncertainties": ["possible errors, outdated statements or gaps — quote the text"]
+}}
+claims: 8–25 statements carrying the note's facts (numbers, thresholds, doses, drug choices, criteria,
+recommendations). high_stakes = doses, thresholds for intervention, contraindications."""
+
+
+def polish_user(item: dict) -> str:
+    return "\n\n".join([f"SUBJECT: {SUBJECT_LABEL.get(item['subject'], item['subject'])}",
+                        f"AUTHOR'S NOTE:\n{item.get('note_md', '')}"])
+
+
+DERIVE_NOTE_SYSTEM = f"""You turn a clinical teaching note into exam practice material for {config.STUDIO_AUDIENCE}.
+
+{TRUTH_POLICY}
+The NOTE is the primary source: base everything on it. Where an exam-quality answer needs a point the note does not
+cover, you may add it from mainstream knowledge — keep such additions brief and accurate.
+
+Return ONE JSON object:
+{{
+  "qna": [{{"question": "exam-style question", "qtype": "long | short | very_short | viva", "marks": 10,
+           "answer_md": "model answer in markdown", "rubric": [{{"point": "...", "keywords": ["..."], "marks": 2}}]}}],
+  "flashcards": [{{"front": "a question", "back": "1–4 lines"}}],
+  "mcqs": [{{"stem": "...", "options": ["A", "B", "C", "D"], "answer": [index], "explanation": "...", "difficulty": 1}}]
+}}
+qna: 3–6 questions an examiner would actually set on this topic (mix long, short and viva). Answer length by type:
+long ~80–110 words per mark, short ~300–500 words, very_short ~80–180, viva ~120–250. Rubric marks sum to `marks`.
+flashcards: 6–12, atomic, high-yield (criteria, thresholds, first-line choices, mechanisms, classic associations).
+mcqs: 3–6 single-best-answer, exactly 4 options, one unambiguous key, plausible homogeneous distractors,
+no "all/none of the above", vignette stems preferred; explanation says why right and why each distractor is wrong."""
+
+
+def derive_note_user(item: dict, polished: dict) -> str:
+    return "\n\n".join([f"SUBJECT: {SUBJECT_LABEL.get(item['subject'], item['subject'])}",
+                        f"NOTE:\n{polished.get('theory_md') or item.get('note_md', '')}",
+                        "KEY POINTS:\n- " + "\n- ".join(polished.get("key_points") or [])])
+
+
+def verify_note_user(item: dict, package: dict, context: List[dict]) -> str:
+    claims = "\n".join(f"  {i}. {c.get('text')}  [high_stakes={c.get('high_stakes')}]"
+                       for i, c in enumerate(package.get("claims") or []))
+    qna = "\n".join(f"  {i}. ({q.get('qtype')}, {q.get('marks')}m) {q.get('question')}\n     ANSWER: {q.get('answer_md')}"
+                    for i, q in enumerate(package.get("qna") or []))
+    cards = "\n".join(f"  {i}. Q: {c.get('front')}\n     A: {c.get('back')}" for i, c in enumerate(package.get("flashcards") or []))
+    mcqs = "\n".join(f"  {i}. {m.get('stem')}\n     options={m.get('options')} key={m.get('answer')}\n     expl: {m.get('explanation')}"
+                     for i, m in enumerate(package.get("mcqs") or []))
+    return "\n\n".join([
+        f"SUBJECT: {SUBJECT_LABEL.get(item['subject'], item['subject'])}",
+        "This is a TEACHING NOTE written by the author (lightly copy-edited), plus exam material derived from it.\n"
+        "Use where=\"theory\" for problems in the note itself, \"qna:<i>\" for exam questions/answers.",
+        f"THEORY NOTE:\n{package.get('theory_md', '')}",
+        f"CLAIMS FROM THE NOTE:\n{claims or '  (none)'}",
+        f"EXAM QUESTIONS:\n{qna or '  (none)'}",
+        f"FLASHCARDS:\n{cards or '  (none)'}",
+        f"MCQS:\n{mcqs or '  (none)'}",
+        _ctx_block(context),
+    ])
+
+
+REVISE_NOTE_SYSTEM = f"""You are revising exam material derived from an author's teaching note after an independent review.
+
+{TRUTH_POLICY}
+
+Fix EVERY listed problem in the exam questions (qna), flashcards and MCQs. Keep everything not criticised unchanged.
+The theory note itself is the author's and is NOT yours to change.
+Return ONE JSON object with exactly these keys: qna, flashcards, mcqs (same schemas as given)."""
+
+REVISE_NOTE_EDITOR_SYSTEM = f"""You are applying the AUTHOR'S OWN change request to their teaching note and its exam material.
+
+{TRUTH_POLICY}
+
+Apply the request exactly. You may change theory_md only as far as the request asks; keep the rest of the author's
+wording. Update claims, key_points, qna, flashcards and mcqs so they stay consistent with the note.
+Return the COMPLETE package as ONE JSON object with keys: title, system, subtopic, theory_md, edits, key_points,
+claims, uncertainties, qna, flashcards, mcqs."""
+
+
+def revise_note_user(item: dict, package: dict, problems: List[str], context: List[dict], editor: bool) -> str:
+    pkg = package if editor else {k: package.get(k) for k in ("qna", "flashcards", "mcqs")}
+    parts = [f"SUBJECT: {SUBJECT_LABEL.get(item['subject'], item['subject'])}"]
+    if not editor:
+        parts.append(f"THEORY NOTE (read-only context):\n{package.get('theory_md', '')}")
+    parts += ["CURRENT " + ("PACKAGE" if editor else "EXAM MATERIAL") + ":\n" + json.dumps(pkg, ensure_ascii=False),
+              ("AUTHOR'S REQUEST:\n- " if editor else "PROBLEMS TO FIX:\n- ") + "\n- ".join(problems),
+              _ctx_block(context)]
+    return "\n\n".join(parts)

@@ -264,7 +264,16 @@ EXCEL_HEADERS = [
 # CONTENT STUDIO (studio.py) — uploaded questions → answer + flashcards + MCQs
 # See docs/studio/DESIGN.md
 # =====================================================================
-STUDIO_INPUT_DIR = os.path.join(PROJECT_DIR, "studio_input")            # {Medicine|Microbiology|CCM}/*.txt|md|docx|pdf|csv
+# Inbox: {CCM|Medicine|Microbiology}/ notes (.md/.docx/...) + {Subject}/Questions/ question lists.
+# Point STUDIO_INPUT_DIR at a Google Drive for desktop folder, e.g. "G:/My Drive/hack.CCM Inbox".
+STUDIO_INPUT_DIR = os.getenv("STUDIO_INPUT_DIR") or os.path.join(PROJECT_DIR, "studio_input")
+STUDIO_PROCESSED_FOLDER = "Processed"                                     # ingested files are moved here inside the inbox
+STUDIO_QUESTIONS_FOLDER = "Questions"                                     # {Subject}/Questions/** → question-list splitter
+STUDIO_SETTLE_SECONDS = int(os.getenv("STUDIO_SETTLE_SECONDS", "60"))    # skip files modified more recently (still syncing)
+STUDIO_USAGE_FILE = os.path.join(PROJECT_DIR, "studio", "usage.json")   # LLM call counter per day
+STUDIO_MAX_CALLS_PER_RUN = int(os.getenv("STUDIO_MAX_CALLS_PER_RUN", "40"))
+STUDIO_MAX_CALLS_PER_DAY = int(os.getenv("STUDIO_MAX_CALLS_PER_DAY", "200"))
+STUDIO_WATCH_INTERVAL = int(os.getenv("STUDIO_WATCH_INTERVAL", "300"))
 STUDIO_DIR = os.path.join(PROJECT_DIR, "studio")
 STUDIO_ITEMS_DIR = os.path.join(STUDIO_DIR, "items")                    # {subject}/{item_id}.json
 STUDIO_LEDGER_FILE = os.path.join(STUDIO_DIR, "ledger.json")            # input file sha256 → item ids

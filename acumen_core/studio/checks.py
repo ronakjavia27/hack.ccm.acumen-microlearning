@@ -5,19 +5,45 @@ import re
 from typing import List, Optional, Tuple
 
 _NUM_UNIT = re.compile(
-    r"\b\d+(?:\.\d+)?\s?(?:%|mg|mcg|µg|ug|g|kg|ml|l|mmol|meq|units?|iu|mmhg|cmh2o|mosm|h|hrs?|hours?|min|days?|weeks?)\b",
+    r"\b\d+(?:\.\d+)?\s?(?:%|mg|mcg|µg|ug|g|kg|ml|l|mmol|meq|units?|iu|mmhg|cmh2o|mosm|h|hrs?|hours?|minutes?|mins?|days?|weeks?)\b",
     re.I)
 _DOSE = re.compile(r"\b\d+(?:\.\d+)?\s?(?:mg|mcg|µg|ug|g|units?|iu|mmol|meq)(?:\s?/\s?kg)?(?:\s?/\s?(?:h|hr|min|day|d))?\b", re.I)
 _AOTA = re.compile(r"\b(all|none|both)\s+of\s+the\s+above\b", re.I)
 _BOILER = re.compile(r"\bas an ai\b|\bi cannot\b|\bconsult (?:a|your) (?:doctor|physician)\b", re.I)
 
 
+_UNIT_ALIASES = [(r"(hours?|hrs?)$", "h"), (r"(minutes?|mins?)$", "min"), (r"days?$", "d"), (r"weeks?$", "wk"),
+                 (r"units?$", "u"), (r"(µg|ug)$", "mcg")]
+
+
 def _norm_num(s: str) -> str:
-    return re.sub(r"\s+", "", s.lower()).replace("µg", "mcg").replace("ug", "mcg")
+    t = re.sub(r"\s+", "", s.lower())
+    for pat, rep in _UNIT_ALIASES:
+        t = re.sub(pat, rep, t)
+    return t
 
 
 def numbers(text: str) -> set:
     return {_norm_num(m.group(0)) for m in _NUM_UNIT.finditer(text or "")}
+
+
+POLISH_CHANGE_LIMIT = 0.15
+
+
+def polish_change_ratio(original: str, polished: str) -> float:
+    """Share of the note's wording changed by polishing (whitespace/markdown markers ignored)."""
+    import difflib
+    norm = lambda t: re.sub(r"[#*_>|`\-]+", " ", (t or "").lower()).split()
+    a, b = norm(original), norm(polished)
+    if not a:
+        return 0.0
+    return 1.0 - difflib.SequenceMatcher(None, a, b, autojunk=False).ratio()
+
+
+def polish_diff(original: str, polished: str) -> str:
+    import difflib
+    return "\n".join(difflib.unified_diff((original or "").splitlines(), (polished or "").splitlines(),
+                                           "your note", "published theory", lineterm="", n=1))
 
 
 def expected_words(item: dict) -> Tuple[int, int]:
@@ -34,20 +60,49 @@ def lint(item: dict, pkg: dict) -> List[dict]:
     def add(sev, where, code, msg):
         out.append({"severity": sev, "where": where, "code": code, "msg": msg})
 
-    ans = pkg.get("answer_md") or ""
+    is_note = item.get("kind") == "note"
+    ans = (pkg.get("theory_md") if is_note else pkg.get("answer_md")) or ""
+    main = "theory" if is_note else "answer"
     if not ans.strip():
-        add("error", "answer", "empty_answer", "Answer is empty")
-    words = len(ans.split())
-    lo, hi = expected_words(item)
-    if ans and not lo <= words <= hi:
-        add("warn", "answer", "length", f"{words} words; expected {lo}–{hi} for {item.get('qtype')}"
-            + (f" ({item['marks']} marks)" if item.get("marks") else ""))
+        add("error", main, "empty_answer", "Theory note is empty" if is_note else "Answer is empty")
+    if not is_note:
+        words = len(ans.split())
+        lo, hi = expected_words(item)
+        if ans and not lo <= words <= hi:
+            add("warn", "answer", "length", f"{words} words; expected {lo}–{hi} for {item.get('qtype')}"
+                + (f" ({item['marks']} marks)" if item.get("marks") else ""))
     if _BOILER.search(ans):
-        add("warn", "answer", "boilerplate", "Contains AI/disclaimer boilerplate")
+        add("warn", main, "boilerplate", "Contains AI/disclaimer boilerplate")
+
+    reference = ans
+    if is_note:
+        ratio = polish_change_ratio(item.get("note_md", ""), ans)
+        if ratio > POLISH_CHANGE_LIMIT:
+            add("warn", "theory", "polish_changed",
+                f"Polish changed {round(ratio * 100)}% of your note — check the diff (should be formatting only)")
+        qna = pkg.get("qna") or []
+        if not qna:
+            add("warn", "qna", "no_qna", "No exam questions derived")
+        for i, q in enumerate(qna):
+            a = (q.get("answer_md") or "").strip()
+            if not (q.get("question") or "").strip() or not a:
+                add("error", f"qna:{i}", "qna_empty", "Question or answer missing")
+                continue
+            lo, hi = expected_words({"qtype": q.get("qtype"), "marks": q.get("marks")})
+            if not lo <= len(a.split()) <= hi:
+                add("warn", f"qna:{i}", "length", f"{len(a.split())} words; expected {lo}–{hi} for {q.get('qtype')}")
+            rub = q.get("rubric") or []
+            if q.get("marks") and rub and sum(int(r.get("marks") or 0) for r in rub) != int(q["marks"]):
+                add("warn", f"qna:{i}", "rubric_sum", f"Rubric sums to {sum(int(r.get('marks') or 0) for r in rub)}, "
+                                                     f"question is {q['marks']} marks")
+            extra = numbers(a) - numbers(ans)
+            if extra:
+                add("warn", f"qna:{i}", "number_mismatch", f"Numbers not in your note: {', '.join(sorted(extra))}")
+            reference += "\n" + a
 
     # rubric
     rub = pkg.get("rubric") or []
-    if item.get("qtype") != "mcq":
+    if item.get("qtype") not in ("mcq", "note"):
         if not rub:
             add("warn", "rubric", "no_rubric", "No marking rubric")
         elif item.get("marks") and sum(int(r.get("marks") or 0) for r in rub) != item["marks"]:
@@ -66,7 +121,7 @@ def lint(item: dict, pkg: dict) -> List[dict]:
     cards = pkg.get("flashcards") or []
     if not cards:
         add("warn", "flashcards", "no_cards", "No flashcards")
-    ans_nums = numbers(ans)
+    ans_nums = numbers(reference)
     for i, c in enumerate(cards):
         f, b = (c.get("front") or "").strip(), (c.get("back") or "").strip()
         if not f or not b:
@@ -76,7 +131,8 @@ def lint(item: dict, pkg: dict) -> List[dict]:
             add("warn", f"flashcard:{i}", "card_long", f"Back is {len(b)} chars (keep cards atomic)")
         extra = numbers(b) - ans_nums
         if extra:
-            add("warn", f"flashcard:{i}", "number_mismatch", f"Numbers not in the answer: {', '.join(sorted(extra))}")
+            add("warn", f"flashcard:{i}", "number_mismatch",
+                f"Numbers not in the {'note' if is_note else 'answer'}: {', '.join(sorted(extra))}")
 
     # MCQs
     for i, m in enumerate(pkg.get("mcqs") or []):
@@ -112,7 +168,7 @@ def lint(item: dict, pkg: dict) -> List[dict]:
     # PHI (case-based questions sometimes carry identifiers)
     try:
         from acumen_platform import deid
-        for where, text in (("question", item.get("question", "")), ("answer", ans)):
+        for where, text in (("question", item.get("question", "")), (main, ans)):
             highs = [f for f in deid.scan(text) if f.severity == "high"]
             if highs:
                 add("error", where, "phi", "Possible patient identifiers: " + ", ".join(f.kind for f in highs))
@@ -182,25 +238,37 @@ def triage(item: dict, pkg: dict, ver: Optional[dict], blind: Optional[dict], li
     return "green", []
 
 
-def problems_for_revision(pkg: dict, ver: Optional[dict], blind: Optional[dict], lint_res: List[dict]) -> List[str]:
-    """Actionable fix list for the reviser. Empty → nothing an LLM can fix."""
+LOCKED_NOTE_PARTS = ("theory", "answer", "claims", "rubric", "question")
+
+
+def problems_for_revision(pkg: dict, ver: Optional[dict], blind: Optional[dict], lint_res: List[dict],
+                          locked: tuple = ()) -> List[str]:
+    """Actionable fix list for the reviser. Empty → nothing an LLM can fix.
+
+    `locked` parts (e.g. the author's theory note) are never sent for auto-revision — their issues stay
+    flagged for the human."""
     out = []
     claims = pkg.get("claims") or []
-    for cc in (ver or {}).get("claim_checks") or []:
+    is_locked = lambda where: str(where or "").split(":")[0] in locked
+    for cc in ([] if "claims" in locked else (ver or {}).get("claim_checks") or []):
         if cc.get("verdict") in ("incorrect", "outdated"):
             i = cc.get("i")
             text = claims[i].get("text") if isinstance(i, int) and 0 <= i < len(claims) else f"claim {i}"
             out.append(f"Claim {i} is {cc['verdict']}: \"{text}\" — {cc.get('comment', '')} Fix: {cc.get('fix', '')}")
     for iss in (ver or {}).get("issues") or []:
+        if is_locked(iss.get("where")):
+            continue
         out.append(f"[{iss.get('severity')}] {iss.get('where')}: {iss.get('problem')} Fix: {iss.get('fix', '')}")
     for mm in blind_mismatches(pkg, blind):
         out.append(f"mcq:{mm['i']}: an independent solver chose {mm['chosen']} but the key is {mm['key']}"
                    f"{' and found it ambiguous' if mm['ambiguous'] else ''}. {mm['note']} Make the stem and key unambiguous.")
     missing = ((ver or {}).get("coverage") or {}).get("missing") or []
-    if missing:
+    if missing and not locked:
         out.append("Add missing key points: " + "; ".join(missing))
     for l in lint_res:
-        if l["code"] in ("mcq_options", "mcq_dup_options", "mcq_key", "mcq_single", "mcq_stem", "mcq_aota",
+        if is_locked(l["where"]):
+            continue
+        if l["code"] in ("qna_empty", "mcq_options", "mcq_dup_options", "mcq_key", "mcq_single", "mcq_stem", "mcq_aota",
                          "card_empty", "card_long", "number_mismatch", "length", "rubric_sum", "undeclared_doses",
                          "boilerplate"):
             out.append(f"{l['where']}: {l['msg']}")

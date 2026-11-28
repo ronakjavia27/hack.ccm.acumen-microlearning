@@ -34,9 +34,12 @@ class PublishError(ValueError):
 
 # ---- review ---------------------------------------------------------------------
 
-def default_parts(pkg: dict) -> dict:
-    return {"answer": True, "flashcards": list(range(len(pkg.get("flashcards") or []))),
+def default_parts(pkg: dict, item: Optional[dict] = None) -> dict:
+    base = {"flashcards": list(range(len(pkg.get("flashcards") or []))),
             "mcqs": list(range(len(pkg.get("mcqs") or [])))}
+    if (item or {}).get("kind") == "note":
+        return {"theory": True, "qna": list(range(len(pkg.get("qna") or []))), **base}
+    return {"answer": True, **base}
 
 
 def approve(item: dict, by: str, parts: Optional[dict] = None, note: str = "", save: bool = True) -> dict:
@@ -46,10 +49,13 @@ def approve(item: dict, by: str, parts: Optional[dict] = None, note: str = "", s
     if item["status"] not in ("generated", "approved", "published"):
         raise PublishError(f"cannot approve an item in status {item['status']}")
     pkg = cur["package"]
-    p = {**default_parts(pkg), **(parts or {})}
-    p["flashcards"] = sorted({int(i) for i in p["flashcards"] if 0 <= int(i) < len(pkg.get("flashcards") or [])})
-    p["mcqs"] = sorted({int(i) for i in p["mcqs"] if 0 <= int(i) < len(pkg.get("mcqs") or [])})
-    p["answer"] = bool(p.get("answer"))
+    p = {**default_parts(pkg, item), **(parts or {})}
+    for key in ("flashcards", "mcqs", "qna"):
+        if key in p:
+            p[key] = sorted({int(i) for i in p[key] or [] if 0 <= int(i) < len(pkg.get(key) or [])})
+    for key in ("answer", "theory"):
+        if key in p:
+            p[key] = bool(p[key])
     item["review"] = {"by": by, "at": store.now(), "version": cur["v"], "hash": cur["hash"], "parts": p,
                       "note": note, "triage_at_review": cur.get("triage")}
     store.transition(item, "approved", by, note or f"v{cur['v']}")
@@ -117,6 +123,26 @@ def _theory_md(item: dict, pkg: dict, prov: dict) -> str:
     return "\n".join(lines)
 
 
+def _note_md(item: dict, pkg: dict, prov: dict, qna_idx: List[int]) -> str:
+    theory = (pkg.get("theory_md") or "").strip()
+    if not theory.lstrip().startswith("# "):
+        theory = f"# {pkg.get('title') or item['question']}\n\n{theory}"
+    lines = [theory, ""]
+    if pkg.get("key_points") and not re.search(r"^#+\s*key points", theory, re.I | re.M):
+        lines += ["## Key points", ""] + [f"- {k}" for k in pkg["key_points"]] + [""]
+    qna = [pkg["qna"][i] for i in qna_idx]
+    if qna:
+        lines += ["## Exam-style questions", ""]
+        for n, q in enumerate(qna, 1):
+            marks = f" _({q['marks']} marks)_" if q.get("marks") else (" _(viva)_" if q.get("qtype") == "viva" else "")
+            lines += [f"### Q{n}. {q['question']}{marks}", "", q.get("answer_md", "").strip(), ""]
+    lines += ["---",
+              f"_hack.CCM Studio · author's note, lightly copy-edited"
+              f"{'; exam questions AI-drafted' + (' and independently AI-verified' if prov.get('verified_by') else '') if qna else ''}"
+              f" · reviewed by {prov['reviewed_by']} on {prov['reviewed_at'][:10]} · v{prov['version']}_", ""]
+    return "\n".join(lines)
+
+
 def _bank_path(subject: str) -> str:
     return os.path.join(config.QUESTION_BANK_DIR, subject, "studio.json")
 
@@ -158,16 +184,18 @@ def publish(item: dict, save: bool = True) -> dict:
     system = item.get("system") or pkg.get("system") or "General"
     subtopic = canonical_subtopic(system, item.get("subtopic") or pkg.get("subtopic")) or system
 
-    # 1. theory answer
+    is_note = item.get("kind") == "note"
+
+    # 1. theory (question items: the model answer; note items: your note + approved exam Q&A)
     rel = None
-    if parts.get("answer"):
-        rel = f"{_safe(system)}/{_safe(subtopic)}/qna-{item['id']}.md"
+    if parts.get("theory" if is_note else "answer"):
+        rel = f"{_safe(system)}/{_safe(subtopic)}/{'note' if is_note else 'qna'}-{item['id']}.md"
         if prev.get("theory_rel") and prev["theory_rel"] != rel:
             _remove_theory(prev["theory_rel"])
         path = os.path.join(config.THEORY_MDS_DIR, rel)
         os.makedirs(os.path.dirname(path), exist_ok=True)
         with open(path + ".tmp", "w", encoding="utf-8") as f:
-            f.write(_theory_md(item, pkg, prov))
+            f.write(_note_md(item, pkg, prov, parts.get("qna") or []) if is_note else _theory_md(item, pkg, prov))
         os.replace(path + ".tmp", path)
         meta = load_json_safe(_theory_meta(), default={}) or {}
         meta[rel] = {"title": pkg.get("title") or item["question"][:80], "system": system, "subtopic": subtopic,
@@ -194,7 +222,14 @@ def publish(item: dict, save: bool = True) -> dict:
     bank = []
     base = {"subject": item["subject"], "system": system, "subtopic": subtopic, "tier": "free",
             "status": "published", "studio": prov, "refs": [f"theory:{rel}"] if rel else []}
-    if parts.get("answer"):
+    if is_note:
+        for n, idx in enumerate(parts.get("qna") or []):
+            q = pkg["qna"][idx]
+            bank.append({**base, "id": f"{item['id']}-q{n}", "kind": WRITTEN_KIND.get(q.get("qtype"), "written_short"),
+                         "stem": q["question"], "marks": q.get("marks"), "rubric": q.get("rubric") or [],
+                         "model_answer": q.get("answer_md", ""), "explanation": "",
+                         "difficulty": 4 if q.get("qtype") == "long" else 3})
+    elif parts.get("answer"):
         if item.get("options"):
             bank.append({**base, "id": f"{item['id']}-u", "kind": "mcq_single" if len(pkg.get("mcq_key") or []) <= 1 else "mcq_multi",
                          "stem": item["question"], "options": item["options"],
@@ -214,7 +249,7 @@ def publish(item: dict, save: bool = True) -> dict:
 
     item["published"] = {"version": ver["v"], "at": store.now(), "theory_rel": rel,
                          "flashcard_ids": new_ids, "question_ids": [q["id"] for q in bank]}
-    store.transition(item, "published", review["by"], f"v{ver['v']}: answer={bool(rel)}, "
+    store.transition(item, "published", review["by"], f"v{ver['v']}: theory={bool(rel)}, "
                                                        f"{len(new_ids)} cards, {len(bank)} questions")
     if save:
         store.save(item)

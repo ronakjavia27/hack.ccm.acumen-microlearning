@@ -10,13 +10,14 @@ import threading
 from pathlib import Path
 from typing import Any, Dict, List, Optional
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from fastapi.responses import HTMLResponse
 from pydantic import BaseModel
 
 from acumen_core import config
 from acumen_core.studio import generate, intake, items as store, publish
 
+from .access import reviewer_name
 from .storage import audit
 
 router = APIRouter()
@@ -39,6 +40,7 @@ def _lite(it: dict) -> dict:
             "question": it["question"], "qtype": it["qtype"], "marks": it.get("marks"), "status": it["status"],
             "triage": it.get("triage"), "reasons": (cur.get("reasons") or [])[:3], "n_sources": len(it.get("sources") or []),
             "n_cards": len(pkg.get("flashcards") or []), "n_mcqs": len(pkg.get("mcqs") or []),
+            "kind": it.get("kind", "question"), "n_qna": len(pkg.get("qna") or []),
             "version": it.get("current"), "updated_at": it.get("updated_at"), "busy": it["id"] in _BUSY,
             "error": it.get("error") if it["status"] == "error" else None}
 
@@ -49,6 +51,7 @@ def _run_job(kind: str, ids: List[str], fn) -> dict:
     _JOBS[jid] = job
 
     def worker():
+        generate.reset_run_counter()
         for iid in ids:
             with _LOCK:
                 if iid in _BUSY:
@@ -59,11 +62,17 @@ def _run_job(kind: str, ids: List[str], fn) -> dict:
             try:
                 it = fn(store.load(iid))
                 job["results"].append({"id": iid, "status": it["status"], "triage": it.get("triage")})
+            except generate.CapReached as e:
+                job["results"].append({"id": iid, "skipped": str(e)})
+                job["capped"] = str(e)
+                break
             except Exception as e:
                 job["results"].append({"id": iid, "error": str(e)})
             finally:
                 _BUSY.discard(iid)
                 job["done"] += 1
+        if job.get("capped"):
+            job["done"] = job["total"]
         job["status"] = "done"
 
     threading.Thread(target=worker, daemon=True).start()
@@ -81,11 +90,15 @@ async def studio_page():
 # ---- read --------------------------------------------------------------------------
 
 @router.get("/api/studio/summary")
-async def studio_summary():
+async def studio_summary(request: Request):
     all_ = store.all_items()
     return {"counts": store.counts(all_), "total": len(all_),
             "models": {"draft": config.STUDIO_DRAFT_MODEL, "verify": config.STUDIO_VERIFY_MODEL},
-            "api_key": bool(config.STUDIO_API_KEY), "reviewer": config.STUDIO_REVIEWER,
+            "api_key": bool(config.STUDIO_API_KEY), "reviewer": reviewer_name(request) or config.STUDIO_REVIEWER,
+            "reviewer_locked": bool(reviewer_name(request)),
+            "usage_today": generate.usage_today(), "caps": {"per_run": config.STUDIO_MAX_CALLS_PER_RUN,
+                                                             "per_day": config.STUDIO_MAX_CALLS_PER_DAY},
+            "inbox": config.STUDIO_INPUT_DIR,
             "subjects": sorted(set(config.STUDIO_SUBJECT_FOLDERS.values()))}
 
 
@@ -137,6 +150,18 @@ async def studio_ingest_text(body: IngestText):
     return r
 
 
+@router.post("/api/studio/ingest-note")
+async def studio_ingest_note(body: IngestText):
+    """Paste a whole note (e.g. from claude.ai on the phone). Same title again = new version of that note."""
+    title = (body.label or "").strip() or intake.note_title(body.text, "pasted note")
+    try:
+        r = intake.ingest_note(body.text, body.subject, f"console/{title}.md", label=title)
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+    audit("studio", ",".join(r["new"] + r["updated"])[:200], "ingest_note", note=title)
+    return r
+
+
 @router.post("/api/studio/ingest-folder")
 async def studio_ingest_folder(force: bool = False):
     return intake.ingest_folder(force=force)
@@ -183,8 +208,10 @@ class EditBody(BaseModel):
     package: Dict[str, Any]
 
 
-def _by(b: str) -> str:
-    return (b or config.STUDIO_REVIEWER).strip()[:60]
+def _by(b: str, request: Optional[Request] = None) -> str:
+    """Reviewer identity: the Tailscale identity when present (it can't be typed over), else the typed name."""
+    ts = reviewer_name(request) if request is not None else ""
+    return (ts or b or config.STUDIO_REVIEWER).strip()[:60]
 
 
 def _guard(item_id):
@@ -193,21 +220,21 @@ def _guard(item_id):
 
 
 @router.post("/api/studio/items/{item_id}/approve")
-async def studio_approve(item_id: str, body: ReviewBody):
+async def studio_approve(request: Request, item_id: str, body: ReviewBody):
     _guard(item_id)
     try:
-        it = publish.approve(_get(item_id), _by(body.by), body.parts, body.note)
+        it = publish.approve(_get(item_id), _by(body.by, request), body.parts, body.note)
     except (publish.PublishError, store.TransitionError) as e:
         raise HTTPException(400, str(e))
-    audit("studio", item_id, "approve", note=f"{_by(body.by)} v{it['review']['version']}")
+    audit("studio", item_id, "approve", note=f"{_by(body.by, request)} v{it['review']['version']}")
     return _lite(it)
 
 
 @router.post("/api/studio/items/{item_id}/reject")
-async def studio_reject(item_id: str, body: ReviewBody):
+async def studio_reject(request: Request, item_id: str, body: ReviewBody):
     _guard(item_id)
     try:
-        it = publish.reject(_get(item_id), _by(body.by), body.note)
+        it = publish.reject(_get(item_id), _by(body.by, request), body.note)
     except store.TransitionError as e:
         raise HTTPException(400, str(e))
     audit("studio", item_id, "reject", note=body.note)
@@ -215,10 +242,10 @@ async def studio_reject(item_id: str, body: ReviewBody):
 
 
 @router.post("/api/studio/items/{item_id}/revise")
-async def studio_revise(item_id: str, body: ReviewBody, run: bool = True):
+async def studio_revise(request: Request, item_id: str, body: ReviewBody, run: bool = True):
     _guard(item_id)
     try:
-        publish.request_revision(_get(item_id), _by(body.by), body.note)
+        publish.request_revision(_get(item_id), _by(body.by, request), body.note)
     except (publish.PublishError, store.TransitionError) as e:
         raise HTTPException(400, str(e))
     audit("studio", item_id, "revision_requested", note=body.note)
@@ -228,21 +255,21 @@ async def studio_revise(item_id: str, body: ReviewBody, run: bool = True):
 
 
 @router.put("/api/studio/items/{item_id}/edit")
-async def studio_edit(item_id: str, body: EditBody):
+async def studio_edit(request: Request, item_id: str, body: EditBody):
     _guard(item_id)
     try:
-        it = generate.human_edit(_get(item_id), body.package, _by(body.by), body.note)
+        it = generate.human_edit(_get(item_id), body.package, _by(body.by, request), body.note)
     except (ValueError, store.TransitionError) as e:
         raise HTTPException(400, str(e))
-    audit("studio", item_id, "edit", note=f"v{it['current']} by {_by(body.by)}")
+    audit("studio", item_id, "edit", note=f"v{it['current']} by {_by(body.by, request)}")
     return it
 
 
 @router.post("/api/studio/items/{item_id}/requeue")
-async def studio_requeue(item_id: str, body: ReviewBody):
+async def studio_requeue(request: Request, item_id: str, body: ReviewBody):
     it = _get(item_id)
     try:
-        store.transition(it, "queued", _by(body.by), body.note or "requeued")
+        store.transition(it, "queued", _by(body.by, request), body.note or "requeued")
     except store.TransitionError as e:
         raise HTTPException(400, str(e))
     store.save(it)
@@ -261,9 +288,9 @@ async def studio_publish(item_id: str):
 
 
 @router.post("/api/studio/approve-green")
-async def studio_approve_green(body: ReviewBody, subject: str = ""):
-    ids = [i for i in publish.approve_green(_by(body.by), subject) if i not in _BUSY]
-    audit("studio", f"{len(ids)} items", "bulk_approve_green", note=_by(body.by))
+async def studio_approve_green(request: Request, body: ReviewBody, subject: str = ""):
+    ids = [i for i in publish.approve_green(_by(body.by, request), subject) if i not in _BUSY]
+    audit("studio", f"{len(ids)} items", "bulk_approve_green", note=_by(body.by, request))
     return {"approved": ids}
 
 

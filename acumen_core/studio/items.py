@@ -33,13 +33,15 @@ STATUSES = ("queued", "generating", "generated", "revision_requested", "approved
             "rejected", "error")
 
 # from-status -> allowed to-statuses
+# "queued" is reachable from most states because re-saving a note with new content re-queues it
+# (published content stays live until the new version is approved and published).
 TRANSITIONS = {
     "queued": {"generating", "error", "rejected"},
-    "generating": {"generated", "error", "queued"},
-    "generated": {"approved", "rejected", "revision_requested", "generating", "generated"},
-    "revision_requested": {"generating", "generated", "rejected", "error"},
-    "approved": {"published", "generated", "rejected", "revision_requested", "generating"},
-    "published": {"generated", "rejected", "revision_requested", "generating", "published", "approved"},
+    "generating": {"generated", "error", "queued", "revision_requested"},   # back to queued/revision_requested = call cap hit
+    "generated": {"approved", "rejected", "revision_requested", "generating", "generated", "queued"},
+    "revision_requested": {"generating", "generated", "rejected", "error", "queued"},
+    "approved": {"published", "generated", "rejected", "revision_requested", "generating", "queued"},
+    "published": {"generated", "rejected", "revision_requested", "generating", "published", "approved", "queued"},
     "rejected": {"queued"},
     "error": {"queued", "generating"},
 }
@@ -58,6 +60,14 @@ def normalize_question(text: str) -> str:
     t = re.sub(r"\(\s*\d+\s*(marks?|m)\s*\)|\[\s*\d+\s*\]", " ", t)
     t = re.sub(r"[^a-z0-9]+", " ", t)
     return re.sub(r"\s+", " ", t).strip()
+
+
+def make_note_id(subject: str, filename: str) -> str:
+    """Notes are identified by subject + file name, so re-saving an edited note updates the same item."""
+    stem = os.path.splitext(os.path.basename(filename or ""))[0]
+    stem = re.sub(r"\s*\(\d+\)$", "", stem)            # "ARDS (1).docx" from a re-download = same note
+    key = re.sub(r"[^a-z0-9]+", " ", stem.lower()).strip()
+    return f"{subject}-n{hashlib.sha1(key.encode('utf-8')).hexdigest()[:10]}"
 
 
 def make_id(subject: str, question: str) -> str:

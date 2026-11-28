@@ -1,8 +1,18 @@
-# Studio input — drop question lists here
+# Studio inbox
 
-Put files under the subject folder: `Medicine/`, `Microbiology/` or `CCM/` (sub-folders are fine).
-Formats: `.txt` `.md` `.docx` `.pdf` `.csv`.
+Default inbox when `STUDIO_INPUT_DIR` is not set. On the laptop hub, point `STUDIO_INPUT_DIR` at your
+Google Drive for desktop folder instead (docs/console/REMOTE_ACCESS.md).
 
+```
+CCM/ Medicine/ Microbiology/
+  <topic>.md | .docx | .txt | .pdf   → NOTE: one item; your note becomes the theory section,
+                                        Q&A + flashcards + MCQs are derived from it
+  Questions/<paper>.txt | .md | .docx | .pdf | .csv   → QUESTION LIST: one item per question
+Processed/                            ← ingested files are moved here
+```
+Re-saving a note under the same file name creates a new version of the same item.
+
+Question-list format:
 ```
 1. Discuss the pathophysiology and management of ARDS. (10 marks)
 2. Short note: procalcitonin-guided antibiotic stewardship (5)
@@ -16,4 +26,4 @@ Formats: `.txt` `.md` `.docx` `.pdf` `.csv`.
 ```
 CSV header: `question,marks,type,system,subtopic,source,option_a,option_b,option_c,option_d,answer`
 
-Then: `python studio.py run` → review at http://localhost:8878/console/studio → `python studio.py publish`.
+Run: `python studio.py watch` (background) or `python studio.py run` (once) → review at /console/studio.

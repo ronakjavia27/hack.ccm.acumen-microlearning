@@ -86,7 +86,41 @@ STUDIO_MAX_REVISIONS    default 1
 STUDIO_REVIEWER         default reviewer name shown in provenance
 ```
 
-## 6. Not in this version (next steps)
+## 6. Notes mode and the laptop watcher
+
+You write a short note with Claude, save it to the Drive inbox, and the laptop does the rest. Setup is in `docs/console/REMOTE_ACCESS.md`.
+
+| Decision | Choice | Why |
+|---|---|---|
+| What a note becomes | **Your note is the theory section, nearly verbatim.** `polish` fixes formatting and typos only and lists each non-formatting edit; a diff of every change is shown in review | It's your teaching text. Silent rewrites would hide changes from you |
+| Errors in your note | Reported as "possible problems in your note" and verifier issues on `theory`. **Never auto-fixed.** | You decide. Fix them with **Edit**, or with **Request changes** (an explicit request may change the theory) |
+| What gets derived | 3–6 exam questions with model answers and rubrics, 6–12 flashcards, 3–6 MCQs, all grounded in the note | One note covers the topic in all formats |
+| Auto-revision | One round, **Q&A / flashcards / MCQs only** (`checks.LOCKED_NOTE_PARTS` keeps theory, claims and rubric out) | Keeps the author's text authoritative |
+| Where it runs | `studio.py watch` on the always-on laptop, reading a Google Drive for desktop folder (`STUDIO_INPUT_DIR`) | No service account, no cloud runner, no git conflicts; reviewing happens over Tailscale |
+| Token budget | `STUDIO_MAX_CALLS_PER_RUN` (40) and `STUDIO_MAX_CALLS_PER_DAY` (200), counted in `generate._call` (`studio/usage.json`). A capped item goes back to `queued`, never `error`. Error items retry at most 3 times | A runaway loop can't burn credits. No Claude tokens are used at runtime |
+
+**Calls per note:**
+1. `polish` (draft model)
+2. `derive_note` (draft model)
+3. `verify` (verify model)
+4. `blind` (verify model)
+5. at most one `revise_note`
+
+So 4–5 calls in total.
+
+**Inbox rules** (`intake.ingest_folder`):
+- `{Subject}/Questions/**` and `*.csv` are question lists. Everything else is a note.
+- Files modified less than `STUDIO_SETTLE_SECONDS` (60) ago are left until the next pass, because Drive may still be writing them.
+- Ingested files are moved to `Processed/`. The ledger is keyed by sha256.
+- A note's id is derived from the subject and file name, so re-saving it creates a new version. A `(1)` suffix from a re-download is ignored.
+- `.docx` is converted with `docx_to_markdown`, which keeps headings, lists, bold/italic and tables.
+
+**Publishing a note** (parts `{theory, qna[], flashcards[], mcqs[]}`):
+- `Theory MDs/{System}/{Subtopic}/note-{id}.md`: your note, with the approved Q&A appended under "Exam-style questions".
+- `question_bank/{subject}/studio.json`: `{id}-q<n>` (written questions) and `{id}-m<n>` (MCQs).
+- Flashcards go to the unified store.
+
+## 7. Not in this version (next steps)
 
 - **Citation check against PubMed** for named trials and guidelines (NCBI E-utilities). The hook point is `checks.py`.
 - **Multi-reviewer roles** (faculty accounts, 2-person sign-off for red items). The console is local-only today.

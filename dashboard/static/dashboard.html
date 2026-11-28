@@ -127,6 +127,29 @@ td.check-col,th.check-col{width:30px}
 #backdrop.show{display:block}
 #drawer{position:fixed;top:0;right:-650px;width:640px;max-width:94vw;height:100vh;background:var(--bg-panel);border-left:1px solid var(--line);z-index:61;transition:right .22s ease;display:flex;flex-direction:column;box-shadow:-20px 0 40px rgba(0,0,0,.4)}
 #drawer.open{right:0}
+#navToggle{display:none;background:none;border:1px solid var(--line);border-radius:var(--radius);font-size:18px;line-height:1;padding:6px 10px}
+@media (max-width:760px){
+  body{overflow:auto;height:auto}
+  #app{display:block;height:auto}
+  #navToggle{display:inline-block}
+  .topbar-row{flex-wrap:wrap;gap:8px;padding:8px 10px}
+  .brand{flex:1}.brand-sub{display:none}
+  .search-global{order:3;flex:1 1 100%;max-width:none}
+  .topbar-right{display:flex;gap:6px}.topbar-right .btn-ghost{display:none}
+  .ecg-wrap{display:none}
+  nav.sidebar{position:fixed;top:0;left:-270px;width:260px;height:100vh;z-index:70;transition:left .2s ease;box-shadow:12px 0 30px rgba(0,0,0,.25)}
+  body.nav-open nav.sidebar{left:0}
+  body.nav-open #navShade{display:block}
+  #navShade{display:none;position:fixed;inset:0;background:rgba(0,0,0,.35);z-index:69}
+  .nav-item{padding:12px 12px;font-size:15px}
+  main{padding:14px 12px 80px;overflow:visible}
+  .table-wrap,table{display:block;overflow-x:auto;-webkit-overflow-scrolling:touch}
+  .stat-grid{grid-template-columns:repeat(2,1fr)}
+  #drawer{width:100vw;max-width:100vw;right:-100vw}
+  #drawer.open{right:0}
+  .drawer-foot{position:sticky;bottom:0;background:var(--bg-panel);padding-bottom:calc(14px + env(safe-area-inset-bottom))}
+  .btn,button,select,input{min-height:40px}
+}
 .drawer-head{padding:16px 20px;border-bottom:1px solid var(--line);display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
 .drawer-kind{font-family:var(--mono);font-size:10.5px;color:var(--phosphor);text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
 .drawer-title{font-size:15px;font-weight:600;line-height:1.35}
@@ -182,6 +205,7 @@ td.check-col,th.check-col{width:30px}
 <div id="app">
 <header class="topbar">
   <div class="topbar-row">
+    <button id="navToggle" onclick="document.body.classList.toggle('nav-open')" aria-label="Menu">☰</button>
     <div class="brand">
       <div class="brand-mark">hack<span>.</span>CCM</div>
       <div class="brand-sub">Console</div>
@@ -203,6 +227,7 @@ td.check-col,th.check-col{width:30px}
     </svg>
   </div>
 </header>
+<div id="navShade" onclick="document.body.classList.remove('nav-open')"></div>
 <nav class="sidebar">
   <div class="nav-item active" onclick="switchSection('overview')"><span>Overview</span></div>
   <div class="nav-section-label">Content</div>
@@ -548,6 +573,7 @@ async function reloadSection(){
 
 // ---- navigation ----
 function switchSection(name){
+  document.body.classList.remove('nav-open');
   state.section = name;
   document.querySelectorAll('.nav-item[data-section]').forEach(el=>el.classList.toggle('active', false));
   document.querySelectorAll('.nav-item').forEach(el=>{

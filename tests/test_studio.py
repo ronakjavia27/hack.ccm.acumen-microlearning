@@ -19,6 +19,9 @@ def tmp_dirs(tmp_path, monkeypatch):
     monkeypatch.setattr(config, "STUDIO_LEDGER_FILE", str(tmp_path / "studio" / "ledger.json"))
     monkeypatch.setattr(config, "THEORY_MDS_DIR", str(tmp_path / "Theory MDs"))
     monkeypatch.setattr(config, "QUESTION_BANK_DIR", str(tmp_path / "question_bank"))
+    monkeypatch.setattr(config, "STUDIO_USAGE_FILE", str(tmp_path / "studio" / "usage.json"))
+    monkeypatch.setattr(config, "STUDIO_SETTLE_SECONDS", 0)
+    generate.reset_run_counter()
     monkeypatch.setattr(fc, "FLASHCARDS_DIR", str(tmp_path / "flashcards"))
     monkeypatch.setattr(fc, "FLASHCARDS_INDEX_FILE", str(tmp_path / "flashcards_index.json"))
     monkeypatch.setattr(retrieve, "_LIB", retrieve.Library([
@@ -132,14 +135,21 @@ def test_ingest_dedup_and_types():
     assert store.load(r1["new"][3])["qtype"] == "mcq"
 
 
-def test_ingest_folder_ledger(tmp_dirs):
-    d = tmp_dirs / "studio_input" / "CCM"
-    d.mkdir(parents=True)
-    (d / "p.txt").write_text(PAPER, encoding="utf-8")
-    (tmp_dirs / "studio_input" / "loose.txt").write_text("1. Ignored question here", encoding="utf-8")
+def test_ingest_folder_routes_questions_and_moves_processed(tmp_dirs):
+    inbox = tmp_dirs / "studio_input"
+    (inbox / "CCM" / "Questions").mkdir(parents=True)
+    (inbox / "CCM" / "Questions" / "p.txt").write_text(PAPER, encoding="utf-8")
+    (inbox / "loose.txt").write_text("1. Ignored question here", encoding="utf-8")
     r = intake.ingest_folder()
-    assert len(r["new"]) == 4
-    assert intake.ingest_folder()["skipped_files"] == ["CCM/p.txt"]
+    assert len(r["new"]) == 4 and r["errors"] == []
+    assert not (inbox / "CCM" / "Questions" / "p.txt").exists()
+    assert (inbox / "Processed" / "CCM" / "Questions" / "p.txt").exists()
+    # the same file dropped again is recognised by its sha and just tidied away
+    (inbox / "CCM" / "Questions" / "p.txt").write_text(PAPER, encoding="utf-8")
+    r2 = intake.ingest_folder()
+    assert r2["new"] == [] and r2["skipped_files"] == ["CCM/Questions/p.txt"]
+    assert (inbox / "Processed" / "CCM" / "Questions" / "p (1).txt").exists()
+    assert intake.ingest_folder()["skipped_files"] == []          # Processed/ itself is never re-read
 
 
 # ---- pipeline ------------------------------------------------------------------------
@@ -311,3 +321,207 @@ def test_console_api_flow(tmp_dirs):
     pub = c.post(f"/console/api/studio/items/{iid}/publish").json()
     assert pub["question_ids"] and c.get("/console/api/studio/summary").json()["counts"]["published"] == 1
     assert c.get("/console/studio").status_code == 200
+
+
+# ---- notes mode -------------------------------------------------------------------------
+
+NOTE_MD = """# Septic shock — short note
+
+## Definition
+Sepsis with vasopressor need to keep MAP ≥65 mmHg and lactate >2 mmol/L despite adequate fluids.
+
+## Management
+- Crystalloid 30 mL/kg within 3 h for hypoperfusion
+- Norepinephrine first-line vasopressor
+- Antibiotics within 1 h
+"""
+
+
+def note_polish(**over):
+    p = {"title": "Septic shock", "system": "Sepsis", "subtopic": "Septic shock", "theory_md": NOTE_MD,
+         "edits": [], "key_points": ["MAP ≥65", "30 mL/kg", "Norepinephrine first"],
+         "claims": [{"text": "Crystalloid 30 mL/kg within 3 h", "basis": "note", "confidence": "high", "high_stakes": True}],
+         "uncertainties": []}
+    p.update(over)
+    return p
+
+
+NOTE_DERIVED = {
+    "qna": [{"question": "Define septic shock and outline initial management.", "qtype": "short", "marks": 5,
+             "answer_md": ("Septic shock: vasopressors for MAP ≥65 mmHg and lactate >2 mmol/L. "
+                           "Give crystalloid 30 mL/kg within 3 h, antibiotics within 1 h, norepinephrine first-line. ") * 9,
+             "rubric": [{"point": "Definition", "keywords": ["MAP"], "marks": 2}, {"point": "Management", "keywords": ["30 mL/kg"], "marks": 3}]}],
+    "flashcards": [{"front": "First-line vasopressor in septic shock?", "back": "Norepinephrine"}],
+    "mcqs": [{"stem": "Initial crystalloid volume for sepsis-induced hypoperfusion:", "options": ["10 mL/kg", "20 mL/kg", "30 mL/kg", "50 mL/kg"],
+              "answer": [2], "explanation": "30 mL/kg within 3 h.", "difficulty": 2}]}
+
+
+class NoteLLM(FakeLLM):
+    def __init__(self, polish=None, **kw):
+        kw.setdefault("blind_seq", [{"answers": [{"i": 0, "chosen": [2], "confidence": "high"}]}])
+        kw.setdefault("verify_seq", [good_verify(claim_checks=[{"i": 0, "verdict": "supported"}])])
+        super().__init__(**kw)
+        self.polish = polish or note_polish()
+        self.revised = None
+
+    def __call__(self, role, system, user, max_tokens):
+        self.calls.append((role, user))
+        if role == "polish":
+            return self.polish
+        if role == "derive_note":
+            return NOTE_DERIVED
+        if role == "revise_note":
+            self.revised = {"qna": NOTE_DERIVED["qna"], "flashcards": NOTE_DERIVED["flashcards"],
+                            "mcqs": NOTE_DERIVED["mcqs"], "theory_md": "SHOULD NOT BE USED"}
+            return self.revised
+        return super().__call__(role, system, user, max_tokens)
+
+
+def _note(text=NOTE_MD, name="CCM/Septic shock.md"):
+    r = intake.ingest_note(text, "ccm", name, label="Septic shock")
+    return store.load((r["new"] or r["updated"] or r["merged"])[0])
+
+
+def test_docx_to_markdown_keeps_structure(tmp_dirs):
+    from docx import Document
+    d = Document()
+    d.add_heading("ARDS short note", 0)
+    d.add_heading("Definition", 1)
+    p = d.add_paragraph("Onset within ")
+    p.add_run("1 week").bold = True
+    d.add_paragraph("Low tidal volume 6 mL/kg", style="List Bullet")
+    t = d.add_table(rows=2, cols=2)
+    t.cell(0, 0).text, t.cell(0, 1).text, t.cell(1, 0).text, t.cell(1, 1).text = "Severity", "P/F", "Severe", "≤100"
+    path = tmp_dirs / "n.docx"
+    d.save(str(path))
+    md = intake.docx_to_markdown(str(path))
+    assert md.startswith("# ARDS short note") and "\n## Definition" in md
+    assert "**1 week**" in md and "- Low tidal volume 6 mL/kg" in md and "| Severe | ≤100 |" in md
+
+
+def test_note_ingest_and_resave_creates_new_version(tmp_dirs):
+    it = _note()
+    assert it["kind"] == "note" and it["question"] == "Septic shock — short note" and it["status"] == "queued"
+    assert intake.ingest_note(NOTE_MD, "ccm", "CCM/Septic shock.md")["merged"] == [it["id"]]   # unchanged
+    generate.set_llm(NoteLLM())
+    generate.generate_item(store.load(it["id"]))
+    r = intake.ingest_note(NOTE_MD + "\n- Steroids if refractory\n", "ccm", "CCM/Septic shock (1).md")
+    assert r["updated"] == [it["id"]]                         # same note, re-downloaded name
+    again = store.load(it["id"])
+    assert again["status"] == "queued" and "Steroids" in again["note_md"] and len(again["versions"]) == 1
+
+
+def test_inbox_note_routing_and_settling(tmp_dirs, monkeypatch):
+    inbox = tmp_dirs / "studio_input" / "CCM"
+    inbox.mkdir(parents=True)
+    (inbox / "Septic shock.md").write_text(NOTE_MD, encoding="utf-8")
+    monkeypatch.setattr(config, "STUDIO_SETTLE_SECONDS", 3600)
+    r = intake.ingest_folder()
+    assert r["settling"] == ["CCM/Septic shock.md"] and r["new"] == []     # Drive may still be writing it
+    monkeypatch.setattr(config, "STUDIO_SETTLE_SECONDS", 0)
+    r = intake.ingest_folder()
+    assert len(r["new"]) == 1 and store.load(r["new"][0])["kind"] == "note"
+
+
+def test_note_pipeline_green_and_theory_never_auto_revised():
+    major_theory = good_verify(claim_checks=[{"i": 0, "verdict": "incorrect", "comment": "x"}],
+                               issues=[{"where": "theory", "severity": "major", "problem": "dose wrong", "fix": "..."},
+                                       {"where": "qna:0", "severity": "major", "problem": "answer misses lactate", "fix": "add"}])
+    llm = NoteLLM(verify_seq=[major_theory, major_theory])
+    generate.set_llm(llm)
+    it = generate.generate_item(_note(), max_revisions=1)
+    v = store.current_version(it)
+    roles = [r for r, _ in llm.calls]
+    assert roles[:2] == ["polish", "derive_note"] and roles.count("revise_note") == 1
+    revise_prompt = next(u for r, u in llm.calls if r == "revise_note")
+    assert "answer misses lactate" in revise_prompt and "dose wrong" not in revise_prompt   # theory issue not sent
+    assert v["package"]["theory_md"] == NOTE_MD.strip()         # author's text untouched
+    assert it["triage"] == "red" and any("dose wrong" in r for r in v["reasons"])  # still flagged for the author
+    assert "polish_diff" in v and v["polish_change"] == 0
+
+
+def test_note_polish_overreach_is_amber():
+    rewritten = "# Septic shock\n\nCompletely different wording about circulatory failure and vasoplegia management.\n"
+    generate.set_llm(NoteLLM(polish=note_polish(theory_md=rewritten)))
+    it = generate.generate_item(_note(), max_revisions=0)
+    assert it["triage"] in ("amber", "red")
+    assert any("Polish changed" in r for r in store.current_version(it)["reasons"])
+
+
+def test_editor_request_on_note_may_change_theory():
+    llm = NoteLLM()
+    generate.set_llm(llm)
+    it = generate.generate_item(_note())
+    publish.request_revision(it, "Dr R", "Add vasopressin as second-line")
+    llm.revise = None
+    def editor(role, system, user, max_tokens):
+        llm.calls.append((role, user))
+        if role == "revise_note" and "AUTHOR'S REQUEST" in user:
+            return {**note_polish(theory_md=NOTE_MD + "- Vasopressin second-line\n"), **NOTE_DERIVED}
+        return llm(role, system, user, max_tokens)
+    generate.set_llm(editor)
+    it = generate.generate_item(store.load(it["id"]))
+    assert it["status"] == "generated", it.get("error")
+    first_revise = next(u for r, u in llm.calls if r == "revise_note")
+    assert "AUTHOR'S REQUEST" in first_revise and "Add vasopressin" in first_revise
+    assert "Vasopressin" in store.current_version(it)["package"]["theory_md"]
+
+
+def test_note_publish_theory_qna_bank_cards(tmp_dirs):
+    generate.set_llm(NoteLLM())
+    it = generate.generate_item(_note())
+    assert it["triage"] == "green", store.current_version(it)["reasons"]
+    publish.approve(it, "Dr R")
+    assert it["review"]["parts"] == {"theory": True, "qna": [0], "flashcards": [0], "mcqs": [0]}
+    it = publish.publish(it)
+    pub = it["published"]
+    assert pub["theory_rel"].startswith("Sepsis/") and "/note-" in pub["theory_rel"]
+    text = (tmp_dirs / "Theory MDs" / pub["theory_rel"]).read_text(encoding="utf-8")
+    assert text.startswith("# Septic shock") and "## Exam-style questions" in text and "### Q1." in text
+    assert "author's note, lightly copy-edited" in text
+    bank = json.loads((tmp_dirs / "question_bank" / "ccm" / "studio.json").read_text())
+    assert [q["id"] for q in bank] == [f"{it['id']}-q0", f"{it['id']}-m0"]
+    assert bank[0]["kind"] == "written_short" and bank[0]["model_answer"]
+    assert fc.find_card(pub["flashcard_ids"][0])["source"] == "studio"
+    # partial approval: theory only, no Q&A
+    publish.approve(it, "Dr R", parts={"qna": [], "mcqs": []})
+    it = publish.publish(it)
+    text = (tmp_dirs / "Theory MDs" / it["published"]["theory_rel"]).read_text(encoding="utf-8")
+    assert "## Exam-style questions" not in text
+    assert [q["id"] for q in json.loads((tmp_dirs / "question_bank" / "ccm" / "studio.json").read_text())] == []
+
+
+def test_call_caps_leave_items_queued(monkeypatch):
+    monkeypatch.setattr(config, "STUDIO_MAX_CALLS_PER_RUN", 3)      # a note needs 4 calls
+    generate.set_llm(NoteLLM())
+    _note()
+    r = generate.generate_pending()
+    assert r["processed"] == 0 and "per-run cap" in r["capped"]
+    it = store.all_items()[0]
+    assert it["status"] == "queued" and not it.get("error")
+    monkeypatch.setattr(config, "STUDIO_MAX_CALLS_PER_RUN", 40)
+    monkeypatch.setattr(config, "STUDIO_MAX_CALLS_PER_DAY", generate.usage_today()["calls"])
+    assert "daily cap" in generate.generate_pending()["capped"]
+
+
+def test_error_items_retried_at_most_three_times():
+    def dead(role, *a):
+        raise RuntimeError("bad json")
+    generate.set_llm(dead)
+    _note()
+    for _ in range(5):
+        generate.generate_pending()
+    it = store.all_items()[0]
+    assert it["status"] == "error" and it["attempts"] == generate.MAX_ATTEMPTS
+
+
+def test_watch_once_dry_run(tmp_dirs, monkeypatch, capsys):
+    import studio
+    inbox = tmp_dirs / "studio_input" / "CCM"
+    inbox.mkdir(parents=True)
+    (inbox / "Septic shock.md").write_text(NOTE_MD, encoding="utf-8")
+    monkeypatch.setattr(sys, "argv", ["studio.py", "watch", "--once", "--dry-run"])
+    studio.main()
+    out = capsys.readouterr().out
+    assert "inbox: +1 new" in out and "generated 0" in out
+    assert (inbox / "Septic shock.md").exists()                # dry run moves nothing
