@@ -210,6 +210,7 @@ td.check-col,th.check-col{width:30px}
   <div class="nav-item" onclick="switchSection('pearls')"><span>Pearls</span><span class="nav-count" id="countPearls">0</span></div>
   <div class="nav-item" onclick="switchSection('theory')"><span>Theory</span><span class="nav-count" id="countTheory">0</span></div>
   <div class="nav-item" onclick="switchSection('flashcards')"><span>Flashcards</span><span class="nav-count" id="countFlashcards">0</span></div>
+  <div class="nav-item" onclick="switchSection('mcqs')"><span>MCQs</span><span class="nav-count" id="countMcqs" title="Questions with open reports">0</span></div>
   <div class="nav-section-label">System</div>
   <div class="nav-item" onclick="switchSection('backups')"><span>Backups</span></div>
   <div class="nav-item" onclick="switchSection('audit')"><span>Audit log</span></div>
@@ -266,6 +267,17 @@ td.check-col,th.check-col{width:30px}
   </div>
   <table><thead><tr><th class="check-col"><input type="checkbox" id="pearlSelectAll"></th><th class="id-col">ID</th><th>Pearl</th><th>System / subtopic</th><th>Type</th><th>Status</th></tr></thead><tbody id="pearlTableBody"></tbody></table>
   <div class="empty-state" id="pearlEmpty" style="display:none">No pearls match this filter.</div>
+</section>
+<!-- MCQS -->
+<section class="section" id="section-mcqs">
+  <div class="section-head"><div><div class="section-title">MCQs</div><div class="section-sub">Auto-published questions. Reported ones are flagged and listed first.</div></div></div>
+  <div class="section-toolbar">
+    <div class="search-box flex-1"><span>⌕</span><input id="mcqSearch" placeholder="Search stem, subtopic, source…" oninput="renderMcqs()"></div>
+    <label style="font-size:13px;display:flex;gap:6px;align-items:center"><input type="checkbox" id="mcqReportedOnly" onchange="renderMcqs()"> Reported only</label>
+    <span id="mcqCount" style="font-size:12px;color:var(--text-muted)"></span>
+  </div>
+  <div class="table-wrap"><table><thead><tr><th>Reports</th><th>System / subtopic</th><th>Question</th><th>Status</th><th></th></tr></thead><tbody id="mcqTableBody"></tbody></table></div>
+  <div class="empty-state" id="mcqEmpty" style="display:none">No MCQs match.</div>
 </section>
 <!-- THEORY -->
 <section class="section" id="section-theory">
@@ -554,6 +566,7 @@ function switchSection(name){
   });
   document.querySelectorAll('main .section').forEach(el=>el.classList.toggle('active', el.id==='section-'+name));
   if (name === 'audit') loadAudit();
+  if (name === 'mcqs') loadMcqs();
   render();
 }
 
@@ -1541,6 +1554,62 @@ document.addEventListener('click', async function(ev){
 });
 
 // ---- render ----
+
+// ---- MCQs (reports flagged) ----
+async function loadMcqs(){
+  try { state.cache.mcqs = await apiGet('/mcqs'); } catch (e) { state.cache.mcqs = []; toast('MCQs load failed: ' + e.message, true); }
+  renderMcqs();
+}
+function renderMcqs(){
+  const all = state.cache.mcqs || [];
+  const open = all.filter(m => m.reports > 0).length;
+  const cnt = $('countMcqs'); if (cnt) { cnt.textContent = open || all.length; cnt.style.color = open ? 'var(--red)' : ''; }
+  const q = (($('mcqSearch')||{}).value||'').toLowerCase();
+  const only = ($('mcqReportedOnly')||{}).checked;
+  const rows = all.filter(m => (!only || m.reports) && (!q || (m.stem+m.subtopic+m.source).toLowerCase().includes(q))).slice(0, 400);
+  $('mcqCount').textContent = rows.length + ' of ' + all.length + (open ? ' · ' + open + ' reported' : '');
+  $('mcqEmpty').style.display = rows.length ? 'none' : 'block';
+  const tb = $('mcqTableBody'); tb.innerHTML = '';
+  rows.forEach(m => {
+    const tr = document.createElement('tr');
+    if (m.reports) tr.style.background = 'rgba(220,60,60,.08)';
+    tr.innerHTML = `<td>${m.reports ? `<span class="feat-badge feat-off" title="${esc(m.report_reasons.join(', '))}">⚑ ${m.reports}</span>` : ''}</td>
+      <td>${esc(m.system)}<br><small>${esc(trunc(m.subtopic,40))}</small></td>
+      <td>${esc(trunc(m.stem,160))}</td><td>${esc(m.status)}</td>
+      <td><button class="btn btn-sm">Review</button></td>`;
+    tr.querySelector('button').onclick = () => openMcq(m.id);
+    tb.appendChild(tr);
+  });
+}
+async function openMcq(id){
+  const m = await apiGet('/mcqs/' + encodeURIComponent(id));
+  const opts = (m.options||[]).map(o => `<li${o.key===m.answer?' style="font-weight:700"':''}>${esc(o.key)}. ${esc(o.text)}${o.key===m.answer?' ✓':''}</li>`).join('');
+  const reps = (m.reports||[]).map(r => `<li><b>${esc(r.reason)}</b> — ${esc(r.email)}${r.note?': '+esc(r.note):''} <small>${esc(r.at)}</small></li>`).join('');
+  const html = `<div style="max-width:720px"><h3>${esc(m.system)} / ${esc(m.subtopic)}</h3>
+    <p>${esc(m.stem)}</p><ul style="list-style:none;padding:0">${opts}</ul>
+    <p><b>Explanation:</b> ${esc(m.explanation)}</p>
+    ${reps ? '<h4 style="color:var(--red)">Open reports</h4><ul>'+reps+'</ul>' : ''}
+    <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
+      ${m.status==='rejected' ? '<button class="btn btn-sm" id="mcqRestore">Restore (publish)</button>' : '<button class="btn btn-sm" style="background:var(--red);color:#fff;border:none" id="mcqReject">Reject (hide)</button>'}
+      ${reps ? '<button class="btn btn-sm" id="mcqDismiss">Dismiss reports</button>' : ''}
+      <button class="btn btn-sm btn-ghost" id="mcqClose">Close</button></div></div>`;
+  const ov = document.createElement('div');
+  ov.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:999;display:flex;align-items:center;justify-content:center;padding:20px';
+  ov.innerHTML = `<div class="panel" style="max-height:90vh;overflow:auto;background:var(--bg-card)">${html}</div>`;
+  document.body.appendChild(ov);
+  const done = async (fn) => { await fn(); ov.remove(); await loadMcqs(); };
+  ov.querySelector('#mcqClose').onclick = () => ov.remove();
+  const setStatus = (st) => done(async () => {
+    const r = await apiPut('/mcqs/' + encodeURIComponent(id), {status: st});
+    if (r.affected_paths) state.dirtyPaths['mcqs:' + id] = r.affected_paths;
+    toast(st === 'rejected' ? 'Hidden — push to apply on production' : 'Restored — push to apply on production');
+    if (typeof renderOverview === 'function') renderOverview();
+  });
+  if (ov.querySelector('#mcqReject')) ov.querySelector('#mcqReject').onclick = () => setStatus('rejected');
+  if (ov.querySelector('#mcqRestore')) ov.querySelector('#mcqRestore').onclick = () => setStatus('published');
+  if (ov.querySelector('#mcqDismiss')) ov.querySelector('#mcqDismiss').onclick = () => done(async () => { await apiPost('/mcqs/' + encodeURIComponent(id) + '/resolve-reports', {}); toast('Reports dismissed'); });
+}
+
 function render(){
   renderOverview();
   populateTheorySpecialtyFilter();
@@ -1550,6 +1619,7 @@ function render(){
   renderTheory();
   renderFlashcards();
   renderAccounts();
+  renderMcqs();
   updateBulk('summaries');
   updateBulk('pearls');
 }
@@ -1559,6 +1629,7 @@ function render(){
   console.log('[Console] init starting…');
   document.getElementById('overviewSub').textContent = 'Connecting…';
   try {
+    loadMcqs();
     await loadData();
     console.log('[Console] loadData OK, summaries:', state.cache.summaries.length);
   } catch (e) {

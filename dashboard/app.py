@@ -17,6 +17,7 @@ from .modules.summaries import get_content as summaries_get_content
 from .storage import REPO_ROOT, PUSH, audit_tail, LOCKS, audit, read_json
 from . import backup as backup_mod
 from .cascade import cascade_summary_update, cascade_preview
+from .modules import mcqs as mcq_mod
 from .modules.accounts import list_users, get_user, update_user, delete_user, get_defaults, save_defaults, FEATURE_FLAGS, FEATURE_LABELS
 
 router = APIRouter(prefix="/console")
@@ -192,6 +193,37 @@ async def api_backup_restore(body: Dict[str, Any]):
 @router.get("/api/backup/verify/{name}")
 async def api_backup_verify(name: str):
     return backup_mod.verify_backup(name)
+
+
+# =========================================================================
+# MCQs (auto-published; user reports flagged here)
+# =========================================================================
+@router.get("/api/mcqs")
+async def api_mcqs_list(system: str = "", q: str = "", reported: str = ""):
+    return mcq_mod.list_items({"system": system, "q": q, "reported": reported})
+
+
+@router.get("/api/mcqs/{qid}")
+async def api_mcqs_get(qid: str):
+    try:
+        return mcq_mod.get_item(qid)
+    except ItemNotFound:
+        raise HTTPException(404, "MCQ not found")
+
+
+@router.put("/api/mcqs/{qid}")
+async def api_mcqs_update(qid: str, body: Dict[str, Any]):
+    try:
+        return mcq_mod.update_item(qid, body)
+    except ItemNotFound:
+        raise HTTPException(404, "MCQ not found")
+    except ValueError as e:
+        raise HTTPException(400, str(e))
+
+
+@router.post("/api/mcqs/{qid}/resolve-reports")
+async def api_mcqs_resolve(qid: str, body: Dict[str, Any]):
+    return mcq_mod.resolve_reports(qid, str(body.get("note", "")))
 
 
 # =========================================================================

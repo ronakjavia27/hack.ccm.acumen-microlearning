@@ -17,7 +17,7 @@ Store (read by redefined_ui.py)
       "answer": "B", "explanation": "...",
       "difficulty": "easy|medium|hard", "tags": [...],
       "source": {"kind": "theory|guideline", "ref": "...", "title": "..."},
-      "status": "draft", "created_at": "..."
+      "status": "published", "created_at": "..."
     }]
   }
 Progress ledger: mcq_ledger.json  (sha256 of the source text -> question ids)
@@ -256,7 +256,7 @@ def validate(raw, seen):
         "explanation": expl,
         "difficulty": diff if diff in ("easy", "medium", "hard") else "medium",
         "tags": [str(t).strip()[:40] for t in (raw.get("tags") or []) if str(t).strip()][:3],
-        "status": "draft",
+        "status": "published",
         "created_at": datetime.utcnow().isoformat(timespec="seconds"),
     }, "ok"
 

@@ -34,6 +34,7 @@ MCQs are produced by `mcq_generator.py` into output_files/mcqs/ (override with
 the MCQ_DIR environment variable).
 """
 
+import hashlib
 import json
 import os
 import random
@@ -335,6 +336,32 @@ async def redefined_mcqs(request: Request, ids: str = "", system: str = "", subt
         qs = [q for q in qs if (not system or q["system"] == system)
               and (not subtopic or q["subtopic"] == subtopic)][:200]
     return {"questions": qs}
+
+
+REPORT_REASONS = ("wrong_answer", "unclear", "outdated", "typo", "other")
+
+
+@app.post("/api/redefined/mcqs/report")
+async def redefined_mcq_report(request: Request, body: dict):
+    """Flag a published MCQ for editor review. One report per user per question
+    (re-reporting overwrites). Stored in the KV shared with the console."""
+    user = _user_or_401(request)
+    _require(user, "theory")
+    qid = str(body.get("id") or "")[:64]
+    q = next((x for x in _load_mcq_store() if x["id"] == qid), None)
+    if not q:
+        raise HTTPException(404, "Unknown question")
+    reason = str(body.get("reason") or "other")
+    if reason not in REPORT_REASONS:
+        reason = "other"
+    email = user["email"]
+    uh = hashlib.sha256(email.lower().encode()).hexdigest()[:12]
+    legacy._kv_set(f"mcqreport:{qid}:{uh}", {
+        "qid": qid, "email": email, "reason": reason, "note": str(body.get("note") or "")[:500],
+        "system": q["system"], "subtopic": q["subtopic"], "stem": str(q.get("stem", ""))[:200],
+        "status": "open", "at": datetime.utcnow().isoformat(timespec="seconds"),
+    })
+    return {"ok": True}
 
 
 def _clean_progress(d):
@@ -1238,7 +1265,7 @@ function mcqQuestion(){var R=S.mcq.run,q=R.qs[R.i],a=R.ans[q.id],tutor=R.mode===
   var h='<div class="qwrap"><div class="qhead"><button class="btn sm" data-act="mQuit">'+ic('i-x')+'End</button><span class="eyebrow">Question '+(R.i+1)+' of '+R.qs.length+' · '+(tutor?'tutor':'exam')+'</span>'+
    (R.mode==='exam'?'<span class="timer" id="timer" aria-label="Time left">'+fmtT(R.limit-Math.floor((Date.now()-R.start)/1000))+'</span>':'<span class="timer muted">'+Object.keys(R.ans).length+' answered</span>')+'</div>'+
    '<div class="progress"><i style="width:'+((R.i+1)/R.qs.length*100)+'%"></i></div>'+
-   '<div class="card qcard"><div style="display:flex;gap:8px;flex-wrap:wrap">'+pill(q.system,trunc(q.subtopic,30))+'<span class="tag '+({easy:'ok',medium:'warn',hard:'bad'}[q.difficulty]||'neu')+'">'+esc(q.difficulty||'')+'</span>'+(q.status==='draft'?'<span class="tag neu" title="Generated, awaiting editor review">draft</span>':'')+'</div>'+
+   '<div class="card qcard"><div style="display:flex;gap:8px;flex-wrap:wrap">'+pill(q.system,trunc(q.subtopic,30))+'<span class="tag '+({easy:'ok',medium:'warn',hard:'bad'}[q.difficulty]||'neu')+'">'+esc(q.difficulty||'')+'</span>'+'</div>'+
    '<div class="stem">'+mdi(q.stem)+'</div><div class="opts" role="radiogroup" aria-label="Answer options">';
   q.shown.forEach(function(o,i){var cls='',fb='';
     if(revealed){if(o.key===q.answer){cls=' right';fb='<span class="fb" style="color:var(--ok)">CORRECT</span>'}else if(o.key===a){cls=' wrong';fb='<span class="fb" style="color:var(--bad)">YOUR PICK</span>'}}else if(o.key===a)cls=' sel';
@@ -1249,7 +1276,7 @@ function mcqQuestion(){var R=S.mcq.run,q=R.qs[R.i],a=R.ans[q.id],tutor=R.mode===
     (n?'<div style="margin-top:12px"><button class="btn sm" data-go="topic" data-pid="'+esc(n.id)+'">'+ic('i-book')+'Read: '+esc(trunc(n.title,50))+'</button></div>':'')+'</div>'}
   h+='</div><div class="qnav"><button class="btn" data-act="mPrev"'+(R.i?'':' disabled')+'>'+ic('i-left')+'Back</button>'+
    (R.mode==='exam'?'<button class="btn'+(R.flag[q.id]?' saved':'')+'" data-act="mFlag" aria-pressed="'+!!R.flag[q.id]+'">'+ic('i-flag')+(R.flag[q.id]?'Flagged':'Flag')+'</button>':'')+
-   '<div class="right">'+(R.i<R.qs.length-1?'<button class="btn primary" data-act="mNext"'+(tutor&&a==null?' disabled':'')+'>Next'+ic('i-right')+'</button>':'<button class="btn primary" data-act="mFinish"'+(tutor&&a==null?' disabled':'')+'>Finish'+ic('i-check')+'</button>')+'</div></div>';
+   '<button class="btn" data-act="mReport" title="Report a problem with this question">'+ic('i-flag')+'Report</button>'+'<div class="right">'+(R.i<R.qs.length-1?'<button class="btn primary" data-act="mNext"'+(tutor&&a==null?' disabled':'')+'>Next'+ic('i-right')+'</button>':'<button class="btn primary" data-act="mFinish"'+(tutor&&a==null?' disabled':'')+'>Finish'+ic('i-check')+'</button>')+'</div></div>';
   if(R.mode==='exam')h+='<div class="qdots" aria-label="Jump to question">'+R.qs.map(function(x,i){return '<button data-act="mJump" data-i="'+i+'" class="'+(i===R.i?'cur ':'')+(R.ans[x.id]!=null?'ans ':'')+(R.flag[x.id]?'flag':'')+'" aria-label="Question '+(i+1)+'">'+(i+1)+'</button>'}).join('')+'</div>';
   return h+'<p class="muted" style="font-size:13px;margin-top:16px">Keys: A–E or 1–5 to answer · Enter for next</p></div>'}
 function noteFromSrc(q){var s=q.source||{};if(s.kind!=='theory')return null;return D.notes.find(function(n){return n.rel===s.ref})}
@@ -1258,6 +1285,11 @@ function record(q,k){var p=PR.mcq[q.id]||{n:0,c:0},ok=k===q.answer;queue('mcq',q
 ACT.mNext=function(){var R=S.mcq.run;if(R.i<R.qs.length-1){R.i++;render();window.scrollTo(0,0)}};
 ACT.mPrev=function(){var R=S.mcq.run;if(R.i>0){R.i--;render()}};
 ACT.mJump=function(b){S.mcq.run.i=+b.dataset.i;render()};
+ACT.mReport=function(){var R=S.mcq.run,q=R.qs[R.i];
+  modal('<h3 style="margin-top:0">Report this question</h3><p class="muted">Editors are notified and will review it.</p>'+
+   '<select id="rptReason" class="btn" style="width:100%;margin-bottom:10px"><option value="wrong_answer">Wrong answer / key</option><option value="unclear">Unclear or ambiguous</option><option value="outdated">Outdated</option><option value="typo">Typo / formatting</option><option value="other">Other</option></select>'+
+   '<textarea id="rptNote" maxlength="500" rows="3" placeholder="Optional details" style="width:100%"></textarea>',
+   [['Cancel',''],['Send report',function(){fetch('/api/redefined/mcqs/report',{method:'POST',credentials:'same-origin',headers:{'Content-Type':'application/json'},body:JSON.stringify({id:q.id,reason:$('#rptReason').value,note:$('#rptNote').value})}).then(function(r){toast(r.ok?'Thanks, report sent':'Could not send report')})}]])};
 ACT.mFlag=function(){var R=S.mcq.run,q=R.qs[R.i];R.flag[q.id]=!R.flag[q.id];render()};
 ACT.mFinish=function(){var R=S.mcq.run,un=R.qs.filter(function(q){return R.ans[q.id]==null}).length;
   if(R.mode==='exam'&&un)modal('<h3 style="margin-top:0">Submit with '+un+' unanswered?</h3><p>Unanswered questions count as incorrect.</p>',[['Keep going',''],['Submit',finishMcq]]);else finishMcq()};

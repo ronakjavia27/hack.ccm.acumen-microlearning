@@ -72,7 +72,7 @@ output_files/
   trials_database_condensed/                — Condensed trial JSON
   flashcards/{System}/{Subtopic}.json       — Unified flashcard store (system/subtopic files, UUID cards, explicit front/back)
   flashcards_index.json                     — Derived flashcard index (v2) powering portal/global-search/console
-  mcqs/{System}/{Subtopic}.json             — MCQ store (from mcq_generator.py; questions with options/answer/explanation/source, status draft|approved|rejected; override dir with MCQ_DIR)
+  mcqs/{System}/{Subtopic}.json             — MCQ store (from mcq_generator.py; questions with options/answer/explanation/source, status published|rejected (auto-published; legacy draft/approved still shown); override dir with MCQ_DIR)
   Theory MDs/                               — Theory Topics notes (any extension; markdown, first `# ` line = title)
 
 backups/                                    — Full repo snapshots
@@ -273,7 +273,7 @@ python mcq_generator.py status          # store + pending summary
 --llm openrouter|gemini | --gemini   Provider (default openrouter via FLASHCARD_LLM_* model)
 --api-key K --model M [--base-url U] Direct OpenAI-compatible call
 ```
-Theory sources come from `revamped_webapp.load_theory_notes()` (same taxonomy as the portal, BOOKS/ skipped); guidelines from `sent_summaries.json` → `recommendation_blocks` + `key_pearls`. Each question is validated (4–5 unique options, answer in range, no "all/none of the above", explanation ≥30 chars, deduped stem) and saved as `status: "draft"`. Re-running replaces a changed source's previous questions.
+Theory sources come from `revamped_webapp.load_theory_notes()` (same taxonomy as the portal, BOOKS/ skipped); guidelines from `sent_summaries.json` → `recommendation_blocks` + `key_pearls`. Each question is validated (4–5 unique options, answer in range, no "all/none of the above", explanation ≥30 chars, deduped stem) and saved as `status: "published"` (auto-publish: live on the portal at next push). Re-running replaces a changed source's previous questions.
 
 ### `esbicm_parser.py` — ESBICM Trial Parsing
 ```
@@ -377,3 +377,5 @@ PyMuPDF, pdf2image, pytesseract, fastapi, uvicorn, requests, beautifulsoup4
 - Git push from UI via async `PushWorker`
 - Backup/restore system
 - Audit log viewer
+## MCQ reports
+Portal users can report an MCQ (`POST /api/redefined/mcqs/report`, reasons: wrong_answer|unclear|outdated|typo|other). Reports are stored in the shared KV as `mcqreport:{qid}:{user-hash}` (one per user per question), so the console sees reports made on production. Console → **MCQs** section (`dashboard/modules/mcqs.py`, `/console/api/mcqs*`) lists reported questions first (⚑ count), and lets an admin Reject (hide, `status: "rejected"`), Restore, or Dismiss reports. Reject/Restore edits the store file and must be pushed (console push) to take effect on prod.
