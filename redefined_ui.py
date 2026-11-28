@@ -1008,7 +1008,7 @@ window.addEventListener('popstate',function(){if(S.view==='topic')saveReading();
 function readURL(){var u=new URL(location);S.view=u.searchParams.get('v')||'today';S.params={};u.searchParams.forEach(function(v,k){if(k!=='v')S.params[k]=v})}
 
 document.addEventListener('click',function(e){
-  var g=e.target.closest('[data-go]');if(g){e.preventDefault();var p={};Object.keys(g.dataset).forEach(function(k){if(/^p[A-Z]/.test(k))p[k.slice(1).toLowerCase()]=g.dataset[k]});closeReader();go(g.dataset.go,p);return}
+  var g=e.target.closest('[data-go]');if(g){e.preventDefault();var p={};Object.keys(g.dataset).forEach(function(k){if(/^p[a-z]/.test(k))p[k.slice(1).toLowerCase()]=g.dataset[k]});closeReader();go(g.dataset.go,p);return}
   var a=e.target.closest('[data-act]');if(a&&ACT[a.dataset.act]){e.preventDefault();ACT[a.dataset.act](a);return}
   var b=e.target.closest('[data-bm]');if(b){var ref=b.dataset.bm,icon=b.classList.contains('save');toggleBM(ref,JSON.parse(b.dataset.meta)).then(function(){var on=!!BM.items[ref];b.classList.toggle(icon?'on':'saved',on);b.innerHTML=ic(on?'i-bmf':'i-bm')+(icon?'':(on?'Saved':'Save'));renderNav()});return}
   var o;
