@@ -9,7 +9,10 @@ AI-powered clinical microlearning platform. Ingests medical PDFs, extracts struc
 | File | Purpose |
 |------|---------|
 | `revamped_webapp.py` | THE public knowledge portal (serves `/`, auth-gated) — single FastAPI app, JS/CSS inline in one giant HTML f-string |
-| `webapp_google.py` | Vercel entrypoint (see `vercel.json`) — wraps `revamped_webapp` and adds the Google OAuth landing page |
+| `redefined_ui.py` | **Theory-first portal (live UI)** — imports `revamped_webapp` read-only, reuses all its routes, serves the new SPA at `/` (old UI at `/classic`). Study: Today, Topics (theory hubs), Flashcards (SM-2), MCQs (tutor/exam), Pearls; Reference: Guidelines; Evidence: Papers, Trials. Adds `/api/redefined/*` (bootstrap, note, related, guideline, pearls, mcqs, progress). `theory` is on by default for non-admins here unless an admin explicitly turns it off. |
+| `webapp_redefined.py` | **Vercel entrypoint** (see `vercel.json`) — imports `webapp_google` first (Google OAuth routes + landing), then `redefined_ui`; `app = redefined_ui.app` |
+| `webapp_google.py` | Wraps `revamped_webapp` and adds the Google OAuth landing page + `/api/auth/google*` routes (imported by `webapp_redefined.py`) |
+| `mcq_generator.py` | Builds single-best-answer MCQs from theory notes + guidelines into `output_files/mcqs/` (validated, options shuffled, sha256 ledger) |
 | `dashboard_app.py` | Admin console at `/console` (port 8878) — wraps `dashboard/` |
 | `generator.py` | PDF ingestion pipeline (Pass 1: summaries, Pass 2: pearls) |
 | `maintainer.py` | Health checks, schema validation, repairs, error reports |
@@ -69,6 +72,7 @@ output_files/
   trials_database_condensed/                — Condensed trial JSON
   flashcards/{System}/{Subtopic}.json       — Unified flashcard store (system/subtopic files, UUID cards, explicit front/back)
   flashcards_index.json                     — Derived flashcard index (v2) powering portal/global-search/console
+  mcqs/{System}/{Subtopic}.json             — MCQ store (from mcq_generator.py; questions with options/answer/explanation/source, status draft|approved|rejected; override dir with MCQ_DIR)
   Theory MDs/                               — Theory Topics notes (any extension; markdown, first `# ` line = title)
 
 backups/                                    — Full repo snapshots
@@ -89,6 +93,7 @@ quarantine/{date}/{category|errors}/        — Processed/failed PDFs
 | `health_report.md` | Markdown version of health report |
 | `master_error_list_YYYY-MM.txt` | Monthly error logs (JSONL format, auto-rotated) |
 | `flashcards_ledger.json` | Flashcard generator progress (sha256 per input file → deck/md paths) |
+| `mcq_ledger.json` | MCQ generator progress (sha256 per source → question ids + store path) |
 | `generator.log` | Audit log for each generator run |
 | `emails.csv` | Synced subscriber list (from Google Sheets) |
 | `.console_edits.log` | Dashboard edit audit trail |
@@ -104,7 +109,10 @@ python maintainer.py                   # Health report
 python dashboard_app.py                # Admin console → http://localhost:8878/console
 python revamped_webapp.py               # Local: serves at http://localhost:8000 (see note below)
 # Run locally with: uvicorn revamped_webapp:app --port 8000  (no __main__ block).
-# On Vercel the entrypoint is webapp_google.py (wraps revamped_webapp + Google OAuth).
+uvicorn redefined_ui:app --port 8000   # New theory-first portal (old UI at /classic)
+uvicorn webapp_redefined:app --port 8000  # Same as production: redefined UI + Google OAuth landing
+python mcq_generator.py                # Generate MCQs for new/changed theory notes + guidelines
+# On Vercel the entrypoint is webapp_redefined.py (webapp_google + redefined_ui).
 ```
 
 ## Configuration (`.env` + `acumen_core/config.py`)
@@ -253,6 +261,20 @@ python flashcards.py --as-is --file CVS/deck.md   # verbatim '==='-separated mar
 
 **Portal Theory section** (`revamped_webapp.py`, run via `uvicorn revamped_webapp:app` — it has no `__main__` block): hero with two mode cards — **Theory Topics** (rendered markdown notes from `output_files/Theory MDs/`, any file extension; title from first `# ` line; loaded by `load_theory_notes()`) and **Flashcards** (unified store). Flashcards loads decks via `load_flashcard_decks()` from `output_files/flashcards/` subtopic files (deck id `System/Subtopic`; cards carry explicit `front`/`back`/`tags`, UUID ids, no `---` divider). Features: specialty chips, deck search (incl. front/back/tags), subtopic chips when exactly one specialty active (filter decks + restrict card navigation; non-matching dots dimmed/disabled), deck list, card reader with Next/Prev + keyboard arrows, Single-face/Flip view toggle, per-card save via bookmarks API (kind `flashcard`, ref `flashcard:{uuid}`; locator stores `{deck, card: uuid, cardIdx}`), "Saved only" filter, jump dots. Flip mode shows `front` on the front face and `back` on the back; browsers without `backface-visibility` support get a `.no-3d` display-swap fallback (faces never stack). Single-face mode shows the back only. Global search adds "Flashcards" and "Theory Topics" result groups with deep links (`data-theory-card` uuid / `data-theory-note`); URL deep links supported: `?theory=flashcards[&system=…&subtopic=…&card=<uuid>]` and `?theory=notes[&note=<id>]`. Console reader likewise shows the question as a small label above the answer.
 
+### `mcq_generator.py` — MCQ Generation
+```
+python mcq_generator.py                 # generate for every new/changed source (default)
+python mcq_generator.py status          # store + pending summary
+--source theory|guidelines|all   Which sources (default all)
+--spec Pulmonology               Only one system
+--file "Pulmonology/ARDS/x.md"   Only one source (theory rel path or guideline file name)
+--per-source N                   Questions per source (default 8)
+--max N  --force  --dry-run  --verbose
+--llm openrouter|gemini | --gemini   Provider (default openrouter via FLASHCARD_LLM_* model)
+--api-key K --model M [--base-url U] Direct OpenAI-compatible call
+```
+Theory sources come from `revamped_webapp.load_theory_notes()` (same taxonomy as the portal, BOOKS/ skipped); guidelines from `sent_summaries.json` → `recommendation_blocks` + `key_pearls`. Each question is validated (4–5 unique options, answer in range, no "all/none of the above", explanation ≥30 chars, deduped stem) and saved as `status: "draft"`. Re-running replaces a changed source's previous questions.
+
 ### `esbicm_parser.py` — ESBICM Trial Parsing
 ```
 --pdf-path PATH    Override PDF location
@@ -316,7 +338,7 @@ PDF in input_pdfs/
             ├─ LLM pearl extraction (openai/gpt-oss-20b)
             └─ Append to pearls.json
                 │
-                ▼ Dashboard (revamped_webapp.py → webapp_google.py → Vercel)
+                ▼ Portal (revamped_webapp.py → webapp_google.py → redefined_ui.py → webapp_redefined.py → Vercel)
                 ├─ Reads sent_summaries.json for articles
                 ├─ Reads pearls.json for pearls
                 └─ Reads esbicm_trials_index.json for trials
@@ -342,7 +364,8 @@ PyMuPDF, pdf2image, pytesseract, fastapi, uvicorn, requests, beautifulsoup4
 ```
 
 ## Vercel Deployment
-- Entrypoint: `webapp_google.py` (see `vercel.json`) — imports `revamped_webapp.app` and adds Google OAuth landing
+- Entrypoint: `webapp_redefined.py` (see `vercel.json`) — imports `webapp_google` (Google OAuth landing + routes on `revamped_webapp.app`), then `redefined_ui` (copies those routes, serves the theory-first UI at `/`, old UI at `/classic`). Import order matters: `redefined_ui` copies routes at import time.
+- Rollback to the old UI: point `vercel.json` back at `webapp_google.py`
 - URL: `hack-ccm-acumen-microlearning.vercel.app`
 - Serves the public knowledge portal with papers, guidelines, pearls, and trials views
 

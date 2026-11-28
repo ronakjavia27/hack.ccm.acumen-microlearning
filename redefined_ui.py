@@ -76,6 +76,26 @@ def _user_or_401(request):
     return user
 
 
+def _has_feature(user, feature):
+    """Feature check for the redefined UI. Same as the portal's own check,
+    except "theory" is ON by default for non-admins: it is only off when an
+    admin explicitly turned it off for this user or in the access defaults."""
+    if feature == "theory" and not user.get("is_admin"):
+        overrides = user.get("features") or {}
+        if "theory" in overrides:
+            return bool(overrides["theory"])
+        defaults = legacy._kv_get("auth:access_defaults") or {}
+        if isinstance(defaults, dict) and "theory" in defaults:
+            return bool(defaults["theory"])
+        return True
+    return bool(legacy._user_has_feature(user, feature))
+
+
+def _require(user, feature):
+    if not _has_feature(user, feature):
+        raise HTTPException(status_code=403, detail=f"Feature '{feature}' is not enabled for this account")
+
+
 def _doi_url(raw):
     raw = str(raw or "").strip()
     if not raw or raw.lower() in ("none", "nan"):
@@ -159,7 +179,9 @@ def _find_summary_json(file_name, system="", type_=""):
 @app.get("/api/redefined/bootstrap")
 async def redefined_bootstrap(request: Request):
     user = _user_or_401(request)
-    features = {f: bool(legacy._user_has_feature(user, f)) for f in legacy.FEATURE_FLAGS}
+    features = {f: _has_feature(user, f) for f in legacy.FEATURE_FLAGS}
+    # The legacy print route still applies the legacy theory flag.
+    features["print_notes"] = bool(legacy._user_has_feature(user, "theory"))
 
     articles = _articles() if (features["papers"] or features["guidelines"]) else []
     pearls = legacy.load_pearls() if features["pearls"] else []
@@ -227,7 +249,7 @@ async def redefined_bootstrap(request: Request):
 @app.get("/api/redefined/note")
 async def redefined_note(request: Request, id: str):
     user = _user_or_401(request)
-    legacy._require_feature(user, "theory")
+    _require(user, "theory")
     for n in legacy.load_theory_notes():
         if n.get("id") == id or n.get("rel") == id:
             return n
@@ -258,7 +280,7 @@ async def redefined_related(request: Request, ref: str, limit: int = 12):
 @app.get("/api/redefined/guideline")
 async def redefined_guideline(request: Request, file_name: str, system: str = "", type: str = "Guideline"):
     user = _user_or_401(request)
-    legacy._require_feature(user, "guidelines")
+    _require(user, "guidelines")
     path = _find_summary_json(file_name, system, type)
     if not path:
         return JSONResponse(status_code=404, content={"error": "Guideline not found"})
@@ -279,7 +301,7 @@ async def redefined_guideline(request: Request, file_name: str, system: str = ""
 async def redefined_pearls(request: Request, q: str = "", system: str = "", subtopic: str = "",
                            page: int = 1, limit: int = 36, shuffle: int = 0):
     user = _user_or_401(request)
-    legacy._require_feature(user, "pearls")
+    _require(user, "pearls")
     ql = q.lower().strip()
     st = subtopic.lower().strip()
     rows = []
@@ -303,7 +325,7 @@ async def redefined_pearls(request: Request, q: str = "", system: str = "", subt
 @app.get("/api/redefined/mcqs")
 async def redefined_mcqs(request: Request, ids: str = "", system: str = "", subtopic: str = ""):
     user = _user_or_401(request)
-    legacy._require_feature(user, "theory")
+    _require(user, "theory")
     qs = _load_mcq_store()
     if ids:
         want = [i for i in ids.split(",") if i][:200]
@@ -1096,7 +1118,7 @@ VIEWS.topic=function(){
    '<div class="hub-actions"><button class="btn'+(done?' saved':' primary')+'" data-act="markRead">'+ic('i-check')+(done?'Read':'Mark as read')+'</button>'+
    '<button class="btn'+(on?' saved':'')+'" data-bm="'+esc(ref)+'" data-meta="'+esc(JSON.stringify({kind:'note',title:n.title,system:n.system,type:'Theory',locator:{note:n.id}}))+'">'+ic(on?'i-bmf':'i-bm')+(on?'Saved':'Save')+'</button>'+
    '<button class="btn" data-act="fs" data-d="-1" aria-label="Smaller text">A−</button><button class="btn" data-act="fs" data-d="1" aria-label="Larger text">A+</button>'+
-   '<a class="btn" href="/export/print?kind=note&file_name='+encodeURIComponent(n.id)+'&title='+encodeURIComponent(n.title)+'" target="_blank" rel="noopener">'+ic('i-print')+'Print</a></div></header>'+
+   (D.features.print_notes?'<a class="btn" href="/export/print?kind=note&file_name='+encodeURIComponent(n.id)+'&title='+encodeURIComponent(n.title)+'" target="_blank" rel="noopener">'+ic('i-print')+'Print</a>':'')+'</div></header>'+
    '<div class="prose" id="noteBody"><div class="empty">Loading…</div></div></article>'+
    '<aside class="prac" aria-label="Practise this topic"><div class="card"><h4>Practise this topic</h4>'+
    dk.map(function(d){var st=deckStats(d);return '<button class="pa" data-act="studyDeck" data-deck="'+esc(d.id)+'"><span class="ic">'+ic('i-cards')+'</span><span><b>'+esc(d.title)+'</b><small>'+d.cards.length+' cards · '+st.due+' due · '+st.neu+' new</small></span></button>'}).join('')+

@@ -2,17 +2,17 @@
   "version": 2,
   "builds": [
     {
-      "src": "webapp_google.py",
+      "src": "webapp_redefined.py",
       "use": "@vercel/python",
       "config": {
-        "entrypoint": "webapp_google.py"
+        "entrypoint": "webapp_redefined.py"
       }
     }
   ],
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "webapp_google.py"
+      "dest": "webapp_redefined.py"
     }
   ]
 }
